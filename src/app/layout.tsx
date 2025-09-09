@@ -15,7 +15,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "KubeStellar - Multi-Cluster Kubernetes Orchestration",
-  description: "Simplify multi-cluster Kubernetes operations with intelligent workload distribution, unified management, and seamless orchestration across any infrastructure.",
+  description:
+    "Simplify multi-cluster Kubernetes operations with intelligent workload distribution, unified management, and seamless orchestration across any infrastructure.",
 };
 
 export default function RootLayout({

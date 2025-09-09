@@ -1,11 +1,11 @@
-import Navigation from '@/components/sections/Navigation';
-import HeroSection from '@/components/sections/HeroSection';
-import AboutSection from '@/components/sections/AboutSection';
-import HowItWorksSection from '@/components/sections/HowItWorksSection';
-import UseCasesSection from '@/components/sections/UseCasesSection';
-import GetStartedSection from '@/components/sections/GetStartedSection';
-import ContactSection from '@/components/sections/ContactSection';
-import Footer from '@/components/sections/Footer';
+import Navigation from "@/components/Navigation";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import UseCasesSection from "@/components/UseCasesSection";
+import GetStartedSection from "@/components/GetStartedSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
