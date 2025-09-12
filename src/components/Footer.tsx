@@ -146,16 +146,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-4">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">K</span>
-              </div>
-              <span className="text-2xl font-bold text-white">KubeStellar</span>
+              
+            <div className="flex items-center-space-x-2 mb-2">
+              <img src="/KubeStellar-with-Logo-transparent-v2.png" alt="Kubestellar logo" className="h-10" />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Transform your multi-cluster Kubernetes operations with
-              intelligent automation, seamless scalability, and enterprise-grade
-              reliability.
+              Multi-Cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure.
             </p>
             <div className="flex space-x-4">
               <a
