@@ -92,7 +92,7 @@ export default function Footer() {
       const toggleButton = () => {
         if (window.pageYOffset > 300) {
           backToTopButton.style.opacity = "1";
-          backToTopButton.style.transform = "translateY(0)";
+          backToTopButton.style.transform = "translateY(-30px)";
         } else {
           backToTopButton.style.opacity = "0";
           backToTopButton.style.transform = "translateY(10px)";
