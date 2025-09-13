@@ -289,7 +289,7 @@ export default function Footer() {
           </div>
 
           {/* Company Links */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <h3 className="text-lg font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-3">
               <li>
@@ -328,16 +328,16 @@ export default function Footer() {
           </div>
 
           {/* Stay updated */}
-          <div className="lg:col-span-2">
+          <div className="ml-10 lg:col-span-3">
             <h3 className="text-lg font-semibold text-white mb-4">Stay Updated</h3>
             <div className="border border-gray-700 bg-[#161A23] rounded-xl p-6">
               <form action="" className="space-y-6">
-                <div className="relative">
+                <div className="relative ">
                   <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <input type="email" placeholder="Enter your email" className="w-full bg-[#252C39] border border-gray-700 rounded-lg py-2.5 pl-10 pr-4 text-white placeholder-gray-400 focus:ring-purple-500 focus:border-purple-500 transition" />
+                  <input type="email" placeholder="Enter your email address" className=" w-full bg-[#252C39] border border-gray-700 rounded-lg py-3 text-wrap pl-10 pr-4 text-white placeholder-gray-400 focus:ring-purple-500 focus:border-purple-500 transition" />
                 </div>
                 <button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-2.5 px-4 rounded-lg flex items-center justify-center transition-all duration-300">Subscribe
                   <svg className="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -346,6 +346,7 @@ export default function Footer() {
                 </button>
               </form>
             </div>
+            <p className=" text-gray-400 mt-3">We respect your privacy. No spam.</p>
           </div>
         </div>
 
