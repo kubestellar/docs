@@ -35,7 +35,7 @@ jobs:
 
           SUMMARY=$(echo "${{ github.event.pull_request.body }}" | sed -E '/^([-*_] ?){3,}$/d' | sed 's/^> //g' | grep -v '^\s*$' | head -n 2 | tr '\n' ' ' | sed 's/^[ \t]*/- /;s/[ \t]*$//')
 
-          if [[ -z "$SUMMARY" ]] || [[ "$SUMMARY" == "- " ]]; then
+          if [[ -z "$SUMMARY" ]] || [[ "$SUMMARY" == "- " ]] ; then
             SUMMARY="- ${{ github.event.pull_request.title }}"
           fi
           
