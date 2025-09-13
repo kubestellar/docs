@@ -135,12 +135,6 @@ export default function Footer() {
       {/* Grid lines background */}
       <div id="grid-lines-footer" className="absolute inset-0 opacity-20"></div>
 
-      {/* Background elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-blue-900/10 to-transparent"></div>
-        <div className="absolute top-0 right-0 w-full h-1/2 bg-gradient-to-b from-purple-900/10 to-transparent"></div>
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
