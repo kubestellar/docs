@@ -379,7 +379,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-gray-400 text-sm">
-                Made with ❤️ for the Kubernetes community
+                Made with ❤️ by the Kubernetes team.
               </span>
             </div>
           </div>
