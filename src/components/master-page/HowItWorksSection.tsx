@@ -129,10 +129,13 @@ export default function HowItWorksSection() {
           <div className="relative mb-16">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 md:pr-12">
-                <div className="relative">
+                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-xl p-4">
                   <div className="absolute -left-2 md:-left-6 top-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900"></div>
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    1. Define Your Workloads
+                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white mr-2">
+                      1
+                    </span>
+                    Define Your Workloads
                   </h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
                     Use standard Kubernetes manifests with KubeStellar
@@ -178,10 +181,13 @@ metadata:
           <div className="relative mb-16">
             <div className="flex flex-col md:flex-row-reverse items-center">
               <div className="md:w-1/2 md:pl-12">
-                <div className="relative">
+                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-xl p-4">
                   <div className="absolute -right-2 md:-right-6 top-6 w-4 h-4 bg-purple-500 rounded-full border-4 border-gray-900"></div>
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    2. Intelligent Placement
+                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white mr-2">
+                      2
+                    </span>
+                    Intelligent Placement
                   </h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
                     KubeStellar&apos;s intelligent engine analyzes cluster
@@ -231,11 +237,15 @@ metadata:
           <div className="relative">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 md:pr-12">
-                <div className="relative">
+                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-xl p-4">
                   <div className="absolute -left-2 md:-left-6 top-6 w-4 h-4 bg-green-500 rounded-full border-4 border-gray-900"></div>
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    3. Deploy & Monitor
+                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white mr-2">
+                      3
+                    </span>
+                    Deploy & Monitor
                   </h3>
+
                   <p className="text-gray-300 mb-6 leading-relaxed">
                     Workloads are automatically deployed to selected clusters
                     with continuous monitoring, health checks, and automatic
@@ -267,7 +277,7 @@ metadata:
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      d="M7 16a4 4 0 01-.88-7.906A6 6 0 1118 14h-1m-5 6V10m0 10l-3-3m3 3l3-3"
                     />
                   </svg>
                 </div>
