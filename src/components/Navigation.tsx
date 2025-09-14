@@ -179,46 +179,35 @@ export default function Navigation() {
         <div className="flex justify-between h-16 items-center">
           {/* Left side: Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">K</span>
-              </div>
-              <span className="text-xl font-bold text-white">KubeStellar</span>
-            </a>
+            <img src="\KubeStellar-with-Logo-transparent-v2.png" alt="Kubestellar logo" className="h-10 w-50"/>
           </div>
 
           {/* Center: Nav Links */}
           <div className="hidden md:flex flex-1 justify-center">
             <div className="flex items-center space-x-8">
               <a
-                href="#about"
+                href="#docs"
                 className="nav-link-hover px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
               >
-                About
+                Docs
               </a>
               <a
-                href="#how-it-works"
+                href="#blog"
                 className="nav-link-hover px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
               >
-                How It Works
+                Blog
               </a>
               <a
-                href="#use-cases"
+                href="#contribute"
                 className="nav-link-hover px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
               >
-                Use Cases
+                Contribute
               </a>
               <a
-                href="#get-started"
+                href="#community"
                 className="nav-link-hover px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
               >
-                Get Started
-              </a>
-              <a
-                href="#contact"
-                className="nav-link-hover px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
-              >
-                Contact
+                Community
               </a>
             </div>
           </div>
