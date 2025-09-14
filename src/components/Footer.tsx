@@ -205,7 +205,7 @@ export default function Footer() {
           </div>
 
           {/* Product Links */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1 mr-25">
             <h3 className="text-lg font-semibold text-white mb-4">Product</h3>
             <ul className="space-y-3">
               <li>
@@ -244,7 +244,7 @@ export default function Footer() {
           </div>
 
           {/* Resources Links */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1 ml-10">
             <h3 className="text-lg font-semibold text-white mb-4">Resources</h3>
             <ul className="space-y-3">
               <li>
@@ -283,7 +283,7 @@ export default function Footer() {
           </div>
 
           {/* Company Links */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 ml-20">
             <h3 className="text-lg font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-3">
               <li>
@@ -322,7 +322,7 @@ export default function Footer() {
           </div>
 
           {/* Stay updated */}
-          <div className="ml-10 lg:col-span-3">
+          <div className="ml-30 lg:col-span-4">
             <h3 className="text-lg font-semibold text-white mb-4">Stay Updated</h3>
             <div className="border border-gray-700 bg-[#161A23] rounded-xl p-6">
               <form action="" className="space-y-6">
