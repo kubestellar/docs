@@ -3,93 +3,7 @@
 import { useEffect } from "react";
 
 export default function HowItWorksSection() {
-  useEffect(() => {
-    // Create starfield and grid for How It Works section
-    const createStarfield = (container: HTMLElement) => {
-      if (!container) return;
-      container.innerHTML = "";
 
-      for (let layer = 1; layer <= 3; layer++) {
-        const layerDiv = document.createElement("div");
-        layerDiv.className = `star-layer layer-${layer}`;
-        layerDiv.style.position = "absolute";
-        layerDiv.style.inset = "0";
-        layerDiv.style.zIndex = layer.toString();
-
-        const starCount = layer === 1 ? 60 : layer === 2 ? 40 : 25;
-
-        for (let i = 0; i < starCount; i++) {
-          const star = document.createElement("div");
-          star.style.position = "absolute";
-          star.style.width = `${Math.random() * 2 + 1}px`;
-          star.style.height = star.style.width;
-          star.style.backgroundColor = "white";
-          star.style.borderRadius = "50%";
-          star.style.top = `${Math.random() * 100}%`;
-          star.style.left = `${Math.random() * 100}%`;
-          star.style.opacity = Math.random().toString();
-          star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite alternate`;
-          star.style.animationDelay = `${Math.random() * 2}s`;
-          layerDiv.appendChild(star);
-        }
-
-        container.appendChild(layerDiv);
-      }
-    };
-
-    const createGrid = (container: HTMLElement) => {
-      if (!container) return;
-      container.innerHTML = "";
-
-      const gridSvg = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg"
-      );
-      gridSvg.setAttribute("width", "100%");
-      gridSvg.setAttribute("height", "100%");
-      gridSvg.style.position = "absolute";
-      gridSvg.style.top = "0";
-      gridSvg.style.left = "0";
-
-      for (let i = 0; i < 12; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", "0");
-        line.setAttribute("y1", `${i * 8}%`);
-        line.setAttribute("x2", "100%");
-        line.setAttribute("y2", `${i * 8}%`);
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      for (let i = 0; i < 12; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", `${i * 8}%`);
-        line.setAttribute("y1", "0");
-        line.setAttribute("x2", `${i * 8}%`);
-        line.setAttribute("y2", "100%");
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      container.appendChild(gridSvg);
-    };
-
-    const starsContainer = document.getElementById("stars-container-how");
-    const gridContainer = document.getElementById("grid-lines-how");
-
-    if (starsContainer) createStarfield(starsContainer);
-    if (gridContainer) createGrid(gridContainer);
-  }, []);
 
   return (
     <section
@@ -99,14 +13,7 @@ export default function HowItWorksSection() {
       {/* Dark base background */}
       <div className="absolute inset-0 bg-[#0a0a0a]"></div>
 
-      {/* Starfield background */}
-      <div
-        id="stars-container-how"
-        className="absolute inset-0 overflow-hidden"
-      ></div>
 
-      {/* Grid lines background */}
-      <div id="grid-lines-how" className="absolute inset-0 opacity-20"></div>
 
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-blue-500/10 to-transparent"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative ">
