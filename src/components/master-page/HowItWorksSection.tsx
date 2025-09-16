@@ -109,14 +109,14 @@ export default function HowItWorksSection() {
       <div id="grid-lines-how" className="absolute inset-0 opacity-20"></div>
 
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-blue-500/10 to-transparent"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative ">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            How <span className="text-gradient">KubeStellar</span> Works
+            How <span className="text-gradient">It Works</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
-            Three simple steps to transform your multi-cluster Kubernetes
-            operations
+            KubeStellar orchestrates your multi-cluster environment with a simple, <br />
+            powerful architecture
           </p>
         </div>
 
@@ -128,25 +128,20 @@ export default function HowItWorksSection() {
           {/* Step 1 */}
           <div className="relative mb-16">
             <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 md:pr-12">
-                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-xl p-4">
-                  <div className="absolute -left-2 md:-left-6 top-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900"></div>
-                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white mr-2">
+              <div className="md:w-1/2 md:pr-10">
+                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-s-md rounded-e-md p-4 border-1 border-white/10 p-6">
+                  <h3 className="text-xl font-bold  text-white mb-4 flex items-center">
+                    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 mr-2 text-white font-bold">
                       1
                     </span>
-                    Define Your Workloads
+
+                    Define Workloads
                   </h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    Use standard Kubernetes manifests with KubeStellar
-                    annotations to specify placement policies, resource
-                    requirements, and distribution preferences.
+                    Create Kubernetes resource in the KubeStellar control plane using familiar tools and manifests. Tag resource with placement constraints and policies.
                   </p>
-                  <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 border border-gray-700/50">
-                    <div className="text-xs text-gray-400 mb-2">
-                      workload.yaml
-                    </div>
-                    <pre className="text-sm text-green-400 font-mono">
+                  <div className="bg-slate-900/60 backdrop-blur-sm backdrop-blur-sm p-4">
+                    <pre className="text-sm text-white font-mono opacity-80">
                       {`apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -154,9 +149,11 @@ metadata:
   annotations:
     kubestellar.io/placement: "region=us-east,tier=prod"`}
                     </pre>
+
                   </div>
                 </div>
               </div>
+
               <div className="flex justify-center md:w-1/2 md:pl-12 mt-8 md:mt-0">
                 <div className="relative w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
                   <svg
@@ -181,40 +178,34 @@ metadata:
           <div className="relative mb-16">
             <div className="flex flex-col md:flex-row-reverse items-center">
               <div className="md:w-1/2 md:pl-12">
-                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-xl p-4">
-                  <div className="absolute -right-2 md:-right-6 top-6 w-4 h-4 bg-purple-500 rounded-full border-4 border-gray-900"></div>
-                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white mr-2">
+                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-s-md rounded-e-md p-4 border-1 border-white/10">
+
+                  <h3 className="text-xl font-bold  text-white mb-4 flex items-center">
+                    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 mr-2 text-white font-bold">
                       2
                     </span>
-                    Intelligent Placement
+
+                    Workload Orchestation
                   </h3>
+
                   <p className="text-gray-300 mb-6 leading-relaxed">
-                    KubeStellar&apos;s intelligent engine analyzes cluster
-                    capacity, network topology, and policy constraints to
-                    determine optimal workload placement across your
-                    infrastructure.
+                    KubeStellar's orchestation engine analyzes workloads and determines optimal placement across registered clusters based on constraints and policies.
                   </p>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-green-500/10 backdrop-blur-sm rounded-lg p-3 border border-green-500/30">
-                      <div className="text-green-400 text-sm font-medium">
-                        US-East Cluster
-                      </div>
-                      <div className="text-xs text-gray-400">
-                        ✓ Policy Match
-                      </div>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="bg-blue-900/80 backdrop-blur-lg rounded-full px-3 py-1 text-white text-sm flex items-center justify-center">
+                      <div className="text-sm text-400 opacity-70 font-semibold">Policy Evaluation</div>
                     </div>
-                    <div className="bg-blue-500/10 backdrop-blur-sm rounded-lg p-3 border border-blue-500/30">
-                      <div className="text-blue-400 text-sm font-medium">
-                        EU-West Cluster
-                      </div>
-                      <div className="text-xs text-gray-400">○ Evaluating</div>
+                    <div className="bg-purple-900/80 backdrop-blur-lg rounded-full px-3 py-1 text-white text-sm flex items-center justify-center">
+                      <div className="text-sm text-400 opacity-70 font-semibold">Constraint Matching</div>
+                    </div>
+                    <div className="bg-green-900/80 backdrop-blur-lg rounded-full px-3 py-1 text-white text-sm flex items-center justify-center">
+                      <div className="text-sm text-400 opacity-70 font-semibold">Resource Analysis</div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="flex justify-center md:w-1/2 md:pr-12 mt-8 md:mt-0">
-                <div className="relative w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center shadow-lg">
+                <div className="relative w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
                   <svg
                     className="w-12 h-12 text-white"
                     fill="none"
@@ -224,8 +215,14 @@ metadata:
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                      strokeWidth={1}
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
                 </div>
@@ -237,36 +234,45 @@ metadata:
           <div className="relative">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 md:pr-12">
-                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-xl p-4">
-                  <div className="absolute -left-2 md:-left-6 top-6 w-4 h-4 bg-green-500 rounded-full border-4 border-gray-900"></div>
-                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white mr-2">
+                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-s-md rounded-e-md p-4 border-1 border-white/10">
+
+
+                  <h3 className="text-xl font-bold  text-white mb-4 flex items-center">
+                    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 mr-2 text-white font-bold">
                       3
                     </span>
-                    Deploy & Monitor
+                    Automated Deployment
                   </h3>
+
 
                   <p className="text-gray-300 mb-6 leading-relaxed">
                     Workloads are automatically deployed to selected clusters
-                    with continuous monitoring, health checks, and automatic
-                    failover capabilities for maximum reliability.
+                    KubeStellar continuously monitors health and ensures desired state across all clusters.
                   </p>
                   <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm text-green-400">
-                        5 Clusters Active
-                      </span>
+                    <div className="bg-blue-900/40 backdrop-blur-lg px-3 py-2 text-white text-sm flex flex-col items-center justify-center w-40 rounded-s rounded-e">
+                      <span className="text-sm text-400 opacity-50">Edge Cluster</span>
+
+                      <div className="w-full h-1 bg-blue-500 mt-2"></div>
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm text-blue-400">Monitoring</span>
+
+                    <div className="bg-purple-900/40 backdrop-blur-lg px-3 py-2 text-white text-sm flex flex-col items-center justify-center w-40 rounded-s rounded-e">
+                      <span className="text-sm text-400 opacity-50">Cloud Cluster</span>
+                      <div className="w-full h-1 bg-purple-500 mt-2"></div>
+                    </div>
+
+                    <div className="bg-green-900/40 backdrop-blur-lg px-3 py-2 text-white text-sm flex flex-col items-center justify-center w-40 rounded-s rounded-e">
+                      <span className="text-sm text-400 opacity-50">On-Prem Cluster</span>
+                      <div className="w-full h-1 bg-green-500 mt-2"></div>
                     </div>
                   </div>
+
+
+
                 </div>
               </div>
               <div className="flex justify-center md:w-1/2 md:pl-12 mt-8 md:mt-0">
-                <div className="relative w-24 h-24 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg">
+                <div className="relative w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
                   <svg
                     className="w-12 h-12 text-white"
                     fill="none"
