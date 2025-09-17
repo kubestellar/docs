@@ -135,7 +135,7 @@ export default function Footer() {
       {/* Grid lines background */}
       <div id="grid-lines-footer" className="absolute inset-0 opacity-20"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full mx-auto px-8 sm:px-16 lg:px-24">
         {/* Main footer content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
           {/* Brand Section */}
@@ -205,7 +205,7 @@ export default function Footer() {
           </div>
 
           {/* Product Links */}
-          <div className="lg:col-span-1 mr-25">
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-white mb-4">Product</h3>
             <ul className="space-y-3">
               <li>
@@ -244,7 +244,7 @@ export default function Footer() {
           </div>
 
           {/* Resources Links */}
-          <div className="lg:col-span-1 ml-10">
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-white mb-4">Resources</h3>
             <ul className="space-y-3">
               <li>
@@ -283,7 +283,7 @@ export default function Footer() {
           </div>
 
           {/* Company Links */}
-          <div className="lg:col-span-1 ml-20">
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-3">
               <li>
@@ -322,7 +322,7 @@ export default function Footer() {
           </div>
 
           {/* Stay updated */}
-          <div className="ml-30 lg:col-span-4">
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold text-white mb-4">Stay Updated</h3>
             <div className="border border-gray-700 bg-[#161A23] rounded-xl p-6">
               <form action="" className="space-y-6">
