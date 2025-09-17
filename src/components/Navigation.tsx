@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from 'next/link';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -133,44 +134,55 @@ export default function Navigation() {
   return (
     <nav className="fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-md border-b border-gray-700/50 transition-all duration-300">
       {/* Dark base background */}
-      <div className="absolute inset-0 bg-[#0a0a0a]/90"></div>
+      <div className="absolute inset-0 bg-[#0a0a0a]/90 z-[-3]"></div>
 
       {/* Starfield background */}
       <div
         id="stars-container-nav"
-        className="absolute inset-0 overflow-hidden"
+        className="absolute inset-0 overflow-hidden z-[-2]"
       ></div>
 
       {/* Grid lines background */}
-      <div id="grid-lines-nav" className="absolute inset-0 opacity-10"></div>
+      <div id="grid-lines-nav" className="absolute inset-0 opacity-10 z-[-1]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between h-16 items-center">
           {/* Left side: Logo */}
-          <div className="flex-shrink-0">
-            <img src="\KubeStellar-with-Logo-transparent-v2.png" alt="Kubestellar logo" className="h-10 w-50" />
-          </div>
+          <Link href="#" className="cursor-pointer">
+            <div className="flex-shrink-0 cursor-pointer relative z-10">
+              <img src="/KubeStellar-with-Logo-transparent-v2.png" alt="Kubestellar logo" className="h-10 w-50" />
+            </div>
+          </Link>
 
           {/* Center: Nav Links */}
           <div className="hidden md:flex flex-1 justify-center">
             <div className="flex items-center space-x-8">
-              <a href="#docs" className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 transform group nav-link-hover">
-                <div className="relative">
-                  <svg className="w-5 h-5 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                  </svg>
-                </div>
-                <span>Docs</span>
-              </a>
-              <a href="#blog" className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 transform group nav-link-hover">
-                <div className="relative">
-                  <svg className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 8a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6a2 2 0 012-2h8z" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"></path>
-                  </svg>
-                </div>
-                <span>Blog</span>
-              </a>
+              {/* Docs Link */}
+              <div className="relative group">
+                <a href="#docs" className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 transform">
+                  <div className="relative">
+                    <svg className="w-5 h-5 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                  </div>
+                  <span>Docs</span>
+                </a>
+              </div>
+
+              {/* Blog Link */}
+              <div className="relative group">
+
+                <a href="#blog" className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 transform">
+                  <div className="relative">
+                    <svg className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 8a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6a2 2 0 012-2h8z" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"></path>
+                    </svg>
+                  </div>
+                  <span>Blog</span>
+                </a>
+              </div>
+
               {/* Contribute Dropdown */}
               <div className="relative group" data-dropdown>
                 <button type="button" className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-105 transform nav-link-hover" data-dropdown-button aria-haspopup="true" aria-expanded="false">
@@ -438,6 +450,6 @@ export default function Navigation() {
           </div>
         )}
       </div>
-    </nav>
+    </nav >
   );
 }
