@@ -141,13 +141,6 @@ export default function HowItWorksSection() {
                                         Create Kubernetes resource in the KubeStellar control plane using familiar tools and manifests. Tag resource with placement constraints and policies.
                                     </p>
                                     <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-fit">
-                                        {/* Top bar with traffic light buttons */}
-                                        <div className="flex items-center space-x-2 px-3 py-2 bg-slate-800">
-                                            <span className="w-3 h-3 bg-red-500 rounded-full"></span>
-                                            <span className="w-3 h-3 bg-yellow-400 rounded-full"></span>
-                                            <span className="w-3 h-3 bg-green-500 rounded-full"></span>
-                                        </div>
-
                                         {/* Code block */}
                                         <pre className="text-sm font-mono text-white p-4 leading-6">
                                             <code>
@@ -156,7 +149,7 @@ export default function HowItWorksSection() {
                                                 {"\n"}<span className="text-yellow-300">metadata</span>:
                                                 {"\n"}  <span className="text-yellow-300">name</span>: <span className="text-white">example-app</span>
                                                 {"\n"}  <span className="text-yellow-300">annotations</span>:
-                                                {"\n"}    <span className="text-yellow-300">kubestellar.io/placement</span>: <span className="text-emerald-400">"region=us-east,tier=prod"</span>
+                                                {"\n"}    <span className="text-yellow-300">kubestellar.io/placement</span>: <span className="text-emerald-400">&quot;region=us-east,tier=prod&quot;</span>
                                             </code>
                                         </pre>
                                     </div>
@@ -199,7 +192,7 @@ export default function HowItWorksSection() {
                                     </h3>
 
                                     <p className="text-gray-300 mb-6 leading-relaxed">
-                                        KubeStellar's orchestation engine analyzes workloads and determines optimal placement across registered clusters based on constraints and policies.
+                                        KubeStellar&apos;s orchestation engine analyzes workloads and determines optimal placement across registered clusters based on constraints and policies.
                                     </p>
                                     <div className="grid grid-cols-3 gap-4">
                                         <div className="bg-blue-900/80 backdrop-blur-lg rounded-full px-3 py-1 text-white text-sm flex items-center justify-center">
