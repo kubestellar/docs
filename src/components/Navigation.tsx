@@ -11,50 +11,19 @@ export default function Navigation() {
       const dropdownContainers = document.querySelectorAll("[data-dropdown]");
 
       dropdownContainers.forEach(container => {
-        const button = container.querySelector("[data-dropdown-button]");
         const menu = container.querySelector(
           "[data-dropdown-menu]"
         ) as HTMLElement;
 
-        if (button && menu) {
-          button.addEventListener("click", e => {
-            e.preventDefault();
-            e.stopPropagation();
+        if (menu) {
+          container.addEventListener("mouseenter", () => {
+            menu.style.display = "block";
+          });
 
-            // Close other dropdowns
-            dropdownContainers.forEach(otherContainer => {
-              if (otherContainer !== container) {
-                const otherMenu = otherContainer.querySelector(
-                  "[data-dropdown-menu]"
-                ) as HTMLElement;
-                if (otherMenu) {
-                  otherMenu.style.display = "none";
-                }
-              }
-            });
-
-            // Toggle current dropdown
-            if (menu.style.display === "block") {
-              menu.style.display = "none";
-            } else {
-              menu.style.display = "block";
-            }
+          container.addEventListener("mouseleave", () => {
+            menu.style.display = "none";
           });
         }
-      });
-
-      // Close dropdowns when clicking outside
-      document.addEventListener("click", e => {
-        dropdownContainers.forEach(container => {
-          if (!container.contains(e.target as Node)) {
-            const menu = container.querySelector(
-              "[data-dropdown-menu]"
-            ) as HTMLElement;
-            if (menu) {
-              menu.style.display = "none";
-            }
-          }
-        });
       });
 
       // Close on Escape key
@@ -179,36 +148,106 @@ export default function Navigation() {
         <div className="flex justify-between h-16 items-center">
           {/* Left side: Logo */}
           <div className="flex-shrink-0">
-            <img src="\KubeStellar-with-Logo-transparent-v2.png" alt="Kubestellar logo" className="h-10 w-50"/>
+            <img src="\KubeStellar-with-Logo-transparent-v2.png" alt="Kubestellar logo" className="h-10 w-50" />
           </div>
 
           {/* Center: Nav Links */}
           <div className="hidden md:flex flex-1 justify-center">
             <div className="flex items-center space-x-8">
-              <a
-                href="#docs"
-                className="nav-link-hover px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
-              >
-                Docs
+              <a href="#docs" className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 transform group nav-link-hover">
+                <div className="relative">
+                  <svg className="w-5 h-5 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                </div>
+                <span>Docs</span>
               </a>
-              <a
-                href="#blog"
-                className="nav-link-hover px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
-              >
-                Blog
+              <a href="#blog" className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 transform group nav-link-hover">
+                <div className="relative">
+                  <svg className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 8a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6a2 2 0 012-2h8z" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"></path>
+                  </svg>
+                </div>
+                <span>Blog</span>
               </a>
-              <a
-                href="#contribute"
-                className="nav-link-hover px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
-              >
-                Contribute
-              </a>
-              <a
-                href="#community"
-                className="nav-link-hover px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
-              >
-                Community
-              </a>
+              {/* Contribute Dropdown */}
+              <div className="relative group" data-dropdown>
+                <button type="button" className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-105 transform nav-link-hover" data-dropdown-button aria-haspopup="true" aria-expanded="false">
+                  <div className="relative">
+                    <svg className="w-5 h-5 transition-all duration-300 group-hover:-rotate-12 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"></path>
+                    </svg>
+                  </div>
+                  <span>Contribute</span>
+                  <svg className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50" data-dropdown-menu style={{ display: 'none' }}>
+                  <a href="#join-in" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md">
+                    <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                    </svg>
+                    Join In
+                  </a>
+                  <a href="#contribute-handbook" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md">
+                    <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                    Contribute Handbook
+                  </a>
+                  <a href="#security" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md">
+                    <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    Security
+                  </a>
+                </div>
+              </div>
+              {/* Community Dropdown */}
+              <div className="relative group" data-dropdown>
+                <button type="button" className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-105 transform nav-link-hover" data-dropdown-button aria-haspopup="true" aria-expanded="false">
+                  <div className="relative">
+                    <svg className="w-5 h-5 transition-all duration-300 group-hover:scale-125 group-hover:rotate-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                  </div>
+                  <span>Community</span>
+                  <svg className="ml-1 h-4 w-4 transition-transform duration-300 " fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50" data-dropdown-menu style={{ display: 'none' }}>
+                  <a href="#get-involved" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md">
+                    <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                    </svg>
+                    Get Involved
+                  </a>
+                  <a href="#programs" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md">
+                    <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v2M7 7h10"></path>
+                    </svg>
+                    Programs
+                  </a>
+                  <a href="#ladder" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md">
+                    <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                    </svg>
+                    Ladder
+                  </a>
+                  <a href="#contact-us" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md">
+                    <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    Contact Us
+                  </a>
+                  <a href="#partners" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md">
+                    <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    Partners
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -220,7 +259,7 @@ export default function Navigation() {
                 data-dropdown-button
                 className="nav-link-hover flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
               >
-                <svg
+                {/* <svg
                   className="w-4 h-4 mr-2"
                   fill="none"
                   stroke="currentColor"
@@ -232,8 +271,8 @@ export default function Navigation() {
                     strokeWidth={2}
                     d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
                   />
-                </svg>
-                v0.1.0
+                </svg> */}
+                3.8.1
                 <svg
                   className="w-4 h-4 ml-1"
                   fill="none"
@@ -252,24 +291,9 @@ export default function Navigation() {
                 data-dropdown-menu
                 className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
               >
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 first:rounded-t-md"
-                >
-                  v0.1.0 (current)
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                >
-                  v0.0.9
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 last:rounded-b-md"
-                >
-                  v0.0.8
-                </a>
+                <a href="#" className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 rounded transition-all duration-200 hover:text-blue-300 hover:shadow-md">3.8.1 (Current)</a>
+                <a href="#" className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 rounded transition-all duration-200 hover:text-blue-300 hover:shadow-md">3.8.0</a>
+                <a href="#" className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 rounded transition-all duration-200 hover:text-blue-300 hover:shadow-md">All versions</a>
               </div>
             </div>
 
@@ -311,18 +335,9 @@ export default function Navigation() {
                 data-dropdown-menu
                 className="absolute right-0 mt-2 w-32 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
               >
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 first:rounded-t-md"
-                >
-                  English
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 last:rounded-b-md"
-                >
-                  中文
-                </a>
+                <a href="#" className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md">English</a>
+                <a href="#" className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md">日本語</a>
+                <a href="#" className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md">简体中文</a>
               </div>
             </div>
 
@@ -357,29 +372,20 @@ export default function Navigation() {
                 data-dropdown-menu
                 className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
               >
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 first:rounded-t-md"
-                >
-                  Repository
+                <a href="https://github.com/kubestellar/kubestellar" target="_blank" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2C5.58 2 2 5.58 2 10c0 3.87 2.69 7.13 6.39 7.93.47.09.64-.2.64-.45 0-.22-.01-.94-.01-1.7-2.6.57-3.15-1.25-3.15-1.25-.43-1.09-1.05-1.38-1.05-1.38-.86-.59.07-.58.07-.58.95.07 1.45.98 1.45.98.85 1.45 2.23 1.03 2.78.79.09-.62.33-1.03.6-1.27-2.22-.25-4.555-1.11-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                  Star
+                  <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">12.3k</span>
                 </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                >
-                  Issues
+                <a href="https://github.com/kubestellar/kubestellar/fork" target="_blank" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a3 3 0 106 0 3 3 0 00-6 0zm0 2a2 2 0 114 0 2 2 0 01-4 0zm10 10a3 3 0 11-6 0 3 3 0 016 0zm-2-2a2 2 0 100 4 2 2 0 000-4zm-6 2a2 2 0 100-4 2 2 0 000 4zm8-2a2 2 0 100-4 2 2 0 000 4z" /></svg>
+                  Fork
+                  <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">2.1k</span>
                 </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
-                >
-                  Releases
-                </a>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 last:rounded-b-md"
-                >
-                  Contributing
+                <a href="https://github.com/kubestellar/kubestellar/watchers" target="_blank" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2C5.454 2 1.73 5.11.458 9.09a1.5 1.5 0 000 1.82C1.73 14.89 5.454 18 10 18s8.27-3.11 9.542-7.09a1.5 1.5 0 000-1.82C18.27 5.11 14.546 2 10 2zm0 14c-3.866 0-7.09-2.61-8.13-6C2.91 6.61 6.134 4 10 4s7.09 2.61 8.13 6c-1.04 3.39-4.264 6-8.13 6zm0-8a2 2 0 110 4 2 2 0 010-4z" /></svg>
+                  Watch
+                  <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">350</span>
                 </a>
               </div>
             </div>
