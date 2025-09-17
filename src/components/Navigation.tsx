@@ -131,7 +131,7 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className="fixed w-full z-50 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900/90 backdrop-blur-md border-b border-gray-700/50 transition-all duration-300">
+    <nav className="fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-md border-b border-gray-700/50 transition-all duration-300">
       {/* Dark base background */}
       <div className="absolute inset-0 bg-[#0a0a0a]/90"></div>
 
@@ -257,21 +257,8 @@ export default function Navigation() {
             <div className="relative group" data-dropdown>
               <button
                 data-dropdown-button
-                className="nav-link-hover flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-105 transform nav-link-hover"
               >
-                {/* <svg
-                  className="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
-                  />
-                </svg> */}
                 3.8.1
                 <svg
                   className="w-4 h-4 ml-1"
@@ -301,7 +288,7 @@ export default function Navigation() {
             <div className="relative group" data-dropdown>
               <button
                 data-dropdown-button
-                className="nav-link-hover flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-105 transform nav-link-hover"
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -345,7 +332,7 @@ export default function Navigation() {
             <div className="relative group" data-dropdown>
               <button
                 data-dropdown-button
-                className="nav-link-hover flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-105 transform nav-link-hover"
               >
                 <svg
                   className="w-4 h-4 mr-2"
