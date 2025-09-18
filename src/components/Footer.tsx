@@ -135,6 +135,12 @@ export default function Footer() {
       {/* Grid lines background */}
       <div id="grid-lines-footer" className="absolute inset-0 opacity-20"></div>
 
+      {/* Background elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-blue-900/10 to-transparent"></div>
+        <div className="absolute top-0 right-0 w-full h-1/2 bg-gradient-to-b from-purple-900/10 to-transparent"></div>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-16 lg:px-24">
         {/* Main footer content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
@@ -355,7 +361,7 @@ export default function Footer() {
                     id="email-address"
                     type="email"
                     className="block w-full pl-10 pr-3 py-2 text-sm text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
-                    placeholder="Enter your email address"
+                    placeholder="Email"
                   />
                 </div>
                 <button
