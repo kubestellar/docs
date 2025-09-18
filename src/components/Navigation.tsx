@@ -82,6 +82,9 @@ export default function Navigation() {
       if (!container) return;
       container.innerHTML = "";
 
+      const exclusionZoneStart = 5;
+      const exclusionZoneEnd = 20;
+
       for (let layer = 1; layer <= 3; layer++) {
         const layerDiv = document.createElement("div");
         layerDiv.className = `star-layer layer-${layer}`;
@@ -89,28 +92,53 @@ export default function Navigation() {
         layerDiv.style.inset = "0";
         layerDiv.style.zIndex = layer.toString();
 
-        const starCount = layer === 1 ? 50 : layer === 2 ? 30 : 20;
+        const starCount = layer === 1 ? 75 : layer === 2 ? 50 : 25;
+        // const speedFactor = layer === 1 ? 1 : layer === 2 ? 0.7 : 0.4;
 
         for (let i = 0; i < starCount; i++) {
           const star = document.createElement("div");
+          let randomLeft = Math.random() * 100;
+          if( randomLeft > exclusionZoneStart && randomLeft < exclusionZoneEnd) {
+            randomLeft = Math.random() < 0.5 ? Math.random() * exclusionZoneStart: Math.random() * (100 - exclusionZoneEnd) + exclusionZoneEnd;
+          }
           star.style.position = "absolute";
-          star.style.width = `${Math.random() * 2 + 1}px`;
+          star.style.width = `${Math.random() * 3 + 1}px`;
           star.style.height = star.style.width;
           star.style.backgroundColor = "white";
           star.style.borderRadius = "50%";
           star.style.top = `${Math.random() * 100}%`;
           star.style.left = `${Math.random() * 100}%`;
           star.style.opacity = Math.random().toString();
-          star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite alternate`;
-          star.style.animationDelay = `${Math.random() * 2}s`;
+          star.style.animation = `twinkle ${Math.random() * 4 + 3}s infinite alternate`;
+          star.style.animationDelay = `${Math.random() * 3}s`;
+          star.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
           layerDiv.appendChild(star);
         }
 
         container.appendChild(layerDiv);
       }
+
+      // Add shooting stars
+      for (let i = 0; i < 5; i++) {
+        const shootingStar = document.createElement("div");
+        shootingStar.className = "shooting-star";
+        shootingStar.style.position = "absolute";
+        shootingStar.style.top = `${Math.random() * 70}%`;
+        shootingStar.style.left = `${Math.random() * 100}%`;
+        shootingStar.style.width = "2px";
+        shootingStar.style.height = "2px";
+        shootingStar.style.backgroundColor = "white";
+        shootingStar.style.borderRadius = "50%";
+        shootingStar.style.animation = `shootingStar ${Math.random() * 10 + 10}s infinite linear`;
+        shootingStar.style.animationDelay = `${Math.random() * 15}s`;
+        shootingStar.style.opacity = "0";
+        shootingStar.style.zIndex = "10";
+
+        container.appendChild(shootingStar);
+      }
     };
 
-    const createGrid = (container: HTMLElement) => {
+      const createGrid = (container: HTMLElement) => {
       if (!container) return;
       container.innerHTML = "";
 
@@ -163,6 +191,7 @@ export default function Navigation() {
     if (starsContainer) createStarfield(starsContainer);
     if (gridContainer) createGrid(gridContainer);
 
+
     initDropdowns();
   }, []);
 
@@ -183,7 +212,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between h-16 items-center">
           {/* Left side: Logo */}
-          <Link href="#" className="cursor-pointer">
+          <Link href="/" className="cursor-pointer">
             <div className="flex-shrink-0 cursor-pointer relative z-10">
               <img src="/KubeStellar-with-Logo-transparent-v2.png" alt="Kubestellar logo" className="h-11 w-52" />
             </div>
