@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from 'next/link';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<HTMLElement | null>(null)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     // Initialize dropdowns functionality
@@ -18,12 +20,35 @@ export default function Navigation() {
 
         if (menu) {
           container.addEventListener("mouseenter", () => {
+            if (timeoutRef.current) {
+              clearTimeout(timeoutRef.current);
+              timeoutRef.current = null;
+            }
+
             menu.style.display = "block";
+            setActiveDropdown(menu);
           });
 
           container.addEventListener("mouseleave", () => {
-            menu.style.display = "none";
+            timeoutRef.current = setTimeout(() => {
+              if(activeDropdown === menu) {
+                menu.style.display = "none";
+                setActiveDropdown(null);
+              }
+            }, 300);
           });
+
+          menu.addEventListener("mouseenter", () => {
+            if(timeoutRef.current) {
+              clearTimeout(timeoutRef.current);
+              timeoutRef.current = null;
+            }
+            setActiveDropdown(menu);
+          });
+          menu.addEventListener("mouseleave", () => {
+            menu.style.display = " none";
+            setActiveDropdown(null);
+          })
         }
       });
 
