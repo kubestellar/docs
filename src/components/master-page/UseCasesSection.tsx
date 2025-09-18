@@ -16,18 +16,24 @@ export default function UseCasesSection() {
         layerDiv.style.inset = "0";
         layerDiv.style.zIndex = layer.toString();
 
-        const starCount = layer === 1 ? 70 : layer === 2 ? 45 : 25;
+        const starCount = layer === 1 ? 120 : layer === 2 ? 80 : 50;
 
         for (let i = 0; i < starCount; i++) {
           const star = document.createElement("div");
           star.style.position = "absolute";
-          star.style.width = `${Math.random() * 2 + 1}px`;
+          const size =
+            layer === 1
+              ? Math.random() * 1.5 + 0.5
+              : layer === 2
+                ? Math.random() * 1 + 0.5
+                : Math.random() * 0.5 + 0.3;
+          star.style.width = `${size}px`;
           star.style.height = star.style.width;
           star.style.backgroundColor = "white";
           star.style.borderRadius = "50%";
           star.style.top = `${Math.random() * 100}%`;
           star.style.left = `${Math.random() * 100}%`;
-          star.style.opacity = Math.random().toString();
+          star.style.opacity = (Math.random() * 0.4 + 0.1).toString();
           star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite alternate`;
           star.style.animationDelay = `${Math.random() * 2}s`;
           layerDiv.appendChild(star);
@@ -51,33 +57,33 @@ export default function UseCasesSection() {
       gridSvg.style.top = "0";
       gridSvg.style.left = "0";
 
-      for (let i = 0; i < 12; i++) {
+      for (let i = 0; i < 15; i++) {
         const line = document.createElementNS(
           "http://www.w3.org/2000/svg",
           "line"
         );
         line.setAttribute("x1", "0");
-        line.setAttribute("y1", `${i * 8}%`);
+        line.setAttribute("y1", `${i * 6.67}%`);
         line.setAttribute("x2", "100%");
-        line.setAttribute("y2", `${i * 8}%`);
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
+        line.setAttribute("y2", `${i * 6.67}%`);
+        line.setAttribute("stroke", "#ffffff");
+        line.setAttribute("stroke-width", "0.3");
+        line.setAttribute("stroke-opacity", "0.08");
         gridSvg.appendChild(line);
       }
 
-      for (let i = 0; i < 12; i++) {
+      for (let i = 0; i < 20; i++) {
         const line = document.createElementNS(
           "http://www.w3.org/2000/svg",
           "line"
         );
-        line.setAttribute("x1", `${i * 8}%`);
+        line.setAttribute("x1", `${i * 5}%`);
         line.setAttribute("y1", "0");
-        line.setAttribute("x2", `${i * 8}%`);
+        line.setAttribute("x2", `${i * 5}%`);
         line.setAttribute("y2", "100%");
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
+        line.setAttribute("stroke", "#ffffff");
+        line.setAttribute("stroke-width", "0.3");
+        line.setAttribute("stroke-opacity", "0.08");
         gridSvg.appendChild(line);
       }
 
@@ -112,6 +118,7 @@ export default function UseCasesSection() {
       description:
         "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
       borderColor: "bg-blue-500",
+      iconBgColor: "bg-blue-400/20",
     },
     {
       icon: (
@@ -133,6 +140,7 @@ export default function UseCasesSection() {
       description:
         "Deploy applications with specific regional compliance requirements. Ensure data residency and regulatory compliance across global operations.",
       borderColor: "bg-purple-500",
+      iconBgColor: "bg-purple-400/20",
     },
     {
       icon: (
@@ -154,6 +162,7 @@ export default function UseCasesSection() {
       description:
         "Seamlessly manage workloads across multiple cloud providers and on-premises infrastructure with unified policies and consistent experience.",
       borderColor: "bg-green-500",
+      iconBgColor: "bg-green-400/20",
     },
     {
       icon: (
@@ -175,6 +184,7 @@ export default function UseCasesSection() {
       description:
         "Implement robust disaster recovery strategies with automatic workload replication and failover across multiple clusters in different regions.",
       borderColor: "bg-red-500",
+      iconBgColor: "bg-red-400/20",
     },
     {
       icon: (
@@ -196,6 +206,7 @@ export default function UseCasesSection() {
       description:
         "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
       borderColor: "bg-yellow-500",
+      iconBgColor: "bg-yellow-400/20",
     },
     {
       icon: (
@@ -217,15 +228,16 @@ export default function UseCasesSection() {
       description:
         "Deploy workloads closest to users or data sources for optimal performance, reducing latency and improving user experience across global operations.",
       borderColor: "bg-indigo-500",
+      iconBgColor: "bg-indigo-400/20",
     },
   ];
 
   return (
     <section
       id="use-cases"
-      className="relative py-16 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden"
+      className="relative py-16 text-white overflow-hidden"
     >
-      {/* Dark base background */}
+      {/* Dark base background matching the image */}
       <div className="absolute inset-0 bg-[#0a0a0a]"></div>
 
       {/* Starfield background */}
@@ -235,17 +247,21 @@ export default function UseCasesSection() {
       ></div>
 
       {/* Grid lines background */}
-      <div id="grid-lines-use" className="absolute inset-0 opacity-20"></div>
+      <div id="grid-lines-use" className="absolute inset-0 opacity-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold mb-4" style={{ fontSize: '36px' }}>
+          <h2
+            className="text-4xl font-extrabold mb-4"
+            style={{ fontSize: "36px" }}
+          >
             <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600 bg-clip-text text-transparent">
               Use Cases
             </span>
           </h2>
           <p className="max-w-2xl mx-auto text-xl text-white font-normal">
-            Discover how organizations leverage KubeStellar for their multi-cluster needs.
+            Discover how organizations leverage KubeStellar for their
+            multi-cluster needs.
           </p>
         </div>
 
@@ -253,28 +269,53 @@ export default function UseCasesSection() {
           {useCases.map((useCase, index) => (
             <div
               key={index}
-              className="group relative bg-gray-800/80 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 transition-all duration-300 hover:border-gray-600/50 hover:shadow-xl"
-              style={{ width: '382px', height: '280px' }}
+              className="group relative bg-gray-800 rounded-lg overflow-hidden border border-gray-700/50 transition-all duration-300 hover:border-gray-600/50 hover:shadow-xl"
+              style={{ width: "382px", height: "280px" }}
             >
               {/* Top colored border */}
               <div className={`h-2 ${useCase.borderColor}`}></div>
 
               <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="bg-gray-700/50 rounded-lg flex items-center justify-center mr-3" style={{ width: '48px', height: '48px' }}>
+                <div className="mb-4">
+                  <div
+                    className={`${useCase.iconBgColor} rounded-lg flex items-center justify-center mb-3`}
+                    style={{ width: "48px", height: "48px" }}
+                  >
                     {useCase.icon}
                   </div>
-                  <h3 className="font-bold text-white" style={{ fontSize: '18px' }}>
+                  <h3
+                    className="font-bold text-white mb-2"
+                    style={{ fontSize: "17px", lineHeight: "1.3" }}
+                  >
                     {useCase.title}
                   </h3>
                 </div>
 
-                <p className="text-gray-300 font-normal leading-relaxed mb-4" style={{ fontSize: '18px' }}>
+                <p
+                  className="text-gray-300 font-normal mb-4"
+                  style={{ fontSize: "15px", lineHeight: "1.4" }}
+                >
                   {useCase.description}
                 </p>
 
-                <button className="text-blue-400 text-sm font-medium hover:text-blue-300 transition-colors flex items-center group-hover:translate-x-1 transition-transform duration-200">
-                  Learn more →
+                <button
+                  className="text-blue-400 font-medium hover:text-blue-300 transition-colors flex items-center group-hover:translate-x-1 transition-transform duration-200"
+                  style={{ fontSize: "14px" }}
+                >
+                  Learn more
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
