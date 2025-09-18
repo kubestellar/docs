@@ -159,9 +159,9 @@ export default function Navigation() {
             <div className="flex items-center space-x-8">
               {/* Docs Link */}
               <div className="relative group">
-                <a href="#docs" className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 transform">
+                <a href="#docs" className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 nav-link-hover">
                   <div className="relative">
-                    <svg className="w-5 h-5 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                     </svg>
                   </div>
@@ -172,9 +172,9 @@ export default function Navigation() {
               {/* Blog Link */}
               <div className="relative group">
 
-                <a href="#blog" className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 transform">
+                <a href="#blog" className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 transform nav-link-hover">
                   <div className="relative">
-                    <svg className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 8a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6a2 2 0 012-2h8z" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"></path>
                     </svg>
@@ -187,13 +187,13 @@ export default function Navigation() {
               <div className="relative group" data-dropdown>
                 <button type="button" className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-105 transform nav-link-hover" data-dropdown-button aria-haspopup="true" aria-expanded="false">
                   <div className="relative">
-                    <svg className="w-5 h-5 transition-all duration-300 group-hover:-rotate-12 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"></path>
                     </svg>
                   </div>
                   <span>Contribute</span>
-                  <svg className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                  <svg className="ml-1 h-4 w-4 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 <div className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50" data-dropdown-menu style={{ display: 'none' }}>
                   <a href="#join-in" className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md">
@@ -220,7 +220,7 @@ export default function Navigation() {
               <div className="relative group" data-dropdown>
                 <button type="button" className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-105 transform nav-link-hover" data-dropdown-button aria-haspopup="true" aria-expanded="false">
                   <div className="relative">
-                    <svg className="w-5 h-5 transition-all duration-300 group-hover:scale-125 group-hover:rotate-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 transition-all duration-300 group-hover:scale-125" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                     </svg>
                   </div>
