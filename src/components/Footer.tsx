@@ -220,7 +220,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Features
                 </a>
@@ -228,7 +228,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Use Cases
                 </a>
@@ -236,7 +236,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Pricing
                 </a>
@@ -244,7 +244,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Roadmap
                 </a>
@@ -259,7 +259,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Documentation
                 </a>
@@ -267,7 +267,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Tutorials
                 </a>
@@ -275,7 +275,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Blog
                 </a>
@@ -283,7 +283,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Community
                 </a>
@@ -298,7 +298,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   About
                 </a>
@@ -306,7 +306,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Team
                 </a>
@@ -314,7 +314,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Careers
                 </a>
@@ -322,7 +322,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Contact
                 </a>
