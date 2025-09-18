@@ -95,7 +95,7 @@ export default function UseCasesSection() {
     {
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-6 h-6 text-blue-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -108,36 +108,15 @@ export default function UseCasesSection() {
           />
         </svg>
       ),
-      title: "Multi-Cloud Deployment",
-      description:
-        "Deploy applications across AWS, Azure, GCP, and on-premises clusters with unified management and consistent policies.",
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      icon: (
-        <svg
-          className="w-8 h-8 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
-        </svg>
-      ),
       title: "Edge Computing",
       description:
-        "Distribute workloads to edge locations for reduced latency and improved user experience while maintaining centralized control.",
-      color: "from-purple-500 to-pink-500",
+        "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
+      borderColor: "bg-blue-500",
     },
     {
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-6 h-6 text-purple-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -150,36 +129,15 @@ export default function UseCasesSection() {
           />
         </svg>
       ),
-      title: "Disaster Recovery",
+      title: "Multi-Region Compliance",
       description:
-        "Implement robust disaster recovery strategies with automatic failover and data replication across geographically distributed clusters.",
-      color: "from-green-500 to-teal-500",
+        "Deploy applications with specific regional compliance requirements. Ensure data residency and regulatory compliance across global operations.",
+      borderColor: "bg-purple-500",
     },
     {
       icon: (
         <svg
-          className="w-8 h-8 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
-          />
-        </svg>
-      ),
-      title: "DevOps Acceleration",
-      description:
-        "Streamline CI/CD pipelines with automated testing across multiple environments and seamless production deployments.",
-      color: "from-orange-500 to-red-500",
-    },
-    {
-      icon: (
-        <svg
-          className="w-8 h-8 text-white"
+          className="w-6 h-6 text-green-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -192,15 +150,15 @@ export default function UseCasesSection() {
           />
         </svg>
       ),
-      title: "Enterprise Governance",
+      title: "Hybrid/Multi-Cloud",
       description:
-        "Enforce compliance policies, security standards, and resource quotas consistently across all clusters and environments.",
-      color: "from-indigo-500 to-purple-500",
+        "Seamlessly manage workloads across multiple cloud providers and on-premises infrastructure with unified policies and consistent experience.",
+      borderColor: "bg-green-500",
     },
     {
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-6 h-6 text-red-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -209,14 +167,56 @@ export default function UseCasesSection() {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
           />
         </svg>
       ),
-      title: "Cost Optimization",
+      title: "Disaster Recovery",
       description:
-        "Optimize infrastructure costs by intelligently placing workloads based on resource pricing and availability across regions.",
-      color: "from-yellow-500 to-orange-500",
+        "Implement robust disaster recovery strategies with automatic workload replication and failover across multiple clusters in different regions.",
+      borderColor: "bg-red-500",
+    },
+    {
+      icon: (
+        <svg
+          className="w-6 h-6 text-yellow-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        </svg>
+      ),
+      title: "Multi-Tenant Isolation",
+      description:
+        "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
+      borderColor: "bg-yellow-500",
+    },
+    {
+      icon: (
+        <svg
+          className="w-6 h-6 text-indigo-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+          />
+        </svg>
+      ),
+      title: "Performance Optimization",
+      description:
+        "Deploy workloads closest to users or data sources for optimal performance, reducing latency and improving user experience across global operations.",
+      borderColor: "bg-indigo-500",
     },
   ];
 
@@ -238,57 +238,44 @@ export default function UseCasesSection() {
       <div id="grid-lines-use" className="absolute inset-0 opacity-20"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            Use <span className="text-gradient">Cases</span>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold mb-4" style={{ fontSize: '36px' }}>
+            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600 bg-clip-text text-transparent">
+              Use Cases
+            </span>
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
-            Discover how KubeStellar solves real-world multi-cluster challenges
-            across industries
+          <p className="max-w-2xl mx-auto text-xl text-white font-normal">
+            Discover how organizations leverage KubeStellar for their multi-cluster needs.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {useCases.map((useCase, index) => (
             <div
               key={index}
-              className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="group relative bg-gray-800/80 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 transition-all duration-300 hover:border-gray-600/50 hover:shadow-xl"
+              style={{ width: '382px', height: '280px' }}
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${useCase.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300`}
-              ></div>
-              <div className="relative z-10">
-                <div
-                  className={`w-16 h-16 bg-gradient-to-br ${useCase.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  {useCase.icon}
+              {/* Top colored border */}
+              <div className={`h-2 ${useCase.borderColor}`}></div>
+
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="bg-gray-700/50 rounded-lg flex items-center justify-center mr-3" style={{ width: '48px', height: '48px' }}>
+                    {useCase.icon}
+                  </div>
+                  <h3 className="font-bold text-white" style={{ fontSize: '18px' }}>
+                    {useCase.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-white transition-colors">
-                  {useCase.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+
+                <p className="text-gray-300 font-normal leading-relaxed mb-4" style={{ fontSize: '18px' }}>
                   {useCase.description}
                 </p>
-                <div className="mt-6 flex items-center text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span
-                    className={`bg-gradient-to-r ${useCase.color} bg-clip-text text-transparent`}
-                  >
-                    Learn more
-                  </span>
-                  <svg
-                    className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
+
+                <button className="text-blue-400 text-sm font-medium hover:text-blue-300 transition-colors flex items-center group-hover:translate-x-1 transition-transform duration-200">
+                  Learn more →
+                </button>
               </div>
             </div>
           ))}
