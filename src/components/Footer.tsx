@@ -146,7 +146,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-4">
-            <div className="flex items-center-space-x-2 mb-2">
+            <div className="flex items-center-space-x-2 mb-2  ml-[-7px]">
               <img
                 src="/KubeStellar-with-Logo-transparent-v2.png"
                 alt="Kubestellar logo"
