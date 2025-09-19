@@ -142,7 +142,7 @@ export default function Footer() {
           <div className="lg:col-span-4">
 
             <div className="flex items-center-space-x-2 mb-2">
-              <img src="/KubeStellar-with-Logo-transparent-v2.png" alt="Kubestellar logo" className="h-10" />
+              <img src="/KubeStellar-with-Logo-transparent.png" alt="Kubestellar logo" className="h-10" />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Multi-Cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure.
