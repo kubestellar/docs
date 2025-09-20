@@ -60,7 +60,7 @@ export default function GetStartedSection() {
         strokeWidth={0.2}
         className="absolute inset-0"
       />
-
+      
       <div
         id="grid-lines-get"
         className="absolute inset-0 opacity-20 pointer-events-none"

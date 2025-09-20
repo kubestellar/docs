@@ -69,6 +69,7 @@ export default function GridBackground({
       createGrid(containerRef.current);
     }
   }, [color, opacity, strokeWidth]);
+  
 
   return (
     <div
