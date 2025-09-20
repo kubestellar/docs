@@ -1,62 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
-import StarField from "../StarField";
+import BackgroundEffects, { BackgroundPresets } from "./components/BackgroundEffects";
+import GridBackground from "./components/GridBackground";
 
 export default function UseCasesSection() {
-  useEffect(() => {
-    const createGrid = (container: HTMLElement) => {
-      if (!container) return;
-      container.innerHTML = "";
-
-      const gridSvg = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg"
-      );
-      gridSvg.setAttribute("width", "100%");
-      gridSvg.setAttribute("height", "100%");
-      gridSvg.style.position = "absolute";
-      gridSvg.style.top = "0";
-      gridSvg.style.left = "0";
-
-      for (let i = 0; i < 12; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", "0");
-        line.setAttribute("y1", `${i * 8}%`);
-        line.setAttribute("x2", "100%");
-        line.setAttribute("y2", `${i * 8}%`);
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      for (let i = 0; i < 12; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", `${i * 8}%`);
-        line.setAttribute("y1", "0");
-        line.setAttribute("x2", `${i * 8}%`);
-        line.setAttribute("y2", "100%");
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      container.appendChild(gridSvg);
-    };
-
-    const gridContainer = document.getElementById("grid-lines-use");
-
-    if (gridContainer) createGrid(gridContainer);
-  }, []);
-
   const useCases = [
     {
       icon: (
@@ -191,14 +138,11 @@ export default function UseCasesSection() {
       id="use-cases"
       className="relative py-16 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden"
     >
-      {/* Dark base background */}
-      <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-
-      {/* Starfield background */}
-      <StarField density="medium" showComets={true} cometCount={4} />
+      {/* Background Effects */}
+      <BackgroundEffects {...BackgroundPresets.section} />
 
       {/* Grid lines background */}
-      <div id="grid-lines-use" className="absolute inset-0 opacity-20"></div>
+      <GridBackground id="grid-lines-use" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">

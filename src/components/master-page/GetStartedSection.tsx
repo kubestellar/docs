@@ -1,7 +1,8 @@
 "use client";
 
-import StarField from "../StarField";
-import { useEffect, useState } from "react";
+import BackgroundEffects, { BackgroundPresets } from "./components/BackgroundEffects";
+import GridBackground from "./components/GridBackground";
+import { useState } from "react";
 
 const Icon = ({
   path,
@@ -42,79 +43,21 @@ export default function GetStartedSection() {
     }
   };
 
-  useEffect(() => {
-    const createGrid = (container: HTMLElement) => {
-      if (!container) return;
-      container.innerHTML = "";
-
-      const gridSvg = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg"
-      );
-      gridSvg.setAttribute("width", "100%");
-      gridSvg.setAttribute("height", "100%");
-      gridSvg.style.position = "absolute";
-      gridSvg.style.top = "0";
-      gridSvg.style.left = "0";
-
-      for (let i = 0; i < 8; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", "0");
-        line.setAttribute("y1", `${i * 12}%`);
-        line.setAttribute("x2", "100%");
-        line.setAttribute("y2", `${i * 12}%`);
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      for (let i = 0; i < 8; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", `${i * 12}%`);
-        line.setAttribute("y1", "0");
-        line.setAttribute("x2", `${i * 12}%`);
-        line.setAttribute("y2", "100%");
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      container.appendChild(gridSvg);
-    };
-
-    const gridContainer = document.getElementById("grid-lines-get");
-
-    if (gridContainer) createGrid(gridContainer);
-  }, []);
-
   return (
     <section
       id="get-started"
       className="relative py-16 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[#0a0a0a] pointer-events-none"></div>
+      {/* Background Effects */}
+      <BackgroundEffects {...BackgroundPresets.getStarted} />
 
-      {/* Starfield background */}
-      <StarField density="medium" showComets={true} cometCount={3} />
-
-      <div
-        id="grid-lines-get"
-        className="absolute inset-0 opacity-20 pointer-events-none"
-      ></div>
-
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-2/5 left-2/11 w-[6rem] h-[6rem] bg-purple-500/10 rounded-full blur-[120px]"></div>
-
-        <div className="absolute top-4/5 left-1/2 w-[10rem] h-[10rem] bg-purple-500/5 rounded-full blur-[180px]"></div>
-      </div>
+      {/* Grid lines background */}
+      <GridBackground 
+        id="grid-lines-get" 
+        horizontalLines={8}
+        verticalLines={8}
+        lineSpacing={12}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">
