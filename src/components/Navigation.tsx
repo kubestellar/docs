@@ -1,91 +1,16 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import StarField from "./StarField";
+import useDropdown from "../hooks/useDropdown";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<HTMLElement | null>(
-    null
-  );
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  useDropdown();
 
   useEffect(() => {
-    // Initialize dropdowns functionality
-    const initDropdowns = () => {
-      const dropdownContainers =
-        document.querySelectorAll<HTMLElement>("[data-dropdown]");
-
-      dropdownContainers.forEach(container => {
-        const menu = container.querySelector<HTMLElement>(
-          "[data-dropdown-menu]"
-        );
-
-        if (menu) {
-          container.addEventListener("mouseenter", () => {
-            if (timeoutRef.current) {
-              clearTimeout(timeoutRef.current);
-              timeoutRef.current = null;
-            }
-
-            dropdownContainers.forEach(otherContainer => {
-              if (otherContainer !== container) {
-                const otherMenu = otherContainer.querySelector<HTMLElement>(
-                  "[data-dropdown-menu]"
-                );
-
-                if (otherMenu) {
-                  otherMenu.style.display = "none";
-                }
-              }
-            });
-
-            menu.style.display = "block";
-            setActiveDropdown(menu);
-          });
-
-          container.addEventListener("mouseleave", () => {
-            timeoutRef.current = setTimeout(() => {
-              menu.style.display = "none";
-              if (activeDropdown === menu) {
-                setActiveDropdown(null);
-              }
-            }, 100);
-          });
-
-          menu.addEventListener("mouseenter", () => {
-            if (timeoutRef.current) {
-              clearTimeout(timeoutRef.current);
-              timeoutRef.current = null;
-            }
-          });
-
-          menu.addEventListener("mouseleave", () => {
-            menu.style.display = "none";
-            if (activeDropdown === menu) {
-              setActiveDropdown(null);
-            }
-          });
-        }
-      });
-
-      // Close on Escape key
-      document.addEventListener("keydown", e => {
-        if (e.key === "Escape") {
-          dropdownContainers.forEach(container => {
-            const menu = container.querySelector(
-              "[data-dropdown-menu]"
-            ) as HTMLElement;
-            if (menu) {
-              menu.style.display = "none";
-            }
-          });
-        }
-      });
-    };
-
     const createGrid = (container: HTMLElement) => {
       if (!container) return;
       container.innerHTML = "";
@@ -136,8 +61,6 @@ export default function Navigation() {
     const gridContainer = document.getElementById("grid-lines-nav");
 
     if (gridContainer) createGrid(gridContainer);
-
-    initDropdowns();
   }, []);
 
   return (
