@@ -2,8 +2,11 @@
 
 import { useEffect } from "react";
 import StarField from "../StarField";
+import useParallax from "../../hooks/useParallax";
 
 export default function HeroSection() {
+  useParallax(".mission-control-scene", ".scene-container");
+
   useEffect(() => {
     // Interactive grid canvas
     const initGridCanvas = () => {
@@ -102,47 +105,6 @@ export default function HeroSection() {
     initGridCanvas();
     initTypingAnimation();
     animateCounters();
-
-    // Enhanced 3D hover effect for mission control scene
-    const sceneContainer = document.querySelector(
-      ".scene-container"
-    ) as HTMLElement;
-    const missionControlScene = document.querySelector(
-      ".mission-control-scene"
-    ) as HTMLElement;
-
-    if (sceneContainer && missionControlScene) {
-      // Initial animation to bring the scene into view
-      setTimeout(() => {
-        sceneContainer.style.transform =
-          "perspective(1000px) rotateY(3deg) rotateX(2deg) translateZ(0)";
-        sceneContainer.style.opacity = "1";
-      }, 500);
-
-      missionControlScene.addEventListener("mousemove", e => {
-        const rect = missionControlScene.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        // Calculate rotation values with easing
-        const rotateY = (x - centerX) / 40;
-        const rotateX = (centerY - y) / 40;
-
-        // Apply smooth transition
-        sceneContainer.style.transition = "transform 0.1s ease-out";
-        sceneContainer.style.transform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateZ(10px)`;
-      });
-
-      // Reset on mouse leave with smooth transition
-      missionControlScene.addEventListener("mouseleave", () => {
-        sceneContainer.style.transition = "transform 0.5s ease-out";
-        sceneContainer.style.transform =
-          "perspective(1000px) rotateY(3deg) rotateX(2deg) translateZ(0)";
-      });
-    }
   }, []);
 
   return (
