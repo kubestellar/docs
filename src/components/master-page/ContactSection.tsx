@@ -383,22 +383,54 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                     >
                       Subject *
                     </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-700/60 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 backdrop-blur-sm"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="General Inquiry">General Inquiry</option>
-                      <option value="Technical Support">Technical Support</option>
-                      <option value="Partnership">Partnership</option>
-                      <option value="Documentation Feedback">Documentation Feedback</option>
-                      <option value="Enterprise Solutions">Enterprise Solutions</option>
-                      <option value="Other">Other</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        id="subject"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 pr-12 bg-gray-700/60 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 backdrop-blur-sm appearance-none cursor-pointer hover:border-gray-500/60 hover:bg-gray-700/70"
+                      >
+                        <option value="" disabled className="text-gray-400">
+                          Select a subject
+                        </option>
+                        <option value="General Inquiry" className="bg-gray-800 text-white py-2">
+                          General Inquiry
+                        </option>
+                        <option value="Technical Support" className="bg-gray-800 text-white py-2">
+                          Technical Support
+                        </option>
+                        <option value="Partnership" className="bg-gray-800 text-white py-2">
+                          Partnership
+                        </option>
+                        <option value="Documentation Feedback" className="bg-gray-800 text-white py-2">
+                          Documentation Feedback
+                        </option>
+                        <option value="Enterprise Solutions" className="bg-gray-800 text-white py-2">
+                          Enterprise Solutions
+                        </option>
+                        <option value="Other" className="bg-gray-800 text-white py-2">
+                          Other
+                        </option>
+                      </select>
+                      {/* Custom dropdown chevron */}
+                      <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                        <svg
+                          className="w-5 h-5 text-gray-400 transition-transform duration-200"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
 
                   <div>
