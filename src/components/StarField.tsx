@@ -55,8 +55,13 @@ export default function StarField({
       star.style.left = `${Math.random() * 100}%`;
       star.style.top = `${Math.random() * 100}%`;
       
-      // Random animation delay for natural twinkling
-      star.style.animationDelay = `${Math.random() * 3}s`;
+      // Random animation delay for natural twinkling (0 to 5 seconds)
+      const randomDelay = Math.random() * 5;
+      star.style.animationDelay = `${randomDelay}s`;
+      
+      // Random animation duration for more variation (1.5 to 4 seconds)
+      const randomDuration = 1.5 + Math.random() * 2.5;
+      star.style.animationDuration = `${randomDuration}s`;
       
       container.appendChild(star);
     }
