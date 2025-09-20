@@ -3,7 +3,12 @@
 import StarField from "../StarField";
 import { useEffect, useState } from "react";
 
-const Icon = ({ path, className = "h-6 w-6 text-white", strokeColor = "currentColor", strokeWidth = "2" }: {
+const Icon = ({
+  path,
+  className = "h-6 w-6 text-white",
+  strokeColor = "currentColor",
+  strokeWidth = "2",
+}: {
   path: string;
   className?: string;
   strokeColor?: string;
@@ -24,17 +29,18 @@ const Icon = ({ path, className = "h-6 w-6 text-white", strokeColor = "currentCo
 export default function GetStartedSection() {
   const [isCopied, setIsCopied] = useState(false);
 
-  const commandToCopy = 'kubectl apply -f https://github.com/kubestellar/kubestellar/releases/latest/download/install.yaml';
+  const commandToCopy =
+    "kubectl apply -f https://github.com/kubestellar/kubestellar/releases/latest/download/install.yaml";
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(commandToCopy);
       setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 10000); 
+      setTimeout(() => setIsCopied(false), 10000);
     } catch (err) {
-      console.error('Failed to copy text: ', err);
+      console.error("Failed to copy text: ", err);
     }
-  }
+  };
 
   useEffect(() => {
     const createGrid = (container: HTMLElement) => {
@@ -99,16 +105,17 @@ export default function GetStartedSection() {
       {/* Starfield background */}
       <StarField density="medium" showComets={true} cometCount={3} />
 
-      <div id="grid-lines-get" className="absolute inset-0 opacity-20 pointer-events-none"></div>
+      <div
+        id="grid-lines-get"
+        className="absolute inset-0 opacity-20 pointer-events-none"
+      ></div>
 
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      
         <div className="absolute top-2/5 left-2/11 w-[6rem] h-[6rem] bg-purple-500/10 rounded-full blur-[120px]"></div>
 
         <div className="absolute top-4/5 left-1/2 w-[10rem] h-[10rem] bg-purple-500/5 rounded-full blur-[180px]"></div>
       </div>
 
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold sm:text-4xl">
@@ -124,9 +131,7 @@ export default function GetStartedSection() {
           <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300">
             <div className="p-6 flex flex-col h-full">
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
-                <Icon
-                  path="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
+                <Icon path="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </div>
               <h3 className="text-lg font-bold mb-2">Quick Installation</h3>
               <p className="text-blue-100 mb-4">
@@ -134,16 +139,25 @@ export default function GetStartedSection() {
                 installation guide.
               </p>
               <div className="relative  bg-black/30 p-3 rounded font-mono text-sm text-blue-100">
-                <pre className="whitespace-pre-wrap break-all pr-10 leading-relaxed">{commandToCopy}</pre>
+                <pre className="whitespace-pre-wrap break-all pr-10 leading-relaxed">
+                  {commandToCopy}
+                </pre>
                 <button
                   onClick={handleCopy}
                   className="absolute bottom-2 right-2 p-1 rounded-md text-gray-400 transition-colors cursor-pointer"
                   aria-label="Copy command"
                 >
                   {isCopied ? (
-                    <Icon path="M5 13l4 4L19 7" className="w-4 h-4" strokeColor="#4ade80" />
+                    <Icon
+                      path="M5 13l4 4L19 7"
+                      className="w-4 h-4"
+                      strokeColor="#4ade80"
+                    />
                   ) : (
-                    <Icon path="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" className="w-4 h-4" />
+                    <Icon
+                      path="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                      className="w-4 h-4"
+                    />
                   )}
                 </button>
               </div>
@@ -172,8 +186,20 @@ export default function GetStartedSection() {
           <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300">
             <div className="p-6">
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
-                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.1667 16.6666H18.3334V14.9999C18.3334 14.4804 18.1715 13.9737 17.8702 13.5504C17.5689 13.1272 17.1433 12.8082 16.6524 12.638C16.1615 12.4678 15.6298 12.4548 15.1311 12.6008C14.6325 12.7467 14.1917 13.0444 13.8701 13.4524M14.1667 16.6666H5.83341M14.1667 16.6666V14.9999C14.1667 14.4533 14.0617 13.9308 13.8701 13.4524M13.8701 13.4524C13.5606 12.6791 13.0265 12.0161 12.3367 11.5492C11.6469 11.0822 10.8331 10.8327 10.0001 10.8327C9.1671 10.8327 8.35322 11.0822 7.66342 11.5492C6.97362 12.0161 6.43954 12.6791 6.13008 13.4524M5.83341 16.6666H1.66675V14.9999C1.66679 14.4804 1.82869 13.9737 2.12997 13.5504C2.43124 13.1272 2.8569 12.8082 3.34779 12.638C3.83868 12.4678 4.3704 12.4548 4.86903 12.6008C5.36766 12.7467 5.80844 13.0444 6.13008 13.4524M5.83341 16.6666V14.9999C5.83341 14.4533 5.93841 13.9308 6.13008 13.4524M12.5001 5.83325C12.5001 6.49629 12.2367 7.13218 11.7678 7.60102C11.299 8.06986 10.6631 8.33325 10.0001 8.33325C9.33704 8.33325 8.70115 8.06986 8.23231 7.60102C7.76347 7.13218 7.50008 6.49629 7.50008 5.83325C7.50008 5.17021 7.76347 4.53433 8.23231 4.06549C8.70115 3.59664 9.33704 3.33325 10.0001 3.33325C10.6631 3.33325 11.299 3.59664 11.7678 4.06549C12.2367 4.53433 12.5001 5.17021 12.5001 5.83325ZM17.5001 8.33325C17.5001 8.77528 17.3245 9.1992 17.0119 9.51176C16.6994 9.82432 16.2754 9.99992 15.8334 9.99992C15.3914 9.99992 14.9675 9.82432 14.6549 9.51176C14.3423 9.1992 14.1667 8.77528 14.1667 8.33325C14.1667 7.89122 14.3423 7.4673 14.6549 7.15474C14.9675 6.84218 15.3914 6.66659 15.8334 6.66659C16.2754 6.66659 16.6994 6.84218 17.0119 7.15474C17.3245 7.4673 17.5001 7.89122 17.5001 8.33325ZM5.83341 8.33325C5.83341 8.77528 5.65782 9.1992 5.34526 9.51176C5.0327 9.82432 4.60878 9.99992 4.16675 9.99992C3.72472 9.99992 3.3008 9.82432 2.98824 9.51176C2.67568 9.1992 2.50008 8.77528 2.50008 8.33325C2.50008 7.89122 2.67568 7.4673 2.98824 7.15474C3.3008 6.84218 3.72472 6.66659 4.16675 6.66659C4.60878 6.66659 5.0327 6.84218 5.34526 7.15474C5.65782 7.4673 5.83341 7.89122 5.83341 8.33325Z" stroke="#D1D5DB" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg
+                  width="20"
+                  height="22"
+                  viewBox="0 0 20 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.1667 16.6666H18.3334V14.9999C18.3334 14.4804 18.1715 13.9737 17.8702 13.5504C17.5689 13.1272 17.1433 12.8082 16.6524 12.638C16.1615 12.4678 15.6298 12.4548 15.1311 12.6008C14.6325 12.7467 14.1917 13.0444 13.8701 13.4524M14.1667 16.6666H5.83341M14.1667 16.6666V14.9999C14.1667 14.4533 14.0617 13.9308 13.8701 13.4524M13.8701 13.4524C13.5606 12.6791 13.0265 12.0161 12.3367 11.5492C11.6469 11.0822 10.8331 10.8327 10.0001 10.8327C9.1671 10.8327 8.35322 11.0822 7.66342 11.5492C6.97362 12.0161 6.43954 12.6791 6.13008 13.4524M5.83341 16.6666H1.66675V14.9999C1.66679 14.4804 1.82869 13.9737 2.12997 13.5504C2.43124 13.1272 2.8569 12.8082 3.34779 12.638C3.83868 12.4678 4.3704 12.4548 4.86903 12.6008C5.36766 12.7467 5.80844 13.0444 6.13008 13.4524M5.83341 16.6666V14.9999C5.83341 14.4533 5.93841 13.9308 6.13008 13.4524M12.5001 5.83325C12.5001 6.49629 12.2367 7.13218 11.7678 7.60102C11.299 8.06986 10.6631 8.33325 10.0001 8.33325C9.33704 8.33325 8.70115 8.06986 8.23231 7.60102C7.76347 7.13218 7.50008 6.49629 7.50008 5.83325C7.50008 5.17021 7.76347 4.53433 8.23231 4.06549C8.70115 3.59664 9.33704 3.33325 10.0001 3.33325C10.6631 3.33325 11.299 3.59664 11.7678 4.06549C12.2367 4.53433 12.5001 5.17021 12.5001 5.83325ZM17.5001 8.33325C17.5001 8.77528 17.3245 9.1992 17.0119 9.51176C16.6994 9.82432 16.2754 9.99992 15.8334 9.99992C15.3914 9.99992 14.9675 9.82432 14.6549 9.51176C14.3423 9.1992 14.1667 8.77528 14.1667 8.33325C14.1667 7.89122 14.3423 7.4673 14.6549 7.15474C14.9675 6.84218 15.3914 6.66659 15.8334 6.66659C16.2754 6.66659 16.6994 6.84218 17.0119 7.15474C17.3245 7.4673 17.5001 7.89122 17.5001 8.33325ZM5.83341 8.33325C5.83341 8.77528 5.65782 9.1992 5.34526 9.51176C5.0327 9.82432 4.60878 9.99992 4.16675 9.99992C3.72472 9.99992 3.3008 9.82432 2.98824 9.51176C2.67568 9.1992 2.50008 8.77528 2.50008 8.33325C2.50008 7.89122 2.67568 7.4673 2.98824 7.15474C3.3008 6.84218 3.72472 6.66659 4.16675 6.66659C4.60878 6.66659 5.0327 6.84218 5.34526 7.15474C5.65782 7.4673 5.83341 7.89122 5.83341 8.33325Z"
+                    stroke="#D1D5DB"
+                    strokeWidth="1.66667"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </div>
               <h3 className="text-lg font-bold mb-2">Join the Community</h3>
@@ -219,14 +245,12 @@ export default function GetStartedSection() {
           <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300">
             <div className="p-6">
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
-                <Icon
-                  path="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                />
+                <Icon path="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </div>
               <h3 className="text-lg font-bold mb-2">Explore Documentation</h3>
               <p className="text-blue-100 mb-4">
                 Comprehensive guides, tutorials, and API references to help you
-                master KubeStellar's capabilities.
+                master KubeStellar&#39;s capabilities.
               </p>
               <div className="mt-4 grid grid-cols-1 gap-2">
                 <a
