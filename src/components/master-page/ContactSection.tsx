@@ -202,9 +202,9 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
             </a>
 
             {/* Contact card 2 */}
-            <a href="https://kubestellar.slack.com" target="_blank" rel="noopener noreferrer" className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-purple-500/50 cursor-pointer">
+            <a href="https://kubestellar.slack.com" target="_blank" rel="noopener noreferrer" className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-transparent p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-purple-500/70 cursor-pointer">
               <div className="flex items-center">
-                <div className="flex-shrink-0 h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center">
+                <div className="flex-shrink-0 h-12 w-12 rounded-full bg-purple-600 flex items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 text-white"
@@ -223,7 +223,7 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                 <div className="ml-5">
                   <h3 className="text-lg font-medium text-white">Community Chat</h3>
                   <p className="text-gray-300 mt-1">Join our Slack workspace for real-time support</p>
-                  <p className="text-blue-400 mt-1 text-sm inline-flex items-center">
+                  <p className="text-purple-400 mt-1 text-sm inline-flex items-center">
                     Join Slack
                     <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -251,32 +251,6 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                   <p className="text-gray-300 mt-1">Contribute, report issues, or browse the source code</p>
                   <p className="text-green-400 mt-1 text-sm inline-flex items-center">
                     View Repository
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            {/* Contact card 4 - Medium */}
-            <a href="https://medium.com/@kubestellar" target="_blank" rel="noopener noreferrer" className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-orange-500/50 cursor-pointer">
-              <div className="flex items-center">
-                <div className="flex-shrink-0 h-12 w-12 rounded-full bg-orange-900/30 flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-orange-400"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/>
-                  </svg>
-                </div>
-                <div className="ml-5">
-                  <h3 className="text-lg font-medium text-white">Medium Blog</h3>
-                  <p className="text-gray-300 mt-1">Read our latest insights and updates</p>
-                  <p className="text-orange-400 mt-1 text-sm inline-flex items-center">
-                    Read Blog
                     <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
@@ -346,13 +320,13 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
           {/* Right side: Contact form */}
           <div className="lg:col-span-3">
             <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-700/50 overflow-hidden">
-              <div className="p-8 sm:p-10">
-                <h3 className="text-2xl font-bold text-white mb-8 text-center">
+              <div className="p-5.5 sm:p-7.5">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">
                   Send us a message
                 </h3>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <form onSubmit={handleSubmit} className="space-y-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label
                         htmlFor="name"
@@ -462,7 +436,7 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      rows={8}
+                      rows={4}
                       className="w-full px-4 py-3 bg-gray-700/60 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 backdrop-blur-sm resize-none"
                       placeholder="Tell us about your use case and how we can help..."
                     ></textarea>
@@ -517,7 +491,7 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                               strokeLinecap="round"
                               strokeLinejoin="round"
                               strokeWidth={2}
-                              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
                             />
                           </svg>
                         </div>
