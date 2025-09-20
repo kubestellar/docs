@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import StarField from "./StarField";
-import useDropdown from "../hooks/useDropdown";
+import { useDropdown } from '../index';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
