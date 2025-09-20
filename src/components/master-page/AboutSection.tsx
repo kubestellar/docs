@@ -2,8 +2,13 @@
 
 import { useEffect } from "react";
 import StarField from "../StarField";
+import useCardHover from "../../hooks/useHover";
 
 export default function AboutSection() {
+
+  // Use the custom hover hook for feature cards
+  useCardHover(".feature-card");
+
   useEffect(() => {
     const createGrid = (container: HTMLElement) => {
       if (!container) return;
@@ -55,7 +60,7 @@ export default function AboutSection() {
     // Feature cards animation
     const initFeatureCards = () => {
       const featureCards = document.querySelectorAll(".feature-card");
-      
+
       // Cards appear on scroll
       const observer = new IntersectionObserver(
         entries => {
@@ -99,36 +104,6 @@ export default function AboutSection() {
         }
       `;
       document.head.appendChild(style);
-
-      // 3D tilt effect on mouse move
-      featureCards.forEach(card => {
-        card.addEventListener("mousemove", (e: Event) => {
-          const mouseEvent = e as MouseEvent;
-          const container = card.querySelector(".card-3d-container");
-          const rect = card.getBoundingClientRect();
-          const x = mouseEvent.clientX - rect.left;
-          const y = mouseEvent.clientY - rect.top;
-
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-
-          // Calculate rotation values (reduced intensity for subtlety)
-          const rotateY = (x - centerX) / 15;
-          const rotateX = (centerY - y) / 15;
-
-          if (container) {
-            (container as HTMLElement).style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
-          }
-        });
-
-        // Reset on mouse leave
-        card.addEventListener("mouseleave", () => {
-          const container = card.querySelector(".card-3d-container");
-          if (container) {
-            (container as HTMLElement).style.transform = "rotateY(0deg) rotateX(0deg)";
-          }
-        });
-      });
     };
 
     const gridContainer = document.getElementById("grid-lines-about");
