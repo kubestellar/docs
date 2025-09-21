@@ -167,10 +167,7 @@ export default function UseCasesSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-12">
-          <h2
-            className="text-4xl font-extrabold mb-4"
-            style={{ fontSize: "36px" }}
-          >
+          <h2 className="text-4xl font-extrabold mb-4">
             <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600 bg-clip-text text-transparent">
               Use Cases
             </span>
@@ -185,68 +182,34 @@ export default function UseCasesSection() {
           {useCases.map((useCase, index) => (
             <div
               key={index}
-              className="group relative rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 hover:border-gray-500 hover:shadow-2xl hover:shadow-gray-900/50 hover:-translate-y-2 hover:scale-105 cursor-pointer"
-              style={{
-                width: "382px",
-                height: "280px",
-                backgroundColor: "#1f2937",
-                zIndex: 10
-              }}
+              className="group relative rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 hover:border-gray-500 hover:shadow-2xl hover:shadow-gray-900/50 hover:-translate-y-2 hover:scale-105 cursor-pointer w-96 h-[280px] bg-gray-800 z-10"
             >
               {/* Top colored border */}
               <div className={`h-2 ${useCase.borderColor}`}></div>
 
               <div className="p-6">
-                {/* Logo container - 48x48 */}
+                {/* Logo container */}
                 <div
-                  className={`${useCase.iconBgColor} rounded-lg flex items-center justify-center mb-4`}
-                  style={{ width: "48px", height: "48px" }}
+                  className={`${useCase.iconBgColor} rounded-lg flex items-center justify-center mb-4 w-12 h-12`}
                 >
                   {getIcon(useCase.icon)}
                 </div>
 
-                {/* Main heading - 334x28 */}
-                <h3
-                  className="font-bold text-white mb-4 transition-colors duration-300 group-hover:text-blue-300"
-                  style={{
-                    fontSize: "18px",
-                    lineHeight: "28px",
-                    width: "334px",
-                    height: "28px",
-                    overflow: "hidden"
-                  }}
-                >
+                {/* Main heading */}
+                <h3 className="font-bold text-white mb-4 transition-colors duration-300 group-hover:text-blue-300 text-lg leading-7 w-80 h-7 overflow-hidden">
                   {useCase.title}
                 </h3>
 
-                {/* Description text - 334x96 */}
-                <p
-                  className="text-gray-300 font-normal mb-2 transition-colors duration-300 group-hover:text-gray-200"
-                  style={{
-                    fontSize: "14px",
-                    lineHeight: "20px",
-                    width: "334px",
-                    height: "96px",
-                    overflow: "hidden"
-                  }}
-                >
+                {/* Description text */}
+                <p className="text-gray-300 font-normal mb-2 transition-colors duration-300 group-hover:text-gray-200 text-sm leading-5 w-80 h-24 overflow-hidden">
                   {useCase.description}
                 </p>
 
-                {/* Learn more button - 334x20 */}
-                <button
-                  className="text-blue-400 font-medium hover:text-blue-300 transition-colors flex items-center"
-                  style={{
-                    fontSize: "14px",
-                    width: "334px",
-                    height: "20px"
-                  }}
-                >
+                {/* Learn more button */}
+                <button className="text-blue-400 font-medium hover:text-blue-300 transition-colors flex items-center text-sm w-80 h-5">
                   Learn more
                   <svg
-                    className="ml-1"
-                    width="16"
-                    height="16"
+                    className="ml-1 w-4 h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
