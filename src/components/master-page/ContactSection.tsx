@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import StarField from "../animations/StarField";
+import GridLines from "../animations/GridLines";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -89,58 +90,6 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
       setIsSubmitting(false);
     }
   };
-  useEffect(() => {
-    const createGrid = (container: HTMLElement) => {
-      if (!container) return;
-      container.innerHTML = "";
-
-      const gridSvg = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg"
-      );
-      gridSvg.setAttribute("width", "100%");
-      gridSvg.setAttribute("height", "100%");
-      gridSvg.style.position = "absolute";
-      gridSvg.style.top = "0";
-      gridSvg.style.left = "0";
-
-      for (let i = 0; i < 8; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", "0");
-        line.setAttribute("y1", `${i * 12}%`);
-        line.setAttribute("x2", "100%");
-        line.setAttribute("y2", `${i * 12}%`);
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      for (let i = 0; i < 8; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", `${i * 12}%`);
-        line.setAttribute("y1", "0");
-        line.setAttribute("x2", `${i * 12}%`);
-        line.setAttribute("y2", "100%");
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      container.appendChild(gridSvg);
-    };
-
-    const gridContainer = document.getElementById("grid-lines-contact");
-
-    if (gridContainer) createGrid(gridContainer);
-  }, []);
 
   return (
     <section
@@ -154,10 +103,7 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
       <StarField density="medium" showComets={true} cometCount={4} />
 
       {/* Grid lines background */}
-      <div
-        id="grid-lines-contact"
-        className="absolute inset-0 opacity-20"
-      ></div>
+      <GridLines className="opacity-40"/>
 
       {/* Background elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
