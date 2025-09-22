@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import useDropdown from "../hooks/useDropdown";
+import { useDropdown } from "../index";
 
 interface SelectDropdownProps {
   id: string;

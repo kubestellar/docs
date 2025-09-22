@@ -2,7 +2,7 @@
 
 import {useState, useEffect } from "react";
 import StarField from "../StarField";
-import SelectDropdown from "../SelectDropdown";
+import { SelectDropdown } from "../../index";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
