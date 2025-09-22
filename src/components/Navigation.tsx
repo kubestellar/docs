@@ -78,7 +78,7 @@ export default function Navigation() {
 
     initDropdowns();
   }, []);
-
+  
   return (
     <nav className="fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-md border-b border-gray-700/50 transition-all duration-300">
       {/* Dark base background */}
