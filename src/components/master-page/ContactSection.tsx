@@ -2,6 +2,7 @@
 
 import {useState, useEffect } from "react";
 import StarField from "../StarField";
+import SelectDropdown from "../SelectDropdown";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -342,54 +343,22 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                     >
                       Subject *
                     </label>
-                    <div className="relative">
-                      <select
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 pr-12 bg-gray-700/60 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 backdrop-blur-sm appearance-none cursor-pointer hover:border-gray-500/60 hover:bg-gray-700/70"
-                      >
-                        <option value="" disabled className="text-gray-400">
-                          Select a subject
-                        </option>
-                        <option value="General Inquiry" className="bg-gray-800 text-white py-2">
-                          General Inquiry
-                        </option>
-                        <option value="Technical Support" className="bg-gray-800 text-white py-2">
-                          Technical Support
-                        </option>
-                        <option value="Partnership" className="bg-gray-800 text-white py-2">
-                          Partnership
-                        </option>
-                        <option value="Documentation Feedback" className="bg-gray-800 text-white py-2">
-                          Documentation Feedback
-                        </option>
-                        <option value="Enterprise Solutions" className="bg-gray-800 text-white py-2">
-                          Enterprise Solutions
-                        </option>
-                        <option value="Other" className="bg-gray-800 text-white py-2">
-                          Other
-                        </option>
-                      </select>
-                      {/* Custom dropdown chevron */}
-                      <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                        <svg
-                          className="w-5 h-5 text-gray-400 transition-transform duration-200"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </div>
-                    </div>
+                    <SelectDropdown
+                      id="subject"
+                      name="subject"
+                      widthClass="w-72"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
+                      options={[
+                        { value: "General Inquiry", label: "General Inquiry" },
+                        { value: "Technical Support", label: "Technical Support" },
+                        { value: "Partnership", label: "Partnership" },
+                        { value: "Documentation Feedback", label: "Documentation Feedback" },
+                        { value: "Enterprise Solutions", label: "Enterprise Solutions" },
+                        { value: "Other", label: "Other" },
+                      ]}
+                    />
                   </div>
 
                   <div className="flex-1 flex flex-col">

@@ -1,107 +1,127 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
-const useDropdown = () => {
-  const [activeDropdown, setActiveDropdown] = useState<HTMLElement | null>(
-    null
-  );
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+function useDropdown<T extends HTMLElement = HTMLElement>(
+  dropdownRef?: React.RefObject<T | null>,
+  onClose?: () => void
+) {
+  const activeDropdownRef = useRef<HTMLElement | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const onCloseRef = useRef(onClose);
 
   useEffect(() => {
-    const dropdownContainers =
-      document.querySelectorAll<HTMLElement>("[data-dropdown]");
+    onCloseRef.current = onClose;
+  }, [onClose]);
 
-    const handleMouseEnter = (container: HTMLElement, menu: HTMLElement) => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = null;
-      }
+  useEffect(() => {
+    const dropdownContainers = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-dropdown]")
+    );
 
-      dropdownContainers.forEach(otherContainer => {
-        if (otherContainer !== container) {
-          const otherMenu = otherContainer.querySelector<HTMLElement>(
-            "[data-dropdown-menu]"
-          );
-          if (otherMenu) {
-            otherMenu.style.display = "none";
-          }
-        }
-      });
-
-      menu.style.display = "block";
-      setActiveDropdown(menu);
-    };
-
-    const handleMouseLeave = (menu: HTMLElement) => {
-      timeoutRef.current = setTimeout(() => {
-        menu.style.display = "none";
-        if (activeDropdown === menu) {
-          setActiveDropdown(null);
-        }
-      }, 100);
-    };
-
-    const handleMenuMouseEnter = () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = null;
-      }
-    };
-
-    const handleMenuMouseLeave = (menu: HTMLElement) => {
-      menu.style.display = "none";
-      if (activeDropdown === menu) {
-        setActiveDropdown(null);
-      }
-    };
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        dropdownContainers.forEach(container => {
-          const menu = container.querySelector<HTMLElement>(
-            "[data-dropdown-menu]"
-          );
-          if (menu) {
-            menu.style.display = "none";
-          }
-        });
-      }
-    };
+    const handlers: Array<{
+      container: HTMLElement;
+      menu: HTMLElement;
+      handleMouseEnter: () => void;
+      handleMouseLeave: () => void;
+      handleMenuMouseEnter: () => void;
+      handleMenuMouseLeave: () => void;
+    }> = [];
 
     dropdownContainers.forEach(container => {
       const menu = container.querySelector<HTMLElement>("[data-dropdown-menu]");
-      if (menu) {
-        container.addEventListener("mouseenter", () =>
-          handleMouseEnter(container, menu)
-        );
-        container.addEventListener("mouseleave", () => handleMouseLeave(menu));
-        menu.addEventListener("mouseenter", handleMenuMouseEnter);
-        menu.addEventListener("mouseleave", () => handleMenuMouseLeave(menu));
-      }
+      if (!menu) return;
+
+      const handleMouseEnter = () => {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
+        dropdownContainers.forEach(other => {
+          if (other !== container) {
+            const otherMenu = other.querySelector<HTMLElement>("[data-dropdown-menu]");
+            if (otherMenu) otherMenu.style.display = "none";
+          }
+        });
+        menu.style.display = "block";
+        activeDropdownRef.current = menu;
+      };
+
+      const handleMouseLeave = () => {
+        timeoutRef.current = setTimeout(() => {
+          menu.style.display = "none";
+          if (activeDropdownRef.current === menu) {
+            activeDropdownRef.current = null;
+            onCloseRef.current?.();
+          }
+        }, 100);
+      };
+
+      const handleMenuMouseEnter = () => {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
+      };
+
+      const handleMenuMouseLeave = () => {
+        menu.style.display = "none";
+        if (activeDropdownRef.current === menu) {
+          activeDropdownRef.current = null;
+          onCloseRef.current?.();
+        }
+      };
+
+      container.addEventListener("mouseenter", handleMouseEnter);
+      container.addEventListener("mouseleave", handleMouseLeave);
+      menu.addEventListener("mouseenter", handleMenuMouseEnter);
+      menu.addEventListener("mouseleave", handleMenuMouseLeave);
+
+      handlers.push({
+        container,
+        menu,
+        handleMouseEnter,
+        handleMouseLeave,
+        handleMenuMouseEnter,
+        handleMenuMouseLeave,
+      });
     });
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handlers.forEach(h => (h.menu.style.display = "none"));
+        activeDropdownRef.current = null;
+        onCloseRef.current?.();
+      }
+    };
+
+    const handleDocumentClick = (e: MouseEvent) => {
+      const target = e.target as Node | null;
+      if (dropdownRef?.current && !dropdownRef.current.contains(target)) {
+        handlers.forEach(h => (h.menu.style.display = "none"));
+        activeDropdownRef.current = null;
+        onCloseRef.current?.();
+      }
+    };
+
     document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("click", handleDocumentClick);
 
     return () => {
-      dropdownContainers.forEach(container => {
-        const menu = container.querySelector<HTMLElement>(
-          "[data-dropdown-menu]"
-        );
-        if (menu) {
-          container.removeEventListener("mouseenter", () =>
-            handleMouseEnter(container, menu)
-          );
-          container.removeEventListener("mouseleave", () =>
-            handleMouseLeave(menu)
-          );
-          menu.removeEventListener("mouseenter", handleMenuMouseEnter);
-          menu.removeEventListener("mouseleave", () =>
-            handleMenuMouseLeave(menu)
-          );
-        }
+      handlers.forEach(h => {
+        h.container.removeEventListener("mouseenter", h.handleMouseEnter);
+        h.container.removeEventListener("mouseleave", h.handleMouseLeave);
+        h.menu.removeEventListener("mouseenter", h.handleMenuMouseEnter);
+        h.menu.removeEventListener("mouseleave", h.handleMenuMouseLeave);
       });
       document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("click", handleDocumentClick);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
     };
-  }, [activeDropdown]);
-};
+  }, [dropdownRef]);
+
+  return { activeDropdownRef };
+}
 
 export default useDropdown;
