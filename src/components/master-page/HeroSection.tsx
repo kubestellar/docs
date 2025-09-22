@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import StarField from "../StarField";
-import useParallax from "../../hooks/useParallax";
+import { useParallax } from "../../index";
 
 export default function HeroSection() {
   useParallax(".mission-control-scene", ".scene-container");

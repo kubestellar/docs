@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import StarField from "../StarField";
-import useParallax from "../../hooks/useParallax";
+import { useParallax } from "../../index";
 
 export default function AboutSection() {
   useParallax(".feature-card", ".card-3d-container");
@@ -57,7 +57,7 @@ export default function AboutSection() {
     // Feature cards animation
     const initFeatureCards = () => {
       const featureCards = document.querySelectorAll(".feature-card");
-      
+
       // Cards appear on scroll
       const observer = new IntersectionObserver(
         entries => {
@@ -128,7 +128,10 @@ export default function AboutSection() {
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
             What is
-            <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600"> KubeStellar</span>
+            <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
+              {" "}
+              KubeStellar
+            </span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
             A multi-cluster Kubernetes orchestration platform that simplifies
