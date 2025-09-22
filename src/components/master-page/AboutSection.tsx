@@ -102,8 +102,10 @@ export default function AboutSection() {
       {/* Grid lines background */}
       <GridBackground
         color="#6366F1"
-        opacity={0.2}
-        strokeWidth={0.2}
+        opacity={0.15}
+        strokeWidth={0.3}
+        spacing={60}
+        animated={true}
         className="absolute inset-0"
       />
 

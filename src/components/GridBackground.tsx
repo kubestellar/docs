@@ -7,6 +7,8 @@ interface GridBackgroundProps {
   opacity?: number;
   strokeWidth?: number;
   className?: string;
+  animated?: boolean;
+  spacing?: number;
 }
 
 export default function GridBackground({
@@ -14,11 +16,13 @@ export default function GridBackground({
   opacity = 0.3,
   strokeWidth = 0.5,
   className = "",
+  animated = true,
+  spacing = 50,
 }: GridBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const createGrid = (container: HTMLElement) => {
+    const createAnimatedGrid = (container: HTMLElement) => {
       if (!container) return;
       container.innerHTML = "";
 
@@ -32,49 +36,69 @@ export default function GridBackground({
       gridSvg.style.top = "0";
       gridSvg.style.left = "0";
 
-      for (let i = 0; i < 8; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", "0");
-        line.setAttribute("y1", `${i * 12}%`);
-        line.setAttribute("x2", "100%");
-        line.setAttribute("y2", `${i * 12}%`);
-        line.setAttribute("stroke", color);
-        line.setAttribute("stroke-width", strokeWidth.toString());
-        line.setAttribute("stroke-opacity", opacity.toString());
-        gridSvg.appendChild(line);
+      // Create pattern for animated grid
+      const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+      const pattern = document.createElementNS("http://www.w3.org/2000/svg", "pattern");
+      pattern.setAttribute("id", `grid-pattern-${Math.random().toString(36).substr(2, 9)}`);
+      pattern.setAttribute("width", spacing.toString());
+      pattern.setAttribute("height", spacing.toString());
+      pattern.setAttribute("patternUnits", "userSpaceOnUse");
+
+      if (animated) {
+        // Add animation transform to pattern
+        const animateTransform = document.createElementNS("http://www.w3.org/2000/svg", "animateTransform");
+        animateTransform.setAttribute("attributeName", "patternTransform");
+        animateTransform.setAttribute("type", "translate");
+        animateTransform.setAttribute("values", `0,0; ${spacing},${spacing}; 0,0`);
+        animateTransform.setAttribute("dur", "20s");
+        animateTransform.setAttribute("repeatCount", "indefinite");
+        pattern.appendChild(animateTransform);
       }
 
-      for (let i = 0; i < 8; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", `${i * 12}%`);
-        line.setAttribute("y1", "0");
-        line.setAttribute("x2", `${i * 12}%`);
-        line.setAttribute("y2", "100%");
-        line.setAttribute("stroke", color);
-        line.setAttribute("stroke-width", strokeWidth.toString());
-        line.setAttribute("stroke-opacity", opacity.toString());
-        gridSvg.appendChild(line);
-      }
+      // Vertical line
+      const verticalLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      verticalLine.setAttribute("x1", "0");
+      verticalLine.setAttribute("y1", "0");
+      verticalLine.setAttribute("x2", "0");
+      verticalLine.setAttribute("y2", spacing.toString());
+      verticalLine.setAttribute("stroke", color);
+      verticalLine.setAttribute("stroke-width", strokeWidth.toString());
+      verticalLine.setAttribute("stroke-opacity", opacity.toString());
+
+      // Horizontal line
+      const horizontalLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      horizontalLine.setAttribute("x1", "0");
+      horizontalLine.setAttribute("y1", "0");
+      horizontalLine.setAttribute("x2", spacing.toString());
+      horizontalLine.setAttribute("y2", "0");
+      horizontalLine.setAttribute("stroke", color);
+      horizontalLine.setAttribute("stroke-width", strokeWidth.toString());
+      horizontalLine.setAttribute("stroke-opacity", opacity.toString());
+
+      pattern.appendChild(verticalLine);
+      pattern.appendChild(horizontalLine);
+      defs.appendChild(pattern);
+      gridSvg.appendChild(defs);
+
+      // Create rectangle that uses the pattern
+      const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      rect.setAttribute("width", "100%");
+      rect.setAttribute("height", "100%");
+      rect.setAttribute("fill", `url(#${pattern.getAttribute("id")})`);
+      gridSvg.appendChild(rect);
 
       container.appendChild(gridSvg);
     };
 
     if (containerRef.current) {
-      createGrid(containerRef.current);
+      createAnimatedGrid(containerRef.current);
     }
-  }, [color, opacity, strokeWidth]);
-  
+  }, [color, opacity, strokeWidth, animated, spacing]);
 
   return (
     <div
       ref={containerRef}
-      className={`absolute inset-0 ${className}`}
+      className={`absolute inset-0 pointer-events-none ${className}`}
     />
   );
 }

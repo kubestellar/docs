@@ -4,29 +4,7 @@ import StarField from "../StarField";
 import GridBackground from "../GridBackground";
 
 export default function UseCasesSection() {
-
   const useCases = [
-    {
-      icon: (
-        <svg
-          className="w-8 h-8 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-      title: "Multi-Cloud Deployment",
-      description:
-        "Deploy applications across AWS, Azure, GCP, and on-premises clusters with unified management and consistent policies.",
-      color: "from-blue-500 to-cyan-500",
-    },
     {
       icon: (
         <svg
@@ -45,8 +23,8 @@ export default function UseCasesSection() {
       ),
       title: "Edge Computing",
       description:
-        "Distribute workloads to edge locations for reduced latency and improved user experience while maintaining centralized control.",
-      color: "from-purple-500 to-pink-500",
+        "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
+      color: "from-blue-500 to-cyan-500",
     },
     {
       icon: (
@@ -64,9 +42,30 @@ export default function UseCasesSection() {
           />
         </svg>
       ),
-      title: "Disaster Recovery",
+      title: "Multi-Region Compliance",
       description:
-        "Implement robust disaster recovery strategies with automatic failover and data replication across geographically distributed clusters.",
+        "Deploy applications with specific regional compliance requirements. Ensure data residency and regulatory compliance across global operations.",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: (
+        <svg
+          className="w-8 h-8 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      ),
+      title: "Hybrid/Multi-Cloud",
+      description:
+        "Seamlessly manage workloads across multiple cloud providers and on-premises infrastructure with unified policies and consistent experience.",
       color: "from-green-500 to-teal-500",
     },
     {
@@ -85,9 +84,9 @@ export default function UseCasesSection() {
           />
         </svg>
       ),
-      title: "DevOps Acceleration",
+      title: "Disaster Recovery",
       description:
-        "Streamline CI/CD pipelines with automated testing across multiple environments and seamless production deployments.",
+        "Implement robust disaster recovery strategies with automatic workload replication and failover across multiple clusters in different regions.",
       color: "from-orange-500 to-red-500",
     },
     {
@@ -106,9 +105,9 @@ export default function UseCasesSection() {
           />
         </svg>
       ),
-      title: "Enterprise Governance",
+      title: "Multi-Tenant Isolation",
       description:
-        "Enforce compliance policies, security standards, and resource quotas consistently across all clusters and environments.",
+        "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
       color: "from-indigo-500 to-purple-500",
     },
     {
@@ -127,9 +126,9 @@ export default function UseCasesSection() {
           />
         </svg>
       ),
-      title: "Cost Optimization",
+      title: "Performance Optimization",
       description:
-        "Optimize infrastructure costs by intelligently placing workloads based on resource pricing and availability across regions.",
+        "Deploy workloads closest to users or data sources for optimal performance, reducing latency and improving user experience across global operations.",
       color: "from-yellow-500 to-orange-500",
     },
   ];
@@ -148,8 +147,10 @@ export default function UseCasesSection() {
       {/* Grid lines background */}
       <GridBackground
         color="#6366F1"
-        opacity={0.2}
-        strokeWidth={0.2}
+        opacity={0.15}
+        strokeWidth={0.3}
+        spacing={60}
+        animated={true}
         className="absolute inset-0"
       />
 
@@ -159,8 +160,8 @@ export default function UseCasesSection() {
             Use <span className="text-gradient">Cases</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
-            Discover how KubeStellar solves real-world multi-cluster challenges
-            across industries
+            Discover how organizations leverage KubeStellar for their
+            multi-cluster needs
           </p>
         </div>
 

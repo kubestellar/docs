@@ -96,11 +96,13 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
       {/* Starfield background */}
       <StarField density="medium" showComets={true} cometCount={4} />
 
-      {/* Grid lines background */}
+      {/* Grid lines background - consistent with other sections */}
       <GridBackground
         color="#6366F1"
-        opacity={0.2}
-        strokeWidth={0.2}
+        opacity={0.15}
+        strokeWidth={0.3}
+        spacing={60}
+        animated={true}
         className="absolute inset-0"
       />
 
