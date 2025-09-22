@@ -2,8 +2,10 @@
 
 import { useEffect } from "react";
 import StarField from "../StarField";
+import useParallax from "../../hooks/useParallax";
 
 export default function AboutSection() {
+  useParallax(".feature-card", ".card-3d-container");
   useEffect(() => {
     const createGrid = (container: HTMLElement) => {
       if (!container) return;
@@ -99,36 +101,6 @@ export default function AboutSection() {
         }
       `;
       document.head.appendChild(style);
-
-      // 3D tilt effect on mouse move
-      featureCards.forEach(card => {
-        card.addEventListener("mousemove", (e: Event) => {
-          const mouseEvent = e as MouseEvent;
-          const container = card.querySelector(".card-3d-container");
-          const rect = card.getBoundingClientRect();
-          const x = mouseEvent.clientX - rect.left;
-          const y = mouseEvent.clientY - rect.top;
-
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-
-          // Calculate rotation values (reduced intensity for subtlety)
-          const rotateY = (x - centerX) / 15;
-          const rotateX = (centerY - y) / 15;
-
-          if (container) {
-            (container as HTMLElement).style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
-          }
-        });
-
-        // Reset on mouse leave
-        card.addEventListener("mouseleave", () => {
-          const container = card.querySelector(".card-3d-container");
-          if (container) {
-            (container as HTMLElement).style.transform = "rotateY(0deg) rotateX(0deg)";
-          }
-        });
-      });
     };
 
     const gridContainer = document.getElementById("grid-lines-about");
@@ -156,7 +128,7 @@ export default function AboutSection() {
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
             What is
-            <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">KubeStellar</span>
+            <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600"> KubeStellar</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
             A multi-cluster Kubernetes orchestration platform that simplifies
