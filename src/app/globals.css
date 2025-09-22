@@ -142,6 +142,15 @@ body {
     transform: translateX(400px) translateY(200px) scale(0);
   }
 }
+@keyframes move-vertical {
+
+  from{
+    transform: translateY(-100px, -100px);
+  }
+  to {
+    transform: translateY(0, 0);
+  }
+}
 
 @keyframes cometTrail {
   0% {
