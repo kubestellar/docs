@@ -233,7 +233,7 @@ export default function HeroSection() {
       {/* Animated Background Universe */}
       <div className="absolute inset-0 z-0">
         {/*!-- Floating Nebula Clouds*/}
-        {/* IMPLEMENTATION REMATINING WILL DO*/}
+        {/* IMPLEMENTATION REMAINING WILL DO*/}
         {/* Dynamic Star Field */}
         <div className="absolute inset-0 bg-[#0a0a0a]">
           <StarField density="high" showComets={true} cometCount={8} />
