@@ -1,25 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StarField from "../StarField";
 import GridBackground from "../GridBackground";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    privacy: false
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    privacy: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value, type } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+      [name]:
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
     }));
   };
 
@@ -27,7 +32,7 @@ export default function ContactSection() {
     e.preventDefault();
 
     if (!formData.privacy) {
-      alert('Please agree to the privacy policy to continue.');
+      alert("Please agree to the privacy policy to continue.");
       return;
     }
 
@@ -67,19 +72,22 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
 
       // Reset form
       setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        privacy: false
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        privacy: false,
       });
 
       // Hide success message after 8 seconds
       setTimeout(() => setShowSuccess(false), 8000);
 
+
     } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('There was an error opening your email client. Please try again or visit https://groups.google.com/g/kubestellar-dev directly.');
+      console.error("Error submitting form:", error);
+      alert(
+        "There was an error opening your email client. Please try again or visit https://groups.google.com/g/kubestellar-dev directly."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -96,15 +104,16 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
       {/* Starfield background */}
       <StarField density="medium" showComets={true} cometCount={4} />
 
-      {/* Grid lines background - consistent with other sections */}
-      <GridBackground
-        color="#6366F1"
-        opacity={0.15}
-        strokeWidth={0.3}
-        spacing={60}
-        animated={true}
-        className="absolute inset-0"
-      />
+{/* Grid lines background - consistent with other sections */}
+<GridBackground
+  color="#6366F1"
+  opacity={0.15}
+  strokeWidth={0.3}
+  spacing={60}
+  animated={true}
+  className="absolute inset-0"
+/>
+
 
       {/* Background elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -126,7 +135,10 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
           {/* Left side: Contact info cards */}
           <div className="lg:col-span-2 flex flex-col justify-between space-y-4">
             {/* Contact card 1 */}
-            <a href="mailto:info@kubestellar.io" className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer">
+            <a
+              href="mailto:info@kubestellar.io"
+              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer"
+            >
               <div className="flex items-center">
                 <div className="flex-shrink-0 h-12 w-12 rounded-full bg-blue-900/30 flex items-center justify-center">
                   <svg
@@ -145,12 +157,26 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                   </svg>
                 </div>
                 <div className="ml-5">
-                  <h3 className="text-lg font-medium text-white">Email Support</h3>
-                  <p className="text-gray-300 mt-1">Get direct support from our team</p>
+                  <h3 className="text-lg font-medium text-white">
+                    Email Support
+                  </h3>
+                  <p className="text-gray-300 mt-1">
+                    Get direct support from our team
+                  </p>
                   <p className="text-blue-400 mt-1 text-sm inline-flex items-center">
                     support@kubestellar.io
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <svg
+                      className="ml-1 w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
                     </svg>
                   </p>
                 </div>
@@ -158,7 +184,12 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
             </a>
 
             {/* Contact card 2 */}
-            <a href="https://kubestellar.slack.com" target="_blank" rel="noopener noreferrer" className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-transparent p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-purple-500/70 cursor-pointer">
+            <a
+              href="https://kubestellar.slack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-transparent p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-purple-500/70 cursor-pointer"
+            >
               <div className="flex items-center">
                 <div className="flex-shrink-0 h-12 w-12 rounded-full bg-purple-600 flex items-center justify-center">
                   <svg
@@ -177,12 +208,26 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                   </svg>
                 </div>
                 <div className="ml-5">
-                  <h3 className="text-lg font-medium text-white">Community Chat</h3>
-                  <p className="text-gray-300 mt-1">Join our Slack workspace for real-time support</p>
+                  <h3 className="text-lg font-medium text-white">
+                    Community Chat
+                  </h3>
+                  <p className="text-gray-300 mt-1">
+                    Join our Slack workspace for real-time support
+                  </p>
                   <p className="text-purple-400 mt-1 text-sm inline-flex items-center">
                     Join Slack
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <svg
+                      className="ml-1 w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
                     </svg>
                   </p>
                 </div>
@@ -190,7 +235,12 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
             </a>
 
             {/* Contact card 3 */}
-            <a href="https://github.com/kubestellar/kubestellar" target="_blank" rel="noopener noreferrer" className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-green-500/50 cursor-pointer">
+            <a
+              href="https://github.com/kubestellar/kubestellar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-green-500/50 cursor-pointer"
+            >
               <div className="flex items-center">
                 <div className="flex-shrink-0 h-12 w-12 rounded-full bg-green-600 flex items-center justify-center">
                   <svg
@@ -204,18 +254,35 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                 </div>
                 <div className="ml-5">
                   <h3 className="text-lg font-medium text-white">GitHub</h3>
-                  <p className="text-gray-300 mt-1">Contribute, report issues, or browse the source code</p>
+                  <p className="text-gray-300 mt-1">
+                    Contribute, report issues, or browse the source code
+                  </p>
                   <p className="text-green-400 mt-1 text-sm inline-flex items-center">
                     View Repository
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <svg
+                      className="ml-1 w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
                     </svg>
                   </p>
                 </div>
               </div>
             </a>
             {/* Contact card 4 - LinkedIn */}
-            <a href="https://linkedin.com/company/kubestellar" target="_blank" rel="noopener noreferrer" className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer">
+            <a
+              href="https://linkedin.com/company/kubestellar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer"
+            >
               <div className="flex items-center">
                 <div className="flex-shrink-0 h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center">
                   <svg
@@ -229,17 +296,28 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                 </div>
                 <div className="ml-5">
                   <h3 className="text-lg font-medium text-white">LinkedIn</h3>
-                  <p className="text-gray-300 mt-1">Connect with our professional community</p>
+                  <p className="text-gray-300 mt-1">
+                    Connect with our professional community
+                  </p>
                   <p className="text-blue-400 mt-1 text-sm inline-flex items-center">
                     Follow Us
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <svg
+                      className="ml-1 w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
                     </svg>
                   </p>
                 </div>
               </div>
             </a>
-
           </div>
 
           {/* Right side: Contact form */}
@@ -250,7 +328,10 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                   Send us a message
                 </h3>
 
-                <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-4 flex-1 flex flex-col"
+                >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label
@@ -310,22 +391,40 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                         <option value="" disabled className="text-gray-400">
                           Select a subject
                         </option>
-                        <option value="General Inquiry" className="bg-gray-800 text-white py-2">
+                        <option
+                          value="General Inquiry"
+                          className="bg-gray-800 text-white py-2"
+                        >
                           General Inquiry
                         </option>
-                        <option value="Technical Support" className="bg-gray-800 text-white py-2">
+                        <option
+                          value="Technical Support"
+                          className="bg-gray-800 text-white py-2"
+                        >
                           Technical Support
                         </option>
-                        <option value="Partnership" className="bg-gray-800 text-white py-2">
+                        <option
+                          value="Partnership"
+                          className="bg-gray-800 text-white py-2"
+                        >
                           Partnership
                         </option>
-                        <option value="Documentation Feedback" className="bg-gray-800 text-white py-2">
+                        <option
+                          value="Documentation Feedback"
+                          className="bg-gray-800 text-white py-2"
+                        >
                           Documentation Feedback
                         </option>
-                        <option value="Enterprise Solutions" className="bg-gray-800 text-white py-2">
+                        <option
+                          value="Enterprise Solutions"
+                          className="bg-gray-800 text-white py-2"
+                        >
                           Enterprise Solutions
                         </option>
-                        <option value="Other" className="bg-gray-800 text-white py-2">
+                        <option
+                          value="Other"
+                          className="bg-gray-800 text-white py-2"
+                        >
                           Other
                         </option>
                       </select>
@@ -446,6 +545,7 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                         <p className="text-sm font-medium text-green-300">
                           Your email will be sent to the KubeStellar development mailing list.
                           Please check your email client to complete sending!
+
                         </p>
                       </div>
                     </div>

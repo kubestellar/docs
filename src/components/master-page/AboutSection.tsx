@@ -71,7 +71,8 @@ export default function AboutSection() {
           const rotateX = (centerY - y) / 15;
 
           if (container) {
-            (container as HTMLElement).style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+            (container as HTMLElement).style.transform =
+              `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
           }
         });
 
@@ -79,7 +80,8 @@ export default function AboutSection() {
         card.addEventListener("mouseleave", () => {
           const container = card.querySelector(".card-3d-container");
           if (container) {
-            (container as HTMLElement).style.transform = "rotateY(0deg) rotateX(0deg)";
+            (container as HTMLElement).style.transform =
+              "rotateY(0deg) rotateX(0deg)";
           }
         });
       });
@@ -113,7 +115,9 @@ export default function AboutSection() {
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
             What is
-            <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">KubeStellar</span>
+            <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
+              KubeStellar
+            </span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
             A multi-cluster Kubernetes orchestration platform that simplifies

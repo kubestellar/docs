@@ -136,9 +136,9 @@ export default function UseCasesSection() {
   return (
     <section
       id="use-cases"
-      className="relative py-16 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden"
+      className="relative py-16 text-white overflow-hidden"
     >
-      {/* Dark base background */}
+      {/* Dark base background matching the image */}
       <div className="absolute inset-0 bg-[#0a0a0a]"></div>
 
       {/* Starfield background */}
@@ -154,46 +154,52 @@ export default function UseCasesSection() {
         className="absolute inset-0"
       />
 
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            Use <span className="text-gradient">Cases</span>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
+            <span className="bg-gradient-to-r from-[#667EEA] to-[#764BA2] bg-clip-text text-transparent">
+              Use Cases
+            </span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
             Discover how organizations leverage KubeStellar for their
-            multi-cluster needs
+            multi-cluster needs.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {useCases.map((useCase, index) => (
             <div
               key={index}
-              className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className={`group relative rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 ${useCase.hoverBorderColor} hover:shadow-2xl hover:shadow-gray-900/50 hover:-translate-y-2 hover:scale-105 cursor-pointer w-full max-w-sm h-[280px] bg-gray-800 z-10`}
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${useCase.color} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300`}
-              ></div>
-              <div className="relative z-10">
+              {/* Top colored border */}
+              <div className={`h-2 ${useCase.borderColor}`}></div>
+
+              <div className="p-6">
+                {/* Logo container */}
                 <div
-                  className={`w-16 h-16 bg-gradient-to-br ${useCase.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  className={`${useCase.iconBgColor} rounded-lg flex items-center justify-center mb-4 w-12 h-12`}
                 >
-                  {useCase.icon}
+                  {getIcon(useCase.icon)}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-white transition-colors">
+
+                {/* Main heading */}
+                <h3 className="font-bold text-white mb-4 transition-colors duration-300 group-hover:text-blue-300 text-lg leading-7 overflow-hidden">
                   {useCase.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+
+                {/* Description text */}
+                <p className="text-gray-300 font-normal mb-2 transition-colors duration-300 group-hover:text-gray-200 text-sm leading-5 overflow-hidden line-clamp-4">
                   {useCase.description}
                 </p>
-                <div className="mt-6 flex items-center text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span
-                    className={`bg-gradient-to-r ${useCase.color} bg-clip-text text-transparent`}
-                  >
-                    Learn more
-                  </span>
+
+                {/* Learn more button */}
+                <button className="text-blue-400 font-medium hover:text-blue-300 transition-all duration-300 flex items-center text-sm hover:scale-110 transform origin-left">
+                  Learn more
                   <svg
-                    className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
+                    className="ml-1 w-4 h-4 transition-transform duration-300 hover:scale-125"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -202,10 +208,10 @@ export default function UseCasesSection() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M9 5l7 7-7 7"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </div>
+                </button>
               </div>
             </div>
           ))}
