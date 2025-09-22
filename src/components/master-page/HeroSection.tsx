@@ -3,7 +3,90 @@
 import { useEffect } from "react";
 import StarField from "../StarField";
 import GridBackground from "../GridBackground";
+import StatCard from "../StatsCard";
 
+
+interface StatData {
+  id: number;
+  icon: React.ReactNode;
+  value: number;
+  suffix: string;
+  title: string;
+  color: "blue" | "purple" | "emerald";
+  animationDelay: string;
+}
+
+const statsData: StatData[] = [
+  {
+    id: 1,
+    icon: (
+      <svg
+        className="w-8 h-8 text-blue-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M13 10V3L4 14h7v7l9-11h-7z"
+        ></path>
+      </svg>
+    ),
+    value: 40,
+    suffix: "x",
+    title: "Performance Boost",
+    color: "blue" as const,
+    animationDelay: "0s",
+  },
+  {
+    id: 2,
+    icon: (
+      <svg
+        className="w-8 h-8 text-purple-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+        ></path>
+      </svg>
+    ),
+    value: 99,
+    suffix: "%",
+    title: "Uptime Guarantee",
+    color: "purple" as const,
+    animationDelay: "0.2s",
+  },
+  {
+    id: 3,
+    icon: (
+      <svg
+        className="w-8 h-8 text-emerald-400"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+        ></path>
+      </svg>
+    ),
+    value: 50,
+    suffix: "k+",
+    title: "Active Users",
+    color: "emerald" as const,
+    animationDelay: "0.4s",
+  },
+];
 
 export default function HeroSection() {
   useEffect(() => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import StarField from "../StarField";
 import GridBackground from "../GridBackground";
 
