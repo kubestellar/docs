@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import StarField from "./StarField";
+import StarField from "./animations/StarField";
 import GridLines from "./animations/GridLines";
 
 export default function Footer() {

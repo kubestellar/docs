@@ -1,6 +1,6 @@
 "use client";
 
-import StarField from "../StarField";
+import StarField from "../animations/StarField";
 import { useEffect, useState } from "react";
 
 const Icon = ({

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import StarField from "../StarField";
+import StarField from "../animations/StarField";
 
 export default function AboutSection() {
   useEffect(() => {
