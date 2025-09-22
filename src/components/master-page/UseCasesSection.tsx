@@ -108,6 +108,7 @@ export default function UseCasesSection() {
         "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
       borderColor: "bg-blue-500",
       iconBgColor: "bg-blue-400/20",
+      hoverBorderColor: "hover:border-[#60A5FA]",
     },
     {
       icon: "security",
@@ -116,6 +117,7 @@ export default function UseCasesSection() {
         "Deploy applications with specific regional compliance requirements. Ensure data residency and regulatory compliance across global operations.",
       borderColor: "bg-purple-500",
       iconBgColor: "bg-purple-400/20",
+      hoverBorderColor: "hover:border-[#C084FC]",
     },
     {
       icon: "power",
@@ -124,6 +126,7 @@ export default function UseCasesSection() {
         "Seamlessly manage workloads across multiple cloud providers and on-premises infrastructure with unified policies and consistent experience.",
       borderColor: "bg-green-500",
       iconBgColor: "bg-green-400/20",
+      hoverBorderColor: "hover:border-[#4ADE80]",
     },
     {
       icon: "clock",
@@ -132,6 +135,7 @@ export default function UseCasesSection() {
         "Implement robust disaster recovery strategies with automatic workload replication and failover across multiple clusters in different regions.",
       borderColor: "bg-red-500",
       iconBgColor: "bg-red-400/20",
+      hoverBorderColor: "hover:border-[#F87171]",
     },
     {
       icon: "cloud",
@@ -140,6 +144,7 @@ export default function UseCasesSection() {
         "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
       borderColor: "bg-yellow-500",
       iconBgColor: "bg-yellow-400/20",
+      hoverBorderColor: "hover:border-[#FACC15]",
     },
     {
       icon: "network",
@@ -148,6 +153,7 @@ export default function UseCasesSection() {
         "Deploy workloads closest to users or data sources for optimal performance, reducing latency and improving user experience across global operations.",
       borderColor: "bg-indigo-500",
       iconBgColor: "bg-indigo-400/20",
+      hoverBorderColor: "hover:border-[#818CF8]",
     },
   ];
 
@@ -167,22 +173,22 @@ export default function UseCasesSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold mb-4">
-            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">
+            <span className="bg-gradient-to-r from-[#667EEA] to-[#764BA2] bg-clip-text text-transparent">
               Use Cases
             </span>
           </h2>
-          <p className="max-w-2xl mx-auto text-xl text-white font-normal">
+          <p className="max-w-2xl mx-auto text-lg sm:text-xl text-[#D1D5DB] font-normal px-4">
             Discover how organizations leverage KubeStellar for their
             multi-cluster needs.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {useCases.map((useCase, index) => (
             <div
               key={index}
-              className="group relative rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 hover:border-gray-500 hover:shadow-2xl hover:shadow-gray-900/50 hover:-translate-y-2 hover:scale-105 cursor-pointer w-96 h-[280px] bg-gray-800 z-10"
+              className={`group relative rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 ${useCase.hoverBorderColor} hover:shadow-2xl hover:shadow-gray-900/50 hover:-translate-y-2 hover:scale-105 cursor-pointer w-full max-w-sm h-[280px] bg-gray-800 z-10`}
             >
               {/* Top colored border */}
               <div className={`h-2 ${useCase.borderColor}`}></div>
@@ -196,20 +202,20 @@ export default function UseCasesSection() {
                 </div>
 
                 {/* Main heading */}
-                <h3 className="font-bold text-white mb-4 transition-colors duration-300 group-hover:text-blue-300 text-lg leading-7 w-80 h-7 overflow-hidden">
+                <h3 className="font-bold text-white mb-4 transition-colors duration-300 group-hover:text-blue-300 text-lg leading-7 overflow-hidden">
                   {useCase.title}
                 </h3>
 
                 {/* Description text */}
-                <p className="text-gray-300 font-normal mb-2 transition-colors duration-300 group-hover:text-gray-200 text-sm leading-5 w-80 h-24 overflow-hidden">
+                <p className="text-gray-300 font-normal mb-2 transition-colors duration-300 group-hover:text-gray-200 text-sm leading-5 overflow-hidden line-clamp-4">
                   {useCase.description}
                 </p>
 
                 {/* Learn more button */}
-                <button className="text-blue-400 font-medium hover:text-blue-300 transition-colors flex items-center text-sm w-80 h-5">
+                <button className="text-blue-400 font-medium hover:text-blue-300 transition-all duration-300 flex items-center text-sm hover:scale-110 transform origin-left">
                   Learn more
                   <svg
-                    className="ml-1 w-4 h-4"
+                    className="ml-1 w-4 h-4 transition-transform duration-300 hover:scale-125"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
