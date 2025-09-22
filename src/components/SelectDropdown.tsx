@@ -10,7 +10,6 @@ interface SelectDropdownProps {
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   options: { value: string; label: string }[];
   required?: boolean;
-  // optional sizing controls:
   widthClass?: string; // e.g. "w-64", "w-72", "w-full"
   widthPx?: number; // e.g. 280
 }
