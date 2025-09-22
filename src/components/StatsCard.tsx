@@ -25,21 +25,18 @@ const StatCard = ({
       border: "border-blue-500/30",
       text: "text-blue-400",
       glow: "rgba(59, 130, 246, 0.2)",
-      textColor: "#3B82F633",
     },
     purple: {
       gradient: "from-purple-500/20 to-purple-600/20",
       border: "border-purple-500/30",
       text: "text-purple-400",
       glow: "rgba(147, 51, 234, 0.2)",
-      textColor: "#FFF",
     },
     emerald: {
       gradient: "from-emerald-500/20 to-emerald-600/20",
       border: "border-emerald-500/30",
       text: "text-emerald-400",
       glow: "rgba(16, 185, 129, 0.2)",
-      textColor: "#10B98133",
     },
   };
 
@@ -71,7 +68,6 @@ const StatCard = ({
       style={
         {
           animationDelay,
-          backgroundColor: styles.gradient,
           "--glow-color": styles.glow,
         } as React.CSSProperties
       }

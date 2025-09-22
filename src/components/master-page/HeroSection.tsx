@@ -232,8 +232,8 @@ export default function HeroSection() {
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-[85vh] flex items-center">
       {/* Animated Background Universe */}
       <div className="absolute inset-0 z-0">
-        {/*!-- Floating Nebula Clouds*/}
-        {/* IMPLEMENTATION REMATINING WILL DO*/}
+        {/*!-- Floating Nebula Clouds */}
+        {/* IMPLEMENTATION REMAINING WILL DO*/}
         {/* Dynamic Star Field */}
         <div className="absolute inset-0 bg-[#0a0a0a]">
           <StarField density="high" showComets={true} cometCount={8} />
@@ -364,10 +364,10 @@ export default function HeroSection() {
                       <span className="text-gray-300 ml-4">
                         Analyzing cluster topology and workload patterns...
                       </span>
-                      <div className="loading-dots ml-2">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                      <div className="loading-dots ml-2" aria-label="Loading">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
                       </div>
                     </div>
 
