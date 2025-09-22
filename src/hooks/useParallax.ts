@@ -2,47 +2,69 @@ import { useEffect } from "react";
 
 const useParallax = (sceneSelector: string, containerSelector: string) => {
   useEffect(() => {
-    const sceneContainer = document.querySelector(
+    const sceneContainers = document.querySelectorAll(
       containerSelector
-    ) as HTMLElement;
-    const missionControlScene = document.querySelector(
+    ) as NodeListOf<HTMLElement>;
+    const missionControlScenes = document.querySelectorAll(
       sceneSelector
-    ) as HTMLElement;
+    ) as NodeListOf<HTMLElement>;
 
-    if (sceneContainer && missionControlScene) {
-      setTimeout(() => {
-        sceneContainer.style.transform =
-          "perspective(1000px) rotateY(3deg) rotateX(2deg) translateZ(0)";
-        sceneContainer.style.opacity = "1";
-      }, 500);
+    if (sceneContainers.length > 0 && missionControlScenes.length > 0) {
+      missionControlScenes.forEach((missionControlScene, index) => {
+        const sceneContainer = sceneContainers[index];
 
-      const handleMouseMove = (e: MouseEvent) => {
-        const rect = missionControlScene.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+        if (sceneContainer && missionControlScene) {
+          setTimeout(() => {
+            sceneContainer.style.transform =
+              "perspective(1000px) rotateY(3deg) rotateX(2deg) translateZ(0)";
+            sceneContainer.style.opacity = "1";
+          }, 500);
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+          const handleMouseMove = (e: MouseEvent) => {
+            const rect = missionControlScene.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-        const rotateY = (x - centerX) / 40;
-        const rotateX = (centerY - y) / 40;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
 
-        sceneContainer.style.transition = "transform 0.1s ease-out";
-        sceneContainer.style.transform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateZ(10px)`;
-      };
+            const rotateY = (x - centerX) / 40;
+            const rotateX = (centerY - y) / 40;
 
-      const handleMouseLeave = () => {
-        sceneContainer.style.transition = "transform 0.5s ease-out";
-        sceneContainer.style.transform =
-          "perspective(1000px) rotateY(3deg) rotateX(2deg) translateZ(0)";
-      };
+            sceneContainer.style.transition = "transform 0.1s ease-out";
+            sceneContainer.style.transform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateZ(10px)`;
+          };
 
-      missionControlScene.addEventListener("mousemove", handleMouseMove);
-      missionControlScene.addEventListener("mouseleave", handleMouseLeave);
+          const handleMouseLeave = () => {
+            sceneContainer.style.transition = "transform 0.5s ease-out";
+            sceneContainer.style.transform =
+              "perspective(1000px) rotateY(3deg) rotateX(2deg) translateZ(0)";
+          };
+
+          missionControlScene.addEventListener("mousemove", handleMouseMove);
+          missionControlScene.addEventListener("mouseleave", handleMouseLeave);
+
+          const cleanup = () => {
+            missionControlScene.removeEventListener(
+              "mousemove",
+              handleMouseMove
+            );
+            missionControlScene.removeEventListener(
+              "mouseleave",
+              handleMouseLeave
+            );
+          };
+
+          (missionControlScene as any).__cleanup__ = cleanup;
+        }
+      });
 
       return () => {
-        missionControlScene.removeEventListener("mousemove", handleMouseMove);
-        missionControlScene.removeEventListener("mouseleave", handleMouseLeave);
+        missionControlScenes.forEach(missionControlScene => {
+          if ((missionControlScene as any).__cleanup__) {
+            (missionControlScene as any).__cleanup__();
+          }
+        });
       };
     }
   }, [sceneSelector, containerSelector]);
