@@ -18,7 +18,7 @@ export default function HowItWorksSection() {
       <StarField density="medium" showComets={true} cometCount={3} />
 
       {/* Grid lines background */}
-      <GridLines className="opacity-40"/>
+      <GridLines className="opacity-20"/>
 
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-blue-500/10 to-transparent"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
