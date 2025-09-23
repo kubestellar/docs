@@ -44,15 +44,16 @@ export default function GridBackground({
       pattern.setAttribute("height", spacing.toString());
       pattern.setAttribute("patternUnits", "userSpaceOnUse");
 
-if (animated) {
-  const animateTransform = document.createElementNS("http://www.w3.org/2000/svg", "animateTransform");
-  animateTransform.setAttribute("attributeName", "patternTransform");
-  animateTransform.setAttribute("type", "translate");
-  animateTransform.setAttribute("values", `0,0; ${spacing},0`);
-  animateTransform.setAttribute("dur", "0.7s");
-  animateTransform.setAttribute("repeatCount", "indefinite");
-  pattern.appendChild(animateTransform);
-}
+      if (animated) {
+        const animateTransform = document.createElementNS("http://www.w3.org/2000/svg", "animateTransform");
+        animateTransform.setAttribute("attributeName", "patternTransform");
+        animateTransform.setAttribute("type", "translate");
+        animateTransform.setAttribute("values", `0,0; ${spacing},${spacing}`);
+        animateTransform.setAttribute("dur", "0.6s");
+        animateTransform.setAttribute("repeatCount", "indefinite");
+        pattern.appendChild(animateTransform);
+      }
+
       // Vertical line
       const verticalLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
       verticalLine.setAttribute("x1", "0");
@@ -97,6 +98,7 @@ if (animated) {
     <div
       ref={containerRef}
       className={`absolute inset-0 pointer-events-none ${className}`}
+      style={{ width: '100vw', height: '100vh' }}
     />
   );
 }
