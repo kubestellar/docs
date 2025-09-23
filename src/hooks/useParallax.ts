@@ -1,13 +1,16 @@
 import { useEffect } from "react";
 
+type HTMLElementWithCleanup = HTMLElement & {
+  __cleanup__?: () => void;
+};
+
 const useParallax = (sceneSelector: string, containerSelector: string) => {
   useEffect(() => {
     const sceneContainers = document.querySelectorAll(
       containerSelector
     ) as NodeListOf<HTMLElement>;
-    const missionControlScenes = document.querySelectorAll(
-      sceneSelector
-    ) as NodeListOf<HTMLElement>;
+    const missionControlScenes: NodeListOf<HTMLElementWithCleanup> =
+      document.querySelectorAll(sceneSelector);
 
     if (sceneContainers.length > 0 && missionControlScenes.length > 0) {
       missionControlScenes.forEach((missionControlScene, index) => {
@@ -55,14 +58,14 @@ const useParallax = (sceneSelector: string, containerSelector: string) => {
             );
           };
 
-          (missionControlScene as any).__cleanup__ = cleanup;
+          missionControlScene.__cleanup__ = cleanup;
         }
       });
 
       return () => {
         missionControlScenes.forEach(missionControlScene => {
-          if ((missionControlScene as any).__cleanup__) {
-            (missionControlScene as any).__cleanup__();
+          if (missionControlScene.__cleanup__) {
+            missionControlScene.__cleanup__();
           }
         });
       };
