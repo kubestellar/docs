@@ -4,87 +4,75 @@ import { useEffect, useRef } from "react";
 
 interface GridLinesProps {
   className?: string;
-  gridSize?: number;
+  horizontalLines?: number;
+  verticalLines?: number;
   strokeColor?: string;
   strokeOpacity?: number;
   strokeWidth?: number;
-  speedX?: number;
-  speedY?: number;
 }
 
 export default function GridLines({
   className = "",
-  gridSize = 50,
   strokeColor = "#6366F1",
+  horizontalLines = 20,
+  verticalLines = 20,
   strokeOpacity = 0.2,
   strokeWidth = 0.5,
-  speedX = 0.1,
-  speedY = 0.1,
 }: GridLinesProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const gridContainer = containerRef.current;
+    if (!gridContainer) return;
 
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    gridContainer.innerHTML = "";
+    const gridSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    gridSvg.setAttribute("width", "100%");
+    gridSvg.setAttribute("height", "100%");
+    gridSvg.style.position = "absolute";
+    gridSvg.style.top = "0";
+    gridSvg.style.left = "0";
 
-    let animationFrameId: number;
-
-    const resizeCanvas = () => {
-      const { devicePixelRatio: ratio = 1 } = window;
-      const rect = canvas.getBoundingClientRect();
-      canvas.width = rect.width * ratio;
-      canvas.height = rect.height * ratio;
-      ctx.scale(ratio, ratio);
-    };
-
-    const drawGrid = () => {
-      const rect = canvas.getBoundingClientRect();
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.strokeStyle = strokeColor;
-      ctx.globalAlpha = strokeOpacity;
-      ctx.lineWidth = strokeWidth;
-
-      const offsetX = (Date.now() * speedX) % gridSize;
-      const offsetY = (Date.now() * speedY) % gridSize;
-
-      for (let x = offsetX; x < rect.width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, rect.height);
-        ctx.stroke();
+    if (horizontalLines > 0) {
+      const hSpacing = 100 / horizontalLines;
+      for (let i = 0; i < horizontalLines; i++) {
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", "0");
+        line.setAttribute("y1", `${i * hSpacing}%`);
+        line.setAttribute("x2", "100%");
+        line.setAttribute("y2", `${i * hSpacing}%`);
+        line.setAttribute("stroke", strokeColor);
+        line.setAttribute("stroke-width", String(strokeWidth));
+        line.setAttribute("stroke-opacity", String(strokeOpacity));
+        line.style.animation = `gridPulse ${3 + i % 5}s infinite alternate ease-in-out`;
+        line.style.animationDelay = `${i * 0.2}s`;
+        gridSvg.appendChild(line);
       }
+    }
 
-      for (let y = offsetY; y < rect.height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(rect.width, y);
-        ctx.stroke();
+    if (verticalLines > 0) {
+      const vSpacing = 100 / verticalLines;
+      for (let i = 0; i < verticalLines; i++) {
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", `${i * vSpacing}%`);
+        line.setAttribute("y1", "0");
+        line.setAttribute("x2", `${i * vSpacing}%`);
+        line.setAttribute("y2", "100%");
+        line.setAttribute("stroke", strokeColor);
+        line.setAttribute("stroke-width", String(strokeWidth));
+        line.setAttribute("stroke-opacity", String(strokeOpacity));
+        line.style.animation = `gridPulse ${3 + (i % 5)}s infinite alternate ease-in-out`;
+        line.style.animationDelay = `${i * 0.2}s`;
+        gridSvg.appendChild(line);
       }
-    };
+    }
+    gridContainer.appendChild(gridSvg);
 
-    const animate = () => {
-      drawGrid();
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    resizeCanvas();
-    animate();
-
-    window.addEventListener("resize", resizeCanvas);
-
-    return () => {
-      window.removeEventListener("resize", resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [gridSize, strokeColor, strokeOpacity, strokeWidth, speedX, speedY]);
+  }, [horizontalLines, verticalLines, strokeColor, strokeWidth, strokeOpacity]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={`absolute inset-0 pointer-events-none w-full h-full ${className}`}
-    />
+    <div
+      ref={containerRef}
+      className={`absolute inset-0 pointer-events-none ${className}`} />
   );
 }

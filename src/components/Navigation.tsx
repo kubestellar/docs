@@ -106,7 +106,7 @@ export default function Navigation() {
       />
 
       {/* Grid lines background */}
-      <GridLines className="opacity-10" />
+      <GridLines horizontalLines={20} verticalLines={20} className="opacity-10" />
      
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
