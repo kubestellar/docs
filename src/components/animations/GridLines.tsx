@@ -27,11 +27,12 @@ export default function GridLines({
 
     gridContainer.innerHTML = "";
     const gridSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    gridSvg.setAttribute("width", "100%");
-    gridSvg.setAttribute("height", "100%");
+    gridSvg.setAttribute("width", "calc(100% + 100px)");
+    gridSvg.setAttribute("height", "calc(100% + 100px)");
     gridSvg.style.position = "absolute";
     gridSvg.style.top = "0";
     gridSvg.style.left = "0";
+    gridSvg.style.animation = `move-diagonal 20s linear infinite`;
 
     if (horizontalLines > 0) {
       const hSpacing = 100 / horizontalLines;
