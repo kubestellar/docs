@@ -153,7 +153,7 @@ body {
   }
 }
 
-@keyframes move-vertical {
+@keyframes move-diagonal {
 
   from {
     transform: translate(-100px, -100px);
