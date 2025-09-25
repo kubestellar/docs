@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import StarField from "../StarField";
+import GridBackground from "../GridBackground";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -80,6 +81,8 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
 
       // Hide success message after 8 seconds
       setTimeout(() => setShowSuccess(false), 8000);
+
+
     } catch (error) {
       console.error("Error submitting form:", error);
       alert(
@@ -89,58 +92,6 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
       setIsSubmitting(false);
     }
   };
-  useEffect(() => {
-    const createGrid = (container: HTMLElement) => {
-      if (!container) return;
-      container.innerHTML = "";
-
-      const gridSvg = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg"
-      );
-      gridSvg.setAttribute("width", "100%");
-      gridSvg.setAttribute("height", "100%");
-      gridSvg.style.position = "absolute";
-      gridSvg.style.top = "0";
-      gridSvg.style.left = "0";
-
-      for (let i = 0; i < 8; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", "0");
-        line.setAttribute("y1", `${i * 12}%`);
-        line.setAttribute("x2", "100%");
-        line.setAttribute("y2", `${i * 12}%`);
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      for (let i = 0; i < 8; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", `${i * 12}%`);
-        line.setAttribute("y1", "0");
-        line.setAttribute("x2", `${i * 12}%`);
-        line.setAttribute("y2", "100%");
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      container.appendChild(gridSvg);
-    };
-
-    const gridContainer = document.getElementById("grid-lines-contact");
-
-    if (gridContainer) createGrid(gridContainer);
-  }, []);
 
   return (
     <section
@@ -153,11 +104,16 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
       {/* Starfield background */}
       <StarField density="medium" showComets={true} cometCount={4} />
 
-      {/* Grid lines background */}
-      <div
-        id="grid-lines-contact"
-        className="absolute inset-0 opacity-20"
-      ></div>
+{/* Grid lines background - consistent with other sections */}
+<GridBackground
+  color="#6366F1"
+  opacity={0.15}
+  strokeWidth={0.3}
+  spacing={60}
+  animated={true}
+  className="absolute inset-0"
+/>
+
 
       {/* Background elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -587,9 +543,9 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                       </div>
                       <div className="ml-3">
                         <p className="text-sm font-medium text-green-300">
-                          Your email will be sent to the KubeStellar development
-                          mailing list. Please check your email client to
-                          complete sending!
+                          Your email will be sent to the KubeStellar development mailing list.
+                          Please check your email client to complete sending!
+
                         </p>
                       </div>
                     </div>
