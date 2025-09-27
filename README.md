@@ -123,7 +123,7 @@ Get instant access to our documents and meeting invites at **[kubestellar.io/joi
 
 ### Communication Channels
 
-- **💬 Slack**: Join [`#kubestellar-dev`](https://kubernetes.slack.com/archives/C058SUSL5AA) in the [Kubernetes Slack workspace](https://communityinviter.com/apps/kubernetes/community)
+- **💬 Slack**: Join [`#kubestellar-dev`](https://cloud-native.slack.com/archives/C097094RZ3M) in the [CNCF Slack workspace](https://communityinviter.com/apps/cloud-native/cncf)
 - **📧 Mailing Lists**:
   - [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) - Development discussions
   - [kubestellar-users](https://groups.google.com/g/kubestellar-users) - User discussions and support
