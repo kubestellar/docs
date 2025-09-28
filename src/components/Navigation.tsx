@@ -3,13 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-<<<<<<< HEAD
 import { GridLines, StarField} from "./index";
-=======
-import StarField from "./animations/StarField";
-import GridLines from "./animations/GridLines";
-import MovingGridLines from "./animations/MovingGridLines";
->>>>>>> d0a9314 (improvements, testing pending)
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,13 +72,14 @@ export default function Navigation() {
               menu.style.display = "none";
             }
           });
+          setActiveDropdown(null);
         }
       });
     };
 
     initDropdowns();
   }, []);
-  
+
   return (
     <nav className="fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-md border-b border-gray-700/50 transition-all duration-300">
       {/* Dark base background */}

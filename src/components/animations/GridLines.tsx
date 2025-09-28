@@ -94,7 +94,10 @@ export default function GridLines({
     <div
       ref={containerRef}
       className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}
+<<<<<<< HEAD
       style={{ opacity }}
+=======
+>>>>>>> 6a10a0c (lint and format)
     />
   );
 }
