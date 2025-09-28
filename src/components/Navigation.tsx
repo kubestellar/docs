@@ -72,7 +72,6 @@ export default function Navigation() {
               menu.style.display = "none";
             }
           });
-          setActiveDropdown(null);
         }
       });
     };
