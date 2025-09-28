@@ -9,6 +9,7 @@ interface GridLinesProps {
   strokeColor?: string;
   strokeOpacity?: number;
   strokeWidth?: number;
+  speed?: number;
 }
 
 export default function GridLines({
@@ -18,6 +19,7 @@ export default function GridLines({
   verticalLines = 20,
   strokeOpacity = 0.2,
   strokeWidth = 0.5,
+  speed = 5,
 }: GridLinesProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +34,7 @@ export default function GridLines({
     gridSvg.style.position = "absolute";
     gridSvg.style.top = "0";
     gridSvg.style.left = "0";
-    gridSvg.style.animation = `move-diagonal 20s linear infinite`;
+    gridSvg.style.animation = `move-diagonal ${speed}s linear infinite`;
 
     if (horizontalLines > 0) {
       const hSpacing = 100 / horizontalLines;
@@ -69,11 +71,11 @@ export default function GridLines({
     }
     gridContainer.appendChild(gridSvg);
 
-  }, [horizontalLines, verticalLines, strokeColor, strokeWidth, strokeOpacity]);
+  }, [horizontalLines, verticalLines, strokeColor, strokeWidth, strokeOpacity, speed]);
 
   return (
     <div
       ref={containerRef}
-      className={`absolute inset-0 pointer-events-none ${className}`} />
+      className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`} />
   );
 }

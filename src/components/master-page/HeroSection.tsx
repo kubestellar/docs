@@ -195,7 +195,7 @@ export default function HeroSection() {
 
         {/* Interactive Grid Network */}
         <div className="absolute inset-0">
-         <GridLines className="opacity-20" />
+         <GridLines verticalLines={15} horizontalLines={18} className="opacity-20" />
         </div>
 
         {/* Floating Data Particles */}
