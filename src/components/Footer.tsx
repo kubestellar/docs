@@ -47,7 +47,11 @@ export default function Footer() {
       <StarField density="low" showComets={true} cometCount={2} />
 
       {/* Grid lines background */}
-      <GridLines horizontalLines={21} verticalLines={15} className="opacity-20" />
+      <GridLines
+        horizontalLines={21}
+        verticalLines={15}
+        className="opacity-20"
+      />
 
       {/* Background elements */}
       <div className="absolute inset-0 z-0">

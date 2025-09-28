@@ -50,9 +50,12 @@ export default function Navigation() {
           container.addEventListener("mouseleave", () => {
             timeoutRef.current = setTimeout(() => {
               menu.style.display = "none";
-              if (activeDropdown === menu) {
-                setActiveDropdown(null);
-              }
+              setActiveDropdown(prevActive => {
+                if (prevActive === menu) {
+                  return null;
+                }
+                return prevActive;
+              });
             }, 100);
           });
 
@@ -65,9 +68,7 @@ export default function Navigation() {
 
           menu.addEventListener("mouseleave", () => {
             menu.style.display = "none";
-            if (activeDropdown === menu) {
-              setActiveDropdown(null);
-            }
+            setActiveDropdown(null);
           });
         }
       });
@@ -83,15 +84,14 @@ export default function Navigation() {
               menu.style.display = "none";
             }
           });
+          setActiveDropdown(null);
         }
       });
     };
 
-    
-    
     initDropdowns();
   }, []);
-  
+
   return (
     <nav className="fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-md border-b border-gray-700/50 transition-all duration-300">
       {/* Dark base background */}
@@ -108,7 +108,6 @@ export default function Navigation() {
       {/* Grid lines background */}
       {/* <GridLines horizontalLines={20} verticalLines={20} className="opacity-10" /> */}
       <GridLines className="opacity-20" />
-     
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between h-16 items-center">
@@ -568,7 +567,7 @@ export default function Navigation() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth="2"
                     d="M19 9l-7 7-7-7"
                   />
                 </svg>

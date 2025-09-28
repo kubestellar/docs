@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import StarField from "../animations/StarField";
 import GridLines from "../animations/GridLines";
 
@@ -103,7 +103,11 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
       <StarField density="medium" showComets={true} cometCount={4} />
 
       {/* Grid lines background */}
-      <GridLines horizontalLines={21} verticalLines={15} className="opacity-20"/>
+      <GridLines
+        horizontalLines={21}
+        verticalLines={15}
+        className="opacity-20"
+      />
 
       {/* Background elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">

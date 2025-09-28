@@ -89,7 +89,6 @@ const statsData: StatData[] = [
 
 export default function HeroSection() {
   useEffect(() => {
-
     // Enhanced typing animation for terminal
     const initTypingAnimation = () => {
       const typingText = document.querySelector(".typing-text") as HTMLElement;
@@ -195,7 +194,11 @@ export default function HeroSection() {
 
         {/* Interactive Grid Network */}
         <div className="absolute inset-0">
-         <GridLines verticalLines={15} horizontalLines={18} className="opacity-20" />
+          <GridLines
+            verticalLines={15}
+            horizontalLines={18}
+            className="opacity-20"
+          />
         </div>
 
         {/* Floating Data Particles */}

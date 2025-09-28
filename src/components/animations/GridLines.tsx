@@ -28,7 +28,10 @@ export default function GridLines({
     if (!gridContainer) return;
 
     gridContainer.innerHTML = "";
-    const gridSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    const gridSvg = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "svg"
+    );
     gridSvg.setAttribute("width", "calc(100% + 100px)");
     gridSvg.setAttribute("height", "calc(100% + 100px)");
     gridSvg.style.position = "absolute";
@@ -39,7 +42,10 @@ export default function GridLines({
     if (horizontalLines > 0) {
       const hSpacing = 100 / horizontalLines;
       for (let i = 0; i < horizontalLines; i++) {
-        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        const line = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "line"
+        );
         line.setAttribute("x1", "0");
         line.setAttribute("y1", `${i * hSpacing}%`);
         line.setAttribute("x2", "100%");
@@ -47,7 +53,7 @@ export default function GridLines({
         line.setAttribute("stroke", strokeColor);
         line.setAttribute("stroke-width", String(strokeWidth));
         line.setAttribute("stroke-opacity", String(strokeOpacity));
-        line.style.animation = `gridPulse ${3 + i % 5}s infinite alternate ease-in-out`;
+        line.style.animation = `gridPulse ${3 + (i % 5)}s infinite alternate ease-in-out`;
         line.style.animationDelay = `${i * 0.2}s`;
         gridSvg.appendChild(line);
       }
@@ -56,7 +62,10 @@ export default function GridLines({
     if (verticalLines > 0) {
       const vSpacing = 100 / verticalLines;
       for (let i = 0; i < verticalLines; i++) {
-        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        const line = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "line"
+        );
         line.setAttribute("x1", `${i * vSpacing}%`);
         line.setAttribute("y1", "0");
         line.setAttribute("x2", `${i * vSpacing}%`);
@@ -70,12 +79,19 @@ export default function GridLines({
       }
     }
     gridContainer.appendChild(gridSvg);
-
-  }, [horizontalLines, verticalLines, strokeColor, strokeWidth, strokeOpacity, speed]);
+  }, [
+    horizontalLines,
+    verticalLines,
+    strokeColor,
+    strokeWidth,
+    strokeOpacity,
+    speed,
+  ]);
 
   return (
     <div
       ref={containerRef}
-      className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`} />
+      className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}
+    />
   );
 }

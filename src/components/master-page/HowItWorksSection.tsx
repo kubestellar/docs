@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
 import StarField from "../animations/StarField";
 import GridLines from "../animations/GridLines";
 
 export default function HowItWorksSection() {
-
   return (
     <section
       id="how-it-works"
@@ -18,7 +16,11 @@ export default function HowItWorksSection() {
       <StarField density="medium" showComets={true} cometCount={3} />
 
       {/* Grid lines background */}
-      <GridLines horizontalLines={21} verticalLines={18} className="opacity-20"/>
+      <GridLines
+        horizontalLines={21}
+        verticalLines={18}
+        className="opacity-20"
+      />
 
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-blue-500/10 to-transparent"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

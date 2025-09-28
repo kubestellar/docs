@@ -6,7 +6,6 @@ import GridLines from "../animations/GridLines";
 
 export default function AboutSection() {
   useEffect(() => {
-
     // Feature cards animation
     const initFeatureCards = () => {
       const featureCards = document.querySelectorAll(".feature-card");
@@ -103,7 +102,11 @@ export default function AboutSection() {
       <StarField density="medium" showComets={true} cometCount={3} />
 
       {/* Grid lines background */}
-      <GridLines horizontalLines={21} verticalLines={15} className="opacity-20" />
+      <GridLines
+        horizontalLines={21}
+        verticalLines={15}
+        className="opacity-20"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">

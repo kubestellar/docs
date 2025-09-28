@@ -1,7 +1,7 @@
 "use client";
 
 import StarField from "../animations/StarField";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import GridLines from "../animations/GridLines";
 
 const Icon = ({
@@ -43,7 +43,6 @@ export default function GetStartedSection() {
     }
   };
 
-
   return (
     <section
       id="get-started"
@@ -55,7 +54,11 @@ export default function GetStartedSection() {
       <StarField density="medium" showComets={true} cometCount={3} />
 
       {/* Gridlines background */}
-      <GridLines verticalLines={20} horizontalLines={33} className="opacity-20"/>
+      <GridLines
+        verticalLines={20}
+        horizontalLines={33}
+        className="opacity-20"
+      />
 
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-2/5 left-2/11 w-[6rem] h-[6rem] bg-purple-500/10 rounded-full blur-[120px]"></div>

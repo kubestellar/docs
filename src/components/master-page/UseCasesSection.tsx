@@ -1,11 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
 import StarField from "../animations/StarField";
 import GridLines from "../animations/GridLines";
 
 export default function UseCasesSection() {
-
   const getIcon = (iconType: string) => {
     switch (iconType) {
       case "globe":
@@ -190,7 +188,11 @@ export default function UseCasesSection() {
       <StarField density="medium" showComets={true} cometCount={4} />
 
       {/* Grid lines background */}
-      <GridLines horizontalLines={18} verticalLines={15} className="opacity-20"/>
+      <GridLines
+        horizontalLines={18}
+        verticalLines={15}
+        className="opacity-20"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-12">
