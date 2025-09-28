@@ -8,9 +8,6 @@ import GridLines from "./animations/GridLines";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<HTMLElement | null>(
-    null
-  );
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -44,18 +41,11 @@ export default function Navigation() {
             });
 
             menu.style.display = "block";
-            setActiveDropdown(menu);
           });
 
           container.addEventListener("mouseleave", () => {
             timeoutRef.current = setTimeout(() => {
               menu.style.display = "none";
-              setActiveDropdown(prevActive => {
-                if (prevActive === menu) {
-                  return null;
-                }
-                return prevActive;
-              });
             }, 100);
           });
 
@@ -68,7 +58,6 @@ export default function Navigation() {
 
           menu.addEventListener("mouseleave", () => {
             menu.style.display = "none";
-            setActiveDropdown(null);
           });
         }
       });
@@ -84,7 +73,6 @@ export default function Navigation() {
               menu.style.display = "none";
             }
           });
-          setActiveDropdown(null);
         }
       });
     };
