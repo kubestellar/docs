@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import StarField from "../animations/StarField";
+import { GridLines, StarField } from "../animations";
 import StatCard from "../StatsCard";
-import GridLines from "../animations/GridLines";
 
 interface StatData {
   id: number;

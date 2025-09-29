@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import StarField from "../animations/StarField";
-import GridLines from "../animations/GridLines";
+import { GridLines, StarField } from "../animations";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({

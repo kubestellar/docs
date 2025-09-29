@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import StarField from "./animations/StarField";
-import GridLines from "./animations/GridLines";
+import { StarField, GridLines } from "./animations";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -1,8 +1,7 @@
 "use client";
 
-import StarField from "../animations/StarField";
+import { GridLines, StarField } from "../animations";
 import { useState } from "react";
-import GridLines from "../animations/GridLines";
 
 const Icon = ({
   path,
