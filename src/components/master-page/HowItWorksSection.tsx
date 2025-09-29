@@ -19,7 +19,6 @@ export default function HowItWorksSection() {
       <GridLines
         horizontalLines={21}
         verticalLines={18}
-        className="opacity-20"
       />
 
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-blue-500/10 to-transparent"></div>

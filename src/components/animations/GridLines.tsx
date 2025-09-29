@@ -10,6 +10,7 @@ interface GridLinesProps {
   strokeOpacity?: number;
   strokeWidth?: number;
   speed?: number;
+  opacity?: number;
 }
 
 export default function GridLines({
@@ -20,6 +21,7 @@ export default function GridLines({
   strokeOpacity = 0.2,
   strokeWidth = 0.5,
   speed = 5,
+  opacity = 0.2,
 }: GridLinesProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -92,6 +94,7 @@ export default function GridLines({
     <div
       ref={containerRef}
       className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}
+      style={{ opacity }}
     />
   );
 }

@@ -57,7 +57,6 @@ export default function GetStartedSection() {
       <GridLines
         verticalLines={20}
         horizontalLines={33}
-        className="opacity-20"
       />
 
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">

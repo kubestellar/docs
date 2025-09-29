@@ -106,7 +106,6 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
       <GridLines
         horizontalLines={21}
         verticalLines={15}
-        className="opacity-20"
       />
 
       {/* Background elements */}

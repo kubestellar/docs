@@ -191,7 +191,6 @@ export default function UseCasesSection() {
       <GridLines
         horizontalLines={18}
         verticalLines={15}
-        className="opacity-20"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

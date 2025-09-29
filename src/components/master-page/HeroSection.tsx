@@ -197,7 +197,6 @@ export default function HeroSection() {
           <GridLines
             verticalLines={15}
             horizontalLines={18}
-            className="opacity-20"
           />
         </div>
 

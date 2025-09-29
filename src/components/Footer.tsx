@@ -50,7 +50,6 @@ export default function Footer() {
       <GridLines
         horizontalLines={21}
         verticalLines={15}
-        className="opacity-20"
       />
 
       {/* Background elements */}
