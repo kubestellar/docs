@@ -1,6 +1,6 @@
 "use client";
 
-import { GridLines, StarField } from "../animations";
+import { GridLines, StarField} from "../index";
 
 export default function UseCasesSection() {
   const getIcon = (iconType: string) => {

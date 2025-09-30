@@ -1,6 +1,6 @@
 "use client";
 
-import { GridLines, StarField } from "../animations";
+import { GridLines, StarField} from "../index";
 import { useState } from "react";
 
 const Icon = ({

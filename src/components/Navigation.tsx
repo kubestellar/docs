@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { StarField, GridLines } from "./animations";
+import { GridLines, StarField} from "./index";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,7 +93,6 @@ export default function Navigation() {
       />
 
       {/* Grid lines background */}
-      {/* <GridLines horizontalLines={20} verticalLines={20} className="opacity-10" /> */}
       <GridLines />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

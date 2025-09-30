@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { GridLines, StarField } from "../animations";
+import { GridLines, StarField} from "../index";
 import StatCard from "../StatsCard";
 
 interface StatData {
