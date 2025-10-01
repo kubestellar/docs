@@ -1,93 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
 import Image from "next/image";
 import StarField from "./StarField";
+import GridBackground from "./GridBackground";
 
 export default function Footer() {
-  useEffect(() => {
-    const createGrid = (container: HTMLElement) => {
-      if (!container) return;
-      container.innerHTML = "";
-
-      const gridSvg = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg"
-      );
-      gridSvg.setAttribute("width", "100%");
-      gridSvg.setAttribute("height", "100%");
-      gridSvg.style.position = "absolute";
-      gridSvg.style.top = "0";
-      gridSvg.style.left = "0";
-
-      for (let i = 0; i < 6; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", "0");
-        line.setAttribute("y1", `${i * 16}%`);
-        line.setAttribute("x2", "100%");
-        line.setAttribute("y2", `${i * 16}%`);
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.2");
-        gridSvg.appendChild(line);
-      }
-
-      for (let i = 0; i < 8; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", `${i * 12}%`);
-        line.setAttribute("y1", "0");
-        line.setAttribute("x2", `${i * 12}%`);
-        line.setAttribute("y2", "100%");
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.2");
-        gridSvg.appendChild(line);
-      }
-
-      container.appendChild(gridSvg);
-    };
-
-    // Back to top functionality
-    const initBackToTop = () => {
-      const backToTopButton = document.getElementById("back-to-top");
-      if (!backToTopButton) return;
-
-      const toggleButton = () => {
-        if (window.pageYOffset > 300) {
-          backToTopButton.style.opacity = "1";
-          backToTopButton.style.transform = "translateY(-30px)";
-        } else {
-          backToTopButton.style.opacity = "0";
-          backToTopButton.style.transform = "translateY(10px)";
-        }
-      };
-
-      window.addEventListener("scroll", toggleButton);
-
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // Initial check
-      toggleButton();
-    };
-
-    const gridContainer = document.getElementById("grid-lines-footer");
-
-    if (gridContainer) createGrid(gridContainer);
-
-    initBackToTop();
-  }, []);
-
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden pt-16 pb-8">
       {/* Dark base background */}
@@ -96,8 +13,15 @@ export default function Footer() {
       {/* Starfield background */}
       <StarField density="low" showComets={true} cometCount={2} />
 
-      {/* Grid lines background */}
-      <div id="grid-lines-footer" className="absolute inset-0 opacity-20"></div>
+      {/* Grid background */}
+      <GridBackground
+        color="#7c3aed"
+        opacity={0.1}
+        strokeWidth={0.5}
+        spacing={80}
+        animated={true}
+        className="absolute inset-0"
+      />
 
       {/* Background elements */}
       <div className="absolute inset-0 z-0">

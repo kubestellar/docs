@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import StarField from "./StarField";
+import GridBackground from "./GridBackground";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -85,58 +86,6 @@ export default function Navigation() {
         }
       });
     };
-
-    const createGrid = (container: HTMLElement) => {
-      if (!container) return;
-      container.innerHTML = "";
-
-      const gridSvg = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg"
-      );
-      gridSvg.setAttribute("width", "100%");
-      gridSvg.setAttribute("height", "100%");
-      gridSvg.style.position = "absolute";
-      gridSvg.style.top = "0";
-      gridSvg.style.left = "0";
-
-      for (let i = 0; i < 10; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", "0");
-        line.setAttribute("y1", `${i * 10}%`);
-        line.setAttribute("x2", "100%");
-        line.setAttribute("y2", `${i * 10}%`);
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      for (let i = 0; i < 10; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", `${i * 10}%`);
-        line.setAttribute("y1", "0");
-        line.setAttribute("x2", `${i * 10}%`);
-        line.setAttribute("y2", "100%");
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      container.appendChild(gridSvg);
-    };
-
-    const gridContainer = document.getElementById("grid-lines-nav");
-
-    if (gridContainer) createGrid(gridContainer);
-
     initDropdowns();
   }, []);
 
@@ -154,10 +103,14 @@ export default function Navigation() {
       />
 
       {/* Grid lines background */}
-      <div
-        id="grid-lines-nav"
-        className="absolute inset-0 opacity-10 z-[-1]"
-      ></div>
+      <GridBackground
+        color="#7c3aed"
+        opacity={0.15}
+        strokeWidth={0.3}
+        spacing={60}
+        animated={true}
+        className="absolute inset-0"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between h-16 items-center">
