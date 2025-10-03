@@ -62,7 +62,7 @@ export default function ProgramsPage() {
 
       {/* Hero Section */}
       <section className="relative min-h-[40vh] flex items-center justify-center z-10">
-        <div className="relative z-10 text-center px-4 pt-20 pb-8">
+        <div className="relative z-10 text-center px-4 pt-20 pb-2">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-shadow-lg">
             Join Our <span className="text-gradient">Mission</span>
           </h1>
