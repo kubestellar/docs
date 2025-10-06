@@ -11,6 +11,11 @@ export default function Navigation() {
     null
   );
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [githubStats, setGithubStats] = useState({
+    stars: "0",
+    forks: "0",
+    watchers: "0",
+  })
 
   useEffect(() => {
     // Initialize dropdowns functionality
@@ -85,6 +90,30 @@ export default function Navigation() {
         }
       });
     };
+
+    const fetchGithubStats = async () => {
+      try{
+        const response = await fetch("https://api.github.com/repos/kubestellar/kubestellar");
+        if (!response.ok) {
+          throw new Error("Network reposone was not okay");
+        }
+        const data = await response.json();
+        const formatNumber = (num: number): string => {
+          if(num >= 1000) {
+            return (num/1000).toFixed(1) + "K";
+          }
+          return num.toString();
+        };
+        setGithubStats({
+          stars: formatNumber(data.stargazers_count),
+          forks: formatNumber(data.forks_count),
+          watchers: formatNumber(data.subscribers_count),
+        });
+      } catch (err) {
+        console.error("Failed to fetch Github stats: ", err);
+      }
+    };
+    fetchGithubStats();
 
     const createGrid = (container: HTMLElement) => {
       if (!container) return;
@@ -642,7 +671,7 @@ export default function Navigation() {
                   </svg>
                   Star
                   <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
-                    12.3k
+                    {githubStats.stars}
                   </span>
                 </a>
                 <a
@@ -658,7 +687,7 @@ export default function Navigation() {
                   </svg>
                   Fork
                   <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
-                    2.1k
+                    {githubStats.forks}
                   </span>
                 </a>
                 <a
@@ -674,7 +703,7 @@ export default function Navigation() {
                   </svg>
                   Watch
                   <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
-                    350
+                    {githubStats.watchers}
                   </span>
                 </a>
               </div>
