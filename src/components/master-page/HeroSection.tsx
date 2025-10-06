@@ -285,7 +285,7 @@ export default function HeroSection() {
             <div className="heading-container space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none">
                 {/* First Line */}
-                <span className="block text-white mb-3 animate-text-reveal">
+                <span className="block text-white mb-3 animate-text-reveal pt-6">
                   <span className="text-gradient">Multi-Cluster</span>
                 </span>
 
