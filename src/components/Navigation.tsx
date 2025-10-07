@@ -7,85 +7,104 @@ import StarField from "./StarField";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<HTMLElement | null>(
-    null
-  );
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const navRef = useRef<HTMLElement>(null);
+
+  // Handle responsive behavior
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      if (!mobile && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+      if (mobile && activeDropdown) {
+        setActiveDropdown(null);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMenuOpen, activeDropdown]);
+
+  // Handle click outside to close dropdowns and mobile menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Toggle dropdown for both desktop and mobile
+  const toggleDropdown = (dropdownId: string) => {
+    setActiveDropdown(activeDropdown === dropdownId ? null : dropdownId);
+  };
+
+  // Handle mobile menu toggle
+  const toggleMobileMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setActiveDropdown(null);
+  };
 
   useEffect(() => {
-    // Initialize dropdowns functionality
-    const initDropdowns = () => {
-      const dropdownContainers =
-        document.querySelectorAll<HTMLElement>("[data-dropdown]");
+    // Handle keyboard navigation
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setActiveDropdown(null);
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  // Handle desktop hover for dropdowns (only on non-touch devices)
+  useEffect(() => {
+    if (isMobile) return;
+
+    const initDesktopDropdowns = () => {
+      const dropdownContainers = document.querySelectorAll<HTMLElement>("[data-dropdown]");
 
       dropdownContainers.forEach(container => {
-        const menu = container.querySelector<HTMLElement>(
-          "[data-dropdown-menu]"
-        );
+        const dropdownId = container.getAttribute('data-dropdown');
+        
+        const handleMouseEnter = () => {
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+          }
+          setActiveDropdown(dropdownId);
+        };
 
-        if (menu) {
-          container.addEventListener("mouseenter", () => {
-            if (timeoutRef.current) {
-              clearTimeout(timeoutRef.current);
-              timeoutRef.current = null;
-            }
+        const handleMouseLeave = () => {
+          timeoutRef.current = setTimeout(() => {
+            setActiveDropdown(null);
+          }, 150);
+        };
 
-            dropdownContainers.forEach(otherContainer => {
-              if (otherContainer !== container) {
-                const otherMenu = otherContainer.querySelector<HTMLElement>(
-                  "[data-dropdown-menu]"
-                );
+        container.addEventListener("mouseenter", handleMouseEnter);
+        container.addEventListener("mouseleave", handleMouseLeave);
 
-                if (otherMenu) {
-                  otherMenu.style.display = "none";
-                }
-              }
-            });
-
-            menu.style.display = "block";
-            setActiveDropdown(menu);
-          });
-
-          container.addEventListener("mouseleave", () => {
-            timeoutRef.current = setTimeout(() => {
-              menu.style.display = "none";
-              if (activeDropdown === menu) {
-                setActiveDropdown(null);
-              }
-            }, 100);
-          });
-
-          menu.addEventListener("mouseenter", () => {
-            if (timeoutRef.current) {
-              clearTimeout(timeoutRef.current);
-              timeoutRef.current = null;
-            }
-          });
-
-          menu.addEventListener("mouseleave", () => {
-            menu.style.display = "none";
-            if (activeDropdown === menu) {
-              setActiveDropdown(null);
-            }
-          });
-        }
-      });
-
-      // Close on Escape key
-      document.addEventListener("keydown", e => {
-        if (e.key === "Escape") {
-          dropdownContainers.forEach(container => {
-            const menu = container.querySelector(
-              "[data-dropdown-menu]"
-            ) as HTMLElement;
-            if (menu) {
-              menu.style.display = "none";
-            }
-          });
-        }
+        return () => {
+          container.removeEventListener("mouseenter", handleMouseEnter);
+          container.removeEventListener("mouseleave", handleMouseLeave);
+        };
       });
     };
 
+    initDesktopDropdowns();
+  }, [isMobile]);
+
+  useEffect(() => {
     const createGrid = (container: HTMLElement) => {
       if (!container) return;
       container.innerHTML = "";
@@ -134,14 +153,11 @@ export default function Navigation() {
     };
 
     const gridContainer = document.getElementById("grid-lines-nav");
-
     if (gridContainer) createGrid(gridContainer);
-
-    initDropdowns();
   }, []);
 
   return (
-    <nav className="fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-md border-b border-gray-700/50 transition-all duration-300">
+    <nav ref={navRef} className="fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-md border-b border-gray-700/50 transition-all duration-300">
       {/* Dark base background */}
       <div className="absolute inset-0 bg-[#0a0a0a]/90 z-[-3]"></div>
 
@@ -160,7 +176,7 @@ export default function Navigation() {
       ></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Left side: Logo */}
           <Link href="/" className="cursor-pointer">
             <div className="flex-shrink-0 cursor-pointer relative z-10">
@@ -169,19 +185,19 @@ export default function Navigation() {
                 alt="Kubestellar logo"
                 width={160}
                 height={40}
-                className="h-10 w-auto"
+                className="h-8 w-auto sm:h-10 lg:h-12 transition-all duration-300"
               />
             </div>
           </Link>
 
           {/* Center: Nav Links */}
-          <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex items-center space-x-8">
+          <div className="hidden lg:flex flex-1 justify-center">
+            <div className="flex items-center space-x-4 xl:space-x-8">
               {/* Docs Link */}
               <div className="relative group">
                 <a
                   href="#docs"
-                  className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 nav-link-hover"
+                  className="text-sm xl:text-base font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 nav-link-hover"
                 >
                   <div className="relative">
                     <svg
@@ -206,7 +222,7 @@ export default function Navigation() {
               <div className="relative group">
                 <a
                   href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
-                  className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20 transform nav-link-hover"
+                  className="text-sm xl:text-base font-medium text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-500/20 transform nav-link-hover"
                 >
                   <div className="relative">
                     <svg
@@ -235,13 +251,14 @@ export default function Navigation() {
               </div>
 
               {/* Contribute Dropdown */}
-              <div className="relative group" data-dropdown>
+              <div className="relative group" data-dropdown="contribute">
                 <button
                   type="button"
-                  className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-100 transform nav-link-hover"
+                  onClick={() => !isMobile && toggleDropdown('contribute')}
+                  className="text-sm xl:text-base font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-100 transform nav-link-hover"
                   data-dropdown-button
                   aria-haspopup="true"
-                  aria-expanded="false"
+                  aria-expanded={activeDropdown === 'contribute'}
                 >
                   <div className="relative">
                     <svg
@@ -281,9 +298,10 @@ export default function Navigation() {
                   </svg>
                 </button>
                 <div
-                  className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50"
+                  className={`absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 transform origin-top-left ${
+                    activeDropdown === 'contribute' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                  }`}
                   data-dropdown-menu
-                  style={{ display: "none" }}
                 >
                   <a
                     href="#join-in"
@@ -344,14 +362,16 @@ export default function Navigation() {
                   </a>
                 </div>
               </div>
+
               {/* Community Dropdown */}
-              <div className="relative group" data-dropdown>
+              <div className="relative group" data-dropdown="community">
                 <button
                   type="button"
-                  className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-100 transform nav-link-hover"
+                  onClick={() => !isMobile && toggleDropdown('community')}
+                  className="text-sm xl:text-base font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-100 transform nav-link-hover"
                   data-dropdown-button
                   aria-haspopup="true"
-                  aria-expanded="false"
+                  aria-expanded={activeDropdown === 'community'}
                 >
                   <div className="relative">
                     <svg
@@ -384,9 +404,10 @@ export default function Navigation() {
                   </svg>
                 </button>
                 <div
-                  className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50"
+                  className={`absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 transform origin-top-left ${
+                    activeDropdown === 'community' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                  }`}
                   data-dropdown-menu
-                  style={{ display: "none" }}
                 >
                   <a
                     href="#get-involved"
@@ -489,12 +510,13 @@ export default function Navigation() {
           </div>
 
           {/* Right side: Controls */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 lg:space-x-4">
             {/* Version Dropdown */}
-            <div className="relative group" data-dropdown>
+            <div className="relative group hidden md:block" data-dropdown="version">
               <button
+                onClick={() => toggleDropdown('version')}
                 data-dropdown-button
-                className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
+                className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-2 lg:px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
               >
                 3.8.1
                 <svg
@@ -513,7 +535,9 @@ export default function Navigation() {
               </button>
               <div
                 data-dropdown-menu
-                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+                className={`absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 transition-all duration-200 transform origin-top-right ${
+                  activeDropdown === 'version' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                }`}
               >
                 <a
                   href="#"
@@ -537,10 +561,11 @@ export default function Navigation() {
             </div>
 
             {/* Language Dropdown */}
-            <div className="relative group" data-dropdown>
+            <div className="relative group hidden lg:block" data-dropdown="language">
               <button
+                onClick={() => toggleDropdown('language')}
                 data-dropdown-button
-                className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-100 transform nav-link-hover"
+                className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-2 lg:px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-100 transform nav-link-hover"
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -572,7 +597,9 @@ export default function Navigation() {
               </button>
               <div
                 data-dropdown-menu
-                className="absolute right-0 mt-2 w-32 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+                className={`absolute right-0 mt-2 w-32 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 transition-all duration-200 transform origin-top-right ${
+                  activeDropdown === 'language' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                }`}
               >
                 <a
                   href="#"
@@ -596,10 +623,11 @@ export default function Navigation() {
             </div>
 
             {/* GitHub Dropdown */}
-            <div className="relative group" data-dropdown>
+            <div className="relative group hidden sm:block" data-dropdown="github">
               <button
+                onClick={() => toggleDropdown('github')}
                 data-dropdown-button
-                className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
+                className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-2 lg:px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
               >
                 <svg
                   className="w-4 h-4 mr-2"
@@ -624,7 +652,9 @@ export default function Navigation() {
               </button>
               <div
                 data-dropdown-menu
-                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+                className={`absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 transition-all duration-200 transform origin-top-right ${
+                  activeDropdown === 'github' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                }`}
               >
                 <a
                   href="https://github.com/kubestellar/kubestellar"
@@ -682,64 +712,152 @@ export default function Navigation() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700"
-              aria-label="Open menu"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden p-2 rounded-lg focus:outline-none hover:bg-gray-700/50 transition-all duration-300 text-gray-300 hover:text-white"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              onClick={toggleMobileMenu}
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
+              <div className="w-6 h-6 flex flex-col justify-center items-center relative">
+                <span
+                  className={`block h-0.5 w-6 bg-current transition-all duration-300 absolute ${
+                    isMenuOpen ? 'rotate-45' : '-translate-y-1.5'
+                  }`}
                 />
-              </svg>
+                <span
+                  className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
+                    isMenuOpen ? 'opacity-0' : 'opacity-100'
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 w-6 bg-current transition-all duration-300 absolute ${
+                    isMenuOpen ? '-rotate-45' : 'translate-y-1.5'
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
 
         {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a
-                href="#about"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+        <div
+          className={`lg:hidden absolute top-full left-0 w-full bg-gray-900/95 backdrop-blur-md border-b border-gray-700/50 transition-all duration-300 overflow-hidden ${
+            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="px-4 py-4 space-y-2">
+            {/* Mobile Docs Link */}
+            <a
+              href="#docs"
+              className="flex items-center px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-blue-400 hover:bg-blue-500/10 transition-all duration-200"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Docs
+            </a>
+
+            {/* Mobile Blog Link */}
+            <a
+              href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
+              className="flex items-center px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-purple-400 hover:bg-purple-500/10 transition-all duration-200"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              Blog
+            </a>
+
+            {/* Mobile Contribute Dropdown */}
+            <div className="space-y-1">
+              <button
+                onClick={() => toggleDropdown('mobile-contribute')}
+                className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-200"
               >
-                About
-              </a>
-              <a
-                href="#how-it-works"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                  Contribute
+                </div>
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    activeDropdown === 'mobile-contribute' ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-200 ${
+                  activeDropdown === 'mobile-contribute' ? 'max-h-48' : 'max-h-0'
+                }`}
               >
-                How It Works
-              </a>
-              <a
-                href="#use-cases"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                <div className="pl-12 space-y-1">
+                  <a href="#join-in" className="block px-4 py-2 text-sm text-gray-400 hover:text-emerald-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Join In</a>
+                  <Link href="/community-handbook" className="block px-4 py-2 text-sm text-gray-400 hover:text-emerald-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Contribute Handbook</Link>
+                  <a href="#security" className="block px-4 py-2 text-sm text-gray-400 hover:text-emerald-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Security</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Community Dropdown */}
+            <div className="space-y-1">
+              <button
+                onClick={() => toggleDropdown('mobile-community')}
+                className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
               >
-                Use Cases
-              </a>
-              <a
-                href="#get-started"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                <div className="flex items-center">
+                  <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  Community
+                </div>
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    activeDropdown === 'mobile-community' ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-200 ${
+                  activeDropdown === 'mobile-community' ? 'max-h-64' : 'max-h-0'
+                }`}
               >
-                Get Started
-              </a>
-              <a
-                href="#contact"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-              >
-                Contact
-              </a>
+                <div className="pl-12 space-y-1">
+                  <a href="#get-involved" className="block px-4 py-2 text-sm text-gray-400 hover:text-cyan-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Get Involved</a>
+                  <Link href="/programs" className="block px-4 py-2 text-sm text-gray-400 hover:text-cyan-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Programs</Link>
+                  <a href="#ladder" className="block px-4 py-2 text-sm text-gray-400 hover:text-cyan-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Ladder</a>
+                  <a href="#contact-us" className="block px-4 py-2 text-sm text-gray-400 hover:text-cyan-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Contact Us</a>
+                  <a href="#partners" className="block px-4 py-2 text-sm text-gray-400 hover:text-cyan-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Partners</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Version/Language/GitHub combined section */}
+            <div className="border-t border-gray-700/50 pt-4 mt-4">
+              <div className="grid grid-cols-2 gap-2">
+                <a href="#" className="flex items-center justify-center px-3 py-2 text-sm text-gray-400 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors">
+                  Version 3.8.1
+                </a>
+                <a href="https://github.com/kubestellar/kubestellar" className="flex items-center justify-center px-3 py-2 text-sm text-gray-400 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.300 24 12c0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
