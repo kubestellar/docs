@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
-import StarField from "../../components/StarField";
+import { GridLines, StarField } from "@/components";
 
 export default function ProgramsPage() {
   const programs = getAllPrograms();
@@ -57,12 +57,15 @@ export default function ProgramsPage() {
         <StarField density="medium" showComets={true} cometCount={3} />
 
         {/* Grid lines background */}
-        <div className="absolute inset-0 opacity-10 background-grid"></div>
+        <GridLines
+          horizontalLines={21}
+          verticalLines={18}
+        />
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center z-10">
-        <div className="relative z-10 text-center px-4 pt-20">
+      <section className="relative min-h-[40vh] flex items-center justify-center z-10">
+        <div className="relative z-10 text-center px-4 pt-20 pb-2">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter text-shadow-lg">
             Join Our <span className="text-gradient">Mission</span>
           </h1>
@@ -74,18 +77,17 @@ export default function ProgramsPage() {
       </section>
 
       {/* Programs Section */}
-      <section id="programs" className="relative py-24 z-10">
+      <section id="programs" className="relative pt-8 pb-24 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-2">
             {programs.map(program => (
               <Link
                 key={program.id}
                 href={`/programs/${program.id}`}
-                className={`program-card bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg border border-gray-700/50 p-8 flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${
-                  program.isPaid
+                className={`program-card bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg border border-gray-700/50 p-8 flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${program.isPaid
                     ? "hover:border-blue-500/50"
                     : "hover:border-purple-500/50"
-                }`}
+                  }`}
               >
                 <div className="relative w-32 h-24 mb-6 flex items-center justify-center">
                   <Image
@@ -104,11 +106,10 @@ export default function ProgramsPage() {
                   {program.description}
                 </p>
                 <span
-                  className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${
-                    program.isPaid
+                  className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${program.isPaid
                       ? "bg-green-500/20 text-green-300"
                       : "bg-purple-500/20 text-purple-300"
-                  }`}
+                    }`}
                 >
                   {program.isPaid ? "Paid Program" : "Unpaid Internship"}
                 </span>
