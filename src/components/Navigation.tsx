@@ -553,7 +553,7 @@ export default function Navigation() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth="2"
+                    strokeWidth={2}
                     d="M19 9l-7 7-7-7"
                   />
                 </svg>
