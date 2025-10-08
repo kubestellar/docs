@@ -68,7 +68,10 @@ export default function HowItWorksSection() {
       <StarField density="medium" showComets={true} cometCount={3} />
 
       {/* Grid lines background */}
-      <div id="grid-lines-how" className="absolute inset-0 opacity-20 overflow-hidden pointer-events-none"></div>
+      <div
+        id="grid-lines-how"
+        className="absolute inset-0 opacity-20 overflow-hidden pointer-events-none"
+      ></div>
 
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-blue-500/10 to-transparent"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -84,7 +87,6 @@ export default function HowItWorksSection() {
 
         {/* Mobile Steps Layout */}
         <div className="lg:hidden relative z-10">
-
           {/* Mobile Step 1 */}
           <div className="mb-8">
             <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
@@ -94,24 +96,37 @@ export default function HowItWorksSection() {
                   <span className="text-white font-bold text-lg">1</span>
                 </div>
               </div>
-              
+
               <div className="pt-4">
-                <h3 className="text-lg font-bold text-white mb-2 text-center">Define Workloads</h3>
+                <h3 className="text-lg font-bold text-white mb-2 text-center">
+                  Define Workloads
+                </h3>
                 <p className="text-gray-300 text-sm leading-relaxed mb-3 text-center">
-                  Create Kubernetes resources with placement constraints and policies.
+                  Create Kubernetes resources with placement constraints and
+                  policies.
                 </p>
                 <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
                   <pre className="text-xs font-mono text-white">
                     <code>
-                      <span className="text-yellow-300">apiVersion</span>: <span className="text-white">apps/v1</span>
+                      <span className="text-yellow-300">apiVersion</span>:{" "}
+                      <span className="text-white">apps/v1</span>
                       {"\n"}
-                      <span className="text-yellow-300">kind</span>: <span className="text-white">Deployment</span>
+                      <span className="text-yellow-300">kind</span>:{" "}
+                      <span className="text-white">Deployment</span>
                       {"\n"}
-                      <span className="text-yellow-300">metadata</span>:
-                      {"\n"}  <span className="text-yellow-300">name</span>: <span className="text-white">example-app</span>
-                      {"\n"}  <span className="text-yellow-300">annotations</span>:
-                      {"\n"}    <span className="text-yellow-300">kubestellar.io/placement</span>:
-                      {"\n"}    <span className="text-emerald-400">"region=us-east,tier=prod"</span>
+                      <span className="text-yellow-300">metadata</span>:{"\n"}{" "}
+                      <span className="text-yellow-300">name</span>:{" "}
+                      <span className="text-white">example-app</span>
+                      {"\n"}{" "}
+                      <span className="text-yellow-300">annotations</span>:
+                      {"\n"}{" "}
+                      <span className="text-yellow-300">
+                        kubestellar.io/placement
+                      </span>
+                      :{"\n"}{" "}
+                      <span className="text-emerald-400">
+                        "region=us-east,tier=prod"
+                      </span>
                     </code>
                   </pre>
                 </div>
@@ -132,11 +147,14 @@ export default function HowItWorksSection() {
                   <span className="text-white font-bold text-lg">2</span>
                 </div>
               </div>
-              
+
               <div className="pt-4">
-                <h3 className="text-lg font-bold text-white mb-2 text-center">Workload Orchestration</h3>
+                <h3 className="text-lg font-bold text-white mb-2 text-center">
+                  Workload Orchestration
+                </h3>
                 <p className="text-gray-300 text-sm leading-relaxed mb-3 text-center">
-                  KubeStellar analyzes workloads and determines optimal placement.
+                  KubeStellar analyzes workloads and determines optimal
+                  placement.
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center">
                   <div className="bg-blue-900/80 backdrop-blur-lg rounded-full px-3 py-1 text-white text-xs">
@@ -166,11 +184,14 @@ export default function HowItWorksSection() {
                   <span className="text-white font-bold text-lg">3</span>
                 </div>
               </div>
-              
+
               <div className="pt-4">
-                <h3 className="text-lg font-bold text-white mb-2 text-center">Automated Deployment</h3>
+                <h3 className="text-lg font-bold text-white mb-2 text-center">
+                  Automated Deployment
+                </h3>
                 <p className="text-gray-300 text-sm leading-relaxed mb-3 text-center">
-                  Workloads are deployed and continuously monitored across clusters.
+                  Workloads are deployed and continuously monitored across
+                  clusters.
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2 justify-center">
