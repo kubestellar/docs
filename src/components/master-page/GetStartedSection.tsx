@@ -260,7 +260,7 @@ export default function GetStartedSection() {
                   Getting Started
                 </a>
                 <a
-                  href="https://docs.kubestellar.io/release-0.24.0/direct/get-started/" target="_blank"
+                  href="https://docs.kubestellar.io/release-0.28.0/direct/user-guide-intro/" target="_blank"
                   className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm"
                 >
                   Tutorials
