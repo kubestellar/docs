@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import { GridLines, StarField} from "../index";
+import { GridLines, StarField } from "../index";
 import StatCard from "../StatsCard";
+import { useParallax } from "../../index";
 
 interface StatData {
   id: number;
@@ -87,6 +88,8 @@ const statsData: StatData[] = [
 ];
 
 export default function HeroSection() {
+  useParallax(".mission-control-scene", ".scene-container");
+
   useEffect(() => {
     // Enhanced typing animation for terminal
     const initTypingAnimation = () => {
@@ -137,47 +140,6 @@ export default function HeroSection() {
     // Initialize all components
     initTypingAnimation();
     animateCounters();
-
-    // Enhanced 3D hover effect for mission control scene
-    const sceneContainer = document.querySelector(
-      ".scene-container"
-    ) as HTMLElement;
-    const missionControlScene = document.querySelector(
-      ".mission-control-scene"
-    ) as HTMLElement;
-
-    if (sceneContainer && missionControlScene) {
-      // Initial animation to bring the scene into view
-      setTimeout(() => {
-        sceneContainer.style.transform =
-          "perspective(1000px) rotateY(3deg) rotateX(2deg) translateZ(0)";
-        sceneContainer.style.opacity = "1";
-      }, 500);
-
-      missionControlScene.addEventListener("mousemove", e => {
-        const rect = missionControlScene.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        // Calculate rotation values with easing
-        const rotateY = (x - centerX) / 40;
-        const rotateX = (centerY - y) / 40;
-
-        // Apply smooth transition
-        sceneContainer.style.transition = "transform 0.1s ease-out";
-        sceneContainer.style.transform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateZ(10px)`;
-      });
-
-      // Reset on mouse leave with smooth transition
-      missionControlScene.addEventListener("mouseleave", () => {
-        sceneContainer.style.transition = "transform 0.5s ease-out";
-        sceneContainer.style.transform =
-          "perspective(1000px) rotateY(3deg) rotateX(2deg) translateZ(0)";
-      });
-    }
   }, []);
 
   return (
@@ -193,10 +155,7 @@ export default function HeroSection() {
 
         {/* Interactive Grid Network */}
         <div className="absolute inset-0">
-          <GridLines
-            verticalLines={15}
-            horizontalLines={18}
-          />
+          <GridLines verticalLines={15} horizontalLines={18} />
         </div>
 
         {/* Floating Data Particles */}
@@ -336,9 +295,7 @@ export default function HeroSection() {
 
                     {/* Line 3 */}
                     <div className="output-line animate-slide-in-left [animation-delay:1.8s]">
-                      <span className="text-purple-400 font-bold">
-                        OPTIMIZE
-                      </span>
+                      <span className="text-purple-400 font-bold">OPTIMIZE</span>
                       <span className="text-gray-300 ml-4">
                         AI optimizing resource allocation...
                       </span>
@@ -349,9 +306,7 @@ export default function HeroSection() {
 
                     {/* Line 4 */}
                     <div className="output-line animate-slide-in-left [animation-delay:2.2s]">
-                      <span className="text-emerald-400 font-bold">
-                        SUCCESS
-                      </span>
+                      <span className="text-emerald-400 font-bold">SUCCESS</span>
                       <span className="text-gray-300 ml-4">
                         Deployment completed with 40% efficiency gain
                       </span>
