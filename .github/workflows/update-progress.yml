@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PROGRESS_WORKFLOW }}
 
       - name: Extract PR Info & Generate summary
         id: pr_info
@@ -27,21 +27,29 @@ jobs:
             CATEGORY="MAJOR"
           elif [[ "$LABELS" == *"minor"* ]] || [[ "$TITLE" == *"minor"* ]]; then
             CATEGORY="MINOR"
-          elif [[ "$TITLE" == *"patch"* ]] || [[ "$TITLE" == *"patch"* ]]; then
+          elif [[ "$LABELS" == *"patch"* ]] || [[ "$TITLE" == *"patch"* ]]; then
             CATEGORY="PATCH"
           fi
 
           echo "category=$CATEGORY" >> $GITHUB_OUTPUT
 
-          SUMMARY=$(echo "${{ github.event.pull_request.body }}" | sed -E '/^([-*_] ?){3,}$/d' | sed 's/^> //g' | grep -v '^\s*$' | head -n 2 | tr '\n' ' ' | sed 's/^[ \t]*/- /;s/[ \t]*$//')
+          # More robust extraction - look for content between Description and next ### heading
+          PR_BODY="${{ github.event.pull_request.body }}"
+          SUMMARY=""
+          
+          if [[ -n "$PR_BODY" ]]; then
+            # Extract everything between ### Description and next ### heading
+            SUMMARY=$(echo "$PR_BODY" | sed -n '/^###\s*[Dd]escription/,/^###/p' | sed '1d' | sed '/^###/d' | sed '/<!--/,/-->/d' | grep -v '^\s*$' | head -n 2 | tr '\n' ' ' | sed 's/^[ \t]*//;s/[ \t]*$//')
+          fi
 
-          if [[ -z "$SUMMARY" ]] || [[ "$SUMMARY" == "- " ]] ; then
+          # Add dash prefix and fallback to title if empty
+          if [[ -n "$SUMMARY" ]]; then
+            SUMMARY="- $SUMMARY"
+          else
             SUMMARY="- ${{ github.event.pull_request.title }}"
           fi
 
-          echo "summary<<EOF" >> $GITHUB_ENV
-          echo "$SUMMARY" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          echo "summary=$SUMMARY" >> $GITHUB_OUTPUT
 
       - name: Update PROGRESS.md
         if: steps.pr_info.outputs.category == 'MAJOR' || steps.pr_info.outputs.category == 'MINOR'
@@ -51,8 +59,12 @@ jobs:
             echo "" >> PROGRESS.md
           fi
 
-          echo "### PR #${{ github.event.pull_request.number }}: ${{ github.event.pull_request.title }}" >> PROGRESS.md
-          echo "${{ env.summary }}" >> PROGRESS.md
+          PR_LINK="[#${{ github.event.pull_request.number }}](${{ github.event.pull_request.html_url }})"
+          CONTRIBUTOR="[@${{ github.event.pull_request.user.login }}](${{ github.event.pull_request.user.html_url }})"
+          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+
+          # The summary from the previous step already starts with '- '
+          echo "${{ steps.pr_info.outputs.summary }} ($PR_LINK) by $CONTRIBUTOR on $TIMESTAMP" >> PROGRESS.md
           echo "" >> PROGRESS.md
 
           cat PROGRESS.md
@@ -62,10 +74,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout main
+          git pull origin main
           git add PROGRESS.md
           if ! git diff --staged --quiet; then
             git commit -m "Update progress log for PR #${{ github.event.pull_request.number }}"
-            git push
+            git push origin main
           else
             echo "No changes to commit."
           fi

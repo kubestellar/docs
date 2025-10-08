@@ -1,59 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-import StarField from "../StarField";
+import { GridLines, StarField } from "../index";
 import { useParallax } from "../../index";
 
 export default function AboutSection() {
   useParallax(".feature-card", ".card-3d-container");
+
   useEffect(() => {
-    const createGrid = (container: HTMLElement) => {
-      if (!container) return;
-      container.innerHTML = "";
-
-      const gridSvg = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "svg"
-      );
-      gridSvg.setAttribute("width", "100%");
-      gridSvg.setAttribute("height", "100%");
-      gridSvg.style.position = "absolute";
-      gridSvg.style.top = "0";
-      gridSvg.style.left = "0";
-
-      for (let i = 0; i < 15; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", "0");
-        line.setAttribute("y1", `${i * 7}%`);
-        line.setAttribute("x2", "100%");
-        line.setAttribute("y2", `${i * 7}%`);
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      for (let i = 0; i < 15; i++) {
-        const line = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "line"
-        );
-        line.setAttribute("x1", `${i * 7}%`);
-        line.setAttribute("y1", "0");
-        line.setAttribute("x2", `${i * 7}%`);
-        line.setAttribute("y2", "100%");
-        line.setAttribute("stroke", "#6366F1");
-        line.setAttribute("stroke-width", "0.5");
-        line.setAttribute("stroke-opacity", "0.3");
-        gridSvg.appendChild(line);
-      }
-
-      container.appendChild(gridSvg);
-    };
-
     // Feature cards animation
     const initFeatureCards = () => {
       const featureCards = document.querySelectorAll(".feature-card");
@@ -101,11 +55,39 @@ export default function AboutSection() {
         }
       `;
       document.head.appendChild(style);
+
+      // 3D tilt effect on mouse move
+      featureCards.forEach(card => {
+        card.addEventListener("mousemove", (e: Event) => {
+          const mouseEvent = e as MouseEvent;
+          const container = card.querySelector(".card-3d-container");
+          const rect = card.getBoundingClientRect();
+          const x = mouseEvent.clientX - rect.left;
+          const y = mouseEvent.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          // Calculate rotation values (reduced intensity for subtlety)
+          const rotateY = (x - centerX) / 15;
+          const rotateX = (centerY - y) / 15;
+
+          if (container) {
+            (container as HTMLElement).style.transform =
+              `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+          }
+        });
+
+        // Reset on mouse leave
+        card.addEventListener("mouseleave", () => {
+          const container = card.querySelector(".card-3d-container");
+          if (container) {
+            (container as HTMLElement).style.transform =
+              "rotateY(0deg) rotateX(0deg)";
+          }
+        });
+      });
     };
-
-    const gridContainer = document.getElementById("grid-lines-about");
-
-    if (gridContainer) createGrid(gridContainer);
 
     initFeatureCards();
   }, []);
@@ -122,14 +104,13 @@ export default function AboutSection() {
       <StarField density="medium" showComets={true} cometCount={3} />
 
       {/* Grid lines background */}
-      <div id="grid-lines-about" className="absolute inset-0 opacity-20"></div>
+      <GridLines horizontalLines={21} verticalLines={15} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            What is
+            What is{" "}
             <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
-              {" "}
               KubeStellar
             </span>
           </h2>
