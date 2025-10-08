@@ -1,6 +1,6 @@
 "use client";
 
-import { GridLines, StarField} from "../index";
+import { GridLines, StarField } from "../index";
 
 export default function HowItWorksSection() {
   return (
@@ -15,10 +15,7 @@ export default function HowItWorksSection() {
       <StarField density="medium" showComets={true} cometCount={3} />
 
       {/* Grid lines background */}
-      <GridLines
-        horizontalLines={21}
-        verticalLines={18}
-      />
+      <GridLines horizontalLines={21} verticalLines={18} />
 
       <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-blue-500/10 to-transparent"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -140,18 +137,20 @@ export default function HowItWorksSection() {
                   Workloads are deployed and continuously monitored across
                   clusters.
                 </p>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2 justify-center">
-                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                    <span className="text-white text-xs">Edge Cluster</span>
-                  </div>
-                  <div className="flex items-center space-x-2 justify-center">
-                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                    <span className="text-white text-xs">Cloud Cluster</span>
-                  </div>
-                  <div className="flex items-center space-x-2 justify-center">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-white text-xs">On-Prem Cluster</span>
+                <div className="flex justify-center">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex flex-col items-center space-y-2">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div className="flex flex-col space-y-2">
+                      <span className="text-white text-xs">Edge Cluster</span>
+                      <span className="text-white text-xs">Cloud Cluster</span>
+                      <span className="text-white text-xs">
+                        On-Prem Cluster
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -307,7 +306,7 @@ export default function HowItWorksSection() {
                     KubeStellar continuously monitors health and ensures desired
                     state across all clusters.
                   </p>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center justify-center space-x-4">
                     <div className="bg-blue-900/40 backdrop-blur-lg px-3 py-2 text-white text-sm flex flex-col items-center justify-center w-40 rounded-lg transition-all duration-300 hover:bg-blue-900/50 hover:scale-105">
                       <span className="text-sm opacity-50 text-center">
                         Edge Cluster
