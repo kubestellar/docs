@@ -162,7 +162,7 @@ export default function GetStartedSection() {
                 </button>
               </div>
               <a
-                href="#"
+                href="https://docs.kubestellar.io/release-0.24.0/direct/user-guide-intro/#the-full-story"
                 className="mt-4 inline-flex items-center text-sm font-medium text-white"
               >
                 View installation guide
@@ -254,19 +254,19 @@ export default function GetStartedSection() {
               </p>
               <div className="mt-4 grid grid-cols-1 gap-2">
                 <a
-                  href="#"
+                  href="https://docs.kubestellar.io/release-0.28.0/direct/get-started/" target="_blank"
                   className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm"
                 >
                   Getting Started
                 </a>
                 <a
-                  href="#"
+                  href="https://docs.kubestellar.io/release-0.24.0/direct/get-started/" target="_blank"
                   className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm"
                 >
                   Tutorials
                 </a>
                 <a
-                  href="#"
+                  href="https://pkg.go.dev/github.com/kubestellar/kubestellar/api/control/v1alpha1" target="_blank"
                   className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm"
                 >
                   API Reference
