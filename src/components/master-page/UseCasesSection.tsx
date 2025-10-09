@@ -1,6 +1,6 @@
 "use client";
 
-import { GridLines, StarField} from "../index";
+import { GridLines, StarField } from "../index";
 
 // Icon mapping function - moved outside component to prevent recreation on each render
 const getIcon = (iconType: string) => {
@@ -8,7 +8,7 @@ const getIcon = (iconType: string) => {
     case "globe":
       return (
         <svg
-          className="w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0"
+          className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
           viewBox="0 0 24 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const getIcon = (iconType: string) => {
     case "cloud":
       return (
         <svg
-          className="w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0"
+          className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
           viewBox="0 0 24 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ const getIcon = (iconType: string) => {
     case "clock":
       return (
         <svg
-          className="w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0"
+          className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
           viewBox="0 0 24 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ const getIcon = (iconType: string) => {
     case "power":
       return (
         <svg
-          className="w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0"
+          className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0"
           viewBox="0 0 24 25"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -123,15 +123,31 @@ interface UseCaseCardProps {
   hoverShadowColor: string;
 }
 
-function UseCaseCard({ icon, title, description, borderColor, iconBgColor, hoverBorderColor, hoverShadowColor }: UseCaseCardProps) {
+function UseCaseCard({
+  icon,
+  title,
+  description,
+  borderColor,
+  iconBgColor,
+  hoverBorderColor,
+  hoverShadowColor,
+}: UseCaseCardProps) {
   return (
-    <div className={`relative group bg-slate-800/50 border border-slate-700 rounded-xl p-4 sm:p-6 lg:p-8 h-80 sm:h-84 lg:h-88 overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl ${hoverShadowColor} ${hoverBorderColor}`}>
+    <div
+      className={`relative group bg-slate-800/50 border border-slate-700 rounded-xl p-4 sm:p-6 lg:p-8 h-64 sm:h-72 lg:h-80 w-full max-w-md sm:max-w-lg lg:max-w-xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl ${hoverShadowColor} ${hoverBorderColor}`}
+    >
       <div className="transition-all duration-300 group-hover:-translate-y-2 h-full flex flex-col">
-        <div className={`w-12 h-12 sm:w-14 sm:h-14 ${iconBgColor} rounded-lg flex items-center justify-center mb-3 sm:mb-4 lg:mb-5 aspect-square`}>
+        <div
+          className={`w-10 h-10 sm:w-12 sm:h-12 ${iconBgColor} rounded-lg flex items-center justify-center mb-3 sm:mb-4 lg:mb-5 aspect-square`}
+        >
           {getIcon(icon)}
         </div>
-        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4">{title}</h3>
-        <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-3 sm:mb-4">{description}</p>
+        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4">
+          {title}
+        </h3>
+        <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-3 sm:mb-4">
+          {description}
+        </p>
         <button className="text-blue-400 font-medium hover:text-blue-300 transition-all duration-300 flex items-center text-sm hover:scale-110 transform origin-left mt-auto">
           Learn more
           <svg
@@ -154,17 +170,16 @@ function UseCaseCard({ icon, title, description, borderColor, iconBgColor, hover
 }
 
 export default function UseCasesSection() {
-
   const useCases = [
     {
-      icon: "globe",
-      title: "Edge Computing",
+      icon: "cloud",
+      title: "Multi-Tenant Isolation",
       description:
-        "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
-      borderColor: "bg-blue-500",
-      iconBgColor: "bg-blue-400/20",
-      hoverBorderColor: "hover:border-[#60A5FA]",
-      hoverShadowColor: "hover:shadow-blue-500/30",
+        "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
+      borderColor: "bg-yellow-500",
+      iconBgColor: "bg-yellow-400/20",
+      hoverBorderColor: "hover:border-[#FACC15]",
+      hoverShadowColor: "hover:shadow-yellow-500/30",
     },
     {
       icon: "security",
@@ -187,6 +202,16 @@ export default function UseCasesSection() {
       hoverShadowColor: "hover:shadow-green-500/30",
     },
     {
+      icon: "globe",
+      title: "Edge Computing",
+      description:
+        "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
+      borderColor: "bg-blue-500",
+      iconBgColor: "bg-blue-400/20",
+      hoverBorderColor: "hover:border-[#60A5FA]",
+      hoverShadowColor: "hover:shadow-blue-500/30",
+    },
+    {
       icon: "clock",
       title: "Disaster Recovery",
       description:
@@ -195,16 +220,6 @@ export default function UseCasesSection() {
       iconBgColor: "bg-red-400/20",
       hoverBorderColor: "hover:border-[#F87171]",
       hoverShadowColor: "hover:shadow-red-500/30",
-    },
-    {
-      icon: "cloud",
-      title: "Multi-Tenant Isolation",
-      description:
-        "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
-      borderColor: "bg-yellow-500",
-      iconBgColor: "bg-yellow-400/20",
-      hoverBorderColor: "hover:border-[#FACC15]",
-      hoverShadowColor: "hover:shadow-yellow-500/30",
     },
     {
       icon: "network",
@@ -230,10 +245,7 @@ export default function UseCasesSection() {
       <StarField density="medium" showComets={true} cometCount={4} />
 
       {/* Grid lines background */}
-      <GridLines
-        horizontalLines={18}
-        verticalLines={15}
-      />
+      <GridLines horizontalLines={18} verticalLines={15} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
