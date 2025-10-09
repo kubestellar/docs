@@ -117,7 +117,6 @@ interface UseCaseCardProps {
   icon: string;
   title: string;
   description: string;
-  borderColor: string;
   iconBgColor: string;
   hoverBorderColor: string;
   hoverShadowColor: string;
@@ -127,7 +126,6 @@ function UseCaseCard({
   icon,
   title,
   description,
-  borderColor,
   iconBgColor,
   hoverBorderColor,
   hoverShadowColor,
@@ -176,7 +174,6 @@ export default function UseCasesSection() {
       title: "Multi-Tenant Isolation",
       description:
         "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
-      borderColor: "bg-yellow-500",
       iconBgColor: "bg-yellow-400/20",
       hoverBorderColor: "hover:border-[#FACC15]",
       hoverShadowColor: "hover:shadow-yellow-500/30",
@@ -186,7 +183,6 @@ export default function UseCasesSection() {
       title: "Multi-Region Compliance",
       description:
         "Deploy applications with specific regional compliance requirements. Ensure data residency and regulatory compliance across global operations.",
-      borderColor: "bg-purple-500",
       iconBgColor: "bg-purple-400/20",
       hoverBorderColor: "hover:border-[#C084FC]",
       hoverShadowColor: "hover:shadow-purple-500/30",
@@ -196,7 +192,6 @@ export default function UseCasesSection() {
       title: "Hybrid/Multi-Cloud",
       description:
         "Seamlessly manage workloads across multiple cloud providers and on-premises infrastructure with unified policies and consistent experience.",
-      borderColor: "bg-green-500",
       iconBgColor: "bg-green-400/20",
       hoverBorderColor: "hover:border-[#4ADE80]",
       hoverShadowColor: "hover:shadow-green-500/30",
@@ -206,7 +201,6 @@ export default function UseCasesSection() {
       title: "Edge Computing",
       description:
         "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
-      borderColor: "bg-blue-500",
       iconBgColor: "bg-blue-400/20",
       hoverBorderColor: "hover:border-[#60A5FA]",
       hoverShadowColor: "hover:shadow-blue-500/30",
@@ -216,7 +210,6 @@ export default function UseCasesSection() {
       title: "Disaster Recovery",
       description:
         "Implement robust disaster recovery strategies with automatic workload replication and failover across multiple clusters in different regions.",
-      borderColor: "bg-red-500",
       iconBgColor: "bg-red-400/20",
       hoverBorderColor: "hover:border-[#F87171]",
       hoverShadowColor: "hover:shadow-red-500/30",
@@ -226,7 +219,6 @@ export default function UseCasesSection() {
       title: "Performance Optimization",
       description:
         "Deploy workloads closest to users or data sources for optimal performance, reducing latency and improving user experience across global operations.",
-      borderColor: "bg-indigo-500",
       iconBgColor: "bg-indigo-400/20",
       hoverBorderColor: "hover:border-[#818CF8]",
       hoverShadowColor: "hover:shadow-indigo-500/30",
@@ -267,7 +259,6 @@ export default function UseCasesSection() {
               icon={useCase.icon}
               title={useCase.title}
               description={useCase.description}
-              borderColor={useCase.borderColor}
               iconBgColor={useCase.iconBgColor}
               hoverBorderColor={useCase.hoverBorderColor}
               hoverShadowColor={useCase.hoverShadowColor}
