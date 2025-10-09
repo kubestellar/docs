@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import StarField from "../StarField";
+import { GridLines, StarField} from "../index";
 import StatCard from "../StatsCard";
 
 interface StatData {
@@ -88,53 +88,6 @@ const statsData: StatData[] = [
 
 export default function HeroSection() {
   useEffect(() => {
-    // Interactive grid canvas
-    const initGridCanvas = () => {
-      const canvas = document.getElementById(
-        "grid-canvas"
-      ) as HTMLCanvasElement;
-      if (!canvas) return;
-
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-
-      const gridSize = 50;
-
-      const drawGrid = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.strokeStyle = "rgba(99, 102, 241, 0.2)";
-        ctx.lineWidth = 0.5;
-
-        // Draw vertical lines
-        for (let x = 0; x < canvas.width; x += gridSize) {
-          ctx.beginPath();
-          ctx.moveTo(x, 0);
-          ctx.lineTo(x, canvas.height);
-          ctx.stroke();
-        }
-
-        // Draw horizontal lines
-        for (let y = 0; y < canvas.height; y += gridSize) {
-          ctx.beginPath();
-          ctx.moveTo(0, y);
-          ctx.lineTo(canvas.width, y);
-          ctx.stroke();
-        }
-      };
-
-      drawGrid();
-
-      // Redraw on resize
-      window.addEventListener("resize", () => {
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-        drawGrid();
-      });
-    };
-
     // Enhanced typing animation for terminal
     const initTypingAnimation = () => {
       const typingText = document.querySelector(".typing-text") as HTMLElement;
@@ -182,7 +135,6 @@ export default function HeroSection() {
     };
 
     // Initialize all components
-    initGridCanvas();
     initTypingAnimation();
     animateCounters();
 
@@ -241,10 +193,10 @@ export default function HeroSection() {
 
         {/* Interactive Grid Network */}
         <div className="absolute inset-0">
-          <canvas
-            id="grid-canvas"
-            className="w-full h-full opacity-20"
-          ></canvas>
+          <GridLines
+            verticalLines={15}
+            horizontalLines={18}
+          />
         </div>
 
         {/* Floating Data Particles */}
@@ -281,21 +233,11 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
           {/* Left Column: Interactive Content */}
           <div className="hero-content space-y-6">
-            {/* Animated Status Badge */}
-            <div className="status-badge-container">
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-emerald-500/20 via-green-500/20 to-emerald-500/20 border border-emerald-400/40 rounded-full backdrop-blur-md shadow-lg">
-                <div className="status-dot"></div>
-                <span className="text-emerald-300 text-xs uppercase tracking-wider font-semibold">
-                  Ready to Deploy
-                </span>
-              </div>
-            </div>
-
             {/* Dynamic Main Heading */}
             <div className="heading-container space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none">
                 {/* First Line */}
-                <span className="block text-white mb-3 animate-text-reveal">
+                <span className="block text-white mb-3 animate-text-reveal pt-5">
                   <span className="text-gradient">Multi-Cluster</span>
                 </span>
 
