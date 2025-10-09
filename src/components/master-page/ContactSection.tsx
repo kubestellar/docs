@@ -251,7 +251,9 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                   </svg>
                 </div>
                 <div className="ml-3 sm:ml-5">
-                  <h3 className="text-base sm:text-lg font-medium text-white">GitHub</h3>
+                  <h3 className="text-base sm:text-lg font-medium text-white">
+                    GitHub
+                  </h3>
                   <p className="text-gray-300 mt-1 text-sm sm:text-base">
                     Contribute, report issues, or browse the source code
                   </p>
@@ -293,7 +295,9 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                   </svg>
                 </div>
                 <div className="ml-3 sm:ml-5">
-                  <h3 className="text-base sm:text-lg font-medium text-white">LinkedIn</h3>
+                  <h3 className="text-base sm:text-lg font-medium text-white">
+                    LinkedIn
+                  </h3>
                   <p className="text-gray-300 mt-1 text-sm sm:text-base">
                     Connect with our professional community
                   </p>
