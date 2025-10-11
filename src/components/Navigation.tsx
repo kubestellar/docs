@@ -676,278 +676,136 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mobile menu */}
+{/* Mobile menu */}
         {isMenuOpen && (
-          <div className="mobile-menu-panel">
-            <div className="px-5 mt-4 pb-3 sm:px-3">
-              {/* Primary Links for Mobile */}
-              <div className="mobile-primary-links">
-                <a
-                  href="/docs"
-                  className="block px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                >
-                  Docs
-                </a>
-                <a
-                  href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
-                  target="_blank"
-                  className="block px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                >
-                  Blog
-                </a>
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <a
+                href="#docs"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+              >
+                Docs
+              </a>
+              <a
+                href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
+                target="_blank"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+              >
+                Blog
+              </a>
 
-                {/* Contribute Dropdown for Mobile */}
-                <div>
-                  <button
-                    onClick={() =>
-                      setOpenMobileDropdown(
-                        openMobileDropdown === "contribute" ? null : "contribute"
-                      )
-                    }
-                    className="w-full flex justify-between items-center px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+              {/* Contribute Dropdown for Mobile */}
+              <div>
+                <button
+                  onClick={() =>
+                    setOpenMobileDropdown(
+                      openMobileDropdown === "contribute" ? null : "contribute"
+                    )
+                  }
+                  className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                >
+                  <span>Contribute</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform ${
+                      openMobileDropdown === "contribute" ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <span>Contribute</span>
-                    <svg
-                      className={`w-5 h-5 transition-transform ${openMobileDropdown === "contribute" ? "rotate-180" : ""
-                        }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                {openMobileDropdown === "contribute" && (
+                  <div className="pl-4 mt-1 space-y-1">
+                    <a
+                      href="#join-in"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {openMobileDropdown === "contribute" && (
-                    <div className="pl-4 mt-1 space-y-1">
-                      <a
-                        href="#join-in"
-                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                      >
-                        Join In
-                      </a>
-                      <a
-                        href="/community-handbook"
-                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                      >
-                        Contribute Handbook
-                      </a>
-                      <a
-                        href="#security"
-                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                      >
-                        Security
-                      </a>
-                    </div>
-                  )}
-                </div>
-
-                {/* Community Dropdown for Mobile */}
-                <div>
-                  <button
-                    onClick={() =>
-                      setOpenMobileDropdown(
-                        openMobileDropdown === "community" ? null : "community"
-                      )
-                    }
-                    className="w-full flex justify-between items-center px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                  >
-                    <span>Community</span>
-                    <svg
-                      className={`w-5 h-5 transition-transform ${openMobileDropdown === "community" ? "rotate-180" : ""
-                        }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                      Join In
+                    </a>
+                    <a
+                      href="/community-handbook"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {openMobileDropdown === "community" && (
-                    <div className="pl-4 mt-1 space-y-1">
-                      <a
-                        href="#get-involved"
-                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                      >
-                        Get Involved
-                      </a>
-                      <Link
-                        href="/programs"
-                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                      >
-                        Programs
-                      </Link>
-                      <a
-                        href="#ladder"
-                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                      >
-                        Ladder
-                      </a>
-                      <a
-                        href="#contact-us"
-                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                      >
-                        Contact Us
-                      </a>
-                      <a
-                        href="#partners"
-                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
-                      >
-                        Partners
-                      </a>
-                    </div>
-                  )}
-                </div>
+                      Contribute Handbook
+                    </a>
+                    <a
+                      href="#security"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Security
+                    </a>
+                  </div>
+                )}
               </div>
 
-              {/* Divider and Secondary Controls for mobile menu */}
-              <div className="mobile-secondary-controls border-t border-gray-700 pt-4 mt-4">
-                <div className="flex flex-col space-y-4">
-                  
-                  {/* Version Dropdown */}
-                <div>
-                  <button
-                    onClick={() =>
-                      setOpenMobileDropdown(
-                        openMobileDropdown === "version" ? null : "version"
-                      )
-                    }
-                    className="w-full flex justify-between items-center py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+              {/* Community Dropdown for Mobile */}
+              <div>
+                <button
+                  onClick={() =>
+                    setOpenMobileDropdown(
+                      openMobileDropdown === "community" ? null : "community"
+                    )
+                  }
+                  className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                >
+                  <span>Community</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform ${
+                      openMobileDropdown === "community" ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <span>Version</span>
-                    <svg
-                      className={`w-5 h-5 transition-transform ${
-                        openMobileDropdown === "version" ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                {openMobileDropdown === "community" && (
+                  <div className="pl-4 mt-1 space-y-1">
+                    <a
+                      href="#get-involved"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {openMobileDropdown === "version" && (
-                    <div className="pl-5 mt-1 space-y-1">
-                      <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                        3.8.1 (Current)
-                      </a>
-                      <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                        3.8.0
-                      </a>
-                      <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                        All versions
-                      </a>
-                    </div>
-                  )}
-                </div>
-
-                {/* Language Dropdown */}
-                <div>
-                  <button
-                    onClick={() =>
-                      setOpenMobileDropdown(
-                        openMobileDropdown === "language" ? null : "language"
-                      )
-                    }
-                    className="w-full flex justify-between items-center py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                  >
-                    <span>Language</span>
-                    <svg
-                      className={`w-5 h-5 transition-transform ${
-                        openMobileDropdown === "language" ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                      Get Involved
+                    </a>
+                    <Link
+                      href="/programs"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {openMobileDropdown === "language" && (
-                    <div className="pl-5 mt-1 space-y-1">
-                      <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                        English
-                      </a>
-                      <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                        日本語
-                      </a>
-                      <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                        简体中文
-                      </a>
-                    </div>
-                  )}
-                </div>
-
-                {/* GitHub Dropdown */}
-                <div>
-                  <button
-                    onClick={() =>
-                      setOpenMobileDropdown(
-                        openMobileDropdown === "github" ? null : "github"
-                      )
-                    }
-                    className="w-full flex justify-between items-center py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                  >
-                    <span>GitHub</span>
-                    <svg
-                      className={`w-5 h-5 transition-transform ${
-                        openMobileDropdown === "github" ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                      Programs
+                    </Link>
+                    <a
+                      href="#ladder"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {openMobileDropdown === "github" && (
-                    <div className="pl-5 mt-1 space-y-1">
-                      <a href="https://github.com/kubestellar/kubestellar" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                        Star
-                        <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
-                          {githubStats.stars}
-                        </span>
-                      </a>
-                      <a href="https://github.com/kubestellar/kubestellar/fork" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                        Fork
-                        <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
-                          {githubStats.forks}
-                        </span>
-                      </a>
-                      <a href="https://github.com/kubestellar/kubestellar/watchers" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                        Watch
-                        <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
-                          {githubStats.watchers}
-                        </span>
-                      </a>
-                    </div>
-                  )}
+                      Ladder
+                    </a>
+                    <a
+                      href="#contact-us"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Contact Us
+                    </a>
+                    <a
+                      href="#partners"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Partners
+                    </a>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
