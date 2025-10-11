@@ -12,7 +12,7 @@ export default function Navigation() {
     stars: "0",
     forks: "0",
     watchers: "0",
-  })
+  });
 
   useEffect(() => {
     // Initialize dropdowns functionality
@@ -82,15 +82,17 @@ export default function Navigation() {
     };
 
     const fetchGithubStats = async () => {
-      try{
-        const response = await fetch("https://api.github.com/repos/kubestellar/kubestellar");
+      try {
+        const response = await fetch(
+          "https://api.github.com/repos/kubestellar/kubestellar"
+        );
         if (!response.ok) {
           throw new Error("Network reposone was not okay");
         }
         const data = await response.json();
         const formatNumber = (num: number): string => {
-          if(num >= 1000) {
-            return (num/1000).toFixed(1) + "K";
+          if (num >= 1000) {
+            return (num / 1000).toFixed(1) + "K";
           }
           return num.toString();
         };
@@ -185,13 +187,13 @@ export default function Navigation() {
                 alt="Kubestellar logo"
                 width={160}
                 height={40}
-                className="h-10 w-auto"
+                className="h-9 sm:h-10 md:h-11 w-auto transition-all duration-300 hover:scale-105"
               />
             </div>
           </Link>
 
-          {/* Center: Nav Links */}
-          <div className="hidden md:flex flex-1 justify-center">
+          {/* Center: Nav Links - Desktop Only */}
+          <div className="hidden lg:flex flex-1 justify-center">
             <div className="flex items-center space-x-8">
               {/* Docs Link */}
               <div className="relative group">
@@ -507,9 +509,9 @@ export default function Navigation() {
           </div>
 
           {/* Right side: Controls */}
-          <div className="flex items-center space-x-4">
-            {/* Version Dropdown */}
-            <div className="relative group" data-dropdown>
+          <div className="flex items-center space-x-2 lg:space-x-4">
+            {/* Version Dropdown - Hidden on small screens */}
+            <div className="relative group hidden sm:block" data-dropdown>
               <button
                 data-dropdown-button
                 className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
@@ -554,8 +556,8 @@ export default function Navigation() {
               </div>
             </div>
 
-            {/* Language Dropdown */}
-            <div className="relative group" data-dropdown>
+            {/* Language Dropdown - Hidden on small screens */}
+            <div className="relative group hidden sm:block" data-dropdown>
               <button
                 data-dropdown-button
                 className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-100 transform nav-link-hover"
@@ -613,8 +615,8 @@ export default function Navigation() {
               </div>
             </div>
 
-            {/* GitHub Dropdown */}
-            <div className="relative group" data-dropdown>
+            {/* GitHub Dropdown - Hidden on small screens */}
+            <div className="relative group hidden sm:block" data-dropdown>
               <button
                 data-dropdown-button
                 className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
@@ -700,64 +702,191 @@ export default function Navigation() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="lg:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20"
               aria-label="Open menu"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
+              <div className="w-6 h-6 flex flex-col justify-center items-center">
+                <span
+                  className={`block w-5 h-0.5 bg-gray-300 transition-all duration-300 ${
+                    isMenuOpen ? "rotate-45 translate-y-1" : ""
+                  }`}
                 />
-              </svg>
+                <span
+                  className={`block w-5 h-0.5 bg-gray-300 transition-all duration-300 mt-1 ${
+                    isMenuOpen ? "opacity-0" : ""
+                  }`}
+                />
+                <span
+                  className={`block w-5 h-0.5 bg-gray-300 transition-all duration-300 mt-1 ${
+                    isMenuOpen ? "-rotate-45 -translate-y-1" : ""
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
 
         {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a
-                href="#about"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+        <div
+          className={`lg:hidden transition-all duration-300 overflow-hidden ${
+            isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="px-4 pt-2 pb-4 space-y-2 bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50">
+            {/* Main Navigation Links */}
+            <div className="space-y-1">
+              <Link
+                href="#docs"
+                target="_blank"
+                className="flex items-center px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-blue-400 hover:bg-blue-500/10 transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
-                About
-              </a>
-              <a
-                href="#how-it-works"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                <svg
+                  className="w-5 h-5 mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                Docs
+              </Link>
+
+              <Link
+                href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
+                target="_blank"
+                className="flex items-center px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-purple-400 hover:bg-purple-500/10 transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
-                How It Works
-              </a>
-              <a
-                href="#use-cases"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                <svg
+                  className="w-5 h-5 mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+                Blog
+              </Link>
+
+              <Link
+                href="/community-handbook"
+                className="flex items-center px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Use Cases
-              </a>
-              <a
-                href="#get-started"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                <svg
+                  className="w-5 h-5 mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                  />
+                </svg>
+                Contribute
+              </Link>
+
+              <Link
+                href="/programs"
+                className="flex items-center px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Get Started
-              </a>
+                <svg
+                  className="w-5 h-5 mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                Community
+              </Link>
+            </div>
+
+            {/* Mobile Controls Section */}
+            <div className="pt-4 border-t border-gray-700/50 space-y-2">
+              <div className="text-xs font-medium text-gray-500 uppercase tracking-wider px-3">
+                Controls
+              </div>
+
+              <div className="flex items-center px-3 py-2 rounded-lg text-sm text-gray-300">
+                <svg
+                  className="w-4 h-4 mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
+                  />
+                </svg>
+                Version: 3.8.1
+              </div>
+
+              <div className="flex items-center px-3 py-2 rounded-lg text-sm text-gray-300">
+                <svg
+                  className="w-4 h-4 mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+                  />
+                </svg>
+                English
+              </div>
+
               <a
-                href="#contact"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                href="https://github.com/kubestellar/kubestellar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between px-3 py-2 rounded-lg text-sm text-gray-300 hover:text-emerald-300 hover:bg-emerald-500/10 transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                <div className="flex items-center">
+                  <svg
+                    className="w-4 h-4 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10 2C5.58 2 2 5.58 2 10c0 3.87 2.69 7.13 6.39 7.93.47.09.64-.2.64-.45 0-.22-.01-.94-.01-1.7-2.6.57-3.15-1.25-3.15-1.25-.43-1.09-1.05-1.38-1.05-1.38-.86-.59.07-.58.07-.58.95.07 1.45.98 1.45.98.85 1.45 2.23 1.03 2.78.79.09-.62.33-1.03.6-1.27-2.22-.25-4.555-1.11-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                  GitHub
+                </div>
+                <span className="text-xs bg-gray-700 text-gray-300 rounded px-2 py-0.5">
+                  {githubStats.stars}
+                </span>
               </a>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
