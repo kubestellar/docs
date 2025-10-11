@@ -4,11 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GridLines, StarField } from "./index";
-<<<<<<< HEAD
-import { useTranslations } from "next-intl";
-=======
 import Link from "next/link";
->>>>>>> 1186034 (footer IA, link tag)
 
 export default function Footer() {
   const t = useTranslations("footer");

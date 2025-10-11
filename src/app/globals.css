@@ -904,6 +904,7 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 [data-dropdown-menu] a:hover {
   background: rgba(59, 130, 246, 0.2) !important;
@@ -911,6 +912,8 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
 }
 
 >>>>>>> aa5d8ae (corrected hover anim)
+=======
+>>>>>>> a0e7f85 (blur backdrop)
 [data-dropdown-button] {
   user-select: none;
 }

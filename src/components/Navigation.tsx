@@ -188,7 +188,7 @@ export default function Navigation() {
           <div className="hidden xl:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="flex items-center space-x-4 xl:space-x-8">
               {/* Docs Link */}
-              <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg">
+              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25">
                 <Link
                   href="/docs"
                   className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 nav-link-hover"
@@ -213,7 +213,7 @@ export default function Navigation() {
               </div>
 
               {/* Blog Link */}
-              <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg">
+              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25">
                 <Link
                   target="_blank"
                   href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
@@ -246,7 +246,7 @@ export default function Navigation() {
               </div>
 
               {/* Contribute Dropdown */}
-              <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg" data-dropdown>
+              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
                 <button
                   type="button"
                   className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-100 transform nav-link-hover"
@@ -375,7 +375,7 @@ export default function Navigation() {
                 </div>
               </div>
               {/* Community Dropdown */}
-              <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg" data-dropdown>
+              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
                 <button
                   type="button"
                   className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-100 transform nav-link-hover"
@@ -521,7 +521,7 @@ export default function Navigation() {
           {/* Right side: Controls */}
           <div className="flex items-center space-x-1 xl:space-x-2">
             {/* Version Dropdown */}
-            <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg" data-dropdown>
+            <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
               <button
                 data-dropdown-button
                 className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
@@ -567,7 +567,7 @@ export default function Navigation() {
             </div>
 
             {/* Language Dropdown */}
-            <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg" data-dropdown>
+            <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
               <button
                 data-dropdown-button
                 className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-100 transform nav-link-hover"
@@ -626,7 +626,7 @@ export default function Navigation() {
             </div>
 
             {/* GitHub Dropdown */}
-            <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg" data-dropdown>
+            <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
               <button
                 data-dropdown-button
                 className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
