@@ -177,15 +177,21 @@ export default function Navigation() {
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
                 alt="Kubestellar logo"
+<<<<<<< HEAD
                 width={240}
                 height={60}
                 className="h-12 w-auto xl:h-10"
+=======
+                width={160}
+                height={40}
+                className="h-8 w-auto xl:h-10"
+>>>>>>> ddee141 (completely responsive navbar in all possible screen sizes)
               />
             </div>
           </Link>
 
           {/* Center: Nav Links */}
-          <div className="main-nav-links absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="hidden xl:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="flex items-center space-x-4 xl:space-x-8">
               {/* Docs Link */}
               <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25">
@@ -519,17 +525,146 @@ export default function Navigation() {
           </div>
 
           {/* Right side: Controls */}
-          <div className="flex items-center">
-            <div className="secondary-nav-controls flex items-center space-x-1 xl:space-x-2">
-              {/* Version Dropdown */}
-              <div>
-                <button
-                  onClick={() =>
-                    setOpenMobileDropdown(
-                      openMobileDropdown === "version" ? null : "version"
-                    )
-                  }
-                  className="w-full flex justify-between items-center px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+          <div className="flex items-center space-x-1 xl:space-x-4">
+            {/* Version Dropdown */}
+            <div className="relative group" data-dropdown>
+              <button
+                data-dropdown-button
+                className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
+              >
+                3.8.1
+                <svg
+                  className="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                data-dropdown-menu
+                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+              >
+                <a
+                  href="#"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 rounded transition-all duration-200 hover:text-blue-300 hover:shadow-md"
+                >
+                  3.8.1 (Current)
+                </a>
+                <a
+                  href="#"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 rounded transition-all duration-200 hover:text-blue-300 hover:shadow-md"
+                >
+                  3.8.0
+                </a>
+                <a
+                  href="#"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 rounded transition-all duration-200 hover:text-blue-300 hover:shadow-md"
+                >
+                  All versions
+                </a>
+              </div>
+            </div>
+
+            {/* Language Dropdown */}
+            <div className="relative group" data-dropdown>
+              <button
+                data-dropdown-button
+                className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-100 transform nav-link-hover"
+              >
+                <svg
+                  className="w-4 h-4 xl:mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+                  />
+                </svg>
+                <span className="hidden xl:inline">English</span>
+                <svg
+                  className="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                data-dropdown-menu
+                className="absolute right-0 mt-2 w-32 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+              >
+                <a
+                  href="#"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md"
+                >
+                  English
+                </a>
+                <a
+                  href="#"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md"
+                >
+                  日本語
+                </a>
+                <a
+                  href="#"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md"
+                >
+                  简体中文
+                </a>
+              </div>
+            </div>
+
+            {/* GitHub Dropdown */}
+            <div className="relative group" data-dropdown>
+              <button
+                data-dropdown-button
+                className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
+              >
+                <svg
+                  className="w-4 h-4 xl:mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.300 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+                <svg
+                  className="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                data-dropdown-menu
+                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+              >
+                <a
+                  href="https://github.com/kubestellar/kubestellar"
+                  className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                 >
                   <span>Version</span>
                   <svg
@@ -655,7 +790,7 @@ export default function Navigation() {
             </div>
             {/* Mobile menu button */}
             <button
-              className="mobile-menu-button p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="xl:hidden p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700"
               aria-label="Open menu"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -678,7 +813,7 @@ export default function Navigation() {
 
 {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a
                 href="#docs"
