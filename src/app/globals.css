@@ -803,11 +803,6 @@ html:not(.dark) .nextra-sidebar-container {
   transition: all 0.2s ease;
 }
 
-[data-dropdown-menu] a:hover {
-  background: rgba(59, 130, 246, 0.2) !important;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
-}
-
 [data-dropdown-button] {
   user-select: none;
 }
