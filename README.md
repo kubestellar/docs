@@ -1,7 +1,7 @@
 # KubeStellar Documentation
 
 <p align="center">
-  <img src="./docs/overrides/favicons/android-72x72.png" alt="KubeStellar Logo" width="72"/>
+  <img src="./public/KubeStellar-with-Logo.png" alt="KubeStellar Logo" width="500px"/>
 </p>
 
 <p align="center">
@@ -189,9 +189,9 @@ We especially encourage first-time contributors and provide mentorship for those
 ## CNCF & Licensing
 
 <p align="center">
-  <a href="https://landscape.cncf.io">
-    <img src="/docs/overrides/images/cncf-color.png" width="300" alt="CNCF Logo"/>
-  </a>
+   <a href="https://landscape.cncf.io">
+        <img src="./public/cncf-color.png" width="300px;" alt="Cloud Native Computing Foundation Logo"/>
+    </a>
 </p>
 
 <p align="center">
