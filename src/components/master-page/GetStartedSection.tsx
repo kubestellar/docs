@@ -51,46 +51,35 @@ export default function GetStartedSection() {
           <h2 className="text-3xl font-extrabold sm:text-4xl">
             Ready to Get Started?
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-blue-100">
+          <p className="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-blue-100">
             Join the growing community of KubeStellar users and contributors.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 lgcustom:grid-cols-3 gap-6 lg:gap-8">
           {/* Installation Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
             <div className="p-6 flex flex-col h-full">
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
-                {/* <Icon path="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /> */}
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
-                  />
-                </svg>
+                <Icon path="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
               </div>
-              <h3 className="text-lg font-bold mb-2">Quick Installation</h3>
-              <p className="text-blue-100 mb-6">
+              <h3 className="text-base sm:text-lg font-bold mb-2">
+                Quick Installation
+              </h3>
+              <p className="text-sm sm:text-base text-blue-100 mb-6">
                 Get up and running with KubeStellar in minutes using our
                 streamlined installation guide with prerequisites and
                 step-by-step instructions.
               </p>
               <div className="mt-auto">
-                <Link
+                <a
                   href="/quick-installation"
-                  className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 sm:px-6 sm:py-3 sm:text-base transition-colors duration-200"
+                  className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 sm:px-6 sm:py-3 sm:text-base transition-colors duration-20"
                 >
                   Start Quick Installation
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="ml-2 h-5 w-5"
+                    className="hidden lg:inline ml-2 h-5 w-5"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -100,7 +89,7 @@ export default function GetStartedSection() {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                </Link>
+                </a>
                 <p className="mt-3 text-xs text-center text-blue-200 sm:text-sm">
                   Kubernetes experience required
                 </p>
@@ -109,26 +98,15 @@ export default function GetStartedSection() {
           </div>
 
           {/* Community Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
             <div className="p-6">
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
+                <Icon path="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M13 7A4 4 0 1 1 5 7A4 4 0 0 1 13 7 M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
               </div>
-              <h3 className="text-lg font-bold mb-2">Join the Community</h3>
-              <p className="text-blue-100 mb-4">
+              <h3 className="text-base sm:text-lg font-bold mb-2">
+                Join the Community
+              </h3>
+              <p className="text-sm sm:text-base text-blue-100 mb-4">
                 Connect with other users, contributors, and maintainers through
                 Slack, forums, and community calls.
               </p>
@@ -168,7 +146,6 @@ export default function GetStartedSection() {
                   target="_blank"
                   className="flex items-center justify-center p-2 rounded-lg bg-gray-700 hover:bg-gray-800 text-white text-sm"
                 >
-                  {/* Inlined GitHub SVG Icon */}
                   <svg
                     className="h-4 w-4 mr-2"
                     xmlns="http://www.w3.org/2000/svg"
@@ -184,13 +161,15 @@ export default function GetStartedSection() {
           </div>
 
           {/* Documentation Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300">
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
             <div className="p-6">
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
                 <Icon path="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </div>
-              <h3 className="text-lg font-bold mb-2">Explore Documentation</h3>
-              <p className="text-blue-100 mb-4">
+              <h3 className="text-base sm:text-lg font-bold mb-2">
+                Explore Documentation
+              </h3>
+              <p className="text-sm sm:text-base text-blue-100 mb-4">
                 Comprehensive guides, tutorials, and API references to help you
                 master KubeStellar&#39;s capabilities.
               </p>
