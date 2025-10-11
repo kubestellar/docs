@@ -162,7 +162,7 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className="relative fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-lg border-b border-gray-700/50 transition-all duration-300">
+    <nav className="fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-lg border-b border-gray-700/50 transition-all duration-300">
       {/* Dark base background */}
       <div className="absolute inset-0 bg-[#0a0a0a]/90 z-[-3]"></div>
 
@@ -177,15 +177,9 @@ export default function Navigation() {
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
                 alt="Kubestellar logo"
-<<<<<<< HEAD
-                width={240}
-                height={60}
-                className="h-12 w-auto xl:h-10"
-=======
                 width={160}
                 height={40}
                 className="h-8 w-auto xl:h-10"
->>>>>>> ddee141 (completely responsive navbar in all possible screen sizes)
               />
             </div>
           </Link>
@@ -194,7 +188,7 @@ export default function Navigation() {
           <div className="hidden xl:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="flex items-center space-x-4 xl:space-x-8">
               {/* Docs Link */}
-              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25">
+              <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg">
                 <Link
                   href="/docs"
                   className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 nav-link-hover"
@@ -219,7 +213,7 @@ export default function Navigation() {
               </div>
 
               {/* Blog Link */}
-              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25">
+              <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg">
                 <Link
                   target="_blank"
                   href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
@@ -252,7 +246,7 @@ export default function Navigation() {
               </div>
 
               {/* Contribute Dropdown */}
-              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
+              <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg" data-dropdown>
                 <button
                   type="button"
                   className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-100 transform nav-link-hover"
@@ -381,7 +375,7 @@ export default function Navigation() {
                 </div>
               </div>
               {/* Community Dropdown */}
-              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
+              <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg" data-dropdown>
                 <button
                   type="button"
                   className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-100 transform nav-link-hover"
@@ -426,7 +420,7 @@ export default function Navigation() {
                 >
                   <a
                     href="#get-involved"
-                    className="flex items-center px-10 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                   >
                     <svg
                       className="w-4 h-4 mr-3"
@@ -445,7 +439,7 @@ export default function Navigation() {
                   </a>
                   <Link
                     href="/programs"
-                    className="flex items-center px-10 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                   >
                     <svg
                       className="w-4 h-4 mr-3"
@@ -464,7 +458,7 @@ export default function Navigation() {
                   </Link>
                   <a
                     href="#ladder"
-                    className="flex items-center px-10 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                   >
                     <svg
                       className="w-4 h-4 mr-3"
@@ -483,7 +477,7 @@ export default function Navigation() {
                   </Link>
                   <a
                     href="#contact-us"
-                    className="flex items-center px-10 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                   >
                     <svg
                       className="w-4 h-4 mr-3"
@@ -502,7 +496,7 @@ export default function Navigation() {
                   </a>
                   <a
                     href="#partners"
-                    className="flex items-center px-10 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                   >
                     <svg
                       className="w-4 h-4 mr-3"
@@ -525,9 +519,9 @@ export default function Navigation() {
           </div>
 
           {/* Right side: Controls */}
-          <div className="flex items-center space-x-1 xl:space-x-4">
+          <div className="flex items-center space-x-1 xl:space-x-2">
             {/* Version Dropdown */}
-            <div className="relative group" data-dropdown>
+            <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg" data-dropdown>
               <button
                 data-dropdown-button
                 className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
@@ -549,23 +543,23 @@ export default function Navigation() {
               </button>
               <div
                 data-dropdown-menu
-                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
               >
                 <a
                   href="#"
-                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 rounded transition-all duration-200 hover:text-blue-300 hover:shadow-md"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
                 >
                   3.8.1 (Current)
                 </a>
                 <a
                   href="#"
-                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 rounded transition-all duration-200 hover:text-blue-300 hover:shadow-md"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
                 >
                   3.8.0
                 </a>
                 <a
                   href="#"
-                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 rounded transition-all duration-200 hover:text-blue-300 hover:shadow-md"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
                 >
                   All versions
                 </a>
@@ -573,7 +567,7 @@ export default function Navigation() {
             </div>
 
             {/* Language Dropdown */}
-            <div className="relative group" data-dropdown>
+            <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg" data-dropdown>
               <button
                 data-dropdown-button
                 className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-100 transform nav-link-hover"
@@ -608,23 +602,23 @@ export default function Navigation() {
               </button>
               <div
                 data-dropdown-menu
-                className="absolute right-0 mt-2 w-32 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+                className="absolute right-0 mt-2 w-32 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
               >
                 <a
                   href="#"
-                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 transition-all duration-200 hover:text-purple-300 hover:shadow-md"
                 >
                   English
                 </a>
                 <a
                   href="#"
-                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 transition-all duration-200 hover:text-purple-300 hover:shadow-md"
                 >
                   日本語
                 </a>
                 <a
                   href="#"
-                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 transition-all duration-200 hover:text-purple-300 hover:shadow-md"
                 >
                   简体中文
                 </a>
@@ -632,7 +626,7 @@ export default function Navigation() {
             </div>
 
             {/* GitHub Dropdown */}
-            <div className="relative group" data-dropdown>
+            <div className="relative group bg-black/10 backdrop-blur-sm rounded-lg" data-dropdown>
               <button
                 data-dropdown-button
                 className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
@@ -660,11 +654,11 @@ export default function Navigation() {
               </button>
               <div
                 data-dropdown-menu
-                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
               >
                 <a
                   href="https://github.com/kubestellar/kubestellar"
-                  className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
+                  className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                 >
                   <span>Version</span>
                   <svg
@@ -681,31 +675,14 @@ export default function Navigation() {
                       d="M19 9l-7 7-7-7"
                     />
                   </svg>
-                </button>
-                {openMobileDropdown === "version" && (
-                  <div className="pl-4 mt-1 space-y-1">
-                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                      3.8.1 (Current)
-                    </a>
-                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                      3.8.0
-                    </a>
-                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                      All versions
-                    </a>
-                  </div>
-                )}
-              </div>
-
-              {/* Language Dropdown */}
-              <div>
-                <button
-                  onClick={() =>
-                    setOpenMobileDropdown(
-                      openMobileDropdown === "language" ? null : "language"
-                    )
-                  }
-                  className="w-full flex justify-between items-center px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                  Star
+                  <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
+                    {githubStats.stars}
+                  </span>
+                </a>
+                <a
+                  href="https://github.com/kubestellar/kubestellar/fork"
+                  className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                 >
                   <span>Language</span>
                   <svg
@@ -722,31 +699,14 @@ export default function Navigation() {
                       d="M19 9l-7 7-7-7"
                     />
                   </svg>
-                </button>
-                {openMobileDropdown === "language" && (
-                  <div className="pl-4 mt-1 space-y-1">
-                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                      English
-                    </a>
-                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                      日本語
-                    </a>
-                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                      简体中文
-                    </a>
-                  </div>
-                )}
-              </div>
-
-              {/* GitHub Dropdown */}
-              <div>
-                <button
-                  onClick={() =>
-                    setOpenMobileDropdown(
-                      openMobileDropdown === "github" ? null : "github"
-                    )
-                  }
-                  className="w-full flex justify-between items-center px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                  Fork
+                  <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
+                    {githubStats.forks}
+                  </span>
+                </a>
+                <a
+                  href="https://github.com/kubestellar/kubestellar/watchers"
+                  className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                 >
                   <span>GitHub</span>
                   <svg
