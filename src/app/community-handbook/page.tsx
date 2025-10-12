@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useCallback, useMemo, memo } from "react";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -11,67 +11,131 @@ interface HandbookCardComponentProps {
   card: HandbookCard;
 }
 
-function HandbookCardComponent({ card }: HandbookCardComponentProps) {
+const HandbookCardComponent = memo(function HandbookCardComponent({ card }: HandbookCardComponentProps) {
+  const cardClasses = useMemo(() => 
+    `relative group bg-slate-800/50 border border-slate-700 rounded-xl p-8 h-72 overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30`,
+    []
+  );
+
+  const iconClasses = useMemo(() => 
+    `w-12 h-12 ${card.bgColor} rounded-lg flex items-center justify-center mb-4`,
+    [card.bgColor]
+  );
+
+  const svgClasses = useMemo(() => 
+    `w-6 h-6 ${card.iconColor}`,
+    [card.iconColor]
+  );
+
   return (
     <Link href={card.link}>
-      <div className="relative group bg-slate-800/50 border border-slate-700 rounded-xl p-8 h-72 overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30">
+      <div className={cardClasses}>
         <div className="transition-all duration-300 group-hover:-translate-y-2 h-full flex flex-col">
-          <div
-            className={`w-12 h-12 ${card.bgColor} rounded-lg flex items-center justify-center mb-4`}
-          >
+          <div className={iconClasses}>
             <svg
-              className={`w-6 h-6 ${card.iconColor}`}
+              className={svgClasses}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d={card.iconPath}
-              ></path>
+              />
             </svg>
           </div>
           <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
-          <p className="text-gray-300 leading-relaxed flex-grow">
+          <p className="text-gray-300 leading-relaxed flex-grow mb-4">
             {card.description}
           </p>
-        </div>
-        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span className="learn-more-enhanced">Learn More</span>
+          <div className="mt-auto">
+            <span className="learn-more-enhanced">Learn More</span>
+          </div>
         </div>
       </div>
     </Link>
   );
-}
+});
+
+// Custom hook for back to top functionality
+const useBackToTop = () => {
+  const handleScroll = useCallback(() => {
+    const backToTopButton = document.getElementById("back-to-top");
+    if (!backToTopButton) return;
+
+    const isVisible = window.scrollY > 300;
+    const action = isVisible ? 'add' : 'remove';
+    const oppositeAction = isVisible ? 'remove' : 'add';
+    
+    backToTopButton.classList[action]("opacity-100", "translate-y-0");
+    backToTopButton.classList[oppositeAction]("opacity-0", "translate-y-10");
+  }, []);
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    const backToTopButton = document.getElementById("back-to-top");
+    if (!backToTopButton) return;
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    backToTopButton.addEventListener("click", scrollToTop);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      backToTopButton.removeEventListener("click", scrollToTop);
+    };
+  }, [handleScroll, scrollToTop]);
+};
+
+// Optimized data particles component
+const DataParticles = memo(() => {
+  const particles = useMemo(() => 
+    Array.from({ length: 6 }, (_, i) => ({
+      id: i,
+      delay: `${i}s`
+    })),
+    []
+  );
+
+  return (
+    <div className="absolute inset-0">
+      {particles.map(({ id, delay }) => (
+        <div
+          key={id}
+          className="data-particle"
+          style={{ "--delay": delay } as React.CSSProperties}
+        />
+      ))}
+    </div>
+  );
+});
+
+// Optimized page title component
+const PageTitle = memo(() => (
+  <h1 className="text-6xl font-bold text-center mb-16 text-shadow-lg">
+    <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
+      Contribute
+    </span>{" "}
+    <span className="text-gradient animated-gradient bg-gradient-to-r from-cyan-400 via-emerald-500 to-blue-500">
+      Handbook
+    </span>
+  </h1>
+));
 
 export default function CommunityHandbook() {
-  useEffect(() => {
-    // Back to top functionality
-    const backToTopButton = document.getElementById("back-to-top");
-    if (backToTopButton) {
-      const handleScroll = () => {
-        if (window.scrollY > 300) {
-          backToTopButton.classList.remove("opacity-0", "translate-y-10");
-          backToTopButton.classList.add("opacity-100", "translate-y-0");
-        } else {
-          backToTopButton.classList.add("opacity-0", "translate-y-10");
-          backToTopButton.classList.remove("opacity-100", "translate-y-0");
-        }
-      };
-
-      window.addEventListener("scroll", handleScroll);
-
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, []);
+  useBackToTop();
+  
+  const memoizedCards = useMemo(() => 
+    handbookCards.map(card => (
+      <HandbookCardComponent key={card.id} card={card} />
+    )),
+    []
+  );
 
   return (
     <div className="bg-slate-900 text-white overflow-x-hidden dark">
@@ -79,7 +143,7 @@ export default function CommunityHandbook() {
 
       <main className="pt-24 relative overflow-hidden bg-slate-900 text-white">
         {/* Dark base background */}
-        <div className="absolute inset-0 bg-[#0a0a0a]"></div>
+        <div className="absolute inset-0 bg-[#0a0a0a]" />
 
         {/* Starfield background */}
         <div className="absolute inset-0 overflow-hidden">
@@ -90,47 +154,13 @@ export default function CommunityHandbook() {
         <GridLines horizontalLines={21} verticalLines={18} />
 
         {/* Floating Data Particles */}
-        <div className="absolute inset-0">
-          <div
-            className="data-particle"
-            style={{ "--delay": "0s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "1s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "2s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "3s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "4s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "5s" } as React.CSSProperties}
-          ></div>
-        </div>
+        <DataParticles />
 
         <div className="relative py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h1 className="text-6xl font-bold text-center mb-16 text-shadow-lg">
-              <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
-                Contribute
-              </span>{" "}
-              <span className="text-gradient animated-gradient bg-gradient-to-r from-cyan-400 via-emerald-500 to-blue-500">
-                Handbook
-              </span>
-            </h1>
+            <PageTitle />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {handbookCards.map(card => (
-                <HandbookCardComponent key={card.id} card={card} />
-              ))}
+              {memoizedCards}
             </div>
           </div>
         </div>
@@ -142,6 +172,7 @@ export default function CommunityHandbook() {
       <button
         id="back-to-top"
         className="fixed bottom-8 right-8 p-2 rounded-full bg-blue-600 text-white shadow-lg z-50 transition-all duration-300 opacity-0 translate-y-10"
+        aria-label="Back to top"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -149,6 +180,7 @@ export default function CommunityHandbook() {
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"
