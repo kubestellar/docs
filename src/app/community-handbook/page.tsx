@@ -16,18 +16,18 @@ const HandbookCardComponent = memo(function HandbookCardComponent({
 }: HandbookCardComponentProps) {
   const cardClasses = useMemo(
     () =>
-      `relative group bg-slate-800/50 border border-slate-700 rounded-xl p-8 h-85 overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30`,
+      `relative group bg-slate-800/50 border border-slate-700 rounded-xl p-4 sm:p-6 lg:p-8 h-auto min-h-64 sm:min-h-72 lg:min-h-80 overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30`,
     []
   );
 
   const iconClasses = useMemo(
     () =>
-      `w-12 h-12 ${card.bgColor} rounded-lg flex items-center justify-center mb-4`,
+      `w-10 h-10 sm:w-12 sm:h-12 ${card.bgColor} rounded-lg flex items-center justify-center mb-3 sm:mb-4`,
     [card.bgColor]
   );
 
   const svgClasses = useMemo(
-    () => `w-6 h-6 ${card.iconColor}`,
+    () => `w-5 h-5 sm:w-6 sm:h-6 ${card.iconColor}`,
     [card.iconColor]
   );
 
@@ -51,15 +51,17 @@ const HandbookCardComponent = memo(function HandbookCardComponent({
               />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
-          <p className="text-gray-300 leading-relaxed flex-grow mb-1">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4">
+            {card.title}
+          </h3>
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-1">
             {card.description}
           </p>
-          <div className="mt-auto">
-            <span className="text-blue-400 hover:text-blue-300 transition-colors duration-200 flex items-center gap-1">
+          <div className="mt-3">
+            <span className="text-sm sm:text-base text-blue-400 hover:text-blue-300 transition-colors duration-200 flex items-center gap-1">
               Learn More
               <svg
-                className="w-4 h-4"
+                className="w-3 h-3 sm:w-4 sm:h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -138,7 +140,7 @@ const DataParticles = memo(() => {
 
 // Optimized page title component
 const PageTitle = memo(() => (
-  <h1 className="text-6xl font-bold text-center mb-16 text-shadow-lg">
+  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 text-shadow-lg px-4">
     <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
       Contribute
     </span>{" "}
@@ -178,10 +180,10 @@ export default function CommunityHandbook() {
         {/* Floating Data Particles */}
         <DataParticles />
 
-        <div className="relative py-16">
+        <div className="relative py-8 sm:py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <PageTitle />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {memoizedCards}
             </div>
           </div>
@@ -193,7 +195,7 @@ export default function CommunityHandbook() {
       {/* Floating back to top button */}
       <button
         id="back-to-top"
-        className="fixed bottom-8 right-8 p-2 rounded-full bg-blue-600 text-white shadow-lg z-50 transition-all duration-300 opacity-0 translate-y-10"
+        className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 p-2 rounded-full bg-blue-600 text-white shadow-lg z-50 transition-all duration-300 opacity-0 translate-y-10"
         aria-label="Back to top"
       >
         <svg
