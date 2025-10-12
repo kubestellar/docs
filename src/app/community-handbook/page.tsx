@@ -11,19 +11,23 @@ interface HandbookCardComponentProps {
   card: HandbookCard;
 }
 
-const HandbookCardComponent = memo(function HandbookCardComponent({ card }: HandbookCardComponentProps) {
-  const cardClasses = useMemo(() => 
-    `relative group bg-slate-800/50 border border-slate-700 rounded-xl p-8 h-72 overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30`,
+const HandbookCardComponent = memo(function HandbookCardComponent({
+  card,
+}: HandbookCardComponentProps) {
+  const cardClasses = useMemo(
+    () =>
+      `relative group bg-slate-800/50 border border-slate-700 rounded-xl p-8 h-85 overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30`,
     []
   );
 
-  const iconClasses = useMemo(() => 
-    `w-12 h-12 ${card.bgColor} rounded-lg flex items-center justify-center mb-4`,
+  const iconClasses = useMemo(
+    () =>
+      `w-12 h-12 ${card.bgColor} rounded-lg flex items-center justify-center mb-4`,
     [card.bgColor]
   );
 
-  const svgClasses = useMemo(() => 
-    `w-6 h-6 ${card.iconColor}`,
+  const svgClasses = useMemo(
+    () => `w-6 h-6 ${card.iconColor}`,
     [card.iconColor]
   );
 
@@ -48,11 +52,27 @@ const HandbookCardComponent = memo(function HandbookCardComponent({ card }: Hand
             </svg>
           </div>
           <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
-          <p className="text-gray-300 leading-relaxed flex-grow mb-4">
+          <p className="text-gray-300 leading-relaxed flex-grow mb-1">
             {card.description}
           </p>
           <div className="mt-auto">
-            <span className="learn-more-enhanced">Learn More</span>
+            <span className="text-blue-400 hover:text-blue-300 transition-colors duration-200 flex items-center gap-1">
+              Learn More
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 12h14m-7-7l7 7-7 7"
+                />
+              </svg>
+            </span>
           </div>
         </div>
       </div>
@@ -67,9 +87,9 @@ const useBackToTop = () => {
     if (!backToTopButton) return;
 
     const isVisible = window.scrollY > 300;
-    const action = isVisible ? 'add' : 'remove';
-    const oppositeAction = isVisible ? 'remove' : 'add';
-    
+    const action = isVisible ? "add" : "remove";
+    const oppositeAction = isVisible ? "remove" : "add";
+
     backToTopButton.classList[action]("opacity-100", "translate-y-0");
     backToTopButton.classList[oppositeAction]("opacity-0", "translate-y-10");
   }, []);
@@ -94,11 +114,12 @@ const useBackToTop = () => {
 
 // Optimized data particles component
 const DataParticles = memo(() => {
-  const particles = useMemo(() => 
-    Array.from({ length: 6 }, (_, i) => ({
-      id: i,
-      delay: `${i}s`
-    })),
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 6 }, (_, i) => ({
+        id: i,
+        delay: `${i}s`,
+      })),
     []
   );
 
@@ -129,11 +150,12 @@ const PageTitle = memo(() => (
 
 export default function CommunityHandbook() {
   useBackToTop();
-  
-  const memoizedCards = useMemo(() => 
-    handbookCards.map(card => (
-      <HandbookCardComponent key={card.id} card={card} />
-    )),
+
+  const memoizedCards = useMemo(
+    () =>
+      handbookCards.map(card => (
+        <HandbookCardComponent key={card.id} card={card} />
+      )),
     []
   );
 

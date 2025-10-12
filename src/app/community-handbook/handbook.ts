@@ -123,7 +123,7 @@ export const handbookCards: HandbookCard[] = [
       "The process for creating and publishing new KubeStellar releases. Complete release lifecycle management.",
     iconType: "flag",
     iconPath:
-      "M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m0 0V3a1 1 0 011 1v8.5l-5-5-5 5V4a1 1 0 011-1m0 0h10m-9 4h8m-8 4h8m-8 4h3.5",
+      "M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9",
     bgColor: "bg-orange-500/20",
     iconColor: "text-orange-400",
     link: "/docs/contribution-guidelines/release-process",
