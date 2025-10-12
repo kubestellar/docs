@@ -115,7 +115,7 @@ const useBackToTop = () => {
 };
 
 // Optimized data particles component
-const DataParticles = memo(() => {
+const DataParticles = memo(function DataParticles() {
   const particles = useMemo(
     () =>
       Array.from({ length: 6 }, (_, i) => ({
@@ -139,7 +139,8 @@ const DataParticles = memo(() => {
 });
 
 // Optimized page title component
-const PageTitle = memo(() => (
+const PageTitle = memo(function PageTitle() {
+  return (
   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 text-shadow-lg px-4">
     <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
       Contribute
@@ -148,7 +149,8 @@ const PageTitle = memo(() => (
       Handbook
     </span>
   </h1>
-));
+  );
+});
 
 export default function CommunityHandbook() {
   useBackToTop();
