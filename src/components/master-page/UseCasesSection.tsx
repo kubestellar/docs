@@ -212,7 +212,7 @@ export default function UseCasesSection() {
   return (
     <section
       id="use-cases"
-      className="relative py-8 sm:py-12 lg:py-16 text-white overflow-hidden"
+      className="relative py-6 xs:py-8 sm:py-12 md:py-14 lg:py-16 xl:py-20 text-white overflow-hidden"
     >
       {/* Dark base background matching the image */}
       <div className="absolute inset-0 bg-[#0a0a0a]"></div>
@@ -223,14 +223,14 @@ export default function UseCasesSection() {
       {/* Grid lines background */}
       <GridLines horizontalLines={18} verticalLines={15} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 sm:mb-4">
+      <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative">
+        <div className="text-center mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16">
+          <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-2 xs:mb-3 sm:mb-4 md:mb-5">
             <span className="bg-gradient-to-r from-[#667EEA] to-[#764BA2] bg-clip-text text-transparent">
               Use Cases
             </span>
           </h2>
-          <p className="max-w-2xl mx-auto text-base sm:text-lg lg:text-xl text-[#D1D5DB] font-normal px-2 sm:px-4">
+          <p className="max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-[#D1D5DB] font-normal px-2 xs:px-3 sm:px-4 md:px-6">
             Discover how organizations leverage KubeStellar for their
             multi-cluster needs.
           </p>
