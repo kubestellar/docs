@@ -66,33 +66,18 @@ export default function GetStartedSection() {
               <h3 className="text-base sm:text-lg font-bold mb-2">
                 Quick Installation
               </h3>
-              <p className="text-sm sm:text-base text-blue-100 mb-6">
+              <p className="text-sm sm:text-base text-blue-100 mb-4">
                 Get up and running with KubeStellar in minutes using our
                 streamlined installation guide with prerequisites and
                 step-by-step instructions.
               </p>
-              <div className="mt-auto">
+              <div>
                 <a
                   href="/quick-installation"
                   className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 sm:px-6 sm:py-3 sm:text-base transition-colors duration-20"
                 >
                   Start Quick Installation
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="hidden lg:inline ml-2 h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
                 </a>
-                <p className="mt-3 text-xs text-center text-blue-200 sm:text-sm">
-                  Kubernetes experience required
-                </p>
               </div>
             </div>
           </div>
@@ -176,19 +161,19 @@ export default function GetStartedSection() {
               <div className="mt-4 grid grid-cols-1 gap-2">
                 <Link
                   href="#"
-                  className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm"
+                  className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm pl-5"
                 >
                   Getting Started
                 </Link>
                 <Link
                   href="#"
-                  className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm"
+                  className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm pl-5"
                 >
                   Tutorials
                 </Link>
                 <Link
                   href="#"
-                  className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm"
+                  className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm pl-5"
                 >
                   API Reference
                 </Link>
