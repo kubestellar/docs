@@ -74,37 +74,37 @@ interface CardTheme {
 const cardThemes: Record<string, CardTheme> = {
   yellow: {
     iconBg: "bg-yellow-400/20",
-    borderColor: "border-blue-700/30",
+    borderColor: "border-slate-700",
     borderHover: "hover:border-[#EAB308]/80",
     shadowHover: "hover:shadow-yellow-500/30",
   },
   purple: {
     iconBg: "bg-purple-400/20",
-    borderColor: "border-blue-700/30",
+    borderColor: "border-slate-700",
     borderHover: "hover:border-[#A855F7]/80",
     shadowHover: "hover:shadow-purple-500/30",
   },
   green: {
     iconBg: "bg-green-400/20",
-    borderColor: "border-blue-700/30",
+    borderColor: "border-slate-700",
     borderHover: "hover:border-[#22C55E]/80",
     shadowHover: "hover:shadow-green-500/30",
   },
   blue: {
     iconBg: "bg-blue-400/20",
-    borderColor: "border-blue-700/30",
+    borderColor: "border-slate-700",
     borderHover: "hover:border-[#3B82F6]/80",
     shadowHover: "hover:shadow-blue-500/30",
   },
   red: {
     iconBg: "bg-red-400/20",
-    borderColor: "border-blue-700/30",
+    borderColor: "border-slate-700",
     borderHover: "hover:border-[#EF4444]/80",
     shadowHover: "hover:shadow-red-500/30",
   },
   indigo: {
     iconBg: "bg-indigo-400/20",
-    borderColor: "border-blue-700/30",
+    borderColor: "border-slate-700",
     borderHover: "hover:border-[#6366F1]/80",
     shadowHover: "hover:shadow-indigo-500/30",
   },
@@ -124,7 +124,7 @@ const Card = memo(
 
     return (
       <div
-        className={`relative group bg-blue-900/20 backdrop-blur-md border ${themeConfig.borderColor} rounded-xl p-4 sm:p-6 lg:p-8 h-64 sm:h-72 lg:h-80 w-full max-w-md sm:max-w-lg lg:max-w-xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:bg-blue-900/30 ${themeConfig.shadowHover} ${themeConfig.borderHover} ${className}`}
+        className={`relative group bg-slate-800/50 backdrop-blur-2xl border ${themeConfig.borderColor} rounded-xl p-4 sm:p-6 lg:p-8 h-64 sm:h-72 lg:h-80 w-full max-w-md sm:max-w-lg lg:max-w-xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:bg-slate-800/60 ${themeConfig.shadowHover} ${themeConfig.borderHover} ${className}`}
       >
         <div className="transition-all duration-300 group-hover:-translate-y-2 h-full flex flex-col">
           <div
