@@ -107,7 +107,7 @@ const Card = memo(
 
     return (
       <div
-        className={`relative group bg-slate-800/50 backdrop-blur-2xl border ${themeConfig.borderColor} rounded-xl p-4 sm:p-6 lg:p-8 h-64 sm:h-72 lg:h-80 w-full max-w-md sm:max-w-lg lg:max-w-xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:bg-slate-800/60 ${themeConfig.shadowHover} ${themeConfig.borderHover} ${className}`}
+        className={`relative group bg-slate-800/30 backdrop-blur-3xl border ${themeConfig.borderColor} rounded-xl p-4 sm:p-6 lg:p-8 h-64 sm:h-72 lg:h-80 w-full max-w-3xl sm:max-w-4xl lg:max-w-5xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:bg-slate-800/40 hover:backdrop-blur-3xl ${themeConfig.shadowHover} ${themeConfig.borderHover} ${className}`}
       >
         <div className="transition-all duration-300 group-hover:-translate-y-2 h-full flex flex-col">
           <div
@@ -206,7 +206,7 @@ export default function UseCasesSection() {
       {/* Grid lines background */}
       <GridLines horizontalLines={18} verticalLines={15} />
 
-      <div className="max-w-7xl mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative">
+      <div className="max-w-[90rem] mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative">
         <div className="text-center mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16">
           <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-2 xs:mb-3 sm:mb-4 md:mb-5">
             <span className="bg-gradient-to-r from-[#667EEA] to-[#764BA2] bg-clip-text text-transparent">
@@ -219,7 +219,7 @@ export default function UseCasesSection() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+        <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {useMemo(
             () =>
               useCases.map((useCase, index) => (
