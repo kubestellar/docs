@@ -185,7 +185,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="https://docs.kubestellar.io/release-0.28.0/direct/contribute/"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Overview
@@ -193,7 +193,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/coc-inc/"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Code of Conduct
@@ -201,7 +201,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/contributing-inc/"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Guidelines
@@ -209,7 +209,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/license-inc/"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   License
@@ -217,7 +217,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/onboarding-inc/"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Onboarding
