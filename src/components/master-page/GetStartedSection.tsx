@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Link from "next/link";
 import { GridLines, StarField } from "../index";
 
 const Icon = ({
@@ -74,12 +73,12 @@ export default function GetStartedSection() {
                 step-by-step instructions.
               </p>
               <div>
-                <a
+                <Link
                   href="/quick-installation"
                   className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 sm:px-6 sm:py-3 sm:text-base transition-colors duration-20"
                 >
                   Start Quick Installation
-                </a>
+                </Link>
               </div>
             </div>
           </div>
