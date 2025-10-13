@@ -4,10 +4,8 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GridLines, StarField } from "./index";
-import Link from "next/link";
 
 export default function Footer() {
-  const t = useTranslations("footer");
   useEffect(() => {
     // Back to top functionality
     const initBackToTop = () => {
@@ -78,7 +76,7 @@ export default function Footer() {
                 <Link
                 target="_blank"
                 href="#"
-                className="w-12 h-12 rounded-lg flex items-center justify-center transition-colors duration-300"
+                className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors duration-300"
                 >
                 <svg
                   opacity={0.5}
@@ -88,7 +86,7 @@ export default function Footer() {
                 >
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
-              </a>
+                </Link>
               <Link
                 target="_blank"
                 href="https://github.com/kubestellar"
@@ -109,7 +107,7 @@ export default function Footer() {
                 className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors duration-300"
               >
                 <svg
-                  className="w-6 h-6 hover:opacity-75"
+                  className="w-6 h-6 hover:opacity-100"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   opacity={0.5}
@@ -123,7 +121,7 @@ export default function Footer() {
                 className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors duration-300"
               >
                 <svg
-                  className="w-6 h-6 hover:opacity-75"
+                  className="w-6 h-6 hover:opacity-100"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   opacity={0.5}
