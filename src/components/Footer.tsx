@@ -240,7 +240,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/programs"
+                  href=""
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Programs
