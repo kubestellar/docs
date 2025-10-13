@@ -184,7 +184,7 @@ export default function UseCasesSection() {
       <div className="absolute inset-0 bg-[#0a0a0a]"></div>
 
       {/* Starfield background */}
-      <StarField density="medium" showComets={true} cometCount={4} />
+      <StarField density="low" showComets={true} cometCount={4} />
 
       {/* Grid lines background */}
       <GridLines horizontalLines={18} verticalLines={15} />
