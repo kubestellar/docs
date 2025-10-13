@@ -2,12 +2,9 @@
 
 import { GridLines, StarField } from "../index";
 import { memo, useMemo } from "react";
+import { IconProps, CardTheme, CardProps } from "../types";
 
 // Optimized Icon component with memoization
-interface IconProps {
-  type: string;
-  className?: string;
-}
 
 // Move iconMap outside component to prevent recreation on every render
 const iconMap = {
@@ -64,12 +61,6 @@ const Icon = memo(
 Icon.displayName = "Icon";
 
 // Optimized reusable Card component with theme system
-interface CardTheme {
-  iconBg: string;
-  borderColor: string;
-  borderHover: string;
-  shadowHover: string;
-}
 
 const cardThemes: Record<string, CardTheme> = {
   yellow: {
@@ -110,17 +101,9 @@ const cardThemes: Record<string, CardTheme> = {
   },
 };
 
-interface CardProps {
-  icon: string;
-  title: string;
-  description: string;
-  theme: keyof typeof cardThemes;
-  className?: string;
-}
-
 const Card = memo(
   ({ icon, title, description, theme, className = "" }: CardProps) => {
-    const themeConfig = cardThemes[theme];
+    const themeConfig = cardThemes[theme as keyof typeof cardThemes];
 
     return (
       <div
