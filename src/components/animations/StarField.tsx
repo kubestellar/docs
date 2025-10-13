@@ -27,10 +27,22 @@ export default function StarField({
 
     // Calculate star count based on density
     const densityMap = {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      low: 100,
+      medium: 150,
+      high: 200,
+=======
+>>>>>>> 1132336 (less stars in nevbar)
       "very-low": 30,
       low: 200,
       medium: 300,
       high: 600,
+<<<<<<< HEAD
+=======
+>>>>>>> 659363c (less stars in nevbar)
+>>>>>>> 1132336 (less stars in nevbar)
     };
 
     const starCount = densityMap[density];
