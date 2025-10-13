@@ -171,9 +171,9 @@ export default function Navigation() {
 
       {/* Starfield background */}
       <StarField
-        density="low"
+        density="very-low"
         showComets={true}
-        cometCount={2}
+        cometCount={0}
         className="z-[-2]"
       />
 

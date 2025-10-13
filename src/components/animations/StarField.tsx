@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 interface StarFieldProps {
   className?: string;
-  density?: "low" | "medium" | "high";
+  density?: "very-low" | "low" | "medium" | "high";
   showComets?: boolean;
   cometCount?: number;
 }
@@ -13,7 +13,7 @@ export default function StarField({
   className = "",
   density = "low",
   showComets = true,
-  cometCount = 3,
+  cometCount = 1,
 }: StarFieldProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -27,9 +27,16 @@ export default function StarField({
 
     // Calculate star count based on density
     const densityMap = {
+<<<<<<< HEAD
       low: 100,
       medium: 150,
       high: 200,
+=======
+      "very-low": 30,
+      low: 200,
+      medium: 300,
+      high: 600,
+>>>>>>> 659363c (less stars in nevbar)
     };
 
     const starCount = densityMap[density];
