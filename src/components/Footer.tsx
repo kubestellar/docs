@@ -150,7 +150,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="https://docs.kubestellar.io/release-0.28.0/readme/"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Overview
@@ -244,7 +244,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                  href="http://docs.kubestellar.io/release-0.28.0/Community/_index/"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Get Involved
@@ -252,7 +252,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/programs"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                   Programs
