@@ -21,7 +21,8 @@ export default function HowItWorksSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-3xl font-extrabold text-white sm:text-[2.4rem]">
-            How <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
+            How{" "}
+            <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
               It Works
             </span>
           </h2>

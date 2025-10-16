@@ -192,7 +192,8 @@ export default function UseCasesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-extrabold text-white sm:text-[2.4rem]">
-            Use <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
+            Use{" "}
+            <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
               Cases
             </span>
           </h2>
