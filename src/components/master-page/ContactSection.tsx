@@ -112,8 +112,10 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
-            <span className="text-gradient">Get in Touch</span>
+          <h2 className="text-3xl font-extrabold text-white sm:text-[2.4rem]">
+            Get <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
+              in Touch
+            </span>
           </h2>
           <p className="mt-3 sm:mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 px-4">
             Have questions about KubeStellar? We&apos;re here to help!

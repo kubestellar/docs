@@ -49,7 +49,7 @@ export default function GetStartedSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold sm:text-4xl">
+          <h2 className="text-3xl font-extrabold sm:text-[2.4rem]">
             Ready to Get Started?
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-blue-100">
