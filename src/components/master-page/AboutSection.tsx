@@ -114,7 +114,7 @@ export default function AboutSection() {
               KubeStellar
             </span>
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
+          <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-300">
             A multi-cluster Kubernetes orchestration platform that simplifies
             how you manage distributed workloads.
           </p>

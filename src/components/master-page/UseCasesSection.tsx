@@ -197,7 +197,7 @@ export default function UseCasesSection() {
               Cases
             </span>
           </h2>
-          <p className="max-w-2xl mx-auto text-lg sm:text-xl text-[#D1D5DB] font-normal px-4">
+          <p className="max-w-2xl mt-3 mx-auto text-lg sm:text-xl text-[#D1D5DB] font-normal px-4">
             Discover how organizations leverage KubeStellar for their
             multi-cluster needs.
           </p>

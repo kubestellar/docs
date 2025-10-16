@@ -52,7 +52,7 @@ export default function GetStartedSection() {
           <h2 className="text-3xl font-extrabold sm:text-[2.4rem]">
             Ready to Get Started?
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-blue-100">
+          <p className="mt-3 max-w-2xl mx-auto text-lg sm:text-xl text-blue-100">
             Join the growing community of KubeStellar users and contributors.
           </p>
         </div>
