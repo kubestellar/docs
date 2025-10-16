@@ -3,8 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { GridLines, StarField, LanguageSwitcher } from "./index";
-import { useTranslations } from "next-intl";
+import { GridLines } from "./index";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -168,14 +167,6 @@ export default function Navigation() {
     <nav className="fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-lg border-b border-gray-700/50 transition-all duration-300">
       {/* Dark base background */}
       <div className="absolute inset-0 bg-[#0a0a0a]/90 z-[-3]"></div>
-
-      {/* Starfield background */}
-      <StarField
-        density="very-low"
-        showComets={true}
-        cometCount={0}
-        className="z-[-2]"
-      />
 
       {/* Grid lines background */}
       <GridLines />
