@@ -162,7 +162,7 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className="fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-lg border-b border-gray-700/50 transition-all duration-300">
+    <nav className="relative fixed w-full z-50 bg-gradient-to-br from-green-900 via-purple-900 to-green-900/90 backdrop-blur-lg border-b border-gray-700/50 transition-all duration-300">
       {/* Dark base background */}
       <div className="absolute inset-0 bg-[#0a0a0a]/90 z-[-3]"></div>
 
@@ -733,9 +733,6 @@ export default function Navigation() {
             </button>
           </div>
         </div>
-
-
-
 
         {/* Mobile menu */}
         {isMenuOpen && (

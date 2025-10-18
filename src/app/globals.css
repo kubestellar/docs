@@ -445,11 +445,18 @@ html:not(.dark) .nextra-sidebar-container {
 
 /* Custom Responsive Navigation Styles */
 
-/* --- Mobile First (Default State: < 1024px) --- */
-/* Hide main links and desktop controls, show mobile button */
-.main-nav-links {
-  display: none;
+.mobile-menu-panel {
+  position: absolute;
+  top: 2.5rem; /* This is the fix: h-16 = 4rem (64px) */
+  left: -1rem;
+  right: -1rem;
+  background: inherit;
+  border-bottom: 1px solid #4a5568;
+  z-index: 40;
 }
+
+/* Mobile State (< 1024px) */
+.main-nav-links,
 .secondary-nav-controls {
   display: none;
 }
