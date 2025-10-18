@@ -445,10 +445,14 @@ html:not(.dark) .nextra-sidebar-container {
 
 /* Custom Responsive Navigation Styles */
 
-/* --- Mobile First (Default State: < 1024px) --- */
-/* Hide main links and desktop controls, show mobile button */
-.main-nav-links {
-  display: none;
+.mobile-menu-panel {
+  position: absolute;
+  top: 2.5  rem; /* This is the fix: h-16 = 4rem (64px) */
+  left: -1rem;
+  right: -1rem;
+  background: inherit;
+  border-bottom: 1px solid #4a5568;
+  z-index: 40;
 }
 .secondary-nav-controls {
   display: none;
@@ -466,10 +470,11 @@ html:not(.dark) .nextra-sidebar-container {
 
 
 /* --- Tablet State (1024px to 1279px) --- */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   /* Show main links, keep desktop controls hidden */
   .main-nav-links {
     display: flex;
+    left: 58%; 
   }
   .secondary-nav-controls {
     display: none;
