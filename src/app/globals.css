@@ -447,7 +447,7 @@ html:not(.dark) .nextra-sidebar-container {
 
 .mobile-menu-panel {
   position: absolute;
-  top: 2.5rem; /* This is the fix: h-16 = 4rem (64px) */
+  top: 2.5  rem; /* This is the fix: h-16 = 4rem (64px) */
   left: -1rem;
   right: -1rem;
   background: inherit;
@@ -473,10 +473,11 @@ html:not(.dark) .nextra-sidebar-container {
 
 
 /* --- Tablet State (1024px to 1279px) --- */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   /* Show main links, keep desktop controls hidden */
   .main-nav-links {
     display: flex;
+    left: 58%; 
   }
   .secondary-nav-controls {
     display: none;
