@@ -444,10 +444,9 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 /* Custom Responsive Navigation Styles */
-
 .mobile-menu-panel {
   position: absolute;
-  top: 2.5  rem; /* This is the fix: h-16 = 4rem (64px) */
+  top: 2.5  rem; 
   left: -1rem;
   right: -1rem;
   background: inherit;
@@ -455,7 +454,6 @@ html:not(.dark) .nextra-sidebar-container {
   z-index: 40;
 }
 
-/* Mobile State (< 1024px) */
 .main-nav-links,
 .secondary-nav-controls {
   display: none;
@@ -463,7 +461,6 @@ html:not(.dark) .nextra-sidebar-container {
 .mobile-menu-button {
   display: flex;
 }
-/* In mobile menu, show everything */
 .mobile-menu-panel .mobile-primary-links {
   display: block;
 }
@@ -472,9 +469,7 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 
-/* --- Tablet State (1024px to 1279px) --- */
 @media (min-width: 768px) {
-  /* Show main links, keep desktop controls hidden */
   .main-nav-links {
     display: flex;
     left: 58%; 
@@ -483,9 +478,8 @@ html:not(.dark) .nextra-sidebar-container {
     display: none;
   }
   .mobile-menu-button {
-    display: flex; /* Keep hamburger visible */
+    display: flex; 
   }
-  /* In mobile menu, hide primary links (now in nav) but show secondary */
   .mobile-menu-panel .mobile-primary-links {
     display: none;
   }
@@ -494,16 +488,13 @@ html:not(.dark) .nextra-sidebar-container {
   }
 }
 
-/* --- Desktop State (1280px and up) --- */
 @media (min-width: 1280px) {
-  /* Show both main links and desktop controls */
   .main-nav-links {
     display: flex;
   }
   .secondary-nav-controls {
     display: flex;
   }
-  /* Hide the mobile hamburger button completely */
   .mobile-menu-button {
     display: none;
   }
