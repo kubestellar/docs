@@ -444,6 +444,7 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 /* Custom Responsive Navigation Styles */
+<<<<<<< HEAD
 .mobile-menu-panel {
   position: absolute;
   top: 2.5rem; 
@@ -455,12 +456,24 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 .main-nav-links,
+=======
+
+/* --- Mobile First (Default State: < 1024px) --- */
+/* Hide main links and desktop controls, show mobile button */
+.main-nav-links {
+  display: none;
+}
+>>>>>>> 8292540 (rebase)
 .secondary-nav-controls {
   display: none;
 }
 .mobile-menu-button {
   display: flex;
 }
+<<<<<<< HEAD
+=======
+/* In mobile menu, show everything */
+>>>>>>> 8292540 (rebase)
 .mobile-menu-panel .mobile-primary-links {
   display: block;
 }
@@ -469,13 +482,22 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 
+<<<<<<< HEAD
 @media (min-width: 768px) and (max-width: 1279px){
   .main-nav-links {
     display: none !important;
+=======
+/* --- Tablet State (1024px to 1279px) --- */
+@media (min-width: 1024px) {
+  /* Show main links, keep desktop controls hidden */
+  .main-nav-links {
+    display: flex;
+>>>>>>> 8292540 (rebase)
   }
   .secondary-nav-controls {
     display: none;
   }
+<<<<<<< HEAD
   .mobile-menu_button, .mobile-menu-button {
     display: flex;
   }
@@ -534,10 +556,33 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
   .main-nav-links {
     display: flex;
     left:50%
+=======
+  .mobile-menu-button {
+    display: flex; /* Keep hamburger visible */
+  }
+  /* In mobile menu, hide primary links (now in nav) but show secondary */
+  .mobile-menu-panel .mobile-primary-links {
+    display: none;
+  }
+  .mobile-menu-panel .mobile-secondary-controls {
+    display: block;
+  }
+}
+
+/* --- Desktop State (1280px and up) --- */
+@media (min-width: 1280px) {
+  /* Show both main links and desktop controls */
+  .main-nav-links {
+    display: flex;
+>>>>>>> 8292540 (rebase)
   }
   .secondary-nav-controls {
     display: flex;
   }
+<<<<<<< HEAD
+=======
+  /* Hide the mobile hamburger button completely */
+>>>>>>> 8292540 (rebase)
   .mobile-menu-button {
     display: none;
   }
