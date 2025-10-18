@@ -343,8 +343,10 @@ export default function Footer() {
         {/* Divider and bottom section */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
+            <div><p className="text-gray-400">
+                © 2025 KubeStellar. All rights reserved.
+              </p></div>
             <div className="flex items-center space-x-6 mb-4 md:mb-0">
-              <p className="text-gray-400">{t("copyright")}</p>
               <div className="flex items-center space-x-4">
                 <a
                   href="#"
