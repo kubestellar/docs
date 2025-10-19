@@ -201,19 +201,20 @@ export default function UseCasesSection() {
       <div className="absolute inset-0 bg-[#0a0a0a]"></div>
 
       {/* Starfield background */}
-      <StarField density="medium" showComets={true} cometCount={4} />
+      <StarField density="low" showComets={true} cometCount={4} />
 
       {/* Grid lines background */}
       <GridLines horizontalLines={18} verticalLines={15} />
 
-      <div className="max-w-[90rem] mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative">
-        <div className="text-center mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-14 xl:mb-16">
-          <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-extrabold mb-2 xs:mb-3 sm:mb-4 md:mb-5">
-            <span className="bg-gradient-to-r from-[#667EEA] to-[#764BA2] bg-clip-text text-transparent">
-              Use Cases
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-extrabold text-white sm:text-[2.4rem]">
+            Use{" "}
+            <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
+              Cases
             </span>
           </h2>
-          <p className="max-w-xs xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-[#D1D5DB] font-normal px-2 xs:px-3 sm:px-4 md:px-6">
+          <p className="max-w-2xl mt-3 mx-auto text-lg sm:text-xl text-[#D1D5DB] font-normal px-4">
             Discover how organizations leverage KubeStellar for their
             multi-cluster needs.
           </p>
