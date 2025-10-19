@@ -472,7 +472,7 @@ html:not(.dark) .nextra-sidebar-container {
 @media (min-width: 768px) {
   .main-nav-links {
     display: flex;
-    left: 55%; 
+    left: 57% 
   }
   .secondary-nav-controls {
     display: none;
@@ -491,6 +491,7 @@ html:not(.dark) .nextra-sidebar-container {
 @media (min-width: 1280px) {
   .main-nav-links {
     display: flex;
+    left:50%
   }
   .secondary-nav-controls {
     display: flex;
