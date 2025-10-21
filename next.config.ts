@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 import nextra from "nextra";
 
+import createNextIntlPlugin from 'next-intl/plugin';
+
+
 const withNextra = nextra({
   latex: true,
   search: {
@@ -19,4 +22,11 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 };
 
-export default withNextra(nextConfig);
+
+const configWithNextra = withNextra(nextConfig);
+
+// Note: Route-level exclusion is handled in src/middleware.ts (matcher excludes /docs)
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+
+export default withNextIntl(configWithNextra);
+

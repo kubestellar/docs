@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import { GridLines, StarField } from "../index";
 import StatCard from "../StatsCard";
+import { useTranslations } from 'next-intl';
+
 
 interface StatData {
   id: number;
@@ -87,6 +89,7 @@ const statsData: StatData[] = [
 ];
 
 export default function HeroSection() {
+  const t = useTranslations('heroSection');
   useEffect(() => {
     // Enhanced typing animation for terminal
     const initTypingAnimation = () => {
@@ -235,17 +238,17 @@ export default function HeroSection() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none">
                 {/* First Line */}
                 <span className="block text-white mb-3 animate-text-reveal pt-5">
-                  <span className="text-gradient">Multi-Cluster</span>
+                  <span className="text-gradient">{t('line1')}</span>
                 </span>
 
                 {/* Second Line with delay */}
                 <span className="block animate-text-reveal">
-                  <span className="text-gradient-animated">Kubernetes</span>
+                  <span className="text-gradient-animated">{t('line2')}</span>
                 </span>
 
                 {/* Third Line with longer delay */}
                 <span className="block animate-text-reveal [animation-delay:0.4s]">
-                  <span className="text-gradient-animated">Orchestration</span>
+                  <span className="text-gradient-animated">{t('line3')}</span>
                 </span>
               </h1>
 
