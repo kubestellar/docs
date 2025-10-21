@@ -82,7 +82,7 @@ export default function Footer() {
                 <Link
                 target="_blank"
                 href="#"
-                className="w-7 h-7 rounded-lg flex items-center justify-center transition-colors duration-300"
+                className="w-12 h-12 rounded-lg flex items-center justify-center transition-colors duration-300"
                 >
                 <svg
                   opacity={0.5}
