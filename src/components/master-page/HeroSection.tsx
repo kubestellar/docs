@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
+import { Link as IntlLink } from "@/i18n/navigation";
 import { GridLines, StarField } from "../index";
 import StatCard from "../StatsCard";
-import { useTranslations } from 'next-intl';
-
+import { useTranslations } from "next-intl";
 
 interface StatData {
   id: number;
@@ -89,7 +90,7 @@ const statsData: StatData[] = [
 ];
 
 export default function HeroSection() {
-  const t = useTranslations('heroSection');
+  const t = useTranslations("heroSection");
   useEffect(() => {
     // Enhanced typing animation for terminal
     const initTypingAnimation = () => {
@@ -238,17 +239,17 @@ export default function HeroSection() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none">
                 {/* First Line */}
                 <span className="block text-white mb-3 animate-text-reveal pt-5">
-                  <span className="text-gradient">{t('line1')}</span>
+                  <span className="text-gradient">{t("line1")}</span>
                 </span>
 
                 {/* Second Line with delay */}
                 <span className="block animate-text-reveal">
-                  <span className="text-gradient-animated">{t('line2')}</span>
+                  <span className="text-gradient-animated">{t("line2")}</span>
                 </span>
 
                 {/* Third Line with longer delay */}
                 <span className="block animate-text-reveal [animation-delay:0.4s]">
-                  <span className="text-gradient-animated">{t('line3')}</span>
+                  <span className="text-gradient-animated">{t("line3")}</span>
                 </span>
               </h1>
 
@@ -381,7 +382,7 @@ export default function HeroSection() {
               className="action-buttons-container flex flex-col sm:flex-row gap-4 animate-btn-float"
               style={{ animationDelay: "0.8s" }}
             >
-              <a
+              <IntlLink
                 href="/quick-installation"
                 className="primary-action-btn group relative overflow-hidden inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-white 
                           bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 
@@ -403,9 +404,9 @@ export default function HeroSection() {
                   ></path>
                 </svg>
                 <div className="btn-shine"></div>
-              </a>
+              </IntlLink>
 
-              <a
+              <Link
                 href="/docs"
                 className="secondary-action-btn inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-xl text-gray-200 
                           bg-gray-800/40 hover:bg-gray-800/60 
@@ -428,7 +429,7 @@ export default function HeroSection() {
                   ></path>
                 </svg>
                 Explore Docs
-              </a>
+              </Link>
             </div>
 
             {/* STATS DASHBOARD */}

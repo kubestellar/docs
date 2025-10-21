@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import { GridLines, StarField } from "@/components";
-import { Link } from '@/i18n/navigation';
+import { Link } from "@/i18n/navigation";
 export default function ProgramsPage() {
   const programs = getAllPrograms();
 

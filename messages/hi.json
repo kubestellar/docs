@@ -1,7 +1,7 @@
 {
-    "heroSection": {
+  "heroSection": {
     "line1": "MULTI-CLUSTER",
     "line2": "KUBERNETES",
     "line3": "ORCHESTRATION"
-    }
-}    
+  }
+}
