@@ -63,9 +63,9 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 mb-12">
           {/* Brand Section */}
-          <div className="lg:col-span-4">
+          <div className="md:col-span-1 lg:col-span-4">
             <div className="flex items-center-space-x-2 mb-2  ml-[-7px]">
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
@@ -144,199 +144,211 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Docs Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-semibold text-white mb-4">Docs</h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="https://docs.kubestellar.io/release-0.28.0/readme/"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Overview
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Install & Configure
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Uses & Integrate
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  User Guide & Support
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  UI Tools
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contribute Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-semibold text-white mb-4">Contribute</h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="https://docs.kubestellar.io/release-0.28.0/direct/contribute/"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Overview
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/coc-inc/"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Code of Conduct
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/contributing-inc/"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Guidelines
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/license-inc/"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  License
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/onboarding-inc/"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Onboarding
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Community Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-semibold text-white mb-4">Community</h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="http://docs.kubestellar.io/release-0.28.0/Community/_index/"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Get Involved
-                </a>
-              </li>
-              <li>
-                <a
-                  href=""
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Programs
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Ladder
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  Partners
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Stay updated */}
-          <div className="sm:col-span-2 lg:col-span-2">
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              {t("stayUpdated")}
-            </h3>
-            <div className="bg-gray-800/50 backdrop-blur-md rounded-lg p-4 border border-gray-700/50 transform transition-all duration-300 hover:border-blue-500/30">
-              <form id="newsletter-form" className="flex flex-col space-y-3">
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-gray-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <input
-                    id="email-address"
-                    type="email"
-                    className="block w-full pl-10 pr-3 py-2 text-sm text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
-                    placeholder={t("emailPlaceholder")}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-md shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 transform hover:translate-y-[-1px] flex items-center justify-center"
-                >
-                  <span>{t("subscribe")}</span>
-                </button>
-              </form>
-
-              {/* Success message (hidden by default) */}
-              <div
-                id="newsletter-success"
-                className="hidden mt-3 text-sm text-green-400"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>{t("subscribed")}</span>
-              </div>
+          {/* Column 2 on iPad: Docs + Contribute */}
+          <div className="space-y-8 md:col-span-1 md:space-y-8 lg:contents">
+            {/* Docs Links */}
+            <div className="lg:col-span-2">
+              <h3 className="text-lg font-semibold text-white mb-4">Docs</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="https://docs.kubestellar.io/release-0.28.0/readme/"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Overview
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Install & Configure
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Uses & Integrate
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    User Guide & Support
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    UI Tools
+                  </a>
+                </li>
+              </ul>
             </div>
-            <p className="mt-3 text-xs text-gray-400">{t("privacyNotice")}</p>
+
+            {/* Contribute Links */}
+            <div className="lg:col-span-2">
+              <h3 className="text-lg font-semibold text-white mb-4">
+                Contribute
+              </h3>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="https://docs.kubestellar.io/release-0.28.0/direct/contribute/"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Overview
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/coc-inc/"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Code of Conduct
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/contributing-inc/"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Guidelines
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/license-inc/"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    License
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://docs.kubestellar.io/release-0.28.0/contribution-guidelines/onboarding-inc/"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Onboarding
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Column 3 on iPad: Community + Stay Updated */}
+          <div className="space-y-8 sm:col-span-2 md:col-span-1 md:space-y-8 lg:contents">
+            {/* Community Links */}
+            <div className="lg:col-span-2">
+              <h3 className="text-lg font-semibold text-white mb-4">
+                Community
+              </h3>
+              <ul className="space-y-3">
+                <li>
+                  <a
+                    href="http://docs.kubestellar.io/release-0.28.0/Community/_index/"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Get Involved
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href=""
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Programs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Ladder
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                  >
+                    Partners
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Stay updated */}
+            <div className="lg:col-span-2">
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+                Stay Updated
+              </h3>
+              <div className="bg-gray-800/50 backdrop-blur-md rounded-lg p-4 border border-gray-700/50 transform transition-all duration-300 hover:border-blue-500/30">
+                <form id="newsletter-form" className="flex flex-col space-y-3">
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      id="email-address"
+                      type="email"
+                      className="block w-full pl-10 pr-3 py-2 text-sm text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-md shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 transform hover:translate-y-[-1px] flex items-center justify-center"
+                  >
+                    <span>Subscribe</span>
+                  </button>
+                </form>
+
+                {/* Success message (hidden by default) */}
+                <div
+                  id="newsletter-success"
+                  className="hidden mt-3 text-sm text-green-400 flex items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 mr-1"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>Subscribed!</span>
+                </div>
+              </div>
+              <p className="mt-3 text-xs text-gray-400">
+                We respect your privacy. No spam.
+              </p>
+            </div>
           </div>
         </div>
 
