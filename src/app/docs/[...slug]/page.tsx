@@ -26,7 +26,10 @@ const INCLUDE_PREFIXES: string[] = [
 
 ]
 const basePath = ''
-const headers: Record<string, string> = {}
+const headers: Record<string, string> = {
+  'User-Agent': 'kubestellar-docs-dev',
+  'Accept': 'application/vnd.github+json'
+}
 if (process.env.GITHUB_TOKEN) {
   headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
 }
