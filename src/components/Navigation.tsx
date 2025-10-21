@@ -737,19 +737,19 @@ export default function Navigation() {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="mobile-menu-panel">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div className="px-5 mt-4 pb-3 sm:px-3">
               {/* Primary Links for Mobile */}
               <div className="mobile-primary-links">
                 <a
                   href="/docs"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                  className="block px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
                   Docs
                 </a>
                 <a
                   href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
                   target="_blank"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                  className="block px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
                   Blog
                 </a>
@@ -762,7 +762,7 @@ export default function Navigation() {
                         openMobileDropdown === "contribute" ? null : "contribute"
                       )
                     }
-                    className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                    className="w-full flex justify-between items-center px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                   >
                     <span>Contribute</span>
                     <svg
@@ -812,7 +812,7 @@ export default function Navigation() {
                         openMobileDropdown === "community" ? null : "community"
                       )
                     }
-                    className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                    className="w-full flex justify-between items-center px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                   >
                     <span>Community</span>
                     <svg
@@ -899,19 +899,19 @@ export default function Navigation() {
                       >
                         <a
                           href="#"
-                          className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
+                          className="block px-5 py-1 text-xl text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
                         >
                           3.8.1 (Current)
                         </a>
                         <a
                           href="#"
-                          className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
+                          className="block px-5 py-1 text-xl text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
                         >
                           3.8.0
                         </a>
                         <a
                           href="#"
-                          className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
+                          className="block px-5 py-1 text-xl text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
                         >
                           All versions
                         </a>
@@ -928,7 +928,7 @@ export default function Navigation() {
                       className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-100 transform nav-link-hover"
                     >
                       <svg
-                        className="w-4 h-4 xl:mr-2"
+                        className="w-6 h-6 xl:mr-2"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -990,7 +990,7 @@ export default function Navigation() {
                       className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
                     >
                       <svg
-                        className="w-4 h-4 xl:mr-2"
+                        className="w-6 h-6 xl:mr-2"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
