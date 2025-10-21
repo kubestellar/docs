@@ -58,12 +58,40 @@ const { mdxPages, pageMap: _pageMap } = convertToPageMap({
   filePaths,
   basePath
 })
- 
-// `mergeMetaWithPageMap` is used to change sidebar order and title
-const eslintPageMap = mergeMetaWithPageMap(_pageMap, {
-  index: 'Introduction'
-})
- 
+
+// Build a normalized route -> real file path map
+const STRIP_PREFIXES = ['content']; // remove these from URLs
+
+function normalizeRoute(noExtPath: string) {
+  let r = noExtPath;
+  // strip folder index files
+  r = r.replace(/\/(readme|index)$/i, '');
+  // strip known leading prefixes (e.g., "content/")
+  for (const pre of STRIP_PREFIXES) {
+    if (r === pre) r = '';
+    else if (r.startsWith(pre + '/')) r = r.slice(pre.length + 1);
+  }
+  return r;
+}
+
+const routeMap: Record<string, string> = {};
+for (const fp of filePaths) {
+  const noExt = fp.replace(/\.(md|mdx)$/i, '');
+  const norm = normalizeRoute(noExt);
+
+  // canonical route (exact path without extension)
+  routeMap[noExt] = fp;
+
+  // clean route without "content/" and without README/index
+  const isIndex = /\/(readme|index)$/i.test(noExt) || /^(readme|index)$/i.test(noExt);
+  if (!routeMap[norm] || isIndex) routeMap[norm] = fp;
+
+  // root README/index -> /docs (only if you later switch to [[...slug]])
+  if (/^(readme|index)$/i.test(noExt)) routeMap[''] = fp;
+}
+
+// Sidebar: keep minimal meta
+const eslintPageMap = mergeMetaWithPageMap(_pageMap, { index: 'Introduction' })
 export const pageMap = normalizePageMap(eslintPageMap)
  
 const { wrapper: Wrapper, ...components } = getMDXComponents({
@@ -80,8 +108,13 @@ type PageProps = Readonly<{
 export default async function Page(props: PageProps) {
   const params = await props.params
   const route = params.slug?.join('/') ?? ''
-  const filePath = mdxPages[route]
- 
+
+  // Use normalized map instead of mdxPages
+  const filePath =
+    routeMap[route] ??
+    [`${route}.mdx`, `${route}.md`, `${route}/README.md`, `${route}/readme.md`, `${route}/index.mdx`, `${route}/index.md`]
+      .find(p => filePaths.includes(p))
+
   if (!filePath) {
     notFound()
   }
@@ -95,18 +128,17 @@ export default async function Page(props: PageProps) {
   const data = await response.text()
   const rawJs = await compileMdx(data, { filePath })
   const { default: MDXContent, toc, metadata } = evaluate(rawJs, components)
- 
+
   return (
     <Wrapper toc={toc} metadata={metadata} sourceCode={rawJs}>
       <MDXContent />
     </Wrapper>
   )
 }
- 
+
 export function generateStaticParams() {
-  const params = Object.keys(mdxPages).map(route => ({
-    slug: route.split('/')
-  }))
- 
-  return params
+  // [ ...slug ] is non‑optional: don’t emit the empty route
+  return Object.keys(routeMap)
+    .filter(k => k !== '')
+    .map(route => ({ slug: route.split('/') }))
 }
