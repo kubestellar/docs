@@ -870,8 +870,9 @@ export default function Navigation() {
               </div>
 
               {/* Divider and Secondary Controls for mobile menu */}
-              <div className="mobile-secondary-controls border-t border-gray-700 pt-4 mt-4">
-                <div className="flex justify-around items-center">
+              <div className="mobile-secondary-controls">
+                <div className="flex flex-col">
+                  
                   {/* Version Dropdown */}
                   <div className="relative group" data-dropdown>
                     <button
