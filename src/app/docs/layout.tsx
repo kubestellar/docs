@@ -10,7 +10,7 @@ export const metadata = {
   description: 'Official documentation for KubeStellar - Multi-cluster orchestration platform',
 }
 
-const banner = <Banner storageKey="kubestellar-demo">Welcome to KubeStellar Docs - Powered by Nextra! 🎉</Banner>
+const banner = <Banner storageKey="kubestellar-demo"><strong>Hacktoberfest 2025</strong> is here! Join us to learn, share, and contribute to our community🎉</Banner>
 const navbar = <DocsNavbar />
 const footer = <Footer />
  
