@@ -12,7 +12,7 @@ import { useMDXComponents as getMDXComponents } from '../../../../mdx-components
 const user = 'kubestellar'
 const repo = 'kubestellar'
 const branch = 'main'
-const docsPath = 'docs/'
+const docsPath = 'docs/content/'
 // const filePaths = [
 //   'configs.mdx',
 //   'custom-rules.mdx',
@@ -74,10 +74,19 @@ for (const fp of filePaths) {
 
   // canonical route (exact path without extension)
   routeMap[noExt] = fp;
+   if (!noExt.startsWith('content/')) {
+    routeMap[`content/${noExt}`] = fp;
+  }
 
   // clean route without "content/" and without README/index
   const isIndex = /\/(readme|index)$/i.test(noExt) || /^(readme|index)$/i.test(noExt);
   if (!routeMap[norm] || isIndex) routeMap[norm] = fp;
+
+  // also expose normalized route with 'content/' prefix (skip empty norm)
+  if (norm !== '' && !norm.startsWith('content/')) {
+    const contentNorm = `content/${norm}`;
+    if (!routeMap[contentNorm] || isIndex) routeMap[contentNorm] = fp;
+  }
 
 }
 
@@ -98,7 +107,7 @@ type PageProps = Readonly<{
 
 export default async function Page(props: PageProps) {
   const params = await props.params
-  const route = params.slug ? ['content', ...params.slug].join('/') : ''
+  const route = params.slug ? params.slug.join('/') : ''
 
 
   console.log(route);
