@@ -12,10 +12,19 @@ export default function DocsNavbar() {
   const [openDropdown, setOpenDropdown] = useState<DropdownType>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchMatches, setSearchMatches] = useState<number>(0);
-  const [currentMatchIndex, setCurrentMatchIndex] = useState<number>(0);
+  const [searchResults, setSearchResults] = useState<Array<{
+    title: string;
+    url: string;
+    category: string;
+    snippet: string;
+    highlightedSnippet: string;
+    matchType: string;
+  }>>([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const commandPaletteRef = useRef<HTMLDivElement>(null);
+  const debounceRef = useRef<NodeJS.Timeout | null>(null);
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [githubStats, setGithubStats] = useState({
@@ -58,21 +67,38 @@ export default function DocsNavbar() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         if (isSearchOpen) {
-          clearSearch();
           setIsSearchOpen(false);
+          setSearchQuery("");
+          setSearchResults([]);
+          setSelectedIndex(0);
         } else {
           setOpenDropdown(null);
         }
       }
-      if ((e.ctrlKey || e.metaKey) && e.key === "f") {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
         e.preventDefault();
-        setIsSearchOpen(true);
+        setIsSearchOpen(!isSearchOpen);
         setTimeout(() => searchInputRef.current?.focus(), 100);
       }
+      
+      // Navigation in search results
+      if (isSearchOpen && searchResults.length > 0) {
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          setSelectedIndex((prev) => (prev < searchResults.length - 1 ? prev + 1 : prev));
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          setSelectedIndex((prev) => (prev > 0 ? prev - 1 : 0));
+        } else if (e.key === "Enter" && searchResults[selectedIndex]) {
+          e.preventDefault();
+          window.location.href = searchResults[selectedIndex].url;
+        }
+      }
     };
+    
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isSearchOpen]);
+  }, [isSearchOpen, searchResults, selectedIndex]);
 
   const handleMouseEnter = (dropdown: DropdownType) => {
     if (timeoutRef.current) {
@@ -96,132 +122,48 @@ export default function DocsNavbar() {
   };
 
   const isDark = resolvedTheme === 'dark';
+  const [isSearching, setIsSearching] = useState(false);
 
-  const clearSearch = () => {
-    const highlights = document.querySelectorAll('.search-highlight, .search-highlight-current');
-    highlights.forEach((highlight) => {
-      const parent = highlight.parentNode;
-      if (parent) {
-        parent.replaceChild(document.createTextNode(highlight.textContent || ''), highlight);
-        parent.normalize();
+  const performSearchAPI = async (query: string) => {
+    try {
+      // Call the search API
+      const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+      
+      if (!response.ok) {
+        throw new Error('Search failed');
       }
-    });
-    setSearchQuery("");
-    setSearchMatches(0);
-    setCurrentMatchIndex(0);
-  };
-
-  const highlightText = (text: string, query: string): Node[] => {
-    if (!query) return [document.createTextNode(text)];
-    
-    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-    const parts = text.split(regex);
-    
-    return parts.map((part) => {
-      if (regex.test(part)) {
-        const span = document.createElement('span');
-        span.className = 'search-highlight';
-        span.textContent = part;
-        span.style.backgroundColor = isDark ? '#fbbf24' : '#fef08a';
-        span.style.color = '#000';
-        span.style.padding = '2px 0';
-        span.style.borderRadius = '2px';
-        return span;
-      }
-      return document.createTextNode(part);
-    });
+      
+      const data = await response.json();
+      setSearchResults(data.results || []);
+    } catch (error) {
+      console.error('Search error:', error);
+      setSearchResults([]);
+    } finally {
+      setIsSearching(false);
+    }
   };
 
   const performSearch = (query: string) => {
+    setSearchQuery(query);
+    setSelectedIndex(0);
+    
+    // Clear existing debounce timer
+    if (debounceRef.current) {
+      clearTimeout(debounceRef.current);
+    }
+    
     if (!query.trim()) {
-      clearSearch();
+      setSearchResults([]);
+      setIsSearching(false);
       return;
     }
 
-    clearSearch();
-    setSearchQuery(query);
+    setIsSearching(true);
 
-    const mainContent = document.querySelector('main') || document.body;
-    const walker = document.createTreeWalker(
-      mainContent,
-      NodeFilter.SHOW_TEXT,
-      {
-        acceptNode: (node) => {
-          const parent = node.parentElement;
-          if (!parent) return NodeFilter.FILTER_REJECT;
-          if (['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(parent.tagName)) {
-            return NodeFilter.FILTER_REJECT;
-          }
-          if (parent.classList.contains('search-highlight')) {
-            return NodeFilter.FILTER_REJECT;
-          }
-          if (node.textContent && node.textContent.toLowerCase().includes(query.toLowerCase())) {
-            return NodeFilter.FILTER_ACCEPT;
-          }
-          return NodeFilter.FILTER_REJECT;
-        }
-      }
-    );
-
-    const textNodes: Node[] = [];
-    let node;
-    while ((node = walker.nextNode())) {
-      textNodes.push(node);
-    }
-
-    let matchCount = 0;
-    textNodes.forEach((textNode) => {
-      const parent = textNode.parentNode;
-      if (!parent || !textNode.textContent) return;
-
-      const text = textNode.textContent;
-      const regex = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
-      const matches = text.match(regex);
-      
-      if (matches) {
-        matchCount += matches.length;
-        const fragment = document.createDocumentFragment();
-        const nodes = highlightText(text, query);
-        nodes.forEach(n => fragment.appendChild(n));
-        parent.replaceChild(fragment, textNode);
-      }
-    });
-
-    setSearchMatches(matchCount);
-    if (matchCount > 0) {
-      setCurrentMatchIndex(1);
-      highlightCurrentMatch(0);
-    }
-  };
-
-  const highlightCurrentMatch = (index: number) => {
-    const highlights = document.querySelectorAll('.search-highlight');
-    highlights.forEach((highlight, i) => {
-      if (i === index) {
-        highlight.classList.add('search-highlight-current');
-        (highlight as HTMLElement).style.backgroundColor = isDark ? '#f97316' : '#fb923c';
-        (highlight as HTMLElement).style.fontWeight = 'bold';
-        highlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        highlight.classList.remove('search-highlight-current');
-        (highlight as HTMLElement).style.backgroundColor = isDark ? '#fbbf24' : '#fef08a';
-        (highlight as HTMLElement).style.fontWeight = 'normal';
-      }
-    });
-  };
-
-  const navigateToNextMatch = () => {
-    if (searchMatches === 0) return;
-    const nextIndex = currentMatchIndex >= searchMatches ? 1 : currentMatchIndex + 1;
-    setCurrentMatchIndex(nextIndex);
-    highlightCurrentMatch(nextIndex - 1);
-  };
-
-  const navigateToPrevMatch = () => {
-    if (searchMatches === 0) return;
-    const prevIndex = currentMatchIndex <= 1 ? searchMatches : currentMatchIndex - 1;
-    setCurrentMatchIndex(prevIndex);
-    highlightCurrentMatch(prevIndex - 1);
+    // Debounce search API calls (300ms delay)
+    debounceRef.current = setTimeout(() => {
+      performSearchAPI(query);
+    }, 300);
   };
 
   if (!mounted) {
@@ -267,120 +209,6 @@ export default function DocsNavbar() {
         </Link>
 
         <div className="flex-1" />
-
-        <div className={`hidden md:flex items-center gap-2 mr-4 transition-all ${
-          isSearchOpen ? 'w-96' : 'w-auto'
-        }`}>
-          {!isSearchOpen ? (
-            <button
-              onClick={() => {
-                setIsSearchOpen(true);
-                setTimeout(() => searchInputRef.current?.focus(), 100);
-              }}
-              className={`text-sm transition-colors px-3 py-1.5 rounded-md flex items-center gap-2 ${
-                isDark 
-                  ? 'text-gray-400 hover:text-gray-100 hover:bg-neutral-800 border border-neutral-800'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 border border-gray-200'
-              }`}
-              aria-label="Search page"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <span className="text-xs">Search...</span>
-              <kbd className={`text-xs px-1.5 py-0.5 rounded ${
-                isDark ? 'bg-neutral-800 text-gray-400' : 'bg-gray-100 text-gray-500'
-              }`}>
-                Ctrl+F
-              </kbd>
-            </button>
-          ) : (
-            <div className={`flex items-center gap-2 w-full border rounded-md px-3 py-1.5 ${
-              isDark 
-                ? 'bg-neutral-900 border-neutral-700'
-                : 'bg-white border-gray-300'
-            }`}>
-              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <input
-                ref={searchInputRef}
-                type="text"
-                value={searchQuery}
-                onChange={(e) => performSearch(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    if (e.shiftKey) {
-                      navigateToPrevMatch();
-                    } else {
-                      navigateToNextMatch();
-                    }
-                  }
-                }}
-                placeholder="Search page..."
-                className={`flex-1 bg-transparent outline-none text-sm ${
-                  isDark ? 'text-gray-200 placeholder-gray-500' : 'text-gray-900 placeholder-gray-400'
-                }`}
-              />
-              {searchMatches > 0 && (
-                <>
-                  <span className={`text-xs whitespace-nowrap ${
-                    isDark ? 'text-gray-400' : 'text-gray-600'
-                  }`}>
-                    {currentMatchIndex}/{searchMatches}
-                  </span>
-                  <div className="flex gap-1">
-                    <button
-                      onClick={navigateToPrevMatch}
-                      className={`p-1 rounded transition-colors ${
-                        isDark 
-                          ? 'hover:bg-neutral-800 text-gray-400 hover:text-gray-200'
-                          : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
-                      }`}
-                      aria-label="Previous match"
-                      title="Previous (Shift+Enter)"
-                    >
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
-                      </svg>
-                    </button>
-                    <button
-                      onClick={navigateToNextMatch}
-                      className={`p-1 rounded transition-colors ${
-                        isDark 
-                          ? 'hover:bg-neutral-800 text-gray-400 hover:text-gray-200'
-                          : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
-                      }`}
-                      aria-label="Next match"
-                      title="Next (Enter)"
-                    >
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                  </div>
-                </>
-              )}
-              <button
-                onClick={() => {
-                  clearSearch();
-                  setIsSearchOpen(false);
-                }}
-                className={`p-1 rounded transition-colors ${
-                  isDark 
-                    ? 'hover:bg-neutral-800 text-gray-400 hover:text-gray-200'
-                    : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
-                }`}
-                aria-label="Close search"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          )}
-        </div>
 
         <div className="hidden md:flex items-center gap-1">
           
@@ -718,12 +546,35 @@ export default function DocsNavbar() {
             setIsSearchOpen(true);
             setTimeout(() => searchInputRef.current?.focus(), 100);
           }}
+          className={`hidden md:flex text-sm transition-colors px-3 py-1.5 rounded-md items-center gap-2 ml-2 ${
+            isDark 
+              ? 'text-gray-400 hover:text-gray-100 hover:bg-neutral-800 border border-neutral-800'
+              : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 border border-gray-200'
+          }`}
+          aria-label="Search documentation"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <span className="text-xs">Search docs...</span>
+          <kbd className={`text-xs px-1.5 py-0.5 rounded ${
+            isDark ? 'bg-neutral-800 text-gray-400' : 'bg-gray-100 text-gray-500'
+          }`}>
+            ⌘K
+          </kbd>
+        </button>
+
+        <button
+          onClick={() => {
+            setIsSearchOpen(true);
+            setTimeout(() => searchInputRef.current?.focus(), 100);
+          }}
           className={`md:hidden p-1.5 rounded-md transition-colors ${
             isDark 
               ? 'text-gray-400 hover:text-gray-100 hover:bg-neutral-800'
               : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
           }`}
-          aria-label="Search page"
+          aria-label="Search documentation"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -745,89 +596,166 @@ export default function DocsNavbar() {
         </button>
       </div>
 
+      {/* Command Palette Modal */}
       {isSearchOpen && (
-        <div className={`md:hidden border-t ${
-          isDark ? 'border-neutral-800 bg-[#111]' : 'border-gray-200 bg-white'
-        }`}>
-          <div className="px-4 py-3">
-            <div className={`flex items-center gap-2 w-full border rounded-md px-3 py-2 ${
-              isDark 
-                ? 'bg-neutral-900 border-neutral-700'
-                : 'bg-white border-gray-300'
-            }`}>
-              <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <input
-                ref={searchInputRef}
-                type="text"
-                value={searchQuery}
-                onChange={(e) => performSearch(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    if (e.shiftKey) {
-                      navigateToPrevMatch();
-                    } else {
-                      navigateToNextMatch();
-                    }
-                  }
-                }}
-                placeholder="Search page..."
-                className={`flex-1 bg-transparent outline-none text-sm ${
-                  isDark ? 'text-gray-200 placeholder-gray-500' : 'text-gray-900 placeholder-gray-400'
-                }`}
-              />
-              <button
-                onClick={() => {
-                  clearSearch();
-                  setIsSearchOpen(false);
-                }}
-                className={`p-1 rounded transition-colors flex-shrink-0 ${
-                  isDark 
-                    ? 'hover:bg-neutral-800 text-gray-400 hover:text-gray-200'
-                    : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
-                }`}
-                aria-label="Close search"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            onClick={() => {
+              setIsSearchOpen(false);
+              setSearchQuery("");
+              setSearchResults([]);
+            }}
+          />
+          
+          {/* Command Palette */}
+          <div className="fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-2xl z-50 px-4">
+            <div 
+              ref={commandPaletteRef}
+              className={`rounded-lg shadow-2xl border ${
+                isDark 
+                  ? 'bg-neutral-900 border-neutral-700' 
+                  : 'bg-white border-gray-200'
+              }`}
+            >
+              {/* Search Input */}
+              <div className="flex items-center gap-3 px-4 py-3 border-b border-neutral-700">
+                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-              </button>
-            </div>
-            {searchMatches > 0 && (
-              <div className="flex items-center justify-between mt-2">
-                <span className={`text-xs ${
-                  isDark ? 'text-gray-400' : 'text-gray-600'
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => performSearch(e.target.value)}
+                  placeholder="Search documentation..."
+                  className={`flex-1 bg-transparent outline-none text-base ${
+                    isDark ? 'text-gray-100 placeholder-gray-500' : 'text-gray-900 placeholder-gray-400'
+                  }`}
+                  autoFocus
+                />
+                <kbd className={`text-xs px-2 py-1 rounded ${
+                  isDark ? 'bg-neutral-800 text-gray-400' : 'bg-gray-100 text-gray-500'
                 }`}>
-                  {currentMatchIndex} of {searchMatches} matches
-                </span>
-                <div className="flex gap-2">
-                  <button
-                    onClick={navigateToPrevMatch}
-                    className={`px-3 py-1.5 rounded text-xs transition-colors ${
-                      isDark 
-                        ? 'bg-neutral-800 text-gray-300 hover:bg-neutral-700'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                  >
-                    Previous
-                  </button>
-                  <button
-                    onClick={navigateToNextMatch}
-                    className={`px-3 py-1.5 rounded text-xs transition-colors ${
-                      isDark 
-                        ? 'bg-neutral-800 text-gray-300 hover:bg-neutral-700'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                  >
-                    Next
-                  </button>
-                </div>
+                  ESC
+                </kbd>
               </div>
-            )}
+
+              {/* Search Results */}
+              <div className="max-h-96 overflow-y-auto">
+                {searchQuery.trim() === "" ? (
+                  <div className="px-4 py-8 text-center">
+                    <svg className="w-12 h-12 mx-auto mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                      Search for any word or phrase in the documentation...
+                    </p>
+                    <p className={`text-xs mt-2 ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
+                      Try &quot;kubectl&quot;, &quot;cluster&quot;, &quot;workload&quot;, or &quot;installation&quot;
+                    </p>
+                  </div>
+                ) : isSearching ? (
+                  <div className="px-4 py-8 text-center">
+                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-gray-400 mb-3"></div>
+                    <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                      Searching documentation...
+                    </p>
+                  </div>
+                ) : searchResults.length === 0 ? (
+                  <div className="px-4 py-8 text-center">
+                    <svg className="w-12 h-12 mx-auto mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M12 12h.01M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                      No results found for &quot;{searchQuery}&quot;
+                    </p>
+                    <p className={`text-xs mt-2 ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
+                      Try different keywords or check spelling
+                    </p>
+                  </div>
+                ) : (
+                  <div className="py-2">
+                    {searchResults.map((result, index) => (
+                      <a
+                        key={index}
+                        href={result.url}
+                        className={`block px-4 py-3 transition-colors border-l-2 ${
+                          index === selectedIndex
+                            ? isDark 
+                              ? 'bg-neutral-800 border-blue-500' 
+                              : 'bg-gray-100 border-blue-600'
+                            : isDark
+                              ? 'hover:bg-neutral-800 border-transparent'
+                              : 'hover:bg-gray-50 border-transparent'
+                        }`}
+                        onMouseEnter={() => setSelectedIndex(index)}
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className={`mt-0.5 p-1.5 rounded flex-shrink-0 ${
+                            isDark ? 'bg-neutral-700' : 'bg-gray-200'
+                          }`}>
+                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1">
+                              <div className={`font-medium text-sm ${
+                                isDark ? 'text-gray-100' : 'text-gray-900'
+                              }`}>
+                                {result.title}
+                              </div>
+                              <span className={`text-xs px-1.5 py-0.5 rounded flex-shrink-0 ${
+                                isDark ? 'bg-neutral-700 text-gray-400' : 'bg-gray-200 text-gray-600'
+                              }`}>
+                                {result.category}
+                              </span>
+                            </div>
+                            <div 
+                              className={`text-xs leading-relaxed ${
+                                isDark ? 'text-gray-400' : 'text-gray-600'
+                              }`}
+                              dangerouslySetInnerHTML={{ 
+                                __html: result.highlightedSnippet.replace(
+                                  /<mark>/g, 
+                                  `<mark style="background-color: ${isDark ? '#fbbf24' : '#fef08a'}; color: ${isDark ? '#000' : '#000'}; padding: 2px 4px; border-radius: 2px; font-weight: 500;">`
+                                )
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Footer */}
+              {searchResults.length > 0 && (
+                <div className={`flex items-center justify-between px-4 py-2 text-xs border-t ${
+                  isDark 
+                    ? 'border-neutral-700 text-gray-500' 
+                    : 'border-gray-200 text-gray-600'
+                }`}>
+                  <div className="flex items-center gap-4">
+                    <span className="flex items-center gap-1">
+                      <kbd className={`px-1.5 py-0.5 rounded ${isDark ? 'bg-neutral-800' : 'bg-gray-100'}`}>↑</kbd>
+                      <kbd className={`px-1.5 py-0.5 rounded ${isDark ? 'bg-neutral-800' : 'bg-gray-100'}`}>↓</kbd>
+                      to navigate
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <kbd className={`px-1.5 py-0.5 rounded ${isDark ? 'bg-neutral-800' : 'bg-gray-100'}`}>↵</kbd>
+                      to select
+                    </span>
+                  </div>
+                  <span>{searchResults.length} result{searchResults.length !== 1 ? 's' : ''}</span>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        </>
       )}
 
       {isMenuOpen && (
