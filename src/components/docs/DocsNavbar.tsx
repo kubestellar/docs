@@ -24,7 +24,6 @@ export default function DocsNavbar() {
     watchers: "0",
   });
 
-  // Ensure component is mounted before using theme
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -56,7 +55,6 @@ export default function DocsNavbar() {
     };
     fetchGithubStats();
 
-    // Close dropdown on Escape key and keyboard shortcuts
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         if (isSearchOpen) {
@@ -66,7 +64,6 @@ export default function DocsNavbar() {
           setOpenDropdown(null);
         }
       }
-      // Ctrl+F or Cmd+F to open search
       if ((e.ctrlKey || e.metaKey) && e.key === "f") {
         e.preventDefault();
         setIsSearchOpen(true);
@@ -98,12 +95,9 @@ export default function DocsNavbar() {
     }
   };
 
-  // Calculate isDark early for use in functions
   const isDark = resolvedTheme === 'dark';
 
-  // Search functionality
   const clearSearch = () => {
-    // Remove all highlights
     const highlights = document.querySelectorAll('.search-highlight, .search-highlight-current');
     highlights.forEach((highlight) => {
       const parent = highlight.parentNode;
@@ -147,14 +141,12 @@ export default function DocsNavbar() {
     clearSearch();
     setSearchQuery(query);
 
-    // Get all text nodes in the main content area
     const mainContent = document.querySelector('main') || document.body;
     const walker = document.createTreeWalker(
       mainContent,
       NodeFilter.SHOW_TEXT,
       {
         acceptNode: (node) => {
-          // Skip script, style, and already highlighted content
           const parent = node.parentElement;
           if (!parent) return NodeFilter.FILTER_REJECT;
           if (['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(parent.tagName)) {
@@ -232,12 +224,10 @@ export default function DocsNavbar() {
     highlightCurrentMatch(prevIndex - 1);
   };
 
-  // Don't render until mounted to avoid hydration issues
   if (!mounted) {
     return null;
   }
   
-  // Theme-aware class helpers
   const buttonClasses = `text-sm transition-colors px-2 py-1.5 rounded-md flex items-center gap-1.5 ${
     isDark 
       ? 'text-gray-400 hover:text-gray-100 hover:bg-neutral-800'
@@ -265,7 +255,6 @@ export default function DocsNavbar() {
       }`} />
       
       <div className="mx-auto flex items-center gap-2 h-16 px-4 max-w-[90rem]">
-        {/* Logo */}
         <Link href="/" className="flex items-center hover:opacity-75 transition-opacity">
           <Image
             src="/KubeStellar-with-Logo-transparent.png"
@@ -277,10 +266,8 @@ export default function DocsNavbar() {
           />
         </Link>
 
-        {/* Spacer */}
         <div className="flex-1" />
 
-        {/* Search Bar */}
         <div className={`hidden md:flex items-center gap-2 mr-4 transition-all ${
           isSearchOpen ? 'w-96' : 'w-auto'
         }`}>
@@ -395,10 +382,8 @@ export default function DocsNavbar() {
           )}
         </div>
 
-        {/* Main Navigation Links - Hidden on mobile */}
         <div className="hidden md:flex items-center gap-1">
           
-          {/* Contribute Dropdown */}
           <div 
             className="relative" 
             onMouseEnter={() => handleMouseEnter("contribute")}
@@ -465,7 +450,6 @@ export default function DocsNavbar() {
             )}
           </div>
 
-          {/* Community Dropdown */}
           <div 
             className="relative"
             onMouseEnter={() => handleMouseEnter("community")}
@@ -542,7 +526,6 @@ export default function DocsNavbar() {
 
           <div className="w-px h-5 bg-gray-300 dark:bg-neutral-700 mx-1" />
 
-          {/* Version Dropdown */}
           <div 
             className="relative"
             onMouseEnter={() => handleMouseEnter("version")}
@@ -598,7 +581,6 @@ export default function DocsNavbar() {
             )}
           </div>
 
-          {/* Language Dropdown */}
           <div 
             className="relative"
             onMouseEnter={() => handleMouseEnter("language")}
@@ -653,7 +635,6 @@ export default function DocsNavbar() {
             )}
           </div>
 
-          {/* GitHub Link with Dropdown */}
           <div 
             className="relative"
             onMouseEnter={() => handleMouseEnter("github")}
@@ -732,7 +713,6 @@ export default function DocsNavbar() {
           </div>
         </div>
 
-        {/* Mobile search button */}
         <button
           onClick={() => {
             setIsSearchOpen(true);
@@ -750,7 +730,6 @@ export default function DocsNavbar() {
           </svg>
         </button>
 
-        {/* Mobile menu button */}
         <button
           className={`md:hidden p-1.5 rounded-md transition-colors ${
             isDark 
@@ -766,7 +745,6 @@ export default function DocsNavbar() {
         </button>
       </div>
 
-      {/* Mobile Search Bar */}
       {isSearchOpen && (
         <div className={`md:hidden border-t ${
           isDark ? 'border-neutral-800 bg-[#111]' : 'border-gray-200 bg-white'
@@ -852,7 +830,6 @@ export default function DocsNavbar() {
         </div>
       )}
 
-      {/* Mobile menu */}
       {isMenuOpen && (
         <div className={`md:hidden border-t ${
           isDark ? 'border-neutral-800 bg-[#111]' : 'border-gray-200 bg-white'
