@@ -8,7 +8,7 @@ import {
   normalizePageMap
 } from 'nextra/page-map'
 import { useMDXComponents as getMDXComponents } from '../../../../mdx-components'
- 
+
 const user = 'kubestellar'
 const repo = 'kubestellar'
 const branch = 'main'
@@ -25,7 +25,7 @@ const docsPath = 'docs/'
 const INCLUDE_PREFIXES: string[] = [
 
 ]
-const basePath = ''
+const basePath = 'docs'
 const headers: Record<string, string> = {
   'User-Agent': 'kubestellar-docs-dev',
   'Accept': 'application/vnd.github+json'
@@ -34,7 +34,7 @@ if (process.env.GITHUB_TOKEN) {
   headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
 }
 
-type GitTreeItem = { path: string; type: 'blob' | 'tree' } 
+type GitTreeItem = { path: string; type: 'blob' | 'tree' }
 type GitTreeResp = { tree?: GitTreeItem[] }
 
 const treeUrl = `https://api.github.com/repos/${user}/${repo}/git/trees/${encodeURIComponent(
@@ -45,13 +45,13 @@ const treeData: GitTreeResp = await fetch(treeUrl, { headers, cache: 'force-cach
   r.ok ? r.json() : Promise.reject(new Error(`GitHub tree fetch failed: ${r.status}`))
 )
 
- 
-const allDocFiles =treeData.tree?.filter(t =>t.type === 'blob' && t.path.startsWith(docsPath) && (t.path.endsWith('.md') || t.path.endsWith('.mdx'))).map(t => t.path.slice(docsPath.length)) ?? []
+
+const allDocFiles = treeData.tree?.filter(t => t.type === 'blob' && t.path.startsWith(docsPath) && (t.path.endsWith('.md') || t.path.endsWith('.mdx'))).map(t => t.path.slice(docsPath.length)) ?? []
 
 const filePaths = INCLUDE_PREFIXES.length
   ? allDocFiles.filter(fp =>
-      INCLUDE_PREFIXES.some(prefix => fp === prefix || fp.startsWith(prefix + '/'))
-    )
+    INCLUDE_PREFIXES.some(prefix => fp === prefix || fp.startsWith(prefix + '/'))
+  )
   : allDocFiles
 
 const { mdxPages, pageMap: _pageMap } = convertToPageMap({
@@ -59,18 +59,11 @@ const { mdxPages, pageMap: _pageMap } = convertToPageMap({
   basePath
 })
 
-// Build a normalized route -> real file path map
-const STRIP_PREFIXES = ['content']; // remove these from URLs
-
 function normalizeRoute(noExtPath: string) {
   let r = noExtPath;
   // strip folder index files
   r = r.replace(/\/(readme|index)$/i, '');
-  // strip known leading prefixes (e.g., "content/")
-  for (const pre of STRIP_PREFIXES) {
-    if (r === pre) r = '';
-    else if (r.startsWith(pre + '/')) r = r.slice(pre.length + 1);
-  }
+  r = r.replace(/^(readme|index)$/i, '');
   return r;
 }
 
@@ -86,28 +79,29 @@ for (const fp of filePaths) {
   const isIndex = /\/(readme|index)$/i.test(noExt) || /^(readme|index)$/i.test(noExt);
   if (!routeMap[norm] || isIndex) routeMap[norm] = fp;
 
-  // root README/index -> /docs (only if you later switch to [[...slug]])
-  if (/^(readme|index)$/i.test(noExt)) routeMap[''] = fp;
 }
 
 // Sidebar: keep minimal meta
-const eslintPageMap = mergeMetaWithPageMap(_pageMap, { index: 'Introduction' })
-export const pageMap = normalizePageMap(eslintPageMap)
- 
+// const eslintPageMap = mergeMetaWithPageMap(_pageMap, { index: 'Introduction' })
+export const pageMap = normalizePageMap(_pageMap)
+
 const { wrapper: Wrapper, ...components } = getMDXComponents({
   $Tabs: Tabs,
   Callout
 })
- 
+
 type PageProps = Readonly<{
   params: Promise<{
     slug?: string[]
   }>
 }>
- 
+
 export default async function Page(props: PageProps) {
   const params = await props.params
-  const route = params.slug?.join('/') ?? ''
+  const route = params.slug ? ['content', ...params.slug].join('/') : ''
+
+
+  console.log(route);
 
   // Use normalized map instead of mdxPages
   const filePath =
