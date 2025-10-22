@@ -74,7 +74,7 @@ for (const fp of filePaths) {
 
   // canonical route (exact path without extension)
   routeMap[noExt] = fp;
-   if (!noExt.startsWith('content/')) {
+  if (!noExt.startsWith('content/')) {
     routeMap[`content/${noExt}`] = fp;
   }
 
@@ -129,7 +129,11 @@ export default async function Page(props: PageProps) {
   if (!response.ok) notFound()
 
   const data = await response.text()
-  const rawJs = await compileMdx(data, { filePath })
+  const processedData = data
+    .replace(/<!--/g, '{/*')
+    .replace(/-->/g, '*/}')
+    .replace(/<br>/g, '<br />')
+  const rawJs = await compileMdx(processedData, { filePath })
   const { default: MDXContent, toc, metadata } = evaluate(rawJs, components)
 
   return (
