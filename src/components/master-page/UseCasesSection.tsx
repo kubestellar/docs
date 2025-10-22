@@ -107,7 +107,7 @@ const Card = memo(
 
     return (
       <div
-        className={`relative group bg-slate-800/15 backdrop-blur-[30px] border ${themeConfig.borderColor} rounded-xl p-4 sm:p-6 lg:p-8 h-64 sm:h-72 lg:h-80 w-full max-w-3xl sm:max-w-4xl lg:max-w-5xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:bg-slate-800/25 hover:backdrop-blur-[40px] ${themeConfig.shadowHover} ${themeConfig.borderHover} ${className} before:absolute before:inset-0 before:bg-blue-500/5 before:rounded-xl before:transition-opacity before:duration-300 hover:before:bg-blue-500/10`}
+        className={`relative group bg-slate-900/95 backdrop-blur-[120px] border ${themeConfig.borderColor} rounded-xl p-4 sm:p-6 lg:p-8 h-64 sm:h-72 lg:h-80 w-full max-w-3xl sm:max-w-4xl lg:max-w-5xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:bg-slate-900/98 hover:backdrop-blur-[150px] ${themeConfig.shadowHover} ${themeConfig.borderHover} ${className} before:absolute before:inset-0 before:bg-gradient-to-br before:from-slate-800/40 before:to-transparent before:rounded-xl before:transition-opacity before:duration-300 hover:before:from-slate-800/50`}
       >
         <div className="transition-all duration-300 group-hover:-translate-y-2 h-full flex flex-col">
           <div
