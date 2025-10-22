@@ -488,7 +488,57 @@ html:not(.dark) .nextra-sidebar-container {
   }
 }
 
-@media (min-width: 1280px) {
+@media (max-width: 726px){
+  .mobile-menu-panel .mobile-secondary-controls button {
+    padding-left: 2.5rem; /* px-10 */
+    padding-right: 2.5rem; /* px-10 */
+  }
+}
+
+/* Solid backgrounds for dropdown UI */
+
+/* Hamburger panel */
+.mobile-menu-panel {
+  background-color: var(--background) !important; /* solid */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-top: 1px solid rgba(100, 116, 139, 0.5); /* keep the divider if you want */
+  margin-top: 24px;
+}
+
+/* Desktop popover menus (they have data-dropdown-menu) */
+[data-dropdown-menu] {
+  background-color: var(--background) !important; /* solid */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: rgba(100, 116, 139, 0.5) !important;
+}
+
+/* Mobile popover menus inside the hamburger (absolute dropdown panels) */
+.mobile-menu-panel .mobile-secondary-controls .absolute {
+  background-color: var(--background) !important; /* solid */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: rgba(100, 116, 139, 0.5) !important;
+}
+
+/* Optional: tweak exact colors per theme */
+html.dark [data-dropdown-menu],
+html.dark .mobile-menu-panel,
+html.dark .mobile-menu-panel .mobile-secondary-controls .absolute {
+  background-color: #0b0d14 !important;
+}
+
+html:not(.dark) [data-dropdown-menu],
+html:not(.dark) .mobile-menu-panel,
+html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
+  background-color: #ffffff !important;
+}
+
+@media (min-width: 1280px)  {
+  .mobile-menu-panel {
+    display: none;
+  }
   .main-nav-links {
     display: flex;
     left:50%

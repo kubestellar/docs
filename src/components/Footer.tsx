@@ -57,9 +57,9 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 mb-12">
+        <div className="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-12 gap-8 mb-12">
           {/* Brand Section */}
-          <div className="md:col-span-1 lg:col-span-4">
+          <div className="min-[450px]:col-span-2 md:col-span-4">
             <div className="flex items-center-space-x-2 mb-2  ml-[-7px]">
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
@@ -357,7 +357,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2 on iPad: Docs + Contribute */}
-          <div className="space-y-8 md:col-span-1 md:space-y-8 lg:contents">
+          <div className="space-y-8 md:col-span-4 md:space-y-8 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-8 lg:contents">
             {/* Docs Links */}
             <div className="lg:col-span-2">
               <h3 className="text-lg font-semibold text-white mb-4">Docs</h3>
@@ -456,7 +456,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 on iPad: Community + Stay Updated */}
-          <div className="space-y-8 sm:col-span-2 md:col-span-1 md:space-y-8 lg:contents">
+          <div className="space-y-8 md:col-span-4 md:space-y-8 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-8 lg:contents">
             {/* Community Links */}
             <div className="lg:col-span-2">
               <h3 className="text-lg font-semibold text-white mb-4">
