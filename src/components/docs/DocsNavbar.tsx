@@ -419,7 +419,7 @@ export default function DocsNavbar() {
                 onMouseEnter={handleDropdownMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-              <a
+              <Link
                 href="/#join-in"
                 className={dropdownItemClasses}
               >
@@ -427,8 +427,8 @@ export default function DocsNavbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                 </svg>
                 Join In
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/community-handbook"
                 className={dropdownItemClasses}
               >
@@ -436,8 +436,8 @@ export default function DocsNavbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
                 Contribute Handbook
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/#security"
                 className={dropdownItemClasses}
               >
@@ -445,7 +445,7 @@ export default function DocsNavbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
                 Security
-              </a>
+              </Link>
               </div>
             )}
           </div>
@@ -475,7 +475,7 @@ export default function DocsNavbar() {
                 onMouseEnter={handleDropdownMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-              <a
+              <Link
                 href="/#get-involved"
                 className={dropdownItemClasses}
               >
@@ -483,7 +483,7 @@ export default function DocsNavbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                 </svg>
                 Get Involved
-              </a>
+              </Link>
               <Link
                 href="/programs"
                 className={dropdownItemClasses}
@@ -493,7 +493,7 @@ export default function DocsNavbar() {
                 </svg>
                 Programs
               </Link>
-              <a
+              <Link
                 href="/#ladder"
                 className={dropdownItemClasses}
               >
@@ -501,8 +501,8 @@ export default function DocsNavbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
                 Ladder
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/#contact-us"
                 className={dropdownItemClasses}
               >
@@ -510,8 +510,8 @@ export default function DocsNavbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 Contact Us
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/#partners"
                 className={dropdownItemClasses}
               >
@@ -519,7 +519,7 @@ export default function DocsNavbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
                 Partners
-              </a>
+              </Link>
               </div>
             )}
           </div>
@@ -838,66 +838,66 @@ export default function DocsNavbar() {
             <div className={`text-xs font-semibold uppercase px-2 py-1.5 ${
               isDark ? 'text-gray-400' : 'text-gray-500'
             }`}>Contribute</div>
-            <a href="/#join-in" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+            <Link href="/#join-in" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}>
               Join In
-            </a>
-            <a href="/community-handbook" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+            </Link>
+            <Link href="/community-handbook" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}>
               Contribute Handbook
-            </a>
-            <a href="/#security" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+            </Link>
+            <Link href="/#security" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}>
               Security
-            </a>
+            </Link>
             
             <div className={`text-xs font-semibold uppercase px-2 py-1.5 mt-3 ${
               isDark ? 'text-gray-400' : 'text-gray-500'
             }`}>Community</div>
-            <a href="/#get-involved" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+            <Link href="/#get-involved" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}>
               Get Involved
-            </a>
-            <a href="/programs" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+            </Link>
+            <Link href="/programs" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}>
               Programs
-            </a>
-            <a href="/#ladder" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+            </Link>
+            <Link href="/#ladder" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}>
               Ladder
-            </a>
-            <a href="/#contact-us" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+            </Link>
+            <Link href="/#contact-us" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}>
               Contact Us
-            </a>
-            <a href="/#partners" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+            </Link>
+            <Link href="/#partners" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}>
               Partners
-            </a>
+            </Link>
 
             <div className={`pt-3 border-t mt-3 ${
               isDark ? 'border-neutral-800' : 'border-gray-200'
