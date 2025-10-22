@@ -7,22 +7,16 @@ import { useTheme } from "next-themes";
 
 type DropdownType = "contribute" | "community" | "version" | "language" | "github" | null;
 
-interface SearchResult {
-  title: string;
-  description: string;
-  url: string;
-  category: string;
-}
-
 export default function DocsNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<DropdownType>(null);
-  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchMatches, setSearchMatches] = useState<number>(0);
+  const [currentMatchIndex, setCurrentMatchIndex] = useState<number>(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const { theme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [githubStats, setGithubStats] = useState({
     stars: "0",
@@ -62,15 +56,26 @@ export default function DocsNavbar() {
     };
     fetchGithubStats();
 
-    // Close dropdown on Escape key
-    const handleEscape = (e: KeyboardEvent) => {
+    // Close dropdown on Escape key and keyboard shortcuts
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setOpenDropdown(null);
+        if (isSearchOpen) {
+          clearSearch();
+          setIsSearchOpen(false);
+        } else {
+          setOpenDropdown(null);
+        }
+      }
+      // Ctrl+F or Cmd+F to open search
+      if ((e.ctrlKey || e.metaKey) && e.key === "f") {
+        e.preventDefault();
+        setIsSearchOpen(true);
+        setTimeout(() => searchInputRef.current?.focus(), 100);
       }
     };
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
-  }, []);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isSearchOpen]);
 
   const handleMouseEnter = (dropdown: DropdownType) => {
     if (timeoutRef.current) {
@@ -93,12 +98,144 @@ export default function DocsNavbar() {
     }
   };
 
+  // Calculate isDark early for use in functions
+  const isDark = resolvedTheme === 'dark';
+
+  // Search functionality
+  const clearSearch = () => {
+    // Remove all highlights
+    const highlights = document.querySelectorAll('.search-highlight, .search-highlight-current');
+    highlights.forEach((highlight) => {
+      const parent = highlight.parentNode;
+      if (parent) {
+        parent.replaceChild(document.createTextNode(highlight.textContent || ''), highlight);
+        parent.normalize();
+      }
+    });
+    setSearchQuery("");
+    setSearchMatches(0);
+    setCurrentMatchIndex(0);
+  };
+
+  const highlightText = (text: string, query: string): Node[] => {
+    if (!query) return [document.createTextNode(text)];
+    
+    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    const parts = text.split(regex);
+    
+    return parts.map((part) => {
+      if (regex.test(part)) {
+        const span = document.createElement('span');
+        span.className = 'search-highlight';
+        span.textContent = part;
+        span.style.backgroundColor = isDark ? '#fbbf24' : '#fef08a';
+        span.style.color = '#000';
+        span.style.padding = '2px 0';
+        span.style.borderRadius = '2px';
+        return span;
+      }
+      return document.createTextNode(part);
+    });
+  };
+
+  const performSearch = (query: string) => {
+    if (!query.trim()) {
+      clearSearch();
+      return;
+    }
+
+    clearSearch();
+    setSearchQuery(query);
+
+    // Get all text nodes in the main content area
+    const mainContent = document.querySelector('main') || document.body;
+    const walker = document.createTreeWalker(
+      mainContent,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: (node) => {
+          // Skip script, style, and already highlighted content
+          const parent = node.parentElement;
+          if (!parent) return NodeFilter.FILTER_REJECT;
+          if (['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(parent.tagName)) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          if (parent.classList.contains('search-highlight')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          if (node.textContent && node.textContent.toLowerCase().includes(query.toLowerCase())) {
+            return NodeFilter.FILTER_ACCEPT;
+          }
+          return NodeFilter.FILTER_REJECT;
+        }
+      }
+    );
+
+    const textNodes: Node[] = [];
+    let node;
+    while ((node = walker.nextNode())) {
+      textNodes.push(node);
+    }
+
+    let matchCount = 0;
+    textNodes.forEach((textNode) => {
+      const parent = textNode.parentNode;
+      if (!parent || !textNode.textContent) return;
+
+      const text = textNode.textContent;
+      const regex = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+      const matches = text.match(regex);
+      
+      if (matches) {
+        matchCount += matches.length;
+        const fragment = document.createDocumentFragment();
+        const nodes = highlightText(text, query);
+        nodes.forEach(n => fragment.appendChild(n));
+        parent.replaceChild(fragment, textNode);
+      }
+    });
+
+    setSearchMatches(matchCount);
+    if (matchCount > 0) {
+      setCurrentMatchIndex(1);
+      highlightCurrentMatch(0);
+    }
+  };
+
+  const highlightCurrentMatch = (index: number) => {
+    const highlights = document.querySelectorAll('.search-highlight');
+    highlights.forEach((highlight, i) => {
+      if (i === index) {
+        highlight.classList.add('search-highlight-current');
+        (highlight as HTMLElement).style.backgroundColor = isDark ? '#f97316' : '#fb923c';
+        (highlight as HTMLElement).style.fontWeight = 'bold';
+        highlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        highlight.classList.remove('search-highlight-current');
+        (highlight as HTMLElement).style.backgroundColor = isDark ? '#fbbf24' : '#fef08a';
+        (highlight as HTMLElement).style.fontWeight = 'normal';
+      }
+    });
+  };
+
+  const navigateToNextMatch = () => {
+    if (searchMatches === 0) return;
+    const nextIndex = currentMatchIndex >= searchMatches ? 1 : currentMatchIndex + 1;
+    setCurrentMatchIndex(nextIndex);
+    highlightCurrentMatch(nextIndex - 1);
+  };
+
+  const navigateToPrevMatch = () => {
+    if (searchMatches === 0) return;
+    const prevIndex = currentMatchIndex <= 1 ? searchMatches : currentMatchIndex - 1;
+    setCurrentMatchIndex(prevIndex);
+    highlightCurrentMatch(prevIndex - 1);
+  };
+
   // Don't render until mounted to avoid hydration issues
   if (!mounted) {
     return null;
   }
-
-  const isDark = resolvedTheme === 'dark';
   
   // Theme-aware class helpers
   const buttonClasses = `text-sm transition-colors px-2 py-1.5 rounded-md flex items-center gap-1.5 ${
@@ -142,6 +279,121 @@ export default function DocsNavbar() {
 
         {/* Spacer */}
         <div className="flex-1" />
+
+        {/* Search Bar */}
+        <div className={`hidden md:flex items-center gap-2 mr-4 transition-all ${
+          isSearchOpen ? 'w-96' : 'w-auto'
+        }`}>
+          {!isSearchOpen ? (
+            <button
+              onClick={() => {
+                setIsSearchOpen(true);
+                setTimeout(() => searchInputRef.current?.focus(), 100);
+              }}
+              className={`text-sm transition-colors px-3 py-1.5 rounded-md flex items-center gap-2 ${
+                isDark 
+                  ? 'text-gray-400 hover:text-gray-100 hover:bg-neutral-800 border border-neutral-800'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100 border border-gray-200'
+              }`}
+              aria-label="Search page"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <span className="text-xs">Search...</span>
+              <kbd className={`text-xs px-1.5 py-0.5 rounded ${
+                isDark ? 'bg-neutral-800 text-gray-400' : 'bg-gray-100 text-gray-500'
+              }`}>
+                Ctrl+F
+              </kbd>
+            </button>
+          ) : (
+            <div className={`flex items-center gap-2 w-full border rounded-md px-3 py-1.5 ${
+              isDark 
+                ? 'bg-neutral-900 border-neutral-700'
+                : 'bg-white border-gray-300'
+            }`}>
+              <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => performSearch(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (e.shiftKey) {
+                      navigateToPrevMatch();
+                    } else {
+                      navigateToNextMatch();
+                    }
+                  }
+                }}
+                placeholder="Search page..."
+                className={`flex-1 bg-transparent outline-none text-sm ${
+                  isDark ? 'text-gray-200 placeholder-gray-500' : 'text-gray-900 placeholder-gray-400'
+                }`}
+              />
+              {searchMatches > 0 && (
+                <>
+                  <span className={`text-xs whitespace-nowrap ${
+                    isDark ? 'text-gray-400' : 'text-gray-600'
+                  }`}>
+                    {currentMatchIndex}/{searchMatches}
+                  </span>
+                  <div className="flex gap-1">
+                    <button
+                      onClick={navigateToPrevMatch}
+                      className={`p-1 rounded transition-colors ${
+                        isDark 
+                          ? 'hover:bg-neutral-800 text-gray-400 hover:text-gray-200'
+                          : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
+                      }`}
+                      aria-label="Previous match"
+                      title="Previous (Shift+Enter)"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={navigateToNextMatch}
+                      className={`p-1 rounded transition-colors ${
+                        isDark 
+                          ? 'hover:bg-neutral-800 text-gray-400 hover:text-gray-200'
+                          : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
+                      }`}
+                      aria-label="Next match"
+                      title="Next (Enter)"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                </>
+              )}
+              <button
+                onClick={() => {
+                  clearSearch();
+                  setIsSearchOpen(false);
+                }}
+                className={`p-1 rounded transition-colors ${
+                  isDark 
+                    ? 'hover:bg-neutral-800 text-gray-400 hover:text-gray-200'
+                    : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
+                }`}
+                aria-label="Close search"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* Main Navigation Links - Hidden on mobile */}
         <div className="hidden md:flex items-center gap-1">
@@ -480,6 +732,24 @@ export default function DocsNavbar() {
           </div>
         </div>
 
+        {/* Mobile search button */}
+        <button
+          onClick={() => {
+            setIsSearchOpen(true);
+            setTimeout(() => searchInputRef.current?.focus(), 100);
+          }}
+          className={`md:hidden p-1.5 rounded-md transition-colors ${
+            isDark 
+              ? 'text-gray-400 hover:text-gray-100 hover:bg-neutral-800'
+              : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+          }`}
+          aria-label="Search page"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+
         {/* Mobile menu button */}
         <button
           className={`md:hidden p-1.5 rounded-md transition-colors ${
@@ -495,6 +765,92 @@ export default function DocsNavbar() {
           </svg>
         </button>
       </div>
+
+      {/* Mobile Search Bar */}
+      {isSearchOpen && (
+        <div className={`md:hidden border-t ${
+          isDark ? 'border-neutral-800 bg-[#111]' : 'border-gray-200 bg-white'
+        }`}>
+          <div className="px-4 py-3">
+            <div className={`flex items-center gap-2 w-full border rounded-md px-3 py-2 ${
+              isDark 
+                ? 'bg-neutral-900 border-neutral-700'
+                : 'bg-white border-gray-300'
+            }`}>
+              <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => performSearch(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (e.shiftKey) {
+                      navigateToPrevMatch();
+                    } else {
+                      navigateToNextMatch();
+                    }
+                  }
+                }}
+                placeholder="Search page..."
+                className={`flex-1 bg-transparent outline-none text-sm ${
+                  isDark ? 'text-gray-200 placeholder-gray-500' : 'text-gray-900 placeholder-gray-400'
+                }`}
+              />
+              <button
+                onClick={() => {
+                  clearSearch();
+                  setIsSearchOpen(false);
+                }}
+                className={`p-1 rounded transition-colors flex-shrink-0 ${
+                  isDark 
+                    ? 'hover:bg-neutral-800 text-gray-400 hover:text-gray-200'
+                    : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
+                }`}
+                aria-label="Close search"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            {searchMatches > 0 && (
+              <div className="flex items-center justify-between mt-2">
+                <span className={`text-xs ${
+                  isDark ? 'text-gray-400' : 'text-gray-600'
+                }`}>
+                  {currentMatchIndex} of {searchMatches} matches
+                </span>
+                <div className="flex gap-2">
+                  <button
+                    onClick={navigateToPrevMatch}
+                    className={`px-3 py-1.5 rounded text-xs transition-colors ${
+                      isDark 
+                        ? 'bg-neutral-800 text-gray-300 hover:bg-neutral-700'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    Previous
+                  </button>
+                  <button
+                    onClick={navigateToNextMatch}
+                    className={`px-3 py-1.5 rounded text-xs transition-colors ${
+                      isDark 
+                        ? 'bg-neutral-800 text-gray-300 hover:bg-neutral-700'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Mobile menu */}
       {isMenuOpen && (
