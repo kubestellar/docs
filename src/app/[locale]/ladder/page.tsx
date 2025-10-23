@@ -424,10 +424,8 @@ export default function MaintainerLadderPage() {
             </div>
           </div>
         </section>
-
         {/* Ready To Get Started Section */}
         <GetStartedSection />
-        
       </div>
       <Footer />
     </div>
