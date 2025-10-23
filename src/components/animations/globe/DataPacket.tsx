@@ -1,13 +1,13 @@
-import { useRef, useState, useMemo } from 'react';
-import { useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
+import { useRef, useState, useMemo } from "react";
+import { useFrame } from "@react-three/fiber";
+import * as THREE from "three";
 
 /**
  * DataPacket Component
- * 
+ *
  * Creates an animated sphere that travels along a path between two points.
  * Includes a particle trail effect.
- * 
+ *
  * @param path - Array of 3D positions defining the path [start, end]
  * @param speed - Speed multiplier for animation
  * @param color - Color of the data packet
@@ -26,7 +26,7 @@ interface DataPacketProps {
 const DataPacket = ({
   path,
   speed = 1,
-  color = '#00E396',
+  color = "#00E396",
   size = 0.08,
   isActive = true,
 }: DataPacketProps) => {
@@ -69,7 +69,8 @@ const DataPacket = ({
 
     // Update trail positions
     if (trailRef.current && ref.current && path.length >= 2) {
-      const positions = trailRef.current.geometry.attributes.position.array as Float32Array;
+      const positions = trailRef.current.geometry.attributes.position
+        .array as Float32Array;
       const start = path[0];
       const end = path[1];
 
@@ -114,7 +115,10 @@ const DataPacket = ({
       {/* Simple trail with optimized settings */}
       <points ref={trailRef} frustumCulled>
         <bufferGeometry>
-          <bufferAttribute attach="attributes-position" args={[trailPositions, 3, false]} />
+          <bufferAttribute
+            attach="attributes-position"
+            args={[trailPositions, 3, false]}
+          />
         </bufferGeometry>
         <pointsMaterial
           color={color}

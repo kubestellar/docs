@@ -1,13 +1,13 @@
 "use client";
 
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { Suspense, useState, useEffect } from 'react';
-import NetworkGlobe from './NetworkGlobe';
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { Suspense, useState, useEffect } from "react";
+import NetworkGlobe from "./NetworkGlobe";
 
 /**
  * GlobeAnimation Component - Wrapper for NetworkGlobe
- * 
+ *
  * Main component to use in your hero section
  * Handles Canvas setup and loading states
  */
@@ -64,7 +64,7 @@ const GlobeAnimation: React.FC<GlobeAnimationProps> = ({
   const containerStyle: React.CSSProperties = {
     width,
     height,
-    position: 'relative',
+    position: "relative",
     ...style,
   };
 
@@ -74,12 +74,12 @@ const GlobeAnimation: React.FC<GlobeAnimationProps> = ({
       {showLoader && !isLoaded && (
         <div
           style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            color: 'white',
-            fontSize: '16px',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            color: "white",
+            fontSize: "16px",
             zIndex: 10,
           }}
         >
@@ -90,7 +90,7 @@ const GlobeAnimation: React.FC<GlobeAnimationProps> = ({
       {/* Canvas with 3D Globe */}
       <Canvas
         camera={{ position: cameraPosition, fov: fov }}
-        style={{ background: 'transparent' }}
+        style={{ background: "transparent" }}
       >
         {/* Lighting for the scene */}
         <ambientLight intensity={0.5} />

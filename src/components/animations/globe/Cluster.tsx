@@ -1,23 +1,29 @@
-import { useRef, useState, useMemo, useEffect } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { Sphere, Text, Billboard, Instances, Instance } from '@react-three/drei';
-import * as THREE from 'three';
+import { useRef, useState, useMemo, useEffect } from "react";
+import { useFrame } from "@react-three/fiber";
+import {
+  Sphere,
+  Text,
+  Billboard,
+  Instances,
+  Instance,
+} from "@react-three/drei";
+import * as THREE from "three";
 
 // Theme colors
 const COLORS = {
-  primary: '#1a90ff',
-  secondary: '#6236FF',
-  highlight: '#00C2FF',
-  success: '#00E396',
-  background: '#0a0f1c',
+  primary: "#1a90ff",
+  secondary: "#6236FF",
+  highlight: "#00C2FF",
+  success: "#00E396",
+  background: "#0a0f1c",
 };
 
 /**
  * Cluster Component
- * 
+ *
  * Creates a cluster of nodes arranged in a sphere, with connections between them.
  * Nodes randomly activate to show activity.
- * 
+ *
  * @param position - 3D position of the cluster center
  * @param name - Display name of the cluster
  * @param nodeCount - Number of nodes in the cluster
@@ -83,8 +89,9 @@ const Cluster = ({
     if (!isActive) return;
 
     const interval = setInterval(() => {
-      const randomNodes = Array.from({ length: Math.min(3, Math.floor(nodeCount / 4)) }, () =>
-        Math.floor(Math.random() * nodeCount)
+      const randomNodes = Array.from(
+        { length: Math.min(3, Math.floor(nodeCount / 4)) },
+        () => Math.floor(Math.random() * nodeCount)
       );
       setActiveNodes(randomNodes);
     }, 4000);
@@ -101,13 +108,17 @@ const Cluster = ({
     // Update rotation every 2 frames
     if (frameCount.current % 2 === 0 && clusterRef.current) {
       clusterRef.current.rotation.y = state.clock.getElapsedTime() * 0.1;
-      clusterRef.current.rotation.x = Math.sin(state.clock.getElapsedTime() * 0.2) * 0.05;
+      clusterRef.current.rotation.x =
+        Math.sin(state.clock.getElapsedTime() * 0.2) * 0.05;
     }
 
     // Scale effect on hover
     if (clusterRef.current) {
       const targetScale = hovered ? 1.05 : 1;
-      clusterRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
+      clusterRef.current.scale.lerp(
+        new THREE.Vector3(targetScale, targetScale, targetScale),
+        0.1
+      );
     }
   });
 

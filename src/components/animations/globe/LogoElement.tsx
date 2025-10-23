@@ -1,15 +1,15 @@
-import { useRef, useMemo } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { Text, Billboard } from '@react-three/drei';
-import * as THREE from 'three';
-import { COLORS } from './colors';
+import { useRef, useMemo } from "react";
+import { useFrame } from "@react-three/fiber";
+import { Text, Billboard } from "@react-three/drei";
+import * as THREE from "three";
+import { COLORS } from "./colors";
 
 /**
  * LogoElement Component
- * 
+ *
  * Creates the central logo element with a pulsing sphere and rotating ring.
  * Displays KubeStellar branding in the center.
- * 
+ *
  * @param animate - Controls whether animation is running
  */
 
@@ -47,7 +47,10 @@ const LogoElement = ({ animate = true }: LogoElementProps) => {
 
   // Create shared geometries for better performance
   const coreGeometry = useMemo(() => new THREE.SphereGeometry(0.3, 16, 16), []);
-  const ringGeometry = useMemo(() => new THREE.TorusGeometry(0.6, 0.02, 8, 48), []);
+  const ringGeometry = useMemo(
+    () => new THREE.TorusGeometry(0.6, 0.02, 8, 48),
+    []
+  );
 
   // Optimize animation frequency
   useFrame(state => {
@@ -67,8 +70,9 @@ const LogoElement = ({ animate = true }: LogoElementProps) => {
 
       // Update material opacity instead of changing instance
       if (coreRef.current.material) {
-        (coreRef.current.material as THREE.MeshPhongMaterial).emissiveIntensity =
-          0.5 + Math.sin(time * 2) * 0.2;
+        (
+          coreRef.current.material as THREE.MeshPhongMaterial
+        ).emissiveIntensity = 0.5 + Math.sin(time * 2) * 0.2;
       }
     }
 
@@ -82,10 +86,20 @@ const LogoElement = ({ animate = true }: LogoElementProps) => {
   return (
     <group>
       {/* Central core sphere */}
-      <mesh ref={coreRef} geometry={coreGeometry} material={coreMaterial} frustumCulled />
+      <mesh
+        ref={coreRef}
+        geometry={coreGeometry}
+        material={coreMaterial}
+        frustumCulled
+      />
 
       {/* Outer rotating ring */}
-      <mesh ref={outerRingRef} geometry={ringGeometry} material={ringMaterial} frustumCulled />
+      <mesh
+        ref={outerRingRef}
+        geometry={ringGeometry}
+        material={ringMaterial}
+        frustumCulled
+      />
 
       {/* KubeStellar Branding */}
       <Billboard position={[0, 1, 0]} frustumCulled>
