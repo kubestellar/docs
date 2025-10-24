@@ -39,3 +39,5 @@ roleRef:
   kind: Role
   name: nextra-rollout-role
   apiGroup: rbac.authorization.k8s.io
+
+  
