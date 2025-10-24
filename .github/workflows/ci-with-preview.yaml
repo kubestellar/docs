@@ -223,7 +223,7 @@ jobs:
             iad.ocir.io/id4wyucbsggm/kubestellar-docs-prs:pr-${{ github.event.pull_request.number }}
             ```
             🌐 **Live Preview (after rollout):**
-            [https://pr-${{ github.event.pull_request.number }}.previews.kubestellar.io](https://pr-${{ github.event.pull_request.number }}.previews.kubestellar.io)
+            [http://pr-${{ github.event.pull_request.number }}.previews.kubestellar.io](http://pr-${{ github.event.pull_request.number }}.previews.kubestellar.io)
 
   # ============================================================
   # 🧹 Cleanup when PR closes
@@ -286,4 +286,4 @@ jobs:
             iad.ocir.io/id4wyucbsggm/kubestellar-docs-prs:pr-${{ github.event.number }}
             ```
             📴 **Preview URL Removed**
-            https://pr-${{ github.event.number }}.previews.kubestellar.io
+            http://pr-${{ github.event.number }}.previews.kubestellar.io
