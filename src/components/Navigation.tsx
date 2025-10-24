@@ -5,10 +5,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { GridLines } from "./index";
 
+const useMediaQuery = (query: string) => {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    const updateMatches = () => {
+      if (media.matches !== matches) {
+        setMatches(media.matches);
+      }
+    };
+    updateMatches();
+    media.addEventListener("change", updateMatches);
+    return () => media.removeEventListener("change", updateMatches);
+  }, [matches, query]);
+
+  return matches;
+};
+
+
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
   const [githubStats, setGithubStats] = useState({
     stars: "0",
     forks: "0",
@@ -524,10 +544,18 @@ export default function Navigation() {
               {/* Version Dropdown */}
               <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
                 <button
-                  data-dropdown-button
-                  className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
+                  onClick={() =>
+                    setOpenMobileDropdown(
+                      openMobileDropdown === "version" ? null : "version"
+                    )
+                  }
+                  className="w-full flex justify-between items-center px-4 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
-                  3.8.1
+                  {isDesktop ? (
+                    <span>3.8.1</span>
+                  ) : (
+                    <span>Version</span>
+                  )}
                   <svg
                     className="w-4 h-4 ml-1"
                     fill="none"
@@ -542,38 +570,49 @@ export default function Navigation() {
                     />
                   </svg>
                 </button>
+<<<<<<< HEAD
                 <div
                   data-dropdown-menu
                   className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
                 >
                   <a
                     href="#"
-                    className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
-                  >
-                    3.8.1 (Current)
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
-                  >
-                    3.8.0
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
-                  >
-                    All versions
-                  </a>
-                </div>
+                    </a>
+                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      All versions
+                    </a>
+                  </div>
+                )}
+>>>>>>> 7f5b428 (desktop nav fixes)
               </div>
 
               {/* Language Dropdown */}
               <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
                 <button
-                  data-dropdown-button
-                  className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-100 transform nav-link-hover"
+                  onClick={() =>
+                    setOpenMobileDropdown(
+                      openMobileDropdown === "language" ? null : "language"
+                    )
+                  }
+                  className="w-full flex justify-between items-center px-4 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
-                  <span>Language</span>
+                  {isDesktop ? (
+                    <svg
+                      className="w-4 h-4 xl:mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+                      />
+                    </svg>
+                  ) : (
+                    <span>Language</span>
+                  )}
                   <svg
                     className="w-4 h-4 xl:mr-2"
                     fill="none"
@@ -602,38 +641,42 @@ export default function Navigation() {
                     />
                   </svg>
                 </button>
-                <div
-                  data-dropdown-menu
-                  className="absolute right-0 mt-2 w-32 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
-                >
-                  <a
-                    href="#"
-                    className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 transition-all duration-200 hover:text-purple-300 hover:shadow-md"
-                  >
-                    English
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 transition-all duration-200 hover:text-purple-300 hover:shadow-md"
-                  >
-                    日本語
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 transition-all duration-200 hover:text-purple-300 hover:shadow-md"
-                  >
-                    简体中文
-                  </a>
-                </div>
+                {openMobileDropdown === "language" && (
+                  <div className="pl-4 mt-1 space-y-1 lg:absolute lg:right-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-md lg:shadow-xl lg:py-1 lg:border lg:bg-gray-800/90 lg:ring lg:ring-gray-700/50">
+                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      English
+                    </a>
+                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      日本語
+                    </a>
+                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      简体中文
+                    </a>
+                  </div>
+                )}
               </div>
 
               {/* GitHub Dropdown */}
               <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
                 <button
-                  data-dropdown-button
-                  className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
+                  onClick={() =>
+                    setOpenMobileDropdown(
+                      openMobileDropdown === "github" ? null : "github"
+                    )
+                  }
+                  className="w-full flex justify-between items-center px-4 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
-                  <span>GitHub</span>
+                  {isDesktop ? (
+                    <svg
+                      className="w-4 h-4 mr-2"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.300 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                  ) : (
+                    <span>Github</span>
+                  )}
                   <svg
                     className="w-4 h-4 xl:mr-2"
                     fill="currentColor"
@@ -655,62 +698,28 @@ export default function Navigation() {
                     />
                   </svg>
                 </button>
-                <div
-                  data-dropdown-menu
-                  className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
-                >
-                  <a
-                    href="https://github.com/kubestellar/kubestellar"
-                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M10 2C5.58 2 2 5.58 2 10c0 3.87 2.69 7.13 6.39 7.93.47.09.64-.2.64-.45 0-.22-.01-.94-.01-1.7-2.6.57-3.15-1.25-3.15-1.25-.43-1.09-1.05-1.38-1.05-1.38-.86-.59.07-.58.07-.58.95.07 1.45.98 1.45.98.85 1.45 2.23 1.03 2.78.79.09-.62.33-1.03.6-1.27-2.22-.25-4.555-1.11-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    Star
-                    <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
-                      {githubStats.stars}
-                    </span>
-                  </a>
-                  <a
-                    href="https://github.com/kubestellar/kubestellar/fork"
-                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M5 3a3 3 0 106 0 3 3 0 00-6 0zm0 2a2 2 0 114 0 2 2 0 01-4 0zm10 10a3 3 0 11-6 0 3 3 0 016 0zm-2-2a2 2 0 100 4 2 2 0 000-4zm-6 2a2 2 0 100-4 2 2 0 000 4zm8-2a2 2 0 100-4 2 2 0 000 4z" />
-                    </svg>
-                    Fork
-                    <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
-                      {githubStats.forks}
-                    </span>
-                  </a>
-                  <a
-                    href="https://github.com/kubestellar/kubestellar/watchers"
-                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 2C5.454 2 1.73 5.11.458 9.09a1.5 1.5 0 000 1.82C1.73 14.89 5.454 18 10 18s8.27-3.11 9.542-7.09a1.5 1.5 0 000-1.82C18.27 5.11 14.546 2 10 2zm0 14c-3.866 0-7.09-2.61-8.13-6C2.91 6.61 6.134 4 10 4s7.09 2.61 8.13 6c-1.04 3.39-4.264 6-8.13 6zm0-8a2 2 0 110 4 2 2 0 010-4z" />
-                    </svg>
-                    Watch
-                    <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
-                      {githubStats.watchers}
-                    </span>
-                  </a>
-                </div>
+                {openMobileDropdown === "github" && (
+                  <div className="pl-4 mt-1 space-y-1 lg:absolute lg:right-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-md lg:shadow-xl lg:py-1 lg:border lg:bg-gray-800/90 lg:ring lg:ring-gray-700/50">
+                    <a href="https://github.com/kubestellar/kubestellar" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      Star
+                      <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
+                        {githubStats.stars}
+                      </span>
+                    </a>
+                    <a href="https://github.com/kubestellar/kubestellar/fork" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      Fork
+                      <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
+                        {githubStats.forks}
+                      </span>
+                    </a>
+                    <a href="https://github.com/kubestellar/kubestellar/watchers" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      Watch
+                      <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
+                        {githubStats.watchers}
+                      </span>
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
             {/* Mobile menu button */}
@@ -872,66 +881,21 @@ export default function Navigation() {
               {/* Divider and Secondary Controls for mobile menu */}
               <div className="mobile-secondary-controls">
                 <div className="flex flex-col">
-                  
-                  {/* Version Dropdown */}
-                  <div className="relative group" data-dropdown>
-                    <button
-                      onClick={() => {
-                        setOpenMobileDropdown(openMobileDropdown === "version" ? null : "version")
-                      }}
-                      className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
-                    >
-                      3.8.1
-                      <svg
-                        className="w-4 h-4 ml-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
-                    {openMobileDropdown === "version" && (
-                      <div
-                        className="absolute left-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
-                      >
-                        <a
-                          href="#"
-                          className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
-                        >
-                          3.8.1 (Current)
-                        </a>
-                        <a
-                          href="#"
-                          className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
-                        >
-                          3.8.0
-                        </a>
-                        <a
-                          href="#"
-                          className="block px-5 py-2 text-sm text-gray-300 hover:bg-blue-900/30 transition-all duration-200 hover:text-blue-300 hover:shadow-md"
-                        >
-                          All versions
-                        </a>
-                      </div>
-                    )}
-                  </div>
 
-                  {/* Language Dropdown */}
-                  <div className="relative group" data-dropdown>
+                  {/* Version Dropdown */}
+                  <div>
                     <button
-                      onClick={() => {
-                        setOpenMobileDropdown(openMobileDropdown === "language" ? null : "language")
-                      }}
-                      className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-100 transform nav-link-hover"
+                      onClick={() =>
+                        setOpenMobileDropdown(
+                          openMobileDropdown === "version" ? null : "version"
+                        )
+                      }
+                      className="w-full flex justify-between items-center py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                     >
+                      <span>Version</span>
                       <svg
-                        className="w-4 h-4 xl:mr-2"
+                        className={`w-5 h-5 transition-transform ${openMobileDropdown === "version" ? "rotate-180" : ""
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -940,12 +904,39 @@ export default function Navigation() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth="2"
-                          d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+                          d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                      <span className="hidden xl:inline">English</span>
+                    </button>
+                    {openMobileDropdown === "version" && (
+                      <div className="pl-5 mt-1 space-y-1">
+                        <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                          3.8.1 (Current)
+                        </a>
+                        <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                          3.8.0
+                        </a>
+                        <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                          All versions
+                        </a>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Language Dropdown */}
+                  <div>
+                    <button
+                      onClick={() =>
+                        setOpenMobileDropdown(
+                          openMobileDropdown === "language" ? null : "language"
+                        )
+                      }
+                      className="w-full flex justify-between items-center py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                    >
+                      <span>Language</span>
                       <svg
-                        className="w-4 h-4 ml-1"
+                        className={`w-5 h-5 transition-transform ${openMobileDropdown === "language" ? "rotate-180" : ""
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -959,25 +950,14 @@ export default function Navigation() {
                       </svg>
                     </button>
                     {openMobileDropdown === "language" && (
-                      <div
-                        className="absolute right-0 mt-2 w-32 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
-                      >
-                        <a
-                          href="#"
-                          className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 transition-all duration-200 hover:text-purple-300 hover:shadow-md"
-                        >
+                      <div className="pl-5 mt-1 space-y-1">
+                        <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                           English
                         </a>
-                        <a
-                          href="#"
-                          className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 transition-all duration-200 hover:text-purple-300 hover:shadow-md"
-                        >
+                        <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                           日本語
                         </a>
-                        <a
-                          href="#"
-                          className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 transition-all duration-200 hover:text-purple-300 hover:shadow-md"
-                        >
+                        <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                           简体中文
                         </a>
                       </div>
@@ -985,22 +965,19 @@ export default function Navigation() {
                   </div>
 
                   {/* GitHub Dropdown */}
-                  <div className="relative group" data-dropdown>
+                  <div>
                     <button
-                      onClick={() => {
-                        setOpenMobileDropdown(openMobileDropdown === "github" ? null : "github")
-                      }}
-                      className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
+                      onClick={() =>
+                        setOpenMobileDropdown(
+                          openMobileDropdown === "github" ? null : "github"
+                        )
+                      }
+                      className="w-full flex justify-between items-center py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                     >
+                      <span>GitHub</span>
                       <svg
-                        className="w-4 h-4 xl:mr-2"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.446-1.524.117-3.176 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.300 24 12c0-6.627-5.373-12-12-12z" />
-                      </svg>
-                      <svg
-                        className="w-4 h-4 ml-1"
+                        className={`w-5 h-5 transition-transform ${openMobileDropdown === "github" ? "rotate-180" : ""
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -1014,57 +991,20 @@ export default function Navigation() {
                       </svg>
                     </button>
                     {openMobileDropdown === "github" && (
-
-
-                      <div
-                        className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
-                      >
-                        <a
-                          href="https://github.com/kubestellar/kubestellar"
-                          className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
-                        >
-                          <svg
-                            className="w-4 h-4 mr-2"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              d="M10 2C5.58 2 2 5.58 2 10c0 3.87 2.69 7.13 6.39 7.93.47.09.64-.2.64-.45 0-.22-.01-.94-.01-1.7-2.6.57-3.15-1.25-3.15-1.25-.43-1.09-1.05-1.38-1.05-1.38-.86-.59.07-.58.07-.58.95.07 1.45.98 1.45.98.85 1.45 2.23 1.03 2.78.79.09-.62.33-1.03.6-1.27-2.22-.25-4.555-1.11-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
+                      <div className="pl-5 mt-1 space-y-1">
+                        <a href="https://github.com/kubestellar/kubestellar" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                           Star
                           <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                             {githubStats.stars}
                           </span>
                         </a>
-                        <a
-                          href="https://github.com/kubestellar/kubestellar/fork"
-                          className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
-                        >
-                          <svg
-                            className="w-4 h-4 mr-2"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M5 3a3 3 0 106 0 3 3 0 00-6 0zm0 2a2 2 0 114 0 2 2 0 01-4 0zm10 10a3 3 0 11-6 0 3 3 0 016 0zm-2-2a2 2 0 100 4 2 2 0 000-4zm-6 2a2 2 0 100-4 2 2 0 000 4zm8-2a2 2 0 100-4 2 2 0 000 4z" />
-                          </svg>
+                        <a href="https://github.com/kubestellar/kubestellar/fork" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                           Fork
                           <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                             {githubStats.forks}
                           </span>
                         </a>
-                        <a
-                          href="https://github.com/kubestellar/kubestellar/watchers"
-                          className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
-                        >
-                          <svg
-                            className="w-4 h-4 mr-2"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M10 2C5.454 2 1.73 5.11.458 9.09a1.5 1.5 0 000 1.82C1.73 14.89 5.454 18 10 18s8.27-3.11 9.542-7.09a1.5 1.5 0 000-1.82C18.27 5.11 14.546 2 10 2zm0 14c-3.866 0-7.09-2.61-8.13-6C2.91 6.61 6.134 4 10 4s7.09 2.61 8.13 6c-1.04 3.39-4.264 6-8.13 6zm0-8a2 2 0 110 4 2 2 0 010-4z" />
-                          </svg>
+                        <a href="https://github.com/kubestellar/kubestellar/watchers" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                           Watch
                           <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                             {githubStats.watchers}
