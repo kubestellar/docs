@@ -1,6 +1,7 @@
 # Dockerfile.rollout-checker
 FROM docker.io/alpine/kubectl:1.34.1
 
+
 # Install runtime dependencies and OCI CLI
 RUN apk add --no-cache python3 py3-pip bash jq curl gettext \
     && pip install --break-system-packages --no-cache-dir oci-cli \
