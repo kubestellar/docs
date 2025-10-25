@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import BlurOverlay from "../BlurOverlay";
 
 type DropdownType = "contribute" | "community" | "version" | "language" | "github" | null;
 
@@ -32,6 +33,9 @@ export default function DocsNavbar() {
     forks: "0",
     watchers: "0",
   });
+
+  // Use existing dropdown state for blur effect
+  const isAnyDropdownOpen = openDropdown !== null || isSearchOpen;
 
   useEffect(() => {
     setMounted(true);
@@ -121,6 +125,26 @@ export default function DocsNavbar() {
     }
   };
 
+  // Enhanced keyboard navigation for dropdowns
+  const handleKeyDown = (e: React.KeyboardEvent, dropdown: DropdownType) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+    } else if (e.key === 'ArrowDown' && openDropdown === dropdown) {
+      e.preventDefault();
+      const dropdownElement = document.querySelector(`[data-dropdown="${dropdown}"]`);
+      const firstItem = dropdownElement?.querySelector('a, button') as HTMLElement;
+      if (firstItem) {
+        firstItem.focus();
+      }
+    }
+  };
+
+  // Touch support for mobile
+  const handleTouchStart = (dropdown: DropdownType) => {
+    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  };
+
   const isDark = resolvedTheme === 'dark';
   const [isSearching, setIsSearching] = useState(false);
 
@@ -189,7 +213,15 @@ export default function DocsNavbar() {
   }`;
 
   return (
-    <div className="nextra-nav-container sticky top-0 z-20 w-full bg-transparent">
+    <>
+      <BlurOverlay 
+        isVisible={isAnyDropdownOpen} 
+        onClose={() => {
+          setOpenDropdown(null);
+          setIsSearchOpen(false);
+        }} 
+      />
+      <div className="nextra-nav-container sticky top-0 z-20 w-full bg-transparent">
       <div className={`nextra-nav-container-blur pointer-events-none absolute z-[-1] h-full w-full shadow-sm border-b ${
         isDark 
           ? 'bg-[#111] border-neutral-800' 
@@ -222,6 +254,8 @@ export default function DocsNavbar() {
               className={buttonClasses}
               aria-haspopup="true"
               aria-expanded={openDropdown === "contribute"}
+              onKeyDown={(e) => handleKeyDown(e, "contribute")}
+              onTouchStart={() => handleTouchStart("contribute")}
             >
               <svg
                 className="w-3.5 h-3.5"
@@ -288,6 +322,8 @@ export default function DocsNavbar() {
               className={buttonClasses}
               aria-haspopup="true"
               aria-expanded={openDropdown === "community"}
+              onKeyDown={(e) => handleKeyDown(e, "community")}
+              onTouchStart={() => handleTouchStart("community")}
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -855,5 +891,6 @@ export default function DocsNavbar() {
         </div>
       )}
     </div>
+    </>
   );
 }

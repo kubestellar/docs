@@ -20,7 +20,6 @@ export default function LanguageSwitcher({
   const [isTransitioning, setIsTransitioning] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const locale = useLocale() as Locale;
   const pathname = usePathname();
@@ -43,9 +42,6 @@ export default function LanguageSwitcher({
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
     };
   }, []);
 
@@ -124,6 +120,7 @@ export default function LanguageSwitcher({
         {isOpen && (
           <div
             ref={dropdownRef}
+            data-language-dropdown
             className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-lg shadow-xl border border-gray-700/50 py-2 z-50 animate-in fade-in-0 zoom-in-95 duration-200"
             role="listbox"
             aria-label="Select language"
