@@ -26,8 +26,12 @@ export default function Navigation() {
         const menu = container.querySelector<HTMLElement>(
           "[data-dropdown-menu]"
         );
+        const button = container.querySelector<HTMLElement>(
+          "[data-dropdown-button]"
+        );
 
-        if (menu) {
+        if (menu && button) {
+          // Desktop hover behavior
           container.addEventListener("mouseenter", () => {
             if (timeoutRef.current) {
               clearTimeout(timeoutRef.current);
@@ -64,6 +68,36 @@ export default function Navigation() {
 
           menu.addEventListener("mouseleave", () => {
             menu.style.display = "none";
+          });
+
+          // Touch/mobile behavior
+          button.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isOpen = menu.style.display === "block";
+            
+            // Close all other dropdowns
+            dropdownContainers.forEach(otherContainer => {
+              if (otherContainer !== container) {
+                const otherMenu = otherContainer.querySelector<HTMLElement>(
+                  "[data-dropdown-menu]"
+                );
+                if (otherMenu) {
+                  otherMenu.style.display = "none";
+                }
+              }
+            });
+            
+            // Toggle current dropdown
+            menu.style.display = isOpen ? "none" : "block";
+          });
+
+          // Close dropdown when clicking outside
+          document.addEventListener("click", (e) => {
+            if (!container.contains(e.target as Node)) {
+              menu.style.display = "none";
+            }
           });
         }
       });
@@ -194,9 +228,78 @@ export default function Navigation() {
             </div>
           </Link>
 
-          {/* Center: Nav Links */}
-          <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex items-center space-x-8">
+          {/* Tablet Navigation - Compact layout for medium screens */}
+          <div className="hidden md:flex lg:hidden flex-1 justify-center">
+            <div className="flex items-center space-x-4">
+              {/* Docs Link */}
+              <Link
+                href="/docs"
+                className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-2 py-2 rounded-lg hover:bg-blue-500/10"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
+                <span className="hidden sm:inline">{t("docs")}</span>
+              </Link>
+
+              {/* Blog Link */}
+              <a
+                target="_blank"
+                href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
+                className="text-sm font-medium text-gray-300 hover:text-purple-400 transition-all duration-300 flex items-center space-x-1 px-2 py-2 rounded-lg hover:bg-purple-500/10"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  ></path>
+                </svg>
+                <span className="hidden sm:inline">{t("blog")}</span>
+              </a>
+
+              {/* Community Link */}
+              <Link
+                href="/programs"
+                className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-2 py-2 rounded-lg hover:bg-cyan-500/10"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+                <span className="hidden sm:inline">{t("community")}</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* Desktop Navigation - Full layout for large screens */}
+          <div className="hidden lg:flex flex-1 justify-center">
+            <div className="flex items-center space-x-6 xl:space-x-8">
               {/* Docs Link */}
               <div className="relative group">
                 <Link
@@ -302,7 +405,7 @@ export default function Navigation() {
                   </svg>
                 </button>
                 <div
-                  className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50"
+                  className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 sm:left-0 lg:left-0 xl:left-0 max-h-[60vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800"
                   data-dropdown-menu
                   style={{ display: "none" }}
                 >
@@ -424,7 +527,7 @@ export default function Navigation() {
                   </svg>
                 </button>
                 <div
-                  className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50"
+                  className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 sm:left-0 lg:left-0 xl:left-0 max-h-[60vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800"
                   data-dropdown-menu
                   style={{ display: "none" }}
                 >
@@ -529,14 +632,15 @@ export default function Navigation() {
           </div>
 
           {/* Right side: Controls */}
-          <div className="flex items-center space-x-4">
-            {/* Version Dropdown */}
-            <div className="relative group" data-dropdown>
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            {/* Version Dropdown - Hidden on small screens */}
+            <div className="relative group hidden sm:block" data-dropdown>
               <button
                 data-dropdown-button
-                className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
+                className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-2 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
               >
-                3.8.1
+                <span className="hidden md:inline">3.8.1</span>
+                <span className="md:hidden">v3.8.1</span>
                 <svg
                   className="w-4 h-4 ml-1"
                   fill="none"
@@ -553,7 +657,8 @@ export default function Navigation() {
               </button>
               <div
                 data-dropdown-menu
-                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 z-50 max-h-[60vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800"
+                style={{ display: "none" }}
               >
                 <a
                   href="#"
@@ -583,15 +688,16 @@ export default function Navigation() {
             <div className="relative group" data-dropdown>
               <button
                 data-dropdown-button
-                className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
+                className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-2 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
               >
                 <svg
-                  className="w-4 h-4 mr-2"
+                  className="w-4 h-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.300 24 12c0-6.627-5.373-12-12-12z" />
                 </svg>
+                <span className="hidden sm:inline ml-1">{githubStats.stars}</span>
                 <svg
                   className="w-4 h-4 ml-1"
                   fill="none"
@@ -608,7 +714,8 @@ export default function Navigation() {
               </button>
               <div
                 data-dropdown-menu
-                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+                className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 z-50 max-h-[60vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800"
+                style={{ display: "none" }}
               >
                 <a
                   href="https://github.com/kubestellar/kubestellar"
@@ -666,22 +773,31 @@ export default function Navigation() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700"
-              aria-label="Open menu"
+              className="lg:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/50 hover:bg-gray-700/50 transition-all duration-200 touch-manipulation"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <svg
-                className="w-6 h-6"
+                className={`w-6 h-6 transition-transform duration-200 ${isMenuOpen ? 'rotate-90' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
+                {isMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
                   d="M4 6h16M4 12h16M4 18h16"
                 />
+                )}
               </svg>
             </button>
           </div>
@@ -689,38 +805,252 @@ export default function Navigation() {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a
-                href="#about"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+          <div className="lg:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800/95 backdrop-blur-md rounded-lg mx-2 mb-2 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+              {/* Docs Link */}
+              <Link
+                href="/docs"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-blue-400 hover:bg-blue-500/10 transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
-                {t("mobileAbout")}
-              </a>
+                <svg
+                  className="w-5 h-5 mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  ></path>
+                </svg>
+                {t("docs")}
+              </Link>
+
+              {/* Blog Link */}
               <a
-                href="#how-it-works"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                target="_blank"
+                href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-purple-400 hover:bg-purple-500/10 transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
               >
-                {t("mobileHowItWorks")}
+                <svg
+                  className="w-5 h-5 mr-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  ></path>
+                </svg>
+                {t("blog")}
               </a>
-              <a
-                href="#use-cases"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-              >
-                {t("mobileUseCases")}
-              </a>
-              <a
-                href="#get-started"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-              >
-                {t("mobileGetStarted")}
-              </a>
-              <a
-                href="#contact"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-              >
-                {t("mobileContact")}
-              </a>
+
+              {/* Contribute Section */}
+              <div className="border-t border-gray-700 pt-2 mt-2">
+                <div className="px-3 py-2 text-sm font-semibold text-gray-400 uppercase tracking-wider">
+                  {t("contribute")}
+                </div>
+                <a
+                  href="#join-in"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg
+                    className="w-5 h-5 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                    ></path>
+                  </svg>
+                  {t("joinIn")}
+                </a>
+                <Link
+                  href="/community-handbook"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg
+                    className="w-5 h-5 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    ></path>
+                  </svg>
+                  {t("contributeHandbook")}
+                </Link>
+                <a
+                  href="#security"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg
+                    className="w-5 h-5 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    ></path>
+                  </svg>
+                  {t("security")}
+                </a>
+              </div>
+
+              {/* Community Section */}
+              <div className="border-t border-gray-700 pt-2 mt-2">
+                <div className="px-3 py-2 text-sm font-semibold text-gray-400 uppercase tracking-wider">
+                  {t("community")}
+                </div>
+                <a
+                  href="#get-involved"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg
+                    className="w-5 h-5 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                    ></path>
+                  </svg>
+                  {t("getInvolved")}
+                </a>
+                <Link
+                  href="/programs"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg
+                    className="w-5 h-5 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v2M7 7h10"
+                    ></path>
+                  </svg>
+                  {t("programs")}
+                </Link>
+                <Link
+                  href="/ladder"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg
+                    className="w-5 h-5 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    ></path>
+                  </svg>
+                  {t("ladder")}
+                </Link>
+                <a
+                  href="#contact-us"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg
+                    className="w-5 h-5 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                  {t("contactUs")}
+                </a>
+                <a
+                  href="#partners"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg
+                    className="w-5 h-5 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    ></path>
+                  </svg>
+                  {t("partners")}
+                </a>
+              </div>
+
+              {/* GitHub Stats */}
+              <div className="border-t border-gray-700 pt-2 mt-2">
+                <div className="px-3 py-2 text-sm font-semibold text-gray-400 uppercase tracking-wider">
+                  GitHub
+                </div>
+                <a
+                  href="https://github.com/kubestellar/kubestellar"
+                  className="flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-green-400 hover:bg-green-500/10 transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="flex items-center">
+                    <svg
+                      className="w-5 h-5 mr-3"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.300 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    {t("githubStar")}
+                  </div>
+                  <span className="bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
+                    {githubStats.stars}
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         )}
