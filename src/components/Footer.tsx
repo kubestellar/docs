@@ -352,9 +352,6 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-400 text-sm">{t("madeWithLove")}</span>
-            </div>
           </div>
         </div>
       </div>
