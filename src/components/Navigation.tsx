@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const [githubStats, setGithubStats] = useState({
     stars: "0",
     forks: "0",
@@ -687,40 +688,137 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mobile menu */}
+{/* Mobile menu */}
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a
-                href="#about"
+                href="#docs"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
               >
-                {t("mobileAbout")}
+                Docs
               </a>
               <a
-                href="#how-it-works"
+                href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
+                target="_blank"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
               >
-                {t("mobileHowItWorks")}
+                Blog
               </a>
-              <a
-                href="#use-cases"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-              >
-                {t("mobileUseCases")}
-              </a>
-              <a
-                href="#get-started"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-              >
-                {t("mobileGetStarted")}
-              </a>
-              <a
-                href="#contact"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-              >
-                {t("mobileContact")}
-              </a>
+
+              {/* Contribute Dropdown for Mobile */}
+              <div>
+                <button
+                  onClick={() =>
+                    setOpenMobileDropdown(
+                      openMobileDropdown === "contribute" ? null : "contribute"
+                    )
+                  }
+                  className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                >
+                  <span>Contribute</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform ${
+                      openMobileDropdown === "contribute" ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                {openMobileDropdown === "contribute" && (
+                  <div className="pl-4 mt-1 space-y-1">
+                    <a
+                      href="#join-in"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Join In
+                    </a>
+                    <a
+                      href="/community-handbook"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Contribute Handbook
+                    </a>
+                    <a
+                      href="#security"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Security
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* Community Dropdown for Mobile */}
+              <div>
+                <button
+                  onClick={() =>
+                    setOpenMobileDropdown(
+                      openMobileDropdown === "community" ? null : "community"
+                    )
+                  }
+                  className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                >
+                  <span>Community</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform ${
+                      openMobileDropdown === "community" ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                {openMobileDropdown === "community" && (
+                  <div className="pl-4 mt-1 space-y-1">
+                    <a
+                      href="#get-involved"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Get Involved
+                    </a>
+                    <Link
+                      href="/programs"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Programs
+                    </Link>
+                    <a
+                      href="#ladder"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Ladder
+                    </a>
+                    <a
+                      href="#contact-us"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Contact Us
+                    </a>
+                    <a
+                      href="#partners"
+                      className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                    >
+                      Partners
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         )}
