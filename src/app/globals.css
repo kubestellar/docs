@@ -3,6 +3,7 @@
 @theme {
   --breakpoint-lgcustom: 900px;
 }
+
 :root {
   /* Dark mode colors (default) */
   --background: #0a0a0a;
@@ -80,11 +81,9 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 .bg-star-pattern {
-  background-image: radial-gradient(
-    circle at 10px 10px,
-    rgba(255, 255, 255, 0.1) 1px,
-    transparent 0
-  );
+  background-image: radial-gradient(circle at 10px 10px,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 0);
   background-size: 40px 40px;
 }
 
@@ -117,6 +116,7 @@ html:not(.dark) .nextra-sidebar-container {
 
 /* Animations */
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -128,6 +128,7 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     opacity: 1;
@@ -319,6 +320,7 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 @keyframes blink {
+
   0%,
   100% {
     opacity: 1;
@@ -364,6 +366,7 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 @keyframes gradient-shift {
+
   0%,
   100% {
     background-position: 0% 50%;
@@ -387,6 +390,7 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 @keyframes status-glow {
+
   0%,
   100% {
     box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
@@ -398,6 +402,7 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 @keyframes status-pulse {
+
   0%,
   100% {
     transform: scale(1);
@@ -423,6 +428,7 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 @keyframes command-glow {
+
   0%,
   100% {
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
@@ -446,7 +452,7 @@ html:not(.dark) .nextra-sidebar-container {
 /* Custom Responsive Navigation Styles */
 .mobile-menu-panel {
   position: absolute;
-  top: 2.5rem; 
+  top: 2.5rem;
   left: -1rem;
   right: -1rem;
   background: inherit;
@@ -458,40 +464,71 @@ html:not(.dark) .nextra-sidebar-container {
 .secondary-nav-controls {
   display: none;
 }
+
 .mobile-menu-button {
   display: flex;
 }
+
 .mobile-menu-panel .mobile-primary-links {
   display: block;
 }
+
 .mobile-menu-panel .mobile-secondary-controls {
   display: block;
 }
 
 
+<<<<<<< HEAD
 @media (min-width: 768px) {
+=======
+@media (min-width: 768px) and (max-width: 1279px) {
+>>>>>>> e3d8ab2 (width)
   .main-nav-links {
     display: flex;
     left: 57% 
   }
+
   .secondary-nav-controls {
     display: none;
   }
+<<<<<<< HEAD
   .mobile-menu-button {
     display: flex; 
   }
   .mobile-menu-panel .mobile-primary-links {
     display: none;
+=======
+
+  .mobile-menu_button,
+  .mobile-menu-button {
+    display: flex;
   }
+
+  /* Keep primary links inside hamburger visible on tablets */
+  .mobile-menu-panel .mobile-primary-links {
+    display: block;
+>>>>>>> e3d8ab2 (width)
+  }
+
   .mobile-menu-panel .mobile-secondary-controls {
     display: block;
   }
 }
 
-@media (max-width: 726px){
+@media (max-width: 726px) {
   .mobile-menu-panel .mobile-secondary-controls button {
-    padding-left: 2.5rem; /* px-10 */
-    padding-right: 2.5rem; /* px-10 */
+    padding-left: 2.5rem;
+    /* px-10 */
+    padding-right: 2.5rem;
+    /* px-10 */
+  }
+}
+
+@media (max-width: 768px) and (min-width: 726px) {
+  .mobile-ipad {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+
   }
 }
 
@@ -499,16 +536,19 @@ html:not(.dark) .nextra-sidebar-container {
 
 /* Hamburger panel */
 .mobile-menu-panel {
-  background-color: var(--background) !important; /* solid */
+  background-color: var(--background) !important;
+  /* solid */
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border-top: 1px solid rgba(100, 116, 139, 0.5); /* keep the divider if you want */
+  border-top: 1px solid rgba(100, 116, 139, 0.5);
+  /* keep the divider if you want */
   margin-top: 24px;
 }
 
 /* Desktop popover menus (they have data-dropdown-menu) */
 [data-dropdown-menu] {
-  background-color: var(--background) !important; /* solid */
+  background-color: var(--background) !important;
+  /* solid */
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border-color: rgba(100, 116, 139, 0.5) !important;
@@ -516,7 +556,8 @@ html:not(.dark) .nextra-sidebar-container {
 
 /* Mobile popover menus inside the hamburger (absolute dropdown panels) */
 .mobile-menu-panel .mobile-secondary-controls .absolute {
-  background-color: var(--background) !important; /* solid */
+  background-color: var(--background) !important;
+  /* solid */
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border-color: rgba(100, 116, 139, 0.5) !important;
@@ -535,23 +576,27 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
   background-color: #ffffff !important;
 }
 
-@media (min-width: 1280px)  {
+@media (min-width: 1280px) {
   .mobile-menu-panel {
     display: none;
   }
+
   .main-nav-links {
     display: flex;
-    left:50%
+    left: 50%
   }
+
   .secondary-nav-controls {
     display: flex;
   }
+
   .mobile-menu-button {
     display: none;
   }
 }
 
 @keyframes loading-bounce {
+
   0%,
   80%,
   100% {
@@ -574,6 +619,7 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
 }
 
 @keyframes btn-float {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -585,6 +631,7 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
 }
 
 @keyframes stat-float {
+
   0%,
   100% {
     transform: translateY(0px);
@@ -815,12 +862,10 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: left 0.5s;
 }
 
@@ -863,12 +908,10 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
   transition: left 0.5s;
 }
 
@@ -937,12 +980,10 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
 .nebula-1 {
   width: 300px;
   height: 300px;
-  background: radial-gradient(
-    circle,
-    rgba(147, 51, 234, 0.4) 0%,
-    rgba(59, 130, 246, 0.2) 50%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(147, 51, 234, 0.4) 0%,
+      rgba(59, 130, 246, 0.2) 50%,
+      transparent 70%);
   top: 20%;
   left: 10%;
   animation-duration: 50s;
@@ -951,12 +992,10 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
 .nebula-2 {
   width: 200px;
   height: 200px;
-  background: radial-gradient(
-    circle,
-    rgba(236, 72, 153, 0.3) 0%,
-    rgba(168, 85, 247, 0.2) 50%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(236, 72, 153, 0.3) 0%,
+      rgba(168, 85, 247, 0.2) 50%,
+      transparent 70%);
   top: 60%;
   right: 20%;
   animation-duration: 70s;
@@ -966,12 +1005,10 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
 .nebula-3 {
   width: 150px;
   height: 150px;
-  background: radial-gradient(
-    circle,
-    rgba(34, 197, 94, 0.3) 0%,
-    rgba(59, 130, 246, 0.2) 50%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(34, 197, 94, 0.3) 0%,
+      rgba(59, 130, 246, 0.2) 50%,
+      transparent 70%);
   bottom: 30%;
   left: 60%;
   animation-duration: 45s;
@@ -1210,6 +1247,7 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
 
 /* Enhanced icon animations */
 @keyframes iconFloat {
+
   0%,
   100% {
     transform: translateY(0px) scale(1.1);
@@ -1291,12 +1329,10 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: left 0.5s;
 }
 
@@ -1321,11 +1357,9 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
   position: absolute;
   inset: 0;
   border-radius: 12px;
-  background: radial-gradient(
-    circle at center,
-    var(--glow-color, rgba(59, 130, 246, 0.2)) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at center,
+      var(--glow-color, rgba(59, 130, 246, 0.2)) 0%,
+      transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1335,27 +1369,21 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
 }
 
 .stat-card-1:hover .stat-glow {
-  background: radial-gradient(
-    circle at center,
-    rgba(34, 197, 94, 0.2) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at center,
+      rgba(34, 197, 94, 0.2) 0%,
+      transparent 70%);
 }
 
 .stat-card-2:hover .stat-glow {
-  background: radial-gradient(
-    circle at center,
-    rgba(147, 51, 234, 0.2) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at center,
+      rgba(147, 51, 234, 0.2) 0%,
+      transparent 70%);
 }
 
 .stat-card-3:hover .stat-glow {
-  background: radial-gradient(
-    circle at center,
-    rgba(16, 185, 129, 0.2) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at center,
+      rgba(16, 185, 129, 0.2) 0%,
+      transparent 70%);
 }
 
 /* .stat-card-1:hover .stat-glow {
@@ -1588,12 +1616,10 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
   transition: left 0.5s;
 }
 
@@ -1613,10 +1639,12 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
 
 /* Enhanced icon animations */
 @keyframes iconFloat {
+
   0%,
   100% {
     transform: translateY(0px) scale(1.1);
   }
+
   50% {
     transform: translateY(-2px) scale(1.1);
   }
@@ -1641,41 +1669,50 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
   top: 20%;
   left: 10%;
 }
+
 .data-particle:nth-child(2) {
   top: 40%;
   left: 80%;
 }
+
 .data-particle:nth-child(3) {
   top: 70%;
   left: 30%;
 }
+
 .data-particle:nth-child(4) {
   top: 30%;
   left: 70%;
 }
+
 .data-particle:nth-child(5) {
   top: 80%;
   left: 60%;
 }
+
 .data-particle:nth-child(6) {
   top: 60%;
   left: 20%;
 }
 
 @keyframes particle-float {
+
   0%,
   100% {
     transform: translateY(0) translateX(0) scale(1);
     opacity: 0.7;
   }
+
   25% {
     transform: translateY(-20px) translateX(10px) scale(1.2);
     opacity: 1;
   }
+
   50% {
     transform: translateY(-10px) translateX(-15px) scale(0.8);
     opacity: 0.8;
   }
+
   75% {
     transform: translateY(-30px) translateX(5px) scale(1.1);
     opacity: 0.9;
@@ -1687,6 +1724,7 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
   0% {
     stroke-opacity: 0.1;
   }
+
   100% {
     stroke-opacity: 0.4;
   }
@@ -1696,19 +1734,23 @@ html:not(.dark) .mobile-menu-panel .mobile-secondary-controls .absolute {
   0% {
     transform: translateY(0) rotate(0deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(1deg);
   }
+
   100% {
     transform: translateY(0) rotate(0deg);
   }
 }
 
 @keyframes blink {
+
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
