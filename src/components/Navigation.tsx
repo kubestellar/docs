@@ -942,7 +942,11 @@ export default function Navigation() {
                       </svg>
                     </button>
                     {openMobileDropdown === "version" && (
+<<<<<<< HEAD
                       <div className="pl-5 mt-1 space-y-1">
+=======
+                      <div className="mobile-wid pl-5 mt-1 space-y-1">
+>>>>>>> 5fabe50 (navdrop)
                         <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                           3.8.1 (Current)
                         </a>
@@ -983,6 +987,7 @@ export default function Navigation() {
                       </svg>
                     </button>
                     {openMobileDropdown === "language" && (
+<<<<<<< HEAD
                       <div className="pl-5 mt-1 space-y-1">
                         <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                           English
@@ -991,6 +996,16 @@ export default function Navigation() {
                           日本語
                         </a>
                         <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+=======
+                      <div className="mobile-wid pl-5 mt-1 space-y-1">
+                        <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                          English
+                        </a>
+                        <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                          日本語
+                        </a>
+                        <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+>>>>>>> 5fabe50 (navdrop)
                           简体中文
                         </a>
                       </div>
@@ -1024,20 +1039,33 @@ export default function Navigation() {
                       </svg>
                     </button>
                     {openMobileDropdown === "github" && (
+<<<<<<< HEAD
                       <div className="pl-5 mt-1 space-y-1">
                         <a href="https://github.com/kubestellar/kubestellar" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+=======
+                      <div className="mobile-wid pl-5 mt-1 space-y-1">
+                        <a href="https://github.com/kubestellar/kubestellar" className="flex justify-between items-center py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+>>>>>>> 5fabe50 (navdrop)
                           Star
                           <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                             {githubStats.stars}
                           </span>
                         </a>
+<<<<<<< HEAD
                         <a href="https://github.com/kubestellar/kubestellar/fork" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+=======
+                        <a href="https://github.com/kubestellar/kubestellar/fork" className="flex justify-between items-center py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+>>>>>>> 5fabe50 (navdrop)
                           Fork
                           <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                             {githubStats.forks}
                           </span>
                         </a>
+<<<<<<< HEAD
                         <a href="https://github.com/kubestellar/kubestellar/watchers" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+=======
+                        <a href="https://github.com/kubestellar/kubestellar/watchers" className="flex justify-between items-center py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+>>>>>>> 5fabe50 (navdrop)
                           Watch
                           <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                             {githubStats.watchers}

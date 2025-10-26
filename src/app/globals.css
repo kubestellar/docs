@@ -478,11 +478,7 @@ html:not(.dark) .nextra-sidebar-container {
 }
 
 
-<<<<<<< HEAD
-@media (min-width: 768px) {
-=======
 @media (min-width: 768px) and (max-width: 1279px) {
->>>>>>> e3d8ab2 (width)
   .main-nav-links {
     display: flex;
     left: 57% 
@@ -491,13 +487,6 @@ html:not(.dark) .nextra-sidebar-container {
   .secondary-nav-controls {
     display: none;
   }
-<<<<<<< HEAD
-  .mobile-menu-button {
-    display: flex; 
-  }
-  .mobile-menu-panel .mobile-primary-links {
-    display: none;
-=======
 
   .mobile-menu_button,
   .mobile-menu-button {
@@ -507,11 +496,14 @@ html:not(.dark) .nextra-sidebar-container {
   /* Keep primary links inside hamburger visible on tablets */
   .mobile-menu-panel .mobile-primary-links {
     display: block;
->>>>>>> e3d8ab2 (width)
   }
 
   .mobile-menu-panel .mobile-secondary-controls {
     display: block;
+  }
+  .mobile-ipad {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 }
 
@@ -522,14 +514,18 @@ html:not(.dark) .nextra-sidebar-container {
     padding-right: 2.5rem;
     /* px-10 */
   }
+  .mobile-wid {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
 @media (max-width: 768px) and (min-width: 726px) {
   .mobile-ipad {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
-
   }
+
 }
 
 /* Solid backgrounds for dropdown UI */
