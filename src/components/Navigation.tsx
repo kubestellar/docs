@@ -35,7 +35,6 @@ export default function Navigation() {
     watchers: "0",
   });
 
-  const t = useTranslations("navigation");
   useEffect(() => {
     // Initialize dropdowns functionality
     const initDropdowns = () => {
@@ -197,9 +196,9 @@ export default function Navigation() {
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
                 alt="Kubestellar logo"
-                width={160}
-                height={40}
-                className="h-8 w-auto xl:h-10"
+                width={240}
+                height={60}
+                className="h-12 w-auto xl:h-10"
               />
             </div>
           </Link>
@@ -228,7 +227,7 @@ export default function Navigation() {
                       ></path>
                     </svg>
                   </div>
-                  <span>{t("docs")}</span>
+                  <span>Docs</span>
                 </Link>
               </div>
 
@@ -261,7 +260,7 @@ export default function Navigation() {
                       ></path>
                     </svg>
                   </div>
-                  <span>{t("blog")}</span>
+                  <span>Blog</span>
                 </Link>
               </div>
 
@@ -296,7 +295,7 @@ export default function Navigation() {
                       ></path>
                     </svg>
                   </div>
-                  <span>{t("contribute")}</span>
+                  <span>Contribute</span>
                   <svg
                     className="ml-1 h-4 w-4 transition-transform duration-300"
                     fill="none"
@@ -333,9 +332,9 @@ export default function Navigation() {
                         d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
                       ></path>
                     </svg>
-                    {t("joinIn")}
+                    Join In
                   </a>
-                  <Link
+                  <a
                     href="/community-handbook"
                     className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                   >
@@ -352,27 +351,8 @@ export default function Navigation() {
                         d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                       ></path>
                     </svg>
-                    {t("contributeHandbook")}
-                  </Link>
-                  <Link
-                    href="/quick-installation"
-                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-3"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      ></path>
-                    </svg>
-                    {t("quickInstallation")}
-                  </Link>
+                    Contribute Handbook
+                  </a>
                   <a
                     href="#security"
                     className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
@@ -390,7 +370,7 @@ export default function Navigation() {
                         d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                       ></path>
                     </svg>
-                    {t("security")}
+                    Security
                   </a>
                 </div>
               </div>
@@ -418,7 +398,7 @@ export default function Navigation() {
                       ></path>
                     </svg>
                   </div>
-                  <span>{t("community")}</span>
+                  <span>Community</span>
                   <svg
                     className="ml-1 h-4 w-4 transition-transform duration-300"
                     fill="none"
@@ -440,7 +420,7 @@ export default function Navigation() {
                 >
                   <a
                     href="#get-involved"
-                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    className="flex items-center px-10 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                   >
                     <svg
                       className="w-4 h-4 mr-3"
@@ -455,11 +435,11 @@ export default function Navigation() {
                         d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
                       ></path>
                     </svg>
-                    {t("getInvolved")}
+                    Get Involved
                   </a>
                   <Link
                     href="/programs"
-                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    className="flex items-center px-10 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                   >
                     <svg
                       className="w-4 h-4 mr-3"
@@ -474,11 +454,11 @@ export default function Navigation() {
                         d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v2M7 7h10"
                       ></path>
                     </svg>
-                    {t("programs")}
+                    Programs
                   </Link>
                   <a
                     href="#ladder"
-                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    className="flex items-center px-10 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                   >
                     <svg
                       className="w-4 h-4 mr-3"
@@ -493,11 +473,11 @@ export default function Navigation() {
                         d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                       ></path>
                     </svg>
-                    {t("ladder")}
-                  </Link>
+                    Ladder
+                  </a>
                   <a
                     href="#contact-us"
-                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    className="flex items-center px-10 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                   >
                     <svg
                       className="w-4 h-4 mr-3"
@@ -512,11 +492,11 @@ export default function Navigation() {
                         d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                       ></path>
                     </svg>
-                    {t("contactUs")}
+                    Contact Us
                   </a>
                   <a
                     href="#partners"
-                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    className="flex items-center px-10 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                   >
                     <svg
                       className="w-4 h-4 mr-3"
@@ -531,7 +511,7 @@ export default function Navigation() {
                         d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                       ></path>
                     </svg>
-                    {t("partners")}
+                    Partners
                   </a>
                 </div>
               </div>
@@ -562,7 +542,8 @@ export default function Navigation() {
                     <span>Version</span>
                   )}
                   <svg
-                    className="w-4 h-4 ml-1"
+                    className={`w-5 h-5 transition-transform ${openMobileDropdown === "version" ? "rotate-180" : ""
+                      }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -570,20 +551,11 @@ export default function Navigation() {
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2}
+                      strokeWidth="2"
                       d="M19 9l-7 7-7-7"
                     />
                   </svg>
                 </button>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <div
-                  data-dropdown-menu
-                  className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
-                >
-                  <a
-                    href="#"
-=======
                 {openMobileDropdown === "version" && (
                   <div className="pl-4 mt-1 space-y-1 lg:absolute lg:left-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-md lg:shadow-xl lg:py-1 lg:bg-gray-800/90 lg:ring lg:ring-gray-700/50">
                     <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
@@ -591,26 +563,20 @@ export default function Navigation() {
                     </a>
                     <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                       3.8.0
->>>>>>> 80526cb (dropdwon)
                     </a>
                     <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                       All versions
                     </a>
                   </div>
                 )}
->>>>>>> 7f5b428 (desktop nav fixes)
               </div>
 
               {/* Language Dropdown */}
-<<<<<<< HEAD
-              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
-=======
               <div
                 className="relative"
                 onMouseEnter={() => isDesktop && setOpenMobileDropdown("language")}
                 onMouseLeave={() => isDesktop && setOpenMobileDropdown(null)}
               >
->>>>>>> 80526cb (dropdwon)
                 <button
                   onClick={() => {
                     if (isDesktop) return;
@@ -638,21 +604,8 @@ export default function Navigation() {
                     <span>Language</span>
                   )}
                   <svg
-                    className="w-4 h-4 xl:mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
-                    />
-                  </svg>
-                  <span className="hidden xl:inline">English</span>
-                  <svg
-                    className="w-4 h-4 ml-1"
+                    className={`w-5 h-5 transition-transform ${openMobileDropdown === "language" ? "rotate-180" : ""
+                      }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -681,15 +634,11 @@ export default function Navigation() {
               </div>
 
               {/* GitHub Dropdown */}
-<<<<<<< HEAD
-              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
-=======
               <div
                 className="relative"
                 onMouseEnter={() => isDesktop && setOpenMobileDropdown("github")}
                 onMouseLeave={() => isDesktop && setOpenMobileDropdown(null)}
               >
->>>>>>> 80526cb (dropdwon)
                 <button
                   onClick={() => {
                     if (isDesktop) return;
@@ -711,14 +660,8 @@ export default function Navigation() {
                     <span>Github</span>
                   )}
                   <svg
-                    className="w-4 h-4 xl:mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.300 24 12c0-6.627-5.373-12-12-12z" />
-                  </svg>
-                  <svg
-                    className="w-4 h-4 ml-1"
+                    className={`w-5 h-5 transition-transform ${openMobileDropdown === "github" ? "rotate-180" : ""
+                      }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -781,19 +724,19 @@ export default function Navigation() {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="mobile-menu-panel">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div className="px-5 mt-4 pb-3 sm:px-3">
               {/* Primary Links for Mobile */}
               <div className="mobile-primary-links">
                 <a
-                  href="#docs"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                  href="/docs"
+                  className="block px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
                   Docs
                 </a>
                 <a
                   href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
                   target="_blank"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                  className="block px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
                   Blog
                 </a>
@@ -806,7 +749,7 @@ export default function Navigation() {
                         openMobileDropdown === "contribute" ? null : "contribute"
                       )
                     }
-                    className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                    className="w-full flex justify-between items-center px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                   >
                     <span>Contribute</span>
                     <svg
@@ -828,19 +771,19 @@ export default function Navigation() {
                     <div className="pl-4 mt-1 space-y-1">
                       <a
                         href="#join-in"
-                        className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                       >
                         Join In
                       </a>
                       <a
                         href="/community-handbook"
-                        className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                       >
                         Contribute Handbook
                       </a>
                       <a
                         href="#security"
-                        className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                       >
                         Security
                       </a>
@@ -856,7 +799,7 @@ export default function Navigation() {
                         openMobileDropdown === "community" ? null : "community"
                       )
                     }
-                    className="w-full flex justify-between items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                    className="w-full flex justify-between items-center px-10 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                   >
                     <span>Community</span>
                     <svg
@@ -878,31 +821,31 @@ export default function Navigation() {
                     <div className="pl-4 mt-1 space-y-1">
                       <a
                         href="#get-involved"
-                        className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                       >
                         Get Involved
                       </a>
                       <Link
                         href="/programs"
-                        className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                       >
                         Programs
                       </Link>
                       <a
                         href="#ladder"
-                        className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                       >
                         Ladder
                       </a>
                       <a
                         href="#contact-us"
-                        className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                       >
                         Contact Us
                       </a>
                       <a
                         href="#partners"
-                        className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
+                        className="block px-10 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700"
                       >
                         Partners
                       </a>
@@ -916,7 +859,7 @@ export default function Navigation() {
                 <div className="flex flex-col">
 
                   {/* Version Dropdown */}
-                  <div>
+                  <div className="mobile-ipad">
                     <button
                       onClick={() =>
                         setOpenMobileDropdown(
@@ -942,11 +885,7 @@ export default function Navigation() {
                       </svg>
                     </button>
                     {openMobileDropdown === "version" && (
-<<<<<<< HEAD
-                      <div className="pl-5 mt-1 space-y-1">
-=======
                       <div className="mobile-wid pl-5 mt-1 space-y-1">
->>>>>>> 5fabe50 (navdrop)
                         <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                           3.8.1 (Current)
                         </a>
@@ -961,7 +900,7 @@ export default function Navigation() {
                   </div>
 
                   {/* Language Dropdown */}
-                  <div>
+                  <div className="mobile-ipad">
                     <button
                       onClick={() =>
                         setOpenMobileDropdown(
@@ -987,16 +926,6 @@ export default function Navigation() {
                       </svg>
                     </button>
                     {openMobileDropdown === "language" && (
-<<<<<<< HEAD
-                      <div className="pl-5 mt-1 space-y-1">
-                        <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                          English
-                        </a>
-                        <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-                          日本語
-                        </a>
-                        <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-=======
                       <div className="mobile-wid pl-5 mt-1 space-y-1">
                         <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                           English
@@ -1005,7 +934,6 @@ export default function Navigation() {
                           日本語
                         </a>
                         <a href="#" className="block py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
->>>>>>> 5fabe50 (navdrop)
                           简体中文
                         </a>
                       </div>
@@ -1013,7 +941,7 @@ export default function Navigation() {
                   </div>
 
                   {/* GitHub Dropdown */}
-                  <div>
+                  <div className="mobile-ipad">
                     <button
                       onClick={() =>
                         setOpenMobileDropdown(
@@ -1039,33 +967,20 @@ export default function Navigation() {
                       </svg>
                     </button>
                     {openMobileDropdown === "github" && (
-<<<<<<< HEAD
-                      <div className="pl-5 mt-1 space-y-1">
-                        <a href="https://github.com/kubestellar/kubestellar" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-=======
                       <div className="mobile-wid pl-5 mt-1 space-y-1">
                         <a href="https://github.com/kubestellar/kubestellar" className="flex justify-between items-center py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
->>>>>>> 5fabe50 (navdrop)
                           Star
                           <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                             {githubStats.stars}
                           </span>
                         </a>
-<<<<<<< HEAD
-                        <a href="https://github.com/kubestellar/kubestellar/fork" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-=======
                         <a href="https://github.com/kubestellar/kubestellar/fork" className="flex justify-between items-center py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
->>>>>>> 5fabe50 (navdrop)
                           Fork
                           <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                             {githubStats.forks}
                           </span>
                         </a>
-<<<<<<< HEAD
-                        <a href="https://github.com/kubestellar/kubestellar/watchers" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
-=======
                         <a href="https://github.com/kubestellar/kubestellar/watchers" className="flex justify-between items-center py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
->>>>>>> 5fabe50 (navdrop)
                           Watch
                           <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                             {githubStats.watchers}
