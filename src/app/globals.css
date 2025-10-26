@@ -500,11 +500,22 @@ html:not(.dark) .nextra-sidebar-container {
 
   .mobile-menu-panel .mobile-secondary-controls {
     display: block;
+    padding-left: 4%;
+    padding-right: 4%;
   }
+
+  .mobile-ipad {
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
   .mobile-ipad {
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
+
 }
 
 @media (max-width: 726px) {
@@ -514,6 +525,7 @@ html:not(.dark) .nextra-sidebar-container {
     padding-right: 2.5rem;
     /* px-10 */
   }
+
   .mobile-wid {
     padding-left: 4rem;
     padding-right: 4rem;
