@@ -183,21 +183,21 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between h-16 items-center">
           {/* Left side: Logo */}
-          <Link href="/" className="cursor-pointer">
+          <Link href="/" className="cursor-pointer flex-shrink-0">
             <div className="flex-shrink-0 cursor-pointer relative z-10">
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
                 alt="Kubestellar logo"
                 width={160}
                 height={40}
-                className="h-10 w-auto"
+                className="h-8 w-auto xl:h-10"
               />
             </div>
           </Link>
 
           {/* Center: Nav Links */}
-          <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex items-center space-x-8">
+          <div className="hidden xl:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="flex items-center space-x-4 xl:space-x-8">
               {/* Docs Link */}
               <div className="relative group">
                 <Link
@@ -530,12 +530,12 @@ export default function Navigation() {
           </div>
 
           {/* Right side: Controls */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-1 xl:space-x-4">
             {/* Version Dropdown */}
             <div className="relative group" data-dropdown>
               <button
                 data-dropdown-button
-                className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
+                className="text-sm font-medium text-gray-300 hover:text-indigo-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-indigo-500/10 hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-100 transform nav-link-hover"
               >
                 3.8.1
                 <svg
@@ -577,17 +577,73 @@ export default function Navigation() {
               </div>
             </div>
 
-            {/* Language Switcher */}
-            <LanguageSwitcher className="relative group" />
+            {/* Language Dropdown */}
+            <div className="relative group" data-dropdown>
+              <button
+                data-dropdown-button
+                className="text-sm font-medium text-gray-300 hover:text-pink-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 hover:scale-100 transform nav-link-hover"
+              >
+                <svg
+                  className="w-4 h-4 xl:mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+                  />
+                </svg>
+                <span className="hidden xl:inline">English</span>
+                <svg
+                  className="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                data-dropdown-menu
+                className="absolute right-0 mt-2 w-32 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+              >
+                <a
+                  href="#"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md"
+                >
+                  English
+                </a>
+                <a
+                  href="#"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md"
+                >
+                  日本語
+                </a>
+                <a
+                  href="#"
+                  className="block px-5 py-2 text-sm text-gray-300 hover:bg-purple-900/30 rounded transition-all duration-200 hover:text-purple-300 hover:shadow-md"
+                >
+                  简体中文
+                </a>
+              </div>
+            </div>
 
             {/* GitHub Dropdown */}
             <div className="relative group" data-dropdown>
               <button
                 data-dropdown-button
-                className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
+                className="text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 flex items-center space-x-1 px-2 xl:px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
               >
                 <svg
-                  className="w-4 h-4 mr-2"
+                  className="w-4 h-4 xl:mr-2"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -602,7 +658,7 @@ export default function Navigation() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth="2"
                     d="M19 9l-7 7-7-7"
                   />
                 </svg>
@@ -667,7 +723,7 @@ export default function Navigation() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="xl:hidden p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700"
               aria-label="Open menu"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -690,7 +746,7 @@ export default function Navigation() {
 
 {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a
                 href="#docs"
