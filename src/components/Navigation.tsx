@@ -420,7 +420,7 @@ export default function Navigation() {
                   </div>
                   <span>{t("community")}</span>
                   <svg
-                    className="ml-1 h-4 w-4 transition-transform duration-300 "
+                    className="ml-1 h-4 w-4 transition-transform duration-300"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -542,13 +542,18 @@ export default function Navigation() {
           <div className="flex items-center">
             <div className="secondary-nav-controls flex items-center space-x-1 xl:space-x-2">
               {/* Version Dropdown */}
-              <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
+              <div
+                className="relative"
+                onMouseEnter={() => isDesktop && setOpenMobileDropdown("version")}
+                onMouseLeave={() => isDesktop && setOpenMobileDropdown(null)}
+              >
                 <button
-                  onClick={() =>
+                  onClick={() => {
+                    if (isDesktop) return;
                     setOpenMobileDropdown(
                       openMobileDropdown === "version" ? null : "version"
-                    )
-                  }
+                    );
+                  }}
                   className="w-full flex justify-between items-center px-4 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
                   {isDesktop ? (
@@ -571,12 +576,22 @@ export default function Navigation() {
                   </svg>
                 </button>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div
                   data-dropdown-menu
                   className="absolute right-0 mt-2 w-48 bg-gray-800/95 backdrop-blur-lg rounded-md shadow-lg border border-gray-700 overflow-hidden"
                 >
                   <a
                     href="#"
+=======
+                {openMobileDropdown === "version" && (
+                  <div className="pl-4 mt-1 space-y-1 lg:absolute lg:left-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-md lg:shadow-xl lg:py-1 lg:bg-gray-800/90 lg:ring lg:ring-gray-700/50">
+                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      3.8.1 (Current)
+                    </a>
+                    <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
+                      3.8.0
+>>>>>>> 80526cb (dropdwon)
                     </a>
                     <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                       All versions
@@ -587,13 +602,22 @@ export default function Navigation() {
               </div>
 
               {/* Language Dropdown */}
+<<<<<<< HEAD
               <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
+=======
+              <div
+                className="relative"
+                onMouseEnter={() => isDesktop && setOpenMobileDropdown("language")}
+                onMouseLeave={() => isDesktop && setOpenMobileDropdown(null)}
+              >
+>>>>>>> 80526cb (dropdwon)
                 <button
-                  onClick={() =>
+                  onClick={() => {
+                    if (isDesktop) return;
                     setOpenMobileDropdown(
                       openMobileDropdown === "language" ? null : "language"
-                    )
-                  }
+                    );
+                  }}
                   className="w-full flex justify-between items-center px-4 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
                   {isDesktop ? (
@@ -642,7 +666,7 @@ export default function Navigation() {
                   </svg>
                 </button>
                 {openMobileDropdown === "language" && (
-                  <div className="pl-4 mt-1 space-y-1 lg:absolute lg:right-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-md lg:shadow-xl lg:py-1 lg:border lg:bg-gray-800/90 lg:ring lg:ring-gray-700/50">
+                  <div className="pl-4 mt-1 space-y-1 lg:absolute lg:left-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-md lg:shadow-xl lg:py-1 lg:bg-gray-800/90 lg:ring lg:ring-gray-700/50">
                     <a href="#" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                       English
                     </a>
@@ -657,13 +681,22 @@ export default function Navigation() {
               </div>
 
               {/* GitHub Dropdown */}
+<<<<<<< HEAD
               <div className="relative group bg-white/1 backdrop-blur-xl rounded-lg border border-white/4 shadow-inner shadow-black/25" data-dropdown>
+=======
+              <div
+                className="relative"
+                onMouseEnter={() => isDesktop && setOpenMobileDropdown("github")}
+                onMouseLeave={() => isDesktop && setOpenMobileDropdown(null)}
+              >
+>>>>>>> 80526cb (dropdwon)
                 <button
-                  onClick={() =>
+                  onClick={() => {
+                    if (isDesktop) return;
                     setOpenMobileDropdown(
                       openMobileDropdown === "github" ? null : "github"
-                    )
-                  }
+                    );
+                  }}
                   className="w-full flex justify-between items-center px-4 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                 >
                   {isDesktop ? (
@@ -699,7 +732,7 @@ export default function Navigation() {
                   </svg>
                 </button>
                 {openMobileDropdown === "github" && (
-                  <div className="pl-4 mt-1 space-y-1 lg:absolute lg:right-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-md lg:shadow-xl lg:py-1 lg:border lg:bg-gray-800/90 lg:ring lg:ring-gray-700/50">
+                  <div className="pl-4 mt-1 space-y-1 lg:absolute lg:left-0 lg:top-full lg:mt-2 lg:w-44 lg:rounded-md lg:shadow-xl lg:py-1 lg:bg-gray-800/90 lg:ring lg:ring-gray-700/50">
                     <a href="https://github.com/kubestellar/kubestellar" className="flex justify-between items-center px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-700">
                       Star
                       <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
