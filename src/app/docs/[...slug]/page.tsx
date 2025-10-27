@@ -72,7 +72,6 @@ for (const fp of filePaths) {
   const noExt = fp.replace(/\.(md|mdx)$/i, '');
   const norm = normalizeRoute(noExt);
 
-  // canonical route (exact path without extension)
   routeMap[noExt] = fp;
   if (!noExt.startsWith('content/')) {
     routeMap[`content/${noExt}`] = fp;
@@ -82,7 +81,7 @@ for (const fp of filePaths) {
   const isIndex = /\/(readme|index)$/i.test(noExt) || /^(readme|index)$/i.test(noExt);
   if (!routeMap[norm] || isIndex) routeMap[norm] = fp;
 
-  // also expose normalized route with 'content/' prefix (skip empty norm)
+  // expose normalized route with 'content/' prefix 
   if (norm !== '' && !norm.startsWith('content/')) {
     const contentNorm = `content/${norm}`;
     if (!routeMap[contentNorm] || isIndex) routeMap[contentNorm] = fp;
@@ -90,8 +89,6 @@ for (const fp of filePaths) {
 
 }
 
-// Sidebar: keep minimal meta
-// const eslintPageMap = mergeMetaWithPageMap(_pageMap, { index: 'Introduction' })
 export const pageMap = normalizePageMap(_pageMap)
 
 const { wrapper: Wrapper, ...components } = getMDXComponents({
@@ -155,7 +152,6 @@ export default async function Page(props: PageProps) {
 }
 
 export function generateStaticParams() {
-  // [ ...slug ] is non‑optional: don’t emit the empty route
   return Object.keys(routeMap)
     .filter(k => k !== '')
     .map(route => ({ slug: route.split('/') }))
