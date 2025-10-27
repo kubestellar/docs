@@ -29,12 +29,12 @@ export default function DocsFooter() {
 
   return (
     <footer className="border-t border-gray-200 dark:border-neutral-800 bg-white dark:bg-[#111]">
-      <div className="max-w-[90rem] mx-auto px-4 py-12">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main footer content */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 justify-items-center sm:justify-items-start">
           {/* Brand Section */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="mb-4">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-1 text-center sm:text-left w-full">
+            <div className="mb-4 flex justify-center sm:justify-start">
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
                 alt="KubeStellar"
@@ -46,7 +46,7 @@ export default function DocsFooter() {
             <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
               Multi-Cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 justify-center sm:justify-start">
               <a
                 href="https://github.com/kubestellar"
                 target="_blank"
@@ -119,7 +119,7 @@ export default function DocsFooter() {
           </div>
 
           {/* Product Links */}
-          <div>
+          <div className="text-center sm:text-left w-full sm:pl-8 lg:pl-12">
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
               Product
             </h3>
@@ -160,7 +160,7 @@ export default function DocsFooter() {
           </div>
 
           {/* Resources Links */}
-          <div>
+          <div className="text-center sm:text-left w-full">
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
               Resources
             </h3>
@@ -201,7 +201,7 @@ export default function DocsFooter() {
           </div>
 
           {/* Company Links */}
-          <div>
+          <div className="text-center sm:text-left w-full">
             <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
               Company
             </h3>
