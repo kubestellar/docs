@@ -113,7 +113,7 @@ export default function PartnersPage() {
         <section className="py-4 sm:py-8 md:py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {partners.map((partner) => (
+              {partners.map(partner => (
                 <Link
                   key={partner.id}
                   href={partner.link}
@@ -126,9 +126,9 @@ export default function PartnersPage() {
                       <Image
                         src={partner.logo}
                         alt={`${partner.name} logo`}
-                        width={partner.slug === 'argocd' ? 100 : 96}
-                        height={partner.slug === 'argocd' ? 100 : 96}
-                        className={`${partner.slug === 'argocd' ? 'w-[100px] h-[100px]' : 'w-24 h-24'} object-contain ${(partner.slug === 'mvi' || partner.slug === 'turbonomic') ? 'bg-white rounded-lg p-2' : ''}`}
+                        width={partner.slug === "argocd" ? 100 : 96}
+                        height={partner.slug === "argocd" ? 100 : 96}
+                        className={`${partner.slug === "argocd" ? "w-[100px] h-[100px]" : "w-24 h-24"} object-contain ${partner.slug === "mvi" || partner.slug === "turbonomic" ? "bg-white rounded-lg p-2" : ""}`}
                       />
                     </div>
                     <h3 className="text-3xl font-bold text-white mb-5">
@@ -139,7 +139,9 @@ export default function PartnersPage() {
                     </p>
                   </div>
                   <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="learn-more-enhanced">{t("learnMore")}</span>
+                    <span className="learn-more-enhanced">
+                      {t("learnMore")}
+                    </span>
                   </div>
                 </Link>
               ))}
