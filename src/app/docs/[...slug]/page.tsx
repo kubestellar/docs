@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks -- false positive, useMDXComponents are not react hooks */
 import { notFound } from 'next/navigation'
 import { compileMdx } from 'nextra/compile'
 import { Callout, Tabs } from 'nextra/components'
