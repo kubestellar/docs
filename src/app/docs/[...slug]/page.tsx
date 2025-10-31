@@ -8,6 +8,7 @@ import {
   normalizePageMap
 } from 'nextra/page-map'
 import { useMDXComponents as getMDXComponents } from '../../../../mdx-components'
+import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
 
 const user = 'kubestellar'
 const repo = 'kubestellar'
@@ -126,7 +127,7 @@ export default async function Page(props: PageProps) {
   if (!response.ok) notFound()
 
   const data = await response.text()
-  const processedData = data
+  const processedData = convertHtmlScriptsToJsxComments(data)
     // Convert HTML comments to JSX comments
     .replace(/<!--/g, '{/*')
     .replace(/-->/g, '*/}')
