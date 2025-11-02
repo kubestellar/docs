@@ -61,7 +61,6 @@ const { mdxPages, pageMap: _pageMap } = convertToPageMap({
 
 function normalizeRoute(noExtPath: string) {
   let r = noExtPath;
-  // strip folder index files
   r = r.replace(/\/(readme|index)$/i, '');
   r = r.replace(/^(readme|index)$/i, '');
   return r;
@@ -77,11 +76,9 @@ for (const fp of filePaths) {
     routeMap[`content/${noExt}`] = fp;
   }
 
-  // clean route without "content/" and without README/index
   const isIndex = /\/(readme|index)$/i.test(noExt) || /^(readme|index)$/i.test(noExt);
   if (!routeMap[norm] || isIndex) routeMap[norm] = fp;
 
-  // expose normalized route with 'content/' prefix 
   if (norm !== '' && !norm.startsWith('content/')) {
     const contentNorm = `content/${norm}`;
     if (!routeMap[contentNorm] || isIndex) routeMap[contentNorm] = fp;
@@ -114,7 +111,6 @@ export default async function Page(props: PageProps) {
 
   console.log(route);
 
-  // Use normalized map instead of mdxPages
   const filePath =
     routeMap[route] ??
     [`${route}.mdx`, `${route}.md`, `${route}/README.md`, `${route}/readme.md`, `${route}/index.mdx`, `${route}/index.md`]
