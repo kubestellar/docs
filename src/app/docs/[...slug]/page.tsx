@@ -33,6 +33,7 @@ const headers: Record<string, string> = {
 }
 if (process.env.GITHUB_TOKEN) {
   headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
+  headers['X-GitHub-Api-Version'] = '2022-11-28'
 }
 
 type GitTreeItem = { path: string; type: 'blob' | 'tree' }
@@ -128,20 +129,15 @@ export default async function Page(props: PageProps) {
 
   const data = await response.text()
   const processedData = convertHtmlScriptsToJsxComments(data)
-    // Convert HTML comments to JSX comments
-    .replace(/<!--/g, '{/*')
-    .replace(/-->/g, '*/}')
-    .replace(/<br\s*\/?>/gi, '<br />')
-    .replace(/\{\{.*?\}\}/g, '')
-    .replace(/style="border: 0"/g, 'style={{border:"0"}}')
-    .replace(/align=center/g, 'align="center"')
-    .replace(/frameborder="0"/g, 'frameBorder="0"')
-    .replace(/allowfullscreen/g, 'allowFullScreen')
-    .replace(/scrolling=no/g, 'scrolling="no"')
-    .replace(/onload="[^"]*"/g, '')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
-    .replace(/<\/?ol>/g, '')
-    .replace(/<\/?li>/g, '')
+     .replace(/<br\s*\/?>/gi, '<br />')
+     .replace(/align=center/g, 'align="center"')
+     .replace(/frameborder="0"/g, 'frameBorder="0"')
+     .replace(/allowfullscreen/g, 'allowFullScreen')
+     .replace(/scrolling=no/g, 'scrolling="no"')
+     .replace(/onload="[^"]*"/g, '')
+     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
+     .replace(/<\/?ol>/g, '')
+     .replace(/<\/?li>/g, '')
   const rawJs = await compileMdx(processedData, { filePath })
   const { default: MDXContent, toc, metadata } = evaluate(rawJs, components)
 
