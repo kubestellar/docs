@@ -8,7 +8,8 @@ import {
   normalizePageMap
 } from 'nextra/page-map'
 import { useMDXComponents as getMDXComponents } from '../../../../mdx-components'
-import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
+import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'  
+import { MermaidComponent } from '@/lib/Mermaid'
 
 export const dynamic = 'force-dynamic'
 
@@ -16,19 +17,10 @@ const user = 'kubestellar'
 const repo = 'kubestellar'
 const branch = 'main'
 const docsPath = 'docs/content/'
-// const filePaths = [
-//   'configs.mdx',
-//   'custom-rules.mdx',
-//   'getting-started.mdx',
-//   'getting-started/parser-options.mdx',
-//   'getting-started/parser.mdx',
-//   'index.mdx'
-// ]
-
-const INCLUDE_PREFIXES: string[] = [
-
-]
+const INCLUDE_PREFIXES: string[] = []
 const basePath = 'docs'
+
+
 function makeGitHubHeaders(): Record<string, string> {
   const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GITHUB_PAT
   const h: Record<string, string> = {
@@ -104,6 +96,11 @@ const { wrapper: Wrapper, ...components } = getMDXComponents({
   Callout
 })
 
+const component = {
+  ...components,
+  Mermaid: MermaidComponent
+}
+
 type PageProps = Readonly<{
   params: Promise<{
     slug?: string[]
@@ -145,7 +142,7 @@ export default async function Page(props: PageProps) {
      .replace(/<\/?ol>/g, '')
      .replace(/<\/?li>/g, '')
   const rawJs = await compileMdx(processedData, { filePath })
-  const { default: MDXContent, toc, metadata } = evaluate(rawJs, components)
+  const { default: MDXContent, toc, metadata } = evaluate(rawJs, component)
 
   return (
     <Wrapper toc={toc} metadata={metadata} sourceCode={rawJs}>
