@@ -10,6 +10,8 @@ import {
 import { useMDXComponents as getMDXComponents } from '../../../../mdx-components'
 import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
 
+export const dynamic = 'force-dynamic'
+
 const user = 'kubestellar'
 const repo = 'kubestellar'
 const branch = 'main'
@@ -27,13 +29,15 @@ const INCLUDE_PREFIXES: string[] = [
 
 ]
 const basePath = 'docs'
-const headers: Record<string, string> = {
-  'User-Agent': 'kubestellar-docs-dev',
-  'Accept': 'application/vnd.github+json'
-}
-if (process.env.GITHUB_TOKEN) {
-  headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`
-  headers['X-GitHub-Api-Version'] = '2022-11-28'
+function makeGitHubHeaders(): Record<string, string> {
+  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GITHUB_PAT
+  const h: Record<string, string> = {
+    'User-Agent': 'kubestellar-docs-dev',
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28'
+  }
+  if (token) h.Authorization = `Bearer ${token}`
+  return h
 }
 
 type GitTreeItem = { path: string; type: 'blob' | 'tree' }
@@ -43,10 +47,12 @@ const treeUrl = `https://api.github.com/repos/${user}/${repo}/git/trees/${encode
   branch
 )}?recursive=1`
 
-const treeData: GitTreeResp = await fetch(treeUrl, { headers, cache: 'force-cache' }).then(r =>
-  r.ok ? r.json() : Promise.reject(new Error(`GitHub tree fetch failed: ${r.status}`))
-)
-
+const treeResp = await fetch(treeUrl, { headers: makeGitHubHeaders(), cache: 'no-store' })
+if (!treeResp.ok) {
+  const body = await treeResp.text().catch(() => '')
+  throw new Error(`GitHub tree fetch failed: ${treeResp.status} ${treeResp.statusText} ${body}`)
+}
+const treeData: GitTreeResp = await treeResp.json()
 
 const allDocFiles = treeData.tree?.filter(t => t.type === 'blob' && t.path.startsWith(docsPath) && (t.path.endsWith('.md') || t.path.endsWith('.mdx'))).map(t => t.path.slice(docsPath.length)) ?? []
 
@@ -123,7 +129,7 @@ export default async function Page(props: PageProps) {
 
   const response = await fetch(
     `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${filePath}`,
-    { headers, cache: 'force-cache' }
+    { headers: makeGitHubHeaders(), cache: 'no-store' }
   )
   if (!response.ok) notFound()
 
