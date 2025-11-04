@@ -234,7 +234,7 @@ export default function HowItWorksSection() {
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 via-green-500 via-orange-500 to-pink-500 z-5 transform -translate-x-1/2 will-change-transform"></div>
 
           {/* Desktop Step 1 */}
-          <div className="relative mb-16 lg:mb-20 z-20">
+          <div className="relative mb-4 lg:mb-6 z-20">
             <div className="flex flex-row items-center">
               <div className="w-1/2 pr-12">
                 <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
@@ -267,7 +267,7 @@ export default function HowItWorksSection() {
           </div>
 
           {/* Desktop Step 2 */}
-          <div className="relative mb-16 lg:mb-20 z-20">
+          <div className="relative mb-4 lg:mb-6 z-20 -mt-20">
             <div className="flex flex-row-reverse items-center">
               <div className="w-1/2 pl-12">
                 <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
@@ -300,7 +300,7 @@ export default function HowItWorksSection() {
           </div>
 
           {/* Desktop Step 3 */}
-          <div className="relative mb-16 lg:mb-20 z-20">
+          <div className="relative mb-4 lg:mb-6 z-20 -mt-20">
             <div className="flex flex-row items-center">
               <div className="w-1/2 pr-12">
                 <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
@@ -341,7 +341,7 @@ export default function HowItWorksSection() {
           </div>
 
           {/* Desktop Step 4 */}
-          <div className="relative mb-16 lg:mb-20 z-20">
+          <div className="relative mb-4 lg:mb-6 z-20 -mt-24">
             <div className="flex flex-row-reverse items-center">
               <div className="w-1/2 pl-12">
                 <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
@@ -382,7 +382,7 @@ export default function HowItWorksSection() {
           </div>
 
           {/* Desktop Step 5 */}
-          <div className="relative z-20">
+          <div className="relative z-20 -mt-24">
             <div className="flex flex-row items-center">
               <div className="w-1/2 pr-12">
                 <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
