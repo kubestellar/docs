@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GridLines, StarField } from "../index";
 
 export default function DocsFooter() {
+  const [showNewsletterSuccess, setShowNewsletterSuccess] = useState(false);
+  
   useEffect(() => {
     // Back to top functionality
     const initBackToTop = () => {
@@ -37,6 +39,35 @@ export default function DocsFooter() {
 
     initBackToTop();
   }, []);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    const form = e.currentTarget;
+    const emailInput = form.querySelector('#email-address') as HTMLInputElement;
+    const email = emailInput?.value;
+
+    if (!email) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Show success message
+    setShowNewsletterSuccess(true);
+    
+    // Clear input
+    if (emailInput) {
+      emailInput.value = "";
+    }
+
+    // Open Google Groups join page in new tab
+    window.open('https://groups.google.com/g/kubestellar-dev', '_blank');
+
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setShowNewsletterSuccess(false);
+    }, 5000);
+  };
 
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden pt-16 pb-8">
@@ -260,7 +291,7 @@ export default function DocsFooter() {
               Stay Updated
             </h3>
             <div className="bg-gray-800/50 backdrop-blur-md rounded-lg p-4 border border-gray-700/50 transform transition-all duration-300 hover:border-blue-500/30">
-              <form id="newsletter-form" className="flex flex-col space-y-3">
+              <form id="newsletter-form" className="flex flex-col space-y-3" onSubmit={handleNewsletterSubmit}>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg
@@ -281,6 +312,7 @@ export default function DocsFooter() {
                   <input
                     id="email-address"
                     type="email"
+                    required
                     className="block w-full pl-10 pr-3 py-2 text-sm text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                     placeholder="Enter your email"
                   />
@@ -293,25 +325,24 @@ export default function DocsFooter() {
                 </button>
               </form>
 
-              {/* Success message (hidden by default) */}
-              <div
-                id="newsletter-success"
-                className="hidden mt-3 text-sm text-green-400"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>Thank you for subscribing!</span>
-              </div>
+              {/* Success message */}
+              {showNewsletterSuccess && (
+                <div className="mt-3 text-sm text-green-400 flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 mr-1"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>Thank you for subscribing!</span>
+                </div>
+              )}
             </div>
             <p className="mt-3 text-xs text-gray-400">
               We respect your privacy. No spam, unsubscribe anytime.

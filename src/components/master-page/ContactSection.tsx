@@ -65,8 +65,18 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
       // Small delay to show loading state
       await new Promise(resolve => setTimeout(resolve, 800));
 
-      // Open email client
-      window.location.href = mailtoLink;
+      // Open email client with pre-filled message
+      const emailWindow = window.open(mailtoLink, "_blank");
+
+      // If popup blocked or mailto not supported, show alternative
+      if (
+        !emailWindow ||
+        emailWindow.closed ||
+        typeof emailWindow.closed === "undefined"
+      ) {
+        // Fallback: redirect to Google Groups
+        window.open("https://groups.google.com/g/kubestellar-dev", "_blank");
+      }
 
       // Show success message
       setShowSuccess(true);
