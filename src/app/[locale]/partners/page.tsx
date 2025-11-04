@@ -109,10 +109,62 @@ export default function PartnersPage() {
             </div>
           </div>
         </section>
-        {/* Partners Grid Section */}
-        <section className="py-4 sm:py-8 md:py-12 lg:py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Partners Carousel Section */}
+        <section className="py-4 sm:py-8 md:py-12 lg:py-16 overflow-hidden">
+          {/* Desktop Sliding View */}
+          <div className="hidden lg:block">
+            <div className="relative overflow-hidden">
+              <div className="flex gap-6 animate-slide-partners group-hover:pause">
+                {/* Triple the partners for seamless infinite loop */}
+                {[...partners, ...partners, ...partners].map((partner, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-[400px] group/card"
+                    onMouseEnter={(e) => {
+                      e.currentTarget.closest('.animate-slide-partners')?.classList.add('pause-animation');
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.closest('.animate-slide-partners')?.classList.remove('pause-animation');
+                    }}
+                  >
+                    <Link
+                      href={partner.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative block bg-slate-800/50 border border-slate-700 rounded-2xl p-10 h-96 overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30 hover:border-purple-500/50"
+                    >
+                      <div className="transition-all duration-300 group-hover/card:-translate-y-2 h-full flex flex-col">
+                        <div className="mb-6">
+                          <Image
+                            src={partner.logo}
+                            alt={`${partner.name} logo`}
+                            width={partner.slug === "argocd" ? 130 : 96}
+                            height={partner.slug === "argocd" ? 130 : 96}
+                            className={`${partner.slug === "argocd" ? "w-[130px] h-[130px]" : "w-24 h-24"} object-contain ${partner.slug === "mvi" || partner.slug === "turbonomic" ? "bg-white rounded-lg p-2" : ""}`}
+                          />
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-5">
+                          {partner.name}
+                        </h3>
+                        <p className="text-gray-300 leading-relaxed text-base flex-grow">
+                          {partner.description}
+                        </p>
+                      </div>
+                      <div className="absolute bottom-6 right-6 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+                        <span className="learn-more-enhanced">
+                          {t("learnMore")}
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile/Tablet Grid View */}
+          <div className="lg:hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {partners.map(partner => (
                 <Link
                   key={partner.id}
@@ -126,9 +178,9 @@ export default function PartnersPage() {
                       <Image
                         src={partner.logo}
                         alt={`${partner.name} logo`}
-                        width={partner.slug === "argocd" ? 100 : 96}
-                        height={partner.slug === "argocd" ? 100 : 96}
-                        className={`${partner.slug === "argocd" ? "w-[100px] h-[100px]" : "w-24 h-24"} object-contain ${partner.slug === "mvi" || partner.slug === "turbonomic" ? "bg-white rounded-lg p-2" : ""}`}
+                        width={partner.slug === "argocd" ? 130 : 96}
+                        height={partner.slug === "argocd" ? 130 : 96}
+                        className={`${partner.slug === "argocd" ? "w-[130px] h-[130px]" : "w-24 h-24"} object-contain ${partner.slug === "mvi" || partner.slug === "turbonomic" ? "bg-white rounded-lg p-2" : ""}`}
                       />
                     </div>
                     <h3 className="text-3xl font-bold text-white mb-5">
@@ -235,8 +287,127 @@ export default function PartnersPage() {
             </div>
           </div>
         </section>
-        {/* Ready To Get Started Section */}
-        <GetStartedSection />
+        {/* Partnership Opportunities Section */}
+        <section className="py-16 sm:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-gradient-to-br from-purple-900/30 via-slate-800/40 to-blue-900/30 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-purple-500/20">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  {t("partnershipOpportunities.title")}
+                </h2>
+                <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+                  {t("partnershipOpportunities.subtitle")}
+                </p>
+              </div>
+
+              <div className="max-w-4xl mx-auto mb-8">
+                <div className="bg-slate-800/30 rounded-xl p-8 border border-slate-700/50">
+                  <p className="text-gray-300 text-base leading-relaxed mb-6">
+                    {t("partnershipOpportunities.description")}
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-300">{t("partnershipOpportunities.features.0")}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-300">{t("partnershipOpportunities.features.1")}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-300">{t("partnershipOpportunities.features.2")}</span>
+                      </li>
+                    </ul>
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-300">{t("partnershipOpportunities.features.3")}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-300">{t("partnershipOpportunities.features.4")}</span>
+                      </li>
+                      <li className="flex items-start">
+                        <svg className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-300">{t("partnershipOpportunities.features.5")}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <a
+                    href="#contact-us"
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50"
+                  >
+                    <svg
+                      className="w-5 h-5 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    {t("partnershipOpportunities.contactButton")}
+                  </a>
+                  
+                  <a
+                    href="https://kubestellar.io/slack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-gray-500/30 border border-gray-600/50"
+                  >
+                    <svg
+                      className="w-5 h-5 mr-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 60 60"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <path
+                        d="M22,12 a6,6 0 1 1 6,-6 v6z M22,16 a6,6 0 0 1 0,12 h-16 a6,6 0 1 1 0,-12"
+                        fill="#36C5F0"
+                      />
+                      <path
+                        d="M48,22 a6,6 0 1 1 6,6 h-6z M32,6 a6,6 0 1 1 12,0v16a6,6 0 0 1 -12,0z"
+                        fill="#2EB67D"
+                      />
+                      <path
+                        d="M38,48 a6,6 0 1 1 -6,6 v-6z M54,32 a6,6 0 0 1 0,12 h-16 a6,6 0 1 1 0,-12"
+                        fill="#ECB22E"
+                      />
+                      <path
+                        d="M12,38 a6,6 0 1 1 -6,-6 h6z M16,38 a6,6 0 1 1 12,0v16a6,6 0 0 1 -12,0z"
+                        fill="#E01E5A"
+                      />
+                    </svg>
+                    Join the Slack
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
       <Footer />
     </div>

@@ -574,6 +574,20 @@
           "description": "Drive industry standards and best practices in Kubernetes orchestration"
         }
       ]
+    },
+    "partnershipOpportunities": {
+      "title": "Become a Partner",
+      "subtitle": "Join forces with KubeStellar to drive innovation in multi-cluster Kubernetes orchestration and expand your reach in the cloud-native ecosystem.",
+      "description": "Our partnership program is designed to foster collaboration with technology providers, cloud platforms, and service integrators who share our vision of simplifying multi-cluster Kubernetes management. Together, we can deliver comprehensive solutions that empower enterprises to manage their distributed workloads seamlessly.",
+      "features": [
+        "Technical integration support and engineering resources",
+        "Joint go-to-market initiatives and co-marketing opportunities",
+        "Access to our growing community of cloud-native practitioners",
+        "Featured placement on our partners page and documentation",
+        "Collaborative product development and roadmap input",
+        "Priority support and dedicated partnership manager"
+      ],
+      "contactButton": "Get in Touch"
     }
   }
 }
