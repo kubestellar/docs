@@ -129,13 +129,12 @@ export default function UseCasesSection() {
       iconBgColor: "bg-blue-400/20",
       hoverBorderColor: "hover:border-[#60A5FA]",
       backContent: {
-        title: "Edge Computing Excellence",
-        description:
-          "Deploy applications across edge locations with intelligent workload distribution. KubeStellar automatically manages resource allocation, ensures low-latency connectivity, and maintains consistency across your edge infrastructure.",
+        title: t("cases.edge.backContent.title"),
+        description: t("cases.edge.backContent.description"),
         features: [
-          "Automatic edge deployment",
-          "Low-latency optimization",
-          "Resource intelligent distribution",
+          t("cases.edge.backContent.features.0"),
+          t("cases.edge.backContent.features.1"),
+          t("cases.edge.backContent.features.2"),
         ],
       },
     },
@@ -147,13 +146,12 @@ export default function UseCasesSection() {
       iconBgColor: "bg-purple-400/20",
       hoverBorderColor: "hover:border-[#C084FC]",
       backContent: {
-        title: "Security & Compliance",
-        description:
-          "Enforce security policies and compliance requirements across all clusters with centralized governance. Automated policy distribution ensures consistent security posture throughout your infrastructure.",
+        title: t("cases.compliance.backContent.title"),
+        description: t("cases.compliance.backContent.description"),
         features: [
-          "Centralized policy management",
-          "Automated compliance checks",
-          "Security posture monitoring",
+          t("cases.compliance.backContent.features.0"),
+          t("cases.compliance.backContent.features.1"),
+          t("cases.compliance.backContent.features.2"),
         ],
       },
     },
@@ -165,13 +163,12 @@ export default function UseCasesSection() {
       iconBgColor: "bg-green-400/20",
       hoverBorderColor: "hover:border-[#4ADE80]",
       backContent: {
-        title: "Hybrid Cloud Mastery",
-        description:
-          "Seamlessly connect and manage workloads across public clouds, private data centers, and edge locations. Enable true hybrid deployment with unified management and automated failover capabilities.",
+        title: t("cases.hybrid.backContent.title"),
+        description: t("cases.hybrid.backContent.description"),
         features: [
-          "Multi-cloud orchestration",
-          "Unified management plane",
-          "Automated failover & recovery",
+          t("cases.hybrid.backContent.features.0"),
+          t("cases.hybrid.backContent.features.1"),
+          t("cases.hybrid.backContent.features.2"),
         ],
       },
     },
@@ -183,13 +180,12 @@ export default function UseCasesSection() {
       iconBgColor: "bg-red-400/20",
       hoverBorderColor: "hover:border-[#F87171]",
       backContent: {
-        title: "Disaster Recovery",
-        description:
-          "Implement robust disaster recovery strategies with automated backup, replication, and restoration capabilities. Ensure business continuity with multi-region deployment and instant failover mechanisms.",
+        title: t("cases.dr.backContent.title"),
+        description: t("cases.dr.backContent.description"),
         features: [
-          "Automated backup & replication",
-          "Multi-region deployment",
-          "Instant failover capabilities",
+          t("cases.dr.backContent.features.0"),
+          t("cases.dr.backContent.features.1"),
+          t("cases.dr.backContent.features.2"),
         ],
       },
     },
@@ -201,13 +197,12 @@ export default function UseCasesSection() {
       iconBgColor: "bg-yellow-400/20",
       hoverBorderColor: "hover:border-[#FACC15]",
       backContent: {
-        title: "Multi-Tenant Architecture",
-        description:
-          "Support multiple tenants with isolated environments while maximizing resource efficiency. Implement tenant-specific policies, resource quotas, and secure data separation across your clusters.",
+        title: t("cases.multitenant.backContent.title"),
+        description: t("cases.multitenant.backContent.description"),
         features: [
-          "Tenant isolation & security",
-          "Resource quota management",
-          "Scalable multi-tenancy",
+          t("cases.multitenant.backContent.features.0"),
+          t("cases.multitenant.backContent.features.1"),
+          t("cases.multitenant.backContent.features.2"),
         ],
       },
     },
@@ -219,13 +214,12 @@ export default function UseCasesSection() {
       iconBgColor: "bg-indigo-400/20",
       hoverBorderColor: "hover:border-[#818CF8]",
       backContent: {
-        title: "Performance Optimization",
-        description:
-          "Optimize application performance with intelligent resource allocation, auto-scaling, and load balancing across clusters. Monitor and improve performance metrics in real-time.",
+        title: t("cases.performance.backContent.title"),
+        description: t("cases.performance.backContent.description"),
         features: [
-          "Intelligent resource allocation",
-          "Auto-scaling optimization",
-          "Real-time performance monitoring",
+          t("cases.performance.backContent.features.0"),
+          t("cases.performance.backContent.features.1"),
+          t("cases.performance.backContent.features.2"),
         ],
       },
     },
