@@ -128,6 +128,11 @@ export default function UseCasesSection() {
       borderColor: "bg-blue-500",
       iconBgColor: "bg-blue-400/20",
       hoverBorderColor: "hover:border-[#60A5FA]",
+      backContent: {
+        title: "Edge Computing Excellence",
+        description: "Deploy applications across edge locations with intelligent workload distribution. KubeStellar automatically manages resource allocation, ensures low-latency connectivity, and maintains consistency across your edge infrastructure.",
+        features: ["Automatic edge deployment", "Low-latency optimization", "Resource intelligent distribution"]
+      }
     },
     {
       icon: "security",
@@ -136,6 +141,11 @@ export default function UseCasesSection() {
       borderColor: "bg-purple-500",
       iconBgColor: "bg-purple-400/20",
       hoverBorderColor: "hover:border-[#C084FC]",
+      backContent: {
+        title: "Security & Compliance",
+        description: "Enforce security policies and compliance requirements across all clusters with centralized governance. Automated policy distribution ensures consistent security posture throughout your infrastructure.",
+        features: ["Centralized policy management", "Automated compliance checks", "Security posture monitoring"]
+      }
     },
     {
       icon: "power",
@@ -144,6 +154,11 @@ export default function UseCasesSection() {
       borderColor: "bg-green-500",
       iconBgColor: "bg-green-400/20",
       hoverBorderColor: "hover:border-[#4ADE80]",
+      backContent: {
+        title: "Hybrid Cloud Mastery",
+        description: "Seamlessly connect and manage workloads across public clouds, private data centers, and edge locations. Enable true hybrid deployment with unified management and automated failover capabilities.",
+        features: ["Multi-cloud orchestration", "Unified management plane", "Automated failover & recovery"]
+      }
     },
     {
       icon: "clock",
@@ -152,6 +167,11 @@ export default function UseCasesSection() {
       borderColor: "bg-red-500",
       iconBgColor: "bg-red-400/20",
       hoverBorderColor: "hover:border-[#F87171]",
+      backContent: {
+        title: "Disaster Recovery",
+        description: "Implement robust disaster recovery strategies with automated backup, replication, and restoration capabilities. Ensure business continuity with multi-region deployment and instant failover mechanisms.",
+        features: ["Automated backup & replication", "Multi-region deployment", "Instant failover capabilities"]
+      }
     },
     {
       icon: "cloud",
@@ -160,6 +180,11 @@ export default function UseCasesSection() {
       borderColor: "bg-yellow-500",
       iconBgColor: "bg-yellow-400/20",
       hoverBorderColor: "hover:border-[#FACC15]",
+      backContent: {
+        title: "Multi-Tenant Architecture",
+        description: "Support multiple tenants with isolated environments while maximizing resource efficiency. Implement tenant-specific policies, resource quotas, and secure data separation across your clusters.",
+        features: ["Tenant isolation & security", "Resource quota management", "Scalable multi-tenancy"]
+      }
     },
     {
       icon: "network",
@@ -168,6 +193,11 @@ export default function UseCasesSection() {
       borderColor: "bg-indigo-500",
       iconBgColor: "bg-indigo-400/20",
       hoverBorderColor: "hover:border-[#818CF8]",
+      backContent: {
+        title: "Performance Optimization",
+        description: "Optimize application performance with intelligent resource allocation, auto-scaling, and load balancing across clusters. Monitor and improve performance metrics in real-time.",
+        features: ["Intelligent resource allocation", "Auto-scaling optimization", "Real-time performance monitoring"]
+      }
     },
   ];
 
@@ -202,79 +232,87 @@ export default function UseCasesSection() {
           {useCases.map((useCase, index) => (
             <div
               key={index}
-              className={`group relative rounded-2xl overflow-hidden border border-slate-700 transition-all duration-500 ${useCase.hoverBorderColor} hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-2 cursor-pointer w-full max-w-sm h-[280px] bg-slate-800/50 backdrop-blur-md z-10 hover:border-purple-500/50`}
-              style={{ transformStyle: 'preserve-3d' }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-8px) rotateY(180deg)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0) rotateY(0deg)';
-              }}
+              className="group relative w-full max-w-sm h-[320px]"
+              style={{ perspective: '1000px' }}
             >
-              {/* Front Face */}
-              <div 
-                className="absolute inset-0 w-full h-full backface-hidden"
-                style={{ backfaceVisibility: 'hidden' }}
-              >
-                {/* Top colored border */}
-                <div className={`h-2 ${useCase.borderColor}`}></div>
-
-                <div className="p-6">
-                  {/* Logo container */}
-                  <div
-                    className={`${useCase.iconBgColor} rounded-lg flex items-center justify-center mb-4 w-12 h-12 backdrop-blur-sm border border-white/10`}
-                  >
-                    {getIcon(useCase.icon)}
-                  </div>
-
-                  {/* Main heading */}
-                  <h3 className="font-bold text-white mb-4 transition-colors duration-300 group-hover:text-blue-300 text-lg leading-7">
-                    {useCase.title}
-                  </h3>
-
-                  {/* Description text */}
-                  <p className="text-gray-300 font-normal transition-colors duration-300 group-hover:text-gray-200 text-sm leading-5 line-clamp-6">
-                    {useCase.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Back Face */}
-              <div 
-                className="absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-purple-900/60 via-slate-800/60 to-blue-900/60 backdrop-blur-md border border-purple-500/30"
+              <div
+                className="relative w-full h-full transition-transform duration-700 cursor-pointer"
                 style={{ 
-                  backfaceVisibility: 'hidden',
-                  transform: 'rotateY(180deg)'
+                  transformStyle: 'preserve-3d',
+                  transform: 'rotateY(0deg)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'rotateY(180deg)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'rotateY(0deg)';
                 }}
               >
-                {/* Top colored border */}
-                <div className={`h-2 ${useCase.borderColor}`}></div>
-
-                <div className="p-6 flex flex-col justify-center h-full text-center">
-                  {/* Large icon */}
-                  <div className="flex justify-center mb-6">
+                {/* Front Face */}
+                <div 
+                  className="absolute inset-0 w-full h-full bg-slate-800/50 backdrop-blur-md border border-slate-700 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30 hover:border-purple-500/50"
+                  style={{ backfaceVisibility: 'hidden' }}
+                >
+                  <div className="p-6 h-full flex flex-col">
+                    {/* Logo container */}
                     <div
-                      className={`${useCase.iconBgColor} rounded-2xl flex items-center justify-center w-20 h-20 backdrop-blur-sm border border-white/20`}
+                      className={`${useCase.iconBgColor} rounded-lg flex items-center justify-center mb-6 w-14 h-14 backdrop-blur-sm border border-white/10`}
                     >
-                      <div className="scale-150">
+                      <div className="scale-110">
                         {getIcon(useCase.icon)}
                       </div>
                     </div>
+
+                    {/* Main heading */}
+                    <h3 className="font-bold text-white mb-5 transition-colors duration-300 group-hover:text-blue-300 text-xl leading-7">
+                      {useCase.title}
+                    </h3>
+
+                    {/* Description text */}
+                    <p className="text-gray-300 font-normal transition-colors duration-300 group-hover:text-gray-200 text-base leading-6 line-clamp-6 flex-grow">
+                      {useCase.description}
+                    </p>
+
+                    {/* Hover indicator */}
+                    <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-sm text-purple-400 font-medium">Hover to learn more →</span>
+                    </div>
                   </div>
+                </div>
 
-                  {/* Title */}
-                  <h3 className="font-bold text-white mb-4 text-xl">
-                    {useCase.title}
-                  </h3>
+                {/* Back Face */}
+                <div 
+                  className="absolute inset-0 w-full h-full bg-gradient-to-br from-purple-900/60 via-slate-800/60 to-blue-900/60 backdrop-blur-md border border-purple-500/30 rounded-2xl overflow-hidden"
+                  style={{ 
+                    backfaceVisibility: 'hidden',
+                    transform: 'rotateY(180deg)'
+                  }}
+                >
+                  <div className="p-6 h-full flex flex-col justify-center">
+                    {/* Enhanced title */}
+                    <h3 className="font-bold text-white mb-4 text-xl text-center">
+                      {useCase.backContent.title}
+                    </h3>
 
-                  {/* Enhanced description or additional info */}
-                  <p className="text-gray-200 text-sm leading-relaxed">
-                    Discover how KubeStellar can transform your {useCase.title.toLowerCase()} strategy with advanced multi-cluster management capabilities.
-                  </p>
+                    {/* Enhanced description */}
+                    <p className="text-gray-200 text-sm leading-relaxed mb-6 text-center">
+                      {useCase.backContent.description}
+                    </p>
 
-                  {/* Decorative element */}
-                  <div className="mt-6 flex justify-center">
-                    <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+                    {/* Features list */}
+                    <div className="space-y-2 mb-6">
+                      {useCase.backContent.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-xs">
+                          <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mr-2 flex-shrink-0"></div>
+                          <span className="text-gray-300">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Decorative element */}
+                    <div className="flex justify-center">
+                      <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+                    </div>
                   </div>
                 </div>
               </div>
