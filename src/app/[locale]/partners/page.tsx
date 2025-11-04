@@ -4,7 +4,6 @@ import { GridLines, StarField } from "../../../components/index";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import { useTranslations } from "next-intl";
-import GetStartedSection from "@/components/master-page/GetStartedSection";
 import Link from "next/link";
 import Image from "next/image";
 
