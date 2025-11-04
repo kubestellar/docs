@@ -1,10 +1,9 @@
 "use client";
 
-import { GridLines, StarField } from "../../../components/index";
+import { GridLines, StarField, ContributionCallToAction } from "../../../components/index";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import { useTranslations } from "next-intl";
-import GetStartedSection from "@/components/master-page/GetStartedSection";
 
 export default function MaintainerLadderPage() {
   const t = useTranslations("ladderPage");
@@ -196,7 +195,7 @@ export default function MaintainerLadderPage() {
             {/* Mobile Layout */}
             <div className="lg:hidden">
               {levels.map((level, index) => (
-                <div key={level.id} className="mb-8">
+                <div key={level.id} className="mb-4">
                   {/* Level Card */}
                   <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 relative">
                     {/* Level Number */}
@@ -264,8 +263,8 @@ export default function MaintainerLadderPage() {
 
                   {/* Connector */}
                   {index < levels.length - 1 && (
-                    <div className="flex justify-center mt-4">
-                      <div className="w-0.5 h-8 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+                    <div className="flex justify-center mt-2">
+                      <div className="w-0.5 h-6 bg-gradient-to-b from-blue-500 to-purple-500"></div>
                     </div>
                   )}
                 </div>
@@ -278,7 +277,7 @@ export default function MaintainerLadderPage() {
               <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 transform -translate-x-1/2 z-5"></div>
 
               {levels.map((level, index) => (
-                <div key={level.id} className="relative mb-24 z-20">
+                <div key={level.id} className="relative z-20">
                   <div
                     className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
                   >
@@ -391,7 +390,7 @@ export default function MaintainerLadderPage() {
                         {t("activityRequirements.table.helpWantedIssues")}
                       </td>
                       <td className="py-4 px-6 text-green-400 font-semibold">
-                        ≥ 2
+                        {t("activityRequirements.table.helpWantedIssuesValue")}
                       </td>
                     </tr>
                     <tr className="border-b border-gray-700/50">
@@ -399,7 +398,7 @@ export default function MaintainerLadderPage() {
                         {t("activityRequirements.table.prsMerged")}
                       </td>
                       <td className="py-4 px-6 text-green-400 font-semibold">
-                        ≥ 3
+                        {t("activityRequirements.table.prsMergedValue")}
                       </td>
                     </tr>
                     <tr className="border-b border-gray-700/50">
@@ -407,7 +406,7 @@ export default function MaintainerLadderPage() {
                         {t("activityRequirements.table.prReviews")}
                       </td>
                       <td className="py-4 px-6 text-green-400 font-semibold">
-                        ≥ 8
+                        {t("activityRequirements.table.prReviewsValue")}
                       </td>
                     </tr>
                     <tr>
@@ -415,7 +414,7 @@ export default function MaintainerLadderPage() {
                         {t("activityRequirements.table.meetingAttendance")}
                       </td>
                       <td className="py-4 px-6 text-green-400 font-semibold">
-                        ≥ 3
+                        {t("activityRequirements.table.meetingAttendanceValue")}
                       </td>
                     </tr>
                   </tbody>
@@ -424,8 +423,8 @@ export default function MaintainerLadderPage() {
             </div>
           </div>
         </section>
-        {/* Ready To Get Started Section */}
-        <GetStartedSection />
+        {/* Ready To Contribute Section */}
+        <ContributionCallToAction />
       </div>
       <Footer />
     </div>
