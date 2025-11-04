@@ -130,9 +130,14 @@ export default function UseCasesSection() {
       hoverBorderColor: "hover:border-[#60A5FA]",
       backContent: {
         title: "Edge Computing Excellence",
-        description: "Deploy applications across edge locations with intelligent workload distribution. KubeStellar automatically manages resource allocation, ensures low-latency connectivity, and maintains consistency across your edge infrastructure.",
-        features: ["Automatic edge deployment", "Low-latency optimization", "Resource intelligent distribution"]
-      }
+        description:
+          "Deploy applications across edge locations with intelligent workload distribution. KubeStellar automatically manages resource allocation, ensures low-latency connectivity, and maintains consistency across your edge infrastructure.",
+        features: [
+          "Automatic edge deployment",
+          "Low-latency optimization",
+          "Resource intelligent distribution",
+        ],
+      },
     },
     {
       icon: "security",
@@ -143,9 +148,14 @@ export default function UseCasesSection() {
       hoverBorderColor: "hover:border-[#C084FC]",
       backContent: {
         title: "Security & Compliance",
-        description: "Enforce security policies and compliance requirements across all clusters with centralized governance. Automated policy distribution ensures consistent security posture throughout your infrastructure.",
-        features: ["Centralized policy management", "Automated compliance checks", "Security posture monitoring"]
-      }
+        description:
+          "Enforce security policies and compliance requirements across all clusters with centralized governance. Automated policy distribution ensures consistent security posture throughout your infrastructure.",
+        features: [
+          "Centralized policy management",
+          "Automated compliance checks",
+          "Security posture monitoring",
+        ],
+      },
     },
     {
       icon: "power",
@@ -156,9 +166,14 @@ export default function UseCasesSection() {
       hoverBorderColor: "hover:border-[#4ADE80]",
       backContent: {
         title: "Hybrid Cloud Mastery",
-        description: "Seamlessly connect and manage workloads across public clouds, private data centers, and edge locations. Enable true hybrid deployment with unified management and automated failover capabilities.",
-        features: ["Multi-cloud orchestration", "Unified management plane", "Automated failover & recovery"]
-      }
+        description:
+          "Seamlessly connect and manage workloads across public clouds, private data centers, and edge locations. Enable true hybrid deployment with unified management and automated failover capabilities.",
+        features: [
+          "Multi-cloud orchestration",
+          "Unified management plane",
+          "Automated failover & recovery",
+        ],
+      },
     },
     {
       icon: "clock",
@@ -169,9 +184,14 @@ export default function UseCasesSection() {
       hoverBorderColor: "hover:border-[#F87171]",
       backContent: {
         title: "Disaster Recovery",
-        description: "Implement robust disaster recovery strategies with automated backup, replication, and restoration capabilities. Ensure business continuity with multi-region deployment and instant failover mechanisms.",
-        features: ["Automated backup & replication", "Multi-region deployment", "Instant failover capabilities"]
-      }
+        description:
+          "Implement robust disaster recovery strategies with automated backup, replication, and restoration capabilities. Ensure business continuity with multi-region deployment and instant failover mechanisms.",
+        features: [
+          "Automated backup & replication",
+          "Multi-region deployment",
+          "Instant failover capabilities",
+        ],
+      },
     },
     {
       icon: "cloud",
@@ -182,9 +202,14 @@ export default function UseCasesSection() {
       hoverBorderColor: "hover:border-[#FACC15]",
       backContent: {
         title: "Multi-Tenant Architecture",
-        description: "Support multiple tenants with isolated environments while maximizing resource efficiency. Implement tenant-specific policies, resource quotas, and secure data separation across your clusters.",
-        features: ["Tenant isolation & security", "Resource quota management", "Scalable multi-tenancy"]
-      }
+        description:
+          "Support multiple tenants with isolated environments while maximizing resource efficiency. Implement tenant-specific policies, resource quotas, and secure data separation across your clusters.",
+        features: [
+          "Tenant isolation & security",
+          "Resource quota management",
+          "Scalable multi-tenancy",
+        ],
+      },
     },
     {
       icon: "network",
@@ -195,9 +220,14 @@ export default function UseCasesSection() {
       hoverBorderColor: "hover:border-[#818CF8]",
       backContent: {
         title: "Performance Optimization",
-        description: "Optimize application performance with intelligent resource allocation, auto-scaling, and load balancing across clusters. Monitor and improve performance metrics in real-time.",
-        features: ["Intelligent resource allocation", "Auto-scaling optimization", "Real-time performance monitoring"]
-      }
+        description:
+          "Optimize application performance with intelligent resource allocation, auto-scaling, and load balancing across clusters. Monitor and improve performance metrics in real-time.",
+        features: [
+          "Intelligent resource allocation",
+          "Auto-scaling optimization",
+          "Real-time performance monitoring",
+        ],
+      },
     },
   ];
 
@@ -233,34 +263,32 @@ export default function UseCasesSection() {
             <div
               key={index}
               className="group relative w-full max-w-sm h-[320px]"
-              style={{ perspective: '1000px' }}
+              style={{ perspective: "1000px" }}
             >
               <div
                 className="relative w-full h-full transition-transform duration-700 cursor-pointer"
-                style={{ 
-                  transformStyle: 'preserve-3d',
-                  transform: 'rotateY(0deg)'
+                style={{
+                  transformStyle: "preserve-3d",
+                  transform: "rotateY(0deg)",
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'rotateY(180deg)';
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = "rotateY(180deg)";
                 }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'rotateY(0deg)';
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = "rotateY(0deg)";
                 }}
               >
                 {/* Front Face */}
-                <div 
+                <div
                   className="absolute inset-0 w-full h-full bg-slate-800/50 backdrop-blur-md border border-slate-700 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30 hover:border-purple-500/50"
-                  style={{ backfaceVisibility: 'hidden' }}
+                  style={{ backfaceVisibility: "hidden" }}
                 >
                   <div className="p-6 h-full flex flex-col">
                     {/* Logo container */}
                     <div
                       className={`${useCase.iconBgColor} rounded-lg flex items-center justify-center mb-6 w-14 h-14 backdrop-blur-sm border border-white/10`}
                     >
-                      <div className="scale-110">
-                        {getIcon(useCase.icon)}
-                      </div>
+                      <div className="scale-110">{getIcon(useCase.icon)}</div>
                     </div>
 
                     {/* Main heading */}
@@ -275,17 +303,19 @@ export default function UseCasesSection() {
 
                     {/* Hover indicator */}
                     <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-sm text-purple-400 font-medium">Hover to learn more →</span>
+                      <span className="text-sm text-purple-400 font-medium">
+                        Hover to learn more →
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 {/* Back Face */}
-                <div 
+                <div
                   className="absolute inset-0 w-full h-full bg-gradient-to-br from-purple-900/60 via-slate-800/60 to-blue-900/60 backdrop-blur-md border border-purple-500/30 rounded-2xl overflow-hidden"
-                  style={{ 
-                    backfaceVisibility: 'hidden',
-                    transform: 'rotateY(180deg)'
+                  style={{
+                    backfaceVisibility: "hidden",
+                    transform: "rotateY(180deg)",
                   }}
                 >
                   <div className="p-6 h-full flex flex-col justify-center">
@@ -301,12 +331,17 @@ export default function UseCasesSection() {
 
                     {/* Features list */}
                     <div className="space-y-2 mb-6">
-                      {useCase.backContent.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center text-xs">
-                          <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mr-2 flex-shrink-0"></div>
-                          <span className="text-gray-300">{feature}</span>
-                        </div>
-                      ))}
+                      {useCase.backContent.features.map(
+                        (feature, featureIndex) => (
+                          <div
+                            key={featureIndex}
+                            className="flex items-center text-xs"
+                          >
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mr-2 flex-shrink-0"></div>
+                            <span className="text-gray-300">{feature}</span>
+                          </div>
+                        )
+                      )}
                     </div>
 
                     {/* Decorative element */}
