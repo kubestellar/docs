@@ -202,46 +202,81 @@ export default function UseCasesSection() {
           {useCases.map((useCase, index) => (
             <div
               key={index}
-              className={`group relative rounded-lg overflow-hidden border border-gray-700 transition-all duration-300 ${useCase.hoverBorderColor} hover:shadow-2xl hover:shadow-gray-900/50 hover:-translate-y-2 hover:scale-105 cursor-pointer w-full max-w-sm h-[280px] bg-gray-800 z-10`}
+              className={`group relative rounded-2xl overflow-hidden border border-slate-700 transition-all duration-500 ${useCase.hoverBorderColor} hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-2 cursor-pointer w-full max-w-sm h-[280px] bg-slate-800/50 backdrop-blur-md z-10 hover:border-purple-500/50`}
+              style={{ transformStyle: 'preserve-3d' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px) rotateY(180deg)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0) rotateY(0deg)';
+              }}
             >
-              {/* Top colored border */}
-              <div className={`h-2 ${useCase.borderColor}`}></div>
+              {/* Front Face */}
+              <div 
+                className="absolute inset-0 w-full h-full backface-hidden"
+                style={{ backfaceVisibility: 'hidden' }}
+              >
+                {/* Top colored border */}
+                <div className={`h-2 ${useCase.borderColor}`}></div>
 
-              <div className="p-6">
-                {/* Logo container */}
-                <div
-                  className={`${useCase.iconBgColor} rounded-lg flex items-center justify-center mb-4 w-12 h-12`}
-                >
-                  {getIcon(useCase.icon)}
-                </div>
-
-                {/* Main heading */}
-                <h3 className="font-bold text-white mb-4 transition-colors duration-300 group-hover:text-blue-300 text-lg leading-7 overflow-hidden">
-                  {useCase.title}
-                </h3>
-
-                {/* Description text */}
-                <p className="text-gray-300 font-normal mb-2 transition-colors duration-300 group-hover:text-gray-200 text-sm leading-5 overflow-hidden line-clamp-4">
-                  {useCase.description}
-                </p>
-
-                {/* Learn more button */}
-                <button className="text-blue-400 font-medium hover:text-blue-300 transition-all duration-300 flex items-center text-sm hover:scale-110 transform origin-left">
-                  {t("learnMore")}
-                  <svg
-                    className="ml-1 w-4 h-4 transition-transform duration-300 hover:scale-125"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                <div className="p-6">
+                  {/* Logo container */}
+                  <div
+                    className={`${useCase.iconBgColor} rounded-lg flex items-center justify-center mb-4 w-12 h-12 backdrop-blur-sm border border-white/10`}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </button>
+                    {getIcon(useCase.icon)}
+                  </div>
+
+                  {/* Main heading */}
+                  <h3 className="font-bold text-white mb-4 transition-colors duration-300 group-hover:text-blue-300 text-lg leading-7">
+                    {useCase.title}
+                  </h3>
+
+                  {/* Description text */}
+                  <p className="text-gray-300 font-normal transition-colors duration-300 group-hover:text-gray-200 text-sm leading-5 line-clamp-6">
+                    {useCase.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Back Face */}
+              <div 
+                className="absolute inset-0 w-full h-full backface-hidden bg-gradient-to-br from-purple-900/60 via-slate-800/60 to-blue-900/60 backdrop-blur-md border border-purple-500/30"
+                style={{ 
+                  backfaceVisibility: 'hidden',
+                  transform: 'rotateY(180deg)'
+                }}
+              >
+                {/* Top colored border */}
+                <div className={`h-2 ${useCase.borderColor}`}></div>
+
+                <div className="p-6 flex flex-col justify-center h-full text-center">
+                  {/* Large icon */}
+                  <div className="flex justify-center mb-6">
+                    <div
+                      className={`${useCase.iconBgColor} rounded-2xl flex items-center justify-center w-20 h-20 backdrop-blur-sm border border-white/20`}
+                    >
+                      <div className="scale-150">
+                        {getIcon(useCase.icon)}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="font-bold text-white mb-4 text-xl">
+                    {useCase.title}
+                  </h3>
+
+                  {/* Enhanced description or additional info */}
+                  <p className="text-gray-200 text-sm leading-relaxed">
+                    Discover how KubeStellar can transform your {useCase.title.toLowerCase()} strategy with advanced multi-cluster management capabilities.
+                  </p>
+
+                  {/* Decorative element */}
+                  <div className="mt-6 flex justify-center">
+                    <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
