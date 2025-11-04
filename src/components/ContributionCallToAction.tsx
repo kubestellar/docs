@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Link as IntlLink } from "@/i18n/navigation";
 import { GridLines, StarField } from "./index";
 import { useTranslations } from "next-intl";
