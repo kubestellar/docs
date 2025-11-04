@@ -21,7 +21,7 @@ export default function HeroSection() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy text: ', err);
+      console.error("Failed to copy text: ", err);
     }
   };
   useEffect(() => {
@@ -180,7 +180,7 @@ export default function HeroSection() {
                     onClick={handleCopy}
                     className={`copy-button ml-3 p-2 rounded-md bg-gray-700/50 hover:bg-gray-600/50 
                               border border-gray-600/50 hover:border-gray-500/50 
-                              transition-all duration-200 group relative ${copied ? 'copy-success' : ''}`}
+                              transition-all duration-200 group relative ${copied ? "copy-success" : ""}`}
                     title="Copy installation script"
                   >
                     {copied ? (
@@ -212,11 +212,13 @@ export default function HeroSection() {
                         />
                       </svg>
                     )}
-                    
+
                     {/* Tooltip */}
-                    <div className="absolute -top-10 right-0 bg-gray-800 text-white text-xs 
+                    <div
+                      className="absolute -top-10 right-0 bg-gray-800 text-white text-xs 
                                     px-2 py-1 rounded opacity-0 group-hover:opacity-100 
-                                    transition-opacity duration-200 whitespace-nowrap z-50">
+                                    transition-opacity duration-200 whitespace-nowrap z-50"
+                    >
                       {copied ? "Copied!" : "Copy script"}
                     </div>
                   </button>

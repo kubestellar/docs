@@ -1,6 +1,10 @@
 "use client";
 
-import { GridLines, StarField, ContributionCallToAction } from "../../../components/index";
+import {
+  GridLines,
+  StarField,
+  ContributionCallToAction,
+} from "../../../components/index";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import { useTranslations } from "next-intl";
