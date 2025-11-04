@@ -55,9 +55,16 @@ export default function HowToUseSection() {
                 <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
                   <pre className="text-xs font-mono text-white">
                     <code>
-                      <span className="text-gray-400">{t("step1CodeComment")}</span>
+                      <span className="text-gray-400">
+                        {t("step1CodeComment")}
+                      </span>
                       {"\n"}
-                      <span className="text-blue-400">{t("step1Tool1")}</span>, <span className="text-blue-400">{t("step1Tool2")}</span>, <span className="text-blue-400">{t("step1Tool3")}</span>, <span className="text-blue-400">{t("step1Tool4")}</span>
+                      <span className="text-blue-400">
+                        {t("step1Tool1")}
+                      </span>,{" "}
+                      <span className="text-blue-400">{t("step1Tool2")}</span>,{" "}
+                      <span className="text-blue-400">{t("step1Tool3")}</span>,{" "}
+                      <span className="text-blue-400">{t("step1Tool4")}</span>
                       {"\n"}
                       <span className="text-blue-400">{t("step1Tool5")}</span>
                       {"\n"}
@@ -93,13 +100,22 @@ export default function HowToUseSection() {
                 <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
                   <pre className="text-xs font-mono text-white">
                     <code>
-                      <span className="text-gray-400">{t("step2CodeComment")}</span>
+                      <span className="text-gray-400">
+                        {t("step2CodeComment")}
+                      </span>
                       {"\n"}
-                      <span className="text-blue-400">{t("step2Command")}</span> <span className="text-white">{t("step2Cluster")}</span> \
+                      <span className="text-blue-400">
+                        {t("step2Command")}
+                      </span>{" "}
+                      <span className="text-white">{t("step2Cluster")}</span> \
                       {"\n"}
-                      <span className="text-emerald-400">{t("step2Label1")}</span> \
-                      {"\n"}
-                      <span className="text-emerald-400">{t("step2Label2")}</span>
+                      <span className="text-emerald-400">
+                        {t("step2Label1")}
+                      </span>{" "}
+                      \{"\n"}
+                      <span className="text-emerald-400">
+                        {t("step2Label2")}
+                      </span>
                     </code>
                   </pre>
                 </div>
@@ -131,17 +147,27 @@ export default function HowToUseSection() {
                 <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
                   <pre className="text-xs font-mono text-white">
                     <code>
-                      <span className="text-yellow-300">apiVersion</span>: <span className="text-white">{t("step3ApiVersion")}</span>
+                      <span className="text-yellow-300">apiVersion</span>:{" "}
+                      <span className="text-white">{t("step3ApiVersion")}</span>
                       {"\n"}
-                      <span className="text-yellow-300">kind</span>: <span className="text-white">{t("step3Kind")}</span>
+                      <span className="text-yellow-300">kind</span>:{" "}
+                      <span className="text-white">{t("step3Kind")}</span>
                       {"\n"}
-                      <span className="text-yellow-300">spec</span>:
-                      {"\n"}
-                      {"  "}<span className="text-yellow-300">{t("step3SpecClusterSelectors")}</span>:
-                      {"\n"}
-                      {"  - "}<span className="text-yellow-300">{t("step3MatchLabels")}</span>:
-                      {"\n"}
-                      {"      "}<span className="text-emerald-400">{t("step3LocationGroup")}</span>
+                      <span className="text-yellow-300">spec</span>:{"\n"}
+                      {"  "}
+                      <span className="text-yellow-300">
+                        {t("step3SpecClusterSelectors")}
+                      </span>
+                      :{"\n"}
+                      {"  - "}
+                      <span className="text-yellow-300">
+                        {t("step3MatchLabels")}
+                      </span>
+                      :{"\n"}
+                      {"      "}
+                      <span className="text-emerald-400">
+                        {t("step3LocationGroup")}
+                      </span>
                     </code>
                   </pre>
                 </div>
@@ -173,17 +199,28 @@ export default function HowToUseSection() {
                 <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
                   <pre className="text-xs font-mono text-white">
                     <code>
-                      <span className="text-yellow-300">apiVersion</span>: <span className="text-white">{t("step4ApiVersion")}</span>
+                      <span className="text-yellow-300">apiVersion</span>:{" "}
+                      <span className="text-white">{t("step4ApiVersion")}</span>
                       {"\n"}
-                      <span className="text-yellow-300">kind</span>: <span className="text-white">{t("step4Kind")}</span>
+                      <span className="text-yellow-300">kind</span>:{" "}
+                      <span className="text-white">{t("step4Kind")}</span>
                       {"\n"}
-                      <span className="text-yellow-300">metadata</span>:
+                      <span className="text-yellow-300">metadata</span>:{"\n"}
+                      {"  "}
+                      <span className="text-yellow-300">name</span>:{" "}
+                      <span className="text-white">
+                        {t("step4MetadataName")}
+                      </span>
                       {"\n"}
-                      {"  "}<span className="text-yellow-300">name</span>: <span className="text-white">{t("step4MetadataName")}</span>
-                      {"\n"}
-                      {"  "}<span className="text-yellow-300">{t("step4Labels")}</span>:
-                      {"\n"}
-                      {"    "}<span className="text-emerald-400">{t("step4AppName")}</span>
+                      {"  "}
+                      <span className="text-yellow-300">
+                        {t("step4Labels")}
+                      </span>
+                      :{"\n"}
+                      {"    "}
+                      <span className="text-emerald-400">
+                        {t("step4AppName")}
+                      </span>
                     </code>
                   </pre>
                 </div>
@@ -215,19 +252,31 @@ export default function HowToUseSection() {
                 <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
                   <pre className="text-xs font-mono text-white">
                     <code>
-                      <span className="text-gray-400">{t("step5Command1Comment")}</span>
+                      <span className="text-gray-400">
+                        {t("step5Command1Comment")}
+                      </span>
                       {"\n"}
-                      <span className="text-emerald-400">kubectl get pods -A</span>
+                      <span className="text-emerald-400">
+                        kubectl get pods -A
+                      </span>
                       {"\n"}
                       {"\n"}
-                      <span className="text-gray-400">{t("step5Command2Comment")}</span>
+                      <span className="text-gray-400">
+                        {t("step5Command2Comment")}
+                      </span>
                       {"\n"}
-                      <span className="text-emerald-400">kubectl get deployments -A</span>
+                      <span className="text-emerald-400">
+                        kubectl get deployments -A
+                      </span>
                       {"\n"}
                       {"\n"}
-                      <span className="text-gray-400">{t("step5Command3Comment")}</span>
+                      <span className="text-gray-400">
+                        {t("step5Command3Comment")}
+                      </span>
                       {"\n"}
-                      <span className="text-emerald-400">kubectl describe deployment example-app</span>
+                      <span className="text-emerald-400">
+                        kubectl describe deployment example-app
+                      </span>
                     </code>
                   </pre>
                 </div>
@@ -258,9 +307,17 @@ export default function HowToUseSection() {
                   <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
                     <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
                       <code>
-                        <span className="text-gray-400">{t("step1CodeComment")}</span>
+                        <span className="text-gray-400">
+                          {t("step1CodeComment")}
+                        </span>
                         {"\n"}
-                        <span className="text-blue-400">{t("step1Tool1")}</span>, <span className="text-blue-400">{t("step1Tool2")}</span>, <span className="text-blue-400">{t("step1Tool3")}</span>, <span className="text-blue-400">{t("step1Tool4")}</span>
+                        <span className="text-blue-400">{t("step1Tool1")}</span>
+                        ,{" "}
+                        <span className="text-blue-400">{t("step1Tool2")}</span>
+                        ,{" "}
+                        <span className="text-blue-400">{t("step1Tool3")}</span>
+                        ,{" "}
+                        <span className="text-blue-400">{t("step1Tool4")}</span>
                         {"\n"}
                         <span className="text-blue-400">{t("step1Tool5")}</span>
                         {"\n"}
@@ -291,13 +348,22 @@ export default function HowToUseSection() {
                   <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
                     <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
                       <code>
-                        <span className="text-gray-400">{t("step2CodeComment")}</span>
+                        <span className="text-gray-400">
+                          {t("step2CodeComment")}
+                        </span>
                         {"\n"}
-                        <span className="text-blue-400">{t("step2Command")}</span> <span className="text-white">{t("step2Cluster")}</span> \
-                        {"\n"}
-                        <span className="text-emerald-400">{t("step2Label1")}</span> \
-                        {"\n"}
-                        <span className="text-emerald-400">{t("step2Label2")}</span>
+                        <span className="text-blue-400">
+                          {t("step2Command")}
+                        </span>{" "}
+                        <span className="text-white">{t("step2Cluster")}</span>{" "}
+                        \{"\n"}
+                        <span className="text-emerald-400">
+                          {t("step2Label1")}
+                        </span>{" "}
+                        \{"\n"}
+                        <span className="text-emerald-400">
+                          {t("step2Label2")}
+                        </span>
                       </code>
                     </pre>
                   </div>
@@ -324,21 +390,36 @@ export default function HowToUseSection() {
                   <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
                     <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
                       <code>
-                        <span className="text-yellow-300">apiVersion</span>: <span className="text-white">{t("step3ApiVersion")}</span>
+                        <span className="text-yellow-300">apiVersion</span>:{" "}
+                        <span className="text-white">
+                          {t("step3ApiVersion")}
+                        </span>
                         {"\n"}
-                        <span className="text-yellow-300">kind</span>: <span className="text-white">{t("step3Kind")}</span>
+                        <span className="text-yellow-300">kind</span>:{" "}
+                        <span className="text-white">{t("step3Kind")}</span>
                         {"\n"}
-                        <span className="text-yellow-300">metadata</span>:
+                        <span className="text-yellow-300">metadata</span>:{"\n"}
+                        {"  "}
+                        <span className="text-yellow-300">name</span>:{" "}
+                        <span className="text-white">
+                          {t("step3MetadataName")}
+                        </span>
                         {"\n"}
-                        {"  "}<span className="text-yellow-300">name</span>: <span className="text-white">{t("step3MetadataName")}</span>
-                        {"\n"}
-                        <span className="text-yellow-300">spec</span>:
-                        {"\n"}
-                        {"  "}<span className="text-yellow-300">{t("step3SpecClusterSelectors")}</span>:
-                        {"\n"}
-                        {"  - "}<span className="text-yellow-300">{t("step3MatchLabels")}</span>:
-                        {"\n"}
-                        {"      "}<span className="text-emerald-400">{t("step3LocationGroup")}</span>
+                        <span className="text-yellow-300">spec</span>:{"\n"}
+                        {"  "}
+                        <span className="text-yellow-300">
+                          {t("step3SpecClusterSelectors")}
+                        </span>
+                        :{"\n"}
+                        {"  - "}
+                        <span className="text-yellow-300">
+                          {t("step3MatchLabels")}
+                        </span>
+                        :{"\n"}
+                        {"      "}
+                        <span className="text-emerald-400">
+                          {t("step3LocationGroup")}
+                        </span>
                       </code>
                     </pre>
                   </div>
@@ -365,21 +446,43 @@ export default function HowToUseSection() {
                   <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
                     <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
                       <code>
-                        <span className="text-yellow-300">apiVersion</span>: <span className="text-white">{t("step4ApiVersion")}</span>
+                        <span className="text-yellow-300">apiVersion</span>:{" "}
+                        <span className="text-white">
+                          {t("step4ApiVersion")}
+                        </span>
                         {"\n"}
-                        <span className="text-yellow-300">kind</span>: <span className="text-white">{t("step4Kind")}</span>
+                        <span className="text-yellow-300">kind</span>:{" "}
+                        <span className="text-white">{t("step4Kind")}</span>
                         {"\n"}
-                        <span className="text-yellow-300">metadata</span>:
+                        <span className="text-yellow-300">metadata</span>:{"\n"}
+                        {"  "}
+                        <span className="text-yellow-300">name</span>:{" "}
+                        <span className="text-white">
+                          {t("step4MetadataName")}
+                        </span>
                         {"\n"}
-                        {"  "}<span className="text-yellow-300">name</span>: <span className="text-white">{t("step4MetadataName")}</span>
+                        {"  "}
+                        <span className="text-yellow-300">
+                          {t("step4Labels")}
+                        </span>
+                        :{"\n"}
+                        {"    "}
+                        <span className="text-emerald-400">
+                          {t("step4AppName")}
+                        </span>
                         {"\n"}
-                        {"  "}<span className="text-yellow-300">{t("step4Labels")}</span>:
-                        {"\n"}
-                        {"    "}<span className="text-emerald-400">{t("step4AppName")}</span>
-                        {"\n"}
-                        <span className="text-yellow-300">{t("step4Spec")}</span>:
-                        {"\n"}
-                        {"  "}<span className="text-yellow-300">{t("step4Replicas")}</span>: <span className="text-white">{t("step4ReplicasValue")}</span>
+                        <span className="text-yellow-300">
+                          {t("step4Spec")}
+                        </span>
+                        :{"\n"}
+                        {"  "}
+                        <span className="text-yellow-300">
+                          {t("step4Replicas")}
+                        </span>
+                        :{" "}
+                        <span className="text-white">
+                          {t("step4ReplicasValue")}
+                        </span>
                       </code>
                     </pre>
                   </div>
@@ -406,19 +509,31 @@ export default function HowToUseSection() {
                   <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
                     <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
                       <code>
-                        <span className="text-gray-400">{t("step5Command1Comment")}</span>
+                        <span className="text-gray-400">
+                          {t("step5Command1Comment")}
+                        </span>
                         {"\n"}
-                        <span className="text-emerald-400">kubectl get pods -A</span>
+                        <span className="text-emerald-400">
+                          kubectl get pods -A
+                        </span>
                         {"\n"}
                         {"\n"}
-                        <span className="text-gray-400">{t("step5Command2Comment")}</span>
+                        <span className="text-gray-400">
+                          {t("step5Command2Comment")}
+                        </span>
                         {"\n"}
-                        <span className="text-emerald-400">kubectl get deployments -A</span>
+                        <span className="text-emerald-400">
+                          kubectl get deployments -A
+                        </span>
                         {"\n"}
                         {"\n"}
-                        <span className="text-gray-400">{t("step5Command3Comment")}</span>
+                        <span className="text-gray-400">
+                          {t("step5Command3Comment")}
+                        </span>
                         {"\n"}
-                        <span className="text-emerald-400">kubectl describe deployment example-app</span>
+                        <span className="text-emerald-400">
+                          kubectl describe deployment example-app
+                        </span>
                       </code>
                     </pre>
                   </div>
