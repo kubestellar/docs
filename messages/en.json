@@ -543,12 +543,12 @@
       "kubestellarUI": {
         "name": "KubeStellar UI",
         "fullName": "KubeStellar UI",
-        "description": "A powerful web-based interface for managing multi-cluster Kubernetes orchestration with intuitive dashboards, real-time monitoring, and comprehensive controls for streamlined cluster management. Features advanced visualization tools, customizable workspaces, and intelligent alerts to optimize your multi-cluster operations. Provides centralized visibility across all clusters with detailed analytics and performance metrics."
+        "description": "A powerful web-based interface for managing multi-cluster Kubernetes orchestration with intuitive dashboards, real-time monitoring, and comprehensive controls for streamlined cluster management. Features advanced visualization tools, customizable workspaces, and intelligent alerts to optimize your multi-cluster operations."
       },
       "kubeflex": {
         "name": "KubeFlex",
         "fullName": "KubeFlex",
-        "description": "A flexible Kubernetes management platform providing comprehensive tools and resources for multi-cluster orchestration and workload distribution. Enables dynamic cluster provisioning, automated scaling, and intelligent resource allocation across heterogeneous environments. Simplifies complex deployment scenarios with policy-driven automation and advanced lifecycle management capabilities."
+        "description": "A flexible Kubernetes management platform providing comprehensive tools and resources for multi-cluster orchestration and workload distribution. Enables dynamic cluster provisioning, automated scaling, and intelligent resource allocation across heterogeneous environments. Simplifies complex deployment scenarios with policy-driven automation."
       },
       "a2a": {
         "name": "A2A",
