@@ -12,6 +12,33 @@ export default function ProductsPage() {
   const t = useTranslations("productsPage");
   const products = getAllProducts();
 
+  // Helper function to get translated product data
+  const getTranslatedProduct = (product: any) => {
+    const translationMap: { [key: string]: any } = {
+      'kubestellar-ui': {
+        name: t('products.kubestellarUI.name'),
+        fullName: t('products.kubestellarUI.fullName'),
+        description: t('products.kubestellarUI.description')
+      },
+      'kubeflex': {
+        name: t('products.kubeflex.name'),
+        fullName: t('products.kubeflex.fullName'),
+        description: t('products.kubeflex.description')
+      },
+      'a2a': {
+        name: t('products.a2a.name'),
+        fullName: t('products.a2a.fullName'),
+        description: t('products.a2a.description')
+      },
+      'galaxy-marketplace': {
+        name: t('products.galaxyMarketplace.name'),
+        fullName: t('products.galaxyMarketplace.fullName'),
+        description: t('products.galaxyMarketplace.description')
+      }
+    };
+    return translationMap[product.id] || product;
+  };
+
   useEffect(() => {
     // Add CSS for animations
     const style = document.createElement("style");
@@ -77,7 +104,9 @@ export default function ProductsPage() {
       <section id="products" className="relative pt-8 pb-24 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-2">
-            {products.map(product => (
+            {products.map(product => {
+              const translatedProduct = getTranslatedProduct(product);
+              return (
               <div
                 key={product.id}
                 className={`product-card bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg border border-gray-700/50 p-8 flex items-start text-left transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-500/50`}
@@ -86,7 +115,7 @@ export default function ProductsPage() {
                 <div className={`relative ${product.id === 'a2a' ? 'w-40 h-32' : 'w-32 h-24'} mr-6 flex items-center justify-center flex-shrink-0`}>
                   <Image
                     src={product.logo}
-                    alt={`${product.name} Logo`}
+                    alt={`${translatedProduct.name} Logo`}
                     fill
                     className="object-contain"
                     sizes={product.id === 'a2a' ? '160px' : '128px'}
@@ -97,10 +126,10 @@ export default function ProductsPage() {
                 {/* Content on the right */}
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-white mb-2">
-                    {product.fullName}
+                    {translatedProduct.fullName}
                   </h3>
                   <p className="text-gray-400 mb-6">
-                    {product.description}
+                    {translatedProduct.description}
                   </p>
                   
                   {/* Action Buttons */}
@@ -123,14 +152,17 @@ export default function ProductsPage() {
                       className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-all duration-200"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M2 12h20" />
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                       </svg>
                       {t("websiteButton")}
                     </a>
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

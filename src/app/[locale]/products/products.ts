@@ -18,7 +18,7 @@ export const products: Product[] = [
   {
     id: "kubestellar-ui",
     name: "KubeStellar UI",
-    fullName: "KubeStellar UI",
+    fullName: "KubeStellar UI", 
     description: "A powerful web-based interface for managing multi-cluster Kubernetes orchestration with intuitive dashboards and controls.",
     logo: "/products/ui.png",
     website: "https://ui.kubestellar.io",
@@ -48,8 +48,8 @@ export const products: Product[] = [
   {
     id: "a2a",
     name: "A2A",
-    fullName: "A2A",
-    description: "Application-to-Application communication platform enabling seamless connectivity and data exchange between distributed systems and microservices.",
+    fullName: "KubeStellar A2A",
+    description: "KubeStellar's Application-to-Application communication platform enabling seamless connectivity and data exchange between distributed systems and microservices within the KubeStellar ecosystem.",
     logo: "/products/a2a.png",
     website: "https://a2a.kubestellar.io",
     repository: "https://github.com/kubestellar/a2a",
@@ -63,7 +63,7 @@ export const products: Product[] = [
   {
     id: "galaxy-marketplace",
     name: "Galaxy Marketplace",
-    fullName: "Galaxy Marketplace",
+    fullName: "KS Galaxy Marketplace",
     description: "A centralized marketplace for KubeStellar extensions, plugins, and community-contributed tools and integrations.",
     logo: "/products/galaxy.png",
     website: "https://galaxy.kubestellar.io",

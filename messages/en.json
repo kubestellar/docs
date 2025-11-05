@@ -538,7 +538,29 @@
     "titleSpan": "Products",
     "subtitle": "Discover our suite of tools and platforms that enhance the KubeStellar ecosystem and empower multi-cluster Kubernetes management.",
     "repoButton": "Repository",
-    "websiteButton": "Website"
+    "websiteButton": "Website",
+    "products": {
+      "kubestellarUI": {
+        "name": "KubeStellar UI",
+        "fullName": "KubeStellar UI",
+        "description": "A powerful web-based interface for managing multi-cluster Kubernetes orchestration with intuitive dashboards and controls."
+      },
+      "kubeflex": {
+        "name": "KubeFlex",
+        "fullName": "KubeFlex",
+        "description": "A flexible Kubernetes management platform providing comprehensive tools and resources for multi-cluster orchestration and workload distribution."
+      },
+      "a2a": {
+        "name": "A2A",
+        "fullName": "KubeStellar A2A",
+        "description": "KubeStellar's Application-to-Application communication platform enabling seamless connectivity and data exchange between distributed systems and microservices within the KubeStellar ecosystem."
+      },
+      "galaxyMarketplace": {
+        "name": "Galaxy Marketplace",
+        "fullName": "KS Galaxy Marketplace",
+        "description": "A centralized marketplace for KubeStellar extensions, plugins, and community-contributed tools and integrations."
+      }
+    }
   },
   "ladderPage": {
     "title": "Contribution",
