@@ -152,7 +152,7 @@ export default function ProductsPage() {
                 {/* Top section: Logo on left, Title on right */}
                 <div className="flex items-center mb-6">
                   {/* Logo on the left */}
-                  <div className={`relative ${product.id === 'kubestellar' ? 'w-full h-30' : product.id === 'a2a' ? 'w-96 h-24' : product.id === 'galaxy-marketplace' ? 'w-40 h-28' : product.id === 'kubectl-multi' ? 'w-40 h-28' : 'w-32 h-24'} ${product.id === 'kubestellar' ? '' : 'mr-6'} flex items-center justify-center flex-shrink-0`}>
+                  <div className={`relative ${product.id === 'kubestellar' ? 'w-full h-24' : product.id === 'a2a' ? 'w-96 h-24' : product.id === 'galaxy-marketplace' ? 'w-40 h-28' : product.id === 'kubectl-multi' ? 'w-40 h-28' : 'w-32 h-24'} ${product.id === 'kubestellar' ? '' : 'mr-6'} flex items-center justify-center flex-shrink-0`}>
                     <Image
                       src={product.logo}
                       alt={`${product.name} Logo`}

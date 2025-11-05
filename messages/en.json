@@ -544,7 +544,7 @@
       "kubestellar": {
         "name": "KubeStellar",
         "fullName": "KubeStellar",
-        "description": "Multi-cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure. Provides unified control plane, intelligent workload placement, and policy-driven governance for complex multi-cluster deployments with automated scaling and resource optimization."
+        "description": "Multi-cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure environments. Provides unified control plane, intelligent workload placement, and policy-driven governance for complex multi-cluster deployments with automated scaling, resource optimization, and seamless integration capabilities across cloud providers."
       },
       "kubestellarUI": {
         "name": "KubeStellar UI",
