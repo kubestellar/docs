@@ -1698,3 +1698,19 @@ html:not(.dark) .nextra-sidebar-container {
 .copy-success {
   animation: copy-success 0.3s ease;
 }
+
+/* Fade In Animation for Show More Steps */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
