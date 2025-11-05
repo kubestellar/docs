@@ -6,14 +6,7 @@ import Image from "next/image";
 import { GridLines, StarField, LanguageSwitcher } from "./index";
 import { useTranslations } from "next-intl";
 
-declare global {
-  interface Window {
-    // Optional global function used to programmatically close the language switcher
-    closeLangSwitcher?: () => void;
-  }
-}
-
-export default function Navigation() {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
