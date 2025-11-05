@@ -2,11 +2,33 @@
 
 import { GridLines, StarField } from "../index";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function HowToUseSection() {
   const t = useTranslations("howToUseSection");
   const [showAllSteps, setShowAllSteps] = useState(false);
+  const stepsRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("step-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    const steps = document.querySelectorAll(".step-animate");
+    steps.forEach((step) => observer.observe(step));
+
+    return () => observer.disconnect();
+  }, [showAllSteps]);
   
   return (
     <section
@@ -37,9 +59,9 @@ export default function HowToUseSection() {
         </div>
 
         {/* Mobile Steps Layout */}
-        <div className="lg:hidden relative z-10">
+        <div className="lg:hidden relative z-10" ref={stepsRef}>
           {/* Mobile Step 1 */}
-          <div className="mb-8">
+          <div className="mb-8 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out">
             <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
               {/* Step Number at Top */}
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -84,7 +106,7 @@ export default function HowToUseSection() {
           </div>
 
           {/* Mobile Step 2 */}
-          <div className="mb-8">
+          <div className="mb-8 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-100">
             <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
               {/* Step Number at Top */}
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -131,7 +153,7 @@ export default function HowToUseSection() {
           </div>
 
           {/* Mobile Step 3 */}
-          <div className="mb-8 relative">
+          <div className="mb-8 relative step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200">
             <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
               {/* Step Number at Top */}
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -147,11 +169,7 @@ export default function HowToUseSection() {
                 <p className="text-gray-300 text-sm leading-relaxed mb-3 text-center">
                   {t("step3Description")}
                 </p>
-                <div 
-                  className={`bg-slate-900/90 rounded-lg p-3 overflow-hidden relative transition-all duration-500 ${
-                    showAllSteps ? 'max-h-full' : 'max-h-[100px]'
-                  }`}
-                >
+                <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
                   <pre className="text-xs font-mono text-white">
                     <code>
                       <span className="text-yellow-300">apiVersion</span>:{" "}
@@ -177,29 +195,9 @@ export default function HowToUseSection() {
                       </span>
                     </code>
                   </pre>
-                  
-                  {/* Blur overlay */}
-                  {!showAllSteps && (
-                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none"></div>
-                  )}
                 </div>
               </div>
             </div>
-            
-            {/* Show More Button */}
-            {!showAllSteps && (
-              <div className="flex justify-center mt-6">
-                <button
-                  onClick={() => setShowAllSteps(true)}
-                  className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-                >
-                  <span>Show More Steps</span>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-              </div>
-            )}
             
             {/* Mobile Connector - only show if steps are expanded */}
             {showAllSteps && (
@@ -208,10 +206,25 @@ export default function HowToUseSection() {
               </div>
             )}
           </div>
+          
+          {/* Blur Overlay - Full Width */}
+          {!showAllSteps && (
+            <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent pointer-events-none z-30 flex items-end justify-center pb-4">
+              <button
+                onClick={() => setShowAllSteps(true)}
+                className="pointer-events-auto px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 animate-bounce-slow"
+              >
+                <span>Show More Steps</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
+          )}
 
           {/* Mobile Step 4 */}
           {showAllSteps && (
-            <div className="mb-8 animate-fadeIn">
+            <div className="mb-8 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-300">
               <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
                 {/* Step Number at Top */}
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -268,7 +281,7 @@ export default function HowToUseSection() {
 
           {/* Mobile Step 5 */}
           {showAllSteps && (
-            <div className="mb-8 animate-fadeIn">
+            <div className="mb-8 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-400">
               <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
                 {/* Step Number at Top */}
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -327,7 +340,7 @@ export default function HowToUseSection() {
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 via-green-500 via-orange-500 to-purple-500 z-5 transform -translate-x-1/2 will-change-transform"></div>
 
           {/* Desktop Step 1 */}
-          <div className="relative mb-4 lg:mb-6 z-20">
+          <div className="relative mb-4 lg:mb-6 z-20 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out">
             <div className="flex flex-row items-center">
               <div className="w-1/2 pr-12">
                 <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
@@ -368,7 +381,7 @@ export default function HowToUseSection() {
           </div>
 
           {/* Desktop Step 2 */}
-          <div className="relative mb-4 lg:mb-6 z-20 -mt-20">
+          <div className="relative mb-4 lg:mb-6 z-20 -mt-20 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-100">
             <div className="flex flex-row-reverse items-center">
               <div className="w-1/2 pl-12">
                 <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
@@ -410,7 +423,7 @@ export default function HowToUseSection() {
           </div>
 
           {/* Desktop Step 3 */}
-          <div className="relative mb-4 lg:mb-6 z-20 -mt-20">
+          <div className="relative mb-4 lg:mb-6 z-20 -mt-20 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200">
             <div className="flex flex-row items-center">
               <div className="w-1/2 pr-12">
                 <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
@@ -423,77 +436,66 @@ export default function HowToUseSection() {
                   <p className="text-gray-300 mb-6 leading-relaxed">
                     {t("step3DescriptionDesktop")}
                   </p>
-                  <div 
-                    className={`bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full relative transition-all duration-500 ${
-                      showAllSteps ? 'max-h-full' : 'max-h-[150px]'
-                    }`}
-                  >
-                    <div className={`overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 ${!showAllSteps ? 'overflow-y-hidden' : ''}`}>
-                      <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
-                        <code>
-                          <span className="text-yellow-300">apiVersion</span>:{" "}
-                          <span className="text-white">
-                            {t("step3ApiVersion")}
-                          </span>
-                          {"\n"}
-                          <span className="text-yellow-300">kind</span>:{" "}
-                          <span className="text-white">{t("step3Kind")}</span>
-                          {"\n"}
-                          <span className="text-yellow-300">metadata</span>:{"\n"}
-                          {"  "}
-                          <span className="text-yellow-300">name</span>:{" "}
-                          <span className="text-white">
-                            {t("step3MetadataName")}
-                          </span>
-                          {"\n"}
-                          <span className="text-yellow-300">spec</span>:{"\n"}
-                          {"  "}
-                          <span className="text-yellow-300">
-                            {t("step3SpecClusterSelectors")}
-                          </span>
-                          :{"\n"}
-                          {"  - "}
-                          <span className="text-yellow-300">
-                            {t("step3MatchLabels")}
-                          </span>
-                          :{"\n"}
-                          {"      "}
-                          <span className="text-emerald-400">
-                            {t("step3LocationGroup")}
-                          </span>
-                        </code>
-                      </pre>
-                    </div>
-                    
-                    {/* Blur overlay */}
-                    {!showAllSteps && (
-                      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent pointer-events-none"></div>
-                    )}
+                  <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+                    <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
+                      <code>
+                        <span className="text-yellow-300">apiVersion</span>:{" "}
+                        <span className="text-white">
+                          {t("step3ApiVersion")}
+                        </span>
+                        {"\n"}
+                        <span className="text-yellow-300">kind</span>:{" "}
+                        <span className="text-white">{t("step3Kind")}</span>
+                        {"\n"}
+                        <span className="text-yellow-300">metadata</span>:{"\n"}
+                        {"  "}
+                        <span className="text-yellow-300">name</span>:{" "}
+                        <span className="text-white">
+                          {t("step3MetadataName")}
+                        </span>
+                        {"\n"}
+                        <span className="text-yellow-300">spec</span>:{"\n"}
+                        {"  "}
+                        <span className="text-yellow-300">
+                          {t("step3SpecClusterSelectors")}
+                        </span>
+                        :{"\n"}
+                        {"  - "}
+                        <span className="text-yellow-300">
+                          {t("step3MatchLabels")}
+                        </span>
+                        :{"\n"}
+                        {"      "}
+                        <span className="text-emerald-400">
+                          {t("step3LocationGroup")}
+                        </span>
+                      </code>
+                    </pre>
                   </div>
                 </div>
               </div>
               <div className="w-1/2 pl-12"></div>
             </div>
-            
-            {/* Show More Button - Desktop */}
-            {!showAllSteps && (
-              <div className="flex justify-center mt-8 absolute left-1/2 transform -translate-x-1/2 z-40">
-                <button
-                  onClick={() => setShowAllSteps(true)}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-3 border border-purple-400/30"
-                >
-                  <span className="text-lg">Show More Steps</span>
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-              </div>
-            )}
           </div>
+          
+          {/* Blur Overlay - Full Width Desktop */}
+          {!showAllSteps && (
+            <div className="absolute inset-x-0 bottom-0 h-60 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent pointer-events-none z-40 flex items-end justify-center pb-12">
+              <button
+                onClick={() => setShowAllSteps(true)}
+                className="pointer-events-auto px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-3 border border-purple-400/30 animate-bounce-slow"
+              >
+                <span className="text-lg">Show More Steps</span>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
+          )}
 
           {/* Desktop Step 4 */}
           {showAllSteps && (
-            <div className="relative mb-4 lg:mb-6 z-20 -mt-24 animate-fadeIn">
+            <div className="relative mb-4 lg:mb-6 z-20 -mt-24 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-300">
               <div className="flex flex-row-reverse items-center">
                 <div className="w-1/2 pl-12">
                   <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
@@ -558,7 +560,7 @@ export default function HowToUseSection() {
 
           {/* Desktop Step 5 */}
           {showAllSteps && (
-            <div className="relative z-20 -mt-24 animate-fadeIn">
+            <div className="relative z-20 -mt-24 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-400">
               <div className="flex flex-row items-center">
                 <div className="w-1/2 pr-12">
                   <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
