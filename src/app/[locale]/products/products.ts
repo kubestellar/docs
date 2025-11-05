@@ -48,8 +48,8 @@ export const products: Product[] = [
   {
     id: "a2a",
     name: "A2A",
-    fullName: "KubeStellar A2A",
-    description: "KubeStellar's Application-to-Application communication platform enabling seamless connectivity and data exchange between distributed systems and microservices within the KubeStellar ecosystem.",
+    fullName: "A2A",
+    description: "Application-to-Application communication platform enabling seamless connectivity within the KubeStellar ecosystem.",
     logo: "/products/a2a.png",
     website: "https://a2a.kubestellar.io",
     repository: "https://github.com/kubestellar/a2a",
