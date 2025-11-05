@@ -19,7 +19,7 @@ export const products: Product[] = [
     id: "kubestellar-ui",
     name: "KubeStellar UI",
     fullName: "KubeStellar UI", 
-    description: "A powerful web-based interface for managing multi-cluster Kubernetes orchestration with intuitive dashboards and controls.",
+    description: "A powerful web-based interface for managing multi-cluster Kubernetes orchestration with intuitive dashboards, real-time monitoring, and comprehensive controls for cluster management.",
     logo: "/products/ui.png",
     website: "https://ui.kubestellar.io",
     repository: "https://github.com/kubestellar/ui",

@@ -109,25 +109,32 @@ export default function ProductsPage() {
               return (
               <div
                 key={product.id}
-                className={`product-card bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg border border-gray-700/50 p-8 flex items-start text-left transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-500/50`}
+                className={`product-card bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg border border-gray-700/50 p-8 flex flex-col text-left transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-500/50`}
               >
-                {/* Logo on the left */}
-                <div className={`relative ${product.id === 'a2a' ? 'w-40 h-32' : 'w-32 h-24'} mr-6 flex items-center justify-center flex-shrink-0`}>
-                  <Image
-                    src={product.logo}
-                    alt={`${translatedProduct.name} Logo`}
-                    fill
-                    className="object-contain"
-                    sizes={product.id === 'a2a' ? '160px' : '128px'}
-                    priority
-                  />
+                {/* Top section: Logo on left, Title on right */}
+                <div className="flex items-center mb-6">
+                  {/* Logo on the left */}
+                  <div className={`relative ${product.id === 'a2a' ? 'w-56 h-44' : product.id === 'galaxy-marketplace' ? 'w-40 h-32' : 'w-32 h-24'} mr-6 flex items-center justify-center flex-shrink-0`}>
+                    <Image
+                      src={product.logo}
+                      alt={`${translatedProduct.name} Logo`}
+                      fill
+                      className="object-contain"
+                      sizes={product.id === 'a2a' ? '224px' : product.id === 'galaxy-marketplace' ? '160px' : '128px'}
+                      priority
+                    />
+                  </div>
+                  
+                  {/* Title on the right */}
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-white">
+                      {translatedProduct.fullName}
+                    </h3>
+                  </div>
                 </div>
                 
-                {/* Content on the right */}
+                {/* Bottom section: Description and buttons */}
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    {translatedProduct.fullName}
-                  </h3>
                   <p className="text-gray-400 mb-6">
                     {translatedProduct.description}
                   </p>
