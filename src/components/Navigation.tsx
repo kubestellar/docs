@@ -326,7 +326,7 @@ export default function Navigation() {
                     {t("joinIn")}
                   </a>
                   <Link
-                    href="/community-handbook"
+                    href="/contribute-handbook"
                     className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                   >
                     <svg
