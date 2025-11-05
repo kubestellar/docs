@@ -23,6 +23,15 @@ export default function ProductsPage() {
   // Product data with translatable strings
   const products: Product[] = [
     {
+      id: "kubestellar",
+      logo: "/products/kubestellar.png",
+      website: "https://kubestellar.io",
+      repository: "https://github.com/kubestellar/kubestellar",
+      name: t('products.kubestellar.name'),
+      fullName: t('products.kubestellar.fullName'),
+      description: t('products.kubestellar.description')
+    },
+    {
       id: "kubestellar-ui",
       logo: "/products/ui.png",
       website: "https://ui.kubestellar.io",
@@ -48,6 +57,15 @@ export default function ProductsPage() {
       name: t('products.a2a.name'),
       fullName: t('products.a2a.fullName'),
       description: t('products.a2a.description')
+    },
+    {
+      id: "kubectl-multi",
+      logo: "/products/kubectl-multi.png",
+      website: "https://github.com/kubestellar/kubectl-multi",
+      repository: "https://github.com/kubestellar/kubectl-multi",
+      name: t('products.kubectlMulti.name'),
+      fullName: t('products.kubectlMulti.fullName'),
+      description: t('products.kubectlMulti.description')
     },
     {
       id: "galaxy-marketplace",
@@ -134,23 +152,25 @@ export default function ProductsPage() {
                 {/* Top section: Logo on left, Title on right */}
                 <div className="flex items-center mb-6">
                   {/* Logo on the left */}
-                  <div className={`relative ${product.id === 'a2a' ? 'w-96 h-28' : product.id === 'galaxy-marketplace' ? 'w-40 h-28' : 'w-32 h-24'} mr-6 flex items-center justify-center flex-shrink-0`}>
+                  <div className={`relative ${product.id === 'kubestellar' ? 'w-full h-30' : product.id === 'a2a' ? 'w-96 h-24' : product.id === 'galaxy-marketplace' ? 'w-40 h-28' : product.id === 'kubectl-multi' ? 'w-40 h-28' : 'w-32 h-24'} ${product.id === 'kubestellar' ? '' : 'mr-6'} flex items-center justify-center flex-shrink-0`}>
                     <Image
                       src={product.logo}
                       alt={`${product.name} Logo`}
                       fill
                       className="object-contain"
-                      sizes={product.id === 'a2a' ? '224px' : product.id === 'galaxy-marketplace' ? '160px' : '128px'}
+                      sizes={product.id === 'kubestellar' ? '100%' : product.id === 'a2a' ? '224px' : product.id === 'galaxy-marketplace' || product.id === 'kubectl-multi' ? '160px' : '128px'}
                       priority
                     />
                   </div>
                   
-                  {/* Title on the right */}
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-white">
-                      {product.fullName}
-                    </h3>
-                  </div>
+                  {/* Title on the right - hidden for kubestellar */}
+                  {product.id !== 'kubestellar' && (
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-white">
+                        {product.fullName}
+                      </h3>
+                    </div>
+                  )}
                 </div>
                 
                 {/* Bottom section: Description and buttons */}
@@ -178,12 +198,23 @@ export default function ProductsPage() {
                       rel="noopener noreferrer"
                       className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-all duration-200"
                     >
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M2 12h20" />
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                      </svg>
-                      {t("websiteButton")}
+                      {(product.id === 'kubectl-multi' || product.id === 'kubestellar-ui' || product.id === 'galaxy-marketplace') ? (
+                        <>
+                          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                          </svg>
+                          {t("watchDemoButton")}
+                        </>
+                      ) : (
+                        <>
+                          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M2 12h20" />
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                          </svg>
+                          {t("websiteButton")}
+                        </>
+                      )}
                     </a>
                   </div>
                 </div>
