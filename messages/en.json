@@ -59,6 +59,7 @@
     "joinIn": "Join In",
     "contributeHandbook": "Contribute Handbook",
     "quickInstallation": "Quick Installation",
+    "products": "Products",
     "security": "Security",
     "community": "Community",
     "getInvolved": "Get Involved",
@@ -147,6 +148,8 @@
     "card2Description": "Connect with other users, contributors, and maintainers through Slack, forums, and community calls.",
     "card2Button1": "Slack",
     "card2Button2": "GitHub",
+    "card2Button3": "Products",
+    "card2Button4": "Handbook",
     "card3Title": "Explore Documentation",
     "card3Description": "Comprehensive guides, tutorials, and API references to help you master KubeStellar's capabilities.",
     "card3Link1": "Getting Started",
@@ -529,6 +532,13 @@
         }
       }
     }
+  },
+  "productsPage": {
+    "title": "Our",
+    "titleSpan": "Products",
+    "subtitle": "Discover our suite of tools and platforms that enhance the KubeStellar ecosystem and empower multi-cluster Kubernetes management.",
+    "repoButton": "Repository",
+    "websiteButton": "Website"
   },
   "ladderPage": {
     "title": "Contribution",
