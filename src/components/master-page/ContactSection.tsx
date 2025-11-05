@@ -137,7 +137,7 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 items-stretch">
           {/* Left side: Contact info cards */}
-          <div className="lg:col-span-2 flex flex-col justify-between space-y-3 sm:space-y-4">
+          <div className="lg:col-span-2 flex flex-col space-y-3 sm:space-y-4">
             {/* Contact card 1 */}
             <a
               href="mailto:info@kubestellar.io"
@@ -299,9 +299,9 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
               className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer"
             >
               <div className="flex items-center">
-                <div className="flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-blue-600 flex items-center justify-center shadow-lg">
+                <div className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-blue-600 flex items-center justify-center shadow-lg">
                   <svg
-                    className="h-4 w-4 sm:h-6 sm:w-6"
+                    className="h-6 w-6 sm:h-8 sm:w-8"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 382 382"
                     fill="white"
@@ -338,12 +338,14 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
           </div>
 
           {/* Right side: Contact form */}
-          <div className="lg:col-span-3 flex flex-col mt-6 lg:mt-0">
+          <div className="lg:col-span-3 flex flex-col">
             <div className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-700/50 overflow-hidden h-full flex flex-col">
               <div className="p-4 sm:p-6 md:p-8 flex-1 flex flex-col">
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 text-center">
-                  {t("formTitle")}
-                </h3>
+                <div className="w-full flex justify-center mb-4 sm:mb-6">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white text-center">
+                    {t("formTitle")}
+                  </h3>
+                </div>
 
                 <form
                   onSubmit={handleSubmit}
