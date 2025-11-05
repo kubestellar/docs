@@ -1,6 +1,5 @@
 "use client";
 
-import { getAllProducts } from "./products";
 import Image from "next/image";
 import { useEffect } from "react";
 import Navigation from "../../../components/Navigation";
@@ -8,36 +7,58 @@ import Footer from "../../../components/Footer";
 import { GridLines, StarField } from "@/components";
 import { useTranslations } from "next-intl";
 
+interface Product {
+  id: string;
+  logo: string;
+  website: string;
+  repository: string;
+  name: string;
+  fullName: string;
+  description: string;
+}
+
 export default function ProductsPage() {
   const t = useTranslations("productsPage");
-  const products = getAllProducts();
-
-  // Helper function to get translated product data
-  const getTranslatedProduct = (product: any) => {
-    const translationMap: { [key: string]: any } = {
-      'kubestellar-ui': {
-        name: t('products.kubestellarUI.name'),
-        fullName: t('products.kubestellarUI.fullName'),
-        description: t('products.kubestellarUI.description')
-      },
-      'kubeflex': {
-        name: t('products.kubeflex.name'),
-        fullName: t('products.kubeflex.fullName'),
-        description: t('products.kubeflex.description')
-      },
-      'a2a': {
-        name: t('products.a2a.name'),
-        fullName: t('products.a2a.fullName'),
-        description: t('products.a2a.description')
-      },
-      'galaxy-marketplace': {
-        name: t('products.galaxyMarketplace.name'),
-        fullName: t('products.galaxyMarketplace.fullName'),
-        description: t('products.galaxyMarketplace.description')
-      }
-    };
-    return translationMap[product.id] || product;
-  };
+  
+  // Product data with translatable strings
+  const products: Product[] = [
+    {
+      id: "kubestellar-ui",
+      logo: "/products/ui.png",
+      website: "https://ui.kubestellar.io",
+      repository: "https://github.com/kubestellar/ui",
+      name: t('products.kubestellarUI.name'),
+      fullName: t('products.kubestellarUI.fullName'),
+      description: t('products.kubestellarUI.description')
+    },
+    {
+      id: "kubeflex",
+      logo: "/products/kubeflex.png",
+      website: "https://kflex.kubestellar.io",
+      repository: "https://github.com/kubestellar/kubeflex",
+      name: t('products.kubeflex.name'),
+      fullName: t('products.kubeflex.fullName'),
+      description: t('products.kubeflex.description')
+    },
+    {
+      id: "a2a",
+      logo: "/products/a2a.png",
+      website: "https://a2a.kubestellar.io",
+      repository: "https://github.com/kubestellar/a2a",
+      name: t('products.a2a.name'),
+      fullName: t('products.a2a.fullName'),
+      description: t('products.a2a.description')
+    },
+    {
+      id: "galaxy-marketplace",
+      logo: "/products/galaxy.png",
+      website: "https://galaxy.kubestellar.io",
+      repository: "https://github.com/kubestellar/ui-plugins",
+      name: t('products.galaxyMarketplace.name'),
+      fullName: t('products.galaxyMarketplace.fullName'),
+      description: t('products.galaxyMarketplace.description')
+    },
+  ];
 
   useEffect(() => {
     // Add CSS for animations
@@ -105,7 +126,6 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-2">
             {products.map(product => {
-              const translatedProduct = getTranslatedProduct(product);
               return (
               <div
                 key={product.id}
@@ -114,10 +134,10 @@ export default function ProductsPage() {
                 {/* Top section: Logo on left, Title on right */}
                 <div className="flex items-center mb-6">
                   {/* Logo on the left */}
-                  <div className={`relative ${product.id === 'a2a' ? 'w-56 h-44' : product.id === 'galaxy-marketplace' ? 'w-40 h-32' : 'w-32 h-24'} mr-6 flex items-center justify-center flex-shrink-0`}>
+                  <div className={`relative ${product.id === 'a2a' ? 'w-96 h-28' : product.id === 'galaxy-marketplace' ? 'w-40 h-28' : 'w-32 h-24'} mr-6 flex items-center justify-center flex-shrink-0`}>
                     <Image
                       src={product.logo}
-                      alt={`${translatedProduct.name} Logo`}
+                      alt={`${product.name} Logo`}
                       fill
                       className="object-contain"
                       sizes={product.id === 'a2a' ? '224px' : product.id === 'galaxy-marketplace' ? '160px' : '128px'}
@@ -128,7 +148,7 @@ export default function ProductsPage() {
                   {/* Title on the right */}
                   <div className="flex-1">
                     <h3 className="text-2xl font-bold text-white">
-                      {translatedProduct.fullName}
+                      {product.fullName}
                     </h3>
                   </div>
                 </div>
@@ -136,7 +156,7 @@ export default function ProductsPage() {
                 {/* Bottom section: Description and buttons */}
                 <div className="flex-1">
                   <p className="text-gray-400 mb-6">
-                    {translatedProduct.description}
+                    {product.description}
                   </p>
                   
                   {/* Action Buttons */}

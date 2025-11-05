@@ -543,22 +543,22 @@
       "kubestellarUI": {
         "name": "KubeStellar UI",
         "fullName": "KubeStellar UI",
-        "description": "A powerful web-based interface for managing multi-cluster Kubernetes orchestration with intuitive dashboards, real-time monitoring, and comprehensive controls for cluster management."
+        "description": "A powerful web-based interface for managing multi-cluster Kubernetes orchestration with intuitive dashboards, real-time monitoring, and comprehensive controls for streamlined cluster management. Features advanced visualization tools, customizable workspaces, and intelligent alerts to optimize your multi-cluster operations. Provides centralized visibility across all clusters with detailed analytics and performance metrics."
       },
       "kubeflex": {
         "name": "KubeFlex",
         "fullName": "KubeFlex",
-        "description": "A flexible Kubernetes management platform providing comprehensive tools and resources for multi-cluster orchestration and workload distribution."
+        "description": "A flexible Kubernetes management platform providing comprehensive tools and resources for multi-cluster orchestration and workload distribution. Enables dynamic cluster provisioning, automated scaling, and intelligent resource allocation across heterogeneous environments. Simplifies complex deployment scenarios with policy-driven automation and advanced lifecycle management capabilities."
       },
       "a2a": {
         "name": "A2A",
         "fullName": "A2A",
-        "description": "Application-to-Application communication platform enabling seamless connectivity within the KubeStellar ecosystem."
+        "description": "Application-to-Application communication platform enabling seamless connectivity within the KubeStellar ecosystem. Facilitates secure data exchange and real-time communication between distributed microservices. Provides advanced routing, load balancing, and service discovery capabilities for complex multi-cluster deployments."
       },
       "galaxyMarketplace": {
         "name": "Galaxy Marketplace",
         "fullName": "KS Galaxy Marketplace",
-        "description": "A centralized marketplace for KubeStellar extensions, plugins, and community-contributed tools and integrations."
+        "description": "A centralized marketplace for KubeStellar extensions, plugins, and community-contributed tools and integrations. Discover, install, and manage third-party components to enhance your multi-cluster orchestration capabilities. Features automated compatibility checking, version management, and seamless integration with existing KubeStellar deployments."
       }
     }
   },
