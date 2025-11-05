@@ -423,6 +423,8 @@
     "installNext1": "Verify installation",
     "installNext2": "Check KubeStellar status",
     "installNext3": "Explore the",
+    "installNext3Link": "documentation",
+    "installNext3Suffix": "for examples and advanced usage",
     "faqTitle": "Frequently Asked Questions",
     "faqSubtitle": "Common questions about KubeStellar installation and setup",
     "faq1Q": "What's the difference between Core, Additional, and Build prerequisites?",
