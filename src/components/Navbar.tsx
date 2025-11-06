@@ -49,7 +49,9 @@ export default function Navbar() {
             });
 
             // Close language switcher when hovering other dropdowns
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             if (typeof (window as any).closeLangSwitcher === "function") {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               (window as any).closeLangSwitcher();
             }
 
@@ -91,7 +93,9 @@ export default function Navbar() {
           });
 
           // Also close language switcher
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           if (typeof (window as any).closeLangSwitcher === "function") {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (window as any).closeLangSwitcher();
           }
 
@@ -237,6 +241,7 @@ export default function Navbar() {
         };
 
         // Add method to global scope for other dropdowns to call
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).closeLangSwitcher = closeLangSwitcher;
 
         langSwitcher.addEventListener("mouseenter", handleMouseEnter);
