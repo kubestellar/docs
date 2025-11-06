@@ -11,7 +11,6 @@ declare global {
     // Optional global function used to programmatically close the language switcher
     closeLangSwitcher?: () => void;
   }
-
 }
 
 export default function Navigation() {
