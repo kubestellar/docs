@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "@/i18n/navigation";
-import { Loader } from "@/components/animations/loader";
 
 export default function PlaygroundPage() {
   const router = useRouter();
@@ -14,5 +13,14 @@ export default function PlaygroundPage() {
     router.replace("/coming-soon");
   }, [router]);
 
-  return <Loader isLoading={isRedirecting} text="Redirecting to Coming Soon" />;
+  return(
+    <>
+    <div className="flex items-center justify-center h-screen bg-black">
+      <div className="flex flex-col items-center space-y-4">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+        <p className="text-lg text-gray-300">Loading...</p>
+      </div>
+    </div>
+    </>
+  );
 }
