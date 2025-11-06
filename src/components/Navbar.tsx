@@ -49,8 +49,8 @@ export default function Navbar() {
             });
 
             // Close language switcher when hovering other dropdowns
-            if (typeof window.closeLangSwitcher === "function") {
-              window.closeLangSwitcher();
+            if (typeof (window as any).closeLangSwitcher === "function") {
+              (window as any).closeLangSwitcher();
             }
 
             menu.style.display = "block";
@@ -91,8 +91,8 @@ export default function Navbar() {
           });
 
           // Also close language switcher
-          if (typeof window.closeLangSwitcher === "function") {
-            window.closeLangSwitcher();
+          if (typeof (window as any).closeLangSwitcher === "function") {
+            (window as any).closeLangSwitcher();
           }
 
           setIsDropdownOpen(false);
