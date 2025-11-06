@@ -1,23 +1,22 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "@/i18n/navigation";
+import { Loader } from "@/components/animations/loader";
 
 export default function PlaygroundPage() {
   const router = useRouter();
+  const [isRedirecting, setIsRedirecting] = useState(true);
 
   useEffect(() => {
-    // Redirect to coming-soon page
+    // Redirect immediately to coming-soon page
     router.replace("/coming-soon");
   }, [router]);
 
-  // Optional: Show a loading state while redirecting
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-4"></div>
-        <p className="text-gray-400">Redirecting...</p>
-      </div>
-    </div>
+    <Loader 
+      isLoading={isRedirecting} 
+      text="Redirecting to Coming Soon"
+    />
   );
 }
