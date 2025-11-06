@@ -341,13 +341,14 @@ export default function Navbar() {
                   width={160}
                   height={40}
                   className="h-10 w-auto object-contain"
+                  className="h-10 w-auto object-contain"
                 />
               </div>
             </Link>
 
             {/* Center: Nav Links */}
             <div className="hidden lg:flex flex-1 justify-center">
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-8">
                 {/* Docs Link */}
                 <div className="relative group">
                   <Link
@@ -810,7 +811,6 @@ export default function Navbar() {
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 {/*DOCS */}
                 <div className="relative mb-2">
-
                   <Link
                     href="/docs"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
@@ -833,10 +833,11 @@ export default function Navbar() {
                     <span>{t("docs")}</span>
                   </Link>
                 </div>
-                {/*Playground */}
+                {/*BLOG */}
                 <div className="relative mb-4">
                   <Link
-                    href="/playground"
+                    target="_blank"
+                    href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -850,11 +851,18 @@ export default function Navbar() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth="2"
-                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        ></path>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M16 8a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6a2 2 0 012-2h8z"
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         ></path>
                       </svg>
                     </div>
-                    <span>{t("playground")}</span>
+                    <span>{t("blog")}</span>
                   </Link>
                 </div>
                 <div className="border-t border-gray-400/50 mb-4"></div>
@@ -864,7 +872,6 @@ export default function Navbar() {
                   </span>
                 </div>
                 <div className="relative mb-2">
-
                   <a
                     href="#join-in"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
@@ -888,7 +895,6 @@ export default function Navbar() {
                   </a>
                 </div>
                 <div className="relative mb-2">
-
                   <Link
                     href="/contribute-handbook"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
@@ -912,7 +918,6 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className="relative mb-4">
-
                   <a
                     href="#security"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
@@ -942,7 +947,6 @@ export default function Navbar() {
                   </span>
                 </div>
                 <div className="relative mb-2">
-
                   <a
                     href="#get-involved"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
@@ -966,7 +970,6 @@ export default function Navbar() {
                   </a>
                 </div>
                 <div className="relative mb-2">
-
                   <Link
                     href="/programs"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
@@ -989,11 +992,10 @@ export default function Navbar() {
                     <span>{t("programs")}</span>
                   </Link>
                 </div>
-                <div className="relative group mb-2">
-
+                <div className="relative mb-2">
                   <Link
                     href="/ladder"
-                    className="text-sm sm:text-base font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 nav-link-hover"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
                       <svg
@@ -1011,14 +1013,12 @@ export default function Navbar() {
                       </svg>
                     </div>
                     <span>{t("ladder")}</span>
-
                   </Link>
                 </div>
-                <div className="relative group mb-2">
-
+                <div className="relative mb-2">
                   <a
                     href="#contact-us"
-                    className="text-sm sm:text-base font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 nav-link-hover"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
                       <svg
@@ -1038,11 +1038,10 @@ export default function Navbar() {
                     <span>{t("contactUs")}</span>
                   </a>
                 </div>
-                <div className="relative group mb-4">
-
+                <div className="relative mb-4">
                   <Link
                     href="/partners"
-                    className="text-sm sm:text-base font-medium text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 nav-link-hover"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
                       <svg
@@ -1056,7 +1055,7 @@ export default function Navbar() {
                           strokeLinejoin="round"
                           strokeWidth="2"
                           d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                        ></path>  
+                        ></path>
                       </svg>
                     </div>
                     <span>{t("partners")}</span>
@@ -1068,7 +1067,7 @@ export default function Navbar() {
                     {t("github")}
                   </span>
                 </div>
-                
+
                 {/* GitHub Stats */}
                 <div className="mt-2 mb-4 px-3 space-y-2">
                   {/* Stars */}
@@ -1076,7 +1075,7 @@ export default function Navbar() {
                     href="https://github.com/kubestellar/kubestellar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 group max-w-xs"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 max-w-xs"
                   >
                     <div className="flex items-center space-x-3">
                       <svg
@@ -1086,7 +1085,7 @@ export default function Navbar() {
                       >
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                       </svg>
-                      <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
+                      <span className="text-sm font-medium text-gray-300">
                         {t("githubStar")}
                       </span>
                     </div>
@@ -1100,7 +1099,7 @@ export default function Navbar() {
                     href="https://github.com/kubestellar/kubestellar/fork"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 group max-w-xs"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 max-w-xs"
                   >
                     <div className="flex items-center space-x-3">
                       <svg
@@ -1116,7 +1115,7 @@ export default function Navbar() {
                           d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
                         ></path>
                       </svg>
-                      <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
+                      <span className="text-sm font-medium text-gray-300">
                         {t("githubFork")}
                       </span>
                     </div>
@@ -1130,7 +1129,7 @@ export default function Navbar() {
                     href="https://github.com/kubestellar/kubestellar/watchers"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 group max-w-xs"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 max-w-xs"
                   >
                     <div className="flex items-center space-x-3">
                       <svg
@@ -1152,7 +1151,7 @@ export default function Navbar() {
                           d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                         ></path>
                       </svg>
-                      <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
+                      <span className="text-sm font-medium text-gray-300">
                         {t("githubWatch")}
                       </span>
                     </div>
