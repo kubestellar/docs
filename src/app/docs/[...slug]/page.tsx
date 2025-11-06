@@ -55,6 +55,7 @@ export default async function Page(props: PageProps) {
     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
     .replace(/<\/?ol>/g, '')
     .replace(/<\/?li>/g, '')
+
   const rawJs = await compileMdx(processedData, { filePath })
   const { default: MDXContent, toc, metadata } = evaluate(rawJs, component)
 
