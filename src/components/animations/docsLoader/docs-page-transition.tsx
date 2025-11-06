@@ -20,7 +20,7 @@ const DocsPageTransition = ({ children }: DocsPageTransitionProps) => {
       // Hide loader after content loads
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 1000); // Slightly faster for docs
+      }, 300); // Reduced lag time
 
       return () => clearTimeout(timer);
     };
@@ -50,7 +50,7 @@ const DocsPageTransition = ({ children }: DocsPageTransitionProps) => {
     const handlePopState = () => {
       if (window.location.pathname.startsWith('/docs')) {
         setIsLoading(true);
-        setTimeout(() => setIsLoading(false), 600);
+        setTimeout(() => setIsLoading(false), 200); // Reduced lag time
       }
     };
 
@@ -69,7 +69,7 @@ const DocsPageTransition = ({ children }: DocsPageTransitionProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 600);
+    }, 200); // Reduced lag time
 
     return () => clearTimeout(timer);
   }, [pathname]);

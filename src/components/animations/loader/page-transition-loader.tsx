@@ -21,7 +21,7 @@ const PageTransitionLoader = ({ children }: PageTransitionLoaderProps) => {
       // Hide loader after content loads
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 1200); // Adjust timing as needed
+      }, 400); // Reduced lag time
 
       return () => clearTimeout(timer);
     };
@@ -50,7 +50,7 @@ const PageTransitionLoader = ({ children }: PageTransitionLoaderProps) => {
     // Handle browser back/forward buttons
     const handlePopState = () => {
       setIsLoading(true);
-      setTimeout(() => setIsLoading(false), 800);
+      setTimeout(() => setIsLoading(false), 300); // Reduced lag time
     };
 
     // Add event listeners
@@ -68,7 +68,7 @@ const PageTransitionLoader = ({ children }: PageTransitionLoaderProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 800);
+    }, 300); // Reduced lag time
 
     return () => clearTimeout(timer);
   }, [pathname]);
