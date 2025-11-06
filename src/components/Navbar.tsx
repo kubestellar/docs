@@ -340,13 +340,13 @@ export default function Navbar() {
                   alt="Kubestellar logo"
                   width={160}
                   height={40}
-                  className="h-10 w-auto"
+                  className="h-10 w-auto object-contain"
                 />
               </div>
             </Link>
 
             {/* Center: Nav Links */}
-            <div className="hidden md:flex flex-1 justify-center">
+            <div className="hidden lg:flex flex-1 justify-center">
               <div className="flex items-center space-x-8">
                 {/* Docs Link */}
                 <div className="relative group">
@@ -452,7 +452,7 @@ export default function Navbar() {
                     </svg>
                   </button>
                   <div
-                    className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50"
+                    className="absolute left-0 mt-1 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50"
                     data-dropdown-menu
                     style={{ display: "none" }}
                   >
@@ -599,7 +599,7 @@ export default function Navbar() {
                     </svg>
                   </button>
                   <div
-                    className="absolute left-0 mt-2 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50"
+                    className="absolute left-0  mt-1 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50"
                     data-dropdown-menu
                     style={{ display: "none" }}
                   >
@@ -704,7 +704,7 @@ export default function Navbar() {
             </div>
 
             {/* Right side: Controls */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center sm:space-x-4">
               {/* Language Switcher */}
               <div className="language-switcher-container">
                 <LanguageSwitcher className="relative group" />
@@ -753,14 +753,11 @@ export default function Navbar() {
                     className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                   >
                     <svg
-                      className="w-4 h-4 mr-2"
+                      className="w-5 h-5"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
-                      <path
-                        d="M10 2C5.58 2 2 5.58 2 10c0 3.87 2.69 7.13 6.39 7.93.47.09.64-.2.64-.45 0-.22-.01-.94-.01-1.7-2.6.57-3.15-1.25-3.15-1.25-.43-1.09-1.05-1.38-1.05-1.38-.86-.59.07-.58.07-.58.95.07 1.45.98 1.45.98.85 1.45 2.23 1.03 2.78.79.09-.62.33-1.03.6-1.27-2.22-.25-4.555-1.11-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                        clipRule="evenodd"
-                      ></path>
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
                     {t("githubStar")}
                     <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
@@ -774,10 +771,11 @@ export default function Navbar() {
                     <svg
                       className="w-4 h-4 mr-2"
                       fill="currentColor"
-                      viewBox="0 0 20 20"
+                      viewBox="0 0 16 16"
                     >
-                      <path d="M5 3a3 3 0 106 0 3 3 0 00-6 0zm0 2a2 2 0 114 0 2 2 0 01-4 0zm10 10a3 3 0 11-6 0 3 3 0 016 0zm-2-2a2 2 0 100 4 2 2 0 000-4zm-6 2a2 2 0 100-4 2 2 0 000 4zm8-2a2 2 0 100-4 2 2 0 000 4z" />
+                      <path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z" />
                     </svg>
+
                     {t("githubFork")}
                     <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                       {githubStats.forks}
@@ -804,7 +802,7 @@ export default function Navbar() {
 
               {/* Mobile menu button */}
               <button
-                className="md:hidden p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="lg:hidden p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700"
                 aria-label="Open menu"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
@@ -827,38 +825,359 @@ export default function Navbar() {
 
           {/* Mobile menu */}
           {isMenuOpen && (
-            <div className="md:hidden">
+            <div className="lg:hidden max-h-[calc(100vh-4rem)] overflow-y-auto">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a
-                  href="#about"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                >
-                  {t("mobileAbout")}
-                </a>
-                <a
-                  href="#how-it-works"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                >
-                  {t("mobileHowItWorks")}
-                </a>
-                <a
-                  href="#use-cases"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                >
-                  {t("mobileUseCases")}
-                </a>
-                <a
-                  href="#get-started"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                >
-                  {t("mobileGetStarted")}
-                </a>
-                <a
-                  href="#contact"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
-                >
-                  {t("mobileContact")}
-                </a>
+                {/*DOCS */}
+                <div className="relative mb-2">
+                  <Link
+                    href="/docs"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
+                  >
+                    <div className="relative">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>{t("docs")}</span>
+                  </Link>
+                </div>
+                {/*BLOG */}
+                <div className="relative mb-4">
+                  <Link
+                    target="_blank"
+                    href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
+                  >
+                    <div className="relative">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        ></path>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M16 8a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6a2 2 0 012-2h8z"
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>{t("blog")}</span>
+                  </Link>
+                </div>
+                <div className="border-t border-gray-400/50 mb-4"></div>
+                <div className="mb-2">
+                  <span className="text-sm sm:text-base px-3 font-medium tracking-wider text-gray-400 uppercase">
+                    {t("contribute")}
+                  </span>
+                </div>
+                <div className="relative mb-2">
+                  <a
+                    href="#join-in"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
+                  >
+                    <div className="relative">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>{t("joinIn")}</span>
+                  </a>
+                </div>
+                <div className="relative mb-2">
+                  <Link
+                    href="/contribute-handbook"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
+                  >
+                    <div className="relative">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>{t("contributeHandbook")}</span>
+                  </Link>
+                </div>
+                <div className="relative mb-4">
+                  <a
+                    href="#security"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
+                  >
+                    <div className="relative">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>{t("security")}</span>
+                  </a>
+                </div>
+                <div className="border-t border-gray-400/50 mb-4"></div>
+                <div className="mb-2">
+                  <span className="px-3 text-sm sm:text-base font-medium tracking-wider text-gray-400 uppercase">
+                    {t("community")}
+                  </span>
+                </div>
+                <div className="relative mb-2">
+                  <a
+                    href="#get-involved"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
+                  >
+                    <div className="relative">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>{t("getInvolved")}</span>
+                  </a>
+                </div>
+                <div className="relative mb-2">
+                  <Link
+                    href="/programs"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
+                  >
+                    <div className="relative">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>{t("programs")}</span>
+                  </Link>
+                </div>
+                <div className="relative mb-2">
+                  <Link
+                    href="/ladder"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
+                  >
+                    <div className="relative">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>{t("ladder")}</span>
+                  </Link>
+                </div>
+                <div className="relative mb-2">
+                  <a
+                    href="#contact-us"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
+                  >
+                    <div className="relative">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>{t("contactUs")}</span>
+                  </a>
+                </div>
+                <div className="relative mb-4">
+                  <Link
+                    href="/partners"
+                    className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
+                  >
+                    <div className="relative">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span>{t("partners")}</span>
+                  </Link>
+                </div>
+                <div className="border-t border-gray-400/50 mb-4"></div>
+                <div className="mb-4">
+                  <span className="text-sm sm:text-base px-3 font-medium tracking-wider text-gray-400 uppercase">
+                    {t("github")}
+                  </span>
+                </div>
+
+                {/* GitHub Stats */}
+                <div className="mt-2 mb-4 px-3 space-y-2">
+                  {/* Stars */}
+                  <a
+                    href="https://github.com/kubestellar/kubestellar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 max-w-xs"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <svg
+                        className="w-5 h-5 text-gray-300"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                      </svg>
+                      <span className="text-sm font-medium text-gray-300">
+                        {t("githubStar")}
+                      </span>
+                    </div>
+                    <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
+                      {githubStats.stars}
+                    </span>
+                  </a>
+
+                  {/* Forks */}
+                  <a
+                    href="https://github.com/kubestellar/kubestellar/fork"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 max-w-xs"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <svg
+                        className="w-5 h-5 mr-3 text-gray-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
+                        ></path>
+                      </svg>
+                      <span className="text-sm font-medium text-gray-300">
+                        {t("githubFork")}
+                      </span>
+                    </div>
+                    <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
+                      {githubStats.forks}
+                    </span>
+                  </a>
+
+                  {/* Watchers */}
+                  <a
+                    href="https://github.com/kubestellar/kubestellar/watchers"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 max-w-xs"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <svg
+                        className="w-5 h-5 mr-3 text-gray-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        ></path>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        ></path>
+                      </svg>
+                      <span className="text-sm font-medium text-gray-300">
+                        {t("githubWatch")}
+                      </span>
+                    </div>
+                    <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
+                      {githubStats.watchers}
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           )}

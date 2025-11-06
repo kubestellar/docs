@@ -210,7 +210,7 @@ export default function LanguageSwitcher({
       {isOpen && (
         <div
           ref={dropdownRef}
-          className="absolute right-0 mt-2 w-56 bg-gray-800/95 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 animate-in fade-in-0 zoom-in-95"
+          className="absolute right-0 w-56 mt-1 bg-gray-800/95 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 animate-in fade-in-0 zoom-in-95"
           role="listbox"
           aria-label="Select language"
         >
@@ -223,7 +223,7 @@ export default function LanguageSwitcher({
               key={loc}
               onClick={() => handleLanguageChange(loc)}
               disabled={isTransitioning}
-              className={`w-full text-left px-4 py-3 text-sm transition-all duration-200 hover:bg-pink-500/20 hover:text-pink-300 disabled:opacity-50 flex items-center justify-between group ${
+              className={`cursor-pointer w-full text-left px-4 py-3 text-sm transition-all duration-200 hover:bg-pink-500/20 hover:text-pink-300 disabled:opacity-50 flex items-center justify-between group ${
                 loc === locale
                   ? "bg-pink-500/10 text-pink-300 font-medium"
                   : "text-gray-300"
