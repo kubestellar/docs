@@ -41,10 +41,10 @@ export default function LanguageSwitcher({
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    
+
     // Capture the current timeout value at effect setup time for cleanup
     const currentTimeout = timeoutRef.current;
-    
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       if (currentTimeout) {
