@@ -64,10 +64,10 @@ export default function GetStartedSection() {
           {/* Installation Card */}
           <div className="bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30 hover:border-purple-500/50 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
             <div className="p-6 flex flex-col h-full">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center mb-4 border border-blue-400/30">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
                 <Icon 
                   path="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" 
-                  className="h-6 w-6 text-blue-400"
+                  className="h-6 w-6 white"
                 />
               </div>
               <h3 className="text-base sm:text-lg font-bold mb-2">
@@ -90,9 +90,9 @@ export default function GetStartedSection() {
           {/* Use Cases & Resources Card */}
           <div className="bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30 hover:border-purple-500/50 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
             <div className="p-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg flex items-center justify-center mb-4 border border-purple-400/30">
+              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
                 <svg
-                  className="h-6 w-6 text-purple-400"
+                  className="h-6 w-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
