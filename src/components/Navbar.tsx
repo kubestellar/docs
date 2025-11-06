@@ -237,7 +237,7 @@ export default function Navbar() {
         };
 
         // Add method to global scope for other dropdowns to call
-        window.closeLangSwitcher = closeLangSwitcher;
+        (window as any).closeLangSwitcher = closeLangSwitcher;
 
         langSwitcher.addEventListener("mouseenter", handleMouseEnter);
         langSwitcher.addEventListener("mouseleave", handleMouseLeave);

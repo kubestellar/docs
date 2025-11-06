@@ -1,4 +1,4 @@
-import Navigation from './Navbar';
+import Navigation from "./Navbar";
 export { default as GridLines } from "./animations/GridLines";
 export { default as StarField } from "./animations/StarField";
 export { default as GlobeAnimation } from "./animations/GlobeAnimation";

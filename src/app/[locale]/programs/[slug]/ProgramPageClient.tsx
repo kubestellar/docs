@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { Program } from "../programs";
-import {Navbar, Footer, StarField, GridLines } from "@/components";
+import { Navbar, Footer, StarField, GridLines } from "@/components";
 import { useTranslations } from "next-intl";
 
 interface ProgramPageClientProps {

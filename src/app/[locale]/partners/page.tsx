@@ -1,6 +1,11 @@
 "use client";
 
-import { Navbar, Footer, GridLines, StarField } from "../../../components/index";
+import {
+  Navbar,
+  Footer,
+  GridLines,
+  StarField,
+} from "../../../components/index";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";

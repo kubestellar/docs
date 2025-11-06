@@ -1,7 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Navbar, Footer, GridLines, StarField, ComingSoonCTA } from "@/components";
+import {
+  Navbar,
+  Footer,
+  GridLines,
+  StarField,
+  ComingSoonCTA,
+} from "@/components";
 
 export default function ComingSoonPage() {
   const t = useTranslations("comingSoonPage");
@@ -12,10 +18,10 @@ export default function ComingSoonPage() {
         <GridLines />
         <StarField />
       </div>
-      
+
       <div className="relative z-10">
         <Navbar />
-        
+
         {/* Hero Section */}
         <section className="px-4 py-32 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
@@ -25,9 +31,7 @@ export default function ComingSoonPage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="text-gradient">
-                {t("title")}
-              </span>
+              <span className="text-gradient">{t("title")}</span>
               <span className="block text-gradient-animated">
                 {t("titleSpan")}
               </span>

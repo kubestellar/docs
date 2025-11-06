@@ -5,7 +5,7 @@ import {
   StarField,
   ContributionCallToAction,
   Navbar,
-  Footer
+  Footer,
 } from "../../../components/index";
 import { useTranslations } from "next-intl";
 
