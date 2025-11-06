@@ -512,7 +512,6 @@ export default function HowToUseSection() {
               </div>
             )}
           </div>
-
           {/* Desktop Step 4 */}
           {showAllSteps && (
             <div className="relative mb-4 lg:mb-6 z-20 -mt-24 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-300">

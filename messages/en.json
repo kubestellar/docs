@@ -45,7 +45,7 @@
     "subscribe": "Subscribe",
     "subscribed": "Subscribed!",
     "privacyNotice": "We respect your privacy. No spam.",
-    "copyright": "© 2025 KubeStellar. All rights reserved.",
+    "copyright": "© 2025 KubeStellar. All rights reserved. Apache 2.0 Licence",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "cookiePolicy": "Cookie Policy",
@@ -729,6 +729,30 @@
         "Priority support and dedicated partnership manager"
       ],
       "contactButton": "Get in Touch"
+    }
+  },
+  "comingSoonPage": {
+    "title": "Coming",
+    "titleSpan": "Soon",
+    "subtitle": "We're working on something amazing for the KubeStellar community",
+    "description": "This exciting new feature is currently under development. Our team is crafting an exceptional experience that will enhance your multi-cluster Kubernetes orchestration journey.",
+    "statusBadge": "Under Development",
+    "cta": {
+      "title": "Explore KubeStellar Now",
+      "subtitle": "While you wait, discover what KubeStellar can do for you today",
+      "documentsButton": "View Documentation",
+      "documentsDescription": "Comprehensive guides and API references",
+      "documentsAction": "Explore Docs",
+      "quickStartButton": "Quick Start Guide",
+      "quickStartDescription": "Get up and running in minutes",
+      "quickStartAction": "Start Installing",
+      "communityButton": "Join Community",
+      "communityDescription": "Connect with developers and contributors",
+      "communityAction": "Join GitHub",
+      "handbookButton": "Handbook",
+      "ladderButton": "Ladder",
+      "programsButton": "Programs",
+      "partnersButton": "Partners"
     }
   }
 }
