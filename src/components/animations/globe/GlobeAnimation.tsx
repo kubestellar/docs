@@ -69,18 +69,19 @@ const GlobeAnimation = ({
         <pointLight position={[10, 10, 10]} intensity={1} />
         <pointLight position={[-10, -10, -10]} intensity={0.5} />
 
-        {/* Controls - disabled zoom and limited rotation */}
+        {/* Controls - allow full 360-degree rotation */}
         {enableControls && (
           <OrbitControls
             enableZoom={false} // Disable zoom as requested
             enablePan={enablePan}
             enableRotate={true}
             autoRotate={autoRotate}
-            autoRotateSpeed={0.5}
-            maxPolarAngle={Math.PI / 1.5}
-            minPolarAngle={Math.PI / 2.5}
-            maxAzimuthAngle={Math.PI / 4}
-            minAzimuthAngle={-Math.PI / 4}
+            autoRotateSpeed={0.3} // Reduced from 1.0 to 0.3 to match slower globe rotation
+            maxPolarAngle={Math.PI * 0.8} // Allow more vertical rotation
+            minPolarAngle={Math.PI * 0.2} // Allow more vertical rotation
+            // Remove azimuth limits for full 360-degree horizontal rotation
+            maxAzimuthAngle={Infinity}
+            minAzimuthAngle={-Infinity}
           />
         )}
 

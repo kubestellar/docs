@@ -31,6 +31,7 @@ interface CentralNodeChild extends THREE.Object3D {
 // Update the main component to accept props
 const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
   const globeRef = useRef<THREE.Mesh>(null);
+  const gridLinesRef = useRef<THREE.Group>(null);
   const centralNodeRef = useRef<THREE.Group>(null);
   const dataFlowsRef = useRef<THREE.Group>(null);
   
@@ -158,20 +159,34 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
       setAnimationProgress(Math.min(animationProgress + 0.01, 1));
     }
     
-    // Rotate the globe continuously for full 360-degree rotation
+    // Rotate the globe and grid lines together with slower speed to match clusters
     if (globeRef.current) {
-      globeRef.current.rotation.y = time * 0.15; // Increased speed for full rotation
-      globeRef.current.rotation.x = Math.sin(time * 0.3) * 0.1; // More dynamic tilt
+      // Slower Y-axis rotation to match cluster speed
+      globeRef.current.rotation.y = time * 0.1; // Reduced from 0.3 to 0.1
+      
+      // Subtle X-axis tilt for dynamic movement
+      globeRef.current.rotation.x = Math.sin(time * 0.15) * 0.08; // Reduced speed and amplitude
+      
+      // Optional: Add slight Z-axis rotation for even more dynamic movement
+      globeRef.current.rotation.z = Math.cos(time * 0.08) * 0.03; // Reduced speed and amplitude
       
       // Fixed scale - no zoom effect
       const scale = isLoaded ? 1 * animationProgress : 0.5;
       globeRef.current.scale.setScalar(scale);
     }
     
-    // Animate central node
+    // Rotate grid lines to match globe rotation with same slow speed
+    if (gridLinesRef.current) {
+      gridLinesRef.current.rotation.y = time * 0.1; // Match globe speed
+      gridLinesRef.current.rotation.x = Math.sin(time * 0.15) * 0.08;
+      gridLinesRef.current.rotation.z = Math.cos(time * 0.08) * 0.03;
+    }
+    
+    // Animate central node with slower rotation to match globe
     if (centralNodeRef.current) {
-      centralNodeRef.current.rotation.y = time * 0.2;
-      centralNodeRef.current.scale.setScalar((1 + Math.sin(time * 1.5) * 0.05) * animationProgress);
+      centralNodeRef.current.rotation.y = time * 0.15; // Reduced from 0.4 to 0.15
+      centralNodeRef.current.rotation.x = Math.sin(time * 0.2) * 0.05; // Reduced amplitude
+      centralNodeRef.current.scale.setScalar((1 + Math.sin(time * 1.5) * 0.05) * animationProgress); // Reduced from 0.08 to 0.05
       
       // Fade in the central node
       centralNodeRef.current.children.forEach((child: CentralNodeChild) => {
@@ -231,28 +246,28 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
         <meshPhongMaterial
           color={COLORS.primary}
           transparent
-          opacity={0.08 * animationProgress}
+          opacity={0.15 * animationProgress} // Increased from 0.08 to 0.15 for more opacity
           wireframe
         />
       </Sphere>
       
       {/* Grid lines for the globe */}
-      <group rotation={[0, 0, 0]}>
+      <group ref={gridLinesRef} rotation={[0, 0, 0]}>
         {Array.from({ length: 8 }).map((_, idx) => (
           <Torus key={idx} args={[3.5, 0.01, 16, 100]} rotation={[0, 0, Math.PI * idx / 8]}>
             <meshBasicMaterial 
               color={COLORS.primary} 
               transparent 
-              opacity={0.1 * animationProgress} 
+              opacity={0.18 * animationProgress} // Increased from 0.1 to 0.18
             />
           </Torus>
         ))}
         {Array.from({ length: 8 }).map((_, idx) => (
-          <Torus key={idx} args={[3.5, 0.01, 16, 100]} rotation={[Math.PI / 2, Math.PI * idx / 8, 0]}>
+          <Torus key={idx + 8} args={[3.5, 0.01, 16, 100]} rotation={[Math.PI / 2, Math.PI * idx / 8, 0]}>
             <meshBasicMaterial 
               color={COLORS.primary} 
               transparent 
-              opacity={0.1 * animationProgress} 
+              opacity={0.18 * animationProgress} // Increased from 0.1 to 0.18
             />
           </Torus>
         ))}
