@@ -79,7 +79,7 @@ export default function GetStartedSection() {
               <div>
                 <Link
                   href="/quick-installation"
-                  className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600/80 to-blue-700/80 hover:from-blue-600 hover:to-blue-700 rounded-lg sm:px-6 sm:py-3 sm:text-base transition-all duration-200 border border-blue-500/30"
+                  className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600/80 to-blue-700/80 hover:from-blue-600 hover:to-blue-700 rounded-lg sm:px-6 sm:py-3 sm:text-base transition-all duration-200 border border-blue-500/30 mt-7"
                 >
                   {t("card1Button")}
                 </Link>
@@ -164,7 +164,7 @@ export default function GetStartedSection() {
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <Link
-                    href="#use-cases"
+                    href="/products"
                     className="flex items-center justify-center px-3 py-2.5 rounded-lg bg-gradient-to-r from-orange-600/80 to-orange-700/80 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-medium transition-all duration-200 border border-orange-500/30"
                   >
                     <svg
