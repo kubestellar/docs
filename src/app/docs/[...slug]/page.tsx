@@ -18,10 +18,21 @@ export default async function Page(props: PageProps) {
   const params = await props.params
   const route = params.slug ? params.slug.join('/') : ''
 
+  const normalizedRoute = route.startsWith('docs/')
+  ? route.slice(5) // remove 'docs/' prefix if present
+  : route
+
   let filePath: string | undefined =
-    routeMap[route] ??
-    [`${route}.mdx`, `${route}.md`, `${route}/README.md`, `${route}/readme.md`, `${route}/index.mdx`, `${route}/index.md`]
-      .find(p => filePaths.includes(p))
+  routeMap[normalizedRoute] ??
+  [
+    `${normalizedRoute}.mdx`,
+    `${normalizedRoute}.md`,
+    `${normalizedRoute}/README.md`,
+    `${normalizedRoute}/readme.md`,
+    `${normalizedRoute}/index.mdx`,
+    `${normalizedRoute}/index.md`
+  ].find(p => filePaths.includes(p))
+
 
   if (!filePath) notFound()
 
