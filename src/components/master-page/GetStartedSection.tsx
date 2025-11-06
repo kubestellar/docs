@@ -62,7 +62,7 @@ export default function GetStartedSection() {
 
         <div className="mt-12 grid grid-cols-1 lgcustom:grid-cols-3 gap-6 lg:gap-8">
           {/* Installation Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
+          <div className="bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30 hover:border-purple-500/50 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
             <div className="p-6 flex flex-col h-full">
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
                 <Icon path="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
@@ -85,7 +85,7 @@ export default function GetStartedSection() {
           </div>
 
           {/* Community Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
+          <div className="bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30 hover:border-purple-500/50 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
             <div className="p-6">
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
                 <Icon path="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2 M13 7A4 4 0 1 1 5 7A4 4 0 0 1 13 7 M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
@@ -191,7 +191,7 @@ export default function GetStartedSection() {
           </div>
 
           {/* Documentation Card */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 hover:bg-white/20 transition-colors duration-300 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
+          <div className="bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-2xl hover:shadow-purple-500/30 hover:border-purple-500/50 w-11/12 max-w-xl mx-auto lgcustom:w-auto lgcustom:max-w-none">
             <div className="p-6">
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
                 <Icon path="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
