@@ -1,7 +1,7 @@
-'use client';
-import { useEffect, useState } from 'react';
-import StarField from '../StarField';
-import GridLines from '../GridLines';
+"use client";
+import { useEffect, useState } from "react";
+import StarField from "../StarField";
+import GridLines from "../GridLines";
 
 interface DocsLoaderProps {
   isLoading?: boolean;
@@ -9,18 +9,18 @@ interface DocsLoaderProps {
   className?: string;
 }
 
-const DocsLoader = ({ 
-  isLoading = true, 
+const DocsLoader = ({
+  isLoading = true,
   text = "Loading Documentation...",
-  className = ""
+  className = "",
 }: DocsLoaderProps) => {
-  const [dots, setDots] = useState('');
+  const [dots, setDots] = useState("");
 
   useEffect(() => {
     if (!isLoading) return;
 
     const interval = setInterval(() => {
-      setDots(prev => prev.length >= 3 ? '' : prev + '.');
+      setDots(prev => (prev.length >= 3 ? "" : prev + "."));
     }, 500);
 
     return () => clearInterval(interval);
@@ -29,22 +29,24 @@ const DocsLoader = ({
   if (!isLoading) return null;
 
   return (
-    <div className={`fixed inset-0 z-50 flex items-center justify-center ${className}`}>
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center ${className}`}
+    >
       {/* Dark Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#0a0a0a]" />
-      
+
       {/* StarField Background */}
-      <StarField 
-        className="z-10" 
-        density="medium" 
-        showComets={true} 
-        cometCount={2} 
+      <StarField
+        className="z-10"
+        density="medium"
+        showComets={true}
+        cometCount={2}
       />
-      
+
       {/* GridLines Background */}
-      <GridLines 
-        className="z-10" 
-        strokeColor="#667eea" 
+      <GridLines
+        className="z-10"
+        strokeColor="#667eea"
         strokeOpacity={0.2}
         horizontalLines={20}
         verticalLines={20}
@@ -61,13 +63,13 @@ const DocsLoader = ({
             <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-[#667eea] via-[#764ba2] to-[#f093fb] rounded-full animate-spin opacity-80">
               <div className="absolute inset-1 bg-[#0a0a0a] rounded-full"></div>
             </div>
-            
+
             {/* Inner pulsing circle */}
             <div className="absolute inset-4 bg-gradient-to-br from-[#667eea]/20 to-[#764ba2]/20 rounded-full animate-pulse blur-sm"></div>
-            
+
             {/* Favicon container */}
             <div className="absolute inset-6 bg-gradient-to-br from-[#667eea]/10 to-[#764ba2]/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-[#667eea]/30">
-              <img 
+              <img
                 src="/favicon.ico"
                 alt="KubeStellar"
                 className="h-12 w-12 object-contain filter brightness-110 drop-shadow-lg"
@@ -80,7 +82,7 @@ const DocsLoader = ({
         <div className="mb-6">
           <h2 className="text-2xl font-semibold mb-2">
             <span className="bg-gradient-to-r from-[#667eea] via-[#764ba2] to-[#f093fb] bg-clip-text text-transparent">
-              {text.replace('...', '')}
+              {text.replace("...", "")}
             </span>
             <span className="text-[#667eea] text-xl">{dots}</span>
           </h2>
@@ -96,7 +98,10 @@ const DocsLoader = ({
 
         {/* Floating particles */}
         <div className="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-r from-[#667eea]/10 to-[#764ba2]/10 rounded-full blur-xl animate-float"></div>
-        <div className="absolute -bottom-10 -right-10 w-16 h-16 bg-gradient-to-r from-[#f093fb]/10 to-[#667eea]/10 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div
+          className="absolute -bottom-10 -right-10 w-16 h-16 bg-gradient-to-r from-[#f093fb]/10 to-[#667eea]/10 rounded-full blur-xl animate-float"
+          style={{ animationDelay: "1s" }}
+        ></div>
       </div>
     </div>
   );

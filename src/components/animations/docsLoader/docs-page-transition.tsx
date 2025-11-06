@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import DocsLoader from './loader';
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import DocsLoader from "./loader";
 
 interface DocsPageTransitionProps {
   children: React.ReactNode;
@@ -16,7 +16,7 @@ const DocsPageTransition = ({ children }: DocsPageTransitionProps) => {
     // Show loader when docs route changes
     const handleRouteChange = () => {
       setIsLoading(true);
-      
+
       // Hide loader after content loads
       const timer = setTimeout(() => {
         setIsLoading(false);
@@ -31,16 +31,22 @@ const DocsPageTransition = ({ children }: DocsPageTransitionProps) => {
     // Handle link clicks within docs
     const handleLinkClick = (event: Event) => {
       const target = event.target as HTMLElement;
-      const link = target.closest('a');
-      
+      const link = target.closest("a");
+
       if (link) {
-        const href = link.getAttribute('href');
-        const isExternal = link.getAttribute('target') === '_blank' || 
-                          href?.startsWith('http') || 
-                          href?.startsWith('//');
-        
+        const href = link.getAttribute("href");
+        const isExternal =
+          link.getAttribute("target") === "_blank" ||
+          href?.startsWith("http") ||
+          href?.startsWith("//");
+
         // Show loader for internal docs navigation only
-        if (!isExternal && href && href !== pathname && href.startsWith('/docs')) {
+        if (
+          !isExternal &&
+          href &&
+          href !== pathname &&
+          href.startsWith("/docs")
+        ) {
           setIsLoading(true);
         }
       }
@@ -48,20 +54,20 @@ const DocsPageTransition = ({ children }: DocsPageTransitionProps) => {
 
     // Handle browser back/forward buttons
     const handlePopState = () => {
-      if (window.location.pathname.startsWith('/docs')) {
+      if (window.location.pathname.startsWith("/docs")) {
         setIsLoading(true);
         setTimeout(() => setIsLoading(false), 200); // Reduced lag time
       }
     };
 
     // Add event listeners
-    document.addEventListener('click', handleLinkClick);
-    window.addEventListener('popstate', handlePopState);
+    document.addEventListener("click", handleLinkClick);
+    window.addEventListener("popstate", handlePopState);
 
     // Cleanup
     return () => {
-      document.removeEventListener('click', handleLinkClick);
-      window.removeEventListener('popstate', handlePopState);
+      document.removeEventListener("click", handleLinkClick);
+      window.removeEventListener("popstate", handlePopState);
     };
   }, [pathname]);
 
@@ -76,11 +82,14 @@ const DocsPageTransition = ({ children }: DocsPageTransitionProps) => {
 
   return (
     <>
-      <DocsLoader 
-        isLoading={isLoading} 
-        text="Loading Documentation" 
-      />
-      <div className={isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-300'}>
+      <DocsLoader isLoading={isLoading} text="Loading Documentation" />
+      <div
+        className={
+          isLoading
+            ? "opacity-0"
+            : "opacity-100 transition-opacity duration-300"
+        }
+      >
         {children}
       </div>
     </>

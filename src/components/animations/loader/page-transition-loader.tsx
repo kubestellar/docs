@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
-import { Loader } from '@/components/animations/loader';
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { Loader } from "@/components/animations/loader";
 
 interface PageTransitionLoaderProps {
   children: React.ReactNode;
@@ -11,13 +11,12 @@ interface PageTransitionLoaderProps {
 const PageTransitionLoader = ({ children }: PageTransitionLoaderProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
 
   useEffect(() => {
     // Show loader when route changes
     const handleRouteChange = () => {
       setIsLoading(true);
-      
+
       // Hide loader after content loads
       const timer = setTimeout(() => {
         setIsLoading(false);
@@ -32,14 +31,15 @@ const PageTransitionLoader = ({ children }: PageTransitionLoaderProps) => {
     // Handle direct link clicks
     const handleLinkClick = (event: Event) => {
       const target = event.target as HTMLElement;
-      const link = target.closest('a');
-      
+      const link = target.closest("a");
+
       if (link) {
-        const href = link.getAttribute('href');
-        const isExternal = link.getAttribute('target') === '_blank' || 
-                          href?.startsWith('http') || 
-                          href?.startsWith('//');
-        
+        const href = link.getAttribute("href");
+        const isExternal =
+          link.getAttribute("target") === "_blank" ||
+          href?.startsWith("http") ||
+          href?.startsWith("//");
+
         // Show loader for internal navigation only
         if (!isExternal && href && href !== pathname) {
           setIsLoading(true);
@@ -54,13 +54,13 @@ const PageTransitionLoader = ({ children }: PageTransitionLoaderProps) => {
     };
 
     // Add event listeners
-    document.addEventListener('click', handleLinkClick);
-    window.addEventListener('popstate', handlePopState);
+    document.addEventListener("click", handleLinkClick);
+    window.addEventListener("popstate", handlePopState);
 
     // Cleanup
     return () => {
-      document.removeEventListener('click', handleLinkClick);
-      window.removeEventListener('popstate', handlePopState);
+      document.removeEventListener("click", handleLinkClick);
+      window.removeEventListener("popstate", handlePopState);
     };
   }, [pathname]);
 
@@ -75,11 +75,14 @@ const PageTransitionLoader = ({ children }: PageTransitionLoaderProps) => {
 
   return (
     <>
-      <Loader 
-        isLoading={isLoading} 
-        text="Loading" 
-      />
-      <div className={isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}>
+      <Loader isLoading={isLoading} text="Loading" />
+      <div
+        className={
+          isLoading
+            ? "opacity-0"
+            : "opacity-100 transition-opacity duration-500"
+        }
+      >
         {children}
       </div>
     </>

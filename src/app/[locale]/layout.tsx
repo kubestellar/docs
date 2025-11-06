@@ -61,9 +61,7 @@ export default async function RootLayout({ children, params }: Props) {
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          <PageTransitionLoader>
-            {children}
-          </PageTransitionLoader>
+          <PageTransitionLoader>{children}</PageTransitionLoader>
         </NextIntlClientProvider>
       </body>
     </html>
