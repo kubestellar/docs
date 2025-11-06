@@ -178,10 +178,10 @@ export default function MaintainerLadderPage() {
         {" "}
         {/* Add padding-top to account for fixed navbar */}
         {/* Header Section */}
-        <section className="py-16 sm:py-20 lg:py-24">
+        <section className="pt-12 pb-12 sm:pt-28 sm:pb-16 lg:pt-24 lg:pb-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
                 {t("title")}{" "}
                 <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
                   {t("titleSpan")}
