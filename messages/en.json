@@ -45,7 +45,7 @@
     "subscribe": "Subscribe",
     "subscribed": "Subscribed!",
     "privacyNotice": "We respect your privacy. No spam.",
-    "copyright": "© 2025 KubeStellar. All rights reserved.",
+    "copyright": "© 2025 KubeStellar. All rights reserved. Apache 2.0 Licence",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "cookiePolicy": "Cookie Policy",
@@ -59,6 +59,7 @@
     "joinIn": "Join In",
     "contributeHandbook": "Contribute Handbook",
     "quickInstallation": "Quick Installation",
+    "products": "Products",
     "security": "Security",
     "community": "Community",
     "getInvolved": "Get Involved",
@@ -66,9 +67,6 @@
     "ladder": "Ladder",
     "contactUs": "Contact Us",
     "partners": "Partners",
-    "versionCurrent": "3.8.1 (Current)",
-    "version380": "3.8.0",
-    "allVersions": "All versions",
     "language": "English",
     "selectLanguage": "Select Language",
     "langHindi": "हिन्दी",
@@ -150,31 +148,65 @@
     "card2Description": "Connect with other users, contributors, and maintainers through Slack, forums, and community calls.",
     "card2Button1": "Slack",
     "card2Button2": "GitHub",
+    "card2Button3": "Products",
+    "card2Button4": "Handbook",
     "card3Title": "Explore Documentation",
     "card3Description": "Comprehensive guides, tutorials, and API references to help you master KubeStellar's capabilities.",
     "card3Link1": "Getting Started",
     "card3Link2": "Tutorials",
     "card3Link3": "API Reference"
   },
-  "howItWorksSection": {
-    "title": "How",
-    "titleSpan": "It Works",
-    "subtitle": "KubeStellar orchestrates your multi-cluster environment with a simple, powerful architecture",
-    "step1Title": "Define Workloads",
-    "step1Description": "Create Kubernetes resources with placement constraints and policies.",
-    "step1DescriptionDesktop": "Create Kubernetes resource in the KubeStellar control plane using familiar tools and manifests. Tag resource with placement constraints and policies.",
-    "step2Title": "Workload Orchestration",
-    "step2Description": "KubeStellar analyzes workloads and determines optimal placement.",
-    "step2DescriptionDesktop": "KubeStellar's orchestration engine analyzes workloads and determines optimal placement across registered clusters based on constraints and policies.",
-    "step2Tag1": "Policy Evaluation",
-    "step2Tag2": "Constraint Matching",
-    "step2Tag3": "Resource Analysis",
-    "step3Title": "Automated Deployment",
-    "step3Description": "Workloads are deployed and continuously monitored across clusters.",
-    "step3DescriptionDesktop": "Workloads are automatically deployed to selected clusters. KubeStellar continuously monitors health and ensures desired state across all clusters.",
-    "step3Cluster1": "Edge Cluster",
-    "step3Cluster2": "Cloud Cluster",
-    "step3Cluster3": "On-Prem Cluster"
+  "howToUseSection": {
+    "title": "How to Use",
+    "titleSpan": "KubeStellar",
+    "subtitle": "Follow these 5 simple steps to get started with KubeStellar multi-cluster orchestration",
+    "step1Title": "Set Up Your Environment",
+    "step1Description": "Install required tools and initialize core components",
+    "step1DescriptionDesktop": "Install required tools and initialize core components including KubeFlex hosting cluster, ITS, WDS, and WECs.",
+    "step1CodeComment": "# Install required tools",
+    "step1Tool1": "kubectl",
+    "step1Tool2": "helm",
+    "step1Tool3": "docker",
+    "step1Tool4": "kind/k3d",
+    "step1Tool5": "KubeFlex",
+    "step1Tool6": "Open Cluster Management (OCM) CLI",
+    "step2Title": "Register and Label Clusters",
+    "step2Description": "Register WECs and apply labels for targeting",
+    "step2DescriptionDesktop": "Register WECs with the ITS using OCM, apply labels to clusters for targeting, and establish secure connections.",
+    "step2CodeComment": "# Example cluster labeling",
+    "step2Command": "kubectl label managedcluster",
+    "step2Cluster": "cluster1",
+    "step2Label1": "location-group=edge",
+    "step2Label2": "name=cluster1",
+    "step3Title": "Define Workload Placement",
+    "step3Description": "Create BindingPolicy objects to specify deployment rules",
+    "step3DescriptionDesktop": "Create BindingPolicy objects to specify which clusters receive workloads and which workloads to distribute.",
+    "step3ApiVersion": "control.kubestellar.io/v1alpha1",
+    "step3Kind": "BindingPolicy",
+    "step3MetadataName": "example-policy",
+    "step3SpecClusterSelectors": "clusterSelectors",
+    "step3MatchLabels": "matchLabels",
+    "step3LocationGroup": "location-group: edge",
+    "step4Title": "Deploy Your Workloads",
+    "step4Description": "Deploy workloads in native Kubernetes format",
+    "step4DescriptionDesktop": "Deploy workloads in native Kubernetes format using kubectl apply, Helm charts, ArgoCD, or Custom Resources.",
+    "step4ApiVersion": "apps/v1",
+    "step4Kind": "Deployment",
+    "step4MetadataName": "example-app",
+    "step4Labels": "labels",
+    "step4AppName": "app.kubernetes.io/name: myapp",
+    "step4Spec": "spec",
+    "step4Replicas": "replicas",
+    "step4ReplicasValue": "3",
+    "step5Title": "Monitor and Manage",
+    "step5Description": "Monitor deployment status and manage workload health",
+    "step5DescriptionDesktop": "Monitor deployment status across clusters, view workload health, collect status information, and manage policy compliance.",
+    "step5Tag1": "Status Collection",
+    "step5Tag2": "Health Monitoring",
+    "step5Tag3": "Policy Management",
+    "step5Command1Comment": "# Check deployment status across clusters",
+    "step5Command2Comment": "# View workload distribution",
+    "step5Command3Comment": "# Monitor resource usage"
   },
   "useCasesSection": {
     "title": "Use",
@@ -184,27 +216,81 @@
     "cases": {
       "edge": {
         "title": "Edge Computing",
-        "description": "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure."
+        "description": "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
+        "backContent": {
+          "title": "Edge Computing Excellence",
+          "description": "Deploy applications across edge locations with intelligent workload distribution. KubeStellar automatically manages resource allocation, ensures low-latency connectivity, and maintains consistency across your edge infrastructure.",
+          "features": [
+            "Automatic edge deployment",
+            "Low-latency optimization",
+            "Resource intelligent distribution"
+          ]
+        }
       },
       "compliance": {
         "title": "Multi-Region Compliance",
-        "description": "Deploy applications with specific regional compliance requirements. Ensure data residency and regulatory compliance across global operations."
+        "description": "Deploy applications with specific regional compliance requirements. Ensure data residency and regulatory compliance across global operations.",
+        "backContent": {
+          "title": "Security & Compliance",
+          "description": "Enforce security policies and compliance requirements across all clusters with centralized governance. Automated policy distribution ensures consistent security posture throughout your infrastructure.",
+          "features": [
+            "Centralized policy management",
+            "Automated compliance checks",
+            "Security posture monitoring"
+          ]
+        }
       },
       "hybrid": {
         "title": "Hybrid/Multi-Cloud",
-        "description": "Seamlessly manage workloads across multiple cloud providers and on-premises infrastructure with unified policies and consistent experience."
+        "description": "Seamlessly manage workloads across multiple cloud providers and on-premises infrastructure with unified policies and consistent experience.",
+        "backContent": {
+          "title": "Hybrid Cloud Mastery",
+          "description": "Seamlessly connect and manage workloads across public clouds, private data centers, and edge locations. Enable true hybrid deployment with unified management and automated failover capabilities.",
+          "features": [
+            "Multi-cloud orchestration",
+            "Unified management plane",
+            "Automated failover & recovery"
+          ]
+        }
       },
       "dr": {
         "title": "Disaster Recovery",
-        "description": "Implement robust disaster recovery strategies with automatic workload replication and failover across multiple clusters in different regions."
+        "description": "Implement robust disaster recovery strategies with automatic workload replication and failover across multiple clusters in different regions.",
+        "backContent": {
+          "title": "Disaster Recovery",
+          "description": "Implement robust disaster recovery strategies with automated backup, replication, and restoration capabilities. Ensure business continuity with multi-region deployment and instant failover mechanisms.",
+          "features": [
+            "Automated backup & replication",
+            "Multi-region deployment",
+            "Instant failover capabilities"
+          ]
+        }
       },
       "multitenant": {
         "title": "Multi-Tenant Isolation",
-        "description": "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises."
+        "description": "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
+        "backContent": {
+          "title": "Multi-Tenant Architecture",
+          "description": "Support multiple tenants with isolated environments while maximizing resource efficiency. Implement tenant-specific policies, resource quotas, and secure data separation across your clusters.",
+          "features": [
+            "Tenant isolation & security",
+            "Resource quota management",
+            "Scalable multi-tenancy"
+          ]
+        }
       },
       "performance": {
         "title": "Performance Optimization",
-        "description": "Deploy workloads closest to users or data sources for optimal performance, reducing latency and improving user experience across global operations."
+        "description": "Deploy workloads closest to users or data sources for optimal performance, reducing latency and improving user experience across global operations.",
+        "backContent": {
+          "title": "Performance Optimization",
+          "description": "Optimize application performance with intelligent resource allocation, auto-scaling, and load balancing across clusters. Monitor and improve performance metrics in real-time.",
+          "features": [
+            "Intelligent resource allocation",
+            "Auto-scaling optimization",
+            "Real-time performance monitoring"
+          ]
+        }
       }
     }
   },
@@ -337,6 +423,8 @@
     "installNext1": "Verify installation",
     "installNext2": "Check KubeStellar status",
     "installNext3": "Explore the",
+    "installNext3Link": "documentation",
+    "installNext3Suffix": "for examples and advanced usage",
     "faqTitle": "Frequently Asked Questions",
     "faqSubtitle": "Common questions about KubeStellar installation and setup",
     "faq1Q": "What's the difference between Core, Additional, and Build prerequisites?",
@@ -447,6 +535,46 @@
       }
     }
   },
+  "productsPage": {
+    "title": "Our",
+    "titleSpan": "Products",
+    "subtitle": "Discover our suite of tools and platforms that enhance the KubeStellar ecosystem and empower multi-cluster Kubernetes management.",
+    "repoButton": "Repository",
+    "websiteButton": "Website",
+    "watchDemoButton": "Watch Demo",
+    "products": {
+      "kubestellar": {
+        "name": "KubeStellar",
+        "fullName": "KubeStellar",
+        "description": "Multi-cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure environments. Provides unified control plane, intelligent workload placement, and policy-driven governance for complex multi-cluster deployments with automated scaling, resource optimization, and seamless integration capabilities across cloud providers."
+      },
+      "kubestellarUI": {
+        "name": "KubeStellar UI",
+        "fullName": "KubeStellar UI",
+        "description": "A powerful web-based interface for managing multi-cluster Kubernetes orchestration with intuitive dashboards, real-time monitoring, and comprehensive controls for streamlined cluster management. Features advanced visualization tools, customizable workspaces, and intelligent alerts to optimize your multi-cluster operations."
+      },
+      "kubeflex": {
+        "name": "KubeFlex",
+        "fullName": "KubeFlex",
+        "description": "A flexible Kubernetes management platform providing comprehensive tools and resources for multi-cluster orchestration and workload distribution. Enables dynamic cluster provisioning, automated scaling, and intelligent resource allocation across heterogeneous environments. Simplifies complex deployment scenarios with policy-driven automation."
+      },
+      "a2a": {
+        "name": "A2A",
+        "fullName": "A2A",
+        "description": "Application-to-Application communication platform enabling seamless connectivity within the KubeStellar ecosystem. Facilitates secure data exchange and real-time communication between distributed microservices. Provides advanced routing, load balancing, and service discovery capabilities for complex multi-cluster deployments."
+      },
+      "kubectlMulti": {
+        "name": "kubectl-multi",
+        "fullName": "kubectl-multi",
+        "description": "A comprehensive kubectl plugin for multi-cluster operations with KubeStellar. This plugin extends kubectl to work seamlessly across all KubeStellar managed clusters, providing unified views and operations while filtering out workflow staging clusters (WDS). Execute commands across multiple clusters simultaneously with intelligent output aggregation."
+      },
+      "galaxyMarketplace": {
+        "name": "Galaxy Marketplace",
+        "fullName": "KS Galaxy Marketplace",
+        "description": "A centralized marketplace for KubeStellar extensions, plugins, and community-contributed tools and integrations. Discover, install, and manage third-party components to enhance your multi-cluster orchestration capabilities. Features automated compatibility checking, version management, and seamless integration with existing KubeStellar deployments."
+      }
+    }
+  },
   "ladderPage": {
     "title": "Contribution",
     "titleSpan": "Ladder",
@@ -520,16 +648,87 @@
         "metric": "Metric",
         "requirement": "Requirement (Per 2 Months)",
         "helpWantedIssues": "\"Help Wanted\" Issues",
+        "helpWantedIssuesValue": "≥ 2",
         "prsMerged": "PRs Merged",
+        "prsMergedValue": "≥ 3",
         "prReviews": "PR Reviews or Constructive Comments",
-        "meetingAttendance": "Community Meeting Attendance"
+        "prReviewsValue": "≥ 8",
+        "meetingAttendance": "Community Meeting Attendance",
+        "meetingAttendanceValue": "≥ 3"
       }
     },
     "callToAction": {
       "title": "Ready to Start Your Journey?",
       "subtitle": "Join the KubeStellar community and begin climbing the maintainer ladder today",
       "communityMeetingsButton": "Community Meetings",
-      "viewIssuesButton": "View Open Issues"
+      "viewIssuesButton": "View Open Issues",
+      "exploreCodeTitle": "Explore Code",
+      "exploreCodeDescription": "Browse our codebase and contribute to the project",
+      "viewRepositoryLink": "View Repository →",
+      "joinSlackTitle": "Join Slack",
+      "joinSlackDescription": "Connect with the community for real-time discussions",
+      "joinCommunityLink": "Join Community →",
+      "learnGuideTitle": "Learn Guide",
+      "learnGuideDescription": "Read our comprehensive contribution handbook",
+      "viewHandbookLink": "View Handbook →"
+    }
+  },
+  "partnersPage": {
+    "title": "Our",
+    "titleSpan": "Partners",
+    "subtitle": "Collaborating with leading open source projects to enhance multi-cluster Kubernetes orchestration",
+    "learnMore": "Learn More",
+    "partners": {
+      "argocd": {
+        "description": "Declarative GitOps continuous delivery tool for Kubernetes that automates application deployment and lifecycle management."
+      },
+      "fluxcd": {
+        "description": "Progressive delivery tool for Kubernetes that enables automated deployments from Git repositories with powerful GitOps capabilities."
+      },
+      "kyverno": {
+        "description": "Kubernetes-native policy management solution that validates, mutates, and generates configurations using declarative policies."
+      },
+      "mvi": {
+        "description": "Multi-cluster visibility and insights platform providing comprehensive monitoring and analytics across distributed Kubernetes environments."
+      },
+      "openziti": {
+        "description": "Zero trust network overlay and edge application platform providing secure connectivity for distributed applications."
+      },
+      "turbonomic": {
+        "description": "Application resource management platform that ensures application performance while optimizing infrastructure costs through AI-driven automation."
+      }
+    },
+    "whyPartner": {
+      "title": "Why Partner With Us",
+      "subtitle": "Join our ecosystem of innovative partners to shape the future of multi-cluster Kubernetes management",
+      "benefits": [
+        {
+          "title": "Innovation",
+          "description": "Collaborate on cutting-edge multi-cluster orchestration solutions"
+        },
+        {
+          "title": "Community",
+          "description": "Connect with a vibrant ecosystem of cloud-native developers and organizations"
+        },
+        {
+          "title": "Excellence",
+          "description": "Drive industry standards and best practices in Kubernetes orchestration"
+        }
+      ]
+    },
+    "partnershipOpportunities": {
+      "title": "Become a Partner",
+      "subtitle": "Join forces with KubeStellar to drive innovation in multi-cluster Kubernetes orchestration and expand your reach in the cloud-native ecosystem.",
+      "description": "Our partnership program is designed to foster collaboration with technology providers, cloud platforms, and service integrators who share our vision of simplifying multi-cluster Kubernetes management. Together, we can deliver comprehensive solutions that empower enterprises to manage their distributed workloads seamlessly.",
+      "features": [
+        "Technical integration support and engineering resources",
+        "Joint go-to-market initiatives and co-marketing opportunities",
+        "Access to our growing community of cloud-native practitioners",
+        "Featured placement on our partners page and documentation",
+        "Collaborative product development and roadmap input",
+        "Priority support and dedicated partnership manager"
+      ],
+      "contactButton": "Get in Touch"
     }
   }
 }

@@ -1602,6 +1602,24 @@ html:not(.dark) .nextra-sidebar-container {
   }
 }
 
+@keyframes slide-partners {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-2544px));
+  }
+}
+
+.animate-slide-partners {
+  animation: slide-partners 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-slide-partners.pause-animation {
+  animation-play-state: paused;
+}
+
 .animate-spin-slow {
   animation: spin 20s linear infinite;
 }
@@ -1635,4 +1653,107 @@ html:not(.dark) .nextra-sidebar-container {
   .star-layer {
     opacity: 0.7;
   }
+}
+
+/* 3D Card Flip Effects */
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Copy Button Animations */
+@keyframes copy-success {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.copy-button:active {
+  transform: scale(0.95);
+}
+
+.copy-button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.copy-button svg {
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover svg {
+  transform: scale(1.1);
+}
+
+/* Copy success animation */
+.copy-success {
+  animation: copy-success 0.3s ease;
+}
+
+/* Fade In Animation for Show More Steps */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Scroll-based step animations */
+.step-animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.step-animate.step-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Bounce animation for button */
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Delay utilities for staggered animations */
+.delay-100 {
+  transition-delay: 100ms;
+}
+
+.delay-200 {
+  transition-delay: 200ms;
+}
+
+.delay-300 {
+  transition-delay: 300ms;
+}
+
+.delay-400 {
+  transition-delay: 400ms;
 }
