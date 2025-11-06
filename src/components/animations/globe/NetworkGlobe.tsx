@@ -2,11 +2,10 @@ import { useRef, useMemo, useState, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Sphere, Line, Text, Torus, Billboard } from '@react-three/drei';
 import * as THREE from 'three';
-import { COLORS } from './components/colors';
-import CosmicDust from './components/CosmicDust';
-import DataPacket from './components/DataPacket';
-import LogoElement from './components/LogoElement';
-import Cluster from './components/Cluster';
+import { COLORS } from './colors';
+import DataPacket from './DataPacket';
+import LogoElement from './LogoElement';
+import Cluster from './Cluster';
 
 // Add this interface for the component props
 interface NetworkGlobeProps {
@@ -39,47 +38,47 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
   const [activeFlows, setActiveFlows] = useState<number[]>([]);
   const [animationProgress, setAnimationProgress] = useState(0);
   
-  // Create cluster configurations with updated names and descriptions
+  // Create cluster configurations with KubeStellar-related names and descriptions
   const clusters = useMemo(() => [
     { 
-      name: "Edge Cluster",
+      name: "KubeFlex Core",
       position: [0, 3, 0] as [number, number, number], 
       nodeCount: 6,
       radius: 0.8,
       color: COLORS.primary,
-      description: "Edge computing resources for low-latency processing"
+      description: "KubeFlex control plane managing multi-cluster operations"
     },
     { 
-      name: "AI Inferencing Cluster",
+      name: "Edge Clusters",
       position: [3, 0, 0] as [number, number, number], 
       nodeCount: 8,
       radius: 1,
-      color: COLORS.aiInference,
-      description: "Real-time AI model inference and prediction services"
+      color: COLORS.highlight,
+      description: "Edge computing clusters for distributed workloads"
     },
     { 
-      name: "AI Training Cluster",
+      name: "Production Cluster",
       position: [0, -3, 0] as [number, number, number], 
       nodeCount: 5,
       radius: 0.7,
-      color: COLORS.aiTraining,
-      description: "High-performance compute for AI model training"
+      color: COLORS.success,
+      description: "Production workloads and mission-critical applications"
     },
     { 
-      name: "Service Cluster",
+      name: "Dev/Test Cluster",
       position: [-3, 0, 0] as [number, number, number], 
       nodeCount: 7,
       radius: 0.9,
       color: COLORS.accent2,
-      description: "Core microservices and API endpoints"
+      description: "Development and testing environments"
     },
     { 
-      name: "Compute Cluster",
+      name: "Multi-Cloud Hub",
       position: [2, 2, -2] as [number, number, number], 
       nodeCount: 4,
       radius: 0.6,
-      color: COLORS.success,
-      description: "General-purpose compute resources"
+      color: COLORS.accent1,
+      description: "Cross-cloud orchestration and management"
     },
   ], []);
   
@@ -98,18 +97,25 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
     });
     
     // Add some cross-cluster connections with specific types
-    // AI Training to AI Inferencing (model deployment)
+    // Production to Edge (workload distribution)
     flows.push({
       path: [clusters[2].position, clusters[1].position],
       id: clusters.length + 1,
-      type: "model"
+      type: "workload"
     });
     
-    // Edge to AI Inferencing (inference requests)
+    // KubeFlex to Edge (control commands)
     flows.push({
       path: [clusters[0].position, clusters[1].position],
       id: clusters.length + 2,
-      type: "inference"
+      type: "control"
+    });
+    
+    // Dev/Test to Production (deployment pipeline)
+    flows.push({
+      path: [clusters[3].position, clusters[2].position],
+      id: clusters.length + 3,
+      type: "deploy"
     });
     
     // Add some other cross-cluster connections
@@ -152,12 +158,12 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
       setAnimationProgress(Math.min(animationProgress + 0.01, 1));
     }
     
-    // Rotate the globe slowly
+    // Rotate the globe continuously for full 360-degree rotation
     if (globeRef.current) {
-      globeRef.current.rotation.y = time * 0.05;
-      globeRef.current.rotation.x = Math.sin(time * 0.2) * 0.02;
+      globeRef.current.rotation.y = time * 0.15; // Increased speed for full rotation
+      globeRef.current.rotation.x = Math.sin(time * 0.3) * 0.1; // More dynamic tilt
       
-      // Scale up the globe as it loads
+      // Fixed scale - no zoom effect
       const scale = isLoaded ? 1 * animationProgress : 0.5;
       globeRef.current.scale.setScalar(scale);
     }
@@ -186,14 +192,14 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
             flow.material.opacity = Math.min(flow.material.opacity + 0.05, 0.8 * animationProgress);
             
             // Set color based on flow type
-            if (flowType === "model") {
-              flow.material.color.set(COLORS.aiTraining);
-            } else if (flowType === "inference") {
-              flow.material.color.set(COLORS.aiInference);
+            if (flowType === "workload") {
+              flow.material.color.set(COLORS.success);
+            } else if (flowType === "deploy") {
+              flow.material.color.set(COLORS.accent1);
             } else if (flowType === "control") {
               flow.material.color.set(COLORS.secondary);
             } else {
-              flow.material.color.set(COLORS.success);
+              flow.material.color.set(COLORS.highlight);
             }
             
             if (flow.material.dashSize !== undefined) {
@@ -220,9 +226,6 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
 
   return (
     <group>
-      {/* Background cosmic dust */}
-      <CosmicDust />
-      
       {/* Main globe - represents the global network */}
       <Sphere ref={globeRef} args={[3.5, 64, 64]}>
         <meshPhongMaterial
@@ -313,10 +316,10 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
             key={idx}
             points={flow.path}
             color={activeFlows.includes(idx) ? 
-              (flow.type === "model" ? COLORS.aiTraining : 
-               flow.type === "inference" ? COLORS.aiInference : 
+              (flow.type === "workload" ? COLORS.success : 
+               flow.type === "deploy" ? COLORS.accent1 : 
                flow.type === "control" ? COLORS.secondary : 
-               COLORS.success) : 
+               COLORS.highlight) : 
               COLORS.primary}
             lineWidth={1.5}
             transparent
@@ -335,10 +338,10 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
             key={idx} 
             path={flow.path} 
             speed={1 + Math.random()} 
-            color={flow.type === "model" ? COLORS.aiTraining : 
-                  flow.type === "inference" ? COLORS.aiInference : 
+            color={flow.type === "workload" ? COLORS.success : 
+                  flow.type === "deploy" ? COLORS.accent1 : 
                   flow.type === "control" ? COLORS.secondary : 
-                  idx % 2 === 0 ? COLORS.highlight : COLORS.success}
+                  idx % 2 === 0 ? COLORS.highlight : COLORS.primary}
           />
         )
       )}
