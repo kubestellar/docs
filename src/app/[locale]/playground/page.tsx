@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "@/i18n/navigation";
-import Loader from "@/components/animations/loader";
+import Loader from "@/components/animations/Loader";
 
 export default function PlaygroundPage() {
   const router = useRouter();
