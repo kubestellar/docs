@@ -19,7 +19,6 @@ export function makeGitHubHeaders(): Record<string, string> {
 type GitTreeItem = { path: string; type: 'blob' | 'tree' }
 type GitTreeResp = { tree?: GitTreeItem[] }
 
-// MAKE THIS FUNCTION ACCEPT A BRANCH PARAMETER
 export async function buildPageMapForBranch(branch: string) {
   async function fetchDocsTree(): Promise<GitTreeResp> {
     const refUrl = `https://api.github.com/repos/${user}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`
@@ -41,7 +40,7 @@ export async function buildPageMapForBranch(branch: string) {
   }
 
   const treeData = await fetchDocsTree()
-  const allDocFiles =
+  let allDocFiles =
     treeData.tree?.filter(
       t =>
         t.type === 'blob' &&
@@ -52,9 +51,106 @@ export async function buildPageMapForBranch(branch: string) {
   // Filter out Direct folder completely
   const ROOT_FOLDERS = Array.from(new Set(allDocFiles.map(fp => fp.split('/')[0])))
   const DIRECT_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'direct')
+  const UI_DOCS_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'ui docs' || r.toLowerCase() === 'ui-docs')
 
-  const filePaths = allDocFiles.filter(fp => {
-    if (DIRECT_ROOT && fp.toLowerCase().startsWith(`${DIRECT_ROOT.toLowerCase()}/`)) {
+  type PageMapNode = { kind: 'Folder' | 'MdxPage'; name: string; route: string; children?: any[] } | any
+  const _pageMap: PageMapNode[] = []
+  const aliases: Array<{ alias: string; fp: string }> = []
+  const processedFiles = new Set<string>()
+  const pretty = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ')
+
+  const CATEGORY_MAPPINGS: Record<string, Array<{ root?: string; file: string }>> = {
+    'What is Kubestellar?': [
+      { file: 'overview.md' },
+      { file: 'architecture.md' },
+      { file: 'related-projects.md' },
+      { file: 'roadmap.md' },
+      { file: 'release-notes.md' }
+    ],
+    'Install & Configure': [
+      { file: '.get-started.md' },
+      { file: 'start-from-ocm.md' },
+      { file: 'setup-limitations.md' },
+      { file: 'acquire-hosting-cluster.md' },
+      { file: 'init-hosting-cluster.md' },
+      { file: 'core-specs/inventory-and-transport.md' },
+      { file: 'core-specs/workload-description.md' },
+      { file: 'workload-execution-cluster/about.md' },
+      { file: 'workload-execution-cluster/register.md' },
+      { file: 'core-chart.md' },
+      { file: 'teardown.md' }
+    ],
+    'UI & Tools': [
+      // from Direct
+      { file: 'ui-intro.md' },
+      { file: 'plugins.md' },
+      { file: 'galaxy-marketplace.md' },
+      { file: 'kubeflex-intro.md' },
+      { file: 'galaxy-intro.md' },
+      // from UI Docs folder
+      { root: UI_DOCS_ROOT, file: 'README.md' },
+      { root: UI_DOCS_ROOT, file: 'ui-overview.md' },
+    ],
+    'Use & Integrate': [
+      { file: 'usage-limitations.md' },
+      { file: 'binding.md' },
+      { file: 'transforming.md' },
+      { file: 'combined-status.md' },
+      { file: 'example-scenarios.md' },
+      { file: 'argo-to-wds1.md' }
+    ],
+    'User Guide & Support': [
+      { file: 'user-guide-intro.md' },
+      { file: 'troubleshooting.md' },
+      { file: 'known-issues.md' },
+      { file: 'knownissue-collector-miss.md' },
+      { file: 'knownissue-helm-ghcr.md' },
+      { file: 'knownissue-kind-config.md' },
+      { file: 'knownissue-cpu-insufficient-for-its1.md' },
+      { file: 'knownissue-kflex-extension.md' },
+      { file: 'combined-status.md' }
+    ]
+  }
+
+  for (const [categoryName, fileConfigs] of Object.entries(CATEGORY_MAPPINGS)) {
+    const fulls: string[] = []
+
+    for (const config of fileConfigs) {
+      const root = config.root || DIRECT_ROOT
+      if (!root) continue
+
+      const fullPath = `${root}/${config.file}`
+      if (allDocFiles.includes(fullPath)) {
+        fulls.push(fullPath)
+        processedFiles.add(fullPath)
+      }
+    }
+
+    if (!fulls.length) continue
+
+    const categorySlug = categoryName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+    const children = fulls.map(full => {
+      const baseName = full
+        .replace(/\.(md|mdx)$/i, '')
+        .split('/')
+        .pop()!
+      const route = `/${basePath}/${categorySlug}/${baseName}`
+      const alias = `${categorySlug}/${baseName}`
+      aliases.push({ alias, fp: full })
+      return { kind: 'MdxPage' as const, name: pretty(baseName), route }
+    })
+
+    _pageMap.push({ kind: 'Folder', name: categoryName, route: `/${basePath}/${categorySlug}`, children })
+  }
+
+  // Filter out files that have been manually categorized or are in special folders
+  const remainingFiles = allDocFiles.filter(fp => {
+    if (processedFiles.has(fp)) return false
+    const lower = fp.toLowerCase()
+    if (
+      (DIRECT_ROOT && lower.startsWith(`${DIRECT_ROOT.toLowerCase()}/`)) ||
+      (UI_DOCS_ROOT && lower.startsWith(`${UI_DOCS_ROOT.toLowerCase()}/`))
+    ) {
       return false
     }
     return true
