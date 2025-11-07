@@ -59,15 +59,15 @@ export async function buildPageMapForBranch(branch: string) {
   const processedFiles = new Set<string>()
   const pretty = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ')
 
-  const CATEGORY_MAPPINGS: Record<string, Array<{ root?: string; file: string }>> = {
-    'What is Kubestellar?': [
+  const CATEGORY_MAPPINGS: Array<[string, Array<{ root?: string; file: string }>]> = [
+    ['What is Kubestellar?', [
       { file: 'overview.md' },
       { file: 'architecture.md' },
       { file: 'related-projects.md' },
       { file: 'roadmap.md' },
       { file: 'release-notes.md' }
-    ],
-    'Install & Configure': [
+    ]],
+    ['Install & Configure', [
       { file: '.get-started.md' },
       { file: 'start-from-ocm.md' },
       { file: 'setup-limitations.md' },
@@ -79,27 +79,16 @@ export async function buildPageMapForBranch(branch: string) {
       { file: 'workload-execution-cluster/register.md' },
       { file: 'core-chart.md' },
       { file: 'teardown.md' }
-    ],
-    'UI & Tools': [
-      // from Direct
-      { file: 'ui-intro.md' },
-      { file: 'plugins.md' },
-      { file: 'galaxy-marketplace.md' },
-      { file: 'kubeflex-intro.md' },
-      { file: 'galaxy-intro.md' },
-      // from UI Docs folder
-      { root: UI_DOCS_ROOT, file: 'README.md' },
-      { root: UI_DOCS_ROOT, file: 'ui-overview.md' },
-    ],
-    'Use & Integrate': [
+    ]],
+    ['Use & Integrate', [
       { file: 'usage-limitations.md' },
       { file: 'binding.md' },
       { file: 'transforming.md' },
       { file: 'combined-status.md' },
       { file: 'example-scenarios.md' },
       { file: 'argo-to-wds1.md' }
-    ],
-    'User Guide & Support': [
+    ]],
+    ['User Guide & Support', [
       { file: 'user-guide-intro.md' },
       { file: 'troubleshooting.md' },
       { file: 'known-issues.md' },
@@ -109,10 +98,21 @@ export async function buildPageMapForBranch(branch: string) {
       { file: 'knownissue-cpu-insufficient-for-its1.md' },
       { file: 'knownissue-kflex-extension.md' },
       { file: 'combined-status.md' }
-    ]
-  }
+    ]],
+    ['UI & Tools', [
+      // from Direct
+      { file: 'ui-intro.md' },
+      { file: 'plugins.md' },
+      { file: 'galaxy-marketplace.md' },
+      { file: 'kubeflex-intro.md' },
+      { file: 'galaxy-intro.md' },
+      // from UI Docs folder
+      { root: UI_DOCS_ROOT, file: 'README.md' },
+      { root: UI_DOCS_ROOT, file: 'ui-overview.md' },
+    ]]
+  ]
 
-  for (const [categoryName, fileConfigs] of Object.entries(CATEGORY_MAPPINGS)) {
+  for (const [categoryName, fileConfigs] of CATEGORY_MAPPINGS) {
     const fulls: string[] = []
 
     for (const config of fileConfigs) {
