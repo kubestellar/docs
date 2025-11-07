@@ -134,7 +134,7 @@ export async function buildPageMapForBranch(branch: string) {
     const nodes: PageMapNode[] = [];
 
     for (const item of items) {
-        if ('file' in item) { // It's a file object
+        if ('file' in item) {
             const root = item.root || DIRECT_ROOT;
             if (!root) continue;
             const fullPath = `${root}/${item.file}`;
@@ -146,17 +146,15 @@ export async function buildPageMapForBranch(branch: string) {
                 aliases.push({ alias, fp: fullPath });
                 nodes.push({ kind: 'MdxPage' as const, name: pretty(baseName), route });
             }
-        } else { // It's a category object
+        } else { 
             const title = Object.keys(item)[0];
             const value = item[title];
 
-            if (typeof value === 'string') { // It's a file path string
-                // Don't assume DIRECT_ROOT. Check if the file exists as specified.
+            if (typeof value === 'string') { 
                  if (allDocFiles.includes(value)) {
                     processedFiles.add(value);
                     const baseName = value.replace(/\.(md|mdx)$/i, '').split('/').pop()!;
                     const route = `/${basePath}/${parentSlug}/${baseName}`;
-                    // Create an alias from the route to the file path
                     const alias = route.replace(`/${basePath}/`, '');
                     aliases.push({ alias, fp: value });
                     nodes.push({ kind: 'MdxPage' as const, name: title, route });
@@ -183,7 +181,6 @@ export async function buildPageMapForBranch(branch: string) {
     _pageMap.push({ kind: 'Folder', name: categoryName, route: `/${basePath}/${categorySlug}`, children })
   }
 
-  // Filter out files that have been manually categorized or are in special folders
   const remainingFiles = allDocFiles.filter(fp => {
     if (processedFiles.has(fp)) return false
     const lower = fp.toLowerCase()
