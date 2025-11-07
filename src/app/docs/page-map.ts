@@ -53,7 +53,7 @@ export async function buildPageMapForBranch(branch: string) {
   const DIRECT_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'direct')
   const UI_DOCS_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'ui docs' || r.toLowerCase() === 'ui-docs')
 
-  // Strong types for page-map nodes (no `any`)'
+  // Strong types for page-map nodes (no `any`)
   type MdxPageNode = { kind: 'MdxPage'; name: string; route: string }
   type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageMapNode[] }
   type MetaNode = { kind: 'Meta'; data: Record<string, string> }
@@ -208,7 +208,7 @@ export async function buildPageMapForBranch(branch: string) {
     }
 
     if (Object.keys(meta).length > 0) {
-        nodes.unshift({ kind: 'Meta', data: meta });
+      nodes.unshift({ kind: 'Meta', data: meta });
     }
     return nodes;
   }
@@ -235,12 +235,14 @@ export async function buildPageMapForBranch(branch: string) {
     return true
   })
 
-  const { pageMap: remainingFileNodesRaw } = convertToPageMap({ filePaths: remainingFiles, meta: {} })
+  const { pageMap: remainingFileNodesRaw } = convertToPageMap({ filePaths: remainingFiles })
   const remainingFileNodes = remainingFileNodesRaw as unknown as PageMapNode[]
 
   // Type guards so TS knows which fields exist
   const hasRoute = (n: PageMapNode): n is MdxPageNode | FolderNode => 'route' in n
   const hasChildren = (n: PageMapNode): n is FolderNode => 'children' in n
+  const hasName = (n: PageMapNode): n is MdxPageNode | FolderNode => 'name' in n
+
   function addBasePathToRoutes(nodes: PageMapNode[]) {
     for (const node of nodes) {
       if (hasRoute(node)) node.route = `/${basePath}${node.route}`
@@ -257,7 +259,9 @@ export async function buildPageMapForBranch(branch: string) {
     meta[categoryName] = categoryName
   }
   for (const item of remainingFileNodes) {
-    meta[item.name] = item.name
+    if (hasName(item)) {
+      meta[item.name] = item.name
+    }
   }
 
   _pageMap.unshift({
@@ -276,7 +280,7 @@ export async function buildPageMapForBranch(branch: string) {
     routeMap[alias] = fp
   }
 
-  // @ts-expect-error nextra typing
+  // normalizePageMap has compatible types now; remove stale suppressor
   const pageMap = normalizePageMap(_pageMap)
 
   return { pageMap, routeMap, filePaths: allDocFiles, branch }
