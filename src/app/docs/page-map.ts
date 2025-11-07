@@ -193,75 +193,35 @@ export async function buildPageMapForBranch(branch: string) {
     return true
   })
 
-  const { pageMap: baseMap } = convertToPageMap({ filePaths, basePath })
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  type PageMapNode = { kind: 'Folder' | 'MdxPage'; name: string; route: string; children?: any[] } | any
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const _pageMap: PageMapNode[] = baseMap as any
+  const { pageMap: remainingFileNodes } = convertToPageMap({ filePaths: remainingFiles, meta: {} })
 
-  // Your category mappings...
-  const CATEGORY_MAPPINGS: Record<string, string[]> = {
-    'What is Kubestellar?': ['overview.md', 'architecture.md', 'related-projects.md', 'roadmap.md', 'release-notes.md'],
-    'Install & Configure': [
-      '.get-started.md',
-      'start-from-ocm.md',
-      'setup-limitations.md',
-      'acquire-hosting-cluster.md',
-      'init-hosting-cluster.md',
-      'core-specs/inventory-and-transport.md',
-      'core-specs/workload-description.md',
-      'workload-execution-cluster/about.md',
-      'workload-execution-cluster/register.md',
-      'core-chart.md',
-      'teardown.md'
-    ],
-    'UI & Tools': [
-      'ui-intro.md',
-      'plugins.md',
-      'galaxy-marketplace.md',
-      'kubeflex-intro.md',
-      'galaxy-intro.md'
-    ],
-    'Use & Integrate': [
-      'usage-limitations.md',
-      'binding.md',
-      'transforming.md',
-      'combined-status.md',
-      'example-scenarios.md',
-      'argo-to-wds1.md'
-    ],
-    'User Guide & Support': [
-      'user-guide-intro.md',
-      'troubleshooting.md',
-      'known-issues.md',
-      'knownissue-collector-miss.md',
-      'knownissue-helm-ghcr.md',
-      'knownissue-kind-config.md',
-      'knownissue-cpu-insufficient-for-its1.md',
-      'knownissue-kflex-extension.md',
-      'combined-status.md'
-    ]
+  function addBasePathToRoutes(nodes: PageMapNode[]) {
+    for (const node of nodes) {
+      if (node.route) {
+        node.route = `/${basePath}${node.route}`
+      }
+      if (node.children) {
+        addBasePathToRoutes(node.children)
+      }
+    }
   }
 
-  const pretty = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ')
-  const aliases: Array<{ alias: string; fp: string }> = []
+  addBasePathToRoutes(remainingFileNodes)
 
-  for (const [categoryName, relFiles] of Object.entries(CATEGORY_MAPPINGS)) {
-    if (!DIRECT_ROOT) continue
-    const fulls = relFiles.map(rel => `${DIRECT_ROOT}/${rel}`).filter(full => allDocFiles.includes(full))
-    if (!fulls.length) continue
+  _pageMap.push(...remainingFileNodes)
 
-    const categorySlug = categoryName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-    const children = fulls.map(full => {
-      const base = full.replace(/\.(md|mdx)$/i, '').split('/').pop()!
-      const route = `/${basePath}/${categorySlug}/${base}`
-      const alias = `${categorySlug}/${base}`
-      aliases.push({ alias, fp: full })
-      return { kind: 'MdxPage' as const, name: pretty(base), route }
-    })
-
-    _pageMap.push({ kind: 'Folder', name: categoryName, route: `/${basePath}/${categorySlug}`, children })
+  const meta: Record<string, any> = {}
+  for (const [categoryName] of CATEGORY_MAPPINGS) {
+    meta[categoryName] = categoryName
   }
+  for (const item of remainingFileNodes) {
+    meta[item.name] = item.name
+  }
+
+  _pageMap.unshift({
+    kind: 'Meta',
+    data: meta
+  })
 
   // Build routeMap
   function normalizeRoute(noExtPath: string) {
@@ -279,6 +239,7 @@ export async function buildPageMapForBranch(branch: string) {
     routeMap[alias] = fp
   }
 
+  // @ts-expect-error nextra typing
   const pageMap = normalizePageMap(_pageMap)
 
   return { pageMap, routeMap, filePaths: allDocFiles, branch }
