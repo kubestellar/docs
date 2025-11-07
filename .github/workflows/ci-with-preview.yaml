@@ -372,7 +372,6 @@ jobs:
             - 🏗️ 2-node K8s cluster (master + worker)
             - 🌐 WebSocket bridge for terminal access
             - ⏱️ Auto-terminates in 30 minutes
-            - 🔒 Password: `rishimondal`
 
             **Access:** [pr-${{ github.event.pull_request.number }}.previews.kubestellar.io/rishi-playground](http://pr-${{ github.event.pull_request.number }}.previews.kubestellar.io/rishi-playground)
 
