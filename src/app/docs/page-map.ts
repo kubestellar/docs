@@ -59,9 +59,11 @@ export async function buildPageMapForBranch(branch: string) {
   const processedFiles = new Set<string>()
   const pretty = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ')
 
-  const CATEGORY_MAPPINGS: Array<[string, Array<{ root?: string; file: string }>]> = [
+  type NavItem = { [key: string]: string | NavItem[] } | { file: string, root?: string };
+
+  const CATEGORY_MAPPINGS: Array<[string, NavItem[]]> = [
     ['What is Kubestellar?', [
-      { file: 'overview.md' },
+      { file: 'readme.md' },
       { file: 'architecture.md' },
       { file: 'related-projects.md' },
       { file: 'roadmap.md' },
@@ -70,33 +72,49 @@ export async function buildPageMapForBranch(branch: string) {
     ['Install & Configure', [
       { file: '.get-started.md' },
       { file: 'start-from-ocm.md' },
+      { file: 'pre-reqs.md' },
       { file: 'setup-limitations.md' },
-      { file: 'acquire-hosting-cluster.md' },
-      { file: 'init-hosting-cluster.md' },
-      { file: 'core-specs/inventory-and-transport.md' },
-      { file: 'core-specs/workload-description.md' },
-      { file: 'workload-execution-cluster/about.md' },
-      { file: 'workload-execution-cluster/register.md' },
+      { 'KubeFlex Hosting cluster': [
+          { 'Acquire cluster for KubeFlex Hosting': 'direct/acquire-hosting-cluster.md' },
+          { 'Initialize KubeFlex Hosting cluster': 'direct/init-hosting-cluster.md' }
+      ]},
+      { 'Core Spaces': [
+          { 'Inventory and Transport Spaces': 'direct/its.md' },
+          { 'Workload Description Spaces': 'direct/wds.md' }
+      ]},
+      { 'Workload Execution Clusters': [
+          { 'About Workload Execution Clusters': 'direct/wec.md' },
+          { 'Register a Workload Execution Cluster': 'direct/wec-registration.md' }
+      ]},
       { file: 'core-chart.md' },
       { file: 'teardown.md' }
     ]],
     ['Use & Integrate', [
       { file: 'usage-limitations.md' },
-      { file: 'binding.md' },
-      { file: 'transforming.md' },
-      { file: 'combined-status.md' },
+      { 'KubeStellar API': [
+          { 'Overview': 'direct/control.md' },
+          { 'API reference (new tab)': 'https://pkg.go.dev/github.com/kubestellar/kubestellar/api/control/v1alpha1' },
+          { 'Binding': 'direct/binding.md' },
+          { 'Transforming desired state': 'direct/transforming.md' },
+          { 'Combining reported state': 'direct/combined-status.md' }
+      ]},
       { file: 'example-scenarios.md' },
-      { file: 'argo-to-wds1.md' }
+      { 'Third-party integrations': [
+          { 'ArgoCD to WDS': 'direct/argo-to-wds1.md' }
+      ]}
     ]],
     ['User Guide & Support', [
       { file: 'user-guide-intro.md' },
       { file: 'troubleshooting.md' },
-      { file: 'known-issues.md' },
-      { file: 'knownissue-collector-miss.md' },
-      { file: 'knownissue-helm-ghcr.md' },
-      { file: 'knownissue-kind-config.md' },
-      { file: 'knownissue-cpu-insufficient-for-its1.md' },
-      { file: 'knownissue-kflex-extension.md' },
+      { 'Known Issues': [
+          { 'Overview': 'direct/known-issues.md' },
+          { 'Hidden state in kubeconfig': 'direct/knownissue-kflex-extension.md' },
+          { 'Kind needs OS reconfig': 'direct/knownissue-kind-config.md' },
+          { 'Authorization failure while fetching Helm chart from ghcr.io': 'direct/knownissue-helm-ghcr.md' },
+          { 'Missing results in a CombinedStatus object': 'direct/knownissue-collector-miss.md' },
+          { 'Kind host not configured for more than two clusters': 'direct/installation-errors.md' },
+          { 'Insufficient CPU for your clusters': 'direct/knownissue-cpu-insufficient-for-its1.md' }
+      ]},
       { file: 'combined-status.md' }
     ]],
     ['UI & Tools', [
@@ -112,33 +130,53 @@ export async function buildPageMapForBranch(branch: string) {
     ]]
   ]
 
-  for (const [categoryName, fileConfigs] of CATEGORY_MAPPINGS) {
-    const fulls: string[] = []
+  function buildNavNodes(items: NavItem[], parentSlug: string): PageMapNode[] {
+    const nodes: PageMapNode[] = [];
 
-    for (const config of fileConfigs) {
-      const root = config.root || DIRECT_ROOT
-      if (!root) continue
+    for (const item of items) {
+        if ('file' in item) { // It's a file object
+            const root = item.root || DIRECT_ROOT;
+            if (!root) continue;
+            const fullPath = `${root}/${item.file}`;
+            if (allDocFiles.includes(fullPath)) {
+                processedFiles.add(fullPath);
+                const baseName = fullPath.replace(/\.(md|mdx)$/i, '').split('/').pop()!;
+                const route = `/${basePath}/${parentSlug}/${baseName}`;
+                const alias = `${parentSlug}/${baseName}`;
+                aliases.push({ alias, fp: fullPath });
+                nodes.push({ kind: 'MdxPage' as const, name: pretty(baseName), route });
+            }
+        } else { // It's a category object
+            const title = Object.keys(item)[0];
+            const value = item[title];
 
-      const fullPath = `${root}/${config.file}`
-      if (allDocFiles.includes(fullPath)) {
-        fulls.push(fullPath)
-        processedFiles.add(fullPath)
-      }
+            if (typeof value === 'string') { // It's a file path string
+                // Don't assume DIRECT_ROOT. Check if the file exists as specified.
+                 if (allDocFiles.includes(value)) {
+                    processedFiles.add(value);
+                    const route = `/${basePath}/${parentSlug}/${value.replace(/\.(md|mdx)$/i, '')}`;
+                    const alias = `${parentSlug}/${value.replace(/\.(md|mdx)$/i, '')}`;
+                    aliases.push({ alias, fp: value });
+                    nodes.push({ kind: 'MdxPage' as const, name: title, route });
+                }
+            } else if (Array.isArray(value)) { // It's a sub-category
+                const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                const children = buildNavNodes(value, `${parentSlug}/${slug}`);
+                if (children.length > 0) {
+                    nodes.push({ kind: 'Folder', name: title, route: `/${basePath}/${parentSlug}/${slug}`, children });
+                }
+            }
+        }
     }
+    return nodes;
+  }
 
-    if (!fulls.length) continue
 
+  for (const [categoryName, fileConfigs] of CATEGORY_MAPPINGS) {
     const categorySlug = categoryName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-    const children = fulls.map(full => {
-      const baseName = full
-        .replace(/\.(md|mdx)$/i, '')
-        .split('/')
-        .pop()!
-      const route = `/${basePath}/${categorySlug}/${baseName}`
-      const alias = `${categorySlug}/${baseName}`
-      aliases.push({ alias, fp: full })
-      return { kind: 'MdxPage' as const, name: pretty(baseName), route }
-    })
+    const children = buildNavNodes(fileConfigs, categorySlug);
+
+    if (!children.length) continue
 
     _pageMap.push({ kind: 'Folder', name: categoryName, route: `/${basePath}/${categorySlug}`, children })
   }
