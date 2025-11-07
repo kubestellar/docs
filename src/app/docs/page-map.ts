@@ -154,8 +154,10 @@ export async function buildPageMapForBranch(branch: string) {
                 // Don't assume DIRECT_ROOT. Check if the file exists as specified.
                  if (allDocFiles.includes(value)) {
                     processedFiles.add(value);
-                    const route = `/${basePath}/${parentSlug}/${value.replace(/\.(md|mdx)$/i, '')}`;
-                    const alias = `${parentSlug}/${value.replace(/\.(md|mdx)$/i, '')}`;
+                    const baseName = value.replace(/\.(md|mdx)$/i, '').split('/').pop()!;
+                    const route = `/${basePath}/${parentSlug}/${baseName}`;
+                    // Create an alias from the route to the file path
+                    const alias = route.replace(`/${basePath}/`, '');
                     aliases.push({ alias, fp: value });
                     nodes.push({ kind: 'MdxPage' as const, name: title, route });
                 }
@@ -270,21 +272,14 @@ export async function buildPageMapForBranch(branch: string) {
   }
 
   const routeMap: Record<string, string> = {}
+  // Populate routeMap from all files first
   for (const fp of allDocFiles) {
     const noExt = fp.replace(/\.(md|mdx)$/i, '')
-    const norm = normalizeRoute(noExt)
     routeMap[noExt] = fp
-    if (!noExt.startsWith('content/')) routeMap[`content/${noExt}`] = fp
-    const isIndex = /\/(readme|index)$/i.test(noExt) || /^(readme|index)$/i.test(noExt)
-    if (!routeMap[norm] || isIndex) routeMap[norm] = fp
-    if (norm !== '' && !norm.startsWith('content/')) {
-      const contentNorm = `content/${norm}`
-      if (!routeMap[contentNorm] || isIndex) routeMap[contentNorm] = fp
-    }
   }
+  // Overwrite with specific aliases from our custom structure to ensure correctness
   for (const { alias, fp } of aliases) {
     routeMap[alias] = fp
-    if (!alias.startsWith('content/')) routeMap[`content/${alias}`] = fp
   }
 
   const pageMap = normalizePageMap(_pageMap)
