@@ -40,7 +40,7 @@ export async function buildPageMapForBranch(branch: string) {
   }
 
   const treeData = await fetchDocsTree()
-  let allDocFiles =
+  const allDocFiles =
     treeData.tree?.filter(
       t =>
         t.type === 'blob' &&
@@ -53,7 +53,12 @@ export async function buildPageMapForBranch(branch: string) {
   const DIRECT_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'direct')
   const UI_DOCS_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'ui docs' || r.toLowerCase() === 'ui-docs')
 
-  type PageMapNode = { kind: 'Folder' | 'MdxPage'; name: string; route: string; children?: any[] } | any
+  // Strong types for page-map nodes (no `any`)'
+  type MdxPageNode = { kind: 'MdxPage'; name: string; route: string }
+  type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageMapNode[] }
+  type MetaNode = { kind: 'Meta'; data: Record<string, string> }
+  type PageMapNode = MdxPageNode | FolderNode | MetaNode
+
   const _pageMap: PageMapNode[] = []
   const aliases: Array<{ alias: string; fp: string }> = []
   const processedFiles = new Set<string>()
@@ -144,7 +149,7 @@ export async function buildPageMapForBranch(branch: string) {
 
   function buildNavNodes(items: NavItem[], parentSlug: string): PageMapNode[] {
     const nodes: PageMapNode[] = [];
-    const meta: Record<string, any> = {};
+    const meta: Record<string, string> = {};
 
     for (const item of items) {
         let node: PageMapNode | null = null;
@@ -205,7 +210,6 @@ export async function buildPageMapForBranch(branch: string) {
     if (Object.keys(meta).length > 0) {
         nodes.unshift({ kind: 'Meta', data: meta });
     }
-    
     return nodes;
   }
 
@@ -231,16 +235,16 @@ export async function buildPageMapForBranch(branch: string) {
     return true
   })
 
-  const { pageMap: remainingFileNodes } = convertToPageMap({ filePaths: remainingFiles, meta: {} })
+  const { pageMap: remainingFileNodesRaw } = convertToPageMap({ filePaths: remainingFiles, meta: {} })
+  const remainingFileNodes = remainingFileNodesRaw as unknown as PageMapNode[]
 
+  // Type guards so TS knows which fields exist
+  const hasRoute = (n: PageMapNode): n is MdxPageNode | FolderNode => 'route' in n
+  const hasChildren = (n: PageMapNode): n is FolderNode => 'children' in n
   function addBasePathToRoutes(nodes: PageMapNode[]) {
     for (const node of nodes) {
-      if (node.route) {
-        node.route = `/${basePath}${node.route}`
-      }
-      if (node.children) {
-        addBasePathToRoutes(node.children)
-      }
+      if (hasRoute(node)) node.route = `/${basePath}${node.route}`
+      if (hasChildren(node)) addBasePathToRoutes(node.children)
     }
   }
 
@@ -248,7 +252,7 @@ export async function buildPageMapForBranch(branch: string) {
 
   _pageMap.push(...remainingFileNodes)
 
-  const meta: Record<string, any> = {}
+  const meta: Record<string, string> = {}
   for (const [categoryName] of CATEGORY_MAPPINGS) {
     meta[categoryName] = categoryName
   }
@@ -260,11 +264,6 @@ export async function buildPageMapForBranch(branch: string) {
     kind: 'Meta',
     data: meta
   })
-
-  // Build routeMap
-  function normalizeRoute(noExtPath: string) {
-    return noExtPath.replace(/\/(readme|index)$/i, '').replace(/^(readme|index)$/i, '')
-  }
 
   const routeMap: Record<string, string> = {}
   // Populate routeMap from all files first
