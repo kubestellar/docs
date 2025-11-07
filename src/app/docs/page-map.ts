@@ -63,50 +63,61 @@ export async function buildPageMapForBranch(branch: string) {
 
   const CATEGORY_MAPPINGS: Array<[string, NavItem[]]> = [
     ['What is Kubestellar?', [
-      { file: 'readme.md' },
+      { 'Overview': 'README.md' },
       { file: 'architecture.md' },
       { file: 'related-projects.md' },
       { file: 'roadmap.md' },
       { file: 'release-notes.md' }
     ]],
     ['Install & Configure', [
-      { file: '.get-started.md' },
-      { file: 'start-from-ocm.md' },
+      // { file: 'get-started.md' },  
       { file: 'pre-reqs.md' },
+      { file: 'start-from-ocm.md' },
       { file: 'setup-limitations.md' },
-      { 'KubeFlex Hosting cluster': [
+      {
+        'KubeFlex Hosting cluster': [
           { 'Acquire cluster for KubeFlex Hosting': 'direct/acquire-hosting-cluster.md' },
           { 'Initialize KubeFlex Hosting cluster': 'direct/init-hosting-cluster.md' }
-      ]},
-      { 'Core Spaces': [
+        ]
+      },
+      {
+        'Core Spaces': [
           { 'Inventory and Transport Spaces': 'direct/its.md' },
           { 'Workload Description Spaces': 'direct/wds.md' }
-      ]},
-      { 'Workload Execution Clusters': [
+        ]
+      },
+      {
+        'Workload Execution Clusters': [
           { 'About Workload Execution Clusters': 'direct/wec.md' },
           { 'Register a Workload Execution Cluster': 'direct/wec-registration.md' }
-      ]},
+        ]
+      },
       { file: 'core-chart.md' },
       { file: 'teardown.md' }
     ]],
     ['Use & Integrate', [
       { file: 'usage-limitations.md' },
-      { 'KubeStellar API': [
+      {
+        'KubeStellar API': [
           { 'Overview': 'direct/control.md' },
           { 'API reference (new tab)': 'https://pkg.go.dev/github.com/kubestellar/kubestellar/api/control/v1alpha1' },
           { 'Binding': 'direct/binding.md' },
           { 'Transforming desired state': 'direct/transforming.md' },
           { 'Combining reported state': 'direct/combined-status.md' }
-      ]},
+        ]
+      },
       { file: 'example-scenarios.md' },
-      { 'Third-party integrations': [
+      {
+        'Third-party integrations': [
           { 'ArgoCD to WDS': 'direct/argo-to-wds1.md' }
-      ]}
+        ]
+      }
     ]],
     ['User Guide & Support', [
       { file: 'user-guide-intro.md' },
       { file: 'troubleshooting.md' },
-      { 'Known Issues': [
+      {
+        'Known Issues': [
           { 'Overview': 'direct/known-issues.md' },
           { 'Hidden state in kubeconfig': 'direct/knownissue-kflex-extension.md' },
           { 'Kind needs OS reconfig': 'direct/knownissue-kind-config.md' },
@@ -114,7 +125,8 @@ export async function buildPageMapForBranch(branch: string) {
           { 'Missing results in a CombinedStatus object': 'direct/knownissue-collector-miss.md' },
           { 'Kind host not configured for more than two clusters': 'direct/installation-errors.md' },
           { 'Insufficient CPU for your clusters': 'direct/knownissue-cpu-insufficient-for-its1.md' }
-      ]},
+        ]
+      },
       { file: 'combined-status.md' }
     ]],
     ['UI & Tools', [
@@ -132,8 +144,12 @@ export async function buildPageMapForBranch(branch: string) {
 
   function buildNavNodes(items: NavItem[], parentSlug: string): PageMapNode[] {
     const nodes: PageMapNode[] = [];
+    const meta: Record<string, any> = {};
 
     for (const item of items) {
+        let node: PageMapNode | null = null;
+        let keyForMeta: string | null = null;
+
         if ('file' in item) {
             const root = item.root || DIRECT_ROOT;
             if (!root) continue;
@@ -144,30 +160,52 @@ export async function buildPageMapForBranch(branch: string) {
                 const route = `/${basePath}/${parentSlug}/${baseName}`;
                 const alias = `${parentSlug}/${baseName}`;
                 aliases.push({ alias, fp: fullPath });
-                nodes.push({ kind: 'MdxPage' as const, name: pretty(baseName), route });
+                node = { kind: 'MdxPage' as const, name: pretty(baseName), route };
+                keyForMeta = pretty(baseName);
             }
         } else { 
             const title = Object.keys(item)[0];
             const value = item[title];
 
             if (typeof value === 'string') { 
-                 if (allDocFiles.includes(value)) {
-                    processedFiles.add(value);
-                    const baseName = value.replace(/\.(md|mdx)$/i, '').split('/').pop()!;
-                    const route = `/${basePath}/${parentSlug}/${baseName}`;
-                    const alias = route.replace(`/${basePath}/`, '');
-                    aliases.push({ alias, fp: value });
-                    nodes.push({ kind: 'MdxPage' as const, name: title, route });
+                 if (value.startsWith('http')) {
+                    node = { kind: 'MdxPage' as const, name: title, route: value };
+                    keyForMeta = title;
+                 } else {
+                    // Case-insensitive file search
+                    const foundFile = allDocFiles.find(f => f.toLowerCase() === value.toLowerCase());
+                    if (foundFile) {
+                        processedFiles.add(foundFile);
+                        const baseName = foundFile.replace(/\.(md|mdx)$/i, '').split('/').pop()!;
+                        // Correct route for root files like README.md
+                        const isRootFile = !foundFile.includes('/');
+                        const route = isRootFile ? `/${basePath}` : `/${basePath}/${parentSlug}/${baseName}`;
+                        const alias = isRootFile ? '' : route.replace(`/${basePath}/`, '');
+                        aliases.push({ alias, fp: foundFile });
+                        node = { kind: 'MdxPage' as const, name: title, route };
+                        keyForMeta = title;
+                    }
                 }
             } else if (Array.isArray(value)) { // It's a sub-category
                 const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
                 const children = buildNavNodes(value, `${parentSlug}/${slug}`);
                 if (children.length > 0) {
-                    nodes.push({ kind: 'Folder', name: title, route: `/${basePath}/${parentSlug}/${slug}`, children });
+                    node = { kind: 'Folder', name: title, route: `/${basePath}/${parentSlug}/${slug}`, children };
+                    keyForMeta = title;
                 }
             }
         }
+
+        if (node && keyForMeta) {
+            nodes.push(node);
+            meta[keyForMeta] = keyForMeta;
+        }
     }
+
+    if (Object.keys(meta).length > 0) {
+        nodes.unshift({ kind: 'Meta', data: meta });
+    }
+    
     return nodes;
   }
 
