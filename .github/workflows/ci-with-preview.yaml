@@ -311,6 +311,72 @@ jobs:
             [http://pr-${{ github.event.pull_request.number }}.previews.kubestellar.io](http://pr-${{ github.event.pull_request.number }}.previews.kubestellar.io)
 
   # ============================================================
+  # 🏗️ Deploy Kubernetes Playground (Oracle Cloud)
+  # ============================================================
+  deploy-playground:
+    name: Deploy K8s Playground
+    runs-on: ubuntu-latest
+    needs: [check_changes, build-preview]
+    if: |
+      github.event.action != 'closed' &&
+      (contains(github.event.pull_request.changed_files, 'src/app/[locale]/rishi-playground/') ||
+       contains(github.event.pull_request.changed_files, 'scripts/') ||
+       contains(github.event.pull_request.changed_files, 'src/components/playground/'))
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install OCI CLI
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y python3-pip
+          pip install oci-cli
+
+      - name: Configure OCI CLI
+        env:
+          OCI_CLI_USER: ${{ secrets.OCI_CLI_USER }}
+          OCI_CLI_FINGERPRINT: ${{ secrets.OCI_CLI_FINGERPRINT }}
+          OCI_CLI_KEY_CONTENT: ${{ secrets.OCI_CLI_KEY_CONTENT }}
+          OCI_CLI_TENANCY: ${{ secrets.OCI_CLI_TENANCY }}
+          OCI_CLI_REGION: ${{ secrets.OCI_CLI_REGION }}
+        run: |
+          mkdir -p ~/.oci
+          echo "$OCI_CLI_KEY_CONTENT" > ~/.oci/oci_api_key.pem
+          chmod 600 ~/.oci/oci_api_key.pem
+          cat <<EOF > ~/.oci/config
+          [DEFAULT]
+          user=${OCI_CLI_USER}
+          fingerprint=${OCI_CLI_FINGERPRINT}
+          key_file=~/.oci/oci_api_key.pem
+          tenancy=${OCI_CLI_TENANCY}
+          region=${OCI_CLI_REGION}
+          EOF
+
+      - name: Deploy playground environment
+        run: |
+          chmod +x scripts/deploy-playground.sh
+          scripts/deploy-playground.sh
+        env:
+          OCI_COMPARTMENT_ID: ${{ secrets.OCI_CLI_TENANCY }}
+          OCI_AD: ${{ secrets.OCI_AD }}
+          OCI_UBUNTU_IMAGE: ${{ secrets.OCI_UBUNTU_IMAGE }}
+          OCI_SUBNET_ID: ${{ secrets.OCI_SUBNET_ID }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+
+      - name: Comment PR with playground info
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            🎮 **Kubernetes Playground Deployed**
+            - 🏗️ 2-node K8s cluster (master + worker)
+            - 🌐 WebSocket bridge for terminal access
+            - ⏱️ Auto-terminates in 30 minutes
+            - 🔒 Password: `rishimondal`
+
+            **Access:** [pr-${{ github.event.pull_request.number }}.previews.kubestellar.io/rishi-playground](http://pr-${{ github.event.pull_request.number }}.previews.kubestellar.io/rishi-playground)
+
+  # ============================================================
   # 🧹 Cleanup on PR close
   # ============================================================
   cleanup:
