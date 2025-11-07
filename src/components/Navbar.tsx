@@ -29,7 +29,7 @@ export default function Navbar() {
         );
 
         if (menu) {
-          container.addEventListener("mouseenter", () => {
+          const showMenu = () => {
             if (timeoutRef.current) {
               clearTimeout(timeoutRef.current);
               timeoutRef.current = null;
@@ -55,16 +55,24 @@ export default function Navbar() {
               (window as any).closeLangSwitcher();
             }
 
+            // Ensure menu is visible
             menu.style.display = "block";
+            menu.style.opacity = "1";
+            menu.style.visibility = "visible";
             setIsDropdownOpen(true);
-          });
+          };
 
-          container.addEventListener("mouseleave", () => {
+          const hideMenu = () => {
             timeoutRef.current = setTimeout(() => {
               menu.style.display = "none";
+              menu.style.opacity = "0";
+              menu.style.visibility = "hidden";
               setIsDropdownOpen(false);
-            }, 100);
-          });
+            }, 300);
+          };
+
+          container.addEventListener("mouseenter", showMenu);
+          container.addEventListener("mouseleave", hideMenu);
 
           menu.addEventListener("mouseenter", () => {
             if (timeoutRef.current) {
@@ -73,10 +81,7 @@ export default function Navbar() {
             }
           });
 
-          menu.addEventListener("mouseleave", () => {
-            menu.style.display = "none";
-            setIsDropdownOpen(false);
-          });
+          menu.addEventListener("mouseleave", hideMenu);
         }
       });
 
@@ -89,6 +94,8 @@ export default function Navbar() {
             ) as HTMLElement;
             if (menu) {
               menu.style.display = "none";
+              menu.style.opacity = "0";
+              menu.style.visibility = "hidden";
             }
           });
 
@@ -213,29 +220,49 @@ export default function Navbar() {
 
           // Trigger LanguageSwitcher open
           const langButton = langSwitcher.querySelector("button");
-          if (langButton && !isLangHovered) {
-            isLangHovered = true;
-            langButton.click();
-            setIsDropdownOpen(true);
+          if (langButton) {
+            // Check if dropdown is currently open
+            const dropdown = document.querySelector('[role="listbox"]');
+            const isDropdownVisible = dropdown && window.getComputedStyle(dropdown).display !== 'none';
+            
+            if (!isDropdownVisible) {
+              isLangHovered = true;
+              langButton.click();
+              setIsDropdownOpen(true);
+            } else {
+              isLangHovered = true;
+            }
           }
         };
 
         const handleMouseLeave = () => {
           timeoutRef.current = setTimeout(() => {
             const langButton = langSwitcher.querySelector("button");
-            if (langButton && isLangHovered) {
+            const dropdown = document.querySelector('[role="listbox"]');
+            const isDropdownVisible = dropdown && window.getComputedStyle(dropdown).display !== 'none';
+            
+            if (langButton && isLangHovered && isDropdownVisible) {
               isLangHovered = false;
               langButton.click();
               setIsDropdownOpen(false);
+            } else if (!isDropdownVisible) {
+              isLangHovered = false;
+              setIsDropdownOpen(false);
             }
-          }, 100);
+          }, 300);
         };
 
         const closeLangSwitcher = () => {
           const langButton = langSwitcher.querySelector("button");
-          if (langButton && isLangHovered) {
+          const dropdown = document.querySelector('[role="listbox"]');
+          const isDropdownVisible = dropdown && window.getComputedStyle(dropdown).display !== 'none';
+          
+          if (langButton && isDropdownVisible) {
             isLangHovered = false;
             langButton.click();
+            setIsDropdownOpen(false);
+          } else if (isLangHovered) {
+            isLangHovered = false;
             setIsDropdownOpen(false);
           }
         };
@@ -403,7 +430,7 @@ export default function Navbar() {
                 <div className="relative group" data-dropdown>
                   <button
                     type="button"
-                    className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-100 transform nav-link-hover"
+                    className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-100 transform nav-link-hover cursor-pointer"
                     data-dropdown-button
                     aria-haspopup="true"
                     aria-expanded="false"
@@ -446,7 +473,7 @@ export default function Navbar() {
                     </svg>
                   </button>
                   <div
-                    className="absolute left-0 mt-1 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50"
+                    className="absolute left-0 mt-1 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
                     data-dropdown-menu
                     style={{ display: "none" }}
                   >
@@ -551,7 +578,7 @@ export default function Navbar() {
                 <div className="relative group" data-dropdown>
                   <button
                     type="button"
-                    className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-100 transform nav-link-hover"
+                    className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-100 transform nav-link-hover cursor-pointer"
                     data-dropdown-button
                     aria-haspopup="true"
                     aria-expanded="false"
@@ -587,7 +614,7 @@ export default function Navbar() {
                     </svg>
                   </button>
                   <div
-                    className="absolute left-0  mt-1 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50"
+                    className="absolute left-0  mt-1 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
                     data-dropdown-menu
                     style={{ display: "none" }}
                   >
@@ -727,7 +754,7 @@ export default function Navbar() {
                 </button>
                 <div
                   data-dropdown-menu
-                  className="absolute hidden lg:flex right-0 mt-1 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700"
+                  className="absolute hidden lg:flex right-0 mt-1 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
                   style={{ display: "none" }}
                 >
                   <a
@@ -784,22 +811,37 @@ export default function Navbar() {
 
               {/* Mobile menu button */}
               <button
-                className="lg:hidden p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700"
-                aria-label="Open menu"
+                className="lg:hidden p-2 rounded focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-700 group cursor-pointer"
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                <svg
-                  className="w-6 h-6 stroke-black dark:stroke-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                {isMenuOpen ? (
+                  <svg
+                    className="w-6 h-6 stroke-black dark:stroke-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-90"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="w-6 h-6 stroke-black dark:stroke-white transition-all duration-300 group-hover:scale-110"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
@@ -991,11 +1033,7 @@ export default function Navbar() {
                     <span>{t("programs")}</span>
                   </Link>
                 </div>
-<<<<<<< Updated upstream
                 <div className="relative mb-2">
-=======
-                <div className="relative group mb-2">
->>>>>>> Stashed changes
                   <Link
                     href="/ladder"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
@@ -1018,11 +1056,7 @@ export default function Navbar() {
                     <span>{t("ladder")}</span>
                   </Link>
                 </div>
-<<<<<<< Updated upstream
                 <div className="relative mb-2">
-=======
-                <div className="relative group mb-2">
->>>>>>> Stashed changes
                   <a
                     href="#contact-us"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
@@ -1045,11 +1079,7 @@ export default function Navbar() {
                     <span>{t("contactUs")}</span>
                   </a>
                 </div>
-<<<<<<< Updated upstream
                 <div className="relative mb-4">
-=======
-                <div className="relative group mb-4">
->>>>>>> Stashed changes
                   <Link
                     href="/partners"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
@@ -1086,7 +1116,7 @@ export default function Navbar() {
                     href="https://github.com/kubestellar/kubestellar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 max-w-xs"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg  max-w-xs"
                   >
                     <div className="flex items-center space-x-3">
                       <svg
@@ -1110,7 +1140,7 @@ export default function Navbar() {
                     href="https://github.com/kubestellar/kubestellar/fork"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 max-w-xs"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg  max-w-xs"
                   >
                     <div className="flex items-center space-x-3">
                       <svg
@@ -1140,7 +1170,7 @@ export default function Navbar() {
                     href="https://github.com/kubestellar/kubestellar/watchers"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between px-3 py-2 rounded-lg bg-gray-800/50 max-w-xs"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg  max-w-xs"
                   >
                     <div className="flex items-center space-x-3">
                       <svg
