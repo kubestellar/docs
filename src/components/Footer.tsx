@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { GridLines, StarField } from "./index";
 import { useTranslations } from "next-intl";
+import {Link}  from "@/i18n/navigation";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -138,51 +138,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Product Links */}
+          {/* Docs Links */}
           <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-3 sm:order-3">
             <h3 className="text-lg font-semibold text-white mb-4">
-              {t("product")}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("features")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("useCases")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("pricing")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("roadmap")}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources Links */}
-          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-4 sm:order-4">
-            <h3 className="text-lg font-semibold text-white mb-4">
-              {t("resources")}
+              {t("docs")}
             </h3>
             <ul className="space-y-3">
               <li>
@@ -190,72 +149,115 @@ export default function Footer() {
                   href="/docs"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("documentation")}
+                  {t("overview")}
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/docs"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("tutorials")}
-                </a>
+                  {t("userGuide")}
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/docs"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("blog")}
-                </a>
+                  {t("onboarding")}
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/docs"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("community")}
-                </a>
+                  {t("releasesNotes")}
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company Links */}
-          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-5 sm:order-5">
+          {/* Getting Started Links */}
+          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-4 sm:order-4">
             <h3 className="text-lg font-semibold text-white mb-4">
-              {t("company")}
+              {t("gettingStarted")}
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/quick-installation"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("about")}
-                </a>
+                  {t("installationPage")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/ladder"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("ladder")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("products")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contribute-handbook"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("contributeHandbook")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources Links */}
+          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-5 sm:order-5">
+            <h3 className="text-lg font-semibold text-white mb-4">
+              {t("resources")}
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/playground"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("playground")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/programs"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("programs")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/partners"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("partners")}
+                </Link>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://blog.kubestellar.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("team")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("careers")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("contact")}
+                  {t("blog")}
                 </a>
               </li>
             </ul>
