@@ -1,4 +1,70 @@
 {
+  "heroSection": {
+    "line1": "多集群",
+    "line2": "Kubernetes",
+    "line3": "编排",
+    "subtitle": "体验云原生编排的未来。KubeStellar通过AI驱动的自动化和实时智能革新多集群管理。",
+    "terminalTitle": "kubestellar-control-center",
+    "terminalStatus": "就绪",
+    "terminalCommandL1": "bash <(curl -s \\",
+    "terminalCommandL2": "  https://raw.githubusercontent.com/kubestellar/ \\",
+    "terminalCommandL3": "  kubestellar/refs/tags/v0.27.2/scripts/ \\",
+    "terminalCommandL4": "  create-kubestellar-demo-env.sh) --platform kind",
+    "terminalOutputInfo": "信息",
+    "terminalOutputInfoText": "正在安装KubeStellar演示环境...",
+    "terminalOutputSetup": "设置",
+    "terminalOutputSetupText": "创建kind集群：kubeflex、cluster1、cluster2",
+    "terminalOutputInstall": "安装",
+    "terminalOutputInstallText": "部署KubeFlex控制平面组件",
+    "terminalOutputConfig": "配置",
+    "terminalOutputConfigText": "配置开放集群管理",
+    "terminalOutputSuccess": "成功",
+    "terminalOutputSuccessText": "KubeStellar演示环境就绪！设置完成",
+    "buttonInstall": "安装KubeStellar",
+    "buttonDocs": "浏览文档"
+  },
+  "footer": {
+    "description": "多集群Kubernetes编排平台，简化跨不同基础设施的分布式工作负载管理。",
+    "docs": "文档",
+    "overview": "概览",
+    "userGuide": "用户指南",
+    "onboarding": "入门指导",
+    "releasesNotes": "发布说明",
+    "gettingStarted": "开始使用",
+    "installationPage": "安装页面",
+    "ladder": "阶梯",
+    "products": "产品",
+    "contributeHandbook": "贡献手册",
+    "resources": "资源",
+    "playground": "游乐场",
+    "programs": "项目",
+    "partners": "合作伙伴",
+    "blog": "博客",
+    "product": "产品",
+    "features": "功能",
+    "useCases": "使用案例",
+    "pricing": "定价",
+    "roadmap": "路线图",
+    "documentation": "文档",
+    "tutorials": "教程",
+    "community": "社区",
+    "company": "公司",
+    "about": "关于",
+    "team": "团队",
+    "careers": "职业",
+    "contact": "联系",
+    "stayUpdated": "保持更新",
+    "emailPlaceholder": "邮箱",
+    "subscribe": "订阅",
+    "subscribed": "已订阅！",
+    "privacyNotice": "我们尊重您的隐私。无垃圾邮件。",
+    "copyright": "© 2025 KubeStellar. 保留所有权利。Apache 2.0许可证",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "cookiePolicy": "Cookie政策",
+    "madeWithLove": "由KubeStellar团队用❤️制作",
+    "backToTop": "回到顶部"
+  },
   "navigation": {
     "docs": "文档",
     "blog": "博客",
@@ -36,5 +102,612 @@
     "mobileUseCases": "使用案例",
     "mobileGetStarted": "开始使用",
     "mobileContact": "联系方式"
+  },
+  "aboutSection": {
+    "title": "什么是",
+    "titleSpan": "KubeStellar",
+    "subtitle": "一个多集群Kubernetes编排平台，简化组织跨多个Kubernetes集群管理分布式工作负载的方式。",
+    "card1Title": "单一控制平面",
+    "card1Description": "以原生Kubernetes格式处理对象，无需包装或捆绑。通过工作负载定义空间(WDS)集中存储和管理工作负载定义，通过库存和传输空间(ITS)高效管理集群库存。",
+    "card2Title": "智能工作负载放置",
+    "card2Description": "使用基于标签的选择和绑定策略指定工作负载在何处运行。支持标准Kubernetes资源、自定义资源(CRD)、Helm图表和树外工作负载类型，具有自动同步功能以保持跨集群工作负载同步。",
+    "card3Title": "策略驱动管理",
+    "card3Description": "通过BindingPolicy系统实施全面治理。管理单例状态以进行单独集群监控和组合状态聚合。应用自定义转换，在中断后自动恢复。",
+    "learnMore": "了解更多"
+  },
+  "contactSection": {
+    "title": "联系",
+    "titleSpan": "我们",
+    "subtitle": "对KubeStellar有疑问？我们在这里提供帮助！",
+    "card1Title": "邮件支持",
+    "card1Description": "从我们的团队获得直接支持",
+    "card1Link": "support@kubestellar.io",
+    "card2Title": "社区聊天",
+    "card2Description": "加入我们的Slack工作空间获得实时支持",
+    "card2Link": "加入Slack",
+    "card3Title": "GitHub",
+    "card3Description": "贡献、报告问题或浏览源代码",
+    "card3Link": "查看仓库",
+    "card4Title": "LinkedIn",
+    "card4Description": "与我们的专业社区连接",
+    "card4Link": "关注我们",
+    "formTitle": "发送消息",
+    "formName": "姓名 *",
+    "formNamePlaceholder": "您的全名",
+    "formEmail": "邮箱 *",
+    "formEmailPlaceholder": "you@example.com",
+    "formSubject": "主题 *",
+    "formSubjectPlaceholder": "选择主题",
+    "formSubjectOption1": "一般咨询",
+    "formSubjectOption2": "技术支持",
+    "formSubjectOption3": "合作伙伴关系",
+    "formSubjectOption4": "文档反馈",
+    "formSubjectOption5": "企业解决方案",
+    "formSubjectOption6": "其他",
+    "formMessage": "消息 *",
+    "formMessagePlaceholder": "告诉我们您的使用案例以及我们如何提供帮助...",
+    "formPrivacy": "我同意",
+    "formPrivacyLink": "隐私政策",
+    "formPrivacyCont": "并同意KubeStellar团队联系我。",
+    "formSubmit": "发送消息",
+    "formSubmitting": "发送中...",
+    "formSuccess": "您的邮件将发送到KubeStellar开发邮件列表。请检查您的邮件客户端以完成发送！"
+  },
+  "getStartedSection": {
+    "title": "准备开始了吗？",
+    "subtitle": "加入不断增长的KubeStellar用户和贡献者社区。",
+    "card1Title": "快速安装",
+    "card1Description": "使用我们简化的安装指南，在几分钟内启动和运行KubeStellar，包括自动化先决条件检查和逐步部署程序。",
+    "card1Button": "开始快速安装",
+    "card2Title": "探索使用案例和社区",
+    "card2Description": "发现多集群工作负载管理能力并与社区连接。",
+    "card2Button1": "加入Slack",
+    "card2Button2": "GitHub",
+    "card2Button3": "产品",
+    "card2Button4": "手册",
+    "card3Title": "探索文档",
+    "card3Description": "全面的指南、教程和API参考，帮助您掌握KubeStellar的能力。",
+    "card3Link1": "开始使用",
+    "card3Link2": "教程",
+    "card3Link3": "API参考"
+  },
+  "howToUseSection": {
+    "title": "如何使用",
+    "titleSpan": "KubeStellar",
+    "subtitle": "按照这5个简单步骤开始使用KubeStellar多集群编排",
+    "step1Title": "设置您的环境",
+    "step1Description": "安装所需工具并初始化核心组件",
+    "step1DescriptionDesktop": "安装所需工具并初始化核心组件，包括KubeFlex托管集群、ITS、WDS和WEC。",
+    "step1CodeComment": "# 安装所需工具",
+    "step1Tool1": "kubectl",
+    "step1Tool2": "helm",
+    "step1Tool3": "docker",
+    "step1Tool4": "kind/k3d",
+    "step1Tool5": "KubeFlex",
+    "step1Tool6": "开放集群管理(OCM) CLI",
+    "step2Title": "注册和标记集群",
+    "step2Description": "注册WEC并应用标签进行定位",
+    "step2DescriptionDesktop": "使用OCM向ITS注册WEC，向集群应用标签进行定位，并建立安全连接。",
+    "step2CodeComment": "# 集群标记示例",
+    "step2Command": "kubectl label managedcluster",
+    "step2Cluster": "cluster1",
+    "step2Label1": "location-group=edge",
+    "step2Label2": "name=cluster1",
+    "step3Title": "定义工作负载放置",
+    "step3Description": "创建BindingPolicy对象指定部署规则",
+    "step3DescriptionDesktop": "创建BindingPolicy对象指定哪些集群接收工作负载以及分发哪些工作负载。",
+    "step3ApiVersion": "control.kubestellar.io/v1alpha1",
+    "step3Kind": "BindingPolicy",
+    "step3MetadataName": "example-policy",
+    "step3SpecClusterSelectors": "clusterSelectors",
+    "step3MatchLabels": "matchLabels",
+    "step3LocationGroup": "location-group: edge",
+    "step4Title": "部署您的工作负载",
+    "step4Description": "以原生Kubernetes格式部署工作负载",
+    "step4DescriptionDesktop": "使用kubectl apply、Helm图表、ArgoCD或自定义资源以原生Kubernetes格式部署工作负载。",
+    "step4ApiVersion": "apps/v1",
+    "step4Kind": "Deployment",
+    "step4MetadataName": "example-app",
+    "step4Labels": "labels",
+    "step4AppName": "app.kubernetes.io/name: myapp",
+    "step4Spec": "spec",
+    "step4Replicas": "replicas",
+    "step4ReplicasValue": "3",
+    "step5Title": "监控和管理",
+    "step5Description": "监控部署状态并管理工作负载健康",
+    "step5DescriptionDesktop": "跨集群监控部署状态，查看工作负载健康状况，收集状态信息，并管理策略合规性。",
+    "step5Tag1": "状态收集",
+    "step5Tag2": "健康监控",
+    "step5Tag3": "策略管理",
+    "step5Command1Comment": "# 检查跨集群部署状态",
+    "step5Command2Comment": "# 查看工作负载分布",
+    "step5Command3Comment": "# 监控资源使用"
+  },
+  "useCasesSection": {
+    "title": "使用",
+    "titleSpan": "案例",
+    "subtitle": "发现组织如何利用KubeStellar满足其多集群需求。",
+    "learnMore": "了解更多",
+    "cases": {
+      "edge": {
+        "title": "边缘计算",
+        "description": "跨边缘位置部署应用程序，实现集中管理。适用于具有分布式基础设施的零售、制造和电信。",
+        "backContent": {
+          "title": "声明式多集群工作负载管理",
+          "description": "使用原生Kubernetes对象跨多个集群部署和管理Kubernetes工作负载，无需包装或捆绑。",
+          "features": [
+            "跨集群部署原生Kubernetes对象",
+            "使用基于标签的集群选择进行工作负载定位",
+            "通过工作负载定义空间(WDS)进行集中管理"
+          ]
+        }
+      },
+      "compliance": {
+        "title": "多区域合规",
+        "description": "部署具有特定区域合规要求的应用程序。确保全球运营中的数据驻留和监管合规。",
+        "backContent": {
+          "title": "自定义资源分发",
+          "description": "跨多个集群分发和管理自定义资源(CRD)，同时保持适当的同步和生命周期管理。",
+          "features": ["支持树外工作负载类型", "自动CRD同步", "灵活的RBAC配置"]
+        }
+      },
+      "hybrid": {
+        "title": "混合/多云",
+        "description": "通过统一策略和一致体验，无缝管理跨多个云提供商和本地基础设施的工作负载。",
+        "backContent": {
+          "title": "弹性多集群操作",
+          "description": "即使在控制平面中断或网络问题期间也能保持可靠的工作负载分发和管理。",
+          "features": [
+            "具有多个空间的弹性架构",
+            "中断后自动恢复",
+            "跨集群状态协调"
+          ]
+        }
+      },
+      "dr": {
+        "title": "灾难恢复",
+        "description": "通过跨不同区域多个集群的自动工作负载复制和故障转移实施强大的灾难恢复策略。",
+        "backContent": {
+          "title": "高级状态管理",
+          "description": "跨多个集群监控和管理工作负载状态，提供单独和聚合状态报告选项。",
+          "features": [
+            "用于单独集群监控的单例状态报告",
+            "跨集群的组合状态聚合",
+            "通过OCM状态插件的实时状态更新"
+          ]
+        }
+      },
+      "multitenant": {
+        "title": "多租户隔离",
+        "description": "为不同团队或客户创建隔离环境，同时保持集中控制。适用于SaaS提供商和大型企业。",
+        "backContent": {
+          "title": "Helm图表分发",
+          "description": "跨多个集群部署和管理Helm图表，同时保持图表元数据和发布信息。",
+          "features": [
+            "原生Helm图表支持",
+            "跨集群一致的发布管理",
+            "基于标签的图表分发"
+          ]
+        }
+      },
+      "performance": {
+        "title": "性能优化",
+        "description": "将工作负载部署到最接近用户或数据源的位置以获得最佳性能，减少延迟并改善全球运营中的用户体验。",
+        "backContent": {
+          "title": "基于模板的定制",
+          "description": "为不同集群定制工作负载配置，同时保持单一事实来源。",
+          "features": ["支持模板扩展", "集群特定定制", "基于属性的配置"]
+        }
+      }
+    }
+  },
+  "communityHandbook": {
+    "title": "贡献",
+    "titleSpan": "手册",
+    "learnMore": "了解更多",
+    "cards": {
+      "onboarding": {
+        "title": "入门指导",
+        "description": "KubeStellar GitHub组织入职和离职政策。了解如何开始使用我们的社区。"
+      },
+      "codeOfConduct": {
+        "title": "行为准则",
+        "description": "我们承诺创建一个欢迎和包容的社区，让每个人都能贡献和繁荣。"
+      },
+      "guidelines": {
+        "title": "指导原则",
+        "description": "为KubeStellar项目做贡献的最佳实践。高质量贡献的基本指导原则。"
+      },
+      "license": {
+        "title": "许可证",
+        "description": "KubeStellar采用Apache 2.0许可证。了解开源许可和条款。"
+      },
+      "governance": {
+        "title": "治理",
+        "description": "KubeStellar项目的治理和组织方式。了解我们的决策过程。"
+      },
+      "testing": {
+        "title": "测试",
+        "description": "测试贡献的程序和指导原则。确保每次更改的质量和可靠性。"
+      },
+      "packaging": {
+        "title": "打包",
+        "description": "如何打包和分发KubeStellar组件。了解构建和部署过程。"
+      },
+      "docsManagement": {
+        "title": "文档管理概述",
+        "description": "文档如何管理和更新的概述。全面的文档工作流程。"
+      },
+      "testingWebsitePRs": {
+        "title": "测试网站PR",
+        "description": "如何测试KubeStellar网站的拉取请求。Web更改的质量保证。"
+      },
+      "releaseProcess": {
+        "title": "发布流程",
+        "description": "创建和发布新KubeStellar版本的过程。完整的发布生命周期管理。"
+      },
+      "releaseTesting": {
+        "title": "发布测试",
+        "description": "如何在发布前测试和验证新版本。全面的发布验证过程。"
+      },
+      "signoffSigning": {
+        "title": "签署和签名贡献",
+        "description": "签署您的贡献的要求。法律合规和贡献验证。"
+      }
+    }
+  },
+  "programDetailsPage": {
+    "benefits": "好处",
+    "description": "描述",
+    "overview": "概述",
+    "eligibility": "资格标准",
+    "timeline": "时间表",
+    "structure": "项目结构",
+    "howToApply": "如何申请",
+    "resources": "资源"
+  },
+  "quickInstallationPage": {
+    "title": "快速安装指南",
+    "subtitle": "通过这个简化的安装指南快速启动和运行KubeStellar。按照下面的先决条件和安装步骤操作。",
+    "prerequisitesTitle": "先决条件",
+    "prerequisitesSubtitle": "根据您的使用案例安装所需工具",
+    "coreTitle": "核心先决条件",
+    "coreDescription": "使用KubeStellar的基本工具",
+    "coreDocker": "Docker",
+    "coreDockerDesc": "容器运行时平台",
+    "coreKubectl": "kubectl",
+    "coreKubectlDesc": "Kubernetes命令行工具",
+    "coreKubeflex": "KubeFlex",
+    "coreKubeflexDesc": "多集群管理的核心组件",
+    "coreOcm": "OCM CLI",
+    "coreOcmDesc": "开放集群管理命令行界面",
+    "coreHelm": "Helm",
+    "coreHelmDesc": "Kubernetes包管理器",
+    "additionalTitle": "附加先决条件",
+    "additionalDescription": "运行KubeStellar示例的附加工具",
+    "additionalKind": "kind",
+    "additionalKindDesc": "Kubernetes IN Docker - 本地Kubernetes集群",
+    "additionalK3d": "k3d",
+    "additionalK3dDesc": "在Docker中运行k3s的轻量级包装器",
+    "additionalArgo": "Argo CD CLI",
+    "additionalArgoDesc": "Kubernetes的GitOps持续交付工具",
+    "buildTitle": "构建先决条件",
+    "buildDescription": "从源代码构建KubeStellar所需的工具",
+    "buildMake": "Make",
+    "buildMakeDesc": "构建自动化工具",
+    "buildGo": "Go",
+    "buildGoDesc": "构建KubeStellar的编程语言",
+    "buildKo": "ko",
+    "buildKoDesc": "Go应用程序的容器镜像构建器",
+    "prerequisitesInstall": "安装：",
+    "prerequisitesVerify": "验证：",
+    "prerequisitesButton": "查看详细安装指南",
+    "autoCheckTitle": "自动检查先决条件",
+    "autoCheckSubtitle": "使用此脚本自动验证您的系统是否具有所有必需工具",
+    "autoCheckRun": "运行先决条件检查：",
+    "autoCheckAboutTitle": "关于先决条件检查脚本",
+    "autoCheckAbout1": "自包含脚本，适用于\"curl-to-bash\"使用",
+    "autoCheckAbout2": "使用which命令检查您的$PATH中先决条件的存在",
+    "autoCheckAbout3": "为现有先决条件提供版本和路径信息",
+    "autoCheckAbout4": "显示缺失先决条件的安装信息",
+    "autoCheckReleaseTitle": "针对特定版本",
+    "autoCheckReleaseDesc": "要检查特定KubeStellar版本的先决条件，请使用该特定版本的脚本而不是主分支。",
+    "autoCheckReleaseTip": "提示：在继续安装之前运行此检查，以确保您的系统配置正确。",
+    "installTitle": "KubeStellar安装",
+    "installSubtitle": "选择您的平台并运行安装脚本",
+    "installPlatform": "选择您的平台：",
+    "installKind": "kind",
+    "installKindDesc": "Docker中的Kubernetes",
+    "installK3d": "k3d",
+    "installK3dDesc": "轻量级Kubernetes",
+    "installScriptTitle": "安装脚本适用于",
+    "installProcessTitle": "安装过程",
+    "installProcess1": "创建本地{platform}集群",
+    "installProcess2": "安装KubeStellar核心组件",
+    "installProcess3": "设置多集群管理能力",
+    "installProcess4": "配置工作负载分发",
+    "installNextTitle": "下一步",
+    "installNext1": "验证安装",
+    "installNext2": "检查KubeStellar状态",
+    "installNext3": "探索",
+    "installNext3Link": "文档",
+    "installNext3Suffix": "获取示例和高级用法",
+    "faqTitle": "常见问题",
+    "faqSubtitle": "关于KubeStellar安装和设置的常见问题",
+    "faq1Q": "核心、附加和构建先决条件之间有什么区别？",
+    "faq1A": "核心先决条件是使用KubeStellar的基本要求。附加先决条件是运行示例和演示所需的。构建先决条件仅在您计划从源代码构建KubeStellar时才需要。",
+    "faq2Q": "我可以自动检查是否安装了所有先决条件吗？",
+    "faq2A": "是的！使用自动先决条件检查脚本：'curl -fsSL https://raw.githubusercontent.com/kubestellar/kubestellar/refs/heads/main/scripts/check_pre_req.sh | bash'。此脚本将验证所有先决条件并为缺失的工具提供安装指导。",
+    "faq3Q": "我需要安装所有先决条件吗？",
+    "faq3A": "对于基本的KubeStellar使用，您只需要核心先决条件。如果您想运行示例，请安装附加先决条件。构建先决条件仅用于开发和从源代码构建。",
+    "faq4Q": "我可以在现有的Kubernetes集群中使用KubeStellar吗？",
+    "faq4A": "是的！KubeStellar可以管理现有的Kubernetes集群。您可以将生产集群与本地开发集群连接，实现统一的多集群管理。",
+    "faq5Q": "最低系统要求是什么？",
+    "faq5A": "KubeStellar至少需要4GB RAM和2个CPU核心。您需要Docker(v20.0+)、kubectl(v1.27+)和kind(v0.20+)或k3d用于本地集群。"
+  },
+  "programsPage": {
+    "title": "加入我们的",
+    "titleSpan": "使命",
+    "subtitle": "发现为KubeStellar做贡献并在开源开发中推进您职业生涯的有意义机会。",
+    "paid": "付费项目",
+    "unpaid": "无薪实习",
+    "programs": {
+      "gsoc": {
+        "name": "GSoC",
+        "fullName": "Google Summer of Code",
+        "description": "通过Google的顶级开源项目转变您的编程技能",
+        "sections": {
+          "benefits": "获得实际经验，向经验丰富的导师学习，成为开源社区的一部分，并在成功完成项目后获得津贴。",
+          "description": "Google Summer of Code是一个专注于将更多学生开发者带入开源软件开发的全球项目。学生在学校休息期间与开源组织合作进行为期3个月的编程项目。"
+        }
+      },
+      "esoc": {
+        "name": "ESoC",
+        "fullName": "European Summer of Code",
+        "description": "赋能欧洲开源开发人才",
+        "sections": {
+          "benefits": "获得实际经验，向经验丰富的导师学习，成为开源社区的一部分，并在成功完成项目后获得津贴。",
+          "description": "European Summer of Code是一个专注于将更多学生开发者带入开源软件开发的欧洲项目。学生在学校休息期间与开源组织合作进行为期3个月的编程项目。"
+        }
+      },
+      "ifos": {
+        "name": "IFoS",
+        "fullName": "Interns for Open Source",
+        "description": "通过KubeStellar开启您的开源之旅",
+        "sections": {
+          "benefits": "获得实际经验，向经验丰富的导师学习，成为开源社区的一部分，并在成功完成项目后获得津贴。",
+          "description": "Interns for Open Source是一个专注于将更多学生开发者带入开源软件开发的项目。学生在学校休息期间与开源组织合作进行为期3个月的编程项目。"
+        }
+      },
+      "lfx": {
+        "name": "LFX",
+        "fullName": "LFX Mentorship",
+        "description": "通过Linux Foundation导师制加速您的开源之旅",
+        "sections": {
+          "benefits": "获得实际经验，向经验丰富的导师学习，成为开源社区的一部分，并在成功完成项目后获得津贴。",
+          "description": "LFX Mentorship是一个专注于将更多学生开发者带入开源软件开发的项目。学生在学校休息期间与开源组织合作进行为期3个月的编程项目。"
+        }
+      }
+    }
+  },
+  "productsPage": {
+    "title": "我们的",
+    "titleSpan": "产品",
+    "subtitle": "发现我们的工具和平台套件，它们增强了KubeStellar生态系统并赋能多集群Kubernetes管理。",
+    "repoButton": "仓库",
+    "websiteButton": "网站",
+    "watchDemoButton": "观看演示",
+    "products": {
+      "kubestellar": {
+        "name": "KubeStellar",
+        "fullName": "KubeStellar",
+        "description": "多集群Kubernetes编排平台，简化跨不同基础设施环境的分布式工作负载管理。提供统一控制平面、智能工作负载放置和策略驱动治理，通过自动扩展、资源优化和跨云提供商的无缝集成功能实现复杂的多集群部署。"
+      },
+      "kubestellarUI": {
+        "name": "KubeStellar UI",
+        "fullName": "KubeStellar UI",
+        "description": "用于管理多集群Kubernetes编排的强大的基于Web的界面，具有直观的仪表板、实时监控和全面的控制功能，用于简化集群管理。具有高级可视化工具、可定制工作空间和智能警报，以优化您的多集群操作。"
+      },
+      "kubeflex": {
+        "name": "KubeFlex",
+        "fullName": "KubeFlex",
+        "description": "灵活的Kubernetes管理平台，为多集群编排和工作负载分发提供全面的工具和资源。支持动态集群配置、自动扩展和跨异构环境的智能资源分配。通过策略驱动的自动化简化复杂的部署场景。"
+      },
+      "a2a": {
+        "name": "A2A",
+        "fullName": "A2A",
+        "description": "应用到应用通信平台，在KubeStellar生态系统内实现无缝连接。促进分布式微服务之间的安全数据交换和实时通信。为复杂的多集群部署提供高级路由、负载均衡和服务发现功能。"
+      },
+      "kubectlMulti": {
+        "name": "kubectl-multi",
+        "fullName": "kubectl-multi",
+        "description": "用于KubeStellar多集群操作的全面kubectl插件。此插件扩展kubectl以在所有KubeStellar管理的集群中无缝工作，提供统一视图和操作，同时过滤掉工作流暂存集群(WDS)。同时跨多个集群执行命令，具有智能输出聚合。"
+      },
+      "galaxyMarketplace": {
+        "name": "Galaxy Marketplace",
+        "fullName": "KS Galaxy Marketplace",
+        "description": "KubeStellar扩展、插件和社区贡献工具和集成的集中市场。发现、安装和管理第三方组件以增强您的多集群编排能力。具有自动兼容性检查、版本管理和与现有KubeStellar部署的无缝集成。"
+      }
+    }
+  },
+  "ladderPage": {
+    "title": "贡献",
+    "titleSpan": "阶梯",
+    "subtitle": "KubeStellar社区中从首次贡献者到受信任维护者的透明、基于功绩的路径",
+    "requirementsLabel": "要求：",
+    "nextLevelLabel": "下一级别：",
+    "levels": {
+      "contributor": {
+        "title": "贡献者",
+        "nextLevel": "无薪实习生",
+        "description": "在KubeStellar社区中开始您的旅程",
+        "requirements": [
+          "至少3个贡献(错误报告、文档或代码PR)",
+          "展示对长期参与的热情和兴趣",
+          "在GitHub和Slack上保持活跃",
+          "非正式申请或提名加入实习生项目"
+        ]
+      },
+      "unpaidIntern": {
+        "title": "无薪实习生",
+        "nextLevel": "付费实习生",
+        "description": "为期12周的旅程，展示承诺和技能",
+        "timeframe": "12周",
+        "requirements": [
+          "至少开启6个'需要帮助'的问题",
+          "合并至少20个PR(前6周内8个)",
+          "参加每周团队会议或提交总结",
+          "与导师协作",
+          "获得导师推荐"
+        ]
+      },
+      "paidIntern": {
+        "title": "付费实习生",
+        "nextLevel": "导师",
+        "description": "获得认可的贡献者，有报酬和责任",
+        "requirements": [
+          "成功完成至少一个12周的付费实习周期",
+          "帮助入职并支持至少一个新实习生或贡献者",
+          "提交≥3个PR审查",
+          "对PR或问题提交≥5个有用评论",
+          "在社区电话会议中演示或共同演示"
+        ]
+      },
+      "mentor": {
+        "title": "导师",
+        "nextLevel": "维护者",
+        "description": "指导和支持下一代贡献者",
+        "requirements": [
+          "在一个或多个关键领域展示技术领导力",
+          "保持一致的贡献活动",
+          "在GitHub和Slack中与社区互动",
+          "经过公开审查流程由核心维护者批准"
+        ]
+      },
+      "maintainer": {
+        "title": "维护者",
+        "nextLevel": "核心团队",
+        "description": "具有完全项目责任的受信任领导者",
+        "requirements": [
+          "每2个月≥2个'需要帮助'问题",
+          "每2个月≥3个合并的PR",
+          "每2个月≥8个PR审查或建设性评论",
+          "每2个月≥3次社区会议出席"
+        ]
+      }
+    },
+    "activityRequirements": {
+      "title": "维护者活动要求",
+      "subtitle": "维护者必须满足这些双月(每2个月)贡献最低要求：",
+      "table": {
+        "metric": "指标",
+        "requirement": "要求(每2个月)",
+        "helpWantedIssues": "\"需要帮助\"问题",
+        "helpWantedIssuesValue": "≥ 2",
+        "prsMerged": "合并的PR",
+        "prsMergedValue": "≥ 3",
+        "prReviews": "PR审查或建设性评论",
+        "prReviewsValue": "≥ 8",
+        "meetingAttendance": "社区会议出席",
+        "meetingAttendanceValue": "≥ 3"
+      }
+    },
+    "callToAction": {
+      "title": "准备开始您的旅程了吗？",
+      "subtitle": "加入KubeStellar社区，今天开始攀登维护者阶梯",
+      "communityMeetingsButton": "社区会议",
+      "viewIssuesButton": "查看开放问题",
+      "exploreCodeTitle": "探索代码",
+      "exploreCodeDescription": "浏览我们的代码库并为项目做贡献",
+      "viewRepositoryLink": "查看仓库 →",
+      "joinSlackTitle": "加入Slack",
+      "joinSlackDescription": "与社区连接进行实时讨论",
+      "joinCommunityLink": "加入社区 →",
+      "learnGuideTitle": "学习指南",
+      "learnGuideDescription": "阅读我们的全面贡献手册",
+      "viewHandbookLink": "查看手册 →"
+    }
+  },
+  "partnersPage": {
+    "title": "我们的",
+    "titleSpan": "合作伙伴",
+    "subtitle": "与领先的开源项目合作，增强多集群Kubernetes编排",
+    "learnMore": "了解更多",
+    "partners": {
+      "argocd": {
+        "description": "Kubernetes的声明式GitOps持续交付工具，自动化应用程序部署和生命周期管理。"
+      },
+      "fluxcd": {
+        "description": "Kubernetes的渐进式交付工具，从Git仓库启用自动部署，具有强大的GitOps功能。"
+      },
+      "kyverno": {
+        "description": "Kubernetes原生策略管理解决方案，使用声明式策略验证、转换和生成配置。"
+      },
+      "mvi": {
+        "description": "多集群可见性和洞察平台，为分布式Kubernetes环境提供全面的监控和分析。"
+      },
+      "openziti": {
+        "description": "零信任网络覆盖和边缘应用平台，为分布式应用程序提供安全连接。"
+      },
+      "turbonomic": {
+        "description": "应用程序资源管理平台，通过AI驱动的自动化确保应用程序性能，同时优化基础设施成本。"
+      }
+    },
+    "whyPartner": {
+      "title": "为什么与我们合作",
+      "subtitle": "加入我们的创新合作伙伴生态系统，共同塑造多集群Kubernetes管理的未来",
+      "benefits": [
+        {
+          "title": "创新",
+          "description": "在前沿多集群编排解决方案上合作"
+        },
+        {
+          "title": "社区",
+          "description": "与充满活力的云原生开发者和组织生态系统连接"
+        },
+        {
+          "title": "卓越",
+          "description": "推动Kubernetes编排的行业标准和最佳实践"
+        }
+      ]
+    },
+    "partnershipOpportunities": {
+      "title": "成为合作伙伴",
+      "subtitle": "与KubeStellar携手，推动多集群Kubernetes编排的创新，扩大您在云原生生态系统中的影响力。",
+      "description": "我们的合作伙伴计划旨在促进与技术提供商、云平台和服务集成商的合作，这些合作伙伴与我们简化多集群Kubernetes管理的愿景一致。我们可以共同提供全面的解决方案，使企业能够无缝管理其分布式工作负载。",
+      "features": [
+        "技术集成支持和工程资源",
+        "联合市场推广计划和共同营销机会",
+        "访问我们不断增长的云原生从业者社区",
+        "在我们的合作伙伴页面和文档中的特色展示",
+        "协作产品开发和路线图输入",
+        "优先支持和专门的合作伙伴经理"
+      ],
+      "contactButton": "联系我们"
+    }
+  },
+  "comingSoonPage": {
+    "title": "即将",
+    "titleSpan": "推出",
+    "subtitle": "我们正在为KubeStellar社区开发令人惊叹的功能",
+    "description": "这个令人兴奋的新功能目前正在开发中。我们的团队正在打造一个卓越的体验，将增强您的多集群Kubernetes编排之旅。",
+    "statusBadge": "开发中",
+    "cta": {
+      "title": "立即探索KubeStellar",
+      "subtitle": "在等待的同时，发现KubeStellar今天能为您做什么",
+      "documentsButton": "查看文档",
+      "documentsDescription": "全面的指南和API参考",
+      "documentsAction": "探索文档",
+      "quickStartButton": "快速开始指南",
+      "quickStartDescription": "几分钟内启动和运行",
+      "quickStartAction": "开始安装",
+      "communityButton": "加入社区",
+      "communityDescription": "与开发者和贡献者连接",
+      "communityAction": "加入GitHub",
+      "handbookButton": "手册",
+      "ladderButton": "阶梯",
+      "programsButton": "项目",
+      "partnersButton": "合作伙伴"
+    }
   }
 }
