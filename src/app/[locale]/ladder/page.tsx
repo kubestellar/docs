@@ -1,10 +1,13 @@
 "use client";
 
-import { GridLines, StarField } from "../../../components/index";
-import Navigation from "../../../components/Navigation";
-import Footer from "../../../components/Footer";
+import {
+  GridLines,
+  StarField,
+  ContributionCallToAction,
+  Navbar,
+  Footer,
+} from "../../../components/index";
 import { useTranslations } from "next-intl";
-import GetStartedSection from "@/components/master-page/GetStartedSection";
 
 export default function MaintainerLadderPage() {
   const t = useTranslations("ladderPage");
@@ -157,7 +160,7 @@ export default function MaintainerLadderPage() {
 
   return (
     <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
-      <Navigation />
+      <Navbar />
 
       {/* Full page background with starfield */}
       <div className="fixed inset-0 z-0">
@@ -171,14 +174,14 @@ export default function MaintainerLadderPage() {
         <GridLines horizontalLines={21} verticalLines={18} />
       </div>
 
-      <div className="relative z-10 pt-16">
+      <div className="relative z-10 pt-7">
         {" "}
         {/* Add padding-top to account for fixed navbar */}
         {/* Header Section */}
-        <section className="py-16 sm:py-20 lg:py-24">
+        <section className="pt-12 pb-12 sm:pt-28 sm:pb-16 lg:pt-24 lg:pb-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
                 {t("title")}{" "}
                 <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
                   {t("titleSpan")}
@@ -196,7 +199,7 @@ export default function MaintainerLadderPage() {
             {/* Mobile Layout */}
             <div className="lg:hidden">
               {levels.map((level, index) => (
-                <div key={level.id} className="mb-8">
+                <div key={level.id} className="mb-4">
                   {/* Level Card */}
                   <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 relative">
                     {/* Level Number */}
@@ -264,8 +267,8 @@ export default function MaintainerLadderPage() {
 
                   {/* Connector */}
                   {index < levels.length - 1 && (
-                    <div className="flex justify-center mt-4">
-                      <div className="w-0.5 h-8 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+                    <div className="flex justify-center mt-2">
+                      <div className="w-0.5 h-6 bg-gradient-to-b from-blue-500 to-purple-500"></div>
                     </div>
                   )}
                 </div>
@@ -278,7 +281,7 @@ export default function MaintainerLadderPage() {
               <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 transform -translate-x-1/2 z-5"></div>
 
               {levels.map((level, index) => (
-                <div key={level.id} className="relative mb-24 z-20">
+                <div key={level.id} className="relative z-20">
                   <div
                     className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
                   >
@@ -362,70 +365,8 @@ export default function MaintainerLadderPage() {
             </div>
           </div>
         </section>
-        {/* Maintainer Activity Requirements */}
-        <section className="py-16 sm:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-8 border border-white/10">
-              <h2 className="text-3xl font-bold text-white mb-8 text-center">
-                {t("activityRequirements.title")}
-              </h2>
-              <p className="text-gray-300 text-center mb-8 text-lg">
-                {t("activityRequirements.subtitle")}
-              </p>
-
-              <div className="overflow-x-auto">
-                <table className="w-full text-left">
-                  <thead>
-                    <tr className="border-b border-gray-600">
-                      <th className="py-4 px-6 text-white font-semibold">
-                        {t("activityRequirements.table.metric")}
-                      </th>
-                      <th className="py-4 px-6 text-white font-semibold">
-                        {t("activityRequirements.table.requirement")}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-gray-300">
-                    <tr className="border-b border-gray-700/50">
-                      <td className="py-4 px-6">
-                        {t("activityRequirements.table.helpWantedIssues")}
-                      </td>
-                      <td className="py-4 px-6 text-green-400 font-semibold">
-                        ≥ 2
-                      </td>
-                    </tr>
-                    <tr className="border-b border-gray-700/50">
-                      <td className="py-4 px-6 font-semibold">
-                        {t("activityRequirements.table.prsMerged")}
-                      </td>
-                      <td className="py-4 px-6 text-green-400 font-semibold">
-                        ≥ 3
-                      </td>
-                    </tr>
-                    <tr className="border-b border-gray-700/50">
-                      <td className="py-4 px-6">
-                        {t("activityRequirements.table.prReviews")}
-                      </td>
-                      <td className="py-4 px-6 text-green-400 font-semibold">
-                        ≥ 8
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="py-4 px-6">
-                        {t("activityRequirements.table.meetingAttendance")}
-                      </td>
-                      <td className="py-4 px-6 text-green-400 font-semibold">
-                        ≥ 3
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* Ready To Get Started Section */}
-        <GetStartedSection />
+        {/* Ready To Contribute Section */}
+        <ContributionCallToAction />
       </div>
       <Footer />
     </div>

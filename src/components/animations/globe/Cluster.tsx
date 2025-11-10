@@ -1,15 +1,9 @@
 import { useRef, useState, useMemo, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
-import {
-  Sphere,
-  Text,
-  Billboard,
-  Instances,
-  Instance,
-} from "@react-three/drei";
+import { Sphere, Line, Text, Billboard } from "@react-three/drei";
 import * as THREE from "three";
 
-// Theme colors
+// KubeStellar theme colors
 const COLORS = {
   primary: "#1a90ff",
   secondary: "#6236FF",
@@ -18,21 +12,7 @@ const COLORS = {
   background: "#0a0f1c",
 };
 
-/**
- * Cluster Component
- *
- * Creates a cluster of nodes arranged in a sphere, with connections between them.
- * Nodes randomly activate to show activity.
- *
- * @param position - 3D position of the cluster center
- * @param name - Display name of the cluster
- * @param nodeCount - Number of nodes in the cluster
- * @param radius - Radius of the cluster
- * @param color - Color theme for the cluster
- * @param description - Optional description shown on hover
- * @param isActive - Controls whether animation is running
- */
-
+// Cluster visualization with dynamic elements
 interface ClusterProps {
   position?: [number, number, number];
   name: string;
@@ -40,7 +20,6 @@ interface ClusterProps {
   radius: number;
   color: string;
   description?: string;
-  isActive?: boolean;
 }
 
 const Cluster = ({
@@ -50,14 +29,12 @@ const Cluster = ({
   radius,
   color,
   description,
-  isActive = true,
 }: ClusterProps) => {
   const clusterRef = useRef<THREE.Group>(null);
   const [activeNodes, setActiveNodes] = useState<number[]>([]);
   const [hovered, setHovered] = useState(false);
-  const frameCount = useRef(0);
 
-  // Generate nodes in a sphere distribution
+  // Generate nodes
   const nodes = useMemo(() => {
     return Array.from({ length: nodeCount }, (_, i) => {
       const phi = Math.acos(-1 + (2 * i) / nodeCount);
@@ -71,49 +48,27 @@ const Cluster = ({
     });
   }, [nodeCount, radius]);
 
-  // Generate connection lines between nodes (reduced for performance)
-  const connections = useMemo(() => {
-    const lines: [[number, number, number], [number, number, number]][] = [];
-
-    for (let i = 0; i < nodes.length; i += 2) {
-      for (let j = i + 1; j < nodes.length; j += 3) {
-        lines.push([nodes[i], nodes[j]]);
-      }
-    }
-
-    return lines;
-  }, [nodes]);
-
-  // Randomly activate nodes periodically
+  // Randomly activate nodes
   useEffect(() => {
-    if (!isActive) return;
-
     const interval = setInterval(() => {
       const randomNodes = Array.from(
-        { length: Math.min(3, Math.floor(nodeCount / 4)) },
+        { length: Math.floor(nodeCount / 3) },
         () => Math.floor(Math.random() * nodeCount)
       );
       setActiveNodes(randomNodes);
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, [nodeCount, isActive]);
+  }, [nodeCount]);
 
-  // Animation updates
+  // Animate cluster
   useFrame(state => {
-    if (!isActive) return;
-
-    frameCount.current += 1;
-
-    // Update rotation every 2 frames
-    if (frameCount.current % 2 === 0 && clusterRef.current) {
+    if (clusterRef.current) {
       clusterRef.current.rotation.y = state.clock.getElapsedTime() * 0.1;
       clusterRef.current.rotation.x =
         Math.sin(state.clock.getElapsedTime() * 0.2) * 0.05;
-    }
 
-    // Scale effect on hover
-    if (clusterRef.current) {
+      // Scale effect on hover
       const targetScale = hovered ? 1.05 : 1;
       clusterRef.current.scale.lerp(
         new THREE.Vector3(targetScale, targetScale, targetScale),
@@ -122,36 +77,14 @@ const Cluster = ({
     }
   });
 
-  // Shared materials
-  const nodeMaterial = useMemo(
-    () =>
-      new THREE.MeshPhongMaterial({
-        color: color,
-        emissive: color,
-        emissiveIntensity: 0.3,
-        shininess: 50,
-      }),
-    [color]
-  );
-
-  const lineMaterial = useMemo(
-    () =>
-      new THREE.LineBasicMaterial({
-        color: color,
-        transparent: true,
-        opacity: 0.2,
-      }),
-    [color]
-  );
-
   return (
     <group
       position={position}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      {/* Cluster boundary sphere */}
-      <Sphere args={[radius * 1.2, 16, 16]} frustumCulled>
+      {/* Cluster boundary */}
+      <Sphere args={[radius * 1.2, 32, 32]}>
         <meshPhongMaterial
           color={color}
           transparent
@@ -159,12 +92,11 @@ const Cluster = ({
           wireframe
           emissive={color}
           emissiveIntensity={hovered ? 0.3 : 0.1}
-          depthWrite={false}
         />
       </Sphere>
 
       {/* Cluster name */}
-      <Billboard position={[0, radius * 1.4, 0]} frustumCulled>
+      <Billboard position={[0, radius * 1.4, 0]}>
         <Text
           fontSize={0.18}
           color={color}
@@ -194,39 +126,35 @@ const Cluster = ({
         )}
       </Billboard>
 
-      {/* Node group */}
+      {/* Nodes */}
       <group ref={clusterRef}>
-        {/* Connection lines */}
-        {connections.map((points, i) => (
-          <primitive
-            key={i}
-            object={
-              new THREE.Line(
-                new THREE.BufferGeometry().setFromPoints([
-                  new THREE.Vector3(...points[0]),
-                  new THREE.Vector3(...points[1]),
-                ]),
-                lineMaterial
-              )
-            }
-            frustumCulled
-          />
+        {nodes.map((nodePos, idx) => (
+          <group key={idx}>
+            <Sphere position={nodePos} args={[0.08, 16, 16]}>
+              <meshPhongMaterial
+                color={activeNodes.includes(idx) ? COLORS.success : color}
+                emissive={activeNodes.includes(idx) ? color : undefined}
+                emissiveIntensity={activeNodes.includes(idx) ? 0.5 : 0}
+              />
+            </Sphere>
+
+            {/* Connect to some other nodes */}
+            {idx % 2 === 0 &&
+              nodes
+                .slice(idx + 1)
+                .filter((_, i) => i % 3 === 0)
+                .map((target, targetIdx) => (
+                  <Line
+                    key={targetIdx}
+                    points={[nodePos, target]}
+                    color={color}
+                    lineWidth={1}
+                    transparent
+                    opacity={0.3}
+                  />
+                ))}
+          </group>
         ))}
-
-        {/* Instanced nodes for performance */}
-        <Instances limit={nodeCount} range={nodeCount}>
-          <sphereGeometry args={[0.08, 8, 8]} />
-          <primitive object={nodeMaterial} />
-
-          {nodes.map((nodePos, idx) => (
-            <Instance
-              key={idx}
-              position={nodePos}
-              scale={activeNodes.includes(idx) ? 1.2 : 1}
-              color={activeNodes.includes(idx) ? COLORS.success : color}
-            />
-          ))}
-        </Instances>
       </group>
     </group>
   );

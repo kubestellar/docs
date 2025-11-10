@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useSearchParams, usePathname, useRouter } from 'next/navigation'
+import { VERSIONS, type VersionKey } from '@/config/versions'
 
 type DropdownType = "contribute" | "community" | "version" | "language" | "github" | null;
 
@@ -32,6 +34,11 @@ export default function DocsNavbar() {
     forks: "0",
     watchers: "0",
   });
+
+  const searchParams = useSearchParams()
+  const pathname = usePathname()
+  const router = useRouter()
+  const currentVersion = (searchParams.get('version') as VersionKey) || Object.keys(VERSIONS)[0]
 
   useEffect(() => {
     setMounted(true);
@@ -166,6 +173,13 @@ export default function DocsNavbar() {
     }, 300);
   };
 
+  const handleVersionChange = (version: VersionKey) => {
+    const params = new URLSearchParams(searchParams.toString())
+    params.set('version', version)
+    router.push(`${pathname}?${params.toString()}`)
+    setOpenDropdown(null)
+  }
+
   if (!mounted) {
     return null;
   }
@@ -257,7 +271,7 @@ export default function DocsNavbar() {
                 Join In
               </Link>
               <Link
-                href="/community-handbook"
+                href="/contribute-handbook"
                 className={dropdownItemClasses}
               >
                 <svg className="w-4 h-4 mr-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -317,7 +331,7 @@ export default function DocsNavbar() {
                 className={dropdownItemClasses}
               >
                 <svg className="w-4 h-4 mr-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v2M7 7h10" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
                 Programs
               </Link>
@@ -368,7 +382,7 @@ export default function DocsNavbar() {
               aria-haspopup="true"
               aria-expanded={openDropdown === "version"}
             >
-              <span>v3.8.1</span>
+              <span>{currentVersion}</span>
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -383,28 +397,36 @@ export default function DocsNavbar() {
                 onMouseEnter={handleDropdownMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-              <a href="#" className={`block px-3 py-2 text-sm transition-colors ${
-                isDark
-                  ? 'text-gray-300 hover:bg-neutral-800'
-                  : 'text-gray-700 hover:bg-gray-100'
-              }`}>
-                v3.8.1 <span className={isDark ? 'text-gray-400' : 'text-gray-500'}>(Current)</span>
-              </a>
-              <a href="#" className={`block px-3 py-2 text-sm transition-colors ${
-                isDark
-                  ? 'text-gray-300 hover:bg-neutral-800'
-                  : 'text-gray-700 hover:bg-gray-100'
-              }`}>
-                v3.8.0
-              </a>
-              <hr className={isDark ? 'my-1 border-neutral-800' : 'my-1 border-gray-200'} />
-              <a href="#" className={`block px-3 py-2 text-sm transition-colors ${
-                isDark
-                  ? 'text-gray-300 hover:bg-neutral-800'
-                  : 'text-gray-700 hover:bg-gray-100'
-              }`}>
-                All versions →
-              </a>
+                {Object.entries(VERSIONS).map(([key, value]) => (
+                  <button
+                    key={key}
+                    onClick={() => handleVersionChange(key as VersionKey)}
+                    className={`w-full text-left px-3 py-2 text-sm transition-colors ${
+                      currentVersion === key
+                        ? isDark
+                          ? 'bg-neutral-800 text-white'
+                          : 'bg-gray-100 text-gray-900'
+                        : isDark
+                          ? 'text-gray-300 hover:bg-neutral-800'
+                          : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    {value.label}
+                  </button>
+                ))}
+                <hr className={isDark ? 'my-1 border-neutral-800' : 'my-1 border-gray-200'} />
+                <a
+                  href="https://github.com/kubestellar/kubestellar/tags"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block px-3 py-2 text-sm transition-colors ${
+                    isDark
+                      ? 'text-gray-300 hover:bg-neutral-800'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  All versions →
+                </a>
               </div>
             )}
           </div>
@@ -773,7 +795,7 @@ export default function DocsNavbar() {
             }`}>
               Join In
             </Link>
-            <Link href="/community-handbook" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+            <Link href="/contribute-handbook" className={`block px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'

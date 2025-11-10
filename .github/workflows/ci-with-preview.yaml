@@ -1,12 +1,10 @@
-name: CI/CD & PR Preview Pipeline
+name: CI/CD Build, PR Preview, and Container Cleanup Pipeline
 
 on:
   push:
     branches: [main, develop]
   pull_request:
-    types: [opened, reopened, synchronize, labeled, unlabeled]
-  pull_request_target:
-    types: [opened, reopened, synchronize, labeled, unlabeled]
+    types: [opened, reopened, synchronize, labeled, unlabeled, closed]
   workflow_dispatch:
 
 env:
@@ -18,10 +16,16 @@ jobs:
   # ============================================================
   check_changes:
     name: Detect relevant changes
+    if: "!startsWith(github.event.head_commit.message, 'Merge')"
     runs-on: ubuntu-latest
     outputs:
       has_changes: ${{ steps.filter.outputs.has_changes }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Check for changed files (ignore root .md and config)
         id: changes
         uses: tj-actions/changed-files@v44
@@ -91,6 +95,7 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Verify build output
         run: |
@@ -209,11 +214,21 @@ jobs:
         if: steps.check_access.outputs.authorized == 'true'
         run: |
           echo "Checking if preview image exists for PR-${{ github.event.pull_request.number }}"
+          EXISTING_IMAGES=$(oci artifacts container image list \
+            --repository-name "kubestellar-docs-prs" \
+            --compartment-id "${{ secrets.OCI_CLI_TENANCY }}" \
+            --query 'data.items[?contains("display-name", `pr-`)].{id:id,name:["display-name"]}' \
+            --raw-output)
+          echo "Existing images: $EXISTING_IMAGES"
+
           EXISTING_IMAGE=$(oci artifacts container image list \
             --repository-name "kubestellar-docs-prs" \
             --compartment-id "${{ secrets.OCI_CLI_TENANCY }}" \
-            --query 'data[?contains(`display-name`, `pr-${{ github.event.pull_request.number }}`)].id' \
+            --query 'data.items[?contains("display-name", `pr-${{ github.event.pull_request.number }}`)].id | [0]' \
             --raw-output)
+
+          echo "Found image ID: $EXISTING_IMAGE"
+
           if [ -n "$EXISTING_IMAGE" ]; then
             echo "existing=true" >> $GITHUB_OUTPUT
             echo "✅ Found existing preview image."
@@ -243,6 +258,15 @@ jobs:
           echo "✅ No relevant changes and existing preview image found. Skipping rebuild and redeploy."
           echo "skip_build=true" >> $GITHUB_OUTPUT
 
+      - name: Checkout code
+        if: |
+          steps.check_access.outputs.authorized == 'true' &&
+          (needs.check_changes.outputs.has_changes == 'true' ||
+           steps.get_artifacts.outcome != 'success')
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Build app for preview
         if: |
           steps.check_access.outputs.authorized == 'true' &&
@@ -252,6 +276,8 @@ jobs:
           echo "⚙️ Building new preview..."
           npm ci
           npm run build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Verify build output
         if: steps.check_access.outputs.authorized == 'true' && steps.skip_build.outputs.skip_build != 'true'
@@ -331,11 +357,21 @@ jobs:
       - name: Delete PR image from OCIR
         run: |
           echo "Searching for image: pr-${{ github.event.pull_request.number }}"
+          EXISTING_IMAGES=$(oci artifacts container image list \
+            --repository-name "kubestellar-docs-prs" \
+            --compartment-id "${{ secrets.OCI_CLI_TENANCY }}" \
+            --query 'data.items[?contains("display-name", `pr-`)].{id:id,name:["display-name"]}' \
+            --raw-output)
+          echo "Existing images: $EXISTING_IMAGES"
+
           IMAGE_IDS=$(oci artifacts container image list \
             --repository-name "kubestellar-docs-prs" \
             --compartment-id "${{ secrets.OCI_CLI_TENANCY }}" \
-            --query 'data.items[?contains(`display-name`, `pr-${{ github.event.pull_request.number }}`)].id' \
+            --query 'data.items[?contains("display-name", `pr-${{ github.event.pull_request.number }}`)].id | [0]' \
             --raw-output)
+
+          echo "Found image IDs: $IMAGE_IDS"
+
           if [ -z "$IMAGE_IDS" ]; then
             echo "No image found for PR #${{ github.event.pull_request.number }}"
           else

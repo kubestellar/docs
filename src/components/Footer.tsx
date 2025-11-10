@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useEffect } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "./index";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -92,10 +94,10 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
+        <div className="grid grid-cols-3 sm:grid-cols-12 mb-12 items-start gap-1 sm:gap-6">
           {/* Brand Section */}
-          <div className="lg:col-span-4">
-            <div className="flex items-center-space-x-2 mb-2  ml-[-7px]">
+          <div className="col-span-3 sm:col-span-6 lg:col-span-4">
+            <div className="flex items-center space-x-2 mb-2  ml-[-7px]">
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
                 alt="Kubestellar logo"
@@ -113,13 +115,13 @@ export default function Footer() {
                 className="group relative w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300"
               >
                 <svg
-                  className="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(29,161,242,0.8)]"
+                  className="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    className="transition-colors duration-300 text-gray-400 group-hover:text-[#1DA1F2]"
-                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                    className="transition-colors duration-300 text-gray-400 group-hover:text-white"
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
                   />
                 </svg>
               </a>
@@ -171,51 +173,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Product Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-semibold text-white mb-4">
-              {t("product")}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("features")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("useCases")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("pricing")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("roadmap")}
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-semibold text-white mb-4">
-              {t("resources")}
+          {/* Docs Links */}
+          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-3 sm:order-3 mt-4 sm:mt-0">
+            <h3 className="text-md sm:text-lg font-semibold text-white mb-4">
+              {t("docs")}
             </h3>
             <ul className="space-y-3">
               <li>
@@ -223,80 +184,126 @@ export default function Footer() {
                   href="/docs"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("documentation")}
+                  {t("overview")}
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/docs"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("tutorials")}
-                </a>
+                  {t("userGuide")}
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/docs"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("blog")}
-                </a>
+                  {t("onboarding")}
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/docs"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("community")}
-                </a>
+                  {t("releasesNotes")}
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-semibold text-white mb-4">
-              {t("company")}
+          {/* Getting Started Links */}
+          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-4 sm:order-4 mt-4 sm:mt-0">
+            <h3 className="text-md sm:text-lg font-semibold text-white mb-4">
+              {t("gettingStarted")}
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/quick-installation"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("about")}
-                </a>
+                  {t("installationPage")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/ladder"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("ladder")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("products")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contribute-handbook"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("contributeHandbook")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources Links */}
+          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-5 sm:order-5 mt-4 sm:mt-0">
+            <h3 className="text-md sm:text-lg font-semibold text-white mb-4">
+              {t("resources")}
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/playground"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("playground")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/programs"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("programs")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/partners"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  {t("partners")}
+                </Link>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://blog.kubestellar.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
-                  {t("team")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("careers")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("contact")}
+                  {t("blog")}
                 </a>
               </li>
             </ul>
           </div>
 
           {/* Stay updated */}
-          <div className="sm:col-span-2 lg:col-span-2">
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+          <div
+            className="col-span-3 sm:col-span-6 lg:col-span-2 sm:order-2 lg:order-6 md:ml-12 lg:ml-0 mt-4 sm:mt-0
+          "
+          >
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider sm:mt-3 md:mt-2 lg:mt-1 mb-4">
               {t("stayUpdated")}
             </h3>
             <div className="bg-gray-800/50 backdrop-blur-md rounded-lg p-4 border border-gray-700/50 transform transition-all duration-300 hover:border-blue-500/30">
@@ -332,7 +339,7 @@ export default function Footer() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-md shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 transform hover:translate-y-[-1px] flex items-center justify-center"
+                  className="w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-md shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 transform hover:translate-y-[-1px] flex items-center justify-center cursor-pointer"
                 >
                   <span>{t("subscribe")}</span>
                 </button>
@@ -364,33 +371,31 @@ export default function Footer() {
         {/* Divider and bottom section */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-6 mb-4 md:mb-0">
-              <p className="text-gray-400">{t("copyright")}</p>
-              <div className="flex items-center space-x-4">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
-                >
-                  {t("privacyPolicy")}
-                </a>
-                <span className="text-gray-600">•</span>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
-                >
-                  {t("termsOfService")}
-                </a>
-                <span className="text-gray-600">•</span>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
-                >
-                  {t("cookiePolicy")}
-                </a>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-400 text-sm">{t("madeWithLove")}</span>
+            {/* Left side - copyright */}
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+              {t("copyright")}
+            </p>
+
+            {/* Right side - policy links */}
+            <div className="flex items-center space-x-8">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+              >
+                {t("privacyPolicy")}
+              </a>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+              >
+                {t("termsOfService")}
+              </a>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+              >
+                {t("cookiePolicy")}
+              </a>
             </div>
           </div>
         </div>
@@ -399,7 +404,7 @@ export default function Footer() {
       {/* Floating back to top button */}
       <button
         id="back-to-top"
-        className="fixed bottom-8 right-8 p-3 rounded-full bg-blue-600 text-white shadow-lg z-50 transition-all duration-300 opacity-0 translate-y-10 hover:bg-blue-700 hover:scale-110"
+        className="fixed bottom-18 right-8 p-3 rounded-full bg-blue-600 text-white shadow-lg z-50 transition-all duration-300 opacity-0 translate-y-10 hover:bg-blue-700 hover:scale-110"
         aria-label={t("backToTop")}
       >
         <svg
