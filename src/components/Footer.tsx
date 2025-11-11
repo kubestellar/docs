@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { useEffect } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "./index";
 import { useTranslations } from "next-intl";

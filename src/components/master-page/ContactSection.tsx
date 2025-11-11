@@ -137,13 +137,13 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 items-stretch">
           {/* Left side: Contact info cards */}
-          <div className="lg:col-span-2 flex flex-col space-y-3 sm:space-y-4">
+          <div className="lg:col-span-2 grid grid-rows-4 gap-3 sm:gap-4">
             {/* Contact card 1 */}
             <a
               href="mailto:info@kubestellar.io"
-              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer"
+              className="flex items-center bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer"
             >
-              <div className="flex items-center">
+              <div className="flex items-center w-full">
                 <div className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-blue-900/30 flex items-center justify-center">
                   <svg
                     className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400"
@@ -192,9 +192,9 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
               href="https://kubestellar.io/slack"
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-transparent p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-purple-500/70 cursor-pointer"
+              className="flex items-center bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-transparent p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-purple-500/70 cursor-pointer"
             >
-              <div className="flex items-center">
+              <div className="flex items-center w-full">
                 <div className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gray-800 flex items-center justify-center shadow-lg">
                   <svg
                     className="h-6 w-6 sm:h-8 sm:w-8"
@@ -252,9 +252,9 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
               href="https://github.com/kubestellar/kubestellar"
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-green-500/50 cursor-pointer"
+              className="flex items-center bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-green-500/50 cursor-pointer"
             >
-              <div className="flex items-center">
+              <div className="flex items-center w-full">
                 <div className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-lg border border-gray-600">
                   <svg
                     className="h-6 w-6 sm:h-8 sm:w-8 text-white"
@@ -296,9 +296,9 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
               href="https://linkedin.com/company/kubestellar"
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer"
+              className="flex items-center bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer"
             >
-              <div className="flex items-center">
+              <div className="flex items-center w-full">
                 <div className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-blue-600 flex items-center justify-center shadow-lg">
                   <svg
                     className="h-6 w-6 sm:h-8 sm:w-8"

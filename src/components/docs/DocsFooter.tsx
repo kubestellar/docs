@@ -2,15 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useEffect } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "../index";
-import Link from "next/link";
 
 export default function DocsFooter() {
   const [showNewsletterSuccess, setShowNewsletterSuccess] = useState(false);
   
-export default function Footer() {
   useEffect(() => {
     // Back to top functionality
     const initBackToTop = () => {
