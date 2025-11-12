@@ -1,56 +1,169 @@
-# Contributing to the Docs Repository
+# Contributing to the KubeStellar Docs Repository
 
-Thank you for your interest in contributing to the docs repository! We welcome contributions from everyone. Please follow these guidelines to help us maintain a high-quality and collaborative project.
+Thanks for wanting to contribute! This guide shows how to make a useful, reviewable contribution to the docs repository. Follow these steps so maintainers can review and merge faster.
 
-## How to Contribute
+---
 
-1. **Fork the Repository**
-   - Click the "Fork" button at the top right of this page to create your own copy of the repository.
+## Table of contents
 
-2. **Clone Your Fork**
-   - Clone your fork to your local machine:
-     ```sh
-     git clone https://github.com/your-username/docs.git
-     ```
+- [Before you start](#before-you-start)  
+- [How to contribute](#how-to-contribute)  
+- [Branching and commit rules](#branching-and-commit-rules)  
+- [Pull request process](#pull-request-process)  
+- [Internationalization (i18n) rules — important](#internationalization-i18n-rules---important)  
+- [Style and formatting](#style-and-formatting)  
+- [Testing and previewing locally](#testing-and-previewing-locally)  
+- [Labels and issue workflow](#labels-and-issue-workflow)  
+- [Security issues](#security-issues)  
+- [Code of conduct](#code-of-conduct)  
+- [Contact & help](#contact--help)
 
-3. **Create a Branch**
-   - Create a new branch for your changes:
-     ```sh
-     git checkout -b my-feature-branch
-     ```
+---
 
-4. **Make Your Changes**
-   - Edit or add documentation files as needed. Please follow the existing style and structure.
+## Before you start
 
-5. **Test Your Changes**
-   - If applicable, preview your changes locally to ensure everything renders correctly.
+1. Read `README.md` and `CODE_OF_CONDUCT.md`.
+2. Search open issues to avoid duplicate work.
+3. If your change is large, open an issue first to discuss scope and design.
 
-6. **Commit and Push**
-   - Commit your changes with a clear message:
-     ```sh
-     git add .
-     git commit -m "Describe your changes"
-     git push origin my-feature-branch
-     ```
+---
 
-7. **Open a Pull Request**
-   - Go to the original repository and open a Pull Request from your branch.
-   - **Title:** Your PR title should be descriptive. Please prefix it with `major:`, `minor:`, or `patch:` to indicate the scope of the change, following semantic versioning guidelines.
-     - Use `major:` for significant, breaking changes or large new features that are not backward-compatible.
-     - Use `minor:` for new features or enhancements that are backward-compatible.
-     - Use `patch:` for backward-compatible bug fixes, typo corrections, or small documentation updates.
-     - _Example: `patch: Fix typo in installation guide`_
-   - **Description:** Provide a concise summary of your changes in the PR description. **This summary must not be longer than two lines**, as it is used to automatically generate progress logs.
-   - Reference any related issues in the description (e.g., `Fixes #123`).
+## How to contribute
 
-## Guidelines
+1. **Fork** the repo and clone your fork:
+   ```bash
+   git clone https://github.com/your-username/docs.git
+   cd docs
+   ```
 
-- **Write Clearly:** Use clear, concise language and proper formatting.
-- **Stay Consistent:** Follow the existing file structure and naming conventions.
-- **Be Respectful:** Review our [Code of Conduct](docs/contribution-guidelines/coc-inc.md) before contributing.
+2. **Create a branch**:
+   ```bash
+   git checkout -b docs/<short-description>-<your-gh>
+   ```
+   Example: `docs/fix-install-typo-amanc77`
 
-## Need Help?
+3. Make small, focused changes. Limit each PR to a single goal.
 
-If you have questions, open an issue or ask in the community channels.
+4. Preview your changes locally.
 
-Thank you for helping improve our documentation!
+5. Commit, push, and open a PR to `main`.
+
+---
+
+## Branching and commit rules
+
+- Branch pattern: `docs/<short-description>-<your-username>`
+- Commit message format:
+  ```
+  <type>: Short description
+
+  Optional longer description.
+  ```
+  `<type>`: `major:`, `minor:`, `patch:`.
+
+Example:
+```
+patch: Fix typo in installation guide
+```
+
+---
+
+## Pull request process
+
+1. Push your branch and open a PR against `kubestellar/docs:main`.
+2. Use a concise PR title and a one-line description (the repo uses short PR summaries).
+3. In the PR body, include:
+   - Why the change matters
+   - How to test locally
+   - Any i18n impacts
+   - Screenshots for UI changes
+4. Use the PR checklist:
+   - [ ] Local build passes
+   - [ ] i18n keys added or issue opened
+   - [ ] Screenshots added for UI changes
+   - [ ] PR allows edits by maintainers (recommended)
+
+5. Mention related issues using `Fixes #<issue>` to auto-close them on merge.
+
+---
+
+## Internationalization (i18n) rules — important
+
+- **Do not commit raw strings** in templates or components.
+- Add new English keys in `i18n/` or `locales/`, following naming patterns.
+- If you change copy, update the English key and open a translation issue for other locales or add minimal translations when possible.
+- Add context comments for translators when needed.
+
+If unsure, ask on Slack (`#kubestellar-dev`) or open an issue.
+
+---
+
+## Style and formatting
+
+- Use plain, clear English.
+- Short paragraphs.
+- Use fenced code blocks with language markers.
+- Use internal links to other docs.
+- Provide descriptive `alt` text for images.
+
+---
+
+## Testing and previewing locally
+
+**Prereqs:** Node.js v18+, npm or yarn.
+
+```bash
+npm install
+npm run dev
+# open http://localhost:3000
+```
+
+If layout or CSS changes, rebuild:
+```bash
+npm run build
+npm start
+```
+
+If something breaks, remove `.next` and retry `npm run dev`. Check terminal for errors.
+
+---
+
+## Labels and issue workflow
+
+Use labels to categorize issues and PRs. Common labels:
+- `good first issue`
+- `help wanted`
+- `docs`
+- `bug`
+- `enhancement`
+
+---
+
+## Security issues
+
+Do not open public issues for security problems. Follow `SECURITY.md` and contact maintainers via the private channel listed there.
+
+---
+
+## Code of conduct
+
+Follow our [Code of Conduct](docs/contribution-guidelines/coc-inc.md). Be respectful and constructive.
+
+---
+
+## Contact & help
+
+Need help?
+- Open an issue with `help wanted`.
+- Ask in Slack: `#kubestellar-dev`
+- Mention maintainers on GitHub if urgent.
+
+---
+
+## Final notes
+
+- Small, focused PRs merge faster.
+- Add screenshots for UI changes.
+- Follow the i18n rule — it's a common blocker.
+
+Thanks — your contributions improve the docs for everyone!
