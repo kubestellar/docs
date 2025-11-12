@@ -43,6 +43,38 @@ Thank you for your interest in contributing to the docs repository! We welcome c
    - **Description:** Provide a concise summary of your changes in the PR description. **This summary must not be longer than two lines**, as it is used to automatically generate progress logs.
    - Reference any related issues in the description (e.g., `Fixes #123`).
 
+## 🧩 Pre-commit Checks (Husky)
+
+This project uses **Husky** to enforce code quality before every commit.  
+The following checks will run automatically when you try to commit changes:
+
+| Check              | Description                                                       |
+| ------------------ | ----------------------------------------------------------------- |
+| 🧹 **Prettier**    | Ensures consistent code formatting                                |
+| 🧭 **ESLint**      | Detects and fixes linting issues                                  |
+| 🧠 **Type Check**  | Verifies TypeScript types using `tsc`                             |
+| 🏗️ **Build Check** | Runs a lightweight Next.js build to ensure successful compilation |
+
+If any check fails, the commit will be blocked until the issues are fixed.
+
+### 🔕 Skipping Pre-commit Checks
+
+If you need to skip Husky checks (for example, when committing documentation-only changes), you can bypass them using:
+
+```bash
+git commit -n -m "your_commit_message"
+```
+
+or equivalently:
+
+```bash
+git commit --no-verify -m "your_commit_message"
+```
+
+> ⚠️ Use this only when absolutely necessary.
+
+---
+
 ## Guidelines
 
 - **Write Clearly:** Use clear, concise language and proper formatting.
