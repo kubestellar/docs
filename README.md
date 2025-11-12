@@ -1,8 +1,12 @@
 # KubeStellar Documentation
 
 <p align="center">
-  <img src="./docs/overrides/favicons/android-72x72.png" alt="KubeStellar Logo" width="72"/>
+  <img src="./overrides/images/banner.png" alt="KubeStellar Docs Banner" width="100%"/>
 </p>
+
+<!-- <p align="center">
+  <img src="./docs/overrides/favicons/android-72x72.png" alt="KubeStellar Logo" width="72"/>
+</p> -->
 
 <p align="center">
   <b>Multi-cluster Configuration Management for Edge, Multi-Cloud, and Hybrid Cloud</b><br/>
@@ -115,34 +119,11 @@ node --version
 
 ---
 
-## Community & Communication
+## Internationalization (i18n) — Important rules
 
-### Join Our Community
-
-Get instant access to our documents and meeting invites at **[kubestellar.io/joinus](http://kubestellar.io/joinus)**
-
-### Communication Channels
-
-- **💬 Slack**: Join [`#kubestellar-dev`](https://kubernetes.slack.com/archives/C058SUSL5AA) in the [Kubernetes Slack workspace](https://communityinviter.com/apps/kubernetes/community)
-- **📧 Mailing Lists**:
-  - [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) - Development discussions
-  - [kubestellar-users](https://groups.google.com/g/kubestellar-users) - User discussions and support
-
-### Meetings & Events
-
-- **🗓️ Community Calendar**: [Subscribe here](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MWM4a2loZDZrOWwzZWQzZ29xanZwa3NuMWdfMjAyMzA1MThUMTQwMDAwWiBiM2Q2NWM5MmJlZDdhOTg4NGVmN2ZlOWUzZjZjOGZlZDE2ZjZmYjJmODExZjU3NTBmNTQ3NTY3YTVkZDU4ZmVkQGc&tmsrc=b3d65c92bed7a9884ef7fe9e3f6c8fed16f6fb2f811f5750f547567a5dd58fed%40group.calendar.google.com&scp=ALL)
-- **📺 Meeting Recordings**: [YouTube Channel](https://www.youtube.com/@kubestellar)
-- **📋 Meeting Notes**: [GitHub Issues](https://github.com/kubestellar/kubestellar/issues?q=label%3Acommunity-meeting) (upcoming and past agendas)
-
-### Resources & Collaboration
-
-- **📂 Shared Documents**: [Google Drive](https://drive.google.com/drive/folders/1p68MwkX0sYdTvtup0DcnAEsnXElobFLS?usp=sharing)
-  _(Available to [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) mailing list members)_
-
-### Follow Us
-
-- **LinkedIn**: [#kubestellar](https://www.linkedin.com/feed/hashtag/?keywords=kubestellar)
-- **Medium**: [KubeStellar Articles](https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST)
+- All user-facing strings must use the i18n system. **Do not commit raw strings**.
+- Add keys to the English source and open a translation issue if you add new copy.
+- Keep strings short and include context in comments where the meaning is ambiguous.
 
 ---
 
@@ -157,6 +138,43 @@ We welcome contributions from everyone! Whether you're fixing a typo, improving 
 3. Open issues or pull requests for improvements
 
 We especially encourage first-time contributors and provide mentorship for those new to open source.
+
+### Suggested PR checklist
+- Run `npm run dev` locally and confirm no build errors
+- Add screenshots for UI changes
+- Update i18n keys when you change text
+- Mention related issues in the PR
+
+---
+
+## Content structure
+
+```
+docs/
+  content/           # markdown pages, organized by section
+  overrides/          # images, favicons, banners, CSS overrides
+  public/             # static assets
+  i18n/               # translation files and rules
+  site.config.js      # site configuration
+```
+
+---
+
+## Design & Visuals
+
+- Place images in `docs/overrides/images/`.
+- Banner path used in README: `./docs/overrides/images/banner.png`
+- Recommended banner size: **1600×420 px** (desktop friendly).
+- Use descriptive alt text for accessibility.
+
+---
+
+## Accessibility & Quality
+
+- Use semantic headings and logical structure.
+- Mark code fences with language.
+- Add alt text for images.
+- Run CI checks before requesting a final review.
 
 ---
 
