@@ -45,17 +45,7 @@ Thank you for your interest in contributing to the docs repository! We welcome c
 
 ## 🧩 Pre-commit Checks (Husky)
 
-This project uses **Husky** to enforce code quality before every commit.  
-The following checks will run automatically when you try to commit changes:
-
-| Check              | Description                                                       |
-| ------------------ | ----------------------------------------------------------------- |
-| 🧹 **Prettier**    | Ensures consistent code formatting                                |
-| 🧭 **ESLint**      | Detects and fixes linting issues                                  |
-| 🧠 **Type Check**  | Verifies TypeScript types using `tsc`                             |
-| 🏗️ **Build Check** | Runs a lightweight Next.js build to ensure successful compilation |
-
-If any check fails, the commit will be blocked until the issues are fixed.
+This project uses **Husky** to enforce code quality before every commit.
 
 ### 🔕 Skipping Pre-commit Checks
 
