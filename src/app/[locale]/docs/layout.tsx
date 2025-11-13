@@ -34,11 +34,23 @@ type Props = {
   children: React.ReactNode
 }
 
-export default async function DocsLayout({ children }: Props) {
+export default async function RootLayout({ children, params }: Props) {
+  const { locale } = await params;
+
+  const isLocale = (val: string): val is Locale =>
+    (locales as readonly string[]).includes(val);
+
+  if (!isLocale(locale)) {
+    notFound();
+  }
+
+  const messages = await getMessages();
   // Always use default version for initial layout
   // The page component will handle version-specific content
   const defaultVersion = getDefaultVersion()
   const branch = getBranchForVersion(defaultVersion)
+
+  
   
   // Build page map for the default version
   const { pageMap } = await buildPageMapForBranch(branch)
