@@ -2,7 +2,7 @@ import { Layout } from 'nextra-theme-docs'
 import { Banner } from 'nextra/components'
 import 'nextra-theme-docs/style.css'
 import { locales, type Locale } from "@/i18n/settings";
-import { DocsNavbar, DocsFooter } from '@/components/docs/index'
+import { DocsNavbar/*, DocsFooter*/ } from '@/components/docs/index'
 import {Footer} from '@/components/index'
 import { Inter, JetBrains_Mono } from "next/font/google"
 import "../../globals.css"
@@ -44,7 +44,7 @@ export default async function RootLayout({ children, params }: Props) {
     notFound();
   }
 
-  const messages = await getMessages();
+  //const messages = await getMessages();
   // Always use default version for initial layout
   // The page component will handle version-specific content
   const defaultVersion = getDefaultVersion()
