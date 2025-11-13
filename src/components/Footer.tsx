@@ -59,7 +59,7 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="grid grid-cols-3 sm:grid-cols-12 mb-12 items-start gap-1 sm:gap-6">
+        <div className="grid grid-cols-3 sm:grid-cols-10 mb-12 items-start gap-1 sm:gap-6 lg:gap-20">
           {/* Brand Section */}
           <div className="col-span-3 sm:col-span-6 lg:col-span-4">
             <div className="flex items-center space-x-2 mb-2  ml-[-7px]">
@@ -139,7 +139,7 @@ export default function Footer() {
           </div>
 
           {/* Docs Links */}
-          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-3 sm:order-3 mt-4 sm:mt-0">
+          <div className="col-span-2 sm:col-span-4 lg:col-span-2 order-3 sm:order-3 mt-4 sm:mt-0">
             <h3 className="text-md sm:text-lg font-semibold text-white mb-4">
               {t("docs")}
             </h3>
@@ -180,7 +180,7 @@ export default function Footer() {
           </div>
 
           {/* Getting Started Links */}
-          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-4 sm:order-4 mt-4 sm:mt-0">
+          <div className="col-span-2 sm:col-span-4 lg:col-span-2 order-4 sm:order-4 mt-4 sm:mt-0">
             <h3 className="text-md sm:text-lg font-semibold text-white mb-4">
               {t("gettingStarted")}
             </h3>
@@ -221,7 +221,7 @@ export default function Footer() {
           </div>
 
           {/* Resources Links */}
-          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-5 sm:order-5 mt-4 sm:mt-0">
+          <div className="col-span-2 sm:col-span-4 lg:col-span-2 order-5 sm:order-5 mt-4 sm:mt-0">
             <h3 className="text-md sm:text-lg font-semibold text-white mb-4">
               {t("resources")}
             </h3>
@@ -262,70 +262,58 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+        </div>
 
-          {/* Stay updated */}
-          <div
-            className="col-span-3 sm:col-span-6 lg:col-span-2 sm:order-2 lg:order-6 md:ml-12 lg:ml-0 mt-4 sm:mt-0
-          "
-          >
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider sm:mt-3 md:mt-2 lg:mt-1 mb-4">
-              {t("stayUpdated")}
-            </h3>
-            <div className="bg-gray-800/50 backdrop-blur-md rounded-lg p-4 border border-gray-700/50 transform transition-all duration-300 hover:border-blue-500/30">
-              <form id="newsletter-form" className="flex flex-col space-y-3">
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-gray-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+        <div className="flex flex-col items-end justify-center w-full mb-8">
+          <div className="w-full max-w-2xl lg:pr-20">
+            <div className="flex flex-col md:flex-row items-end justify-between gap-4 mb-4">
+              <div className="flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-2 md:gap-4 text-center md:text-left w-full">
+                <h3 className="text-sm md:text-base font-semibold text-white uppercase tracking-wide whitespace-nowrap">
+                  {t("stayUpdated")}
+                </h3>
+                <p className="text-xs text-gray-400">{t("privacyNotice")}</p>
+              </div>
+
+              {/* Form container */}
+              <div className="flex-1 w-full md:w-auto">
+                <form
+                  id="newsletter-form"
+                  className="flex flex-col sm:flex-row gap-2 justify-end"
+                >
+                  <div className="relative flex-1 min-w-[250px]">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      id="email-address"
+                      type="email"
+                      className="block w-full pl-10 pr-3 py-3 text-sm text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                      placeholder={t("emailPlaceholder")}
+                      required
+                    />
                   </div>
-                  <input
-                    id="email-address"
-                    type="email"
-                    className="block w-full pl-10 pr-3 py-2 text-sm text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
-                    placeholder={t("emailPlaceholder")}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-md shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 transform hover:translate-y-[-1px] flex items-center justify-center cursor-pointer"
-                >
-                  <span>{t("subscribe")}</span>
-                </button>
-              </form>
-
-              {/* Success message (hidden by default) */}
-              <div
-                id="newsletter-success"
-                className="hidden mt-3 text-sm text-green-400"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>{t("subscribed")}</span>
+                  <button
+                    type="submit"
+                    className="px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center cursor-pointer whitespace-nowrap"
+                  >
+                    <span>{t("subscribe")}</span>
+                  </button>
+                </form>
               </div>
             </div>
-            <p className="mt-3 text-xs text-gray-400">{t("privacyNotice")}</p>
           </div>
         </div>
 
