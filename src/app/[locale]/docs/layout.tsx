@@ -3,7 +3,7 @@ import { Banner } from 'nextra/components'
 import 'nextra-theme-docs/style.css'
 import { DocsNavbar, DocsFooter } from '@/components/docs/index'
 import { Inter, JetBrains_Mono } from "next/font/google"
-import "../globals.css"
+import "../../globals.css"
 import { buildPageMapForBranch } from './page-map'
 import { getDefaultVersion, getBranchForVersion } from '@/config/versions'
 
