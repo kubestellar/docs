@@ -2,7 +2,7 @@ import { Layout } from 'nextra-theme-docs'
 import { Banner } from 'nextra/components'
 import 'nextra-theme-docs/style.css'
 //import { locales, type Locale } from "@/i18n/settings";
-import { DocsNavbar, DocsFooter } from '@/components/docs/index'
+import { DocsNavbar/*, DocsFooter*/ } from '@/components/docs/index'
 import {Footer} from '@/components/index'
 import { Inter, JetBrains_Mono } from "next/font/google"
 import "../../globals.css"
