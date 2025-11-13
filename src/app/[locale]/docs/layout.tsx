@@ -1,7 +1,9 @@
 import { Layout } from 'nextra-theme-docs'
 import { Banner } from 'nextra/components'
 import 'nextra-theme-docs/style.css'
+import { locales, type Locale } from "@/i18n/settings";
 import { DocsNavbar, DocsFooter } from '@/components/docs/index'
+import {Footer} from '@/components/index'
 import { Inter, JetBrains_Mono } from "next/font/google"
 import "../../globals.css"
 import { buildPageMapForBranch } from './page-map'
@@ -25,7 +27,8 @@ export const metadata = {
 
 const banner = <Banner storageKey="kubestellar-demo"><strong>Hacktoberfest 2025</strong> is here! Join us to learn, share, and contribute to our community🎉</Banner>
 const navbar = <DocsNavbar />
-const footer = <DocsFooter />
+//const footer = <DocsFooter /> Let's try the global footer instead
+const footer = <Footer />
 
 type Props = {
   children: React.ReactNode
