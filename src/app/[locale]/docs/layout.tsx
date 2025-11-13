@@ -1,8 +1,8 @@
 import { Layout } from 'nextra-theme-docs'
 import { Banner } from 'nextra/components'
 import 'nextra-theme-docs/style.css'
-import { locales, type Locale } from "@/i18n/settings";
-import { DocsNavbar/*, DocsFooter*/ } from '@/components/docs/index'
+//import { locales, type Locale } from "@/i18n/settings";
+import { DocsNavbar, DocsFooter } from '@/components/docs/index'
 import {Footer} from '@/components/index'
 import { Inter, JetBrains_Mono } from "next/font/google"
 import "../../globals.css"
@@ -34,17 +34,7 @@ type Props = {
   children: React.ReactNode
 }
 
-export default async function RootLayout({ children, params }: Props) {
-  const { locale } = await params;
-
-  const isLocale = (val: string): val is Locale =>
-    (locales as readonly string[]).includes(val);
-
-  if (!isLocale(locale)) {
-    notFound();
-  }
-
-  //const messages = await getMessages();
+export default async function DocsLayout({ children }: Props) {
   // Always use default version for initial layout
   // The page component will handle version-specific content
   const defaultVersion = getDefaultVersion()
