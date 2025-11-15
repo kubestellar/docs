@@ -1,7 +1,7 @@
 # KubeStellar Documentation
 
 <p align="center">
-  <img src="public/KubeStellar-with-Logo-transparent.png" alt="KubeStellar Logo" width="72"/>
+  <img src="public/KubeStellar-with-Logo-transparent.png" alt="KubeStellar Logo" width="200"/>
 </p>
 
 <p align="center">
