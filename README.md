@@ -1,7 +1,7 @@
 # KubeStellar Documentation
 
 <p align="center">
-  <img src="./docs/overrides/favicons/android-72x72.png" alt="KubeStellar Logo" width="72"/>
+  <img src="public/KubeStellar-with-Logo-transparent.png" alt="KubeStellar Logo" width="72"/>
 </p>
 
 <p align="center">
@@ -189,7 +189,7 @@ We especially encourage first-time contributors and provide mentorship for those
 
 <p align="center">
   <a href="https://landscape.cncf.io">
-    <img src="/docs/overrides/images/cncf-color.png" width="300" alt="CNCF Logo"/>
+    <img src="https://raw.githubusercontent.com/cncf/artwork/main/other/cncf/horizontal/color/cncf-color.png" width="300" alt="CNCF Logo"/>
   </a>
 </p>
 
