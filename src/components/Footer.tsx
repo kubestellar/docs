@@ -59,9 +59,9 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-10 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-10 lg:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-10 gap-6 sm:gap-4 lg:gap-12 mb-8 sm:mb-10 lg:mb-12">
           {/* Brand Section */}
-          <div className="sm:col-span-2 lg:col-span-4">
+          <div className="col-span-1 sm:col-span-3 lg:col-span-4 mb-4 sm:mb-0">
             <div className="flex items-center space-x-2 mb-3 sm:mb-4">
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
@@ -142,129 +142,132 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Docs Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-3 sm:mb-4">
-              {t("docs")}
-            </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("overview")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("userGuide")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("onboarding")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("releasesNotes")}
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Navigation Links Container - 3 columns on mobile */}
+          <div className="col-span-1 sm:col-span-3 lg:col-span-6 grid grid-cols-3 gap-4 sm:gap-4 lg:gap-8">
+            {/* Docs Links */}
+            <div>
+              <h3 className="text-xs sm:text-base md:text-lg font-semibold text-white mb-2 sm:mb-4">
+                {t("docs")}
+              </h3>
+              <ul className="space-y-1 sm:space-y-3">
+                <li>
+                  <Link
+                    href="/docs"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("overview")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/docs"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("userGuide")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/docs"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("onboarding")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/docs"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("releasesNotes")}
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Getting Started Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-3 sm:mb-4">
-              {t("gettingStarted")}
-            </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li>
-                <Link
-                  href="/quick-installation"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("installationPage")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/ladder"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("ladder")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("products")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contribute-handbook"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("contributeHandbook")}
-                </Link>
-              </li>
-            </ul>
-          </div>
+            {/* Getting Started Links */}
+            <div>
+              <h3 className="text-xs sm:text-base md:text-lg font-semibold text-white mb-2 sm:mb-4">
+                {t("gettingStarted")}
+              </h3>
+              <ul className="space-y-1 sm:space-y-3">
+                <li>
+                  <Link
+                    href="/quick-installation"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("installationPage")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/ladder"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("ladder")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/products"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("products")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contribute-handbook"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("contributeHandbook")}
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Resources Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-3 sm:mb-4">
-              {t("resources")}
-            </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li>
-                <Link
-                  href="/playground"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("playground")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/programs"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("programs")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/partners"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("partners")}
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://blog.kubestellar.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                >
-                  {t("blog")}
-                </a>
-              </li>
-            </ul>
+            {/* Resources Links */}
+            <div>
+              <h3 className="text-xs sm:text-base md:text-lg font-semibold text-white mb-2 sm:mb-4">
+                {t("resources")}
+              </h3>
+              <ul className="space-y-1 sm:space-y-3">
+                <li>
+                  <Link
+                    href="/playground"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("playground")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/programs"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("programs")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/partners"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("partners")}
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://blog.kubestellar.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("blog")}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
