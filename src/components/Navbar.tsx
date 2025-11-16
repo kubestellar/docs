@@ -397,8 +397,13 @@ export default function Navbar() {
                     aria-current={isActive('/docs') ? 'page' : undefined}
                     className={cx(
                       "text-sm font-medium text-gray-300 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:text-blue-400 hover:bg-blue-500/10 hover:shadow-lg hover:shadow-blue-500/20 nav-link-hover",
-                      isActive('/docs') && "ring-1 ring-blue-400/40 shadow-lg shadow-blue-500/20 bg-blue-500/10"
+                      isActive('/docs') && "nav-glow "
                     )}
+                    style={
+                      isActive('/docs')
+                        ? ({ ['--glow-from' as any]: '#6366f1', ['--glow-to' as any]: '#22d3ee' })
+                        : undefined
+                    }
                   >
                     <div className="relative">
                       <svg
@@ -423,11 +428,16 @@ export default function Navbar() {
                 <div className="relative group z-10">
                   <Link
                     href="/playground"
-                    aria-current={isActive('/playground') ? 'page' : undefined}
+                    aria-current={isActive('/coming-soon') ? 'page' : undefined}
                     className={cx(
-                      "text-sm font-medium text-gray-300 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:text-orange-400 hover:bg-orange-500/10 hover:shadow-lg hover:shadow-orange-500/20 nav-link-hover",
-                      isActive('/coming-soon') && "ring-1 ring-orange-400/40 shadow-lg shadow-orange-500/20 bg-orange-500/10"
+                      "text-sm font-medium text-gray-300 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:text-orange-400 hover:bg-orange-500/10 hover:shadow-lg hover:shadow-orange-500/20 nav-link-hover ",
+                      isActive('/coming-soon') && "nav-glow"
                     )}
+                    style={
+                      isActive('/coming-soon')
+                        ? ({ ['--glow-from' as any]: '#f59e0b', ['--glow-to' as any]: '#fb923c' })
+                        : undefined
+                    }
                   >
                     <div className="relative">
                       <svg
@@ -456,8 +466,13 @@ export default function Navbar() {
                     aria-current={isActive('/marketplace') ? 'page' : undefined}
                     className={cx(
                       "text-sm font-medium text-gray-300 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:text-pink-400 hover:bg-pink-500/10 hover:shadow-lg hover:shadow-pink-500/20 nav-link-hover",
-                      isActive('/marketplace') && "shadow-lg shadow-pink-500/20 bg-pink-500/10"
+                      isActive('/marketplace') && "nav-glow "
                     )}
+                    style={
+                      isActive('/marketplace')
+                        ? ({ ['--glow-from' as any]: '#ec4899', ['--glow-to' as any]: '#d946ef' })
+                        : undefined
+                    }
                   >
                     <div className="relative">
                       <svg
