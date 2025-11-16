@@ -41,7 +41,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden pt-16 pb-8">
+    <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8">
       {/* Dark base background */}
       <div className="absolute inset-0 bg-[#0a0a0a]"></div>
 
@@ -57,30 +57,31 @@ export default function Footer() {
         <div className="absolute top-0 right-0 w-full h-1/2 bg-gradient-to-b from-purple-900/10 to-transparent"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="grid grid-cols-3 sm:grid-cols-12 mb-12 items-start gap-1 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-10 gap-6 sm:gap-4 lg:gap-12 mb-8 sm:mb-10 lg:mb-12">
           {/* Brand Section */}
-          <div className="col-span-3 sm:col-span-6 lg:col-span-4">
-            <div className="flex items-center space-x-2 mb-2  ml-[-7px]">
+          <div className="col-span-1 sm:col-span-3 lg:col-span-4 mb-4 sm:mb-0">
+            <div className="flex items-center space-x-2 mb-3 sm:mb-4">
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
                 alt="Kubestellar logo"
                 width={160}
                 height={40}
-                className="h-10 w-auto"
+                className="h-8 sm:h-9 md:h-10 w-auto"
               />
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
               {t("description")}
             </p>
-            <div className="flex space-x-6">
+            <div className="flex space-x-3 sm:space-x-4">
               <a
                 href="#"
-                className="group relative w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300"
+                className="group relative w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center transition-all duration-300"
+                aria-label="Twitter"
               >
                 <svg
-                  className="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+                  className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -92,10 +93,11 @@ export default function Footer() {
               </a>
               <a
                 href="https://github.com/kubestellar"
-                className="group relative w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300"
+                className="group relative w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center transition-all duration-300"
+                aria-label="GitHub"
               >
                 <svg
-                  className="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
+                  className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -107,10 +109,11 @@ export default function Footer() {
               </a>
               <a
                 href="https://www.linkedin.com/company/kubestellar/"
-                className="group relative w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300"
+                className="group relative w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center transition-all duration-300"
+                aria-label="LinkedIn"
               >
                 <svg
-                  className="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(0,119,181,0.8)]"
+                  className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(0,119,181,0.8)]"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -122,10 +125,11 @@ export default function Footer() {
               </a>
               <a
                 href="https://www.youtube.com/@kubestellar"
-                className="group relative w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300"
+                className="group relative w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center transition-all duration-300"
+                aria-label="YouTube"
               >
                 <svg
-                  className="w-7 h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]"
+                  className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -138,222 +142,215 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Docs Links */}
-          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-3 sm:order-3 mt-4 sm:mt-0">
-            <h3 className="text-md sm:text-lg font-semibold text-white mb-4">
-              {t("docs")}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("overview")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("userGuide")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("onboarding")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/docs"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("releasesNotes")}
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Navigation Links Container - 3 columns on mobile */}
+          <div className="col-span-1 sm:col-span-3 lg:col-span-6 grid grid-cols-3 gap-4 sm:gap-4 lg:gap-8">
+            {/* Docs Links */}
+            <div>
+              <h3 className="text-xs sm:text-base md:text-lg font-semibold text-white mb-2 sm:mb-4">
+                {t("docs")}
+              </h3>
+              <ul className="space-y-1 sm:space-y-3">
+                <li>
+                  <Link
+                    href="/docs"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("overview")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/docs"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("userGuide")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/docs"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("onboarding")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/docs"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("releasesNotes")}
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Getting Started Links */}
-          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-4 sm:order-4 mt-4 sm:mt-0">
-            <h3 className="text-md sm:text-lg font-semibold text-white mb-4">
-              {t("gettingStarted")}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/quick-installation"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("installationPage")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/ladder"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("ladder")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("products")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contribute-handbook"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("contributeHandbook")}
-                </Link>
-              </li>
-            </ul>
-          </div>
+            {/* Getting Started Links */}
+            <div>
+              <h3 className="text-xs sm:text-base md:text-lg font-semibold text-white mb-2 sm:mb-4">
+                {t("gettingStarted")}
+              </h3>
+              <ul className="space-y-1 sm:space-y-3">
+                <li>
+                  <Link
+                    href="/quick-installation"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("installationPage")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/ladder"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("ladder")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/products"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("products")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contribute-handbook"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("contributeHandbook")}
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          {/* Resources Links */}
-          <div className="col-span-1 sm:col-span-4 lg:col-span-2 order-5 sm:order-5 mt-4 sm:mt-0">
-            <h3 className="text-md sm:text-lg font-semibold text-white mb-4">
-              {t("resources")}
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/playground"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("playground")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/programs"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("programs")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/partners"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("partners")}
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://blog.kubestellar.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                  {t("blog")}
-                </a>
-              </li>
-            </ul>
+            {/* Resources Links */}
+            <div>
+              <h3 className="text-xs sm:text-base md:text-lg font-semibold text-white mb-2 sm:mb-4">
+                {t("resources")}
+              </h3>
+              <ul className="space-y-1 sm:space-y-3">
+                <li>
+                  <Link
+                    href="/playground"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("playground")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/programs"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("programs")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/partners"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("partners")}
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://blog.kubestellar.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors duration-200 text-[10px] sm:text-sm inline-block"
+                  >
+                    {t("blog")}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
 
-          {/* Stay updated */}
-          <div
-            className="col-span-3 sm:col-span-6 lg:col-span-2 sm:order-2 lg:order-6 md:ml-12 lg:ml-0 mt-4 sm:mt-0
-          "
-          >
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider sm:mt-3 md:mt-2 lg:mt-1 mb-4">
-              {t("stayUpdated")}
-            </h3>
-            <div className="bg-gray-800/50 backdrop-blur-md rounded-lg p-4 border border-gray-700/50 transform transition-all duration-300 hover:border-blue-500/30">
-              <form id="newsletter-form" className="flex flex-col space-y-3">
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-gray-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+        {/* Newsletter Section */}
+        <div className="flex flex-col items-end justify-center w-full mb-6 sm:mb-8">
+          <div className="w-full max-w-3xl lg:pr-28 ">
+            <div className="flex flex-col md:flex-row items-end justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
+              <div className="flex-col md:flex-row items-center md:items-start lg:pl-13 justify-center md:justify-start gap-1 sm:gap-2 md:gap-4 text-center md:text-left w-full">
+                <h3 className="text-xs sm:text-sm md:text-base font-semibold text-white uppercase lg:pb-2.5 tracking-wide whitespace-nowrap">
+                  {t("stayUpdated")}
+                </h3>
+              </div>
+
+              {/* Form container */}
+              <div className="flex-1 w-full md:w-auto">
+                <form
+                  id="newsletter-form"
+                  className="flex flex-col sm:flex-row gap-2 justify-end"
+                >
+                  <div className="relative flex-1 min-w-[250px] sm:min-w-[280px] md:min-w-[300px]">
+                    <div className="absolute inset-y-0 left-0 pl-2 sm:pl-3 flex items-center pointer-events-none">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+
+                    <input
+                      id="email-address"
+                      type="email"
+                      className="block w-full pl-8 sm:pl-10 pr-3 py-2.5 sm:py-3 text-xs sm:text-sm text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                      placeholder={t("emailPlaceholder")}
+                      required
+                    />
                   </div>
-                  <input
-                    id="email-address"
-                    type="email"
-                    className="block w-full pl-10 pr-3 py-2 text-sm text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
-                    placeholder={t("emailPlaceholder")}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-md shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 transform hover:translate-y-[-1px] flex items-center justify-center cursor-pointer"
-                >
-                  <span>{t("subscribe")}</span>
-                </button>
-              </form>
 
-              {/* Success message (hidden by default) */}
-              <div
-                id="newsletter-success"
-                className="hidden mt-3 text-sm text-green-400"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span>{t("subscribed")}</span>
+                  <button
+                    type="submit"
+                    className="px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center cursor-pointer whitespace-nowrap"
+                  >
+                    <span>{t("subscribe")}</span>
+                  </button>
+                </form>
               </div>
             </div>
-            <p className="mt-3 text-xs text-gray-400">{t("privacyNotice")}</p>
           </div>
         </div>
 
         {/* Divider and bottom section */}
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 pt-4 sm:pt-6 md:pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
             {/* Left side - copyright */}
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left order-2 md:order-1">
               {t("copyright")}
             </p>
 
             {/* Right side - policy links */}
-            <div className="flex items-center space-x-8">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 order-1 md:order-2">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                className="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm whitespace-nowrap"
               >
                 {t("privacyPolicy")}
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                className="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm whitespace-nowrap"
               >
                 {t("termsOfService")}
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+                className="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm whitespace-nowrap"
               >
                 {t("cookiePolicy")}
               </a>
@@ -365,12 +362,12 @@ export default function Footer() {
       {/* Floating back to top button */}
       <button
         id="back-to-top"
-        className="fixed bottom-18 right-8 p-3 rounded-full bg-blue-600 text-white shadow-lg z-50 transition-all duration-300 opacity-0 translate-y-10 hover:bg-blue-700 hover:scale-110"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 p-2 sm:p-2.5 md:p-3 rounded-full bg-blue-600 text-white shadow-lg z-50 transition-all duration-300 opacity-0 translate-y-10 hover:bg-blue-700 hover:scale-110"
         aria-label={t("backToTop")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
+          className="h-5 w-5 sm:h-5 sm:w-5 md:h-6 md:w-6"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
