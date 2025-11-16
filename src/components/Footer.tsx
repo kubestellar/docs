@@ -273,14 +273,12 @@ export default function Footer() {
 
         {/* Newsletter Section */}
         <div className="flex flex-col items-end justify-center w-full mb-6 sm:mb-8">
-          <div className="w-full max-w-3xl lg:pr-20">
+          <div className="w-full max-w-3xl lg:pr-28 ">
             <div className="flex flex-col md:flex-row items-end justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
-              <div className="flex-col md:flex-row items-center md:items-start lg:pl-10 justify-center md:justify-start gap-1 sm:gap-2 md:gap-4 text-center md:text-left w-full">
-                <h3 className="text-xs sm:text-sm md:text-base font-semibold text-white uppercase tracking-wide whitespace-nowrap">
+              <div className="flex-col md:flex-row items-center md:items-start lg:pl-13 justify-center md:justify-start gap-1 sm:gap-2 md:gap-4 text-center md:text-left w-full">
+                <h3 className="text-xs sm:text-sm md:text-base font-semibold text-white uppercase lg:pb-2.5 tracking-wide whitespace-nowrap">
                   {t("stayUpdated")}
                 </h3>
-
-                <p className="text-xs text-gray-400">{t("privacyNotice")}</p>
               </div>
 
               {/* Form container */}
