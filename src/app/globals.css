@@ -751,7 +751,7 @@ html:not(.dark) .nextra-docs-theme .nextra-sidebar-container {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
+/* For adding active glow */
 @layer components {
   .nav-pill {
     position: relative;
