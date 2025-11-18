@@ -73,6 +73,7 @@ export default function Footer() {
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               {t("description")}
+              <br />@KPRoche test copy
             </p>
             <div className="flex space-x-6">
               <a
