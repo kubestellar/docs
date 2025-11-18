@@ -65,7 +65,7 @@ export default function Footer() {
             <div className="flex items-center space-x-2 mb-2  ml-[-7px]">
               <Image
                 src="/KubeStellar-with-Logo-transparent.png"
-                alt="Kubestellar logo"
+                alt="Kubestellar log for kproche test branch"
                 width={160}
                 height={40}
                 className="h-10 w-auto"
