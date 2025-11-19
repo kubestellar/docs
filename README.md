@@ -22,8 +22,6 @@
   </a>
 </p>
 
-
-
 ## Preview of KubeStellar Docs Website
 
 <p align="center">
@@ -31,7 +29,6 @@
 </p>
 
 Visit our website: [http://prod.previews.kubestellar.io/en](http://prod.previews.kubestellar.io/en)
-
 
 ## Overview
 
@@ -54,7 +51,6 @@ This repository includes comprehensive documentation such as:
 - **Roadmaps & Release Notes** — Project planning and version history
 - **Contribution Guidelines** — Resources for contributors and maintainers
 - **Real-World Examples** — Practical use cases and hands-on tutorials
-
 
 ## Local Development
 
@@ -114,7 +110,6 @@ node --version
    yarn start
    ```
 
-
 ## Community & Support
 
 We welcome contributions and engagement from the community. Here's how to get involved:
@@ -136,7 +131,6 @@ We welcome contributions and engagement from the community. Here's how to get in
   - Available to [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) mailing list members
 - **Blog**: Read our latest updates on [Medium](https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST)
 - **LinkedIn**: Follow [#kubestellar](https://www.linkedin.com/feed/hashtag/?keywords=kubestellar) for news and updates
-
 
 ## Contributing
 
@@ -160,7 +154,6 @@ We welcome contributions of all kinds — from documentation improvements to cod
     <img src="https://contrib.rocks/image?repo=kubestellar/docs" alt="Contributors"/>
   </a>
 </p>
-
 
 ## CNCF Sandbox Project
 
