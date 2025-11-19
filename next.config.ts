@@ -16,12 +16,12 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: '**',
-        port: '',
-        pathname: '**'
-      }
-    ]
+        protocol: "http",
+        hostname: "**",
+        port: "",
+        pathname: "**",
+      },
+    ],
   },
   experimental: {
     optimizePackageImports: ["@/components"],
