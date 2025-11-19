@@ -1,56 +1,91 @@
-# Contributing to the Docs Repository
+# Contributing to Kubestellar Docs
 
-Thank you for your interest in contributing to the docs repository! We welcome contributions from everyone. Please follow these guidelines to help us maintain a high-quality and collaborative project.
+Thank you for your interest in contributing to our documentation repository! We welcome contributions from everyone. Please follow these guidelines to help maintain a high-quality, consistent, and collaborative project.
+
+---
 
 ## How to Contribute
 
-1. **Fork the Repository**
-   - Click the "Fork" button at the top right of this page to create your own copy of the repository.
+### 1. Fork the Repository
 
-2. **Clone Your Fork**
-   - Clone your fork to your local machine:
-     ```sh
-     git clone https://github.com/your-username/docs.git
-     ```
+Click the **Fork** button at the top-right corner of this page to create your own copy of the repository.
 
-3. **Create a Branch**
-   - Create a new branch for your changes:
-     ```sh
-     git checkout -b my-feature-branch
-     ```
+### 2. Clone Your Fork
 
-4. **Make Your Changes**
-   - Edit or add documentation files as needed. Please follow the existing style and structure.
+Clone the repository to your local machine:
 
-5. **Test Your Changes**
-   - If applicable, preview your changes locally to ensure everything renders correctly.
+```sh
+git clone https://github.com/your-username/docs.git
+```
 
-6. **Commit and Push**
-   - Commit your changes with a clear message:
-     ```sh
-     git add .
-     git commit -m "Describe your changes"
-     git push origin my-feature-branch
-     ```
+### 3. Install Dependencies
 
-7. **Open a Pull Request**
-   - Go to the original repository and open a Pull Request from your branch.
-   - **Title:** Your PR title should be descriptive. Please prefix it with `major:`, `minor:`, or `patch:` to indicate the scope of the change, following semantic versioning guidelines.
-     - Use `major:` for significant, breaking changes or large new features that are not backward-compatible.
-     - Use `minor:` for new features or enhancements that are backward-compatible.
-     - Use `patch:` for backward-compatible bug fixes, typo corrections, or small documentation updates.
-     - _Example: `patch: Fix typo in installation guide`_
-   - **Description:** Provide a concise summary of your changes in the PR description. **This summary must not be longer than two lines**, as it is used to automatically generate progress logs.
-   - Reference any related issues in the description (e.g., `Fixes #123`).
+Navigate into the project directory and install dependencies:
+
+```sh
+cd docs
+npm install
+```
+
+### 4. Create a Branch
+
+Create a new branch for your work:
+
+```sh
+git checkout -b my-feature-branch
+```
+
+### 5. Make Your Changes
+
+Edit or create documentation files as needed.
+Please follow the existing structure, tone, and formatting style.
+
+### 6. Preview / Test Your Changes
+
+Start the development environment to verify rendering:
+
+```sh
+npm run dev
+```
+
+> Frequent usage: During active documentation contributions, regularly run `npm run dev` to preview updates in real time.
+
+### 7. Commit and Push
+
+Commit your changes with a clear and meaningful message:
+
+```sh
+git add .
+git commit -m "Describe your changes"
+git push origin my-feature-branch
+```
+
+### 8. Open a Pull Request
+
+Open a Pull Request (PR) from your branch to the main repository.
+
+#### PR Description
+
+- Provide a summary of what you changed (maximum 2 lines).
+- Reference related issues, e.g.:
+
+```
+Fixes #123
+```
+---
 
 ## Guidelines
 
-- **Write Clearly:** Use clear, concise language and proper formatting.
-- **Stay Consistent:** Follow the existing file structure and naming conventions.
-- **Be Respectful:** Review our [Code of Conduct](docs/contribution-guidelines/coc-inc.md) before contributing.
+- **Write Clearly:** Use concise language and proper formatting.
+- **Stay Consistent:** Maintain the existing structure and style.
+- **Respect Internationalization Standards:** Avoid pushing raw UI strings directly; always use i18n references.
+- **Be Respectful:** Review our Code of Conduct before contributing.
+- **Use AI Responsibly:** Do not use AI-generated content blindly. Always review, verify, and edit AI suggestions to ensure accuracy, relevance, and quality before submitting.
+
+---
 
 ## Need Help?
 
 If you have questions, open an issue or ask in the community channels.
 
-Thank you for helping improve our documentation!
+Thank you for contributing to our documentation! 🚀
