@@ -2,7 +2,7 @@
 
 import Loader from "@/components/animations/Loader";
 import { useRouter } from "next/dist/client/components/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 // import React, { useState, useMemo, useRef, useEffect } from "react";
 // import Link from "next/link";
@@ -12,7 +12,6 @@ import { useEffect, useState } from "react";
 // import { usePlugins } from "./plugins";
 
 export default function MarketplacePage() {
-
   const router = useRouter();
   useEffect(() => {
     router.replace("/coming-soon");
