@@ -506,7 +506,7 @@ export default function Navbar() {
                     style={{ display: "none" }}
                   >
                     <a
-                      href="#join-in"
+                      href="https://kubestellar.io/joinus"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                     >
                       <svg
@@ -601,7 +601,7 @@ export default function Navbar() {
                       {t("ladder")}
                     </Link>
                     <a
-                      href="#security"
+                      href="/docs/contribution-guidelines/security/security-inc"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                     >
                       <svg
@@ -665,8 +665,8 @@ export default function Navbar() {
                     data-dropdown-menu
                     style={{ display: "none" }}
                   >
-                    <a
-                      href="#get-involved"
+                    <Link
+                      href="/docs"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                     >
                       <svg
@@ -683,7 +683,7 @@ export default function Navbar() {
                         ></path>
                       </svg>
                       {t("getInvolved")}
-                    </a>
+                    </Link>
                     <Link
                       href="/programs"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
@@ -906,7 +906,7 @@ export default function Navbar() {
                 <div className="relative mb-4">
                   <Link
                     target="_blank"
-                    href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
+                    href="https://kubestellar.io/blog"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -990,7 +990,7 @@ export default function Navbar() {
                 </div>
                 <div className="relative mb-2">
                   <a
-                    href="#join-in"
+                    href="https://kubestellar.io/joinus"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -1101,7 +1101,7 @@ export default function Navbar() {
                 </div>
                 <div className="relative mb-4">
                   <a
-                    href="#security"
+                    href="/docs/contribution-guidelines/security/security-inc"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -1129,8 +1129,8 @@ export default function Navbar() {
                   </span>
                 </div>
                 <div className="relative mb-2">
-                  <a
-                    href="#get-involved"
+                  <Link
+                    href="/docs"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -1149,7 +1149,7 @@ export default function Navbar() {
                       </svg>
                     </div>
                     <span>{t("getInvolved")}</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="relative mb-2">
                   <Link

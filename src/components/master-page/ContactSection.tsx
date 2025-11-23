@@ -488,7 +488,7 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
                     >
                       {t("formPrivacy")}{" "}
                       <a
-                        href="#"
+                        href="/docs/contribution-guidelines/license-inc"
                         className="text-blue-400 hover:text-blue-300 underline transition-colors duration-200"
                       >
                         {t("formPrivacyLink")}
