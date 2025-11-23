@@ -295,24 +295,24 @@ export default function Footer() {
 
             {/* Right side - policy links */}
             <div className="flex items-center space-x-8">
-              <a
+              <Link
                 href="/docs/contribution-guidelines/license-inc"
                 className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
               >
                 Privacy Policy
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/docs/contribution-guidelines/security/security-inc"
                 className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
               >
                 Terms of Service
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/docs/contribution-guidelines/security/security_contacts-inc"
                 className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
               >
                 Cookie Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>

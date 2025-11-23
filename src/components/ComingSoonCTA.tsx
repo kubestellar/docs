@@ -43,7 +43,7 @@ export default function ComingSoonCTA() {
               className="inline-flex items-center px-4 py-2 bg-blue-500/20 text-blue-300 rounded-lg hover:bg-blue-500/30 transition-colors text-sm"
             >
               {t("cta.documentsAction")}
-             </NextLink>
+            </NextLink>
           </div>
 
           {/* Quick Installation Card */}

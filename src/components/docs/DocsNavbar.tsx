@@ -377,7 +377,7 @@ export default function DocsNavbar() {
                     <span>Ladder</span>
                 </Link>
 
-              <a
+              <Link
                 href="/docs/contribution-guidelines/security/security-inc"
                 className={dropdownItemClasses}
               >
@@ -385,7 +385,7 @@ export default function DocsNavbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
                 Security
-              </a>
+              </Link>
               </div>
             )}
           </div>
@@ -893,7 +893,7 @@ export default function DocsNavbar() {
               </svg>
               Ladder
             </Link>
-            <a href="/docs/contribution-guidelines/security/security-inc" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
+            <Link href="/docs/contribution-guidelines/security/security-inc" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
@@ -902,7 +902,7 @@ export default function DocsNavbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
               Security
-            </a>
+            </Link>
             
             <div className={`text-sm font-medium uppercase px-2 py-1.5 mt-3 tracking-wider ${
               isDark ? 'text-gray-300' : 'text-gray-500'
