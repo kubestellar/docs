@@ -506,7 +506,7 @@ export default function Navbar() {
                     style={{ display: "none" }}
                   >
                     <a
-                      href="#join-in"
+                      href="https://kubestellar.io/joinus"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                     >
                       <svg
@@ -600,8 +600,8 @@ export default function Navbar() {
                       </svg>
                       {t("ladder")}
                     </Link>
-                    <a
-                      href="#security"
+                    <Link
+                      href="/docs/contribution-guidelines/security/security-inc"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                     >
                       <svg
@@ -618,7 +618,7 @@ export default function Navbar() {
                         ></path>
                       </svg>
                       {t("security")}
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 {/* Community Dropdown */}
@@ -665,8 +665,8 @@ export default function Navbar() {
                     data-dropdown-menu
                     style={{ display: "none" }}
                   >
-                    <a
-                      href="#get-involved"
+                    <Link
+                      href="/docs"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                     >
                       <svg
@@ -683,7 +683,7 @@ export default function Navbar() {
                         ></path>
                       </svg>
                       {t("getInvolved")}
-                    </a>
+                    </Link>
                     <Link
                       href="/programs"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
@@ -703,8 +703,8 @@ export default function Navbar() {
                       </svg>
                       {t("programs")}
                     </Link>
-                    <a
-                      href="#contact-us"
+                    <Link
+                      href="/#contact"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                     >
                       <svg
@@ -721,7 +721,7 @@ export default function Navbar() {
                         ></path>
                       </svg>
                       {t("contactUs")}
-                    </a>
+                    </Link>
                     <Link
                       href="/partners"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
@@ -834,6 +834,20 @@ export default function Navbar() {
                       {githubStats.watchers}
                     </span>
                   </a>
+                  <a
+                    href="https://github.com/kubestellar/docs/issues"
+                    className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
+                  >
+                    <svg
+                      className="w-4 h-4 mr-2"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                      <path d="M8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                    </svg>
+                    Create Issue
+                  </a>
                 </div>
               </div>
 
@@ -906,7 +920,7 @@ export default function Navbar() {
                 <div className="relative mb-4">
                   <Link
                     target="_blank"
-                    href="https://kubestellar.medium.com/list/predefined:e785a0675051:READING_LIST"
+                    href="https://kubestellar.io/blog"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -990,7 +1004,7 @@ export default function Navbar() {
                 </div>
                 <div className="relative mb-2">
                   <a
-                    href="#join-in"
+                    href="https://kubestellar.io/joinus"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -1100,8 +1114,8 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className="relative mb-4">
-                  <a
-                    href="#security"
+                  <Link
+                    href="/docs/contribution-guidelines/security/security-inc"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -1120,7 +1134,7 @@ export default function Navbar() {
                       </svg>
                     </div>
                     <span>{t("security")}</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="border-t border-gray-400/50 mb-4"></div>
                 <div className="mb-2">
@@ -1129,8 +1143,8 @@ export default function Navbar() {
                   </span>
                 </div>
                 <div className="relative mb-2">
-                  <a
-                    href="#get-involved"
+                  <Link
+                    href="/docs"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -1149,7 +1163,7 @@ export default function Navbar() {
                       </svg>
                     </div>
                     <span>{t("getInvolved")}</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="relative mb-2">
                   <Link
@@ -1175,8 +1189,8 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className="relative mb-2">
-                  <a
-                    href="#contact-us"
+                  <Link
+                    href="/#contact"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -1195,7 +1209,7 @@ export default function Navbar() {
                       </svg>
                     </div>
                     <span>{t("contactUs")}</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="relative mb-4">
                   <Link
@@ -1317,6 +1331,28 @@ export default function Navbar() {
                     <span className="ml-auto bg-gray-700 text-gray-300 text-xs rounded px-2 py-0.5">
                       {githubStats.watchers}
                     </span>
+                  </a>
+
+                  {/* Create Issue */}
+                  <a
+                    href="https://github.com/kubestellar/docs/issues"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-3 py-2 rounded-lg  max-w-xs"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <svg
+                        className="w-5 h-5 mr-3 text-gray-300"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                        <path d="M8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-300">
+                        Create Issue
+                      </span>
+                    </div>
                   </a>
                 </div>
               </div>
