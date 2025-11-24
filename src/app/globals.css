@@ -84,13 +84,12 @@ html:not(.dark) .nextra-docs-theme .nextra-sidebar-container {
 /* Ensure sticky sidebar offsets respect banner height */
 .nextra-sidebar {
   top: calc(
-      var(--nextra-navbar-height, 4rem) +
-        var(--nextra-banner-height, 0px)
-    ) !important;
+    var(--nextra-navbar-height, 4rem) + var(--nextra-banner-height, 0px)
+  ) !important;
   height: calc(
-      100dvh - var(--nextra-navbar-height, 4rem) -
-        var(--nextra-banner-height, 0px)
-    ) !important;
+    100dvh - var(--nextra-navbar-height, 4rem) -
+      var(--nextra-banner-height, 0px)
+  ) !important;
 }
 
 /* Make the navigation list scrollable with proper padding at bottom */
