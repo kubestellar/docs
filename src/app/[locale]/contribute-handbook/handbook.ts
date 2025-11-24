@@ -60,7 +60,7 @@ export const handbookCards: HandbookCard[] = [
     iconPath: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
     bgColor: "bg-red-500/20",
     iconColor: "text-red-400",
-    link: "/docs/contribution-guidelines/operations/testing-doc-prs",
+    link: "/docs/contribution-guidelines/operations/testing",
   },
   {
     id: "packaging",
@@ -85,7 +85,7 @@ export const handbookCards: HandbookCard[] = [
     iconPath: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
     bgColor: "bg-green-500/20",
     iconColor: "text-green-400",
-    link: "/docs/contribution-guidelines/testing-website-prs",
+    link: "/docs/contribution-guidelines/testing-doc-prs",
   },
   {
     id: "release-process",
