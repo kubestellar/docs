@@ -52,6 +52,62 @@ function wrapMarkdownImagesWithFigures(markdown: string) {
   });
 }
 
+function wrapBadgeLinksInGrid(markdown: string) {
+  const badgePattern = /\[!\[([^\]]*)\]\(([^)]*(?:shields\.io|badge|deepwiki)[^)]*)\)\]\(([^)]*)\)/gi;
+  
+  const allBadges: Array<{ fullMatch: string; startIndex: number; endIndex: number }> = [];
+  let match;
+  
+  while ((match = badgePattern.exec(markdown)) !== null) {
+    allBadges.push({
+      fullMatch: match[0],
+      startIndex: match.index,
+      endIndex: match.index + match[0].length
+    });
+  }
+  
+  if (allBadges.length === 0) return markdown;
+  
+  const groups: string[][] = [];
+  let currentGroup: string[] = [];
+  let lastEndIndex = -1;
+  
+  for (const badge of allBadges) {
+    if (currentGroup.length === 0 || badge.startIndex - lastEndIndex < 200) {
+      currentGroup.push(badge.fullMatch);
+    } else {
+      if (currentGroup.length > 0) groups.push(currentGroup);
+      currentGroup = [badge.fullMatch];
+    }
+    lastEndIndex = badge.endIndex;
+  }
+  if (currentGroup.length > 0) groups.push(currentGroup);
+  
+  let result = markdown;
+  let offset = 0;
+  
+  for (const group of groups) {
+    if (group.length > 0) {
+      const badgesToWrap = group.slice(0, 9);
+      const firstBadge = badgesToWrap[0];
+      const lastBadge = badgesToWrap[badgesToWrap.length - 1];
+      const firstIndex = result.indexOf(firstBadge, offset);
+      
+      if (firstIndex !== -1) {
+        const lastIndex = result.indexOf(lastBadge, firstIndex) + lastBadge.length;
+        const beforeSection = result.substring(0, firstIndex);
+        const afterSection = result.substring(lastIndex);
+        const wrapped = `<div class="badge-grid-container">\n${badgesToWrap.map(b => `  <p>${b}</p>`).join('\n')}\n</div>`;
+        
+        result = beforeSection + wrapped + afterSection;
+        offset = beforeSection.length + wrapped.length;
+      }
+    }
+  }
+  
+  return result;
+}
+
 export default async function Page(props: PageProps) {
   const params = await props.params
   const searchParams = await props.searchParams
@@ -206,6 +262,9 @@ export default async function Page(props: PageProps) {
   });
 
   rewrittenText = wrapMarkdownImagesWithFigures(rewrittenText);
+
+  // Wrap badges in grid container before HTML processing
+  rewrittenText = wrapBadgeLinksInGrid(rewrittenText);
 
   // 3. Pre-process Jinja and Pymdown syntax before MDX compilation
   const preProcessedText = rewrittenText
