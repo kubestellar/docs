@@ -35,7 +35,8 @@ function resolvePath(baseFile: string, relativePath: string) {
 }
 
 function wrapMarkdownImagesWithFigures(markdown: string) {
-  const imageRegex = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g;
+  // Skip images that are part of link badges: [![...](...)](...)
+  const imageRegex = /(?<!\[)!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g;
 
   return markdown.replace(imageRegex, (_match, alt = '', src, title) => {
     const captionText = title || alt;
