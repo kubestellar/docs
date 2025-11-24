@@ -17,10 +17,7 @@
   },
   "what-is-kubestellar": {
     "title": "What Is Kubestellar?",
-    "type": "folder",
-    "theme": {
-      "collapsed": false
-    }
+    "type": "folder"
   },
   "community": {
     "title": "Community",
