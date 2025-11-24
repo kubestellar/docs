@@ -703,7 +703,7 @@ export default function Navbar() {
                       </svg>
                       {t("programs")}
                     </Link>
-                    <a
+                    <Link
                       href="/#contact"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                     >
@@ -721,7 +721,7 @@ export default function Navbar() {
                         ></path>
                       </svg>
                       {t("contactUs")}
-                    </a>
+                    </Link>
                     <Link
                       href="/partners"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
@@ -843,8 +843,8 @@ export default function Navbar() {
                       fill="currentColor"
                       viewBox="0 0 16 16"
                     >
-                      <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-                      <path d="M8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                      <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                      <path d="M8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                     </svg>
                     Create Issue
                   </a>
@@ -1189,7 +1189,7 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className="relative mb-2">
-                  <a
+                  <Link
                     href="/#contact"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
@@ -1209,7 +1209,7 @@ export default function Navbar() {
                       </svg>
                     </div>
                     <span>{t("contactUs")}</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="relative mb-4">
                   <Link
@@ -1346,8 +1346,8 @@ export default function Navbar() {
                         fill="currentColor"
                         viewBox="0 0 16 16"
                       >
-                        <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-                        <path d="M8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                        <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
+                        <path d="M8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                       </svg>
                       <span className="text-sm font-medium text-gray-300">
                         Create Issue
