@@ -101,7 +101,8 @@
     "mobileHowItWorks": "Como funciona",
     "mobileUseCases": "Casos de uso",
     "mobileGetStarted": "Começar",
-    "mobileContact": "Contato"
+    "mobileContact": "Contato",
+    "marketplace": "Marketplace"
   },
   "aboutSection": {
     "title": "O que é",
@@ -168,7 +169,7 @@
     "card3Title": "Explorar Documentação",
     "card3Description": "Guias abrangentes, tutoriais e referências de API para ajudá-lo a dominar as capacidades do KubeStellar.",
     "card3Link1": "Começando",
-    "card3Link2": "Tutoriais",
+    "card3Link2": "Arquitetura",
     "card3Link3": "Referência da API"
   },
   "howToUseSection": {
@@ -466,7 +467,16 @@
         "description": "Transforme suas habilidades de programação com o programa premier de código aberto do Google",
         "sections": {
           "benefits": "Ganhe experiência do mundo real, aprenda com mentores experientes, torne-se parte de uma comunidade de código aberto e receba uma bolsa após conclusão bem-sucedida do programa.",
-          "description": "Google Summer of Code é um programa global focado em trazer mais desenvolvedores estudantes para o desenvolvimento de software de código aberto. Estudantes trabalham com uma organização de código aberto em um projeto de programação de 3 meses durante suas férias escolares."
+          "description": "Google Summer of Code é um programa global focado em trazer mais desenvolvedores estudantes para o desenvolvimento de software de código aberto. Estudantes trabalham com uma organização de código aberto em um projeto de programação de 3 meses durante suas férias escolares.",
+          "overview": "O KubeStellar participa como organização mentora. Fornecemos ideias de projetos, mentores e uma comunidade acolhedora para estudantes aprenderem e contribuírem.",
+          "eligibility": "Os participantes devem ter pelo menos 18 anos, ser estudantes ou iniciantes em desenvolvimento de software open source. Para critérios detalhados, consulte o site oficial do GSoC.",
+          "timeline": "O programa normalmente ocorre de maio a agosto. Datas importantes incluem o período de inscrição, integração à comunidade e fases de codificação. Consulte o site do GSoC para o cronograma oficial.",
+          "structure": "Os contribuintes aceitos trabalham em seus projetos com orientação de um ou mais mentores do KubeStellar. Há avaliações no meio e no final do programa.",
+          "howToApply": "Os estudantes podem se inscrever pelo site do Google Summer of Code durante o período de inscrição. Recomendamos engajar-se com nossa comunidade e contribuir com o KubeStellar antes.",
+          "resources": [
+            { "name": "Site Oficial do GSoC" },
+            { "name": "KubeStellar GitHub" }
+          ]
         }
       },
       "esoc": {
@@ -475,7 +485,16 @@
         "description": "Capacite talentos europeus no desenvolvimento de código aberto",
         "sections": {
           "benefits": "Desenvolvimento de habilidades técnicas, networking profissional, contribuições significativas para projetos, mentoria especializada e certificação de programa.",
-          "description": "European Summer of Code é uma iniciativa regional para promover o desenvolvimento de código aberto na Europa, conectando estudantes com projetos inovadores."
+          "description": "European Summer of Code é uma iniciativa regional para promover o desenvolvimento de código aberto na Europa, conectando estudantes com projetos inovadores.",
+          "overview": "O KubeStellar está animado para orientar participantes no ESoC, oferecendo projetos desafiadores e suporte dedicado para ajudá-los a crescer como desenvolvedores.",
+          "eligibility": "Aberto para estudantes e recém-formados baseados na Europa. Consulte o site oficial do ESoC para regras detalhadas de elegibilidade.",
+          "timeline": "O programa geralmente ocorre durante os meses de verão. Consulte o site do ESoC para datas e prazos específicos.",
+          "structure": "Os participantes trabalham de perto com mentores do KubeStellar em um projeto pré-definido, com reuniões regulares e sessões de feedback.",
+          "howToApply": "As inscrições devem ser feitas pelo portal oficial do European Summer of Code.",
+          "resources": [
+            { "name": "Site Oficial do ESoC (Link não disponível)" },
+            { "name": "KubeStellar GitHub" }
+          ]
         }
       },
       "ifos": {
@@ -484,7 +503,16 @@
         "description": "Inicie sua jornada de código aberto com o KubeStellar",
         "sections": {
           "benefits": "Experiência prática, desenvolvimento de portfólio, networking da comunidade, certificação de projeto e potencial para oportunidades futuras.",
-          "description": "Interns for Open Source é nosso programa interno de estágio projetado para introduzir novos contribuidores ao ecossistema KubeStellar."
+          "description": "Interns for Open Source é nosso programa interno de estágio projetado para introduzir novos contribuidores ao ecossistema KubeStellar.",
+          "overview": "Este programa de 3 meses oferece um caminho direto para a comunidade KubeStellar. Os participantes trabalham em projetos significativos e são orientados por nossos desenvolvedores principais.",
+          "eligibility": "Aceitamos inscrições de qualquer pessoa com forte interesse em Kubernetes, orquestração multi-cluster e open source. Conhecimento básico de Go e tecnologias de container é um diferencial.",
+          "timeline": "O IFoS é um programa contínuo. As inscrições são aceitas durante todo o ano, e os estágios começam conforme disponibilidade de projetos e cronograma dos candidatos.",
+          "structure": "Os estagiários são pareados com um mentor e integrados a uma de nossas equipes de desenvolvimento. O programa é flexível, permitindo dedicação parcial ou integral.",
+          "howToApply": "Para se inscrever, envie seu currículo e uma breve declaração de interesse para nosso email da comunidade. Também incentivamos que você comece a contribuir em nosso repositório GitHub.",
+          "resources": [
+            { "name": "KubeStellar GitHub" },
+            { "name": "Página da Comunidade KubeStellar" }
+          ]
         }
       },
       "lfx": {
@@ -493,48 +521,17 @@
         "description": "Acelere sua jornada de código aberto com mentoria da Linux Foundation",
         "sections": {
           "benefits": "Mentoria profissional, acesso à rede Linux Foundation, desenvolvimento de habilidades técnicas, oportunidades de carreira e certificação de programa.",
-          "description": "LFX Mentorship conecta desenvolvedores aspirantes com mentores experientes em projetos de código aberto apoiados pela Linux Foundation."
+          "description": "LFX Mentorship conecta desenvolvedores aspirantes com mentores experientes em projetos de código aberto apoiados pela Linux Foundation.",
+          "overview": "O KubeStellar tem orgulho de fazer parte do programa LFX Mentorship. Oferecemos projetos críticos para nosso roadmap, dando aos mentorados a chance de causar impacto significativo.",
+          "eligibility": "O programa é aberto para desenvolvedores de todas as origens. Requisitos específicos podem variar por projeto. Consulte a plataforma LFX Mentorship para detalhes de elegibilidade.",
+          "timeline": "O LFX Mentorship ocorre em períodos, normalmente Primavera, Verão e Outono. Cada período dura cerca de 12 semanas.",
+          "structure": "Os mentorados trabalham individualmente com um mentor do KubeStellar, contribuindo para o projeto e participando da comunidade.",
+          "howToApply": "As inscrições são feitas pela plataforma LFX Mentorship. Procure projetos do KubeStellar e inscreva-se.",
+          "resources": [
+            { "name": "Plataforma LFX Mentorship" },
+            { "name": "KubeStellar GitHub" }
+          ]
         }
-      }
-    }
-  },
-  "productsPage": {
-    "title": "Nossos",
-    "titleSpan": "Produtos",
-    "subtitle": "Descubra nosso conjunto de ferramentas e plataformas que aprimoram o ecossistema KubeStellar e capacitam o gerenciamento Kubernetes multi-cluster.",
-    "repoButton": "Repositório",
-    "websiteButton": "Website",
-    "watchDemoButton": "Assistir Demo",
-    "products": {
-      "kubestellar": {
-        "name": "KubeStellar",
-        "fullName": "KubeStellar",
-        "description": "Plataforma de orquestração Kubernetes multi-cluster que simplifica o gerenciamento de carga de trabalho distribuída em ambientes de infraestrutura diversos. Fornece plano de controle unificado, posicionamento inteligente de carga de trabalho e governança orientada por políticas para implantações multi-cluster complexas com escalabilidade automatizada, otimização de recursos e capacidades de integração perfeita entre provedores de nuvem."
-      },
-      "kubestellarUI": {
-        "name": "KubeStellar UI",
-        "fullName": "KubeStellar UI",
-        "description": "Uma interface web poderosa para gerenciar orquestração Kubernetes multi-cluster com dashboards intuitivos, monitoramento em tempo real e controles abrangentes para gerenciamento simplificado de clusters. Possui ferramentas avançadas de visualização, espaços de trabalho personalizáveis e alertas inteligentes para otimizar suas operações multi-cluster."
-      },
-      "kubeflex": {
-        "name": "KubeFlex",
-        "fullName": "KubeFlex",
-        "description": "Uma plataforma flexível de gerenciamento Kubernetes fornecendo ferramentas e recursos abrangentes para orquestração multi-cluster e distribuição de carga de trabalho. Permite provisionamento dinâmico de clusters, escalabilidade automatizada e alocação inteligente de recursos em ambientes heterogêneos. Simplifica cenários complexos de implantação com automação orientada por políticas."
-      },
-      "a2a": {
-        "name": "A2A",
-        "fullName": "A2A",
-        "description": "Plataforma de comunicação Aplicação-para-Aplicação permitindo conectividade perfeita dentro do ecossistema KubeStellar. Facilita troca segura de dados e comunicação em tempo real entre microsserviços distribuídos. Fornece roteamento avançado, balanceamento de carga e capacidades de descoberta de serviços para implantações multi-cluster complexas."
-      },
-      "kubectlMulti": {
-        "name": "kubectl-multi",
-        "fullName": "kubectl-multi",
-        "description": "Um plugin kubectl abrangente para operações multi-cluster com KubeStellar. Este plugin estende o kubectl para trabalhar perfeitamente em todos os clusters gerenciados pelo KubeStellar, fornecendo visualizações e operações unificadas enquanto filtra clusters de staging de fluxo de trabalho (WDS). Execute comandos em múltiplos clusters simultaneamente com agregação inteligente de saída."
-      },
-      "galaxyMarketplace": {
-        "name": "Galaxy Marketplace",
-        "fullName": "KS Galaxy Marketplace",
-        "description": "Um marketplace centralizado para extensões KubeStellar, plugins e ferramentas e integrações contribuídas pela comunidade. Descubra, instale e gerencie componentes de terceiros para aprimorar suas capacidades de orquestração multi-cluster. Possui verificação automatizada de compatibilidade, gerenciamento de versões e integração perfeita com implantações KubeStellar existentes."
       }
     }
   },
@@ -553,7 +550,11 @@
           "Faça sua primeira contribuição (PR, issue, documentação)",
           "Assine o CLA (Contributor License Agreement)",
           "Siga o código de conduta da comunidade",
-          "Participe de discussões da comunidade"
+          "Participe de discussões da comunidade",
+          "Mínimo de 3 contribuições (relatos de bugs, documentação ou PRs de código)",
+          "Demonstrar entusiasmo e interesse em participação de longo prazo",
+          "Ser ativo no GitHub e Slack",
+          "Aplicação informal ou indicação para ingressar no programa de estágio"
         ]
       },
       "unpaidIntern": {
@@ -566,7 +567,12 @@
           "Demonstre conhecimento técnico em áreas específicas",
           "Participe regularmente de reuniões da comunidade",
           "Ajude outros contribuidores com questões e PRs",
-          "Mantenha atividade consistente por 12 semanas"
+          "Mantenha atividade consistente por 12 semanas",
+          "Abrir pelo menos 6 issues \"help wanted\"",
+          "Mesclar pelo menos 20 PRs (8 nas primeiras 6 semanas)",
+          "Participar de reuniões semanais ou enviar resumos",
+          "Trabalhar colaborativamente com mentores",
+          "Receber recomendação do mentor"
         ]
       },
       "paidIntern": {
@@ -578,7 +584,11 @@
           "Demonstre expertise em componentes específicos",
           "Lidere pelo menos um projeto ou recurso",
           "Mentore novos contribuidores",
-          "Mantenha alta qualidade nas contribuições"
+          "Mantenha alta qualidade nas contribuições",
+          "≥2 issues \"Help Wanted\" a cada 2 meses",
+          "≥3 PRs mesclados a cada 2 meses",
+          "≥8 revisões de PR ou comentários construtivos a cada 2 meses",
+          "≥3 participações em reuniões da comunidade a cada 2 meses"
         ]
       },
       "mentor": {
@@ -590,7 +600,11 @@
           "Lidere iniciativas de mentoria",
           "Contribua para decisões técnicas",
           "Ajude na orientação da comunidade",
-          "Mantenha atividade de mentoria consistente"
+          "Mantenha atividade de mentoria consistente",
+          "Demonstrar liderança técnica em uma ou mais áreas-chave",
+          "Manter atividade consistente de contribuição",
+          "Engajar-se com a comunidade no GitHub e Slack",
+          "Aprovado pelos mantenedores principais após processo público de revisão"
         ]
       },
       "maintainer": {
@@ -602,7 +616,11 @@
           "Responsabilidades de revisão de código",
           "Autoridade de lançamento e tomada de decisões",
           "Liderança na direção do projeto",
-          "Compromisso de longo prazo com o projeto"
+          "Compromisso de longo prazo com o projeto",
+          "≥2 issues \"Help Wanted\" a cada 2 meses",
+          "≥3 PRs mesclados a cada 2 meses",
+          "≥8 revisões de PR ou comentários construtivos a cada 2 meses",
+          "≥3 participações em reuniões da comunidade a cada 2 meses"
         ]
       }
     },
@@ -668,22 +686,16 @@
       "subtitle": "Junte-se ao nosso ecossistema de parceiros inovadores para moldar o futuro do gerenciamento Kubernetes multi-cluster",
       "benefits": [
         {
+          "title": "Inovação",
           "description": "Colabore em soluções de orquestração multi-cluster de ponta"
         },
         {
+          "title": "Comunidade",
           "description": "Conecte-se com um ecossistema vibrante de desenvolvedores e organizações nativas da nuvem"
         },
         {
-          "description": "Acesse nossa base de usuários crescente e oportunidades de mercado"
-        },
-        {
-          "description": "Influencie o desenvolvimento e a direção do produto"
-        },
-        {
-          "description": "Ganhe visibilidade através de comarketing e eventos da comunidade"
-        },
-        {
-          "description": "Beneficie-se de suporte técnico e recursos de integração"
+          "title": "Excelência",
+          "description": "Impulsione padrões da indústria e melhores práticas em orquestração Kubernetes"
         }
       ]
     },
