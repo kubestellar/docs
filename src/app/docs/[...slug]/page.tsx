@@ -34,6 +34,23 @@ function resolvePath(baseFile: string, relativePath: string) {
   return stack.join('/');
 }
 
+function wrapMarkdownImagesWithFigures(markdown: string) {
+  const imageRegex = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g;
+
+  return markdown.replace(imageRegex, (_match, alt = '', src, title) => {
+    const captionText = title || alt;
+    const titleAttr = title ? ` title="${title}"` : '';
+    const figcaption = captionText ? `<figcaption>${captionText}</figcaption>` : '';
+
+    return `
+<figure class="ks-doc-figure">
+  <img src="${src}" alt="${alt}"${titleAttr} />
+  ${figcaption}
+</figure>
+`;
+  });
+}
+
 export default async function Page(props: PageProps) {
   const params = await props.params
   const searchParams = await props.searchParams
@@ -186,6 +203,8 @@ export default async function Page(props: PageProps) {
     
     return `<img ${pre}src="${rawUrl}"${post}>`;
   });
+
+  rewrittenText = wrapMarkdownImagesWithFigures(rewrittenText);
 
   // 3. Pre-process Jinja and Pymdown syntax before MDX compilation
   const preProcessedText = rewrittenText
