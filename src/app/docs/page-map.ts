@@ -51,6 +51,7 @@ export async function buildPageMapForBranch(branch: string) {
   // Filter out Direct folder completely
   const ROOT_FOLDERS = Array.from(new Set(allDocFiles.map(fp => fp.split('/')[0])))
   const DIRECT_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'direct')
+  const CONTRIBUTE_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'contribution-guidelines')
   const UI_DOCS_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'ui docs' || r.toLowerCase() === 'ui-docs')
   const COMMON_SUBS_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'common subs' || r.toLowerCase() === 'common-subs')
 
@@ -145,6 +146,22 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
       // from UI Docs folder
       { root: UI_DOCS_ROOT, file: 'README.md' },
       { root: UI_DOCS_ROOT, file: 'ui-overview.md' },
+    ]]
+     ['Contributing', [
+      // from contribution-guidelines or direct folders
+      { 'Guidelines': root: CONTRIBUTE_ROOT, file: 'contributing.md' },
+      { 'Code of Conduct': root: CONTRIBUTE_ROOT, file: 'coc-inc.md' },
+      { 'Governance': root: CONTRIBUTE_ROOT, file: 'governance-inc.md' },
+      { 'Contributor Ladder': root: CONTRIBUTE_ROOT, file: 'contributor-ladder.md' },
+      { 'License': root: CONTRIBUTE_ROOT,  file: 'license-inc.md' },
+      { 'Testing (Code)': root: DIRECT_ROOT, file: 'testing.md' },
+      { 'Packaging': root: DIRECT_ROOT, file: 'packaging.md' },
+      { 'Docs Management': root: CONTRIBUTE_ROOT,  file: 'operations/document-management.md' },
+      { 'Docs Style Guide': root: CONTRIBUTE_ROOT,  file: 'operations/docs-styleguide.md' },
+      { 'Testing Docs PRs': root: CONTRIBUTE_ROOT,  file: 'operations/testing-docs-prs.md' },
+      { 'Release Process': root: DIRECT_ROOT,  file: 'release.md' }, 
+      { 'Release Testing': root: CONTRIBUTE_ROOT,  file: 'release-testing.md' },     
+      { 'Signoff and Contribution Signing': root: DIRECT_ROOT,  file: 'operations/pr-signoff.md' },
     ]]
   ]
 
