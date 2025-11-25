@@ -15,7 +15,6 @@
   --separator-color: rgba(0, 0, 0, 0.1);
 }
 
-.nextra-sidebar-container,
 aside[class*="sidebar"] {
   border-right: 3px solid var(--separator-color);
 }
