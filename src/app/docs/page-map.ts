@@ -149,19 +149,19 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
     ]]
      ['Contributing', [
       // from contribution-guidelines or direct folders
-      { 'Guidelines': root: CONTRIBUTE_ROOT, file: 'contributing.md' },
-      { 'Code of Conduct': root: CONTRIBUTE_ROOT, file: 'coc-inc.md' },
-      { 'Governance': root: CONTRIBUTE_ROOT, file: 'governance-inc.md' },
-      { 'Contributor Ladder': root: CONTRIBUTE_ROOT, file: 'contributor-ladder.md' },
-      { 'License': root: CONTRIBUTE_ROOT,  file: 'license-inc.md' },
-      { 'Testing (Code)': root: DIRECT_ROOT, file: 'testing.md' },
-      { 'Packaging': root: DIRECT_ROOT, file: 'packaging.md' },
-      { 'Docs Management': root: CONTRIBUTE_ROOT,  file: 'operations/document-management.md' },
-      { 'Docs Style Guide': root: CONTRIBUTE_ROOT,  file: 'operations/docs-styleguide.md' },
-      { 'Testing Docs PRs': root: CONTRIBUTE_ROOT,  file: 'operations/testing-docs-prs.md' },
-      { 'Release Process': root: DIRECT_ROOT,  file: 'release.md' }, 
-      { 'Release Testing': root: CONTRIBUTE_ROOT,  file: 'release-testing.md' },     
-      { 'Signoff and Contribution Signing': root: DIRECT_ROOT,  file: 'operations/pr-signoff.md' },
+      { 'Guidelines': 'contribution-guidelines/contributing.md' },
+      { 'Code of Conduct': 'contribution-guidelines/coc-inc.md' },
+      { 'Governance': 'contribution-guidelines/governance-inc.md' },
+      { 'Contributor Ladder': 'contribution-guidelines/contributor-ladder.md' },
+      { 'License': 'contribution-guidelines/license-inc.md' },
+      { 'Testing (Code)': 'direct/testing.md' },
+      { 'Packaging': 'direct/packaging.md' },
+      { 'Docs Management': 'contribution-guidelines/operations/document-management.md' },
+      { 'Docs Style Guide': 'contribution-guidelines/operations/docs-styleguide.md' },
+      { 'Testing Docs PRs': 'contribution-guidelines/operations/testing-docs-prs.md' },
+      { 'Release Process': 'direct/release.md' }, 
+      { 'Release Testing': 'contribution-guidelines/release-testing.md' },     
+      { 'Signoff and Contribution Signing': 'contribution-guidelines/operations/pr-signoff.md' },
     ]]
   ]
 
