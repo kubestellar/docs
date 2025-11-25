@@ -51,7 +51,7 @@ export async function buildPageMapForBranch(branch: string) {
   // Filter out Direct folder completely
   const ROOT_FOLDERS = Array.from(new Set(allDocFiles.map(fp => fp.split('/')[0])))
   const DIRECT_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'direct')
-  const CONTRIBUTE_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'contribution-guidelines')
+  //const CONTRIBUTE_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'contribution-guidelines')
   const UI_DOCS_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'ui docs' || r.toLowerCase() === 'ui-docs')
   const COMMON_SUBS_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'common subs' || r.toLowerCase() === 'common-subs')
 
