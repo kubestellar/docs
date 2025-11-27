@@ -59,7 +59,7 @@ export default function ProductsPage() {
     {
       id: "kubectl-multi",
       logo: "/products/kubectl-multi.png",
-      website: "https://github.com/kubestellar/kubectl-multi",
+      website: "https://github.com/kubestellar/kubectl-multi-plugin",
       repository: "https://github.com/kubestellar/kubectl-multi-plugin",
       name: t("products.kubectlMulti.name"),
       fullName: t("products.kubectlMulti.fullName"),
