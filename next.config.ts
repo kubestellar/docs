@@ -22,12 +22,14 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/agenda",
-        destination: "https://docs.google.com/document/d/1XppfxSOD7AOX1lVVVIPWjpFkrxakfBfVzcybRg17-PM/edit?usp=share_link",
+        destination:
+          "https://docs.google.com/document/d/1XppfxSOD7AOX1lVVVIPWjpFkrxakfBfVzcybRg17-PM/edit?usp=share_link",
         permanent: true,
       },
       {
         source: "/blog",
-        destination: "https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST",
+        destination:
+          "https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST",
         permanent: true,
       },
       {
@@ -42,7 +44,8 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/drive",
-        destination: "https://drive.google.com/drive/u/1/folders/1p68MwkX0sYdTvtup0DcnAEsnXElobFLS",
+        destination:
+          "https://drive.google.com/drive/u/1/folders/1p68MwkX0sYdTvtup0DcnAEsnXElobFLS",
         permanent: true,
       },
       {
@@ -67,12 +70,14 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/ladder_stats",
-        destination: "https://docs.google.com/spreadsheets/d/16CxUk2tNbTB-Si0qRVwIrI_f19t9HwSby9C1djMN7Sc/edit?usp=sharing",
+        destination:
+          "https://docs.google.com/spreadsheets/d/16CxUk2tNbTB-Si0qRVwIrI_f19t9HwSby9C1djMN7Sc/edit?usp=sharing",
         permanent: true,
       },
       {
         source: "/linkedin",
-        destination: "https://www.linkedin.com/feed/hashtag/?keywords=kubestellar",
+        destination:
+          "https://www.linkedin.com/feed/hashtag/?keywords=kubestellar",
         permanent: true,
       },
       {
