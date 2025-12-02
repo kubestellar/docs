@@ -22,18 +22,7 @@ const nextConfig: NextConfig = {
     
   
 };
-module.exports = withNextra({
-  async redirects() {
-    return [
-      // Basic redirect
-      {
-        source: '/tv',
-        destination: 'https://www.youtube.com/@kubestellar',
-        permanent: true,
-      },
-    ]
-  },
-});
+
 const configWithNextra = withNextra(nextConfig);
 
 // Note: Route-level exclusion is handled in src/middleware.ts (matcher excludes /docs)
