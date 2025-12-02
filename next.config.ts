@@ -17,6 +17,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["@/components"],
   },
+  
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+    
+  
+};
+module.exports = withNextra({
   async redirects() {
     return [
       // Basic redirect
@@ -27,11 +33,7 @@ const nextConfig: NextConfig = {
       },
     ]
   },
-  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-    
-  
-};
-
+});
 const configWithNextra = withNextra(nextConfig);
 
 // Note: Route-level exclusion is handled in src/middleware.ts (matcher excludes /docs)
