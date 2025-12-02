@@ -18,6 +18,18 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["@/components"],
   },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+  
+  async redirects() {
+    return [
+      // Basic redirect
+      {
+        source: '/tv',
+        destination: 'https://www.youtube.com/@kubestellar',
+        permanent: true,
+      },
+    ]
+  },
+
 };
 
 const configWithNextra = withNextra(nextConfig);
