@@ -505,7 +505,7 @@ export default function Navbar() {
                     data-dropdown-menu
                     style={{ display: "none" }}
                   >
-                    <a
+                    <Link
                       href="/joinus"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                     >
@@ -523,7 +523,7 @@ export default function Navbar() {
                         ></path>
                       </svg>
                       {t("joinIn")}
-                    </a>
+                    </Link>
                     <Link
                       href="/contribute-handbook"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
@@ -1003,7 +1003,7 @@ export default function Navbar() {
                   </span>
                 </div>
                 <div className="relative mb-2">
-                  <a
+                  <Link
                     href="/joinus"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
@@ -1023,7 +1023,7 @@ export default function Navbar() {
                       </svg>
                     </div>
                     <span>{t("joinIn")}</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="relative mb-2">
                   <Link
