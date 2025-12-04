@@ -8,7 +8,7 @@ export default async function proxy(request: NextRequest) {
   // Step 2: Create and call the next-intl middleware (example)
   const handleI18nRouting = createMiddleware({
     locales: ['en', 'de'],
-    defaultLocale
+    defaultLocale: 'en',
   });
   const response = handleI18nRouting(request);
  
