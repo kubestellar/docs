@@ -27,10 +27,7 @@ const nextConfig: NextConfig = {
         destination: 'https://www.youtube.com/@kubestellar',
         permanent: true,
       },
-    ]
-  },
-async redirects() {
-    return [
+
       {
         source: '/agenda',
         destination: 'https://docs.google.com/document/d/1XppfxSOD7AOX1lVVVIPWjpFkrxakfBfVzcybRg17-PM/edit?usp=share_link',
