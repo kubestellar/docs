@@ -118,7 +118,7 @@ export default function GetStartedSection() {
               <div className="space-y-3">
                 <div className="grid grid-cols-2 gap-3">
                   <a
-                  //href="https://kubestellar.io/slack"
+                  //href="/slack"
                     href="/slack"
                     target="_blank"
                     rel="noopener noreferrer"

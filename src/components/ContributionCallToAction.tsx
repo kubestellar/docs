@@ -157,7 +157,7 @@ export default function ContributionCallToAction() {
               {t("joinSlackDescription")}
             </p>
             <a
-              href="https://kubestellar.io/slack"
+              href="/slack"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-center text-blue-300 hover:text-blue-200 font-medium"
