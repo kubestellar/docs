@@ -118,7 +118,8 @@ export default function GetStartedSection() {
               <div className="space-y-3">
                 <div className="grid grid-cols-2 gap-3">
                   <a
-                    href="https://kubestellar.io/slack"
+                  //href="https://kubestellar.io/slack"
+                    href="/slack"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center px-3 py-2.5 rounded-lg bg-gradient-to-r from-purple-600/80 to-purple-700/80 hover:from-purple-600 hover:to-purple-700 text-white text-sm font-medium transition-all duration-200 border border-purple-500/30"
