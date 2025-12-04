@@ -20,7 +20,7 @@ export default async function proxy(request: NextRequest) {
  
 export const config = {
   // Match only internationalized pathnames
-  matcher: ['
-    /((?!docs|api|_next|_vercel|agenda|blog|code|community|drive|infomercial|join_us|joinus|ladder|ladder_stats|linkedin|quickstart|slack|survey|tv|youtube|.*\\..*).*)',
+  matcher: [
+    "/((?!docs|api|_next|_vercel|agenda|blog|code|community|drive|infomercial|join_us|joinus|ladder|ladder_stats|linkedin|quickstart|slack|survey|tv|youtube|.*\\..*).*)",
   ]
 }
