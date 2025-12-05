@@ -2,12 +2,12 @@
 # https://docs.netlify.com/configure-builds/file-based-configuration/
 
 
-[build.environment]
-NODE_VERSION = "18"
-
 [build]
   command = "npm run build"
   publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20.11.1"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
