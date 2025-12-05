@@ -58,10 +58,10 @@ ${formData.name}
 
 ---
 This message was sent via the KubeStellar website contact form.
-Google Groups: https://groups.google.com/g/kubestellar-dev`
+Google Groups: https://groups.google.com/g/kubestellar-users`
       );
 
-      const mailtoLink = `mailto:kubestellar-dev@googlegroups.com?subject=${subject}&body=${body}`;
+      const mailtoLink = `mailto:kubestellar-users@googlegroups.com?subject=${subject}&body=${body}`;
 
       // Small delay to show loading state
       await new Promise(resolve => setTimeout(resolve, 800));
@@ -86,7 +86,7 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
     } catch (error) {
       console.error("Error submitting form:", error);
       alert(
-        "There was an error opening your email client. Please try again or visit https://groups.google.com/g/kubestellar-dev directly."
+        "There was an error opening your email client. Please try again or visit https://groups.google.com/g/kubestellar-users directly."
       );
     } finally {
       setIsSubmitting(false);
@@ -180,7 +180,7 @@ Google Groups: https://groups.google.com/g/kubestellar-dev`
 
             {/* Contact card 2 */}
             <a
-              href="https://kubestellar.io/slack"
+              href="/slack"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-transparent p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-purple-500/70 cursor-pointer"
