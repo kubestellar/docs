@@ -12,6 +12,11 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Forms configuration
+[forms]
+  # Enable spam filtering
+  spam_protection = true
+
 # Redirects for short URLs
 [[redirects]]
   from = "/agenda"
