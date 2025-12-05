@@ -1,6 +1,10 @@
 # Netlify configuration file
 # https://docs.netlify.com/configure-builds/file-based-configuration/
 
+
+[build.environment]
+NODE_VERSION = "18"
+
 [build]
   command = "npm run build"
   publish = ".next"
