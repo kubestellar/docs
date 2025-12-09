@@ -51,6 +51,7 @@ export async function buildPageMapForBranch(branch: string) {
   // Filter out Direct folder completely
   const ROOT_FOLDERS = Array.from(new Set(allDocFiles.map(fp => fp.split('/')[0])))
   const DIRECT_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'direct')
+  const CONTRIBUTE_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'contribution-guidelines')
   const UI_DOCS_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'ui docs' || r.toLowerCase() === 'ui-docs')
   const COMMON_SUBS_ROOT = ROOT_FOLDERS.find(r => r.toLowerCase() === 'common subs' || r.toLowerCase() === 'common-subs')
 
@@ -145,6 +146,19 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
       // from UI Docs folder
       { root: UI_DOCS_ROOT, file: 'README.md' },
       { root: UI_DOCS_ROOT, file: 'ui-overview.md' },
+    ]],
+    ['Contribution Guidelines', [
+      // from contribution guidelines folder
+      { root: CONTRIBUTE_ROOT, title: 'Code of Conduct', file: 'coc-inc.md' },
+      { root: CONTRIBUTE_ROOT, title: 'Guidelines', file: 'contributing-inc.md' },
+      { root: CONTRIBUTE_ROOT, title: 'Contributor Ladder', file: 'contribute_ladder.md' },
+      { root: CONTRIBUTE_ROOT, title: 'License', file: 'license-inc.md' },
+      { root: CONTRIBUTE_ROOT, title: 'Governance', file: 'governance-inc.md' },
+      { root: CONTRIBUTE_ROOT, title: 'Onboarding', file: 'onboarding-inc.md' },
+      { root: CONTRIBUTE_ROOT, title: 'Docs Style Guide', file: 'documents-styleguide.md' },
+      { root: CONTRIBUTE_ROOT, title: 'Document Management', file: 'document-management.md' },
+      { root: CONTRIBUTE_ROOT, title: 'Packaging', file: 'packaging.md' },
+     
     ]]
   ]
 
