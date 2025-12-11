@@ -213,10 +213,10 @@ export default function MaintainerLadderPage() {
         {" "}
         {/* Add padding-top to account for fixed navbar */}
         {/* Header Section */}
-        <section className="pt-12 pb-12 sm:pt-28 sm:pb-16 lg:pt-24 lg:pb-6">
+        <section className="pt-8 pb-6 sm:pt-16 sm:pb-8 lg:pt-16 lg:pb-4">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
                 {t("title")}{" "}
                 <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
                   {t("titleSpan")}
@@ -227,7 +227,7 @@ export default function MaintainerLadderPage() {
               </p>
 
               {/* Tracking Sheet CTA */}
-              <div className="mt-8 flex justify-center">
+              <div className="mt-4 flex justify-center">
                 <div className="relative group">
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
                   <a
@@ -254,14 +254,14 @@ export default function MaintainerLadderPage() {
           </div>
         </section>
         {/* Ladder Section */}
-        <section className="py-4 sm:py-5 md:py-6 lg:py-8">
+        <section className="py-2 sm:py-3 md:py-4 lg:py-4">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             {/* Mobile Layout */}
-            <div className="lg:hidden space-y-2">
+            <div className="lg:hidden space-y-1.5">
               {levels.map((level, index) => (
                 <div key={level.id} className="relative">
                   {/* Level Card - Ultra Compact */}
-                  <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-2.5 border border-white/10 hover:border-white/20 transition-all duration-300 shadow-md">
+                  <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-2 border border-white/10 hover:border-white/20 transition-all duration-300 shadow-md">
                     {/* Header with Icon and Title */}
                     <div className="flex items-center gap-2.5 mb-2">
                       <div className={`flex-shrink-0 w-10 h-10 bg-gradient-to-br ${level.gradient} rounded-lg flex items-center justify-center shadow-md`}>
@@ -350,18 +350,18 @@ export default function MaintainerLadderPage() {
             </div>
 
             {/* Desktop Layout - Compact Zigzag */}
-            <div className="hidden lg:block space-y-3">
+            <div className="hidden lg:block space-y-2">
               {/* Central Ladder Line with Animation */}
               <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 transform -translate-x-1/2 z-0 opacity-30">
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 animate-pulse"></div>
               </div>
 
               {levels.map((level, index) => (
-                <div key={level.id} className="relative z-10 mb-3">
+                <div key={level.id} className="relative z-10 mb-2">
                   <div className={`flex items-center gap-4 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
                     {/* Content Card - Super Compact */}
                     <div className="w-[46%]">
-                      <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-3 border border-white/10 transition-all duration-300 hover:bg-gray-800/60 hover:border-white/30 hover:shadow-xl hover:scale-[1.01] group">
+                      <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-2.5 border border-white/10 transition-all duration-300 hover:bg-gray-800/60 hover:border-white/30 hover:shadow-xl hover:scale-[1.01] group">
                         {/* Header */}
                         <div className="flex items-center gap-2.5 mb-2.5">
                           <div className={`w-9 h-9 bg-gradient-to-br ${level.gradient} rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform flex-shrink-0`}>
