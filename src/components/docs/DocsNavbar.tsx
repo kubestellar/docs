@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { VERSIONS, type VersionKey } from '@/config/versions'
+import { getLocalizedUrl } from "@/lib/url";
 import { useMenu, setMenu } from 'nextra-theme-docs'
 
 type DropdownType = "contribute" | "community" | "version" | "language" | "github" | null;
