@@ -23,7 +23,7 @@ export async function buildPageMapForBranch(branch: string) {
   async function fetchDocsTree(): Promise<GitTreeResp> {
     const refUrl = `https://api.github.com/repos/${user}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`
     let sha: string | undefined
-    const refRes = await fetch(refUrl, { headers: makeGitHubHeaders(), cache: 'no-store' })
+    const refRes = await fetch(refUrl, { headers: makeGitHubHeaders(), cache: 'force-cache' })
     if (refRes.ok) {
       const ref = await refRes.json()
       sha = ref?.object?.sha
@@ -31,7 +31,7 @@ export async function buildPageMapForBranch(branch: string) {
     const treeUrl = sha
       ? `https://api.github.com/repos/${user}/${repo}/git/trees/${sha}?recursive=1`
       : `https://api.github.com/repos/${user}/${repo}/git/trees/${encodeURIComponent(branch)}?recursive=1`
-    const treeRes = await fetch(treeUrl, { headers: makeGitHubHeaders(), cache: 'no-store' })
+    const treeRes = await fetch(treeUrl, { headers: makeGitHubHeaders(), cache: 'force-cache' })
     if (!treeRes.ok) {
       const body = await treeRes.text().catch(() => '')
       throw new Error(`GitHub tree fetch failed: ${treeRes.status} ${treeRes.statusText} ${body}`)
