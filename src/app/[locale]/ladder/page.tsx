@@ -254,55 +254,56 @@ export default function MaintainerLadderPage() {
           </div>
         </section>
         {/* Ladder Section */}
-        <section className="py-8 sm:py-12 md:py-16 lg:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <section className="py-4 sm:py-6 md:py-8 lg:py-10">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             {/* Mobile Layout */}
-            <div className="lg:hidden space-y-6">
+            <div className="lg:hidden space-y-3">
               {levels.map((level, index) => (
                 <div key={level.id} className="relative">
-                  {/* Level Card - Compact Design */}
-                  <div className="bg-gray-800/40 backdrop-blur-md rounded-xl p-5 border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg">
+                  {/* Level Card - Ultra Compact */}
+                  <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-3 border border-white/10 hover:border-white/20 transition-all duration-300 shadow-md">
                     {/* Header with Icon and Title */}
-                    <div className="flex items-start gap-4 mb-3">
-                      <div
-                        className={`flex-shrink-0 w-14 h-14 bg-gradient-to-br ${level.gradient} rounded-xl flex items-center justify-center shadow-lg`}
-                      >
-                        <div className="text-white">{level.icon}</div>
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <div className={`flex-shrink-0 w-10 h-10 bg-gradient-to-br ${level.gradient} rounded-lg flex items-center justify-center shadow-md`}>
+                        <div className="text-white scale-75">{level.icon}</div>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-1">
-                          <div className={`w-7 h-7 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center text-white text-xs font-bold`}>
+                        <div className="flex items-center gap-1.5">
+                          <div className={`w-5 h-5 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0`}>
                             {level.id}
                           </div>
-                          <h3 className="text-lg font-bold text-white truncate">
+                          <h3 className="text-sm font-bold text-white truncate leading-tight">
                             {level.title}
                           </h3>
                         </div>
                         {level.timeframe && (
-                          <span className="inline-block bg-blue-900/50 rounded-full px-2 py-0.5 text-xs text-blue-200">
+                          <span className="inline-block bg-blue-900/50 rounded-full px-1.5 py-0.5 text-[10px] text-blue-200 mt-0.5">
                             {level.timeframe}
                           </span>
                         )}
                       </div>
                     </div>
 
-                    {/* Description */}
-                    <p className="text-gray-300 text-sm mb-3 line-clamp-2">
+                    {/* Description - Compact */}
+                    <p className="text-gray-300 text-xs mb-2 line-clamp-2 leading-tight">
                       {level.description}
                     </p>
 
                     {/* Requirements - Collapsible */}
-                    <details className="group">
-                      <summary className="cursor-pointer text-sm font-semibold text-white mb-2 flex items-center justify-between hover:text-blue-400 transition-colors">
-                        <span>{t("requirementsLabel")}</span>
-                        <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <details className="group mb-1">
+                      <summary className="cursor-pointer text-xs font-semibold text-white mb-1 flex items-center justify-between hover:text-blue-400 transition-colors py-1">
+                        <span className="flex items-center gap-1.5">
+                          <span className="w-1 h-1 bg-green-400 rounded-full"></span>
+                          {t("requirementsLabel")}
+                        </span>
+                        <svg className="w-3 h-3 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                       </summary>
-                      <ul className="space-y-1.5 mt-2">
+                      <ul className="space-y-1 mt-1 pl-2">
                         {level.requirements.map((req, reqIndex) => (
-                          <li key={reqIndex} className="text-xs text-gray-300 flex items-start">
-                            <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                          <li key={reqIndex} className="text-[11px] text-gray-300 flex items-start leading-tight">
+                            <span className="text-green-400 mr-1.5 flex-shrink-0 text-xs">✓</span>
                             <span>{req}</span>
                           </li>
                         ))}
@@ -311,15 +312,18 @@ export default function MaintainerLadderPage() {
 
                     {/* Good Standing - Collapsible */}
                     {level.goodStanding && (
-                      <details className="group mt-3">
-                        <summary className="cursor-pointer text-sm font-semibold text-blue-300 flex items-center justify-between hover:text-blue-400 transition-colors">
-                          <span>{t("goodStandingLabel")}</span>
-                          <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <details className="group mb-1">
+                        <summary className="cursor-pointer text-xs font-semibold text-blue-300 flex items-center justify-between hover:text-blue-400 transition-colors py-1">
+                          <span className="flex items-center gap-1.5">
+                            <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
+                            {t("goodStandingLabel")}
+                          </span>
+                          <svg className="w-3 h-3 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                           </svg>
                         </summary>
-                        <div className="mt-2 p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg">
-                          <p className="text-xs text-gray-300 leading-relaxed">
+                        <div className="mt-1 p-2 bg-blue-900/20 border border-blue-500/30 rounded">
+                          <p className="text-[11px] text-gray-300 leading-tight">
                             {level.goodStanding}
                           </p>
                         </div>
@@ -328,7 +332,7 @@ export default function MaintainerLadderPage() {
 
                     {/* Next Level Indicator */}
                     {index < levels.length - 1 && (
-                      <div className="mt-3 pt-3 border-t border-gray-700/50 flex items-center justify-between text-xs">
+                      <div className="mt-2 pt-2 border-t border-gray-700/50 flex items-center justify-between text-[10px]">
                         <span className="text-gray-400">{t("nextLevelLabel")}</span>
                         <span className="text-blue-400 font-semibold">{level.nextLevel}</span>
                       </div>
@@ -337,38 +341,38 @@ export default function MaintainerLadderPage() {
 
                   {/* Connector Line */}
                   {index < levels.length - 1 && (
-                    <div className="flex justify-center my-3">
-                      <div className={`w-1 h-8 bg-gradient-to-b ${level.gradient} opacity-50`}></div>
+                    <div className="flex justify-center my-2">
+                      <div className={`w-0.5 h-4 bg-gradient-to-b ${level.gradient} opacity-50`}></div>
                     </div>
                   )}
                 </div>
               ))}
             </div>
 
-            {/* Desktop Layout - Improved with better spacing */}
-            <div className="hidden lg:block space-y-12">
+            {/* Desktop Layout - Compact Zigzag */}
+            <div className="hidden lg:block space-y-4">
               {/* Central Ladder Line with Animation */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 transform -translate-x-1/2 z-0 opacity-30">
+              <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 transform -translate-x-1/2 z-0 opacity-30">
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 animate-pulse"></div>
               </div>
 
               {levels.map((level, index) => (
-                <div key={level.id} className="relative z-10 mb-8">
-                  <div className={`flex items-center gap-8 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
-                    {/* Content Card - Compact */}
-                    <div className="w-[45%]">
-                      <div className="bg-gray-800/40 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:bg-gray-800/60 hover:border-white/30 hover:shadow-2xl hover:scale-[1.02] group">
+                <div key={level.id} className="relative z-10 mb-4">
+                  <div className={`flex items-center gap-4 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
+                    {/* Content Card - Super Compact */}
+                    <div className="w-[46%]">
+                      <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 transition-all duration-300 hover:bg-gray-800/60 hover:border-white/30 hover:shadow-xl hover:scale-[1.01] group">
                         {/* Header */}
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className={`w-12 h-12 bg-gradient-to-br ${level.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
-                            <div className="text-white">{level.icon}</div>
+                        <div className="flex items-center gap-2.5 mb-2.5">
+                          <div className={`w-9 h-9 bg-gradient-to-br ${level.gradient} rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 transition-transform flex-shrink-0`}>
+                            <div className="text-white scale-75">{level.icon}</div>
                           </div>
-                          <div className="flex-1">
-                            <h3 className="text-xl font-bold text-white mb-1">
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-base font-bold text-white leading-tight truncate">
                               {level.title}
                             </h3>
                             {level.timeframe && (
-                              <span className="inline-block bg-blue-900/50 rounded-full px-3 py-1 text-xs text-blue-200">
+                              <span className="inline-block bg-blue-900/50 rounded-full px-2 py-0.5 text-[10px] text-blue-200 mt-0.5">
                                 {level.timeframe}
                               </span>
                             )}
@@ -376,21 +380,21 @@ export default function MaintainerLadderPage() {
                         </div>
 
                         {/* Description */}
-                        <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                        <p className="text-gray-300 text-xs mb-2.5 leading-relaxed line-clamp-2">
                           {level.description}
                         </p>
 
-                        {/* Requirements - Compact */}
-                        <div className="mb-4">
-                          <h4 className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                        {/* Requirements - Compact Grid */}
+                        <div className="mb-2.5">
+                          <h4 className="text-xs font-semibold text-white mb-1.5 flex items-center gap-1.5">
+                            <span className="w-1 h-1 bg-green-400 rounded-full"></span>
                             {t("requirementsLabel")}
                           </h4>
-                          <ul className="space-y-1.5 pl-4">
+                          <ul className="space-y-1 pl-3">
                             {level.requirements.map((req, reqIndex) => (
-                              <li key={reqIndex} className="text-xs text-gray-300 flex items-start">
-                                <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
-                                <span className="leading-relaxed">{req}</span>
+                              <li key={reqIndex} className="text-[11px] text-gray-300 flex items-start leading-tight">
+                                <span className="text-green-400 mr-1.5 flex-shrink-0">✓</span>
+                                <span className="leading-snug">{req}</span>
                               </li>
                             ))}
                           </ul>
@@ -398,12 +402,12 @@ export default function MaintainerLadderPage() {
 
                         {/* Good Standing - Compact */}
                         {level.goodStanding && (
-                          <div className="p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg mb-4">
-                            <h4 className="text-xs font-semibold text-blue-300 mb-1.5 flex items-center gap-2">
-                              <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                          <div className="p-2 bg-blue-900/20 border border-blue-500/30 rounded mb-2">
+                            <h4 className="text-[10px] font-semibold text-blue-300 mb-1 flex items-center gap-1.5">
+                              <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
                               {t("goodStandingLabel")}
                             </h4>
-                            <p className="text-xs text-gray-300 leading-relaxed">
+                            <p className="text-[11px] text-gray-300 leading-snug line-clamp-2">
                               {level.goodStanding}
                             </p>
                           </div>
@@ -411,11 +415,11 @@ export default function MaintainerLadderPage() {
 
                         {/* Next Level */}
                         {index < levels.length - 1 && (
-                          <div className="pt-3 border-t border-gray-700/50 flex items-center justify-between text-xs">
+                          <div className="pt-2 border-t border-gray-700/50 flex items-center justify-between text-[10px]">
                             <span className="text-gray-400">{t("nextLevelLabel")}</span>
-                            <span className="text-blue-400 font-semibold flex items-center gap-1">
+                            <span className="text-blue-400 font-semibold flex items-center gap-0.5">
                               {level.nextLevel}
-                              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                               </svg>
                             </span>
@@ -424,11 +428,11 @@ export default function MaintainerLadderPage() {
                       </div>
                     </div>
 
-                    {/* Center Circle - Enhanced */}
-                    <div className="w-[10%] flex justify-center">
-                      <div className={`relative w-16 h-16 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-2xl z-20 transition-all duration-300 hover:scale-125 hover:rotate-12 group cursor-pointer`}>
+                    {/* Center Circle - Compact */}
+                    <div className="w-[8%] flex justify-center">
+                      <div className={`relative w-12 h-12 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-xl z-20 transition-all duration-300 hover:scale-110 hover:rotate-6 group cursor-pointer`}>
                         <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <span className="text-white font-bold text-xl relative z-10">
+                        <span className="text-white font-bold text-base relative z-10">
                           {level.id}
                         </span>
                         {/* Pulse effect */}
@@ -437,7 +441,7 @@ export default function MaintainerLadderPage() {
                     </div>
 
                     {/* Empty Side */}
-                    <div className="w-[45%]"></div>
+                    <div className="w-[46%]"></div>
                   </div>
                 </div>
               ))}
