@@ -53,6 +53,10 @@ export default async function DocsLayout({ children }: Props) {
             defaultMenuCollapseLevel: 1,
             toggleButton: true
           }}
+          toc={{
+            float: true,
+            title: "On This Page"
+          }}
         >
           {children}
         </Layout>

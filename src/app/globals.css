@@ -1958,6 +1958,16 @@ html.dark .ks-doc-figure figcaption {
     visibility: visible !important;
   }
 
+  /* Make TOC accessible on mobile with proper positioning */
+  .nextra-toc-container {
+    position: fixed !important;
+    top: calc(var(--nextra-navbar-height, 4rem) + var(--nextra-banner-height, 0px)) !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 45 !important;
+    max-width: 16rem !important;
+  }
+
   /* Ensure proper backdrop for mobile sidebar */
   .nextra-sidebar-container ~ div[class*="backdrop"],
   .nextra-overlay {
