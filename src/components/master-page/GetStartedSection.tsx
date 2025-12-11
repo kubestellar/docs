@@ -138,12 +138,12 @@ export default function GetStartedSection() {
                 </div>
               </div>
               <p className="text-sm text-blue-100 mb-4">
-                Production-ready deployment on AWS EKS for scalable, enterprise-grade multi-cluster management
+                Production-ready deployment on AWS EKS (Kubernetes 1.34) for scalable, enterprise-grade multi-cluster management
               </p>
               <ul className="text-sm text-gray-300 mb-4 space-y-2 flex-grow">
                 <li className="flex items-start">
                   <span className="text-emerald-400 mr-2">✓</span>
-                  <span><strong>Production-ready</strong> infrastructure</span>
+                  <span><strong>EKS 1.34</strong> with high scalability</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-400 mr-2">✓</span>
@@ -151,11 +151,11 @@ export default function GetStartedSection() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-400 mr-2">✓</span>
-                  <span>Requires AWS Account & eksctl</span>
+                  <span>Tools: kubectl, eksctl, Helm, kflex, clusteradm</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-400 mr-2">✓</span>
-                  <span>EKS 1.34 - High scalability</span>
+                  <span>Requires AWS Account (us-east-1)</span>
                 </li>
               </ul>
               <Link
