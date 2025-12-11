@@ -1931,7 +1931,12 @@ html.dark .ks-doc-figure figcaption {
 }
 
 /* Mobile Responsiveness Fixes for Nextra Sidebar and TOC */
-/* Ensure sidebar toggle button is always visible on mobile/tablet */
+/* 
+ * Note: Using 1024px breakpoint instead of 768px (md) to cover both mobile and tablet devices.
+ * This ensures sidebar and TOC toggles work on tablets where sidebars may not fit comfortably.
+ * The md:hidden class in DocsNavbar hides elements at ≥768px, but CSS at ≤1024px provides
+ * enhanced functionality for tablets between 768px and 1024px.
+ */
 @media (max-width: 1024px) {
   /* Ensure Nextra's hamburger menu button is visible */
   .nextra-nav-container button[aria-label="Toggle sidebar"],
