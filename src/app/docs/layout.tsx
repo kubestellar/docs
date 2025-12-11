@@ -2,7 +2,6 @@ import { Layout } from 'nextra-theme-docs'
 import 'nextra-theme-docs/style.css'
 import { DocsNavbar, DocsFooter, DocsBanner } from '@/components/docs/index'
 import { Inter, JetBrains_Mono } from "next/font/google"
-import { Suspense } from 'react'
 import "../globals.css"
 import { buildPageMapForBranch } from './page-map'
 import { getDefaultVersion, getBranchForVersion } from '@/config/versions'
