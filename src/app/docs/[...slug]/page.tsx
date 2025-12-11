@@ -12,6 +12,8 @@ import EditViewSourceButtons from '@/components/docs/EditViewSourceButtons'
 // Keep dynamic rendering but let Next.js cache the data fetches
 export const dynamic = 'force-dynamic'
 export const fetchCache = 'default-cache'
+// Increase revalidation time for content to 1 hour
+export const revalidate = 3600
 
 const { wrapper: Wrapper, ...components } = getMDXComponents({ $Tabs: Tabs, Callout })
 const component = { ...components, Mermaid: MermaidComponent }
@@ -131,7 +133,7 @@ export default async function Page(props: PageProps) {
 
   const response = await fetch(
     `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${filePath}`,
-    { headers: makeGitHubHeaders(), next: { revalidate: 300 } }
+    { headers: makeGitHubHeaders(), next: { revalidate: 3600 } }
   )
 
   if (!response.ok) notFound()
@@ -175,10 +177,10 @@ export default async function Page(props: PageProps) {
       const resolvedPath = resolvePath(filePath, relativePath);
       const url = `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${docsPath}${resolvedPath}`;
       try {
-        const res = await fetch(url, { headers: makeGitHubHeaders(), next: { revalidate: 300 } });
+        const res = await fetch(url, { headers: makeGitHubHeaders(), next: { revalidate: 3600 } });
         if (res.ok) return { path: relativePath, text: removeCommentPatterns(await res.text()) };
         const rootUrl = `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${resolvedPath}`;
-        const rootRes = await fetch(rootUrl, { headers: makeGitHubHeaders(), next: { revalidate: 300 } });
+        const rootRes = await fetch(rootUrl, { headers: makeGitHubHeaders(), next: { revalidate: 3600 } });
         if (rootRes.ok) return { path: relativePath, text: removeCommentPatterns(await rootRes.text()) };
 
         // Suppress error for coming-soon.md
@@ -213,7 +215,7 @@ export default async function Page(props: PageProps) {
       const resolvedPath = resolvePath(filePath, relativePath);
       const url = `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${resolvedPath}`;
       try {
-        const res = await fetch(url, { headers: makeGitHubHeaders(), next: { revalidate: 300 } });
+        const res = await fetch(url, { headers: makeGitHubHeaders(), next: { revalidate: 3600 } });
         if (res.ok) {
           const fileContent = await res.text();
           processedContent = processedContent.replace(fullMatch, () => removeCommentPatterns(fileContent));
@@ -241,7 +243,7 @@ export default async function Page(props: PageProps) {
       const resolvedPath = resolvePath(filePath, relativePath);
       const url = `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${resolvedPath}`;
       try {
-        const res = await fetch(url, { headers: makeGitHubHeaders(), next: { revalidate: 300 } });
+        const res = await fetch(url, { headers: makeGitHubHeaders(), next: { revalidate: 3600 } });
         if (res.ok) {
           const fileContent = await res.text();
           const startIndex = fileContent.indexOf(startMarker);

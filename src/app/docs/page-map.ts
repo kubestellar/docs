@@ -23,10 +23,10 @@ export async function buildPageMapForBranch(branch: string) {
   async function fetchDocsTree(): Promise<GitTreeResp> {
     const refUrl = `https://api.github.com/repos/${user}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`
     let sha: string | undefined
-    // Cache for 5 minutes (300 seconds)
+    // Cache for 1 hour (3600 seconds) - navigation structure changes infrequently
     const refRes = await fetch(refUrl, { 
       headers: makeGitHubHeaders(), 
-      next: { revalidate: 300 }
+      next: { revalidate: 3600 }
     })
     if (refRes.ok) {
       const ref = await refRes.json()
@@ -35,10 +35,10 @@ export async function buildPageMapForBranch(branch: string) {
     const treeUrl = sha
       ? `https://api.github.com/repos/${user}/${repo}/git/trees/${sha}?recursive=1`
       : `https://api.github.com/repos/${user}/${repo}/git/trees/${encodeURIComponent(branch)}?recursive=1`
-    // Cache for 5 minutes (300 seconds)
+    // Cache for 1 hour (3600 seconds) - page map structure changes infrequently
     const treeRes = await fetch(treeUrl, { 
       headers: makeGitHubHeaders(), 
-      next: { revalidate: 300 }
+      next: { revalidate: 3600 }
     })
     if (!treeRes.ok) {
       const body = await treeRes.text().catch(() => '')
