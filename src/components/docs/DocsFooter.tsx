@@ -1,45 +1,88 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "../index";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 
 export default function Footer() {
+  const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     // Back to top functionality
-    const initBackToTop = () => {
-      const backToTopButton = document.getElementById("back-to-top");
-      if (!backToTopButton) return;
+    const backToTopButton = document.getElementById("back-to-top");
+    if (!backToTopButton) return;
 
-      const toggleButton = () => {
-        if (window.pageYOffset > 300) {
-          backToTopButton.style.opacity = "1";
-          backToTopButton.style.transform = "translateY(-30px)";
-        } else {
-          backToTopButton.style.opacity = "0";
-          backToTopButton.style.transform = "translateY(10px)";
-        }
-      };
-
-      window.addEventListener("scroll", toggleButton);
-
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // Initial check
-      toggleButton();
+    const toggleButton = () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.style.opacity = "1";
+        backToTopButton.style.transform = "translateY(-30px)";
+      } else {
+        backToTopButton.style.opacity = "0";
+        backToTopButton.style.transform = "translateY(10px)";
+      }
     };
 
-    initBackToTop();
+    const handleClick = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+
+    window.addEventListener("scroll", toggleButton);
+    backToTopButton.addEventListener("click", handleClick);
+
+    // Initial check
+    toggleButton();
+
+    // Cleanup function to prevent memory leaks
+    return () => {
+      window.removeEventListener("scroll", toggleButton);
+      backToTopButton.removeEventListener("click", handleClick);
+    };
   }, []);
+
+  // Prevent hydration mismatch by rendering dark theme until mounted
+  if (!mounted) {
+    return (
+      <footer className="relative overflow-hidden pt-16 pb-8 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+        <div className="absolute inset-0 bg-[#0a0a0a]"></div>
+        <StarField density="low" showComets={true} cometCount={2} />
+        <GridLines horizontalLines={21} verticalLines={15} />
+        <div className="absolute inset-0 z-0">
+          <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-blue-900/10 to-transparent"></div>
+          <div className="absolute top-0 right-0 w-full h-1/2 bg-gradient-to-b from-purple-900/10 to-transparent"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 sm:grid-cols-12 md:grid-cols-12 mb-12 items-start gap-1 sm:gap-6">
+            <div className="col-span-2 sm:col-span-6 lg:col-span-4">
+              <div className="flex items-center space-x-2 mb-2 ml-[-7px]">
+                <Image
+                  src="/KubeStellar-with-Logo-transparent.png"
+                  alt="Kubestellar logo"
+                  width={160}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              </div>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Multi-Cluster Kubernetes orchestration platform that simplifies
+                distributed workload management across diverse infrastructure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    );
+  }
 
   return (
     <footer className={`relative overflow-hidden pt-16 pb-8 ${
