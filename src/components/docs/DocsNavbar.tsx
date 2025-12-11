@@ -6,15 +6,14 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { VERSIONS, type VersionKey } from '@/config/versions'
-import { useSidebar, useTOC } from 'nextra-theme-docs'
+import { useMenu, setMenu } from 'nextra-theme-docs'
 
 type DropdownType = "contribute" | "community" | "version" | "language" | "github" | null;
 
 export default function DocsNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<DropdownType>(null);
-  const sidebar = useSidebar();
-  const toc = useTOC();
+  const menuOpen = useMenu();
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchResults, setSearchResults] = useState<Array<{
@@ -718,29 +717,12 @@ export default function DocsNavbar() {
               : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
           }`}
           aria-label="Toggle sidebar"
-          onClick={() => sidebar?.toggle?.()}
+          onClick={() => setMenu(!menuOpen)}
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
           </svg>
         </button>
-
-        {/* TOC toggle button for mobile */}
-        {toc && toc.items && toc.items.length > 0 && (
-          <button
-            className={`md:hidden p-1.5 rounded-md transition-colors cursor-pointer ${
-              isDark 
-                ? 'text-gray-300 hover:text-gray-100 hover:bg-neutral-800'
-                : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-            }`}
-            aria-label="Toggle table of contents"
-            onClick={() => toc?.toggle?.()}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-            </svg>
-          </button>
-        )}
 
         <button
           className={`xl:hidden p-1.5 rounded-md transition-colors cursor-pointer ${
