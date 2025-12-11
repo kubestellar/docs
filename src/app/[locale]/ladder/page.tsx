@@ -257,190 +257,187 @@ export default function MaintainerLadderPage() {
         <section className="py-8 sm:py-12 md:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             {/* Mobile Layout */}
-            <div className="lg:hidden">
+            <div className="lg:hidden space-y-6">
               {levels.map((level, index) => (
-                <div key={level.id} className="mb-4">
-                  {/* Level Card */}
-                  <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 relative">
-                    {/* Level Number */}
-                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                <div key={level.id} className="relative">
+                  {/* Level Card - Compact Design */}
+                  <div className="bg-gray-800/40 backdrop-blur-md rounded-xl p-5 border border-white/10 hover:border-white/20 transition-all duration-300 shadow-lg">
+                    {/* Header with Icon and Title */}
+                    <div className="flex items-start gap-4 mb-3">
                       <div
-                        className={`w-12 h-12 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-lg`}
+                        className={`flex-shrink-0 w-14 h-14 bg-gradient-to-br ${level.gradient} rounded-xl flex items-center justify-center shadow-lg`}
                       >
-                        <span className="text-white font-bold text-lg">
-                          {level.id}
-                        </span>
+                        <div className="text-white">{level.icon}</div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className={`w-7 h-7 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center text-white text-xs font-bold`}>
+                            {level.id}
+                          </div>
+                          <h3 className="text-lg font-bold text-white truncate">
+                            {level.title}
+                          </h3>
+                        </div>
+                        {level.timeframe && (
+                          <span className="inline-block bg-blue-900/50 rounded-full px-2 py-0.5 text-xs text-blue-200">
+                            {level.timeframe}
+                          </span>
+                        )}
                       </div>
                     </div>
 
-                    <div className="pt-4">
-                      <div className="text-center mb-4">
-                        <div
-                          className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${level.gradient} rounded-full mb-3`}
-                        >
-                          <div className="text-white">{level.icon}</div>
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-2">
-                          {level.title}
-                        </h3>
-                        {level.timeframe && (
-                          <div className="inline-block bg-blue-900/50 rounded-full px-3 py-1 text-xs text-blue-200 mb-2">
-                            {level.timeframe}
-                          </div>
-                        )}
-                        <p className="text-gray-300 text-sm mb-4">
-                          {level.description}
-                        </p>
-                      </div>
+                    {/* Description */}
+                    <p className="text-gray-300 text-sm mb-3 line-clamp-2">
+                      {level.description}
+                    </p>
 
-                      <div className="space-y-2">
-                        <h4 className="text-sm font-semibold text-white mb-2">
-                          {t("requirementsLabel")}
-                        </h4>
-                        <ul className="space-y-1">
-                          {level.requirements.map((req, reqIndex) => (
-                            <li
-                              key={reqIndex}
-                              className="text-xs text-gray-300 flex items-start"
-                            >
-                              <span className="text-green-400 mr-2 mt-1">
-                                •
-                              </span>
-                              <span>{req}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    {/* Requirements - Collapsible */}
+                    <details className="group">
+                      <summary className="cursor-pointer text-sm font-semibold text-white mb-2 flex items-center justify-between hover:text-blue-400 transition-colors">
+                        <span>{t("requirementsLabel")}</span>
+                        <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </summary>
+                      <ul className="space-y-1.5 mt-2">
+                        {level.requirements.map((req, reqIndex) => (
+                          <li key={reqIndex} className="text-xs text-gray-300 flex items-start">
+                            <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                            <span>{req}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
 
-                      {level.goodStanding && (
-                        <div className="mt-4 p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg">
-                          <h4 className="text-sm font-semibold text-blue-300 mb-2">
-                            {t("goodStandingLabel")}
-                          </h4>
+                    {/* Good Standing - Collapsible */}
+                    {level.goodStanding && (
+                      <details className="group mt-3">
+                        <summary className="cursor-pointer text-sm font-semibold text-blue-300 flex items-center justify-between hover:text-blue-400 transition-colors">
+                          <span>{t("goodStandingLabel")}</span>
+                          <svg className="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </summary>
+                        <div className="mt-2 p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg">
                           <p className="text-xs text-gray-300 leading-relaxed">
                             {level.goodStanding}
                           </p>
                         </div>
-                      )}
+                      </details>
+                    )}
 
-                      {index < levels.length - 1 && (
-                        <div className="text-center mt-4">
-                          <div className="text-xs text-gray-400">
-                            {t("nextLevelLabel")}
-                          </div>
-                          <div className="text-sm font-semibold text-blue-400">
-                            {level.nextLevel}
-                          </div>
-                        </div>
-                      )}
-                    </div>
+                    {/* Next Level Indicator */}
+                    {index < levels.length - 1 && (
+                      <div className="mt-3 pt-3 border-t border-gray-700/50 flex items-center justify-between text-xs">
+                        <span className="text-gray-400">{t("nextLevelLabel")}</span>
+                        <span className="text-blue-400 font-semibold">{level.nextLevel}</span>
+                      </div>
+                    )}
                   </div>
 
-                  {/* Connector */}
+                  {/* Connector Line */}
                   {index < levels.length - 1 && (
-                    <div className="flex justify-center mt-2">
-                      <div className="w-0.5 h-6 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+                    <div className="flex justify-center my-3">
+                      <div className={`w-1 h-8 bg-gradient-to-b ${level.gradient} opacity-50`}></div>
                     </div>
                   )}
                 </div>
               ))}
             </div>
 
-            {/* Desktop Layout */}
-            <div className="hidden lg:block">
-              {/* Central Ladder Line */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 transform -translate-x-1/2 z-5"></div>
+            {/* Desktop Layout - Improved with better spacing */}
+            <div className="hidden lg:block space-y-12">
+              {/* Central Ladder Line with Animation */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 transform -translate-x-1/2 z-0 opacity-30">
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 animate-pulse"></div>
+              </div>
 
               {levels.map((level, index) => (
-                <div key={level.id} className="relative z-20">
-                  <div
-                    className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
-                  >
-                    {/* Content Side */}
-                    <div
-                      className={`w-5/12 ${index % 2 === 0 ? "pr-12" : "pl-12"}`}
-                    >
-                      <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-8 border border-white/10 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20 hover:scale-105">
-                        <div className="flex items-center mb-4">
-                          <div
-                            className={`w-12 h-12 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center mr-4`}
-                          >
+                <div key={level.id} className="relative z-10 mb-8">
+                  <div className={`flex items-center gap-8 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
+                    {/* Content Card - Compact */}
+                    <div className="w-[45%]">
+                      <div className="bg-gray-800/40 backdrop-blur-md rounded-xl p-6 border border-white/10 transition-all duration-300 hover:bg-gray-800/60 hover:border-white/30 hover:shadow-2xl hover:scale-[1.02] group">
+                        {/* Header */}
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className={`w-12 h-12 bg-gradient-to-br ${level.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
                             <div className="text-white">{level.icon}</div>
                           </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-white">
+                          <div className="flex-1">
+                            <h3 className="text-xl font-bold text-white mb-1">
                               {level.title}
                             </h3>
                             {level.timeframe && (
-                              <div className="inline-block bg-blue-900/50 rounded-full px-3 py-1 text-xs text-blue-200 mt-1">
+                              <span className="inline-block bg-blue-900/50 rounded-full px-3 py-1 text-xs text-blue-200">
                                 {level.timeframe}
-                              </div>
+                              </span>
                             )}
                           </div>
                         </div>
 
-                        <p className="text-gray-300 mb-6 leading-relaxed">
+                        {/* Description */}
+                        <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                           {level.description}
                         </p>
 
-                        <div className="space-y-3">
-                          <h4 className="text-lg font-semibold text-white">
+                        {/* Requirements - Compact */}
+                        <div className="mb-4">
+                          <h4 className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
                             {t("requirementsLabel")}
                           </h4>
-                          <ul className="space-y-2">
+                          <ul className="space-y-1.5 pl-4">
                             {level.requirements.map((req, reqIndex) => (
-                              <li
-                                key={reqIndex}
-                                className="text-gray-300 flex items-start"
-                              >
-                                <span className="text-green-400 mr-3 mt-1 text-lg">
-                                  •
-                                </span>
-                                <span className="text-sm leading-relaxed">
-                                  {req}
-                                </span>
+                              <li key={reqIndex} className="text-xs text-gray-300 flex items-start">
+                                <span className="text-green-400 mr-2 flex-shrink-0">✓</span>
+                                <span className="leading-relaxed">{req}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
 
+                        {/* Good Standing - Compact */}
                         {level.goodStanding && (
-                          <div className="mt-6 p-4 bg-blue-900/20 border border-blue-500/30 rounded-lg">
-                            <h4 className="text-base font-semibold text-blue-300 mb-2">
+                          <div className="p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg mb-4">
+                            <h4 className="text-xs font-semibold text-blue-300 mb-1.5 flex items-center gap-2">
+                              <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
                               {t("goodStandingLabel")}
                             </h4>
-                            <p className="text-sm text-gray-300 leading-relaxed">
+                            <p className="text-xs text-gray-300 leading-relaxed">
                               {level.goodStanding}
                             </p>
                           </div>
                         )}
 
+                        {/* Next Level */}
                         {index < levels.length - 1 && (
-                          <div className="mt-6 pt-4 border-t border-gray-700/50">
-                            <div className="text-sm text-gray-400">
-                              {t("nextLevelLabel")}
-                            </div>
-                            <div className="text-lg font-semibold text-blue-400">
+                          <div className="pt-3 border-t border-gray-700/50 flex items-center justify-between text-xs">
+                            <span className="text-gray-400">{t("nextLevelLabel")}</span>
+                            <span className="text-blue-400 font-semibold flex items-center gap-1">
                               {level.nextLevel}
-                            </div>
+                              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                              </svg>
+                            </span>
                           </div>
                         )}
                       </div>
                     </div>
 
-                    {/* Center Circle */}
-                    <div className="w-2/12 flex justify-center">
-                      <div
-                        className={`w-20 h-20 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-2xl z-30 transition-all duration-300 hover:scale-110`}
-                      >
-                        <span className="text-white font-bold text-2xl">
+                    {/* Center Circle - Enhanced */}
+                    <div className="w-[10%] flex justify-center">
+                      <div className={`relative w-16 h-16 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-2xl z-20 transition-all duration-300 hover:scale-125 hover:rotate-12 group cursor-pointer`}>
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span className="text-white font-bold text-xl relative z-10">
                           {level.id}
                         </span>
+                        {/* Pulse effect */}
+                        <div className={`absolute inset-0 bg-gradient-to-br ${level.gradient} rounded-full animate-ping opacity-20`}></div>
                       </div>
                     </div>
 
                     {/* Empty Side */}
-                    <div className="w-5/12"></div>
+                    <div className="w-[45%]"></div>
                   </div>
                 </div>
               ))}
