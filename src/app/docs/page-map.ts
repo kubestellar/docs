@@ -238,15 +238,11 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
 
     if (!children.length) continue
 
-    const folderNode: FolderNode & { theme?: { collapsed?: boolean } } = {
+    const folderNode: FolderNode = {
       kind: 'Folder',
       name: categoryName,
       route: `/${basePath}/${categorySlug}`,
       children
-    }
-
-    if (categoryName.toLowerCase().startsWith('what is kubestellar')) {
-      folderNode.theme = { collapsed: false }
     }
 
     _pageMap.push(folderNode)

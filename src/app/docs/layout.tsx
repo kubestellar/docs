@@ -1,8 +1,21 @@
 import { Layout } from 'nextra-theme-docs'
 import 'nextra-theme-docs/style.css'
 import { DocsNavbar, DocsFooter, DocsBanner } from '@/components/docs/index'
+import { Inter, JetBrains_Mono } from "next/font/google"
+import "../globals.css"
 import { buildPageMapForBranch } from './page-map'
 import { getDefaultVersion, getBranchForVersion } from '@/config/versions'
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+})
 
 export const metadata = {
   title: 'KubeStellar - Multi-Cluster Kubernetes Orchestration',
@@ -27,19 +40,23 @@ export default async function DocsLayout({ children }: Props) {
   const { pageMap } = await buildPageMapForBranch(branch)
   
   return (
-    <Layout
-      banner={banner}
-      navbar={navbar}
-      pageMap={pageMap}
-      docsRepositoryBase="https://github.com/kubestellar/kubestellar/edit/main/docs/content"
-      footer={footer}
-      darkMode={true}
-      sidebar={{
-        defaultMenuCollapseLevel: 1,
-        toggleButton: true
-      }}
-    >
-      {children}
-    </Layout>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
+        <Layout
+          banner={banner}
+          navbar={navbar}
+          pageMap={pageMap}
+          docsRepositoryBase="https://github.com/kubestellar/kubestellar/edit/main/docs/content"
+          footer={footer}
+          darkMode={true}
+          sidebar={{
+            defaultMenuCollapseLevel: 1,
+            toggleButton: true
+          }}
+        >
+          {children}
+        </Layout>
+      </body>
+    </html>
   )
 }
