@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { primaryLandingCtaClasses } from "../ctaStyles";
 import { GridLines, StarField } from "../index";
 import { useTranslations } from "next-intl";
 import { getLocalizedUrl } from "@/lib/url";
@@ -491,7 +492,7 @@ export default function ContactSection() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-2 sm:py-3 px-4 sm:px-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 disabled:from-gray-600 disabled:to-gray-700 rounded-xl font-bold text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 text-sm sm:text-base"
+                      className={`w-full ${primaryLandingCtaClasses}`}
                     >
                       {isSubmitting ? (
                         <div className="flex items-center justify-center space-x-2">

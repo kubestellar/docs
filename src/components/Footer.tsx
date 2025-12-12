@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
+import { primaryLandingCtaClasses } from "./ctaStyles";
 import { GridLines, StarField } from "./index";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -315,12 +316,12 @@ export default function Footer() {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap"
-                  >
-                    <span>{t("subscribe")}</span>
-                  </button>
+                    <button
+                      type="submit"
+                      className={`${primaryLandingCtaClasses} w-full sm:w-auto`}
+                    >
+                      <span>{t("subscribe")}</span>
+                    </button>
                 </form>
               </div>
             </div>
