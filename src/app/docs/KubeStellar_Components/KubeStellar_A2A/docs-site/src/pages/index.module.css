@@ -1,0 +1,231 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  color: var(--ifm-color-on-primary, #fff);
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 1.5rem 0 2rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3rem 1rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+    margin: 1rem 0 1.5rem 0;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.features {
+  padding: 4rem 0;
+  background: var(--ifm-background-surface-color, #f8f9fa);
+}
+
+.keyFeatures {
+  padding: 4rem 0;
+  background: var(--ifm-background-color, #fff);
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.featureList li {
+  padding: 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--ifm-color-success, #28a745);
+  font-weight: 500;
+}
+
+.codeExample {
+  background: var(--ifm-background-surface-color, #f6f8fa);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+.codeExample h4 {
+  margin-top: 0;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.codeExample pre {
+  background: #2d3748;
+  color: #e2e8f0;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.codeExample code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+}
+
+.getStarted {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--ifm-background-surface-color) 0%, var(--ifm-background-color) 100%);
+  text-align: center;
+}
+
+.startButtons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .features,
+  .keyFeatures,
+  .getStarted {
+    padding: 2rem 0;
+  }
+  
+  .buttons,
+  .startButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buttons > *,
+  .startButtons > * {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.featuresHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.featuresTitle {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.featuresSubtitle {
+  color: var(--ifm-font-color-base, var(--ifm-color-content));
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.stepsGrid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.stepBox {
+  background: var(--ifm-background-surface-color, #fff);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  flex: 1 1 220px;
+  max-width: 300px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.stepBox:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.stepNumber {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.stepIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.stepTitle {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.stepDesc {
+  text-align: center;
+  color: var(--ifm-font-color-base, var(--ifm-color-content));
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .stepsGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stepBox {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.githubButton:hover,
+.githubButton:focus {
+  background: var(--ifm-hover-overlay) !important;
+  color: var(--ifm-color-primary) !important;
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: 0 2px 8px rgba(50,108,229,0.08);
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
