@@ -4,6 +4,17 @@
   <img src="./public/KubeStellar-with-Logo-transparent.png" alt="KubeStellar Logo" width="500"/>
 </p>
 
+<h1>This is an Experimental Branch to develop a consolidated Documentation website repository that will replace the current distributed site at kubestellar.io</h1> 
+
+<p align = 'center'>
+<strong>Do NOT</strong> merge this into the main branch of <i>kubestellar/docs</i> without approval from @kproche and @clubanderson
+</p>
+<hr>
+
+
+
+
+
 <h2 align="center">Multi-cluster Configuration Management for Edge, Multi-Cloud, and Hybrid Cloud</h2>
 
 <p align="center">
