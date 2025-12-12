@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { primaryLandingCtaClasses } from "../ctaStyles";
 import { Link as IntlLink } from "@/i18n/navigation";
 import { GridLines, StarField, GlobeAnimation } from "../index";
 import { useTranslations } from "next-intl";
@@ -312,12 +313,7 @@ export default function HeroSection() {
                 {/* Local Development Button */}
                 <IntlLink
                   href="/quick-installation"
-                  className="primary-action-btn group relative overflow-hidden inline-flex items-center justify-center px-6 py-4 text-base font-bold rounded-xl text-white 
-                            bg-gradient-to-r from-blue-600 via-blue-700 to-blue-600 
-                            hover:from-blue-700 hover:via-blue-800 hover:to-blue-700 
-                            transition-all duration-500 transform hover:-translate-y-1 
-                            hover:shadow-xl hover:shadow-blue-500/40 
-                            animate-btn-float border-2 border-blue-500/50 hover:border-blue-400"
+                  className={`${primaryLandingCtaClasses} animate-btn-float`}
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     <span className="text-xl">🚀</span>
@@ -340,12 +336,7 @@ export default function HeroSection() {
                 {/* AWS EKS Cloud Button */}
                 <Link
                   href="/docs/getting-started/aws-eks"
-                  className="primary-action-btn group relative overflow-hidden inline-flex items-center justify-center px-6 py-4 text-base font-bold rounded-xl text-white 
-                            bg-gradient-to-r from-orange-600 via-orange-700 to-orange-600 
-                            hover:from-orange-700 hover:via-orange-800 hover:to-orange-700 
-                            transition-all duration-500 transform hover:-translate-y-1 
-                            hover:shadow-xl hover:shadow-orange-500/40 
-                            animate-btn-float border-2 border-orange-500/50 hover:border-orange-400"
+                  className={`${primaryLandingCtaClasses} bg-gradient-to-r from-orange-600 via-orange-700 to-orange-600 hover:from-orange-700 hover:via-orange-800 hover:to-orange-700 border-orange-500/60 hover:border-orange-400 animate-btn-float`}
                   style={{ animationDelay: "0.1s" }}
                 >
                   <span className="relative z-10 flex items-center gap-2">

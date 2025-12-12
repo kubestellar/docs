@@ -2,6 +2,7 @@
 
 import { GridLines, StarField } from "../index";
 import { useTranslations } from "next-intl";
+import { primaryLandingCtaClasses } from "../ctaStyles";
 import { useState, useEffect, useRef } from "react";
 
 export default function HowToUseSection() {
@@ -492,7 +493,7 @@ export default function HowToUseSection() {
               <div className="absolute inset-x-0 bottom-0 h-60 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent pointer-events-none z-40 flex items-end justify-center pb-12">
                 <button
                   onClick={() => setShowAllSteps(true)}
-                  className="pointer-events-auto px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-3 border border-purple-400/30 animate-bounce-slow"
+                  className={`pointer-events-auto ${primaryLandingCtaClasses} px-8 py-4 animate-bounce-slow`}
                 >
                   <span className="text-lg">Show More Steps</span>
                   <svg
