@@ -317,7 +317,7 @@ export async function buildPageMapForBranch(branch: string) {
   _pageMap.push(...remainingFileNodes)
 
   const meta: Record<string, string> = {}
-  for (const [categoryName] of CATEGORY_MAPPINGS) {
+  /*for (const [categoryName] of CATEGORY_MAPPINGS) {
     meta[categoryName] = categoryName
   }
   for (const item of remainingFileNodes) {
@@ -325,7 +325,7 @@ export async function buildPageMapForBranch(branch: string) {
       // Use the prettified name for both key and value
       meta[item.name] = item.name
     }
-  }
+  }*/
 
   _pageMap.unshift({
     kind: 'Meta',
