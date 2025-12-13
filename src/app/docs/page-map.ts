@@ -19,7 +19,7 @@ export function makeGitHubHeaders(): Record<string, string> {
 type GitTreeItem = { path: string; type: 'blob' | 'tree' }
 type GitTreeResp = { tree?: GitTreeItem[] }
 
-/*export async function buildPageMapForBranch(branch: string) {
+export async function buildPageMapForBranch(branch: string) {
   async function fetchDocsTree(): Promise<GitTreeResp> {
     const refUrl = `https://api.github.com/repos/${user}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`
     let sha: string | undefined
@@ -64,7 +64,7 @@ type GitTreeResp = { tree?: GitTreeItem[] }
 
   // Strong types for page-map nodes (no `any`)
   type MdxPageNode = { kind: 'MdxPage'; name: string; route: string }
-type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageMapNode[]; theme?: { collapsed?: boolean } }
+  type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageMapNode[]; theme?: { collapsed?: boolean } }
   type MetaNode = { kind: 'Meta'; data: Record<string, string> }
   type PageMapNode = MdxPageNode | FolderNode | MetaNode
 
@@ -75,7 +75,7 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
 
   type NavItem = { [key: string]: string | NavItem[] } | { file: string, root?: string };
 
-  const CATEGORY_MAPPINGS: Array<[string, NavItem[]]> = [
+  /*const CATEGORY_MAPPINGS: Array<[string, NavItem[]]> = [
     ['What is Kubestellar?', [
       { 'Overview': 'readme.md' },
       { file: 'architecture.md' },
@@ -159,7 +159,7 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
       { root: UI_DOCS_ROOT, file: 'README.md' },
       { root: UI_DOCS_ROOT, file: 'ui-overview.md' },
     ]]
-  ]*/
+  ] */
 
   function buildNavNodes(items: NavItem[], parentSlug: string): PageMapNode[] {
     const nodes: PageMapNode[] = [];
@@ -245,7 +245,7 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
   }
 
 
-  for (const [categoryName, fileConfigs] of CATEGORY_MAPPINGS) {
+  /*for (const [categoryName, fileConfigs] of CATEGORY_MAPPINGS) {
     const categorySlug = categoryName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
     const children = buildNavNodes(fileConfigs, categorySlug);
 
@@ -263,7 +263,7 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
     }
 
     _pageMap.push(folderNode)
-  }
+  }*/
 
   const remainingFiles = allDocFiles.filter(fp => {
     if (processedFiles.has(fp)) return false
