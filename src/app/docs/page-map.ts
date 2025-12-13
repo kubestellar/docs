@@ -161,7 +161,7 @@ export async function buildPageMapForBranch(branch: string) {
     ]]
   ] */
 
-  function buildNavNodes(items: NavItem[], parentSlug: string): PageMapNode[] {
+  /*function buildNavNodes(items: NavItem[], parentSlug: string): PageMapNode[] {
     const nodes: PageMapNode[] = [];
     const meta: Record<string, string> = {};
 
@@ -242,7 +242,7 @@ export async function buildPageMapForBranch(branch: string) {
       nodes.unshift({ kind: 'Meta', data: meta });
     }
     return nodes;
-  }
+  }*/
 
 
   /*for (const [categoryName, fileConfigs] of CATEGORY_MAPPINGS) {
