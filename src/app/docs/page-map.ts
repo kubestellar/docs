@@ -73,7 +73,7 @@ export async function buildPageMapForBranch(branch: string) {
   const processedFiles = new Set<string>()
   const pretty = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ')
 
-  type NavItem = { [key: string]: string | NavItem[] } | { file: string, root?: string };
+  //type NavItem = { [key: string]: string | NavItem[] } | { file: string, root?: string };
 
   /*const CATEGORY_MAPPINGS: Array<[string, NavItem[]]> = [
     ['What is Kubestellar?', [
