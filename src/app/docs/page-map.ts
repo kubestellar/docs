@@ -64,7 +64,7 @@ export async function buildPageMapForBranch(branch: string) {
 
   // Strong types for page-map nodes (no `any`)
   type MdxPageNode = { kind: 'MdxPage'; name: string; route: string }
-type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageMapNode[]; theme?: { collapsed?: boolean } }
+  type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageMapNode[]; theme?: { collapsed?: boolean } }
   type MetaNode = { kind: 'Meta'; data: Record<string, string> }
   type PageMapNode = MdxPageNode | FolderNode | MetaNode
 
@@ -73,9 +73,9 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
   const processedFiles = new Set<string>()
   const pretty = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g, ' ')
 
-  type NavItem = { [key: string]: string | NavItem[] } | { file: string, root?: string };
+  //type NavItem = { [key: string]: string | NavItem[] } | { file: string, root?: string };
 
-  const CATEGORY_MAPPINGS: Array<[string, NavItem[]]> = [
+  /*const CATEGORY_MAPPINGS: Array<[string, NavItem[]]> = [
     ['What is Kubestellar?', [
       { 'Overview': 'readme.md' },
       { file: 'architecture.md' },
@@ -159,9 +159,9 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
       { root: UI_DOCS_ROOT, file: 'README.md' },
       { root: UI_DOCS_ROOT, file: 'ui-overview.md' },
     ]]
-  ]
+  ] */
 
-  function buildNavNodes(items: NavItem[], parentSlug: string): PageMapNode[] {
+  /*function buildNavNodes(items: NavItem[], parentSlug: string): PageMapNode[] {
     const nodes: PageMapNode[] = [];
     const meta: Record<string, string> = {};
 
@@ -242,10 +242,10 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
       nodes.unshift({ kind: 'Meta', data: meta });
     }
     return nodes;
-  }
+  }*/
 
 
-  for (const [categoryName, fileConfigs] of CATEGORY_MAPPINGS) {
+  /*for (const [categoryName, fileConfigs] of CATEGORY_MAPPINGS) {
     const categorySlug = categoryName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
     const children = buildNavNodes(fileConfigs, categorySlug);
 
@@ -263,7 +263,7 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
     }
 
     _pageMap.push(folderNode)
-  }
+  }*/
 
   const remainingFiles = allDocFiles.filter(fp => {
     if (processedFiles.has(fp)) return false
@@ -317,7 +317,7 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
   _pageMap.push(...remainingFileNodes)
 
   const meta: Record<string, string> = {}
-  for (const [categoryName] of CATEGORY_MAPPINGS) {
+  /*for (const [categoryName] of CATEGORY_MAPPINGS) {
     meta[categoryName] = categoryName
   }
   for (const item of remainingFileNodes) {
@@ -325,7 +325,7 @@ type FolderNode = { kind: 'Folder'; name: string; route: string; children: PageM
       // Use the prettified name for both key and value
       meta[item.name] = item.name
     }
-  }
+  }*/
 
   _pageMap.unshift({
     kind: 'Meta',
