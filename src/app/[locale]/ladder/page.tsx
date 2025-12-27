@@ -9,9 +9,12 @@ import {
   PageActions,
 } from "../../../components/index";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function MaintainerLadderPage() {
   const t = useTranslations("ladderPage");
+  const [completedLevels, setCompletedLevels] = useState<number[]>([]);
+  const [activeLevel, setActiveLevel] = useState(1);
 
   const levels = [
     {
@@ -194,262 +197,429 @@ export default function MaintainerLadderPage() {
     },
   ];
 
+  const handleMarkComplete = (levelId: number) => {
+    if (!completedLevels.includes(levelId)) {
+      setCompletedLevels([...completedLevels, levelId]);
+      if (levelId < levels.length) {
+        setActiveLevel(levelId + 1);
+      }
+    }
+  };
+
+  const isLevelUnlocked = (levelId: number) => {
+    return levelId === 1 || completedLevels.includes(levelId - 1);
+  };
+
+  const isLevelCompleted = (levelId: number) => {
+    return completedLevels.includes(levelId);
+  };
+
   return (
     <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
       <Navbar />
       <PageActions position="fixed" />
 
-      {/* Full page background with starfield */}
       <div className="fixed inset-0 z-0">
-        {/* Dark base background */}
         <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-
-        {/* Starfield background */}
         <StarField density="medium" showComets={true} cometCount={3} />
-
-        {/* Grid lines background */}
         <GridLines horizontalLines={21} verticalLines={18} />
       </div>
 
       <div className="relative z-10 pt-7">
-        {" "}
-        {/* Add padding-top to account for fixed navbar */}
-        {/* Header Section */}
-        <section className="pt-12 pb-12 sm:pt-28 sm:pb-16 lg:pt-24 lg:pb-6">
+        {/* Compact Header */}
+        <section className="pt-16 pb-8 sm:pt-20 sm:pb-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
                 {t("title")}{" "}
                 <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
                   {t("titleSpan")}
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                 {t("subtitle")}
               </p>
 
-              {/* Tracking Sheet CTA */}
-              <div className="mt-8 flex justify-center">
-                <div className="relative group">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
-                  <a
-                    href="http://kubestellar.io/ladder_stats"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="relative flex items-center gap-3 px-8 py-4 bg-gray-900 rounded-lg border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 group-hover:scale-105"
-                  >
-                    <div className="text-left">
-                      <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                        How do we audit our contributor ladder?
-                      </div>
-                      <div className="text-lg font-semibold text-white flex items-center gap-2">
-                        View Real-Time Statistics
-                        <span className="text-blue-400 group-hover:translate-x-1 transition-transform inline-block">
-                          →
-                        </span>
-                      </div>
-                    </div>
-                  </a>
+              {/* Compact Progress */}
+              <div className="mt-4 flex items-center justify-center gap-3">
+                <span className="text-xs text-gray-400">Progress:</span>
+                <span className="text-base font-bold text-blue-400">
+                  {completedLevels.length} / {levels.length}
+                </span>
+                <div className="w-48 h-1.5 bg-gray-700 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-500"
+                    style={{
+                      width: `${(completedLevels.length / levels.length) * 100}%`,
+                    }}
+                  ></div>
                 </div>
+              </div>
+
+              {/* Compact CTA */}
+              <div className="mt-6">
+                <a
+                  href="http://kubestellar.io/ladder_stats"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-gray-900 rounded-lg border border-blue-500/30 hover:border-blue-400/50 transition-all text-sm"
+                >
+                  <span className="text-gray-300">
+                    View Real-Time Statistics
+                  </span>
+                  <span className="text-blue-400">→</span>
+                </a>
               </div>
             </div>
           </div>
         </section>
-        {/* Ladder Section */}
-        <section className="py-8 sm:py-12 md:py-16 lg:py-20">
+
+        {/* Compact Ladder Section */}
+        <section className="py-6 sm:py-8 md:py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             {/* Mobile Layout */}
             <div className="lg:hidden">
-              {levels.map((level, index) => (
-                <div key={level.id} className="mb-4">
-                  {/* Level Card */}
-                  <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 relative">
-                    {/* Level Number */}
-                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                      <div
-                        className={`w-12 h-12 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-lg`}
-                      >
-                        <span className="text-white font-bold text-lg">
-                          {level.id}
-                        </span>
-                      </div>
-                    </div>
+              {levels.map((level, index) => {
+                const isUnlocked = isLevelUnlocked(level.id);
+                const isCompleted = isLevelCompleted(level.id);
+                const isActive = activeLevel === level.id;
 
-                    <div className="pt-4">
-                      <div className="text-center mb-4">
-                        <div
-                          className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${level.gradient} rounded-full mb-3`}
-                        >
-                          <div className="text-white">{level.icon}</div>
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-2">
-                          {level.title}
-                        </h3>
-                        {level.timeframe && (
-                          <div className="inline-block bg-blue-900/50 rounded-full px-3 py-1 text-xs text-blue-200 mb-2">
-                            {level.timeframe}
-                          </div>
-                        )}
-                        <p className="text-gray-300 text-sm mb-4">
-                          {level.description}
-                        </p>
-                      </div>
-
-                      <div className="space-y-2">
-                        <h4 className="text-sm font-semibold text-white mb-2">
-                          {t("requirementsLabel")}
-                        </h4>
-                        <ul className="space-y-1">
-                          {level.requirements.map((req, reqIndex) => (
-                            <li
-                              key={reqIndex}
-                              className="text-xs text-gray-300 flex items-start"
+                return (
+                  <div key={level.id} className="mb-3">
+                    <div
+                      className={`bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border relative transition-all duration-500 ${
+                        isUnlocked
+                          ? isActive
+                            ? "border-blue-500/50 shadow-lg shadow-blue-500/20"
+                            : "border-white/10"
+                          : "border-gray-700/30 opacity-50"
+                      } ${isCompleted ? "border-green-500/50" : ""}`}
+                    >
+                      {!isUnlocked && (
+                        <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm rounded-lg flex items-center justify-center z-20">
+                          <div className="text-center">
+                            <svg
+                              className="w-8 h-8 text-gray-500 mx-auto mb-1"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
                             >
-                              <span className="text-green-400 mr-2 mt-1">
-                                •
-                              </span>
-                              <span>{req}</span>
-                            </li>
-                          ))}
-                        </ul>
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                              />
+                            </svg>
+                            <p className="text-gray-400 text-xs">
+                              Complete previous level
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <div
+                          className={`w-8 h-8 rounded-full flex items-center justify-center shadow-lg ${isCompleted ? "bg-green-500" : `bg-gradient-to-br ${level.gradient}`}`}
+                        >
+                          {isCompleted ? (
+                            <svg
+                              className="w-4 h-4 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                          ) : (
+                            <span className="text-white font-bold text-sm">
+                              {level.id}
+                            </span>
+                          )}
+                        </div>
                       </div>
 
-                      {level.goodStanding && (
-                        <div className="mt-4 p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg">
-                          <h4 className="text-sm font-semibold text-blue-300 mb-2">
-                            {t("goodStandingLabel")}
-                          </h4>
-                          <p className="text-xs text-gray-300 leading-relaxed">
-                            {level.goodStanding}
+                      <div className="pt-2">
+                        <div className="text-center mb-3">
+                          <div
+                            className={`inline-flex items-center justify-center w-10 h-10 bg-gradient-to-br ${level.gradient} rounded-full mb-2 text-lg`}
+                          >
+                            {level.icon}
+                          </div>
+                          <h3 className="text-base font-bold text-white mb-1">
+                            {level.title}
+                          </h3>
+                          {level.timeframe && (
+                            <div className="inline-block bg-blue-900/50 rounded-full px-2 py-0.5 text-xs text-blue-200 mb-1">
+                              {level.timeframe}
+                            </div>
+                          )}
+                          <p className="text-gray-300 text-xs mb-2">
+                            {level.description}
                           </p>
                         </div>
-                      )}
 
-                      {index < levels.length - 1 && (
-                        <div className="text-center mt-4">
-                          <div className="text-xs text-gray-400">
-                            {t("nextLevelLabel")}
-                          </div>
-                          <div className="text-sm font-semibold text-blue-400">
-                            {level.nextLevel}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Connector */}
-                  {index < levels.length - 1 && (
-                    <div className="flex justify-center mt-2">
-                      <div className="w-0.5 h-6 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            {/* Desktop Layout */}
-            <div className="hidden lg:block">
-              {/* Central Ladder Line */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 transform -translate-x-1/2 z-5"></div>
-
-              {levels.map((level, index) => (
-                <div key={level.id} className="relative z-20">
-                  <div
-                    className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
-                  >
-                    {/* Content Side */}
-                    <div
-                      className={`w-5/12 ${index % 2 === 0 ? "pr-12" : "pl-12"}`}
-                    >
-                      <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-8 border border-white/10 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20 hover:scale-105">
-                        <div className="flex items-center mb-4">
-                          <div
-                            className={`w-12 h-12 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center mr-4`}
-                          >
-                            <div className="text-white">{level.icon}</div>
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-white">
-                              {level.title}
-                            </h3>
-                            {level.timeframe && (
-                              <div className="inline-block bg-blue-900/50 rounded-full px-3 py-1 text-xs text-blue-200 mt-1">
-                                {level.timeframe}
-                              </div>
-                            )}
-                          </div>
-                        </div>
-
-                        <p className="text-gray-300 mb-6 leading-relaxed">
-                          {level.description}
-                        </p>
-
-                        <div className="space-y-3">
-                          <h4 className="text-lg font-semibold text-white">
+                        <div className="space-y-1.5">
+                          <h4 className="text-xs font-semibold text-white">
                             {t("requirementsLabel")}
                           </h4>
-                          <ul className="space-y-2">
+                          <ul className="space-y-0.5">
                             {level.requirements.map((req, reqIndex) => (
                               <li
                                 key={reqIndex}
-                                className="text-gray-300 flex items-start"
+                                className="text-xs text-gray-300 flex items-start"
                               >
-                                <span className="text-green-400 mr-3 mt-1 text-lg">
-                                  •
-                                </span>
-                                <span className="text-sm leading-relaxed">
-                                  {req}
-                                </span>
+                                <span className="text-green-400 mr-1.5">•</span>
+                                <span>{req}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
 
                         {level.goodStanding && (
-                          <div className="mt-6 p-4 bg-blue-900/20 border border-blue-500/30 rounded-lg">
-                            <h4 className="text-base font-semibold text-blue-300 mb-2">
+                          <div className="mt-2 p-2 bg-blue-900/20 border border-blue-500/30 rounded-lg">
+                            <h4 className="text-xs font-semibold text-blue-300 mb-1">
                               {t("goodStandingLabel")}
                             </h4>
-                            <p className="text-sm text-gray-300 leading-relaxed">
+                            <p className="text-xs text-gray-300">
                               {level.goodStanding}
                             </p>
                           </div>
                         )}
 
+                        {isUnlocked && !isCompleted && (
+                          <button
+                            onClick={() => handleMarkComplete(level.id)}
+                            className="mt-2 w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-1.5 px-3 rounded-lg transition-all text-xs flex items-center justify-center gap-1"
+                          >
+                            Mark as Complete
+                            <svg
+                              className="w-3 h-3"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
+                            </svg>
+                          </button>
+                        )}
+
                         {index < levels.length - 1 && (
-                          <div className="mt-6 pt-4 border-t border-gray-700/50">
-                            <div className="text-sm text-gray-400">
-                              {t("nextLevelLabel")}
-                            </div>
-                            <div className="text-lg font-semibold text-blue-400">
-                              {level.nextLevel}
+                          <div className="text-center mt-2 pt-2 border-t border-gray-700/30">
+                            <div className="text-xs text-gray-400">
+                              Next:{" "}
+                              <span className="font-semibold text-blue-400">
+                                {level.nextLevel}
+                              </span>
                             </div>
                           </div>
                         )}
                       </div>
                     </div>
 
-                    {/* Center Circle */}
-                    <div className="w-2/12 flex justify-center">
-                      <div
-                        className={`w-20 h-20 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-2xl z-30 transition-all duration-300 hover:scale-110`}
-                      >
-                        <span className="text-white font-bold text-2xl">
-                          {level.id}
-                        </span>
+                    {index < levels.length - 1 && (
+                      <div className="flex justify-center my-1">
+                        <div
+                          className={`w-0.5 h-4 ${isCompleted ? "bg-gradient-to-b from-green-500 to-green-400" : "bg-gradient-to-b from-blue-500 to-purple-500 opacity-30"}`}
+                        ></div>
                       </div>
-                    </div>
-
-                    {/* Empty Side */}
-                    <div className="w-5/12"></div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden lg:block">
+              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-700/30 transform -translate-x-1/2 z-5"></div>
+              <div
+                className="absolute left-1/2 top-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 transform -translate-x-1/2 z-5 transition-all duration-1000"
+                style={{
+                  height: `${(completedLevels.length / levels.length) * 100}%`,
+                }}
+              ></div>
+
+              {levels.map((level, index) => {
+                const isUnlocked = isLevelUnlocked(level.id);
+                const isCompleted = isLevelCompleted(level.id);
+                const isActive = activeLevel === level.id;
+
+                return (
+                  <div key={level.id} className="relative z-20 mb-10">
+                    <div
+                      className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+                    >
+                      <div
+                        className={`w-5/12 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}
+                      >
+                        <div
+                          className={`bg-gray-800/40 backdrop-blur-md rounded-lg p-5 border relative transition-all duration-500 ${
+                            isUnlocked
+                              ? isActive
+                                ? "border-blue-500/50 shadow-lg shadow-blue-500/20 scale-105"
+                                : "border-white/10 hover:bg-gray-800/50 hover:border-white/20 hover:scale-105"
+                              : "border-gray-700/30 opacity-50"
+                          } ${isCompleted ? "border-green-500/50" : ""}`}
+                        >
+                          {!isUnlocked && (
+                            <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm rounded-lg flex items-center justify-center z-20">
+                              <div className="text-center">
+                                <svg
+                                  className="w-12 h-12 text-gray-500 mx-auto mb-2"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                                  />
+                                </svg>
+                                <p className="text-gray-400 text-sm">
+                                  Complete previous level
+                                </p>
+                              </div>
+                            </div>
+                          )}
+
+                          <div className="flex items-center mb-3">
+                            <div
+                              className={`w-10 h-10 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center mr-3 text-lg`}
+                            >
+                              {level.icon}
+                            </div>
+                            <div>
+                              <h3 className="text-lg font-bold text-white">
+                                {level.title}
+                              </h3>
+                              {level.timeframe && (
+                                <div className="inline-block bg-blue-900/50 rounded-full px-2 py-0.5 text-xs text-blue-200">
+                                  {level.timeframe}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+                          <p className="text-gray-300 mb-3 text-sm">
+                            {level.description}
+                          </p>
+
+                          <div className="space-y-2">
+                            <h4 className="text-sm font-semibold text-white">
+                              {t("requirementsLabel")}
+                            </h4>
+                            <ul className="space-y-1">
+                              {level.requirements.map((req, reqIndex) => (
+                                <li
+                                  key={reqIndex}
+                                  className="text-gray-300 flex items-start text-sm"
+                                >
+                                  <span className="text-green-400 mr-2">•</span>
+                                  <span>{req}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          {level.goodStanding && (
+                            <div className="mt-3 p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg">
+                              <h4 className="text-sm font-semibold text-blue-300 mb-1">
+                                {t("goodStandingLabel")}
+                              </h4>
+                              <p className="text-xs text-gray-300">
+                                {level.goodStanding}
+                              </p>
+                            </div>
+                          )}
+
+                          {isUnlocked && !isCompleted && (
+                            <button
+                              onClick={() => handleMarkComplete(level.id)}
+                              className="mt-3 w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-2 px-4 rounded-lg transition-all text-sm flex items-center justify-center gap-2"
+                            >
+                              Mark as Complete
+                              <svg
+                                className="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                              </svg>
+                            </button>
+                          )}
+
+                          {index < levels.length - 1 && (
+                            <div className="mt-3 pt-3 border-t border-gray-700/50">
+                              <div className="text-xs text-gray-400">
+                                Next:{" "}
+                                <span className="font-semibold text-blue-400">
+                                  {level.nextLevel}
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="w-2/12 flex justify-center">
+                        <div
+                          className={`w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-30 transition-all duration-500 ${
+                            isCompleted
+                              ? "bg-green-500 scale-110"
+                              : isActive
+                                ? `bg-gradient-to-br ${level.gradient} scale-125`
+                                : `bg-gradient-to-br ${level.gradient} hover:scale-110`
+                          } ${!isUnlocked ? "opacity-30" : ""}`}
+                        >
+                          {isCompleted ? (
+                            <svg
+                              className="w-8 h-8 text-white"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={3}
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                          ) : (
+                            <span className="text-white font-bold text-xl">
+                              {level.id}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="w-5/12"></div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
-        {/* Ready To Contribute Section */}
+
         <ContributionCallToAction />
       </div>
       <Footer />
