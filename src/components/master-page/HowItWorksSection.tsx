@@ -163,7 +163,7 @@ export default function HowItWorksSection() {
                     <span className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 mr-2 text-white font-bold">
                       2
                     </span>
-                    Workload Orchestation
+                    Workload Orchestration
                   </h3>
 
                   <p className="text-gray-300 mb-6 leading-relaxed">
