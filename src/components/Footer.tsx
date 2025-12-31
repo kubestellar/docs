@@ -344,7 +344,7 @@ export default function Footer() {
             {/* Right side - policy links */}
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 order-1 md:order-2">
               <a
-                href="#"
+                href="/docs/contribution-guidelines/license-inc"
                 className="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm whitespace-nowrap"
               >
                 {t("privacyPolicy")}
