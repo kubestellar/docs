@@ -44,9 +44,12 @@ function resolvePath(baseFile: string, relativePath: string) {
 }
 
 function wrapMarkdownImagesWithFigures(markdown: string) {
-  const imageRegex = /(?<!\[)!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g
+  // Only wrap standalone images that are NOT inside list items
+  // This regex matches: start of line, NO leading whitespace, image, end of line
+  // We explicitly require NO leading whitespace to avoid wrapping images inside lists
+  const imageRegex = /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)\s*$/gm
 
-  return markdown.replace(imageRegex, (_match, alt, src, title) => {
+  return markdown.replace(imageRegex, (match, alt, src, title) => {
     // Safety checks for undefined/null values
     const safeAlt = alt || ''
     const safeSrc = src || ''
@@ -54,14 +57,11 @@ function wrapMarkdownImagesWithFigures(markdown: string) {
     
     const captionText = safeTitle || safeAlt
     const titleAttr = safeTitle ? ` title="${safeTitle}"` : ''
-    const figcaption = captionText ? `<figcaption>${captionText}</figcaption>` : ''
+    const figcaptionElement = captionText ? `\n  <figcaption>${captionText}</figcaption>` : ''
 
-    return `
-<figure className="ks-doc-figure">
-  <img src="${safeSrc}" alt="${safeAlt}"${titleAttr} />
-  ${figcaption}
-</figure>
-`
+    return `<figure className="ks-doc-figure">
+  <img src="${safeSrc}" alt="${safeAlt}"${titleAttr} />${figcaptionElement}
+</figure>`
   })
 }
 
