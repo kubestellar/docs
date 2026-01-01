@@ -217,7 +217,7 @@ export function buildPageMap() {
             meta[title] = title
           } else if (allDocFiles.includes(value)) {
             processedFiles.add(value)
-            const baseName = value.replace(/\.(md|mdx)$/i, '').split('/').pop()!
+            // const baseName = value.replace(/\.(md|mdx)$/i, '').split('/').pop()!
             const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
             const route = `/${basePath}/${parentSlug ? parentSlug + '/' : ''}${slug}`
             routeMap[`${parentSlug ? parentSlug + '/' : ''}${slug}`] = value
@@ -292,6 +292,6 @@ export function buildPageMap() {
 }
 
 // For backwards compatibility, export a function that doesn't need branch parameter
-export async function buildPageMapForBranch(_branch?: string) {
+export async function buildPageMapForBranch() {
   return buildPageMap()
 }

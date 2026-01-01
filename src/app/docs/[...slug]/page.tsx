@@ -5,7 +5,7 @@ import { evaluate } from 'nextra/evaluate'
 import { useMDXComponents as getMDXComponents } from '../../../../mdx-components'
 import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
 import { MermaidComponent } from '@/lib/Mermaid'
-import { buildPageMap, docsContentPath, basePath } from '../page-map'
+import { buildPageMap, docsContentPath } from '../page-map'
 import fs from 'fs'
 import path from 'path'
 

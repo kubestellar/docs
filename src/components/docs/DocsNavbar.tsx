@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { useSearchParams, usePathname, useRouter } from 'next/navigation'
+// import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { VERSIONS } from '@/config/versions'
 import { getLocalizedUrl } from "@/lib/url";
 import { useMenu, setMenu } from 'nextra-theme-docs'
@@ -38,9 +38,9 @@ export default function DocsNavbar() {
     watchers: "0",
   });
 
-  const searchParams = useSearchParams()
-  const pathname = usePathname()
-  const router = useRouter()
+  // const searchParams = useSearchParams()
+  // const pathname = usePathname()
+  // const router = useRouter()
   // Use the first (and only) version label from config
   const currentVersionLabel = Object.values(VERSIONS)[0]?.label || 'latest'
 
