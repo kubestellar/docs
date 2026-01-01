@@ -8,11 +8,11 @@ For KubeStellar's Inventory Management Workspace (IMW) and Workload Management W
 The steps are similar.
 Let's take WMW as an example:
 
-<ol>
-<li>Create `kube-system` namespace in the workspace.</li>
-<li>Make sure necessary apibindings exist in the workspace. 
-For WMW, we need one for Kubernetes and one for KubeStellar's edge API.</li>
-<li>Exclude `ClusterWorkspace` from discovery and sync.
+1. Create `kube-system` namespace in the workspace.
+
+2. Make sure necessary apibindings exist in the workspace. For WMW, we need one for Kubernetes and one for KubeStellar's edge API.
+
+3. Exclude `ClusterWorkspace` from discovery and sync.
 
 ```shell
 kubectl -n argocd edit cm argocd-cm
@@ -35,18 +35,17 @@ Restart the Argo CD server.
 kubectl -n argocd rollout restart deployment argocd-server
 ```
 
-Argo CD's documentation mentions this feature as [Resource Exclusion/Inclusion](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#resource-exclusioninclusion).
-</li>
-<li>Make sure the current context uses WMW, then identify the admin.kubeconfig.
-The command and output should be similar to
+   Argo CD's documentation mentions this feature as [Resource Exclusion/Inclusion](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#resource-exclusioninclusion).
+
+4. Make sure the current context uses WMW, then identify the admin.kubeconfig. The command and output should be similar to:
 ```console
 $ argocd cluster add --name wmw --kubeconfig ./admin.kubeconfig workspace.kcp.io/current
 WARNING: This will create a service account `argocd-manager` on the cluster referenced by context `workspace.kcp.io/current` with full cluster level privileges. Do you want to continue [y/N]? y
 INFO[0001] ServiceAccount "argocd-manager" already exists in namespace "kube-system"
 INFO[0001] ClusterRole "argocd-manager-role" updated
 INFO[0001] ClusterRoleBinding "argocd-manager-role-binding" updated
-Cluster 'https://172.31.31.125:6443/clusters/root:my-org:wmw-turbo' added
-```
+   Cluster 'https://172.31.31.125:6443/clusters/root:my-org:wmw-turbo' added
+   ```
 
 ### Create Argo CD Applications
 Once KubeStellar's workspaces are added, Argo CD Applications can be created as normal.
@@ -102,10 +101,8 @@ $ argocd app create edgeplacement \
 --path kubestellar/placements/ \
 --dest-server https://172.31.31.125:6443/clusters/root:my-org:wmw-turbo \
 --sync-policy automated
-application 'edgeplacement' created
-```
-</li>
-</ol>
+   application 'edgeplacement' created
+   ```
 
 # Other Resources
 Medium - [Sync 10,000 ArgoCD Applications in One Shot](https://medium.com/itnext/sync-10-000-argo-cd-applications-in-one-shot-bfcda04abe5b)<br/>

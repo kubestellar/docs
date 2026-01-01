@@ -392,7 +392,7 @@ sleep 10
 
 (To avoid confusing readers of the HTML, this should be used only for _output_ seen in a shell session.)
 
-For a codeblock that should <u>not</u> be 'tested' as part of our CI, use the <b><i>`.bash`</i></b> with the plain codeblock, and <b>without</b> the <b><i>'.hide-me'</b></i> style:
+For a codeblock that should <u>not</u> be 'tested' as part of our CI, use the <b><i>`.bash`</i></b> with the plain codeblock, and <b>without</b> the <b><i>'.hide-me'</i></b> style:
 <br/><b>codeblock:</b>
 ````
 ``` {.bash}
@@ -407,7 +407,7 @@ mkdocs server
 
 #### Seen but not executed and no copy button
 
-For a codeblock that should not be 'tested', be seen by the reader, and not include a 'copy' icon (great for output-only instances), use the <b><i>`.bash`</i></b> codeblock <b>without</b> the <b><i>'.no-copy'</b></i> style:
+For a codeblock that should not be 'tested', be seen by the reader, and not include a 'copy' icon (great for output-only instances), use the <b><i>`.bash`</i></b> codeblock <b>without</b> the <b><i>'.no-copy'</i></b> style:
 <br/><b>codeblock:</b>
 ```` {.bash .no-copy}
 ``` {.bash .no-copy}

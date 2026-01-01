@@ -46,14 +46,19 @@ function resolvePath(baseFile: string, relativePath: string) {
 function wrapMarkdownImagesWithFigures(markdown: string) {
   const imageRegex = /(?<!\[)!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g
 
-  return markdown.replace(imageRegex, (_match, alt = '', src, title) => {
-    const captionText = title || alt
-    const titleAttr = title ? ` title="${title}"` : ''
+  return markdown.replace(imageRegex, (_match, alt, src, title) => {
+    // Safety checks for undefined/null values
+    const safeAlt = alt || ''
+    const safeSrc = src || ''
+    const safeTitle = title || ''
+    
+    const captionText = safeTitle || safeAlt
+    const titleAttr = safeTitle ? ` title="${safeTitle}"` : ''
     const figcaption = captionText ? `<figcaption>${captionText}</figcaption>` : ''
 
     return `
 <figure className="ks-doc-figure">
-  <img src="${src}" alt="${alt}"${titleAttr} />
+  <img src="${safeSrc}" alt="${safeAlt}"${titleAttr} />
   ${figcaption}
 </figure>
 `
@@ -171,6 +176,9 @@ function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/<tr>[\s\S]*?<\/tr>/gi, '')
   sanitized = sanitized.replace(/<td[^>]*>[\s\S]*?<\/td>/gi, '')
   
+  // Remove all iframe tags - they cause issues with MDX and event handlers
+  sanitized = sanitized.replace(/<iframe[\s\S]*?<\/iframe>/gi, '')
+  
   // Normalize all img tags - handle both <img ...> and <img ... />
   sanitized = sanitized.replace(/<img\s+([^>]*?)\/?>/gi, (match, attrs) => {
     // Keep only src, alt, and title attributes
@@ -190,17 +198,25 @@ function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/<br\s*\/?>/gi, '<br />')
   sanitized = sanitized.replace(/<hr\s*\/?>/gi, '<hr />')
   
+  // Remove inline event handlers - must be done before other attribute fixes
+  // Handle complex event handlers with nested quotes
+  sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][^"']*["']/gi, '')
+  sanitized = sanitized.replace(/\s+on\w+\s*=\s*"[^"]*"/gi, '')
+  sanitized = sanitized.replace(/\s+on\w+\s*=\s*'[^']*'/gi, '')
+  // Fallback for complex nested quotes - remove the entire event handler
+  sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][\s\S]*?["'](?=\s|>)/gi, '')
+  
   // Remove other problematic attributes from remaining tags
   sanitized = sanitized.replace(/\s+align=["']?[^"'\s>]+["']?/gi, '')
   sanitized = sanitized.replace(/\s+width=["']?[^"'\s>]+["']?/gi, '')
   sanitized = sanitized.replace(/\s+height=["']?[^"'\s>]+["']?/gi, '')
-  sanitized = sanitized.replace(/frameborder=["']?[^"'\s>]+["']?/gi, 'frameBorder="0"')
-  sanitized = sanitized.replace(/allowfullscreen(?:=["'][^"']*["'])?/gi, 'allowFullScreen')
-  sanitized = sanitized.replace(/scrolling=["']?[^"'\s>]+["']?/gi, 'scrolling="no"')
-  sanitized = sanitized.replace(/class=/gi, 'className=')
+  sanitized = sanitized.replace(/\s+frameborder=["']?[^"'\s>]+["']?/gi, '')
+  sanitized = sanitized.replace(/\s+allowfullscreen(?:=["'][^"']*["'])?/gi, '')
+  sanitized = sanitized.replace(/\s+scrolling=["']?[^"'\s>]+["']?/gi, '')
+  sanitized = sanitized.replace(/\sclass=/gi, ' className=')
   
-  // Remove inline event handlers
-  sanitized = sanitized.replace(/\s+on\w+=["'][^"']*["']/gi, '')
+  // Remove style attributes that might cause issues
+  sanitized = sanitized.replace(/\s+style=["'][^"']*["']/gi, '')
   
   // Remove style tags
   sanitized = sanitized.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
