@@ -74,7 +74,7 @@
     "joinIn": "Junte-se",
     "contributeHandbook": "Manual de contribuição",
     "quickInstallation": "Instalação rápida",
-    "products": "Produtos",
+    "products": "Projetos",
     "security": "Segurança",
     "community": "Comunidade",
     "getInvolved": "Participe",
@@ -553,7 +553,7 @@
   },
   "productsPage": {
     "title": "Nossos",
-    "titleSpan": "Produtos",
+    "titleSpan": "Projetos",
     "subtitle": "Descubra nosso conjunto de ferramentas e plataformas que aprimoram o ecossistema KubeStellar e capacitam o gerenciamento Kubernetes multi-cluster.",
     "repoButton": "Repositório",
     "websiteButton": "Website",

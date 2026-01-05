@@ -73,7 +73,7 @@
     "joinIn": "शामिल हों",
     "contributeHandbook": "योगदान हैंडबुक",
     "quickInstallation": "त्वरित इंस्टॉलेशन",
-    "products": "उत्पाद",
+    "products": "परियोजनाएं",
     "security": "सुरक्षा",
     "community": "समुदाय",
     "getInvolved": "शामिल हों",
@@ -550,7 +550,7 @@
   },
   "productsPage": {
     "title": "हमारे",
-    "titleSpan": "उत्पाद",
+    "titleSpan": "परियोजनाएं",
     "subtitle": "जानिए हमारी टूल्स और प्लेटफ़ॉर्म-सुइट, जो KubeStellar इकोसिस्टम को सशक्त बनाती हैं और मल्टी-क्लस्टर क्यूबेरनेटिस प्रबंधन को सक्षम करती हैं।",
     "repoButton": "रेपो",
     "websiteButton": "वेबसाइट",

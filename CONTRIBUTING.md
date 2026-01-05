@@ -304,14 +304,17 @@ For hierarchical navigation:
   ]
 }
 ```
+
     {
       'Nested Section': [
         { 'Deep File': 'path/to/nested/file.md' }
       ]
     }
-  ]
+
+]
 }
-```
+
+````
 
 #### External Links
 
@@ -319,7 +322,7 @@ You can also add external documentation links:
 
 ```typescript
 { 'API Reference (new tab)': 'https://pkg.go.dev/github.com/kubestellar/kubestellar/api/control/v1alpha1' }
-```
+````
 
 ### Version Management
 

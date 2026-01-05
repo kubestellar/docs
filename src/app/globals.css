@@ -308,7 +308,9 @@ html.dark .ks-doc-figure figcaption {
   text-decoration: none;
   padding: 0.75rem;
   border-radius: 0.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   background: rgba(128, 128, 128, 0.1);
 }
 
@@ -352,7 +354,7 @@ html:not(.dark) .contributor-card:hover {
   .contributors-grid {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
-  
+
   .contributor-card img {
     width: 60px;
     height: 60px;
