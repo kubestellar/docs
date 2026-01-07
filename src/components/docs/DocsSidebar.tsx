@@ -22,35 +22,53 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
 
-  // Auto-expand the active category
+  // Auto-expand only the folders that contain the active page
   useEffect(() => {
     const newCollapsed = new Set<string>();
+    const pathToActive = new Set<string>();
     
-    function checkActive(items: MenuItem[], parentKey: string = ''): boolean {
+    // Find the path to the active item
+    function findActivePath(items: MenuItem[], parentKey: string = ''): boolean {
       for (const item of items) {
         const itemKey = parentKey ? `${parentKey}-${item.name}` : item.name;
         const isActive = item.route && pathname === item.route;
         
-        if (isActive && parentKey) {
-          // Don't collapse parent of active item
+        if (isActive) {
+          // Found the active item, don't collapse any parent in the path
           return true;
         }
         
         if (item.children) {
-          const childActive = checkActive(item.children, itemKey);
-          if (!childActive) {
-            newCollapsed.add(itemKey);
-          } else if (parentKey) {
+          const childActive = findActivePath(item.children, itemKey);
+          if (childActive) {
+            // This folder contains the active item, keep it expanded
+            pathToActive.add(itemKey);
             return true;
           }
-        } else if (!isActive) {
-          newCollapsed.add(itemKey);
         }
       }
       return false;
     }
     
-    checkActive(pageMap);
+    // Collapse all folders except those in the active path
+    function collapseAll(items: MenuItem[], parentKey: string = '') {
+      for (const item of items) {
+        const itemKey = parentKey ? `${parentKey}-${item.name}` : item.name;
+        const hasChildren = item.children && item.children.length > 0;
+        
+        if (hasChildren) {
+          // Collapse this folder if it's not in the path to active item
+          if (!pathToActive.has(itemKey)) {
+            newCollapsed.add(itemKey);
+          }
+          // Recursively check children
+          collapseAll(item.children, itemKey);
+        }
+      }
+    }
+    
+    findActivePath(pageMap);
+    collapseAll(pageMap);
     setCollapsed(newCollapsed);
   }, [pathname, pageMap]);
 
