@@ -1,4 +1,28 @@
 {
+  "heroSection": {
+    "line1": "Multi-Clúster",
+    "line2": "Kubernetes",
+    "line3": "Orquestación",
+    "subtitle": "Experimenta el futuro de la orquestación cloud-native. KubeStellar revoluciona la gestión multi-clúster con automatización impulsada por IA e inteligencia en tiempo real.",
+    "terminalTitle": "kubestellar-control-center",
+    "terminalStatus": "LISTO",
+    "terminalCommandL1": "bash <(curl -s \\",
+    "terminalCommandL2": "  https://raw.githubusercontent.com/kubestellar/ \\",
+    "terminalCommandL3": "  kubestellar/refs/tags/v0.27.2/scripts/ \\",
+    "terminalCommandL4": "  create-kubestellar-demo-env.sh) --platform kind",
+    "terminalOutputInfo": "INFO",
+    "terminalOutputInfoText": "Instalando el entorno de demostración de KubeStellar...",
+    "terminalOutputSetup": "CONFIGURACIÓN",
+    "terminalOutputSetupText": "Creando clústeres kind: kubeflex, cluster1, cluster2",
+    "terminalOutputInstall": "INSTALACIÓN",
+    "terminalOutputInstallText": "Desplegando componentes del plano de control de KubeFlex",
+    "terminalOutputConfig": "CONFIG",
+    "terminalOutputConfigText": "Configurando Open Cluster Management",
+    "terminalOutputSuccess": "ÉXITO",
+    "terminalOutputSuccessText": "¡El entorno de demostración de KubeStellar está listo! Configuración completada",
+    "buttonInstall": "Instalar KubeStellar",
+    "buttonDocs": "Explorar documentación"
+  },
   "navigation": {
     "docs": "Documentación",
     "blog": "Blog",
