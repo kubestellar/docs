@@ -778,97 +778,97 @@
     }
   },
   "marketplace": {
-    "hero": {
-      "title": "KubeStellar Galaxy",
-      "titleSuffix": "Marketplace",
-      "subtitle": "Extend your KubeStellar deployment with powerful plugins and tools. From free community projects to enterprise solutions.",
-      "stats": {
-        "pluginsAvailable": "Plugins Available",
-        "freePlugins": "Free Plugins",
-        "totalDownloads": "Total Downloads"
+  "hero": {
+    "title": "KubeStellar Galaxy",
+    "titleSuffix": "Marketplace",
+    "subtitle": "Amplía tu despliegue de KubeStellar con potentes plugins y herramientas. Desde proyectos comunitarios gratuitos hasta soluciones empresariales.",
+    "stats": {
+      "pluginsAvailable": "Plugins disponibles",
+      "freePlugins": "Plugins gratuitos",
+      "totalDownloads": "Descargas totales"
       }
     },
     "featured": {
-      "title": "Featured",
-      "titleSuffix": "& Most Popular",
-      "subtitle": "Discover our top-rated and most downloaded plugins"
+      "title": "Destacados",
+      "titleSuffix": "y más populares",
+      "subtitle": "Descubre nuestros plugins mejor valorados y más descargados"
     },
     "browse": {
-      "title": "Browse All Plugins",
-      "subtitle": "Find the perfect tools to extend your KubeStellar deployment",
-      "searchPlaceholder": "Search plugins...",
-      "categoryFilter": "All",
+      "title": "Explorar todos los plugins",
+      "subtitle": "Encuentra las herramientas perfectas para ampliar tu despliegue de KubeStellar",
+      "searchPlaceholder": "Buscar plugins...",
+      "categoryFilter": "Todos",
       "pricingFilter": {
-        "all": "All Pricing",
-        "free": "Free",
-        "monthly": "Monthly",
-        "oneTime": "One-time"
+        "all": "Todos los precios",
+        "free": "Gratis",
+        "monthly": "Mensual",
+        "oneTime": "Pago único"
       },
-      "showing": "Showing",
-      "of": "of",
+      "showing": "Mostrando",
+      "of": "de",
       "plugins": "plugins",
       "noResults": {
-        "title": "No plugins found",
-        "subtitle": "Try adjusting your search or filters"
+        "title": "No se encontraron plugins",
+        "subtitle": "Intenta ajustar tu búsqueda o los filtros"
       },
       "pagination": {
-        "previous": "Previous",
-        "next": "Next"
+        "previous": "Anterior",
+        "next": "Siguiente"
       }
     },
     "plugin": {
       "badge": {
-        "free": "FREE"
+        "free": "GRATIS"
       },
       "version": "v",
-      "by": "by",
+      "by": "por",
       "rating": "/5.0",
-      "downloads": "downloads",
-      "free": "Free",
-      "monthly": "/month",
-      "oneTime": "once",
-      "viewDetails": "View Details",
-      "backToMarketplace": "Back to Marketplace",
-      "installPlugin": "Install Plugin",
-      "payAndInstall": "Pay & Install",
+      "downloads": "descargas",
+      "free": "Gratis",
+      "monthly": "/mes",
+      "oneTime": "una vez",
+      "viewDetails": "Ver detalles",
+      "backToMarketplace": "Volver al marketplace",
+      "installPlugin": "Instalar plugin",
+      "payAndInstall": "Pagar e instalar",
       "github": "GitHub",
-      "about": "About this plugin",
-      "keyFeatures": "Key Features",
-      "requirements": "Requirements",
-      "compatibility": "Compatibility",
-      "maintainers": "Maintainers",
-      "tags": "Tags",
-      "links": "Links",
-      "documentation": "Documentation",
-      "githubRepository": "GitHub Repository",
-      "officialWebsite": "Official Website",
+      "about": "Acerca de este plugin",
+      "keyFeatures": "Características clave",
+      "requirements": "Requisitos",
+      "compatibility": "Compatibilidad",
+      "maintainers": "Mantenedores",
+      "tags": "Etiquetas",
+      "links": "Enlaces",
+      "documentation": "Documentación",
+      "githubRepository": "Repositorio de GitHub",
+      "officialWebsite": "Sitio web oficial",
       "notFound": {
-        "title": "Plugin Not Found"
+        "title": "Plugin no encontrado"
       }
     },
     "payment": {
-      "title": "Complete Payment",
-      "subtitle": "Purchase {name} to get started",
+      "title": "Completar pago",
+      "subtitle": "Compra {name} para comenzar",
       "details": {
         "plugin": "Plugin",
-        "licenseType": "License Type",
+        "licenseType": "Tipo de licencia",
         "total": "Total"
       },
       "form": {
-        "cardNumber": "Card Number",
+        "cardNumber": "Número de tarjeta",
         "cardPlaceholder": "1234 5678 9012 3456",
-        "expiry": "Expiry",
-        "expiryPlaceholder": "MM/YY",
+        "expiry": "Vencimiento",
+        "expiryPlaceholder": "MM/AA",
         "cvv": "CVV",
         "cvvPlaceholder": "123",
-        "cancel": "Cancel",
-        "payNow": "Pay Now",
-        "processing": "Processing...",
-        "secureNote": "🔒 Secure payment powered by KubeStellar Gateway"
+        "cancel": "Cancelar",
+        "payNow": "Pagar ahora",
+        "processing": "Procesando...",
+        "secureNote": "🔒 Pago seguro gestionado por KubeStellar Gateway"
       },
       "success": {
-        "title": "Payment Successful!",
-        "subtitle": "Starting installation..."
+        "title": "¡Pago exitoso!",
+        "subtitle": "Iniciando instalación..."
       }
     },
     "maintainers": {
@@ -876,29 +876,30 @@
       "mike": "Mike Spreitzer"
     },
     "installation": {
-      "installing": "Installing {name}",
-      "pleaseWait": "Please wait...",
+      "installing": "Instalando {name}",
+      "pleaseWait": "Por favor, espera...",
       "success": {
-        "title": "Successfully Installed!",
-        "subtitle": "{name} has been installed to your KubeStellar deployment.",
-        "commandTitle": "Run this command to get started:",
-        "close": "Close"
+        "title": "¡Instalado correctamente!",
+        "subtitle": "{name} ha sido instalado en tu despliegue de KubeStellar.",
+        "commandTitle": "Ejecuta este comando para comenzar:",
+        "close": "Cerrar"
       }
     },
     "categories": {
-      "all": "All",
-      "cliTools": "CLI Tools",
-      "synchronization": "Synchronization",
-      "security": "Security",
-      "observability": "Observability",
-      "visualization": "Visualization",
-      "developmentTools": "Development Tools",
-      "backupRecovery": "Backup & Recovery",
-      "resourceManagement": "Resource Management",
-      "governance": "Governance",
-      "networking": "Networking",
+      "all": "Todos",
+      "cliTools": "Herramientas CLI",
+      "synchronization": "Sincronización",
+      "security": "Seguridad",
+      "observability": "Observabilidad",
+      "visualization": "Visualización",
+      "developmentTools": "Herramientas de desarrollo",
+      "backupRecovery": "Copia de seguridad y recuperación",
+      "resourceManagement": "Gestión de recursos",
+      "governance": "Gobernanza",
+      "networking": "Redes",
       "gitops": "GitOps",
-      "costManagement": "Cost Management"
+      "costManagement": "Gestión de costos"
     }
   }
+
 }
