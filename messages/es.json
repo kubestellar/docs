@@ -156,6 +156,25 @@
   "formSubmitting": "Enviando...",
   "formSuccess": "Tu correo se enviará a la lista de correo de desarrollo de KubeStellar. Revisa tu cliente de correo para completar el envío."
 },
+"getStartedSection": {
+  "title": "¿Listo para comenzar?",
+  "subtitle": "Únete a la creciente comunidad de usuarios y colaboradores de KubeStellar.",
+  "card1Title": "Instalación rápida",
+  "card1Description": "Comienza a usar KubeStellar en minutos con nuestra guía de instalación simplificada, que incluye verificación automática de requisitos previos y procedimientos de despliegue paso a paso.",
+  "card1Button": "Iniciar instalación rápida",
+  "card2Title": "Explora casos de uso y la comunidad",
+  "card2Description": "Descubre las capacidades de gestión de cargas de trabajo multi-clúster y conéctate con la comunidad.",
+  "card2Button1": "Unirse a Slack",
+  "card2Button2": "GitHub",
+  "card2Button3": "Proyectos",
+  "card2Button4": "Manual",
+  "card2Button5": "YouTube",
+  "card3Title": "Explorar documentación",
+  "card3Description": "Guías completas, tutoriales y referencias de API para ayudarte a dominar las capacidades de KubeStellar.",
+  "card3Link1": "Primeros pasos",
+  "card3Link2": "Arquitectura",
+  "card3Link3": "Referencia de API"
+},
 
 
 }
