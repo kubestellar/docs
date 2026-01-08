@@ -537,7 +537,49 @@
         }
       }
     }
+  },
+  "productsPage": {
+    "title": "私たちの",
+    "titleSpan": "プロジェクト",
+    "subtitle": "KubeStellar エコシステムを強化し、マルチクラスター Kubernetes 管理を実現するツールとプラットフォームのスイートをご紹介します。",
+    "repoButton": "リポジトリ",
+    "websiteButton": "ウェブサイト",
+    "watchDemoButton": "デモを見る",
+    "products": {
+      "kubestellar": {
+        "name": "KubeStellar",
+        "fullName": "KubeStellar",
+        "description": "多様なインフラ環境における分散ワークロード管理を簡素化する、マルチクラスター Kubernetes オーケストレーションプラットフォームです。統合されたコントロールプレーン、インテリジェントなワークロード配置、ポリシー駆動のガバナンスを提供し、自動スケーリング、リソース最適化、クラウドプロバイダー間のシームレスな統合を実現します。"
+      },
+      "kubestellarUI": {
+        "name": "KubeStellar UI",
+        "fullName": "KubeStellar UI",
+        "description": "直感的なダッシュボード、リアルタイム監視、包括的な操作機能を備えた、マルチクラスター Kubernetes オーケストレーション管理用の強力な Web ベースのインターフェースです。高度な可視化ツール、カスタマイズ可能なワークスペース、インテリジェントなアラートにより、マルチクラスター運用を最適化します。"
+      },
+      "kubeflex": {
+        "name": "KubeFlex",
+        "fullName": "KubeFlex",
+        "description": "マルチクラスターオーケストレーションとワークロード分散のための包括的なツールとリソースを提供する、柔軟な Kubernetes 管理プラットフォームです。異種環境における動的なクラスターのプロビジョニング、自動スケーリング、インテリジェントなリソース割り当てを可能にし、ポリシー駆動の自動化によって複雑なデプロイシナリオを簡素化します。"
+      },
+      "a2a": {
+        "name": "A2A",
+        "fullName": "A2A",
+        "description": "KubeStellar エコシステム内でシームレスな接続を実現する、アプリケーション間通信プラットフォームです。分散マイクロサービス間の安全なデータ交換とリアルタイム通信を可能にし、高度なルーティング、ロードバランシング、サービスディスカバリー機能を提供します。"
+      },
+      "kubectlMulti": {
+        "name": "kubectl-multi",
+        "fullName": "kubectl-multi",
+        "description": "KubeStellar によるマルチクラスター操作のための包括的な kubectl プラグインです。KubeStellar が管理するすべてのクラスターで kubectl をシームレスに拡張し、ワークフローステージングクラスター（WDS）を除外しながら、統合されたビューと操作を提供します。複数のクラスターに対して同時にコマンドを実行し、結果をインテリジェントに集約できます。"
+      },
+      "galaxyMarketplace": {
+        "name": "Galaxy Marketplace",
+        "fullName": "KS Galaxy Marketplace",
+        "description": "KubeStellar の拡張機能、プラグイン、コミュニティ提供のツールや統合を集約した中央マーケットプレイスです。サードパーティコンポーネントを発見、インストール、管理することで、マルチクラスターオーケストレーション機能を強化できます。自動互換性チェック、バージョン管理、既存の KubeStellar デプロイメントとのシームレスな統合を備えています。"
+      }
+    }
   }
+
+
 
 
 
