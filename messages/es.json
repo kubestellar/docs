@@ -368,7 +368,17 @@
       }
     }
   },
-  
+  "programDetailsPage": {
+  "benefits": "Beneficios",
+  "description": "Descripción",
+  "overview": "Resumen",
+  "eligibility": "Criterios de elegibilidad",
+  "timeline": "Cronograma",
+  "structure": "Estructura del programa",
+  "howToApply": "Cómo postular",
+  "resources": "Recursos"
+  },
+
 
 
 
