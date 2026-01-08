@@ -577,7 +577,126 @@
         "description": "KubeStellar の拡張機能、プラグイン、コミュニティ提供のツールや統合を集約した中央マーケットプレイスです。サードパーティコンポーネントを発見、インストール、管理することで、マルチクラスターオーケストレーション機能を強化できます。自動互換性チェック、バージョン管理、既存の KubeStellar デプロイメントとのシームレスな統合を備えています。"
       }
     }
+  },
+  "ladderPage": {
+    "title": "貢献",
+    "titleSpan": "ラダー",
+    "subtitle": "KubeStellar コミュニティにおける、初回コントリビューターから信頼されるメンテナーまでの透明で実力主義の成長パス",
+    "requirementsLabel": "要件：",
+    "goodStandingLabel": "良好なステータスでの機会：",
+    "nextLevelLabel": "次のレベル：",
+    "levels": {
+      "contributor": {
+        "title": "コントリビューター",
+        "nextLevel": "無給メンティー",
+        "description": "KubeStellar コミュニティでの旅を始めましょう",
+        "requirements": [
+          "最低 3 件の貢献（バグ報告、ドキュメント、またはコード PR）",
+          "長期的な参加への意欲と熱意を示すこと",
+          "GitHub と Slack で積極的に活動すること",
+          "メンタープログラム参加のための非公式な応募または推薦"
+        ],
+        "goodStanding": "良好なステータスにあるコントリビューター（Help Wanted Issue 作成、PR レビュー、PR マージの指標を満たす場合）は、メンタープロジェクトへのアサインなどの専門的な機会を得ることができます。"
+      },
+      "unpaidMentee": {
+        "title": "無給メンティー",
+        "nextLevel": "有給メンティー",
+        "description": "コミットメントとスキルを示すための 12 週間の取り組み",
+        "timeframe": "12 週間",
+        "requirements": [
+          "少なくとも 6 件の「Help Wanted」Issue を作成すること",
+          "少なくとも 20 件の PR をマージ（最初の 6 週間で 8 件）",
+          "週次チームミーティングに参加、または要約を提出すること",
+          "メンターと協力して作業すること",
+          "メンターからの推薦を受けること"
+        ],
+        "goodStanding": "良好なステータスの無給メンティーは、修了証明書、推薦状を受け取り、GSoC や LFX などの有給メンタープログラムへの優先的な検討対象となります。"
+      },
+      "paidMentee": {
+        "title": "有給メンティー",
+        "nextLevel": "メンター",
+        "description": "報酬と責任を伴う、認められたコントリビューター",
+        "requirements": [
+          "少なくとも 1 回の 12 週間の有給メンタープログラムを完了すること",
+          "新しいメンティーまたはコントリビューターを少なくとも 1 名オンボードし、支援すること",
+          "3 件以上の PR レビューを提出すること",
+          "PR または Issue に対して 5 件以上の有益なコメントを行うこと",
+          "コミュニティコールで発表、または共同発表を行うこと"
+        ],
+        "goodStanding": "良好なステータスの有給メンティーは、職業的な推薦、キャリアメンタリング、プロジェクトを主導したり他者をメンターする機会を得られます。"
+      },
+      "mentor": {
+        "title": "メンター",
+        "nextLevel": "メンテナー",
+        "description": "次世代のコントリビューターを導き、支援する役割",
+        "requirements": [
+          "1 つ以上の主要分野において技術的リーダーシップを示すこと",
+          "継続的な貢献活動を維持すること",
+          "GitHub および Slack でコミュニティと積極的に関わること",
+          "公開レビューを経てコアメンテナーから承認を受けること"
+        ],
+        "goodStanding": "良好なステータスのメンターは、イニシアチブの主導、カンファレンスでの KubeStellar 代表、スピーカー支援、ロードマップ決定への参加、CNCF によるトレーニング／試験バウチャーの受領資格を得ることができます。"
+      },
+      "maintainer": {
+        "title": "メンテナー",
+        "nextLevel": "アンバサダー",
+        "description": "プロジェクト全体の責任を担う信頼されたリーダー",
+        "requirements": [
+          "2 か月ごとに 2 件以上の「Help Wanted」Issue",
+          "2 か月ごとに 3 件以上の PR マージ",
+          "2 か月ごとに 8 件以上の PR レビューまたは建設的なコメント",
+          "2 か月ごとに 3 回以上のコミュニティミーティング参加"
+        ],
+        "goodStanding": "良好なステータスのメンテナーは、完全な書き込み権限、プロジェクト決定における投票権を持ち、公式なプロジェクト代表として活動できます。"
+      },
+      "ambassador": {
+        "title": "アンバサダー",
+        "nextLevel": "ステラ・アドボケイト",
+        "description": "KubeStellar の普及を推進し、支援する役割",
+        "requirements": [
+          "ブログ、プレゼンテーション、SNS を通じて KubeStellar を積極的に発信すること",
+          "ミートアップ、カンファレンス、コミュニティイベントで KubeStellar を代表すること",
+          "KubeStellar に関する教育コンテンツ（チュートリアル、動画、デモ）を作成すること",
+          "ユーザーと関わり、フィードバックを収集し普及を支援すること",
+          "メンテナーレベルの活動（Issue、PR、コミュニティ参加）を維持すること"
+        ],
+        "goodStanding": "良好なステータスのアンバサダーは、登壇機会、ブログの共同執筆、新機能への早期アクセス、プロモーション支援の対象となります。"
+      }
+    },
+    "activityRequirements": {
+      "title": "メンテナーの活動要件",
+      "subtitle": "メンテナーは以下の 2 か月ごとの最低貢献要件を満たす必要があります：",
+      "table": {
+        "metric": "指標",
+        "requirement": "要件（2 か月ごと）",
+        "helpWantedIssues": "「Help Wanted」Issue",
+        "helpWantedIssuesValue": "2 件以上",
+        "prsMerged": "マージされた PR",
+        "prsMergedValue": "3 件以上",
+        "prReviews": "PR レビューまたは建設的なコメント",
+        "prReviewsValue": "8 件以上",
+        "meetingAttendance": "コミュニティミーティング参加",
+        "meetingAttendanceValue": "3 回以上"
+      }
+    },
+    "callToAction": {
+      "title": "あなたの旅を始める準備はできましたか？",
+      "subtitle": "KubeStellar コミュニティに参加し、今日からメンテナーラダーを登り始めましょう",
+      "communityMeetingsButton": "コミュニティミーティング",
+      "viewIssuesButton": "オープン Issue を見る",
+      "exploreCodeTitle": "コードを探る",
+      "exploreCodeDescription": "コードベースを閲覧し、プロジェクトに貢献しましょう",
+      "viewRepositoryLink": "リポジトリを見る →",
+      "joinSlackTitle": "Slack に参加",
+      "joinSlackDescription": "リアルタイムの議論のためにコミュニティとつながる",
+      "joinCommunityLink": "コミュニティに参加 →",
+      "learnGuideTitle": "ガイドを学ぶ",
+      "learnGuideDescription": "包括的な貢献ハンドブックを読む",
+      "viewHandbookLink": "ハンドブックを見る →"
+    }
   }
+
+
 
 
 
