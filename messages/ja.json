@@ -23,7 +23,6 @@
     "buttonInstall": "KubeStellar をインストール",
     "buttonDocs": "ドキュメントを見る"
   },
-  {
   "footer": {
     "description": "多様なインフラストラクチャ全体で分散ワークロード管理を簡素化する、マルチクラスター Kubernetes オーケストレーションプラットフォーム。",
     "docs": "ドキュメント",
@@ -65,9 +64,7 @@
     "cookiePolicy": "Cookie ポリシー",
     "madeWithLove": "KubeStellar チームが ❤️ を込めて開発しました",
     "backToTop": "トップへ戻る"
-  }
   },
-  
   "navigation": {
     "docs": "ドキュメント",
     "blog": "ブログ",
@@ -105,5 +102,18 @@
     "mobileUseCases": "ユースケース",
     "mobileGetStarted": "始める",
     "mobileContact": "お問い合わせ"
-  }
+  },
+  "aboutSection": {
+    "title": "KubeStellar とは",
+    "titleSpan": "",
+    "subtitle": "複数の Kubernetes クラスターにまたがる分散ワークロードの管理を簡素化する、マルチクラスター Kubernetes オーケストレーションプラットフォームです。",
+    "card1Title": "単一のコントロールプレーン",
+    "card1Description": "ラッピングやバンドルを行わず、Kubernetes オブジェクトをネイティブ形式のまま操作できます。Workload Definition Spaces（WDS）を通じてワークロード定義を一元管理し、Inventory and Transport Spaces（ITS）を利用してクラスターインベントリを効率的に管理します。",
+    "card2Title": "インテリジェントなワークロード配置",
+    "card2Description": "ラベルベースのセレクションと BindingPolicy を使用して、どのワークロードをどこで実行するかを指定できます。標準 Kubernetes リソース、カスタムリソース（CRD）、Helm チャート、外部ワークロードタイプをサポートし、自動同期によりクラスター間で一貫性を維持します。",
+    "card3Title": "ポリシー駆動の管理",
+    "card3Description": "BindingPolicy システムを通じて包括的なガバナンスを実現します。個々のクラスター監視のためのシングルトンステータス管理や、統合ステータスの集約を行い、障害発生時には自動復旧機能付きのカスタム変換を適用できます。",
+    "learnMore": "詳細を見る"
+  },
+  
 }
