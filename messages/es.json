@@ -694,6 +694,64 @@
       "learnGuideDescription": "Lee nuestro manual completo de contribución",
       "viewHandbookLink": "Ver manual →"
     }
+  },
+  "partnersPage": {
+  "title": "Nuestros",
+  "titleSpan": "socios",
+  "subtitle": "Colaboramos con proyectos líderes de código abierto para potenciar la orquestación de Kubernetes multi-clúster",
+  "learnMore": "Más información",
+  "partners": {
+    "argocd": {
+      "description": "Herramienta declarativa de entrega continua GitOps para Kubernetes que automatiza el despliegue de aplicaciones y la gestión de su ciclo de vida."
+      },
+      "fluxcd": {
+        "description": "Herramienta de entrega progresiva para Kubernetes que permite despliegues automatizados desde repositorios Git con potentes capacidades GitOps."
+      },
+      "kyverno": {
+        "description": "Solución de gestión de políticas nativa de Kubernetes que valida, modifica y genera configuraciones mediante políticas declarativas."
+      },
+      "mvi": {
+        "description": "Plataforma de visibilidad y análisis multi-clúster que proporciona monitoreo y analíticas completas en entornos Kubernetes distribuidos."
+      },
+      "openziti": {
+        "description": "Plataforma de red de confianza cero y aplicaciones perimetrales que proporciona conectividad segura para aplicaciones distribuidas."
+      },
+      "turbonomic": {
+        "description": "Plataforma de gestión de recursos de aplicaciones que garantiza el rendimiento mientras optimiza los costos de infraestructura mediante automatización impulsada por IA."
+      }
+    },
+    "whyPartner": {
+      "title": "¿Por qué asociarse con nosotros?",
+      "subtitle": "Únete a nuestro ecosistema de socios innovadores para dar forma al futuro de la gestión de Kubernetes multi-clúster",
+      "benefits": [
+        {
+          "title": "Innovación",
+          "description": "Colabora en soluciones de orquestación multi-clúster de vanguardia"
+        },
+        {
+          "title": "Comunidad",
+          "description": "Conéctate con un ecosistema vibrante de desarrolladores y organizaciones cloud-native"
+        },
+        {
+          "title": "Excelencia",
+          "description": "Impulsa estándares de la industria y buenas prácticas en la orquestación de Kubernetes"
+        }
+      ]
+    },
+    "partnershipOpportunities": {
+      "title": "Conviértete en socio",
+      "subtitle": "Une fuerzas con KubeStellar para impulsar la innovación en la orquestación de Kubernetes multi-clúster y ampliar tu alcance en el ecosistema cloud-native.",
+      "description": "Nuestro programa de socios está diseñado para fomentar la colaboración con proveedores de tecnología, plataformas en la nube e integradores de servicios que comparten nuestra visión de simplificar la gestión de Kubernetes multi-clúster. Juntos, podemos ofrecer soluciones integrales que permitan a las empresas gestionar sus cargas de trabajo distribuidas de forma eficiente.",
+      "features": [
+        "Soporte de integración técnica y recursos de ingeniería",
+        "Iniciativas conjuntas de salida al mercado y oportunidades de co-marketing",
+        "Acceso a nuestra creciente comunidad de profesionales cloud-native",
+        "Presencia destacada en nuestra página de socios y documentación",
+        "Desarrollo colaborativo de productos y participación en la hoja de ruta",
+        "Soporte prioritario y gestor de alianzas dedicado"
+      ],
+      "contactButton": "Contactar"
+    }
   }
 
 
