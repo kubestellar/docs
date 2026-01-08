@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
@@ -20,7 +20,45 @@ interface DocsSidebarProps {
 
 export function DocsSidebar({ pageMap }: DocsSidebarProps) {
   const pathname = usePathname();
+  const navRef = useRef<HTMLElement>(null);
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
+  const [maxHeight, setMaxHeight] = useState<string>('auto');
+
+  // Calculate max height accounting for footer
+  useEffect(() => {
+    const calculateHeight = () => {
+      if (navRef.current) {
+        const parent = navRef.current.parentElement;
+        if (parent) {
+          const parentHeight = parent.clientHeight;
+          // Find the footer element (next sibling of parent or last child of grandparent)
+          const footer = parent.nextElementSibling;
+          const footerHeight = footer ? footer.clientHeight : 0;
+          const availableHeight = parentHeight - footerHeight;
+          setMaxHeight(`${availableHeight}px`);
+        }
+      }
+    };
+
+    calculateHeight();
+    window.addEventListener('resize', calculateHeight);
+    
+    // Use MutationObserver to recalculate if footer size changes
+    const observer = new MutationObserver(calculateHeight);
+    if (navRef.current?.parentElement?.parentElement) {
+      observer.observe(navRef.current.parentElement.parentElement, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['class', 'style']
+      });
+    }
+    
+    return () => {
+      window.removeEventListener('resize', calculateHeight);
+      observer.disconnect();
+    };
+  }, []);
 
   // Auto-expand only the folders that contain the active page
   useEffect(() => {
@@ -62,7 +100,9 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
             newCollapsed.add(itemKey);
           }
           // Recursively check children
-          collapseAll(item.children, itemKey);
+          if (item.children) {
+            collapseAll(item.children, itemKey);
+          }
         }
       }
     }
@@ -117,15 +157,15 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
             // Folder - clickable to toggle
             <button
               onClick={() => toggleCollapse(itemKey)}
-              className="flex-1 flex items-center gap-2 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors text-left w-full relative z-10"
+              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors text-left w-full relative z-10"
               style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
-              <span className="truncate">{displayTitle}</span>
-              <span className="ml-auto shrink-0">
+              <span className="flex-1 wrap-break-word">{displayTitle}</span>
+              <span className="ml-auto shrink-0 mt-0.5">
                 {isCollapsed ? (
-                  <ChevronRight className="w-4 h-4 text-gray-500" />
+                  <ChevronRight className="w-4 h-4 text-gray-500 transition-transform duration-200" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-gray-500" />
+                  <ChevronDown className="w-4 h-4 text-gray-500 transition-transform duration-200" />
                 )}
               </span>
             </button>
@@ -134,7 +174,7 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
             <Link
               href={item.route || '#'}
               className={`
-                flex-1 flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-colors relative z-10
+                flex-1 flex items-start gap-2 px-3 py-2 text-sm rounded-lg transition-colors relative z-10
                 ${
                   isActive
                     ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium'
@@ -143,15 +183,20 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
               `}
               style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
-              <FileText className="w-4 h-4 shrink-0" />
-              <span className="truncate">{displayTitle}</span>
+              <FileText className="w-4 h-4 shrink-0 mt-0.5" />
+              <span className="flex-1 wrap-break-word">{displayTitle}</span>
             </Link>
           )}
         </div>
 
         {/* Render children */}
-        {hasChildren && !isCollapsed && (
-          <div className="relative space-y-1">
+        {hasChildren && (
+          <div 
+            className={`
+              relative space-y-1 overflow-hidden transition-all duration-300 ease-in-out
+              ${isCollapsed ? 'max-h-0 opacity-0' : 'max-h-500 opacity-100'}
+            `}
+          >
             {/* Vertical line connecting children */}
             <div 
               className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700"
@@ -165,7 +210,11 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
   };
 
   return (
-    <nav className="p-4 w-full space-y-2">
+    <nav 
+      ref={navRef}
+      className="p-4 pb-6 w-full space-y-2" 
+      style={{ maxHeight }}
+    >
       {pageMap.map(item => renderMenuItem(item))}
     </nav>
   );
