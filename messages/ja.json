@@ -776,7 +776,132 @@
       "programsButton": "プログラム",
       "partnersButton": "パートナー"
     }
+  },
+  "marketplace": {
+    "hero": {
+      "title": "KubeStellar Galaxy",
+      "titleSuffix": "マーケットプレイス",
+      "subtitle": "強力なプラグインやツールで KubeStellar のデプロイを拡張。無料のコミュニティプロジェクトからエンタープライズ向けソリューションまで。",
+      "stats": {
+        "pluginsAvailable": "利用可能なプラグイン",
+        "freePlugins": "無料プラグイン",
+        "totalDownloads": "総ダウンロード数"
+      }
+    },
+    "featured": {
+      "title": "注目",
+      "titleSuffix": "＆ 人気",
+      "subtitle": "評価が高く、最もダウンロードされているプラグインを発見"
+    },
+    "browse": {
+      "title": "すべてのプラグインを閲覧",
+      "subtitle": "KubeStellar のデプロイを拡張する最適なツールを見つけましょう",
+      "searchPlaceholder": "プラグインを検索...",
+      "categoryFilter": "すべて",
+      "pricingFilter": {
+        "all": "すべての料金",
+        "free": "無料",
+        "monthly": "月額",
+        "oneTime": "一括"
+      },
+      "showing": "表示中",
+      "of": "/",
+      "plugins": "プラグイン",
+      "noResults": {
+        "title": "プラグインが見つかりません",
+        "subtitle": "検索条件やフィルターを調整してください"
+      },
+      "pagination": {
+        "previous": "前へ",
+        "next": "次へ"
+      }
+    },
+    "plugin": {
+      "badge": {
+        "free": "無料"
+      },
+      "version": "v",
+      "by": "作成者",
+      "rating": "/5.0",
+      "downloads": "ダウンロード",
+      "free": "無料",
+      "monthly": "/月",
+      "oneTime": "一括",
+      "viewDetails": "詳細を見る",
+      "backToMarketplace": "マーケットプレイスに戻る",
+      "installPlugin": "プラグインをインストール",
+      "payAndInstall": "支払いしてインストール",
+      "github": "GitHub",
+      "about": "このプラグインについて",
+      "keyFeatures": "主な機能",
+      "requirements": "要件",
+      "compatibility": "互換性",
+      "maintainers": "メンテナー",
+      "tags": "タグ",
+      "links": "リンク",
+      "documentation": "ドキュメント",
+      "githubRepository": "GitHub リポジトリ",
+      "officialWebsite": "公式サイト",
+      "notFound": {
+        "title": "プラグインが見つかりません"
+      }
+    },
+    "payment": {
+      "title": "支払いを完了",
+      "subtitle": "{name} を購入して開始",
+      "details": {
+        "plugin": "プラグイン",
+        "licenseType": "ライセンス種別",
+        "total": "合計"
+      },
+      "form": {
+        "cardNumber": "カード番号",
+        "cardPlaceholder": "1234 5678 9012 3456",
+        "expiry": "有効期限",
+        "expiryPlaceholder": "MM/YY",
+        "cvv": "CVV",
+        "cvvPlaceholder": "123",
+        "cancel": "キャンセル",
+        "payNow": "今すぐ支払う",
+        "processing": "処理中...",
+        "secureNote": "🔒 KubeStellar ゲートウェイによる安全な支払い"
+      },
+      "success": {
+        "title": "支払いが完了しました！",
+        "subtitle": "インストールを開始しています..."
+      }
+    },
+    "maintainers": {
+      "andy": "Andy Anderson",
+      "mike": "Mike Spreitzer"
+    },
+    "installation": {
+      "installing": "{name} をインストール中",
+      "pleaseWait": "しばらくお待ちください...",
+      "success": {
+        "title": "インストール完了！",
+        "subtitle": "{name} が KubeStellar にインストールされました。",
+        "commandTitle": "開始するには次のコマンドを実行してください:",
+        "close": "閉じる"
+      }
+    },
+    "categories": {
+      "all": "すべて",
+      "cliTools": "CLI ツール",
+      "synchronization": "同期",
+      "security": "セキュリティ",
+      "observability": "可観測性",
+      "visualization": "可視化",
+      "developmentTools": "開発ツール",
+      "backupRecovery": "バックアップ & リカバリ",
+      "resourceManagement": "リソース管理",
+      "governance": "ガバナンス",
+      "networking": "ネットワーク",
+      "gitops": "GitOps",
+      "costManagement": "コスト管理"
+    }
   }
+
 
 
 
