@@ -102,6 +102,19 @@
   "cookiePolicy": "Política de cookies",
   "madeWithLove": "Hecho con ❤️ por el equipo de KubeStellar",
   "backToTop": "Volver arriba"
-}
+  },
+  "aboutSection": {
+  "title": "Qué es",
+  "titleSpan": "KubeStellar",
+  "subtitle": "Una plataforma de orquestación de Kubernetes multi-clúster que simplifica cómo las organizaciones gestionan cargas de trabajo distribuidas en múltiples clústeres de Kubernetes.",
+  "card1Title": "Plano de control único",
+  "card1Description": "Trabaja con objetos de Kubernetes en su formato nativo sin encapsulación ni empaquetado. Almacena y gestiona definiciones de cargas de trabajo de forma centralizada mediante los Espacios de Definición de Cargas de Trabajo (WDS) y administra eficientemente el inventario de clústeres a través de los Espacios de Inventario y Transporte (ITS).",
+  "card2Title": "Ubicación inteligente de cargas de trabajo",
+  "card2Description": "Utiliza selección basada en etiquetas y políticas de vinculación para especificar qué cargas de trabajo se ejecutan y dónde. Compatibilidad con recursos estándar de Kubernetes, Recursos Personalizados (CRD), gráficos Helm y tipos de cargas de trabajo externos, con sincronización automática para mantener las cargas alineadas entre clústeres.",
+  "card3Title": "Gestión basada en políticas",
+  "card3Description": "Implementa una gobernanza integral mediante el sistema BindingPolicy. Gestiona el estado individual para la supervisión de clústeres y la agregación de estados combinados. Aplica transformaciones personalizadas con recuperación automática tras interrupciones.",
+  "learnMore": "Más información"
+},
+
 
 }
