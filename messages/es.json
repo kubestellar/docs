@@ -313,7 +313,63 @@
       }
     }
   },
+  "communityHandbook": {
+  "title": "Manual",
+  "titleSpan": "del colaborador",
+  "learnMore": "Más información",
+  "cards": {
+    "onboarding": {
+      "title": "Incorporación",
+      "description": "Política de incorporación y salida de la organización KubeStellar en GitHub. Aprende cómo comenzar a participar en nuestra comunidad."
+      },
+      "codeOfConduct": {
+        "title": "Código de conducta",
+        "description": "Nuestro compromiso para crear una comunidad acogedora e inclusiva donde todos puedan contribuir y prosperar."
+      },
+      "guidelines": {
+        "title": "Directrices",
+        "description": "Buenas prácticas para contribuir al proyecto KubeStellar. Directrices esenciales para contribuciones de calidad."
+      },
+      "license": {
+        "title": "Licencia",
+        "description": "KubeStellar está licenciado bajo la Licencia Apache 2.0. Aprende sobre licencias de código abierto y sus términos."
+      },
+      "governance": {
+        "title": "Gobernanza",
+        "description": "Cómo se gobierna y organiza el proyecto KubeStellar. Comprende nuestros procesos de toma de decisiones."
+      },
+      "testing": {
+        "title": "Pruebas",
+        "description": "Procedimientos y directrices para probar contribuciones. Garantiza calidad y confiabilidad en cada cambio."
+      },
+      "packaging": {
+        "title": "Empaquetado",
+        "description": "Cómo empaquetar y distribuir los componentes de KubeStellar. Conoce los procesos de compilación y despliegue."
+      },
+      "docsManagement": {
+        "title": "Gestión de la documentación",
+        "description": "Descripción general de cómo se gestiona y actualiza la documentación. Flujo de trabajo documental completo."
+      },
+      "testingWebsitePRs": {
+        "title": "Pruebas de PR del sitio web",
+        "description": "Cómo probar solicitudes de cambio (pull requests) del sitio web de KubeStellar. Garantía de calidad para cambios web."
+      },
+      "releaseProcess": {
+        "title": "Proceso de lanzamiento",
+        "description": "El proceso para crear y publicar nuevas versiones de KubeStellar. Gestión completa del ciclo de vida de lanzamientos."
+      },
+      "releaseTesting": {
+        "title": "Pruebas de lanzamiento",
+        "description": "Cómo probar y validar nuevas versiones antes de su publicación. Proceso integral de validación de lanzamientos."
+      },
+      "signoffSigning": {
+        "title": "Aprobación y firma de contribuciones",
+        "description": "Requisitos para aprobar y firmar tus contribuciones. Cumplimiento legal y verificación de contribuciones."
+      }
+    }
+  },
   
+
 
 
 }
