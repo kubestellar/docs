@@ -550,34 +550,152 @@
       "name": "KubeStellar",
       "fullName": "KubeStellar",
       "description": "Plataforma de orquestación de Kubernetes multi-clúster que simplifica la gestión de cargas de trabajo distribuidas en diversos entornos de infraestructura. Proporciona un plano de control unificado, colocación inteligente de cargas de trabajo y gobernanza basada en políticas para despliegues multi-clúster complejos, con escalado automatizado, optimización de recursos y capacidades de integración fluida entre proveedores de nube."
+      },
+      "kubestellarUI": {
+        "name": "KubeStellar UI",
+        "fullName": "KubeStellar UI",
+        "description": "Interfaz web potente para gestionar la orquestación de Kubernetes multi-clúster con paneles intuitivos, monitoreo en tiempo real y controles integrales para una gestión de clústeres eficiente. Incluye herramientas avanzadas de visualización, espacios de trabajo personalizables y alertas inteligentes para optimizar tus operaciones multi-clúster."
+      },
+      "kubeflex": {
+        "name": "KubeFlex",
+        "fullName": "KubeFlex",
+        "description": "Plataforma flexible de gestión de Kubernetes que ofrece herramientas y recursos completos para la orquestación multi-clúster y la distribución de cargas de trabajo. Permite el aprovisionamiento dinámico de clústeres, el escalado automatizado y la asignación inteligente de recursos en entornos heterogéneos. Simplifica escenarios de despliegue complejos mediante automatización basada en políticas."
+      },
+      "a2a": {
+        "name": "A2A",
+        "fullName": "A2A",
+        "description": "Plataforma de comunicación aplicación-a-aplicación que permite una conectividad fluida dentro del ecosistema de KubeStellar. Facilita el intercambio seguro de datos y la comunicación en tiempo real entre microservicios distribuidos. Proporciona capacidades avanzadas de enrutamiento, balanceo de carga y descubrimiento de servicios para despliegues multi-clúster complejos."
+      },
+      "kubectlMulti": {
+        "name": "kubectl-multi",
+        "fullName": "kubectl-multi",
+        "description": "Plugin integral de kubectl para operaciones multi-clúster con KubeStellar. Extiende kubectl para funcionar de forma fluida en todos los clústeres gestionados por KubeStellar, proporcionando vistas y operaciones unificadas mientras filtra los clústeres de preparación del flujo de trabajo (WDS). Permite ejecutar comandos en múltiples clústeres simultáneamente con agregación inteligente de resultados."
+      },
+      "galaxyMarketplace": {
+        "name": "Galaxy Marketplace",
+        "fullName": "KS Galaxy Marketplace",
+        "description": "Marketplace centralizado para extensiones, plugins y herramientas e integraciones aportadas por la comunidad de KubeStellar. Descubre, instala y gestiona componentes de terceros para ampliar tus capacidades de orquestación multi-clúster. Incluye verificación automática de compatibilidad, gestión de versiones e integración fluida con despliegues existentes de KubeStellar."
+      }
+    }
+  },
+  "ladderPage": {
+  "title": "Escalera de",
+  "titleSpan": "contribución",
+  "subtitle": "Un camino transparente y basado en méritos desde el primer aporte hasta convertirse en mantenedor de confianza en la comunidad de KubeStellar",
+  "requirementsLabel": "Requisitos:",
+  "goodStandingLabel": "Oportunidades en buen estado:",
+  "nextLevelLabel": "Siguiente nivel:",
+  "levels": {
+    "contributor": {
+      "title": "Colaborador",
+      "nextLevel": "Aprendiz no remunerado",
+      "description": "Comienza tu recorrido en la comunidad de KubeStellar",
+      "requirements": [
+        "Mínimo de 3 contribuciones (reportes de errores, documentación o PR de código)",
+        "Demostrar entusiasmo e interés en la participación a largo plazo",
+        "Ser activo en GitHub y Slack",
+        "Solicitud informal o nominación para unirse al programa de mentoría"
+        ],
+        "goodStanding": "Los colaboradores en buen estado (que cumplen con las métricas de creación de issues \"help wanted\", revisiones de PR y PR fusionados) califican para oportunidades profesionales, incluida la asignación a proyectos con mentores."
+      },
+      "unpaidMentee": {
+        "title": "Aprendiz no remunerado",
+        "nextLevel": "Aprendiz remunerado",
+        "description": "Recorrido de 12 semanas para demostrar compromiso y habilidades",
+        "timeframe": "12 semanas",
+        "requirements": [
+          "Abrir al menos 6 issues de tipo \"help wanted\"",
+          "Fusionar al menos 20 PR (8 dentro de las primeras 6 semanas)",
+          "Asistir a reuniones semanales del equipo o enviar resúmenes",
+          "Trabajar de forma colaborativa con mentores",
+          "Recibir la recomendación de un mentor"
+        ],
+        "goodStanding": "Los aprendices no remunerados en buen estado reciben certificados de finalización, cartas de recomendación y prioridad para programas de mentoría remunerados (GSoC, LFX, etc.)."
+      },
+      "paidMentee": {
+        "title": "Aprendiz remunerado",
+        "nextLevel": "Mentor",
+        "description": "Colaborador reconocido con compensación y responsabilidades",
+        "requirements": [
+          "Completar con éxito al menos un ciclo de mentoría remunerada de 12 semanas",
+          "Ayudar a incorporar y apoyar al menos a un nuevo aprendiz o colaborador",
+          "Enviar ≥3 revisiones de PR",
+          "Enviar ≥5 comentarios útiles en PR o issues",
+          "Presentar o co-presentar en una reunión de la comunidad"
+        ],
+        "goodStanding": "Los aprendices remunerados en buen estado reciben referencias profesionales, mentoría de carrera y oportunidades para liderar proyectos o guiar a otros."
+      },
+      "mentor": {
+        "title": "Mentor",
+        "nextLevel": "Mantenedor",
+        "description": "Guiar y apoyar a la próxima generación de colaboradores",
+        "requirements": [
+          "Demostrar liderazgo técnico en una o más áreas clave",
+          "Mantener una actividad de contribución constante",
+          "Participar activamente en GitHub y Slack",
+          "Ser aprobado por los mantenedores principales mediante un proceso de revisión pública"
+        ],
+        "goodStanding": "Los mentores en buen estado pueden liderar iniciativas, representar a KubeStellar en conferencias, recibir apoyo para ponencias, influir en decisiones de la hoja de ruta y ser elegibles para recibir vales de capacitación o exámenes de la CNCF por proyectos completados con éxito."
+      },
+      "maintainer": {
+        "title": "Mantenedor",
+        "nextLevel": "Embajador",
+        "description": "Líder de confianza con responsabilidades completas del proyecto",
+        "requirements": [
+          "≥2 issues de \"Help Wanted\" cada 2 meses",
+          "≥3 PR fusionados cada 2 meses",
+          "≥8 revisiones de PR o comentarios constructivos cada 2 meses",
+          "≥3 asistencias a reuniones de la comunidad cada 2 meses"
+        ],
+        "goodStanding": "Los mantenedores en buen estado tienen acceso completo de escritura, derechos de voto en decisiones del proyecto y pueden actuar como representantes oficiales del proyecto."
+      },
+      "ambassador": {
+        "title": "Embajador",
+        "nextLevel": "Defensor Stellar",
+        "description": "Impulsar y promover la adopción de KubeStellar",
+        "requirements": [
+          "Promover activamente KubeStellar mediante blogs, presentaciones o redes sociales",
+          "Representar a KubeStellar en encuentros, conferencias o eventos comunitarios",
+          "Crear contenido educativo (tutoriales, videos, demostraciones) sobre KubeStellar",
+          "Interactuar con usuarios para recopilar comentarios y apoyar la adopción",
+          "Mantener actividad a nivel de mantenedor (issues, PR y participación comunitaria)"
+        ],
+        "goodStanding": "Los embajadores en buen estado califican para oportunidades de ponencias, coautoría de blogs, acceso anticipado a nuevas funcionalidades y apoyo promocional para sus actividades de difusión."
+      }
     },
-    "kubestellarUI": {
-      "name": "KubeStellar UI",
-      "fullName": "KubeStellar UI",
-      "description": "Interfaz web potente para gestionar la orquestación de Kubernetes multi-clúster con paneles intuitivos, monitoreo en tiempo real y controles integrales para una gestión de clústeres eficiente. Incluye herramientas avanzadas de visualización, espacios de trabajo personalizables y alertas inteligentes para optimizar tus operaciones multi-clúster."
+    "activityRequirements": {
+      "title": "Requisitos de actividad del mantenedor",
+      "subtitle": "Los mantenedores deben cumplir con estos mínimos de contribución bimestrales (cada 2 meses):",
+      "table": {
+        "metric": "Métrica",
+        "requirement": "Requisito (cada 2 meses)",
+        "helpWantedIssues": "Issues \"Help Wanted\"",
+        "helpWantedIssuesValue": "≥ 2",
+        "prsMerged": "PR fusionados",
+        "prsMergedValue": "≥ 3",
+        "prReviews": "Revisiones de PR o comentarios constructivos",
+        "prReviewsValue": "≥ 8",
+        "meetingAttendance": "Asistencia a reuniones comunitarias",
+        "meetingAttendanceValue": "≥ 3"
+      }
     },
-    "kubeflex": {
-      "name": "KubeFlex",
-      "fullName": "KubeFlex",
-      "description": "Plataforma flexible de gestión de Kubernetes que ofrece herramientas y recursos completos para la orquestación multi-clúster y la distribución de cargas de trabajo. Permite el aprovisionamiento dinámico de clústeres, el escalado automatizado y la asignación inteligente de recursos en entornos heterogéneos. Simplifica escenarios de despliegue complejos mediante automatización basada en políticas."
-    },
-    "a2a": {
-      "name": "A2A",
-      "fullName": "A2A",
-      "description": "Plataforma de comunicación aplicación-a-aplicación que permite una conectividad fluida dentro del ecosistema de KubeStellar. Facilita el intercambio seguro de datos y la comunicación en tiempo real entre microservicios distribuidos. Proporciona capacidades avanzadas de enrutamiento, balanceo de carga y descubrimiento de servicios para despliegues multi-clúster complejos."
-    },
-    "kubectlMulti": {
-      "name": "kubectl-multi",
-      "fullName": "kubectl-multi",
-      "description": "Plugin integral de kubectl para operaciones multi-clúster con KubeStellar. Extiende kubectl para funcionar de forma fluida en todos los clústeres gestionados por KubeStellar, proporcionando vistas y operaciones unificadas mientras filtra los clústeres de preparación del flujo de trabajo (WDS). Permite ejecutar comandos en múltiples clústeres simultáneamente con agregación inteligente de resultados."
-    },
-    "galaxyMarketplace": {
-      "name": "Galaxy Marketplace",
-      "fullName": "KS Galaxy Marketplace",
-      "description": "Marketplace centralizado para extensiones, plugins y herramientas e integraciones aportadas por la comunidad de KubeStellar. Descubre, instala y gestiona componentes de terceros para ampliar tus capacidades de orquestación multi-clúster. Incluye verificación automática de compatibilidad, gestión de versiones e integración fluida con despliegues existentes de KubeStellar."
+    "callToAction": {
+      "title": "¿Listo para comenzar tu recorrido?",
+      "subtitle": "Únete a la comunidad de KubeStellar y comienza a escalar hoy en la escalera de mantenedores",
+      "communityMeetingsButton": "Reuniones de la comunidad",
+      "viewIssuesButton": "Ver issues abiertos",
+      "exploreCodeTitle": "Explorar el código",
+      "exploreCodeDescription": "Explora nuestra base de código y contribuye al proyecto",
+      "viewRepositoryLink": "Ver repositorio →",
+      "joinSlackTitle": "Unirse a Slack",
+      "joinSlackDescription": "Conéctate con la comunidad para discusiones en tiempo real",
+      "joinCommunityLink": "Unirse a la comunidad →",
+      "learnGuideTitle": "Guía de aprendizaje",
+      "learnGuideDescription": "Lee nuestro manual completo de contribución",
+      "viewHandbookLink": "Ver manual →"
     }
   }
-}
+
 
 
 
