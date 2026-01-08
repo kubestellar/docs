@@ -155,5 +155,24 @@
     "formSubmit": "送信",
     "formSubmitting": "送信中...",
     "formSuccess": "メールは KubeStellar の開発メーリングリストに送信されます。送信を完了するために、メールクライアントをご確認ください。"
+  },
+  "getStartedSection": {
+    "title": "始める準備はできましたか？",
+    "subtitle": "成長を続ける KubeStellar のユーザーおよびコントリビューターコミュニティに参加しましょう。",
+    "card1Title": "クイックインストール",
+    "card1Description": "自動的な前提条件チェックとステップバイステップのデプロイ手順を備えた、シンプルなインストールガイドを使って、数分で KubeStellar を起動できます。",
+    "card1Button": "クイックインストールを開始",
+    "card2Title": "ユースケースとコミュニティを探索",
+    "card2Description": "マルチクラスターのワークロード管理機能を発見し、コミュニティとつながりましょう。",
+    "card2Button1": "Slack に参加",
+    "card2Button2": "GitHub",
+    "card2Button3": "プロジェクト",
+    "card2Button4": "ハンドブック",
+    "card2Button5": "YouTube",
+    "card3Title": "ドキュメントを探索",
+    "card3Description": "KubeStellar の機能を習得するための、包括的なガイド、チュートリアル、API リファレンスをご覧ください。",
+    "card3Link1": "はじめに",
+    "card3Link2": "アーキテクチャ",
+    "card3Link3": "API リファレンス"
   }
 }
