@@ -312,7 +312,64 @@
         }
       }
     }
+  },
+  "communityHandbook": {
+    "title": "コントリビューター",
+    "titleSpan": "ハンドブック",
+    "learnMore": "詳細を見る",
+    "cards": {
+      "onboarding": {
+        "title": "オンボーディング",
+        "description": "KubeStellar GitHub 組織のオンボーディングおよびオフボーディングポリシー。コミュニティへの参加方法を学びます。"
+      },
+      "codeOfConduct": {
+        "title": "行動規範",
+        "description": "すべての人が安心して貢献し、成長できる包括的で歓迎されるコミュニティを作るための取り組みです。"
+      },
+      "guidelines": {
+        "title": "ガイドライン",
+        "description": "KubeStellar プロジェクトへ貢献するためのベストプラクティス。高品質な貢献のための重要な指針です。"
+      },
+      "license": {
+        "title": "ライセンス",
+        "description": "KubeStellar は Apache 2.0 ライセンスのもとで提供されています。オープンソースライセンスの条件について学びます。"
+      },
+      "governance": {
+        "title": "ガバナンス",
+        "description": "KubeStellar プロジェクトの運営体制と意思決定プロセスについて理解します。"
+      },
+      "testing": {
+        "title": "テスト",
+        "description": "貢献内容をテストするための手順とガイドライン。すべての変更に品質と信頼性を確保します。"
+      },
+      "packaging": {
+        "title": "パッケージング",
+        "description": "KubeStellar コンポーネントのパッケージングおよび配布方法。ビルドとデプロイのプロセスを学びます。"
+      },
+      "docsManagement": {
+        "title": "ドキュメント管理概要",
+        "description": "ドキュメントがどのように管理・更新されているかの概要。包括的なドキュメントワークフローです。"
+      },
+      "testingWebsitePRs": {
+        "title": "Web サイト PR のテスト",
+        "description": "KubeStellar Web サイトのプルリクエストをテストする方法。Web 変更の品質保証を行います。"
+      },
+      "releaseProcess": {
+        "title": "リリースプロセス",
+        "description": "KubeStellar の新しいリリースを作成・公開するためのプロセス。リリースライフサイクル全体を管理します。"
+      },
+      "releaseTesting": {
+        "title": "リリーステスト",
+        "description": "公開前に新しいリリースをテストおよび検証する方法。包括的なリリース検証プロセスです。"
+      },
+      "signoffSigning": {
+        "title": "サインオフと貢献の署名",
+        "description": "貢献に対するサインオフ要件。法的遵守および貢献の検証を行います。"
+      }
+    }
   }
+
+
 
 
 
