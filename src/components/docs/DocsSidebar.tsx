@@ -37,8 +37,15 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         const rect = sidebarRef.current.getBoundingClientRect();
         const topPosition = rect.top;
         const viewportHeight = window.innerHeight;
-        const calculatedHeight = viewportHeight - topPosition;
-        setSidebarHeight(`${calculatedHeight}px`);
+        
+        // Calculate available height, but cap it at viewport minus navbar (64px)
+        const maxAllowedHeight = viewportHeight - 64; // 64px = 4rem navbar height
+        const calculatedHeight = Math.min(viewportHeight - topPosition, maxAllowedHeight);
+        
+        // Ensure minimum height
+        const finalHeight = Math.max(calculatedHeight, 0);
+        
+        setSidebarHeight(`${finalHeight}px`);
       }
     };
 
@@ -293,11 +300,12 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         flex flex-col
         overflow-hidden
         transition-all duration-300 ease-in-out
+        max-h-[calc(100vh-4rem)]
         ${menuOpen ? 'translate-x-0 w-60' : '-translate-x-full w-0 lg:translate-x-0'}
         ${sidebarCollapsed ? 'lg:w-16' : 'lg:w-60'}
         ${className || ''}
       `}
-      style={{ height: sidebarHeight }}
+      style={{ height: sidebarHeight, maxHeight: 'calc(100vh - 4rem)' }}
     >
       {/* Full Sidebar Content */}
       <div className={`
