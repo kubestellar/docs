@@ -18,35 +18,75 @@ interface MenuItem {
 
 interface DocsSidebarProps {
   pageMap: MenuItem[];
+  className?: string;
 }
 
-export function DocsSidebar({ pageMap }: DocsSidebarProps) {
+export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
-  const { sidebarCollapsed, toggleSidebar } = useDocsMenu();
+  const sidebarRef = useRef<HTMLElement>(null);
+  const { sidebarCollapsed, toggleSidebar, menuOpen } = useDocsMenu();
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
-  const [maxHeight, setMaxHeight] = useState<string>('auto');
+  const [availableHeight, setAvailableHeight] = useState<string>('auto');
+  const [sidebarHeight, setSidebarHeight] = useState('calc(100vh - 4rem)');
 
-  // Calculate max height accounting for footer
+  // Calculate dynamic sidebar height based on actual top position (for banner)
+  useEffect(() => {
+    const calculateSidebarHeight = () => {
+      if (sidebarRef.current) {
+        const rect = sidebarRef.current.getBoundingClientRect();
+        const topPosition = rect.top;
+        const viewportHeight = window.innerHeight;
+        const calculatedHeight = viewportHeight - topPosition;
+        setSidebarHeight(`${calculatedHeight}px`);
+      }
+    };
+
+    calculateSidebarHeight();
+    
+    // Recalculate on scroll (for when banner appears/disappears)
+    window.addEventListener('scroll', calculateSidebarHeight);
+    window.addEventListener('resize', calculateSidebarHeight);
+    
+    // Initial delay to ensure DOM is fully loaded
+    const timer = setTimeout(calculateSidebarHeight, 100);
+    
+    return () => {
+      window.removeEventListener('scroll', calculateSidebarHeight);
+      window.removeEventListener('resize', calculateSidebarHeight);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  // Calculate available height for navigation, accounting for footer and viewport changes
   useEffect(() => {
     const calculateHeight = () => {
       if (navRef.current) {
         const parent = navRef.current.parentElement;
         if (parent) {
+          // Get the parent's actual height (which is constrained by viewport)
           const parentHeight = parent.clientHeight;
-          // Find the footer element (next sibling of parent or last child of grandparent)
+          
+          // Find footer element and get its height
           const footer = parent.nextElementSibling;
           const footerHeight = footer ? footer.clientHeight : 0;
-          const availableHeight = parentHeight - footerHeight;
-          setMaxHeight(`${availableHeight}px`);
+          
+          // Calculate available height for navigation
+          const navHeight = parentHeight - footerHeight;
+          setAvailableHeight(`${navHeight}px`);
         }
       }
     };
 
     calculateHeight();
+    
+    // Recalculate on window resize
     window.addEventListener('resize', calculateHeight);
     
-    // Use MutationObserver to recalculate if footer size changes
+    // Recalculate on scroll (for when banner appears/disappears)
+    window.addEventListener('scroll', calculateHeight);
+    
+    // Use MutationObserver to recalculate if DOM changes
     const observer = new MutationObserver(calculateHeight);
     if (navRef.current?.parentElement?.parentElement) {
       observer.observe(navRef.current.parentElement.parentElement, {
@@ -59,6 +99,7 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
     
     return () => {
       window.removeEventListener('resize', calculateHeight);
+      window.removeEventListener('scroll', calculateHeight);
       observer.disconnect();
     };
   }, []);
@@ -160,15 +201,15 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
             // Folder - clickable to toggle
             <button
               onClick={() => toggleCollapse(itemKey)}
-              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors text-left w-full relative z-10"
+              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-semibold text-gray-500 dark:text-gray-500 hover:text-black dark:hover:text-white rounded-lg transition-colors text-left w-full relative z-10"
               style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
               <span className="flex-1 wrap-break-word">{displayTitle}</span>
               <span className="ml-auto shrink-0 mt-0.5">
                 {isCollapsed ? (
-                  <ChevronRight className="w-4 h-4 text-gray-500 transition-transform duration-200" />
+                  <ChevronRight className="w-4 h-4 transition-all duration-200" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 text-gray-500 transition-transform duration-200" />
+                  <ChevronDown className="w-4 h-4 transition-all duration-200" />
                 )}
               </span>
             </button>
@@ -181,7 +222,7 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
                 ${
                   isActive
                     ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    : 'text-gray-600 dark:text-gray-600 hover:text-black dark:hover:text-white'
                 }
               `}
               style={{ paddingLeft: `${depth * 16 + 12}px` }}
@@ -220,7 +261,7 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
         <nav 
           ref={navRef}
           className="p-4 pb-6 w-full space-y-2" 
-          style={{ maxHeight }}
+          style={{ maxHeight: availableHeight }}
         >
           {pageMap.map(item => renderMenuItem(item))}
         </nav>
@@ -243,7 +284,21 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
   );
 
   return (
-    <>
+    <aside
+      ref={sidebarRef}
+      className={`
+        fixed lg:sticky top-16 left-0 z-30
+        bg-white dark:bg-dark-bg
+        border-r border-gray-200 dark:border-gray-800
+        flex flex-col
+        overflow-hidden
+        transition-all duration-300 ease-in-out
+        ${menuOpen ? 'translate-x-0 w-60' : '-translate-x-full w-0 lg:translate-x-0'}
+        ${sidebarCollapsed ? 'lg:w-16' : 'lg:w-60'}
+        ${className || ''}
+      `}
+      style={{ height: sidebarHeight }}
+    >
       {/* Full Sidebar Content */}
       <div className={`
         flex flex-col h-full
@@ -261,6 +316,6 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
       `}>
         {renderSlimSidebar()}
       </div>
-    </>
+    </aside>
   );
 }

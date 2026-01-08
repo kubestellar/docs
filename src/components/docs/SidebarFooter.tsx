@@ -31,12 +31,12 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
     }
 
     return (
-      <div className="shrink-0 border-t border-gray-200 dark:border-gray-700 flex flex-col items-center gap-2 py-4 min-w-16">
+      <div className="shrink-0 sticky border-t border-gray-200 dark:border-gray-700 flex flex-col items-center gap-2 py-4 min-w-16">
         {/* Theme Toggle Icon */}
         <button
           onClick={() => setTheme(isDark ? 'light' : 'dark')}
           title="Change theme"
-          className="p-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          className="p-2 rounded-md text-gray-600 dark:text-gray-600 hover:text-white dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         >
           <div className="relative w-5 h-5">
             <Moon 
@@ -56,7 +56,7 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
         <button
           onClick={onCollapse}
           title="Expand sidebar"
-          className="p-2 rounded-md text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          className="p-2 rounded-md text-gray-600 dark:text-gray-600 hover:text-white dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         >
           <PanelLeftOpen className="w-5 h-5" />
         </button>
@@ -79,7 +79,7 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
       <button
         onClick={() => setTheme(isDark ? 'light' : 'dark')}
         title="Change theme"
-        className="cursor-pointer h-7 rounded-md px-2 space-x-3 text-sm font-medium transition-colors text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2 flex-1"
+        className="cursor-pointer h-7 rounded-md px-2 space-x-3 text-sm font-medium transition-colors text-gray-600 dark:text-gray-600 hover:text-white dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center gap-2 flex-1"
       >
         <div className="relative w-5 h-5">
           <Moon 
@@ -99,7 +99,7 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
       {/* Collapse Sidebar Button */}
       <button
         onClick={onCollapse}
-        className="transition cursor-pointer rounded-md p-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+        className="transition cursor-pointer rounded-md p-2 text-gray-600 dark:text-gray-600 hover:text-white dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
         title="Collapse sidebar"
         type="button"
       >
