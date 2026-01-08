@@ -456,7 +456,90 @@
     "faq4A": "はい。既存の Kubernetes クラスターを管理できます。ローカル開発用クラスターと本番クラスターを統合して管理することも可能です。",
     "faq5Q": "最小システム要件は何ですか？",
     "faq5A": "最低 4GB の RAM と 2 CPU コアが必要です。Docker (v20.0+)、kubectl (v1.27+)、および kind (v0.20+) または k3d が必要です。"
+  },
+  "programsPage": {
+    "title": "私たちの",
+    "titleSpan": "ミッションに参加",
+    "subtitle": "KubeStellar に貢献し、オープンソース開発でキャリアを成長させるための有意義な機会を見つけましょう。",
+    "paid": "有給プログラム",
+    "unpaid": "無給インターンシップ",
+    "programs": {
+      "gsoc": {
+        "name": "GSoC",
+        "fullName": "Google Summer of Code",
+        "description": "Google の代表的なオープンソースプログラムで、コーディングスキルを飛躍的に向上させましょう",
+        "sections": {
+          "benefits": "実践的な経験を積み、経験豊富なメンターから学び、オープンソースコミュニティの一員となり、プログラムを無事に完了すると奨学金（スティペンド）を受け取ることができます。",
+          "description": "Google Summer of Code は、より多くの学生開発者をオープンソースソフトウェア開発に参加させることを目的としたグローバルプログラムです。学生は休暇期間中に、オープンソース組織と共に 3 か月間のプログラミングプロジェクトに取り組みます。",
+          "overview": "KubeStellar はメンター組織として参加しています。プロジェクトのアイデア、メンター、そして学びながら貢献できる温かいコミュニティを提供します。",
+          "eligibility": "参加者は 18 歳以上で、学生またはオープンソースソフトウェア開発の初心者である必要があります。詳細な条件については、公式 GSoC ウェブサイトをご確認ください。",
+          "timeline": "プログラムは通常 5 月から 8 月にかけて実施されます。応募期間、コミュニティボンディング、コーディング期間などの重要な日程があります。公式なスケジュールは GSoC ウェブサイトをご確認ください。",
+          "structure": "採択された参加者は、KubeStellar の 1 名以上のメンターの指導のもとでプロジェクトに取り組みます。中間評価と最終評価があります。",
+          "howToApply": "学生は応募期間中に Google Summer of Code の公式ウェブサイトから応募できます。事前にコミュニティへ参加し、KubeStellar に貢献することをおすすめします。",
+          "resources": [
+            { "name": "GSoC 公式サイト" },
+            { "name": "KubeStellar GitHub" }
+          ]
+        }
+      },
+      "esoc": {
+        "name": "ESoC",
+        "fullName": "European Summer of Code",
+        "description": "ヨーロッパの才能ある開発者をオープンソース開発で支援",
+        "sections": {
+          "benefits": "実際のプロジェクトに取り組み、奨学金を受け取り、オープンソースコミュニティとつながる絶好の機会です。",
+          "description": "European Summer of Code は、ヨーロッパの学生や新卒者を対象としたプログラムで、オープンソースプロジェクトに貢献する機会を提供します。",
+          "overview": "KubeStellar は ESoC 参加者のメンタリングを行い、成長を支援するための挑戦的なプロジェクトと手厚いサポートを提供します。",
+          "eligibility": "ヨーロッパ在住の学生および新卒者が対象です。詳細な条件については、公式 ESoC ウェブサイトをご確認ください。",
+          "timeline": "プログラムは通常、夏季に実施されます。具体的な日程や締切は ESoC の公式サイトをご参照ください。",
+          "structure": "参加者は、定期的なミーティングやフィードバックを通じて、KubeStellar のメンターと密接に連携しながら、事前に定義されたプロジェクトに取り組みます。",
+          "howToApply": "応募は European Summer of Code の公式ポータルから行ってください。",
+          "resources": [
+            { "name": "ESoC 公式サイト（リンク未提供）" },
+            { "name": "KubeStellar GitHub" }
+          ]
+        }
+      },
+      "ifos": {
+        "name": "IFoS",
+        "fullName": "Interns for Open Source",
+        "description": "KubeStellar と共にオープンソースへの第一歩を踏み出そう",
+        "sections": {
+          "benefits": "無給プログラムではありますが、修了者には修了証明書と推薦状が発行され、GSoC や LFX などの将来の有給メンタープログラムへの優先的な選考機会が与えられます。",
+          "description": "Interns for Open Source（IFoS）は、KubeStellar が提供する独自の無給インターンプログラムです。オープンソースに情熱を持ち、最先端のプロジェクトで実践的な経験を積みたい方を対象としています。",
+          "overview": "この 3 か月間のプログラムは、KubeStellar コミュニティへの直接的な入り口となります。参加者は意義のあるプロジェクトに取り組み、コア開発者からメンタリングを受けます。",
+          "eligibility": "Kubernetes、マルチクラスターオーケストレーション、オープンソースに強い関心を持つ方であれば、どなたでも応募できます。Go やコンテナ技術の基礎知識があると望ましいです。",
+          "timeline": "IFoS は通年プログラムです。応募は随時受け付けており、開始時期はプロジェクトの状況や応募者のスケジュールに応じて決定されます。",
+          "structure": "インターンはメンターとペアになり、開発チームの一員として活動します。プログラムは柔軟で、フルタイム・パートタイムのどちらでも参加可能です。",
+          "howToApply": "履歴書と志望動機をコミュニティ用メールアドレスへ送付してください。また、GitHub リポジトリへの貢献を事前に始めることを推奨します。",
+          "resources": [
+            { "name": "KubeStellar GitHub" },
+            { "name": "KubeStellar コミュニティページ" }
+          ]
+        }
+      },
+      "lfx": {
+        "name": "LFX",
+        "fullName": "LFX Mentorship",
+        "description": "Linux Foundation のメンタープログラムでオープンソースの道を加速",
+        "sections": {
+          "benefits": "奨学金を受け取り、最先端技術の実践経験を積み、プロフェッショナルネットワークを広げ、履歴書を強化できます。",
+          "description": "Linux Foundation が運営する LFX Mentorship は、オープンソースへの貢献を目指す開発者のための構造化されたリモート学習プログラムです。経験豊富なメンターと共に実プロジェクトに取り組みます。",
+          "overview": "KubeStellar は LFX Mentorship プログラムの参加組織です。ロードマップ上で重要なプロジェクトを提供し、参加者が大きなインパクトを与えられる機会を用意しています。",
+          "eligibility": "本プログラムはあらゆるバックグラウンドの開発者に開かれています。具体的な要件はプロジェクトごとに異なるため、LFX Mentorship プラットフォームをご確認ください。",
+          "timeline": "LFX Mentorship は通常、春・夏・秋の期間に実施され、各期間は約 12 週間です。",
+          "structure": "参加者は KubeStellar のメンターと 1 対 1 で協力し、プロジェクトに貢献しながらコミュニティ活動にも参加します。",
+          "howToApply": "応募は LFX Mentorship プラットフォームから行います。KubeStellar のプロジェクトを探して応募してください。",
+          "resources": [
+            { "name": "LFX Mentorship プラットフォーム" },
+            { "name": "KubeStellar GitHub" }
+          ]
+        }
+      }
+    }
   }
+
+
 
 
 
