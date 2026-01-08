@@ -367,7 +367,19 @@
         "description": "貢献に対するサインオフ要件。法的遵守および貢献の検証を行います。"
       }
     }
+  },
+  "programDetailsPage": {
+    "benefits": "特典",
+    "description": "説明",
+    "overview": "概要",
+    "eligibility": "応募資格",
+    "timeline": "タイムライン",
+    "structure": "プログラム構成",
+    "howToApply": "応募方法",
+    "resources": "参考資料"
   }
+
+
 
 
 
