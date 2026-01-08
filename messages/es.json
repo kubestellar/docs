@@ -537,7 +537,47 @@
         }
       }
     }
+  },
+  "productsPage": {
+  "title": "Nuestros",
+  "titleSpan": "proyectos",
+  "subtitle": "Descubre nuestra suite de herramientas y plataformas que fortalecen el ecosistema de KubeStellar y potencian la gestión de Kubernetes multi-clúster.",
+  "repoButton": "Repositorio",
+  "websiteButton": "Sitio web",
+  "watchDemoButton": "Ver demostración",
+  "products": {
+    "kubestellar": {
+      "name": "KubeStellar",
+      "fullName": "KubeStellar",
+      "description": "Plataforma de orquestación de Kubernetes multi-clúster que simplifica la gestión de cargas de trabajo distribuidas en diversos entornos de infraestructura. Proporciona un plano de control unificado, colocación inteligente de cargas de trabajo y gobernanza basada en políticas para despliegues multi-clúster complejos, con escalado automatizado, optimización de recursos y capacidades de integración fluida entre proveedores de nube."
+    },
+    "kubestellarUI": {
+      "name": "KubeStellar UI",
+      "fullName": "KubeStellar UI",
+      "description": "Interfaz web potente para gestionar la orquestación de Kubernetes multi-clúster con paneles intuitivos, monitoreo en tiempo real y controles integrales para una gestión de clústeres eficiente. Incluye herramientas avanzadas de visualización, espacios de trabajo personalizables y alertas inteligentes para optimizar tus operaciones multi-clúster."
+    },
+    "kubeflex": {
+      "name": "KubeFlex",
+      "fullName": "KubeFlex",
+      "description": "Plataforma flexible de gestión de Kubernetes que ofrece herramientas y recursos completos para la orquestación multi-clúster y la distribución de cargas de trabajo. Permite el aprovisionamiento dinámico de clústeres, el escalado automatizado y la asignación inteligente de recursos en entornos heterogéneos. Simplifica escenarios de despliegue complejos mediante automatización basada en políticas."
+    },
+    "a2a": {
+      "name": "A2A",
+      "fullName": "A2A",
+      "description": "Plataforma de comunicación aplicación-a-aplicación que permite una conectividad fluida dentro del ecosistema de KubeStellar. Facilita el intercambio seguro de datos y la comunicación en tiempo real entre microservicios distribuidos. Proporciona capacidades avanzadas de enrutamiento, balanceo de carga y descubrimiento de servicios para despliegues multi-clúster complejos."
+    },
+    "kubectlMulti": {
+      "name": "kubectl-multi",
+      "fullName": "kubectl-multi",
+      "description": "Plugin integral de kubectl para operaciones multi-clúster con KubeStellar. Extiende kubectl para funcionar de forma fluida en todos los clústeres gestionados por KubeStellar, proporcionando vistas y operaciones unificadas mientras filtra los clústeres de preparación del flujo de trabajo (WDS). Permite ejecutar comandos en múltiples clústeres simultáneamente con agregación inteligente de resultados."
+    },
+    "galaxyMarketplace": {
+      "name": "Galaxy Marketplace",
+      "fullName": "KS Galaxy Marketplace",
+      "description": "Marketplace centralizado para extensiones, plugins y herramientas e integraciones aportadas por la comunidad de KubeStellar. Descubre, instala y gestiona componentes de terceros para ampliar tus capacidades de orquestación multi-clúster. Incluye verificación automática de compatibilidad, gestión de versiones e integración fluida con despliegues existentes de KubeStellar."
+    }
   }
+}
 
 
 
