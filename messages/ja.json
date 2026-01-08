@@ -752,7 +752,32 @@
       ],
       "contactButton": "お問い合わせ"
     }
+  },
+  "comingSoonPage": {
+    "title": "近日",
+    "titleSpan": "公開予定",
+    "subtitle": "KubeStellar コミュニティのために、素晴らしい機能を開発中です",
+    "description": "このエキサイティングな新機能は現在開発中です。私たちのチームは、マルチクラスター Kubernetes オーケストレーション体験をさらに向上させる特別な体験を構築しています。",
+    "statusBadge": "開発中",
+    "cta": {
+      "title": "今すぐ KubeStellar を探索",
+      "subtitle": "公開までの間に、KubeStellar で今すぐできることをご覧ください",
+      "documentsButton": "ドキュメントを見る",
+      "documentsDescription": "包括的なガイドと API リファレンス",
+      "documentsAction": "ドキュメントを探索",
+      "quickStartButton": "クイックスタートガイド",
+      "quickStartDescription": "数分でセットアップ",
+      "quickStartAction": "インストールを開始",
+      "communityButton": "コミュニティに参加",
+      "communityDescription": "開発者やコントリビューターとつながる",
+      "communityAction": "GitHub に参加",
+      "handbookButton": "ハンドブック",
+      "ladderButton": "ラダー",
+      "programsButton": "プログラム",
+      "partnersButton": "パートナー"
+    }
   }
+
 
 
 
