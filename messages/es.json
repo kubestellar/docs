@@ -226,7 +226,94 @@
   "step5Command1Comment": "# Verificar el estado del despliegue entre clústeres",
   "step5Command2Comment": "# Ver distribución de cargas de trabajo",
   "step5Command3Comment": "# Supervisar uso de recursos"
-},
+  },
+  "useCasesSection": {
+  "title": "Casos",
+  "titleSpan": "de uso",
+  "subtitle": "Descubre cómo las organizaciones aprovechan KubeStellar para sus necesidades multi-clúster.",
+  "learnMore": "Más información",
+  "cases": {
+    "edge": {
+      "title": "Computación en el borde",
+      "description": "Despliega aplicaciones en ubicaciones de borde con gestión centralizada. Ideal para comercio minorista, manufactura y telecomunicaciones con infraestructura distribuida.",
+      "backContent": {
+        "title": "Gestión declarativa de cargas de trabajo multi-clúster",
+        "description": "Despliega y gestiona cargas de trabajo de Kubernetes en múltiples clústeres utilizando objetos nativos de Kubernetes sin encapsulación ni empaquetado.",
+        "features": [
+          "Desplegar objetos nativos de Kubernetes entre clústeres",
+          "Usar selección de clústeres basada en etiquetas para el direccionamiento de cargas de trabajo",
+          "Gestión centralizada mediante Espacios de Definición de Cargas de Trabajo (WDS)"
+          ]
+        }
+      },
+      "compliance": {
+        "title": "Cumplimiento multi-región",
+        "description": "Despliega aplicaciones con requisitos específicos de cumplimiento regional. Garantiza la residencia de datos y el cumplimiento normativo en operaciones globales.",
+        "backContent": {
+          "title": "Distribución de recursos personalizados",
+          "description": "Distribuye y gestiona recursos personalizados (CRD) en múltiples clústeres manteniendo una sincronización adecuada y una gestión completa del ciclo de vida.",
+          "features": [
+            "Compatibilidad con tipos de cargas de trabajo externos",
+            "Sincronización automática de CRD",
+            "Configuración flexible de RBAC"
+          ]
+        }
+      },
+      "hybrid": {
+        "title": "Híbrido / Multi-nube",
+        "description": "Gestiona cargas de trabajo de forma fluida entre múltiples proveedores de nube e infraestructuras locales con políticas unificadas y una experiencia consistente.",
+        "backContent": {
+          "title": "Operaciones multi-clúster resilientes",
+          "description": "Mantén una distribución y gestión confiables de cargas de trabajo incluso durante interrupciones del plano de control o problemas de red.",
+          "features": [
+            "Arquitectura resiliente con múltiples espacios",
+            "Recuperación automática tras interrupciones",
+            "Reconciliación de estado entre clústeres"
+          ]
+        }
+      },
+      "dr": {
+        "title": "Recuperación ante desastres",
+        "description": "Implementa estrategias sólidas de recuperación ante desastres con replicación automática de cargas de trabajo y conmutación por error entre múltiples clústeres en diferentes regiones.",
+        "backContent": {
+          "title": "Gestión avanzada de estado",
+          "description": "Supervisa y gestiona el estado de las cargas de trabajo en múltiples clústeres con opciones tanto de informes individuales como agregados.",
+          "features": [
+            "Informes de estado únicos para la supervisión de clústeres individuales",
+            "Agregación combinada de estado entre clústeres",
+            "Actualizaciones de estado en tiempo real mediante el complemento OCM Status"
+          ]
+        }
+      },
+      "multitenant": {
+        "title": "Aislamiento multi-tenant",
+        "description": "Crea entornos aislados para diferentes equipos o clientes manteniendo un control centralizado. Ideal para proveedores SaaS y grandes empresas.",
+        "backContent": {
+          "title": "Distribución de gráficos Helm",
+          "description": "Despliega y gestiona gráficos Helm en múltiples clústeres manteniendo los metadatos de los gráficos y la información de versiones.",
+          "features": [
+            "Compatibilidad nativa con gráficos Helm",
+            "Gestión coherente de versiones entre clústeres",
+            "Distribución de gráficos basada en etiquetas"
+          ]
+        }
+      },
+      "performance": {
+        "title": "Optimización del rendimiento",
+        "description": "Despliega cargas de trabajo cerca de los usuarios o de las fuentes de datos para un rendimiento óptimo, reduciendo la latencia y mejorando la experiencia del usuario en operaciones globales.",
+        "backContent": {
+          "title": "Personalización basada en plantillas",
+          "description": "Personaliza las configuraciones de las cargas de trabajo para diferentes clústeres manteniendo una única fuente de verdad.",
+          "features": [
+            "Compatibilidad con expansión de plantillas",
+            "Personalización específica por clúster",
+            "Configuración basada en propiedades"
+          ]
+        }
+      }
+    }
+  },
+  
 
 
 }
