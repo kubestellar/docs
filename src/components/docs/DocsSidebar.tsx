@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
+import { SidebarFooter } from './SidebarFooter';
+import { useDocsMenu } from './DocsProvider';
 
 interface MenuItem {
   name: string;
@@ -21,6 +23,7 @@ interface DocsSidebarProps {
 export function DocsSidebar({ pageMap }: DocsSidebarProps) {
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
+  const { sidebarCollapsed, toggleSidebar } = useDocsMenu();
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [maxHeight, setMaxHeight] = useState<string>('auto');
 
@@ -209,13 +212,55 @@ export function DocsSidebar({ pageMap }: DocsSidebarProps) {
     );
   };
 
+  // Render full sidebar (expanded state)
+  const renderFullSidebar = () => (
+    <>
+      {/* Scrollable navigation area */}
+      <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
+        <nav 
+          ref={navRef}
+          className="p-4 pb-6 w-full space-y-2" 
+          style={{ maxHeight }}
+        >
+          {pageMap.map(item => renderMenuItem(item))}
+        </nav>
+      </div>
+      
+      {/* Footer at bottom */}
+      <SidebarFooter onCollapse={toggleSidebar} />
+    </>
+  );
+
+  // Render slim sidebar (collapsed state) - Desktop only
+  const renderSlimSidebar = () => (
+    <div className="flex flex-col h-full">
+      {/* Spacer */}
+      <div className="flex-1"></div>
+      
+      {/* Footer with icon buttons */}
+      <SidebarFooter onCollapse={toggleSidebar} variant="slim" />
+    </div>
+  );
+
   return (
-    <nav 
-      ref={navRef}
-      className="p-4 pb-6 w-full space-y-2" 
-      style={{ maxHeight }}
-    >
-      {pageMap.map(item => renderMenuItem(item))}
-    </nav>
+    <>
+      {/* Full Sidebar Content */}
+      <div className={`
+        flex flex-col h-full
+        transition-all duration-300 ease-in-out
+        ${sidebarCollapsed ? 'opacity-0 pointer-events-none' : 'opacity-100'}
+      `}>
+        {renderFullSidebar()}
+      </div>
+
+      {/* Slim Sidebar Content - Desktop only */}
+      <div className={`
+        hidden lg:flex flex-col h-full absolute inset-0
+        transition-all duration-300 ease-in-out
+        ${sidebarCollapsed ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+      `}>
+        {renderSlimSidebar()}
+      </div>
+    </>
   );
 }
