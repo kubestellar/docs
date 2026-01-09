@@ -91,5 +91,5 @@ In the tutorial, you will:
 This tutorial serves as a hands-on complement to the concepts described above and illustrates how intent changes drive placement behavior in KubeStellar.
 
 Try the interactive tutorial on Killercoda:  
-**BindingPolicy in Action (Scenario 2)**
+[**BindingPolicy in Action (Scenario 2)**](https://killercoda.com/kubestellar/scenario/bindingpolicy-in-action-scenario-2)
 
