@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
 import { SidebarFooter } from './SidebarFooter';
 import { useDocsMenu } from './DocsProvider';
+import { useTheme } from 'next-themes';
 
 interface MenuItem {
   name: string;
@@ -26,6 +27,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const navRef = useRef<HTMLElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
   const { sidebarCollapsed, toggleSidebar, menuOpen } = useDocsMenu();
+  const { resolvedTheme } = useTheme();
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [availableHeight, setAvailableHeight] = useState<string>('auto');
   const [sidebarHeight, setSidebarHeight] = useState('calc(100vh - 4rem)');
@@ -208,8 +210,11 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
             // Folder - clickable to toggle
             <button
               onClick={() => toggleCollapse(itemKey)}
-              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-semibold text-gray-500 dark:text-gray-500 hover:text-black dark:hover:text-white rounded-lg transition-colors text-left w-full relative z-10"
-              style={{ paddingLeft: `${depth * 16 + 12}px` }}
+              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10"
+              style={{ 
+                paddingLeft: `${depth * 16 + 12}px`,
+                color: 'var(--foreground)'
+              }}
             >
               <span className="flex-1 wrap-break-word">{displayTitle}</span>
               <span className="ml-auto shrink-0 mt-0.5">
@@ -225,17 +230,21 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
             <Link
               href={item.route || '#'}
               className={`
-                flex-1 flex items-start gap-2 px-3 py-2 text-sm rounded-lg transition-colors relative z-10
+                flex-1 flex items-start gap-2 px-3 py-2 text-sm rounded-lg transition-all relative z-10
                 ${
                   isActive
-                    ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium'
-                    : 'text-gray-600 dark:text-gray-600 hover:text-black dark:hover:text-white'
+                    ? 'font-thin'
+                    : 'hover:font-semibold'
                 }
               `}
-              style={{ paddingLeft: `${depth * 16 + 12}px` }}
+              style={{ 
+                paddingLeft: `${depth * 16 + 12}px`,
+                color: isActive ? undefined : 'var(--foreground)',
+                backgroundColor: isActive ? 'rgba(59, 130, 246, 0.1)' : undefined
+              }}
             >
-              <FileText className="w-4 h-4 shrink-0 mt-0.5" />
-              <span className="flex-1 wrap-break-word">{displayTitle}</span>
+              <FileText className="w-4 h-4 shrink-0 mt-0.5" style={{ color: isActive ? '#3b82f6' : undefined }} />
+              <span className="flex-1 wrap-break-word" style={{ color: isActive ? '#3b82f6' : undefined }}>{displayTitle}</span>
             </Link>
           )}
         </div>
@@ -295,8 +304,8 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
       ref={sidebarRef}
       className={`
         fixed lg:sticky top-16 left-0 z-30
-        bg-white dark:bg-dark-bg
-        border-r border-gray-200 dark:border-gray-800
+        bg-white dark:bg-[var(--background)]
+        shadow-sm dark:shadow-none
         flex flex-col
         overflow-hidden
         transition-all duration-300 ease-in-out
@@ -305,7 +314,12 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         ${sidebarCollapsed ? 'lg:w-16' : 'lg:w-60'}
         ${className || ''}
       `}
-      style={{ height: sidebarHeight, maxHeight: 'calc(100vh - 4rem)' }}
+      style={{
+        height: sidebarHeight,
+        maxHeight: 'calc(100vh - 4rem)',
+        boxShadow: '0 1px 6px 0 rgba(0,0,0,0.07)',
+        borderRight: resolvedTheme === 'dark' ? '1px solid #222' : '1px solid #e5e7eb',
+      }}
     >
       {/* Full Sidebar Content */}
       <div className={`

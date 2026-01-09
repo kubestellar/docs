@@ -86,7 +86,7 @@ html:not(.dark) .nextra-toc {
 }
 
 body {
-  background: var(--background);
+  background: var(--color-bg-primary);
   color: var(--foreground);
   font-family: var(--font-inter);
   transition:
@@ -2108,4 +2108,110 @@ html:not(.dark) .contributor-card:hover {
   .nextra-overlay {
     z-index: 44 !important;
   }
+}
+
+/* Custom Documentation Styling */
+.prose {
+  @apply text-gray-800 dark:text-gray-200;
+  max-width: none !important;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold mb-6 mt-8 text-gray-900 dark:text-gray-100 border-b border-gray-200 dark:border-gray-800 pb-2;
+}
+
+.prose h2 {
+  @apply text-3xl font-bold mt-10 mb-4 text-gray-900 dark:text-gray-100 border-b border-gray-200 dark:border-gray-800 pb-2;
+  scroll-margin-top: 5rem;
+}
+
+.prose h3 {
+  @apply text-2xl font-bold mt-8 mb-3 text-gray-900 dark:text-gray-100;
+  scroll-margin-top: 5rem;
+}
+
+.prose h4 {
+  @apply text-xl font-bold mt-6 mb-2 text-gray-900 dark:text-gray-100;
+  scroll-margin-top: 5rem;
+}
+
+.prose h5 {
+  @apply text-lg font-bold mt-4 mb-2 text-gray-900 dark:text-gray-100;
+}
+
+.prose h6 {
+  @apply text-base font-bold mt-3 mb-2 text-gray-900 dark:text-gray-100;
+}
+
+.prose p {
+  @apply mb-4 leading-7;
+}
+
+.prose a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline decoration-2 underline-offset-2;
+}
+
+.prose code {
+  @apply bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono text-gray-900 dark:text-gray-100;
+}
+
+.prose pre {
+  @apply bg-gray-900 dark:bg-gray-950 rounded-lg p-4 overflow-x-auto my-6;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-gray-100;
+}
+
+.prose ul, .prose ol {
+  @apply my-4 ml-6;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-blue-500 pl-4 italic my-6 text-gray-700 dark:text-gray-300;
+}
+
+.prose table {
+  @apply w-full my-6 border-collapse;
+}
+
+.prose thead {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+.prose th {
+  @apply border border-gray-300 dark:border-gray-700 px-4 py-2 text-left font-semibold;
+}
+
+.prose td {
+  @apply border border-gray-300 dark:border-gray-700 px-4 py-2;
+}
+
+.prose img {
+  @apply rounded-lg my-6 mx-auto;
+}
+
+.prose hr {
+  @apply my-8 border-gray-300 dark:border-gray-700;
+}
+
+/* Sidebar Scrollbar Styling */
+aside::-webkit-scrollbar {
+  width: 6px;
+}
+
+aside::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+aside::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-600;
 }
