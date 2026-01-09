@@ -92,6 +92,17 @@ Open a Pull Request (PR) from your branch to the main repository.
 - **Respect Internationalization Standards:** Avoid pushing raw UI strings directly; always use i18n references.
 - **Be Respectful:** Review our Code of Conduct before contributing.
 
+## Note on E2E Test Context Workaround
+
+The E2E test suite includes a temporary workaround for a known kubeflex context-selection issue.
+
+Under certain conditions, `kflex create` can select an unintended hosting cluster when multiple kubeconfig contexts are present and kubeflex-related context extensions are configured. This can cause E2E tests to fail even when the current context correctly accesses the intended hosting cluster.
+
+To ensure consistent and reliable test execution, the E2E test setup removes kubeflex-specific extensions from the kubeconfig before running tests. This forces `kflex create` to rely solely on the current kubeconfig context during E2E runs.
+
+This workaround is limited to the E2E test infrastructure and does not affect normal user workflows. It is intended to be temporary and will be removed once the underlying context-handling issue is resolved.
+
+
 ### Caution With AI-Generated Code
 
 > AI tools (like GitHub Copilot or ChatGPT) are helpful but **not always context-aware**.  
