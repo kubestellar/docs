@@ -781,95 +781,95 @@
   "marketplace": {
     "hero": {
       "title": "KubeStellar Galaxy",
-      "titleSuffix": "Marketplace",
-      "subtitle": "Extend your KubeStellar deployment with powerful plugins and tools. From free community projects to enterprise solutions.",
+      "titleSuffix": "插件市场",
+      "subtitle": "通过强大的插件和工具扩展您的 KubeStellar 部署，从免费的社区项目到企业级解决方案。",
       "stats": {
-        "pluginsAvailable": "Plugins Available",
-        "freePlugins": "Free Plugins",
-        "totalDownloads": "Total Downloads"
+        "pluginsAvailable": "可用插件",
+        "freePlugins": "免费插件",
+        "totalDownloads": "总下载量"
       }
     },
     "featured": {
-      "title": "Featured",
-      "titleSuffix": "& Most Popular",
-      "subtitle": "Discover our top-rated and most downloaded plugins"
+      "title": "精选",
+      "titleSuffix": "与最受欢迎",
+      "subtitle": "探索评分最高、下载量最多的插件"
     },
     "browse": {
-      "title": "Browse All Plugins",
-      "subtitle": "Find the perfect tools to extend your KubeStellar deployment",
-      "searchPlaceholder": "Search plugins...",
-      "categoryFilter": "All",
+      "title": "浏览所有插件",
+      "subtitle": "查找最适合扩展您 KubeStellar 部署的工具",
+      "searchPlaceholder": "搜索插件...",
+      "categoryFilter": "全部",
       "pricingFilter": {
-        "all": "All Pricing",
-        "free": "Free",
-        "monthly": "Monthly",
-        "oneTime": "One-time"
+        "all": "所有价格",
+        "free": "免费",
+        "monthly": "按月",
+        "oneTime": "一次性"
       },
-      "showing": "Showing",
-      "of": "of",
-      "plugins": "plugins",
+      "showing": "显示",
+      "of": "共",
+      "plugins": "个插件",
       "noResults": {
-        "title": "No plugins found",
-        "subtitle": "Try adjusting your search or filters"
+        "title": "未找到插件",
+        "subtitle": "请尝试调整搜索条件或筛选器"
       },
       "pagination": {
-        "previous": "Previous",
-        "next": "Next"
+        "previous": "上一页",
+        "next": "下一页"
       }
     },
     "plugin": {
       "badge": {
-        "free": "FREE"
+        "free": "免费"
       },
-      "version": "v",
-      "by": "by",
+      "version": "版本",
+      "by": "作者",
       "rating": "/5.0",
-      "downloads": "downloads",
-      "free": "Free",
-      "monthly": "/month",
-      "oneTime": "once",
-      "viewDetails": "View Details",
-      "backToMarketplace": "Back to Marketplace",
-      "installPlugin": "Install Plugin",
-      "payAndInstall": "Pay & Install",
+      "downloads": "次下载",
+      "free": "免费",
+      "monthly": "/月",
+      "oneTime": "一次性",
+      "viewDetails": "查看详情",
+      "backToMarketplace": "返回插件市场",
+      "installPlugin": "安装插件",
+      "payAndInstall": "支付并安装",
       "github": "GitHub",
-      "about": "About this plugin",
-      "keyFeatures": "Key Features",
-      "requirements": "Requirements",
-      "compatibility": "Compatibility",
-      "maintainers": "Maintainers",
-      "tags": "Tags",
-      "links": "Links",
-      "documentation": "Documentation",
-      "githubRepository": "GitHub Repository",
-      "officialWebsite": "Official Website",
+      "about": "关于此插件",
+      "keyFeatures": "核心功能",
+      "requirements": "使用要求",
+      "compatibility": "兼容性",
+      "maintainers": "维护者",
+      "tags": "标签",
+      "links": "相关链接",
+      "documentation": "文档",
+      "githubRepository": "GitHub 仓库",
+      "officialWebsite": "官方网站",
       "notFound": {
-        "title": "Plugin Not Found"
+        "title": "未找到插件"
       }
     },
     "payment": {
-      "title": "Complete Payment",
-      "subtitle": "Purchase {name} to get started",
+      "title": "完成支付",
+      "subtitle": "购买 {name} 以开始使用",
       "details": {
-        "plugin": "Plugin",
-        "licenseType": "License Type",
-        "total": "Total"
+        "plugin": "插件",
+        "licenseType": "许可证类型",
+        "total": "总计"
       },
       "form": {
-        "cardNumber": "Card Number",
+        "cardNumber": "卡号",
         "cardPlaceholder": "1234 5678 9012 3456",
-        "expiry": "Expiry",
+        "expiry": "有效期",
         "expiryPlaceholder": "MM/YY",
         "cvv": "CVV",
         "cvvPlaceholder": "123",
-        "cancel": "Cancel",
-        "payNow": "Pay Now",
-        "processing": "Processing...",
-        "secureNote": "🔒 Secure payment powered by KubeStellar Gateway"
+        "cancel": "取消",
+        "payNow": "立即支付",
+        "processing": "处理中...",
+        "secureNote": "🔒 安全支付由 KubeStellar 网关提供"
       },
       "success": {
-        "title": "Payment Successful!",
-        "subtitle": "Starting installation..."
+        "title": "支付成功！",
+        "subtitle": "正在开始安装..."
       }
     },
     "maintainers": {
@@ -877,29 +877,29 @@
       "mike": "Mike Spreitzer"
     },
     "installation": {
-      "installing": "Installing {name}",
-      "pleaseWait": "Please wait...",
+      "installing": "正在安装 {name}",
+      "pleaseWait": "请稍候...",
       "success": {
-        "title": "Successfully Installed!",
-        "subtitle": "{name} has been installed to your KubeStellar deployment.",
-        "commandTitle": "Run this command to get started:",
-        "close": "Close"
+        "title": "安装成功！",
+        "subtitle": "{name} 已成功安装到您的 KubeStellar 部署中。",
+        "commandTitle": "运行以下命令以开始使用：",
+        "close": "关闭"
       }
     },
     "categories": {
-      "all": "All",
-      "cliTools": "CLI Tools",
-      "synchronization": "Synchronization",
-      "security": "Security",
-      "observability": "Observability",
-      "visualization": "Visualization",
-      "developmentTools": "Development Tools",
-      "backupRecovery": "Backup & Recovery",
-      "resourceManagement": "Resource Management",
-      "governance": "Governance",
-      "networking": "Networking",
+      "all": "全部",
+      "cliTools": "CLI 工具",
+      "synchronization": "同步",
+      "security": "安全",
+      "observability": "可观测性",
+      "visualization": "可视化",
+      "developmentTools": "开发工具",
+      "backupRecovery": "备份与恢复",
+      "resourceManagement": "资源管理",
+      "governance": "治理",
+      "networking": "网络",
       "gitops": "GitOps",
-      "costManagement": "Cost Management"
+      "costManagement": "成本管理"
     }
   }
 }
