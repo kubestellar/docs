@@ -102,7 +102,6 @@ To ensure consistent and reliable test execution, the E2E test setup removes kub
 
 This workaround is limited to the E2E test infrastructure and does not affect normal user workflows. It is intended to be temporary and will be removed once the underlying context-handling issue is resolved.
 
-
 ### Caution With AI-Generated Code
 
 > AI tools (like GitHub Copilot or ChatGPT) are helpful but **not always context-aware**.  
