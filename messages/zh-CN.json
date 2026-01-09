@@ -315,69 +315,69 @@
     }
   },
   "communityHandbook": {
-    "title": "Contributor",
-    "titleSpan": "Handbook",
-    "learnMore": "Learn More",
+    "title": "贡献者",
+    "titleSpan": "手册",
+    "learnMore": "了解更多",
     "cards": {
       "onboarding": {
-        "title": "Onboarding",
-        "description": "KubeStellar GitHub Organization On-boarding and Off-boarding Policy. Learn how to get started with our community."
+        "title": "入门指南",
+        "description": "KubeStellar GitHub 组织的成员加入与退出政策，帮助你了解如何开始参与社区。"
       },
       "codeOfConduct": {
-        "title": "Code of Conduct",
-        "description": "Our pledge to create a welcoming and inclusive community for everyone to contribute and thrive."
+        "title": "行为准则",
+        "description": "我们致力于打造一个欢迎、包容的社区环境，让每个人都能安心贡献并共同成长。"
       },
       "guidelines": {
-        "title": "Guidelines",
-        "description": "Best practices for contributing to the KubeStellar project. Essential guidelines for quality contributions."
+        "title": "贡献指南",
+        "description": "参与 KubeStellar 项目的最佳实践指南，是高质量贡献的重要参考。"
       },
       "license": {
-        "title": "License",
-        "description": "KubeStellar is licensed under the Apache 2.0 License. Learn about open source licensing and terms."
+        "title": "许可证",
+        "description": "KubeStellar 采用 Apache 2.0 许可证。了解开源许可证的相关条款与规范。"
       },
       "governance": {
-        "title": "Governance",
-        "description": "How the KubeStellar project is governed and organized. Understand our decision-making processes."
+        "title": "项目治理",
+        "description": "了解 KubeStellar 项目的治理方式和组织结构，以及我们的决策流程。"
       },
       "testing": {
-        "title": "Testing",
-        "description": "Procedures and guidelines for testing contributions. Ensure quality and reliability in every change."
+        "title": "测试",
+        "description": "用于测试贡献内容的流程和指南，确保每一次变更的质量和可靠性。"
       },
       "packaging": {
-        "title": "Packaging",
-        "description": "How to package and distribute KubeStellar components. Learn about build and deployment processes."
+        "title": "打包与发布",
+        "description": "了解如何对 KubeStellar 组件进行打包和分发，以及构建与部署流程。"
       },
       "docsManagement": {
-        "title": "Docs Management Overview",
-        "description": "Overview of how documentation is managed and updated. Comprehensive documentation workflow."
+        "title": "文档管理概览",
+        "description": "文档是如何被管理和更新的整体说明，涵盖完整的文档工作流程。"
       },
       "testingWebsitePRs": {
-        "title": "Testing Website PRs",
-        "description": "How to test pull requests for the KubeStellar website. Quality assurance for web changes."
+        "title": "网站 PR 测试",
+        "description": "介绍如何测试 KubeStellar 网站的拉取请求，确保网页变更的质量。"
       },
       "releaseProcess": {
-        "title": "Release Process",
-        "description": "The process for creating and publishing new KubeStellar releases. Complete release lifecycle management."
+        "title": "发布流程",
+        "description": "创建和发布新 KubeStellar 版本的完整流程，涵盖整个发布生命周期。"
       },
       "releaseTesting": {
-        "title": "Release Testing",
-        "description": "How to test and validate new releases before publication. Comprehensive release validation process."
+        "title": "发布测试",
+        "description": "在正式发布前，对新版本进行测试和验证的流程说明。"
       },
       "signoffSigning": {
-        "title": "Signoff and Signing Contributions",
-        "description": "Requirements for signing off on your contributions. Legal compliance and contribution verification."
+        "title": "贡献签署与确认",
+        "description": "对贡献进行签署确认的要求，用于法律合规和贡献来源验证。"
       }
     }
   },
   "programDetailsPage": {
-    "benefits": "Benefits",
-    "description": "Description",
-    "overview": "Overview",
-    "eligibility": "Eligibility Criteria",
-    "timeline": "Timeline",
-    "structure": "Program Structure",
-    "howToApply": "How to Apply",
-    "resources": "Resources"
+    "benefits": "项目福利",
+    "description": "项目介绍",
+    "overview": "项目概览",
+    "eligibility": "申请资格",
+    "timeline": "时间安排",
+    "structure": "项目结构",
+    "howToApply": "如何申请",
+    "resources": "相关资源"
   },
   "quickInstallationPage": {
     "title": "Quick Installation Guide",
