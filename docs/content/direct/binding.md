@@ -75,3 +75,21 @@ spec:
 ## Binding
 
 TODO: write this
+
+## BindingPolicy in Action (Interactive Tutorial)
+
+To see how `BindingPolicy` works in practice, refer to the **BindingPolicy in Action** interactive tutorial available on Killercoda.
+
+This scenario demonstrates KubeStellar’s intent-driven placement model by showing how workload placement can be changed **by updating a `BindingPolicy` only**, without modifying or redeploying the workload itself.
+
+In the tutorial, you will:
+- Deploy a workload once using KubeStellar
+- Use a `BindingPolicy` to control which WEC the workload runs on
+- Update the `BindingPolicy` to change placement dynamically
+- Observe workload movement without per-cluster `kubectl apply`
+
+This tutorial serves as a hands-on complement to the concepts described above and illustrates how intent changes drive placement behavior in KubeStellar.
+
+Try the interactive tutorial on Killercoda:  
+**BindingPolicy in Action (Scenario 2)**
+
