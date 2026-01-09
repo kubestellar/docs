@@ -1,0 +1,921 @@
+{
+  "heroSection": {
+    "line1": "多集群",
+    "line2": "Kubernetes",
+    "line3": "编排",
+    "subtitle": "体验云原生编排的未来。KubeStellar 通过 AI 驱动的自动化和实时智能，彻底革新多集群管理方式。",
+    "terminalTitle": "kubestellar-control-center",
+    "terminalStatus": "就绪",
+    "terminalCommandL1": "bash <(curl -s \\",
+    "terminalCommandL2": "  https://raw.githubusercontent.com/kubestellar/ \\",
+    "terminalCommandL3": "  kubestellar/refs/tags/v0.27.2/scripts/ \\",
+    "terminalCommandL4": "  create-kubestellar-demo-env.sh) --platform kind",
+    "terminalOutputInfo": "信息",
+    "terminalOutputInfoText": "正在安装 KubeStellar 演示环境...",
+    "terminalOutputSetup": "设置",
+    "terminalOutputSetupText": "正在创建 kind 集群：kubeflex、cluster1、cluster2",
+    "terminalOutputInstall": "安装",
+    "terminalOutputInstallText": "正在部署 KubeFlex 控制平面组件",
+    "terminalOutputConfig": "配置",
+    "terminalOutputConfigText": "正在配置 Open Cluster Management",
+    "terminalOutputSuccess": "成功",
+    "terminalOutputSuccessText": "KubeStellar 演示环境已就绪！设置完成",
+    "buttonInstall": "安装 KubeStellar",
+    "buttonDocs": "查看文档"
+  },
+  "footer": {
+    "description": "Multi-Cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure.",
+    "docs": "Docs",
+    "overview": "Overview",
+    "userGuide": "User Guide",
+    "onboarding": "Onboarding",
+    "releasesNotes": "Release Notes",
+    "gettingStarted": "Getting Started",
+    "installationPage": "Installation Page",
+    "ladder": "Ladder",
+    "products": "Products",
+    "contributeHandbook": "Contributor Handbook",
+    "resources": "Resources",
+    "playground": "Playground",
+    "programs": "Programs",
+    "partners": "Partners",
+    "blog": "Blog",
+    "product": "Product",
+    "features": "Features",
+    "useCases": "Use Cases",
+    "pricing": "Pricing",
+    "roadmap": "Roadmap",
+    "documentation": "Documentation",
+    "tutorials": "Tutorials",
+    "community": "Community",
+    "company": "Company",
+    "about": "About",
+    "team": "Team",
+    "careers": "Careers",
+    "contact": "Contact",
+    "stayUpdated": "Stay Updated",
+    "emailPlaceholder": "Email",
+    "subscribe": "Subscribe",
+    "subscribed": "Subscribed!",
+    "privacyNotice": "We respect your privacy. No spam.",
+    "copyright": "© 2025 KubeStellar. All rights reserved. Apache 2.0 Licence",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "madeWithLove": "Made with ❤️ by the KubeStellar Team",
+    "backToTop": "Back to top"
+  },
+  "navigation": {
+    "docs": "Docs",
+    "blog": "Blog",
+    "playground": "Playground",
+    "marketplace": "Marketplace",
+    "contribute": "Contribute",
+    "joinIn": "Join In",
+    "contributeHandbook": "Contributor Handbook",
+    "quickInstallation": "Quick Installation",
+    "products": "Projects",
+    "security": "Security",
+    "community": "Community",
+    "getInvolved": "Get Involved",
+    "programs": "Programs",
+    "ladder": "Ladder",
+    "contactUs": "Contact Us",
+    "partners": "Partners",
+    "language": "English",
+    "selectLanguage": "Select Language",
+    "langHindi": "हिन्दी",
+    "langEnglish": "English",
+    "langJapanese": "日本語",
+    "langSpanish": "Español",
+    "langGerman": "Deutsch",
+    "langFrench": "Français",
+    "langItalian": "Italiano",
+    "langChineseSimplified": "简体中文",
+    "langChineseTraditional": "繁體中文",
+    "langPortuguese": "Português",
+    "github": "Github",
+    "githubStar": "Star",
+    "githubFork": "Fork",
+    "githubWatch": "Watch",
+    "mobileAbout": "About",
+    "mobileHowItWorks": "How It Works",
+    "mobileUseCases": "Use Cases",
+    "mobileGetStarted": "Get Started",
+    "mobileContact": "Contact"
+  },
+  "aboutSection": {
+    "title": "What is",
+    "titleSpan": "KubeStellar",
+    "subtitle": "A multi-cluster Kubernetes orchestration platform that simplifies how organizations manage distributed workloads across multiple Kubernetes clusters.",
+    "card1Title": "Single Control Plane",
+    "card1Description": "Work with Kubernetes objects in their native format without wrapping or bundling. Store and manage workload definitions centrally through Workload Definition Spaces (WDS) and efficiently manage cluster inventory through Inventory and Transport Spaces (ITS).",
+    "card2Title": "Intelligent Workload Placement",
+    "card2Description": "Use label-based selection and binding policies to specify what workloads run where. Support for standard Kubernetes resources, Custom Resources (CRDs), Helm charts, and out-of-tree workload types with automatic synchronization to keep workloads in sync across clusters.",
+    "card3Title": "Policy-Driven Management",
+    "card3Description": "Implement comprehensive governance through the BindingPolicy system. Manage singleton status for individual cluster monitoring and combined status aggregation. Apply custom transforms with automatic recovery after disruptions.",
+    "learnMore": "Learn more"
+  },
+  "contactSection": {
+    "title": "Get",
+    "titleSpan": "in Touch",
+    "subtitle": "Have questions about KubeStellar? We're here to help!",
+    "card1Title": "Email Support",
+    "card1Description": "Get direct support from our team",
+    "card1Link": "support@kubestellar.io",
+    "card2Title": "Community Chat",
+    "card2Description": "Join our Slack workspace for real-time support",
+    "card2Link": "Join Slack",
+    "card3Title": "GitHub",
+    "card3Description": "Contribute, report issues, or browse the source code",
+    "card3Link": "View Repository",
+    "card4Title": "LinkedIn",
+    "card4Description": "Connect with our professional community",
+    "card4Link": "Follow Us",
+    "card5Title": "YouTube",
+    "card5Description": "Check out meeting recording, support, and informational videos in the KubeStellar YouTube Channel",
+    "card5Link": "KubeStellar YouTube",
+    "formTitle": "Send us a message",
+    "formName": "Name *",
+    "formNamePlaceholder": "Your full name",
+    "formEmail": "Email *",
+    "formEmailPlaceholder": "you@example.com",
+    "formSubject": "Subject *",
+    "formSubjectPlaceholder": "Select a subject",
+    "formSubjectOption1": "General Inquiry",
+    "formSubjectOption2": "Technical Support",
+    "formSubjectOption3": "Partnership",
+    "formSubjectOption4": "Documentation Feedback",
+    "formSubjectOption5": "Enterprise Solutions",
+    "formSubjectOption6": "Other",
+    "formMessage": "Message *",
+    "formMessagePlaceholder": "Tell us about your use case and how we can help...",
+    "formPrivacy": "I agree to the",
+    "formPrivacyLink": "privacy policy",
+    "formPrivacyCont": "and consent to being contacted by the KubeStellar team.",
+    "formSubmit": "Send Message",
+    "formSubmitting": "Sending...",
+    "formSuccess": "Your email will be sent to the KubeStellar development mailing list. Please check your email client to complete sending!"
+  },
+  "getStartedSection": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Join the growing community of KubeStellar users and contributors.",
+    "card1Title": "Quick Installation",
+    "card1Description": "Get up and running with KubeStellar in minutes using our streamlined installation guide with automated prerequisite checking and step-by-step deployment procedures.",
+    "card1Button": "Start Quick Installation",
+    "card2Title": "Explore Use Cases & Community",
+    "card2Description": "Discover multi-cluster workload management capabilities and connect with the community.",
+    "card2Button1": "Join Slack",
+    "card2Button2": "GitHub",
+    "card2Button3": "Projects",
+    "card2Button4": "Handbook",
+    "card2Button5": "YouTube",
+    "card3Title": "Explore Documentation",
+    "card3Description": "Comprehensive guides, tutorials, and API references to help you master KubeStellar's capabilities.",
+    "card3Link1": "Getting Started",
+    "card3Link2": "Architecture",
+    "card3Link3": "API Reference"
+  },
+  "howToUseSection": {
+    "title": "How to Use",
+    "titleSpan": "KubeStellar",
+    "subtitle": "Follow these 5 simple steps to get started with KubeStellar multi-cluster orchestration",
+    "step1Title": "Set Up Your Environment",
+    "step1Description": "Install required tools and initialize core components",
+    "step1DescriptionDesktop": "Install required tools and initialize core components including KubeFlex hosting cluster, ITS, WDS, and WECs.",
+    "step1CodeComment": "# Install required tools",
+    "step1Tool1": "kubectl",
+    "step1Tool2": "helm",
+    "step1Tool3": "docker",
+    "step1Tool4": "kind/k3d",
+    "step1Tool5": "KubeFlex",
+    "step1Tool6": "Open Cluster Management (OCM) CLI",
+    "step2Title": "Register and Label Clusters",
+    "step2Description": "Register WECs and apply labels for targeting",
+    "step2DescriptionDesktop": "Register WECs with the ITS using OCM, apply labels to clusters for targeting, and establish secure connections.",
+    "step2CodeComment": "# Example cluster labeling",
+    "step2Command": "kubectl label managedcluster",
+    "step2Cluster": "cluster1",
+    "step2Label1": "location-group=edge",
+    "step2Label2": "name=cluster1",
+    "step3Title": "Define Workload Placement",
+    "step3Description": "Create BindingPolicy objects to specify deployment rules",
+    "step3DescriptionDesktop": "Create BindingPolicy objects to specify which clusters receive workloads and which workloads to distribute.",
+    "step3ApiVersion": "control.kubestellar.io/v1alpha1",
+    "step3Kind": "BindingPolicy",
+    "step3MetadataName": "example-policy",
+    "step3SpecClusterSelectors": "clusterSelectors",
+    "step3MatchLabels": "matchLabels",
+    "step3LocationGroup": "location-group: edge",
+    "step4Title": "Deploy Your Workloads",
+    "step4Description": "Deploy workloads in native Kubernetes format",
+    "step4DescriptionDesktop": "Deploy workloads in native Kubernetes format using kubectl apply, Helm charts, ArgoCD, or Custom Resources.",
+    "step4ApiVersion": "apps/v1",
+    "step4Kind": "Deployment",
+    "step4MetadataName": "example-app",
+    "step4Labels": "labels",
+    "step4AppName": "app.kubernetes.io/name: myapp",
+    "step4Spec": "spec",
+    "step4Replicas": "replicas",
+    "step4ReplicasValue": "3",
+    "step5Title": "Monitor and Manage",
+    "step5Description": "Monitor deployment status and manage workload health",
+    "step5DescriptionDesktop": "Monitor deployment status across clusters, view workload health, collect status information, and manage policy compliance.",
+    "step5Tag1": "Status Collection",
+    "step5Tag2": "Health Monitoring",
+    "step5Tag3": "Policy Management",
+    "step5Command1Comment": "# Check deployment status across clusters",
+    "step5Command2Comment": "# View workload distribution",
+    "step5Command3Comment": "# Monitor resource usage"
+  },
+  "useCasesSection": {
+    "title": "Use",
+    "titleSpan": "Cases",
+    "subtitle": "Discover how organizations leverage KubeStellar for their multi-cluster needs.",
+    "learnMore": "Learn more",
+    "cases": {
+      "edge": {
+        "title": "Edge Computing",
+        "description": "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
+        "backContent": {
+          "title": "Declarative Multi-Cluster Workload Management",
+          "description": "Deploy and manage Kubernetes workloads across multiple clusters using native Kubernetes objects without wrapping or bundling.",
+          "features": [
+            "Deploy native Kubernetes objects across clusters",
+            "Use label-based cluster selection for workload targeting",
+            "Centralized management through Workload Definition Spaces (WDS)"
+          ]
+        }
+      },
+      "compliance": {
+        "title": "Multi-Region Compliance",
+        "description": "Deploy applications with specific regional compliance requirements. Ensure data residency and regulatory compliance across global operations.",
+        "backContent": {
+          "title": "Custom Resource Distribution",
+          "description": "Distribute and manage custom resources (CRDs) across multiple clusters while maintaining proper synchronization and lifecycle management.",
+          "features": [
+            "Support for out-of-tree workload types",
+            "Automatic CRD synchronization",
+            "Flexible RBAC configuration"
+          ]
+        }
+      },
+      "hybrid": {
+        "title": "Hybrid/Multi-Cloud",
+        "description": "Seamlessly manage workloads across multiple cloud providers and on-premises infrastructure with unified policies and consistent experience.",
+        "backContent": {
+          "title": "Resilient Multi-Cluster Operations",
+          "description": "Maintain reliable workload distribution and management even during control plane disruptions or network issues.",
+          "features": [
+            "Resilient architecture with multiple spaces",
+            "Automatic recovery after disruptions",
+            "State reconciliation across clusters"
+          ]
+        }
+      },
+      "dr": {
+        "title": "Disaster Recovery",
+        "description": "Implement robust disaster recovery strategies with automatic workload replication and failover across multiple clusters in different regions.",
+        "backContent": {
+          "title": "Advanced Status Management",
+          "description": "Monitor and manage workload status across multiple clusters with options for both individual and aggregated status reporting.",
+          "features": [
+            "Singleton status reporting for individual cluster monitoring",
+            "Combined status aggregation across clusters",
+            "Real-time status updates through OCM Status Add-On"
+          ]
+        }
+      },
+      "multitenant": {
+        "title": "Multi-Tenant Isolation",
+        "description": "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
+        "backContent": {
+          "title": "Helm Chart Distribution",
+          "description": "Deploy and manage Helm charts across multiple clusters while maintaining chart metadata and release information.",
+          "features": [
+            "Native Helm chart support",
+            "Consistent release management across clusters",
+            "Label-based chart distribution"
+          ]
+        }
+      },
+      "performance": {
+        "title": "Performance Optimization",
+        "description": "Deploy workloads closest to users or data sources for optimal performance, reducing latency and improving user experience across global operations.",
+        "backContent": {
+          "title": "Template-Based Customization",
+          "description": "Customize workload configurations for different clusters while maintaining a single source of truth.",
+          "features": [
+            "Support for template expansion",
+            "Cluster-specific customization",
+            "Property-based configuration"
+          ]
+        }
+      }
+    }
+  },
+  "communityHandbook": {
+    "title": "Contributor",
+    "titleSpan": "Handbook",
+    "learnMore": "Learn More",
+    "cards": {
+      "onboarding": {
+        "title": "Onboarding",
+        "description": "KubeStellar GitHub Organization On-boarding and Off-boarding Policy. Learn how to get started with our community."
+      },
+      "codeOfConduct": {
+        "title": "Code of Conduct",
+        "description": "Our pledge to create a welcoming and inclusive community for everyone to contribute and thrive."
+      },
+      "guidelines": {
+        "title": "Guidelines",
+        "description": "Best practices for contributing to the KubeStellar project. Essential guidelines for quality contributions."
+      },
+      "license": {
+        "title": "License",
+        "description": "KubeStellar is licensed under the Apache 2.0 License. Learn about open source licensing and terms."
+      },
+      "governance": {
+        "title": "Governance",
+        "description": "How the KubeStellar project is governed and organized. Understand our decision-making processes."
+      },
+      "testing": {
+        "title": "Testing",
+        "description": "Procedures and guidelines for testing contributions. Ensure quality and reliability in every change."
+      },
+      "packaging": {
+        "title": "Packaging",
+        "description": "How to package and distribute KubeStellar components. Learn about build and deployment processes."
+      },
+      "docsManagement": {
+        "title": "Docs Management Overview",
+        "description": "Overview of how documentation is managed and updated. Comprehensive documentation workflow."
+      },
+      "testingWebsitePRs": {
+        "title": "Testing Website PRs",
+        "description": "How to test pull requests for the KubeStellar website. Quality assurance for web changes."
+      },
+      "releaseProcess": {
+        "title": "Release Process",
+        "description": "The process for creating and publishing new KubeStellar releases. Complete release lifecycle management."
+      },
+      "releaseTesting": {
+        "title": "Release Testing",
+        "description": "How to test and validate new releases before publication. Comprehensive release validation process."
+      },
+      "signoffSigning": {
+        "title": "Signoff and Signing Contributions",
+        "description": "Requirements for signing off on your contributions. Legal compliance and contribution verification."
+      }
+    }
+  },
+  "programDetailsPage": {
+    "benefits": "Benefits",
+    "description": "Description",
+    "overview": "Overview",
+    "eligibility": "Eligibility Criteria",
+    "timeline": "Timeline",
+    "structure": "Program Structure",
+    "howToApply": "How to Apply",
+    "resources": "Resources"
+  },
+  "quickInstallationPage": {
+    "title": "Quick Installation Guide",
+    "subtitle": "Get KubeStellar up and running quickly with this streamlined installation guide. Follow the prerequisites and installation steps below.",
+    "prerequisitesTitle": "Prerequisites",
+    "prerequisitesSubtitle": "Install the required tools based on your use case",
+    "coreTitle": "Core Prerequisites",
+    "coreDescription": "Essential tools for using KubeStellar",
+    "coreDocker": "Docker",
+    "coreDockerDesc": "Container runtime platform",
+    "coreKubectl": "kubectl",
+    "coreKubectlDesc": "Kubernetes command-line tool",
+    "coreKubeflex": "KubeFlex",
+    "coreKubeflexDesc": "Core component for multi-cluster management",
+    "coreOcm": "OCM CLI",
+    "coreOcmDesc": "Open Cluster Management command line interface",
+    "coreHelm": "Helm",
+    "coreHelmDesc": "Package manager for Kubernetes",
+    "additionalTitle": "Additional Prerequisites",
+    "additionalDescription": "Additional tools for running KubeStellar examples",
+    "additionalKind": "kind",
+    "additionalKindDesc": "Kubernetes IN Docker - local Kubernetes cluster",
+    "additionalK3d": "k3d",
+    "additionalK3dDesc": "Lightweight wrapper to run k3s in Docker",
+    "additionalArgo": "Argo CD CLI",
+    "additionalArgoDesc": "GitOps continuous delivery tool for Kubernetes",
+    "buildTitle": "Build Prerequisites",
+    "buildDescription": "Tools required for building KubeStellar from source",
+    "buildMake": "Make",
+    "buildMakeDesc": "Build automation tool",
+    "buildGo": "Go",
+    "buildGoDesc": "Programming language for building KubeStellar",
+    "buildKo": "ko",
+    "buildKoDesc": "Container image builder for Go applications",
+    "prerequisitesInstall": "Install:",
+    "prerequisitesVerify": "Verify:",
+    "prerequisitesButton": "View Detailed Installation Guides",
+    "autoCheckTitle": "Automated Check of Prerequisites",
+    "autoCheckSubtitle": "Use this script to automatically verify your system has all required tools",
+    "autoCheckRun": "Run Prerequisites Check:",
+    "autoCheckAboutTitle": "About the Prerequisites Check Script",
+    "autoCheckAbout1": "Self-contained script suitable for \"curl-to-bash\" usage",
+    "autoCheckAbout2": "Checks for prerequisite presence in your $PATH using the which command",
+    "autoCheckAbout3": "Provides version and path information for present prerequisites",
+    "autoCheckAbout4": "Shows installation information for missing prerequisites",
+    "autoCheckReleaseTitle": "For Specific Releases",
+    "autoCheckReleaseDesc": "To check prerequisites for a particular KubeStellar release, use the script from that specific release instead of the main branch.",
+    "autoCheckReleaseTip": "Tip: Run this check before proceeding with the installation to ensure your system is properly configured.",
+    "installTitle": "KubeStellar Installation",
+    "installSubtitle": "Choose your platform and run the installation script",
+    "installPlatform": "Choose Your Platform:",
+    "installKind": "kind",
+    "installKindDesc": "Kubernetes in Docker",
+    "installK3d": "k3d",
+    "installK3dDesc": "Lightweight Kubernetes",
+    "installScriptTitle": "Installation Script for",
+    "installProcessTitle": "Installation Process",
+    "installProcess1": "Creates a local {platform} cluster",
+    "installProcess2": "Installs KubeStellar core components",
+    "installProcess3": "Sets up multi-cluster management capabilities",
+    "installProcess4": "Configures workload distribution",
+    "installNextTitle": "Next Steps",
+    "installNext1": "Verify installation",
+    "installNext2": "Check KubeStellar status",
+    "installNext3": "Explore the",
+    "installNext3Link": "documentation",
+    "installNext3Suffix": "for examples and advanced usage",
+    "faqTitle": "Frequently Asked Questions",
+    "faqSubtitle": "Common questions about KubeStellar installation and setup",
+    "faq1Q": "What's the difference between Core, Additional, and Build prerequisites?",
+    "faq1A": "Core prerequisites are essential for using KubeStellar. Additional prerequisites are needed for running examples and demos. Build prerequisites are only required if you plan to build KubeStellar from source code.",
+    "faq2Q": "Can I automatically check if I have all prerequisites installed?",
+    "faq2A": "Yes! Use the automated prerequisite check script: 'curl -fsSL https://raw.githubusercontent.com/kubestellar/kubestellar/refs/heads/main/scripts/check_pre_req.sh | bash'. This script will verify all prerequisites and provide installation guidance for missing tools.",
+    "faq3Q": "Do I need to install all prerequisites?",
+    "faq3A": "For basic KubeStellar usage, you only need the Core prerequisites. Install Additional prerequisites if you want to run examples. Build prerequisites are only needed for development and building from source.",
+    "faq4Q": "Can I use KubeStellar with existing Kubernetes clusters?",
+    "faq4A": "Yes! KubeStellar can manage existing Kubernetes clusters. You can connect your production clusters alongside local development clusters for unified multi-cluster management.",
+    "faq5Q": "What are the minimum system requirements?",
+    "faq5A": "KubeStellar requires at least 4GB RAM and 2 CPU cores. You'll need Docker (v20.0+), kubectl (v1.27+), and either kind (v0.20+) or k3d for local clusters."
+  },
+  "programsPage": {
+    "title": "Join Our",
+    "titleSpan": "Mission",
+    "subtitle": "Discover meaningful opportunities to contribute to KubeStellar and advance your career in open source development.",
+    "paid": "Paid Program",
+    "unpaid": "Unpaid Internship",
+    "programs": {
+      "gsoc": {
+        "name": "GSoC",
+        "fullName": "Google Summer of Code",
+        "description": "Transform your coding skills with Google's premier open source program",
+        "sections": {
+          "benefits": "Gain real-world experience, learn from experienced mentors, become part of an open-source community, and receive a stipend upon successful completion of the program.",
+          "description": "Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3-month programming project during their break from school.",
+          "overview": "KubeStellar participates as a mentor organization. We provide project ideas, mentors, and a welcoming community for students to learn and contribute.",
+          "eligibility": "Participants must be at least 18 years of age, a student or a beginner to open source software development. For detailed criteria, please refer to the official GSoC website.",
+          "timeline": "The program typically runs from May to August. Key dates include the application period, community bonding, and coding phases. Check the GSoC website for the official timeline.",
+          "structure": "Accepted contributors work on their project with the guidance of one or more mentors from KubeStellar. There are evaluations at the midpoint and end of the program.",
+          "howToApply": "Students can apply via the Google Summer of Code website during the application period. We recommend engaging with our community and contributing to KubeStellar beforehand.",
+          "resources": [
+            {
+              "name": "Official GSoC Website"
+            },
+            {
+              "name": "KubeStellar GitHub"
+            }
+          ]
+        }
+      },
+      "esoc": {
+        "name": "ESoC",
+        "fullName": "European Summer of Code",
+        "description": "Empower European talent in open source development",
+        "sections": {
+          "benefits": "A great opportunity to work on a real-world project, receive a stipend, and connect with the open source community.",
+          "description": "European Summer of Code is a program aimed at students and recent graduates in Europe, providing them with an opportunity to contribute to open source projects.",
+          "overview": "KubeStellar is excited to mentor participants in ESoC, offering challenging projects and dedicated support to help them grow as developers.",
+          "eligibility": "Open to students and recent graduates based in Europe. Please check the official ESoC website for detailed eligibility rules.",
+          "timeline": "The program usually takes place during the summer months. Refer to the ESoC website for the specific dates and deadlines.",
+          "structure": "Participants work closely with KubeStellar mentors on a pre-defined project, with regular check-ins and feedback sessions.",
+          "howToApply": "Applications should be submitted through the official European Summer of Code portal.",
+          "resources": [
+            {
+              "name": "Official ESoC Website (Link not available)"
+            },
+            {
+              "name": "KubeStellar GitHub"
+            }
+          ]
+        }
+      },
+      "ifos": {
+        "name": "IFoS",
+        "fullName": "Interns for Open Source",
+        "description": "Kickstart your open source journey with KubeStellar",
+        "sections": {
+          "benefits": "While this is an unpaid program, successful graduates receive a certificate of completion, a letter of recommendation, and are given priority consideration for any future paid mentorship programs like GSoC or LFX.",
+          "description": "Interns for Open Source (IFoS) is a unique, unpaid internship program created by KubeStellar. It is designed for individuals who are passionate about open source and want to gain hands-on experience with a cutting-edge project.",
+          "overview": "This 3-month program provides a direct pathway into the KubeStellar community. Participants work on meaningful projects and are mentored by our core developers.",
+          "eligibility": "We welcome applications from anyone with a strong interest in Kubernetes, multi-cluster orchestration, and open source. Basic knowledge of Go and container technologies is a plus.",
+          "timeline": "IFoS is a rolling program. Applications are accepted year-round, and internships start based on project availability and applicant schedules.",
+          "structure": "Interns are paired with a mentor and integrated into one of our development teams. The program is flexible, allowing for part-time or full-time commitment.",
+          "howToApply": "To apply, please send your resume and a brief statement of interest to our community email. We also encourage you to start contributing to our GitHub repository.",
+          "resources": [
+            {
+              "name": "KubeStellar GitHub"
+            },
+            {
+              "name": "KubeStellar Community Page"
+            }
+          ]
+        }
+      },
+      "lfx": {
+        "name": "LFX",
+        "fullName": "LFX Mentorship",
+        "description": "Accelerate your open source journey with Linux Foundation mentorship",
+        "sections": {
+          "benefits": "Receive a stipend, gain hands-on experience with cutting-edge technology, build your professional network, and enhance your resume.",
+          "description": "The LFX Mentorship program, run by the Linux Foundation, provides a structured, remote learning opportunity for aspiring open source contributors. Mentees get to work on real-world projects with experienced mentors.",
+          "overview": "KubeStellar is proud to be a part of the LFX Mentorship program. We offer projects that are critical to our roadmap, giving mentees a chance to make a significant impact.",
+          "eligibility": "The program is open to developers from all backgrounds. Specific requirements may vary by project. Check the LFX Mentorship platform for details on eligibility.",
+          "timeline": "LFX Mentorship runs in terms, typically Spring, Summer, and Fall. Each term is about 12 weeks long.",
+          "structure": "Mentees work one-on-one with a mentor from KubeStellar, contributing to the project and participating in the community.",
+          "howToApply": "Applications are submitted through the LFX Mentorship platform. Browse for KubeStellar projects and apply.",
+          "resources": [
+            {
+              "name": "LFX Mentorship Platform"
+            },
+            {
+              "name": "KubeStellar GitHub"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "productsPage": {
+    "title": "Our",
+    "titleSpan": "Projects",
+    "subtitle": "Discover our suite of tools and platforms that enhance the KubeStellar ecosystem and empower multi-cluster Kubernetes management.",
+    "repoButton": "Repository",
+    "websiteButton": "Website",
+    "watchDemoButton": "Watch Demo",
+    "products": {
+      "kubestellar": {
+        "name": "KubeStellar",
+        "fullName": "KubeStellar",
+        "description": "Multi-cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure environments. Provides unified control plane, intelligent workload placement, and policy-driven governance for complex multi-cluster deployments with automated scaling, resource optimization, and seamless integration capabilities across cloud providers."
+      },
+      "kubestellarUI": {
+        "name": "KubeStellar UI",
+        "fullName": "KubeStellar UI",
+        "description": "A powerful web-based interface for managing multi-cluster Kubernetes orchestration with intuitive dashboards, real-time monitoring, and comprehensive controls for streamlined cluster management. Features advanced visualization tools, customizable workspaces, and intelligent alerts to optimize your multi-cluster operations."
+      },
+      "kubeflex": {
+        "name": "KubeFlex",
+        "fullName": "KubeFlex",
+        "description": "A flexible Kubernetes management platform providing comprehensive tools and resources for multi-cluster orchestration and workload distribution. Enables dynamic cluster provisioning, automated scaling, and intelligent resource allocation across heterogeneous environments. Simplifies complex deployment scenarios with policy-driven automation."
+      },
+      "a2a": {
+        "name": "A2A",
+        "fullName": "A2A",
+        "description": "Application-to-Application communication platform enabling seamless connectivity within the KubeStellar ecosystem. Facilitates secure data exchange and real-time communication between distributed microservices. Provides advanced routing, load balancing, and service discovery capabilities for complex multi-cluster deployments."
+      },
+      "kubectlMulti": {
+        "name": "kubectl-multi",
+        "fullName": "kubectl-multi",
+        "description": "A comprehensive kubectl plugin for multi-cluster operations with KubeStellar. This plugin extends kubectl to work seamlessly across all KubeStellar managed clusters, providing unified views and operations while filtering out workflow staging clusters (WDS). Execute commands across multiple clusters simultaneously with intelligent output aggregation."
+      },
+      "galaxyMarketplace": {
+        "name": "Galaxy Marketplace",
+        "fullName": "KS Galaxy Marketplace",
+        "description": "A centralized marketplace for KubeStellar extensions, plugins, and community-contributed tools and integrations. Discover, install, and manage third-party components to enhance your multi-cluster orchestration capabilities. Features automated compatibility checking, version management, and seamless integration with existing KubeStellar deployments."
+      }
+    }
+  },
+  "ladderPage": {
+    "title": "Contribution",
+    "titleSpan": "Ladder",
+    "subtitle": "A transparent, merit-based path from first-time contributor to trusted maintainer in the KubeStellar community",
+    "requirementsLabel": "Requirements:",
+    "goodStandingLabel": "Opportunities in Good Standing:",
+    "nextLevelLabel": "Next Level:",
+    "levels": {
+      "contributor": {
+        "title": "Contributor",
+        "nextLevel": "Unpaid Mentee",
+        "description": "Start your journey in the KubeStellar community",
+        "requirements": [
+          "Minimum of 3 contributions (bug reports, documentation, or code PRs)",
+          "Display enthusiasm and interest in long-term participation",
+          "Be active on GitHub and Slack",
+          "Informal application or nomination to join the mentee program"
+        ],
+        "goodStanding": "Contributors in good standing (meeting their metrics for help-wanted issue creation, PR reviews, and merged PRs) qualify for professional opportunities including assignment to mentor projects."
+      },
+      "unpaidMentee": {
+        "title": "Unpaid Mentee",
+        "nextLevel": "Paid Mentee",
+        "description": "12-week journey to demonstrate commitment and skill",
+        "timeframe": "12 weeks",
+        "requirements": [
+          "Open at least 6 'help wanted' issues",
+          "Merge at least 20 PRs (8 within first 6 weeks)",
+          "Attend weekly team meetings or submit summaries",
+          "Work collaboratively with mentors",
+          "Receive mentor's recommendation"
+        ],
+        "goodStanding": "Unpaid mentees in good standing receive certificates of completion, letters of recommendation, and priority consideration for paid mentorship programs (GSoC, LFX, etc.)."
+      },
+      "paidMentee": {
+        "title": "Paid Mentee",
+        "nextLevel": "Mentor",
+        "description": "Recognized contributor with compensation and responsibility",
+        "requirements": [
+          "Successfully complete at least one 12-week paid mentorship cycle",
+          "Help onboard and support at least one new mentee or contributor",
+          "Submit ≥3 PR reviews",
+          "Submit ≥5 helpful comments on PRs or issues",
+          "Present or co-present at a community call"
+        ],
+        "goodStanding": "Paid mentees in good standing receive professional references, career mentorship, and opportunities to lead projects or mentor others."
+      },
+      "mentor": {
+        "title": "Mentor",
+        "nextLevel": "Maintainer",
+        "description": "Guide and support the next generation of contributors",
+        "requirements": [
+          "Demonstrate technical leadership in one or more key areas",
+          "Maintain consistent contribution activity",
+          "Engage with the community in GitHub and Slack",
+          "Approved by core maintainers following a public review process"
+        ],
+        "goodStanding": "Mentors in good standing can lead initiatives, represent KubeStellar at conferences, receive speaker support, have input on project roadmap decisions, and are eligible to receive training / exam vouchers from CNCF for successfully completed projects."
+      },
+      "maintainer": {
+        "title": "Maintainer",
+        "nextLevel": "Ambassador",
+        "description": "Trusted leader with full project responsibilities",
+        "requirements": [
+          "≥2 'Help Wanted' issues every 2 months",
+          "≥3 PRs merged every 2 months",
+          "≥8 PR reviews or constructive comments every 2 months",
+          "≥3 community meeting attendances every 2 months"
+        ],
+        "goodStanding": "Maintainers in good standing have full write access, voting rights on project decisions, and can serve as official project representatives."
+      },
+      "ambassador": {
+        "title": "Ambassador",
+        "nextLevel": "Stellar Advocate",
+        "description": "Empower and advocate for KubeStellar adoption",
+        "requirements": [
+          "Actively promote KubeStellar through blog posts, presentations, or social media",
+          "Represent KubeStellar at meetups, conferences, or community events",
+          "Create educational content (tutorials, videos, demos) about KubeStellar",
+          "Engage with users to gather feedback and support adoption",
+          "Maintain maintainer-level activity (issues, PRs, community engagement)"
+        ],
+        "goodStanding": "Ambassadors in good standing qualify for speaking opportunities, co-authoring blog posts, early access to new features, and promotional support for their advocacy efforts."
+      }
+    },
+    "activityRequirements": {
+      "title": "Maintainer Activity Requirements",
+      "subtitle": "Maintainers must meet these bi-monthly (every 2 months) contribution minimums:",
+      "table": {
+        "metric": "Metric",
+        "requirement": "Requirement (Per 2 Months)",
+        "helpWantedIssues": "\"Help Wanted\" Issues",
+        "helpWantedIssuesValue": "≥ 2",
+        "prsMerged": "PRs Merged",
+        "prsMergedValue": "≥ 3",
+        "prReviews": "PR Reviews or Constructive Comments",
+        "prReviewsValue": "≥ 8",
+        "meetingAttendance": "Community Meeting Attendance",
+        "meetingAttendanceValue": "≥ 3"
+      }
+    },
+    "callToAction": {
+      "title": "Ready to Start Your Journey?",
+      "subtitle": "Join the KubeStellar community and begin climbing the maintainer ladder today",
+      "communityMeetingsButton": "Community Meetings",
+      "viewIssuesButton": "View Open Issues",
+      "exploreCodeTitle": "Explore Code",
+      "exploreCodeDescription": "Browse our codebase and contribute to the project",
+      "viewRepositoryLink": "View Repository →",
+      "joinSlackTitle": "Join Slack",
+      "joinSlackDescription": "Connect with the community for real-time discussions",
+      "joinCommunityLink": "Join Community →",
+      "learnGuideTitle": "Learn Guide",
+      "learnGuideDescription": "Read our comprehensive contribution handbook",
+      "viewHandbookLink": "View Handbook →"
+    }
+  },
+  "partnersPage": {
+    "title": "Our",
+    "titleSpan": "Partners",
+    "subtitle": "Collaborating with leading open source projects to enhance multi-cluster Kubernetes orchestration",
+    "learnMore": "Learn More",
+    "partners": {
+      "argocd": {
+        "description": "Declarative GitOps continuous delivery tool for Kubernetes that automates application deployment and lifecycle management."
+      },
+      "fluxcd": {
+        "description": "Progressive delivery tool for Kubernetes that enables automated deployments from Git repositories with powerful GitOps capabilities."
+      },
+      "kyverno": {
+        "description": "Kubernetes-native policy management solution that validates, mutates, and generates configurations using declarative policies."
+      },
+      "mvi": {
+        "description": "Multi-cluster visibility and insights platform providing comprehensive monitoring and analytics across distributed Kubernetes environments."
+      },
+      "openziti": {
+        "description": "Zero trust network overlay and edge application platform providing secure connectivity for distributed applications."
+      },
+      "turbonomic": {
+        "description": "Application resource management platform that ensures application performance while optimizing infrastructure costs through AI-driven automation."
+      }
+    },
+    "whyPartner": {
+      "title": "Why Partner With Us",
+      "subtitle": "Join our ecosystem of innovative partners to shape the future of multi-cluster Kubernetes management",
+      "benefits": [
+        {
+          "title": "Innovation",
+          "description": "Collaborate on cutting-edge multi-cluster orchestration solutions"
+        },
+        {
+          "title": "Community",
+          "description": "Connect with a vibrant ecosystem of cloud-native developers and organizations"
+        },
+        {
+          "title": "Excellence",
+          "description": "Drive industry standards and best practices in Kubernetes orchestration"
+        }
+      ]
+    },
+    "partnershipOpportunities": {
+      "title": "Become a Partner",
+      "subtitle": "Join forces with KubeStellar to drive innovation in multi-cluster Kubernetes orchestration and expand your reach in the cloud-native ecosystem.",
+      "description": "Our partnership program is designed to foster collaboration with technology providers, cloud platforms, and service integrators who share our vision of simplifying multi-cluster Kubernetes management. Together, we can deliver comprehensive solutions that empower enterprises to manage their distributed workloads seamlessly.",
+      "features": [
+        "Technical integration support and engineering resources",
+        "Joint go-to-market initiatives and co-marketing opportunities",
+        "Access to our growing community of cloud-native practitioners",
+        "Featured placement on our partners page and documentation",
+        "Collaborative product development and roadmap input",
+        "Priority support and dedicated partnership manager"
+      ],
+      "contactButton": "Get in Touch"
+    }
+  },
+  "comingSoonPage": {
+    "title": "Coming",
+    "titleSpan": "Soon",
+    "subtitle": "We're working on something amazing for the KubeStellar community",
+    "description": "This exciting new feature is currently under development. Our team is crafting an exceptional experience that will enhance your multi-cluster Kubernetes orchestration journey.",
+    "statusBadge": "Under Development",
+    "cta": {
+      "title": "Explore KubeStellar Now",
+      "subtitle": "While you wait, discover what KubeStellar can do for you today",
+      "documentsButton": "View Documentation",
+      "documentsDescription": "Comprehensive guides and API references",
+      "documentsAction": "Explore Docs",
+      "quickStartButton": "Quick Start Guide",
+      "quickStartDescription": "Get up and running in minutes",
+      "quickStartAction": "Start Installing",
+      "communityButton": "Join Community",
+      "communityDescription": "Connect with developers and contributors",
+      "communityAction": "Join GitHub",
+      "handbookButton": "Handbook",
+      "ladderButton": "Ladder",
+      "programsButton": "Programs",
+      "partnersButton": "Partners"
+    }
+  },
+  "marketplace": {
+    "hero": {
+      "title": "KubeStellar Galaxy",
+      "titleSuffix": "Marketplace",
+      "subtitle": "Extend your KubeStellar deployment with powerful plugins and tools. From free community projects to enterprise solutions.",
+      "stats": {
+        "pluginsAvailable": "Plugins Available",
+        "freePlugins": "Free Plugins",
+        "totalDownloads": "Total Downloads"
+      }
+    },
+    "featured": {
+      "title": "Featured",
+      "titleSuffix": "& Most Popular",
+      "subtitle": "Discover our top-rated and most downloaded plugins"
+    },
+    "browse": {
+      "title": "Browse All Plugins",
+      "subtitle": "Find the perfect tools to extend your KubeStellar deployment",
+      "searchPlaceholder": "Search plugins...",
+      "categoryFilter": "All",
+      "pricingFilter": {
+        "all": "All Pricing",
+        "free": "Free",
+        "monthly": "Monthly",
+        "oneTime": "One-time"
+      },
+      "showing": "Showing",
+      "of": "of",
+      "plugins": "plugins",
+      "noResults": {
+        "title": "No plugins found",
+        "subtitle": "Try adjusting your search or filters"
+      },
+      "pagination": {
+        "previous": "Previous",
+        "next": "Next"
+      }
+    },
+    "plugin": {
+      "badge": {
+        "free": "FREE"
+      },
+      "version": "v",
+      "by": "by",
+      "rating": "/5.0",
+      "downloads": "downloads",
+      "free": "Free",
+      "monthly": "/month",
+      "oneTime": "once",
+      "viewDetails": "View Details",
+      "backToMarketplace": "Back to Marketplace",
+      "installPlugin": "Install Plugin",
+      "payAndInstall": "Pay & Install",
+      "github": "GitHub",
+      "about": "About this plugin",
+      "keyFeatures": "Key Features",
+      "requirements": "Requirements",
+      "compatibility": "Compatibility",
+      "maintainers": "Maintainers",
+      "tags": "Tags",
+      "links": "Links",
+      "documentation": "Documentation",
+      "githubRepository": "GitHub Repository",
+      "officialWebsite": "Official Website",
+      "notFound": {
+        "title": "Plugin Not Found"
+      }
+    },
+    "payment": {
+      "title": "Complete Payment",
+      "subtitle": "Purchase {name} to get started",
+      "details": {
+        "plugin": "Plugin",
+        "licenseType": "License Type",
+        "total": "Total"
+      },
+      "form": {
+        "cardNumber": "Card Number",
+        "cardPlaceholder": "1234 5678 9012 3456",
+        "expiry": "Expiry",
+        "expiryPlaceholder": "MM/YY",
+        "cvv": "CVV",
+        "cvvPlaceholder": "123",
+        "cancel": "Cancel",
+        "payNow": "Pay Now",
+        "processing": "Processing...",
+        "secureNote": "🔒 Secure payment powered by KubeStellar Gateway"
+      },
+      "success": {
+        "title": "Payment Successful!",
+        "subtitle": "Starting installation..."
+      }
+    },
+    "maintainers": {
+      "andy": "Andy Anderson",
+      "mike": "Mike Spreitzer"
+    },
+    "installation": {
+      "installing": "Installing {name}",
+      "pleaseWait": "Please wait...",
+      "success": {
+        "title": "Successfully Installed!",
+        "subtitle": "{name} has been installed to your KubeStellar deployment.",
+        "commandTitle": "Run this command to get started:",
+        "close": "Close"
+      }
+    },
+    "categories": {
+      "all": "All",
+      "cliTools": "CLI Tools",
+      "synchronization": "Synchronization",
+      "security": "Security",
+      "observability": "Observability",
+      "visualization": "Visualization",
+      "developmentTools": "Development Tools",
+      "backupRecovery": "Backup & Recovery",
+      "resourceManagement": "Resource Management",
+      "governance": "Governance",
+      "networking": "Networking",
+      "gitops": "GitOps",
+      "costManagement": "Cost Management"
+    }
+  }
+}
