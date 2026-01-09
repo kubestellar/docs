@@ -579,7 +579,123 @@
       }
     }
   },
-  
+  "ladderPage": {
+    "title": "贡献",
+    "titleSpan": "阶梯",
+    "subtitle": "在 KubeStellar 社区中，从首次贡献者成长为受信任维护者的透明、以能力为导向的路径",
+    "requirementsLabel": "要求：",
+    "goodStandingLabel": "良好状态下的机会：",
+    "nextLevelLabel": "下一个级别：",
+    "levels": {
+      "contributor": {
+        "title": "贡献者",
+        "nextLevel": "无薪学员",
+        "description": "开启你在 KubeStellar 社区的旅程",
+        "requirements": [
+          "至少 3 次贡献（问题报告、文档或代码 PR）",
+          "展现对长期参与的热情和兴趣",
+          "在 GitHub 和 Slack 上保持活跃",
+          "通过非正式申请或提名加入学员计划"
+        ],
+        "goodStanding": "处于良好状态的贡献者（满足 Help Wanted Issue 创建、PR 审查和 PR 合并指标）将有资格获得专业机会，包括被分配到导师项目。"
+      },
+      "unpaidMentee": {
+        "title": "无薪学员",
+        "nextLevel": "有薪学员",
+        "description": "为期 12 周的成长阶段，用于展示投入度和技能",
+        "timeframe": "12 周",
+        "requirements": [
+          "至少创建 6 个“Help Wanted”Issue",
+          "至少合并 20 个 PR（前 6 周内完成 8 个）",
+          "参加每周团队会议或提交会议总结",
+          "与导师协作完成任务",
+          "获得导师推荐"
+        ],
+        "goodStanding": "处于良好状态的无薪学员将获得结业证书、推荐信，并在 GSoC、LFX 等有薪导师计划中享有优先考虑资格。"
+      },
+      "paidMentee": {
+        "title": "有薪学员",
+        "nextLevel": "导师",
+        "description": "具备责任与回报的认可型贡献者",
+        "requirements": [
+          "成功完成至少一个 12 周的有薪导师周期",
+          "协助至少 1 名新学员或贡献者完成入门",
+          "提交不少于 3 次 PR 审查",
+          "在 PR 或 Issue 中提交不少于 5 条有价值的评论",
+          "在社区会议中进行演讲或联合演讲"
+        ],
+        "goodStanding": "处于良好状态的有薪学员将获得职业推荐、职业发展指导，并有机会领导项目或指导其他贡献者。"
+      },
+      "mentor": {
+        "title": "导师",
+        "nextLevel": "维护者",
+        "description": "引导并支持下一代贡献者",
+        "requirements": [
+          "在一个或多个关键领域展现技术领导力",
+          "保持持续的贡献活跃度",
+          "在 GitHub 和 Slack 中积极参与社区交流",
+          "通过公开评审流程并获得核心维护者批准"
+        ],
+        "goodStanding": "处于良好状态的导师可以主导项目计划、代表 KubeStellar 参加会议、获得演讲支持、参与路线图决策，并有资格获得 CNCF 提供的培训或考试代金券。"
+      },
+      "maintainer": {
+        "title": "维护者",
+        "nextLevel": "大使",
+        "description": "承担完整项目责任的受信任领导者",
+        "requirements": [
+          "每 2 个月至少创建 2 个“Help Wanted”Issue",
+          "每 2 个月至少合并 3 个 PR",
+          "每 2 个月至少完成 8 次 PR 审查或建设性评论",
+          "每 2 个月至少参加 3 次社区会议"
+        ],
+        "goodStanding": "处于良好状态的维护者拥有完整的写权限、项目决策投票权，并可作为官方项目代表。"
+      },
+      "ambassador": {
+        "title": "大使",
+        "nextLevel": "Stellar 倡导者",
+        "description": "推动并倡导 KubeStellar 的采用",
+        "requirements": [
+          "通过博客、演讲或社交媒体积极推广 KubeStellar",
+          "在聚会、会议或社区活动中代表 KubeStellar",
+          "创建与 KubeStellar 相关的教育内容（教程、视频、演示）",
+          "与用户互动，收集反馈并支持产品推广",
+          "保持维护者级别的活跃度（Issue、PR、社区参与）"
+        ],
+        "goodStanding": "处于良好状态的大使将有机会获得演讲机会、联合撰写博客、提前体验新功能，并获得推广支持。"
+      }
+    },
+    "activityRequirements": {
+      "title": "维护者活跃度要求",
+      "subtitle": "维护者需满足以下每 2 个月的最低贡献要求：",
+      "table": {
+        "metric": "指标",
+        "requirement": "要求（每 2 个月）",
+        "helpWantedIssues": "“Help Wanted”Issue",
+        "helpWantedIssuesValue": "≥ 2",
+        "prsMerged": "已合并 PR",
+        "prsMergedValue": "≥ 3",
+        "prReviews": "PR 审查或建设性评论",
+        "prReviewsValue": "≥ 8",
+        "meetingAttendance": "社区会议参与",
+        "meetingAttendanceValue": "≥ 3"
+      }
+    },
+    "callToAction": {
+      "title": "准备好开始你的旅程了吗？",
+      "subtitle": "加入 KubeStellar 社区，今天就开始攀登维护者阶梯",
+      "communityMeetingsButton": "社区会议",
+      "viewIssuesButton": "查看开放 Issue",
+      "exploreCodeTitle": "探索代码",
+      "exploreCodeDescription": "浏览我们的代码库并参与项目贡献",
+      "viewRepositoryLink": "查看仓库 →",
+      "joinSlackTitle": "加入 Slack",
+      "joinSlackDescription": "与社区进行实时交流",
+      "joinCommunityLink": "加入社区 →",
+      "learnGuideTitle": "学习指南",
+      "learnGuideDescription": "阅读完整的贡献者手册",
+      "viewHandbookLink": "查看手册 →"
+    }
+  },
   "partnersPage": {
     "title": "Our",
     "titleSpan": "Partners",
