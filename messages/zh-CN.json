@@ -104,18 +104,17 @@
     "mobileGetStarted": "开始使用",
     "mobileContact": "联系"
   },
-
   "aboutSection": {
-    "title": "What is",
+    "title": "什么是",
     "titleSpan": "KubeStellar",
-    "subtitle": "A multi-cluster Kubernetes orchestration platform that simplifies how organizations manage distributed workloads across multiple Kubernetes clusters.",
-    "card1Title": "Single Control Plane",
-    "card1Description": "Work with Kubernetes objects in their native format without wrapping or bundling. Store and manage workload definitions centrally through Workload Definition Spaces (WDS) and efficiently manage cluster inventory through Inventory and Transport Spaces (ITS).",
-    "card2Title": "Intelligent Workload Placement",
-    "card2Description": "Use label-based selection and binding policies to specify what workloads run where. Support for standard Kubernetes resources, Custom Resources (CRDs), Helm charts, and out-of-tree workload types with automatic synchronization to keep workloads in sync across clusters.",
-    "card3Title": "Policy-Driven Management",
-    "card3Description": "Implement comprehensive governance through the BindingPolicy system. Manage singleton status for individual cluster monitoring and combined status aggregation. Apply custom transforms with automatic recovery after disruptions.",
-    "learnMore": "Learn more"
+    "subtitle": "一个多集群 Kubernetes 编排平台，帮助组织更轻松地在多个 Kubernetes 集群之间管理分布式工作负载。",
+    "card1Title": "统一控制平面",
+    "card1Description": "以 Kubernetes 原生格式直接操作对象，无需封装或打包。通过工作负载定义空间（WDS）集中存储和管理工作负载定义，并通过清单与传输空间（ITS）高效管理集群资源。",
+    "card2Title": "智能工作负载调度",
+    "card2Description": "使用基于标签的选择器和绑定策略来指定工作负载运行的位置。支持标准 Kubernetes 资源、自定义资源（CRD）、Helm Chart 以及外部工作负载类型，并通过自动同步确保多集群之间的一致性。",
+    "card3Title": "策略驱动的管理",
+    "card3Description": "通过 BindingPolicy 系统实现全面的治理能力。支持单集群状态监控与跨集群聚合状态管理，并在发生中断后自动恢复自定义转换。",
+    "learnMore": "了解更多"
   },
   "contactSection": {
     "title": "Get",
