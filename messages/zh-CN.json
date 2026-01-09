@@ -459,97 +459,81 @@
     "faq5A": "至少需要 4GB 内存和 2 个 CPU 核心。需要 Docker（v20.0+）、kubectl（v1.27+），以及 kind（v0.20+）或 k3d。"
   },
   "programsPage": {
-    "title": "Join Our",
-    "titleSpan": "Mission",
-    "subtitle": "Discover meaningful opportunities to contribute to KubeStellar and advance your career in open source development.",
-    "paid": "Paid Program",
-    "unpaid": "Unpaid Internship",
+    "title": "加入我们的",
+    "titleSpan": "使命",
+    "subtitle": "探索为 KubeStellar 做出贡献的有意义机会，并在开源开发中推动你的职业发展。",
+    "paid": "付费项目",
+    "unpaid": "无薪实习",
     "programs": {
       "gsoc": {
         "name": "GSoC",
         "fullName": "Google Summer of Code",
-        "description": "Transform your coding skills with Google's premier open source program",
+        "description": "通过 Google 顶级开源项目提升你的编程技能",
         "sections": {
-          "benefits": "Gain real-world experience, learn from experienced mentors, become part of an open-source community, and receive a stipend upon successful completion of the program.",
-          "description": "Google Summer of Code is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3-month programming project during their break from school.",
-          "overview": "KubeStellar participates as a mentor organization. We provide project ideas, mentors, and a welcoming community for students to learn and contribute.",
-          "eligibility": "Participants must be at least 18 years of age, a student or a beginner to open source software development. For detailed criteria, please refer to the official GSoC website.",
-          "timeline": "The program typically runs from May to August. Key dates include the application period, community bonding, and coding phases. Check the GSoC website for the official timeline.",
-          "structure": "Accepted contributors work on their project with the guidance of one or more mentors from KubeStellar. There are evaluations at the midpoint and end of the program.",
-          "howToApply": "Students can apply via the Google Summer of Code website during the application period. We recommend engaging with our community and contributing to KubeStellar beforehand.",
+          "benefits": "获得真实项目经验，向经验丰富的导师学习，成为开源社区的一员，并在成功完成项目后获得津贴。",
+          "description": "Google Summer of Code 是一项全球性项目，旨在吸引更多学生开发者参与开源软件开发。学生在假期期间与开源组织合作，完成为期 3 个月的编程项目。",
+          "overview": "KubeStellar 作为导师组织参与该项目。我们提供项目想法、导师支持，以及一个欢迎学习和贡献的社区环境。",
+          "eligibility": "参与者需年满 18 岁，并且是学生或开源软件开发初学者。详细条件请参考 GSoC 官方网站。",
+          "timeline": "该项目通常在每年 5 月至 8 月期间进行，关键阶段包括申请期、社区融合期和编码阶段。具体时间请查看 GSoC 官方网站。",
+          "structure": "被录取的贡献者将在一名或多名 KubeStellar 导师的指导下完成项目，并在中期和最终阶段接受评估。",
+          "howToApply": "学生可在申请期内通过 Google Summer of Code 官方网站提交申请。我们建议提前参与社区并为 KubeStellar 做出贡献。",
           "resources": [
-            {
-              "name": "Official GSoC Website"
-            },
-            {
-              "name": "KubeStellar GitHub"
-            }
+            { "name": "GSoC 官方网站" },
+            { "name": "KubeStellar GitHub" }
           ]
         }
       },
       "esoc": {
         "name": "ESoC",
         "fullName": "European Summer of Code",
-        "description": "Empower European talent in open source development",
+        "description": "赋能欧洲地区的开源开发人才",
         "sections": {
-          "benefits": "A great opportunity to work on a real-world project, receive a stipend, and connect with the open source community.",
-          "description": "European Summer of Code is a program aimed at students and recent graduates in Europe, providing them with an opportunity to contribute to open source projects.",
-          "overview": "KubeStellar is excited to mentor participants in ESoC, offering challenging projects and dedicated support to help them grow as developers.",
-          "eligibility": "Open to students and recent graduates based in Europe. Please check the official ESoC website for detailed eligibility rules.",
-          "timeline": "The program usually takes place during the summer months. Refer to the ESoC website for the specific dates and deadlines.",
-          "structure": "Participants work closely with KubeStellar mentors on a pre-defined project, with regular check-ins and feedback sessions.",
-          "howToApply": "Applications should be submitted through the official European Summer of Code portal.",
+          "benefits": "这是一个参与真实项目、获得津贴并与开源社区建立联系的绝佳机会。",
+          "description": "European Summer of Code 是面向欧洲学生和应届毕业生的项目，旨在为他们提供参与开源项目的机会。",
+          "overview": "KubeStellar 很高兴为 ESoC 参与者提供导师支持，提供具有挑战性的项目和专注的指导，帮助他们成长为优秀的开发者。",
+          "eligibility": "面向居住在欧洲的学生和应届毕业生开放。详细资格要求请查看 ESoC 官方网站。",
+          "timeline": "该项目通常在夏季进行，具体时间和截止日期请参考 ESoC 官方网站。",
+          "structure": "参与者将在 KubeStellar 导师的指导下，围绕预定义项目开展工作，并定期进行沟通和反馈。",
+          "howToApply": "申请需通过 European Summer of Code 官方门户提交。",
           "resources": [
-            {
-              "name": "Official ESoC Website (Link not available)"
-            },
-            {
-              "name": "KubeStellar GitHub"
-            }
+            { "name": "ESoC 官方网站（暂无链接）" },
+            { "name": "KubeStellar GitHub" }
           ]
         }
       },
       "ifos": {
         "name": "IFoS",
         "fullName": "Interns for Open Source",
-        "description": "Kickstart your open source journey with KubeStellar",
+        "description": "与 KubeStellar 一起开启你的开源之旅",
         "sections": {
-          "benefits": "While this is an unpaid program, successful graduates receive a certificate of completion, a letter of recommendation, and are given priority consideration for any future paid mentorship programs like GSoC or LFX.",
-          "description": "Interns for Open Source (IFoS) is a unique, unpaid internship program created by KubeStellar. It is designed for individuals who are passionate about open source and want to gain hands-on experience with a cutting-edge project.",
-          "overview": "This 3-month program provides a direct pathway into the KubeStellar community. Participants work on meaningful projects and are mentored by our core developers.",
-          "eligibility": "We welcome applications from anyone with a strong interest in Kubernetes, multi-cluster orchestration, and open source. Basic knowledge of Go and container technologies is a plus.",
-          "timeline": "IFoS is a rolling program. Applications are accepted year-round, and internships start based on project availability and applicant schedules.",
-          "structure": "Interns are paired with a mentor and integrated into one of our development teams. The program is flexible, allowing for part-time or full-time commitment.",
-          "howToApply": "To apply, please send your resume and a brief statement of interest to our community email. We also encourage you to start contributing to our GitHub repository.",
+          "benefits": "虽然这是一个无薪项目，但成功完成的参与者将获得结业证书和推荐信，并在未来的付费导师项目（如 GSoC 或 LFX）中获得优先考虑。",
+          "description": "Interns for Open Source（IFoS）是 KubeStellar 推出的独特无薪实习项目，面向热爱开源并希望在前沿项目中获得实践经验的人士。",
+          "overview": "该为期 3 个月的项目为加入 KubeStellar 社区提供了直接通道。参与者将在核心开发者的指导下参与有意义的项目。",
+          "eligibility": "欢迎对 Kubernetes、多集群编排和开源充满热情的申请者。具备 Go 语言和容器技术基础者优先。",
+          "timeline": "IFoS 为滚动项目，全年接受申请，实习开始时间将根据项目可用性和申请者时间安排确定。",
+          "structure": "实习生将与导师结对，并融入开发团队。项目形式灵活，可选择兼职或全职参与。",
+          "howToApply": "请将简历和简要的兴趣说明发送至我们的社区邮箱。同时我们也鼓励你提前为 GitHub 仓库做出贡献。",
           "resources": [
-            {
-              "name": "KubeStellar GitHub"
-            },
-            {
-              "name": "KubeStellar Community Page"
-            }
+            { "name": "KubeStellar GitHub" },
+            { "name": "KubeStellar 社区页面" }
           ]
         }
       },
       "lfx": {
         "name": "LFX",
         "fullName": "LFX Mentorship",
-        "description": "Accelerate your open source journey with Linux Foundation mentorship",
+        "description": "通过 Linux Foundation 的导师计划加速你的开源之路",
         "sections": {
-          "benefits": "Receive a stipend, gain hands-on experience with cutting-edge technology, build your professional network, and enhance your resume.",
-          "description": "The LFX Mentorship program, run by the Linux Foundation, provides a structured, remote learning opportunity for aspiring open source contributors. Mentees get to work on real-world projects with experienced mentors.",
-          "overview": "KubeStellar is proud to be a part of the LFX Mentorship program. We offer projects that are critical to our roadmap, giving mentees a chance to make a significant impact.",
-          "eligibility": "The program is open to developers from all backgrounds. Specific requirements may vary by project. Check the LFX Mentorship platform for details on eligibility.",
-          "timeline": "LFX Mentorship runs in terms, typically Spring, Summer, and Fall. Each term is about 12 weeks long.",
-          "structure": "Mentees work one-on-one with a mentor from KubeStellar, contributing to the project and participating in the community.",
-          "howToApply": "Applications are submitted through the LFX Mentorship platform. Browse for KubeStellar projects and apply.",
+          "benefits": "获得津贴、积累前沿技术的实践经验、拓展职业人脉，并提升你的简历竞争力。",
+          "description": "LFX Mentorship 是由 Linux Foundation 运营的结构化远程学习项目，为有志于参与开源的开发者提供真实项目实践机会。",
+          "overview": "KubeStellar 很荣幸参与 LFX Mentorship 项目。我们提供对产品路线图至关重要的项目，让参与者产生实质性影响。",
+          "eligibility": "该项目面向不同背景的开发者开放，具体要求因项目而异。请查看 LFX Mentorship 平台了解详情。",
+          "timeline": "LFX Mentorship 通常在春季、夏季和秋季开展，每期约为 12 周。",
+          "structure": "学员将与 KubeStellar 导师一对一合作，在贡献代码的同时积极参与社区活动。",
+          "howToApply": "申请需通过 LFX Mentorship 平台提交，浏览并申请 KubeStellar 相关项目。",
           "resources": [
-            {
-              "name": "LFX Mentorship Platform"
-            },
-            {
-              "name": "KubeStellar GitHub"
-            }
+            { "name": "LFX Mentorship 平台" },
+            { "name": "KubeStellar GitHub" }
           ]
         }
       }
