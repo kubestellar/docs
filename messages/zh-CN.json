@@ -697,85 +697,85 @@
     }
   },
   "partnersPage": {
-    "title": "Our",
-    "titleSpan": "Partners",
-    "subtitle": "Collaborating with leading open source projects to enhance multi-cluster Kubernetes orchestration",
-    "learnMore": "Learn More",
+    "title": "我们的",
+    "titleSpan": "合作伙伴",
+    "subtitle": "与领先的开源项目协作，共同增强多集群 Kubernetes 编排能力",
+    "learnMore": "了解更多",
     "partners": {
       "argocd": {
-        "description": "Declarative GitOps continuous delivery tool for Kubernetes that automates application deployment and lifecycle management."
+        "description": "面向 Kubernetes 的声明式 GitOps 持续交付工具，可自动化应用部署与生命周期管理。"
       },
       "fluxcd": {
-        "description": "Progressive delivery tool for Kubernetes that enables automated deployments from Git repositories with powerful GitOps capabilities."
+        "description": "支持渐进式交付的 Kubernetes 工具，通过强大的 GitOps 能力实现基于 Git 仓库的自动化部署。"
       },
       "kyverno": {
-        "description": "Kubernetes-native policy management solution that validates, mutates, and generates configurations using declarative policies."
+        "description": "Kubernetes 原生策略管理解决方案，使用声明式策略对配置进行验证、变更和生成。"
       },
       "mvi": {
-        "description": "Multi-cluster visibility and insights platform providing comprehensive monitoring and analytics across distributed Kubernetes environments."
+        "description": "多集群可视化与洞察平台，为分布式 Kubernetes 环境提供全面的监控与分析能力。"
       },
       "openziti": {
-        "description": "Zero trust network overlay and edge application platform providing secure connectivity for distributed applications."
+        "description": "零信任网络覆盖与边缘应用平台，为分布式应用提供安全的连接能力。"
       },
       "turbonomic": {
-        "description": "Application resource management platform that ensures application performance while optimizing infrastructure costs through AI-driven automation."
+        "description": "通过 AI 驱动的自动化，在保障应用性能的同时优化基础设施成本的应用资源管理平台。"
       }
     },
     "whyPartner": {
-      "title": "Why Partner With Us",
-      "subtitle": "Join our ecosystem of innovative partners to shape the future of multi-cluster Kubernetes management",
+      "title": "为什么与我们合作",
+      "subtitle": "加入我们的创新合作伙伴生态，共同塑造多集群 Kubernetes 管理的未来",
       "benefits": [
         {
-          "title": "Innovation",
-          "description": "Collaborate on cutting-edge multi-cluster orchestration solutions"
+          "title": "创新",
+          "description": "协作开发前沿的多集群编排解决方案"
         },
         {
-          "title": "Community",
-          "description": "Connect with a vibrant ecosystem of cloud-native developers and organizations"
+          "title": "社区",
+          "description": "与充满活力的云原生开发者和组织生态建立联系"
         },
         {
-          "title": "Excellence",
-          "description": "Drive industry standards and best practices in Kubernetes orchestration"
+          "title": "卓越",
+          "description": "推动 Kubernetes 编排领域的行业标准与最佳实践"
         }
       ]
     },
     "partnershipOpportunities": {
-      "title": "Become a Partner",
-      "subtitle": "Join forces with KubeStellar to drive innovation in multi-cluster Kubernetes orchestration and expand your reach in the cloud-native ecosystem.",
-      "description": "Our partnership program is designed to foster collaboration with technology providers, cloud platforms, and service integrators who share our vision of simplifying multi-cluster Kubernetes management. Together, we can deliver comprehensive solutions that empower enterprises to manage their distributed workloads seamlessly.",
+      "title": "成为合作伙伴",
+      "subtitle": "与 KubeStellar 携手推动多集群 Kubernetes 编排创新，并在云原生生态中扩大影响力。",
+      "description": "我们的合作伙伴计划旨在促进与技术提供商、云平台以及服务集成商之间的协作，这些伙伴与我们拥有简化多集群 Kubernetes 管理的共同愿景。通过合作，我们能够为企业提供无缝管理分布式工作负载的完整解决方案。",
       "features": [
-        "Technical integration support and engineering resources",
-        "Joint go-to-market initiatives and co-marketing opportunities",
-        "Access to our growing community of cloud-native practitioners",
-        "Featured placement on our partners page and documentation",
-        "Collaborative product development and roadmap input",
-        "Priority support and dedicated partnership manager"
+        "技术集成支持与工程资源",
+        "联合市场推广与协同营销机会",
+        "访问不断壮大的云原生实践者社区",
+        "在合作伙伴页面和文档中的重点展示",
+        "协同产品开发与路线图共建",
+        "优先支持与专属合作伙伴负责人"
       ],
-      "contactButton": "Get in Touch"
+      "contactButton": "联系我们"
     }
   },
   "comingSoonPage": {
-    "title": "Coming",
-    "titleSpan": "Soon",
-    "subtitle": "We're working on something amazing for the KubeStellar community",
-    "description": "This exciting new feature is currently under development. Our team is crafting an exceptional experience that will enhance your multi-cluster Kubernetes orchestration journey.",
-    "statusBadge": "Under Development",
+    "title": "即将",
+    "titleSpan": "上线",
+    "subtitle": "我们正在为 KubeStellar 社区打造令人惊喜的新功能",
+    "description": "这一激动人心的新功能目前正在开发中。我们的团队正在精心打磨卓越的使用体验，以进一步增强您的多集群 Kubernetes 编排之旅。",
+    "statusBadge": "开发中",
     "cta": {
-      "title": "Explore KubeStellar Now",
-      "subtitle": "While you wait, discover what KubeStellar can do for you today",
-      "documentsButton": "View Documentation",
-      "documentsDescription": "Comprehensive guides and API references",
-      "documentsAction": "Explore Docs",
-      "quickStartButton": "Quick Start Guide",
-      "quickStartDescription": "Get up and running in minutes",
-      "quickStartAction": "Start Installing",
-      "communityButton": "Join Community",
-      "communityDescription": "Connect with developers and contributors",
-      "communityAction": "Join GitHub",
-      "handbookButton": "Handbook",
-      "ladderButton": "Ladder",
-      "programsButton": "Programs",
-      "partnersButton": "Partners"
+      "title": "立即探索 KubeStellar",
+      "subtitle": "在等待的同时，先来了解 KubeStellar 现在能为您做些什么",
+      "documentsButton": "查看文档",
+      "documentsDescription": "全面的指南和 API 参考",
+      "documentsAction": "浏览文档",
+      "quickStartButton": "快速入门指南",
+      "quickStartDescription": "几分钟内即可完成部署",
+      "quickStartAction": "开始安装",
+      "communityButton": "加入社区",
+      "communityDescription": "与开发者和贡献者建立联系",
+      "communityAction": "加入 GitHub",
+      "handbookButton": "手册",
+      "ladderButton": "成长阶梯",
+      "programsButton": "项目计划",
+      "partnersButton": "合作伙伴"
     }
   },
   "marketplace": {
