@@ -228,88 +228,87 @@
     "step5Command2Comment": "# 查看工作负载分布情况",
     "step5Command3Comment": "# 监控资源使用情况"
   },
-
   "useCasesSection": {
-    "title": "Use",
-    "titleSpan": "Cases",
-    "subtitle": "Discover how organizations leverage KubeStellar for their multi-cluster needs.",
-    "learnMore": "Learn more",
+    "title": "使用",
+    "titleSpan": "场景",
+    "subtitle": "了解各类组织如何利用 KubeStellar 满足其多集群管理需求。",
+    "learnMore": "了解更多",
     "cases": {
       "edge": {
-        "title": "Edge Computing",
-        "description": "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
+        "title": "边缘计算",
+        "description": "通过集中式管理在多个边缘位置部署应用，非常适合基础设施分布式的零售、制造和电信行业。",
         "backContent": {
-          "title": "Declarative Multi-Cluster Workload Management",
-          "description": "Deploy and manage Kubernetes workloads across multiple clusters using native Kubernetes objects without wrapping or bundling.",
+          "title": "声明式多集群工作负载管理",
+          "description": "使用原生 Kubernetes 对象，在不进行封装或打包的情况下，在多个集群之间部署和管理工作负载。",
           "features": [
-            "Deploy native Kubernetes objects across clusters",
-            "Use label-based cluster selection for workload targeting",
-            "Centralized management through Workload Definition Spaces (WDS)"
+            "在多个集群中部署原生 Kubernetes 对象",
+            "基于标签的集群选择实现工作负载调度",
+            "通过工作负载定义空间（WDS）进行集中管理"
           ]
         }
       },
       "compliance": {
-        "title": "Multi-Region Compliance",
-        "description": "Deploy applications with specific regional compliance requirements. Ensure data residency and regulatory compliance across global operations.",
+        "title": "多区域合规",
+        "description": "部署满足特定区域合规要求的应用，确保全球运营中的数据驻留和法规合规性。",
         "backContent": {
-          "title": "Custom Resource Distribution",
-          "description": "Distribute and manage custom resources (CRDs) across multiple clusters while maintaining proper synchronization and lifecycle management.",
+          "title": "自定义资源分发",
+          "description": "在多个集群之间分发和管理自定义资源（CRD），同时保持正确的同步和生命周期管理。",
           "features": [
-            "Support for out-of-tree workload types",
-            "Automatic CRD synchronization",
-            "Flexible RBAC configuration"
+            "支持外部（out-of-tree）工作负载类型",
+            "自动同步 CRD",
+            "灵活的 RBAC 配置"
           ]
         }
       },
       "hybrid": {
-        "title": "Hybrid/Multi-Cloud",
-        "description": "Seamlessly manage workloads across multiple cloud providers and on-premises infrastructure with unified policies and consistent experience.",
+        "title": "混合 / 多云",
+        "description": "通过统一的策略和一致的操作体验，无缝管理多个云提供商和本地基础设施上的工作负载。",
         "backContent": {
-          "title": "Resilient Multi-Cluster Operations",
-          "description": "Maintain reliable workload distribution and management even during control plane disruptions or network issues.",
+          "title": "高可靠性的多集群运行",
+          "description": "即使在控制平面中断或网络出现问题时，也能保持可靠的工作负载分发和管理。",
           "features": [
-            "Resilient architecture with multiple spaces",
-            "Automatic recovery after disruptions",
-            "State reconciliation across clusters"
+            "基于多空间的高可用架构",
+            "故障后的自动恢复能力",
+            "跨集群的状态一致性校验"
           ]
         }
       },
       "dr": {
-        "title": "Disaster Recovery",
-        "description": "Implement robust disaster recovery strategies with automatic workload replication and failover across multiple clusters in different regions.",
+        "title": "灾难恢复",
+        "description": "通过在不同区域的多个集群之间自动复制和故障切换，实现可靠的灾难恢复策略。",
         "backContent": {
-          "title": "Advanced Status Management",
-          "description": "Monitor and manage workload status across multiple clusters with options for both individual and aggregated status reporting.",
+          "title": "高级状态管理",
+          "description": "支持对多个集群中的工作负载状态进行监控和管理，可使用单集群或聚合状态视图。",
           "features": [
-            "Singleton status reporting for individual cluster monitoring",
-            "Combined status aggregation across clusters",
-            "Real-time status updates through OCM Status Add-On"
+            "用于单个集群监控的独立状态报告",
+            "跨集群的聚合状态展示",
+            "通过 OCM Status Add-On 实现实时状态更新"
           ]
         }
       },
       "multitenant": {
-        "title": "Multi-Tenant Isolation",
-        "description": "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
+        "title": "多租户隔离",
+        "description": "在保持集中控制的同时，为不同团队或客户创建相互隔离的环境，非常适合 SaaS 提供商和大型企业。",
         "backContent": {
-          "title": "Helm Chart Distribution",
-          "description": "Deploy and manage Helm charts across multiple clusters while maintaining chart metadata and release information.",
+          "title": "Helm Chart 分发",
+          "description": "在多个集群中部署和管理 Helm Chart，同时保留 Chart 元数据和发布信息。",
           "features": [
-            "Native Helm chart support",
-            "Consistent release management across clusters",
-            "Label-based chart distribution"
+            "原生支持 Helm Chart",
+            "跨集群一致的发布管理",
+            "基于标签的 Chart 分发"
           ]
         }
       },
       "performance": {
-        "title": "Performance Optimization",
-        "description": "Deploy workloads closest to users or data sources for optimal performance, reducing latency and improving user experience across global operations.",
+        "title": "性能优化",
+        "description": "将工作负载部署到最接近用户或数据源的位置，以降低延迟并提升全球用户体验。",
         "backContent": {
-          "title": "Template-Based Customization",
-          "description": "Customize workload configurations for different clusters while maintaining a single source of truth.",
+          "title": "基于模板的定制能力",
+          "description": "在保持单一可信数据源的同时，为不同集群定制工作负载配置。",
           "features": [
-            "Support for template expansion",
-            "Cluster-specific customization",
-            "Property-based configuration"
+            "支持模板展开",
+            "集群级别的定制配置",
+            "基于属性的配置方式"
           ]
         }
       }
