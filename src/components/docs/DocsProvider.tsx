@@ -9,6 +9,9 @@ interface DocsContextType {
   sidebarCollapsed: boolean
   setSidebarCollapsed: (collapsed: boolean) => void
   toggleSidebar: () => void
+  bannerDismissed: boolean
+  setBannerDismissed: (dismissed: boolean) => void
+  dismissBanner: () => void
 }
 
 const DocsContext = createContext<DocsContextType | undefined>(undefined)
@@ -16,9 +19,11 @@ const DocsContext = createContext<DocsContextType | undefined>(undefined)
 export function DocsProvider({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+  const [bannerDismissed, setBannerDismissed] = useState(false)
 
   const toggleMenu = () => setMenuOpen((prev) => !prev)
   const toggleSidebar = () => setSidebarCollapsed((prev) => !prev)
+  const dismissBanner = () => setBannerDismissed(true)
 
   return (
     <DocsContext.Provider value={{ 
@@ -27,7 +32,10 @@ export function DocsProvider({ children }: { children: ReactNode }) {
       toggleMenu,
       sidebarCollapsed,
       setSidebarCollapsed,
-      toggleSidebar
+      toggleSidebar,
+      bannerDismissed,
+      setBannerDismissed,
+      dismissBanner
     }}>
       {children}
     </DocsContext.Provider>
