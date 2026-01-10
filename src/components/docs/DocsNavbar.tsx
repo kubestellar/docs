@@ -7,14 +7,12 @@ import { useTheme } from "next-themes";
 // import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { VERSIONS } from '@/config/versions'
 import { getLocalizedUrl } from "@/lib/url";
-import { useDocsMenu } from './DocsProvider'
 
 type DropdownType = "contribute" | "community" | "language" | "github" | null;
 
 export default function DocsNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<DropdownType>(null);
-  const { toggleMenu } = useDocsMenu();
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchResults, setSearchResults] = useState<Array<{

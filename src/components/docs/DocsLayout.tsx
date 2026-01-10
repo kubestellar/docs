@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import { DocsSidebar } from './DocsSidebar';
 import { TableOfContents } from './TableOfContents';
 import { MobileTOC } from './MobileTOC';
-import { MobileHeader } from './MobileHeader';
+import { MobileHeader } from './MobileSidebarToggle';
 import { useDocsMenu } from './DocsProvider';
 
 interface TOCItem {
