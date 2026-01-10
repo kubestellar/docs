@@ -3,14 +3,36 @@
 import { ReactNode } from 'react';
 import { DocsSidebar } from './DocsSidebar';
 import { TableOfContents } from './TableOfContents';
-import { ThemeToggle } from './ThemeToggle';
+import { MobileTOC } from './MobileTOC';
+import { MobileHeader } from './MobileHeader';
 import { useDocsMenu } from './DocsProvider';
+
+interface TOCItem {
+  id: string;
+  value: string;
+  depth: number;
+}
+
+interface PageMapItem {
+  name: string;
+  route?: string;
+  title?: string;
+  children?: PageMapItem[];
+  frontMatter?: Record<string, unknown>;
+  kind?: string;
+}
+
+interface Metadata {
+  title?: string;
+  description?: string;
+  [key: string]: unknown;
+}
 
 interface DocsLayoutProps {
   children: ReactNode;
-  pageMap: any[];
-  toc?: any[];
-  metadata?: any;
+  pageMap: PageMapItem[];
+  toc?: TOCItem[];
+  metadata?: Metadata;
 }
 
 export function DocsLayout({ children, pageMap, toc, metadata }: DocsLayoutProps) {
@@ -32,6 +54,15 @@ export function DocsLayout({ children, pageMap, toc, metadata }: DocsLayoutProps
       {/* Main content area */}
       <main className="flex-1 min-w-0 lg:ml-0">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Mobile Header with Sidebar Toggle - Only visible on mobile/tablet */}
+          <MobileHeader 
+            onToggleSidebar={toggleMenu}
+            pageTitle={metadata?.title}
+          />
+          
+          {/* Mobile TOC Accordion - Only visible on mobile/tablet */}
+          <MobileTOC toc={toc} />
+          
           {/* Article content */}
           <article className="prose prose-slate dark:prose-invert max-w-none">
             {children}
