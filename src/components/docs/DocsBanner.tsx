@@ -4,21 +4,18 @@ import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
 import { getLocalizedUrl } from '@/lib/url'
+import { useDocsMenu } from './DocsProvider'
 
 export function DocsBanner() {
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
-  const [dismissed, setDismissed] = useState(false)
+  const { bannerDismissed, dismissBanner } = useDocsMenu()
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  const handleDismiss = () => {
-    setDismissed(true)
-  }
-
-  if (!mounted || dismissed) {
+  if (!mounted || bannerDismissed) {
     return null
   }
 
@@ -46,7 +43,7 @@ export function DocsBanner() {
             </span>
           </div>
           <button
-            onClick={handleDismiss}
+            onClick={dismissBanner}
             className={`shrink-0 ml-3 p-1 rounded-md hover:bg-opacity-20 ${
               isDark ? 'hover:bg-gray-700' : 'hover:bg-gray-200'
             } focus:outline-none focus:ring-2 focus:ring-blue-500`}
