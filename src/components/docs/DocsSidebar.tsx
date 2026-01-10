@@ -296,7 +296,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
       </div>
       
       {/* Footer at bottom */}
-      <SidebarFooter onCollapse={toggleSidebar} />
+      <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
     </>
   );
 
@@ -317,12 +317,12 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     <aside
       ref={sidebarRef}
       className={`
-        fixed lg:sticky left-0 z-20
+        fixed lg:sticky left-0
         shadow-sm dark:shadow-none
         flex flex-col
         overflow-hidden
         transition-all duration-300 ease-in-out
-        ${menuOpen ? 'translate-x-0 w-60' : '-translate-x-full w-0 lg:translate-x-0'}
+        ${menuOpen ? 'translate-x-0 w-60 z-30' : '-translate-x-full w-0 lg:translate-x-0 z-20'}
         ${sidebarCollapsed ? 'lg:w-16' : 'lg:w-60'}
         ${className || ''}
       `}
@@ -331,6 +331,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         height: sidebarHeight,
         maxHeight: sidebarHeight,
         boxShadow: '0 1px 6px 0 rgba(0,0,0,0.07)',
+        backgroundColor: isDark ? '#000000' : '#ffffff',
         borderRight: isDark ? '1px solid #1f2937' : '1px solid #e5e7eb',
       }}
       suppressHydrationWarning

@@ -7,9 +7,10 @@ import { Moon, Sun, PanelRightOpenIcon, PanelLeftOpen } from 'lucide-react';
 interface SidebarFooterProps {
   onCollapse: () => void;
   variant?: 'full' | 'slim';
+  isMobile?: boolean;
 }
 
-export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterProps) {
+export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }: SidebarFooterProps) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -101,6 +102,7 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
       style={{
         borderTop: isDark ? '1px solid #1f2937' : '1px solid #e5e7eb',
         boxShadow: '0 -1px 6px 0 rgba(0,0,0,0.07)',
+        backgroundColor: isDark ? '#000000' : '#ffffff',
       }}
       suppressHydrationWarning
     >
@@ -129,19 +131,21 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
         <span>{isDark ? 'Dark' : 'Light'}</span>
       </button>
 
-      {/* Collapse Sidebar Button */}
-      <button
-        onClick={onCollapse}
-        className="transition-all cursor-pointer rounded-md p-2 hover:font-bold"
-        style={{ 
-          color: isDark ? '#f3f4f6' : '#111827',
-        }}
-        title="Collapse sidebar"
-        type="button"
-        suppressHydrationWarning
-      >
-        <PanelRightOpenIcon className="w-4 h-4" />
-      </button>
+      {/* Collapse Sidebar Button - Hidden on mobile */}
+      {!isMobile && (
+        <button
+          onClick={onCollapse}
+          className="transition-all cursor-pointer rounded-md p-2 hover:font-bold"
+          style={{ 
+            color: isDark ? '#f3f4f6' : '#111827',
+          }}
+          title="Collapse sidebar"
+          type="button"
+          suppressHydrationWarning
+        >
+          <PanelRightOpenIcon className="w-4 h-4" />
+        </button>
+      )}
     </div>
   );
 }
