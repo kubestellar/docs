@@ -28,7 +28,7 @@ type Props = {
 
 export default async function DocsLayout({ children }: Props) {
   // Build page map from local docs
-  const { pageMap } = buildPageMap()
+  buildPageMap();
   
   return (
     <html lang="en" suppressHydrationWarning>
