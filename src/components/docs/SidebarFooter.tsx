@@ -17,13 +17,13 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
     setMounted(true);
   }, []);
 
-  const isDark = resolvedTheme === 'dark';
+  const isDark = mounted && resolvedTheme === 'dark';
 
   // Slim variant - icon-only vertical layout
   if (variant === 'slim') {
     if (!mounted) {
       return (
-        <div className="shrink-0 border-t border-gray-200 dark:border-gray-700 flex flex-col items-center gap-2 py-4 min-w-16">
+        <div className="shrink-0 flex flex-col items-center gap-2 py-4 min-w-16">
           <div className="w-5 h-5" />
           <div className="w-5 h-5" />
         </div>
@@ -31,13 +31,22 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
     }
 
     return (
-      <div className="shrink-0 sticky border-t border-gray-200 dark:border-gray-700 flex flex-col items-center gap-2 py-4 min-w-16">
+      <div 
+        className="shrink-0 sticky flex flex-col items-center gap-2 py-4 min-w-16"
+        style={{
+          borderTop: isDark ? '1px solid #374151' : '1px solid #e5e7eb',
+        }}
+        suppressHydrationWarning
+      >
         {/* Theme Toggle Icon */}
         <button
           onClick={() => setTheme(isDark ? 'light' : 'dark')}
           title="Change theme"
           className="group p-2 rounded-md hover:font-bold transition-all"
-          style={{ color: 'var(--foreground)' }}
+          style={{ 
+            color: isDark ? '#f3f4f6' : '#111827',
+          }}
+          suppressHydrationWarning
         >
           <div className="relative w-5 h-5">
             <Moon 
@@ -58,7 +67,10 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
           onClick={onCollapse}
           title="Expand sidebar"
           className="p-2 rounded-md hover:font-bold transition-all"
-          style={{ color: 'var(--foreground)' }}
+          style={{ 
+            color: isDark ? '#f3f4f6' : '#111827',
+          }}
+          suppressHydrationWarning
         >
           <PanelLeftOpen className="w-5 h-5" />
         </button>
@@ -70,11 +82,13 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
   if (!mounted) {
     return (
       <div
-        className="shrink-0 sticky bottom-0 z-10 bg-white dark:bg-(--color-dark-bg) flex items-center gap-2 py-4 px-4"
+        className="shrink-0 flex items-center gap-2 py-4 px-4"
         style={{
-          borderTop: resolvedTheme === 'dark' ? '1px solid #222' : '1px solid #e5e7eb',
+          backgroundColor: '#ffffff',
+          borderTop: '1px solid #e5e7eb',
           boxShadow: '0 -1px 6px 0 rgba(0,0,0,0.07)',
         }}
+        suppressHydrationWarning
       >
         <div className="h-7 w-full" />
       </div>
@@ -83,18 +97,22 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
 
   return (
     <div
-      className="shrink-0 sticky bottom-0 z-10 bg-white dark:bg-(--color-dark-bg) flex items-center gap-2 py-4 px-4"
+      className="shrink-0 flex items-center gap-2 py-4 px-4"
       style={{
-        borderTop: resolvedTheme === 'dark' ? '1px solid #222' : '1px solid #e5e7eb',
+        borderTop: isDark ? '1px solid #1f2937' : '1px solid #e5e7eb',
         boxShadow: '0 -1px 6px 0 rgba(0,0,0,0.07)',
       }}
+      suppressHydrationWarning
     >
       {/* Theme Toggle Button */}
       <button
         onClick={() => setTheme(isDark ? 'light' : 'dark')}
         title="Change theme"
         className="group cursor-pointer h-7 rounded-md px-2 space-x-3 text-sm font-thin transition-all hover:font-bold flex items-center gap-2 flex-1"
-        style={{ color: 'var(--foreground)' }}
+        style={{ 
+          color: isDark ? '#f3f4f6' : '#111827',
+        }}
+        suppressHydrationWarning
       >
         <div className="relative w-5 h-5">
           <Moon 
@@ -115,9 +133,12 @@ export function SidebarFooter({ onCollapse, variant = 'full' }: SidebarFooterPro
       <button
         onClick={onCollapse}
         className="transition-all cursor-pointer rounded-md p-2 hover:font-bold"
-        style={{ color: 'var(--foreground)' }}
+        style={{ 
+          color: isDark ? '#f3f4f6' : '#111827',
+        }}
         title="Collapse sidebar"
         type="button"
+        suppressHydrationWarning
       >
         <PanelRightOpenIcon className="w-4 h-4" />
       </button>

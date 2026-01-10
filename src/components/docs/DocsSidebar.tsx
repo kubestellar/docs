@@ -13,7 +13,7 @@ interface MenuItem {
   route?: string;
   title?: string;
   children?: MenuItem[];
-  frontMatter?: any;
+  frontMatter?: Record<string, unknown>;
   kind?: string;
 }
 
@@ -26,46 +26,58 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
-  const { sidebarCollapsed, toggleSidebar, menuOpen } = useDocsMenu();
+  const { sidebarCollapsed, toggleSidebar, menuOpen, bannerDismissed } = useDocsMenu();
   const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [availableHeight, setAvailableHeight] = useState<string>('auto');
+  const [topOffset, setTopOffset] = useState('4rem');
   const [sidebarHeight, setSidebarHeight] = useState('calc(100vh - 4rem)');
 
-  // Calculate dynamic sidebar height based on actual top position (for banner)
   useEffect(() => {
-    const calculateSidebarHeight = () => {
-      if (sidebarRef.current) {
-        const rect = sidebarRef.current.getBoundingClientRect();
-        const topPosition = rect.top;
-        const viewportHeight = window.innerHeight;
+    setMounted(true);
+  }, []);
+
+  // Calculate dynamic top offset and height based on banner presence
+  useEffect(() => {
+    const calculateOffsets = () => {
+      // Get the navbar element
+      const navbar = document.querySelector('.nextra-nav-container');
+      
+      if (navbar) {
+        // Get the actual bottom position of the navbar (which includes banner if present)
+        const navbarRect = navbar.getBoundingClientRect();
+        const navbarBottom = navbarRect.bottom;
         
-        // Calculate available height, but cap it at viewport minus navbar (64px)
-        const maxAllowedHeight = viewportHeight - 64; // 64px = 4rem navbar height
-        const calculatedHeight = Math.min(viewportHeight - topPosition, maxAllowedHeight);
-        
-        // Ensure minimum height
-        const finalHeight = Math.max(calculatedHeight, 0);
-        
-        setSidebarHeight(`${finalHeight}px`);
+        // The sidebar should start where the navbar ends
+        setTopOffset(`${navbarBottom}px`);
+        setSidebarHeight(`calc(100vh - ${navbarBottom}px)`);
+      } else {
+        // Fallback if navbar not found
+        setTopOffset('4rem');
+        setSidebarHeight('calc(100vh - 4rem)');
       }
     };
 
-    calculateSidebarHeight();
+    calculateOffsets();
     
-    // Recalculate on scroll (for when banner appears/disappears)
-    window.addEventListener('scroll', calculateSidebarHeight);
-    window.addEventListener('resize', calculateSidebarHeight);
+    // Recalculate on window resize, scroll (for sticky navbar), and banner changes
+    window.addEventListener('resize', calculateOffsets);
+    window.addEventListener('scroll', calculateOffsets);
     
-    // Initial delay to ensure DOM is fully loaded
-    const timer = setTimeout(calculateSidebarHeight, 100);
+    // Also recalculate after a short delay to ensure DOM is ready
+    const timer = setTimeout(calculateOffsets, 100);
+    
+    // Recalculate periodically to catch any changes
+    const interval = setInterval(calculateOffsets, 500);
     
     return () => {
-      window.removeEventListener('scroll', calculateSidebarHeight);
-      window.removeEventListener('resize', calculateSidebarHeight);
+      window.removeEventListener('resize', calculateOffsets);
+      window.removeEventListener('scroll', calculateOffsets);
       clearTimeout(timer);
+      clearInterval(interval);
     };
-  }, []);
+  }, [bannerDismissed]);
 
   // Calculate available height for navigation, accounting for footer and viewport changes
   useEffect(() => {
@@ -299,27 +311,29 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     </div>
   );
 
+  const isDark = mounted && resolvedTheme === 'dark';
+
   return (
     <aside
       ref={sidebarRef}
       className={`
-        fixed lg:sticky top-16 left-0 z-30
-        bg-white dark:bg-[var(--background)]
+        fixed lg:sticky left-0 z-20
         shadow-sm dark:shadow-none
         flex flex-col
         overflow-hidden
         transition-all duration-300 ease-in-out
-        max-h-[calc(100vh-4rem)]
         ${menuOpen ? 'translate-x-0 w-60' : '-translate-x-full w-0 lg:translate-x-0'}
         ${sidebarCollapsed ? 'lg:w-16' : 'lg:w-60'}
         ${className || ''}
       `}
       style={{
+        top: topOffset,
         height: sidebarHeight,
-        maxHeight: 'calc(100vh - 4rem)',
+        maxHeight: sidebarHeight,
         boxShadow: '0 1px 6px 0 rgba(0,0,0,0.07)',
-        borderRight: resolvedTheme === 'dark' ? '1px solid #222' : '1px solid #e5e7eb',
+        borderRight: isDark ? '1px solid #1f2937' : '1px solid #e5e7eb',
       }}
+      suppressHydrationWarning
     >
       {/* Full Sidebar Content */}
       <div className={`
