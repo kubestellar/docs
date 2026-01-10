@@ -18,6 +18,17 @@ function TOCLink({ item, isDark, onClose }: { item: TOCItem; isDark: boolean; on
   const [isHovered, setIsHovered] = useState(false);
   const indent = (item.depth - 2) * 16;
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById(item.id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Update URL without jumping
+      window.history.pushState(null, '', `#${item.id}`);
+    }
+    onClose();
+  };
+
   return (
     <Link
       href={`#${item.id}`}
@@ -31,7 +42,7 @@ function TOCLink({ item, isDark, onClose }: { item: TOCItem; isDark: boolean; on
           ? (isDark ? '#f3f4f6' : '#111827')
           : '#6b7280',
       }}
-      onClick={onClose}
+      onClick={handleClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       suppressHydrationWarning
