@@ -31,7 +31,7 @@ export function DocsLayout({ children, pageMap, toc, metadata }: DocsLayoutProps
 
       {/* Main content area */}
       <main className="flex-1 min-w-0 lg:ml-0">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Article content */}
           <article className="prose prose-slate dark:prose-invert max-w-none">
             {children}
@@ -40,11 +40,7 @@ export function DocsLayout({ children, pageMap, toc, metadata }: DocsLayoutProps
       </main>
 
       {/* Table of Contents - Right sidebar on desktop */}
-      {toc && toc.length > 0 && (
-        <aside className="hidden xl:block w-64 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto border-l border-gray-200 dark:border-gray-800">
-          <TableOfContents toc={toc} />
-        </aside>
-      )}
+      <TableOfContents toc={toc} />
     </div>
   );
 }
