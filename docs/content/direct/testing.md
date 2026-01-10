@@ -40,19 +40,19 @@ See `test/e2e/` in the GitHub repository. It has a README.
 
 ## Security scanning in CI
 
-KubeStellar aims to use automated security scanning workflows as part of its CI pipeline to improve supply-chain security and provide early visibility into potential vulnerabilities.
+KubeStellar uses automated security scanning workflows as part of its CI pipeline to improve supply-chain security and provide early visibility into potential vulnerabilities.
 
 ### OpenSSF Scorecard
-
-An OpenSSF Scorecard workflow can be used to evaluate the repository against a set of security best practices (such as branch protection, dependency management, and CI configuration).  
-When enabled (for example via a GitHub Actions workflow under `.github/workflows`), it typically runs on a schedule and/or on changes to the main branch and publishes its results to the GitHub **Security** tab.
+The OpenSSF Scorecard workflow evaluates the repository against a set of security best practices (such as branch protection, dependency management, and CI configuration).
+This workflow runs on a schedule and on changes to the main branch, and publishes its results to the GitHub **Security** tab.
 
 ### Trivy image scanning
 
-KubeStellar can also be integrated with Trivy to scan container images built in CI for known vulnerabilities (CVEs).  
-A Trivy-based workflow generally reports **CRITICAL** and **HIGH** severity findings and can upload results in SARIF format, making them visible in the GitHub **Security** tab.
+KubeStellar also uses Trivy to scan container images built in CI for known vulnerabilities (CVEs).  
+The scan reports **CRITICAL** and **HIGH** severity findings and uploads results in SARIF format, making them visible in the GitHub **Security** tab.
 
-If these workflows are configured in your clone of the repository, they are part of the CI infrastructure only and do not affect the runtime behavior of KubeStellar deployments.
+These workflows are part of the project’s CI infrastructure and do not affect the runtime behavior of KubeStellar deployments.
+
 
 ## Testing releases
 
