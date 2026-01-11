@@ -41,3 +41,32 @@ See `test/e2e/` in the GitHub repository. It has a README.
 ## Testing releases
 
 See [the release testing doc](release-testing.md).
+
+## CI security scanning
+
+KubeStellar uses automated security scanning workflows as part of its
+continuous integration (CI) pipeline to improve supply-chain security
+and provide early visibility into potential vulnerabilities.
+
+### OpenSSF Scorecard
+
+An OpenSSF Scorecard workflow is used to evaluate the repository against
+a set of security best practices, such as branch protection, dependency
+management, and CI configuration.
+
+When enabled, this workflow typically runs on a schedule and/or on
+changes to the main branch. The results are published to the GitHub
+**Security** tab.
+
+### Trivy image scanning
+
+KubeStellar also uses Trivy to scan container images built in CI for
+known vulnerabilities (CVEs).
+
+A Trivy-based workflow reports **CRITICAL** and **HIGH** severity
+findings and uploads results in SARIF format, making them visible in the
+GitHub **Security** tab.
+
+These security scanning workflows are part of the project’s CI
+infrastructure only and do not affect the runtime behavior of
+KubeStellar deployments.
