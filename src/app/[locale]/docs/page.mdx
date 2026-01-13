@@ -1,0 +1,104 @@
+# Bienvenido a la Documentación de KubeStellar
+
+KubeStellar simplifica la gestión de Kubernetes multi-cluster, permitiéndote desplegar y gestionar cargas de trabajo en múltiples clusters con facilidad.
+
+## Elige Tu Ruta de Instalación
+
+Selecciona la ruta de instalación que mejor se adapte a tus necesidades:
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', margin: '2rem 0' }}>
+  <div style={{ border: '2px solid #3b82f6', borderRadius: '12px', padding: '1.5rem', background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.05))' }}>
+    <h3 style={{ marginTop: 0, color: '#3b82f6', fontSize: '1.25rem' }}>🚀 Desarrollo Local</h3>
+    <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>Para pruebas, aprendizaje y desarrollo</p>
+    <ul style={{ fontSize: '0.85rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+      <li>✓ Gratuito</li>
+      <li>✓ Configuración rápida (10-15 minutos)</li>
+      <li>✓ Requisitos: Docker, Kind</li>
+      <li>✓ Kubernetes 1.34+</li>
+    </ul>
+    <a href="/es/quick-installation" style={{ display: 'inline-block', padding: '0.5rem 1rem', background: '#3b82f6', color: 'white', borderRadius: '6px', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Iniciar Instalación Local →</a>
+  </div>
+
+  <div style={{ border: '2px solid #f59e0b', borderRadius: '12px', padding: '1.5rem', background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(251, 146, 60, 0.05))' }}>
+    <h3 style={{ marginTop: 0, color: '#f59e0b', fontSize: '1.25rem' }}>☁️ AWS EKS Cloud</h3>
+    <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>Para despliegues de producción y empresariales</p>
+    <ul style={{ fontSize: '0.85rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+      <li>✓ Listo para producción en EKS 1.34</li>
+      <li>✓ Tiempo de configuración (20-30 minutos)</li>
+      <li>✓ Requisitos: Cuenta AWS, eksctl, kubectl, Helm, kflex, clusteradm</li>
+      <li>✓ Alta escalabilidad y disponibilidad</li>
+    </ul>
+    <a href="/docs/getting-started/aws-eks" style={{ display: 'inline-block', padding: '0.5rem 1rem', background: '#f59e0b', color: 'white', borderRadius: '6px', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Iniciar Instalación AWS →</a>
+  </div>
+</div>
+
+### Comparación Rápida
+
+| Característica         | Desarrollo Local     | AWS EKS Cloud                                                                             |
+| ---------------------- | -------------------- | ----------------------------------------------------------------------------------------- |
+| **Caso de Uso**        | Pruebas, Aprendizaje | Producción, Empresarial                                                                   |
+| **Prerequisitos**      | Docker, Kind         | Cuenta AWS (EC2, EKS, IAM, VPC, CloudFormation), eksctl, kubectl, Helm, kflex, clusteradm |
+| **Tiempo de Config.**  | 10-15 minutos        | 20-30 minutos                                                                             |
+| **Costo**              | Gratis               | Cargos de AWS aplican (~$300-400/mes)                                                     |
+| **Escalabilidad**      | Limitada (local)     | Alta (cloud-native)                                                                       |
+| **Versión Kubernetes** | 1.34+                | EKS 1.34                                                                                  |
+| **Región**             | N/A                  | us-east-1 recomendado                                                                     |
+| **Cuotas Mínimas**     | N/A                  | vCPU: 12, IPs Elásticas: 4, Grupos Destino: 5, NLBs: 2                                    |
+
+## Navegación Rápida
+
+### ¿Nuevo en KubeStellar?
+
+Comienza aquí para entender qué es KubeStellar y cómo funciona:
+
+- **[Bienvenida](docs/what-is-kubestellar/welcome)** - Comienza con KubeStellar
+- **[Descripción General](docs/what-is-kubestellar/readme)** - Aprende sobre la arquitectura y conceptos principales de KubeStellar
+- **[Arquitectura](docs/what-is-kubestellar/architecture)** - Comprende el diseño del sistema
+- **[Instalación Rápida](/es/quick-installation)** - Comienza a funcionar en minutos (Local)
+- **[Instalación AWS EKS](/docs/getting-started/aws-eks)** - Guía de producción para EKS (Cloud)
+
+### Instalar y Configurar
+
+¿Listo para configurar KubeStellar? Sigue nuestras guías de instalación:
+
+- **[Prerequisitos](docs/install-configure/pre-reqs)** - Verifica los requisitos del sistema
+- **[Configuración Principal](docs/install-configure/core-chart)** - Instala los componentes principales de KubeStellar
+- **[Cluster de Alojamiento KubeFlex](docs/install-configure/kubeflex-hosting-cluster)** - Configura tu entorno de alojamiento
+- **[Registrar Clusters de Trabajo](docs/install-configure/workload-execution-clusters)** - Conecta tus clusters de ejecución
+- **[Instalación AWS EKS](/docs/getting-started/aws-eks)** - Instala KubeStellar en AWS
+
+### Usar e Integrar
+
+Aprende a aprovechar las características de KubeStellar:
+
+- **[API de KubeStellar](docs/use-integrate/kubestellar-api)** - Controla la distribución y estado de cargas de trabajo
+- **[Escenarios de Ejemplo](docs/use-integrate/example-scenarios)** - Sigue ejemplos prácticos
+- **[Integraciones de Terceros](docs/use-integrate/third-party-integrations)** - Conecta con ArgoCD y otras herramientas
+
+### Guía de Usuario y Soporte
+
+Obtén ayuda y encuentra soluciones:
+
+- **[Guía de Usuario](docs/user-guide-support/user-guide-intro)** - Documentación completa de uso
+- **[Solución de Problemas](docs/user-guide-support/troubleshooting)** - Resuelve problemas comunes
+- **[Problemas Conocidos](docs/user-guide-support/known-issues)** - Limitaciones actuales y soluciones alternativas
+
+### UI y Herramientas
+
+Explora el ecosistema de KubeStellar:
+
+- **[Descripción General de UI](docs/ui-tools/ui-intro)** - Interfaz web y visualización
+- **[Plugins](docs/ui-tools/plugins)** - Extiende la funcionalidad
+- **[Galaxy Marketplace](docs/ui-tools/galaxy-marketplace)** - Descubre recursos de la comunidad
+
+## Comienza Ahora
+
+Elige tu camino:
+
+1. **Demo Rápida** - Ejecuta nuestro [script de configuración automatizado](/es/quick-installation) para crear un entorno de demostración en minutos
+2. **Paso a Paso** - Sigue la [guía de instalación detallada](docs/install-configure/kubeflex-hosting-cluster) para entender cada componente
+3. **Producción** - Revisa la [guía de despliegue completo](docs/user-guide-support/user-guide-intro) para configuraciones listas para producción
+
+---
+
+**¿Necesitas ayuda?** Revisa nuestra [guía de solución de problemas](docs/user-guide-support/troubleshooting) o explora los [problemas conocidos](docs/user-guide-support/known-issues).
