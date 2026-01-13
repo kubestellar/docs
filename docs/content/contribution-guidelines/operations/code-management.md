@@ -134,7 +134,10 @@ You can create a Pull Request from your Github web repository by selecting the "
 You will be presented with a Github web page titled Comparing Changes, which allows you to enter metadata regarding your pull request
 
 Reference the issue you are addressing ( add #issue-number)
-Add one of the listed emojis to the first character of the title of your new PR indicating the type of issue (bug fix, feature, etc)
+Add one of the listed emoji characters to the first character of the
+title of your new PR indicating the type of issue (bug fix, feature,
+etc). PR titles must use actual emoji characters (for example, 🐛, ✨,
+📖, 🚀, 🌱, ⚠) rather than hex-escaped sequences.
 Complete the summary description field
 Complete the Related issue field by inserting the issue number preceded by the # character, for example "#1187"
 Decide whether this is a draft PR or if it's ready for review, and select the option you want by expanding on the Create Pull Request button.
