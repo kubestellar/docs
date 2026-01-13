@@ -143,3 +143,19 @@ Assign a label to the PR from the available list of labels (a drop down list on 
 Kubestellar CI pipeline:
 
 Prow (https://docs.prow.k8s.io/docs/overview/)
+
+### Container builds for Galaxy components
+
+Galaxy components such as `shadow-pods` and `mc-scheduler` use Dockerfiles
+that reflect their actual Go source layout rather than template
+structures.
+
+- The `shadow-pods` Dockerfile copies the full `cmd/` and `internal/`
+  directories and builds the binary from `./cmd/shadow-pods`.
+- The `mc-scheduler` Dockerfile copies the full `cmd/`, `internal/`, and
+  `pkg/` directories and builds the binary from `./cmd/mc-scheduler`.
+
+This alignment with the real source tree prevents container build
+failures and ensures the Container Image Scanning workflow completes
+successfully for all components.
+
