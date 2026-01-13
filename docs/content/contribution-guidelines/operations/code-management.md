@@ -151,3 +151,9 @@ Assign a label to the PR from the available list of labels (a drop down list on 
 Kubestellar CI pipeline:
 
 Prow (https://docs.prow.k8s.io/docs/overview/)
+
+Kubestellar Prow CI jobs run inside containerized environments.
+Required tooling such as Python is provided by the container image
+itself, rather than being downloaded dynamically during job execution
+(e.g., Python 3.14). This improves CI reliability and consistency.
+
