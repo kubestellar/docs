@@ -171,3 +171,5 @@ We welcome contributions of all kinds — from documentation improvements to cod
 KubeStellar is a [Cloud Native Computing Foundation](https://cncf.io) Sandbox project, part of the broader cloud native ecosystem working to make cloud native computing universal and sustainable.
 
 ---
+
+<!-- CI Test: 2026-01-13T03:00:12Z -->
