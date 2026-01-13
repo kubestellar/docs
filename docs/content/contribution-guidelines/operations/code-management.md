@@ -143,9 +143,6 @@ indicates the type of the PR. It must be one of the following:
 - 📖 (indicates documentation)
 - 🚀 (indicates release)
 - 🌱 (indicates infra, tests, or other changes)
-
-PR titles must use actual emoji characters rather than hex-escaped
-sequences.
 Complete the summary description field
 Complete the Related issue field by inserting the issue number preceded by the # character, for example "#1187"
 Decide whether this is a draft PR or if it's ready for review, and select the option you want by expanding on the Create Pull Request button.
