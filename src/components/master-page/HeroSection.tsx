@@ -225,7 +225,7 @@ export default function HeroSection() {
                         <div className="typing-text text-blue-300 leading-relaxed text-xs sm:text-sm">
                           <div>bash &lt;(curl -s \</div>
                           <div className="ml-4">
-                            https://raw.githubusercontent.com/kubestellar/ \
+                            https:&#47;&#47;raw.githubusercontent.com/kubestellar/ \
                           </div>
                           <div className="ml-4">
                             kubestellar/refs/tags/v0.27.2/scripts/ \
