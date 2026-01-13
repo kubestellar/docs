@@ -64,19 +64,19 @@ export default function Navbar() {
             menu.style.opacity = "1";
             menu.style.visibility = "visible";
             setIsDropdownOpen(true);
-            
+
             // Reset all dropdown states first
             setIsContributeOpen(false);
             setIsCommunityOpen(false);
             setIsGithubOpen(false);
-            
+
             // Track which dropdown is open
-            const dropdownName = container.getAttribute('data-dropdown');
-            if (dropdownName === 'contribute') {
+            const dropdownName = container.getAttribute("data-dropdown");
+            if (dropdownName === "contribute") {
               setIsContributeOpen(true);
-            } else if (dropdownName === 'community') {
+            } else if (dropdownName === "community") {
               setIsCommunityOpen(true);
-            } else if (dropdownName === 'github') {
+            } else if (dropdownName === "github") {
               setIsGithubOpen(true);
             }
           };
@@ -139,7 +139,7 @@ export default function Navbar() {
           "https://api.github.com/repos/kubestellar/kubestellar"
         );
         if (!response.ok) {
-          throw new Error("Network reposone was not okay");
+          throw new Error("Network response was not okay");
         }
         const data = await response.json();
         const formatNumber = (num: number): string => {
@@ -477,7 +477,10 @@ export default function Navbar() {
                 </div>
 
                 {/* Contribute Dropdown */}
-                <div className="relative group after:content-[''] after:absolute after:top-full after:left-0 after:right-0 after:h-2 after:bg-transparent" data-dropdown="contribute">
+                <div
+                  className="relative group after:content-[''] after:absolute after:top-full after:left-0 after:right-0 after:h-2 after:bg-transparent"
+                  data-dropdown="contribute"
+                >
                   <button
                     type="button"
                     className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-100 transform nav-link-hover cursor-pointer"
@@ -644,7 +647,10 @@ export default function Navbar() {
                   </div>
                 </div>
                 {/* Community Dropdown */}
-                <div className="relative group after:content-[''] after:absolute after:top-full after:left-0 after:right-0 after:h-2 after:bg-transparent" data-dropdown="community">
+                <div
+                  className="relative group after:content-[''] after:absolute after:top-full after:left-0 after:right-0 after:h-2 after:bg-transparent"
+                  data-dropdown="community"
+                >
                   <button
                     type="button"
                     className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-100 transform nav-link-hover cursor-pointer"
@@ -776,7 +782,10 @@ export default function Navbar() {
               </div>
 
               {/* GitHub Dropdown */}
-              <div className="hidden lg:flex relative group" data-dropdown="github">
+              <div
+                className="hidden lg:flex relative group"
+                data-dropdown="github"
+              >
                 <button
                   data-dropdown-button
                   className="hidden lg:flex text-sm font-medium text-gray-300 hover:text-green-400 transition-all duration-300 items-center space-x-1 px-3 py-2 rounded-lg hover:bg-green-500/10 hover:shadow-lg hover:shadow-green-500/20 hover:scale-100 transform nav-link-hover"
@@ -868,7 +877,7 @@ export default function Navbar() {
                       <path d="M8 1.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z" />
                       <path d="M8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                     </svg>
-                    Create Issue
+                    {t("githubCreateIssue")}
                   </a>
                 </div>
               </div>
@@ -1372,7 +1381,7 @@ export default function Navbar() {
                         <path d="M8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                       </svg>
                       <span className="text-sm font-medium text-gray-300">
-                        Create Issue
+                        {t("githubCreateIssue")}
                       </span>
                     </div>
                   </a>
