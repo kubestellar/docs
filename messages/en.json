@@ -7,7 +7,7 @@
     "terminalTitle": "kubestellar-control-center",
     "terminalStatus": "READY",
     "terminalCommandL1": "bash <(curl -s \\",
-    "terminalCommandL2": "  https://raw.githubusercontent.com/kubestellar/ \\",
+    "terminalCommandL2": "  https:&#47;&#47;raw.githubusercontent.com/kubestellar/ \\",
     "terminalCommandL3": "  kubestellar/refs/tags/v0.27.2/scripts/ \\",
     "terminalCommandL4": "  create-kubestellar-demo-env.sh) --platform kind",
     "terminalOutputInfo": "INFO",
