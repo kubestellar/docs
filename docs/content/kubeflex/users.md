@@ -142,7 +142,7 @@ after updating the 'kflex' binary is to use `kind delete --name kubeflex` and re
 To use a different domain for DNS resolution, you can specify the `--domain` option when
 you run `kflex init`. This domain should point to the IP address of your ingress controller,
 which handles the routing of requests to different control plane instances based on the hostname.
-A wildcard DNS service is recommended, so that any subdomain of your domain (such as *.<domain>)
+A wildcard DNS service is recommended, so that any subdomain of your domain (such as `*.<domain>`)
 will resolve to the same IP address. The default domain in KubeFlex is localtest.me, which is a
 wildcard DNS service that always resolves to 127.0.0.1.
 For example, `cp1.localtest.me` and `cp2.localtest.me` will both resolve to your local machine.
