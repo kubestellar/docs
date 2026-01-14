@@ -70,7 +70,6 @@ ITS serves as the entry point for cluster lifecycle operations, integrates with 
    - Observe real-time logs and status updates in the dialog until completion.
    
    ![Step 7 — Onboarding logs](../images/its/import-cluster/quick-connect/watch-onboarding-logs.png)
-x
 8. **Verify import success**
    - Return to ITS and confirm the cluster now appears in the table with status "Active".
    
