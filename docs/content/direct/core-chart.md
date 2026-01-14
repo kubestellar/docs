@@ -1,13 +1,4 @@
-# KubeStellar Core Chart Documentation
-
-## 📚 Table of Contents
-
-- [Pre-requisites](#pre-requisites)
-- [KubeStellar Core Chart values](#kubestellar-core-chart-values)
-- [KubeStellar Core Chart Usage Step-by-Step](#kubestellar-core-chart-usage-step-by-step)
-- [Kubeconfig Files and Contexts for Control Planes](#kubeconfig-files-and-contexts-for-control-planes)
-- [Argo CD Integration](#argo-cd-integration)
-- [Uninstalling the KubeStellar Core Chart](#uninstalling-the-kubestellar-core-chart)
+# KubeStellar Core chart usage
 
 This documents explains how to use KubeStellar Core chart to do three
 of the 11 installation and usage steps; please see [the
@@ -35,7 +26,7 @@ For such purpose, a full list of executable that may be required can be found [h
 
 The setup of KubeStellar via the Core chart requires the existence of a KubeFlex hosting cluster.
 
-While not a complete list of supported hosting clusters, here we discuss how to use KubeStellar in:
+This can be:
 
 1. A local **Kind** or **k3s** cluster with an ingress with SSL passthrough and a mapping to host port 9443
 
@@ -46,17 +37,17 @@ While not a complete list of supported hosting clusters, here we discuss how to 
 
     If a host port number different from the expected 9443 is used for the Kind cluster, then the same port number must be specified during the chart installation by adding the following argument `--set "kubeflex-operator.externalPort=<port>"`.
 
-    By default the KubeStellar Core chart uses a test domain `localtest.me`, which is OK for testing on a single host machine. However, for scenarios that span more than one machine, it is necessary to set `--set "kubeflex-operator.domain=<domain>"` to a more appropriate `<domain>` that can be reached from Workload Execution Clusters (WECs).
+    By default the KubeStelalr Core chart uses a test domain `localtest.me`, which is ok for testing on a single host machine. However, scenarios that span more than one machine, it is necessary to set `--set "kubeflex-operator.domain=<domain>"` to a more appropriate `<domain>` that can be reached from Workload Execution CLusters (WECs).
 
     For convenience, a new local **Kind** cluster that satisfies the requirements for KubeStellar setup
-    and that can be used to exercises the [examples](./example-scenarios.md) can be created with the following command:
+    and that can be used to exercises the [examples](./examples.md) can be created with the following command:
 
     ```shell
     bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v$KUBESTELLAR_VERSION/scripts/create-kind-cluster-with-SSL-passthrough.sh) --name kubeflex --port 9443
     ```
 
     Alternatively, a new local **k3s** cluster that satisfies the requirements for KubeStellar setup
-    and that can be used to exercises the [examples](./example-scenarios.md) can be created with the following command:
+    and that can be used to exercises the [examples](./examples.md) can be created with the following command:
 
     ```shell
     bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v$KUBESTELLAR_VERSION/scripts/create-k3s-cluster-with-SSL-passthrough.sh) --port 9443
@@ -64,7 +55,7 @@ While not a complete list of supported hosting clusters, here we discuss how to 
 
 2. An **OpenShift** cluster
 
-    When using this option, one is required to explicitly set the `isOpenShift` variable to `true` by including `--set "kubeflex-operator.isOpenShift=true"` in the Helm chart installation command.
+    When using this option, one is required to explicitely set the `isOpenShift` variable to `true` by including `--set "kubeflex-operator.isOpenShift=true"` in the Helm chart installation command.
 
 ## KubeStellar Core Chart values
 
@@ -94,28 +85,15 @@ kubeflex-operator:
 InstallPCHs: true
 
 # List the Inventory and Transport Spaces (ITSes) to be created by the chart
-# Each ITS consists of:
-# - a mandatory unique name
-# - an optional type, which could be host, vcluster, or external (default to vcluster, if not specified)
-# - an optional install_clusteradm flag, which could be true  or false  (default to true) to enable/disable the installation of OCM in the control plane
-# - an optional bootstrapSecret secion to be used for Control Plabes of type external (more details below)
-ITSes: # ==> installs ocm (optional) + ocm-status-addon
+# Each ITS consists of a mandatory unique name and an optional type, which could be either host or vcluster (default to vcluster, if not specified)
+ITSes: # ==> installs ocm + ocm-status-addon
 
 # List the Workload Description Spaces (WDSes) to be created by the chart
 # Each WDS consists of a mandatory unique name and several optional parameters:
 # - type: host or k8s (default to k8s, if not specified)
 # - APIGroups: a comma separated list of APIGroups
 # - ITSName: the name of the ITS control plane to be used by the WDS. Note that the ITSName MUST be specified if more than one ITS exists.
-WDSes: # all the CPs in this list will execute the transport-controller.yaml and kubestellar-controller.yaml PCHs
-  - name: <wds1>     # mandatory name of the control plane
-    type: <host|k8s> # optional type of control plane host or k8s (default to k8s, if not specified)
-    APIGroups: ""    # optional string holding a comma-separated list of APIGroups
-    ITSName: <its1>  # optional name of the ITS control plane, this MUST be specified if more than one ITS exists at the moment the WDS PCH starts
-  - name: <wds2>     # mandatory name of the control plane
-    type: <host|k8s> # optional type of control plane host or k8s (default to k8s, if not specified)
-    APIGroups: ""    # optional string holding a comma-separated list of APIGroups
-    ITSName: <its2>  # optional name of the ITS control plane, this MUST be specified if more than one ITS exists at the moment the WDS PCH starts
-  ...
+WDSes: # ==> installs kubestellar + ocm-transport-plugin
 ```
 
 The first section of the `values.yaml` file refers to parameters that are specific to the KubeFlex installation, see [here](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md) for more information.
@@ -133,32 +111,18 @@ The third section of the `values.yaml` file allows one to create a list of Inven
 ```yaml
 ITSes: # all the CPs in this list will execute the its.yaml PCH
   - name: <its1>          # mandatory name of the control plane
-    type: <vcluster|host|external> # optional type of control plane: host, vcluster, or external (default to vcluster, if not specified)
-    install_clusteradm: true|false  # optional flag to enable/disable the installation of OCM in the control plane (default to true, if not specified)
-    bootstrapSecret: # this section is ignored unless type is "external"
-      name: <secret-name> # default: "<control-plane-name>-bootstrap"
-      namespace: <secret-namespace> # default: Helm chart installation namespace
-      key: <key-name> # default: "kubeconfig-incluster"
+    type: <vcluster|host> # optional type of control plane host or vcluster (default to vcluster, if not specified)
   - name: <its2>          # mandatory name of the control plane
-    type: <vcluster|host|external> # optional type of control plane: host, vcluster, or external (default to vcluster, if not specified)
-    install_clusteradm: true|false  # optional flag to enable/disable the installation of OCM in the control plane (default to true, if not specified)
-    bootstrapSecret: # this section is ignored unless type is "external"
-      name: <secret-name> # default: "<control-plane-name>-bootstrap"
-      namespace: <secret-namespace> # default: Helm chart installation namespace
-      key: <key-name> # default: "kubeconfig-incluster"
+    type: <vcluster|host> # optional type of control plane host or vcluster (default to vcluster, if not specified)
   ...
 ```
 
-where `name` must specify a name unique among all the control planes in that KubeFlex deployment, the optional `type` can be vcluster (default), host, or external, see [here](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md) for more information, and the optional `install_clusteradm`can be either true (default) or false to enable or disable the installation of OCM in the control plane.
-
-When the ITS `type` is `external`, the `bootstrapSecret` sub-section can be used to indicate the bootstrap secret used by KubeFlex to connect to the external cluster. Specifically, it can be used to specify any combination of (a) the name of the secret, (b) the namespace containing the secret, and (c) the name of the key containg the kubeconfig of the external cluster if they need to be different from their default value.
-
-If the secret was created using the [create-external-bootstrap-secret.sh](https://github.com/kubestellar/kubestellar/tree/v{{ config.ks_latest_release }}/scripts/create-external-bootstrap-secret.sh) script and the value passed to the argument `--controlplane` matches the name of the Control Plane specified by the Helm chart, then the sub-section `bootstrapSecret` is not required because all default values will identify the bootstrap secret created by the script. More specifically, if an external kind cluster was created with the command `kind create cluster --name its1` and the `create-external-bootstrap-secret.sh --controlplane its1 --verbose` command was used to create the bootstrap secret, then it would be enough to inform the Helm chart with `--set-json='ITSes=[{"name":"its1","type":"external"}]'`.
+where `name` must specify a name unique among all the control planes in that KubeFlex deployment and the optional `type` can be either vcluster (default) or host, see [here](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md) for more information.
 
 The fourth section of the `values.yaml` file allows one to create a list of Workload Description Spaces (WDSes). By default, this list is empty and no WDS will be created by the chart. A list of WDSes can be specified using the following format:
 
 ```yaml
-WDSes: # all the CPs in this list will execute the transport-controller.yaml and kubestellar-controller.yaml PCHs
+WDSes: # all the CPs in this list will execute the wds.yaml PCH
   - name: <wds1>     # mandatory name of the control plane
     type: <host|k8s> # optional type of control plane host or k8s (default to k8s, if not specified)
     APIGroups: ""    # optional string holding a comma-separated list of APIGroups
@@ -172,63 +136,18 @@ WDSes: # all the CPs in this list will execute the transport-controller.yaml and
 
 where `name` must specify a name unique among all the control planes in that KubeFlex deployment (note that this must be unique among both ITSes and WDSes), the optional `type` can be either k8s (default) or host, see [here](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md) for more information, the optional `APIGroups` provides a list of APIGroups, see [here](https://docs.kubestellar.io/release-{{ config.ks_latest_release }}/direct/examples/#scenario-2-using-the-hosting-cluster-as-wds-to-deploy-a-custom-resource) for more information, and `ITSName` specify the ITS connected to the new WDS being created (this parameter MUST be specified if more that one ITS exists in the cluster, if no value is specified and only one ITS exists in the cluster, then it will be automatically selected).
 
-## KubeStellar Core Chart usage step by step
+## KubeStellar Core Chart usage
 
-The local copy of the core chart can be installed in an existing cluster using the commands:
-```shell
-git clone https://github.com/kubestellar/kubestellar.git
-cd kubestellar
-```
-```shell
-helm dependency update core-chart
-```
-Output(similar):
-```
-Saving 2 charts
-Downloading kubeflex-operator from repo oci://ghcr.io/kubestellar/kubeflex/chart
-Pulled: ghcr.io/kubestellar/kubeflex/chart/kubeflex-operator:v0.8.9
-Digest: sha256:2be43de71425ad682edca6544f6c3a5864afbfad09a4b7e1e57bde6dae664334
-Downloading argo-cd from repo oci://ghcr.io/argoproj/argo-helm
-Pulled: ghcr.io/argoproj/argo-helm/argo-cd:7.8.5
-Digest: sha256:662f4687e8e525f86ff9305020632b337a09ffacb7b61b7c42a841922c91da7b
-Deleting outdated charts
-```
-```shell
-helm upgrade --install ks-core core-chart
-```
-Output:
-```
-Release "ks-core" does not exist. Installing it now.
-NAME: ks-core
-LAST DEPLOYED: Thu Jun 12 09:58:44 2025
-NAMESPACE: default
-STATUS: deployed
-REVISION: 1
-TEST SUITE: None
-NOTES:
-For your convenience you will probably want to add contexts to your kubeconfig named after the non-host-type control planes (WDSes and ITSes) that you just created (a host-type control plane is just an alias for the KubeFlex hosting cluster). You can do that with the following `kflex` commands; each creates a context and makes it the current one.
-
-See https://github.com/kubestellar/kubestellar/blob/0.28.0-alpha.2/docs/content/direct/core-chart.md#kubeconfig-files-and-contexts-for-control-planes for a way to do this without using `kflex`.
-
-Start by setting your current kubeconfig context to the one you used when installing this chart.
-
-kubectl config use-context $the_one_where_you_installed_this_chart
-kflex ctx --set-current-for-hosting # make sure the KubeFlex CLI's hidden state is right for what the Helm chart just did
-
-Finally, you can use `kflex ctx` to switch back to the kubeconfig context for your KubeFlex hosting cluster.
-```
-
-Alternatively, a specific version of the KubeStellar core chart can be simply installed in an existing cluster using the following command:
+A specific version of the KubeStellar core chart can be simply installed in an existing cluster using the following command:
 
 ```shell
 helm upgrade --install ks-core oci://ghcr.io/kubestellar/kubestellar/core-chart --version $KUBESTELLAR_VERSION
 ```
 
-Either of the previous ways of installing KubeStellar core chart will install KubeFlex and the Post Create Hooks, but it will not create any Control Plane.
+The above command will install KubeFlex and the Post Create Hooks, but no Control Planes.
+Please remember to add `--set "kubeflex-operator.isOpenShift=true"`, when installing into an OpenShift cluster.
 
-Please remember to add `--set "kubeflex-operator.isOpenShift=true"` when installing/updating into an OpenShift cluster.
-
-User defined control planes can be added using additional values files or `--set` arguments, _e.g._:
+User defined control planes can be added using additional value files of `--set` arguments, _e.g._:
 
 - add a single ITS named its1 of default vcluster type: `--set-json='ITSes=[{"name":"its1"}]'`
 - add two ITSes named its1 and its2 of of type vcluster and host, respectively: `--set-json='ITSes=[{"name":"its1"},{"name":"its2","type":"host"}]'`
@@ -237,69 +156,10 @@ User defined control planes can be added using additional values files or `--set
 A KubeStellar Core installation that is consistent with [Getting Started](get-started.md) and and supports [the example scenarios](./example-scenarios.md) could be achieved with the following command:
 
 ```shell
-helm upgrade --install ks-core oci://ghcr.io/kubestellar/kubestellar/core-chart --version "$KUBESTELLAR_VERSION" \
-  --set-json ITSes='[{"name":"its1"}]' \
-  --set-json WDSes='[{"name":"wds1"}]'
-```
-Output:
-```
-Release "ks-core" has been upgraded. Happy Helming!
-NAME: ks-core
-LAST DEPLOYED: Thu Jun 12 10:08:50 2025
-NAMESPACE: default
-STATUS: deployed
-REVISION: 2
-TEST SUITE: None
-NOTES:
-For your convenience you will probably want to add contexts to your
-kubeconfig named after the non-host-type control planes (WDSes and
-ITSes) that you just created (a host-type control plane is just an
-alias for the KubeFlex hosting cluster). You can do that with the
-following `kflex` commands; each creates a context and makes it the
-current one. See
-https://github.com/kubestellar/kubestellar/blob/0.28.0-alpha.2/docs/content/direct/core-chart.md#kubeconfig-files-and-contexts-for-control-planes
-for a way to do this without using `kflex`.
-Start by setting your current kubeconfig context to the one you used
-when installing this chart.
-
-kubectl config use-context $the_one_where_you_installed_this_chart
-kflex ctx --set-current-for-hosting # make sure the KubeFlex CLI's hidden state is right for what the Helm chart just did
-
-kflex ctx --overwrite-existing-context its1
-kflex ctx --overwrite-existing-context wds1
-
-Finally, you can use `kflex ctx` to switch back to the kubeconfig
-context for your KubeFlex hosting cluster.
-```
-The core chart also supports the use of a pre-existing cluster (or any space, really) as an ITS. A specific application is to connect to existing OCM clusters. As an example, create a first local kind cluster with OCM installed in it:
-
-```shell
-kind create cluster --name ext1
-
-clusteradm init
-```
-
-Then, create a second kind cluster suitable for KubeStellar installation and create a bootstrap secret in the new cluster with the kubeconfig information of the `ext1` cluster:
-
-```shell
-bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v$KUBESTELLAR_VERSION/scripts/create-kind-cluster-with-SSL-passthrough.sh) --name kubeflex --port 9443
-
-bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v$KUBESTELLAR_VERSION/scripts/create-external-bootstrap-secret.sh) --controlplane its1 --source-context kind-ext1 --address https://ext1-control-plane:6443 --verbose
-```
-
-Note that the last command above creates a secret named `its1-bootstrap` in the Helm chart installation namespace of the `kind-kubeflex` cluster.
-
-The `--address` URL needs to be one that the KubeFlex controller can use to open a connection to the external cluster's Kubernetes apiserver(s). In this example, the external cluster is a kind cluster with one kube-apiserver and it listens on port 6443 in its node's network namespace. This example relies on the DNS resolver in Docker networking to map the domain name `ext1-control-plane` to the Docker network address of the container of that same name.
-
-Finally, install the core chart using the `ext1` cluster as ITS:
-
-```shell
-helm upgrade --install core-chart oci://ghcr.io/kubestellar/kubestellar/core-chart --version $KUBESTELLAR_VERSION \
-  --set-json='ITSes=[{"name":"its1","type":"external","install_clusteradm":false}]' \
+helm upgrade --install ks-core oci://ghcr.io/kubestellar/kubestellar/core-chart --version $KUBESTELLAR_VERSION \
+  --set-json='ITSes=[{"name":"its1"}]' \
   --set-json='WDSes=[{"name":"wds1"}]'
 ```
-
-Note that by default, the `its1` Control Plane of type `external` will look for a secret named `its1-bootstrap` in the Helm chart installation namespace. Additionally the `"install_clusteradm":false` value is specified to avoid reinstalling OCM in the `ext1` cluster.
 
 After the initial installation is completed, there are two main ways to install additional control planes (_e.g._, create a second `wds2` WDS):
 
@@ -316,10 +176,29 @@ After the initial installation is completed, there are two main ways to install 
     ```shell
     helm upgrade --install add-wds2 oci://ghcr.io/kubestellar/kubestellar/core-chart --version $KUBESTELLAR_VERSION \
       --set='kubeflex-operator.install=false,InstallPCHs=false' \
-      --set-json='WDSes=[{"name":"wds2"}]'
+      --set-json='WDSes=[{name":"wds2"}]'
     ```
 
 ## Kubeconfig files and contexts for Control Planes
+
+Unless you are using the `kflex` CLI from release 0.6.2 or later of
+KubeFlex, before proceeding further you should wait for each of the
+new control planes whose type is not "host" to be "ready". A host type
+control plane is an alias for the hosting cluster and is born ready.
+
+The following commands will wait for every ControlPlane to be "ready".
+
+```shell
+echo "Waiting for all KubeFlex Control Planes to be Ready:"
+for cpname in `kubectl get controlplane -o name`; do
+  cpname=${cpname##*/}
+  while [[ `kubectl get cp $cpname -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}'` != "True" ]]; do
+    echo "Waiting for \"$cpname\"..."
+    sleep 5
+  done
+  echo "\"$cpname\" is ready."
+done
+```
 
 It is convenient to use one kubeconfig file that has a context for
 each of your control planes. That can be done in two ways, one using
@@ -412,7 +291,7 @@ the `kflex` CLI and one not.
 
 3. Using `import-cp-contexts.sh` script
 
-    The following convenience command can also be used to import all the KubeFlex Control Planes in the current hosting cluster as contexts of the current kubeconfig. The script involved requires that you have [`yq`](https://github.com/mikefarah/yq) (also available from [Homebrew](https://formulae.brew.sh/formula/yq)) installed.
+    The following covenience command can also be used to import all the KubeFlex Control Planes in the current hosting cluster as contexts of the current kubeconfig:
 
     ```shell
     bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v$KUBESTELLAR_VERSION/scripts/import-cp-contexts.sh) --merge
@@ -428,12 +307,8 @@ the `kflex` CLI and one not.
     - `--replace-localhost|-r <host>` replaces server addresses "127.0.0.1" with a desired `<host>`. This parameter is useful for making KubeFlex Control Planes of type `host` accessible from outside the machine hosting the cluster.
     - `--merge|-m` merge the kubeconfig with the contexts of the control planes with the existing cluster kubeconfig. If this flag is not specified, then only the kubeconfig with the contexts of the KubeFlex Control Planes will be produced.
     - `--output|-o <filename>|-` specify a kubeconfig file to save the kubeconfig to. Use `-` for stdout. If this argument is not provided, then the kubeconfig will be saved to the input specified kubeconfig, if provided, or to `~/.kube/config`.
-    - `--silent|-s` quiet mode, do not print information. This may be useful when using `-o -`.
+    - `--silent|-s` quiet mode, do not print informarmation. This may be useful when using `-o -`.
     - `-X` enable verbose execution of the script for debugging
-
-## Argo CD integration
-
-KubeStellar Core Helm chart allows to deploy ArgoCD in the KubeFlex hosting cluster, register every WDS as a target cluster in Argo CD, and create Argo CD applications as specified by chart values, as explained [here](core-chart-argocd.md).
 
 ## Uninstalling the KubeStellar Core chart
 
@@ -456,3 +331,4 @@ Alternatively, if a **k3s** cluster was created with the provide script, it can 
 ```shell
 /usr/local/bin/k3s-uninstall.sh
 ```
+
