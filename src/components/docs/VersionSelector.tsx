@@ -58,6 +58,34 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
     return () => document.removeEventListener('keydown', handleEscape);
   }, []);
 
+  // Keyboard navigation
+  const [focusedIndex, setFocusedIndex] = useState(-1);
+
+  // Reset focus when closed
+  useEffect(() => {
+    if (!isOpen) setFocusedIndex(-1);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        setFocusedIndex(i => (i + 1) % versions.length);
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        setFocusedIndex(i => (i - 1 + versions.length) % versions.length);
+      } else if (event.key === 'Enter' && focusedIndex >= 0) {
+        event.preventDefault();
+        handleVersionChange(versions[focusedIndex].key);
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, versions.length, focusedIndex]);
+
   const handleVersionChange = (versionKey: string) => {
     setIsOpen(false);
 
@@ -74,11 +102,10 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
       <div className={className}>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`flex items-center justify-between w-full px-3 py-2 text-sm rounded-md transition-colors ${
-            isDark
-              ? 'text-gray-300 hover:bg-neutral-800'
-              : 'text-gray-700 hover:bg-gray-100'
-          }`}
+          className={`flex items-center justify-between w-full px-3 py-2 text-sm rounded-md transition-colors ${isDark
+            ? 'text-gray-300 hover:bg-neutral-800'
+            : 'text-gray-700 hover:bg-gray-100'
+            }`}
         >
           <span className="flex items-center">
             <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,22 +126,26 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
 
         {isOpen && (
           <div className="mt-1 ml-7 space-y-1">
-            {versions.map(({ key, label, externalUrl }) => {
+            {versions.map(({ key, label, externalUrl }, index) => {
               const isCurrentVersion = key === 'latest';
               const isExternal = !!externalUrl;
+              const isFocused = index === focusedIndex;
               return (
                 <button
                   key={key}
                   onClick={() => handleVersionChange(key)}
-                  className={`block w-full text-left px-3 py-2 text-sm rounded-md transition-colors ${
-                    isCurrentVersion
+                  className={`block w-full text-left px-3 py-2 text-sm rounded-md transition-colors ${isCurrentVersion
+                    ? isDark
+                      ? 'bg-neutral-800 text-white font-medium'
+                      : 'bg-gray-100 text-gray-900 font-medium'
+                    : isFocused
                       ? isDark
-                        ? 'bg-neutral-800 text-white font-medium'
-                        : 'bg-gray-100 text-gray-900 font-medium'
+                        ? 'bg-neutral-800 text-gray-200'
+                        : 'bg-gray-100 text-gray-900'
                       : isDark
                         ? 'text-gray-400 hover:bg-neutral-800 hover:text-gray-200'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                  }`}
+                    }`}
                 >
                   {label}
                   {isExternal && (
@@ -136,11 +167,10 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
     <div className={`relative ${className}`} ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-1 text-xs font-mono px-2 py-1.5 rounded-md transition-colors cursor-pointer ${
-          isDark
-            ? 'text-gray-400 bg-neutral-800/50 hover:bg-neutral-700 hover:text-gray-200'
-            : 'text-gray-600 bg-gray-100 hover:bg-gray-200 hover:text-gray-900'
-        }`}
+        className={`flex items-center gap-1 text-xs font-mono px-2 py-1.5 rounded-md transition-colors cursor-pointer ${isDark
+          ? 'text-gray-400 bg-neutral-800/50 hover:bg-neutral-700 hover:text-gray-200'
+          : 'text-gray-600 bg-gray-100 hover:bg-gray-200 hover:text-gray-900'
+          }`}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         aria-label={`Select ${currentProject.name} documentation version`}
@@ -159,32 +189,35 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
 
       {isOpen && (
         <div
-          className={`absolute top-full right-0 mt-1 w-44 max-h-80 overflow-y-auto rounded-md shadow-lg border z-50 ${
-            isDark
-              ? 'bg-neutral-900 border-neutral-700'
-              : 'bg-white border-gray-200'
-          }`}
+          className={`absolute top-full right-0 mt-1 w-44 max-h-80 overflow-y-auto rounded-md shadow-lg border z-50 ${isDark
+            ? 'bg-neutral-900 border-neutral-700'
+            : 'bg-white border-gray-200'
+            }`}
           role="listbox"
           aria-label={`${currentProject.name} documentation versions`}
         >
           <div className="py-1">
-            {versions.map(({ key, label, externalUrl }) => {
+            {versions.map(({ key, label, externalUrl }, index) => {
               const isCurrentVersion = key === 'latest';
               const isExternal = !!externalUrl;
+              const isFocused = index === focusedIndex;
 
               return (
                 <button
                   key={key}
                   onClick={() => handleVersionChange(key)}
-                  className={`flex items-center justify-between w-full text-left px-3 py-2 text-sm transition-colors ${
-                    isCurrentVersion
+                  className={`flex items-center justify-between w-full text-left px-3 py-2 text-sm transition-colors ${isCurrentVersion
+                    ? isDark
+                      ? 'bg-neutral-800 text-white font-medium'
+                      : 'bg-gray-100 text-gray-900 font-medium'
+                    : isFocused
                       ? isDark
-                        ? 'bg-neutral-800 text-white font-medium'
-                        : 'bg-gray-100 text-gray-900 font-medium'
+                        ? 'bg-neutral-800 text-gray-200'
+                        : 'bg-gray-100 text-gray-900'
                       : isDark
                         ? 'text-gray-300 hover:bg-neutral-800'
                         : 'text-gray-700 hover:bg-gray-50'
-                  }`}
+                    }`}
                   role="option"
                   aria-selected={isCurrentVersion}
                 >
