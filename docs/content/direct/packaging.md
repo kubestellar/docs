@@ -88,8 +88,10 @@ flowchart LR
     otc_code[OTC source code]
     ksc_hc_src[KS Core Helm chart source]
     setup_ksc["'Getting Started' setup"]
-    e2e_local["E2E setup<br>local"]
-    e2e_release["E2E setup<br>release"]
+    e2e_local["E2E setup
+local"]
+    e2e_release["E2E setup
+release"]
     end
     kcm_ctr_image[KCM container image] --> kcm_code
     otc_ctr_image[OTC container image]
@@ -121,8 +123,10 @@ flowchart LR
     end
     subgraph ks_repo["kubestellar@GitHub"]
     ksc_hc_src[KS Core Helm chart source]
-    e2e_local["E2E setup<br>local"]
-    e2e_release["E2E setup<br>release"]
+    e2e_local["E2E setup
+local"]
+    e2e_release["E2E setup
+release"]
     end
     helm_image["ks/helm image"] --> helm_src
     cladm_image["ks/clusteradm image"] --> cladm_src
@@ -307,12 +311,15 @@ flowchart LR
     osa_hc_repo -.-> osa_ctr_image
     subgraph ks_repo["kubestellar@GitHub"]
     kcm_code[KCM source code]
-    gtc_code["generic transport<br>controller code"]
+    gtc_code["generic transport
+controller code"]
     otp_code[OTP source code]
     ksc_hc_src[KS Core Helm chart source]
     setup_ksc["'Getting Started' setup"]
-    e2e_local["E2E setup<br>local"]
-    e2e_release["E2E setup<br>release"]
+    e2e_local["E2E setup
+local"]
+    e2e_release["E2E setup
+release"]
     end
     osa_repo -.-> ks_repo
     kcm_ctr_image[KCM container image] --> kcm_code
