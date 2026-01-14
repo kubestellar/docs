@@ -111,12 +111,12 @@ Future development may define more kinds of control objects hosted in the WDS.
 
 KubeFlex provides the ability to start controllers connected to a
 Control Plane API Server or to deploy Helm Charts into a Control Plane
-API server with [<u>post-create
-hooks</u>](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md#post-create-hooks).
+API server with [post-create
+hooks](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md#post-create-hooks).
 This feature is currently adopted for KubeStellar modules startup, as it allows to
 create a Workload Description Space (WDS) and start the KubeStellar Controller Manager, and create an Inventory and Transport Space (ITS) in a
-`vcluster` and install the [<u>Open Cluster Management
-Hub</u>](https://open-cluster-management.io/) there.
+`vcluster` and install the [Open Cluster Management
+Hub](https://open-cluster-management.io/) there.
 
 ## OCM Cluster Manager
 
@@ -194,7 +194,7 @@ Installing the Status Add-On Agent in the WEC causes status to be returned to `W
 
 The KubeStellar controllers architecture is based on common patterns and best 
 practices for Kubernetes controllers, such as the 
-[<u>Kubernetes Sample Controller</u>](https://github.com/kubernetes/sample-controller). 
+[Kubernetes Sample Controller](https://github.com/kubernetes/sample-controller). 
 A Kubernetes controller uses informers to watch for changes in Kubernetes
 objects, caches to store the objects, event handlers to react to
 events, work queues for parallel processing of tasks, and a reconciler
@@ -439,7 +439,7 @@ implementations of the transport interface. The interface between the plugin and
 - Have an agent that can be used to pull the wrapped objects from the mailbox namespace and apply them to the WEC. A single example for such an agent is an agent that runs on the WEC and watches the wrapped object in the corresponding namespace in the central hub and is able to unwrap it and apply the objects to the WEC. 
 - Have inventory representation for the clusters.
 
-The above list is required in order to comply with [<u>SIG Multi-Cluster Work API</u>](https://multicluster.sigs.k8s.io/concepts/work-api/).
+The above list is required in order to comply with [SIG Multi-Cluster Work API](https://multicluster.sigs.k8s.io/concepts/work-api/).
 
 Each plugin has an executable with a `main` function that calls the generic code (in `pkg/transport/cmd/generic-main.go`), passing the plugin object that implements the plugin interface. The generic code does the rule-based customization; the plugin is given customized objects. The generic code also ensures that the namespace named "customization-properties" exists in the ITS.
 

@@ -18,7 +18,7 @@ Our documentation has remarks about using the following sorts of clusters:
 - **k3s**
 - **openshift** 
 
-<!-- begin software prerequisites -->
+
 ## Software Prerequisites: for Using KubeStellar
 
 - **kubeflex** version 0.6.1 or higher
@@ -68,7 +68,6 @@ To build and _**test**_ KubeStellar properly, you will also need
 - [**kind**](https://kind.sigs.k8s.io/)
 - [**OCP**](https://docs.openshift.com/container-platform/4.13/installing/index.html)
 
-<!-- start tag for check script  include -->
 
 ## Automated Check of Prerequisites for KubeStellar
 The [check_pre_req](https://github.com/kubestellar/kubestellar/blob/main/hack/check_pre_req.sh) script offers a convenient way to check for the prerequisites needed for [KubeStellar](./pre-reqs.md) deployment and [use](./example-scenarios.md).
@@ -115,7 +114,6 @@ Checking pre-requisites for building KubeStellar:
 ✔ KO
 ```
 
-<!-- end tag for check-prereq script -->
 
 In another example, a specific list of prerequisites could be asserted by a higher-level script, while providing some installation information, with the command below (note that the script will terminate upon finding a missing prerequisite):
 

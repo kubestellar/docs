@@ -13,11 +13,9 @@ Before starting, make sure that your user email is verified on Github. To check 
 5. To verify, click **Resend verification email** and follow its prompts
 6. Navigate back to your **Emails** page, if the "Unverified" label is no longer there, then you're good to go!
 
-<br />
 
 **Git Bash** is also highly recommended.
 
-<br />
 
 ## Setting up the GPG Key
 
@@ -59,7 +57,6 @@ Before starting, make sure that your user email is verified on Github. To check 
     - Once done, click **Add GPG key**
 11. Your new GPG key should now be displayed under GPG keys.
 
-<br />
 
 ## Setting up the SSH Key
 
@@ -90,8 +87,6 @@ Before starting, make sure that your user email is verified on Github. To check 
    - If the resulting message says something along the lines of ```Hi [User]! You've successfully authenticated, but GitHub does not provide shell access.```, then it means your SSH key is up and ready.
 
 
-<br />
-
 ## Creating Pull Requests
 
 Whether it's editing files from Kubestellar.io or directly from the Kubestellar Github, there are a couple steps to follow that streamlines the workflow of your PR:
@@ -103,7 +98,6 @@ Whether it's editing files from Kubestellar.io or directly from the Kubestellar 
 2. Click **Propose Changes** after writing the commit message, review your changes, and then create the PR.
 3. If your PR addresses an already opened issue on the github, make sure to close the issue once your PR is approved and closed.
 
-<br />
 
 ## Pull Request Sign-off
 
@@ -129,12 +123,5 @@ Your submitted PR must pass the automated checks in order to be reviewed. This r
 9. Type ```git push -f origin [branch_name]```, replacing ```[branch_name]``` with the actual name of your branch.
 10. Navigate back to your PR github page.
     - A green ```dco-signoff: yes``` label indicates that your PR is successfully signed
-
-
-
-
-
-
-
 
 

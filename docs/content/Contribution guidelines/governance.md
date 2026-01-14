@@ -65,9 +65,6 @@ is the governing body for the project.
 
 ## Becoming a Maintainer
 
-<!-- If you have full Contributor Ladder documentation that covers becoming
-a Maintainer or Owner, then this section should instead be a reference to that
-documentation -->
 
 To become a Maintainer you need to demonstrate the following:
 
@@ -80,7 +77,7 @@ To become a Maintainer you need to demonstrate the following:
   * ability to collaborate with the team,
   * understanding of how the team works (policies, processes for testing and code review, etc),
   * understanding of the project's code base and coding and documentation style.
-  <!-- add any additional Maintainer requirements here -->
+  
 
 A new Maintainer must be proposed by an existing maintainer by sending a message to the
 [developer mailing list](https://groups.google.com/g/kubestellar-dev). A simple majority 
@@ -125,9 +122,6 @@ Maintainer who is accused of a CoC violation.
 
 ## Code of Conduct
 
-<!-- This assumes that your project does not have a separate Code of Conduct
-Committee; most maintainer-run projects do not.  Remember to place a link
-to the private Maintainer mailing list or alias in the code-of-conduct file.-->
 
 [Code of Conduct](coc.md)
 violations by community members will be discussed and resolved
