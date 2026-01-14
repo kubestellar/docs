@@ -3,45 +3,23 @@
 [![CI](https://github.com/kubestellar/kubeflex/actions/workflows/ci.yaml/badge.svg)](https://github.com/kubestellar/kubeflex/actions/workflows/ci.yaml)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=kubestellar_kubeflex&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=kubestellar_kubeflex)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=kubestellar_kubeflex&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=kubestellar_kubeflex)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/kubestellar/kubeflex)
 
-# KubeFlex
+# <img alt="Logo" width="90px" src="./images/kubeflex-logo.png" style="vertical-align: middle;" />  KubeFlex
 
-A flexible and scalable platform for running Kubernetes control plane APIs with multi-tenancy support.
+A flexible and scalable platform for running Kubernetes control plane APIs.
 
-## Overview
+## Goals
 
-KubeFlex is a CNCF sandbox project under the KubeStellar umbrella that enables "control-plane-as-a-service" multi-tenancy for Kubernetes. It provides a new approach to multi-tenancy by offering each tenant their own dedicated Kubernetes control plane and data-plane nodes in a cost-effective manner.
-
-## Architecture
-
-KubeFlex implements a sophisticated multi-tenant architecture that separates control plane management from workload execution:
-
-![KubeFlex Architecture](./images/kubeflex-architecture.png)
-
-### Core Components
-
-1. **KubeFlex Controller**: Orchestrates the lifecycle of tenant control planes through the ControlPlane CRD
-2. **Tenant Control Planes**: Isolated API server and controller manager instances per tenant
-3. **Flexible Data Plane**: Choose between shared host nodes, vCluster virtual nodes, or dedicated KubeVirt VMs
-4. **Unified CLI (kflex)**: Single binary for initializing, managing, and switching between control planes
-5. **Storage Abstraction**: Configurable backends from shared Postgres to dedicated etcd
-
-### Supported Control Plane Types
-
-- **k8s**: Lightweight Kubernetes API server (~350MB) with essential controllers, using shared Postgres via Kine
-- **vcluster**: Full virtual clusters based on the vCluster project, sharing host cluster worker nodes
-- **host**: The hosting cluster itself exposed as a control plane for management scenarios
-- **ocm**: Open Cluster Management control plane for multi-cluster federation scenarios
-- **external**: Import existing external clusters under KubeFlex management (roadmap)
-
-For detailed architecture information, see the [Architecture Guide](./architecture.md).
-
-## Multi-Tenancy Approach
-
-KubeFlex addresses the fundamental challenge of Kubernetes multi-tenancy by providing each tenant with a dedicated control plane while maintaining cost efficiency through shared infrastructure. This approach delivers strong isolation at both control and data plane levels.
-
-For a comprehensive analysis of multi-tenancy approaches and KubeFlex's solution, see the [Multi-Tenancy Guide](./multi-tenancy.md).
+- Provide lightweight Kube API Server instances and selected controllers as a service.
+- Provide a flexible architecture for the storage backend, e.g.:
+    - shared DB for API servers,
+    - dedicated DB for each API server,
+    - etcd DB or Kine + Postgres DB
+- Flexibility in choice of API Server build:
+    - upstream Kube (e.g. `registry.k8s.io/kube-apiserver:v1.27.1`),
+    - trimmed down API Server builds (e.g. [multicluster control plane](https://github.com/open-cluster-management-io/multicluster-controlplane))
+- Single binary CLI for improved user experience:
+    - initialize, install operator, manage lifecycle of control planes and contexts.
 
 ## Installation
 
@@ -64,60 +42,70 @@ If you have [Homebrew](https://brew.sh), use the following commands to install k
 
 ```shell
 brew tap kubestellar/kubeflex https://github.com/kubestellar/kubeflex
-brew install kflex
+brew install kubeflex
 ```
 
 To upgrade the kubeflex CLI to the latest release, you may run:
 
 ```shell
-brew upgrade kflex
+brew upgrade kubeflex
 ```
 
-## Quick Start
+## Quickstart
 
-Get started with KubeFlex quickly by following our [Quick Start Guide](./quickstart.md). The guide includes:
+Create the hosting kind cluster with ingress controller and install
+the kubeflex operator:
 
-- Basic multi-tenant setup with step-by-step commands
-- Advanced development team scenarios with complete isolation
-- Context switching and control plane management
-- Cleanup and best practices
+```shell
+kflex init --create-kind
+```
 
-## Goals and Features
+Create a control plane:
 
-### Core Capabilities
-- **Lightweight API Servers**: Provide dedicated Kubernetes API servers with minimal resource footprint
-- **Flexible Storage Architecture**: Support shared databases, dedicated storage, or external systems
-- **Custom API Server Builds**: Use upstream Kubernetes or specialized builds like multicluster-controlplane
-- **Unified Management**: Single CLI for all control plane lifecycle operations
+```shell
+kflex create cp1
+```
 
-### Architecture Flexibility
-- **Storage Options**: Shared Postgres, dedicated etcd, or Kine+Postgres configurations
-- **API Server Variants**: Standard kubernetes API servers or trimmed-down specialized builds
-- **Integration Ready**: Designed to work with existing Kubernetes ecosystem tools
+Interact with the new control plane, for example get namespaces and create a new one:
 
-### Operational Excellence
-- **Zero-Touch Provisioning**: Automated control plane creation and configuration
-- **Context Management**: Seamless switching between tenant environments
-- **Lifecycle Management**: Complete control plane creation, update, and deletion workflows
+```shell
+kubectl get ns
+kubectl create ns myns
+```
 
-## Documentation
+Create a second control plane and check that the namespace created in the
+first control plane is not present:
 
-- [Quick Start Guide](./quickstart.md): Get up and running quickly with KubeFlex
-- [User Guide](./users.md): Detailed usage instructions and advanced scenarios
-- [Architecture Guide](./architecture.md): Deep-dive into technical architecture
-- [Multi-Tenancy Guide](./multi-tenancy.md): Comprehensive multi-tenancy analysis and use cases
-- [Contributing Guide](./CONTRIBUTING.md): How to contribute to KubeFlex development
+```shell
+kflex create cp2
+kubectl get ns
+```
 
-## Community and Support
+To go back to the hosting cluster context, use the `ctx` command:
 
-- **Issues and Features**: [GitHub Issues](https://github.com/kubestellar/kubeflex/issues)
-- **Community Discussion**: [KubeStellar Slack](https://kubestellar.io/slack)
-- **Documentation**: [KubeStellar Website](https://docs.kubestellar.io/release-0.28.0/direct/kubeflex-intro/)
+```shell
+kflex ctx
+```
 
-## License
+To switch back to a control plane context, use the
+`ctx <control plane name>` command, e.g:
 
-KubeFlex is licensed under the Apache 2.0 License. See [LICENSE](./LICENSE) for the full license text.
+```shell
+kflex ctx cp1
+```
 
----
+To delete a control plane, use the `delete <control plane name>` command, e.g:
 
-*KubeFlex is part of the [KubeStellar](https://kubestellar.io) project, a CNCF sandbox initiative focused on multi-cluster configuration management for edge, multi-cloud, and hybrid cloud environments.*
+```shell
+kflex delete cp1
+```
+
+## Next Steps
+
+Read the [User's Guide](./users.md) to learn more about using KubeFlex for your project
+and how to create and interact with different types of control planes, such as
+[vcluster](https://www.vcluster.com) and [Open Cluster Management](https://github.com/open-cluster-management-io/multicluster-controlplane).
+
+## Architecture
+
+![image info](./images/kubeflex-high-level-arch.png)

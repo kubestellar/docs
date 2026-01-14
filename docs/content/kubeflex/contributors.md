@@ -2,9 +2,9 @@
 
 ## Prereqs
 
-- go version >= go1.24.5
+- go version >= go1.22
 - git
-- make
+- make 
 - gcc
 - docker
 - kind
@@ -13,31 +13,18 @@ Make sure that `${HOME}/go/bin` is in your `$PATH`.
 
 ## How to build kubeflex from source
 
-Clone the repo, set up upstream remote, fetch tags, build the binaries and add them to your path:
+Clone the repo, build the binaries and add them to your path:
 
 ```shell
-# Clone your fork – command only shown for HTTPS; adjust the URL if you prefer SSH
-git clone https://github.com/<your-username>/kubeflex.git
+git clone https://github.com/kubestellar/kubeflex.git
 cd kubeflex
-
-# Add the upstream repository as a remote (adjust the URL if you prefer SSH)
-git remote add upstream https://github.com/kubestellar/kubeflex.git
-
-# Fetch all tags from upstream
-git fetch upstream --tags
-
-# Build the binaries
 make build-all
-
-# Add binaries to your path
 export PATH=$(pwd)/bin:$PATH
 ```
 
-> **Note:** Fetching tags from upstream is important as the version information for KubeFlex binaries is derived from git tags. Without the tags, commands like `kflex init -c` (which initializes KubeFlex and creates a kind cluster) will not work correctly.
-
 ## Setting Up a Testing Cluster for KubeFlex
 
-To prepare a hosting cluster for testing, execute the following script.
+To prepare a hosting cluster for testing, execute the following script. 
 This script accomplishes several key tasks:
 
 - Creates a new kind cluster specifically designed for the KubeFlex hosting environment.
@@ -47,7 +34,7 @@ This script accomplishes several key tasks:
 - Starts the KubeFlex controller manager.
 
 ```shell
-test/e2e/setup-kubeflex.sh
+test/e2e/setup-kubeflex.sh 
 ```
 
 ##  Locally building cmupdate image
@@ -66,15 +53,11 @@ LATEST_TAG=<tag used for image> make ko-build-push-cmupdate
 
 1. Delete branch "brew" from https://github.com/kubestellar/kubeflex, if there is such a branch.
 
-1. Make sure that the `go-version` parameter of `actions/setup-go` in
-   `.github/workflows/goreleaser.yml` is high enough. It is enough
-   that its minor version is not below the one in `go.mod`.
-
 1. `git checkout main` and make sure it (a) equals `main` in https://github.com/kubestellar/kubeflex and (b) is what you want to release.
 
 1. check existing tags e.g.,
    ```
-   git tag
+   git tag 
    v0.1.0
    v0.1.1
    v0.2.0
@@ -91,12 +74,34 @@ LATEST_TAG=<tag used for image> make ko-build-push-cmupdate
    ```
    Wait until goreleaser completes the release process.
 
-1. Invoke [the E2E test workflow](../.github/workflows/test-e2e.yaml) on
-   the release just made (e.g, using [the GitHub web
-   UI](https://github.com/kubestellar/kubeflex/actions/workflows/test-e2e.yaml)). See
-   if it succeeds. If not then there is a problem that needs to be
-   remedied and a newer release made.
-
 1. The goreleaser workflow will also create a branch named `brew` with some changes (to the homebrew instsall script) that need to get merged into `main`. Make a PR to merge `brew` into `main`, and get it approved and merged.
 
 1. To avoid leaving a time bomb, delete that `brew` branch after it was merged into `main` (the goreleaser will fail to create the new `brew` branch if one already exists).
+
+
+## OCM Images
+
+### Commands to build & publish multicluster-controlplane from fork
+
+At this time the official multicluster-controlplane has issues and a build from 
+a fork is required. We expect to re-evaluate when new images will be published
+by the OCM community.
+
+1. Build and publish image from fork
+
+```shell
+git clone https://github.com/pdettori/multicluster-controlplane.git
+cd multicluster-controlplane
+git checkout kubeflex
+make image
+docker tag quay.io/open-cluster-management/multicluster-controlplane:latest quay.io/kubestellar/multicluster-controlplane:v0.2.0-kf-alpha.1
+docker push quay.io/kubestellar/multicluster-controlplane:v0.2.0-kf-alpha.1
+```
+### Commands to package and push a chart to a OCI registry
+
+First clone and build image as explained in [Commands to build & publish multicluster-controlplane from fork](#commands-to-build--publish-multicluster-controlplane-from-fork), then:
+
+```shell
+helm package charts/multicluster-controlplane --version v0.2.0-kf-alpha.1
+helm push *.tgz oci://quay.io/kubestellar
+```

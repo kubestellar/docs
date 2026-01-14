@@ -34,7 +34,7 @@ openssl x509 -noout -text -in certs/apiserver.crt
 ### Manually creating the configmap with KubeFlex defaults
 
 ```shell
-kubectl create configmap kubeflex-config -n kubeflex-system --from-literal=externalPort=9443 --from-literal=domain=localtest.me
+create configmap kubeflex-config -n kubeflex-system --from-literal=externalPort=9443 --from-literal=domain=localtest.me
 ```
 
 ### Get decoded value from secret
@@ -59,7 +59,7 @@ kubectl debug -n ${NAMESPACE} -it ${NAME} --image=${IMAGE} --target=${CONTAINER}
 ### Getting all the command args for a process
 
 ```shell
-cat /proc//cmdline | sed -e "s/\x00/ /g"; echo
+cat /proc/<pid>/cmdline | sed -e "s/\x00/ /g"; echo
 ```
 
 ### How to communicate between kind clusters on the same node
@@ -69,5 +69,7 @@ docker containers. The address is the name of the docker container. For kubflex 
 address is `kubeflex-control-plane`. For example, if I have a nodeport service on 
 `kubeflex-control-plane` with port 30080 and I want to access it from another kind cluster
 the internal address to use is `https://kubeflex-control-plane:30080`
+
+
 
 
