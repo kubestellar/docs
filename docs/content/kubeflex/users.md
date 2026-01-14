@@ -197,7 +197,7 @@ kflex ctx cp1 --overwrite-existing-context
 ```
 
 To switch back to a control plane context, use the
-`ctx <control plane name>` command, e.g:
+`ctx <control-plane-name>` command, e.g:
 
 ```shell
 kflex ctx cp1
@@ -248,7 +248,7 @@ kubectl delete `<control-plane-name>`
 
 If you are not using the kflex CLI to create the control plane and require access to the control plane,
 you may retrieve the secret containing the control plane Kubeconfig, which is hosted in the control
-plane hosting namespace (by convention ``<control-plane-name>`-system`) and is named `admin-kubeconfig`.
+plane hosting namespace (by convention `<control-plane-name>-system`) and is named `admin-kubeconfig`.
 
 For example, the following commands retrieves the Kubeconfig for the control plane `cp1`:
 
@@ -260,10 +260,10 @@ kubectl get secrets -n ${NAMESPACE} admin-kubeconfig -o jsonpath='{.data.kubecon
 ### Accessing the control plane from within a kind cluster
 
 For control plane of type k8s, the Kube API client can only use the 127.0.0.1 address. The DNS name
-``<control-plane-name>`.localtest.me`` is convenient for local test and dev but always resolves to 127.0.0.1, that does not work in a container. For accessing the control plane from within the KubeFlex hosting
+`<control-plane-name>.localtest.me` is convenient for local test and dev but always resolves to 127.0.0.1, that does not work in a container. For accessing the control plane from within the KubeFlex hosting
 cluster, you may use the controller manager Kubeconfig, which is maintained in the secret with name
 `cm-kubeconfig` in the namespace hosting the control plane, or you may use the Kubeconfig in the
-`admin-kubeconfig` secret with the address for the server `https://`<control-plane-name>`.<control-plane-namespace>:9443`.
+`admin-kubeconfig` secret with the address for the server `https://<control-plane-name>.<control-plane-namespace>:9443`.
 
 To access the control plane API server from another kind cluster on the same docker network, you
 can find the value of the nodeport for the service exposing the control plane API service, and construct
@@ -356,7 +356,7 @@ used to register managed clusters:
 
 ```shell
 $ clusteradm get token --use-bootstrap-token
-clusteradm join --hub-token <some value> --hub-apiserver https://cp3.localtest.me:9443/ --cluster-name <cluster_name>
+clusteradm join --hub-token `<some-value>` --hub-apiserver https://cp3.localtest.me:9443/ --cluster-name `<cluster-name>`
 ```
 
 The command returns the command to run on the managed cluster (actual token value not shown in example).
@@ -367,14 +367,14 @@ Now create a kind cluster to register with ocm, with the command:
 kind create cluster --name cluster1
 ```
 
-Once the cluster is ready, run the command above, taking care of replacing <cluster_name> with cluster1
+Once the cluster is ready, run the command above, taking care of replacing `<cluster-name>` with cluster1
 and leaving the actual token value. Most importantly, make sure to add the flag `--force-internal-endpoint-lookup` which allows the managed cluster to communicate with the OCM control plane
 using the docker network that all kind clusters share. Note that the `kind create cluster` command
 switches the context to the new cluster `cluster`, so the `clusteramd join` command is run using the
 new cluster context.
 
 ```shell
-clusteradm join --hub-token <some value> --hub-apiserver https://cp3.localtest.me:9443/ --cluster-name cluster1 --force-internal-endpoint-lookup
+clusteradm join --hub-token `<some-value>` --hub-apiserver https://cp3.localtest.me:9443/ --cluster-name cluster1 --force-internal-endpoint-lookup
 ```
 
 At this point, switch back the context to the OCM control plane with the command:
@@ -621,7 +621,7 @@ You can then reference the hook by name when you create a new control plane.
 With kflex CLI (you can use --postcreate-hook or -p):
 
 ```shell
-kflex create cp1 --postcreate-hook <my-hook-name> # e.g. kflex create cp1 -p hello
+kflex create cp1 --postcreate-hook `<my-hook-name>` # e.g. kflex create cp1 -p hello
 ```
 
 While `kflex create` waits for the control plane to be available, it does not guarantee 
