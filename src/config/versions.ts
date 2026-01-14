@@ -135,6 +135,16 @@ const KUBEFLEX_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.9.3 (Latest)",
     branch: "main",
+    isDefault: false,
+  },
+  "0.8.0": {
+    label: "v0.8.0",
+    branch: "docs/kubeflex/0.8.0",
+    isDefault: false,
+  },
+  "0.7.0": {
+    label: "v0.7.0",
+    branch: "docs/kubeflex/0.7.0",
     isDefault: true,
   },
 }
@@ -170,7 +180,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "kubeflex",
     name: "KubeFlex",
     basePath: "kubeflex",
-    currentVersion: "0.9.3",
+    currentVersion: "0.7.0",
     contentPath: "docs/content/kubeflex",
     versions: KUBEFLEX_VERSIONS,
   },
