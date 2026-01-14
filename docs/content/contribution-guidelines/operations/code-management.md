@@ -127,22 +127,14 @@ Your selected Action workflow will execute and the results will be available whe
 
 ## Create a Pull Request (PR) from your Github repo branch in order to request review and approval from the Kubestellar team
 
-Take a look at [the contribution guidelines](../contributing-inc.md).
+Take a look at https://github.com/kubestellar/kubestellar/blob/main/CONTRIBUTING.md
 
 You can create a Pull Request from your Github web repository by selecting the "Compare & pull request" button.
 
 You will be presented with a Github web page titled Comparing Changes, which allows you to enter metadata regarding your pull request
 
 Reference the issue you are addressing ( add #issue-number)
-The title of the PR must start with a special character (emoji) that
-indicates the type of the PR. It must be one of the following:
-
-- ⚠ (indicates breaking change)
-- ✨ (indicates non-breaking feature)
-- 🐛 (indicates patch fix)
-- 📖 (indicates documentation)
-- 🚀 (indicates release)
-- 🌱 (indicates infra, tests, or other changes)
+Add one of the listed emojis to the first character of the title of your new PR indicating the type of issue (bug fix, feature, etc)
 Complete the summary description field
 Complete the Related issue field by inserting the issue number preceded by the # character, for example "#1187"
 Decide whether this is a draft PR or if it's ready for review, and select the option you want by expanding on the Create Pull Request button.

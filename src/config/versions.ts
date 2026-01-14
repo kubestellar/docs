@@ -10,7 +10,7 @@
 //   2. Add the version to VERSIONS below
 //   3. Update CURRENT_VERSION if it's the latest
 
-export const CURRENT_VERSION = "0.29.0"
+export const CURRENT_VERSION = "0.28.0"
 
 // Netlify site name for branch deploys
 export const NETLIFY_SITE_NAME = "kubestellar-docs"

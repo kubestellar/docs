@@ -1,8 +1,6 @@
 site_name: KubeStellar
 repo_url: https://github.com/kubestellar/kubestellar
-repo_name: kubestellar/kubestellar
 site_url: https://docs.kubestellar.io/
-site_description: "KubeStellar is a Kubernetes-native multi-cluster delivery system: create once, deploy many. Safely route and synchronize resources across clouds, datacenters, and edge."
 
 repo_short_name: kubestellar/kubestellar
 repo_default_file_path: kubestellar
@@ -15,8 +13,8 @@ repo_raw_url: https://raw.githubusercontent.com/kubestellar/kubestellar
 edit_uri: edit/main/docs/content
 ks_branch: 'main'
 ks_tag: 'latest'
-ks_latest_regular_release: '0.29.0'
-ks_latest_release: '0.29.0'
+ks_latest_regular_release: '0.28.0'
+ks_latest_release: '0.28.0'
 
 ks_kind_port_num: '1119'
 
@@ -37,10 +35,9 @@ nav:
         - KubeStellar Galaxy: direct/galaxy-intro.md
       - Release-notes: direct/release-notes.md
       - Roadmap: direct/roadmap.md
-  - Getting Started: direct/get-started/
+  - Getting Started: direct/get-started.md
   - User Guide:
       - Guide Overview: direct/user-guide-intro.md
-      - Observability: direct/observability.md
       - Getting Started: direct/get-started.md
       - Getting Started from OCM: direct/start-from-ocm.md
       - General Setup:
@@ -66,8 +63,6 @@ nav:
               - Binding: direct/binding.md
               - Transforming desired state: direct/transforming.md
               - Combining reported state: direct/combined-status.md
-              - Multi-WEC Aggregated Status: direct/multi-wec-aggregated-status.md
-          - Authorization in WECs: direct/authorization.md
           - Example Scenarios: direct/example-scenarios.md
           - Third-party integrations:
               - ArgoCD to WDS: direct/argo-to-wds1.md
@@ -86,13 +81,11 @@ nav:
       - Overview (How to join in): direct/contribute.md
       - Code of Conduct: contribution-guidelines/coc-inc.md
       - Guidelines: contribution-guidelines/contributing-inc.md
-      - Contributor Ladder: contribution-guidelines/contributor_ladder.md
       - License: contribution-guidelines/license-inc.md
       - Governance: contribution-guidelines/governance-inc.md
       - Onboarding: contribution-guidelines/onboarding-inc.md
       - Website:
           - Docs Management Overview: contribution-guidelines/operations/document-management.md
-          - Style Guide: contribution-guidelines/operations/docs-styleguide.md
           - Testing website PRs: contribution-guidelines/operations/testing-doc-prs.md
       - Security:
           - Policy: contribution-guidelines/security/security-inc.md
@@ -129,8 +122,6 @@ theme:
     text: 'SapceMono'
     code: 'Roboto Mono'
   name: material
-  icon:
-    repo: github
 
   language: en
   # Common files such as images, stylesheets, theme overrides
@@ -147,7 +138,6 @@ theme:
     # - navigation.expand
     - navigation.path
     - navigation.footer
-    - navigation.top
     # - navigation.tracking
     # Enable a copy button in code blocks
     - content.code.copy
@@ -192,7 +182,7 @@ extra:
   #     link: 'https://www.youtube.com/@kubestellar'
   #     name: KubeStellar on YouTube
   #   - icon: fontawesome/brands/slack
-  #     link: 'https://cloud-native.slack.com/archives/C097094RZ3M'
+  #     link: 'https://kubernetes.slack.com/archives/C058SUSL5AA'
   #     name: KubeStellar on Slack
   #   - icon: fontawesome/solid/paper-plane
   #     link: mailto:kubestellar-dev@google.groups.com

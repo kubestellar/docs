@@ -2,48 +2,68 @@
 
 - [What is a WDS?](#what-is-a-wds)
 - [Creating a WDS](#creating-a-wds)
-    - [Creating a kubeconfig context for accessing the WDS](#creating-a-kubeconfig-context-for-accessing-the-wds)
-- [Working with a WDS](#working-with-a-wds)
+  - [Using the KubeFlex CLI](#using-the-kubeflex-cli)
+- [KubeFlex Hosting Cluster as WDS](#kubeflex-hosting-cluster-as-wds)
 - [WDS vs. ControlPlane Registration](#wds-vs-controlplane-registration)
-- [Controllers that work with a WDS](#controllers-that-work-with-a-wds)
+- [Controllers Running in a WDS](#controllers-running-in-a-wds)
+- [Working with a WDS](#working-with-a-wds)
+  - [Accessing the WDS](#accessing-the-wds)
 
-
+A Workload Description Space (WDS) is a core component of the KubeStellar architecture that serves as the primary interface for users to define and manage workloads for multi-cluster deployment.
 
 ## What is a WDS?
 
-A Workload Description Space (WDS) is a space in the [KubeStellar architecture](architecture.md) that serves as the primary interface for users to define and manage workloads for multi-cluster deployment. The WDS consists of a Kubernetes API server with storage that:
+A WDS is a space (a Kubernetes-like API server with storage) that:
 
 - Stores the definitions of workloads in their native Kubernetes format
-- Stores the control objects (`BindingPolicy`, `Binding`, `Status Collector`, `CombinedStatus` and `CustomTransform`) that define how workloads are distributed
-- Stores status information about deployed workloads
+- Hosts the control objects (`BindingPolicy` and `Binding`) that define how workloads are distributed
+- Maintains status information about deployed workloads
 - Acts as the main user interface to the KubeStellar system
-
 
 ## Creating a WDS
 
-Currently the only documented way to create a WDS is by using the [core Helm chart](core-chart.md). See [the step-by-step instructions for getting started](get-started.md#use-core-helm-chart-to-initialize-kubeflex-and-create-its-and-wds) for an example.
+A WDS can be created in several ways:
 
-The adventurous user could --- after using the core Helm chart to get this `PostCreateHook` object created --- create a WDS directly using the KubeFlex CLI or API to create a suitable `ControlPlane` object that uses the same `PostCreateHook` as the core Helm chart does for creating WDSes.
+### Using the KubeStellar Core Helm Chart
 
-### Creating a kubeconfig context for accessing the WDS
-
-After creating your WDS, you will need access to it. To do this you will want your kubeconfig file to have a context for accessing your WDS. The aforementioned step-by-step instructions include doing this.
-
-The following command will (1) ensure that your kubeconfig file has a context that has (a) the same name as the WDS and (b) the right contents for accessing the WDS and then (2) make that context be your current one. You only need to to this once, after creating the WDS. **BEWARE:** This command must only be launched either (a) when the current kubeconfig context is for accessing the KubeFlex hosting cluster or (b) after the KubeFlex CLI has added its [hosting cluster extension](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md#hosting-context) into your kubeconfig file (see the KubeFlex documentation about that, and, for example, the `kflex ctx --set-current-for-hosting` command in the KubeStellar step-by-step setup instructions).
+The recommended approach is to use the KubeStellar Core Chart:
 
 ```shell
-# Create the WDS context if it does not already exist; ensure it has the right contents; make it current.
-kflex ctx --overwrite-existing-context <wds-name>
+helm upgrade --install ks-core oci://ghcr.io/kubestellar/kubestellar/core-chart \
+  --set-json='WDSes=[{"name":"wds1", "type":"k8s"}]'
 ```
 
-Any time later that you want to switch your current kubeconfig context back to the one for this WDS, you can do it with either of the following two commands.
+You can customize your WDS by specifying:
+- `name`: A unique name for the WDS
+- `type`: 
+  - `k8s` (default): Creates a basic Kubernetes API Server with a subset of kube controllers
+  - `host`: Uses the KubeFlex hosting cluster itself
+- `APIGroups`: A comma-separated list of API Groups to include
+- `ITSName`: The name of the ITS to be used by this WDS (required if multiple ITSes exist)
 
-1. `kflex ctx <wds-name>`
-2. `kubectl config use-context <wds-name>`
+### Using the KubeFlex CLI
 
-## Working with a WDS
+You can also create a WDS using the KubeFlex CLI:
 
-With a suitable context in a kubeconfig file, you can use any Kubernetes client to manipulate objects in that WDS. See the "User Guide > Usage" section of this website for more information on using a WDS.
+```shell
+kflex create wds1 -p kubestellar
+```
+
+This command creates a WDS and runs a post-create hook that deploys the KubeStellar controller manager and transport controller.
+
+## KubeFlex Hosting Cluster as WDS
+
+The KubeFlex hosting cluster can be configured to act as a WDS by specifying `type: host` when creating the WDS:
+
+```shell
+helm upgrade --install ks-core oci://ghcr.io/kubestellar/kubestellar/core-chart \
+  --set-json='WDSes=[{"name":"wds1", "type":"host"}]'
+```
+
+This approach:
+- Avoids creating a separate control plane
+- Simplifies the architecture by reusing the hosting cluster
+- Makes the WDS directly accessible through the hosting cluster's API server
 
 ## WDS vs. ControlPlane Registration
 
@@ -52,15 +72,34 @@ It's important to distinguish between:
 1. **Creating a space that can serve as a WDS**: This involves setting up a Kubernetes-like API server.
 2. **Registering it with KubeFlex as a ControlPlane and deploying KubeStellar components**: This is the step that makes the space function as a WDS in the KubeStellar ecosystem.
 
-When using KubeFlex ControlPlane types `host` or `external` for your WDS, step 1 has already been done before creating the `ControlPlane` object for the WDS.
+When using the Core Helm Chart or KubeFlex CLI with appropriate parameters, both steps happen automatically.
 
-## Controllers that work with a WDS
+## Controllers Running in a WDS
 
-The following two Pods run the KubeStellar controllers for a WDS.
+When a space is configured as a WDS, the following controllers are deployed:
 
-1. The [KubeStellar Controller Manager](architecture.md#kubestellar-controller-manager).
-2. The [Transport Controller](architecture.md#pluggable-transport-controller).
+1. **KubeStellar Controller Manager**: Watches `BindingPolicy` objects and creates corresponding `Binding` objects that contain references to concrete workload objects and destination clusters.
 
-These controllers are managed as `Deployment` objects in the KubeFlex hosting cluster. These `Deployment` objects are created by the setup procedures discussed above.
+2. **Transport Controller**: Projects KubeStellar workload and control objects from the WDS into the Inventory and Transport Space (ITS).
 
+These controllers are managed as Deployment objects in the KubeFlex hosting cluster.
 
+## Working with a WDS
+
+Once your WDS is created, you can:
+
+1. **Create workload objects** in their native Kubernetes format
+2. **Define BindingPolicy objects** to specify which workloads should be deployed to which WECs
+3. **Monitor the status** of your deployed workloads
+
+### Accessing the WDS
+
+You can access your WDS using the kubeconfig context provided by KubeFlex:
+
+```shell
+# Set up the WDS context
+kflex ctx --overwrite-existing-context wds1
+
+# Switch to the WDS context
+kubectl config use-context wds1
+```

@@ -124,16 +124,16 @@ Open your browser and navigate to: `https://argocd.localtest.me:9443/`
 
 ## Deploying Argo CD applications
 
-The KubeStellar Core chart can also be used to deploy Argo CD applications as specified by chart values. The example below shows the relevant fragment of the chart values that could be used for deploying an application corresponding to `scenario-6` in [KubeStellar docs](example-scenarios.md#scenario-6-multi-cluster-workload-deployment-of-app-with-serviceaccount-with-argocd).
+The KubeStellar Core chart can also be used to deploy Argo CD applications as specified by chart values. The example below shows the relevant fragment of the chart values that could be used for deploying an application corresponding to `scenario-6` in [KubeStellar docs](example-scenarios.md#scenario-6---multi-cluster-workload-deployment-of-app-with-serviceaccount-with-argocd).
 
 ```yaml
 argocd:
   applications: # list of Argo CD applications to be create
   - name: scenario-6 # required, must be unique
     project: default # default: default
-    repoURL: https://github.com/kubestellar/kubestellar.git
+    repoURL: https://github.com/pdettori/sample-apps.git
     targetRevision: HEAD # default: HEAD
-    path: hack/argo/nginx
+    path: nginx
     destinationWDS: wds1
     destinationNamespace: nginx-sa # default: default
     syncPolicy: auto # default: manual
@@ -142,7 +142,7 @@ argocd:
 Alternatively, the same result can be achieved from Helm CLI by using the followig minimal argument (note that the default values are not explicitely set):
 
 ```shell
---set-json='argocd.applications=[ { "name": "scenario-6", "repoURL": "https://github.com/kubestellar/kubestellar.git", "path": "hack/argo/nginx", "destinationWDS": "wds1", "destinationNamespace": "nginx-sa" } ]'
+--set-json='argocd.applications=[ { "name": "scenario-6", "repoURL": "https://github.com/pdettori/sample-apps.git", "path": "nginx", "destinationWDS": "wds1", "destinationNamespace": "nginx-sa" } ]'
 ```
 
 ![alt text](images/argocd-application.png)

@@ -1,7 +1,7 @@
 # Contributing to KubeStellar
 Welcome to the KubeStellar Contribution Guide! We are excited to have you here. 
 
-You can join the community via our [Slack channel](https://cloud-native.slack.com/archives/C097094RZ3M/).
+You can join the community via our [Slack channel](https://kubernetes.slack.com/archives/C058SUSL5AA/).
 
 This section provides information on the Code of Conduct, guidelines, terms, and conditions that define the KubeStellar contribution processes. By contributing, you are enabling the success of KubeStellar users, and that goes a long way to make everyone happier, including you. We welcome individuals who are new to open-source contributions.
 
@@ -23,9 +23,9 @@ Ensure that you comply with the rules and policy guiding the repository contribu
 
 If you are contributing via the GitHub web interface, navigate to the **Settings** section of your forked repository and enable the **Require contributors to sign off on web-based commits** setting. This will allow you to automatically sign off your commits via GitHub directly, as shown below.
 
-![signoff-via-github-ui](./images/signoff-via-github-ui.png)
+![signoff-via-github-ui](https://github.com/user-attachments/assets/ddfd3988-142e-4380-a738-1a767b1aaba6)
 
-If you are contributing via the command line terminal, run the `git commit --signoff --message [commit message]` or `git commit -s -m [commit message]` command when making each commit. For more detailed information about signing and signing off on commits, including steps to create signing keys and use both the `-s` and `-S` options, see [Sign-off and Signing Contributions](pr-signoff.md).
+If you are contributing via the command line terminal, run the `git commit --signoff --message [commit message]` or `git commit -s -m [commit message]` command when making each commit.
 
 
 
@@ -35,13 +35,11 @@ Read the resources to gain a better understanding of the contribution processes.
 
 - **[Code of Conduct](../contribution-guidelines/coc-inc.md)** The CNCF code of conduct for the KubeStellar community
 - **[Contribution Guidelines](../contribution-guidelines/contributing-inc.md)** General Guidelines for our Github processes
-- **[Contributor Ladder](../contribution-guidelines/contributor_ladder.md)** Path for becoming a KubeStellar maintainer by contributing
 - **[License](../contribution-guidelines/license-inc.md)** The Apache 2.0 license under which KubeStellar is published
 - **[Governance](../contribution-guidelines/governance-inc.md)** The protocols under which the KubeStellar project is run
 - **[Onboarding](../contribution-guidelines/onboarding-inc.md)** The procedures for adding/removing members of our Github organization
 - **Website**
     - **[Build Overview](../contribution-guidelines/operations/document-management.md)** How our website is built and how to collaboratively work on changes to it using Github staging
-    - **[Style Guide](../contribution-guidelines/operations/docs-styleguide.md)** Guidelines on writing the prose parts of our documentation/website
     - **[Testing website PRs](../contribution-guidelines/operations/testing-doc-prs.md)** how to test website changes using only your local workstation
 - **Security**
     - **[Policy](../contribution-guidelines/security/security-inc.md)** Security Policies
