@@ -1,4 +1,4 @@
-<!-- Note that this repo has two readme files, with content that is as nearly identical as is practical: `/README.md` and `/docs/content/readme.md` -->
+<!--readme-for-root-start-->
 
 <img alt="" width="500px" align="left" src="../KubeStellar-with-Logo.png" />
 
@@ -12,13 +12,10 @@
 [![](https://github.com/kubestellar/kubestellar/actions/workflows/docs-gen-and-push.yml/badge.svg?branch={{ config.ks_branch }})](https://github.com/kubestellar/kubestellar/actions/workflows/docs-gen-and-push.yml)&nbsp;&nbsp;&nbsp;
 [![](https://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](https://www.firsttimersonly.com/)&nbsp;&nbsp;&nbsp;
 [![](https://github.com/kubestellar/kubestellar/actions/workflows/broken-links-crawler.yml/badge.svg)](https://github.com/kubestellar/kubestellar/actions/workflows/broken-links-crawler.yml)
-[![](https://www.bestpractices.dev/projects/8266/badge)](https://www.bestpractices.dev/projects/8266)
-[![](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/kubestellar)](https://artifacthub.io/packages/search?repo=kubestellar)
-[![](https://api.scorecard.dev/projects/github.com/kubestellar/kubestellar/badge)](https://scorecard.dev/viewer/?uri=github.com/kubestellar/kubestellar)
-<a href="https://cloud-native.slack.com/archives/C097094RZ3M"> 
+<a href="https://kubernetes.slack.com/archives/C058SUSL5AA"> 
     <img alt="Join Slack" src="https://img.shields.io/badge/KubeStellar-Join%20Slack-blue?logo=slack">
   </a>
- 
+
 **KubeStellar** is a Cloud Native Computing Foundation (CNCF) Sandbox project that simplifies the deployment and configuration of applications across multiple Kubernetes clusters. It provides a seamless experience akin to using a single cluster, and it integrates with the tools you're already familiar with, eliminating the need to modify existing resources.
 
 KubeStellar is particularly beneficial if you're currently deploying in a single cluster and are looking to expand to multiple clusters, or if you're already using multiple clusters and are seeking a more streamlined developer experience.
@@ -41,28 +38,9 @@ In a single-cluster setup, developers typically access the cluster and deploy Ku
 
 KubeStellar simplifies this process by allowing developers to define a binding policy between clusters and Kubernetes objects. It then uses your regular single-cluster tooling to deploy and configure each cluster based on these binding policies, making multi-cluster operations as straightforward as managing a single cluster. This approach enhances productivity and efficiency, making KubeStellar a valuable tool in a multi-cluster Kubernetes environment.
 
-## Quick Start
-
-Get up and running with KubeStellar in minutes:
-
-```bash
-# Install KubeStellar CLI
-brew install kubestellar/kubestellar/kubestellar
-
-# Initialize your environment
-kubestellar init
-```
-
-For a complete walkthrough, see the [Quick Start Guide](direct/get-started.md).
-
-## Getting Started
-
-See the [Getting Started setup guide](direct/get-started.md) for getting started with kicking the tires.
-
 ## Contributing
 
-
-We ❤️ our contributors! If you're interested in helping us out, please head over to our [Contributing](contribution-guidelines/contributing-inc.md) guide.
+We ❤️ our contributors! If you're interested in helping us out, please head over to our [Contributing]({{ config.docs_url }}/{{ config.ks_branch }}/Contribution%20guidelines/CONTRIBUTING/) guide.
 
 ## Getting in touch
 
@@ -70,7 +48,7 @@ There are several ways to communicate with us:
 
 Instantly get access to our documents and meeting invites [http://kubestellar.io/joinus](http://kubestellar.io/joinus)
 
-- The [`#kubestellar-dev` channel](https://cloud-native.slack.com/archives/C097094RZ3M) in the [CNCF Slack workspace](https://communityinviter.com/apps/cloud-native/cncf)
+- The [`#kubestellar-dev` channel](https://kubernetes.slack.com/archives/C058SUSL5AA) in the [Kubernetes Slack workspace](https://slack.k8s.io)
 - Our mailing lists:
     - [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) for development discussions
     - [kubestellar-users](https://groups.google.com/g/kubestellar-users) for discussions among users and potential users
@@ -84,11 +62,6 @@ Instantly get access to our documents and meeting invites [http://kubestellar.io
 - Follow us on:
    - LinkedIn - [#kubestellar](https://www.linkedin.com/feed/hashtag/?keywords=kubestellar)
    - Medium - [kubestellar.medium.com](https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST)
-## Release Notes
-
-For detailed, summaries of each release—including new features, bug fixes, and breaking changes—please visit our release notes page:
-
-https://docs.kubestellar.io/unreleased-development/direct/release-notes/
    
    
 ## ❤️ Contributors
@@ -110,18 +83,15 @@ Thanks go to these wonderful people:
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/fileppb"><img src="https://avatars.githubusercontent.com/u/124100147?v=4" width="100px;" alt=""/><br /><sub><b>Bob Filepp</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Afileppb+" title="Contributed PRs">👀</a></td>
-    <td align="center"><a href="https://github.com/effi-ofer"><img src="https://avatars.githubusercontent.com/u/18140413?v=4" width="100px;" alt=""/><br /><sub><b>Effi Ofer</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Aeffi-ofer+" title="Contributed PRs">👀</a></td>
+    <td align="center"><a href="https://github.com/thinkahead"><img src="https://avatars.githubusercontent.com/u/7507482?v=4" width="100px;" alt=""/><br /><sub><b>Alexei Karve</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Athinkahead+" title="Contributed PRs">👀</a></td>
     <td align="center"><a href="https://github.com/mra-ruiz"><img src="https://avatars.githubusercontent.com/u/16118462?v=4" width="100px;" alt=""/><br /><sub><b>Maria Camila Ruiz Cardenas</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Amra-ruiz+" title="Contributed PRs">👀</a></td>
-    <td align="center"><a href="https://github.com/andreyod"><img src="https://avatars.githubusercontent.com/u/16204273?v=4" width="100px;" alt=""/><br /><sub><b>Andrey Odarenko</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Aandreyod+" title="Contributed PRs">👀</a></td>
+    <td align="center"><a href="https://github.com/aslom"><img src="https://avatars.githubusercontent.com/u/1648338?v=4" width="100px;" alt=""/><br /><sub><b>Aleksander Slominski</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Aaslom+" title="Contributed PRs">👀</a></td>
     <td align="center"><a href="https://github.com/amanroa"><img src="https://avatars.githubusercontent.com/u/26678552?v=4" width="100px;" alt=""/><br /><sub><b>Aashni Manroa</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Aamanroa+" title="Contributed PRs">👀</a></td>
     <td align="center"><a href="https://github.com/KPRoche"><img src="https://avatars.githubusercontent.com/u/25445603?v=4" width="100px;" alt=""/><br /><sub><b>Kevin Roche</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3AKPRoche+" title="Contributed PRs">👀</a></td>
     <td align="center"><a href="https://github.com/namasl"><img src="https://avatars.githubusercontent.com/u/144150872?v=4" width="100px;" alt=""/><br /><sub><b>Nick Masluk</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Anamasl+" title="Contributed PRs">👀</a></td>
   </tr>
   <tr>
-     <td align="center"><a href="https://github.com/fab7"><img src="https://avatars.githubusercontent.com/u/15231306?v=4" width="100px;" alt=""/><br /><sub><b>Francois Abel</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Afab7+" title="Contributed PRs">👀</a></td>
-    <td align="center"><a href="https://github.com/nirrozenbaum"><img src="https://avatars.githubusercontent.com/u/19717747?v=4" width="100px;" alt=""/><br /><sub><b>Nir Rozenbaum</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Anirrozenbaum+" title="Contributed PRs">👀</a></td>
-    <td align="center"><a href="https://github.com/vMaroon"><img src="https://avatars.githubusercontent.com/u/73340153?v=4" width="100px;" alt=""/><br /><sub><b>Maroon Ayoub</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3AvMaroon+" title="Contributed PRs">👀</a></td>
-    <td align="center"><a href="https://github.com/grahamwhiteuk"><img src="https://avatars.githubusercontent.com/u/1632332?v=4" width="100px;" alt=""/><br /><sub><b>Graham White</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/pulls?q=is%3Apr+author%3A%40me+" title="Contributed PRs">👀</a></td>
+    <td align="center"><a href="https://github.com/fab7"><img src="https://avatars.githubusercontent.com/u/15231306?v=4" width="100px;" alt=""/><br /><sub><b>Francois Abel</b></sub></a><br /><a href="https://github.com/kubestellar/kubestellar/issues?q=assignee%3Afab7+" title="Contributed PRs">👀</a></td>
   </tr>
 </table>
 
@@ -129,3 +99,4 @@ Thanks go to these wonderful people:
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+<!--readme-for-root-end-->
