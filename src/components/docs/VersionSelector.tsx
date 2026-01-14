@@ -4,10 +4,9 @@ import { useState, useRef, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import {
-  CURRENT_VERSION,
-  getAllVersions,
+  getProjectFromPath,
+  getProjectVersions,
   getVersionUrl,
-  type VersionKey,
 } from '@/config/versions';
 
 interface VersionSelectorProps {
@@ -15,18 +14,81 @@ interface VersionSelectorProps {
   isMobile?: boolean;
 }
 
+// Detect current version from hostname
+function detectCurrentVersionKey(versions: Array<{ key: string; branch: string; isDev?: boolean }>): string {
+  if (typeof window === 'undefined') return 'latest';
+
+  const hostname = window.location.hostname;
+
+  // Production site = latest
+  if (hostname === 'kubestellar.io' || hostname === 'www.kubestellar.io') {
+    return 'latest';
+  }
+
+  // Netlify branch deploys: {branch-slug}--{site-name}.netlify.app
+  const branchDeployMatch = hostname.match(/^(.+)--[\w-]+\.netlify\.app$/);
+  if (branchDeployMatch) {
+    const branchSlug = branchDeployMatch[1];
+
+    // Check for "main" branch deploy
+    if (branchSlug === 'main') {
+      return 'main';
+    }
+
+    // Check for deploy previews (deploy-preview-XXX)
+    if (branchSlug.startsWith('deploy-preview-')) {
+      return 'latest'; // Preview shows as latest
+    }
+
+    // Match branch slug to version (e.g., docs-0-28-0 -> 0.28.0)
+    for (const version of versions) {
+      const versionBranchSlug = version.branch.replace(/\//g, '-').replace(/\./g, '-');
+      if (branchSlug === versionBranchSlug) {
+        return version.key;
+      }
+    }
+  }
+
+  // Default to latest
+  return 'latest';
+}
+
 export function VersionSelector({ className = '', isMobile = false }: VersionSelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentVersionKey, setCurrentVersionKey] = useState('latest');
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
-  // Get all versions
-  const versions = getAllVersions();
+  // Detect current project from URL
+  const currentProject = getProjectFromPath(pathname);
+  const projectId = currentProject.id;
 
-  // Current version label (from the default/latest version)
-  const currentVersionLabel = `v${CURRENT_VERSION}`;
+  // Get versions for the current project and sort them
+  // Order: default first, then dev, then rest by version number descending
+  const versions = getProjectVersions(projectId).sort((a, b) => {
+    if (a.isDefault && !b.isDefault) return -1;
+    if (!a.isDefault && b.isDefault) return 1;
+    if (a.isDev && !b.isDev) return -1;
+    if (!a.isDev && b.isDev) return 1;
+    // Sort by version number descending (legacy goes last)
+    if (a.key === 'legacy') return 1;
+    if (b.key === 'legacy') return -1;
+    return b.key.localeCompare(a.key, undefined, { numeric: true });
+  });
+
+  // Detect current version from hostname on mount
+  useEffect(() => {
+    setCurrentVersionKey(detectCurrentVersionKey(versions));
+  }, [versions]);
+
+  // Get the label for the current version
+  const currentVersion = versions.find(v => v.key === currentVersionKey);
+  const currentVersionLabel = currentVersion?.label || `v${currentProject.currentVersion}`;
+
+  // Show project name for non-KubeStellar projects
+  const showProjectName = projectId !== 'kubestellar';
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -52,11 +114,11 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
     return () => document.removeEventListener('keydown', handleEscape);
   }, []);
 
-  const handleVersionChange = (versionKey: VersionKey) => {
+  const handleVersionChange = (versionKey: string) => {
     setIsOpen(false);
 
-    // Get the URL for the selected version
-    const url = getVersionUrl(versionKey, pathname);
+    // Get the URL for the selected version (project-aware)
+    const url = getVersionUrl(versionKey, pathname, projectId);
 
     // Navigate to the new version
     window.location.href = url;
@@ -78,6 +140,7 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
             <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
             </svg>
+            {showProjectName && <span className="font-medium mr-1">{currentProject.name}:</span>}
             Version: {currentVersionLabel}
           </span>
           <svg
@@ -92,8 +155,9 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
 
         {isOpen && (
           <div className="mt-1 ml-7 space-y-1">
-            {versions.map(({ key, label }) => {
-              const isCurrentVersion = key === 'latest';
+            {versions.map(({ key, label, externalUrl }) => {
+              const isCurrentVersion = key === currentVersionKey;
+              const isExternal = !!externalUrl;
               return (
                 <button
                   key={key}
@@ -109,7 +173,7 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
                   }`}
                 >
                   {label}
-                  {key === 'legacy' && (
+                  {isExternal && (
                     <svg className="w-3 h-3 ml-1 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
@@ -135,8 +199,9 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
         }`}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
-        aria-label="Select documentation version"
+        aria-label={`Select ${currentProject.name} documentation version`}
       >
+        {showProjectName && <span className="font-semibold">{currentProject.name}</span>}
         <span>{currentVersionLabel}</span>
         <svg
           className={`w-3 h-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
@@ -156,12 +221,12 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
               : 'bg-white border-gray-200'
           }`}
           role="listbox"
-          aria-label="Documentation versions"
+          aria-label={`${currentProject.name} documentation versions`}
         >
           <div className="py-1">
-            {versions.map(({ key, label }) => {
-              const isCurrentVersion = key === 'latest';
-              const isExternal = key === 'legacy';
+            {versions.map(({ key, label, externalUrl }) => {
+              const isCurrentVersion = key === currentVersionKey;
+              const isExternal = !!externalUrl;
 
               return (
                 <button
