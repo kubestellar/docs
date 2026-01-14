@@ -452,6 +452,27 @@ export default function GetStartedSection() {
                       </svg>
                     {t("card2Button5")}
                   </Link>
+                  <a
+                    href={getLocalizedUrl("https://kubestellar.io/agenda")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center px-3 py-2.5 rounded-lg bg-gradient-to-r from-cyan-600/80 to-cyan-700/80 hover:from-cyan-600 hover:to-cyan-700 text-white text-sm font-medium transition-all duration-200 border border-cyan-500/30"
+                  >
+                    <svg
+                      className="h-4 w-4 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    {t("card2Button6")}
+                  </a>
                 </div>
               </div>
             </div>
