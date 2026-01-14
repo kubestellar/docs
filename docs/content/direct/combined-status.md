@@ -70,7 +70,7 @@ LIMIT <limit>
 When there is aggregation but no plain selection and _no_ `GROUP BY`, this is equivalent to the following form of SELECT statement. The [Number of WECs example below](#number-of-wecs) is an example of this form.
 
 ```sql
-SELECT <aggregation columns>
+SELECT 
 FROM PerWEC WHERE <filter condition>
 LIMIT <limit>
 ```
@@ -80,7 +80,7 @@ LIMIT <limit>
 When there is `GROUP BY` and aggregation but no plain selection, this is equivalent to the following form of SELECT statement. The [Histogram of Pod phase example below](#histogram-of-pod-phase) is an example of this form.
 
 ```sql
-SELECT <group-by column names>, <aggregation columns>
+SELECT <group-by column names>, 
 FROM (SELECT <group-by column 1 expr> AS <group-by column 1 name>,
              ...
              <group-by column N expr> AS <group-by column N name>,
