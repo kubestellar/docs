@@ -29,7 +29,7 @@ KubeFlex defines a ControlPlane CRD that represents a Control Plane.
 ![image info](./images/kubeflex-architecture.png)
 
 When a user initiates the creation of a Control Plane Custom Resource (CR) by
-executing the `kflex create `<cp>`` command or the `kubectl apply -f mycontrolplane.yaml` 
+executing the `kflex create <cp>` command or the `kubectl apply -f mycontrolplane.yaml` 
 command for a control plane of type k8s, the KubeFlex controller creates a new namespace 
 within the hosting cluster, and then deploys the following artifacts in that namespace:
 
@@ -39,7 +39,7 @@ within the hosting cluster, and then deploys the following artifacts in that nam
     - For control planes designated as type `k8s`, the API server is
       configured to use a **shared Postgres database** as a backend DB.
       This database is located in the `kubeflex-system` namespace. KubeFlex takes advantage of
-      [**<u>kine</u>**](https://github.com/k3s-io/kine), a tool that
+      [**kine**](https://github.com/k3s-io/kine), a tool that
       emulates the etcd interface for Postgres, allowing the API server
       to interact with the database.
 
