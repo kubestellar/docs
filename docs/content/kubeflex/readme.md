@@ -88,13 +88,13 @@ kflex ctx
 ```
 
 To switch back to a control plane context, use the
-`ctx <control plane name>` command, e.g:
+`ctx `<control-plane-name>`` command, e.g:
 
 ```shell
 kflex ctx cp1
 ```
 
-To delete a control plane, use the `delete <control plane name>` command, e.g:
+To delete a control plane, use the `delete `<control-plane-name>`` command, e.g:
 
 ```shell
 kflex delete cp1

@@ -50,7 +50,7 @@ LATEST_TAG=`<tag used for image>` make ko-build-push-cmupdate
 ## Steps to make release
 
 1. delete branch "brew" from https://github.com/kubestellar/kubeflex 
-2. git checkout <release branch> # e.g. release-0.3
+2. git checkout `<release-branch>` # e.g. release-0.3
 3. Run the rebase from main
 ```
 gitr(){
