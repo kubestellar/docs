@@ -10,31 +10,35 @@
 [![](https://github.com/kubestellar/kubestellar/actions/workflows/broken-links-crawler.yml/badge.svg)](https://github.com/kubestellar/kubestellar/actions/workflows/broken-links-crawler.yml)
 [![Join Slack](https://img.shields.io/badge/KubeStellar-Join%20Slack-blue?logo=slack)](https://kubernetes.slack.com/archives/C058SUSL5AA)
 
-Imagine KubeStellar as a post office for your Kubernetes resources. When you drop packages at the post office, they don't open them; they deliver them to the right recipients. Similarly, KubeStellar works like this for your Kubernetes resources. Instead of running resources right away, KubeStellar safely stores and sends resources to selected clusters across the globe—whether they're in public clouds, private clouds, or on the edge of your network. It's a super useful tool for spreading your Kubernetes resources wherever you need them without disrupting your existing tools and workflows.
+**KubeStellar** is a Cloud Native Computing Foundation (CNCF) Sandbox project that simplifies the deployment and configuration of applications across multiple Kubernetes clusters. It provides a seamless experience akin to using a single cluster, and it integrates with the tools you're already familiar with, eliminating the need to modify existing resources.
 
-How does KubeStellar resist the temptation to run your Kubernetes resources right away? KubeStellar accepts your applied resources in a special staging area (virtual cluster) where pods can't be created. Then, at your direction, KubeStellar transfers your applied resources to remote clusters where they can create pods and other required resource dependencies. KubeStellar does this using many different lightweight virtual cluster providers (Kind, KubeFlex, KCP, etc.) to create this special staging area. 
-
-KubeStellar is an innovative way to stage inactive Kubernetes resources and then apply them to any cluster to run. KubeStellar introduces a native way to expand, optimize, and protect your Kubernetes resources from individual cluster misconfiguration, utilization, and failure. 
-
-__Don't change anything, just add KubeStellar!__
+KubeStellar is particularly beneficial if you're currently deploying in a single cluster and are looking to expand to multiple clusters, or if you're already using multiple clusters and are seeking a more streamlined developer experience.
 
 
-## KubeStellar treats multiple Kubernetes clusters as one so you can:
+![KubeStellar High Level View](./images/kubestellar-high-level.png)
 
-- __Centrally__ apply Kubernetes resources for selective deployment across multiple clusters 
-- Use __standard Kubernetes native deployment tools__ (kubectl, Helm, Kustomize, ArgoCD, Flux); no resource bundling required
-- __Discover__ dynamically created objects created on remote clusters
-- Make __disconnected__ cluster operation possible
-- __Scale__ with 1:many and many:1 scenarios
-- __Remain compatible__ with cloud-native solutions
 
-## Use The Source, Luke
+The use of multiple clusters offers several advantages, including:
 
-**NOTE**: This website is still under construction, and not all of the documentation appears on this website. The rest, which is also still under construction, is designed to be viewed directly from the GitHub repository; see the README of [the KubeStellar GitHub repository](http://github.com/kubestellar/kubestellar). To read the documentation for release `X.Y.Z`, view the Git content tagged `vX.Y.Z`.
+- Separation of environments (e.g., development, testing, staging)
+- Isolation of groups, teams, or departments
+- Compliance with enterprise security or data governance requirements
+- Enhanced resiliency, including across different clouds
+- Improved resource availability
+- Access to heterogeneous resources
+- Capability to run applications on the edge, including in disconnected environments
+
+In a single-cluster setup, developers typically access the cluster and deploy Kubernetes objects directly. Without KubeStellar, multiple clusters are usually deployed and configured individually, which can be time-consuming and complex.
+
+KubeStellar simplifies this process by allowing developers to define a binding policy between clusters and Kubernetes objects. It then uses your regular single-cluster tooling to deploy and configure each cluster based on these binding policies, making multi-cluster operations as straightforward as managing a single cluster. This approach enhances productivity and efficiency, making KubeStellar a valuable tool in a multi-cluster Kubernetes environment.
+
+## Getting Started
+
+See the [Getting Started setup guide](direct/get-started.md) for getting started with kicking the tires.
 
 ## Contributing
 
-We ❤️ our contributors! If you're interested in helping us out, please head over to our [Contributing]({{ config.docs_url }}/{{ config.ks_branch }}/Contribution%20guidelines/CONTRIBUTING/) guide.
+We ❤️ our contributors! If you're interested in helping us out, please head over to our [Contributing](Contribution%20guidelines/CONTRIBUTING.md) guide.
 
 ## Getting in touch
 
@@ -61,6 +65,7 @@ Instantly get access to our documents and meeting invites [http://kubestellar.io
 ## ❤️ Contributors
 
 Thanks go to these wonderful people:
+
 
 
   
@@ -90,15 +95,15 @@ Thanks go to these wonderful people:
     [![](https://avatars.githubusercontent.com/u/124100147?v=4)
 <sub>Bob Filepp</sub>](https://github.com/fileppb)
 [👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3Afileppb+)
-    [![](https://avatars.githubusercontent.com/u/7507482?v=4)
-<sub>Alexei Karve</sub>](https://github.com/thinkahead)
-[👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3Athinkahead+)
+    [![](https://avatars.githubusercontent.com/u/18140413?v=4)
+<sub>Effi Ofer</sub>](https://github.com/effi-ofer)
+[👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3Aeffi-ofer+)
     [![](https://avatars.githubusercontent.com/u/16118462?v=4)
 <sub>Maria Camila Ruiz Cardenas</sub>](https://github.com/mra-ruiz)
 [👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3Amra-ruiz+)
-    [![](https://avatars.githubusercontent.com/u/1648338?v=4)
-<sub>Aleksander Slominski</sub>](https://github.com/aslom)
-[👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3Aaslom+)
+    [![](https://avatars.githubusercontent.com/u/16204273?v=4)
+<sub>Andrey Odarenko</sub>](https://github.com/andreyod)
+[👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3Aandreyod+)
     [![](https://avatars.githubusercontent.com/u/26678552?v=4)
 <sub>Aashni Manroa</sub>](https://github.com/amanroa)
 [👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3Aamanroa+)
@@ -110,9 +115,19 @@ Thanks go to these wonderful people:
 [👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3Anamasl+)
   
   
-    [![](https://avatars.githubusercontent.com/u/15231306?v=4)
+     [![](https://avatars.githubusercontent.com/u/15231306?v=4)
 <sub>Francois Abel</sub>](https://github.com/fab7)
 [👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3Afab7+)
+    [![](https://avatars.githubusercontent.com/u/19717747?v=4)
+<sub>Nir Rozenbaum</sub>](https://github.com/nirrozenbaum)
+[👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3Anirrozenbaum+)
+    [![](https://avatars.githubusercontent.com/u/73340153?v=4)
+<sub>Maroon Ayoub</sub>](https://github.com/vMaroon)
+[👀](https://github.com/kubestellar/kubestellar/issues?q=assignee%3AvMaroon+)
+    [![](https://avatars.githubusercontent.com/u/1632332?v=4)
+<sub>Graham White</sub>](https://github.com/grahamwhiteuk)
+[👀](https://github.com/kubestellar/kubestellar/pulls?q=is%3Apr+author%3A%40me+)
   
+
 
 

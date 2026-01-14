@@ -10,7 +10,8 @@ Let's take WMW as an example:
 
 1. Create `kube-system` namespace in the workspace.
 
-2. Make sure necessary apibindings exist in the workspace. For WMW, we need one for Kubernetes and one for KubeStellar's edge API.
+2. Make sure necessary apibindings exist in the workspace. 
+   For WMW, we need one for Kubernetes and one for KubeStellar's edge API.
 
 3. Exclude `ClusterWorkspace` from discovery and sync.
 
@@ -37,7 +38,8 @@ Let's take WMW as an example:
 
    Argo CD's documentation mentions this feature as [Resource Exclusion/Inclusion](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#resource-exclusioninclusion).
 
-4. Make sure the current context uses WMW, then identify the admin.kubeconfig. The command and output should be similar to
+4. Make sure the current context uses WMW, then identify the admin.kubeconfig.
+   The command and output should be similar to
    ```console
    $ argocd cluster add --name wmw --kubeconfig ./admin.kubeconfig workspace.kcp.io/current
    WARNING: This will create a service account `argocd-manager` on the cluster referenced by context `workspace.kcp.io/current` with full cluster level privileges. Do you want to continue [y/N]? y
@@ -47,73 +49,112 @@ Let's take WMW as an example:
    Cluster 'https://172.31.31.125:6443/clusters/root:my-org:wmw-turbo' added
    ```
 
-### Create Argo CD Applications
-Once KubeStellar's workspaces are added, Argo CD Applications can be created as normal.
-There are a few examples listed [here](https://github.com/edge-experiments/gitops-source/tree/main/kubestellar),
-and the commands to use the examples are listed as follows.
+   ### Create Argo CD Applications
+   Once KubeStellar's workspaces are added, Argo CD Applications can be created as normal.
+   There are a few examples listed [here](https://github.com/edge-experiments/gitops-source/tree/main/kubestellar),
+   and the commands to use the examples are listed as follows.
 
-#### Create Argo CD Applications against KubeStellar's IMW
-Create two Locations. The command and output should be similar to
-```console
-$ argocd app create locations \
---repo https://github.com/edge-experiments/gitops-source.git \
---path kubestellar/locations/ \
---dest-server https://172.31.31.125:6443/clusters/root:imw-turbo \
---sync-policy automated
-application 'locations' created
-```
+   #### Create Argo CD Applications against KubeStellar's IMW
+   Create two Locations. The command and output should be similar to
+   ```console
+   $ argocd app create locations \
+   --repo https://github.com/edge-experiments/gitops-source.git \
+   --path kubestellar/locations/ \
+   --dest-server https://172.31.31.125:6443/clusters/root:imw-turbo \
+   --sync-policy automated
+   application 'locations' created
+   ```
 
-Create two SyncTargets. The command and output should be similar to
-```console
-$ argocd app create synctargets \
---repo https://github.com/edge-experiments/gitops-source.git \
---path kubestellar/synctargets/ \
---dest-server https://172.31.31.125:6443/clusters/root:imw-turbo \
---sync-policy automated
-application 'synctargets' created
-```
+   Create two SyncTargets. The command and output should be similar to
+   ```console
+   $ argocd app create synctargets \
+   --repo https://github.com/edge-experiments/gitops-source.git \
+   --path kubestellar/synctargets/ \
+   --dest-server https://172.31.31.125:6443/clusters/root:imw-turbo \
+   --sync-policy automated
+   application 'synctargets' created
+   ```
 
-#### Create Argo CD Application against KubeStellar's WMW
-Create a Namespace. The command and output should be similar to
-```console
-$ argocd app create namespace \
---repo https://github.com/edge-experiments/gitops-source.git \
---path kubestellar/namespaces/ \
---dest-server https://172.31.31.125:6443/clusters/root:my-org:wmw-turbo \
---sync-policy automated
-application 'namespace' created
-```
+   #### Create Argo CD Application against KubeStellar's WMW
+   Create a Namespace. The command and output should be similar to
+   ```console
+   $ argocd app create namespace \
+   --repo https://github.com/edge-experiments/gitops-source.git \
+   --path kubestellar/namespaces/ \
+   --dest-server https://172.31.31.125:6443/clusters/root:my-org:wmw-turbo \
+   --sync-policy automated
+   application 'namespace' created
+   ```
 
-Create a Deployment for 'cpumemload'. The command and output should be similar to
-```console
-$ argocd app create cpumemload \
---repo https://github.com/edge-experiments/gitops-source.git \
---path kubestellar/workloads/cpumemload/ \
---dest-server https://172.31.31.125:6443/clusters/root:my-org:wmw-turbo \
---sync-policy automated
-application 'cpumemload' created
-```
+   Create a Deployment for 'cpumemload'. The command and output should be similar to
+   ```console
+   $ argocd app create cpumemload \
+   --repo https://github.com/edge-experiments/gitops-source.git \
+   --path kubestellar/workloads/cpumemload/ \
+   --dest-server https://172.31.31.125:6443/clusters/root:my-org:wmw-turbo \
+   --sync-policy automated
+   application 'cpumemload' created
+   ```
 
-Create an EdgePlacement. The command and output should be similar to
-```console
-$ argocd app create edgeplacement \
---repo https://github.com/edge-experiments/gitops-source.git \
---path kubestellar/placements/ \
---dest-server https://172.31.31.125:6443/clusters/root:my-org:wmw-turbo \
---sync-policy automated
-application 'edgeplacement' created
-```
+   Create an EdgePlacement. The command and output should be similar to
+   ```console
+   $ argocd app create edgeplacement \
+   --repo https://github.com/edge-experiments/gitops-source.git \
+   --path kubestellar/placements/ \
+   --dest-server https://172.31.31.125:6443/clusters/root:my-org:wmw-turbo \
+   --sync-policy automated
+   application 'edgeplacement' created
+   ```
 
-## Other Resources
+# Other Resources
+Medium - [Sync 10,000 ArgoCD Applications in One Shot](https://medium.com/itnext/sync-10-000-argo-cd-applications-in-one-shot-bfcda04abe5b)
 
-- [Sync 10,000 ArgoCD Applications in One Shot](https://medium.com/itnext/sync-10-000-argo-cd-applications-in-one-shot-bfcda04abe5b)
-- [Sync 10,000 ArgoCD Applications in One Shot, by Yourself](https://medium.com/@filepp/how-to-sync-10-000-argo-cd-applications-in-one-shot-by-yourself-9e389ab9e8ad)
-- [GitOpsCon - here we come](https://medium.com/@clubanderson/gitopscon-here-we-come-9a8b8ffe2a33)
+Medium - [Sync 10,000 ArgoCD Applications in One Shot, by Yourself](https://medium.com/@filepp/how-to-sync-10-000-argo-cd-applications-in-one-shot-by-yourself-9e389ab9e8ad)
+
+Medium - [GitOpsCon - here we come](https://medium.com/@clubanderson/gitopscon-here-we-come-9a8b8ffe2a33)
 
 ### ArgoCD Scale Experiment - KubeStellar Community Demo Day
 
-[![ArgoCD Scale Experiment](https://img.youtube.com/vi/7XuEJF7--Sc/0.jpg)](https://www.youtube.com/watch?v=7XuEJF7--Sc&t=90s)
+
+  ![image](../../../images/spinner.gif)
+
+[![Video](https://img.youtube.com/vi/7XuEJF7--Sc/0.jpg)](https://www.youtube.com/watch?v=7XuEJF7--Sc)
+
 
 ### GitOpsCon 2023 - A Quantitative Study on Argo Scalability - Andrew Anderson & Jun Duan, IBM
 
-[![GitOpsCon 2023](https://img.youtube.com/vi/PB3OTXDjFjg/0.jpg)](https://www.youtube.com/watch?v=PB3OTXDjFjg)
+
+  ![image](../../../images/spinner.gif)
+
+[![Video](https://img.youtube.com/vi/PB3OTXDjFjg/0.jpg)](https://www.youtube.com/watch?v=PB3OTXDjFjg)
+
+
+### ArgoCD and KubeStellar in the news
+
+
+  ![image](../../../images/spinner.gif)
+
+[View on LinkedIn](https://www.linkedin.com/embed/feed/update/urn:li:share:7031032280722632704)
+
+
+
+
+  ![image](../../../images/spinner.gif)
+
+[View on LinkedIn](https://www.linkedin.com/embed/feed/update/urn:li:share:7046166635367268352)
+
+
+
+
+  ![image](../../../images/spinner.gif)
+
+[View on LinkedIn](https://www.linkedin.com/embed/feed/update/urn:li:share:7060337925300838400)
+
+
+
+
+  ![image](../../../images/spinner.gif)
+
+[View on LinkedIn](https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7074718212461899776)
+
+
