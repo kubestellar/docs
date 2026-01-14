@@ -2,13 +2,16 @@
 
 For the sake of supply chain security, every reference from a workflow to an action identifies the action's version by a commit hash rather than a tag or branch name. This ensures reproducibility and prevents supply chain attacks through action tampering.
 
+> [!NOTE]
+> These instructions apply to the main [kubestellar/kubestellar](https://github.com/kubestellar/kubestellar) repository. The scripts and files mentioned below are located in the root of that repository.
+
 ## The Reversemap File
 
-The file `.gha-reversemap.yml` in the root of the repository is the single source of truth for the mapping from action identity (owner/repo and version tag) to commit hash. This file should only be updated when you have confidence in the new or added version.
+The file `.gha-reversemap.yml` in the root of the `kubestellar` repository is the single source of truth for the mapping from action identity (owner/repo and version tag) to commit hash. This file should only be updated when you have confidence in the new or added version.
 
 ## Managing Action References
 
-The script `hack/gha-reversemap.sh` provides commands for managing GitHub Action references across workflows.
+The script `hack/gha-reversemap.sh` (in the `kubestellar` repository) provides commands for managing GitHub Action references across workflows.
 
 ### Available Commands
 
