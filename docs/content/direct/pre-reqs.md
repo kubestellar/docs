@@ -21,15 +21,15 @@ Our documentation has remarks about using the following sorts of clusters:
 <!-- begin software prerequisites -->
 ## Software Prerequisites: for Using KubeStellar
 
-- **kubeflex** version 0.8.0 or higher.
+- **kubeflex** version 0.7.1 or higher.
     To install kubeflex go to [https://github.com/kubestellar/kubeflex/blob/main/docs/users.md#installation](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md#installation). To upgrade from an existing installation,
 follow [these instructions](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md#upgrading-kubeflex). At the end of the install make sure that the kubeflex CLI, kflex, is in your `$PATH`.
 
-- **OCM CLI (clusteradm)** 0.10 <= version **< 0.11**.
-    To install the latest acceptable version of the OCM CLI use:
+- **OCM CLI (clusteradm)** version >= 0.7.
+    To install OCM CLI use:
 
     ```shell
-    bash <(curl -L https://raw.githubusercontent.com/open-cluster-management-io/clusteradm/main/install.sh) 0.10.1
+    curl -L https://raw.githubusercontent.com/open-cluster-management-io/clusteradm/main/install.sh | bash
     ```
 
     Note that the default installation of clusteradm will install in /usr/local/bin which will require root access. If you prefer to avoid root, you can specify an alternative installation location using the INSTALL_DIR environment variable, as follows:
@@ -37,18 +37,18 @@ follow [these instructions](https://github.com/kubestellar/kubeflex/blob/main/do
     ```shell
     mkdir -p ocm
     export INSTALL_DIR="$PWD/ocm"
-    bash <(curl -L https://raw.githubusercontent.com/open-cluster-management-io/clusteradm/main/install.sh) 0.10.1
+    curl -L https://raw.githubusercontent.com/open-cluster-management-io/clusteradm/main/install.sh | bash
     export PATH=$PWD/ocm:$PATH
     ```
 
     At the end of the install make sure that the OCM CLI, clusteradm, is in your `$PATH`.
 
-- **helm** version >= 3. To deploy the Kubestellar and kubeflex charts. Your `helm` command must not be broken; see [the known issue](knownissue-helm-ghcr.md).
-- [**kubectl**](https://kubernetes.io/docs/tasks/tools/) version >= 1.29 - to access the kubernetes clusters
+- **helm** version >= 3 - to deploy the Kubestellar and kubeflex charts
+- [**kubectl**](https://kubernetes.io/docs/tasks/tools/) version >= 1.27 - to access the kubernetes clusters
 
 ## Additional Software for the Getting Started setup
 
-- [**kind**](https://kind.sigs.k8s.io/) version >= 0.20 and configured to be able to run at least 3 clusters (see the `kind` "known issue" named [Pod errors due to "too many open files"](https://kind.sigs.k8s.io/docs/user/known-issues#pod-errors-due-to-too-many-open-files) and note that it is NOT about `ulimit -n`)
+- [**kind**](https://kind.sigs.k8s.io/) version >= 0.20
 - **docker** (or compatible docker engine that works with kind) (client version >= 20)
 
 ## Additional Software for monitoring
@@ -63,7 +63,7 @@ The setup in `montoring/` additional uses the following.
 
 ## Additional Software For Building KubeStellar from Source and Testing
 
-- [**go**](https://go.dev/doc/install) version 1.23 or higher - to build Kubestellar
+- [**go**](https://go.dev/doc/install) version 1.21 or higher - to build Kubestellar
 - [**GNU make**](https://www.gnu.org/software/make/) version >= 3.5 - to build Kubestellar and create the Kubestellar container images
 - [**ko**](https://ko.build/install/) version >= 0.15 - to create some of the Kubestellar container images
 - **docker** (or equivalent that implements `docker buildx`) (client version >= 20) - to create other KubeStellar container images
@@ -71,7 +71,7 @@ The setup in `montoring/` additional uses the following.
 
 To build and _**test**_ KubeStellar properly, you will also need
 
-- [**kind**](https://kind.sigs.k8s.io/) version >= 0.20 and, if you want the demo setup or any other with three or more clusters, configured to be able to run at least 3 clusters (see the `kind` "known issue" named [Pod errors due to "too many open files"](https://kind.sigs.k8s.io/docs/user/known-issues#pod-errors-due-to-too-many-open-files) and note that it is NOT about `ulimit -n`)
+- [**kind**](https://kind.sigs.k8s.io/) version >= 0.20
 - [**OCP**](https://docs.openshift.com/container-platform/4.13/installing/index.html), if you are testing a scenario involving OCP
 - [**ginkgo**](https://onsi.github.io/ginkgo/), if you will run the ginkgo-based end-to-end test
 - [`yq`](https://github.com/mikefarah/yq) (also available from [Homebrew](https://formulae.brew.sh/formula/yq)) version >= 4 - for running tests
@@ -79,9 +79,9 @@ To build and _**test**_ KubeStellar properly, you will also need
 <!-- start tag for check script  include -->
 
 ## Automated Check of Prerequisites for KubeStellar
-The [check_pre_req](https://github.com/kubestellar/kubestellar/blob/main/scripts/check_pre_req.sh) script offers a convenient way to check for the prerequisites needed for [KubeStellar](./pre-reqs.md) deployment and [use](./example-scenarios.md).
+The [check_pre_req](https://github.com/kubestellar/kubestellar/blob/main/hack/check_pre_req.sh) script offers a convenient way to check for the prerequisites needed for [KubeStellar](./pre-reqs.md) deployment and [use](./example-scenarios.md).
 
-This script is self-contained, so it is suitable for "curl-to-bash" style usage. The latest development version is at [https://raw.githubusercontent.com/kubestellar/kubestellar/refs/heads/main/scripts/check_pre_req.sh](https://raw.githubusercontent.com/kubestellar/kubestellar/refs/heads/main/scripts/check_pre_req.sh). To check the prerequisites for using a particular release of KubeStellar, you will want to use the script from that release.
+This script is self-contained, so it is suitable for "curl-to-bash" style usage. The latest development version is at [https://raw.githubusercontent.com/kubestellar/kubestellar/refs/heads/main/hack/check_pre_req.sh](https://raw.githubusercontent.com/kubestellar/kubestellar/refs/heads/main/hack/check_pre_req.sh). To check the prerequisites for using a particular release of KubeStellar, you will want to use the script from that release.
 
 The script checks for a prerequisite presence in the `$PATH`, by using the `which` command, and it can optionally provide version and path information for prerequisites that are present, or installation information for missing prerequisites.
 
@@ -109,18 +109,15 @@ argo brew docker go helm jq kflex kind ko kubectl make ocm yq
 For example, list of prerequisites required by KubeStellar can be checked with the command below (add the `-V` flag to get the version of each program and a suggestions on how to install missing prerequisites):
 
 ```shell
-$ scripts/check_pre_req.sh
+$ hack/check_pre_req.sh
 Checking pre-requisites for using KubeStellar:
 ✔ Docker (Docker version 27.2.1-rd, build cc0ee3e)
 ✔ kubectl (v1.29.2)
 ✔ KubeFlex (Kubeflex version: v0.6.3.672cc8a 2024-09-23T16:15:47Z)
 ✔ OCM CLI (:v0.9.0-0-g56e1fc8)
 ✔ Helm (v3.16.1)
-✔ helm can fetch public charts
 Checking additional pre-requisites for running the examples:
 ✔ Kind (kind v0.22.0 go1.22.0 darwin/arm64)
-✔ fs.inotify.max_user_watches is 524288
-✔ fs.inotify.max_user_instances is 512
 ✔ ArgoCD CLI (v2.10.1+a79e0ea)
 Checking pre-requisites for building KubeStellar:
 ✔ GNU Make (GNU Make 3.81)

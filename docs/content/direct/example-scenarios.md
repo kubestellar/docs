@@ -2,7 +2,7 @@
 
 This document shows some simple examples of using the release that contains this version of this document. These scenarios can be used to test a KubeStellar installation for proper functionality. These scenarios suppose that you have done "setup". General setup instructions are outlined in [the User Guide Overview](user-guide-intro.md#the-full-story); a simple example setup is in [the Setup section of Getting Started](get-started.md#setup).
 
-## Assumptions and Variables
+## Assumptions and variables
 
 Each scenario supposes that one ITS and one WDS have been created, and that two WECs have been created and registered and also labeled for selection by KubeStellar control objects. These scenarios are written as shell commands (bash or zsh). These commands assume that you have defined the following shell variables to convey the needed information about that ITS and WDS and those WECs. For a concrete example of settings of these variables, see [the end of Getting Started](get-started.md#exercise-kubestellar).
 
@@ -20,7 +20,7 @@ Each example scenario concludes with instructions on how to undo its effects.
 
 There are also end-to-end (E2E) tests that are based on scenario 4 and an extended variant of scenario 1. These tests normally exercise the copy of the repo containing them (rather than a release). They can alternatively test a release. See the e2e tests (in `test/e2e`). Contributors can run these tests, and CI includes checking that these E2E tests pass. Some of these tests, and the setup for all of them, are written in `bash` so that contributors can easily follow them.
 
-## Scenario 0: Look Around
+## Scenario 0 - look around
 
 The following command will list all the `ManagedCluster` objects that will be relevant to these scenarios.
 
@@ -30,7 +30,7 @@ kubectl --context "$its_context" get managedclusters -l "$label_query_both"
 
 Expect to get a listing of your two `ManagedCluster` objects.
 
-## Scenario 1: Multi-cluster Workload Deployment with Kubectl
+## Scenario 1 - multi-cluster workload deployment with kubectl
 
 Create a BindingPolicy to deliver an app to all clusters in the WDS:
 
@@ -95,6 +95,14 @@ spec:
 EOF
 ```
 
+Verify that *manifestworks* wrapping the objects have been created in the mailbox
+namespaces with the following command. Expect to see a `ManifestWork` object named "nginx-bpolicy-wds1" in each namespace.
+
+```shell
+kubectl --context "$its_context" get manifestworks -n "$wec1_name"
+kubectl --context "$its_context" get manifestworks -n "$wec2_name"
+```
+
 Verify that the deployment has been created in both clusters
 
 ```shell
@@ -115,7 +123,7 @@ kubectl --context "$wds_context" delete ns nginx
 kubectl --context "$wds_context" delete bindingpolicies nginx-bpolicy
 ```
 
-## Scenario 2: Out-of-Tree Workload
+## Scenario 2 - Out-of-tree workload
 
 This scenario is like the previous one but involves a workload whose
 kind of objects is not built into Kubernetes. Instead, the workload
@@ -124,7 +132,25 @@ KubeStellar can handle the case where the CRD is part of the workload,
 this example concerns the case where the CRD is established in the
 WECs by some other means.
 
-For background on authorization of the OCM work agent in WECs and how to expand it safely, see [Authorization in WECs](./authorization.md).
+In order to run this scenario using the post-create-hook method you need
+the raise the permissions for the kubeflex controller manager (TODO 1: move this material and its undo to [the doc on WDS](wds.md); TODO 2: why is this needed? Is it needed for the core chart too? can we remove the need for this?):
+
+```shell
+kubectl --context "$host_context" apply -f - <<EOF
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: kubeflex-manager-cluster-admin-rolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: kubeflex-controller-manager
+  namespace: kubeflex-system
+EOF
+```
 
 For this example, we use the `AppWrapper` custom resource defined in the
 [multi cluster app dispatcher](https://github.com/project-codeflare/multi-cluster-app-dispatcher)
@@ -138,6 +164,10 @@ clusters=("$wds_context" "$wec1_context" "$wec2_context");
   kubectl --context ${cluster} apply -f https://raw.githubusercontent.com/project-codeflare/multi-cluster-app-dispatcher/v1.39.0/config/crd/bases/workload.codeflare.dev_appwrappers.yaml
 done
 ```
+
+If desired, you may remove the `kubeflex-manager-cluster-admin-rolebinding` after
+the kubestellar-controller-manager is started, with the command
+`kubectl --context "$host_context" delete clusterrolebinding kubeflex-manager-cluster-admin-rolebinding`
 
 Run the following command to give permission for the klusterlet to
 operate on the appwrapper cluster resource.
@@ -233,6 +263,12 @@ for cluster in "$wec1_context" "$wec2_context"; do
 done
 ```
 
+If you have not already done so, then do the following command.
+
+```shell
+kubectl --context "$host_context" delete clusterrolebinding kubeflex-manager-cluster-admin-rolebinding
+```
+
 Delete the CRD from the WDS and the WECs.
 
 ```shell
@@ -242,7 +278,7 @@ clusters=("$wds_context" "$wec1_context" "$wec2_context");
 done
 ```
 
-## Scenario 3: Multi-Custer Workload Deployment with Helm
+## Scenario 3 - multi-cluster workload deployment with helm
 
 Create a BindingPolicy for the helm chart app:
 
@@ -280,7 +316,7 @@ kubectl --context "$wec1_context" get statefulsets -n postgres-system
 kubectl --context "$wec2_context" get statefulsets -n postgres-system
 ```
 
-### [Optional] Propagate Helm Metadata Secret to Managed Clusters
+### [Optional] Propagate helm metadata Secret to managed clusters
 
 Run "helm list" on the WDS:
 
@@ -326,10 +362,10 @@ kubectl --context "$wds_context" delete ns postgres-system
 kubectl --context "$wds_context" delete bindingpolicies postgres-bpolicy
 ```
 
-## Scenario 4: Singleton Status
+## Scenario 4 - Singleton status
 
-This scenario shows how to get the full status updated, by setting `wantSingletonReportedState`
-in a `DownsyncPolicyClause`. This still an experimental feature.
+This scenario shows how to get the full status updated when setting `wantSingletonReportedState`
+in the BindingPolicy. This still an experimental feature.
 
 Apply a BindingPolicy with the `wantSingletonReportedState` flag set:
 
@@ -340,12 +376,12 @@ kind: BindingPolicy
 metadata:
   name: nginx-singleton-bpolicy
 spec:
+  wantSingletonReportedState: true
   clusterSelectors:
   - matchLabels: {"name":"cluster1"}
   downsync:
   - objectSelectors:
     - matchLabels: {"app.kubernetes.io/name":"nginx-singleton"}
-    wantSingletonReportedState: true
 EOF
 ```
 
@@ -404,7 +440,7 @@ kubectl --context "$wds_context" delete bindingpolicies nginx-singleton-bpolicy
 kubectl --context "$wds_context" delete deployments nginx-singleton-deployment
 ```
 
-## Scenario 5: Resiliency testing
+## Scenario 5 - Resiliency testing
 
 This is a test that you can do after finishing Scenario 1.
 
@@ -500,7 +536,7 @@ kubectl --context "$wds_context" delete ns nginx-res
 kubectl --context "$wds_context" delete bindingpolicies nginx-res-bpolicy
 ```
 
-## Scenario 6: Multi-Cluster Workload Deployment of App with ServiceAccount with ArgoCD
+## Scenario 6 - multi-cluster workload deployment of app with ServiceAccount with ArgoCD
 
 Before running this scenario, install ArgoCD on the hosting cluster and configure it
 work with the WDS as outlined [here](argo-to-wds1.md).
@@ -535,7 +571,7 @@ kubectl config set-context --current --namespace=argocd
 Create a new application in ArgoCD:
 
 ```shell
-argocd app create nginx-sa --repo https://github.com/kubestellar/kubestellar.git --path hack/argo/nginx --dest-server https://"${wds_cp}.${wds_cp}-system" --dest-namespace nginx-sa
+argocd app create nginx-sa --repo https://github.com/pdettori/sample-apps.git --path nginx --dest-server https://"${wds_cp}.${wds_cp}-system" --dest-namespace nginx-sa
 ```
 
 Open browser to Argo UI:
