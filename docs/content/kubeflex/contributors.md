@@ -46,7 +46,7 @@ make ko-build-local-cmupdate
 ## Manually building and publishing cmupdate image
 
 ```shell
-LATEST_TAG=<tag used for image> make ko-build-push-cmupdate
+LATEST_TAG=`<tag used for image>` make ko-build-push-cmupdate
 ```
 
 ## Steps to make release
