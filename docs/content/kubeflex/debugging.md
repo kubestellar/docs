@@ -59,7 +59,7 @@ kubectl debug -n ${NAMESPACE} -it ${NAME} --image=${IMAGE} --target=${CONTAINER}
 ### Getting all the command args for a process
 
 ```shell
-cat /proc/<pid>/cmdline | sed -e "s/\x00/ /g"; echo
+cat /proc/`<pid>`/cmdline | sed -e "s/\x00/ /g"; echo
 ```
 
 ### How to communicate between kind clusters on the same node
