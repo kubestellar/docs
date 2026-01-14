@@ -1,7 +1,7 @@
-<center>Apache License</center>
-<center>Version 2.0, January 2004</center>
-<center>http://www.apache.org/licenses/</center>
-</br>
+Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
    1. Definitions.
