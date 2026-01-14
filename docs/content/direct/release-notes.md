@@ -92,7 +92,6 @@ This patch release fixes some bugs and some documentation oversights. Following 
 * If the workload object count or volume vs the configured limits on content of a `ManifestWork` causes multiple `ManifestWork` to be created for one `Binding` (`BindingPolicy`) then there may be transients where workload objects are deleted and re-created in a WEC --- which, in addition to possibly being troubling on its own, will certainly thwart the "create-only" functionality. Unless you workload is very large, you can avoid this situation by setting the `transport_controller.max_num_wrapped` "value" of [the core Helm chart](core-chart.md) to a number that is larger than the number of your workload objects (double check your count in your `Binding` object).
 
 
-
 ## 0.25.0-alpha.1 test releases
 
 These test the release-building functionality, which has been revised in the course of merge the controller-manager and transport-controller Helm charts into the core Helm chart.

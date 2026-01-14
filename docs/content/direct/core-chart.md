@@ -35,7 +35,7 @@ This can be:
     It is important to note that, when the hosting cluster was created by **kind** or **k3s** and its Ingress domain name is left to default to localtest.me, then the name of the container running hosting cluster must be also be referenced during the Helm chart installation by setting `--set "kubeflex-operator.hostContainer=<control-plane-container-name>"`.
     The `<control-plane-container-name>` is the name of the container in which kind or k3d is running the relevant control plane. One may use `docker ps` to find the `<control-plane-container-name>`.
 
-    If a host port number different from the expected 9443 is used for the Kind cluster, then the same port number must be specified during the chart installation by adding the following argument `--set "kubeflex-operator.externalPort=<port>"`.
+    If a host port number different from the expected 9443 is used for the Kind cluster, then the same port number must be specified during the chart installation by adding the following argument `--set "kubeflex-operator.externalPort="`.
 
     By default the KubeStellar Core chart uses a test domain `localtest.me`, which is OK for testing on a single host machine. However, for scenarios that span more than one machine, it is necessary to set `--set "kubeflex-operator.domain=<domain>"` to a more appropriate `<domain>` that can be reached from Workload Execution Clusters (WECs).
 
@@ -110,10 +110,10 @@ The third section of the `values.yaml` file allows one to create a list of Inven
 
 ```yaml
 ITSes: # all the CPs in this list will execute the its.yaml PCH
-  - name: <its1>          # mandatory name of the control plane
+  - name:           # mandatory name of the control plane
     type: <vcluster|host> # optional type of control plane host or vcluster (default to vcluster, if not specified)
     install_clusteradm: true|false  # optional flag to enable/disable the installation of OCM in the control plane (default to true, if not specified)
-  - name: <its2>          # mandatory name of the control plane
+  - name:           # mandatory name of the control plane
     type: <vcluster|host> # optional type of control plane host or vcluster (default to vcluster, if not specified)
     install_clusteradm: true|false  # optional flag to enable/disable the installation of OCM in the control plane (default to true, if not specified)
   ...
@@ -128,11 +128,11 @@ WDSes: # all the CPs in this list will execute the wds.yaml PCH
   - name: <wds1>     # mandatory name of the control plane
     type: <host|k8s> # optional type of control plane host or k8s (default to k8s, if not specified)
     APIGroups: ""    # optional string holding a comma-separated list of APIGroups
-    ITSName: <its1>  # optional name of the ITS control plane, this MUST be specified if more than one ITS exists at the moment the WDS PCH starts
+    ITSName:   # optional name of the ITS control plane, this MUST be specified if more than one ITS exists at the moment the WDS PCH starts
   - name: <wds2>     # mandatory name of the control plane
     type: <host|k8s> # optional type of control plane host or k8s (default to k8s, if not specified)
     APIGroups: ""    # optional string holding a comma-separated list of APIGroups
-    ITSName: <its2>  # optional name of the ITS control plane, this MUST be specified if more than one ITS exists at the moment the WDS PCH starts
+    ITSName:   # optional name of the ITS control plane, this MUST be specified if more than one ITS exists at the moment the WDS PCH starts
   ...
 ```
 
