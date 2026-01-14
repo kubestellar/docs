@@ -55,7 +55,7 @@ Authenticated requests have significantly higher rate limits than unauthenticate
 
 CI maintains the fact that `hack/gha-reversemap.sh verify-mapusage` passes.
 
-The most common workflow is responding to a Dependabot PR proposing to switch to a newer version of some GitHub Action. Following is the workflow for that:
+The most common workflow is responding to a Dependabot PR proposing to switch to a newer version of some GitHub Action. Following is the workflow for that.
 
 1. **Wait for safety period**: Wait until at least a week after the new version was released, to allow time for vulnerabilities to be discovered and reported.
 
