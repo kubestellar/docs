@@ -13,6 +13,8 @@ Every release should pass all release tests before it can be officially declare 
 
 ### Reacting to a new KubeFlex release
 
+- Update the KubeFlex release in `docs/content/direct/pre-reqs.md`
+- Update the "kflex" release in `hack/check_pre_req.sh` and `scripts/check_pre_req.sh`
 - Update the KubeFlex release in `go.mod`
 - `go mod tidy`
 - Update the KubeFlex release in `core-chart/Chart.yaml`
@@ -28,11 +30,6 @@ Or you could search for appearances of the old release string yourself using a c
 find * .github/workflows \( -name "*.svg" -prune \) -or \( -path "*venv" -prune \) -or \( -path hack/tools -prune \) -or \( -type f -exec fgrep 0.6.2 \{\} \; -print -exec echo \; \)
 ```
 
-#### To increase the lower bound on KubeFlex release
-
-- Update the KubeFlex release in `docs/content/direct/pre-reqs.md`
-- Update the "kflex" release in `scripts/check_pre_req.sh`
-
 ### Reacting to a new ocm-status-addon release
 
 Between each release of [ks/OSA](https://github.com/kubestellar/ocm-status-addon) and the next release of ks/ks, update the references to the ocm-status-addon release in the following files.
@@ -46,13 +43,13 @@ Making a new kubestellar release requires a contributor to do the following thin
 
 - If not already in effect, declare a code freeze. There should be nothing but bug fixes and doc improvements while working towards a regular release.
 
-- Edit `docs/mkdocs.yml` and update the definition of `ks_latest_release` to `$version` (e.g., `'0.23.0-rc42'`). If this is a regular release then also update the definition of `ks_latest_regular_release`.
+- **AFTER** the next regular release: delete `hack/check_pre_req.sh`, delete references to `hack/check_pre_req.sh` in this document, and delete this step.
 
-- Update the version in `scripts/check_pre_req.sh`.
+- Edit `docs/mkdocs.yml` and update the definition of `ks_latest_release` to `$version` (e.g., `'0.23.0-rc42'`). If this is a regular release then also update the definition of `ks_latest_regular_release`.
 
 - Update the version in the core chart defaults, `core-chart/values.yaml`.
 
-- Update the version in `scripts/create-kubestellar-demo-env.sh`. **Note:** merging this change will cause the script to be broken until the release is made.
+- Update the version in `scripts/create-kubestellar-demo-env.sh`. Note: merging this change will cause the script to be broken until the release is made.
 
 - Until we have our first stable release, edit the old docs README(`oldocs/README.md`, section "latest-stable-release") where it wishes it could cite a stable release but instead cites the latest release, to refer to the coming release.
 
@@ -110,7 +107,7 @@ For each tag `v$version` the following published artifacts will be created.
 
 ## Website
 
-We use `mike` and `MkDocs` to derive and publish GitHub pages. See [the website documentation](../contribution-guidelines/operations/document-management.md) for details.
+We use `mike` and `MkDocs` to derive and publish GitHub pages. See `docs/README.md` for details.
 
 The published GitHub pages are organized into "releases".  Each release in the GitHub pages corresponds to a git branch whose name begins with "release-" or is "main".
 
