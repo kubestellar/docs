@@ -56,7 +56,7 @@ Making a new kubestellar release requires a contributor to do the following thin
 
 - Until we have our first stable release, edit the old docs README(`oldocs/README.md`, section "latest-stable-release") where it wishes it could cite a stable release but instead cites the latest release, to refer to the coming release.
 
-- Edit the release notes in `docs/content/direct/release-notes.md`.
+- Edit the release notes in `docs/content/direct/release-notes.md`. **Crucial:** You must explicitly disclose any fixed CVEs or security vulnerabilities in the release notes.
 
 - Make a new Git commit with those changes and get it into the right branch in the shared repo (through the regular PR process if not authorized to cheat).
 
@@ -143,6 +143,10 @@ Right after making a release we test it thoroughly.
 ### Deliberately feature-incomplete releases
 
 We plan a few deliberately feature-incomplete releases. They will be regular releases as far as the technology here is concerned. They will be announced only to selected users who acknowledge that they are getting something that is incomplete. In GitHub, these will be marked as "pre-releases". The status of these releases will be made clear in their documentation (which currently appears in [the release notes](release-notes.md).
+
+### Security Disclosure
+
+All releases must explicitly list any security vulnerabilities (CVEs) addressed in that release. If a release fixes a vulnerability, the release notes must describe it and provide the CVE identifier (if available) or a description of the security impact. This ensures compliance with OpenSSF Best Practices.
 
 ### Website
 
