@@ -11,7 +11,6 @@
 #### Note:
 You currently need write access to the [{{ config.repo_url }}]({{ config.repo_url }}) repository to perform these tasks.
 
-<!-- You also need an available team member with approval permissions from [https://github.com/openshift/release/blob/master/ci-operator/config/{{ config.repo_short_name }}/OWNERS](https://github.com/openshift/release/blob/master/ci-operator/config/{{ config.repo_short_name }}/OWNERS). -->
 
 ### Checkout the main branch
 ```shell
@@ -71,7 +70,7 @@ The VERSION file points to the 'latest' and 'stable' release tags associated wit
 vi VERSION
 ```
 
-<b>before:</b>
+before:
 ```shell title="VERSION" hl_lines="2 3"
 ...
 stable={{ config.ks_stable_tag }}
@@ -79,7 +78,7 @@ latest={{ config.ks_current_tag }}
 ...
 ```
 
-<b>after:</b>
+after:
 ```shell title="VERSION" hl_lines="2 3" 
 ...
 stable={{ config.ks_stable_tag }}
@@ -94,7 +93,7 @@ The mkdocs.yml file points to the branch and tag associated with the branch you 
 vi docs/mkdocs.yml
 ```
 
-<b>before:</b>
+before:
 ```shell title="mkdocs.yml" hl_lines="2 3 4 6 7 8"
 ...
 ks_current_branch: '{{ config.ks_current_branch }}'
@@ -107,7 +106,7 @@ ks_next_helm_version: {{ config.ks_next_helm_version }}
 ...
 ```
 
-<b>after:</b>
+after:
 ```shell title="mkdocs.yml" hl_lines="2 3 4 6 7 8" 
 ...
 ks_current_branch: '{{ config.ks_next_branch }}'
@@ -141,7 +140,7 @@ The mkdocs.yml file points to the branch and tag associated with the branch you 
 vi docs/mkdocs.yml
 ```
 
-<b>before:</b>
+before:
 ```shell title="mkdocs.yml" hl_lines="2 3 4"
 ...
 edit_uri: edit/main/docs/content
@@ -150,7 +149,7 @@ ks_tag: '{{ config.ks_tag }}'
 ...
 ```
 
-<b>after:</b>
+after:
 ```shell title="mkdocs.yml" hl_lines="2 3 4" 
 ...
 edit_uri: edit/{{ config.ks_next_branch }}/docs/content
@@ -166,12 +165,12 @@ There are quite a few references to the main branch /README.MD.  They connect th
 vi README.MD
 ```
 
-<b>before:</b>
+before:
 ```shell hl_lines="1"
 https://github.com/kubestellar/kubestellar/actions/workflows/docs-gen-and-push.yml/badge.svg?branch=main
 ```
 
-<b>after:</b>
+after:
 ```shell hl_lines="1"
 https://github.com/kubestellar/kubestellar/actions/workflows/docs-gen-and-push.yml/badge.svg?branch={{config.ks_next_branch}}
 ```
@@ -212,7 +211,7 @@ git fetch --tags
 git tag
 ```
 
-create a tag that follows <major>.<minor>.<patch>.  For this example we will increment tag '{{ config.ks_current_tag }}' to '{{ config.ks_next_tag }}'
+create a tag that follows <major>.<minor>..  For this example we will increment tag '{{ config.ks_current_tag }}' to '{{ config.ks_next_tag }}'
 
 ```shell
 TAG={{ config.ks_next_tag }}

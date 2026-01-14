@@ -1,12 +1,10 @@
 {%
    include-markdown "../../common-subs/coming-soon.md"
-   start="<!--coming-soon-start-->"
-   end="<!--coming-soon-end-->"
+   start=""
+   end=""
 %}
 
-<!-- Code management
-  Prow, Gh actions broken links, pr verifier, emoji in titles of prs, add issue to project. Add pr to project. Check spelling errors, wordlist.txt, 
-Quay.io -->
+
 # Code Management
 Fork kubestellar into your own repo, create a local branch, set upstream to kubestellar, add and commit changes to local branch, and squash your commits
 
@@ -103,13 +101,13 @@ The commits will then be squashed into one commit.
 
 ### When you are done with the squash, push your changes to your remote branch. You can either:
 ```
-git push -u origin <branch-name>
+git push -u origin 
 
 or 
 
 git push --force-with-lease
 ```
-Note: if using the git push -u origin <branch-name> command, the -u only needs to specified the first time you push. It will set tracking for subsequent pushes to the branch. On the other hand, keeping the -u in the command does no particular harm.
+Note: if using the git push -u origin  command, the -u only needs to specified the first time you push. It will set tracking for subsequent pushes to the branch. On the other hand, keeping the -u in the command does no particular harm.
 
 ## Run Actions (automated workflow tests) manually in your personal Github repository
 
