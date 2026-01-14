@@ -632,6 +632,8 @@
     "requirementsLabel": "Requirements:",
     "goodStandingLabel": "Opportunities in Good Standing:",
     "nextLevelLabel": "Next Level:",
+    "statsQuestion": "How do we audit our contributor ladder?",
+    "viewStats": "View Real-Time Statistics",
     "levels": {
       "contributor": {
         "title": "Contributor",
@@ -806,6 +808,8 @@
     "subtitle": "We're working on something amazing for the KubeStellar community",
     "description": "This exciting new feature is currently under development. Our team is crafting an exceptional experience that will enhance your multi-cluster Kubernetes orchestration journey.",
     "statusBadge": "Under Development",
+    "demoTitle": "See It In Action",
+    "demoSubtitle": "Watch our marketplace demo to get a glimpse of what's coming",
     "cta": {
       "title": "Explore KubeStellar Now",
       "subtitle": "While you wait, discover what KubeStellar can do for you today",

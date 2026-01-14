@@ -75,6 +75,7 @@
     "docs": "ドキュメント",
     "blog": "ブログ",
     "playground": "プレイグラウンド",
+    "marketplace": "マーケットプレイス",
     "contribute": "貢献する",
     "joinIn": "参加する",
     "contributeHandbook": "貢献ハンドブック",
@@ -631,6 +632,8 @@
     "requirementsLabel": "要件：",
     "goodStandingLabel": "良好なステータスでの機会：",
     "nextLevelLabel": "次のレベル：",
+    "statsQuestion": "貢献ラダーはどのように監査されていますか？",
+    "viewStats": "リアルタイム統計を見る",
     "levels": {
       "contributor": {
         "title": "コントリビューター",
@@ -805,6 +808,8 @@
     "subtitle": "KubeStellar コミュニティのために、素晴らしい機能を開発中です",
     "description": "このエキサイティングな新機能は現在開発中です。私たちのチームは、マルチクラスター Kubernetes オーケストレーション体験をさらに向上させる特別な体験を構築しています。",
     "statusBadge": "開発中",
+    "demoTitle": "実際に見てみましょう",
+    "demoSubtitle": "マーケットプレイスのデモを見て、これから何が来るかをご覧ください",
     "cta": {
       "title": "今すぐ KubeStellar を探索",
       "subtitle": "公開までの間に、KubeStellar で今すぐできることをご覧ください",
