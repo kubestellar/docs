@@ -134,7 +134,7 @@ Will be added soon.
    ![Step 2 — Manage Labels](../images/its/bulk-labelling/click-on-manage-labels.png)
 
 3. **Choose "Bulk Labels"**
-   Choose the **Bulk Labels** option in the dialog.
+   - Choose the **Bulk Labels** option in the dialog.
 
    ![Step 3 — Choose mode](../images/its/bulk-labelling/choose-bulk-labels.png)
 
