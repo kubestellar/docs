@@ -267,7 +267,7 @@ export default function UseCasesSection() {
               style={{ perspective: "1000px" }}
             >
               <div
-                className="relative w-full h-full transition-transform duration-700 ease-in-out cursor-pointer"
+                className="relative w-full h-full transition-transform duration-700 ease-in-out cursor-pointer rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
                 style={{
                   transformStyle: "preserve-3d",
                   transform: flipped[index]
@@ -280,6 +280,16 @@ export default function UseCasesSection() {
                 }}
                 onMouseEnter={() => handleFlip(index, true)}
                 onMouseLeave={() => handleFlip(index, false)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleFlip(index, !flipped[index]);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-pressed={flipped[index]}
+                aria-label={`View details for ${useCase.title}`}
               >
                 {/* Front Face */}
                 <div
