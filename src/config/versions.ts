@@ -22,9 +22,15 @@ export const PRODUCTION_URL = "https://kubestellar.io"
 // Branch naming: main for latest, docs/{version} for specific versions
 export const VERSIONS = {
   latest: {
-    label: `v${CURRENT_VERSION} (Latest)`,
+    label: "v0.29.0 (Latest)",
     branch: "main",
     isDefault: true,
+  },
+  main: {
+    label: "main (dev)",
+    branch: "main",
+    isDefault: false,
+    isDev: true,
   },
   "0.28.0": {
     label: "v0.28.0",
