@@ -71,7 +71,6 @@ Instantly get access to our documents and meeting invites [http://kubestellar.io
 Thanks go to these wonderful people:
 
 
-
   
     [![](https://avatars.githubusercontent.com/u/8633434?v=4)
 <sub>Jun Duan</sub>](https://github.com/waltforme)
@@ -84,7 +83,7 @@ Thanks go to these wonderful people:
 [👀](https://github.com/kubestellar/kubestellar/pulls?q=is%3Apr+reviewed-by%3AMikeSpreitzer)
     [![](https://avatars.githubusercontent.com/u/6678093?v=4)
 <sub>Paolo Dettori</sub>](https://github.com/pdettori)
-<a href=https://github.com/kubestellar/kubestellar/issues?q=assignee%3Apdettori+" title="Contributed PRs">👀</a>
+👀
     [![](https://avatars.githubusercontent.com/u/407614?v=4)
 <sub>Andy Anderson</sub>](https://github.com/clubanderson)
 [👀](https://github.com/kubestellar/kubestellar/pulls?q=is%3Apr+reviewed-by%3Aclubanderson)
@@ -132,6 +131,5 @@ Thanks go to these wonderful people:
 <sub>Graham White</sub>](https://github.com/grahamwhiteuk)
 [👀](https://github.com/kubestellar/kubestellar/pulls?q=is%3Apr+author%3A%40me+)
   
-
 
 

@@ -281,8 +281,6 @@ If you want to pull an image for a specific version (e.g., commit hash), use:
 <h2>![Red Heart](https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png) Contributors </h2>
 
 
-
 [![image](https://contrib.rocks/image?repo=kubestellar/ui)](https://github.com/kubestellar/ui/graphs/contributors)
-
 
 

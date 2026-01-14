@@ -76,7 +76,7 @@ After creating your cluster, you need to register it with an ITS. This process i
 clusteradm --context its1 get token
 
 # Execute the join command with your WEC name
-clusteradm join --hub-token <token> --hub-apiserver <api-server-url> --cluster-name cluster1 --context cluster1
+clusteradm join --hub-token <token> --hub-apiserver  --cluster-name cluster1 --context cluster1
 
 # Accept the registration on the ITS side
 clusteradm --context its1 accept --clusters cluster1
