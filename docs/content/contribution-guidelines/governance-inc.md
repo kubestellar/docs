@@ -1,4 +1,4 @@
-<!-- A wrapper file to include the GOVERNANCE file from the repository root -->
+
 {%
     include "../../../GOVERNANCE.md"
 %}

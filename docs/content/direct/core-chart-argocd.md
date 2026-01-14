@@ -36,7 +36,7 @@ To enable the installation of Argo CD by the KubeStellar Core chart, use the fla
 
 When deploying in an **OpenShift** cluster, add the flag `--set argocd.openshift.enabled=true`.
 
-When deploying in a **Kubernetes** cluster, use the flag `--set argocd.global.domain=<url>` to provide the URL for the **nginx** ingress, which defaults to `argocd.localtest.me`.
+When deploying in a **Kubernetes** cluster, use the flag `--set argocd.global.domain=` to provide the URL for the **nginx** ingress, which defaults to `argocd.localtest.me`.
 
 Note that when creating a local **Kubernetes** cluster using our scripts for **Kind** or **k3s**, the **nginx** ingress will be accessible on host port `9443`; therefore the Argo CD UI can be accessed at the address `https://argocd.localtest.me:9443`.
 

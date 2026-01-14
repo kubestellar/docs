@@ -278,14 +278,11 @@ If you want to pull an image for a specific version (e.g., commit hash), use:
 2. **Frontend UI**: [http://localhost:5173](http://localhost:5173)
 
 
-<div>
-<h2><font size="6"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="40" height="40" /> Contributors </font></h2>
-</div>
-<br>
+<h2>![Red Heart](https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png) Contributors </h2>
 
-<center>
-<a href="https://github.com/kubestellar/ui/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=kubestellar/ui" />
-</a>
-</center>
-<br>
+
+
+[![image](https://contrib.rocks/image?repo=kubestellar/ui)](https://github.com/kubestellar/ui/graphs/contributors)
+
+
+

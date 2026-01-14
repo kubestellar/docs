@@ -28,7 +28,6 @@ If you are contributing via the GitHub web interface, navigate to the **Settings
 If you are contributing via the command line terminal, run the `git commit --signoff --message [commit message]` or `git commit -s -m [commit message]` command when making each commit.
 
 
-
 ## Contribution Resources
 
 Read the resources to gain a better understanding of the contribution processes.

@@ -54,11 +54,9 @@ Before starting, make sure that your user email is verified on Github. To check 
 5. To verify, click **Resend verification email** and follow its prompts
 6. Navigate back to your **Emails** page, if the "Unverified" label is no longer there, then you're good to go!
 
-<br />
 
 For Windows users, **Git Bash** is also highly recommended.
 
-<br />
 
 ## Setting up the GPG Key
 
@@ -106,7 +104,6 @@ For Windows users, **Git Bash** is also highly recommended.
     - Once done, click **Add GPG key**
 11. Your new GPG key should now be displayed under GPG keys.
 
-<br />
 
 ## Setting up the SSH Key
 
@@ -141,8 +138,6 @@ For Windows users, **Git Bash** is also highly recommended.
     - Once you've verified the match, type `yes`
     - If the resulting message says something along the lines of `Hi [User]! You've successfully authenticated, but GitHub does not provide shell access.`, then it means your SSH key is up and ready.
 
-
-<br />
 
 ## Creating Pull Requests Using the GitHub Website
 
