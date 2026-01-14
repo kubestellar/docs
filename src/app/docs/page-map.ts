@@ -280,7 +280,12 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
           }
         ]
       },
-      { 'UI (User Interface)': 'ui-docs/ui-overview.md' },
+      { 
+        'UI': [
+          { 'Overview': 'ui-docs/ui-overview.md' },
+          { 'ITS cluster management': 'ui-docs/its-cluster-management.md'}
+        ]
+      },
       { 'Teardown': 'direct/teardown.md' }
     ]
   },
