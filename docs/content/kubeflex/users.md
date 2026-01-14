@@ -100,7 +100,7 @@ and install KubeFlex with the following commands:
 ```shell
 kubectl create ns kubeflex-system
 helm upgrade --install kubeflex-operator oci://ghcr.io/kubestellar/kubeflex/chart/kubeflex-operator \
---version <latest-release-version-tag> \
+--version `<latest-release-version-tag>` \
 --namespace kubeflex-system \
 --set domain=localtest.me \
 --set externalPort=9443
@@ -121,7 +121,7 @@ and install KubeFlex with the following commands:
 ```shell
 kubectl create ns kubeflex-system
 helm upgrade --install kubeflex-operator oci://ghcr.io/kubestellar/kubeflex/chart/kubeflex-operator \
---version <latest-release-version-tag> \
+--version `<latest-release-version-tag>` \
 --namespace kubeflex-system \
 --set isOpenShift=true
 ```
@@ -243,12 +243,12 @@ from the current Kubeconfig and switch the context back to the context for the h
 To delete a control plane with the kubeflex CLI use the command:
 
 ```shell
-kubectl delete <control-plane-name>
+kubectl delete `<control-plane-name>`
 ```
 
 If you are not using the kflex CLI to create the control plane and require access to the control plane,
 you may retrieve the secret containing the control plane Kubeconfig, which is hosted in the control
-plane hosting namespace (by convention `<control-plane-name>-system`) and is named `admin-kubeconfig`.
+plane hosting namespace (by convention ``<control-plane-name>`-system`) and is named `admin-kubeconfig`.
 
 For example, the following commands retrieves the Kubeconfig for the control plane `cp1`:
 
@@ -260,10 +260,10 @@ kubectl get secrets -n ${NAMESPACE} admin-kubeconfig -o jsonpath='{.data.kubecon
 ### Accessing the control plane from within a kind cluster
 
 For control plane of type k8s, the Kube API client can only use the 127.0.0.1 address. The DNS name
-`<control-plane-name>.localtest.me`` is convenient for local test and dev but always resolves to 127.0.0.1, that does not work in a container. For accessing the control plane from within the KubeFlex hosting
+``<control-plane-name>`.localtest.me`` is convenient for local test and dev but always resolves to 127.0.0.1, that does not work in a container. For accessing the control plane from within the KubeFlex hosting
 cluster, you may use the controller manager Kubeconfig, which is maintained in the secret with name
 `cm-kubeconfig` in the namespace hosting the control plane, or you may use the Kubeconfig in the
-`admin-kubeconfig` secret with the address for the server `https://<control-plane-name>.<control-plane-namespace>:9443`.
+`admin-kubeconfig` secret with the address for the server `https://`<control-plane-name>`.<control-plane-namespace>:9443`.
 
 To access the control plane API server from another kind cluster on the same docker network, you
 can find the value of the nodeport for the service exposing the control plane API service, and construct
@@ -613,7 +613,7 @@ Once you define a new hook, you can just apply it in the KubeFlex hosting cluste
 
 ```shell
 kflex ctx
-kubectl apply -f <hook-file.yaml> # e.g. kubectl apply -f hello.yaml
+kubectl apply -f `<hook-file.yaml>` # e.g. kubectl apply -f hello.yaml
 ```
 
 You can then reference the hook by name when you create a new control plane.
