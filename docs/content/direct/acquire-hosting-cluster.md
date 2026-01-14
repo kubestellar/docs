@@ -20,7 +20,7 @@ TODO: finish writing this subsection for real. Following are some clues.
 
 When everything runs on one machine, the defaults just work. When core and some WECs are on different machines, it gets more challenging. When the KubeFlex hosting cluster is an OpenShift cluster with a public domain name, the defaults just work.
 
-After the Getting Started setup, I looked at an OCM Agent (klusterlet-agent, to be specific) and did not find a clear passing of kubeconfig. I found adjacent Secrets holding kubeconfigs in which `cluster[0].cluster.server` was `https://kubeflex-control-plane:31048`. Note that `kubeflex-control-plane` is the name of the Docker container running `kind` cluster serving as KubeFlex hosting cluster. I could not find an explanation for the port number 31048; that Docker container maps port 443 inside to 9443 on the outside.
+After the quickstart setup, I looked at an OCM Agent (klusterlet-agent, to be specific) and did not find a clear passing of kubeconfig. I found adjacent Secrets holding kubeconfigs in which `cluster[0].cluster.server` was `https://kubeflex-control-plane:31048`. Note that `kubeflex-control-plane` is the name of the Docker container running `kind` cluster serving as KubeFlex hosting cluster. I could not find an explanation for the port number 31048; that Docker container maps port 443 inside to 9443 on the outside.
 
 `kflex init` takes a command line flag `--domain string` described as `domain for FQDN (default "localtest.me")`.
 
@@ -54,7 +54,7 @@ This has been tested with version 5.6.0 of [k3d](https://k3d.io).
 1. Create a K3D hosting cluster with nginx ingress controller:
     ```shell
     k3d cluster create -p "9443:443@loadbalancer" --k3s-arg "--disable=traefik@server:*" kubeflex
-    helm install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --version 4.12.1 --namespace ingress-nginx --create-namespace
+    helm install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --version 4.6.1 --namespace ingress-nginx --create-namespace
     ```
 
 1. When we use kind, the name of the container is kubeflex-control-plane and that is what we use 

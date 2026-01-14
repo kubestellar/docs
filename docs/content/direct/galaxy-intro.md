@@ -12,13 +12,13 @@ and Argo Workflows + KubeStellar integration.
 
 ## Utility Scripts
 
-- `suspend-webhook` - webhook used to suspend argo workflows (and in the future other types of workloads supporting the suspend flag)
+- **suspend-webhook** - webhook used to suspend argo workflows (and in the future other types of workloads supporting the suspend flag)
 
-- `shadow-pods` - controller used to support streaming logs in Argo Workflows and KFP.
+- **shadow-pods** - controller used to support streaming logs in Argo Workflows and KFP.
 
-- `clustermetrics` - a CRD and controller that provide basic cluster metrics info for each node in a cluster, designed to work together with KubeStellar sync/status sync mechanisms.
+- **clustermetrics** - a CRD and controller that provide basic cluster metrics info for each node in a cluster, designed to work together with KubeStellar sync/status sync mechanisms.
 
-- `mc-scheduling` - A Multi-cluster scheduling framework supporting pluggable schedulers.
+- **mc-scheduling** - A Multi-cluster scheduling framework supporting pluggable schedulers.
 
 
 ## KubeFlow Pipelines v2
@@ -28,5 +28,5 @@ and Argo Workflows + KubeStellar integration.
 
 # Learn More
 
-To learn more [visit the repository at https://github.com/kubestellar/galaxy](https://github.com/kubestellar/galaxy)
+To learn more [visit the repository at https://github.com/kubestellar/galaxy](https://github.com/kubestellar/gala)
 **_Note that all the code in the galaxy repo is experimental and is available on an as-is basis **

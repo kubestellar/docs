@@ -2,8 +2,8 @@
 
 This is the parent document for docs about particular kinds of control.
 
-- [Binding](binding.md) between workload objects and WECs
-- [Transforming](transforming.md) workload objects on their way to WECs
+- [Binding](binding.md)
+- [Transforming](transforming.md)
 - [Combining returned status](combined-status.md)
 
 TODO: write this for real.
