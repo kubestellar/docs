@@ -15,6 +15,11 @@
       "version": "v7",
       "sha": "f28e40c7f34bde8b3046d885e986cb6290c5673b"
     },
+    "actions/github-script@v8": {
+      "repo": "actions/github-script",
+      "version": "v8",
+      "sha": "ed597411d8f924073f98dfc5c65a23a2325f34cd"
+    },
     "actions/setup-node@v4": {
       "repo": "actions/setup-node",
       "version": "v4",
@@ -24,6 +29,11 @@
       "repo": "actions/upload-artifact",
       "version": "v4",
       "sha": "ea165f8d65b6e75b540449e92b4886f43607fa02"
+    },
+    "githubnext/gh-aw/actions/setup@v0.36.0": {
+      "repo": "githubnext/gh-aw/actions/setup",
+      "version": "v0.36.0",
+      "sha": "a933c835b5e2d12ae4dead665a0fdba420a2d421"
     },
     "peter-evans/create-pull-request@v6": {
       "repo": "peter-evans/create-pull-request",
