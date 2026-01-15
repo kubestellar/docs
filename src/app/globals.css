@@ -2386,6 +2386,25 @@ html.dark .prose hr {
   border-color: #374151;
 }
 
+/* Custom DocsSidebar light/dark mode - explicit overrides */
+html:not(.dark) aside[class*="bg-white"] {
+  background-color: #ffffff !important;
+  color: #0a0a0a !important;
+}
+
+html:not(.dark) aside[class*="bg-white"] button,
+html:not(.dark) aside[class*="bg-white"] a {
+  color: #0a0a0a !important;
+}
+
+html:not(.dark) aside[class*="bg-white"] .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+html:not(.dark) aside[class*="bg-white"] .text-gray-400 {
+  color: #9ca3af !important;
+}
+
 /* Sidebar Scrollbar Styling */
 aside::-webkit-scrollbar {
   width: 6px;

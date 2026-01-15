@@ -156,11 +156,8 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
             // Folder - clickable to toggle
             <button
               onClick={() => toggleCollapse(itemKey)}
-              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10"
-              style={{ 
-                paddingLeft: `${depth * 16 + 12}px`,
-                color: 'var(--foreground)'
-              }}
+              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10 text-gray-900 dark:text-gray-100"
+              style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
               <span className="flex-1 wrap-break-word">{displayTitle}</span>
               <span className="ml-auto shrink-0 mt-0.5">
@@ -179,18 +176,14 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
                 flex-1 flex items-start gap-2 px-3 py-2 text-sm rounded-lg transition-all relative z-10
                 ${
                   isActive
-                    ? 'font-thin'
-                    : 'hover:font-semibold'
+                    ? 'font-thin text-blue-500 bg-blue-500/10'
+                    : 'hover:font-semibold text-gray-900 dark:text-gray-100'
                 }
               `}
-              style={{ 
-                paddingLeft: `${depth * 16 + 12}px`,
-                color: isActive ? undefined : 'var(--foreground)',
-                backgroundColor: isActive ? 'rgba(59, 130, 246, 0.1)' : undefined
-              }}
+              style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
-              <FileText className="w-4 h-4 shrink-0 mt-0.5" style={{ color: isActive ? '#3b82f6' : undefined }} />
-              <span className="flex-1 wrap-break-word" style={{ color: isActive ? '#3b82f6' : undefined }}>{displayTitle}</span>
+              <FileText className={`w-4 h-4 shrink-0 mt-0.5 ${isActive ? 'text-blue-500' : ''}`} />
+              <span className="flex-1 wrap-break-word">{displayTitle}</span>
             </Link>
           )}
         </div>
