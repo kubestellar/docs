@@ -52,13 +52,6 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Overview': 'readme.md' },
       { 'Architecture': 'direct/architecture.md' },
-      {
-        'Related': [
-          { 'KubeStellar UI': 'direct/ui-intro.md' },
-          { 'KubeFlex': 'direct/kubeflex-intro.md' },
-          { 'KubeStellar Galaxy': 'direct/galaxy-intro.md' }
-        ]
-      },
       { 'Release Notes': 'direct/release-notes.md' },
       { 'Roadmap': 'direct/roadmap.md' }
     ]
