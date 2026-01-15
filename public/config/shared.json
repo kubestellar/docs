@@ -140,8 +140,8 @@
     },
     "kubectl-claude": {
       "latest": {
-        "label": "v0.4.6 (Latest)",
-        "branch": "docs/kubectl-claude/0.4.6",
+        "label": "v0.5.0 (Latest)",
+        "branch": "docs/kubectl-claude/0.5.0",
         "isDefault": true
       },
       "main": {
@@ -168,6 +168,11 @@
       "0.4.5": {
         "label": "v0.4.5",
         "branch": "docs/kubectl-claude/0.4.5",
+        "isDefault": false
+      },
+      "0.4.6": {
+        "label": "v0.4.6",
+        "branch": "docs/kubectl-claude/0.4.6",
         "isDefault": false
       }
     }
@@ -196,7 +201,7 @@
     "kubectl-claude": {
       "name": "kubectl-claude",
       "basePath": "kubectl-claude",
-      "currentVersion": "0.4.6"
+      "currentVersion": "0.5.0"
     }
   },
   "relatedProjects": [
@@ -233,5 +238,5 @@
     "multi-plugin": "https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs",
     "kubectl-claude": "https://github.com/kubestellar/kubectl-claude/edit/main/docs"
   },
-  "updatedAt": "2026-01-15T06:36:06.391Z"
+  "updatedAt": "2026-01-15T15:43:14.944Z"
 }
