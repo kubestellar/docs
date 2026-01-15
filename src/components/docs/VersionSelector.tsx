@@ -5,31 +5,95 @@ import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import {
   getProjectFromPath,
-  getProjectVersions,
+  getProjectVersions as getStaticProjectVersions,
   getVersionUrl,
 } from '@/config/versions';
+import { useSharedConfig, getVersionsForProject } from '@/hooks/useSharedConfig';
 
 interface VersionSelectorProps {
   className?: string;
   isMobile?: boolean;
 }
 
+// Detect current version from hostname
+function detectCurrentVersionKey(versions: Array<{ key: string; branch: string; isDev?: boolean }>): string {
+  if (typeof window === 'undefined') return 'latest';
+
+  const hostname = window.location.hostname;
+
+  // Production site = latest
+  if (hostname === 'kubestellar.io' || hostname === 'www.kubestellar.io') {
+    return 'latest';
+  }
+
+  // Netlify branch deploys: {branch-slug}--{site-name}.netlify.app
+  const branchDeployMatch = hostname.match(/^(.+)--[\w-]+\.netlify\.app$/);
+  if (branchDeployMatch) {
+    const branchSlug = branchDeployMatch[1];
+
+    // Check for "main" branch deploy
+    if (branchSlug === 'main') {
+      return 'main';
+    }
+
+    // Check for deploy previews (deploy-preview-XXX)
+    if (branchSlug.startsWith('deploy-preview-')) {
+      return 'latest'; // Preview shows as latest
+    }
+
+    // Match branch slug to version (e.g., docs-0-28-0 -> 0.28.0)
+    for (const version of versions) {
+      const versionBranchSlug = version.branch.replace(/\//g, '-').replace(/\./g, '-');
+      if (branchSlug === versionBranchSlug) {
+        return version.key;
+      }
+    }
+  }
+
+  // Default to latest
+  return 'latest';
+}
+
 export function VersionSelector({ className = '', isMobile = false }: VersionSelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentVersionKey, setCurrentVersionKey] = useState('latest');
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
+  // Fetch dynamic config from production (always shows latest versions)
+  const { config: sharedConfig } = useSharedConfig();
+
   // Detect current project from URL
   const currentProject = getProjectFromPath(pathname);
   const projectId = currentProject.id;
 
-  // Get versions for the current project
-  const versions = getProjectVersions(projectId);
+  // Get versions - prefer dynamic config, fall back to static
+  const rawVersions = sharedConfig
+    ? getVersionsForProject(sharedConfig, projectId)
+    : getStaticProjectVersions(projectId);
 
-  // Current version label
-  const currentVersionLabel = `v${currentProject.currentVersion}`;
+  // Sort versions: default first, then dev, then rest by version number descending
+  const versions = rawVersions.sort((a, b) => {
+    if (a.isDefault && !b.isDefault) return -1;
+    if (!a.isDefault && b.isDefault) return 1;
+    if (a.isDev && !b.isDev) return -1;
+    if (!a.isDev && b.isDev) return 1;
+    // Sort by version number descending (legacy goes last)
+    if (a.key === 'legacy') return 1;
+    if (b.key === 'legacy') return -1;
+    return b.key.localeCompare(a.key, undefined, { numeric: true });
+  });
+
+  // Detect current version from hostname on mount
+  useEffect(() => {
+    setCurrentVersionKey(detectCurrentVersionKey(versions));
+  }, [versions]);
+
+  // Get the label for the current version
+  const currentVersion = versions.find(v => v.key === currentVersionKey);
+  const currentVersionLabel = currentVersion?.label || `v${currentProject.currentVersion}`;
 
   // Show project name for non-KubeStellar projects
   const showProjectName = projectId !== 'kubestellar';
@@ -100,7 +164,7 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
         {isOpen && (
           <div className="mt-1 ml-7 space-y-1">
             {versions.map(({ key, label, externalUrl }) => {
-              const isCurrentVersion = key === 'latest';
+              const isCurrentVersion = key === currentVersionKey;
               const isExternal = !!externalUrl;
               return (
                 <button
@@ -169,7 +233,7 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
         >
           <div className="py-1">
             {versions.map(({ key, label, externalUrl }) => {
-              const isCurrentVersion = key === 'latest';
+              const isCurrentVersion = key === currentVersionKey;
               const isExternal = !!externalUrl;
 
               return (

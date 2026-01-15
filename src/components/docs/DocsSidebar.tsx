@@ -3,10 +3,10 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
-import { SidebarFooter } from './SidebarFooter';
-import { useDocsMenu } from './DocsProvider';
 import { useTheme } from 'next-themes';
+import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
+import { RelatedProjects } from './RelatedProjects';
+import { useDocsMenu } from './DocsProvider';
 
 interface MenuItem {
   name: string;
@@ -25,127 +25,80 @@ interface DocsSidebarProps {
 
 export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const pathname = usePathname();
-  const navRef = useRef<HTMLElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
-  const { sidebarCollapsed, toggleSidebar, menuOpen, bannerDismissed } = useDocsMenu();
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
-  const [availableHeight, setAvailableHeight] = useState<string>('auto');
-  const [topOffset, setTopOffset] = useState('4rem');
-  const [sidebarHeight, setSidebarHeight] = useState('calc(100vh - 4rem)');
+  const {
+    sidebarCollapsed,
+    toggleSidebar,
+    menuOpen,
+    bannerDismissed,
+    navCollapsed: collapsed,
+    setNavCollapsed: setCollapsed,
+    toggleNavCollapsed,
+    navInitialized
+  } = useDocsMenu();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Calculate dynamic top offset and height based on banner presence
+  const isDark = mounted && resolvedTheme === 'dark';
+  // Text colors based on theme
+  const textColor = isDark ? '#e5e7eb' : '#374151'; // gray-200 : gray-700
+  // Stable layout values - only recalculate on resize or banner change
+  const [layoutValues, setLayoutValues] = useState({ top: '4rem', height: 'calc(100vh - 4rem)' });
+  const layoutCalculatedRef = useRef(false);
+
   useEffect(() => {
     const calculateOffsets = () => {
-      // Get the navbar element
       const navbar = document.querySelector('.nextra-nav-container');
-      
       if (navbar) {
-        // Get the actual bottom position of the navbar (which includes banner if present)
-        const navbarRect = navbar.getBoundingClientRect();
-        const navbarBottom = navbarRect.bottom;
-        
-        // The sidebar should start where the navbar ends
-        setTopOffset(`${navbarBottom}px`);
-        setSidebarHeight(`calc(100vh - ${navbarBottom}px)`);
-      } else {
-        // Fallback if navbar not found
-        setTopOffset('4rem');
-        setSidebarHeight('calc(100vh - 4rem)');
+        const navbarHeight = (navbar as HTMLElement).offsetHeight;
+        const newTop = `${navbarHeight}px`;
+        const newHeight = `calc(100vh - ${navbarHeight}px)`;
+        setLayoutValues({ top: newTop, height: newHeight });
+        layoutCalculatedRef.current = true;
       }
     };
 
-    calculateOffsets();
-    
-    // Recalculate on window resize, scroll (for sticky navbar), and banner changes
+    // Calculate on mount and when banner state changes
+    // Use setTimeout to allow DOM to update after banner dismiss
+    const timeoutId = setTimeout(calculateOffsets, 50);
+
     window.addEventListener('resize', calculateOffsets);
-    window.addEventListener('scroll', calculateOffsets);
-    
-    // Also recalculate after a short delay to ensure DOM is ready
-    const timer = setTimeout(calculateOffsets, 100);
-    
-    // Recalculate periodically to catch any changes
-    const interval = setInterval(calculateOffsets, 500);
-    
     return () => {
+      clearTimeout(timeoutId);
       window.removeEventListener('resize', calculateOffsets);
-      window.removeEventListener('scroll', calculateOffsets);
-      clearTimeout(timer);
-      clearInterval(interval);
     };
   }, [bannerDismissed]);
 
-  // Calculate available height for navigation, accounting for footer and viewport changes
-  useEffect(() => {
-    const calculateHeight = () => {
-      if (navRef.current) {
-        const parent = navRef.current.parentElement;
-        if (parent) {
-          // Get the parent's actual height (which is constrained by viewport)
-          const parentHeight = parent.clientHeight;
-          
-          // Find footer element and get its height
-          const footer = parent.nextElementSibling;
-          const footerHeight = footer ? footer.clientHeight : 0;
-          
-          // Calculate available height for navigation
-          const navHeight = parentHeight - footerHeight;
-          setAvailableHeight(`${navHeight}px`);
-        }
-      }
-    };
+  // Store initial pathname for initialization
+  const initialPathnameRef = useRef(pathname);
 
-    calculateHeight();
-    
-    // Recalculate on window resize
-    window.addEventListener('resize', calculateHeight);
-    
-    // Recalculate on scroll (for when banner appears/disappears)
-    window.addEventListener('scroll', calculateHeight);
-    
-    // Use MutationObserver to recalculate if DOM changes
-    const observer = new MutationObserver(calculateHeight);
-    if (navRef.current?.parentElement?.parentElement) {
-      observer.observe(navRef.current.parentElement.parentElement, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ['class', 'style']
-      });
-    }
-    
-    return () => {
-      window.removeEventListener('resize', calculateHeight);
-      window.removeEventListener('scroll', calculateHeight);
-      observer.disconnect();
-    };
-  }, []);
-
-  // Auto-expand only the folders that contain the active page
+  // Initialize collapsed state once on mount - collapse folders not in path to active
+  // After initialization, user controls expand/collapse manually
   useEffect(() => {
-    const newCollapsed = new Set<string>();
+    if (navInitialized.current) return;
+    navInitialized.current = true;
+
+    const initialCollapsed = new Set<string>();
     const pathToActive = new Set<string>();
-    
+    const currentPath = initialPathnameRef.current;
+
     // Find the path to the active item
     function findActivePath(items: MenuItem[], parentKey: string = ''): boolean {
       for (const item of items) {
         const itemKey = parentKey ? `${parentKey}-${item.name}` : item.name;
-        const isActive = item.route && pathname === item.route;
-        
+        const isActive = item.route && currentPath === item.route;
+
         if (isActive) {
-          // Found the active item, don't collapse any parent in the path
           return true;
         }
-        
+
         if (item.children) {
           const childActive = findActivePath(item.children, itemKey);
           if (childActive) {
-            // This folder contains the active item, keep it expanded
             pathToActive.add(itemKey);
             return true;
           }
@@ -153,7 +106,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
       }
       return false;
     }
-    
+
     // Collapse all folders except those in the active path or with theme.collapsed: false
     function collapseAll(items: MenuItem[], parentKey: string = '') {
       for (const item of items) {
@@ -161,36 +114,24 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         const hasChildren = item.children && item.children.length > 0;
 
         if (hasChildren) {
-          // Check if item has theme.collapsed explicitly set to false
           const shouldStayExpanded = item.theme?.collapsed === false;
-
-          // Collapse this folder if it's not in the path to active item and not forced expanded
           if (!pathToActive.has(itemKey) && !shouldStayExpanded) {
-            newCollapsed.add(itemKey);
+            initialCollapsed.add(itemKey);
           }
-          // Recursively check children
           if (item.children) {
             collapseAll(item.children, itemKey);
           }
         }
       }
     }
-    
+
     findActivePath(pageMap);
     collapseAll(pageMap);
-    setCollapsed(newCollapsed);
-  }, [pathname, pageMap]);
+    setCollapsed(initialCollapsed);
+  }, [pageMap]);
 
   const toggleCollapse = (itemKey: string) => {
-    setCollapsed(prev => {
-      const next = new Set(prev);
-      if (next.has(itemKey)) {
-        next.delete(itemKey);
-      } else {
-        next.add(itemKey);
-      }
-      return next;
-    });
+    toggleNavCollapsed(itemKey);
   };
 
   const renderMenuItem = (item: MenuItem, depth: number = 0, parentKey: string = '') => {
@@ -227,10 +168,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
             <button
               onClick={() => toggleCollapse(itemKey)}
               className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10"
-              style={{ 
-                paddingLeft: `${depth * 16 + 12}px`,
-                color: 'var(--foreground)'
-              }}
+              style={{ paddingLeft: `${depth * 16 + 12}px`, color: textColor }}
             >
               <span className="flex-1 wrap-break-word">{displayTitle}</span>
               <span className="ml-auto shrink-0 mt-0.5">
@@ -249,18 +187,20 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
                 flex-1 flex items-start gap-2 px-3 py-2 text-sm rounded-lg transition-all relative z-10
                 ${
                   isActive
-                    ? 'font-thin'
+                    ? 'font-thin text-blue-500 bg-blue-500/10'
                     : 'hover:font-semibold'
                 }
               `}
-              style={{ 
+              style={{
                 paddingLeft: `${depth * 16 + 12}px`,
-                color: isActive ? undefined : 'var(--foreground)',
-                backgroundColor: isActive ? 'rgba(59, 130, 246, 0.1)' : undefined
+                color: isActive ? undefined : textColor
               }}
             >
-              <FileText className="w-4 h-4 shrink-0 mt-0.5" style={{ color: isActive ? '#3b82f6' : undefined }} />
-              <span className="flex-1 wrap-break-word" style={{ color: isActive ? '#3b82f6' : undefined }}>{displayTitle}</span>
+              <FileText
+                className="w-4 h-4 shrink-0 mt-0.5"
+                style={{ color: isActive ? '#3b82f6' : textColor }}
+              />
+              <span className="flex-1 wrap-break-word">{displayTitle}</span>
             </Link>
           )}
         </div>
@@ -290,17 +230,15 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     <>
       {/* Scrollable navigation area */}
       <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-        <nav 
-          ref={navRef}
-          className="p-4 pb-6 w-full space-y-2" 
-          style={{ maxHeight: availableHeight }}
-        >
+        <nav className="p-4 pb-6 w-full space-y-2">
           {pageMap.map(item => renderMenuItem(item))}
         </nav>
       </div>
-      
-      {/* Footer at bottom */}
-      <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
+
+      {/* Related Projects - fixed at bottom, shrink-0 prevents shrinking */}
+      <div className="shrink-0">
+        <RelatedProjects onCollapse={toggleSidebar} isMobile={menuOpen} bannerActive={!bannerDismissed} />
+      </div>
     </>
   );
 
@@ -309,13 +247,11 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     <div className="flex flex-col h-full">
       {/* Spacer */}
       <div className="flex-1"></div>
-      
+
       {/* Footer with icon buttons */}
-      <SidebarFooter onCollapse={toggleSidebar} variant="slim" />
+      <RelatedProjects onCollapse={toggleSidebar} variant="slim" />
     </div>
   );
-
-  const isDark = mounted && resolvedTheme === 'dark';
 
   return (
     <aside
@@ -326,17 +262,18 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         flex flex-col
         overflow-hidden
         transition-all duration-300 ease-in-out
+        bg-white dark:bg-black
+        border-r border-gray-200 dark:border-gray-800
         ${menuOpen ? 'translate-x-0 w-60 z-30' : '-translate-x-full w-0 lg:translate-x-0 z-20'}
         ${sidebarCollapsed ? 'lg:w-16' : 'lg:w-60'}
         ${className || ''}
       `}
       style={{
-        top: topOffset,
-        height: sidebarHeight,
-        maxHeight: sidebarHeight,
+        top: layoutValues.top,
+        height: layoutValues.height,
+        maxHeight: layoutValues.height,
         boxShadow: '0 1px 6px 0 rgba(0,0,0,0.07)',
-        backgroundColor: isDark ? '#000000' : '#ffffff',
-        borderRight: isDark ? '1px solid #1f2937' : '1px solid #e5e7eb',
+        backgroundColor: 'var(--background)',
       }}
       suppressHydrationWarning
     >
