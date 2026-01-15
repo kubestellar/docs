@@ -218,12 +218,15 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   // Render full sidebar (expanded state)
   const renderFullSidebar = () => (
     <>
-      {/* Scrollable area - nav + Related Projects scroll together */}
+      {/* Scrollable navigation area */}
       <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-        <nav className="p-4 pb-2 w-full space-y-2">
+        <nav className="p-4 pb-6 w-full space-y-2">
           {pageMap.map(item => renderMenuItem(item))}
         </nav>
-        {/* Related Projects with Footer Controls - scrolls with nav */}
+      </div>
+
+      {/* Related Projects - fixed at bottom, shrink-0 prevents shrinking */}
+      <div className="shrink-0">
         <RelatedProjects onCollapse={toggleSidebar} isMobile={menuOpen} bannerActive={!bannerDismissed} />
       </div>
     </>
