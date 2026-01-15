@@ -141,8 +141,8 @@
     },
     "klaude": {
       "latest": {
-        "label": "v0.6.0 (Latest)",
-        "branch": "docs/klaude/0.6.0",
+        "label": "v0.7.0 (Latest)",
+        "branch": "docs/klaude/0.7.0",
         "isDefault": true
       },
       "main": {
@@ -180,6 +180,11 @@
         "label": "v0.4.0",
         "branch": "docs/klaude/0.4.0",
         "isDefault": false
+      },
+      "0.6.0": {
+        "label": "v0.6.0",
+        "branch": "docs/klaude/0.6.0",
+        "isDefault": false
       }
     }
   },
@@ -207,7 +212,7 @@
     "klaude": {
       "name": "klaude",
       "basePath": "klaude",
-      "currentVersion": "0.6.0"
+      "currentVersion": "0.7.0"
     }
   },
   "relatedProjects": [
@@ -244,5 +249,5 @@
     "multi-plugin": "https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs",
     "klaude": "https://github.com/kubestellar/klaude/edit/main/docs"
   },
-  "updatedAt": "2026-01-15T15:43:14.944Z"
+  "updatedAt": "2026-01-15T20:39:54.959Z"
 }
