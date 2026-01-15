@@ -179,16 +179,16 @@
   status = 301
   force = true
 
-# Redirect claude.kubestellar.io to kubestellar.io/docs/kubectl-claude
+# Redirect claude.kubestellar.io to kubestellar.io/docs/klaude
 [[redirects]]
   from = "https://claude.kubestellar.io/*"
-  to = "https://kubestellar.io/docs/kubectl-claude/:splat"
+  to = "https://kubestellar.io/docs/klaude/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "https://claude.kubestellar.io"
-  to = "https://kubestellar.io/docs/kubectl-claude/overview/introduction"
+  to = "https://kubestellar.io/docs/klaude/overview/introduction"
   status = 301
   force = true
 
