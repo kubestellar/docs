@@ -10,7 +10,7 @@ import { useSharedConfig } from '@/hooks/useSharedConfig';
 // Static fallback for related projects
 const STATIC_RELATED_PROJECTS = [
   { title: 'KubeStellar', href: '/docs/what-is-kubestellar/overview', description: 'Multi-cluster configuration management' },
-  { title: 'kubectl-claude', href: '/docs/kubectl-claude', description: 'AI-powered kubectl plugin' },
+  { title: 'kubectl-claude', href: '/docs/user-guide/usage/third-party-integrations/claude-code', description: 'AI-powered kubectl plugin' },
   { title: 'KubeFlex', href: '/docs/kubeflex/overview/introduction', description: 'Lightweight Kubernetes control planes' },
   { title: 'A2A', href: '/docs/a2a/overview/introduction', description: 'Agent-to-Agent protocol' },
   { title: 'Multi Plugin', href: '/docs/multi-plugin/overview/introduction', description: 'Multi-cluster kubectl plugin' },
@@ -96,13 +96,16 @@ export function RelatedProjects({ variant = 'full' }: RelatedProjectsProps) {
                     rel="noopener noreferrer"
                     className={`
                       flex items-center gap-2 px-2 py-1.5 text-sm rounded-md transition-colors
-                      ${isCurrentProject
-                        ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium'
-                        : 'hover:bg-gray-100 dark:hover:bg-neutral-800'
-                      }
+                      ${isCurrentProject ? '' : 'hover:bg-gray-100'}
                     `}
                     style={{
-                      color: isCurrentProject ? undefined : isDark ? '#d1d5db' : '#374151',
+                      backgroundColor: isCurrentProject
+                        ? (isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgb(239, 246, 255)')
+                        : undefined,
+                      color: isCurrentProject
+                        ? (isDark ? '#60a5fa' : '#2563eb')
+                        : (isDark ? '#d1d5db' : '#374151'),
+                      fontWeight: isCurrentProject ? 500 : 400,
                     }}
                   >
                     <span className="flex-1 truncate">{project.title}</span>
@@ -113,13 +116,16 @@ export function RelatedProjects({ variant = 'full' }: RelatedProjectsProps) {
                     href={project.href}
                     className={`
                       flex items-center gap-2 px-2 py-1.5 text-sm rounded-md transition-colors
-                      ${isCurrentProject
-                        ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium'
-                        : 'hover:bg-gray-100 dark:hover:bg-neutral-800'
-                      }
+                      ${isCurrentProject ? '' : 'hover:bg-gray-100'}
                     `}
                     style={{
-                      color: isCurrentProject ? undefined : isDark ? '#d1d5db' : '#374151',
+                      backgroundColor: isCurrentProject
+                        ? (isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgb(239, 246, 255)')
+                        : undefined,
+                      color: isCurrentProject
+                        ? (isDark ? '#60a5fa' : '#2563eb')
+                        : (isDark ? '#d1d5db' : '#374151'),
+                      fontWeight: isCurrentProject ? 500 : 400,
                     }}
                   >
                     <span className="flex-1 truncate">{project.title}</span>

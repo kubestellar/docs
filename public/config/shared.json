@@ -47,7 +47,7 @@
   },
   "relatedProjects": [
     { "title": "KubeStellar", "href": "/docs/what-is-kubestellar/overview", "description": "Multi-cluster configuration management" },
-    { "title": "kubectl-claude", "href": "/docs/kubectl-claude", "description": "AI-powered kubectl plugin" },
+    { "title": "kubectl-claude", "href": "/docs/user-guide/usage/third-party-integrations/claude-code", "description": "AI-powered kubectl plugin" },
     { "title": "KubeFlex", "href": "/docs/kubeflex/overview/introduction", "description": "Lightweight Kubernetes control planes" },
     { "title": "A2A", "href": "/docs/a2a/overview/introduction", "description": "Agent-to-Agent protocol" },
     { "title": "Multi Plugin", "href": "/docs/multi-plugin/overview/introduction", "description": "Multi-cluster kubectl plugin" }
