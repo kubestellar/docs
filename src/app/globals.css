@@ -48,6 +48,13 @@ html.dark .nextra-toc {
   border-right-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Center images and iframes */
+.centerImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Light mode specific */
 html:not(.dark) .nextra-sidebar-container {
   border-left-color: rgba(0, 0, 0, 0.1);
