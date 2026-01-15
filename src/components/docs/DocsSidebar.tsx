@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
-import { ChevronRight, ChevronDown, FileText, Sidebar } from 'lucide-react';
+import { ChevronRight, ChevronDown, FileText} from 'lucide-react';
 import { RelatedProjects } from './RelatedProjects';
 import { useDocsMenu } from './DocsProvider';
 import { SidebarFooter } from './SidebarFooter';
@@ -49,7 +49,6 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const textColor = isDark ? '#e5e7eb' : '#374151'; // gray-200 : gray-700
   // Stable layout values - only recalculate on resize or banner change
   const [layoutValues, setLayoutValues] = useState({ top: '4rem', height: 'calc(100vh - 4rem)' });
-  const layoutCalculatedRef = useRef(false);
 
   const calculateOffsets = () => {
   const navbar = document.querySelector('.nextra-nav-container') as HTMLElement | null;
@@ -128,7 +127,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     findActivePath(pageMap);
     collapseAll(pageMap);
     setCollapsed(initialCollapsed);
-  }, [pageMap]);
+  }, [pageMap, navInitialized, setCollapsed]);
 
   const toggleCollapse = (itemKey: string) => {
     toggleNavCollapsed(itemKey);
