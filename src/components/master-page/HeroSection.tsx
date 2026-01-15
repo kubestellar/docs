@@ -163,7 +163,7 @@ export default function HeroSection() {
 
                   {/* Terminal Title */}
                   <span className="text-gray-400 text-sm font-mono">
-                    kubestellar-control-center
+                    {t("terminalTitle")}
                   </span>
 
                   <div className="flex-1"></div>
@@ -171,7 +171,7 @@ export default function HeroSection() {
                   {/* Connection Status */}
                   <div className="connection-status flex items-center space-x-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
-                    <span className="text-green-400 text-xs">READY</span>
+                    <span className="text-green-400 text-xs">{t("terminalStatus")}</span>
                   </div>
 
                   {/* Copy Button */}
@@ -239,10 +239,10 @@ export default function HeroSection() {
                     {/* Header */}
                     <div className="output-line flex animate-slide-in-left [animation-delay:1s]">
                       <span className="text-cyan-400 font-bold w-22 inline-block">
-                        INFO
+                        {t("terminalOutputInfo")}
                       </span>
                       <span className="text-gray-300 flex-1">
-                        Installing KubeStellar demo environment...
+                        {t("terminalOutputInfoText")}
                       </span>
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
@@ -250,10 +250,10 @@ export default function HeroSection() {
                     {/* Creating clusters */}
                     <div className="output-line flex animate-slide-in-left [animation-delay:1.2s]">
                       <span className="text-blue-400 font-bold w-22 inline-block">
-                        SETUP
+                        {t("terminalOutputSetup")}
                       </span>
                       <span className="text-gray-300 flex-1">
-                        Creating kind clusters: kubeflex, cluster1, cluster2
+                        {t("terminalOutputSetupText")}
                       </span>
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
@@ -261,10 +261,10 @@ export default function HeroSection() {
                     {/* Installing KubeFlex */}
                     <div className="output-line flex animate-slide-in-left [animation-delay:1.4s]">
                       <span className="text-purple-400 font-bold w-22 inline-block">
-                        INSTALL
+                        {t("terminalOutputInstall")}
                       </span>
                       <span className="text-gray-300 flex-1">
-                        Deploying KubeFlex control plane components
+                        {t("terminalOutputInstallText")}
                       </span>
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
@@ -272,10 +272,10 @@ export default function HeroSection() {
                     {/* Configuring OCM */}
                     <div className="output-line flex animate-slide-in-left [animation-delay:1.6s]">
                       <span className="text-yellow-400 font-bold w-22 inline-block">
-                        CONFIG
+                        {t("terminalOutputConfig")}
                       </span>
                       <span className="text-gray-300 flex-1">
-                        Configuring Open Cluster Management
+                        {t("terminalOutputConfigText")}
                       </span>
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
@@ -283,10 +283,10 @@ export default function HeroSection() {
                     {/* Final Success */}
                     <div className="output-line flex animate-slide-in-left [animation-delay:1.8s]">
                       <span className="text-emerald-400 font-bold w-22 inline-block">
-                        SUCCESS
+                        {t("terminalOutputSuccess")}
                       </span>
                       <span className="text-gray-300 flex-1">
-                        KubeStellar demo environment ready! Setup complete
+                        {t("terminalOutputSuccessText")}
                       </span>
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
@@ -303,13 +303,13 @@ export default function HeroSection() {
               {/* Installation Path Heading */}
               <div className="text-center sm:text-left">
                 <h3 className="text-xl font-bold text-white mb-2">
-                  Get Started with{" "}
+                  {t("getStartedWith")}{" "}
                   <span className="text-gradient animated-gradient bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
                     KubeStellar
                   </span>
                 </h3>
                 <p className="text-sm text-blue-100/80">
-                  Choose your deployment environment
+                  {t("chooseEnvironment")}
                 </p>
               </div>
 
@@ -343,10 +343,10 @@ export default function HeroSection() {
                     </div>
                     <div className="text-left">
                       <div className="text-sm font-semibold text-white">
-                        Local Development
+                        {t("localDevelopment")}
                       </div>
                       <div className="text-xs text-blue-200/70">
-                        Docker + Kind • 15 mins
+                        {t("localDevelopmentTime")}
                       </div>
                     </div>
                   </div>
@@ -393,10 +393,10 @@ export default function HeroSection() {
                     </div>
                     <div className="text-left">
                       <div className="text-sm font-semibold text-white">
-                        AWS EKS Production
+                        {t("awsEksProduction")}
                       </div>
                       <div className="text-xs text-purple-200/70">
-                        Enterprise Ready • 30 mins
+                        {t("awsEksProductionTime")}
                       </div>
                     </div>
                   </div>
