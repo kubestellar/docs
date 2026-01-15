@@ -23,12 +23,12 @@ export const PRODUCTION_URL = "https://kubestellar.io"
 export const VERSIONS = {
   latest: {
     label: "v0.29.0 (Latest)",
-    branch: "main",
+    branch: "docs/0.29.0",
     isDefault: true,
   },
   main: {
     label: "main (dev)",
-    branch: "main",
+    branch: "docs/0.29.0",
     isDefault: false,
     isDev: true,
   },
