@@ -246,7 +246,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "kubectl-claude",
     name: "kubectl-claude",
     basePath: "kubectl-claude",
-    currentVersion: "0.3.0",
+    currentVersion: "0.4.3",
     contentPath: "docs/content/kubectl-claude",
     versions: KUBECTL_CLAUDE_VERSIONS,
   },

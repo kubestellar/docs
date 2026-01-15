@@ -468,7 +468,7 @@ export default async function Page(props: PageProps) {
   const { pageMap } = buildPageMap(projectId)
 
   return (
-    <Wrapper toc={toc} metadata={metadata} sourceCode={rawJs} pageMap={pageMap}>
+    <Wrapper toc={toc} metadata={metadata} sourceCode={rawJs} pageMap={pageMap} filePath={filePath} projectId={projectId}>
       <MDXContent />
     </Wrapper>
   )

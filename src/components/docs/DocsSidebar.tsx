@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
 import { SidebarFooter } from './SidebarFooter';
+import { RelatedProjects } from './RelatedProjects';
 import { useDocsMenu } from './DocsProvider';
 import { useTheme } from 'next-themes';
 
@@ -290,15 +291,18 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     <>
       {/* Scrollable navigation area */}
       <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-        <nav 
+        <nav
           ref={navRef}
-          className="p-4 pb-6 w-full space-y-2" 
+          className="p-4 pb-6 w-full space-y-2"
           style={{ maxHeight: availableHeight }}
         >
           {pageMap.map(item => renderMenuItem(item))}
         </nav>
       </div>
-      
+
+      {/* Related Projects */}
+      <RelatedProjects />
+
       {/* Footer at bottom */}
       <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
     </>
