@@ -7,7 +7,6 @@ import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
 import { SidebarFooter } from './SidebarFooter';
 import { RelatedProjects } from './RelatedProjects';
 import { useDocsMenu } from './DocsProvider';
-import { useTheme } from 'next-themes';
 
 interface MenuItem {
   name: string;
@@ -29,16 +28,10 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const navRef = useRef<HTMLElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
   const { sidebarCollapsed, toggleSidebar, menuOpen, bannerDismissed } = useDocsMenu();
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [availableHeight, setAvailableHeight] = useState<string>('auto');
   const [topOffset, setTopOffset] = useState('4rem');
   const [sidebarHeight, setSidebarHeight] = useState('calc(100vh - 4rem)');
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Calculate dynamic top offset and height based on banner presence
   useEffect(() => {
@@ -319,8 +312,6 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     </div>
   );
 
-  const isDark = mounted && resolvedTheme === 'dark';
-
   return (
     <aside
       ref={sidebarRef}
@@ -330,6 +321,8 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         flex flex-col
         overflow-hidden
         transition-all duration-300 ease-in-out
+        bg-white dark:bg-black
+        border-r border-gray-200 dark:border-gray-800
         ${menuOpen ? 'translate-x-0 w-60 z-30' : '-translate-x-full w-0 lg:translate-x-0 z-20'}
         ${sidebarCollapsed ? 'lg:w-16' : 'lg:w-60'}
         ${className || ''}
@@ -339,8 +332,6 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         height: sidebarHeight,
         maxHeight: sidebarHeight,
         boxShadow: '0 1px 6px 0 rgba(0,0,0,0.07)',
-        backgroundColor: isDark ? '#000000' : '#ffffff',
-        borderRight: isDark ? '1px solid #1f2937' : '1px solid #e5e7eb',
       }}
       suppressHydrationWarning
     >
