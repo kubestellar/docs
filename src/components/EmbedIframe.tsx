@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 interface EmbedIframeProps {
   id: string; src: string; title: string; width?: string; height?: string;
@@ -22,7 +23,7 @@ export function EmbedIframe({
   const isYouTube = src.includes('youtube.com') || src.includes('youtu.be');
   const useResponsive = isYouTube || (width === "720" && height === "400");
   
-  const spinner = !isLoaded && <img width="140" height="140" src="/docs-images/images/spinner.gif" className="centerImage" alt="Loading..." style={{ display: 'block', margin: 'auto' }} />;
+  const spinner = !isLoaded && <Image width={140} height={140} src="/docs-images/images/spinner.gif" className="centerImage" alt="Loading..." style={{ display: 'block', margin: 'auto' }} unoptimized />;
   
   if (useResponsive) {
     return (
