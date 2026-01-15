@@ -40,12 +40,12 @@ export interface ProjectConfig {
 const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.29.0 (Latest)",
-    branch: "main",
+    branch: "docs/0.29.0",
     isDefault: true,
   },
   main: {
     label: "main (dev)",
-    branch: "main",
+    branch: "docs/0.29.0",
     isDefault: false,
     isDev: true,
   },
@@ -131,12 +131,12 @@ const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
 const A2A_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.1.0 (Latest)",
-    branch: "main",
+    branch: "docs/0.29.0",
     isDefault: true,
   },
   main: {
     label: "main (dev)",
-    branch: "main",
+    branch: "docs/0.29.0",
     isDefault: false,
     isDev: true,
   },
@@ -146,7 +146,7 @@ const A2A_VERSIONS: Record<string, VersionInfo> = {
 const KUBEFLEX_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.9.3 (Latest)",
-    branch: "main",
+    branch: "docs/0.29.0",
     isDefault: false,
   },
   "0.8.0": {
@@ -156,7 +156,7 @@ const KUBEFLEX_VERSIONS: Record<string, VersionInfo> = {
   },
   main: {
     label: "main (dev)",
-    branch: "main",
+    branch: "docs/0.29.0",
     isDefault: false,
     isDev: true,
   },
@@ -171,12 +171,12 @@ const KUBEFLEX_VERSIONS: Record<string, VersionInfo> = {
 const MULTI_PLUGIN_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.1.0 (Latest)",
-    branch: "main",
+    branch: "docs/0.29.0",
     isDefault: true,
   },
   main: {
     label: "main (dev)",
-    branch: "main",
+    branch: "docs/0.29.0",
     isDefault: false,
     isDev: true,
   },
