@@ -4,7 +4,7 @@ For the sake of supply chain security, every reference from a workflow to an act
 
 ## The Reversemap File
 
-The file `.gha-reversemap.yml` in the root of the repository is the single source of truth for the mapping from action identity (owner/repo and version tag) to commit hash. This file should only be updated when you have confidence in the new or added version.
+The file `.gha-reversemap.yml` in the root of the repository is the single source of truth for the mapping from action identity (owner/repo) to commit hash. This file should only be updated when you have confidence in the new or added version.
 
 ## Managing Action References
 
@@ -17,6 +17,7 @@ The script `hack/gha-reversemap.sh` provides commands for managing GitHub Action
 | `update-action-version` | Updates an action to its latest version in the reversemap file |
 | `apply-reversemap` | Distributes the reversemap specifications to all workflow files |
 | `verify-mapusage` | Verifies that all workflow files use correct commit hashes |
+| `update-reversemap` | Update the reverse map values based on given workflow files |
 
 ### Updating an Action
 
@@ -39,6 +40,25 @@ hack/gha-reversemap.sh verify-mapusage
 
 This command checks all workflow files and reports any discrepancies between the reversemap file and actual workflow references.
 
+### Responding to a Dependabot PR to update an Action
+
+Note: CI maintains the fact that `hack/gha-reversemap.sh verify-mapusage` passes.
+
+1. Wait until at least a week after that new version was released, to allow time for vulnerabilities to be discovered and reported.
+
+1. Do a web search on the Action; examine the results to see if any look like reports of a vulnerability.
+
+1. Consult [github.com/advisories](https://github.com/advisories) about the Action.
+
+1. If the above turns up a vulnerability, skip this upgrade. Otherwise proceed as follows.
+
+1. Create a PR to update both the reversemap and the workflow(s). The changes in the PR will be as follows.
+
+    1. IF no subsequent release has been made in the interim THEN use `hack/gha-reversemap.sh update-action-version` to pick up that release. Otherwise edit one workflow to reference the tag of the desired release and use `hack/gha-reversemap.sh update-reversemap <that one workflow>`.
+    1. Follow the map update with `hack/gha-reversemap.sh apply-reversemap`.
+
+1. Get the PR reviewed and merged.
+
 ## GitHub API Rate Limiting
 
 The `hack/gha-reversemap.sh` script makes calls to the GitHub API, which is rate-limited. If you encounter rate limit errors, you can authenticate using a GitHub token:
@@ -49,29 +69,6 @@ hack/gha-reversemap.sh update-action-version actions/checkout
 ```
 
 Authenticated requests have significantly higher rate limits than unauthenticated requests.
-
-## Example Workflow
-
-Here's a typical workflow for updating GitHub Actions:
-
-1. **Check current status**: Run `hack/gha-reversemap.sh verify-mapusage` to see if any actions need updating.
-
-2. **Update actions**: For each action that needs updating:
-   ```shell
-   hack/gha-reversemap.sh update-action-version owner/action-name
-   ```
-
-3. **Apply changes**: Propagate the updates to all workflow files:
-   ```shell
-   hack/gha-reversemap.sh apply-reversemap
-   ```
-
-4. **Verify**: Confirm all references are correct:
-   ```shell
-   hack/gha-reversemap.sh verify-mapusage
-   ```
-
-5. **Commit**: Commit both the updated `.gha-reversemap.yml` and all modified workflow files.
 
 ## Why Commit Hashes?
 
