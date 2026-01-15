@@ -256,6 +256,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         height: layoutValues.height,
         maxHeight: layoutValues.height,
         boxShadow: '0 1px 6px 0 rgba(0,0,0,0.07)',
+        backgroundColor: 'var(--background)',
       }}
       suppressHydrationWarning
     >
