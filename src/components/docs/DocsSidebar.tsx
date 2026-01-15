@@ -54,31 +54,24 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const calculateOffsets = () => {
   const navbar = document.querySelector('.nextra-nav-container') as HTMLElement | null;
   const banner = document.querySelector('.docs-banner') as HTMLElement | null;
-
   const navbarHeight = navbar?.offsetHeight || 0;
   const bannerHeight = banner?.offsetHeight || 0;
-
   const totalTop = navbarHeight + bannerHeight;
-
   setLayoutValues({
     top: `${totalTop}px`,
     height: `calc(100vh - ${totalTop}px)`
   });
 };
 
-
   useEffect(() => {
     // Wait for layout (banner + navbar) to fully render
     const t = setTimeout(calculateOffsets, 500);
-
     window.addEventListener('resize', calculateOffsets);
-
     return () => {
       clearTimeout(t);
       window.removeEventListener('resize', calculateOffsets);
     };
 }, [bannerDismissed]);
-
 
   // Store initial pathname for initialization
   const initialPathnameRef = useRef(pathname);
