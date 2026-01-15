@@ -1043,21 +1043,21 @@ Free and open source, inspired by Chaos Mesh and powered by the community.`,
     },
     {
       id: "25",
-      name: "kubectl-claude",
-      slug: "kubectl-claude",
+      name: "klaude",
+      slug: "klaude",
       tagline: "AI-powered multi-cluster Kubernetes management for Claude Code",
       description:
         "Integrate Claude Code with your Kubernetes clusters. Use natural language to query pods, diagnose issues, analyze RBAC, and manage multi-cluster environments.",
-      longDescription: `kubectl-claude brings the power of AI to multi-cluster Kubernetes management. Install as a Claude Code plugin and use natural language to interact with your clusters.
+      longDescription: `klaude brings the power of AI to multi-cluster Kubernetes management. Install as a Claude Code plugin and use natural language to interact with your clusters.
 
-Ask questions like "find pods with issues", "what permissions does the admin service account have?", or "show me warning events in kube-system". kubectl-claude understands your intent and executes the right kubectl commands across all your clusters.
+Ask questions like "find pods with issues", "what permissions does the admin service account have?", or "show me warning events in kube-system". klaude understands your intent and executes the right kubectl commands across all your clusters.
 
 Built-in diagnostic tools help you quickly identify CrashLoopBackOff pods, stuck deployments, security misconfigurations, and RBAC issues. Perfect for DevOps teams managing complex multi-cluster environments.
 
 **Installation:**
 \`\`\`bash
 brew tap kubestellar/tap
-brew install kubectl-claude
+brew install klaude
 \`\`\`
 
 Or install via Claude Code:
@@ -1074,7 +1074,7 @@ Free, open source, and built by the KubeStellar team.`,
       author: "KubeStellar Core Team",
       downloads: 42,
       rating: 4.9,
-      version: "1.0.0",
+      version: "0.6.0",
       features: [
         "Natural language Kubernetes queries",
         "Multi-cluster support via kubeconfig",
@@ -1094,8 +1094,8 @@ Free, open source, and built by the KubeStellar team.`,
       ],
       compatibility: ["Linux", "macOS", "Windows"],
       screenshots: [],
-      documentation: "https://kubestellar.io/docs/direct/claude-code",
-      github: "https://github.com/kubestellar/kubectl-claude",
+      documentation: "https://kubestellar.io/docs/klaude/overview/introduction",
+      github: "https://github.com/kubestellar/klaude",
       tags: ["claude", "ai", "kubectl", "multi-cluster", "diagnostics", "rbac", "free", "mcp"],
     },
   ];

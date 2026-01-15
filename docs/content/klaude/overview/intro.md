@@ -3,13 +3,13 @@ title: Introduction
 description: AI-powered kubectl plugin for multi-cluster Kubernetes management
 ---
 
-# kubectl-claude
+# klaude
 
 AI-powered kubectl plugin for multi-cluster Kubernetes management, with built-in diagnostic tools.
 
 ## Overview
 
-kubectl-claude provides two main interfaces:
+klaude provides two main interfaces:
 
 1. **Claude Code Plugin** - Use natural language to query and manage Kubernetes clusters directly in Claude Code
 2. **CLI Tool** - Traditional kubectl plugin with AI-powered natural language queries
@@ -31,20 +31,20 @@ kubectl-claude provides two main interfaces:
 
 ```bash
 brew tap kubestellar/tap
-brew install kubectl-claude
+brew install klaude
 ```
 
 #### From Releases
 
-Download from [GitHub Releases](https://github.com/kubestellar/kubectl-claude/releases).
+Download from [GitHub Releases](https://github.com/kubestellar/klaude/releases).
 
 #### From Source
 
 ```bash
-git clone https://github.com/kubestellar/kubectl-claude.git
-cd kubectl-claude
-go build -o kubectl-claude ./cmd/kubectl-claude
-sudo mv kubectl-claude /usr/local/bin/
+git clone https://github.com/kubestellar/klaude.git
+cd klaude
+go build -o klaude ./cmd/klaude
+sudo mv klaude /usr/local/bin/
 ```
 
 ### Claude Code Plugin Setup
@@ -54,13 +54,13 @@ sudo mv kubectl-claude /usr/local/bin/
    /plugin marketplace add kubestellar/claude-plugins
    ```
 2. Go to `/plugin` → **Discover** tab
-3. Install **kubectl-claude**
+3. Install **klaude**
 
 #### Verify Installation
 
 Run `/mcp` in Claude Code - you should see:
 ```
-plugin:kubectl-claude:kubectl-claude · ✓ connected
+plugin:klaude:klaude · ✓ connected
 ```
 
 #### Allow Tools Without Prompts
@@ -71,7 +71,7 @@ To avoid permission prompts for each tool call, add to `~/.claude/settings.json`
 {
   "permissions": {
     "allow": [
-      "mcp__plugin_kubectl-claude_kubectl-claude__*"
+      "mcp__plugin_klaude_klaude__*"
     ]
   }
 }
@@ -79,7 +79,7 @@ To avoid permission prompts for each tool call, add to `~/.claude/settings.json`
 
 Or run in Claude Code:
 ```
-/allowed-tools add mcp__plugin_kubectl-claude_kubectl-claude__*
+/allowed-tools add mcp__plugin_klaude_klaude__*
 ```
 
 ### Usage in Claude Code
@@ -145,26 +145,69 @@ Once installed, ask questions like:
 | `set_ownership_policy_mode` | Change policy enforcement mode |
 | `uninstall_ownership_policy` | Remove the ownership policy |
 
+### Upgrade Tools
+| Tool | Description |
+|------|-------------|
+| `detect_cluster_type` | Detect cluster distribution (OpenShift, EKS, GKE, AKS, kubeadm, k3s, kind) |
+| `get_cluster_version_info` | Get current version and available upgrades |
+| `check_olm_operator_upgrades` | Check OLM operators for pending upgrades |
+| `check_helm_release_upgrades` | List Helm releases and their versions |
+| `get_upgrade_prerequisites` | Validate upgrade readiness (nodes, pods, ClusterOperators) |
+| `trigger_openshift_upgrade` | Trigger OpenShift cluster upgrade (requires confirmation) |
+| `get_upgrade_status` | Monitor upgrade progress |
+
+## Slash Commands
+
+When using klaude as a Claude Code plugin, these slash commands provide guided workflows for common tasks:
+
+| Command | Description |
+|---------|-------------|
+| `/k8s-health` | Check health of all Kubernetes clusters |
+| `/k8s-issues` | Find pod and deployment issues across clusters |
+| `/k8s-security` | Check for security misconfigurations |
+| `/k8s-rbac` | Analyze RBAC permissions for a subject |
+| `/k8s-analyze` | Comprehensive namespace analysis |
+| `/k8s-audit-kubeconfig` | Audit kubeconfig clusters and recommend cleanup |
+| `/k8s-ownership` | Set up and manage resource ownership tracking with OPA Gatekeeper |
+| `/k8s-upgrade-check` | Check for available upgrades (cluster, OLM operators, Helm releases) |
+| `/k8s-upgrade` | Interactive cluster upgrade workflow with safety checks |
+
+### Example Usage
+
+```
+# Check for upgrades across all clusters
+/k8s-upgrade-check
+
+# Start an interactive upgrade workflow
+/k8s-upgrade
+
+# Find all pod and deployment issues
+/k8s-issues
+
+# Analyze RBAC for a service account
+/k8s-rbac
+```
+
 ## CLI Usage
 
 ### As kubectl plugin
 
 ```bash
 # List all clusters
-kubectl claude clusters list
+kubectl klaude clusters list
 
 # Check cluster health
-kubectl claude clusters health
+kubectl klaude clusters health
 
 # Natural language queries (requires ANTHROPIC_API_KEY)
-kubectl claude "show me failing pods"
+kubectl klaude "show me failing pods"
 ```
 
 ### As MCP Server
 
 ```bash
 # Start MCP server (used by Claude Code)
-kubectl-claude --mcp-server
+klaude --mcp-server
 ```
 
 ## Environment Variables
@@ -176,8 +219,8 @@ kubectl-claude --mcp-server
 
 ## Contributing
 
-Contributions are welcome! Please read our [contributing guidelines](https://github.com/kubestellar/kubectl-claude/blob/main/CONTRIBUTING.md).
+Contributions are welcome! Please read our [contributing guidelines](https://github.com/kubestellar/klaude/blob/main/CONTRIBUTING.md).
 
 ## License
 
-Apache License 2.0 - see [LICENSE](https://github.com/kubestellar/kubectl-claude/blob/main/LICENSE) for details.
+Apache License 2.0 - see [LICENSE](https://github.com/kubestellar/klaude/blob/main/LICENSE) for details.

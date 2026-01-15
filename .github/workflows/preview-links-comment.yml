@@ -21,7 +21,7 @@ jobs:
         with:
           name: pr-info
           path: pr-info
-          run_id: ${{ github.event.workflow_run.id }}
+          run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get PR number

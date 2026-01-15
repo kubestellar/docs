@@ -47,7 +47,7 @@ const versionConstants = {
   'a2a': 'A2A_VERSIONS',
   'kubeflex': 'KUBEFLEX_VERSIONS',
   'multi-plugin': 'MULTI_PLUGIN_VERSIONS',
-  'kubectl-claude': 'KUBECTL_CLAUDE_VERSIONS'
+  'klaude': 'KLAUDE_VERSIONS'
 };
 
 const constName = versionConstants[project];

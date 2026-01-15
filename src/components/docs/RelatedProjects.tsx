@@ -12,7 +12,7 @@ const PRODUCTION_URL = 'https://kubestellar.io';
 // Static fallback for related projects
 const STATIC_RELATED_PROJECTS = [
   { title: 'KubeStellar', href: '/docs/what-is-kubestellar/overview', description: 'Multi-cluster configuration management' },
-  { title: 'kubectl-claude', href: '/docs/kubectl-claude/overview/introduction', description: 'AI-powered kubectl plugin' },
+  { title: 'klaude', href: '/docs/klaude/overview/introduction', description: 'AI-powered kubectl plugin' },
   { title: 'KubeFlex', href: '/docs/kubeflex/overview/introduction', description: 'Lightweight Kubernetes control planes' },
   { title: 'A2A', href: '/docs/a2a/overview/introduction', description: 'Agent-to-Agent protocol' },
   { title: 'Multi Plugin', href: '/docs/multi-plugin/overview/introduction', description: 'Multi-cluster kubectl plugin' },
@@ -103,7 +103,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
     if (pathname.startsWith('/docs/a2a')) return 'A2A';
     if (pathname.startsWith('/docs/kubeflex')) return 'KubeFlex';
     if (pathname.startsWith('/docs/multi-plugin')) return 'Multi Plugin';
-    if (pathname.startsWith('/docs/kubectl-claude')) return 'kubectl-claude';
+    if (pathname.startsWith('/docs/klaude')) return 'klaude';
     return 'KubeStellar';
   };
 

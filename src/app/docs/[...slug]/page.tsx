@@ -16,7 +16,7 @@ function getProjectFromSlug(slug: string[]): ProjectId {
     if (slug[0] === 'a2a') return 'a2a'
     if (slug[0] === 'kubeflex') return 'kubeflex'
     if (slug[0] === 'multi-plugin') return 'multi-plugin'
-    if (slug[0] === 'kubectl-claude') return 'kubectl-claude'
+    if (slug[0] === 'klaude') return 'klaude'
   }
   return 'kubestellar'
 }
@@ -510,11 +510,11 @@ export async function generateStaticParams() {
     }
   }
 
-  // kubectl-claude routes (prefixed with 'kubectl-claude')
-  const kubectlClaudeMap = buildPageMap('kubectl-claude')
-  for (const route of Object.keys(kubectlClaudeMap.routeMap)) {
+  // klaude routes (prefixed with 'klaude')
+  const klaudeMap = buildPageMap('klaude')
+  for (const route of Object.keys(klaudeMap.routeMap)) {
     if (route !== '') {
-      allParams.push({ slug: ['kubectl-claude', ...route.split('/')] })
+      allParams.push({ slug: ['klaude', ...route.split('/')] })
     }
   }
 

@@ -4,7 +4,7 @@ Use Claude Code's AI capabilities to manage multiple Kubernetes clusters simulta
 
 ## Overview
 
-kubectl-claude is an AI-powered kubectl plugin designed for **managing multiple clusters simultaneously**. It integrates with Claude Code, enabling you to:
+klaude is an AI-powered kubectl plugin designed for **managing multiple clusters simultaneously**. It integrates with Claude Code, enabling you to:
 
 - Query Kubernetes resources across multiple clusters using natural language
 - Diagnose pod issues (CrashLoopBackOff, OOMKilled, pending pods)
@@ -18,7 +18,7 @@ kubectl-claude is an AI-powered kubectl plugin designed for **managing multiple 
 
 ```bash
 brew tap kubestellar/tap
-brew install kubectl-claude
+brew install klaude
 ```
 
 ### Option 2: Claude Code Plugin Marketplace
@@ -29,14 +29,14 @@ In Claude Code, run:
 /plugin marketplace add kubestellar/claude-plugins
 ```
 
-Then go to `/plugin` → **Discover** tab and install **kubectl-claude**.
+Then go to `/plugin` → **Discover** tab and install **klaude**.
 
 ### Verify Installation
 
 Run `/mcp` in Claude Code to see connected MCP servers:
 
 ```
-plugin:kubectl-claude:kubectl-claude · ✓ connected
+plugin:klaude:klaude · ✓ connected
 ```
 
 ## Configuration
@@ -49,7 +49,7 @@ To avoid permission prompts for each tool call, add to `~/.claude/settings.json`
 {
   "permissions": {
     "allow": [
-      "mcp__plugin_kubectl-claude_kubectl-claude__*"
+      "mcp__plugin_klaude_klaude__*"
     ]
   }
 }
@@ -58,12 +58,12 @@ To avoid permission prompts for each tool call, add to `~/.claude/settings.json`
 Or run in Claude Code:
 
 ```
-/allowed-tools add mcp__plugin_kubectl-claude_kubectl-claude__*
+/allowed-tools add mcp__plugin_klaude_klaude__*
 ```
 
 ## Slash Commands
 
-The kubectl-claude plugin provides specialized slash commands for common Kubernetes operations:
+The klaude plugin provides specialized slash commands for common Kubernetes operations:
 
 ### /k8s-health
 
@@ -231,21 +231,21 @@ Once installed, ask Claude questions like:
 
 ## CLI Usage
 
-kubectl-claude also works as a standalone kubectl plugin:
+klaude also works as a standalone kubectl plugin:
 
 ```bash
 # List all clusters
-kubectl claude clusters list
+kubectl klaude clusters list
 
 # Check cluster health
-kubectl claude clusters health
+kubectl klaude clusters health
 
 # Natural language queries (requires ANTHROPIC_API_KEY)
-kubectl claude "show me failing pods"
+kubectl klaude "show me failing pods"
 ```
 
 ## Links
 
-- [kubectl-claude on GitHub](https://github.com/kubestellar/kubectl-claude)
+- [klaude on GitHub](https://github.com/kubestellar/klaude)
 - [Claude Plugins Marketplace](https://github.com/kubestellar/claude-plugins)
 - [Homebrew Tap](https://github.com/kubestellar/homebrew-tap)

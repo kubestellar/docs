@@ -16,7 +16,7 @@ export const NETLIFY_SITE_NAME = "kubestellar-docs"
 export const PRODUCTION_URL = "https://kubestellar.io"
 
 // Project identifiers
-export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "kubectl-claude"
+export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "klaude"
 
 // Version info structure
 export interface VersionInfo {
@@ -183,12 +183,11 @@ const MULTI_PLUGIN_VERSIONS: Record<string, VersionInfo> = {
   },
 }
 
-// kubectl-claude versions
-// Note: Only latest/main for now - older versions don't have docs structure
-const KUBECTL_CLAUDE_VERSIONS: Record<string, VersionInfo> = {
+// klaude versions (formerly kubectl-claude)
+const KLAUDE_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.4.6 (Latest)",
-    branch: "docs/kubectl-claude/0.4.6",
+    label: "v0.6.0 (Latest)",
+    branch: "docs/klaude/0.6.0",
     isDefault: true,
   },
   main: {
@@ -197,14 +196,34 @@ const KUBECTL_CLAUDE_VERSIONS: Record<string, VersionInfo> = {
     isDefault: false,
     isDev: true,
   },
+  "0.5.0": {
+    label: "v0.5.0",
+    branch: "docs/klaude/0.5.0",
+    isDefault: false,
+  },
+  "0.4.6": {
+    label: "v0.4.6",
+    branch: "docs/klaude/0.4.6",
+    isDefault: false,
+  },
   "0.4.5": {
     label: "v0.4.5",
-    branch: "docs/kubectl-claude/0.4.5",
+    branch: "docs/klaude/0.4.5",
     isDefault: false,
   },
   "0.4.4": {
     label: "v0.4.4",
-    branch: "docs/kubectl-claude/0.4.4",
+    branch: "docs/klaude/0.4.4",
+    isDefault: false,
+  },
+  "0.4.3": {
+    label: "v0.4.3",
+    branch: "docs/klaude/0.4.3",
+    isDefault: false,
+  },
+  "0.4.0": {
+    label: "v0.4.0",
+    branch: "docs/klaude/0.4.0",
     isDefault: false,
   },
 }
@@ -243,13 +262,13 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     contentPath: "docs/content/multi-plugin",
     versions: MULTI_PLUGIN_VERSIONS,
   },
-  "kubectl-claude": {
-    id: "kubectl-claude",
-    name: "kubectl-claude",
-    basePath: "kubectl-claude",
-    currentVersion: "0.4.3",
-    contentPath: "docs/content/kubectl-claude",
-    versions: KUBECTL_CLAUDE_VERSIONS,
+  "klaude": {
+    id: "klaude",
+    name: "klaude",
+    basePath: "klaude",
+    currentVersion: "0.6.0",
+    contentPath: "docs/content/klaude",
+    versions: KLAUDE_VERSIONS,
   },
 }
 
@@ -264,8 +283,8 @@ export function getProjectFromPath(pathname: string): ProjectConfig {
   if (pathname.startsWith("/docs/multi-plugin")) {
     return PROJECTS["multi-plugin"]
   }
-  if (pathname.startsWith("/docs/kubectl-claude") || pathname.startsWith("/docs/related-projects/kubectl-claude")) {
-    return PROJECTS["kubectl-claude"]
+  if (pathname.startsWith("/docs/klaude") || pathname.startsWith("/docs/related-projects/klaude")) {
+    return PROJECTS["klaude"]
   }
   return PROJECTS.kubestellar
 }
