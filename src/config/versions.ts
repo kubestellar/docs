@@ -16,7 +16,7 @@ export const NETLIFY_SITE_NAME = "kubestellar-docs"
 export const PRODUCTION_URL = "https://kubestellar.io"
 
 // Project identifiers
-export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin"
+export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "kubectl-claude"
 
 // Version info structure
 export interface VersionInfo {
@@ -24,6 +24,7 @@ export interface VersionInfo {
   branch: string
   isDefault: boolean
   externalUrl?: string
+  isDev?: boolean // marks development/unreleased versions
 }
 
 // Project configuration
@@ -45,7 +46,7 @@ const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
   },
   main: {
     label: "main (dev)",
-    branch: "docs/0.29.0",
+    branch: "main",
     isDefault: false,
     isDev: true,
   },
@@ -131,12 +132,12 @@ const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
 const A2A_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.1.0 (Latest)",
-    branch: "docs/0.29.0",
+    branch: "main",
     isDefault: true,
   },
   main: {
     label: "main (dev)",
-    branch: "docs/0.29.0",
+    branch: "main",
     isDefault: false,
     isDev: true,
   },
@@ -146,8 +147,14 @@ const A2A_VERSIONS: Record<string, VersionInfo> = {
 const KUBEFLEX_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.9.3 (Latest)",
-    branch: "docs/0.29.0",
+    branch: "main",
+    isDefault: true,
+  },
+  main: {
+    label: "main (dev)",
+    branch: "main",
     isDefault: false,
+    isDev: true,
   },
   "0.8.0": {
     label: "v0.8.0",
@@ -157,13 +164,7 @@ const KUBEFLEX_VERSIONS: Record<string, VersionInfo> = {
   "0.7.0": {
     label: "v0.7.0",
     branch: "docs/kubeflex/0.7.0",
-    isDefault: true,
-  },
-  main: {
-    label: "main (dev)",
-    branch: "docs/0.29.0",
     isDefault: false,
-    isDev: true,
   },
 }
 
@@ -171,12 +172,28 @@ const KUBEFLEX_VERSIONS: Record<string, VersionInfo> = {
 const MULTI_PLUGIN_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.1.0 (Latest)",
-    branch: "docs/0.29.0",
+    branch: "main",
     isDefault: true,
   },
   main: {
     label: "main (dev)",
-    branch: "docs/0.29.0",
+    branch: "main",
+    isDefault: false,
+    isDev: true,
+  },
+}
+
+// kubectl-claude versions
+// Note: Only latest/main for now - older versions don't have docs structure
+const KUBECTL_CLAUDE_VERSIONS: Record<string, VersionInfo> = {
+  latest: {
+    label: "v0.4.3 (Latest)",
+    branch: "docs/kubectl-claude/0.4.3",
+    isDefault: true,
+  },
+  main: {
+    label: "main (dev)",
+    branch: "main",
     isDefault: false,
     isDev: true,
   },
@@ -204,7 +221,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "kubeflex",
     name: "KubeFlex",
     basePath: "kubeflex",
-    currentVersion: "0.7.0",
+    currentVersion: "0.9.3",
     contentPath: "docs/content/kubeflex",
     versions: KUBEFLEX_VERSIONS,
   },
@@ -215,6 +232,14 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     currentVersion: "0.1.0",
     contentPath: "docs/content/multi-plugin",
     versions: MULTI_PLUGIN_VERSIONS,
+  },
+  "kubectl-claude": {
+    id: "kubectl-claude",
+    name: "kubectl-claude",
+    basePath: "kubectl-claude",
+    currentVersion: "0.4.3",
+    contentPath: "docs/content/kubectl-claude",
+    versions: KUBECTL_CLAUDE_VERSIONS,
   },
 }
 
@@ -228,6 +253,9 @@ export function getProjectFromPath(pathname: string): ProjectConfig {
   }
   if (pathname.startsWith("/docs/multi-plugin")) {
     return PROJECTS["multi-plugin"]
+  }
+  if (pathname.startsWith("/docs/kubectl-claude") || pathname.startsWith("/docs/related-projects/kubectl-claude")) {
+    return PROJECTS["kubectl-claude"]
   }
   return PROJECTS.kubestellar
 }
