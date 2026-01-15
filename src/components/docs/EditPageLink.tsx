@@ -1,6 +1,6 @@
 "use client";
 
-import { useSharedConfig, getVersionsForProject } from '@/hooks/useSharedConfig';
+import { useSharedConfig, getVersionsForProject, VersionInfo } from '@/hooks/useSharedConfig';
 import { getProjectVersions as getStaticProjectVersions } from '@/config/versions';
 import type { ProjectId } from '@/config/versions';
 
@@ -10,8 +10,16 @@ interface EditPageLinkProps {
   variant?: 'full' | 'icon';
 }
 
+// Version entry with key from the versions config
+type VersionEntry = { key: string } & VersionInfo;
+
+// Convert branch name to Netlify slug format (e.g., docs/0.29.0 -> docs-0-29-0)
+function branchToSlug(branch: string): string {
+  return branch.replace(/\//g, '-').replace(/\./g, '-');
+}
+
 // Detect current branch from hostname (for kubestellar docs repo)
-function detectCurrentBranch(versions: Array<{ key: string; branch: string }>): string {
+function detectCurrentBranch(versions: VersionEntry[]): string {
   if (typeof window === 'undefined') return 'main';
 
   const hostname = window.location.hostname;
@@ -38,8 +46,7 @@ function detectCurrentBranch(versions: Array<{ key: string; branch: string }>): 
 
     // Match branch slug to version branch (e.g., docs-0-29-0 -> docs/0.29.0)
     for (const version of versions) {
-      const versionBranchSlug = version.branch.replace(/\//g, '-').replace(/\./g, '-');
-      if (branchSlug === versionBranchSlug) {
+      if (branchSlug === branchToSlug(version.branch)) {
         return version.branch;
       }
     }
