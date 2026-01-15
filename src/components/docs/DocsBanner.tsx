@@ -3,13 +3,15 @@
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useState, useEffect } from 'react'
-import { getLocalizedUrl } from '@/lib/url'
 import { useDocsMenu } from './DocsProvider'
+import { useSharedConfig, getSurveyUrl } from '@/hooks/useSharedConfig'
 
 export function DocsBanner() {
   const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const { bannerDismissed, dismissBanner } = useDocsMenu()
+  const { config } = useSharedConfig()
+  const surveyUrl = getSurveyUrl(config)
 
   useEffect(() => {
     setMounted(true)
@@ -27,17 +29,17 @@ export function DocsBanner() {
         <div className="flex items-center justify-between flex-wrap">
           <div className="flex-1 flex items-center justify-center">
             <span className={`${isDark ? 'text-gray-200' : 'text-gray-800'} text-xs md:text-sm`}>
-              🚀 🚀 🚀 ATTENTION: KubeStellar needs your help - please take our 2-minute survey{' '}
-              <Link 
-                href={getLocalizedUrl("https://kubestellar.io/survey")}
-                target="_blank" 
+              🚀 🚀 🚀 ATTENTION: Help us improve multi-cluster Kubernetes - take our 2-minute survey{' '}
+              <Link
+                href={surveyUrl}
+                target="_blank"
                 rel="noopener noreferrer"
-                className={isDark 
+                className={isDark
                   ? 'text-blue-400 underline hover:text-blue-300 transition-colors font-medium'
                   : 'text-blue-600 underline hover:text-blue-700 transition-colors font-medium'
                 }
               >
-                {getLocalizedUrl("https://kubestellar.io/survey")}
+                here
               </Link>
               {' '}🚀 🚀 🚀
             </span>
