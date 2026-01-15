@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
-import { SidebarFooter } from './SidebarFooter';
 import { RelatedProjects } from './RelatedProjects';
 import { useDocsMenu } from './DocsProvider';
 
@@ -224,14 +223,9 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         </nav>
       </div>
 
-      {/* Related Projects - shrink-0 prevents it from shrinking */}
+      {/* Related Projects with Footer Controls - shrink-0 prevents it from shrinking */}
       <div className="shrink-0">
-        <RelatedProjects />
-      </div>
-
-      {/* Footer at bottom - shrink-0 prevents it from shrinking */}
-      <div className="shrink-0">
-        <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
+        <RelatedProjects onCollapse={toggleSidebar} isMobile={menuOpen} />
       </div>
     </>
   );
@@ -241,9 +235,9 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     <div className="flex flex-col h-full">
       {/* Spacer */}
       <div className="flex-1"></div>
-      
+
       {/* Footer with icon buttons */}
-      <SidebarFooter onCollapse={toggleSidebar} variant="slim" />
+      <RelatedProjects onCollapse={toggleSidebar} variant="slim" />
     </div>
   );
 
