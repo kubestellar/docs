@@ -33,7 +33,7 @@
       "latest": { "label": "v0.1.0 (Latest)", "branch": "main", "isDefault": true },
       "main": { "label": "main (dev)", "branch": "main", "isDefault": false, "isDev": true }
     },
-    "kubectl-claude": {
+    "klaude": {
       "latest": { "label": "v0.4.3 (Latest)", "branch": "main", "isDefault": true },
       "main": { "label": "main (dev)", "branch": "main", "isDefault": false, "isDev": true }
     }
@@ -43,11 +43,11 @@
     "a2a": { "name": "A2A", "basePath": "a2a", "currentVersion": "0.1.0" },
     "kubeflex": { "name": "KubeFlex", "basePath": "kubeflex", "currentVersion": "0.9.3" },
     "multi-plugin": { "name": "Multi Plugin", "basePath": "multi-plugin", "currentVersion": "0.1.0" },
-    "kubectl-claude": { "name": "kubectl-claude", "basePath": "kubectl-claude", "currentVersion": "0.4.3" }
+    "klaude": { "name": "klaude", "basePath": "klaude", "currentVersion": "0.4.3" }
   },
   "relatedProjects": [
     { "title": "KubeStellar", "href": "/docs/what-is-kubestellar/overview", "description": "Multi-cluster configuration management" },
-    { "title": "kubectl-claude", "href": "/docs/kubectl-claude/overview/introduction", "description": "AI-powered kubectl plugin" },
+    { "title": "klaude", "href": "/docs/klaude/overview/introduction", "description": "AI-powered kubectl plugin" },
     { "title": "KubeFlex", "href": "/docs/kubeflex/overview/introduction", "description": "Lightweight Kubernetes control planes" },
     { "title": "A2A", "href": "/docs/a2a/overview/introduction", "description": "Agent-to-Agent protocol" },
     { "title": "Multi Plugin", "href": "/docs/multi-plugin/overview/introduction", "description": "Multi-cluster kubectl plugin" }
@@ -57,7 +57,7 @@
     "a2a": "https://github.com/kubestellar/a2a/edit/main/docs",
     "kubeflex": "https://github.com/kubestellar/kubeflex/edit/main/docs",
     "multi-plugin": "https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs",
-    "kubectl-claude": "https://github.com/kubestellar/kubectl-claude/edit/main/docs"
+    "klaude": "https://github.com/kubestellar/klaude/edit/main/docs"
   },
   "updatedAt": "2026-01-15T01:45:00Z"
 }
