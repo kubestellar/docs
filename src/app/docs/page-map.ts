@@ -102,14 +102,6 @@ const NAV_STRUCTURE_A2A: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Contributing': 'CONTRIBUTING.md' },
     ]
-  },
-  {
-    title: 'Related Projects',
-    items: [
-      { 'KubeStellar Documentation': '/docs/what-is-kubestellar/overview' },
-      { 'KubeFlex Documentation': '/docs/kubeflex/overview/introduction' },
-      { 'Multi Plugin Documentation': '/docs/multi-plugin/overview/introduction' }
-    ]
   }
 ]
 
@@ -140,14 +132,6 @@ const NAV_STRUCTURE_MULTI_PLUGIN: Array<{ title: string; items: NavItem[] }> = [
     title: 'Development',
     items: [
       { 'Development Guide': 'development_guide.md' },
-    ]
-  },
-  {
-    title: 'Related Projects',
-    items: [
-      { 'KubeStellar Documentation': '/docs/what-is-kubestellar/overview' },
-      { 'A2A Documentation': '/docs/a2a/overview/introduction' },
-      { 'KubeFlex Documentation': '/docs/kubeflex/overview/introduction' }
     ]
   }
 ]
@@ -182,14 +166,6 @@ const NAV_STRUCTURE_KUBEFLEX: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Contributors': 'contributors.md' },
     ]
-  },
-  {
-    title: 'Related Projects',
-    items: [
-      { 'KubeStellar Documentation': '/docs/what-is-kubestellar/overview' },
-      { 'A2A Documentation': '/docs/a2a/overview/introduction' },
-      { 'Multi Plugin Documentation': '/docs/multi-plugin/overview/introduction' }
-    ]
   }
 ]
 
@@ -201,13 +177,6 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Overview': 'readme.md' },
       { 'Architecture': 'direct/architecture.md' },
-      {
-        'Related': [
-          { 'KubeStellar UI': 'direct/ui-intro.md' },
-          { 'KubeFlex': 'direct/kubeflex-intro.md' },
-          { 'KubeStellar Galaxy': 'direct/galaxy-intro.md' }
-        ]
-      },
       { 'Release Notes': 'direct/release-notes.md' },
       { 'Roadmap': 'direct/roadmap.md' }
     ]
@@ -263,7 +232,8 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
           { 'Example Scenarios': 'direct/example-scenarios.md' },
           {
             'Third-party Integrations': [
-              { 'ArgoCD to WDS': 'direct/argo-to-wds1.md' }
+              { 'ArgoCD to WDS': 'direct/argo-to-wds1.md' },
+              { 'Claude Code': 'direct/claude-code.md' }
             ]
           },
           { 'Troubleshooting': 'direct/troubleshooting.md' },
@@ -333,15 +303,6 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
           { 'Kyverno': 'Community/partners/kyverno.md' }
         ]
       }
-    ]
-  },
-  {
-    title: 'Related Projects',
-    items: [
-      { 'A2A Documentation': '/docs/a2a/overview/introduction' },
-      { 'KubeFlex Documentation': '/docs/kubeflex/overview/introduction' },
-      { 'Multi Plugin Documentation': '/docs/multi-plugin/overview/introduction' },
-      { 'kubectl-claude': 'direct/claude-code.md' }
     ]
   }
 ]
@@ -443,8 +404,8 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
         children
       }
 
-      // Set theme for first category and Related Projects to be expanded
-      if (category.title === 'Welcome' || category.title === 'What is KubeStellar?' || category.title === 'Overview' || category.title === 'Related Projects') {
+      // Set theme for first category to be expanded
+      if (category.title === 'Welcome' || category.title === 'What is KubeStellar?' || category.title === 'Overview') {
         folderNode.theme = { collapsed: false }
       }
 
