@@ -1,0 +1,147 @@
+name: Create Version Branch
+
+on:
+  repository_dispatch:
+    types: [create-version-branch]
+  workflow_dispatch:
+    inputs:
+      project:
+        description: 'Project (kubestellar, a2a, kubeflex, multi-plugin, kubectl-claude)'
+        required: true
+        type: choice
+        options:
+          - kubestellar
+          - a2a
+          - kubeflex
+          - multi-plugin
+          - kubectl-claude
+      version:
+        description: 'Version number (e.g., 0.30.0)'
+        required: true
+      source_repo:
+        description: 'Source repo (e.g., kubestellar/kubestellar)'
+        required: true
+      source_branch:
+        description: 'Source branch/tag (e.g., release-0.30.0 or v0.30.0)'
+        required: true
+      set_as_latest:
+        description: 'Set as latest version'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.WORKFLOW_SYNC_TOKEN }}
+
+      - name: Set variables
+        id: vars
+        run: |
+          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            echo "project=${{ github.event.client_payload.project }}" >> $GITHUB_OUTPUT
+            echo "version=${{ github.event.client_payload.version }}" >> $GITHUB_OUTPUT
+            echo "source_repo=${{ github.event.client_payload.source_repo }}" >> $GITHUB_OUTPUT
+            echo "source_branch=${{ github.event.client_payload.source_branch }}" >> $GITHUB_OUTPUT
+            echo "set_latest=true" >> $GITHUB_OUTPUT
+          else
+            echo "project=${{ inputs.project }}" >> $GITHUB_OUTPUT
+            echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
+            echo "source_repo=${{ inputs.source_repo }}" >> $GITHUB_OUTPUT
+            echo "source_branch=${{ inputs.source_branch }}" >> $GITHUB_OUTPUT
+            echo "set_latest=${{ inputs.set_as_latest }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Determine branch name
+        id: branch
+        run: |
+          PROJECT="${{ steps.vars.outputs.project }}"
+          VERSION="${{ steps.vars.outputs.version }}"
+          VERSION="${VERSION#v}"  # Remove 'v' prefix if present
+
+          case "$PROJECT" in
+            kubestellar) BRANCH="docs/${VERSION}" ;;
+            a2a) BRANCH="docs/a2a/${VERSION}" ;;
+            kubeflex) BRANCH="docs/kubeflex/${VERSION}" ;;
+            multi-plugin) BRANCH="docs/multi-plugin/${VERSION}" ;;
+            kubectl-claude) BRANCH="docs/kubectl-claude/${VERSION}" ;;
+            *) echo "Unknown project: $PROJECT"; exit 1 ;;
+          esac
+          echo "name=$BRANCH" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Branch name: $BRANCH"
+
+      - name: Check if branch exists
+        id: check-branch
+        run: |
+          if git ls-remote --heads origin "${{ steps.branch.outputs.name }}" | grep -q "${{ steps.branch.outputs.name }}"; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Branch ${{ steps.branch.outputs.name }} already exists"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create version branch
+        if: steps.check-branch.outputs.exists != 'true'
+        run: |
+          # All docs content lives in main branch - just create version branch from it
+          # No need to clone from source repos - main already has proper structure
+          echo "Creating version branch ${{ steps.branch.outputs.name }} from main"
+          git checkout -b "${{ steps.branch.outputs.name }}"
+          git push origin "${{ steps.branch.outputs.name }}"
+          echo "✅ Created and pushed branch ${{ steps.branch.outputs.name }}"
+
+      - name: Setup Node.js
+        if: steps.vars.outputs.set_latest == 'true'
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: '20'
+
+      - name: Create PR to update versions.ts
+        if: steps.vars.outputs.set_latest == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.WORKFLOW_SYNC_TOKEN }}
+        run: |
+          # Go back to main for the PR
+          git checkout main
+          git pull origin main
+
+          PR_BRANCH="update-${{ steps.vars.outputs.project }}-${{ steps.branch.outputs.version }}"
+          git checkout -b "$PR_BRANCH"
+
+          # Update versions.ts using node script
+          node scripts/update-version.js \
+            --project "${{ steps.vars.outputs.project }}" \
+            --version "${{ steps.branch.outputs.version }}" \
+            --branch "${{ steps.branch.outputs.name }}" \
+            --set-latest
+
+          git add src/config/versions.ts public/config/shared.json
+          git commit -s -m "chore: update ${{ steps.vars.outputs.project }} to v${{ steps.branch.outputs.version }}
+
+          Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"
+          git push origin "$PR_BRANCH"
+
+          # Create PR
+          gh pr create \
+            --title "📖 Update ${{ steps.vars.outputs.project }} docs to v${{ steps.branch.outputs.version }}" \
+            --body "## Summary
+          Automated update for ${{ steps.vars.outputs.project }} release v${{ steps.branch.outputs.version }}.
+
+          - Created branch: \`${{ steps.branch.outputs.name }}\`
+          - Source: ${{ steps.vars.outputs.source_repo }}@${{ steps.vars.outputs.source_branch }}
+
+          ## Checklist
+          - [ ] Verify branch deploys correctly on Netlify
+          - [ ] Verify version appears in dropdown
+
+          🤖 Generated automatically on release"
+          echo "✅ Created PR to update versions.ts"
