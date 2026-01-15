@@ -27,8 +27,16 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
-  const { sidebarCollapsed, toggleSidebar, menuOpen, bannerDismissed } = useDocsMenu();
-  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
+  const {
+    sidebarCollapsed,
+    toggleSidebar,
+    menuOpen,
+    bannerDismissed,
+    navCollapsed: collapsed,
+    setNavCollapsed: setCollapsed,
+    toggleNavCollapsed,
+    navInitialized
+  } = useDocsMenu();
   const [availableHeight, setAvailableHeight] = useState<string>('auto');
   const [topOffset, setTopOffset] = useState('4rem');
   const [sidebarHeight, setSidebarHeight] = useState('calc(100vh - 4rem)');
@@ -120,26 +128,32 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     };
   }, []);
 
-  // Auto-expand only the folders that contain the active page
+  // Store initial pathname for initialization
+  const initialPathnameRef = useRef(pathname);
+
+  // Initialize collapsed state once on mount - collapse folders not in path to active
+  // After initialization, user controls expand/collapse manually
   useEffect(() => {
-    const newCollapsed = new Set<string>();
+    if (navInitialized.current) return;
+    navInitialized.current = true;
+
+    const initialCollapsed = new Set<string>();
     const pathToActive = new Set<string>();
-    
+    const currentPath = initialPathnameRef.current;
+
     // Find the path to the active item
     function findActivePath(items: MenuItem[], parentKey: string = ''): boolean {
       for (const item of items) {
         const itemKey = parentKey ? `${parentKey}-${item.name}` : item.name;
-        const isActive = item.route && pathname === item.route;
-        
+        const isActive = item.route && currentPath === item.route;
+
         if (isActive) {
-          // Found the active item, don't collapse any parent in the path
           return true;
         }
-        
+
         if (item.children) {
           const childActive = findActivePath(item.children, itemKey);
           if (childActive) {
-            // This folder contains the active item, keep it expanded
             pathToActive.add(itemKey);
             return true;
           }
@@ -147,7 +161,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
       }
       return false;
     }
-    
+
     // Collapse all folders except those in the active path or with theme.collapsed: false
     function collapseAll(items: MenuItem[], parentKey: string = '') {
       for (const item of items) {
@@ -155,36 +169,24 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         const hasChildren = item.children && item.children.length > 0;
 
         if (hasChildren) {
-          // Check if item has theme.collapsed explicitly set to false
           const shouldStayExpanded = item.theme?.collapsed === false;
-
-          // Collapse this folder if it's not in the path to active item and not forced expanded
           if (!pathToActive.has(itemKey) && !shouldStayExpanded) {
-            newCollapsed.add(itemKey);
+            initialCollapsed.add(itemKey);
           }
-          // Recursively check children
           if (item.children) {
             collapseAll(item.children, itemKey);
           }
         }
       }
     }
-    
+
     findActivePath(pageMap);
     collapseAll(pageMap);
-    setCollapsed(newCollapsed);
-  }, [pathname, pageMap]);
+    setCollapsed(initialCollapsed);
+  }, [pageMap]);
 
   const toggleCollapse = (itemKey: string) => {
-    setCollapsed(prev => {
-      const next = new Set(prev);
-      if (next.has(itemKey)) {
-        next.delete(itemKey);
-      } else {
-        next.add(itemKey);
-      }
-      return next;
-    });
+    toggleNavCollapsed(itemKey);
   };
 
   const renderMenuItem = (item: MenuItem, depth: number = 0, parentKey: string = '') => {
