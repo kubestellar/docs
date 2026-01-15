@@ -170,8 +170,6 @@ const NAV_STRUCTURE_KUBEFLEX: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Contributors': 'contributors.md' },
     ]
-<<<<<<< HEAD
-=======
   }
 ]
 
@@ -182,7 +180,6 @@ const NAV_STRUCTURE_KUBECTL_CLAUDE: Array<{ title: string; items: NavItem[] }> =
     items: [
       { 'Introduction': 'overview/intro.md' },
     ]
->>>>>>> origin/main
   }
 ]
 
