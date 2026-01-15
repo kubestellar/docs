@@ -22,9 +22,10 @@ interface RelatedProjectsProps {
   variant?: 'full' | 'slim';
   onCollapse?: () => void;
   isMobile?: boolean;
+  bannerActive?: boolean;
 }
 
-export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false }: RelatedProjectsProps) {
+export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false, bannerActive = false }: RelatedProjectsProps) {
   const [isExpanded, setIsExpanded] = useState(true);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
@@ -125,11 +126,11 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
   };
 
   return (
-    <div className="shrink-0 py-2 px-4 border-t border-gray-200 dark:border-gray-700">
+    <div className={`shrink-0 px-4 border-t border-gray-200 dark:border-gray-700 ${bannerActive ? 'py-1' : 'py-2'}`}>
       {/* Header - clickable to toggle */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center justify-between w-full py-2 text-xs font-semibold uppercase tracking-wider transition-colors text-gray-500 dark:text-gray-400"
+        className={`flex items-center justify-between w-full text-xs font-semibold uppercase tracking-wider transition-colors text-gray-500 dark:text-gray-400 ${bannerActive ? 'py-1' : 'py-2'}`}
       >
         <span>Related Projects</span>
         <span className="ml-auto">
@@ -173,7 +174,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
       {/* Footer Controls */}
       {mounted && (
         <div
-          className="flex items-center gap-2 pt-3 mt-2 border-t border-gray-200 dark:border-gray-700"
+          className={`flex items-center gap-2 border-t border-gray-200 dark:border-gray-700 ${bannerActive ? 'pt-2 mt-1' : 'pt-3 mt-2'}`}
           suppressHydrationWarning
         >
           {/* Theme Toggle Button */}

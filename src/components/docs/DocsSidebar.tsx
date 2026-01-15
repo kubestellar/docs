@@ -224,7 +224,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
           {pageMap.map(item => renderMenuItem(item))}
         </nav>
         {/* Related Projects with Footer Controls - scrolls with nav */}
-        <RelatedProjects onCollapse={toggleSidebar} isMobile={menuOpen} />
+        <RelatedProjects onCollapse={toggleSidebar} isMobile={menuOpen} bannerActive={!bannerDismissed} />
       </div>
     </>
   );
