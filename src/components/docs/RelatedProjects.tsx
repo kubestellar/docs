@@ -145,8 +145,9 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
       {/* Project links */}
       <div
         className={`
-          space-y-1 overflow-hidden transition-all duration-200 ease-in-out
-          ${isExpanded ? 'max-h-96 opacity-100 pb-2' : 'max-h-0 opacity-0'}
+          overflow-hidden transition-all duration-200 ease-in-out
+          ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
+          ${bannerActive ? 'space-y-0' : 'space-y-1 pb-2'}
         `}
       >
         {relatedProjects.map((project: { title: string; href: string; description?: string }) => {
@@ -158,7 +159,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
               key={project.title}
               href={projectUrl}
               className={`
-                block px-3 py-1.5 text-sm rounded-md transition-colors
+                block px-3 text-sm rounded-md transition-colors
+                ${bannerActive ? 'py-0.5' : 'py-1.5'}
                 ${isCurrentProject
                   ? 'bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 font-medium'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
