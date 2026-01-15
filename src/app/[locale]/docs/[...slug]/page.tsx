@@ -35,6 +35,7 @@ function getRouteFromSlug(slug: string[], projectId: ProjectId): string {
 
 export const dynamic = 'force-static'
 export const revalidate = false
+export const dynamicParams = false
 
 const { wrapper: Wrapper, ...components } = getMDXComponents({ $Tabs: Tabs, Callout })
 const component = { ...components, Mermaid: MermaidComponent }
