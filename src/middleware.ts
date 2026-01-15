@@ -15,6 +15,16 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect("https://kubestellar.io/docs", 301);
   }
 
+  // Redirect localized docs URLs to non-localized version
+  // e.g., /es/docs/... -> /docs/...
+  const docsPathMatch = request.nextUrl.pathname.match(/^\/([a-z]{2}(?:-[A-Z]{2})?|SC)\/docs\//);
+  if (docsPathMatch) {
+    const url = request.nextUrl.clone();
+    // Remove the locale prefix from the pathname
+    url.pathname = url.pathname.replace(/^\/[a-z]{2}(?:-[A-Z]{2})?\/docs\//, '/docs/').replace(/^\/SC\/docs\//, '/docs/');
+    return NextResponse.redirect(url, 307);
+  }
+
   // Explicitly handle root path to ensure consistent redirect to /en
   // This helps override any cached redirects in browsers like Safari
   if (request.nextUrl.pathname === "/") {
@@ -29,7 +39,7 @@ export default function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!docs|api|_next|_vercel|agenda|blog|code|community|drive|infomercial|join_us|joinus|ladder|ladder_stats|linkedin|quickstart|slack|survey|tv|youtube|.*\\..*).*)",
+    "/((?!docs|api|_next|_vercel|agenda|blog|code|community|drive|infomercial|join_us|joinus|ladder_stats|linkedin|quickstart|slack|survey|tv|youtube|.*\\..*).*)",
     "/",
   ],
 };
