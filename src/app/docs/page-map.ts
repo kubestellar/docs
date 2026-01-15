@@ -178,7 +178,7 @@ const NAV_STRUCTURE_KUBECTL_CLAUDE: Array<{ title: string; items: NavItem[] }> =
   {
     title: 'Overview',
     items: [
-      { 'Introduction': 'overview/intro.md' },
+      { 'Introduction': 'index.md' },
     ]
   }
 ]
