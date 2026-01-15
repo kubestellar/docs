@@ -51,13 +51,15 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
       }
     };
 
-    // Only calculate once on mount, then on resize
-    if (!layoutCalculatedRef.current) {
-      calculateOffsets();
-    }
+    // Calculate on mount and when banner state changes
+    // Use setTimeout to allow DOM to update after banner dismiss
+    const timeoutId = setTimeout(calculateOffsets, 50);
 
     window.addEventListener('resize', calculateOffsets);
-    return () => window.removeEventListener('resize', calculateOffsets);
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('resize', calculateOffsets);
+    };
   }, [bannerDismissed]);
 
   // Store initial pathname for initialization
