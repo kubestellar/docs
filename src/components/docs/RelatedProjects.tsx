@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { ChevronRight, ChevronDown } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { ChevronRight, ChevronDown, Moon, Sun, PanelRightOpenIcon, PanelLeftOpen } from 'lucide-react';
 import { useSharedConfig } from '@/hooks/useSharedConfig';
 
 // Production URL - all cross-project links go here
@@ -19,18 +20,83 @@ const STATIC_RELATED_PROJECTS = [
 
 interface RelatedProjectsProps {
   variant?: 'full' | 'slim';
+  onCollapse?: () => void;
+  isMobile?: boolean;
 }
 
-export function RelatedProjects({ variant = 'full' }: RelatedProjectsProps) {
+export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false }: RelatedProjectsProps) {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const { config } = useSharedConfig();
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && resolvedTheme === 'dark';
 
   // Get related projects from config or fallback
   const relatedProjects = config?.relatedProjects ?? STATIC_RELATED_PROJECTS;
 
-  // Don't render in slim mode
-  if (variant === 'slim') return null;
+  // Slim variant - icon-only vertical layout
+  if (variant === 'slim') {
+    if (!mounted) {
+      return (
+        <div className="shrink-0 flex flex-col items-center gap-2 py-4 min-w-16">
+          <div className="w-5 h-5" />
+          <div className="w-5 h-5" />
+        </div>
+      );
+    }
+
+    return (
+      <div
+        className="shrink-0 sticky flex flex-col items-center gap-2 py-4 min-w-16 border-t border-gray-200 dark:border-gray-700"
+        suppressHydrationWarning
+      >
+        {/* Theme Toggle Icon */}
+        <button
+          onClick={() => setTheme(isDark ? 'light' : 'dark')}
+          title="Change theme"
+          className="group p-2 rounded-md hover:font-bold transition-all"
+          style={{
+            color: isDark ? '#f3f4f6' : '#111827',
+          }}
+          suppressHydrationWarning
+        >
+          <div className="relative w-5 h-5">
+            <Moon
+              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
+                isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+              }`}
+            />
+            <Sun
+              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
+                !isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
+              }`}
+            />
+          </div>
+        </button>
+
+        {/* Expand Sidebar Icon */}
+        {onCollapse && (
+          <button
+            onClick={onCollapse}
+            title="Expand sidebar"
+            className="p-2 rounded-md hover:font-bold transition-all"
+            style={{
+              color: isDark ? '#f3f4f6' : '#111827',
+            }}
+            suppressHydrationWarning
+          >
+            <PanelLeftOpen className="w-5 h-5" />
+          </button>
+        )}
+      </div>
+    );
+  }
 
   // Determine current project from pathname
   const getCurrentProject = () => {
@@ -85,7 +151,6 @@ export function RelatedProjects({ variant = 'full' }: RelatedProjectsProps) {
         {relatedProjects.map((project: { title: string; href: string; description?: string }) => {
           const isCurrentProject = project.title === currentProject;
           const projectUrl = getProjectUrl(project.href);
-          const isExternal = projectUrl.startsWith('http');
 
           return (
             <a
@@ -98,13 +163,61 @@ export function RelatedProjects({ variant = 'full' }: RelatedProjectsProps) {
                   : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }
               `}
-              {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >
               {project.title}
             </a>
           );
         })}
       </div>
+
+      {/* Footer Controls */}
+      {mounted && (
+        <div
+          className="flex items-center gap-2 pt-3 mt-2 border-t border-gray-200 dark:border-gray-700"
+          suppressHydrationWarning
+        >
+          {/* Theme Toggle Button */}
+          <button
+            onClick={() => setTheme(isDark ? 'light' : 'dark')}
+            title="Change theme"
+            className="group cursor-pointer h-7 rounded-md px-2 text-sm font-thin transition-all hover:font-bold flex items-center gap-2 flex-1"
+            style={{
+              color: isDark ? '#f3f4f6' : '#111827',
+            }}
+            suppressHydrationWarning
+          >
+            <div className="relative w-5 h-5">
+              <Moon
+                className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
+                  isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+                }`}
+              />
+              <Sun
+                className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
+                  !isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
+                }`}
+              />
+            </div>
+            <span>{isDark ? 'Dark' : 'Light'}</span>
+          </button>
+
+          {/* Collapse Sidebar Button - Hidden on mobile */}
+          {onCollapse && !isMobile && (
+            <button
+              onClick={onCollapse}
+              className="transition-all cursor-pointer rounded-md p-2 hover:font-bold"
+              style={{
+                color: isDark ? '#f3f4f6' : '#111827',
+              }}
+              title="Collapse sidebar"
+              type="button"
+              suppressHydrationWarning
+            >
+              <PanelRightOpenIcon className="w-4 h-4" />
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }
