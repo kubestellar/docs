@@ -61,7 +61,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
         <button
           onClick={() => setTheme(isDark ? 'light' : 'dark')}
           title="Change theme"
-          className="group p-2 rounded-md hover:font-bold transition-all text-gray-900 dark:text-gray-100"
+          className="group p-2 rounded-md hover:font-bold transition-all"
+          style={{ color: 'var(--foreground)' }}
           suppressHydrationWarning
         >
           <div className="relative w-5 h-5">
@@ -83,7 +84,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
           <button
             onClick={onCollapse}
             title="Expand sidebar"
-            className="p-2 rounded-md hover:font-bold transition-all text-gray-900 dark:text-gray-100"
+            className="p-2 rounded-md hover:font-bold transition-all"
+            style={{ color: 'var(--foreground)' }}
             suppressHydrationWarning
           >
             <PanelLeftOpen className="w-5 h-5" />
@@ -177,7 +179,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
           <button
             onClick={() => setTheme(isDark ? 'light' : 'dark')}
             title="Change theme"
-            className="group cursor-pointer h-7 rounded-md px-2 text-sm font-thin transition-all hover:font-bold flex items-center gap-2 flex-1 text-gray-900 dark:text-gray-100"
+            className="group cursor-pointer h-7 rounded-md px-2 text-sm font-thin transition-all hover:font-bold flex items-center gap-2 flex-1"
+            style={{ color: 'var(--foreground)' }}
             suppressHydrationWarning
           >
             <div className="relative w-5 h-5">
@@ -199,7 +202,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
           {onCollapse && !isMobile && (
             <button
               onClick={onCollapse}
-              className="transition-all cursor-pointer rounded-md p-2 hover:font-bold text-gray-900 dark:text-gray-100"
+              className="transition-all cursor-pointer rounded-md p-2 hover:font-bold"
+              style={{ color: 'var(--foreground)' }}
               title="Collapse sidebar"
               type="button"
               suppressHydrationWarning

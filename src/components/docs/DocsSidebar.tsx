@@ -156,8 +156,8 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
             // Folder - clickable to toggle
             <button
               onClick={() => toggleCollapse(itemKey)}
-              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10 text-gray-900 dark:text-gray-100"
-              style={{ paddingLeft: `${depth * 16 + 12}px` }}
+              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10"
+              style={{ paddingLeft: `${depth * 16 + 12}px`, color: 'var(--foreground)' }}
             >
               <span className="flex-1 wrap-break-word">{displayTitle}</span>
               <span className="ml-auto shrink-0 mt-0.5">
@@ -177,12 +177,15 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
                 ${
                   isActive
                     ? 'font-thin text-blue-500 bg-blue-500/10'
-                    : 'hover:font-semibold text-gray-900 dark:text-gray-100'
+                    : 'hover:font-semibold'
                 }
               `}
-              style={{ paddingLeft: `${depth * 16 + 12}px` }}
+              style={{
+                paddingLeft: `${depth * 16 + 12}px`,
+                color: isActive ? undefined : 'var(--foreground)'
+              }}
             >
-              <FileText className={`w-4 h-4 shrink-0 mt-0.5 ${isActive ? 'text-blue-500' : ''}`} />
+              <FileText className={`w-4 h-4 shrink-0 mt-0.5 ${isActive ? 'text-blue-500' : ''}`} style={{ color: isActive ? undefined : 'var(--foreground)' }} />
               <span className="flex-1 wrap-break-word">{displayTitle}</span>
             </Link>
           )}
