@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTheme } from 'next-themes';
 import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
 import { RelatedProjects } from './RelatedProjects';
 import { useDocsMenu } from './DocsProvider';
@@ -25,6 +26,8 @@ interface DocsSidebarProps {
 export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const pathname = usePathname();
   const sidebarRef = useRef<HTMLElement>(null);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const {
     sidebarCollapsed,
     toggleSidebar,
@@ -35,6 +38,14 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     toggleNavCollapsed,
     navInitialized
   } = useDocsMenu();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && resolvedTheme === 'dark';
+  // Text colors based on theme
+  const textColor = isDark ? '#e5e7eb' : '#374151'; // gray-200 : gray-700
   // Stable layout values - only recalculate on resize or banner change
   const [layoutValues, setLayoutValues] = useState({ top: '4rem', height: 'calc(100vh - 4rem)' });
   const layoutCalculatedRef = useRef(false);
@@ -156,8 +167,8 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
             // Folder - clickable to toggle
             <button
               onClick={() => toggleCollapse(itemKey)}
-              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10 !text-gray-700 dark:!text-gray-200"
-              style={{ paddingLeft: `${depth * 16 + 12}px` }}
+              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10"
+              style={{ paddingLeft: `${depth * 16 + 12}px`, color: textColor }}
             >
               <span className="flex-1 wrap-break-word">{displayTitle}</span>
               <span className="ml-auto shrink-0 mt-0.5">
@@ -177,12 +188,18 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
                 ${
                   isActive
                     ? 'font-thin text-blue-500 bg-blue-500/10'
-                    : 'hover:font-semibold !text-gray-700 dark:!text-gray-200'
+                    : 'hover:font-semibold'
                 }
               `}
-              style={{ paddingLeft: `${depth * 16 + 12}px` }}
+              style={{
+                paddingLeft: `${depth * 16 + 12}px`,
+                color: isActive ? undefined : textColor
+              }}
             >
-              <FileText className={`w-4 h-4 shrink-0 mt-0.5 ${isActive ? 'text-blue-500' : '!text-gray-700 dark:!text-gray-200'}`} />
+              <FileText
+                className="w-4 h-4 shrink-0 mt-0.5"
+                style={{ color: isActive ? '#3b82f6' : textColor }}
+              />
               <span className="flex-1 wrap-break-word">{displayTitle}</span>
             </Link>
           )}

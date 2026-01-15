@@ -37,6 +37,9 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
   }, []);
 
   const isDark = mounted && resolvedTheme === 'dark';
+  // Text colors based on theme
+  const textColor = isDark ? '#e5e7eb' : '#374151'; // gray-200 : gray-700
+  const mutedTextColor = isDark ? '#9ca3af' : '#6b7280'; // gray-400 : gray-500
 
   // Get related projects from config or fallback
   const relatedProjects = config?.relatedProjects ?? STATIC_RELATED_PROJECTS;
@@ -61,7 +64,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
         <button
           onClick={() => setTheme(isDark ? 'light' : 'dark')}
           title="Change theme"
-          className="group p-2 rounded-md hover:font-bold transition-all !text-gray-700 dark:!text-gray-200"
+          className="group p-2 rounded-md hover:font-bold transition-all"
+          style={{ color: textColor }}
           suppressHydrationWarning
         >
           <div className="relative w-5 h-5">
@@ -83,7 +87,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
           <button
             onClick={onCollapse}
             title="Expand sidebar"
-            className="p-2 rounded-md hover:font-bold transition-all !text-gray-700 dark:!text-gray-200"
+            className="p-2 rounded-md hover:font-bold transition-all"
+            style={{ color: textColor }}
             suppressHydrationWarning
           >
             <PanelLeftOpen className="w-5 h-5" />
@@ -124,7 +129,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
       {/* Header - clickable to toggle */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className={`flex items-center justify-between w-full text-xs font-semibold uppercase tracking-wider transition-colors text-gray-500 dark:text-gray-400 ${bannerActive ? 'py-1' : 'py-2'}`}
+        className={`flex items-center justify-between w-full text-xs font-semibold uppercase tracking-wider transition-colors ${bannerActive ? 'py-1' : 'py-2'}`}
+        style={{ color: mutedTextColor }}
       >
         <span>Related Projects</span>
         <span className="ml-auto">
@@ -156,10 +162,18 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
                 block px-3 text-sm rounded-md transition-colors
                 ${bannerActive ? 'py-0.5' : 'py-1.5'}
                 ${isCurrentProject
-                  ? 'bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 font-medium'
-                  : '!text-gray-700 dark:!text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                  ? 'font-medium'
+                  : 'hover:bg-gray-100 dark:hover:bg-gray-800'
                 }
               `}
+              style={{
+                color: isCurrentProject
+                  ? (isDark ? '#60a5fa' : '#2563eb')  // blue-400 : blue-600
+                  : textColor,
+                backgroundColor: isCurrentProject
+                  ? (isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)')  // blue-500/20 : blue-50
+                  : undefined
+              }}
             >
               {project.title}
             </a>
@@ -177,7 +191,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
           <button
             onClick={() => setTheme(isDark ? 'light' : 'dark')}
             title="Change theme"
-            className="group cursor-pointer h-7 rounded-md px-2 text-sm font-thin transition-all hover:font-bold flex items-center gap-2 flex-1 !text-gray-700 dark:!text-gray-200"
+            className="group cursor-pointer h-7 rounded-md px-2 text-sm font-thin transition-all hover:font-bold flex items-center gap-2 flex-1"
+            style={{ color: textColor }}
             suppressHydrationWarning
           >
             <div className="relative w-5 h-5">
@@ -199,7 +214,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
           {onCollapse && !isMobile && (
             <button
               onClick={onCollapse}
-              className="transition-all cursor-pointer rounded-md p-2 hover:font-bold !text-gray-700 dark:!text-gray-200"
+              className="transition-all cursor-pointer rounded-md p-2 hover:font-bold"
+              style={{ color: textColor }}
               title="Collapse sidebar"
               type="button"
               suppressHydrationWarning
