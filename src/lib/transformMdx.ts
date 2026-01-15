@@ -8,6 +8,9 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
     return key;
   };
 
+  // Protect EmbedIframe components from transformation
+  s = s.replace(/<EmbedIframe[^>]*\/>/g, m => put(m));
+
   s = s.replace(/`{3,}[\s\S]*?`{3,}/g, m => put(m));
   s = s.replace(/~{3,}[\s\S]*?~{3,}/g, m => put(m));
   s = s.replace(/<pre\b[\s\S]*?<\/pre>/gi, m => put(m));
