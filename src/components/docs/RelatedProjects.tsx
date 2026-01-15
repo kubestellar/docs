@@ -26,7 +26,7 @@ interface RelatedProjectsProps {
 }
 
 export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false, bannerActive = false }: RelatedProjectsProps) {
-  const [isExpanded, setIsExpanded] = useState(!bannerActive);
+  const [isExpanded, setIsExpanded] = useState(true);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const { config } = useSharedConfig();
@@ -35,11 +35,6 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  // Auto-collapse when banner becomes active, auto-expand when dismissed
-  useEffect(() => {
-    setIsExpanded(!bannerActive);
-  }, [bannerActive]);
 
   const isDark = mounted && resolvedTheme === 'dark';
 
