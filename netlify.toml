@@ -75,16 +75,29 @@
 
 # Redirects for short URLs
 
-# Redirect docs.kubestellar.io to kubestellar.io/docs
-# [[redirects]]
-#   from = "https://docs.kubestellar.io/*"
-#   to = "https://kubestellar.io/docs/:splat"
-#   status = 301
-#   force = true
+# Redirect /docs/* to /en/docs/* for backwards compatibility (localization)
+[[redirects]]
+  from = "/docs/*"
+  to = "/en/docs/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/docs"
+  to = "/en/docs"
+  status = 301
+  force = true
+
+# Redirect docs.kubestellar.io to kubestellar.io/en/docs
+[[redirects]]
+  from = "https://docs.kubestellar.io/*"
+  to = "https://kubestellar.io/en/docs/:splat"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "https://docs.kubestellar.io"
-  to = "https://kubestellar.io/docs"
+  to = "https://kubestellar.io/en/docs"
   status = 301
   force = true
 

@@ -12,7 +12,7 @@ const intlMiddleware = createMiddleware({
 export default function middleware(request: NextRequest) {
   // Redirect docs.kubestellar.io before any other processing
   if (request.nextUrl.hostname === "docs.kubestellar.io") {
-    return NextResponse.redirect("https://kubestellar.io/docs", 301);
+    return NextResponse.redirect("https://kubestellar.io/en/docs", 301);
   }
 
   // Explicitly handle root path to ensure consistent redirect to /en
@@ -28,8 +28,9 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
+  // Docs are now included in i18n processing (removed from exclusion)
   matcher: [
-    "/((?!docs|api|_next|_vercel|agenda|blog|code|community|drive|infomercial|join_us|joinus|ladder|ladder_stats|linkedin|quickstart|slack|survey|tv|youtube|.*\\..*).*)",
+    "/((?!api|_next|_vercel|agenda|blog|code|community|drive|infomercial|join_us|joinus|ladder|ladder_stats|linkedin|quickstart|slack|survey|tv|youtube|.*\\..*).*)",
     "/",
   ],
 };
