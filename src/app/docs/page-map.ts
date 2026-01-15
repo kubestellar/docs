@@ -16,6 +16,8 @@ export function getContentPath(projectId: ProjectId): string {
       return path.join(process.cwd(), 'docs', 'content', 'kubeflex')
     case 'multi-plugin':
       return path.join(process.cwd(), 'docs', 'content', 'multi-plugin')
+    case 'kubectl-claude':
+      return path.join(process.cwd(), 'docs', 'content', 'kubectl-claude')
     default:
       return docsContentPath
   }
@@ -30,6 +32,8 @@ export function getBasePath(projectId: ProjectId): string {
       return 'docs/kubeflex'
     case 'multi-plugin':
       return 'docs/multi-plugin'
+    case 'kubectl-claude':
+      return 'docs/kubectl-claude'
     default:
       return 'docs'
   }
@@ -165,6 +169,16 @@ const NAV_STRUCTURE_KUBEFLEX: Array<{ title: string; items: NavItem[] }> = [
     title: 'Community',
     items: [
       { 'Contributors': 'contributors.md' },
+    ]
+  }
+]
+
+// kubectl-claude Navigation Structure
+const NAV_STRUCTURE_KUBECTL_CLAUDE: Array<{ title: string; items: NavItem[] }> = [
+  {
+    title: 'Overview',
+    items: [
+      { 'Introduction': 'overview/intro.md' },
     ]
   }
 ]
@@ -316,6 +330,8 @@ function getNavStructure(projectId: ProjectId): Array<{ title: string; items: Na
       return NAV_STRUCTURE_KUBEFLEX
     case 'multi-plugin':
       return NAV_STRUCTURE_MULTI_PLUGIN
+    case 'kubectl-claude':
+      return NAV_STRUCTURE_KUBECTL_CLAUDE
     default:
       return NAV_STRUCTURE
   }
