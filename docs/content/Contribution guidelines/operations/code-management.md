@@ -130,6 +130,32 @@ Complete the Related issue field by inserting the issue number preceded by the #
 Decide whether this is a draft PR or if it's ready for review, and select the option you want by expanding on the Create Pull Request button.
 Assign a label to the PR from the available list of labels (a drop down list on the right side of the web page)
 
-Kubestellar CI pipeline:
+## Kubestellar CI pipeline
+
+### Prow CI jobs
+
+Kubestellar Prow CI jobs run inside containerized environments.
+Required tooling such as Python is provided by the container image
+itself, rather than being downloaded dynamically during job execution
+(e.g., Python 3.14). This improves CI reliability and consistency.
+
+See: https://docs.prow.k8s.io/docs/overview/
+
 
 Prow (https://docs.prow.k8s.io/docs/overview/)
+
+### Container builds for Galaxy components
+
+Galaxy components such as `shadow-pods` and `mc-scheduler` use Dockerfiles
+that reflect their actual Go source layout rather than template
+structures.
+
+- The `shadow-pods` Dockerfile copies the full `cmd/` and `internal/`
+  directories and builds the binary from `./cmd/shadow-pods`.
+- The `mc-scheduler` Dockerfile copies the full `cmd/`, `internal/`, and
+  `pkg/` directories and builds the binary from `./cmd/mc-scheduler`.
+
+This alignment with the real source tree prevents container build
+failures and ensures the Container Image Scanning workflow completes
+successfully for all components.
+
