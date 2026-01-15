@@ -5,6 +5,7 @@ import { evaluate } from 'nextra/evaluate'
 import { useMDXComponents as getMDXComponents } from '../../../../mdx-components'
 import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
 import { MermaidComponent } from '@/lib/Mermaid'
+import { EmbedIframe } from '@/components/EmbedIframe'
 import { buildPageMap, docsContentPath } from '../page-map'
 import { CURRENT_VERSION, type ProjectId } from '@/config/versions'
 import fs from 'fs'
@@ -34,7 +35,7 @@ export const dynamic = 'force-static'
 export const revalidate = false
 
 const { wrapper: Wrapper, ...components } = getMDXComponents({ $Tabs: Tabs, Callout })
-const component = { ...components, Mermaid: MermaidComponent }
+const component = { ...components, Mermaid: MermaidComponent, EmbedIframe }
 
 type PageProps = Readonly<{
   params: Promise<{ slug?: string[] }>
@@ -197,8 +198,51 @@ function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/<tr>[\s\S]*?<\/tr>/gi, '')
   sanitized = sanitized.replace(/<td[^>]*>[\s\S]*?<\/td>/gi, '')
   
-  // Remove all iframe tags - they cause issues with MDX and event handlers
-  sanitized = sanitized.replace(/<iframe[\s\S]*?<\/iframe>/gi, '')
+  // Remove spinner divs (they come before iframes and will be handled by EmbedIframe component)
+  sanitized = sanitized.replace(/<div\s+id=["']spinner\d+["'][^>]*>[\s\S]*?<\/div>/gi, '')
+  
+  // Convert <p> tags that contain iframes to <div> tags to avoid hydration errors
+  // (block elements like div/iframe cannot be inside p tags)
+  sanitized = sanitized.replace(/<p([^>]*)>([\s\S]*?)<iframe/gi, '<div$1>$2<iframe')
+  sanitized = sanitized.replace(/<\/iframe>([\s\S]*?)<\/p>/gi, '</iframe>$1</div>')
+  
+  // Convert iframe tags to EmbedIframe React component
+  sanitized = sanitized.replace(/<iframe([^>]*?)><\/iframe>/gi, (match, attrs) => {
+    // Extract attributes
+    const idMatch = attrs.match(/id=["']([^"']+)["']/i)
+    const srcMatch = attrs.match(/src=["']([^"']+)["']/i)
+    const titleMatch = attrs.match(/title=["']([^"']+)["']/i)
+    const widthMatch = attrs.match(/width=["']?(\d+)["']?/i)
+    const heightMatch = attrs.match(/height=["']?(\d+)["']?/i)
+    const allowMatch = attrs.match(/allow=["']([^"']+)["']/i)
+    const scrollingMatch = attrs.match(/scrolling=["']?([^"'\s>]+)["']?/i)
+    const classMatch = attrs.match(/class=["']([^"']+)["']/i)
+    
+    const id = idMatch ? idMatch[1] : `iframe-${Math.random().toString(36).substr(2, 9)}`
+    const src = srcMatch ? srcMatch[1] : ''
+    const title = titleMatch ? titleMatch[1] : 'Embedded content'
+    const width = widthMatch && widthMatch[1] !== '0' ? widthMatch[1] : '720'
+    const height = heightMatch && heightMatch[1] !== '0' ? heightMatch[1] : '400'
+    const allow = allowMatch ? allowMatch[1] : undefined
+    const scrolling = scrollingMatch ? scrollingMatch[1] : undefined
+    const className = classMatch ? classMatch[1] : 'centerImage'
+    
+    if (!src) return ''
+    
+    // Generate EmbedIframe component
+    const props = [
+      `id="${id}"`,
+      `src="${src}"`,
+      `title="${title}"`,
+      width !== '720' ? `width="${width}"` : null,
+      height !== '400' ? `height="${height}"` : null,
+      allow ? `allow="${allow}"` : null,
+      scrolling ? `scrolling="${scrolling}"` : null,
+      className !== 'centerImage' ? `className="${className}"` : null
+    ].filter(Boolean).join(' ')
+    
+    return `<EmbedIframe ${props} />`
+  })
   
   // Normalize all img tags - handle both <img ...> and <img ... />
   sanitized = sanitized.replace(/<img\s+([^>]*?)\/?>/gi, (match, attrs) => {
