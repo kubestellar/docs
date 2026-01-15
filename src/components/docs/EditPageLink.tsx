@@ -1,12 +1,8 @@
 "use client";
 
-<<<<<<< HEAD
-import { useSharedConfig } from '@/hooks/useSharedConfig';
-=======
 import { useState, useEffect } from 'react';
 import { useSharedConfig, getVersionsForProject, VersionInfo } from '@/hooks/useSharedConfig';
 import { getProjectVersions as getStaticProjectVersions } from '@/config/versions';
->>>>>>> origin/main
 import type { ProjectId } from '@/config/versions';
 
 interface EditPageLinkProps {
@@ -15,17 +11,6 @@ interface EditPageLinkProps {
   variant?: 'full' | 'icon';
 }
 
-<<<<<<< HEAD
-// Static edit base URLs (fallback if shared config unavailable)
-const STATIC_EDIT_BASE_URLS: Record<string, string> = {
-  kubestellar: 'https://github.com/kubestellar/docs/edit/main/docs/content',
-  a2a: 'https://github.com/kubestellar/a2a/edit/main/docs',
-  kubeflex: 'https://github.com/kubestellar/kubeflex/edit/main/docs',
-  'multi-plugin': 'https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs',
-  'kubectl-claude': 'https://github.com/kubestellar/kubectl-claude/edit/main/docs',
-};
-
-=======
 // Version entry with key from the versions config
 type VersionEntry = { key: string } & VersionInfo;
 
@@ -102,7 +87,6 @@ function buildEditBaseUrl(projectId: ProjectId, branch: string): string {
   return '';
 }
 
->>>>>>> origin/main
 // Validate that URL is a safe GitHub edit URL to prevent XSS
 function isValidGitHubEditUrl(url: string): boolean {
   try {
@@ -120,11 +104,6 @@ function isValidGitHubEditUrl(url: string): boolean {
 
 export function EditPageLink({ filePath, projectId, variant = 'full' }: EditPageLinkProps) {
   const { config } = useSharedConfig();
-<<<<<<< HEAD
-
-  // Get edit base URL from config or fallback
-  const editBaseUrl = config?.editBaseUrls?.[projectId] ?? STATIC_EDIT_BASE_URLS[projectId];
-=======
   const [currentBranch, setCurrentBranch] = useState<string>('main');
 
   // Get versions to detect current branch
@@ -140,7 +119,6 @@ export function EditPageLink({ filePath, projectId, variant = 'full' }: EditPage
 
   // Build edit URL with correct branch
   const editBaseUrl = buildEditBaseUrl(projectId, currentBranch);
->>>>>>> origin/main
 
   if (!editBaseUrl) return null;
 
