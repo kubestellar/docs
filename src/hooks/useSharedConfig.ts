@@ -5,6 +5,9 @@ import { useState, useEffect } from 'react';
 // Production URL for fetching shared config
 const PRODUCTION_CONFIG_URL = 'https://kubestellar.io/config/shared.json';
 
+// Cache TTL - config will be refreshed after this time
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+
 // Type definitions
 export interface VersionInfo {
   label: string;
@@ -31,20 +34,27 @@ export interface SharedConfig {
   projects: Record<string, ProjectInfo>;
   relatedProjects: RelatedProject[];
   editBaseUrls: Record<string, string>;
+  surveyUrl?: string;
   updatedAt: string;
 }
 
-// Cache for the config to avoid repeated fetches
+// Cache for the config with TTL
 let configCache: SharedConfig | null = null;
+let cacheTimestamp: number = 0;
 let fetchPromise: Promise<SharedConfig | null> | null = null;
 
-async function fetchConfig(): Promise<SharedConfig | null> {
-  // Return cached config if available
-  if (configCache) {
+// Check if cache is still valid
+function isCacheValid(): boolean {
+  return configCache !== null && (Date.now() - cacheTimestamp) < CACHE_TTL_MS;
+}
+
+async function fetchConfig(forceRefresh: boolean = false): Promise<SharedConfig | null> {
+  // Return cached config if still valid and not forcing refresh
+  if (!forceRefresh && isCacheValid()) {
     return configCache;
   }
 
-  // Return existing fetch promise if in progress
+  // Return existing fetch promise if in progress (avoid duplicate requests)
   if (fetchPromise) {
     return fetchPromise;
   }
@@ -53,13 +63,14 @@ async function fetchConfig(): Promise<SharedConfig | null> {
     try {
       // Try production URL first (works for all branch deploys)
       const res = await fetch(PRODUCTION_CONFIG_URL, {
-        cache: 'no-cache', // Allow caching with revalidation to reduce network requests
+        cache: 'no-store', // Always fetch fresh from network
         headers: {
           'Accept': 'application/json',
         },
       });
       if (res.ok) {
         configCache = await res.json();
+        cacheTimestamp = Date.now();
         return configCache;
       }
     } catch (e) {
@@ -71,6 +82,7 @@ async function fetchConfig(): Promise<SharedConfig | null> {
       const res = await fetch('/config/shared.json');
       if (res.ok) {
         configCache = await res.json();
+        cacheTimestamp = Date.now();
         return configCache;
       }
     } catch (e) {
@@ -78,19 +90,22 @@ async function fetchConfig(): Promise<SharedConfig | null> {
     }
 
     return null;
-  })();
+  })().finally(() => {
+    // Clear the promise so next call can try again
+    fetchPromise = null;
+  });
 
   return fetchPromise;
 }
 
 export function useSharedConfig() {
-  const [config, setConfig] = useState<SharedConfig | null>(configCache);
-  const [loading, setLoading] = useState(!configCache);
+  const [config, setConfig] = useState<SharedConfig | null>(isCacheValid() ? configCache : null);
+  const [loading, setLoading] = useState(!isCacheValid());
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    // If already have cached config, use it immediately
-    if (configCache) {
+    // If cache is still valid, use it immediately
+    if (isCacheValid()) {
       setConfig(configCache);
       setLoading(false);
       return;
@@ -155,6 +170,11 @@ export function getEditUrl(
   // Remove leading slash if present
   const cleanPath = filePath.startsWith('/') ? filePath.slice(1) : filePath;
   return `${config.editBaseUrls[projectId]}/${cleanPath}`;
+}
+
+// Get survey URL from config or fallback to redirect
+export function getSurveyUrl(config: SharedConfig | null): string {
+  return config?.surveyUrl ?? 'https://kubestellar.io/survey';
 }
 
 // Export the fetch function for server-side usage
