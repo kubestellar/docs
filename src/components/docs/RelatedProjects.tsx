@@ -9,13 +9,11 @@ import { useSharedConfig } from '@/hooks/useSharedConfig';
 // Production URL - all cross-project links go here
 const PRODUCTION_URL = 'https://kubestellar.io';
 
-// Static fallback for related projects
+// Generic fallback for related projects - uses safe URLs that won't break
+// The actual project list is fetched from production config
 const STATIC_RELATED_PROJECTS = [
-  { title: 'KubeStellar', href: '/docs/what-is-kubestellar/overview', description: 'Multi-cluster configuration management' },
-  { title: 'klaude', href: '/docs/klaude/overview/introduction', description: 'AI-powered kubectl plugin' },
-  { title: 'KubeFlex', href: '/docs/kubeflex/overview/introduction', description: 'Lightweight Kubernetes control planes' },
-  { title: 'A2A', href: '/docs/a2a/overview/introduction', description: 'Agent-to-Agent protocol' },
-  { title: 'Multi Plugin', href: '/docs/multi-plugin/overview/introduction', description: 'Multi-cluster kubectl plugin' },
+  { title: 'KubeStellar', href: '/docs', description: 'Multi-cluster management' },
+  { title: 'Loading projects...', href: '/docs', description: 'Fetching from config' },
 ];
 
 interface RelatedProjectsProps {
