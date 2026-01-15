@@ -1,5 +1,5 @@
 import { DocsLayout } from './src/components/docs/DocsLayout';
-import { buildPageMap } from './src/app/docs/page-map';
+import { buildPageMap } from './src/app/[locale]/docs/page-map';
 
 // Custom MDX components without nextra-theme-docs
 export function useMDXComponents(components) {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { convertHtmlScriptsToJsxComments } from "@/lib/transformMdx"
-import { buildPageMap, docsContentPath, basePath } from "../../docs/page-map"
+import { buildPageMap, docsContentPath, basePath } from "../../[locale]/docs/page-map"
 import fs from 'fs'
 import path from 'path'
 
