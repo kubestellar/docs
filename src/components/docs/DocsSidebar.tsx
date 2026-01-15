@@ -36,33 +36,29 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     toggleNavCollapsed,
     navInitialized
   } = useDocsMenu();
-  const [topOffset, setTopOffset] = useState('4rem');
-  const [sidebarHeight, setSidebarHeight] = useState('calc(100vh - 4rem)');
+  // Use refs for layout values to avoid re-renders during navigation
+  const topOffsetRef = useRef('4rem');
+  const sidebarHeightRef = useRef('calc(100vh - 4rem)');
+  const [, forceUpdate] = useState(0);
 
-  // Calculate top offset and height based on banner presence - only on resize/banner change
+  // Calculate top offset and height based on navbar - only on resize/banner change
   useEffect(() => {
     const calculateOffsets = () => {
       const navbar = document.querySelector('.nextra-nav-container');
       if (navbar) {
-        const navbarRect = navbar.getBoundingClientRect();
-        const navbarBottom = navbarRect.bottom;
-        setTopOffset(`${navbarBottom}px`);
-        setSidebarHeight(`calc(100vh - ${navbarBottom}px)`);
-      } else {
-        setTopOffset('4rem');
-        setSidebarHeight('calc(100vh - 4rem)');
+        // Use offsetHeight (actual height) not getBoundingClientRect (viewport-relative)
+        const navbarHeight = (navbar as HTMLElement).offsetHeight;
+        topOffsetRef.current = `${navbarHeight}px`;
+        sidebarHeightRef.current = `calc(100vh - ${navbarHeight}px)`;
+        forceUpdate(n => n + 1);
       }
     };
 
     calculateOffsets();
     window.addEventListener('resize', calculateOffsets);
 
-    // Recalculate once after mount to catch banner
-    const timer = setTimeout(calculateOffsets, 100);
-
     return () => {
       window.removeEventListener('resize', calculateOffsets);
-      clearTimeout(timer);
     };
   }, [bannerDismissed]);
 
@@ -268,9 +264,9 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         ${className || ''}
       `}
       style={{
-        top: topOffset,
-        height: sidebarHeight,
-        maxHeight: sidebarHeight,
+        top: topOffsetRef.current,
+        height: sidebarHeightRef.current,
+        maxHeight: sidebarHeightRef.current,
         boxShadow: '0 1px 6px 0 rgba(0,0,0,0.07)',
       }}
       suppressHydrationWarning
