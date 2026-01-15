@@ -22,7 +22,7 @@ export function DocsBanner() {
   const isDark = resolvedTheme === 'dark'
 
   return (
-    <div className={`relative ${isDark ? 'bg-neutral-900' : 'bg-blue-50'} border-b ${isDark ? 'border-gray-800' : 'border-blue-100'}`}>
+    <div className={`docs-banner relative ${isDark ? 'bg-neutral-900' : 'bg-blue-50'} border-b ${isDark ? 'border-gray-800' : 'border-blue-100'}`}>
       <div className="max-w-7xl mx-auto py-2 px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between flex-wrap">
           <div className="flex-1 flex items-center justify-center">

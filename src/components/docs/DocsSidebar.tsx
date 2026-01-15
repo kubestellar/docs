@@ -4,9 +4,10 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
-import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
+import { ChevronRight, ChevronDown, FileText, Sidebar } from 'lucide-react';
 import { RelatedProjects } from './RelatedProjects';
 import { useDocsMenu } from './DocsProvider';
+import { SidebarFooter } from './SidebarFooter';
 
 interface MenuItem {
   name: string;
@@ -50,28 +51,34 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const [layoutValues, setLayoutValues] = useState({ top: '4rem', height: 'calc(100vh - 4rem)' });
   const layoutCalculatedRef = useRef(false);
 
-  useEffect(() => {
-    const calculateOffsets = () => {
-      const navbar = document.querySelector('.nextra-nav-container');
-      if (navbar) {
-        const navbarHeight = (navbar as HTMLElement).offsetHeight;
-        const newTop = `${navbarHeight}px`;
-        const newHeight = `calc(100vh - ${navbarHeight}px)`;
-        setLayoutValues({ top: newTop, height: newHeight });
-        layoutCalculatedRef.current = true;
-      }
-    };
+  const calculateOffsets = () => {
+  const navbar = document.querySelector('.nextra-nav-container') as HTMLElement | null;
+  const banner = document.querySelector('.docs-banner') as HTMLElement | null;
 
-    // Calculate on mount and when banner state changes
-    // Use setTimeout to allow DOM to update after banner dismiss
-    const timeoutId = setTimeout(calculateOffsets, 50);
+  const navbarHeight = navbar?.offsetHeight || 0;
+  const bannerHeight = banner?.offsetHeight || 0;
+
+  const totalTop = navbarHeight + bannerHeight;
+
+  setLayoutValues({
+    top: `${totalTop}px`,
+    height: `calc(100vh - ${totalTop}px)`
+  });
+};
+
+
+  useEffect(() => {
+    // Wait for layout (banner + navbar) to fully render
+    const t = setTimeout(calculateOffsets, 500);
 
     window.addEventListener('resize', calculateOffsets);
+
     return () => {
-      clearTimeout(timeoutId);
+      clearTimeout(t);
       window.removeEventListener('resize', calculateOffsets);
     };
-  }, [bannerDismissed]);
+}, [bannerDismissed]);
+
 
   // Store initial pathname for initialization
   const initialPathnameRef = useRef(pathname);
@@ -233,12 +240,9 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         <nav className="p-4 pb-6 w-full space-y-2">
           {pageMap.map(item => renderMenuItem(item))}
         </nav>
+      <RelatedProjects bannerActive={!bannerDismissed} />
       </div>
-
-      {/* Related Projects - fixed at bottom, shrink-0 prevents shrinking */}
-      <div className="shrink-0">
-        <RelatedProjects onCollapse={toggleSidebar} isMobile={menuOpen} bannerActive={!bannerDismissed} />
-      </div>
+      <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
     </>
   );
 
@@ -249,7 +253,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
       <div className="flex-1"></div>
 
       {/* Footer with icon buttons */}
-      <RelatedProjects onCollapse={toggleSidebar} variant="slim" />
+      <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} variant="slim" />
     </div>
   );
 
