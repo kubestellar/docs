@@ -25,7 +25,6 @@ interface DocsSidebarProps {
 
 export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const pathname = usePathname();
-  const navRef = useRef<HTMLElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
   const {
     sidebarCollapsed,
@@ -37,96 +36,35 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     toggleNavCollapsed,
     navInitialized
   } = useDocsMenu();
-  const [availableHeight, setAvailableHeight] = useState<string>('auto');
   const [topOffset, setTopOffset] = useState('4rem');
   const [sidebarHeight, setSidebarHeight] = useState('calc(100vh - 4rem)');
 
-  // Calculate dynamic top offset and height based on banner presence
+  // Calculate top offset and height based on banner presence - only on resize/banner change
   useEffect(() => {
     const calculateOffsets = () => {
-      // Get the navbar element
       const navbar = document.querySelector('.nextra-nav-container');
-      
       if (navbar) {
-        // Get the actual bottom position of the navbar (which includes banner if present)
         const navbarRect = navbar.getBoundingClientRect();
         const navbarBottom = navbarRect.bottom;
-        
-        // The sidebar should start where the navbar ends
         setTopOffset(`${navbarBottom}px`);
         setSidebarHeight(`calc(100vh - ${navbarBottom}px)`);
       } else {
-        // Fallback if navbar not found
         setTopOffset('4rem');
         setSidebarHeight('calc(100vh - 4rem)');
       }
     };
 
     calculateOffsets();
-    
-    // Recalculate on window resize, scroll (for sticky navbar), and banner changes
     window.addEventListener('resize', calculateOffsets);
-    window.addEventListener('scroll', calculateOffsets);
-    
-    // Also recalculate after a short delay to ensure DOM is ready
+
+    // Recalculate once after mount to catch banner
     const timer = setTimeout(calculateOffsets, 100);
-    
-    // Recalculate periodically to catch any changes
-    const interval = setInterval(calculateOffsets, 500);
-    
+
     return () => {
       window.removeEventListener('resize', calculateOffsets);
-      window.removeEventListener('scroll', calculateOffsets);
       clearTimeout(timer);
-      clearInterval(interval);
     };
   }, [bannerDismissed]);
-
-  // Calculate available height for navigation, accounting for footer and viewport changes
-  useEffect(() => {
-    const calculateHeight = () => {
-      if (navRef.current) {
-        const parent = navRef.current.parentElement;
-        if (parent) {
-          // Get the parent's actual height (which is constrained by viewport)
-          const parentHeight = parent.clientHeight;
-          
-          // Find footer element and get its height
-          const footer = parent.nextElementSibling;
-          const footerHeight = footer ? footer.clientHeight : 0;
-          
-          // Calculate available height for navigation
-          const navHeight = parentHeight - footerHeight;
-          setAvailableHeight(`${navHeight}px`);
-        }
-      }
-    };
-
-    calculateHeight();
-    
-    // Recalculate on window resize
-    window.addEventListener('resize', calculateHeight);
-    
-    // Recalculate on scroll (for when banner appears/disappears)
-    window.addEventListener('scroll', calculateHeight);
-    
-    // Use MutationObserver to recalculate if DOM changes
-    const observer = new MutationObserver(calculateHeight);
-    if (navRef.current?.parentElement?.parentElement) {
-      observer.observe(navRef.current.parentElement.parentElement, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ['class', 'style']
-      });
-    }
-    
-    return () => {
-      window.removeEventListener('resize', calculateHeight);
-      window.removeEventListener('scroll', calculateHeight);
-      observer.disconnect();
-    };
-  }, []);
 
   // Store initial pathname for initialization
   const initialPathnameRef = useRef(pathname);
@@ -284,22 +222,22 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   // Render full sidebar (expanded state)
   const renderFullSidebar = () => (
     <>
-      {/* Scrollable navigation area */}
+      {/* Scrollable navigation area - flex-1 takes remaining space, min-h-0 allows shrinking */}
       <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-        <nav
-          ref={navRef}
-          className="p-4 pb-6 w-full space-y-2"
-          style={{ maxHeight: availableHeight }}
-        >
+        <nav className="p-4 pb-6 w-full space-y-2">
           {pageMap.map(item => renderMenuItem(item))}
         </nav>
       </div>
 
-      {/* Related Projects */}
-      <RelatedProjects />
+      {/* Related Projects - shrink-0 prevents it from shrinking */}
+      <div className="shrink-0">
+        <RelatedProjects />
+      </div>
 
-      {/* Footer at bottom */}
-      <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
+      {/* Footer at bottom - shrink-0 prevents it from shrinking */}
+      <div className="shrink-0">
+        <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
+      </div>
     </>
   );
 
