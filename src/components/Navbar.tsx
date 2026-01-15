@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { Link as LocalizedLink } from "@/i18n/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { GridLines, StarField, LanguageSwitcher } from "./index";
@@ -615,7 +616,7 @@ export default function Navbar() {
                       </svg>
                       {t("products")}
                     </Link>
-                    <Link
+                    <LocalizedLink
                       href="/ladder"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                     >
@@ -633,7 +634,7 @@ export default function Navbar() {
                         ></path>
                       </svg>
                       {t("ladder")}
-                    </Link>
+                    </LocalizedLink>
                     <Link
                       href="/docs/contribution-guidelines/security/security-inc"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
@@ -740,7 +741,7 @@ export default function Navbar() {
                       </svg>
                       {t("programs")}
                     </Link>
-                    <Link
+                    <LocalizedLink
                       href="/#contact"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                     >
@@ -758,8 +759,8 @@ export default function Navbar() {
                         ></path>
                       </svg>
                       {t("contactUs")}
-                    </Link>
-                    <Link
+                    </LocalizedLink>
+                    <LocalizedLink
                       href="/partners"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
                     >
@@ -777,7 +778,7 @@ export default function Navbar() {
                         ></path>
                       </svg>
                       {t("partners")}
-                    </Link>
+                    </LocalizedLink>
                   </div>
                 </div>
               </div>
@@ -1139,7 +1140,7 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className="relative mb-2">
-                  <Link
+                  <LocalizedLink
                     href="/ladder"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
@@ -1159,7 +1160,7 @@ export default function Navbar() {
                       </svg>
                     </div>
                     <span>{t("ladder")}</span>
-                  </Link>
+                  </LocalizedLink>
                 </div>
                 <div className="relative mb-4">
                   <Link
@@ -1237,7 +1238,7 @@ export default function Navbar() {
                   </Link>
                 </div>
                 <div className="relative mb-2">
-                  <Link
+                  <LocalizedLink
                     href="/#contact"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
@@ -1257,10 +1258,10 @@ export default function Navbar() {
                       </svg>
                     </div>
                     <span>{t("contactUs")}</span>
-                  </Link>
+                  </LocalizedLink>
                 </div>
                 <div className="relative mb-4">
-                  <Link
+                  <LocalizedLink
                     href="/partners"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
@@ -1280,7 +1281,7 @@ export default function Navbar() {
                       </svg>
                     </div>
                     <span>{t("partners")}</span>
-                  </Link>
+                  </LocalizedLink>
                 </div>
                 <div className="border-t border-gray-400/50 mb-4"></div>
                 <div className="mb-4">
