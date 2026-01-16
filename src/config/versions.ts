@@ -16,7 +16,7 @@ export const NETLIFY_SITE_NAME = "kubestellar-docs"
 export const PRODUCTION_URL = "https://kubestellar.io"
 
 // Project identifiers
-export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "klaude"
+export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "klaude" | "console"
 
 // Version info structure
 export interface VersionInfo {
@@ -233,6 +233,21 @@ const KLAUDE_VERSIONS: Record<string, VersionInfo> = {
   },
 }
 
+// console versions
+const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
+  latest: {
+    label: "v0.1.0 (Latest)",
+    branch: "docs/console/0.1.0",
+    isDefault: true,
+  },
+  main: {
+    label: "main (dev)",
+    branch: "main",
+    isDefault: false,
+    isDev: true,
+  },
+}
+
 // All projects configuration
 export const PROJECTS: Record<ProjectId, ProjectConfig> = {
   kubestellar: {
@@ -271,9 +286,17 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "klaude",
     name: "klaude",
     basePath: "klaude",
-    currentVersion: "0.6.0",
+    currentVersion: "0.7.1",
     contentPath: "docs/content/klaude",
     versions: KLAUDE_VERSIONS,
+  },
+  "console": {
+    id: "console",
+    name: "Console",
+    basePath: "console",
+    currentVersion: "0.1.0",
+    contentPath: "docs/content/console",
+    versions: CONSOLE_VERSIONS,
   },
 }
 
@@ -290,6 +313,9 @@ export function getProjectFromPath(pathname: string): ProjectConfig {
   }
   if (pathname.startsWith("/docs/klaude") || pathname.startsWith("/docs/related-projects/klaude")) {
     return PROJECTS["klaude"]
+  }
+  if (pathname.startsWith("/docs/console")) {
+    return PROJECTS["console"]
   }
   return PROJECTS.kubestellar
 }
