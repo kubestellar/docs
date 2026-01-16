@@ -17,17 +17,33 @@ This guide will help you get kkc running locally for development or evaluation.
 - Docker (for containerized deployment)
 - kubectl configured with at least one cluster
 - GitHub OAuth App credentials
+- [Claude Code](https://claude.ai/claude-code) CLI installed
+- Klaude plugins (see below)
 
 ## Local Development
 
-### 1. Clone the Repository
+### 1. Install Klaude Tools
+
+**Option A: From Claude Code Marketplace (recommended)**
+```bash
+claude plugins install klaude-ops
+claude plugins install klaude-deploy
+```
+
+**Option B: Via Homebrew**
+```bash
+brew tap kubestellar/tap
+brew install klaude-ops klaude-deploy
+```
+
+### 2. Clone the Repository
 
 ```bash
 git clone https://github.com/kubestellar/console.git
 cd console
 ```
 
-### 2. Create a GitHub OAuth App
+### 3. Create a GitHub OAuth App
 
 Go to [GitHub Developer Settings](https://github.com/settings/developers) → OAuth Apps → New OAuth App
 
@@ -35,14 +51,28 @@ Go to [GitHub Developer Settings](https://github.com/settings/developers) → OA
 - **Homepage URL**: `http://localhost:5174`
 - **Authorization callback URL**: `http://localhost:8080/auth/github/callback`
 
-### 3. Set Environment Variables
+### 4. Configure Environment
+
+Create a `.env` file in the project root:
+
+```bash
+# .env file
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+DEV_MODE=false
+FRONTEND_URL=http://localhost:5174
+JWT_SECRET=your-secret-key-here
+DATABASE_PATH=./data/console.db
+```
+
+Or export directly:
 
 ```bash
 export GITHUB_CLIENT_ID=your_client_id
 export GITHUB_CLIENT_SECRET=your_client_secret
 ```
 
-### 4. Run the Development Server
+### 5. Run the Development Server
 
 ```bash
 ./dev.sh
@@ -50,7 +80,7 @@ export GITHUB_CLIENT_SECRET=your_client_secret
 
 This starts both the backend (port 8080) and frontend (port 5174).
 
-### 5. Access the Console
+### 6. Access the Console
 
 Open http://localhost:5174 and sign in with GitHub.
 
