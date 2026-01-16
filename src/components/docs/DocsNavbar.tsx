@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 // import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { VERSIONS } from '@/config/versions'
-import { getLocalizedUrl } from "@/lib/url";
+import { getLocalizedUrl, getBaseUrl } from "@/lib/url";
 import { VersionSelector } from './VersionSelector';
 
 type DropdownType = "contribute" | "community" | "language" | "github" | null;
@@ -360,8 +360,8 @@ export default function DocsNavbar() {
                       </svg>
                     <span>Products</span>
                 </Link>
-              <Link
-                    href="/ladder"
+              <a
+                    href={`${getBaseUrl()}/en/ladder`}
                     className={dropdownItemClasses}
                   >
                       <svg
@@ -378,7 +378,7 @@ export default function DocsNavbar() {
                         ></path>
                       </svg>
                     <span>Ladder</span>
-                </Link>
+              </a>
 
               <Link
                 href="/docs/contribution-guidelines/security/security-inc"
@@ -443,24 +443,24 @@ export default function DocsNavbar() {
                 </svg>
                 Programs
               </Link>
-              <Link
-                href="/#contact"
+              <a
+                href={`${getBaseUrl()}/en#contact`}
                 className={dropdownItemClasses}
               >
                 <svg className="w-5 h-5 mr-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 Contact Us
-              </Link>
-              <Link
-                href="/partners"
+              </a>
+              <a
+                href={`${getBaseUrl()}/en/partners`}
                 className={dropdownItemClasses}
               >
                 <svg className="w-5 h-5 mr-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
                 Partners
-              </Link>
+              </a>
               </div>
             )}
           </div>
@@ -896,7 +896,7 @@ export default function DocsNavbar() {
               </svg>
               Products
             </Link>
-            <Link href="/ladder" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
+            <a href={`${getBaseUrl()}/en/ladder`} className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
@@ -905,7 +905,7 @@ export default function DocsNavbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
               Ladder
-            </Link>
+            </a>
             <Link href="/docs/contribution-guidelines/security/security-inc" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
@@ -941,7 +941,7 @@ export default function DocsNavbar() {
               Programs
             </Link>
 {/* --- REMOVED LADDER LINK FROM HERE --- */}
-            <Link href="/#contact" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
+            <a href={`${getBaseUrl()}/en#contact`} className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
@@ -950,8 +950,8 @@ export default function DocsNavbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               Contact Us
-            </Link>
-            <Link href="/partners" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
+            </a>
+            <a href={`${getBaseUrl()}/en/partners`} className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
@@ -960,7 +960,7 @@ export default function DocsNavbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
               Partners
-            </Link>
+            </a>
 
             {/* Version selector - mobile */}
             <div className={`md:hidden pt-3 border-t mt-3 ${
