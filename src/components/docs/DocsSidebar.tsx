@@ -50,17 +50,16 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   // Stable layout values - only recalculate on resize or banner change
   const [layoutValues, setLayoutValues] = useState({ top: '4rem', height: 'calc(100vh - 4rem)' });
 
+
   const calculateOffsets = () => {
-  const navbar = document.querySelector('.nextra-nav-container') as HTMLElement | null;
-  const banner = document.querySelector('.docs-banner') as HTMLElement | null;
-  const navbarHeight = navbar?.offsetHeight || 0;
-  const bannerHeight = banner?.offsetHeight || 0;
-  const totalTop = navbarHeight + bannerHeight;
-  setLayoutValues({
-    top: `${totalTop}px`,
-    height: `calc(100vh - ${totalTop}px)`
-  });
-};
+    const navbar = document.querySelector('.nextra-nav-container') as HTMLElement | null;
+    if (!navbar) return;
+    const navbarBottomY = navbar.getBoundingClientRect().bottom;
+    setLayoutValues({
+      top: `${navbarBottomY}px`,
+      height: `calc(100vh - ${navbarBottomY}px)`
+    });
+  };
 
   useEffect(() => {
     // Wait for layout (banner + navbar) to fully render
