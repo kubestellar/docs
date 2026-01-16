@@ -177,3 +177,16 @@ This alignment with the real source tree prevents container build
 failures and ensures the Container Image Scanning workflow completes
 successfully for all components.
 
+#### Argo CD integration tests
+
+Kubestellar includes gated integration tests that validate the installation
+and readiness of Argo CD in a real Kubernetes cluster.
+
+These tests run as part of the Prow CI pipeline and verify that:
+- Argo CD can be installed successfully using Helm
+- Core Argo CD components become healthy and ready
+- Kubestellar continues to operate correctly alongside Argo CD
+
+Because these are real cluster integration tests, they may take longer
+to complete than unit tests and are enforced as required checks for
+pull requests.
