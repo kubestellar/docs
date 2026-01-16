@@ -154,8 +154,8 @@
     },
     "klaude": {
       "latest": {
-        "label": "v0.8.0 (Latest)",
-        "branch": "docs/klaude/0.8.0",
+        "label": "v0.8.1 (Latest)",
+        "branch": "docs/klaude/0.8.1",
         "isDefault": true
       },
       "main": {
@@ -203,6 +203,11 @@
         "label": "v0.4.0",
         "branch": "docs/klaude/0.4.0",
         "isDefault": false
+      },
+      "0.8.0": {
+        "label": "v0.8.0",
+        "branch": "docs/klaude/0.8.0",
+        "isDefault": false
       }
     }
   },
@@ -230,7 +235,7 @@
     "klaude": {
       "name": "klaude",
       "basePath": "klaude",
-      "currentVersion": "0.8.0"
+      "currentVersion": "0.8.1"
     },
     "console": {
       "name": "Console",
@@ -278,5 +283,5 @@
     "klaude": "https://github.com/kubestellar/klaude/edit/main/docs",
     "console": "https://github.com/kubestellar/docs/edit/main/docs/content/console"
   },
-  "updatedAt": "2026-01-16T17:45:32.437Z"
+  "updatedAt": "2026-01-16T18:24:27.434Z"
 }

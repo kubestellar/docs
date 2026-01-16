@@ -186,8 +186,8 @@ const MULTI_PLUGIN_VERSIONS: Record<string, VersionInfo> = {
 // klaude versions (formerly kubectl-claude)
 const KLAUDE_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.8.0 (Latest)",
-    branch: "docs/klaude/0.8.0",
+    label: "v0.8.1 (Latest)",
+    branch: "docs/klaude/0.8.1",
     isDefault: true,
   },
   main: {
