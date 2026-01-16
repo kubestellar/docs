@@ -10,7 +10,7 @@ Key benefits:
 - Fast filtering and search via label chips and status filters
 - Real-time status visibility and detail views for each cluster
 
-ITS serves as the entry point for cluster lifecycle operations, integrates with Binding Policies (BP) for label-driven selection, and is a prerequisite for WECS monitoring and workload status aggregation.
+ITS serves as the entry point for cluster lifecycle operations, integrates with Binding Policies (BP) for label-driven selection, and is a prerequisite for WECs monitoring and workload status aggregation.
 
 ## Prerequisites
 - KubeStellar core installed and accessible
@@ -24,7 +24,7 @@ ITS serves as the entry point for cluster lifecycle operations, integrates with 
 - Cluster lifecycle: Discover → Import → Label → Monitor → Detach. ITS keeps status in sync and exposes per-cluster detail dialogs and logs.
 - Relationships:
   - BP: Labels in ITS drive cluster selectors in Binding Policies.
-  - WECS: Workloads monitored on clusters imported via ITS; health is visible across systems.
+  - WECs: Workloads monitored on clusters imported via ITS; health is visible across systems.
 - Key concepts:
   - Cluster contexts: Logical grouping (e.g., `its1`) associated with hub configuration.
   - Label-based organization: Key/value labels for flexible grouping and policy targeting.
@@ -257,10 +257,10 @@ Solutions:
 - Label suggestions from existing policies
 - Real-time policy status per cluster
 
-### Integration with WECS
+### Integration with WECs
 - Clusters must be imported in ITS first
-- WECS monitors workloads on ITS clusters
-- Status synced between ITS and WECS
+- WECs monitors workloads on ITS clusters
+- Status synced between ITS and WECs
 - Cluster context shared
 
 ### Integration with Dashboard
