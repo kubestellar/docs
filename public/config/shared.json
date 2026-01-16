@@ -1,4 +1,5 @@
 {
+  "surveyUrl": "https://forms.gle/Md2381TQ8CcjZv3LA",
   "versions": {
     "kubestellar": {
       "latest": {
@@ -138,10 +139,23 @@
         "isDev": true
       }
     },
+    "console": {
+      "latest": {
+        "label": "v0.1.0 (Latest)",
+        "branch": "docs/console/0.1.0",
+        "isDefault": true
+      },
+      "main": {
+        "label": "main (dev)",
+        "branch": "main",
+        "isDefault": false,
+        "isDev": true
+      }
+    },
     "klaude": {
       "latest": {
-        "label": "v0.6.0 (Latest)",
-        "branch": "docs/klaude/0.6.0",
+        "label": "v0.7.1 (Latest)",
+        "branch": "docs/klaude/0.7.1",
         "isDefault": true
       },
       "main": {
@@ -179,6 +193,11 @@
         "label": "v0.4.0",
         "branch": "docs/klaude/0.4.0",
         "isDefault": false
+      },
+      "0.6.0": {
+        "label": "v0.6.0",
+        "branch": "docs/klaude/0.6.0",
+        "isDefault": false
       }
     }
   },
@@ -206,7 +225,12 @@
     "klaude": {
       "name": "klaude",
       "basePath": "klaude",
-      "currentVersion": "0.6.0"
+      "currentVersion": "0.7.1"
+    },
+    "console": {
+      "name": "Console",
+      "basePath": "console",
+      "currentVersion": "0.1.0"
     }
   },
   "relatedProjects": [
@@ -234,6 +258,11 @@
       "title": "Multi Plugin",
       "href": "/docs/multi-plugin/overview/introduction",
       "description": "Multi-cluster kubectl plugin"
+    },
+    {
+      "title": "Console",
+      "href": "/docs/console/readme",
+      "description": "AI-powered multi-cluster dashboard"
     }
   ],
   "editBaseUrls": {
@@ -241,7 +270,8 @@
     "a2a": "https://github.com/kubestellar/a2a/edit/main/docs",
     "kubeflex": "https://github.com/kubestellar/kubeflex/edit/main/docs",
     "multi-plugin": "https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs",
-    "klaude": "https://github.com/kubestellar/klaude/edit/main/docs"
+    "klaude": "https://github.com/kubestellar/klaude/edit/main/docs",
+    "console": "https://github.com/kubestellar/docs/edit/main/docs/content/console"
   },
-  "updatedAt": "2026-01-15T15:43:14.944Z"
+  "updatedAt": "2026-01-16T02:38:36.598Z"
 }

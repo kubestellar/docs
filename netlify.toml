@@ -68,6 +68,14 @@
 [context."docs/kubeflex/0.7.0"]
   command = "npm run build"
 
+# CORS headers for shared config (allows branch deploys to fetch from production)
+[[headers]]
+  for = "/config/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
+
 # Forms configuration
 [forms]
   # Enable spam filtering
@@ -352,7 +360,7 @@
 
 [[redirects]]
   from = "/survey"
-  to = "https://forms.gle/WJ7N6ZVtp44D9NK79"
+  to = "https://forms.gle/Md2381TQ8CcjZv3LA"
   status = 301
   force = true
 

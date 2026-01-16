@@ -197,7 +197,7 @@ export default function MaintainerLadderPage() {
   return (
     <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
       <Navbar />
-      <PageActions position="fixed" />
+      <PageActions position="fixed" filePath="[locale]/ladder/page.tsx" docsPath="src/app/" />
 
       {/* Full page background with starfield */}
       <div className="fixed inset-0 z-0">

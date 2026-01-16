@@ -16,7 +16,7 @@ export const NETLIFY_SITE_NAME = "kubestellar-docs"
 export const PRODUCTION_URL = "https://kubestellar.io"
 
 // Project identifiers
-export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "klaude"
+export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "klaude" | "console"
 
 // Version info structure
 export interface VersionInfo {
@@ -186,8 +186,8 @@ const MULTI_PLUGIN_VERSIONS: Record<string, VersionInfo> = {
 // klaude versions (formerly kubectl-claude)
 const KLAUDE_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.6.0 (Latest)",
-    branch: "docs/klaude/0.6.0",
+    label: "v0.7.1 (Latest)",
+    branch: "docs/klaude/0.7.1",
     isDefault: true,
   },
   main: {
@@ -195,6 +195,11 @@ const KLAUDE_VERSIONS: Record<string, VersionInfo> = {
     branch: "main",
     isDefault: false,
     isDev: true,
+  },
+  "0.6.0": {
+    label: "v0.6.0",
+    branch: "docs/klaude/0.6.0",
+    isDefault: false,
   },
   "0.5.0": {
     label: "v0.5.0",
@@ -225,6 +230,21 @@ const KLAUDE_VERSIONS: Record<string, VersionInfo> = {
     label: "v0.4.0",
     branch: "docs/klaude/0.4.0",
     isDefault: false,
+  },
+}
+
+// console versions
+const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
+  latest: {
+    label: "v0.1.0 (Latest)",
+    branch: "docs/console/0.1.0",
+    isDefault: true,
+  },
+  main: {
+    label: "main (dev)",
+    branch: "main",
+    isDefault: false,
+    isDev: true,
   },
 }
 
@@ -266,9 +286,17 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "klaude",
     name: "klaude",
     basePath: "klaude",
-    currentVersion: "0.6.0",
+    currentVersion: "0.7.1",
     contentPath: "docs/content/klaude",
     versions: KLAUDE_VERSIONS,
+  },
+  "console": {
+    id: "console",
+    name: "Console",
+    basePath: "console",
+    currentVersion: "0.1.0",
+    contentPath: "docs/content/console",
+    versions: CONSOLE_VERSIONS,
   },
 }
 
@@ -285,6 +313,9 @@ export function getProjectFromPath(pathname: string): ProjectConfig {
   }
   if (pathname.startsWith("/docs/klaude") || pathname.startsWith("/docs/related-projects/klaude")) {
     return PROJECTS["klaude"]
+  }
+  if (pathname.startsWith("/docs/console")) {
+    return PROJECTS["console"]
   }
   return PROJECTS.kubestellar
 }

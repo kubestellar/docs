@@ -125,11 +125,31 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
   const handleVersionChange = (versionKey: string) => {
     setIsOpen(false);
 
-    // Get the URL for the selected version (project-aware)
-    const url = getVersionUrl(versionKey, pathname, projectId);
+    // Find the version info from our versions array (which uses shared config when available)
+    const version = versions.find(v => v.key === versionKey);
 
-    // Navigate to the new version
-    window.location.href = url;
+    if (!version) {
+      // Fallback to static config if version not found
+      window.location.href = getVersionUrl(versionKey, pathname, projectId);
+      return;
+    }
+
+    // If it has an external URL (like legacy), use that
+    if (version.externalUrl) {
+      window.location.href = version.externalUrl;
+      return;
+    }
+
+    // Latest/default version uses production URL
+    if (versionKey === 'latest' || version.isDefault) {
+      window.location.href = `https://kubestellar.io${pathname}`;
+      return;
+    }
+
+    // Other versions use Netlify branch deploys
+    // Netlify converts branch names: docs/klaude/0.5.0 -> docs-klaude-0-5-0
+    const branchSlug = version.branch.replace(/\//g, '-').replace(/\./g, '-');
+    window.location.href = `https://${branchSlug}--kubestellar-docs.netlify.app${pathname}`;
   };
 
   if (isMobile) {
