@@ -50,7 +50,6 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   // Stable layout values - only recalculate on resize or banner change
   const [layoutValues, setLayoutValues] = useState({ top: '4rem', height: 'calc(100vh - 4rem)' });
 
-
   const calculateOffsets = () => {
     const navbar = document.querySelector('.nextra-nav-container') as HTMLElement | null;
     if (!navbar) return;
