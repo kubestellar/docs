@@ -891,5 +891,11 @@
       "gitops": "GitOps",
       "costManagement": "成本管理"
     }
+  },
+  "notFound": {
+    "title": "找不到頁面",
+    "description": "抱歉，您正在尋找的頁面不存在。",
+    "homeButton": "返回首頁",
+    "docsButton": "查看文件"
   }
 }
