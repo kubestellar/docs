@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export default function NotFoundUI() {
-	const t = useTranslations("notFound");
+  const t = useTranslations("notFound");
 
   return (
     <section className="px-4 py-32 sm:px-6 lg:px-8 min-h-screen flex flex-col items-center justify-center">
