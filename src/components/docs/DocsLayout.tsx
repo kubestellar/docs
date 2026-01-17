@@ -8,6 +8,7 @@ import { MobileHeader } from './MobileSidebarToggle';
 import { EditPageLink } from './EditPageLink';
 import { useDocsMenu } from './DocsProvider';
 import type { ProjectId } from '@/config/versions';
+import { DocsSourceActions } from '@/components/docs/DocsSourceActions';
 
 interface TOCItem {
   id: string;
@@ -71,7 +72,11 @@ export function DocsLayout({ children, pageMap, toc, metadata, filePath, project
             {/* Edit page icon - top right */}
             {filePath && projectId && (
               <div className="shrink-0 ml-2">
-                <EditPageLink filePath={filePath} projectId={projectId} variant="icon" />
+                <DocsSourceActions
+                  filePath={filePath}
+                  projectId={projectId}
+                  pageTitle={metadata?.title ?? 'Documentation'}
+                />
               </div>
             )}
           </div>

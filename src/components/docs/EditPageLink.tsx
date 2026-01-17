@@ -33,19 +33,32 @@ function isValidGitHubEditUrl(url: string): boolean {
   }
 }
 
+//refactoring helper function to build the GitHub edit URL
+export function buildGitHubEditUrl(
+  filePath: string,
+  projectId: ProjectId,
+  editBaseUrls?: Record<string, string>
+): string | null {
+  const baseUrl =
+    editBaseUrls?.[projectId] ?? STATIC_EDIT_BASE_URLS[projectId];
+
+  if (!baseUrl) return null;
+
+  const sanitizedFilePath = filePath.replace(/\.\./g, "").replace(/^\/+/, "");
+  return `${baseUrl}/${sanitizedFilePath}`;
+}
+
 export function EditPageLink({ filePath, projectId, variant = 'full' }: EditPageLinkProps) {
   const { config } = useSharedConfig();
 
-  // Get edit base URL from config or fallback
-  const editBaseUrl = config?.editBaseUrls?.[projectId] ?? STATIC_EDIT_BASE_URLS[projectId];
+  const editUrl = buildGitHubEditUrl(
+    filePath,
+    projectId,
+    config?.editBaseUrls
+  );
 
-  if (!editBaseUrl) return null;
+  if (!editUrl) return null;
 
-  // Sanitize filePath to prevent path traversal
-  const sanitizedFilePath = filePath.replace(/\.\./g, '').replace(/^\/+/, '');
-
-  // Construct the full edit URL
-  const editUrl = `${editBaseUrl}/${sanitizedFilePath}`;
 
   // Validate URL before rendering to prevent XSS
   if (!isValidGitHubEditUrl(editUrl)) return null;
