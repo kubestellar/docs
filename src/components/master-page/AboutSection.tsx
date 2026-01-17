@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { GridLines, StarField } from "../index";
 import { useTranslations } from "next-intl";
+import { DocsSourceActions } from "@/components/docs/DocsSourceActions";
 import Link from "next/link";
 
 export default function AboutSection() {
@@ -175,6 +176,13 @@ export default function AboutSection() {
                     </svg>
                   </div>
                 </Link>
+                <div className="mt-4 pt-3 border-t border-gray-700/40">
+                  <DocsSourceActions
+                    filePath="docs/architecture/overview.md"
+                    projectId="kubestellar"
+                    pageTitle={t("card1Title")}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -231,6 +239,13 @@ export default function AboutSection() {
                     </svg>
                   </div>
                 </Link>
+                <div className="mt-4 pt-3 border-t border-gray-700/40">
+                  <DocsSourceActions
+                    filePath="docs/concepts/binding.md"
+                    projectId="kubestellar"
+                    pageTitle={t("card2Title")}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -287,6 +302,13 @@ export default function AboutSection() {
                     </svg>
                   </div>
                 </Link>
+                <div className="mt-4 pt-3 border-t border-gray-700/40">
+                  <DocsSourceActions
+                    filePath="docs/concepts/control.md"
+                    projectId="kubestellar"
+                    pageTitle={t("card3Title")}
+                  />
+                </div>
               </div>
             </div>
           </div>
