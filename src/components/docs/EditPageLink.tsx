@@ -1,9 +1,17 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { useSharedConfig, getVersionsForProject, VersionInfo } from '@/hooks/useSharedConfig';
-import { getProjectVersions as getStaticProjectVersions } from '@/config/versions';
+import { useState } from 'react';
+import { useSharedConfig, VersionInfo } from '@/hooks/useSharedConfig';
 import type { ProjectId } from '@/config/versions';
+
+const STATIC_EDIT_BASE_URLS: Record<ProjectId, string> = {
+  kubestellar: 'https://github.com/kubestellar/docs/edit/main/docs/content',
+  a2a: 'https://github.com/kubestellar/a2a/edit/main/docs',
+  kubeflex: 'https://github.com/kubestellar/kubeflex/edit/main/docs',
+  'multi-plugin': 'https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs',
+  klaude: 'https://github.com/kubestellar/klaude/edit/main/docs',
+  console: 'https://github.com/kubestellar/console/edit/main/docs',
+};
 
 interface EditPageLinkProps {
   filePath: string;
@@ -111,31 +119,33 @@ function isValidGitHubEditUrl(url: string): boolean {
   }
 }
 
+//refactoring helper function to build the GitHub edit URL
+export function buildGitHubEditUrl(
+  filePath: string,
+  projectId: ProjectId,
+  editBaseUrls?: Record<string, string>
+): string | null {
+  const baseUrl =
+    editBaseUrls?.[projectId] ?? STATIC_EDIT_BASE_URLS[projectId];
+
+  if (!baseUrl) return null;
+
+  const sanitizedFilePath = filePath.replace(/\.\./g, "").replace(/^\/+/, "");
+  return `${baseUrl}/${sanitizedFilePath}`;
+}
+
 export function EditPageLink({ filePath, projectId, variant = 'full' }: EditPageLinkProps) {
   const { config } = useSharedConfig();
   const [currentBranch, setCurrentBranch] = useState<string>('main');
 
-  // Get versions to detect current branch
-  const versions = config
-    ? getVersionsForProject(config, projectId)
-    : getStaticProjectVersions(projectId);
+  const editUrl = buildGitHubEditUrl(
+    filePath,
+    projectId,
+    config?.editBaseUrls
+  );
 
-  // Detect current branch from hostname on client-side mount
-  useEffect(() => {
-    const detected = detectCurrentBranch(versions);
-    setCurrentBranch(detected);
-  }, [versions]);
+  if (!editUrl) return null;
 
-  // Build edit URL with correct branch
-  const editBaseUrl = buildEditBaseUrl(projectId, currentBranch);
-
-  if (!editBaseUrl) return null;
-
-  // Sanitize filePath to prevent path traversal
-  const sanitizedFilePath = filePath.replace(/\.\./g, '').replace(/^\/+/, '');
-
-  // Construct the full edit URL
-  const editUrl = `${editBaseUrl}/${sanitizedFilePath}`;
 
   // Validate URL before rendering to prevent XSS
   if (!isValidGitHubEditUrl(editUrl)) return null;
