@@ -981,5 +981,11 @@
   "metadata": {
     "title": "KubeStellar - Multi-Cluster Kubernetes Orchestration",
     "description": "Simplify multi-cluster Kubernetes operations with intelligent workload distribution, unified management, and seamless orchestration across any infrastructure."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist.",
+    "homeButton": "Return Home",
+    "docsButton": "View Documentation"
   }
 }

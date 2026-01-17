@@ -901,5 +901,11 @@
       "gitops": "GitOps",
       "costManagement": "Gestión de costos"
     }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "Lo sentimos, la página que estás buscando no existe.",
+    "homeButton": "Volver al inicio",
+    "docsButton": "Ver documentación"
   }
 }

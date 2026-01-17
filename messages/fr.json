@@ -844,5 +844,11 @@
       "gitops": "GitOps",
       "costManagement": "Gestion des Coûts"
     }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "Désolé, la page que vous recherchez n'existe pas.",
+    "homeButton": "Retour à l'accueil",
+    "docsButton": "Voir la documentation"
   }
 }
