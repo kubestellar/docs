@@ -5,7 +5,6 @@ import { DocsSidebar } from './DocsSidebar';
 import { TableOfContents } from './TableOfContents';
 import { MobileTOC } from './MobileTOC';
 import { MobileHeader } from './MobileSidebarToggle';
-import { EditPageLink } from './EditPageLink';
 import { useDocsMenu } from './DocsProvider';
 import type { ProjectId } from '@/config/versions';
 import { DocsSourceActions } from '@/components/docs/DocsSourceActions';
