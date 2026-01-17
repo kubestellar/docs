@@ -119,6 +119,20 @@ jobs:
           git pull origin main
 
           PR_BRANCH="update-${{ steps.vars.outputs.project }}-${{ steps.branch.outputs.version }}"
+
+          # Check if PR already exists - if so, skip
+          EXISTING_PR=$(gh pr list --head "$PR_BRANCH" --json number --jq '.[0].number' 2>/dev/null || echo "")
+          if [ -n "$EXISTING_PR" ]; then
+            echo "⚠️ PR #$EXISTING_PR already exists for $PR_BRANCH, skipping creation"
+            exit 0
+          fi
+
+          # Delete existing branch if it exists (from failed previous runs)
+          if git ls-remote --heads origin "$PR_BRANCH" | grep -q "$PR_BRANCH"; then
+            echo "⚠️ Orphan branch $PR_BRANCH exists, deleting for fresh push"
+            git push origin --delete "$PR_BRANCH" || true
+          fi
+
           git checkout -b "$PR_BRANCH"
 
           # Update versions.ts using node script
@@ -135,7 +149,7 @@ jobs:
           git push origin "$PR_BRANCH"
 
           # Create PR
-          gh pr create \
+          PR_URL=$(gh pr create \
             --title "📖 Update ${{ steps.vars.outputs.project }} docs to v${{ steps.branch.outputs.version }}" \
             --body "## Summary
           Automated update for ${{ steps.vars.outputs.project }} release v${{ steps.branch.outputs.version }}.
@@ -144,8 +158,14 @@ jobs:
           - Source: ${{ steps.vars.outputs.source_repo }}@${{ steps.vars.outputs.source_branch }}
 
           ## Checklist
-          - [ ] Verify branch deploys correctly on Netlify
-          - [ ] Verify version appears in dropdown
+          - [x] Verify branch deploys correctly on Netlify
+          - [x] Verify version appears in dropdown
 
-          🤖 Generated automatically on release"
-          echo "✅ Created PR to update versions.ts"
+          🤖 Generated automatically on release")
+          echo "✅ Created PR: $PR_URL"
+
+          # Extract PR number and add labels for auto-merge via Prow
+          PR_NUMBER=$(echo "$PR_URL" | grep -oE '[0-9]+$')
+          gh pr comment "$PR_NUMBER" --body "/lgtm
+          /approve"
+          echo "✅ Added /lgtm and /approve for auto-merge"

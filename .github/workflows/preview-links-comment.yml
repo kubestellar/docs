@@ -32,13 +32,30 @@ jobs:
           echo "PR number: $PR_NUMBER"
 
       - name: Wait for Netlify deploy
-        uses: jakepartusch/wait-for-netlify-action@f1e137043864b9ab9034ae3a5adc1c108e3f1a48  # v1.4
         id: netlify
-        with:
-          site_name: kubestellar-docs
-          max_timeout: 300
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+        run: |
+          PREVIEW_URL="https://deploy-preview-${PR_NUMBER}--kubestellar-docs.netlify.app"
+          echo "Waiting for: $PREVIEW_URL"
+
+          MAX_ATTEMPTS=150  # 5 minutes (2s intervals)
+          ATTEMPT=0
+
+          while [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
+            STATUS=$(curl -sL -o /dev/null -w "%{http_code}" "$PREVIEW_URL" || echo "000")
+            if [ "$STATUS" = "200" ] || [ "$STATUS" = "307" ] || [ "$STATUS" = "301" ] || [ "$STATUS" = "302" ]; then
+              echo "Preview is ready!"
+              echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+            echo "Attempt $ATTEMPT: Status $STATUS, retrying..."
+            ATTEMPT=$((ATTEMPT + 1))
+            sleep 2
+          done
+
+          echo "Timeout waiting for preview, continuing anyway..."
+          echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
 
       - name: Get changed files and post comment
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea  # v7.0.1
