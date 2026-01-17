@@ -1,6 +1,5 @@
 import { getRequestConfig } from "next-intl/server";
 import { locales, type Locale, defaultLocale } from "./settings";
-import { notFound } from "next/navigation";
 
 const isLocale = (val: string): val is Locale =>
   (locales as readonly string[]).includes(val);
