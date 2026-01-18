@@ -44,12 +44,12 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
   const clusters = useMemo(
     () => [
       {
-        name: "KubeFlex Core",
-        position: [0, 3, 0] as [number, number, number],
-        nodeCount: 6,
-        radius: 0.8,
-        color: COLORS.primary,
-        description: "KubeFlex control plane managing multi-cluster operations",
+        name: "Multi-Cloud Hub",
+        position: [2.5, 1.5, -1.5] as [number, number, number],
+        nodeCount: 4,
+        radius: 0.6,
+        color: COLORS.accent1,
+        description: "Cross-cloud orchestration and management",
       },
       {
         name: "Edge Clusters",
@@ -74,14 +74,6 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
         radius: 0.9,
         color: COLORS.accent2,
         description: "Development and testing environments",
-      },
-      {
-        name: "Multi-Cloud Hub",
-        position: [2, 2, -2] as [number, number, number],
-        nodeCount: 4,
-        radius: 0.6,
-        color: COLORS.accent1,
-        description: "Cross-cloud orchestration and management",
       },
     ],
     []
@@ -279,32 +271,44 @@ const NetworkGlobe = ({ isLoaded = true }: NetworkGlobeProps) => {
 
       {/* Grid lines for the globe */}
       <group ref={gridLinesRef} rotation={[0, 0, 0]}>
-        {Array.from({ length: 8 }).map((_, idx) => (
+        {/* Longitudinal lines (Meridians) - rotating around Y axis */}
+        {Array.from({ length: 12 }).map((_, idx) => (
           <Torus
-            key={idx}
+            key={`long-${idx}`}
             args={[3.5, 0.01, 16, 100]}
-            rotation={[0, 0, (Math.PI * idx) / 8]}
+            rotation={[0, (Math.PI * idx) / 6, 0]}
           >
             <meshBasicMaterial
               color={COLORS.primary}
               transparent
-              opacity={0.18 * animationProgress} // Increased from 0.1 to 0.18
+              opacity={0.15 * animationProgress}
             />
           </Torus>
         ))}
-        {Array.from({ length: 8 }).map((_, idx) => (
-          <Torus
-            key={idx + 8}
-            args={[3.5, 0.01, 16, 100]}
-            rotation={[Math.PI / 2, (Math.PI * idx) / 8, 0]}
-          >
-            <meshBasicMaterial
-              color={COLORS.primary}
-              transparent
-              opacity={0.18 * animationProgress} // Increased from 0.1 to 0.18
-            />
-          </Torus>
-        ))}
+
+        {/* Latitudinal lines (Parallels) - stacked along Y axis */}
+        {Array.from({ length: 8 }).map((_, idx) => {
+          // Calculate radius for each latitude ring: R * cos(theta)
+          // angle goes from -PI/2 to PI/2 approx
+          const angle = -Math.PI / 2 + (Math.PI * (idx + 1)) / 9;
+          const radius = 3.5 * Math.cos(angle);
+          const yPos = 3.5 * Math.sin(angle);
+
+          return (
+            <Torus
+              key={`lat-${idx}`}
+              args={[radius, 0.01, 16, 100]}
+              rotation={[Math.PI / 2, 0, 0]}
+              position={[0, yPos, 0]}
+            >
+              <meshBasicMaterial
+                color={COLORS.primary}
+                transparent
+                opacity={0.15 * animationProgress}
+              />
+            </Torus>
+          );
+        })}
       </group>
 
       {/* Central KubeStellar control plane */}
