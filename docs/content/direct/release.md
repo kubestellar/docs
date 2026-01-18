@@ -150,6 +150,22 @@ We aim to keep the documents viewable both through the website and GitHub's web 
 
 We create a release in the GitHub pages for every release. A patch release is a release. A test release is a release. Creating that GitHub pages release is done by creating a git branch named `release-$version`.
 
+#### Automated documentation updates from component releases
+
+Some KubeStellar-related component repositories (for example,
+`kubectl-multi-plugin`) automatically trigger documentation updates
+when a new release is published.
+
+When such a release is created:
+- A GitHub Actions workflow in the component repository runs
+- That workflow triggers a workflow in the documentation repository
+- A documentation version branch may be created or updated
+- A pull request may be opened to update the list of available versions
+
+This automation ensures that published documentation stays aligned
+with released components and reduces the need for manual documentation
+updates during the release process.
+
 ## Future Process Development
 
 We intend to get rid of the self-reference in the KCM PCH, as follows. Define a Helm chart for installing the PCH. Update the release workflow to specialize that Helm chart, similarly to the specialization done for the KCM Helm chart.
