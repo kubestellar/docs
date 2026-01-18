@@ -53,22 +53,42 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const calculateOffsets = () => {
     const navbar = document.querySelector('.nextra-nav-container') as HTMLElement | null;
     if (!navbar) return;
+
     const navbarBottomY = navbar.getBoundingClientRect().bottom;
+
     setLayoutValues({
       top: `${navbarBottomY}px`,
       height: `calc(100vh - ${navbarBottomY}px)`
     });
   };
 
+
   useEffect(() => {
-    // Wait for layout (banner + navbar) to fully render
-    const t = setTimeout(calculateOffsets, 500);
+    let ticking = false;
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          calculateOffsets();
+          ticking = false;
+        });
+      }
+    };
+
+    const t = setTimeout(calculateOffsets, 300);
+
     window.addEventListener('resize', calculateOffsets);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
     return () => {
       clearTimeout(t);
       window.removeEventListener('resize', calculateOffsets);
+      window.removeEventListener('scroll', onScroll);
     };
-}, [bannerDismissed]);
+  }, [bannerDismissed]);
+
+
 
   // Store initial pathname for initialization
   const initialPathnameRef = useRef(pathname);
