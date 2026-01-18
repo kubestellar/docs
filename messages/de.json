@@ -902,11 +902,5 @@
       "gitops": "GitOps",
       "costManagement": "Kostenmanagement"
     }
-  },
-  "notFound": {
-    "title": "Seite nicht gefunden",
-    "description": "Entschuldigung, die von Ihnen gesuchte Seite existiert nicht.",
-    "homeButton": "Zur Startseite",
-    "docsButton": "Dokumentation ansehen"
   }
 }
