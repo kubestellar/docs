@@ -1,9 +1,4 @@
-import { 
-  Footer, 
-  GridLines, 
-  Navbar, 
-  StarField 
-} from "@/components";
+import { Footer, GridLines, Navbar, StarField } from "@/components";
 import NotFoundUI from "@/components/NotFoundUI";
 
 export default function LocaleNotFound() {
@@ -16,7 +11,9 @@ export default function LocaleNotFound() {
 
       <div className="relative z-10">
         <Navbar />
-        <NotFoundUI />
+        <div className="flex justify-center items-center min-h-screen">
+          <NotFoundUI />
+        </div>
         <Footer />
       </div>
     </div>

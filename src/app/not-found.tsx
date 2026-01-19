@@ -17,7 +17,9 @@ export default async function NotFound() {
 
         <div className="relative z-10">
           <Navbar />
-          <NotFoundUI />
+          <div className="flex justify-center items-center min-h-screen">
+            <NotFoundUI />
+          </div>
           <Footer />
         </div>
       </div>
