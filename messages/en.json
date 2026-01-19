@@ -983,7 +983,6 @@
     "description": "Simplify multi-cluster Kubernetes operations with intelligent workload distribution, unified management, and seamless orchestration across any infrastructure."
   },
   "notFound": {
-    "title": "Page Not Found",
     "description": "Sorry, the page you are looking for does not exist.",
     "message": "We couldn't find the page you're looking for, but you can explore our documentation or return to the homepage to get back on track.",
     "homeButton": "Return Home",
