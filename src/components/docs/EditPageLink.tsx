@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from 'react';
-import { useSharedConfig, VersionInfo } from '@/hooks/useSharedConfig';
+import { useSharedConfig } from '@/hooks/useSharedConfig';
 import type { ProjectId } from '@/config/versions';
 
 const STATIC_EDIT_BASE_URLS: Record<ProjectId, string> = {
@@ -17,91 +16,6 @@ interface EditPageLinkProps {
   filePath: string;
   projectId: ProjectId;
   variant?: 'full' | 'icon';
-}
-
-// Version entry with key from the versions config
-type VersionEntry = { key: string } & VersionInfo;
-
-// Convert branch name to Netlify slug format (e.g., docs/0.29.0 -> docs-0-29-0)
-function branchToSlug(branch: string): string {
-  return branch.replace(/\//g, '-').replace(/\./g, '-');
-}
-
-// Detect current branch from hostname (for kubestellar docs repo)
-function detectCurrentBranch(versions: VersionEntry[]): string {
-  if (typeof window === 'undefined') return 'main';
-
-  const hostname = window.location.hostname;
-
-  // Production site uses the "latest" version's branch
-  if (hostname === 'kubestellar.io' || hostname === 'www.kubestellar.io') {
-    const latestVersion = versions.find(v => v.key === 'latest');
-    return latestVersion?.branch || 'main';
-  }
-
-  // Netlify branch deploys: {branch-slug}--{site-name}.netlify.app
-  const branchDeployMatch = hostname.match(/^(.+)--[\w-]+\.netlify\.app$/);
-  if (branchDeployMatch) {
-    const branchSlug = branchDeployMatch[1];
-
-    // Main branch deploy
-    if (branchSlug === 'main') {
-      return 'main';
-    }
-
-    // Deploy previews go to main
-    if (branchSlug.startsWith('deploy-preview-')) {
-      return 'main';
-    }
-
-    // Match branch slug to version branch (e.g., docs-0-29-0 -> docs/0.29.0)
-    for (const version of versions) {
-      if (branchSlug === branchToSlug(version.branch)) {
-        return version.branch;
-      }
-    }
-  }
-
-  return 'main';
-}
-
-// Source repos for each project (used when on main branch)
-// Projects not listed here have their docs in the docs repo itself
-const SOURCE_REPOS: Record<string, { repo: string; docsPath: string }> = {
-  a2a: { repo: 'kubestellar/a2a', docsPath: 'docs' },
-  kubeflex: { repo: 'kubestellar/kubeflex', docsPath: 'docs' },
-  'multi-plugin': { repo: 'kubestellar/kubectl-multi-plugin', docsPath: 'docs' },
-  'kubestellar-mcp': { repo: 'kubestellar/kubestellar-mcp', docsPath: 'docs' },
-};
-
-// Projects whose docs live in the docs repo itself (not a separate source repo)
-const DOCS_REPO_PROJECTS = ['console'];
-
-// Build edit URL for a project, using correct branch
-function buildEditBaseUrl(projectId: ProjectId, branch: string): string {
-  // KubeStellar docs always live in docs repo
-  if (projectId === 'kubestellar') {
-    return `https://github.com/kubestellar/docs/edit/${branch}/docs/content`;
-  }
-
-  // Projects whose docs live in the docs repo itself (e.g., console)
-  if (DOCS_REPO_PROJECTS.includes(projectId)) {
-    return `https://github.com/kubestellar/docs/edit/${branch}/docs/content/${projectId}`;
-  }
-
-  // For other projects: version branches are in docs repo, main goes to source repo
-  if (branch !== 'main' && branch.startsWith('docs/')) {
-    // Version branch in docs repo (e.g., docs/kubestellar-mcp/0.6.0)
-    return `https://github.com/kubestellar/docs/edit/${branch}/docs/content/${projectId}`;
-  }
-
-  // Main branch - link to source repo
-  const source = SOURCE_REPOS[projectId];
-  if (source) {
-    return `https://github.com/${source.repo}/edit/main/${source.docsPath}`;
-  }
-
-  return '';
 }
 
 // Validate that URL is a safe GitHub edit URL to prevent XSS
@@ -136,7 +50,6 @@ export function buildGitHubEditUrl(
 
 export function EditPageLink({ filePath, projectId, variant = 'full' }: EditPageLinkProps) {
   const { config } = useSharedConfig();
-  const [currentBranch, setCurrentBranch] = useState<string>('main');
 
   const editUrl = buildGitHubEditUrl(
     filePath,
