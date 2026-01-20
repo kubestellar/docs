@@ -3,20 +3,14 @@
 import { useSharedConfig } from "@/hooks/useSharedConfig";
 import type { ProjectId } from "@/config/versions";
 
-/* ------------------------------------------------------------------
-   Static edit base URLs (fallback if shared config unavailable)
-------------------------------------------------------------------- */
 const STATIC_EDIT_BASE_URLS: Record<ProjectId, string> = {
   kubestellar: "https://github.com/kubestellar/docs/edit/main/docs/content",
   a2a: "https://github.com/kubestellar/a2a/edit/main/docs",
   kubeflex: "https://github.com/kubestellar/kubeflex/edit/main/docs",
   "multi-plugin": "https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs",
-  "kubectl-claude": "https://github.com/kubestellar/kubectl-claude/edit/main/docs",
+  klaude: "https://github.com/kubestellar/kubectl-claude/edit/main/docs",
+  console: 'https://github.com/kubestellar/console/edit/main/docs',
 };
-
-/* ------------------------------------------------------------------
-   Helpers (kept LOCAL to this file as requested)
-------------------------------------------------------------------- */
 
 // Prevent path traversal
 function sanitizeFilePath(filePath: string): string {
@@ -37,7 +31,7 @@ function buildGitHubEditUrl(
   return `${baseUrl}/${sanitizeFilePath(filePath)}?fork=true`;
 }
 
-// Validate GitHub edit URL (XSS protection)
+// Validate GitHub edit URL
 function isValidGitHubEditUrl(url: string): boolean {
   try {
     const parsed = new URL(url);
@@ -51,7 +45,7 @@ function isValidGitHubEditUrl(url: string): boolean {
   }
 }
 
-// Convert edit → blob (remove fork param)
+// Convert edit → blob 
 function buildSourceUrl(editUrl: string): string {
   const url = new URL(editUrl);
   url.search = "";
@@ -65,10 +59,6 @@ function buildIssueUrl(pageTitle: string, sourceUrl: string): string {
     `Docs: ${pageTitle}`
   )}&body=${encodeURIComponent(`Source file:\n${sourceUrl}`)}`;
 }
-
-/* ------------------------------------------------------------------
-   Component
-------------------------------------------------------------------- */
 
 type DocsSourceActionsProps = {
   filePath: string;
@@ -103,10 +93,6 @@ export function DocsSourceActions({
     </div>
   );
 }
-
-/* ------------------------------------------------------------------
-   Small shared button
-------------------------------------------------------------------- */
 
 function ActionLink({
   href,
