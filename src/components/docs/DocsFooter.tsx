@@ -474,7 +474,7 @@ export default function Footer() {
             <p className={`text-xs sm:text-sm text-center md:text-left order-2 md:order-1 ${
               isDark ? 'text-gray-400' : 'text-gray-600'
             }`}>
-              © 2025 KubeStellar. All rights reserved. Apache 2.0 Licence
+              © {new Date().getFullYear()} KubeStellar. All rights reserved. Apache 2.0 Licence
             </p>
 
             {/* Right side - policy links */}
