@@ -23,7 +23,7 @@ KubeStellar Klaude Console (kkc) is like a smart control room for all your Kuber
 
 ## Why is it special?
 
-This is one of the first projects where **AI helps maintain itself**. When you report a bug or request a feature:
+This is of the first AI-driven projects where **the AI helps maintain and update the project itself** when you report a bug or request a feature:
 
 1. You describe what you want
 2. AI reviews it and creates a fix
