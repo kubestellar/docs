@@ -237,6 +237,6 @@ When you hit the warning threshold, you'll see a notification. At the critical t
 ### Data Handling
 
 - AI analysis happens through Anthropic's API
-- Your data is not used to train AI models
+- According to Anthropic's data usage policy, data sent via their API is not used to train Anthropic models by default. For details, see [Anthropic's privacy and data usage documentation](https://www.anthropic.com/legal/privacy).
 - Conversations are stored locally
 - You can delete mission history anytime
