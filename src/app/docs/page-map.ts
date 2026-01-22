@@ -18,6 +18,8 @@ export function getContentPath(projectId: ProjectId): string {
       return path.join(process.cwd(), 'docs', 'content', 'multi-plugin')
     case 'klaude':
       return path.join(process.cwd(), 'docs', 'content', 'klaude')
+    case 'console':
+      return path.join(process.cwd(), 'docs', 'content', 'console')
     default:
       return docsContentPath
   }
@@ -34,6 +36,8 @@ export function getBasePath(projectId: ProjectId): string {
       return 'docs/multi-plugin'
     case 'klaude':
       return 'docs/klaude'
+    case 'console':
+      return 'docs/console'
     default:
       return 'docs'
   }
@@ -179,6 +183,31 @@ const NAV_STRUCTURE_KLAUDE: Array<{ title: string; items: NavItem[] }> = [
     title: 'Overview',
     items: [
       { 'Introduction': 'overview/intro.md' },
+    ]
+  }
+]
+
+// Console Navigation Structure
+const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
+  {
+    title: 'Overview',
+    items: [
+      { 'Introduction': 'readme.md' },
+      { 'Quick Start': 'quickstart.md' },
+      { 'Installation': 'installation.md' },
+      { 'Architecture': 'architecture.md' },
+      { 'Configuration': 'configuration.md' },
+    ]
+  },
+  {
+    title: 'Features',
+    items: [
+      { 'Dashboards': 'dashboards.md' },
+      { 'Cards': 'all-cards.md' },
+      { 'Stats Blocks': 'stats-blocks.md' },
+      { 'AI Features': 'ai-features.md' },
+      { 'Alerts': 'alerts.md' },
+      { 'Feedback System': 'feedback.md' },
     ]
   }
 ]
@@ -332,6 +361,8 @@ function getNavStructure(projectId: ProjectId): Array<{ title: string; items: Na
       return NAV_STRUCTURE_MULTI_PLUGIN
     case 'klaude':
       return NAV_STRUCTURE_KLAUDE
+    case 'console':
+      return NAV_STRUCTURE_CONSOLE
     default:
       return NAV_STRUCTURE
   }
