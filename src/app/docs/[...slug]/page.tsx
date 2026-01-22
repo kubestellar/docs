@@ -17,6 +17,7 @@ function getProjectFromSlug(slug: string[]): ProjectId {
     if (slug[0] === 'kubeflex') return 'kubeflex'
     if (slug[0] === 'multi-plugin') return 'multi-plugin'
     if (slug[0] === 'klaude') return 'klaude'
+    if (slug[0] === 'console') return 'console'
   }
   return 'kubestellar'
 }
@@ -515,6 +516,14 @@ export async function generateStaticParams() {
   for (const route of Object.keys(klaudeMap.routeMap)) {
     if (route !== '') {
       allParams.push({ slug: ['klaude', ...route.split('/')] })
+    }
+  }
+
+  // Console routes (prefixed with 'console')
+  const consoleMap = buildPageMap('console')
+  for (const route of Object.keys(consoleMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['console', ...route.split('/')] })
     }
   }
 
