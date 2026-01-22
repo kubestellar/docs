@@ -119,6 +119,10 @@ The bug-to-squash workflow:
 
 ## How to Get Started
 
+### Try the Preview (No Installation)
+
+See it running at [kubestellarklaudeconsole.netlify.app](https://kubestellarklaudeconsole.netlify.app)
+
 ### Run Locally (5 minutes)
 
 ```bash
@@ -131,6 +135,8 @@ cd console
 ```
 
 Open http://localhost:5174 and sign in with GitHub.
+
+> **Note**: You'll need klaude plugins installed. See [Installation](installation.md) for the full setup with all 6 components.
 
 ### Run in Kubernetes
 

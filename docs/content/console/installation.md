@@ -10,32 +10,136 @@ description: >
 
 This guide covers all deployment options for KubeStellar Klaude Console.
 
-## Prerequisites
+> **Try it first!** See a live preview at [kubestellarklaudeconsole.netlify.app](https://kubestellarklaudeconsole.netlify.app)
 
-- Kubernetes cluster (1.24+)
-- Helm 3.x
-- kubectl configured with cluster access
-- GitHub OAuth App credentials (see [GitHub OAuth Setup](#github-oauth-setup))
-- [Claude Code](https://claude.ai/claude-code) CLI installed (for local development)
-- Klaude plugins from the [Claude Code Marketplace](https://marketplace.claude.ai) (source: [claude-plugins](https://github.com/kubestellar/claude-plugins)):
-  - `klaude-ops` - Kubernetes operations tools
-  - `klaude-deploy` - Multi-cluster deployment tools
+---
 
-## Quick Start - Plugin Installation
+## System Components
 
-**Option 1: Install from Claude Code Marketplace (recommended)**
+KubeStellar Klaude Console has **6 components** that work together:
 
-```bash
-claude plugins install klaude-ops
-claude plugins install klaude-deploy
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                           YOUR SETUP                                             │
+│                                                                                  │
+│  ┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐   │
+│  │  1. GitHub  │     │ 2. Frontend │     │ 3. Backend  │     │  4. Agent   │   │
+│  │   OAuth App │     │  (React UI) │     │    (Go)     │     │ (MCP Bridge)│   │
+│  │             │────▶│             │◀───▶│             │────▶│             │   │
+│  │  Login with │     │ Dashboard,  │     │ API server, │     │ Talks to    │   │
+│  │   GitHub    │     │ cards, AI   │     │ auth, data  │     │ clusters    │   │
+│  └─────────────┘     └─────────────┘     └─────────────┘     └──────┬──────┘   │
+│                                                                      │          │
+│  ┌─────────────────────────────────────────────────────────────────┐│          │
+│  │                    5. Claude Code Plugins                        ││          │
+│  │  ┌──────────────────────┐     ┌──────────────────────┐         ││          │
+│  │  │    klaude-ops        │     │    klaude-deploy     │         ││          │
+│  │  │  - List clusters     │     │  - Deploy apps       │         ││          │
+│  │  │  - Find pod issues   │     │  - GitOps sync       │         ││          │
+│  │  │  - Check security    │     │  - Scale apps        │         ││          │
+│  │  │  - Analyze RBAC      │     │  - Check drift       │         ││          │
+│  │  └──────────────────────┘     └──────────────────────┘         ││          │
+│  └─────────────────────────────────────────────────────────────────┘│          │
+│                                                                      │          │
+│  ┌───────────────────────────────────────────────────────────────────▼────────┐│
+│  │                           6. Kubeconfig                                    ││
+│  │     ~/.kube/config with access to your clusters                            ││
+│  │     [cluster-1]    [cluster-2]    [cluster-3]    [cluster-n]              ││
+│  └────────────────────────────────────────────────────────────────────────────┘│
+└─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-**Option 2: Install via Homebrew** (source: [homebrew-tap](https://github.com/kubestellar/homebrew-tap))
+### Component Summary
+
+| # | Component | What it does | Where to get it |
+|---|-----------|--------------|-----------------|
+| 1 | **GitHub OAuth App** | Lets users sign in with GitHub | [GitHub Developer Settings](https://github.com/settings/developers) |
+| 2 | **Frontend** | React web app you see in browser | Bundled in console image |
+| 3 | **Backend** | Go server that handles API calls | Bundled in console image |
+| 4 | **Agent (MCP Bridge)** | Connects backend to your clusters | Bundled in console image |
+| 5 | **Claude Code Plugins** | klaude-ops + klaude-deploy tools | [Claude Marketplace](#step-1-install-claude-code-plugins) or Homebrew |
+| 6 | **Kubeconfig** | Your cluster credentials | Your existing `~/.kube/config` |
+
+---
+
+## Installation Steps
+
+### Step 1: Install Claude Code Plugins
+
+The console uses klaude plugins to talk to your clusters. See the full [klaude documentation](/docs/klaude/overview/introduction) for details.
+
+**Option A: Install from Claude Code Marketplace (recommended)**
+
+```bash
+# In Claude Code, run:
+/plugin marketplace add kubestellar/claude-plugins
+```
+
+Then:
+1. Go to `/plugin` → **Marketplaces** tab → click **Update**
+2. Go to `/plugin` → **Discover** tab
+3. Install **klaude-ops** and **klaude-deploy**
+
+Verify with `/mcp` - you should see:
+```
+plugin:klaude-ops:klaude-ops · ✓ connected
+plugin:klaude-deploy:klaude-deploy · ✓ connected
+```
+
+**Option B: Install via Homebrew** (source: [homebrew-tap](https://github.com/kubestellar/homebrew-tap))
 
 ```bash
 brew tap kubestellar/tap
 brew install klaude-ops klaude-deploy
 ```
+
+### Step 2: Set Up Kubeconfig
+
+The console reads clusters from your kubeconfig. Make sure you have access:
+
+```bash
+# List your clusters
+kubectl config get-contexts
+
+# Test access to a cluster
+kubectl --context=your-cluster get nodes
+```
+
+To add more clusters, merge kubeconfigs:
+```bash
+KUBECONFIG=~/.kube/config:~/.kube/cluster2.yaml kubectl config view --flatten > ~/.kube/merged
+mv ~/.kube/merged ~/.kube/config
+```
+
+### Step 3: Create GitHub OAuth App
+
+1. Go to **[GitHub Developer Settings](https://github.com/settings/developers)** → **OAuth Apps** → **New OAuth App**
+
+2. Fill in:
+   - **Application name**: `KubeStellar Console`
+   - **Homepage URL**: Your console URL (e.g., `https://console.your-domain.com`)
+   - **Authorization callback URL**: `https://console.your-domain.com/auth/github/callback`
+
+3. Click **Register application**
+
+4. Copy the **Client ID** and generate a **Client Secret**
+
+| Environment | Callback URL |
+|-------------|--------------|
+| Local dev | `http://localhost:8080/auth/github/callback` |
+| Kubernetes | `https://console.your-domain.com/auth/github/callback` |
+| OpenShift | `https://kkc.apps.your-cluster.com/auth/github/callback` |
+
+### Step 4: Deploy the Console
+
+Choose your deployment method:
+
+- [Helm (Kubernetes)](#helm-installation) - Production deployment
+- [OpenShift](#openshift-installation) - OpenShift with Routes
+- [Docker](#docker-installation) - Single-node or development
+- [Local Development](#local-development) - For contributors
+
+---
 
 ## Helm Installation
 
@@ -164,47 +268,40 @@ helm uninstall kkc --namespace kkc
 kubectl delete namespace kkc
 ```
 
-## GitHub OAuth Setup
+## Local Development
 
-GitHub OAuth is **required** for authentication. Follow these steps:
+For contributing to the console or running from source:
 
-### Creating a GitHub OAuth App
+### Prerequisites
 
-1. Go to **GitHub** → **Settings** → **Developer settings** → **OAuth Apps** → **New OAuth App**
+- Go 1.23+
+- Node.js 20+
+- klaude-ops and klaude-deploy installed (see [Step 1](#step-1-install-claude-code-plugins))
 
-2. Fill in the application details:
-   - **Application name**: `KubeStellar Console`
-   - **Homepage URL**: Your console URL
-   - **Authorization callback URL**: `https://your-console-url/auth/github/callback`
-
-3. Click **Register application**
-
-4. Copy the **Client ID** and generate a **Client Secret**
-
-### Callback URL Reference
-
-| Environment | Callback URL |
-|-------------|--------------|
-| Local dev | `http://localhost:8080/auth/github/callback` |
-| Kubernetes | `https://console.your-domain.com/auth/github/callback` |
-| OpenShift | `https://kkc.apps.your-cluster.com/auth/github/callback` |
-
-### Helm Values for OAuth
+### Setup
 
 ```bash
-# Option 1: Via --set flags
-helm install kkc kubestellar/console \
-  --set github.clientId=$GITHUB_CLIENT_ID \
-  --set github.clientSecret=$GITHUB_CLIENT_SECRET
+# Clone the repo
+git clone https://github.com/kubestellar/console.git
+cd console
 
-# Option 2: Via existing secret
-kubectl create secret generic github-oauth \
-  --from-literal=client-id=$GITHUB_CLIENT_ID \
-  --from-literal=client-secret=$GITHUB_CLIENT_SECRET
+# Create .env file
+cat > .env << EOF
+GITHUB_CLIENT_ID=your_client_id
+GITHUB_CLIENT_SECRET=your_client_secret
+DEV_MODE=false
+FRONTEND_URL=http://localhost:5174
+JWT_SECRET=your-secret-key-here
+DATABASE_PATH=./data/console.db
+EOF
 
-helm install kkc kubestellar/console \
-  --set github.existingSecret=github-oauth
+# Run both frontend and backend
+./dev.sh
 ```
+
+Open http://localhost:5174 and sign in with GitHub.
+
+---
 
 ## Troubleshooting
 
@@ -212,13 +309,10 @@ helm install kkc kubestellar/console \
 
 **Cause**: `klaude-ops` or `klaude-deploy` plugins are not installed.
 
-**Solution**:
-```bash
-# Install from Claude Code Marketplace
-claude plugins install klaude-ops
-claude plugins install klaude-deploy
+**Solution**: Follow [Step 1: Install Claude Code Plugins](#step-1-install-claude-code-plugins) or see the full [klaude documentation](/docs/klaude/overview/introduction).
 
-# Or via Homebrew
+```bash
+# Via Homebrew
 brew tap kubestellar/tap
 brew install klaude-ops klaude-deploy
 ```
@@ -229,7 +323,7 @@ brew install klaude-ops klaude-deploy
 
 **Solutions**:
 1. Verify the secret contains correct credentials
-2. Check callback URL matches exactly
+2. Check callback URL matches exactly (see [Step 3](#step-3-create-github-oauth-app))
 3. View pod logs: `kubectl logs -n kkc deployment/kkc`
 
 ### Clusters Not Showing
@@ -239,4 +333,24 @@ brew install klaude-ops klaude-deploy
 **Solutions**:
 1. Verify kubeconfig is mounted in the pod
 2. Check MCP bridge status in logs
-3. Verify klaude tools are installed
+3. Verify klaude tools are installed: `which klaude-ops klaude-deploy`
+
+### Plugin Shows Disconnected
+
+**Cause**: Binary not in PATH or not working.
+
+**Solutions**:
+1. Verify binary is installed: `which klaude-ops`
+2. Verify binary works: `klaude-ops version`
+3. Restart Claude Code
+
+See [klaude troubleshooting](/docs/klaude/overview/introduction#troubleshooting) for more details.
+
+---
+
+## Related Documentation
+
+- **[klaude Documentation](/docs/klaude/overview/introduction)** - Full guide to klaude-ops and klaude-deploy plugins
+- **[Architecture](architecture.md)** - How the console components work together
+- **[Configuration](configuration.md)** - AI mode, token limits, and customization
+- **[Quick Start](quickstart.md)** - Get running in 5 minutes

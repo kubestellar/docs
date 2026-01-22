@@ -10,6 +10,19 @@ description: >
 
 KubeStellar Klaude Console uses a modern, modular architecture designed for extensibility and real-time updates.
 
+## The 6 Components
+
+The console consists of 6 components working together. See [Installation](installation.md) for how to set up each one.
+
+| # | Component | Purpose |
+|---|-----------|---------|
+| 1 | **GitHub OAuth App** | User authentication via GitHub |
+| 2 | **Frontend** | React SPA - dashboards, cards, AI UI |
+| 3 | **Backend** | Go server - API, auth, data storage |
+| 4 | **MCP Bridge** | Connects backend to klaude tools |
+| 5 | **Claude Code Plugins** | klaude-ops + klaude-deploy ([docs](/docs/klaude/overview/introduction)) |
+| 6 | **Kubeconfig** | Your cluster credentials |
+
 ## System Overview
 
 ```

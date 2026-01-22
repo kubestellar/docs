@@ -8,7 +8,22 @@ description: >
 
 # Quick Start
 
-This guide will help you get kkc running locally for development or evaluation.
+Get kkc running locally for development or evaluation.
+
+> **Try it first!** See a live preview at [kubestellarklaudeconsole.netlify.app](https://kubestellarklaudeconsole.netlify.app) - no installation needed.
+
+## What You Need
+
+The console has 6 components. This quick start covers getting them all running:
+
+| Component | What it is |
+|-----------|------------|
+| GitHub OAuth App | Lets users sign in |
+| Frontend + Backend | The console itself |
+| klaude plugins | Connect to your clusters |
+| kubeconfig | Your cluster credentials |
+
+See [Installation](installation.md) for the full architecture diagram.
 
 ## Prerequisites
 
@@ -18,23 +33,30 @@ This guide will help you get kkc running locally for development or evaluation.
 - kubectl configured with at least one cluster
 - GitHub OAuth App credentials
 - [Claude Code](https://claude.ai/claude-code) CLI installed
-- Klaude plugins (see below)
+- klaude plugins (see below)
 
 ## Local Development
 
-### 1. Install Klaude Tools
+### 1. Install klaude Tools
+
+The console uses klaude plugins to talk to your clusters. See [klaude documentation](/docs/klaude/overview/introduction) for full details.
 
 **Option A: From Claude Code Marketplace (recommended)**
-```bash
-claude plugins install klaude-ops
-claude plugins install klaude-deploy
+
+In Claude Code, run:
 ```
+/plugin marketplace add kubestellar/claude-plugins
+```
+
+Then go to `/plugin` → **Discover** tab and install **klaude-ops** and **klaude-deploy**.
 
 **Option B: Via Homebrew**
 ```bash
 brew tap kubestellar/tap
 brew install klaude-ops klaude-deploy
 ```
+
+Verify installation with `/mcp` in Claude Code - you should see both plugins connected.
 
 ### 2. Clone the Repository
 
@@ -116,6 +138,9 @@ helm install kkc ./deploy/helm/kubestellar-console \
 
 ## Next Steps
 
+- [Installation](installation.md) - Full deployment options (Helm, Docker, OpenShift)
 - [Configuration](configuration.md) - Customize AI mode, token limits, and more
-- [Architecture](architecture.md) - Understand how kkc works
-- [Card Types](cards.md) - Explore available dashboard cards
+- [Architecture](architecture.md) - Understand how the 6 components work together
+- [Dashboards](dashboards.md) - Explore the 20 dashboard pages
+- [Cards](all-cards.md) - See all 60 card types
+- [klaude Documentation](/docs/klaude/overview/introduction) - Deep dive into klaude-ops and klaude-deploy
