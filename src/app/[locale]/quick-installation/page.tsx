@@ -504,7 +504,7 @@ const QuickInstallationPage = () => {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <PageActions position="fixed" />
+      <PageActions position="fixed" filePath="[locale]/quick-installation/page.tsx" docsPath="src/app/" />
 
       <section className="relative py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
         {/* Dark base background */}

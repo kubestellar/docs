@@ -1,10 +1,47 @@
 import { normalizePageMap } from 'nextra/page-map'
 import fs from 'fs'
 import path from 'path'
+import { type ProjectId } from '@/config/versions'
 
 // Local docs path - docs are now in this repository
 export const docsContentPath = path.join(process.cwd(), 'docs', 'content')
 export const basePath = 'docs'
+
+// Get content path for a project
+export function getContentPath(projectId: ProjectId): string {
+  switch (projectId) {
+    case 'a2a':
+      return path.join(process.cwd(), 'docs', 'content', 'a2a')
+    case 'kubeflex':
+      return path.join(process.cwd(), 'docs', 'content', 'kubeflex')
+    case 'multi-plugin':
+      return path.join(process.cwd(), 'docs', 'content', 'multi-plugin')
+    case 'klaude':
+      return path.join(process.cwd(), 'docs', 'content', 'klaude')
+    case 'console':
+      return path.join(process.cwd(), 'docs', 'content', 'console')
+    default:
+      return docsContentPath
+  }
+}
+
+// Get base path for a project
+export function getBasePath(projectId: ProjectId): string {
+  switch (projectId) {
+    case 'a2a':
+      return 'docs/a2a'
+    case 'kubeflex':
+      return 'docs/kubeflex'
+    case 'multi-plugin':
+      return 'docs/multi-plugin'
+    case 'klaude':
+      return 'docs/klaude'
+    case 'console':
+      return 'docs/console'
+    default:
+      return 'docs'
+  }
+}
 
 // Strong types for page-map nodes
 type MdxPageNode = { kind: 'MdxPage'; name: string; route: string }
@@ -45,6 +82,137 @@ function getAllDocFiles(dir: string, baseDir: string = dir): string[] {
 // Navigation structure based on mkdocs.yml
 type NavItem = { [key: string]: string | NavItem[] | NavItem } | string
 
+// A2A Navigation Structure
+const NAV_STRUCTURE_A2A: Array<{ title: string; items: NavItem[] }> = [
+  {
+    title: 'Overview',
+    items: [
+      { 'Introduction': 'intro.md' },
+    ]
+  },
+  {
+    title: 'Getting Started',
+    items: [
+      { 'Overview': 'getting-started/index.md' },
+      { 'Installation': 'getting-started/installation.md' },
+      { 'Quick Start': 'getting-started/quick-start.md' },
+    ]
+  },
+  {
+    title: 'Reference',
+    items: [
+      { 'CLI Reference': 'cli-reference.md' },
+      { 'Troubleshooting': 'troubleshooting.md' },
+    ]
+  },
+  {
+    title: 'Contributing',
+    items: [
+      { 'Contributing': 'CONTRIBUTING.md' },
+    ]
+  }
+]
+
+// Multi Plugin Navigation Structure
+const NAV_STRUCTURE_MULTI_PLUGIN: Array<{ title: string; items: NavItem[] }> = [
+  {
+    title: 'Overview',
+    items: [
+      { 'Introduction': 'readme.md' },
+      { 'Architecture': 'architecture_guide.md' },
+    ]
+  },
+  {
+    title: 'Getting Started',
+    items: [
+      { 'Installation': 'installation_guide.md' },
+      { 'Installation (Windows)': 'installation_guide_windows.md' },
+      { 'Usage Guide': 'usage_guide.md' },
+    ]
+  },
+  {
+    title: 'Reference',
+    items: [
+      { 'API Reference': 'api_reference.md' },
+    ]
+  },
+  {
+    title: 'Development',
+    items: [
+      { 'Development Guide': 'development_guide.md' },
+    ]
+  }
+]
+
+// KubeFlex Navigation Structure
+const NAV_STRUCTURE_KUBEFLEX: Array<{ title: string; items: NavItem[] }> = [
+  {
+    title: 'Overview',
+    items: [
+      { 'Introduction': 'readme.md' },
+      { 'Architecture': 'architecture.md' },
+      { 'Multi-Tenancy': 'multi-tenancy.md' },
+    ]
+  },
+  {
+    title: 'Getting Started',
+    items: [
+      { 'Quick Start': 'quickstart.md' },
+      { 'User Guide': 'users.md' },
+    ]
+  },
+  {
+    title: 'Development',
+    items: [
+      { 'Debugging': 'debugging.md' },
+      { 'Code Generation': 'code-generation.md' },
+      { 'PostgreSQL Architecture': 'postgresql-architecture-decision.md' },
+    ]
+  },
+  {
+    title: 'Community',
+    items: [
+      { 'Contributors': 'contributors.md' },
+    ]
+  }
+]
+
+// klaude Navigation Structure
+const NAV_STRUCTURE_KLAUDE: Array<{ title: string; items: NavItem[] }> = [
+  {
+    title: 'Overview',
+    items: [
+      { 'Introduction': 'overview/intro.md' },
+    ]
+  }
+]
+
+// Console Navigation Structure
+const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
+  {
+    title: 'Overview',
+    items: [
+      { 'Introduction': 'readme.md' },
+      { 'Quick Start': 'quickstart.md' },
+      { 'Installation': 'installation.md' },
+      { 'Architecture': 'architecture.md' },
+      { 'Configuration': 'configuration.md' },
+    ]
+  },
+  {
+    title: 'Features',
+    items: [
+      { 'Dashboards': 'dashboards.md' },
+      { 'Cards': 'all-cards.md' },
+      { 'Stats Blocks': 'stats-blocks.md' },
+      { 'AI Features': 'ai-features.md' },
+      { 'Alerts': 'alerts.md' },
+      { 'Feedback System': 'feedback.md' },
+    ]
+  }
+]
+
+// KubeStellar Navigation Structure
 const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
 
   {
@@ -52,13 +220,6 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Overview': 'readme.md' },
       { 'Architecture': 'direct/architecture.md' },
-      {
-        'Related': [
-          { 'KubeStellar UI': 'direct/ui-intro.md' },
-          { 'KubeFlex': 'direct/kubeflex-intro.md' },
-          { 'KubeStellar Galaxy': 'direct/galaxy-intro.md' }
-        ]
-      },
       { 'Release Notes': 'direct/release-notes.md' },
       { 'Roadmap': 'direct/roadmap.md' }
     ]
@@ -114,7 +275,8 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
           { 'Example Scenarios': 'direct/example-scenarios.md' },
           {
             'Third-party Integrations': [
-              { 'ArgoCD to WDS': 'direct/argo-to-wds1.md' }
+              { 'ArgoCD to WDS': 'direct/argo-to-wds1.md' },
+              { 'Claude Code': 'direct/claude-code.md' }
             ]
           },
           { 'Troubleshooting': 'direct/troubleshooting.md' },
@@ -135,6 +297,10 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
         'UI (User Interface)': [
           { 'Overview': 'ui-docs/ui-overview.md' },
           { 'WECS Remote Monitoring': 'ui-docs/wecs-remote-monitoring.md' }
+      { 
+        'UI': [
+          { 'Overview': 'ui-docs/ui-overview.md' },
+          { 'ITS cluster management': 'ui-docs/its-cluster-management.md'}
         ]
       },
       { 'Teardown': 'direct/teardown.md' }
@@ -155,6 +321,11 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
           { 'Docs Management': 'contribution-guidelines/operations/document-management.md' },
           { 'Style Guide': 'contribution-guidelines/operations/docs-styleguide.md' },
           { 'Testing PRs': 'contribution-guidelines/operations/testing-doc-prs.md' }
+        ]
+      },
+      {
+        'CI/CD': [
+          { 'GitHub Actions': 'contribution-guidelines/operations/github-actions.md' }
         ]
       },
       {
@@ -188,8 +359,30 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
   }
 ]
 
-export function buildPageMap() {
-  const allDocFiles = getAllDocFiles(docsContentPath)
+// Get navigation structure for a project
+function getNavStructure(projectId: ProjectId): Array<{ title: string; items: NavItem[] }> {
+  switch (projectId) {
+    case 'a2a':
+      return NAV_STRUCTURE_A2A
+    case 'kubeflex':
+      return NAV_STRUCTURE_KUBEFLEX
+    case 'multi-plugin':
+      return NAV_STRUCTURE_MULTI_PLUGIN
+    case 'klaude':
+      return NAV_STRUCTURE_KLAUDE
+    case 'console':
+      return NAV_STRUCTURE_CONSOLE
+    default:
+      return NAV_STRUCTURE
+  }
+}
+
+export function buildPageMap(projectId: ProjectId = 'kubestellar') {
+  const contentPath = getContentPath(projectId)
+  const projectBasePath = getBasePath(projectId)
+  const navStructure = getNavStructure(projectId)
+
+  const allDocFiles = getAllDocFiles(contentPath)
   const processedFiles = new Set<string>()
   const routeMap: Record<string, string> = {}
   const _pageMap: PageMapNode[] = []
@@ -204,7 +397,7 @@ export function buildPageMap() {
         if (allDocFiles.includes(item)) {
           processedFiles.add(item)
           const baseName = item.replace(/\.(md|mdx)$/i, '').split('/').pop()!
-          const route = `/${basePath}/${parentSlug}/${baseName}`
+          const route = `/${projectBasePath}/${parentSlug}/${baseName}`
           routeMap[`${parentSlug}/${baseName}`] = item
           nodes.push({ kind: 'MdxPage', name: pretty(baseName), route })
           meta[pretty(baseName)] = pretty(baseName)
@@ -215,16 +408,16 @@ export function buildPageMap() {
         const value = (item as Record<string, string | NavItem[]>)[title]
 
         if (typeof value === 'string') {
-          // It's a file path
-          if (value.startsWith('http')) {
-            // External link
+          // It's a file path or link
+          if (value.startsWith('http') || value.startsWith('/')) {
+            // External link or absolute internal link
             nodes.push({ kind: 'MdxPage', name: title, route: value })
             meta[title] = title
           } else if (allDocFiles.includes(value)) {
             processedFiles.add(value)
             // const baseName = value.replace(/\.(md|mdx)$/i, '').split('/').pop()!
             const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-            const route = `/${basePath}/${parentSlug ? parentSlug + '/' : ''}${slug}`
+            const route = `/${projectBasePath}/${parentSlug ? parentSlug + '/' : ''}${slug}`
             routeMap[`${parentSlug ? parentSlug + '/' : ''}${slug}`] = value
             nodes.push({ kind: 'MdxPage', name: title, route })
             meta[title] = title
@@ -238,7 +431,7 @@ export function buildPageMap() {
             nodes.push({
               kind: 'Folder',
               name: title,
-              route: `/${basePath}/${newParentSlug}`,
+              route: `/${projectBasePath}/${newParentSlug}`,
               children
             })
             meta[title] = title
@@ -254,8 +447,8 @@ export function buildPageMap() {
     return nodes
   }
 
-  // Build navigation from NAV_STRUCTURE
-  for (const category of NAV_STRUCTURE) {
+  // Build navigation from navStructure (project-specific)
+  for (const category of navStructure) {
     const categorySlug = category.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
     const children = buildNavNodes(category.items, categorySlug)
 
@@ -263,12 +456,12 @@ export function buildPageMap() {
       const folderNode: FolderNode = {
         kind: 'Folder',
         name: category.title,
-        route: `/${basePath}/${categorySlug}`,
+        route: `/${projectBasePath}/${categorySlug}`,
         children
       }
 
       // Set theme for first category to be expanded
-      if (category.title === 'Welcome' || category.title === 'What is KubeStellar?') {
+      if (category.title === 'Welcome' || category.title === 'What is KubeStellar?' || category.title === 'Overview') {
         folderNode.theme = { collapsed: false }
       }
 
@@ -278,7 +471,7 @@ export function buildPageMap() {
 
   // Add top-level meta - only include our defined navigation structure
   const meta: Record<string, string> = {}
-  for (const category of NAV_STRUCTURE) {
+  for (const category of navStructure) {
     meta[category.title] = category.title
   }
   _pageMap.unshift({ kind: 'Meta', data: meta })
@@ -293,7 +486,7 @@ export function buildPageMap() {
 
   const pageMap = normalizePageMap(_pageMap)
 
-  return { pageMap, routeMap, filePaths: allDocFiles }
+  return { pageMap, routeMap, filePaths: allDocFiles, contentPath }
 }
 
 // For backwards compatibility, export a function that doesn't need branch parameter

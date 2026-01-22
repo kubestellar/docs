@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <PageActions position="fixed" />
+      <PageActions position="fixed" filePath="[locale]/page.tsx" docsPath="src/app/" />
       <HeroSection />
       <AboutSection />
       <HowItWorksSection />

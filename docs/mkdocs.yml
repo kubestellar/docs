@@ -120,6 +120,21 @@ nav:
         - FluxCD: Community/partners/fluxcd.md
         - OpenZiti: Community/partners/openziti.md
         - Kyverno: Community/partners/kyverno.md
+  - Console:
+      - Overview: console/readme.md
+      - Quick Start: console/quickstart.md
+      - Installation: console/installation.md
+      - Dashboards: console/dashboards.md
+      - Cards: console/all-cards.md
+      - Stats Blocks: console/stats-blocks.md
+      - AI Features: console/ai-features.md
+      - Feedback System: console/feedback.md
+      - Alerts: console/alerts.md
+      - Configuration: console/configuration.md
+      - Architecture: console/architecture.md
+  - klaude:
+      - Overview: klaude/index.md
+      - Getting Started: klaude/overview/intro.md
   - 'Blog': https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST" target="_blank
   # # - Auto generated:
   #   - ... | auto-generated/*/*.md

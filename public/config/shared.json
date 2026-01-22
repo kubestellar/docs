@@ -1,0 +1,287 @@
+{
+  "surveyUrl": "https://forms.gle/Md2381TQ8CcjZv3LA",
+  "versions": {
+    "kubestellar": {
+      "latest": {
+        "label": "v0.29.0 (Latest)",
+        "branch": "docs/0.29.0",
+        "isDefault": true
+      },
+      "main": {
+        "label": "main (dev)",
+        "branch": "main",
+        "isDefault": false,
+        "isDev": true
+      },
+      "0.28.0": {
+        "label": "v0.28.0",
+        "branch": "docs/0.28.0",
+        "isDefault": false
+      },
+      "0.27.2": {
+        "label": "v0.27.2",
+        "branch": "docs/0.27.2",
+        "isDefault": false
+      },
+      "0.27.1": {
+        "label": "v0.27.1",
+        "branch": "docs/0.27.1",
+        "isDefault": false
+      },
+      "0.27.0": {
+        "label": "v0.27.0",
+        "branch": "docs/0.27.0",
+        "isDefault": false
+      },
+      "0.26.0": {
+        "label": "v0.26.0",
+        "branch": "docs/0.26.0",
+        "isDefault": false
+      },
+      "0.25.1": {
+        "label": "v0.25.1",
+        "branch": "docs/0.25.1",
+        "isDefault": false
+      },
+      "0.25.0": {
+        "label": "v0.25.0",
+        "branch": "docs/0.25.0",
+        "isDefault": false
+      },
+      "0.24.0": {
+        "label": "v0.24.0",
+        "branch": "docs/0.24.0",
+        "isDefault": false
+      },
+      "0.23.1": {
+        "label": "v0.23.1",
+        "branch": "docs/0.23.1",
+        "isDefault": false
+      },
+      "0.23.0": {
+        "label": "v0.23.0",
+        "branch": "docs/0.23.0",
+        "isDefault": false
+      },
+      "0.22.0": {
+        "label": "v0.22.0",
+        "branch": "docs/0.22.0",
+        "isDefault": false
+      },
+      "0.21.2": {
+        "label": "v0.21.2",
+        "branch": "docs/0.21.2",
+        "isDefault": false
+      },
+      "0.21.1": {
+        "label": "v0.21.1",
+        "branch": "docs/0.21.1",
+        "isDefault": false
+      },
+      "0.21.0": {
+        "label": "v0.21.0",
+        "branch": "docs/0.21.0",
+        "isDefault": false
+      },
+      "legacy": {
+        "label": "Older Versions",
+        "branch": "legacy",
+        "isDefault": false,
+        "externalUrl": "https://kubestellar.github.io/kubestellar"
+      }
+    },
+    "a2a": {
+      "latest": {
+        "label": "v0.1.0 (Latest)",
+        "branch": "docs/a2a/0.1.0",
+        "isDefault": true
+      },
+      "main": {
+        "label": "main (dev)",
+        "branch": "main",
+        "isDefault": false,
+        "isDev": true
+      }
+    },
+    "kubeflex": {
+      "latest": {
+        "label": "v0.9.3 (Latest)",
+        "branch": "docs/kubeflex/0.9.3",
+        "isDefault": true
+      },
+      "main": {
+        "label": "main (dev)",
+        "branch": "main",
+        "isDefault": false,
+        "isDev": true
+      },
+      "0.8.0": {
+        "label": "v0.8.0",
+        "branch": "docs/kubeflex/0.8.0",
+        "isDefault": false
+      },
+      "0.7.0": {
+        "label": "v0.7.0",
+        "branch": "docs/kubeflex/0.7.0",
+        "isDefault": false
+      }
+    },
+    "multi-plugin": {
+      "latest": {
+        "label": "v0.1.0 (Latest)",
+        "branch": "docs/multi-plugin/0.1.0",
+        "isDefault": true
+      },
+      "main": {
+        "label": "main (dev)",
+        "branch": "main",
+        "isDefault": false,
+        "isDev": true
+      }
+    },
+    "console": {
+      "latest": {
+        "label": "v0.1.0 (Latest)",
+        "branch": "docs/console/0.1.0",
+        "isDefault": true
+      },
+      "main": {
+        "label": "main (dev)",
+        "branch": "main",
+        "isDefault": false,
+        "isDev": true
+      }
+    },
+    "klaude": {
+      "latest": {
+        "label": "v0.8.1 (Latest)",
+        "branch": "docs/klaude/0.8.1",
+        "isDefault": true
+      },
+      "main": {
+        "label": "main (dev)",
+        "branch": "main",
+        "isDefault": false,
+        "isDev": true
+      },
+      "0.7.1": {
+        "label": "v0.7.1",
+        "branch": "docs/klaude/0.7.1",
+        "isDefault": false
+      },
+      "0.6.0": {
+        "label": "v0.6.0",
+        "branch": "docs/klaude/0.6.0",
+        "isDefault": false
+      },
+      "0.5.0": {
+        "label": "v0.5.0",
+        "branch": "docs/klaude/0.5.0",
+        "isDefault": false
+      },
+      "0.4.6": {
+        "label": "v0.4.6",
+        "branch": "docs/klaude/0.4.6",
+        "isDefault": false
+      },
+      "0.4.5": {
+        "label": "v0.4.5",
+        "branch": "docs/klaude/0.4.5",
+        "isDefault": false
+      },
+      "0.4.4": {
+        "label": "v0.4.4",
+        "branch": "docs/klaude/0.4.4",
+        "isDefault": false
+      },
+      "0.4.3": {
+        "label": "v0.4.3",
+        "branch": "docs/klaude/0.4.3",
+        "isDefault": false
+      },
+      "0.4.0": {
+        "label": "v0.4.0",
+        "branch": "docs/klaude/0.4.0",
+        "isDefault": false
+      },
+      "0.8.0": {
+        "label": "v0.8.0",
+        "branch": "docs/klaude/0.8.0",
+        "isDefault": false
+      }
+    }
+  },
+  "projects": {
+    "kubestellar": {
+      "name": "KubeStellar",
+      "basePath": "",
+      "currentVersion": "0.29.0"
+    },
+    "a2a": {
+      "name": "A2A",
+      "basePath": "a2a",
+      "currentVersion": "0.1.0"
+    },
+    "kubeflex": {
+      "name": "KubeFlex",
+      "basePath": "kubeflex",
+      "currentVersion": "0.9.3"
+    },
+    "multi-plugin": {
+      "name": "Multi Plugin",
+      "basePath": "multi-plugin",
+      "currentVersion": "0.1.0"
+    },
+    "klaude": {
+      "name": "klaude",
+      "basePath": "klaude",
+      "currentVersion": "0.8.1"
+    },
+    "console": {
+      "name": "Console",
+      "basePath": "console",
+      "currentVersion": "0.1.0"
+    }
+  },
+  "relatedProjects": [
+    {
+      "title": "KubeStellar",
+      "href": "/docs/what-is-kubestellar/overview",
+      "description": "Multi-cluster configuration management"
+    },
+    {
+      "title": "klaude",
+      "href": "/docs/klaude/overview/introduction",
+      "description": "AI-powered kubectl plugin"
+    },
+    {
+      "title": "KubeFlex",
+      "href": "/docs/kubeflex/overview/introduction",
+      "description": "Lightweight Kubernetes control planes"
+    },
+    {
+      "title": "A2A",
+      "href": "/docs/a2a/overview/introduction",
+      "description": "Agent-to-Agent protocol"
+    },
+    {
+      "title": "Multi Plugin",
+      "href": "/docs/multi-plugin/overview/introduction",
+      "description": "Multi-cluster kubectl plugin"
+    },
+    {
+      "title": "Console",
+      "href": "/docs/console/readme",
+      "description": "AI-powered multi-cluster dashboard"
+    }
+  ],
+  "editBaseUrls": {
+    "kubestellar": "https://github.com/kubestellar/docs/edit/main/docs/content",
+    "a2a": "https://github.com/kubestellar/a2a/edit/main/docs",
+    "kubeflex": "https://github.com/kubestellar/kubeflex/edit/main/docs",
+    "multi-plugin": "https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs",
+    "klaude": "https://github.com/kubestellar/klaude/edit/main/docs",
+    "console": "https://github.com/kubestellar/docs/edit/main/docs/content/console"
+  },
+  "updatedAt": "2026-01-16T18:24:27.434Z"
+}

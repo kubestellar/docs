@@ -93,8 +93,10 @@ For each merged PR, create an issue in `kubestellar/docs` with:
 **Title Format:**
 
 ```
-[Doc Update] <Original PR Title>
+[Doc Update] [<repo-short-name>] <Original PR Title>
 ```
+
+Where `<repo-short-name>` is the repository name without the org prefix (e.g., `kubectl-multi-plugin` not `kubestellar/kubectl-multi-plugin`).
 
 **Issue Body:**
 

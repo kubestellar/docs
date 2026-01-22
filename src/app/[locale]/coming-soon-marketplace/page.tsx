@@ -7,6 +7,7 @@ import {
   GridLines,
   StarField,
   ComingSoonCTA,
+  PageActions,
 } from "@/components";
 
 export default function ComingSoonPage() {
@@ -21,6 +22,7 @@ export default function ComingSoonPage() {
 
       <div className="relative z-10">
         <Navbar />
+        <PageActions position="fixed" filePath="[locale]/coming-soon-marketplace/page.tsx" docsPath="src/app/" />
 
         {/* Hero Section */}
         <section className="px-4 py-32 sm:px-6 lg:px-8">
@@ -52,11 +54,10 @@ export default function ComingSoonPage() {
           <div className="mx-auto max-w-5xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-                <span className="text-gradient">See It In Action</span>
+                <span className="text-gradient">{t("demoTitle")}</span>
               </h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Watch our marketplace demo to get a glimpse of what&apos;s
-                coming
+                {t("demoSubtitle")}
               </p>
             </div>
 

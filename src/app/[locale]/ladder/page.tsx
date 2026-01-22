@@ -197,7 +197,7 @@ export default function MaintainerLadderPage() {
   return (
     <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
       <Navbar />
-      <PageActions position="fixed" />
+      <PageActions position="fixed" filePath="[locale]/ladder/page.tsx" docsPath="src/app/" />
 
       {/* Full page background with starfield */}
       <div className="fixed inset-0 z-0">
@@ -240,10 +240,10 @@ export default function MaintainerLadderPage() {
                   >
                     <div className="text-left">
                       <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                        How do we audit our contributor ladder?
+                        {t("statsQuestion")}
                       </div>
                       <div className="text-lg font-semibold text-white flex items-center gap-2">
-                        View Real-Time Statistics
+                        {t("viewStats")}
                         <span className="text-blue-400 group-hover:translate-x-1 transition-transform inline-block">
                           →
                         </span>

@@ -101,7 +101,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/survey",
-        destination: "https://forms.gle/WJ7N6ZVtp44D9NK79",
+        destination: "https://forms.gle/Md2381TQ8CcjZv3LA",
         permanent: true,
       },
       {

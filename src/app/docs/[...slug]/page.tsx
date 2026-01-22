@@ -6,8 +6,30 @@ import { useMDXComponents as getMDXComponents } from '../../../../mdx-components
 import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
 import { MermaidComponent } from '@/lib/Mermaid'
 import { buildPageMap, docsContentPath } from '../page-map'
+import { CURRENT_VERSION, type ProjectId } from '@/config/versions'
 import fs from 'fs'
 import path from 'path'
+
+// Detect project from URL slug
+function getProjectFromSlug(slug: string[]): ProjectId {
+  if (slug.length > 0) {
+    if (slug[0] === 'a2a') return 'a2a'
+    if (slug[0] === 'kubeflex') return 'kubeflex'
+    if (slug[0] === 'multi-plugin') return 'multi-plugin'
+    if (slug[0] === 'klaude') return 'klaude'
+    if (slug[0] === 'console') return 'console'
+  }
+  return 'kubestellar'
+}
+
+// Get route without project prefix
+function getRouteFromSlug(slug: string[], projectId: ProjectId): string {
+  if (projectId === 'kubestellar') {
+    return slug.join('/')
+  }
+  // Remove the project prefix from the slug
+  return slug.slice(1).join('/')
+}
 
 export const dynamic = 'force-static'
 export const revalidate = false
@@ -233,11 +255,17 @@ function sanitizeHtmlForMdx(content: string): string {
 
 // Replace template variables with actual values
 function replaceTemplateVariables(content: string): string {
+  // Use CURRENT_VERSION from config to support versioned documentation
+  // When a version branch is created, CURRENT_VERSION is updated to that version
+  const version = CURRENT_VERSION as string
+  const versionBranch = version === '0.29.0' ? 'main' : `release-${version}`
+  const versionTag = version === '0.29.0' ? 'latest' : `v${version}`
+
   const vars: Record<string, string> = {
-    'config.ks_branch': 'main',
-    'config.ks_tag': 'latest',
-    'config.ks_latest_release': '0.29.0',
-    'config.ks_latest_regular_release': '0.29.0',
+    'config.ks_branch': versionBranch,
+    'config.ks_tag': versionTag,
+    'config.ks_latest_release': CURRENT_VERSION,
+    'config.ks_latest_regular_release': CURRENT_VERSION,
     'config.docs_url': 'https://docs.kubestellar.io',
     'config.repo_url': 'https://github.com/kubestellar/kubestellar',
     'config.site_url': 'https://docs.kubestellar.io'
@@ -254,8 +282,8 @@ function replaceTemplateVariables(content: string): string {
   return result
 }
 
-function readLocalFile(filePath: string): string | null {
-  const fullPath = path.join(docsContentPath, filePath)
+function readLocalFile(filePath: string, contentPath: string = docsContentPath): string | null {
+  const fullPath = path.join(contentPath, filePath)
   try {
     if (fs.existsSync(fullPath)) {
       return fs.readFileSync(fullPath, 'utf-8')
@@ -268,10 +296,13 @@ function readLocalFile(filePath: string): string | null {
 
 export default async function Page(props: PageProps) {
   const params = await props.params
+  const slug = params.slug ?? []
 
-  const { routeMap, filePaths } = buildPageMap()
+  // Detect project from URL slug
+  const projectId = getProjectFromSlug(slug)
+  const route = getRouteFromSlug(slug, projectId)
 
-  const route = params.slug ? params.slug.join('/') : ''
+  const { routeMap, filePaths, contentPath } = buildPageMap(projectId)
 
   const filePath =
     routeMap[route] ??
@@ -280,7 +311,7 @@ export default async function Page(props: PageProps) {
 
   if (!filePath) notFound()
 
-  const rawText = readLocalFile(filePath)
+  const rawText = readLocalFile(filePath, contentPath)
 
   if (!rawText) notFound()
 
@@ -295,7 +326,7 @@ export default async function Page(props: PageProps) {
     for (const match of includeMatches) {
       const [fullMatch, relativePath] = match
       const resolvedPath = resolvePath(filePath, relativePath)
-      const includeContent = readLocalFile(resolvedPath)
+      const includeContent = readLocalFile(resolvedPath, contentPath)
       if (includeContent) {
         processedContent = processedContent.replace(fullMatch, removeCommentPatterns(includeContent))
       } else if (relativePath.includes('coming-soon.md')) {
@@ -316,7 +347,7 @@ export default async function Page(props: PageProps) {
       if (fullMatch.includes('start=') || fullMatch.includes('end=')) continue
 
       const resolvedPath = resolvePath(filePath, relativePath)
-      const includeContent = readLocalFile(resolvedPath)
+      const includeContent = readLocalFile(resolvedPath, contentPath)
       if (includeContent) {
         processedContent = processedContent.replace(fullMatch, removeCommentPatterns(includeContent))
       } else if (relativePath.includes('coming-soon.md')) {
@@ -335,7 +366,7 @@ export default async function Page(props: PageProps) {
     for (const match of includeMarkdownMatches) {
       const [fullMatch, relativePath, startMarker, endMarker] = match
       const resolvedPath = resolvePath(filePath, relativePath)
-      const includeContent = readLocalFile(resolvedPath)
+      const includeContent = readLocalFile(resolvedPath, contentPath)
       if (includeContent) {
         const startIndex = includeContent.indexOf(startMarker)
         const endIndex = includeContent.indexOf(endMarker)
@@ -355,7 +386,15 @@ export default async function Page(props: PageProps) {
   // --- END PROCESSING INCLUDES ---
 
   const filePathToRoute = new Map<string, string>()
-  Object.entries(routeMap).forEach(([r, fp]) => filePathToRoute.set(fp, r))
+  // Only set if not already set - prefer nav structure routes over fallback routes
+  Object.entries(routeMap).forEach(([r, fp]) => {
+    if (!filePathToRoute.has(fp)) {
+      filePathToRoute.set(fp, r)
+    }
+  })
+
+  // Get the base path for links based on project
+  const linkBasePath = projectId === 'kubestellar' ? '/docs' : `/docs/${projectId}`
 
   // Rewrite Markdown links/images using the fully processed content
   let rewrittenText = processedContent.replace(/(!?\[.*?\])\((.*?)\)/g, (match, label, link) => {
@@ -371,7 +410,9 @@ export default async function Page(props: PageProps) {
       const isImageFile = /\.(png|jpg|jpeg|gif|svg|webp|ico)$/i.test(resolvedPath)
       if (isImageFile) {
         // Serve images from the /docs-images path which maps to docs/content
-        const imgPath = `/docs-images/${resolvedPath}`
+        // For a2a and kubeflex projects, prepend the project name
+        const imagePrefix = projectId === 'kubestellar' ? '' : `${projectId}/`
+        const imgPath = `/docs-images/${imagePrefix}${resolvedPath}`
         return `${label}(${imgPath})`
       }
       return match
@@ -381,7 +422,7 @@ export default async function Page(props: PageProps) {
       if (!targetRoute) targetRoute = filePathToRoute.get(resolvedPath + '.mdx')
 
       if (targetRoute) {
-        return `${label}(/docs/${targetRoute}${linkHash ? '#' + linkHash : ''})`
+        return `${label}(${linkBasePath}/${targetRoute}${linkHash ? '#' + linkHash : ''})`
       }
 
       // Keep the original link if we can't resolve it
@@ -395,7 +436,9 @@ export default async function Page(props: PageProps) {
     const resolvedPath = resolvePath(filePath, src)
     const isImageFile = /\.(png|jpg|jpeg|gif|svg|webp|ico)$/i.test(resolvedPath)
     if (isImageFile) {
-      const imgPath = `/docs-images/${resolvedPath}`
+      // For a2a and kubeflex projects, prepend the project name
+      const imagePrefix = projectId === 'kubestellar' ? '' : `${projectId}/`
+      const imgPath = `/docs-images/${imagePrefix}${resolvedPath}`
       // Only keep alt attribute, remove other problematic attributes
       const altMatch = (pre + post).match(/alt=["']([^"']*)["']/i)
       const alt = altMatch ? altMatch[1] : ''
@@ -423,14 +466,66 @@ export default async function Page(props: PageProps) {
   const rawJs = await compileMdx(processedData, { filePath })
   const { default: MDXContent, toc, metadata } = evaluate(rawJs, component)
 
+  // Get project-specific pageMap for the sidebar
+  const { pageMap } = buildPageMap(projectId)
+
   return (
-    <Wrapper toc={toc} metadata={metadata} sourceCode={rawJs}>
+    <Wrapper toc={toc} metadata={metadata} sourceCode={rawJs} pageMap={pageMap} filePath={filePath} projectId={projectId}>
       <MDXContent />
     </Wrapper>
   )
 }
 
 export async function generateStaticParams() {
-  const { routeMap } = buildPageMap()
-  return Object.keys(routeMap).filter(k => k !== '').map(route => ({ slug: route.split('/') }))
+  const allParams: { slug: string[] }[] = []
+
+  // KubeStellar routes
+  const kubestellarMap = buildPageMap('kubestellar')
+  for (const route of Object.keys(kubestellarMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: route.split('/') })
+    }
+  }
+
+  // A2A routes (prefixed with 'a2a')
+  const a2aMap = buildPageMap('a2a')
+  for (const route of Object.keys(a2aMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['a2a', ...route.split('/')] })
+    }
+  }
+
+  // KubeFlex routes (prefixed with 'kubeflex')
+  const kubeflexMap = buildPageMap('kubeflex')
+  for (const route of Object.keys(kubeflexMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['kubeflex', ...route.split('/')] })
+    }
+  }
+
+  // Multi-Plugin routes (prefixed with 'multi-plugin')
+  const multiPluginMap = buildPageMap('multi-plugin')
+  for (const route of Object.keys(multiPluginMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['multi-plugin', ...route.split('/')] })
+    }
+  }
+
+  // klaude routes (prefixed with 'klaude')
+  const klaudeMap = buildPageMap('klaude')
+  for (const route of Object.keys(klaudeMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['klaude', ...route.split('/')] })
+    }
+  }
+
+  // Console routes (prefixed with 'console')
+  const consoleMap = buildPageMap('console')
+  for (const route of Object.keys(consoleMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['console', ...route.split('/')] })
+    }
+  }
+
+  return allParams
 }

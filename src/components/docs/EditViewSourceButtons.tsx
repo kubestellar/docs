@@ -29,10 +29,11 @@ export default function EditViewSourceButtons({
   const isDark = resolvedTheme === "dark";
 
   
-  // Generate URLs
+  // Generate URLs - encode brackets for GitHub compatibility
   const fullPath = filePath ? `${docsPath}${filePath}` : null;
-  const viewUrl = fullPath ? `https://github.com/${user}/${repo}/blob/${branch}/${fullPath}` : null;
-  const editUrl = fullPath ? `https://github.com/${user}/${repo}/edit/${branch}/${fullPath}` : null;
+  const encodedPath = fullPath ? fullPath.replace(/\[/g, '%5B').replace(/\]/g, '%5D') : null;
+  const viewUrl = encodedPath ? `https://github.com/${user}/${repo}/blob/${branch}/${encodedPath}` : null;
+  const editUrl = encodedPath ? `https://github.com/${user}/${repo}/edit/${branch}/${encodedPath}` : null;
 
 
   // Separate conditional classes for better maintainability
