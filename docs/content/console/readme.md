@@ -136,11 +136,13 @@ Open http://localhost:5174 and sign in with GitHub.
 
 ```bash
 # Create secrets
+# NOTE: Do not put real secrets directly in commands or commit them to git.
+# Prefer environment variables or a secrets file (e.g. --from-env-file) that is not version-controlled.
 kubectl create namespace kkc
 kubectl create secret generic kkc-secrets \
   --namespace kkc \
-  --from-literal=github-client-id=YOUR_ID \
-  --from-literal=github-client-secret=YOUR_SECRET
+  --from-literal=github-client-id="$GITHUB_CLIENT_ID" \
+  --from-literal=github-client-secret="$GITHUB_CLIENT_SECRET"
 
 # Install with Helm
 helm install kkc oci://ghcr.io/kubestellar/charts/console \
