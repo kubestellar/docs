@@ -22,15 +22,16 @@
   </a>
 </p>
 
-## Preview of KubeStellar Docs Website
+## KubeStellar Docs Website
 
 <p align="center">
   <img src="./public/KubeStellar-docs-ui.png" alt="KubeStellar Docs UI Preview" />
 </p>
 
-Visit our website: [http://prod.previews.kubestellar.io/en](http://prod.previews.kubestellar.io/en)
+All docs for KubeStellar and its component products are now consolidated in this repository to render a consolidated website.
+Visit the website at: [https://kubestellar.io/](https://kubestellar.io)
 
-Website preview for a PR \#\#\#: [PR-\#\#\#.previews.kubestellar.io/en](PR-###.previews.kubestellar.io/en)
+Website preview for a PR \#\#\#: [https://deploy-preview-\#\#\#--kubestellar-docs.netlify.app](https://deploy-preview-\#\#\#--kubestellar-docs.netlify.app)
 
 ## Overview
 
