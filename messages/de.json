@@ -58,7 +58,7 @@
     "subscribe": "Abonnieren",
     "subscribed": "Abonniert!",
     "privacyNotice": "Wir respektieren Ihre Privatsphäre. Kein Spam.",
-    "copyright": "© 2025 KubeStellar. Alle Rechte vorbehalten. Apache-2.0-Lizenz",
+    "copyright": "© {year} KubeStellar. Alle Rechte vorbehalten. Apache-2.0-Lizenz",
     "privacyPolicy": "Datenschutzrichtlinie",
     "termsOfService": "Nutzungsbedingungen",
     "cookiePolicy": "Cookie-Richtlinie",

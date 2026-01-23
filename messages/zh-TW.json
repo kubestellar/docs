@@ -58,7 +58,7 @@
     "subscribe": "訂閱",
     "subscribed": "已訂閱！",
     "privacyNotice": "我們尊重您的隱私。不會發送垃圾郵件。",
-    "copyright": "© 2025 KubeStellar。保留所有權利。Apache 2.0 授權",
+    "copyright": "© {year} KubeStellar。保留所有權利。Apache 2.0 授權",
     "privacyPolicy": "隱私權政策",
     "termsOfService": "服務條款",
     "cookiePolicy": "Cookie 政策",

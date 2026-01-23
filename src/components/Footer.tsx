@@ -338,7 +338,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
             {/* Left side - copyright */}
             <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left order-2 md:order-1">
-              {t("copyright")}
+              {t("copyright", { year: new Date().getFullYear() })}
             </p>
 
             {/* Right side - policy links */}
