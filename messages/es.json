@@ -97,7 +97,7 @@
     "subscribe": "Suscribirse",
     "subscribed": "¡Suscrito!",
     "privacyNotice": "Respetamos tu privacidad. Sin spam.",
-    "copyright": "© 2025 KubeStellar. Todos los derechos reservados. Licencia Apache 2.0",
+    "copyright": "© {year} KubeStellar. Todos los derechos reservados. Licencia Apache 2.0",
     "privacyPolicy": "Política de privacidad",
     "termsOfService": "Términos del servicio",
     "cookiePolicy": "Política de cookies",

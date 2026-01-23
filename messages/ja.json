@@ -64,7 +64,7 @@
     "subscribe": "購読する",
     "subscribed": "購読しました！",
     "privacyNotice": "お客様のプライバシーを尊重します。スパムは送信しません。",
-    "copyright": "© 2025 KubeStellar. All rights reserved. Apache 2.0 ライセンス",
+    "copyright": "© {year} KubeStellar. All rights reserved. Apache 2.0 ライセンス",
     "privacyPolicy": "プライバシーポリシー",
     "termsOfService": "利用規約",
     "cookiePolicy": "Cookie ポリシー",
