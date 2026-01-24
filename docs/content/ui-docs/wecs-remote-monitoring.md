@@ -46,7 +46,7 @@ If you are new to KubeStellar, follow these steps to get your remote monitoring 
 Before monitoring, ensure your clusters are imported into the Inventory Transform Service (ITS). 
 Navigate to **Infrastructure** > **Managed Clusters** to see your fleet.
 
-![ITS Managed Clusters](./assets/its-managed-clusters-guide.png)
+![KubeStellar Managed Clusters Guide](./assets/its-managed-clusters-guide.png)
 
 ### 2. Verify Cluster Status
 Check the status of your clusters. You can filter by **Active**, **Inactive**, or **Pending** to ensure everything is healthy.
