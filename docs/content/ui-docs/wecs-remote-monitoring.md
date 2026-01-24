@@ -370,7 +370,7 @@ WECS exposes several internal endpoints for its operation:
 - **Object Explorer**: For a broader, non-cluster-specific view of resources across all managed clusters, use the Object Explorer. 
 
 ### Quick Guide: Advanced Object Discovery
-![Object Explorer Advanced Guide](./assets/object-explorer-advanced-guide.png)
+![Advanced Object Discovery in Object Explorer](./assets/object-explorer-advanced-guide.png)
 
 1.  **Explore (1)**: Browse through all cluster namespaces and object kinds.
 2.  **View Details (2)**: Click on any object to open a detailed summary overlay.
