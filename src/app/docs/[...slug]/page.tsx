@@ -289,9 +289,43 @@ function readLocalFile(filePath: string, contentPath: string = docsContentPath):
       return fs.readFileSync(fullPath, 'utf-8')
     }
   } catch {
-    // File doesn't exist
+    // File doesn't exist in content directory
   }
+  
+  // If not found in content directory, try repository root
+  const repoRootPath = path.join(process.cwd(), filePath)
+  try {
+    if (fs.existsSync(repoRootPath)) {
+      return fs.readFileSync(repoRootPath, 'utf-8')
+    }
+  } catch {
+    // File doesn't exist in repository root either
+  }
+  
   return null
+}
+
+// Process include directives with common logic
+function processInclude(
+  fullMatch: string,
+  relativePath: string,
+  filePath: string,
+  contentPath: string,
+  extractContent?: (content: string) => string
+): string {
+  const resolvedPath = resolvePath(filePath, relativePath)
+  const includeContent = readLocalFile(resolvedPath, contentPath)
+  
+  if (includeContent) {
+    const content = extractContent ? extractContent(includeContent) : includeContent
+    return removeCommentPatterns(content)
+  }
+  
+  if (relativePath.includes('coming-soon.md')) {
+    return ''
+  }
+  
+  return `> **Note**: Include file \`${relativePath}\` not found`
 }
 
 export default async function Page(props: PageProps) {
@@ -319,70 +353,36 @@ export default async function Page(props: PageProps) {
   let processedContent = removeCommentPatterns(rawText)
 
   // 1. Process Jekyll-style includes: {% include "path" %}
-  const includeRegex = /{%\s*include\s+["']([^"']+)["']\s*%}/g
-  const includeMatches = Array.from(processedContent.matchAll(includeRegex))
+  processedContent = processedContent.replace(
+    /{%\s*include\s+["']([^"']+)["']\s*%}/g,
+    (match, relativePath) => processInclude(match, relativePath, filePath, contentPath)
+  )
 
-  if (includeMatches.length > 0) {
-    for (const match of includeMatches) {
-      const [fullMatch, relativePath] = match
-      const resolvedPath = resolvePath(filePath, relativePath)
-      const includeContent = readLocalFile(resolvedPath, contentPath)
-      if (includeContent) {
-        processedContent = processedContent.replace(fullMatch, removeCommentPatterns(includeContent))
-      } else if (relativePath.includes('coming-soon.md')) {
-        processedContent = processedContent.replace(fullMatch, '')
-      } else {
-        processedContent = processedContent.replace(fullMatch, `> **Note**: Include file \`${relativePath}\` not found`)
-      }
-    }
-  }
-
-  // 2. Process full markdown includes (without start/end): {% include-markdown "path" %}
-  const fullIncludeMarkdownRegex = /{%-?\s*include-markdown\s+["']([^"']+)["']\s*-?%}/g
-  const fullIncludeMarkdownMatches = Array.from(processedContent.matchAll(fullIncludeMarkdownRegex))
-
-  if (fullIncludeMarkdownMatches.length > 0) {
-    for (const match of fullIncludeMarkdownMatches) {
-      const [fullMatch, relativePath] = match
-      if (fullMatch.includes('start=') || fullMatch.includes('end=')) continue
-
-      const resolvedPath = resolvePath(filePath, relativePath)
-      const includeContent = readLocalFile(resolvedPath, contentPath)
-      if (includeContent) {
-        processedContent = processedContent.replace(fullMatch, removeCommentPatterns(includeContent))
-      } else if (relativePath.includes('coming-soon.md')) {
-        processedContent = processedContent.replace(fullMatch, '')
-      } else {
-        processedContent = processedContent.replace(fullMatch, `> **Note**: Include file \`${relativePath}\` not found`)
-      }
-    }
-  }
-
-  // 3. Process partial includes: {% include-markdown "path" start="..." end="..." %}
-  const includeMarkdownRegex = /{%-?\s*include-markdown\s+["']([^"']+)["']\s+start=["']([^"']+)["']\s+end=["']([^"']+)["']\s*-?%}/g
-  const includeMarkdownMatches = Array.from(processedContent.matchAll(includeMarkdownRegex))
-
-  if (includeMarkdownMatches.length > 0) {
-    for (const match of includeMarkdownMatches) {
-      const [fullMatch, relativePath, startMarker, endMarker] = match
-      const resolvedPath = resolvePath(filePath, relativePath)
-      const includeContent = readLocalFile(resolvedPath, contentPath)
-      if (includeContent) {
-        const startIndex = includeContent.indexOf(startMarker)
-        const endIndex = includeContent.indexOf(endMarker)
+  // 2. Process partial includes with markers: {% include-markdown "path" start="..." end="..." %}
+  processedContent = processedContent.replace(
+    /{%[\s\S]*?include-markdown[\s\S]+?["']([^"']+)["'][\s\S]*?start\s*=\s*["']([^"']*)["'][\s\S]*?end\s*=\s*["']([^"']*)["'][\s\S]*?%}/g,
+    (match, relativePath, startMarker, endMarker) => {
+      return processInclude(match, relativePath, filePath, contentPath, (content) => {
+        // If markers are empty, return whole content
+        if (!startMarker && !endMarker) return content
+        
+        const startIndex = content.indexOf(startMarker)
+        const endIndex = content.indexOf(endMarker)
+        
         if (startIndex !== -1 && endIndex !== -1) {
-          const extractedContent = includeContent.substring(startIndex + startMarker.length, endIndex).trim()
-          processedContent = processedContent.replace(fullMatch, removeCommentPatterns(extractedContent))
-        } else {
-          processedContent = processedContent.replace(fullMatch, `> **Note**: Markers not found in \`${relativePath}\``)
+          return content.substring(startIndex + startMarker.length, endIndex).trim()
         }
-      } else if (relativePath.includes('coming-soon.md')) {
-        processedContent = processedContent.replace(fullMatch, '')
-      } else {
-        processedContent = processedContent.replace(fullMatch, `> **Note**: Include file \`${relativePath}\` not found`)
-      }
+        
+        return `> **Note**: Markers not found in \`${relativePath}\``
+      })
     }
-  }
+  )
+
+  // 3. Process full includes (without markers): {% include-markdown "path" %}
+  processedContent = processedContent.replace(
+    /{%[\s\S]*?include-markdown[\s\S]+?["']([^"']+)["'][\s\S]*?%}/g,
+    (match, relativePath) => processInclude(match, relativePath, filePath, contentPath)
+  )
   // --- END PROCESSING INCLUDES ---
 
   const filePathToRoute = new Map<string, string>()
