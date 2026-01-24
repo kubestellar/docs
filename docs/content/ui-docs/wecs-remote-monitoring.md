@@ -38,7 +38,7 @@ Before you begin, ensure you have:
 
 ---
 
-##  Beginner Quick Guide
+## Beginner Quick Guide
 
 If you are new to KubeStellar, follow these steps to get your remote monitoring up and running quickly:
 
