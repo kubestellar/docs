@@ -103,8 +103,6 @@ Once workloads are deployed, go to **Deployed Workloads** (WECS) to start explor
 
 ---
 
----
-
 ## 2. Prerequisites
 
 Before using the WECS remote monitoring features, ensure the following prerequisites are met:
