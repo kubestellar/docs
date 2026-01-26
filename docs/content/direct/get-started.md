@@ -12,10 +12,6 @@ The two ways to create this simple configuration are as follows.
 
 ### Note for Windows users
 
-For some users on WSL, use of the setup procedure on this page and/or the demo environment creation script may require running as the user `root` in Linux. There is a [known issue about this](knownissue-helm-ghcr.md).
-
-### Note for MacOS users
-
 After [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install), it is possible to start a Fedora 43 distribution with the command:
 
 ```shell
@@ -27,6 +23,10 @@ Afterwards, the pre-requisites needed by KubeStellar and the demo script can be 
 ```shell
 bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v{{ config.ks_latest_release }}/scripts/setup-wsl-fedora.sh)
 ```
+
+For some users on WSL, use of the setup procedure on this page and/or the demo environment creation script may require running as the user `root` in Linux. There is a [known issue about this](knownissue-helm-ghcr.md).
+
+### Note for MacOS users
 
 Running multiple `kind` clusters on macOS may require increasing Docker Desktop’s memory allocation
 (4–6 GB recommended). Users with 8 GB RAM should avoid running more than 2–3 clusters concurrently or prefer `k3d` for lower overhead.
