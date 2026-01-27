@@ -12,11 +12,17 @@ The KubeStellar Klaude Console is a modern, AI-powered multi-cluster management 
 - Unified view of cluster health, resources, and workloads across all clusters
 
 ### AI-Powered Insights
+
+![AI Missions](images/ai-missions-panel.png)
+
 - AI missions for automated issue detection and remediation
 - Intelligent recommendations for cluster optimization
 - Natural language queries about cluster state and resources
 
 ### Customizable Dashboards
+
+![Card Catalog](images/card-catalog.png)
+
 - 100+ dashboard cards for different monitoring needs
 - Drag-and-drop card arrangement
 - Dashboard templates for quick setup

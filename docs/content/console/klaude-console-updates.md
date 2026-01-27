@@ -33,6 +33,8 @@ Nightly releases include:
 
 ## Checking for Updates
 
+![Settings Page - Updates](images/settings-page.png)
+
 ### From the Settings Page
 
 1. Navigate to **Settings** in the sidebar
