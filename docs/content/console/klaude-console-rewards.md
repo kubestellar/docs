@@ -1,3 +1,11 @@
+---
+title: "Rewards System"
+linkTitle: "Rewards"
+weight: 4
+description: >
+  Community engagement and rewards system in the Klaude Console
+---
+
 # Rewards System
 
 The KubeStellar Klaude Console includes a community rewards system to encourage engagement and contributions.

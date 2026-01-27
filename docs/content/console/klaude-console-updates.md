@@ -1,3 +1,11 @@
+---
+title: "Updates and Releases"
+linkTitle: "Updates"
+weight: 5
+description: >
+  Release channels and version management for the Klaude Console
+---
+
 # Updates and Releases
 
 The KubeStellar Klaude Console follows a regular release schedule with two update channels.
@@ -149,6 +157,6 @@ npm install && npm run build
 
 For update-related issues:
 
-- Check the [troubleshooting guide](README.md#troubleshooting)
+- Check the [console documentation](readme.md)
 - Search [GitHub Issues](https://github.com/kubestellar/console/issues)
 - Ask in the [KubeStellar Slack](https://kubestellar.io/community)

@@ -1,3 +1,11 @@
+---
+title: "Card Reference"
+linkTitle: "Cards"
+weight: 3
+description: >
+  Complete reference of all dashboard cards available in the Klaude Console
+---
+
 # Card Reference
 
 The Klaude Console includes over 100 dashboard cards organized into categories. Cards can display live data from your clusters or demo data for evaluation.

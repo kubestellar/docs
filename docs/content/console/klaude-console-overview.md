@@ -1,3 +1,11 @@
+---
+title: "Console Overview"
+linkTitle: "Overview"
+weight: 1
+description: >
+  Overview of the KubeStellar Klaude Console features and capabilities
+---
+
 # KubeStellar Klaude Console
 
 The KubeStellar Klaude Console is a modern, AI-powered multi-cluster management interface that provides real-time monitoring, intelligent insights, and a customizable dashboard experience for managing Kubernetes clusters at scale.
@@ -54,7 +62,7 @@ For production use, the console requires:
 1. **KKC Agent**: A local agent that connects to your kubeconfig
 2. **Backend API**: The KKC API server running on port 8080
 
-See the [setup guide](README.md) for detailed installation instructions.
+See the [installation guide](installation.md) for detailed setup instructions.
 
 ## Architecture
 

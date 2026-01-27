@@ -1,3 +1,11 @@
+---
+title: "Console Features"
+linkTitle: "Features"
+weight: 2
+description: >
+  Detailed guide to KubeStellar Klaude Console features
+---
+
 # Klaude Console Features
 
 This guide covers the main features of the KubeStellar Klaude Console.
