@@ -83,21 +83,6 @@ Open a Pull Request (PR) from your branch to the main repository.
   Fixes #123
   ```
 
----
-### 8. Open a Pull Request
-
-Open a Pull Request (PR) from your branch to the main repository.
-
-#### PR Description
-
-- Provide a summary of what you changed (maximum 2 lines).
-- Reference related issues, e.g.:
-  ```
-  Fixes #123
-  ```
-
----
-
 ## Contribution Guidelines
 
 - **Write Clearly:** Use concise language and proper formatting.
