@@ -6,11 +6,12 @@ The Klaude Console includes over 100 dashboard cards organized into categories. 
 
 ## Card Categories
 
-### Cluster Health (8 cards)
+### Cluster Health (9 cards)
 
 | Card | Description | Data Source |
 |------|-------------|-------------|
 | Cluster Health | Health status of all clusters | Live |
+| Offline Detection | Monitors nodes and GPUs for offline/unhealthy status | Live |
 | Cluster Metrics | CPU, memory, and pod metrics over time | Live |
 | Cluster Locations | Clusters grouped by region and cloud provider | Live |
 | Cluster Focus | Single cluster detailed view | Live |

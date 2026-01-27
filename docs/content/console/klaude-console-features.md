@@ -130,7 +130,90 @@ The alert system keeps you informed:
 
 AI-powered automation for common tasks:
 
-- Automatic issue detection
-- Suggested remediation steps
-- One-click fixes for common problems
-- Custom mission definitions
+![AI Missions Panel](images/ai-missions-panel.png)
+
+### Starting a Mission
+
+Missions can be started from:
+
+- **Card AI buttons**: Click the AI icon on any card
+- **Stats bar actions**: Click "Address Security Issues" or similar action buttons
+- **Keyboard shortcut**: Press `M` to open the missions panel
+
+### Mission Types
+
+- **Security Analysis**: Investigate security issues and vulnerabilities
+- **Performance Investigation**: Analyze slow pods or resource constraints
+- **Troubleshooting**: Debug failing deployments or pods
+- **Remediation**: Apply fixes for common problems
+
+### AI Provider Configuration
+
+The console supports multiple AI backends:
+
+![API Key Settings](images/api-key-settings.png)
+
+- **Claude (Anthropic)**: Primary AI backend with API access
+- **Claude Code (Local)**: Uses your local Claude Code installation for missions
+- **GPT-4 (OpenAI)**: Alternative LLM backend
+- **Gemini (Google)**: Alternative LLM backend
+
+Configure API keys in Settings > AI Provider Keys or click the key icon in the header.
+
+## Offline Detection
+
+The Offline Detection card monitors node and GPU health:
+
+![Offline Detection Card](images/offline-detection-card.png)
+
+### Features
+
+- **Node Monitoring**: Detects nodes with NotReady status
+- **GPU Tracking**: Identifies GPU nodes reporting 0 available GPUs
+- **Health Summary**: Shows count of offline nodes and GPU issues
+- **AI Analysis**: Click "Analyze Issues" to start an AI mission investigating problems
+
+### Status Indicators
+
+- **All Healthy**: Green status when no issues detected
+- **Issues Found**: Red/orange status with counts of affected resources
+- **Drill-Down**: Click counts to navigate to affected resources
+
+## Deploy Page
+
+The Deploy page provides tools for managing deployments across clusters.
+
+![Deploy Page](images/deploy-page.png)
+
+### Deployment Cards
+
+- **Deployment Status**: Overview of all deployments
+- **Deployment Progress**: Track rollout progress
+- **Deployment Issues**: View failing deployments
+
+### GitOps Integration
+
+- **GitOps Drift**: Detect configuration drift from Git
+- **ArgoCD Applications**: Manage ArgoCD apps across clusters
+- **ArgoCD Sync Status**: Monitor sync state
+- **ArgoCD Health**: Application health dashboard
+
+### Helm Management
+
+- **Helm Release Status**: View deployed releases
+- **Helm History**: Track release revisions
+- **Helm Chart Versions**: Monitor chart updates
+
+### Kustomize
+
+- **Kustomization Status**: Monitor Flux kustomizations
+- **Overlay Comparison**: Compare environment overlays
+
+### Workload Deployment
+
+Deploy workloads across clusters with drag-and-drop:
+
+1. Select a workload type (Deployment, StatefulSet, Job)
+2. Drag to target clusters on the world map
+3. Configure namespace and replicas
+4. Preview changes before applying
