@@ -20,7 +20,7 @@ klaude is an AI-powered kubectl plugin designed for **managing multiple clusters
 brew tap kubestellar/tap
 brew install kubectl-claude
 ```
-```md
+
 > The Homebrew formula is published automatically during releases using GoReleaser.
 > This installs the `kubectl-claude` kubectl plugin.
 
