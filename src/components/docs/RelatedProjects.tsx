@@ -153,6 +153,25 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
           const isCurrentProject = project.title === currentProject;
           const projectUrl = getProjectUrl(project.href);
 
+          if (isCurrentProject) {
+            return (
+              <a
+                key={project.title}
+                href={projectUrl}
+                className={`
+                  block px-3 text-sm rounded-md transition-colors font-medium
+                  ${bannerActive ? 'py-0.5' : 'py-1.5'}
+                `}
+                style={{
+                  color: isDark ? '#60a5fa' : '#2563eb',
+                  backgroundColor: isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)'
+                }}
+              >
+                {project.title}
+              </a>
+            );
+          }
+
           return (
             <a
               key={project.title}
@@ -160,19 +179,11 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
               className={`
                 block px-3 text-sm rounded-md transition-colors
                 ${bannerActive ? 'py-0.5' : 'py-1.5'}
-                ${isCurrentProject
-                  ? 'font-medium'
-                  : 'hover:bg-gray-100 dark:hover:bg-gray-800'
+                ${isDark 
+                  ? 'text-gray-200 hover:bg-blue-500/20 hover:text-blue-400' 
+                  : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
                 }
               `}
-              style={{
-                color: isCurrentProject
-                  ? (isDark ? '#60a5fa' : '#2563eb')  // blue-400 : blue-600
-                  : textColor,
-                backgroundColor: isCurrentProject
-                  ? (isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)')  // blue-500/20 : blue-50
-                  : undefined
-              }}
             >
               {project.title}
             </a>
