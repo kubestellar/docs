@@ -8,7 +8,20 @@ description: >
 
 # Architecture
 
-KubeStellar Klaude Console uses a modern, modular architecture designed for extensibility and real-time updates.
+KubeStellar Console uses a modern, modular architecture designed for extensibility and real-time updates.
+
+## The 6 Components
+
+The console consists of 6 components working together. See [Installation](installation.md) for how to set up each one.
+
+| # | Component | Purpose |
+|---|-----------|---------|
+| 1 | **GitHub OAuth App** | User authentication via GitHub |
+| 2 | **Frontend** | React SPA - dashboards, cards, AI UI |
+| 3 | **Backend** | Go server - API, auth, data storage |
+| 4 | **MCP Bridge** | Connects backend to kubestellar-mcp tools |
+| 5 | **Claude Code Plugins** | kubestellar-ops + kubestellar-deploy ([docs](/docs/kubestellar-mcp/overview/introduction)) |
+| 6 | **Kubeconfig** | Your cluster credentials |
 
 ## System Overview
 
@@ -20,7 +33,7 @@ KubeStellar Klaude Console uses a modern, modular architecture designed for exte
                               │ WebSocket + REST
                               ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                        KubeStellar Klaude Console Backend                    │
+│                        KubeStellar Console Backend                            │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
 │  │   Auth       │  │   Dashboard  │  │   Claude     │  │   Events     │    │
 │  │   Service    │  │   Service    │  │   Service    │  │   Stream     │    │
@@ -30,7 +43,7 @@ KubeStellar Klaude Console uses a modern, modular architecture designed for exte
 │         ▼                  ▼                  ▼                  ▼          │
 │  ┌─────────────────────────────────────────────────────────────────────┐   │
 │  │                         MCP Bridge Layer                             │   │
-│  │    Wraps klaude-ops and klaude-deploy MCP servers as HTTP/WS APIs   │   │
+│  │    Wraps kubestellar-ops and kubestellar-deploy MCP servers as HTTP/WS APIs │   │
 │  └─────────────────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────────────────┘
                               │
@@ -81,7 +94,7 @@ KubeStellar Klaude Console uses a modern, modular architecture designed for exte
 
 ## Database Schema
 
-kkc uses SQLite for persistence:
+The console uses SQLite for persistence:
 
 - `users` - GitHub user info and preferences
 - `dashboards` - User dashboard configurations

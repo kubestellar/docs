@@ -152,10 +152,10 @@
         "isDev": true
       }
     },
-    "klaude": {
+    "kubestellar-mcp": {
       "latest": {
-        "label": "v0.7.1 (Latest)",
-        "branch": "docs/klaude/0.7.1",
+        "label": "v0.8.1 (Latest)",
+        "branch": "docs/kubestellar-mcp/0.8.1",
         "isDefault": true
       },
       "main": {
@@ -163,41 +163,6 @@
         "branch": "main",
         "isDefault": false,
         "isDev": true
-      },
-      "0.5.0": {
-        "label": "v0.5.0",
-        "branch": "docs/klaude/0.5.0",
-        "isDefault": false
-      },
-      "0.4.6": {
-        "label": "v0.4.6",
-        "branch": "docs/klaude/0.4.6",
-        "isDefault": false
-      },
-      "0.4.5": {
-        "label": "v0.4.5",
-        "branch": "docs/klaude/0.4.5",
-        "isDefault": false
-      },
-      "0.4.4": {
-        "label": "v0.4.4",
-        "branch": "docs/klaude/0.4.4",
-        "isDefault": false
-      },
-      "0.4.3": {
-        "label": "v0.4.3",
-        "branch": "docs/klaude/0.4.3",
-        "isDefault": false
-      },
-      "0.4.0": {
-        "label": "v0.4.0",
-        "branch": "docs/klaude/0.4.0",
-        "isDefault": false
-      },
-      "0.6.0": {
-        "label": "v0.6.0",
-        "branch": "docs/klaude/0.6.0",
-        "isDefault": false
       }
     }
   },
@@ -222,10 +187,10 @@
       "basePath": "multi-plugin",
       "currentVersion": "0.1.0"
     },
-    "klaude": {
-      "name": "klaude",
-      "basePath": "klaude",
-      "currentVersion": "0.7.1"
+    "kubestellar-mcp": {
+      "name": "KubeStellar MCP",
+      "basePath": "kubestellar-mcp",
+      "currentVersion": "0.8.1"
     },
     "console": {
       "name": "Console",
@@ -240,9 +205,9 @@
       "description": "Multi-cluster configuration management"
     },
     {
-      "title": "klaude",
-      "href": "/docs/klaude/overview/introduction",
-      "description": "AI-powered kubectl plugin"
+      "title": "KubeStellar MCP",
+      "href": "/docs/kubestellar-mcp/overview/introduction",
+      "description": "AI-powered Kubernetes MCP tools"
     },
     {
       "title": "KubeFlex",
@@ -270,8 +235,8 @@
     "a2a": "https://github.com/kubestellar/a2a/edit/main/docs",
     "kubeflex": "https://github.com/kubestellar/kubeflex/edit/main/docs",
     "multi-plugin": "https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs",
-    "klaude": "https://github.com/kubestellar/klaude/edit/main/docs",
+    "kubestellar-mcp": "https://github.com/kubestellar/kubestellar-mcp/edit/main/docs",
     "console": "https://github.com/kubestellar/docs/edit/main/docs/content/console"
   },
-  "updatedAt": "2026-01-16T02:38:36.598Z"
+  "updatedAt": "2026-01-16T18:24:27.434Z"
 }

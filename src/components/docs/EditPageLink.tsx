@@ -58,12 +58,16 @@ function detectCurrentBranch(versions: VersionEntry[]): string {
 }
 
 // Source repos for each project (used when on main branch)
+// Projects not listed here have their docs in the docs repo itself
 const SOURCE_REPOS: Record<string, { repo: string; docsPath: string }> = {
   a2a: { repo: 'kubestellar/a2a', docsPath: 'docs' },
   kubeflex: { repo: 'kubestellar/kubeflex', docsPath: 'docs' },
   'multi-plugin': { repo: 'kubestellar/kubectl-multi-plugin', docsPath: 'docs' },
-  'klaude': { repo: 'kubestellar/klaude', docsPath: 'docs' },
+  'kubestellar-mcp': { repo: 'kubestellar/kubestellar-mcp', docsPath: 'docs' },
 };
+
+// Projects whose docs live in the docs repo itself (not a separate source repo)
+const DOCS_REPO_PROJECTS = ['console'];
 
 // Build edit URL for a project, using correct branch
 function buildEditBaseUrl(projectId: ProjectId, branch: string): string {
@@ -72,9 +76,14 @@ function buildEditBaseUrl(projectId: ProjectId, branch: string): string {
     return `https://github.com/kubestellar/docs/edit/${branch}/docs/content`;
   }
 
+  // Projects whose docs live in the docs repo itself (e.g., console)
+  if (DOCS_REPO_PROJECTS.includes(projectId)) {
+    return `https://github.com/kubestellar/docs/edit/${branch}/docs/content/${projectId}`;
+  }
+
   // For other projects: version branches are in docs repo, main goes to source repo
   if (branch !== 'main' && branch.startsWith('docs/')) {
-    // Version branch in docs repo (e.g., docs/klaude/0.6.0)
+    // Version branch in docs repo (e.g., docs/kubestellar-mcp/0.6.0)
     return `https://github.com/kubestellar/docs/edit/${branch}/docs/content/${projectId}`;
   }
 

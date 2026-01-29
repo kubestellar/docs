@@ -1043,21 +1043,21 @@ Free and open source, inspired by Chaos Mesh and powered by the community.`,
     },
     {
       id: "25",
-      name: "klaude",
-      slug: "klaude",
+      name: "kubestellar-mcp",
+      slug: "kubestellar-mcp",
       tagline: "AI-powered multi-cluster Kubernetes management for Claude Code",
       description:
         "Integrate Claude Code with your Kubernetes clusters. Use natural language to query pods, diagnose issues, analyze RBAC, and manage multi-cluster environments.",
-      longDescription: `klaude brings the power of AI to multi-cluster Kubernetes management. Install as a Claude Code plugin and use natural language to interact with your clusters.
+      longDescription: `KubeStellar MCP brings the power of AI to multi-cluster Kubernetes management. Install as a Claude Code plugin and use natural language to interact with your clusters.
 
-Ask questions like "find pods with issues", "what permissions does the admin service account have?", or "show me warning events in kube-system". klaude understands your intent and executes the right kubectl commands across all your clusters.
+Ask questions like "find pods with issues", "what permissions does the admin service account have?", or "show me warning events in kube-system". KubeStellar MCP understands your intent and executes the right kubectl commands across all your clusters.
 
 Built-in diagnostic tools help you quickly identify CrashLoopBackOff pods, stuck deployments, security misconfigurations, and RBAC issues. Perfect for DevOps teams managing complex multi-cluster environments.
 
 **Installation:**
 \`\`\`bash
 brew tap kubestellar/tap
-brew install klaude
+brew install kubestellar-ops kubestellar-deploy
 \`\`\`
 
 Or install via Claude Code:
@@ -1094,8 +1094,8 @@ Free, open source, and built by the KubeStellar team.`,
       ],
       compatibility: ["Linux", "macOS", "Windows"],
       screenshots: [],
-      documentation: "https://kubestellar.io/docs/klaude/overview/introduction",
-      github: "https://github.com/kubestellar/klaude",
+      documentation: "https://kubestellar.io/docs/kubestellar-mcp/overview/introduction",
+      github: "https://github.com/kubestellar/kubestellar-mcp",
       tags: ["claude", "ai", "kubectl", "multi-cluster", "diagnostics", "rbac", "free", "mcp"],
     },
   ];

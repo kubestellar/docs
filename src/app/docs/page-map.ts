@@ -16,8 +16,10 @@ export function getContentPath(projectId: ProjectId): string {
       return path.join(process.cwd(), 'docs', 'content', 'kubeflex')
     case 'multi-plugin':
       return path.join(process.cwd(), 'docs', 'content', 'multi-plugin')
-    case 'klaude':
-      return path.join(process.cwd(), 'docs', 'content', 'klaude')
+    case 'kubestellar-mcp':
+      return path.join(process.cwd(), 'docs', 'content', 'kubestellar-mcp')
+    case 'console':
+      return path.join(process.cwd(), 'docs', 'content', 'console')
     default:
       return docsContentPath
   }
@@ -32,8 +34,10 @@ export function getBasePath(projectId: ProjectId): string {
       return 'docs/kubeflex'
     case 'multi-plugin':
       return 'docs/multi-plugin'
-    case 'klaude':
-      return 'docs/klaude'
+    case 'kubestellar-mcp':
+      return 'docs/kubestellar-mcp'
+    case 'console':
+      return 'docs/console'
     default:
       return 'docs'
   }
@@ -173,12 +177,37 @@ const NAV_STRUCTURE_KUBEFLEX: Array<{ title: string; items: NavItem[] }> = [
   }
 ]
 
-// klaude Navigation Structure
-const NAV_STRUCTURE_KLAUDE: Array<{ title: string; items: NavItem[] }> = [
+// kubestellar-mcp Navigation Structure
+const NAV_STRUCTURE_KUBESTELLAR_MCP: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Overview',
     items: [
       { 'Introduction': 'overview/intro.md' },
+    ]
+  }
+]
+
+// Console Navigation Structure
+const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
+  {
+    title: 'Overview',
+    items: [
+      { 'Introduction': 'readme.md' },
+      { 'Quick Start': 'quickstart.md' },
+      { 'Installation': 'installation.md' },
+      { 'Architecture': 'architecture.md' },
+      { 'Configuration': 'configuration.md' },
+    ]
+  },
+  {
+    title: 'Features',
+    items: [
+      { 'Dashboards': 'dashboards.md' },
+      { 'Cards': 'all-cards.md' },
+      { 'Stats Blocks': 'stats-blocks.md' },
+      { 'AI Features': 'ai-features.md' },
+      { 'Alerts': 'alerts.md' },
+      { 'Feedback System': 'feedback.md' },
     ]
   }
 ]
@@ -264,7 +293,12 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
           }
         ]
       },
-      { 'UI (User Interface)': 'ui-docs/ui-overview.md' },
+      { 
+        'UI': [
+          { 'Overview': 'ui-docs/ui-overview.md' },
+          { 'ITS cluster management': 'ui-docs/its-cluster-management.md'}
+        ]
+      },
       { 'Teardown': 'direct/teardown.md' }
     ]
   },
@@ -330,8 +364,10 @@ function getNavStructure(projectId: ProjectId): Array<{ title: string; items: Na
       return NAV_STRUCTURE_KUBEFLEX
     case 'multi-plugin':
       return NAV_STRUCTURE_MULTI_PLUGIN
-    case 'klaude':
-      return NAV_STRUCTURE_KLAUDE
+    case 'kubestellar-mcp':
+      return NAV_STRUCTURE_KUBESTELLAR_MCP
+    case 'console':
+      return NAV_STRUCTURE_CONSOLE
     default:
       return NAV_STRUCTURE
   }
