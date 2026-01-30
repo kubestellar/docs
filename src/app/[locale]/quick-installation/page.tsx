@@ -88,7 +88,7 @@ const getCorePrerequisites = (t: TranslationFunction): Prerequisite[] => [
     minVersion: "0.7.0",
     installCommand:
       "bash <(curl -L https://raw.githubusercontent.com/open-cluster-management-io/clusteradm/main/install.sh) 0.10.1",
-    installUrl: "https://docs.kubestellar.io/latest/direct/pre-reqs/",
+    installUrl: "https://docs.kubestellar.io/latest/kubestellar/pre-reqs/",
     versionCommand: "clusteradm version",
   },
   {

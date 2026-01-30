@@ -305,9 +305,15 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Contributing',
     items: [
-      { 'Overview': 'kubestellar/contribute.md' },
+      { 'Overview': 'contribution-guidelines/contribute.md' },
       { 'Code of Conduct': 'contribution-guidelines/coc-inc.md' },
-      { 'Guidelines': 'contribution-guidelines/contributing-inc.md' },
+      { 'Contributing to Code': 'contribution-guidelines/CONTRIBUTINGKS.md' },
+      { 'Contributing to Docs/Website': [
+          {'Docs Structure': 'contribution-guidelines/documentation/docs-structure-inc.md'} ,
+          {'Simple Changes' : 'contribution-guidelines/documentation/simple-docs-inc.md'},
+          {'Detailed Contribution Guide': 'contribution-guidelines/documentation/contributing-inc.md' },
+          {'Style Guide': 'contribution-guidelines/documentation/docs-styleguide.md' }
+          ]},
       { 'Contributor Ladder': 'contribution-guidelines/contributor_ladder.md' },
       { 'License': 'contribution-guidelines/license-inc.md' },
       { 'Governance': 'contribution-guidelines/governance-inc.md' },
@@ -315,7 +321,7 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
       {
         'Website': [
           { 'Docs Management': 'contribution-guidelines/operations/document-management.md' },
-          { 'Style Guide': 'contribution-guidelines/operations/docs-styleguide.md' },
+          
           { 'Testing PRs': 'contribution-guidelines/operations/testing-doc-prs.md' }
         ]
       },

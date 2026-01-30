@@ -1,6 +1,6 @@
-# Contributing to Kubestellar Docs
+# Contributing to Kubestellar
 
-Thank you for your interest in contributing to our documentation repository! We welcome contributions from everyone. Please follow these guidelines to help maintain a high-quality, consistent, and collaborative project.
+Thank you for your interest in contributing to KubeStellar's code and/or documentation repositories! We welcome contributions from everyone. Please follow these guidelines to help maintain a high-quality, consistent, and collaborative project.
 
 ---
 
@@ -82,6 +82,21 @@ Open a Pull Request (PR) from your branch to the main repository.
   ```
   Fixes #123
   ```
+
+---
+### 8. Open a Pull Request
+
+Open a Pull Request (PR) from your branch to the main repository.
+
+#### PR Description
+
+- Provide a summary of what you changed (maximum 2 lines).
+- Reference related issues, e.g.:
+  ```
+  Fixes #123
+  ```
+
+---
 
 ## Contribution Guidelines
 
@@ -172,36 +187,65 @@ These commands help maintainers manage community contributions effectively and a
 
 ### Overview
 
-This documentation website is a **separate repository** from the main KubeStellar codebase. Here's the key architecture:
+This documentation website is a **separate repository** from the main KubeStellar codebase. All the active documentation is now located _in this repository_. 
+For safety reasons, copies of the docs source may remain in a to-be-deleted folder in the component repositories during a transition period
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  Main KubeStellar Repository                                 │
-│  github.com/kubestellar/kubestellar                          │
-│                                                               │
-│  📁 docs/content/                                            │
-│     ├── readme.md                                            │
-│     ├── architecture.md                                      │
-│     ├── direct/                                              │
-│     │   ├── binding.md                                       │
-│     │   └── wds.md                                           │
-│     └── ... (all documentation content)                      │
+│  Main KubeStellar Repository                                │
+│  github.com/kubestellar/kubestellar                         │
+│  🗄️kubestellar/                                             │
+│   ├📁 docs/   ← NOT THE ACTIVE DOCS                         |
+|     ├──README.md                                            |
+|     └──content/to-be-deleted                                │
+│           ├── readme.md                                     │
+│           ├── architecture.md                               │
+│           ├── direct/                                       │
+│           ├── binding.md                                    │
+│           ├── wds.md                                        │
+│           └── ... (all previous documentation content)      │
+│    └── ...(all the active components of the component repo) |
 └─────────────────────────────────────────────────────────────┘
-                          ↓
-                    (Fetched via GitHub API)
-                          ↓
-┌─────────────────────────────────────────────────────────────┐
-│  Docs Website Repository (THIS REPO)                         │
-│  github.com/kubestellar/docs                                 │
-│                                                               │
-│  📁 src/app/docs/                                            │
-│     ├── page-map.ts     ← Defines navigation structure      │
-│     ├── layout.tsx       ← Nextra theme integration         │
-│     └── [...slug]/page.tsx  ← Renders fetched content       │
-│                                                               │
-│  📁 next.config.ts      ← Nextra configuration              │
-│  📁 mdx-components.js   ← MDX component mappings            │
-└─────────────────────────────────────────────────────────────┘
+                         
+┌────────────────────────────────────────────────────────────────|
+│  Docs Website Repository (THIS REPO)                           │
+│  github.com/kubestellar/docs                                   |
+|                                                                │  
+│  🗄️docs/ ← this repository root folder                        │
+|   ├ 📁 docs/ ← raw MD content source moved from repos         |
+|   |   📁content/                                              |
+|   |     📁 a2a/                                               |
+|   |     📁 dommon-subs/                                       |
+|   |     📁 Community/                                         |
+|   |     📁 console/                                           |
+|   |     📁 contribution-guidelines/                           |
+|   |     📁 icons/                                             |
+|   |     📁 images/                                            |
+|   |     📁 klaude/                                            |
+|   |     📁 kubeflex/                                          |
+|   |     📁 kubestellar/                                       |
+|   |     📁 multi-plugin/                                      |
+|   |     📁 ui-docs/                                           |
+|   |   📁images/ ← image folder for some of the MD files       |
+|   |  📁overrides/ ← master mkdocs layouts (legacy ref only)   |
+|   ├📁 messages      ← alternate language files for NEW pages  | 
+|   ├📁 src/  ← Source for NEW pages, site nav and layout       |    
+|   | ├📁 app/                                                  |
+|   | |  ├📁 docs/  ← layouts to apply to component docs pages  |
+|   | |  ├── 📄page-map.ts     ← Defines navigation structure   │
+│   | |  ├── 📄layout.tsx      ← Nextra theme integration       │
+|   | |  └── 📄page.mdx      ← Nextra page master               │
+|   | ├📁 components/                                           │
+|   | ├📁 config/                                               │
+|   | ├📁 hooks/                                                │
+|   | ├📁 i18n/ ← configures language support                   |
+|   | ├📁 lib/                                                  │
+|   ├📄CONTRIBUTING.md    <----- this file                      |
+|   ├📄GOVERNANCE.md                                            |
+|   ├📄 next.config.ts      ← Nextra configuration              │
+|   ├📄 mdx-components.js   ← MDX component mappings            |
+|   └── ... (various node.js and next.js etc files)              │
+└────────────────────────────────────────────────────────────────┘
                           ↓
                     (Built & Deployed)
                           ↓
@@ -213,9 +257,7 @@ This documentation website is a **separate repository** from the main KubeStella
 
 **Important Concepts:**
 
-- ✅ **Content lives in the main KubeStellar repo** (`docs/content/`)
-- ✅ **This repo only contains the website framework** (Next.js + Nextra)
-- ✅ **Content is fetched dynamically** via GitHub API at build time
+
 - ✅ **Navigation is defined in `page-map.ts`** (not auto-generated from files)
 
 ### How Nextra Integration Works
@@ -250,9 +292,11 @@ This documentation site is built using **Nextra**, a powerful Next.js-based docu
    - Constructs hierarchical navigation from the defined structure
    - Generates routes for each documentation page
    - Creates a mapping between file paths and URL routes
+   - **Note:** The file tree structure in _/docs/content_ roughly parallels the navigation created in _pagemap.ts_ but is **not** identical. As the new site matures many of the differences will be smoothed out
+   - Using the page-map rather than file structure to generate the `NAV_STRUCTURE` simplifies changing menus for different locales (languages)
 
 4. **`src/app/docs/[...slug]/page.tsx`** - Dynamic page renderer that:
-   - Reads MDX content from the local `/docs/content/` directory
+   - Reads MDX and MD content from the local `/docs/content/` directory
    - Compiles and evaluates MDX with custom components
    - Processes Jekyll-style includes and template variables
    - Supports Mermaid diagrams and custom components
@@ -263,7 +307,36 @@ This documentation site is built using **Nextra**, a powerful Next.js-based docu
    - Allows customization of how markdown elements render
    - Enables adding custom React components to MDX files
 
-### How to Add Documentation
+# Working Effectively on the KubeStellar Docs
+
+## How to Modify An Existing Page in the site
+### The Easy Way
+
+For edits to a single page, we have enabled a suggest edits function in the site itself: 
+
+1. Sign into Github in your browser.
+2.  Open a second tab and visit the page in the website you wish to modify. (Make sure have selected the specific version of the docs with the dropdown in the masthead)
+3. Find and click on the Edit This Page (Pencil) icon near the upper right page
+4. A Github editor session will open for you and when you commit your changes, you will be presented with the option to create a corresponding PR. 
+5. You may have to make some adjustments to the PR title, etc to fulfil some requirements for a PR.
+6. When your PR is created, it will automatically generate a site preview via Netlify to make reviewing the proposed changes easier
+
+### The Complicated Way
+
+For less simple edits, for edits across multiple files, or for editing the docs site structure/navigation, you will have to go the more traditional GitHub route of:
+1. creating a fork of the docs repository
+2. configuring your editing system properly with node.js and Nextra
+3. editing the files
+4. committing changes to the branch
+   _be sure to both sign off (-s option) for DCO    and sign (-S option) your commits_
+5. pushing those changes up to your fork 
+5. and then doing a standard Pull Request. The PR will create a website preview via Netlify for reviewers
+
+Some of the most common tasks are detailed below.
+
+## Common Tasks for modifying the KubeStellar Site
+
+### How to _Add_ Documentation
 
 The documentation content is stored directly in this repository in the `/docs/content/` directory.
 
@@ -311,8 +384,8 @@ To add new documentation pages:
 {
   title: 'User Guide',
   items: [
-    { 'Quick Start': 'direct/get-started.md' },
-    { 'Your New Guide': 'direct/new-guide.md' }, // Add this line
+    { 'Quick Start': 'kubestellar/get-started.md' },
+    { 'Your New Guide': 'kubestellar/new-guide.md' }, // Add this line
     // ... rest of the entries
   ]
 }

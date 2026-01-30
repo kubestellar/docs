@@ -384,8 +384,8 @@
         "description": "Overview of how documentation is managed and updated. Comprehensive documentation workflow."
       },
       "testingWebsitePRs": {
-        "title": "Testing Website PRs",
-        "description": "How to test pull requests for the KubeStellar website. Quality assurance for web changes."
+        "title": "Contributing to Code",
+        "description": "Basic information on the process for contributing to the KubeStellar component repositories"
       },
       "releaseProcess": {
         "title": "Release Process",
