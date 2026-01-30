@@ -83,6 +83,30 @@
 
 # Redirects for short URLs
 
+# Redirect console-docs.kubestellar.io to kubestellar.io/docs/console
+[[redirects]]
+  from = "https://console-docs.kubestellar.io/*"
+  to = "https://kubestellar.io/docs/console/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://console-docs.kubestellar.io"
+  to = "https://kubestellar.io/docs/console/readme"
+  status = 301
+  force = true
+
+# Redirect project root pages to first content page
+[[redirects]]
+  from = "/docs/console"
+  to = "/docs/console/readme"
+  status = 302
+
+[[redirects]]
+  from = "/docs/console/"
+  to = "/docs/console/readme"
+  status = 302
+
 # Redirect docs.kubestellar.io to kubestellar.io/docs
 # [[redirects]]
 #   from = "https://docs.kubestellar.io/*"
