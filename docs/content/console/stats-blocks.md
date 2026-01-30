@@ -3,7 +3,7 @@ title: "Stats Blocks"
 linkTitle: "Stats Blocks"
 weight: 8
 description: >
-  All 85 stats blocks across 13 dashboard types
+  All 93+ stats blocks across dashboard types
 ---
 
 # Stats Blocks
@@ -29,7 +29,7 @@ Click "Configure stats" to:
 
 ---
 
-## All 85 Stats Blocks
+## All 93+ Stats Blocks
 
 ### Main Dashboard Stats (6)
 
@@ -204,6 +204,36 @@ Click "Configure stats" to:
 | 77 | resolved | Resolved | green | Resolved alerts |
 | 78 | rules_enabled | Rules Enabled | blue | Enabled alert rules |
 | 79 | rules_disabled | Rules Disabled | gray | Disabled alert rules |
+
+---
+
+### Main Dashboard Stats (6)
+
+| # | ID | Name | Color | What it shows |
+|---|---|------|-------|---------------|
+| 80 | clusters | Clusters | blue | Total cluster count |
+| 81 | healthy | Healthy | green | Healthy clusters |
+| 82 | pods | Pods | cyan | Total pods |
+| 83 | nodes | Nodes | purple | Total nodes |
+| 84 | namespaces | Namespaces | purple | Total namespaces |
+| 85 | errors | Errors | red | Unhealthy clusters |
+
+---
+
+### Additional Dashboard Stats (8+)
+
+| # | ID | Name | Color | What it shows |
+|---|---|------|-------|---------------|
+| 86 | deploy_issues | Deploy Issues | red | Deployment issues |
+| 87 | data_compliance | Data Compliance | blue | Compliance score |
+| 88 | security_posture | Security Posture | purple | Security posture score |
+| 89 | argocd_apps | ArgoCD Apps | blue | Total ArgoCD applications |
+| 90 | argocd_synced | Synced | green | Synced ArgoCD apps |
+| 91 | operators | Operators | purple | Total operators |
+| 92 | crds | CRDs | cyan | Custom Resource Definitions |
+| 93 | provider_health | Provider Health | green | AI/Cloud provider status |
+
+More stats are added as new dashboards and features are built.
 
 ---
 

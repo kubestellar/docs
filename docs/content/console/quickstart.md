@@ -141,6 +141,6 @@ helm install ksc ./deploy/helm/kubestellar-console \
 - [Installation](installation.md) - Full deployment options (Helm, Docker, OpenShift)
 - [Configuration](configuration.md) - Customize AI mode, token limits, and more
 - [Architecture](architecture.md) - Understand how the 6 components work together
-- [Dashboards](dashboards.md) - Explore the 20 dashboard pages
-- [Cards](all-cards.md) - See all 60 card types
+- [Dashboards](dashboards.md) - Explore the 20+ dashboard pages
+- [Cards](all-cards.md) - See all 110+ card types
 - [kubestellar-mcp Documentation](/docs/kubestellar-mcp/overview/introduction) - Deep dive into kubestellar-ops and kubestellar-deploy

@@ -3,7 +3,7 @@ title: "AI Features"
 linkTitle: "AI Features"
 weight: 9
 description: >
-  AI Missions, Diagnose & Repair, and Smart Suggestions
+  AI Missions, Diagnose & Repair, Smart Suggestions, and AI Card Creation
 ---
 
 # AI Features
@@ -148,6 +148,56 @@ When AI notices you're focusing on different things:
 *You've been looking at pod issues for 5 minutes*
 
 **AI Suggestion:** "I notice you're focused on pod issues. Would you like to swap the Cluster Metrics card for a Pod Health Trend card?"
+
+---
+
+## AI Card Creation
+
+You can create brand new cards just by describing what you want. This is the Card Factory feature.
+
+### How to Create a Card with AI
+
+1. Open the **Card Factory** (from the add card menu)
+2. Choose **"Describe with AI"**
+3. Type what you want in plain English
+4. AI builds the card
+5. Preview it and add to your dashboard
+
+### Example
+
+**You type:** "Show me a card that displays the top 5 pods by memory usage with a bar chart"
+
+**AI creates:** A custom bar chart card showing your top pods ranked by memory, updating in real time.
+
+### What You Can Create
+
+- Custom metric views for your specific needs
+- Charts and tables with your own filters
+- Cards that combine data from multiple sources
+- Specialized views for your team's workflow
+
+### Other Ways to Create Cards
+
+If you prefer code, the Card Factory also accepts:
+- **JSON definitions** - Declarative card configuration
+- **TSX code** - Full React components (compiled at runtime)
+
+---
+
+## Provider Health Monitoring
+
+The Provider Health card shows you the status of AI services and cloud providers your console depends on.
+
+### What It Shows
+
+- **Claude** (Anthropic) - Status and availability
+- **OpenAI** - Status and availability
+- **Gemini** (Google) - Status and availability
+- **Cloud providers** - AWS, Azure, GCP status
+
+### Why It Matters
+
+If AI features stop working or respond slowly, check the Provider Health card first. It tells you whether the issue is on your side or the provider's side.
 
 ---
 

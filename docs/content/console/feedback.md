@@ -144,10 +144,25 @@ Your feedback helps improve the fix before it ships.
 
 ### AI-Maintained Repository
 
-This is one of the first codebases that is:
-- **Actively maintained by AI** - Not just code suggestions, but actual fixes
-- **Closed-loop** - Your feedback directly creates changes
-- **Fast** - Fixes can be created in hours, not days
+KubeStellar Console is one of the first codebases that is **continuously maintained by AI**:
+
+- **Closed-loop** - Your feedback directly creates code changes. Report a bug, get a fix. Request a feature, get it built.
+- **Fast** - Fixes can be created in hours, not weeks
+- **Quality-checked** - Every AI-generated fix goes through automated tests, code review, and human approval
+- **Always improving** - The console is being developed all day, every day, with AI writing and reviewing code around the clock
+
+### How the Automation Works
+
+Behind the scenes, a pipeline of AI agents handles your requests:
+
+1. **Auto-QA** scans the codebase for issues every hour
+2. **Copilot coding agent** creates pull requests to fix issues
+3. **Copilot review agent** reviews every PR for quality
+4. **Auto-apply** ensures review suggestions are incorporated
+5. **Automated testing** validates every change
+6. **Human maintainers** approve and merge
+
+This means bugs get caught early, fixes get reviewed automatically, and releases happen frequently.
 
 ### Human + AI
 
@@ -161,6 +176,7 @@ AI helps with:
 - Analyzing problems
 - Creating initial fixes
 - Running tests
+- Reviewing code
 - Generating documentation
 
 ---
