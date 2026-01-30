@@ -138,7 +138,7 @@ We welcome contributions and engagement from the community. Here's how to get in
 - **Shared Documents**: Access our [Google Drive](https://drive.google.com/drive/folders/1p68MwkX0sYdTvtup0DcnAEsnXElobFLS?usp=sharing) for design docs and collaborative materials
   - Available to [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) mailing list members
 - **Blog**: Read our latest updates on [Medium](https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST)
-- **LinkedIn**: Follow [#kubestellar](https://www.linkedin.com/feed/hashtag/?keywords=kubestellar) for news and updates
+- **LinkedIn**: Follow [KubeStellar on LinkedIn](https://www.linkedin.com/company/kubestellar/) for news and updates
 
 ## Contributing
 
