@@ -15,6 +15,13 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect("https://kubestellar.io/docs", 301);
   }
 
+  // Redirect console-docs.kubestellar.io to console docs section
+  if (request.nextUrl.hostname === "console-docs.kubestellar.io") {
+    const path = request.nextUrl.pathname;
+    const target = path === "/" ? "/docs/console/readme" : `/docs/console${path}`;
+    return NextResponse.redirect(`https://kubestellar.io${target}`, 301);
+  }
+
   // Redirect localized docs URLs to non-localized version
   // e.g., /es/docs/... -> /docs/...
   const docsPathMatch = request.nextUrl.pathname.match(/^\/([a-z]{2}(?:-[A-Z]{2})?|SC)\/docs\//);
