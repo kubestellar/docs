@@ -201,8 +201,8 @@ const KUBESTELLAR_MCP_VERSIONS: Record<string, VersionInfo> = {
 // console versions
 const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.1.0 (Latest)",
-    branch: "docs/console/0.1.0",
+    label: "v0.3.6 (Latest)",
+    branch: "docs/console/0.3.6",
     isDefault: true,
   },
   main: {
@@ -210,6 +210,11 @@ const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
     branch: "main",
     isDefault: false,
     isDev: true,
+  },
+  "0.1.0": {
+    label: "v0.1.0",
+    branch: "docs/console/0.1.0",
+    isDefault: false,
   },
 }
 
@@ -259,7 +264,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "console",
     name: "Console",
     basePath: "console",
-    currentVersion: "0.1.0",
+    currentVersion: "0.3.6",
     contentPath: "docs/content/console",
     versions: CONSOLE_VERSIONS,
   },
