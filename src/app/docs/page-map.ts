@@ -296,11 +296,8 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
       {
         'UI (User Interface)': [
           { 'Overview': 'ui-docs/ui-overview.md' },
-          { 'WECS Remote Monitoring': 'ui-docs/wecs-remote-monitoring.md' }
-      { 
-        'UI': [
-          { 'Overview': 'ui-docs/ui-overview.md' },
-          { 'ITS cluster management': 'ui-docs/its-cluster-management.md'}
+          { 'WECS Remote Monitoring': 'ui-docs/wecs-remote-monitoring.md' },
+          { 'ITS cluster management': 'ui-docs/its-cluster-management.md' }
         ]
       },
       { 'Teardown': 'direct/teardown.md' }
