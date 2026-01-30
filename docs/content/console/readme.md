@@ -77,6 +77,20 @@ It's a closed-loop system - your feedback directly improves the product!
 
 [See all cards](all-cards.md)
 
+### Deploy & Orchestrate
+
+The console is a full deployment control plane. From the Deploy dashboard you can:
+
+- See all workloads across every cluster
+- Create cluster groups (like "production" or "us-east")
+- Deploy workloads by dragging them onto groups
+- Let AI plan and execute multi-cluster deployments
+- Track deployment missions in real time
+
+![Deploy Dashboard](images/deploy-dashboard.png)
+
+[Learn about Deploy & Orchestrate](deploy.md)
+
 ### Card Factory - Build Your Own
 
 You can create your own cards in two ways:
@@ -196,6 +210,7 @@ helm install ksc oci://ghcr.io/kubestellar/charts/console \
 
 - [Quick Start](quickstart.md) - Get running fast
 - [Installation](installation.md) - All deployment options
+- [Deploy & Orchestrate](deploy.md) - Multi-cluster deployment control plane
 - [Dashboards](dashboards.md) - All dashboards
 - [Cards](all-cards.md) - All 110+ cards
 - [Stats Blocks](stats-blocks.md) - All 93+ stats
