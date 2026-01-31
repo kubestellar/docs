@@ -2,6 +2,8 @@
 
 import { useSharedConfig } from "@/hooks/useSharedConfig";
 import type { ProjectId } from "@/config/versions";
+import { GitPullRequest, FileCode, AlertCircle } from "lucide-react";
+
 
 const STATIC_EDIT_BASE_URLS: Record<ProjectId, string> = {
   kubestellar: "https://github.com/kubestellar/docs/edit/main/docs/content",
@@ -64,12 +66,14 @@ type DocsSourceActionsProps = {
   filePath: string;
   projectId: ProjectId;
   pageTitle: string;
+  variant?: "full" | "compact";
 };
 
 export function DocsSourceActions({
   filePath,
   projectId,
   pageTitle,
+  variant = "full",
 }: DocsSourceActionsProps) {
   const { config } = useSharedConfig();
 
@@ -86,10 +90,39 @@ export function DocsSourceActions({
   const issueUrl = buildIssueUrl(pageTitle, sourceUrl);
 
   return (
-    <div className="flex gap-2">
-      <ActionLink href={safeEditUrl}>Compose a PR</ActionLink>
-      <ActionLink href={sourceUrl}>View Source</ActionLink>
-      <ActionLink href={issueUrl}>Open Issue</ActionLink>
+    <div
+      className={
+        variant === "compact"
+          ? "flex gap-2"
+          : "flex flex-wrap gap-2"
+      }
+    >
+      <ActionLink
+        href={safeEditUrl}
+        compact={variant === "compact"}
+        title="Compose a PR"
+      >
+        <GitPullRequest className="h-4 w-4" />
+        {variant === "full" && "Compose a PR"}
+      </ActionLink>
+
+      <ActionLink
+        href={sourceUrl}
+        compact={variant === "compact"}
+        title="View Source"
+      >
+        <FileCode className="h-4 w-4" />
+        {variant === "full" && "View Source"}
+      </ActionLink>
+
+      <ActionLink
+        href={issueUrl}
+        compact={variant === "compact"}
+        title="Open Issue"
+      >
+        <AlertCircle className="h-4 w-4" />
+        {variant === "full" && "Open Issue"}
+      </ActionLink>
     </div>
   );
 }
@@ -97,22 +130,29 @@ export function DocsSourceActions({
 function ActionLink({
   href,
   children,
+  compact,
+  title,
 }: {
   href: string;
   children: React.ReactNode;
+  compact?: boolean;
+  title?: string;
 }) {
   return (
     <a
       href={href}
+      title={title}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 min-w-[120px] justify-center rounded-md border px-3 py-1.5 text-sm font-medium
-        border-gray-300 text-gray-800 bg-white
-        dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100
-        hover:bg-gray-100 hover:border-gray-400
-        dark:hover:bg-gray-800 dark:hover:border-gray-500
-        focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-600
-        transition-all duration-150"
+      className={[
+        "inline-flex items-center justify-center rounded-md border font-medium transition-all duration-150",
+        compact
+          ? "h-11 w-11 border-gray-700 bg-gray-900 text-gray-100 hover:bg-gray-800"
+          : "min-w-[150px] gap-2 px-3 py-1.5 text-sm",
+        "border-gray-300 text-gray-800 bg-white dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100",
+        "hover:bg-gray-100 hover:border-gray-400 dark:hover:bg-gray-800 dark:hover:border-gray-500",
+        "focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-600",
+      ].join(" ")}
     >
       {children}
     </a>

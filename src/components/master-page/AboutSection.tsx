@@ -181,6 +181,7 @@ export default function AboutSection() {
                     filePath="direct/architecture.md"
                     projectId="kubestellar"
                     pageTitle={t("card1Title")}
+                    variant="compact"
                   />
                 </div>
               </div>
@@ -244,6 +245,7 @@ export default function AboutSection() {
                     filePath="direct/wds.md"
                     projectId="kubestellar"
                     pageTitle={t("card2Title")}
+                    variant="compact"
                   />
                 </div>
               </div>
@@ -307,6 +309,7 @@ export default function AboutSection() {
                     filePath="direct/binding.md"
                     projectId="kubestellar"
                     pageTitle={t("card3Title")}
+                    variant="compact"
                   />
                 </div>
               </div>
