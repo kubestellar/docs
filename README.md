@@ -128,7 +128,7 @@ We welcome contributions and engagement from the community. Here's how to get in
 - **Mailing Lists**:
   - [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) — Development discussions
   - [kubestellar-users](https://groups.google.com/g/kubestellar-users) — User community discussions
-- **Community Meetings**: Subscribe to our [community calendar](https://docs.google.com/document/d/1XppfxSOD7AOX1lVVVIPWjpFkrxakfBfVzcybRg17-PM/edit?tab=t.0#heading=h.x7eowycdcihh)
+- **Community Meetings**:  [Meeting Agenda](https://docs.google.com/document/d/1XppfxSOD7AOX1lVVVIPWjpFkrxakfBfVzcybRg17-PM/edit?tab=t.0#heading=h.x7eowycdcihh)
   - Automatically subscribed via the [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) mailing list
 - **Meeting Recordings**: Available on [YouTube](https://www.youtube.com/@kubestellar)
 - **Meeting Notes**: View [upcoming](https://github.com/kubestellar/kubestellar/issues?q=is%3Aissue+is%3Aopen+label%3Acommunity-meeting) and [past](https://github.com/kubestellar/kubestellar/issues?q=is%3Aissue+is%3Aclosed+label%3Acommunity-meeting) agendas
