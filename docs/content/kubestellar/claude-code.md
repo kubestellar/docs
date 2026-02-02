@@ -4,7 +4,7 @@ Use Claude Code's AI capabilities to manage multiple Kubernetes clusters simulta
 
 ## Overview
 
-klaude is an AI-powered kubectl plugin designed for **managing multiple clusters simultaneously**. It integrates with Claude Code, enabling you to:
+kubestellar-mcp is an AI-powered kubectl plugin designed for **managing multiple clusters simultaneously**. It integrates with Claude Code, enabling you to:
 
 - Query Kubernetes resources across multiple clusters using natural language
 - Diagnose pod issues (CrashLoopBackOff, OOMKilled, pending pods)
@@ -32,14 +32,14 @@ In Claude Code, run:
 /plugin marketplace add kubestellar/claude-plugins
 ```
 
-Then go to `/plugin` → **Discover** tab and install **klaude**.
+Then go to `/plugin` → **Discover** tab and install **kubestellar-mcp**.
 
 ### Verify Installation
 
 Run `/mcp` in Claude Code to see connected MCP servers:
 
 ```
-plugin:klaude:klaude · ✓ connected
+plugin:kubestellar-mcp:kubestellar-mcp · ✓ connected
 ```
 
 ## Configuration
@@ -52,7 +52,7 @@ To avoid permission prompts for each tool call, add to `~/.claude/settings.json`
 {
   "permissions": {
     "allow": [
-      "mcp__plugin_klaude_klaude__*"
+      "mcp__plugin_kubestellar-mcp_kubestellar-mcp__*"
     ]
   }
 }
@@ -61,12 +61,12 @@ To avoid permission prompts for each tool call, add to `~/.claude/settings.json`
 Or run in Claude Code:
 
 ```
-/allowed-tools add mcp__plugin_klaude_klaude__*
+/allowed-tools add mcp__plugin_kubestellar-mcp_kubestellar-mcp__*
 ```
 
 ## Slash Commands
 
-The klaude plugin provides specialized slash commands for common Kubernetes operations:
+The kubestellar-mcp plugin provides specialized slash commands for common Kubernetes operations:
 
 ### /k8s-health
 
@@ -234,21 +234,21 @@ Once installed, ask Claude questions like:
 
 ## CLI Usage
 
-klaude also works as a standalone kubectl plugin:
+kubestellar-mcp also works as a standalone kubectl plugin:
 
 ```bash
 # List all clusters
-kubectl klaude clusters list
+kubectl kubestellar-mcp clusters list
 
 # Check cluster health
-kubectl klaude clusters health
+kubectl kubestellar-mcp clusters health
 
 # Natural language queries (requires ANTHROPIC_API_KEY)
-kubectl klaude "show me failing pods"
+kubectl kubestellar-mcp "show me failing pods"
 ```
 
 ## Links
 
-- [klaude on GitHub](https://github.com/kubestellar/klaude)
+- [kubestellar-mcp on GitHub](https://github.com/kubestellar/kubestellar-mcp)
 - [Claude Plugins Marketplace](https://github.com/kubestellar/claude-plugins)
 - [Homebrew Tap](https://github.com/kubestellar/homebrew-tap)
