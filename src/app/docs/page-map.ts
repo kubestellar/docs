@@ -318,13 +318,13 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
       { 'License': 'contribution-guidelines/license-inc.md' },
       { 'Governance': 'contribution-guidelines/governance-inc.md' },
       { 'Onboarding': 'contribution-guidelines/onboarding-inc.md' },
-      {
+    /*{
         'Website': [
           { 'Docs Management': 'contribution-guidelines/operations/document-management.md' },
           
           { 'Testing PRs': 'contribution-guidelines/operations/testing-doc-prs.md' }
         ]
-      },
+      }*/
       {
         'CI/CD': [
           { 'GitHub Actions': 'contribution-guidelines/operations/github-actions.md' }

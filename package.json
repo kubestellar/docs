@@ -17,7 +17,8 @@
     "test": "echo \"No tests specified\" && exit 0",
     "test:watch": "echo \"No tests specified\" && exit 0",
     "audit": "npm audit --audit-level=moderate",
-    "update-deps": "npm update && npm audit fix"
+    "update-deps": "npm update && npm audit fix",
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.6",
@@ -45,6 +46,7 @@
     "@types/three": "^0.180.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.6",
+    "pagefind": "^1.4.0",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "typescript": "^5"

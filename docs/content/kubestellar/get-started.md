@@ -12,6 +12,8 @@ The two ways to create this simple configuration are as follows.
 
 ### Note for Windows users
 
+> For some users on WSL, use of the setup procedure on this page and/or the demo environment creation script may require running as the user `root` in Linux.
+
 After [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install), it is possible to start a Fedora 43 distribution with the command:
 
 ```shell
@@ -23,8 +25,6 @@ Afterwards, the pre-requisites needed by KubeStellar and the demo script can be 
 ```shell
 bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v{{ config.ks_latest_release }}/scripts/setup-wsl-fedora.sh)
 ```
-
-For some users on WSL, use of the setup procedure on this page and/or the demo environment creation script may require running as the user `root` in Linux. There is a [known issue about this](knownissue-helm-ghcr.md).
 
 ### Note for MacOS users
 
@@ -69,6 +69,9 @@ bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/ta
 ```
 
 If successful, the script will output the variable definitions that you would use when proceeding to the example scenarios. After successfully running the script, proceed to the [Exercise KubeStellar](#exercise-kubestellar) section below.
+
+>When running this script you may get an error complaining about an authoriztion failure when trying to instantiate the core Helm chart. There is a [known issue about this](knownissue-helm-ghcr.md).
+
 
 _Note: the script does the same things as described in the [Step by Step Setup](#step-by-step-setup) but with a little more concurrency, so it can complete a bit faster. While this is great for getting started quickly with a demo system, you may want to follow the manual setup below to better understand the components and how to create a [configuration that meets your needs](#next-steps)._
 
