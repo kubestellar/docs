@@ -344,6 +344,7 @@ These aren't counted as dashboards but are useful:
 | Card History | `/history` | See cards you've removed |
 | Settings | `/settings` | Configure your preferences |
 | User Management | `/users` | Manage users (admin only) |
+| Namespaces | `/namespaces` | Manage namespace access |
 
 
 ---
