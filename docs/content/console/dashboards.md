@@ -324,12 +324,12 @@ Manage namespaces across all your clusters:
 #### How to Use
 
 1. **View Namespaces**: The page automatically loads namespaces from all connected online clusters
-2. **Create a Namespace**: 
+2. **Create a Namespace**:
    - Click the "Create" button (only appears if at least one cluster is online)
    - Select one or more online clusters from the dialog
    - Enter the namespace name
    - Confirm to create across selected clusters
-3. **Monitor Status**: 
+3. **Monitor Status**:
    - Check cluster headers for online/offline status
    - Watch for error banners if all clusters become unavailable
 
