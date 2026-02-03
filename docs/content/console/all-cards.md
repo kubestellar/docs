@@ -3,7 +3,7 @@ title: "All Cards"
 linkTitle: "Cards"
 weight: 7
 description: >
-  Complete list of all 60 card types
+  Complete list of all 110+ card types
 ---
 
 # Dashboard Cards
@@ -21,7 +21,9 @@ Every card has:
 
 ---
 
-## All 60 Card Types
+## All 110+ Card Types
+
+The console ships with 110+ built-in cards, and you can create more using the Card Factory. Below are the main categories.
 
 ### Cluster Health Cards (7)
 
@@ -150,13 +152,13 @@ Every card has:
 
 ---
 
-### Klaude AI Cards (3)
+### AI Cards (3)
 
 | # | Card | What it shows |
 |---|------|---------------|
-| 51 | **Klaude Issues** | Issues detected by Klaude AI |
-| 52 | **Klaude Kubeconfig Audit** | Audit of your kubeconfig |
-| 53 | **Klaude Health Check** | AI health check gauge |
+| 51 | **AI Issues** | Issues detected by AI |
+| 52 | **Kubeconfig Audit** | Audit of your kubeconfig |
+| 53 | **AI Health Check** | AI health check gauge |
 
 ---
 
@@ -188,6 +190,48 @@ Every card has:
 
 ---
 
+### Compliance Cards (3)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 61 | **Compliance Score** | Overall compliance percentage (CIS, NSA, PCI) |
+| 62 | **Compliance Findings** | Table of compliance findings by severity |
+| 63 | **Security Posture** | Combined security posture overview |
+
+---
+
+### Provider Health Cards (1)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 64 | **Provider Health** | Status of AI providers (Claude, OpenAI, Gemini) and cloud providers |
+
+---
+
+### Workload Monitor Cards (2)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 65 | **Workload Status** | Cascading cluster/namespace/workload selector with resource details |
+| 66 | **Resource Allocation** | Resource allocation across clusters |
+
+---
+
+### Additional Cards (44+)
+
+The console includes 44+ additional specialized cards across categories like:
+
+- **Deploy** - Deployment management and progress tracking
+- **Events** - Event timeline and filtering
+- **Data Compliance** - Data classification and compliance checks
+- **Arcade** - Interactive visualizations
+- **Card History** - Track card changes over time
+- **User Management** - Console user management
+
+Plus any custom cards you create using the **Card Factory**.
+
+---
+
 ## Visualization Types
 
 Cards use different ways to show data:
@@ -211,6 +255,18 @@ Cards use different ways to show data:
 3. Click a card to add it
 4. Drag it where you want
 5. Click the menu to configure it
+
+### Creating Custom Cards (Card Factory)
+
+Don't see the card you need? Create your own:
+
+1. Open the **Card Factory**
+2. Choose your method:
+   - **AI-Assisted** - Describe what you want in plain English
+   - **JSON** - Write a declarative card definition
+   - **TSX Code** - Write a React component (compiled at runtime)
+3. Preview your card
+4. Add it to any dashboard
 
 ---
 

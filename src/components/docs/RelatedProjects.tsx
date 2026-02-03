@@ -101,7 +101,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
     if (pathname.startsWith('/docs/a2a')) return 'A2A';
     if (pathname.startsWith('/docs/kubeflex')) return 'KubeFlex';
     if (pathname.startsWith('/docs/multi-plugin')) return 'Multi Plugin';
-    if (pathname.startsWith('/docs/klaude')) return 'klaude';
+    if (pathname.startsWith('/docs/kubestellar-mcp')) return 'KubeStellar MCP';
     if (pathname.startsWith('/docs/console')) return 'Console';
     return 'KubeStellar';
   };

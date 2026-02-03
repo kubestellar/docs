@@ -3,12 +3,12 @@ title: "Configuration"
 linkTitle: "Configuration"
 weight: 2
 description: >
-  Configure kkc for your environment
+  Configure KubeStellar Console for your environment
 ---
 
 # Configuration
 
-KubeStellar Klaude Console can be configured via environment variables or Helm values.
+KubeStellar Console can be configured via environment variables or Helm values.
 
 ## Environment Variables
 
@@ -41,7 +41,7 @@ service:
 
 # GitHub OAuth
 github:
-  existingSecret: kkc-secrets
+  existingSecret: ksc-secrets
   existingSecretKeys:
     clientId: github-client-id
     clientSecret: github-client-secret
@@ -80,7 +80,7 @@ persistence:
 ```yaml
 route:
   enabled: true
-  host: kkc.apps.your-cluster.com
+  host: ksc.apps.your-cluster.com
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
@@ -95,14 +95,14 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
   hosts:
-    - host: kkc.your-domain.com
+    - host: ksc.your-domain.com
       paths:
         - path: /
           pathType: Prefix
   tls:
-    - secretName: kkc-tls
+    - secretName: ksc-tls
       hosts:
-        - kkc.your-domain.com
+        - ksc.your-domain.com
 ```
 
 ## AI Mode Configuration

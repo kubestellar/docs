@@ -132,9 +132,9 @@ nav:
       - Alerts: console/alerts.md
       - Configuration: console/configuration.md
       - Architecture: console/architecture.md
-  - klaude:
-      - Overview: klaude/index.md
-      - Getting Started: klaude/overview/intro.md
+  - KubeStellar MCP:
+      - Overview: kubestellar-mcp/index.md
+      - Getting Started: kubestellar-mcp/overview/intro.md
   - 'Blog': https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST" target="_blank
   # # - Auto generated:
   #   - ... | auto-generated/*/*.md

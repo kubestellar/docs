@@ -8,7 +8,7 @@ description: >
 
 # Dashboard Cards
 
-KubeStellar Klaude Console provides a variety of cards to monitor and manage your clusters.
+KubeStellar Console provides a variety of cards to monitor and manage your clusters.
 
 ## Available Card Types
 
@@ -73,7 +73,7 @@ interface CardConfig {
 
 ## AI Recommendations
 
-In **High** AI mode, kkc analyzes your cluster state and suggests relevant cards:
+In **High** AI mode, the console analyzes your cluster state and suggests relevant cards:
 
 - **Pod Issues** - Suggested when >5 pods have issues
 - **GPU Status** - Suggested when GPU utilization >90%

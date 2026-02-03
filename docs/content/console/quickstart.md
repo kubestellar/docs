@@ -3,14 +3,14 @@ title: "Quick Start"
 linkTitle: "Quick Start"
 weight: 1
 description: >
-  Get KubeStellar Klaude Console running in minutes
+  Get KubeStellar Console running in minutes
 ---
 
 # Quick Start
 
-Get kkc running locally for development or evaluation.
+Get KubeStellar Console running locally for development or evaluation.
 
-> **Try it first!** See a live preview at [kubestellarklaudeconsole.netlify.app](https://kubestellarklaudeconsole.netlify.app) - no installation needed.
+> **Try it first!** See a live preview at [kubestellarconsole.netlify.app](https://kubestellarconsole.netlify.app) - no installation needed.
 
 ## What You Need
 
@@ -20,7 +20,7 @@ The console has 6 components. This quick start covers getting them all running:
 |-----------|------------|
 | GitHub OAuth App | Lets users sign in |
 | Frontend + Backend | The console itself |
-| klaude plugins | Connect to your clusters |
+| kubestellar-mcp plugins | Connect to your clusters |
 | kubeconfig | Your cluster credentials |
 
 See [Installation](installation.md) for the full architecture diagram.
@@ -33,13 +33,13 @@ See [Installation](installation.md) for the full architecture diagram.
 - kubectl configured with at least one cluster
 - GitHub OAuth App credentials
 - [Claude Code](https://claude.ai/claude-code) CLI installed
-- klaude plugins (see below)
+- kubestellar-mcp plugins (see below)
 
 ## Local Development
 
-### 1. Install klaude Tools
+### 1. Install kubestellar-mcp Tools
 
-The console uses klaude plugins to talk to your clusters. See [klaude documentation](/docs/klaude/overview/introduction) for full details.
+The console uses kubestellar-mcp plugins to talk to your clusters. See [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for full details.
 
 **Option A: From Claude Code Marketplace (recommended)**
 
@@ -48,12 +48,12 @@ In Claude Code, run:
 /plugin marketplace add kubestellar/claude-plugins
 ```
 
-Then go to `/plugin` → **Discover** tab and install **klaude-ops** and **klaude-deploy**.
+Then go to `/plugin` → **Discover** tab and install **kubestellar-ops** and **kubestellar-deploy**.
 
 **Option B: Via Homebrew**
 ```bash
 brew tap kubestellar/tap
-brew install klaude-ops klaude-deploy
+brew install kubestellar-ops kubestellar-deploy
 ```
 
 Verify installation with `/mcp` in Claude Code - you should see both plugins connected.
@@ -69,7 +69,7 @@ cd console
 
 Go to [GitHub Developer Settings](https://github.com/settings/developers) → OAuth Apps → New OAuth App
 
-- **Application name**: `KubeStellar Klaude Console (dev)`
+- **Application name**: `KubeStellar Console (dev)`
 - **Homepage URL**: `http://localhost:5174`
 - **Authorization callback URL**: `http://localhost:8080/auth/github/callback`
 
@@ -112,28 +112,28 @@ Open http://localhost:5174 and sign in with GitHub.
 
 ```bash
 # Create namespace
-kubectl create namespace kkc
+kubectl create namespace ksc
 
 # Create secrets
-kubectl create secret generic kkc-secrets \
-  --namespace kkc \
+kubectl create secret generic ksc-secrets \
+  --namespace ksc \
   --from-literal=github-client-id=$GITHUB_CLIENT_ID \
   --from-literal=github-client-secret=$GITHUB_CLIENT_SECRET
 
 # Install chart
-helm install kkc ./deploy/helm/kubestellar-console \
-  --namespace kkc \
-  --set github.existingSecret=kkc-secrets
+helm install ksc ./deploy/helm/kubestellar-console \
+  --namespace ksc \
+  --set github.existingSecret=ksc-secrets
 ```
 
 ### OpenShift
 
 ```bash
-helm install kkc ./deploy/helm/kubestellar-console \
-  --namespace kkc \
-  --set github.existingSecret=kkc-secrets \
+helm install ksc ./deploy/helm/kubestellar-console \
+  --namespace ksc \
+  --set github.existingSecret=ksc-secrets \
   --set route.enabled=true \
-  --set route.host=kkc.apps.your-cluster.com
+  --set route.host=ksc.apps.your-cluster.com
 ```
 
 ## Next Steps
@@ -141,6 +141,6 @@ helm install kkc ./deploy/helm/kubestellar-console \
 - [Installation](installation.md) - Full deployment options (Helm, Docker, OpenShift)
 - [Configuration](configuration.md) - Customize AI mode, token limits, and more
 - [Architecture](architecture.md) - Understand how the 6 components work together
-- [Dashboards](dashboards.md) - Explore the 20 dashboard pages
-- [Cards](all-cards.md) - See all 60 card types
-- [klaude Documentation](/docs/klaude/overview/introduction) - Deep dive into klaude-ops and klaude-deploy
+- [Dashboards](dashboards.md) - Explore the 20+ dashboard pages
+- [Cards](all-cards.md) - See all 110+ card types
+- [kubestellar-mcp Documentation](/docs/kubestellar-mcp/overview/introduction) - Deep dive into kubestellar-ops and kubestellar-deploy

@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       project:
-        description: 'Project (kubestellar, a2a, kubeflex, multi-plugin, klaude)'
+        description: 'Project (kubestellar, a2a, kubeflex, multi-plugin, kubestellar-mcp, console)'
         required: true
         type: choice
         options:
@@ -14,7 +14,8 @@ on:
           - a2a
           - kubeflex
           - multi-plugin
-          - klaude
+          - kubestellar-mcp
+          - console
       version:
         description: 'Version number (e.g., 0.30.0)'
         required: true
@@ -72,7 +73,8 @@ jobs:
             a2a) BRANCH="docs/a2a/${VERSION}" ;;
             kubeflex) BRANCH="docs/kubeflex/${VERSION}" ;;
             multi-plugin) BRANCH="docs/multi-plugin/${VERSION}" ;;
-            klaude) BRANCH="docs/klaude/${VERSION}" ;;
+            kubestellar-mcp) BRANCH="docs/kubestellar-mcp/${VERSION}" ;;
+            console) BRANCH="docs/console/${VERSION}" ;;
             *) echo "Unknown project: $PROJECT"; exit 1 ;;
           esac
           echo "name=$BRANCH" >> $GITHUB_OUTPUT

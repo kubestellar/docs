@@ -3,12 +3,12 @@ title: "Dashboards"
 linkTitle: "Dashboards"
 weight: 6
 description: >
-  All 20 dashboard pages in KubeStellar Klaude Console
+  All 20 dashboard pages in KubeStellar Console
 ---
 
 # Dashboards
 
-KubeStellar Klaude Console has 20 different dashboards. Each one shows you different information about your Kubernetes clusters.
+KubeStellar Console has 20 different dashboards. Each one shows you different information about your Kubernetes clusters.
 
 ## Main Dashboard
 

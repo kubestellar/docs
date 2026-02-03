@@ -17,9 +17,8 @@
     "test": "echo \"No tests specified\" && exit 0",
     "test:watch": "echo \"No tests specified\" && exit 0",
     "audit": "npm audit --audit-level=moderate",
-    "update-deps": "npm update && npm audit fix",
-    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind"
-  },
+    "update-deps": "npm update && npm audit fix"
+     },
   "dependencies": {
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",

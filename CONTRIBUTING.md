@@ -83,21 +83,6 @@ Open a Pull Request (PR) from your branch to the main repository.
   Fixes #123
   ```
 
----
-### 8. Open a Pull Request
-
-Open a Pull Request (PR) from your branch to the main repository.
-
-#### PR Description
-
-- Provide a summary of what you changed (maximum 2 lines).
-- Reference related issues, e.g.:
-  ```
-  Fixes #123
-  ```
-
----
-
 ## Contribution Guidelines
 
 - **Write Clearly:** Use concise language and proper formatting.
@@ -191,6 +176,7 @@ This documentation website is a **separate repository** from the main KubeStella
 For safety reasons, copies of the docs source may remain in a to-be-deleted folder in the component repositories during a transition period
 
 ```
+CODE is in the component repositories
 ┌─────────────────────────────────────────────────────────────┐
 │  Main KubeStellar Repository                                │
 │  github.com/kubestellar/kubestellar                         │
@@ -206,7 +192,8 @@ For safety reasons, copies of the docs source may remain in a to-be-deleted fold
 │           └── ... (all previous documentation content)      │
 │    └── ...(all the active components of the component repo) |
 └─────────────────────────────────────────────────────────────┘
-                         
+
+DOCUMENTATION/WEBSITE is in the docs repository                       
 ┌────────────────────────────────────────────────────────────────|
 │  Docs Website Repository (THIS REPO)                           │
 │  github.com/kubestellar/docs                                   |
@@ -258,6 +245,7 @@ For safety reasons, copies of the docs source may remain in a to-be-deleted fold
 **Important Concepts:**
 
 
+- ✅ **Content is contained in docs/content filetree** (this does not generate the navigation)
 - ✅ **Navigation is defined in `page-map.ts`** (not auto-generated from files)
 
 ### How Nextra Integration Works

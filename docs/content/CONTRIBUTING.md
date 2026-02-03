@@ -217,7 +217,7 @@ For safety reasons, copies of the docs source may remain in a to-be-deleted fold
 |   |     ├──📄CONTRIBUTING.md    <----- this file              |
 |   |     ├──📄GOVERNANCE.md                                    |
 |   |     📁 a2a/                                               |
-|   |     📁 dommon-subs/                                       |
+|   |     📁 common-subs/                                       |
 |   |     📁 Community/                                         |
 |   |     📁 console/                                           |
 |   |     📁 contribution-guidelines/                           |

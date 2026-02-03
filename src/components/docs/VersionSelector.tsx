@@ -147,7 +147,7 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
     }
 
     // Other versions use Netlify branch deploys
-    // Netlify converts branch names: docs/klaude/0.5.0 -> docs-klaude-0-5-0
+    // Netlify converts branch names: docs/kubestellar-mcp/0.5.0 -> docs-kubestellar-mcp-0-5-0
     const branchSlug = version.branch.replace(/\//g, '-').replace(/\./g, '-');
     window.location.href = `https://${branchSlug}--kubestellar-docs.netlify.app${pathname}`;
   };

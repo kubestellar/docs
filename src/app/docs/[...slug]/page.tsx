@@ -16,7 +16,7 @@ function getProjectFromSlug(slug: string[]): ProjectId {
     if (slug[0] === 'a2a') return 'a2a'
     if (slug[0] === 'kubeflex') return 'kubeflex'
     if (slug[0] === 'multi-plugin') return 'multi-plugin'
-    if (slug[0] === 'klaude') return 'klaude'
+    if (slug[0] === 'kubestellar-mcp') return 'kubestellar-mcp'
     if (slug[0] === 'console') return 'console'
   }
   return 'kubestellar'
@@ -511,11 +511,11 @@ export async function generateStaticParams() {
     }
   }
 
-  // klaude routes (prefixed with 'klaude')
-  const klaudeMap = buildPageMap('klaude')
-  for (const route of Object.keys(klaudeMap.routeMap)) {
+  // kubestellar-mcp routes (prefixed with 'kubestellar-mcp')
+  const kubestellarMcpMap = buildPageMap('kubestellar-mcp')
+  for (const route of Object.keys(kubestellarMcpMap.routeMap)) {
     if (route !== '') {
-      allParams.push({ slug: ['klaude', ...route.split('/')] })
+      allParams.push({ slug: ['kubestellar-mcp', ...route.split('/')] })
     }
   }
 

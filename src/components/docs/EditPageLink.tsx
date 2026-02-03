@@ -63,7 +63,7 @@ const SOURCE_REPOS: Record<string, { repo: string; docsPath: string }> = {
   a2a: { repo: 'kubestellar/a2a', docsPath: 'docs' },
   kubeflex: { repo: 'kubestellar/kubeflex', docsPath: 'docs' },
   'multi-plugin': { repo: 'kubestellar/kubectl-multi-plugin', docsPath: 'docs' },
-  'klaude': { repo: 'kubestellar/klaude', docsPath: 'docs' },
+  'kubestellar-mcp': { repo: 'kubestellar/kubestellar-mcp', docsPath: 'docs' },
 };
 
 // Projects whose docs live in the docs repo itself (not a separate source repo)
@@ -83,7 +83,7 @@ function buildEditBaseUrl(projectId: ProjectId, branch: string): string {
 
   // For other projects: version branches are in docs repo, main goes to source repo
   if (branch !== 'main' && branch.startsWith('docs/')) {
-    // Version branch in docs repo (e.g., docs/klaude/0.6.0)
+    // Version branch in docs repo (e.g., docs/kubestellar-mcp/0.6.0)
     return `https://github.com/kubestellar/docs/edit/${branch}/docs/content/${projectId}`;
   }
 
