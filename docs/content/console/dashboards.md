@@ -301,6 +301,40 @@ Focus on pods:
 
 ---
 
+### Namespaces Dashboard
+
+**Route:** `/namespaces`
+
+Manage namespaces across all your clusters:
+- View all namespaces from online clusters
+- Create new namespaces on one or more clusters
+- See which clusters are online or offline
+- Real-time namespace discovery using local agent
+
+**Best for:** Managing namespace access and organization
+
+#### Key Features
+
+- **Smart Error Handling**: Error banners only appear when ALL clusters fail to respond, not on partial failures
+- **Offline Cluster Detection**: Offline clusters are clearly marked in the header with status indicators
+- **Filtered Creation**: The Create Namespace dialog only shows online clusters, preventing failed creation attempts
+- **Improved Caching**: Namespace data is cached intelligently and won't persist empty states on temporary failures
+- **Direct Agent Access**: Fetches namespaces directly from the local agent, bypassing backend authentication issues
+
+#### How to Use
+
+1. **View Namespaces**: The page automatically loads namespaces from all connected online clusters
+2. **Create a Namespace**: 
+   - Click the "Create" button (only appears if at least one cluster is online)
+   - Select one or more online clusters from the dialog
+   - Enter the namespace name
+   - Confirm to create across selected clusters
+3. **Monitor Status**: 
+   - Check cluster headers for online/offline status
+   - Watch for error banners if all clusters become unavailable
+
+---
+
 ## Utility Pages
 
 These aren't counted as dashboards but are useful:
@@ -310,7 +344,6 @@ These aren't counted as dashboards but are useful:
 | Card History | `/history` | See cards you've removed |
 | Settings | `/settings` | Configure your preferences |
 | User Management | `/users` | Manage users (admin only) |
-| Namespaces | `/namespaces` | Manage namespace access |
 
 ---
 

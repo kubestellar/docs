@@ -107,7 +107,7 @@ The sidebar provides access to all major sections:
 ### Secondary Navigation
 
 - **Card History**: Previously viewed cards
-- **Namespaces**: Namespace-specific views
+- **Namespaces**: Namespace management across clusters - create, view, and manage namespaces with intelligent error handling and offline cluster detection
 - **User Management**: RBAC and access control
 - **Settings**: Console configuration
 
@@ -124,6 +124,36 @@ The global search bar (`Cmd/Ctrl + K`) enables quick navigation:
 - Find applications and pods
 - Navigate to specific namespaces
 - Filter by resource type
+
+## Namespace Management
+
+The Namespace Management page (`/namespaces`) provides a centralized interface for managing namespaces across all your clusters.
+
+### Key Features
+
+- **Direct Agent Access**: Namespace data is fetched directly from the local agent, providing faster response times and bypassing potential backend authentication issues
+- **Smart Caching**: Intelligently caches namespace data while preventing empty states from being persisted on temporary failures
+- **Offline Cluster Handling**: Clearly identifies offline clusters in the header without redundant error messages
+- **Filtered Creation**: The Create Namespace dialog automatically filters out offline clusters, ensuring namespace creation only targets available clusters
+- **Intelligent Error Display**: Error banners only appear when ALL clusters fail to respond, not on partial failures
+
+### Creating Namespaces
+
+To create a new namespace:
+
+1. Navigate to `/namespaces`
+2. Click the "Create" button (sized appropriately for UI consistency)
+3. Select one or more online clusters from the dialog
+4. Enter the namespace name
+5. Confirm to create the namespace across selected clusters
+
+Note: The create dialog only displays clusters that are currently online and responsive, preventing failed creation attempts.
+
+### Cluster Status Indicators
+
+- **Online clusters**: Show namespace lists and are available for namespace creation
+- **Offline clusters**: Marked clearly in the header with offline status indicators
+- **Partial failures**: Do not trigger error banners; only complete failures across all clusters show errors
 
 ## Alerts
 
