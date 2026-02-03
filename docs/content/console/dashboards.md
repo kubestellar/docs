@@ -309,7 +309,7 @@ Manage namespaces across all your clusters:
 - View all namespaces from online clusters
 - Create new namespaces on one or more clusters
 - See which clusters are online or offline
-- Real-time namespace discovery using local agent
+- Real-time namespace discovery using the KSC Agent (local agent)
 
 **Best for:** Managing namespace access and organization
 
@@ -319,7 +319,7 @@ Manage namespaces across all your clusters:
 - **Offline Cluster Detection**: Offline clusters are clearly marked in the header with status indicators
 - **Filtered Creation**: The Create Namespace dialog only shows online clusters, preventing failed creation attempts
 - **Improved Caching**: Namespace data is cached intelligently and won't persist empty states on temporary failures
-- **Direct Agent Access**: Fetches namespaces directly from the local agent, bypassing backend authentication issues
+- **Direct Agent Access**: Fetches namespaces directly from the KSC Agent, bypassing backend authentication issues
 
 #### How to Use
 
@@ -344,7 +344,7 @@ These aren't counted as dashboards but are useful:
 | Card History | `/history` | See cards you've removed |
 | Settings | `/settings` | Configure your preferences |
 | User Management | `/users` | Manage users (admin only) |
-| Namespaces | `/namespaces` | Manage namespace access |
+
 
 ---
 
