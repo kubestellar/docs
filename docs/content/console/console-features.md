@@ -131,7 +131,7 @@ The Namespace Management page (`/namespaces`) provides a centralized interface f
 
 ### Key Features
 
-- **Direct Agent Access**: Namespace data is fetched directly from the local agent, providing faster response times and bypassing potential backend authentication issues
+- **Direct Agent Access**: Namespace data is fetched directly from the KSC Agent, providing faster response times and bypassing potential backend authentication issues
 - **Smart Caching**: Intelligently caches namespace data while preventing empty states from being persisted on temporary failures
 - **Offline Cluster Handling**: Clearly identifies offline clusters in the header without redundant error messages
 - **Filtered Creation**: The Create Namespace dialog automatically filters out offline clusters, ensuring namespace creation only targets available clusters
