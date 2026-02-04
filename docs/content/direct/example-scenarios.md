@@ -410,7 +410,7 @@ kubectl --context "$wds_context" delete deployments nginx-singleton-deployment
 
 This is a test that you can do after finishing Scenario 1.
 
-TODO: rewrite this so that it makes sense after Scenario 4.
+{/* TODO: rewrite this so that it makes sense after Scenario 4. */}
 
 Bring down the control plane: stop and restart the ITS and WDS API servers,
 KubeFlex and KubeStellar controllers:

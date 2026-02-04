@@ -17,7 +17,7 @@ modulations on how downsync is done.
 has a controller that translates each `BindingPolicy` to a
 `Binding`. A user _could_ eschew the `BindingPolicy` and directly
 maintain a `Binding` object or let a different controller maintain the
-`Binding` object (TODO: check that this is true). The `Binding` object
+`Binding` object {/* (TODO: check that this is true) */}. The `Binding` object
 shows which workload objects and which WECs matched the predicates in
 the `BindingPolicy` and so is also useful as feedback to the user
 about that.
@@ -74,4 +74,4 @@ spec:
 
 ## Binding
 
-TODO: write this
+{/* TODO: write this */}

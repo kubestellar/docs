@@ -224,7 +224,29 @@ The console includes 44+ additional specialized cards across categories like:
 - **Deploy** - Deployment management and progress tracking
 - **Events** - Event timeline and filtering
 - **Data Compliance** - Data classification and compliance checks
-- **Arcade** - Interactive visualizations
+- **Data Compliance** - Data classification and compliance checks
+- **Arcade** - Interactive visualizations:
+  - Kube-Man (Pac-Man style)
+  - Kube Kong (Donkey Kong style)
+  - Node Invaders (Space Invaders)
+  - Pod Pitfall (Pitfall adventure)
+  - Container Tetris
+  - Flappy Pod
+  - Pod Sweeper (Minesweeper)
+  - Kube 2048
+  - AI Checkers
+  - AI Chess
+  - Kube Solitaire
+  - Kube Match (Memory game)
+  - Kubedle (Wordle style)
+  - Sudoku
+  - Pod Brothers (Mario style)
+  - Kube Kart (Racing)
+  - Kube Pong
+  - Kube Snake
+  - Kube Galaga
+  - KubeCraft 2D
+  - KubeCraft 3D
 - **Card History** - Track card changes over time
 - **User Management** - Console user management
 
