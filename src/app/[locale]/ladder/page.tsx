@@ -9,9 +9,11 @@ import {
   PageActions,
 } from "../../../components/index";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 
 export default function MaintainerLadderPage() {
   const t = useTranslations("ladderPage");
+  const [hoveredLevel, setHoveredLevel] = useState<number | null>(null);
 
   const levels = [
     {
@@ -259,185 +261,227 @@ export default function MaintainerLadderPage() {
         <section className="py-8 sm:py-12 md:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             {/* Mobile Layout */}
-            <div className="lg:hidden">
+            <div className="lg:hidden space-y-6">
               {levels.map((level, index) => (
-                <div key={level.id} className="mb-4">
-                  {/* Level Card */}
-                  <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 relative">
-                    {/* Level Number */}
-                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                <div
+                  key={level.id}
+                  className="relative group"
+                  onMouseEnter={() => setHoveredLevel(level.id)}
+                  onMouseLeave={() => setHoveredLevel(null)}
+                >
+                  {/* Glowing border effect */}
+                  <div
+                    className={`absolute -inset-[2px] bg-gradient-to-r ${level.gradient} rounded-xl opacity-0 group-hover:opacity-70 blur-sm transition-opacity duration-500`}
+                  ></div>
+
+                  <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-xl rounded-xl p-5 border border-white/5 overflow-hidden">
+                    {/* Animated background particles */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                       <div
-                        className={`w-12 h-12 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-lg`}
+                        className={`absolute top-0 left-0 w-32 h-32 bg-gradient-to-br ${level.gradient} rounded-full blur-3xl opacity-20`}
+                      ></div>
+                      <div
+                        className={`absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl ${level.gradient} rounded-full blur-3xl opacity-20`}
+                      ></div>
+                    </div>
+
+                    {/* Level badge */}
+                    <div className="absolute -top-3 -right-3">
+                      <div
+                        className={`w-10 h-10 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-lg shadow-black/50 group-hover:scale-110 transition-transform duration-300`}
                       >
-                        <span className="text-white font-bold text-lg">
+                        <span className="text-white font-bold text-sm">
                           {level.id}
                         </span>
                       </div>
                     </div>
 
-                    <div className="pt-4">
-                      <div className="text-center mb-4">
-                        <div
-                          className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${level.gradient} rounded-full mb-3`}
-                        >
-                          <div className="text-white">{level.icon}</div>
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-2">
+                    <div className="relative flex items-start gap-4">
+                      {/* Icon */}
+                      <div
+                        className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${level.gradient} rounded-lg flex items-center justify-center group-hover:rotate-6 transition-transform duration-300`}
+                      >
+                        <div className="text-white scale-90">{level.icon}</div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
                           {level.title}
                         </h3>
                         {level.timeframe && (
-                          <div className="inline-block bg-blue-900/50 rounded-full px-3 py-1 text-xs text-blue-200 mb-2">
+                          <div className="inline-block bg-blue-500/20 rounded-full px-2 py-0.5 text-xs text-blue-300 mb-2">
                             {level.timeframe}
                           </div>
                         )}
-                        <p className="text-gray-300 text-sm mb-4">
+                        <p className="text-gray-400 text-sm mb-3 line-clamp-2">
                           {level.description}
                         </p>
-                      </div>
 
-                      <div className="space-y-2">
-                        <h4 className="text-sm font-semibold text-white mb-2">
-                          {t("requirementsLabel")}
-                        </h4>
-                        <ul className="space-y-1">
-                          {level.requirements.map((req, reqIndex) => (
-                            <li
-                              key={reqIndex}
-                              className="text-xs text-gray-300 flex items-start"
-                            >
-                              <span className="text-green-400 mr-2 mt-1">
-                                •
-                              </span>
-                              <span>{req}</span>
-                            </li>
+                        {/* Compact requirements */}
+                        <div className="space-y-1">
+                          {level.requirements.slice(0, 2).map((req, reqIndex) => (
+                            <div key={reqIndex} className="flex items-start gap-2">
+                              <div
+                                className={`w-1 h-1 rounded-full bg-gradient-to-r ${level.gradient} mt-1.5 flex-shrink-0`}
+                              ></div>
+                              <p className="text-xs text-gray-400 line-clamp-1">
+                                {req}
+                              </p>
+                            </div>
                           ))}
-                        </ul>
+                          {level.requirements.length > 2 && (
+                            <p className="text-xs text-gray-500 italic">
+                              +{level.requirements.length - 2} more
+                            </p>
+                          )}
+                        </div>
                       </div>
+                    </div>
 
-                      {level.goodStanding && (
-                        <div className="mt-4 p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg">
-                          <h4 className="text-sm font-semibold text-blue-300 mb-2">
-                            {t("goodStandingLabel")}
-                          </h4>
-                          <p className="text-xs text-gray-300 leading-relaxed">
-                            {level.goodStanding}
-                          </p>
-                        </div>
-                      )}
-
-                      {index < levels.length - 1 && (
-                        <div className="text-center mt-4">
-                          <div className="text-xs text-gray-400">
-                            {t("nextLevelLabel")}
-                          </div>
-                          <div className="text-sm font-semibold text-blue-400">
+                    {/* Next level indicator */}
+                    {index < levels.length - 1 && (
+                      <div className="mt-3 pt-3 border-t border-white/5">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-gray-500">Next:</span>
+                          <span
+                            className={`text-xs font-semibold bg-gradient-to-r ${level.gradient} bg-clip-text text-transparent`}
+                          >
                             {level.nextLevel}
-                          </div>
+                          </span>
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
-
-                  {/* Connector */}
-                  {index < levels.length - 1 && (
-                    <div className="flex justify-center mt-2">
-                      <div className="w-0.5 h-6 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
 
             {/* Desktop Layout */}
             <div className="hidden lg:block">
-              {/* Central Ladder Line */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500 transform -translate-x-1/2 z-5"></div>
+              {/* Central Ladder Line with pulse effect */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-1 transform -translate-x-1/2 z-5">
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-purple-500 to-red-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-400 via-purple-400 to-red-400 animate-pulse opacity-50"></div>
+              </div>
 
               {levels.map((level, index) => (
-                <div key={level.id} className="relative z-20">
+                <div
+                  key={level.id}
+                  className="relative z-20 mb-8"
+                  onMouseEnter={() => setHoveredLevel(level.id)}
+                  onMouseLeave={() => setHoveredLevel(null)}
+                >
                   <div
-                    className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+                    className={`flex items-center ${
+                      index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                    }`}
                   >
                     {/* Content Side */}
                     <div
-                      className={`w-5/12 ${index % 2 === 0 ? "pr-12" : "pl-12"}`}
+                      className={`w-5/12 ${
+                        index % 2 === 0 ? "pr-12" : "pl-12"
+                      }`}
                     >
-                      <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-8 border border-white/10 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20 hover:scale-105">
-                        <div className="flex items-center mb-4">
+                      <div className="relative group">
+                        {/* Glowing border */}
+                        <div
+                          className={`absolute -inset-[2px] bg-gradient-to-r ${level.gradient} rounded-xl opacity-0 group-hover:opacity-70 blur transition-opacity duration-500`}
+                        ></div>
+
+                        <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-xl rounded-xl p-6 border border-white/5 overflow-hidden">
+                          {/* Animated corner accents */}
                           <div
-                            className={`w-12 h-12 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center mr-4`}
-                          >
-                            <div className="text-white">{level.icon}</div>
-                          </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-white">
-                              {level.title}
-                            </h3>
-                            {level.timeframe && (
-                              <div className="inline-block bg-blue-900/50 rounded-full px-3 py-1 text-xs text-blue-200 mt-1">
-                                {level.timeframe}
+                            className={`absolute top-0 ${
+                              index % 2 === 0 ? "right-0" : "left-0"
+                            } w-24 h-24 bg-gradient-to-br ${level.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-700`}
+                          ></div>
+
+                          <div className="relative">
+                            {/* Header */}
+                            <div className="flex items-center gap-3 mb-3">
+                              <div
+                                className={`w-10 h-10 bg-gradient-to-br ${level.gradient} rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-300`}
+                              >
+                                <div className="text-white scale-90">
+                                  {level.icon}
+                                </div>
+                              </div>
+                              <div className="flex-1">
+                                <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
+                                  {level.title}
+                                </h3>
+                                {level.timeframe && (
+                                  <div className="inline-block bg-blue-500/20 rounded-full px-2 py-0.5 text-xs text-blue-300 mt-1">
+                                    {level.timeframe}
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+
+                            {/* Description */}
+                            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                              {level.description}
+                            </p>
+
+                            {/* Requirements */}
+                            <div className="space-y-2 mb-4">
+                              {level.requirements.map((req, reqIndex) => (
+                                <div
+                                  key={reqIndex}
+                                  className="flex items-start gap-2 group/item"
+                                >
+                                  <div
+                                    className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${level.gradient} mt-1.5 flex-shrink-0 group-hover/item:scale-150 transition-transform duration-200`}
+                                  ></div>
+                                  <p className="text-xs text-gray-400 leading-relaxed">
+                                    {req}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Good Standing */}
+                            {level.goodStanding && (
+                              <div className="p-3 bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg">
+                                <p className="text-xs text-gray-300 leading-relaxed">
+                                  {level.goodStanding}
+                                </p>
+                              </div>
+                            )}
+
+                            {/* Next Level */}
+                            {index < levels.length - 1 && (
+                              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
+                                <span className="text-xs text-gray-500">Next Level:</span>
+                                <span
+                                  className={`text-sm font-semibold bg-gradient-to-r ${level.gradient} bg-clip-text text-transparent`}
+                                >
+                                  {level.nextLevel}
+                                </span>
                               </div>
                             )}
                           </div>
                         </div>
-
-                        <p className="text-gray-300 mb-6 leading-relaxed">
-                          {level.description}
-                        </p>
-
-                        <div className="space-y-3">
-                          <h4 className="text-lg font-semibold text-white">
-                            {t("requirementsLabel")}
-                          </h4>
-                          <ul className="space-y-2">
-                            {level.requirements.map((req, reqIndex) => (
-                              <li
-                                key={reqIndex}
-                                className="text-gray-300 flex items-start"
-                              >
-                                <span className="text-green-400 mr-3 mt-1 text-lg">
-                                  •
-                                </span>
-                                <span className="text-sm leading-relaxed">
-                                  {req}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {level.goodStanding && (
-                          <div className="mt-6 p-4 bg-blue-900/20 border border-blue-500/30 rounded-lg">
-                            <h4 className="text-base font-semibold text-blue-300 mb-2">
-                              {t("goodStandingLabel")}
-                            </h4>
-                            <p className="text-sm text-gray-300 leading-relaxed">
-                              {level.goodStanding}
-                            </p>
-                          </div>
-                        )}
-
-                        {index < levels.length - 1 && (
-                          <div className="mt-6 pt-4 border-t border-gray-700/50">
-                            <div className="text-sm text-gray-400">
-                              {t("nextLevelLabel")}
-                            </div>
-                            <div className="text-lg font-semibold text-blue-400">
-                              {level.nextLevel}
-                            </div>
-                          </div>
-                        )}
                       </div>
                     </div>
 
                     {/* Center Circle */}
                     <div className="w-2/12 flex justify-center">
                       <div
-                        className={`w-20 h-20 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-2xl z-30 transition-all duration-300 hover:scale-110`}
+                        className={`relative w-16 h-16 bg-gradient-to-br ${level.gradient} rounded-full flex items-center justify-center shadow-2xl z-30 transition-all duration-300 ${
+                          hoveredLevel === level.id ? "scale-125" : "scale-100"
+                        }`}
                       >
-                        <span className="text-white font-bold text-2xl">
+                        <span className="text-white font-bold text-xl">
                           {level.id}
                         </span>
+                        {/* Ripple effect */}
+                        {hoveredLevel === level.id && (
+                          <div
+                            className={`absolute inset-0 rounded-full bg-gradient-to-br ${level.gradient} animate-ping opacity-75`}
+                          ></div>
+                        )}
                       </div>
                     </div>
 
