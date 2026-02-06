@@ -4,20 +4,19 @@
 The KubeStellar UI is an add-on developed to make managing workloads via KubeStellar even simpler and more intuitive.
 With its web-based interface, you can view and manage your Workload Definition Space, Inventory and Transport Space, and Binding Policies all interactively, with both drag-and-drop and text-based interface modes available for use.
 
-## Learn More
+## Console Features
 
-### UI Repository
-To explore more fully under the covers, [visit the UI repository at https://github.com/kubestellar/ui](https://github.com/kubestellar/ui)
+### Global Filtering
 
----
+The KubeStellar Console now features a powerful **Global Filtering** system located in the navbar, allowing you to filter resources across all dashboard cards and pages simultaneously.
 
-### README (copied from the UI Repository)
+- **Global Status Filter**: Filter your view by resource status (e.g., `Running`, `Failed`, `Pending`, `Initializing`). This helps you quickly identify issues across your entire fleet.
+- **Custom Text Filter**: Use the search bar to filter resources by Name, Namespace, or Cluster.
 
-(The content that follows is imported from a copy of the README.md file for the KubeStellarUI repository)
+> [!NOTE]
+> Your filter preferences are automatically saved to your browser's local storage, so they persist between sessions.
 
-{%
-    include-markdown "./README.md"
-%}
+
 
 
 
