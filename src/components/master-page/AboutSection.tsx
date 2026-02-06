@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { GridLines, StarField } from "../index";
 import { useTranslations } from "next-intl";
+import { DocsSourceActions } from "@/components/docs/DocsSourceActions";
 import Link from "next/link";
 
 export default function AboutSection() {
@@ -127,7 +128,7 @@ export default function AboutSection() {
           <div className="feature-card relative group perspective">
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
-              <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 h-full">
+              <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 h-full flex flex-col justify-between h-full">
                 {/* Icon with animation */}
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <svg
@@ -175,6 +176,14 @@ export default function AboutSection() {
                     </svg>
                   </div>
                 </Link>
+                <div className="mt-4 pt-3 border-t border-gray-700/40">
+                  <DocsSourceActions
+                    filePath="direct/architecture.md"
+                    projectId="kubestellar"
+                    pageTitle={t("card1Title")}
+                    variant="compact"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -183,7 +192,7 @@ export default function AboutSection() {
           <div className="feature-card relative group perspective">
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
-              <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50">
+              <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 flex flex-col justify-between h-full">
                 {/* Icon with animation */}
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <svg
@@ -231,6 +240,14 @@ export default function AboutSection() {
                     </svg>
                   </div>
                 </Link>
+                <div className="mt-4 pt-3 border-t border-gray-700/40">
+                  <DocsSourceActions
+                    filePath="direct/wds.md"
+                    projectId="kubestellar"
+                    pageTitle={t("card2Title")}
+                    variant="compact"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -239,7 +256,7 @@ export default function AboutSection() {
           <div className="feature-card relative group perspective">
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
-              <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50">
+              <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 flex flex-col justify-between h-full">
                 {/* Icon with animation */}
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <svg
@@ -287,6 +304,14 @@ export default function AboutSection() {
                     </svg>
                   </div>
                 </Link>
+                <div className="mt-4 pt-3 border-t border-gray-700/40">
+                  <DocsSourceActions
+                    filePath="direct/binding.md"
+                    projectId="kubestellar"
+                    pageTitle={t("card3Title")}
+                    variant="compact"
+                  />
+                </div>
               </div>
             </div>
           </div>
