@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { RelatedProjects } from './RelatedProjects';
 import { useDocsMenu } from './DocsProvider';
 
@@ -38,6 +39,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     toggleNavCollapsed,
     navInitialized
   } = useDocsMenu();
+  const t = useTranslations('docs');
 
   useEffect(() => {
     setMounted(true);
@@ -128,7 +130,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     findActivePath(pageMap);
     collapseAll(pageMap);
     setCollapsed(initialCollapsed);
-  }, [pageMap]);
+  }, [pageMap, navInitialized, setCollapsed]);
 
   const toggleCollapse = (itemKey: string) => {
     toggleNavCollapsed(itemKey);
@@ -139,13 +141,49 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     const itemKey = parentKey ? `${parentKey}-${item.name}` : item.name;
     const isCollapsed = collapsed.has(itemKey);
     const isActive = item.route && pathname === item.route;
-    const displayTitle = item.title || item.name;
+    
+    // Mapping of hardcoded titles to translation keys
+    const titleToKey: Record<string, string> = {
+      'What is KubeStellar?': 'whatIsKubeStellar',
+      'Overview': 'overview',
+      'Architecture': 'architecture',
+      'User Guide': 'userGuide',
+      'Guide Overview': 'guideOverview',
+      'Observability': 'observability',
+      'Getting Started': 'gettingStarted',
+      'Related Projects': 'relatedProjects',
+      'Release Notes': 'releaseNotes',
+      'Roadmap': 'roadmap'
+    };
+
+    let displayTitle = item.title || item.name;
+    
+    // If title is in our mapping, translate it
+    if (displayTitle && titleToKey[displayTitle]) {
+      try {
+        const translated = t(titleToKey[displayTitle]);
+        if (translated) displayTitle = translated;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (e) {
+        // Fallback to original
+      }
+    }
+    // Backward compatibility for dot notation if used in files
+    else if (displayTitle && displayTitle.includes('.')) {
+      try {
+        const translated = t(displayTitle.split('.')[1]);
+        if (translated) displayTitle = translated;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (e) {
+        // Fallback to original
+      }
+    }
 
     // Skip separator, meta items, and items without title/name
     if (item.kind === 'Separator' || item.kind === 'Meta' || !displayTitle || displayTitle.trim() === '') {
       return null;
     }
-    
+
     // Skip index files and hidden items
     if (item.name === 'index' || item.name === '_meta' || item.route === '#') {
       return null;
@@ -156,12 +194,12 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         <div className="flex items-center group relative">
           {/* Vertical line for nested items */}
           {depth > 0 && (
-            <div 
+            <div
               className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700"
               style={{ left: `${(depth - 1) * 16 + 20}px` }}
             />
           )}
-          
+
           {/* Folder or Page */}
           {hasChildren ? (
             // Folder - clickable to toggle
@@ -185,10 +223,9 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
               href={item.route || '#'}
               className={`
                 flex-1 flex items-start gap-2 px-3 py-2 text-sm rounded-lg transition-all relative z-10
-                ${
-                  isActive
-                    ? 'font-thin text-blue-500 bg-blue-500/10'
-                    : 'hover:font-semibold'
+                ${isActive
+                  ? 'font-thin text-blue-500 bg-blue-500/10'
+                  : 'hover:font-semibold'
                 }
               `}
               style={{
@@ -207,14 +244,14 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
 
         {/* Render children */}
         {hasChildren && (
-          <div 
+          <div
             className={`
               relative space-y-1 overflow-hidden transition-all duration-300 ease-in-out
               ${isCollapsed ? 'max-h-0 opacity-0' : 'max-h-500 opacity-100'}
             `}
           >
             {/* Vertical line connecting children */}
-            <div 
+            <div
               className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700"
               style={{ left: `${depth * 16 + 20}px` }}
             />
