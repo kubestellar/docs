@@ -4,13 +4,12 @@ import HowItWorksSection from "@/components/master-page/HowToUseSection";
 import UseCasesSection from "@/components/master-page/UseCasesSection";
 import GetStartedSection from "@/components/master-page/GetStartedSection";
 import ContactSection from "@/components/master-page/ContactSection";
-import { Navbar, Footer, PageActions } from "@/components";
+import { Navbar, Footer } from "@/components";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <PageActions position="fixed" filePath="[locale]/page.tsx" docsPath="src/app/" />
       <HeroSection />
       <AboutSection />
       <HowItWorksSection />
