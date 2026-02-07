@@ -48,7 +48,7 @@ export default function ProgramsPage() {
       {/* Navigation */}
       <Navbar />
 
-      {/* Full page background with starfield */}}
+      {/* Full page background with starfield */}
       <div className="fixed inset-0 z-0">
         {/* Dark base background */}
         <div className="absolute inset-0 bg-[#0a0a0a]"></div>
