@@ -18,20 +18,12 @@ on:
           - clubanderson
           - dumb0002
           - francostellari
-          - gaurab-khanal
           - kproche
-          - kunal-511
           - mavrick-1
           - mikespreitzer
-          - naman9271
-          - nupurshivani
           - oksaumya
           - onkar717
           - pdettori
-          - rupam-it
-          - rxinui
-          - sagar2366
-          - vedansh-5
           - waltforme
 
 run-name: "Maintainer Metrics Tracker - ${{ inputs.maintainer }}"
@@ -200,20 +192,12 @@ safe-outputs:
                 'clubanderson': 'andy@clubanderson.com',
                 'dumb0002': 'Braulio.Dumba@ibm.com',
                 'francostellari': 'stellari@us.ibm.com',
-                'gaurab-khanal': 'khanalgaurab98@gmail.com',
                 'kproche': 'kproche@us.ibm.com',
-                'kunal-511': 'yoyokvunal@gmail.com',
                 'mavrick-1': 'mavrickrishi@gmail.com',
                 'mikespreitzer': 'mspreitz@us.ibm.com',
-                'naman9271': 'namanjain9271@gmail.com',
-                'nupurshivani': 'nupurjha.me@gmail.com',
                 'oksaumya': 'saumyakr2006@gmail.com',
                 'onkar717': 'onkarwork2234@gmail.com',
                 'pdettori': 'dettori@us.ibm.com',
-                'rupam-it': 'Mannarupam3@gmail.com',
-                'rxinui': 'rainui.ly@gmail.com',
-                'sagar2366': 'sagarutekar2366@gmail.com',
-                'vedansh-5': 'vedanshsaini7719@gmail.com',
                 'waltforme': 'jun.duan@ibm.com'
               };
 
@@ -293,20 +277,12 @@ Your task is to **generate ONE metrics email** for the selected maintainer using
 - clubanderson → andy@clubanderson.com
 - dumb0002 → Braulio.Dumba@ibm.com
 - francostellari → stellari@us.ibm.com
-- gaurab-khanal → khanalgaurab98@gmail.com
 - kproche → kproche@us.ibm.com
-- kunal-511 → yoyokvunal@gmail.com
 - mavrick-1 → mavrickrishi@gmail.com
 - mikespreitzer → mspreitz@us.ibm.com
-- naman9271 → namanjain9271@gmail.com
-- nupurshivani → nupurjha.me@gmail.com
 - oksaumya → saumyakr2006@gmail.com
 - onkar717 → onkarwork2234@gmail.com
 - pdettori → dettori@us.ibm.com
-- rupam-it → Mannarupam3@gmail.com
-- rxinui → rainui.ly@gmail.com
-- sagar2366 → sagarutekar2366@gmail.com
-- vedansh-5 → vedanshsaini7719@gmail.com
 - waltforme → jun.duan@ibm.com
 
 The data files are in `/tmp/metrics-data/${{ github.event.inputs.maintainer }}/`:
