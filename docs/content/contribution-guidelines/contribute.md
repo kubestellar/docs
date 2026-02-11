@@ -7,7 +7,8 @@ This section provides information on the Code of Conduct, guidelines, terms, and
 
 There are different ways you can contribute to the KubeStellar development:
 
-- **Documentation:** Enhance the documentation by fixing typos, enabling semantic clarity, adding links, updating information on changelogs and release versions, and implementing content strategy. _Note that the KubeStellar documentation is consolidated into its own repository now._
+- **Documentation:** Enhance the documentation by fixing typos, enabling semantic clarity, adding links, updating information on changelogs and release versions, and implementing content strategy. <br />
+_**Note that all KubeStellar documentation is consolidated into a separate repository now.**_
   
 - **Code:** Indicate your interest in developing new features, modifying existing features, raising concerns, or fixing bugs.
 
