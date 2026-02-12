@@ -383,7 +383,7 @@
         "title": "Docs Management Overview",
         "description": "Overview of how documentation is managed and updated. Comprehensive documentation workflow."
       },
-      "testingWebsitePRs": {
+      "contributingToCode": {
         "title": "Contributing to Code",
         "description": "Basic information on the process for contributing to the KubeStellar component repositories"
       },

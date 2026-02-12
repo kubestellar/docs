@@ -8,9 +8,9 @@ To get started, kindly read through this document and familiarize yourself with 
 We can't wait to collaborate with you!
 
 
-This document describes our policies, procedures and best practices for working on KubeStellar _code_ ia the project and repositories on GitHub. Much of this interaction (issues, pull requests, discussions) is meant to be viewed directly at the [KubeStellar repository webpage on GitHub](https://github.com/kubestellar/kubestellar/) or the parallel pages for [KubeFlex](https://github.com/kubestellar/kubeflex) and the other components. Other community discussions and questions are available via our slack channel. If you have any inquiries, please feel free to reach out to us on the [KubeStellar-dev Slack channel](https://cloud-native.slack.com/archives/C097094RZ3M/).
+This document describes our policies, procedures and best practices for working on KubeStellar _code_ in the project and repositories on GitHub. Much of this interaction (issues, pull requests, discussions) is meant to be viewed directly at the [KubeStellar repository webpage on GitHub](https://github.com/kubestellar/kubestellar/) or the parallel pages for [KubeFlex](https://github.com/kubestellar/kubeflex) and the other components. Other community discussions and questions are available via our slack channel. If you have any inquiries, please feel free to reach out to us on the [KubeStellar-dev Slack channel](https://cloud-native.slack.com/archives/C097094RZ3M/).
 
-Note that the KubeStellar documentation (which drives the website [kubestellar.io](https://kubestellar.io)) is all located in its [own repository] (https://github.com/kubestellar/docs)
+Note that the KubeStellar documentation (which drives the website [kubestellar.io](https://kubestellar.io)) is all located in its [own repository](https://github.com/kubestellar/docs)
 
 Please read the following guidelines if you're interested in contributing to KubeStellar.
 
@@ -19,7 +19,7 @@ Please read the following guidelines if you're interested in contributing to Kub
 ### Contributing Code -- Prerequisites
 
 
-Please make sure that your environment has all the necessary versions as spelled out in the prerequisites section of our [user guide](docs/content/direct/pre-reqs.md)
+Please make sure that your environment has all the necessary versions as spelled out in the prerequisites section of our [user guide](docs/content/kubestellar/pre-reqs.md)
 
 ### Issues
 

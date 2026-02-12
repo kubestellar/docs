@@ -30,7 +30,7 @@ function HandbookCardComponent({ card }: HandbookCardComponentProps) {
       testing: "testing",
       packaging: "packaging",
       "docs-management": "docsManagement",
-      "testing-website-prs": "testingWebsitePRs",
+      "contributing-to-code": "contributingToCode",
       "release-process": "releaseProcess",
       "release-testing": "releaseTesting",
       "signoff-signing": "signoffSigning",

@@ -80,7 +80,7 @@ export const handbookCards: HandbookCard[] = [
     link: "/docs/contributing/contributing-to-docs-website/docs-structure",
   },
   {
-    id: "testing-website-prs",
+    id: "contributing-to-code",
     iconType: "check-circle-2",
     iconPath: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
     bgColor: "bg-green-500/20",
