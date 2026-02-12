@@ -314,17 +314,17 @@ The Local Clusters page shows all local clusters with:
 
 ---
 
-## LLM-d Inference Monitoring
+## llm-d Inference Monitoring
 
-![LLM-d Cards](images/llmd-cards.jpg)
+![llm-d Cards](images/llmd-cards.jpg)
 
-The AI/ML dashboard includes specialized cards for monitoring LLM-d inference serving stacks.
+The AI/ML dashboard includes specialized cards for monitoring llm-d inference serving stacks.
 
 ### Stack Discovery
 
-The console automatically discovers LLM-d stacks across your clusters:
-- Scans all namespaces for LLM-d deployments
-- Detects vLLM, TGI, LLM-d, and Triton inference servers
+The console automatically discovers llm-d stacks across your clusters:
+- Scans all namespaces for llm-d deployments
+- Detects vLLM, TGI, llm-d, and Triton inference servers
 - Shows stack health with component status
 
 ### Key Cards
@@ -336,7 +336,7 @@ The console automatically discovers LLM-d stacks across your clusters:
 - **Benchmarks** - Compare stacks with TTFT, throughput, and latency charts
 - **Configurator** - Configure inference strategies (Intelligent Scheduling, P/D Disaggregation, Wide Expert Parallelism, Variant Autoscaling)
 
-### LLM-d AI Insights
+### llm-d AI Insights
 
 The AI Insights card provides automated analysis of your inference stack configuration, identifying:
 - Balanced vs imbalanced prefill-to-decode ratios
@@ -345,29 +345,29 @@ The AI Insights card provides automated analysis of your inference stack configu
 
 ---
 
-## Prow CI Monitoring
+## PROW CI Monitoring
 
-![Prow CI](images/prow-ci.jpg)
+![PROW CI](images/prow-ci.jpg)
 
-The CI/CD dashboard includes Prow CI integration for monitoring Kubernetes-style CI/CD.
+The CI/CD dashboard includes PROW CI integration for monitoring Kubernetes-style CI/CD.
 
-### Prow Status Card
+### PROW Status Card
 
-Shows overall Prow health:
+Shows overall PROW health:
 - Success rate percentage
 - Job counts in the last hour
 - Running, pending, and failed job breakdown
-- Link to your Prow dashboard
+- Link to your PROW dashboard
 
-### Prow Jobs Card
+### PROW Jobs Card
 
-Filterable list of Prow jobs:
+Filterable list of PROW jobs:
 - Filter by **job type** (presubmit, postsubmit, periodic, batch)
 - Filter by **state** (all states, triggered, pending, running, succeeded, failed)
 - Each job shows PR number, duration, and age
-- Click to open the job in your Prow instance
+- Click to open the job in your PROW instance
 
-### Prow History Card
+### PROW History Card
 
 Revision history showing pass/fail trends over time.
 

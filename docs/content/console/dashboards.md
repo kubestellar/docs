@@ -308,9 +308,9 @@ Focus on pods:
 ![AI/ML Dashboard](images/aiml-dashboard.jpg)
 
 Monitor AI and Machine Learning workloads:
-- LLM-d inference stack monitoring (Request Flow, KV Cache, EPP Routing)
+- llm-d inference stack monitoring (Request Flow, KV Cache, EPP Routing)
 - Prefill/Decode disaggregation metrics
-- LLM-d benchmarks and comparisons
+- llm-d benchmarks and comparisons
 - ML Jobs and Notebooks
 - GPU Overview with type breakdown
 - Hardware Health monitoring
@@ -344,14 +344,14 @@ Manage Kagenti AI agents:
 ![CI/CD Dashboard](images/prow-ci.jpg)
 
 Monitor continuous integration and deployment:
-- Prow CI status and success rates
-- Prow Jobs with type/state filtering
-- Prow revision history
+- PROW CI status and success rates
+- PROW Jobs with type/state filtering
+- PROW revision history
 - Helm release tracking
 - Kustomize and ArgoCD sync status
 - Operator deployments and synced counts
 
-**Best for:** Monitoring CI/CD pipelines and Prow test infrastructure
+**Best for:** Monitoring CI/CD pipelines and PROW test infrastructure
 
 ---
 

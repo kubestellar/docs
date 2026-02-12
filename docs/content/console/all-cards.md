@@ -217,37 +217,37 @@ The console ships with 110+ built-in cards, and you can create more using the Ca
 
 ---
 
-### LLM-d Inference Cards (7)
+### llm-d Inference Cards (7)
 
-![LLM-d Cards](images/llmd-cards.jpg)
+![llm-d Cards](images/llmd-cards.jpg)
 
 | # | Card | What it shows |
 |---|------|---------------|
-| 67 | **LLM-d Request Flow** | Animated request flow through the inference stack with throughput/latency metrics |
+| 67 | **llm-d Request Flow** | Animated request flow through the inference stack with throughput/latency metrics |
 | 68 | **KV Cache Monitor** | KV cache utilization, per-pod cache stats, aggregated/per-pod toggle |
 | 69 | **EPP Routing** | Endpoint Picker routing decisions with RPS and routing distribution |
 | 70 | **P/D Disaggregation** | Prefill and Decode server load, queue depth, throughput, TPOT, GPU memory |
-| 71 | **LLM-d Benchmarks** | Stacks vs Comparison vs Latency views with TTFT, throughput, bar charts |
-| 72 | **LLM-d AI Insights** | AI-generated insights about balanced P/D configuration and optimization |
-| 73 | **LLM-d Configurator** | Configure inference strategies: Intelligent Scheduling, P/D Disaggregation, Wide Expert Parallelism, Variant Autoscaling |
+| 71 | **llm-d Benchmarks** | Stacks vs Comparison vs Latency views with TTFT, throughput, bar charts |
+| 72 | **llm-d AI Insights** | AI-generated insights about balanced P/D configuration and optimization |
+| 73 | **llm-d Configurator** | Configure inference strategies: Intelligent Scheduling, P/D Disaggregation, Wide Expert Parallelism, Variant Autoscaling |
 
-![LLM-d Stack](images/llmd-stack.jpg)
+![llm-d Stack](images/llmd-stack.jpg)
 
 | # | Card | What it shows |
 |---|------|---------------|
-| 74 | **LLM-d Stack** | Stack health, component status, model serving details with cluster discovery |
-| 75 | **LLM-d Models** | Loaded models with namespace, cluster, and GPU allocation |
-| 76 | **LLM-d Inference Servers** | Running inference servers with status and throughput |
+| 74 | **llm-d Stack** | Stack health, component status, model serving details with cluster discovery |
+| 75 | **llm-d Models** | Loaded models with namespace, cluster, and GPU allocation |
+| 76 | **llm-d Inference Servers** | Running inference servers with status and throughput |
 
 ---
 
-### Prow CI Cards (3)
+### PROW CI Cards (3)
 
 | # | Card | What it shows |
 |---|------|---------------|
-| 77 | **Prow CI Monitor** | Overall Prow health: success rate, job counts (running, pending, failed) |
-| 78 | **Prow Jobs** | Filterable job list with type, state, PR number, duration, and age |
-| 79 | **Prow History** | Revision history with pass/fail trends |
+| 77 | **PROW CI Monitor** | Overall PROW health: success rate, job counts (running, pending, failed) |
+| 78 | **PROW Jobs** | Filterable job list with type, state, PR number, duration, and age |
+| 79 | **PROW History** | Revision history with pass/fail trends |
 
 ---
 

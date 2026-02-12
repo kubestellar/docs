@@ -175,9 +175,9 @@ The KubeStellar Console includes over 100 dashboard cards organized into categor
 
 | Card | Description | Data Source |
 |------|-------------|-------------|
-| Prow Jobs | Prow CI/CD job status | Live |
-| Prow Status | Prow controller health | Live |
-| Prow History | Recent Prow job runs | Live |
+| PROW Jobs | PROW CI/CD job status | Live |
+| PROW Status | PROW controller health | Live |
+| PROW History | Recent PROW job runs | Live |
 | llm-d inference | vLLM, llm-d, TGI server status | Live |
 | llm-d models | Deployed language models | Live |
 | ML Training Jobs | Kubeflow, Ray training status | Demo |
