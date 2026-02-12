@@ -120,6 +120,113 @@ When AI diagnoses a problem, it can often fix it automatically.
 
 ---
 
+## Custom AI Missions
+
+You can create your own AI missions to investigate any problem or perform any task.
+
+### Starting a Custom Mission
+
+1. Click **"AI Missions"** button (bottom right)
+2. Click **"Start Custom Mission"**
+3. Type your question or task in plain English
+4. Press **Cmd+Enter** to submit
+
+![Custom Mission](images/ai-missions-custom.jpg)
+
+### Example Custom Missions
+
+- "Find pods with high memory usage and suggest optimization"
+- "Check why my deployment is failing on cluster-2"
+- "Analyze network policies across all namespaces"
+- "Help me set up GPU reservations for my ML team"
+
+### Search-Based Missions
+
+You can also start missions from the global search bar:
+1. Press **Cmd/Ctrl + K** to open search
+2. Type your question
+3. Select "Start AI Mission" from the results
+
+---
+
+## Resolution History
+
+AI missions automatically save their problem/solution pairs so you can reuse them later. This saves tokens and time by avoiding repeated analysis of the same issues.
+
+### How It Works
+
+1. When an AI mission diagnoses and resolves a problem, the resolution is saved
+2. The resolution includes the problem description, root cause, and solution steps
+3. Future missions can reference past resolutions for similar issues
+
+### Viewing Resolution History
+
+- Navigate to the **Deploy** dashboard to see **Deployment Missions** with resolution status
+- Each resolution shows whether it's been applied ("In Orbit" for deployed fixes)
+- Click any resolution to see the full problem/solution details
+
+### Resolution Tabs
+
+Resolutions are organized by status:
+- **All** - Every resolution recorded
+- **Applied** - Fixes that were successfully deployed
+- **Pending** - Suggested fixes awaiting approval
+- **Archived** - Past resolutions for reference
+
+### Sharing Resolutions
+
+Resolutions are stored with the console and available to all users, enabling team knowledge sharing. When a team member solves a problem, the solution is available for everyone.
+
+---
+
+## Predictive Failure Detection
+
+AI-powered prediction system that detects potential node and GPU failures before they happen.
+
+![Predictive Health Monitor](images/predictive-health.jpg)
+
+### How It Works
+
+1. AI continuously analyzes cluster health data (CPU, memory, disk, network patterns)
+2. Detects anomalous patterns that correlate with past failures
+3. Generates predictions with confidence levels
+4. Alerts you before failures occur
+
+### Configuration
+
+Configure in **Settings > AI & Intelligence > Predictions**:
+
+- **AI Predictions** - Toggle prediction analysis on/off
+- **Analysis Interval** - How often to run (15 min to 2 hours, default 30 min)
+- **Minimum Confidence** - Threshold for showing predictions (50% to 90%, default 60%)
+- **Multi-Provider Consensus** - Run analysis on multiple AI providers for higher confidence
+
+### Prediction Cards
+
+The **Predictive Health Monitor** card on the Clusters dashboard shows:
+- **Offline** count - Currently offline nodes
+- **GPU Issues** count - GPU nodes with problems
+- **Predicted** count - Nodes predicted to have issues soon
+- Issue list with severity, confidence, cluster, and correlated patterns
+
+### Root Cause Analysis (RCA)
+
+When the AI detects an issue or predicts a failure, it provides root cause analysis:
+- **Pattern correlation** - Links symptoms to likely causes (e.g., "restart pattern detected - crashes correlate with traffic spikes")
+- **Resource trending** - "Memory usage trending upward, may hit limits in ~2 hours"
+- **Historical comparison** - Compares current patterns to past incidents
+
+### Heuristic Thresholds
+
+Fine-tune detection sensitivity with heuristic thresholds for:
+- Memory pressure
+- CPU saturation
+- Disk I/O anomalies
+- Network connectivity patterns
+- Pod restart frequency
+
+---
+
 ## Smart Suggestions
 
 AI watches how you use the console and suggests improvements.

@@ -217,16 +217,105 @@ The console ships with 110+ built-in cards, and you can create more using the Ca
 
 ---
 
+### LLM-d Inference Cards (7)
+
+![LLM-d Cards](images/llmd-cards.jpg)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 67 | **LLM-d Request Flow** | Animated request flow through the inference stack with throughput/latency metrics |
+| 68 | **KV Cache Monitor** | KV cache utilization, per-pod cache stats, aggregated/per-pod toggle |
+| 69 | **EPP Routing** | Endpoint Picker routing decisions with RPS and routing distribution |
+| 70 | **P/D Disaggregation** | Prefill and Decode server load, queue depth, throughput, TPOT, GPU memory |
+| 71 | **LLM-d Benchmarks** | Stacks vs Comparison vs Latency views with TTFT, throughput, bar charts |
+| 72 | **LLM-d AI Insights** | AI-generated insights about balanced P/D configuration and optimization |
+| 73 | **LLM-d Configurator** | Configure inference strategies: Intelligent Scheduling, P/D Disaggregation, Wide Expert Parallelism, Variant Autoscaling |
+
+![LLM-d Stack](images/llmd-stack.jpg)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 74 | **LLM-d Stack** | Stack health, component status, model serving details with cluster discovery |
+| 75 | **LLM-d Models** | Loaded models with namespace, cluster, and GPU allocation |
+| 76 | **LLM-d Inference Servers** | Running inference servers with status and throughput |
+
+---
+
+### Prow CI Cards (3)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 77 | **Prow CI Monitor** | Overall Prow health: success rate, job counts (running, pending, failed) |
+| 78 | **Prow Jobs** | Filterable job list with type, state, PR number, duration, and age |
+| 79 | **Prow History** | Revision history with pass/fail trends |
+
+---
+
+### Hardware Health Card (1)
+
+![Hardware Health](images/hardware-health.jpg)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 80 | **Hardware Health** | GPU/accelerator node health with alerts, inventory, IPMI-style monitoring. Shows critical/warning counts, device search, and per-device status with disappearance tracking |
+
+---
+
+### Predictive Health Card (1)
+
+![Predictive Health Monitor](images/predictive-health.jpg)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 81 | **Predictive Health Monitor** | AI-powered failure prediction with offline node count, GPU issues, and predicted failures. Shows confidence levels, severity, and correlates with traffic patterns |
+
+---
+
+### ML Job & Notebook Cards (2)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 82 | **ML Jobs** | Running ML training jobs (Kubeflow, Ray, custom) with GPU count, ETA, and status |
+| 83 | **ML Notebooks** | Active Jupyter/notebook servers with user, resources, and status |
+
+---
+
+### Kagenti AI Agent Cards (7)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 84 | **Kagenti Overview** | Agent count, MCP tools, builds, framework breakdown (LangGraph, CrewAI, AG2) |
+| 85 | **Agent Fleet** | Searchable agent list with cluster, framework, replicas, and status |
+| 86 | **Agent Topology** | Visual topology of agent relationships and dependencies |
+| 87 | **SPIFFE Identity** | SPIFFE identity coverage and certificate status |
+| 88 | **Agent Builds** | Build history with status (succeeded, failed, building) |
+| 89 | **Agent MCP Tools** | MCP tool inventory per agent |
+| 90 | **Agent Logs** | Aggregated agent logs with filtering |
+
+---
+
+### Deploy Cards (5)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 91 | **Workloads** | All workloads with status, drag-to-deploy to cluster groups |
+| 92 | **Cluster Groups** | Target groups (production, staging, edge) with health |
+| 93 | **Deployment Missions** | AI-assisted deployment missions with status tracking |
+| 94 | **Resource Marshall** | Cascading cluster/namespace/workload selector for resource placement |
+| 95 | **Deployment History** | Timeline of recent deployments with rollback options |
+
+---
+
 ### Additional Cards (44+)
 
 The console includes 44+ additional specialized cards across categories like:
 
-- **Deploy** - Deployment management and progress tracking
 - **Events** - Event timeline and filtering
 - **Data Compliance** - Data classification and compliance checks
-- **Arcade** - Interactive visualizations
+- **Arcade** - 21 Kubernetes-themed games (AI Checkers, Kube Chess, Container Tetris, etc.)
 - **Card History** - Track card changes over time
 - **User Management** - Console user management
+- **Weather, Stocks, RSS** - Widget-style cards for external data
 
 Plus any custom cards you create using the **Card Factory**.
 

@@ -3,12 +3,12 @@ title: "Dashboards"
 linkTitle: "Dashboards"
 weight: 6
 description: >
-  All 20 dashboard pages in KubeStellar Console
+  All 25+ dashboard pages in KubeStellar Console
 ---
 
 # Dashboards
 
-KubeStellar Console has 20 different dashboards. Each one shows you different information about your Kubernetes clusters.
+KubeStellar Console has 25+ different dashboards. Each one shows you different information about your Kubernetes clusters.
 
 ## Main Dashboard
 
@@ -298,6 +298,121 @@ Focus on pods:
 - Resource usage
 
 **Best for:** Detailed pod troubleshooting
+
+---
+
+### AI/ML Dashboard
+
+**Route:** `/ai-ml`
+
+![AI/ML Dashboard](images/aiml-dashboard.jpg)
+
+Monitor AI and Machine Learning workloads:
+- LLM-d inference stack monitoring (Request Flow, KV Cache, EPP Routing)
+- Prefill/Decode disaggregation metrics
+- LLM-d benchmarks and comparisons
+- ML Jobs and Notebooks
+- GPU Overview with type breakdown
+- Hardware Health monitoring
+- Node Offline Detection with AI predictions
+
+**Best for:** Managing AI/ML infrastructure and LLM serving stacks
+
+---
+
+### AI Agents Dashboard
+
+**Route:** `/ai-agents`
+
+![AI Agents Dashboard](images/ai-agents-dashboard.jpg)
+
+Manage Kagenti AI agents:
+- Agent fleet overview across clusters
+- MCP tools and framework breakdown (LangGraph, CrewAI, AG2)
+- Agent build status and history
+- SPIFFE identity coverage
+- Per-agent replica status and cluster placement
+
+**Best for:** Deploying, securing, and monitoring AI agents
+
+---
+
+### CI/CD Dashboard
+
+**Route:** `/ci-cd`
+
+![CI/CD Dashboard](images/prow-ci.jpg)
+
+Monitor continuous integration and deployment:
+- Prow CI status and success rates
+- Prow Jobs with type/state filtering
+- Prow revision history
+- Helm release tracking
+- Kustomize and ArgoCD sync status
+- Operator deployments and synced counts
+
+**Best for:** Monitoring CI/CD pipelines and Prow test infrastructure
+
+---
+
+### Deploy Dashboard
+
+**Route:** `/deploy`
+
+![Deploy Dashboard](images/deploy-missions-new.jpg)
+
+Multi-cluster deployment management:
+- Workloads overview with drag-to-deploy
+- Cluster Groups for targeting deployments
+- Deployment Missions with AI-assisted rollouts
+- Resource Marshall for workload placement
+- Deployment history and rollback
+
+**Best for:** Deploying and managing workloads across multiple clusters
+
+---
+
+### Data Compliance Dashboard
+
+**Route:** `/data-compliance`
+
+Monitor data compliance:
+- Data classification status
+- Compliance checks and violations
+- Policy enforcement across clusters
+
+**Best for:** Meeting data governance requirements
+
+---
+
+### Arcade Dashboard
+
+**Route:** `/arcade`
+
+Take a break with Kubernetes-themed games:
+- 21 games including AI Checkers, Kube Chess, Container Tetris, Sudoku
+- High scores saved locally
+- Multiple themes available
+
+**Best for:** Team building and having fun
+
+---
+
+### Marketplace
+
+**Route:** `/marketplace`
+
+![Marketplace](images/marketplace.jpg)
+
+Community dashboards, card presets, and themes:
+- Browse and install community-created dashboards
+- Card presets for common use cases
+- Theme marketplace with multiple visual styles
+- CNCF project coverage tracker (68 projects)
+- Contributor program with help-wanted issues
+- Filter by tags: graduated, incubating, sandbox, CNCF topics
+
+**Best for:** Extending your console with community content
 
 ---
 
