@@ -172,7 +172,7 @@ Configure API keys in Settings > AI Provider Keys or click the key icon in the h
 
 The console includes both reactive offline detection and AI-powered predictive failure detection.
 
-![Predictive Health Monitor](images/predictive-health.jpg)
+![Offline Detection Card](images/offline-detection-card.png)
 
 ### Node Offline Detection
 
@@ -182,6 +182,8 @@ The console includes both reactive offline detection and AI-powered predictive f
 - **AI Analysis**: Click "Analyze Issues" to start an AI mission investigating problems
 
 ### Predictive Failure Detection
+
+![Predictive Health Monitor](images/predictive-health.jpg)
 
 AI analyzes cluster data to predict failures before they happen:
 
@@ -202,7 +204,7 @@ The Hardware Health card provides IPMI-style monitoring for GPU and accelerator 
 - **Alert Summary**: Critical and warning counts at a glance
 - **Device Inventory**: Searchable list of all GPU/accelerator nodes
 - **Disappearance Tracking**: Detects when devices go missing (e.g., "2 → 1 (1 disappeared)")
-- **Per-Device Status**: Shows labels (Irritated, production) and per-device alerts
+- **Per-Device Status**: Shows environment labels (e.g., staging, production) and per-device alerts
 
 ### Status Indicators
 

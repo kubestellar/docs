@@ -26,7 +26,7 @@ The main dashboard learns what you care about and shows those things first.
 
 ---
 
-## Dedicated Dashboards (19)
+## Dedicated Dashboards (26)
 
 ### Clusters Dashboard
 
@@ -398,7 +398,7 @@ Take a break with Kubernetes-themed games:
 
 ---
 
-### Marketplace
+### Marketplace Dashboard
 
 **Route:** `/marketplace`
 

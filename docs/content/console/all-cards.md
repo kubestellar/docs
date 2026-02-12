@@ -217,7 +217,7 @@ The console ships with 110+ built-in cards, and you can create more using the Ca
 
 ---
 
-### llm-d Inference Cards (7)
+### llm-d Inference Cards (10)
 
 ![llm-d Cards](images/llmd-cards.jpg)
 
