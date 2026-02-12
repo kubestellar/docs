@@ -8,9 +8,15 @@ This section provides information on the Code of Conduct, guidelines, terms, and
 There are different ways you can contribute to the KubeStellar development:
 
 - **Documentation:** Enhance the documentation by fixing typos, enabling semantic clarity, adding links, updating information on changelogs and release versions, and implementing content strategy. <br />
-_**Note that all KubeStellar documentation is consolidated into a separate repository now.**_
+  - _**Note that all KubeStellar documentation is consolidated into a separate repository now.**_ <br/>
+  
+  - There _are_ some files required in the root of each repository, e.g. README.md, CONTRIBUTING.md, etc. 
+
+  - Those files should be kept basic and as short as possible. Images for those documents should be placed in an _/images_ folder in the root of the repository, i.e. `kubestellar/images` or `kubeflex/images`
+
   
 - **Code:** Indicate your interest in developing new features, modifying existing features, raising concerns, or fixing bugs.
+  - See the notes above about required files and images for the root of the repository.
 
 Before you start contributing, familiarize yourself with our community [Code of Conduct](../contribution-guidelines/coc-inc.md).
 
