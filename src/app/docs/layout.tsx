@@ -2,6 +2,8 @@ import { DocsNavbar, DocsFooter, DocsBanner } from '@/components/docs/index'
 import { DocsProvider } from '@/components/docs/DocsProvider'
 import { Inter, JetBrains_Mono } from "next/font/google"
 import { Suspense } from 'react'
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getLocale } from 'next-intl/server';
 import { ThemeProvider } from "next-themes"
 import "../globals.css"
 import { buildPageMap } from './page-map'
@@ -29,24 +31,28 @@ type Props = {
 export default async function DocsLayout({ children }: Props) {
   // Build page map from local docs
   buildPageMap();
-  
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <DocsProvider>
-            <div className="flex flex-col min-h-screen">
-              <DocsBanner />
-              <Suspense fallback={<div className="h-16" />}>
-                <DocsNavbar />
-              </Suspense>
-              <main className="flex-1">
-                {children}
-              </main>
-              <DocsFooter />
-            </div>
-          </DocsProvider>
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            <DocsProvider>
+              <div className="flex flex-col min-h-screen">
+                <DocsBanner />
+                <Suspense fallback={<div className="h-16" />}>
+                  <DocsNavbar />
+                </Suspense>
+                <main className="flex-1">
+                  {children}
+                </main>
+                <DocsFooter />
+              </div>
+            </DocsProvider>
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   )

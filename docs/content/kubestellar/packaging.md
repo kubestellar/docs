@@ -293,7 +293,7 @@ Currently only showing kubestellar and ocm-status-addon.
 
 Again, omitting clusteradm and Helm CLI container images for simplicity.
 
-TODO: finish this
+{/* TODO: finish this */}
 
 ```mermaid
 flowchart LR

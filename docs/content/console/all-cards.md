@@ -318,11 +318,48 @@ The console ships with 110+ built-in cards, and you can create more using the Ca
 The console includes 44+ additional specialized cards across categories like:
 
 - **Events** - Event timeline and filtering
-- **Data Compliance** - Data classification and compliance checks
-- **Arcade** - 21 Kubernetes-themed games (AI Checkers, Kube Chess, Container Tetris, etc.)
+- **Arcade** - Interactive visualizations:
+  - Kube-Man (Pac-Man style)
+  - Kube Kong (Donkey Kong style)
+  - Node Invaders (Space Invaders)
+  - Pod Pitfall (Pitfall adventure)
+  - Container Tetris
+  - Flappy Pod
+  - Pod Sweeper (Minesweeper)
+  - Kube 2048
+  - AI Checkers
+  - AI Chess
+  - Kube Solitaire
+  - Kube Match (Memory game)
+  - Kubedle (Wordle style)
+  - Sudoku
+  - Pod Brothers (Mario style)
+  - Kube Kart (Racing)
+  - Kube Pong
+  - Kube Snake
+  - Kube Galaga
+  - KubeCraft 2D
+  - KubeCraft 3D
 - **Card History** - Track card changes over time
 - **User Management** - Console user management
-- **Weather, Stocks, RSS** - Widget-style cards for external data
+
+### Utilities (4 cards)
+
+| Card | Description | Data Source |
+|------|-------------|-------------|
+| **Network Utils** | Ping hosts, check ports | Live |
+| **Mobile Browser** | iPhone-style web browser | Live |
+| **RSS Feed** | Read RSS feeds from tech sources | Live |
+| **Iframe Embed** | Embed external dashboards | Live |
+
+### Miscellaneous (4 cards)
+
+| Card | Description | Data Source |
+|------|-------------|-------------|
+| **Weather** | Weather with forecasts | Live |
+| **GitHub Activity** | Monitor GitHub repository activity | Live |
+| **Kubectl** | Interactive kubectl terminal | Live |
+| **Stock Market Ticker** | Track stocks with charts | Live |
 
 Plus any custom cards you create using the **Card Factory**.
 

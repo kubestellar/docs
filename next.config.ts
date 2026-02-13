@@ -3,6 +3,18 @@ import nextra from "nextra";
 
 import createNextIntlPlugin from "next-intl/plugin";
 
+// Mock localStorage for server-side build to prevent TypeError from client-side dependencies
+if (typeof window === "undefined") {
+  (global as any).localStorage = {
+    getItem: () => null,
+    setItem: () => {},
+    removeItem: () => {},
+    clear: () => {},
+    length: 0,
+    key: () => null,
+  };
+}
+
 const withNextra = nextra({
   latex: true,
   search: {

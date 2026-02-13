@@ -172,35 +172,22 @@ These commands help maintainers manage community contributions effectively and a
 
 ### Overview
 
-This documentation website is a **separate repository** from the main KubeStellar codebase. Here's the key architecture:
+This documentation website manages all content locally. Here's the repository structure:
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  Main KubeStellar Repository                                 │
-│  github.com/kubestellar/kubestellar                          │
-│                                                               │
-│  📁 docs/content/                                            │
-│     ├── readme.md                                            │
-│     ├── architecture.md                                      │
-│     ├── kubestellar/                                              │
-│     │   ├── binding.md                                       │
-│     │   └── wds.md                                           │
-│     └── ... (all documentation content)                      │
-└─────────────────────────────────────────────────────────────┘
-                          ↓
-                    (Fetched via GitHub API)
-                          ↓
-┌─────────────────────────────────────────────────────────────┐
 │  Docs Website Repository (THIS REPO)                         │
 │  github.com/kubestellar/docs                                 │
 │                                                               │
-│  📁 src/app/docs/                                            │
-│     ├── page-map.ts     ← Defines navigation structure      │
-│     ├── layout.tsx       ← Nextra theme integration         │
-│     └── [...slug]/page.tsx  ← Renders fetched content       │
+│  📁 docs/content/        ← [SOURCE] All Markdown/MDX files   │
+│     ├── readme.md                                            │
+│     ├── direct/                                              │
+│     └── ...                                                  │
 │                                                               │
-│  📁 next.config.ts      ← Nextra configuration              │
-│  📁 mdx-components.js   ← MDX component mappings            │
+│  📁 src/app/docs/        ← [ENGINE] Next.js/Nextra logic     │
+│     ├── page-map.ts      ← Defines sidebar structure         │
+│     └── [...slug]/page.tsx ← Renders content from docs/content│
+│                                                               │
+│  📁 messages/            ← [I18N] Translation files          │
 └─────────────────────────────────────────────────────────────┘
                           ↓
                     (Built & Deployed)
@@ -213,9 +200,9 @@ This documentation website is a **separate repository** from the main KubeStella
 
 **Important Concepts:**
 
-- ✅ **Content lives in the main KubeStellar repo** (`docs/content/`)
-- ✅ **This repo only contains the website framework** (Next.js + Nextra)
-- ✅ **Content is fetched dynamically** via GitHub API at build time
+- ✅ **Content lives locally in this repo** (`docs/content/`)
+- ✅ **This repo contains both content and engine** (Next.js + Nextra)
+- ✅ **Content source is [SOURCE] tree**
 - ✅ **Navigation is defined in `page-map.ts`** (not auto-generated from files)
 
 ### How Nextra Integration Works

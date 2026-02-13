@@ -16,7 +16,7 @@ The clients in KubeStellar comprise the following.
 - The OCM Agent and the OCM Status Add-On Agent in each WEC.
 - The KubeStellar controller-manager and the transport controller for each WDS, running in the KubeFlex hosting cluster.
 
-TODO: finish writing this subsection for real. Following are some clues.
+{/* TODO: finish writing this subsection for real. Following are some clues. */}
 
 When everything runs on one machine, the defaults just work. When core and some WECs are on different machines, it gets more challenging. When the KubeFlex hosting cluster is an OpenShift cluster with a public domain name, the defaults just work.
 

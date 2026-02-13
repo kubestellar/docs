@@ -1,4 +1,21 @@
 {
+  "docs": {
+    "overview": "Overview",
+    "architecture": "Architecture",
+    "gettingStarted": "Getting Started",
+    "userGuide": "User Guide",
+    "reference": "Reference",
+    "contributing": "Contributing",
+    "relatedProjects": "Related Projects",
+    "whatIsKubeStellar": "What is KubeStellar?",
+    "installation": "Installation",
+    "usage": "Usage",
+    "troubleshooting": "Troubleshooting",
+    "releaseNotes": "Release Notes",
+    "roadmap": "Roadmap",
+    "guideOverview": "Guide Overview",
+    "observability": "Observability"
+  },
   "heroSection": {
     "line1": "Multi-Cluster",
     "line2": "Kubernetes",

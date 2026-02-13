@@ -6,4 +6,4 @@ This is the parent document for docs about particular kinds of control.
 - [Transforming](transforming.md) workload objects on their way to WECs
 - [Combining returned status](combined-status.md)
 
-TODO: write this for real.
+{/* TODO: write this for real. */}
