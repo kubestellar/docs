@@ -52,14 +52,14 @@ brew install kubestellar/kubestellar/kubestellar
 kubestellar init
 ```
 
-For a complete walkthrough, see the [Quick Start Guide](direct/get-started.md).
+For a complete walkthrough, see the [Quick Start Guide](kubestellar/get-started.md).
 
 ## Documentation
 
-- [Quick Start Guide](direct/get-started.md): Get up and running quickly
-- [Architecture](direct/architecture.md): Deep-dive into technical architecture
-- [User Guide](direct/user-guide-intro.md): Detailed usage instructions
-- [Release Notes](direct/release-notes.md): What's new in each release
+- [Quick Start Guide](kubestellar/get-started.md): Get up and running quickly
+- [Architecture](kubestellar/architecture.md): Deep-dive into technical architecture
+- [User Guide](kubestellar/user-guide-intro.md): Detailed usage instructions
+- [Release Notes](kubestellar/release-notes.md): What's new in each release
 
 ## Community and Support
 

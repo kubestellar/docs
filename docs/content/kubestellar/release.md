@@ -30,7 +30,7 @@ find * .github/workflows \( -name "*.svg" -prune \) -or \( -path "*venv" -prune 
 
 #### To increase the lower bound on KubeFlex release
 
-- Update the KubeFlex release in `docs/content/direct/pre-reqs.md`
+- Update the KubeFlex release in `docs/content/kubestellar/pre-reqs.md`
 - Update the "kflex" release in `scripts/check_pre_req.sh`
 
 ### Reacting to a new ocm-status-addon release
@@ -56,7 +56,7 @@ Making a new kubestellar release requires a contributor to do the following thin
 
 - Until we have our first stable release, edit the old docs README(`oldocs/README.md`, section "latest-stable-release") where it wishes it could cite a stable release but instead cites the latest release, to refer to the coming release.
 
-- Edit the release notes in `docs/content/direct/release-notes.md`.
+- Edit the release notes in `docs/content/kubestellar/release-notes.md`.
 
 - Make a new Git commit with those changes and get it into the right branch in the shared repo (through the regular PR process if not authorized to cheat).
 
@@ -130,7 +130,7 @@ We also have a GitHub workflow, named "Test latest release" in `.github/workflow
 
 We will maintain a document that lists releases that pass our quality bar. The latest of those is thus the latest stable release. This document is updated in `main` as quality evaluations come in.
 
-We used to maintain a statement of what is the latest stable release in `docs/content/direct/README.md`.
+We used to maintain a statement of what is the latest stable release in `docs/content/kubestellar/README.md`.
 
 We maintain a [Getting Started](get-started.md) document that tells users how to exercise the release that the document appears in. This requires a self-reference that is updated as part of the release process.
 
