@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
-import { ChevronRight, ChevronDown, Moon, Sun, PanelRightOpenIcon, PanelLeftOpen } from 'lucide-react';
+import { ChevronRight, ChevronDown, Moon, Sun, PanelLeftOpen } from 'lucide-react';
 import { useSharedConfig } from '@/hooks/useSharedConfig';
 
 // Production URL - all cross-project links go here
@@ -23,7 +23,7 @@ interface RelatedProjectsProps {
   bannerActive?: boolean;
 }
 
-export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false, bannerActive = false }: RelatedProjectsProps) {
+export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false }: RelatedProjectsProps) {
   const [isExpanded, setIsExpanded] = useState(true);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
@@ -179,51 +179,6 @@ export function RelatedProjects({ variant = 'full', onCollapse, isMobile = false
           );
         })}
       </div>
-
-      {/* Footer Controls */}
-      {mounted && (
-        <div
-          className={`flex items-center gap-2 border-t border-gray-200 dark:border-gray-700 ${bannerActive ? 'pt-2 mt-1' : 'pt-3 mt-2'}`}
-          suppressHydrationWarning
-        >
-          {/* Theme Toggle Button */}
-          <button
-            onClick={() => setTheme(isDark ? 'light' : 'dark')}
-            title="Change theme"
-            className="group cursor-pointer h-7 rounded-md px-2 text-sm font-thin transition-all hover:font-bold flex items-center gap-2 flex-1"
-            style={{ color: textColor }}
-            suppressHydrationWarning
-          >
-            <div className="relative w-5 h-5">
-              <Moon
-                className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
-                  isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
-                }`}
-              />
-              <Sun
-                className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
-                  !isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
-                }`}
-              />
-            </div>
-            <span>{isDark ? 'Dark' : 'Light'}</span>
-          </button>
-
-          {/* Collapse Sidebar Button - Hidden on mobile */}
-          {onCollapse && !isMobile && (
-            <button
-              onClick={onCollapse}
-              className="transition-all cursor-pointer rounded-md p-2 hover:font-bold"
-              style={{ color: textColor }}
-              title="Collapse sidebar"
-              type="button"
-              suppressHydrationWarning
-            >
-              <PanelRightOpenIcon className="w-4 h-4" />
-            </button>
-          )}
-        </div>
-      )}
     </div>
   );
 }
