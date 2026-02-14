@@ -55,17 +55,17 @@ const pretty = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/
 // Recursively get all markdown files from the local docs directory
 function getAllDocFiles(dir: string, baseDir: string = dir): string[] {
   const files: string[] = []
-  
+
   if (!fs.existsSync(dir)) {
     return files
   }
-  
+
   const entries = fs.readdirSync(dir, { withFileTypes: true })
-  
+
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name)
     const relativePath = path.relative(baseDir, fullPath)
-    
+
     if (entry.isDirectory()) {
       // Skip hidden directories and node_modules
       if (!entry.name.startsWith('.') && entry.name !== 'node_modules') {
@@ -76,7 +76,7 @@ function getAllDocFiles(dir: string, baseDir: string = dir): string[] {
       files.push(relativePath.replace(/\\/g, '/'))
     }
   }
-  
+
   return files
 }
 
@@ -221,6 +221,13 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Overview': 'readme.md' },
       { 'Architecture': 'direct/architecture.md' },
+      {
+        'Related Projects': [
+          { 'KubeStellar UI': 'direct/ui-intro.md' },
+          { 'KubeFlex': 'direct/kubeflex-intro.md' },
+          { 'KubeStellar Galaxy': 'direct/galaxy-intro.md' }
+        ]
+      },
       { 'Release Notes': 'direct/release-notes.md' },
       { 'Roadmap': 'direct/roadmap.md' }
     ]
@@ -228,7 +235,6 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'User Guide',
     items: [
-      { 'Quick Start': 'direct/get-started.md' },
       { 'Guide Overview': 'direct/user-guide-intro.md' },
       { 'Observability': 'direct/observability.md' },
       { 'Getting Started': 'direct/get-started.md' },
@@ -294,10 +300,10 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
           }
         ]
       },
-      { 
+      {
         'UI': [
           { 'Overview': 'ui-docs/ui-overview.md' },
-          { 'ITS cluster management': 'ui-docs/its-cluster-management.md'}
+          { 'ITS cluster management': 'ui-docs/its-cluster-management.md' }
         ]
       },
       { 'Teardown': 'direct/teardown.md' }
