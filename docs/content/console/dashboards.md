@@ -3,12 +3,12 @@ title: "Dashboards"
 linkTitle: "Dashboards"
 weight: 6
 description: >
-  All 25+ dashboard pages in KubeStellar Console
+  All 27+ dashboard pages in KubeStellar Console
 ---
 
 # Dashboards
 
-KubeStellar Console has 25+ different dashboards. Each one shows you different information about your Kubernetes clusters.
+KubeStellar Console has 27+ different dashboards. Each one shows you different information about your Kubernetes clusters.
 
 ## Main Dashboard
 
@@ -26,7 +26,7 @@ The main dashboard learns what you care about and shows those things first.
 
 ---
 
-## Dedicated Dashboards (26)
+## Dedicated Dashboards (27)
 
 ### Clusters Dashboard
 
@@ -168,12 +168,23 @@ Manage alerts:
 
 **Route:** `/gpu-reservations`
 
-Manage GPUs:
-- Which GPUs are available
-- Who is using them
-- Queue for GPU access
+![GPU Reservations Dashboard](images/gpu-reservations-dashboard.jpg)
 
-**Best for:** AI/ML teams sharing GPUs
+Schedule and manage GPU resources across your clusters with five dedicated tabs:
+
+- **Overview**: Total GPUs, availability, utilization donut chart, GPU types breakdown, allocation by cluster
+- **Calendar**: Visual calendar view of GPU reservations and availability windows
+- **Reservations**: Active and pending GPU reservations with details
+- **Inventory**: Full GPU inventory across all clusters with type, count, and status
+- **Dashboard**: Customizable card-based view of GPU metrics
+
+Key features:
+- Create GPU reservations with namespace, cluster, and time range
+- View GPU usage by namespace with donut chart breakdowns
+- Track 12+ GPU types: NVIDIA A100/H100/A10G/V100/T4, Google TPU v4/v5e, Intel Gaudi2/AIU/Data Center GPU Max/Flex, IBM AIU
+- GPU Allocation by Cluster bar chart for capacity planning
+
+**Best for:** AI/ML teams sharing GPUs across multi-cloud environments
 
 ---
 
@@ -320,6 +331,31 @@ Monitor AI and Machine Learning workloads:
 
 ---
 
+### llm-d Benchmarks Dashboard
+
+**Route:** `/llm-d-benchmarks`
+
+![llm-d Benchmarks Dashboard](images/llmd-benchmarks-dashboard.jpg)
+
+Performance tracking across clouds and accelerators for the llm-d inference stack:
+
+- **Nightly E2E Status**: Real-time pass rates across 16 guides on OCP, GKE, and CKS platforms with per-guide green/red dot matrix and AI-generated summary
+- **Pareto Frontier**: Tabbed chart views comparing throughput vs. latency tradeoffs across configurations
+- **Leaderboard**: Ranked model/configuration comparison with pagination
+- **Benchmark Hero**: Summary metrics from the latest benchmark runs
+- **Live Data**: Streams benchmark results from Google Drive via SSE (Server-Sent Events) with automatic fallback to demo data
+
+The Nightly E2E Status card features:
+- 89% overall pass rate with 16 active guides
+- Per-platform breakdown (OCP, GKE, CKS) with individual pass rates
+- Sparkline trend graph showing pass rate over time
+- AI summary with duration, model, and GPU information
+- Detail panel with per-guide status and last run timestamps
+
+**Best for:** Tracking llm-d inference stack performance and CI health across platforms
+
+---
+
 ### AI Agents Dashboard
 
 **Route:** `/ai-agents`
@@ -402,15 +438,17 @@ Take a break with Kubernetes-themed games:
 
 **Route:** `/marketplace`
 
-![Marketplace](images/marketplace.jpg)
+![Marketplace](images/marketplace-updated.jpg)
 
 Community dashboards, card presets, and themes:
-- Browse and install community-created dashboards
-- Card presets for common use cases
-- Theme marketplace with multiple visual styles
-- CNCF project coverage tracker (68 projects)
-- Contributor program with help-wanted issues
-- Filter by tags: graduated, incubating, sandbox, CNCF topics
+- Browse and install community-created dashboards (3+ available)
+- Card Presets for common use cases (7+ presets)
+- Theme marketplace with multiple visual styles (3+ themes)
+- CNCF project coverage tracker: 11 of 68 cards implemented (16%), with 35 Graduated, 33 Incubating, and 57 Help Wanted
+- Contributor Guide and Browse Issues links for community contribution
+- Rich tag-based filtering: alerts, argocd, certificates, clusters, compliance, cncf, cost, deployments, events, gitops, graduated, health, helm, incubating, monitoring, networking, observability, orchestration, pods, policies, production, provisioning, rbac, runtime, security, serverless, service-mesh, sre, storage, streaming, warm
+- Sort by Name, Type, or Author
+- Grid and list view toggle
 
 **Best for:** Extending your console with community content
 

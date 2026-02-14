@@ -22,6 +22,9 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | `JWT_SECRET` | JWT signing secret | (auto-generated) |
 | `FRONTEND_URL` | Frontend URL for redirects | `http://localhost:5174` |
 | `CLAUDE_API_KEY` | Claude API key for AI features | (optional) |
+| `GITHUB_TOKEN` | GitHub token for nightly E2E status data | (optional) |
+| `GOOGLE_DRIVE_API_KEY` | Google Drive API key for benchmark data | (optional) |
+| `ENABLED_DASHBOARDS` | Comma-separated list of dashboard routes to show in sidebar | (all dashboards) |
 
 ## Helm Values
 
@@ -124,6 +127,20 @@ ingress:
 - Proactive card swap suggestions
 - Automatic issue analysis
 - Real-time recommendations based on cluster activity
+
+## Dashboard Filtering
+
+Use `ENABLED_DASHBOARDS` to control which dashboards appear in the sidebar for a given deployment. This is useful for per-team or per-environment customization.
+
+```bash
+# Show only GPU, AI/ML, and Benchmarks dashboards
+ENABLED_DASHBOARDS=gpu-reservations,ai-ml,llm-d-benchmarks
+
+# Show only operations-focused dashboards
+ENABLED_DASHBOARDS=clusters,workloads,events,security,alerts
+```
+
+When set, only the listed dashboard routes will appear in the sidebar navigation. All other dashboards are hidden but still accessible via direct URL.
 
 ## Security Considerations
 

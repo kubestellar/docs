@@ -286,6 +286,50 @@ The Marketplace includes a **Contributor Guide** and links to **Help Wanted** is
 
 ---
 
+## Real-Time SSE Streaming
+
+The console uses Server-Sent Events (SSE) for real-time data streaming, replacing polling-based REST calls for many resources.
+
+### Streamed Resources
+
+The following resources are streamed in real-time via SSE:
+- **Pods, Deployments, Services** - Core workload status
+- **Jobs, ConfigMaps, Secrets** - Job lifecycle and configuration changes
+- **Operators and Subscriptions** - OLM operator status and available upgrades
+- **Helm Releases** - Release status across clusters
+- **Benchmark Data** - Live benchmark results from Google Drive
+- **NVIDIA Operators** - GPU operator status and health
+
+### How It Works
+
+1. The Go backend opens long-lived connections to each cluster
+2. Data is streamed to the frontend as JSON events
+3. The frontend updates cards instantly without full-page refresh
+4. Automatic reconnection on connection loss
+5. Fallback to REST polling if SSE is unavailable
+
+### Benefits
+
+- **Instant updates**: No more waiting for refresh intervals
+- **Lower resource usage**: Single connection per resource type instead of repeated polls
+- **Better UX**: Cards update in real-time as cluster state changes
+
+---
+
+## Performance Optimizations
+
+Recent optimizations have dramatically improved console load times:
+
+- **17x faster warm start**: Card data loads near-instantly on subsequent visits
+- **3.6x faster cold start**: First-time page loads reduced from ~8s to ~2.2s
+- **Instant card rendering**: Cards render immediately with cached data, then update in background
+- **Vite warmup**: Dashboard pages are pre-warmed to eliminate navigation lag
+- **In-memory operator caching**: Operator and subscription data is cached server-side with TTL, avoiding repeated kubectl calls
+- **Permanent error caching**: Clusters without OLM are cached as permanent errors to skip future probes
+- **Demo data instant display**: Cards configured with `demoWhenEmpty` show demo data immediately while real data loads
+
+---
+
 ## Local Cluster Creation
 
 ![Local Clusters](images/local-clusters.jpg)

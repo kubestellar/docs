@@ -37,10 +37,12 @@ The KubeStellar Console is a modern, AI-powered multi-cluster management interfa
 - Configurable stat blocks for at-a-glance metrics
 
 ### Real-Time Monitoring
+- Server-Sent Events (SSE) streaming for instant updates across all resource types
 - Live cluster metrics with historical charts
 - Event streaming across clusters
 - GPU monitoring and utilization tracking
 - Pod and deployment status tracking
+- In-memory caching with TTL-based invalidation for fast response times
 
 ## Getting Started
 
