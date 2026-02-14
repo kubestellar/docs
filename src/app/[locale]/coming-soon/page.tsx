@@ -7,7 +7,6 @@ import {
   GridLines,
   StarField,
   ComingSoonCTA,
-  PageActions,
 } from "@/components";
 
 export default function ComingSoonPage() {
@@ -22,7 +21,6 @@ export default function ComingSoonPage() {
 
       <div className="relative z-10">
         <Navbar />
-        <PageActions position="fixed" filePath="[locale]/coming-soon/page.tsx" docsPath="src/app/" />
 
         {/* Hero Section */}
         <section className="px-4 py-32 sm:px-6 lg:px-8">

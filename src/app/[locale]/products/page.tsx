@@ -7,7 +7,6 @@ import {
   Footer,
   GridLines,
   StarField,
-  PageActions,
 } from "@/components";
 import { useTranslations } from "next-intl";
 
@@ -124,7 +123,6 @@ export default function ProductsPage() {
     <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
       {/* Navigation */}
       <Navbar />
-      <PageActions position="fixed" filePath="[locale]/products/page.tsx" docsPath="src/app/" />
 
       {/* Full page background with starfield */}
       <div className="fixed inset-0 z-0">
