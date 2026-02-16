@@ -30,7 +30,6 @@ Please ensure the following before submitting your PR:
 - [ ] I have written unit tests for the changes (if applicable).
 - [ ] I have updated the documentation (if applicable).
 - [ ] I have tested the changes locally and ensured they work as expected.
-- [ ] My code follows the project's coding standards.
 
 ---
 
