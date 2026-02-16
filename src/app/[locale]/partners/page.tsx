@@ -5,7 +5,6 @@ import {
   Footer,
   GridLines,
   StarField,
-  PageActions,
 } from "../../../components/index";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -81,7 +80,6 @@ export default function PartnersPage() {
   return (
     <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
       <Navbar />
-      <PageActions position="fixed" filePath="[locale]/partners/page.tsx" docsPath="src/app/" />
 
       {/* Full page background with starfield */}
       <div className="fixed inset-0 z-0">
