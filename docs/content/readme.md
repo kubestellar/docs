@@ -15,7 +15,7 @@ Multi-cluster configuration management for edge, multi-cloud, and hybrid cloud e
 
 ## Overview
 
-KubeStellar enables you to manage multiple Kubernetes clusters as easily as managing one. Whether you're expanding from a single cluster or streamlining an existing multi-cluster setup, KubeStellar lets you define binding policies that automatically deploy and configure workloads across your fleet.
+KubeStellar enables you to manage multiple Kubernetes clusters as easily as managing single cluster. Whether you're expanding from a single cluster or streamlining an existing multi-cluster setup, KubeStellar lets you define binding policies that automatically deploy and configure workloads across your fleet.
 
 ![KubeStellar High Level View](./images/kubestellar-high-level.png)
 
