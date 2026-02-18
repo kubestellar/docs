@@ -63,7 +63,8 @@
     "termsOfService": "Termos de Serviço",
     "cookiePolicy": "Política de Cookies",
     "madeWithLove": "Feito com ❤️ pela Equipe KubeStellar",
-    "backToTop": "Voltar ao topo"
+    "backToTop": "Voltar ao topo",
+    "news": "Notícias"
   },
   "navigation": {
     "docs": "Documentação",
@@ -104,7 +105,8 @@
     "mobileHowItWorks": "Como funciona",
     "mobileUseCases": "Casos de uso",
     "mobileGetStarted": "Começar",
-    "mobileContact": "Contato"
+    "mobileContact": "Contato",
+    "news": "Notícias"
   },
   "aboutSection": {
     "title": "O que é",

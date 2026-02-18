@@ -69,7 +69,8 @@
     "termsOfService": "利用規約",
     "cookiePolicy": "Cookie ポリシー",
     "madeWithLove": "KubeStellar チームが ❤️ を込めて開発しました",
-    "backToTop": "トップへ戻る"
+    "backToTop": "トップへ戻る",
+    "news": "ニュース"
   },
   "navigation": {
     "docs": "ドキュメント",
@@ -110,7 +111,8 @@
     "mobileHowItWorks": "仕組み",
     "mobileUseCases": "ユースケース",
     "mobileGetStarted": "始める",
-    "mobileContact": "お問い合わせ"
+    "mobileContact": "お問い合わせ",
+    "news": "ニュース"
   },
   "aboutSection": {
     "title": "KubeStellar とは",

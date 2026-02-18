@@ -353,6 +353,13 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
         ]
       }
     ]
+  },
+  {
+    title: 'News',
+    items: [
+      { 'Latest News': 'news/index.md' },
+      { 'KubeStellar Console Announcement': 'news/kubestellar-console-announcement.md' }
+    ]
   }
 ]
 

@@ -37,9 +37,8 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/blog",
-        destination:
-          "https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST",
-        permanent: true,
+        destination: "/docs/news/latest-news",
+        permanent: false,
       },
       {
         source: "/code",

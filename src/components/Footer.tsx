@@ -263,14 +263,12 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="https://blog.kubestellar.io"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href="/docs/news/latest-news"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
                   >
-                    {t("blog")}
-                  </a>
+                    {t("news")}
+                  </Link>
                 </li>
               </ul>
             </div>
