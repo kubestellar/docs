@@ -12,6 +12,8 @@ The two ways to create this simple configuration are as follows.
 
 ### Note for Windows users
 
+> For some users on WSL, use of the setup procedure on this page and/or the demo environment creation script may require running as the user `root` in Linux.
+
 After [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install), it is possible to start a Fedora 43 distribution with the command:
 
 ```shell
@@ -23,8 +25,6 @@ Afterwards, the pre-requisites needed by KubeStellar and the demo script can be 
 ```shell
 bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v{{ config.ks_latest_release }}/scripts/setup-wsl-fedora.sh)
 ```
-
-For some users on WSL, use of the setup procedure on this page and/or the demo environment creation script may require running as the user `root` in Linux. There is a [known issue about this](knownissue-helm-ghcr.md).
 
 ### Note for MacOS users
 
