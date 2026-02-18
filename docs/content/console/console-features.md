@@ -14,16 +14,18 @@ This guide covers the main features of the KubeStellar Console.
 
 The main dashboard provides a customizable view of your multi-cluster environment.
 
-![Dashboard Overview](images/dashboard-overview.png)
+![Dashboard Overview](images/dashboard-overview-feb16.jpg)
 
 ### Stats Overview
 
-The stats bar at the top of the dashboard displays key metrics:
+The stats bar at the top of the dashboard displays key metrics with auto-scaling number formatting:
 
 - **Clusters**: Total cluster count and health status
+- **Healthy**: Number of healthy clusters
+- **Pods**: Total pod count (auto-scales to `3.5K` for large counts)
 - **Nodes**: Total nodes across all clusters
-- **Pods**: Total pod count with status breakdown
-- **AI Insights**: Security issues and recommended actions
+- **Namespaces**: Total namespace count
+- **Errors**: Count of unhealthy resources with drill-down links
 
 ### Dashboard Cards
 
@@ -327,6 +329,10 @@ Recent optimizations have dramatically improved console load times:
 - **In-memory operator caching**: Operator and subscription data is cached server-side with TTL, avoiding repeated kubectl calls
 - **Permanent error caching**: Clusters without OLM are cached as permanent errors to skip future probes
 - **Demo data instant display**: Cards configured with `demoWhenEmpty` show demo data immediately while real data loads
+- **SSE response caching**: Backend caches SSE responses for 15 seconds, reducing re-navigation latency from seconds to near-instant
+- **Per-cluster adaptive timeouts**: Slow clusters are automatically tracked and given shorter timeouts (10s vs 60s) to prevent blocking
+- **Smart chunk prefetching**: When `ENABLED_DASHBOARDS` is configured, only JavaScript chunks for enabled dashboards are prefetched, reducing initial network requests by ~80%
+- **SSE deduplication**: Frontend prevents duplicate concurrent SSE requests during rapid navigation
 
 ---
 
@@ -381,6 +387,17 @@ The console automatically discovers llm-d stacks across your clusters:
 - **P/D Disaggregation** - Separate prefill and decode server metrics including load, queue depth, throughput, TPOT, and GPU memory
 - **Benchmarks** - Compare stacks with TTFT, throughput, and latency charts
 - **Configurator** - Configure inference strategies (Intelligent Scheduling, P/D Disaggregation, Wide Expert Parallelism, Variant Autoscaling)
+
+### Real Prometheus Metrics
+
+![AI/ML Dashboard](images/ai-ml-dashboard-feb16.jpg)
+
+The four LLM-d visualization cards (Request Flow, KV Cache Monitor, EPP Routing, P/D Disaggregation) display **real per-pod Prometheus metrics** from vLLM when available:
+
+- A Prometheus query proxy routes queries through the Kubernetes API server's service proxy — no port-forwarding or extra configuration needed
+- Six vLLM metrics are polled every 5 seconds: request throughput, KV cache utilization, time-to-first-token, inter-token latency, batch size, and queue depth
+- Cards gracefully fall back to simulated data when Prometheus is unavailable
+- Per-pod views show individual vLLM instance metrics with color-coded health indicators
 
 ### llm-d AI Insights
 
@@ -447,3 +464,119 @@ Every card in the console has AI-powered Diagnose and Repair buttons:
 - **Diagnose** - Opens an AI mission to analyze the card's data
 - **Repair** - Opens an AI mission to fix detected issues
 - Available as compact icon buttons on every card's toolbar
+
+---
+
+## Nightly E2E Test Monitoring
+
+The CI/CD dashboard includes a Nightly E2E Tests card that monitors end-to-end test results across llm-d infrastructure guides.
+
+### GPU Failure Detection
+
+The card distinguishes between actual test failures and GPU unavailability:
+
+- **Red dots** indicate genuine test failures
+- **Amber dots** indicate GPU unavailability failures (e.g., insufficient GPU quota)
+- **Green dots** indicate successful runs
+- **Flashing blue dots** indicate currently running or queued jobs
+
+The backend classifies failures by inspecting GitHub Actions job steps to determine whether a failure was caused by missing GPU resources or an actual test regression.
+
+### Per-Run Metadata
+
+Hovering over individual run dots in the detail panel reveals infrastructure information:
+
+- **Model**: Which LLM model was tested (e.g., `granite-3.3-2b-instruct`)
+- **GPU type**: GPU accelerator used (e.g., `NVIDIA L40S`)
+- **GPU count**: Number of GPUs allocated
+- **Duration**: How long the run took
+- **Run number**: GitHub Actions run identifier
+
+### Log and Artifact Links
+
+Hovering over failed (red) or GPU-unavailable (amber) run dots shows a popup with:
+
+- Clickable **View Logs** link to the GitHub Actions run
+- Clickable **Artifacts** link to retained pod logs (available for 7 days)
+- Failure type classification (test failure vs GPU unavailability)
+
+---
+
+## CoreWeave Cluster Support
+
+CoreWeave is recognized as a cloud provider with automatic detection:
+
+- Clusters are identified via `.coreweave.com` URL patterns or `coreweave` in the cluster name
+- CoreWeave clusters display a branded icon with the double-wave mark
+- Cluster detail modals include a direct link to the CoreWeave console
+- CoreWeave-specific color scheme is applied to cluster cards
+
+---
+
+## Data Freshness Indicators
+
+Eight core cards now display real-time data freshness information:
+
+- **"Updated Xs ago"** timestamp shows when data was last refreshed
+- A **spinning icon** appears during background data refresh
+- An **amber warning icon** appears when data is stale (older than 5 minutes)
+
+Affected cards: EventStream, EventsTimeline, TopPods, NamespaceOverview, ProwJobs, LLMInference, LLMModels, and ResourceCapacity.
+
+---
+
+## Auto-Scaling Number Formatting
+
+![Dashboard with Auto-Scaling Stats](images/dashboard-overview-feb16.jpg)
+
+Stat blocks in the Stats Overview bar automatically format large numbers to prevent overflow:
+
+- Values **10,000+** display as compact format (e.g., `7.1K` instead of `7120`)
+- Values **1,000,000+** display as millions (e.g., `1.2M`)
+- Values under 10,000 display as full numbers
+- Memory values auto-scale through MB, GB, TB, and PB ranges
+
+---
+
+## Improved Modal Safety
+
+Form modals throughout the console have been hardened against accidental data loss:
+
+- **Backdrop click protection**: Form modals (StatsConfig, APIKeySettings, WidgetExport, NamespaceQuotas, CardChat) no longer close when clicking outside, preventing accidental data loss
+- **Escape key handling**: Custom dropdowns (AlertBadge, ClusterSelect, FloatingDashboardActions) properly close with the Escape key
+- **Error notifications**: Five critical operations (sign-in, OPA policy toggle, policy deletion, role updates, user deletion) now show toast notifications on failure instead of silent console errors
+
+---
+
+## Semantic Color System
+
+Error and status colors have been standardized across the entire console:
+
+| Color | Meaning |
+|-------|---------|
+| **Red** | Errors, failures, critical issues |
+| **Yellow** | Warnings, pending states |
+| **Orange** | Warning-level alerts, medium severity |
+| **Green** | Healthy, success, running |
+| **Blue** | Active, in-progress, informational |
+| **Violet/Purple** | AI/ML features and insights |
+
+---
+
+## Crossplane Managed Resources Card
+
+A new community-contributed card displays Crossplane managed resources:
+
+- Shows managed resource count, provider health, and composite resource status
+- Displays resource table with name, kind, provider, synced/ready status, and age
+- Integrates with the Crossplane operator running in connected clusters
+
+---
+
+## Cloud Native Buildpacks Card
+
+A new community-contributed card monitors Cloud Native Buildpacks:
+
+- Displays build counts, success rates, and active builders
+- Shows recent builds with status, duration, and builder information
+- Tracks buildpack versions and update availability

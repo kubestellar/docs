@@ -306,6 +306,13 @@ The console ships with 110+ built-in cards, and you can create more using the Ca
 
 ---
 
+### Community-Contributed Cards (2)
+
+| Card | What it shows |
+|------|--------------|
+| **Crossplane Managed Resources** | Managed resource count, provider health, composite resource status, resource table with sync/ready status |
+| **Cloud Native Buildpacks** | Build counts, success rates, active builders, recent builds with duration and builder info |
+
 ### Additional Cards (44+)
 
 The console includes 44+ additional specialized cards across categories like:
