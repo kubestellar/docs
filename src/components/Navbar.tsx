@@ -997,11 +997,10 @@ export default function Navbar() {
                     <span>{t("docs")}</span>
                   </Link>
                 </div>
-                {/*BLOG */}
+                {/*NEWS */}
                 <div className="relative mb-4">
                   <Link
-                    target="_blank"
-                    href="/blog"
+                    href="/docs/news/latest-news"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">
@@ -1026,7 +1025,7 @@ export default function Navbar() {
                         ></path>
                       </svg>
                     </div>
-                    <span>{t("blog")}</span>
+                    <span>News</span>
                   </Link>
                 </div>
                 <div className="relative mb-4">

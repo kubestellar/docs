@@ -135,7 +135,10 @@ nav:
   - KubeStellar MCP:
       - Overview: kubestellar-mcp/index.md
       - Getting Started: kubestellar-mcp/overview/intro.md
-  - 'Blog': https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST" target="_blank
+  - News:
+      - Latest News: news/index.md
+      - "KubeStellar Console Announcement": news/kubestellar-console-announcement.md
+  # - 'Blog': https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST" target="_blank
   # # - Auto generated:
   #   - ... | auto-generated/*/*.md
 

@@ -313,8 +313,8 @@
 
 [[redirects]]
   from = "/blog"
-  to = "https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST"
-  status = 301
+  to = "/docs/news/latest-news"
+  status = 302
   force = true
 
 [[redirects]]
