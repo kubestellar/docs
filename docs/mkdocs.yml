@@ -104,6 +104,7 @@ nav:
       - Sign-off and Signing Contributions: kubestellar/pr-signoff.md
   - Community:
     - Get Involved: Community/_index.md
+    - News: news/index.md
     - Contact Us:
         - Mailing List: https://kubestellar.io/join_us
         - Community Meeting Agenda (join mailing list first): https://kubestellar.io/agenda
