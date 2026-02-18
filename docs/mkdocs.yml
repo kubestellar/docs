@@ -37,7 +37,7 @@ nav:
         - KubeStellar Galaxy: kubestellar/galaxy-intro.md
       - Release-notes: kubestellar/release-notes.md
       - Roadmap: kubestellar/roadmap.md
-  - Getting Started: kubestellar/get-started/
+  - Getting Started: kubestellar/get-started.md
   - User Guide:
       - Guide Overview: kubestellar/user-guide-intro.md
       - Observability: kubestellar/observability.md
