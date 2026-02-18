@@ -30,60 +30,60 @@ nav:
       - Landing: index.md
   - What is KubeStellar?:
       - Overview: readme.md
-      - Architecture: direct/architecture.md
+      - Architecture: kubestellar/architecture.md
       - Related:
-        - KubeStellar UI: direct/ui-intro.md
-        - KubeFlex: direct/kubeflex-intro.md
-        - KubeStellar Galaxy: direct/galaxy-intro.md
-      - Release-notes: direct/release-notes.md
-      - Roadmap: direct/roadmap.md
-  - Getting Started: direct/get-started/
+        - KubeStellar UI: kubestellar/ui-intro.md
+        - KubeFlex: kubestellar/kubeflex-intro.md
+        - KubeStellar Galaxy: kubestellar/galaxy-intro.md
+      - Release-notes: kubestellar/release-notes.md
+      - Roadmap: kubestellar/roadmap.md
+  - Getting Started: kubestellar/get-started/
   - User Guide:
-      - Guide Overview: direct/user-guide-intro.md
-      - Observability: direct/observability.md
-      - Getting Started: direct/get-started.md
-      - Getting Started from OCM: direct/start-from-ocm.md
+      - Guide Overview: kubestellar/user-guide-intro.md
+      - Observability: kubestellar/observability.md
+      - Getting Started: kubestellar/get-started.md
+      - Getting Started from OCM: kubestellar/start-from-ocm.md
       - General Setup:
-          - Overview: direct/setup-overview.md
-          - Setup limitations: direct/setup-limitations.md
-          - Prerequisites: direct/pre-reqs.md
+          - Overview: kubestellar/setup-overview.md
+          - Setup limitations: kubestellar/setup-limitations.md
+          - Prerequisites: kubestellar/pre-reqs.md
           - KubeFlex Hosting cluster:
-            - Acquire cluster for KubeFlex Hosting: direct/acquire-hosting-cluster.md
-            - Initialize KubeFlex Hosting cluster: direct/init-hosting-cluster.md
+            - Acquire cluster for KubeFlex Hosting: kubestellar/acquire-hosting-cluster.md
+            - Initialize KubeFlex Hosting cluster: kubestellar/init-hosting-cluster.md
           - Core Spaces:
-            - Inventory and Transport Spaces: direct/its.md
-            - Workload Description Spaces: direct/wds.md
-          - Core Helm chart: direct/core-chart.md
-          - Argo CD integration with Core Helm chart: direct/core-chart-argocd.md
+            - Inventory and Transport Spaces: kubestellar/its.md
+            - Workload Description Spaces: kubestellar/wds.md
+          - Core Helm chart: kubestellar/core-chart.md
+          - Argo CD integration with Core Helm chart: kubestellar/core-chart-argocd.md
           - Workload Execution Clusters:
-            - About Workload Execution Clusters: direct/wec.md
-            - Register a Workload Execution Cluster: direct/wec-registration.md
+            - About Workload Execution Clusters: kubestellar/wec.md
+            - Register a Workload Execution Cluster: kubestellar/wec-registration.md
       - Usage:
-          - Usage limitations: direct/usage-limitations.md
+          - Usage limitations: kubestellar/usage-limitations.md
           - KubeStellar API:
-              - Overview: direct/control.md
+              - Overview: kubestellar/control.md
               - API reference (new tab): https://pkg.go.dev/github.com/kubestellar/kubestellar/api/control/v1alpha1
-              - Binding: direct/binding.md
-              - Transforming desired state: direct/transforming.md
-              - Combining reported state: direct/combined-status.md
-              - Multi-WEC Aggregated Status: direct/multi-wec-aggregated-status.md
-          - Authorization in WECs: direct/authorization.md
-          - Example Scenarios: direct/example-scenarios.md
+              - Binding: kubestellar/binding.md
+              - Transforming desired state: kubestellar/transforming.md
+              - Combining reported state: kubestellar/combined-status.md
+              - Multi-WEC Aggregated Status: kubestellar/multi-wec-aggregated-status.md
+          - Authorization in WECs: kubestellar/authorization.md
+          - Example Scenarios: kubestellar/example-scenarios.md
           - Third-party integrations:
-              - ArgoCD to WDS: direct/argo-to-wds1.md
-          - Troubleshooting: direct/troubleshooting.md
+              - ArgoCD to WDS: kubestellar/argo-to-wds1.md
+          - Troubleshooting: kubestellar/troubleshooting.md
           - Known Issues:
-              - Overview: direct/known-issues.md
-              - Hidden state in kubeconfig: direct/knownissue-kflex-extension.md
-              - Kind needs OS reconfig: direct/knownissue-kind-config.md
-              - Authorization failure while fetching Helm chart from ghcr.io: direct/knownissue-helm-ghcr.md
-              - Missing results in a CombinedStatus object: direct/knownissue-collector-miss.md
-              - Kind host not configured for more than two clusters: direct/installation-errors.md
-              - Insufficient CPU for your clusters: direct/knownissue-cpu-insufficient-for-its1.md
+              - Overview: kubestellar/known-issues.md
+              - Hidden state in kubeconfig: kubestellar/knownissue-kflex-extension.md
+              - Kind needs OS reconfig: kubestellar/knownissue-kind-config.md
+              - Authorization failure while fetching Helm chart from ghcr.io: kubestellar/knownissue-helm-ghcr.md
+              - Missing results in a CombinedStatus object: kubestellar/knownissue-collector-miss.md
+              - Kind host not configured for more than two clusters: kubestellar/installation-errors.md
+              - Insufficient CPU for your clusters: kubestellar/knownissue-cpu-insufficient-for-its1.md
       - UI (User Interface): ui-docs/ui-overview.md
-      - Teardown: direct/teardown.md
+      - Teardown: kubestellar/teardown.md
   - Contributing:
-      - Overview (How to join in): direct/contribute.md
+      - Overview (How to join in): kubestellar/contribute.md
       - Code of Conduct: contribution-guidelines/coc-inc.md
       - Guidelines: contribution-guidelines/contributing-inc.md
       - Contributor Ladder: contribution-guidelines/contributor_ladder.md
@@ -97,11 +97,11 @@ nav:
       - Security:
           - Policy: contribution-guidelines/security/security-inc.md
           - Contacts: contribution-guidelines/security/security_contacts-inc.md
-      - Testing: direct/testing.md
-      - Packaging: direct/packaging.md
-      - Release Process: direct/release.md
-      - Release Testing: direct/release-testing.md
-      - Sign-off and Signing Contributions: direct/pr-signoff.md
+      - Testing: kubestellar/testing.md
+      - Packaging: kubestellar/packaging.md
+      - Release Process: kubestellar/release.md
+      - Release Testing: kubestellar/release-testing.md
+      - Sign-off and Signing Contributions: kubestellar/pr-signoff.md
   - Community:
     - Get Involved: Community/_index.md
     - Contact Us:
