@@ -42,7 +42,7 @@ Before you begin, ensure that your system meets the following requirements:
 
 - Ensure you have access to a Kubernetes clusters setup with Kubestellar Getting Started Guide & Kubestellar prerequisites installed
 
-- **Kubestellar guide**: [Guide](https://docs.kubestellar.io/release-0.25.1/direct/get-started/)
+- **Kubestellar guide**: [Guide](https://docs.kubestellar.io/release-0.25.1/kubestellar/get-started/)
 
 ## Installation Steps
 

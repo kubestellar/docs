@@ -154,7 +154,7 @@ export default function AboutSection() {
 
                 {/* Animated arrow on hover */}
                 <Link
-                  href="/docs/direct/architecture"
+                  href="/docs/kubestellar/architecture"
                   className="block h-8 overflow-hidden"
                 >
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 text-primary-600 dark:text-primary-400 flex items-center">
@@ -210,7 +210,7 @@ export default function AboutSection() {
 
                 {/* Animated arrow on hover */}
                 <Link
-                  href="/docs/direct/binding"
+                  href="/docs/kubestellar/binding"
                   className="block h-8 overflow-hidden"
                 >
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 text-primary-600 dark:text-primary-400 flex items-center">
@@ -266,7 +266,7 @@ export default function AboutSection() {
 
                 {/* Animated arrow on hover */}
                 <Link
-                  href="/docs/direct/control"
+                  href="/docs/kubestellar/control"
                   className="block h-8 overflow-hidden"
                 >
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 text-primary-600 dark:text-primary-400 flex items-center">

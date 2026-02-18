@@ -18,7 +18,7 @@ body:
     id: description
     attributes:
       label: Describe the bug
-      description: Please provide a clear and concise description of the bug. See ["Making a Good Trouble Report"](https://docs.kubestellar.io/unreleased-development/direct/troubleshooting/#making-a-good-trouble-report).
+      description: Please provide a clear and concise description of the bug. See ["Making a Good Trouble Report"](https://docs.kubestellar.io/unreleased-development/kubestellar/troubleshooting/#making-a-good-trouble-report).
       placeholder: |
         You might also look at the rest of the "Troubleshooting" page.
     validations:

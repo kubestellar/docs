@@ -170,7 +170,7 @@ WDSes: # all the CPs in this list will execute the transport-controller.yaml and
   ...
 ```
 
-where `name` must specify a name unique among all the control planes in that KubeFlex deployment (note that this must be unique among both ITSes and WDSes), the optional `type` can be either k8s (default) or host, see [here](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md) for more information, the optional `APIGroups` provides a list of APIGroups, see [here](https://docs.kubestellar.io/release-{{ config.ks_latest_release }}/direct/examples/#scenario-2-using-the-hosting-cluster-as-wds-to-deploy-a-custom-resource) for more information, and `ITSName` specify the ITS connected to the new WDS being created (this parameter MUST be specified if more that one ITS exists in the cluster, if no value is specified and only one ITS exists in the cluster, then it will be automatically selected).
+where `name` must specify a name unique among all the control planes in that KubeFlex deployment (note that this must be unique among both ITSes and WDSes), the optional `type` can be either k8s (default) or host, see [here](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md) for more information, the optional `APIGroups` provides a list of APIGroups, see [here](https://docs.kubestellar.io/release-{{ config.ks_latest_release }}/kubestellar/examples-scenarios.md/#scenario-2-using-the-hosting-cluster-as-wds-to-deploy-a-custom-resource) for more information, and `ITSName` specify the ITS connected to the new WDS being created (this parameter MUST be specified if more that one ITS exists in the cluster, if no value is specified and only one ITS exists in the cluster, then it will be automatically selected).
 
 ## KubeStellar Core Chart usage step by step
 
@@ -208,7 +208,7 @@ TEST SUITE: None
 NOTES:
 For your convenience you will probably want to add contexts to your kubeconfig named after the non-host-type control planes (WDSes and ITSes) that you just created (a host-type control plane is just an alias for the KubeFlex hosting cluster). You can do that with the following `kflex` commands; each creates a context and makes it the current one.
 
-See https://github.com/kubestellar/kubestellar/blob/0.28.0-alpha.2/docs/content/direct/core-chart.md#kubeconfig-files-and-contexts-for-control-planes for a way to do this without using `kflex`.
+See https://github.com/kubestellar/kubestellar/blob/0.28.0-alpha.2/docs/content/kubestellar/core-chart.md#kubeconfig-files-and-contexts-for-control-planes for a way to do this without using `kflex`.
 
 Start by setting your current kubeconfig context to the one you used when installing this chart.
 
@@ -257,7 +257,7 @@ ITSes) that you just created (a host-type control plane is just an
 alias for the KubeFlex hosting cluster). You can do that with the
 following `kflex` commands; each creates a context and makes it the
 current one. See
-https://github.com/kubestellar/kubestellar/blob/0.28.0-alpha.2/docs/content/direct/core-chart.md#kubeconfig-files-and-contexts-for-control-planes
+https://github.com/kubestellar/kubestellar/blob/0.28.0-alpha.2/docs/content/kubestellar/core-chart.md#kubeconfig-files-and-contexts-for-control-planes
 for a way to do this without using `kflex`.
 Start by setting your current kubeconfig context to the one you used
 when installing this chart.

@@ -197,7 +197,7 @@ This documentation website is a **separate repository** from the main KubeStella
 │  📁 docs/content/                                            │
 │     ├── readme.md                                            │
 │     ├── architecture.md                                      │
-│     ├── direct/                                              │
+│     ├── kubestellar/                                              │
 │     │   ├── binding.md                                       │
 │     │   └── wds.md                                           │
 │     └── ... (all documentation content)                      │
@@ -326,8 +326,8 @@ To add new documentation pages:
 {
   title: 'User Guide',
   items: [
-    { 'Quick Start': 'direct/get-started.md' },
-    { 'Your New Guide': 'direct/new-guide.md' }, // Add this line
+    { 'Quick Start': 'kubestellar/get-started.md' },
+    { 'Your New Guide': 'kubestellar/new-guide.md' }, // Add this line
     // ... rest of the entries
   ]
 }
