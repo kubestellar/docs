@@ -63,7 +63,8 @@
     "termsOfService": "服务条款",
     "cookiePolicy": "Cookie 政策",
     "madeWithLove": "由 KubeStellar 团队用 ❤️ 打造",
-    "backToTop": "返回顶部"
+    "backToTop": "返回顶部",
+    "news": "新闻"
   },
   "navigation": {
     "docs": "文档",
@@ -104,7 +105,8 @@
     "mobileHowItWorks": "工作原理",
     "mobileUseCases": "使用场景",
     "mobileGetStarted": "开始使用",
-    "mobileContact": "联系"
+    "mobileContact": "联系",
+    "news": "新闻"
   },
   "aboutSection": {
     "title": "什么是",
@@ -480,8 +482,12 @@
           "structure": "被录取的贡献者将在一名或多名 KubeStellar 导师的指导下完成项目，并在中期和最终阶段接受评估。",
           "howToApply": "学生可在申请期内通过 Google Summer of Code 官方网站提交申请。我们建议提前参与社区并为 KubeStellar 做出贡献。",
           "resources": [
-            { "name": "GSoC 官方网站" },
-            { "name": "KubeStellar GitHub" }
+            {
+              "name": "GSoC 官方网站"
+            },
+            {
+              "name": "KubeStellar GitHub"
+            }
           ]
         }
       },
@@ -498,8 +504,12 @@
           "structure": "参与者将在 KubeStellar 导师的指导下，围绕预定义项目开展工作，并定期进行沟通和反馈。",
           "howToApply": "申请需通过 European Summer of Code 官方门户提交。",
           "resources": [
-            { "name": "ESoC 官方网站（暂无链接）" },
-            { "name": "KubeStellar GitHub" }
+            {
+              "name": "ESoC 官方网站（暂无链接）"
+            },
+            {
+              "name": "KubeStellar GitHub"
+            }
           ]
         }
       },
@@ -516,8 +526,12 @@
           "structure": "实习生将与导师结对，并融入开发团队。项目形式灵活，可选择兼职或全职参与。",
           "howToApply": "请将简历和简要的兴趣说明发送至我们的社区邮箱。同时我们也鼓励你提前为 GitHub 仓库做出贡献。",
           "resources": [
-            { "name": "KubeStellar GitHub" },
-            { "name": "KubeStellar 社区页面" }
+            {
+              "name": "KubeStellar GitHub"
+            },
+            {
+              "name": "KubeStellar 社区页面"
+            }
           ]
         }
       },
@@ -534,8 +548,12 @@
           "structure": "学员将与 KubeStellar 导师一对一合作，在贡献代码的同时积极参与社区活动。",
           "howToApply": "申请需通过 LFX Mentorship 平台提交，浏览并申请 KubeStellar 相关项目。",
           "resources": [
-            { "name": "LFX Mentorship 平台" },
-            { "name": "KubeStellar GitHub" }
+            {
+              "name": "LFX Mentorship 平台"
+            },
+            {
+              "name": "KubeStellar GitHub"
+            }
           ]
         }
       }

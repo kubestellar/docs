@@ -1025,7 +1025,7 @@ export default function Navbar() {
                         ></path>
                       </svg>
                     </div>
-                    <span>News</span>
+                    <span>{t("news")}</span>
                   </Link>
                 </div>
                 <div className="relative mb-4">

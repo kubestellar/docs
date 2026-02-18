@@ -63,7 +63,8 @@
     "termsOfService": "Nutzungsbedingungen",
     "cookiePolicy": "Cookie-Richtlinie",
     "madeWithLove": "Mit ❤️ vom KubeStellar-Team erstellt",
-    "backToTop": "Nach oben"
+    "backToTop": "Nach oben",
+    "news": "Neuigkeiten"
   },
   "navigation": {
     "docs": "Dokumentation",
@@ -104,7 +105,8 @@
     "mobileHowItWorks": "Funktionsweise",
     "mobileUseCases": "Anwendungsfälle",
     "mobileGetStarted": "Erste Schritte",
-    "mobileContact": "Kontakt"
+    "mobileContact": "Kontakt",
+    "news": "Neuigkeiten"
   },
   "aboutSection": {
     "title": "Was ist",
@@ -480,8 +482,12 @@
           "structure": "Angenommene Teilnehmende arbeiten mit Unterstützung eines oder mehrerer Mentoren von KubeStellar an ihrem Projekt. Es gibt Bewertungen zur Halbzeit und am Ende des Programms.",
           "howToApply": "Studierende können sich während der Bewerbungsphase über die Google-Summer-of-Code-Website bewerben. Wir empfehlen, sich vorher in der Community zu engagieren und zu KubeStellar beizutragen.",
           "resources": [
-            { "name": "Offizielle GSoC-Website" },
-            { "name": "KubeStellar GitHub" }
+            {
+              "name": "Offizielle GSoC-Website"
+            },
+            {
+              "name": "KubeStellar GitHub"
+            }
           ]
         }
       },
@@ -498,8 +504,12 @@
           "structure": "Teilnehmende arbeiten eng mit KubeStellar-Mentoren an einem vordefinierten Projekt und erhalten regelmäßiges Feedback.",
           "howToApply": "Bewerbungen müssen über das offizielle European-Summer-of-Code-Portal eingereicht werden.",
           "resources": [
-            { "name": "Offizielle ESoC-Website (Link nicht verfügbar)" },
-            { "name": "KubeStellar GitHub" }
+            {
+              "name": "Offizielle ESoC-Website (Link nicht verfügbar)"
+            },
+            {
+              "name": "KubeStellar GitHub"
+            }
           ]
         }
       },
@@ -516,8 +526,12 @@
           "structure": "Praktikanten werden einem Mentor zugeteilt und in eines unserer Entwicklungsteams integriert. Das Programm ist flexibel und kann in Teil- oder Vollzeit absolviert werden.",
           "howToApply": "Um sich zu bewerben, senden Sie bitte Ihren Lebenslauf und ein kurzes Motivationsschreiben an unsere Community-E-Mail-Adresse. Wir empfehlen außerdem, erste Beiträge in unserem GitHub-Repository zu leisten.",
           "resources": [
-            { "name": "KubeStellar GitHub" },
-            { "name": "KubeStellar Community-Seite" }
+            {
+              "name": "KubeStellar GitHub"
+            },
+            {
+              "name": "KubeStellar Community-Seite"
+            }
           ]
         }
       },
@@ -534,8 +548,12 @@
           "structure": "Mentees arbeiten eins zu eins mit einem Mentor von KubeStellar zusammen, leisten Beiträge zum Projekt und beteiligen sich aktiv an der Community.",
           "howToApply": "Bewerbungen erfolgen über die LFX-Mentorship-Plattform. Suchen Sie nach KubeStellar-Projekten und bewerben Sie sich direkt.",
           "resources": [
-            { "name": "LFX Mentorship Plattform" },
-            { "name": "KubeStellar GitHub" }
+            {
+              "name": "LFX Mentorship Plattform"
+            },
+            {
+              "name": "KubeStellar GitHub"
+            }
           ]
         }
       }

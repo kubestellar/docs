@@ -267,7 +267,7 @@ export default function Footer() {
                     href="/docs/news/latest-news"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
                   >
-                    News
+                    {t("news")}
                   </Link>
                 </li>
               </ul>

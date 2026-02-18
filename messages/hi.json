@@ -63,7 +63,8 @@
     "termsOfService": "सेवा की शर्तें",
     "cookiePolicy": "कुकी नीति",
     "madeWithLove": "KubeStellar टीम द्वारा ❤️ के साथ बनाया गया",
-    "backToTop": "ऊपर लौटें"
+    "backToTop": "ऊपर लौटें",
+    "news": "समाचार"
   },
   "navigation": {
     "docs": "डॉक्स",
@@ -103,7 +104,8 @@
     "mobileHowItWorks": "कैसे काम करता है",
     "mobileUseCases": "उपयोग के मामले",
     "mobileGetStarted": "शुरू करें",
-    "mobileContact": "संपर्क करें"
+    "mobileContact": "संपर्क करें",
+    "news": "समाचार"
   },
   "aboutSection": {
     "title": "क्या है",
