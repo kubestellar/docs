@@ -1,5 +1,5 @@
 # Version Management in the KubeStellar Documentation Architecture
-{% include-markdown "../../../CONTRIBUTING.md"
+{% include-markdown "../../../../CONTRIBUTING.md"
     start='### Version Management'
     end = '### Testing Your Changes'
 

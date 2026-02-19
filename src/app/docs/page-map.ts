@@ -306,7 +306,7 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Contributing',
     items: [
-      { 'Overview': 'kubestellar/contribute.md' },
+      { 'Overview': 'contribution-guidelines/contribute.md' },
       { 'Code of Conduct': 'contribution-guidelines/coc-inc.md' },
       { 'Contributing to Code': 'contribution-guidelines/CONTRIBUTINGKS.md' },
       { 'Contributing to Docs/Website': [
