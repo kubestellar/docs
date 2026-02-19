@@ -276,10 +276,10 @@ This documentation site is built using **Nextra**, a powerful Next.js-based docu
    - Allows customization of how markdown elements render
    - Enables adding custom React components to MDX files
 
-# Working Effectively on the KubeStellar Docs
+## Working Effectively on the KubeStellar Docs
 
-## How to Modify An Existing Page in the site
-### The Easy Way
+### How to Modify An Existing Page in the site
+#### The Easy Way
 
 For edits to a single page, we have enabled a suggest edits function in the site itself: 
 
@@ -287,10 +287,10 @@ For edits to a single page, we have enabled a suggest edits function in the site
 2.  Open a second tab and visit the page in the website you wish to modify. _(Make sure have selected the appropriate version of the docs with the dropdown in the masthead)_
 3. Find and click on the Edit This Page (Pencil) icon near the upper right page
 4. A Github editor session will open for you and when you commit your changes, you will be presented with the option to create a corresponding PR. 
-5. You may have to make some adjustments to the PR title, etc to fulfil some requirements for a PR.
+5. You may have to make some adjustments to the PR title, etc to fulfill some requirements for a PR.
 6. When your PR is created, it will automatically generate a site preview via Netlify to make reviewing the proposed changes easier
 
-### The Complicated Way
+#### The Complicated Way
 
 For less simple edits, for edits across multiple files, or for editing the docs site structure/navigation, you will have to go the more traditional GitHub route of:
 1. creating a fork of the docs repository
@@ -299,13 +299,13 @@ For less simple edits, for edits across multiple files, or for editing the docs 
 4. committing changes to the branch
    _be sure to both sign off (-s option) for DCO    and sign (-S option) your commits_
 5. pushing those changes up to your fork 
-5. and then doing a standard Pull Request. The PR will create a website preview via Netlify for reviewers
+6. and then doing a standard Pull Request. The PR will create a website preview via Netlify for reviewers
 
 Some of the most common tasks are detailed below.
 
-## Common Tasks for modifying the KubeStellar Site
+### Common Tasks for modifying the KubeStellar Site
 
-### How to _Add_ Documentation
+#### How to _Add_ Documentation
 
 The documentation content is stored directly in this repository in the `/docs/content/` directory.
 
