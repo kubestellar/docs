@@ -42,8 +42,8 @@ Read the resources to gain a better understanding of the contribution processes.
 - **Docs/Website**
     - **[Docs Structure](../contribution-guidelines/documentation/docs-structure-inc.md)** Overview of how our website is built with from the source file content and Nextra pagemap
     - **[Simple Changes](../contribution-guidelines/documentation/simple-docs-inc.md)** How to make quick edit suggestions
-    - **[Detailed Contribution Guide](../contribution-guidelines/documentation/contributing-inc.md)** All the gory details on the site structure and rendering and making more complex changes
-    (includes the info in the previous two topics)
+    - **[Version Management](../contribution-guidelines/documentation/docs-version-inc.md)** Brief summary of the multi-version support
+    - **[Detailed Contribution Guide](../contribution-guidelines/documentation/contributing-inc.md)** All the gory details on the site structure and rendering and making more complex changes <br /> (includes the info in the previous topics)
     - **[Style Guide](../contribution-guidelines/documentation/docs-styleguide.md)** Guidelines on writing the prose parts of our documentation/website
 - **Security**
     - **[Policy](../contribution-guidelines/security/security-inc.md)** Security Policies
