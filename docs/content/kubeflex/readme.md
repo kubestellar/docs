@@ -112,7 +112,7 @@ Get started with KubeFlex quickly by following our [Quick Start Guide](./quickst
 
 - **Issues and Features**: [GitHub Issues](https://github.com/kubestellar/kubeflex/issues)
 - **Community Discussion**: [KubeStellar Slack](https://kubestellar.io/slack)
-- **Documentation**: [KubeStellar Website](https://docs.kubestellar.io/release-0.28.0/direct/kubeflex-intro/)
+- **Documentation**: [KubeStellar Website](https://docs.kubestellar.io/release-0.28.0/kubestellar/kubeflex-intro/)
 
 ## License
 

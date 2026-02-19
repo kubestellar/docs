@@ -63,7 +63,7 @@ ITSes) that you just created (a host-type control plane is just an
 alias for the KubeFlex hosting cluster). You can do that with the
 following `kflex` commands; each creates a context and makes it the
 current one. See
-https://github.com/kubestellar/kubestellar/blob/0.28.0-alpha.2/docs/content/direct/core-chart.md#kubeconfig-files-and-contexts-for-control-planes
+https://github.com/kubestellar/kubestellar/blob/0.28.0-alpha.2/docs/content/kubestellar/core-chart.md#kubeconfig-files-and-contexts-for-control-planes
 for a way to do this without using `kflex`.
 Start by setting your current kubeconfig context to the one you used
 when installing this chart.

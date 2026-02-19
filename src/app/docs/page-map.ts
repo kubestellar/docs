@@ -190,88 +190,88 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
     title: 'What is KubeStellar?',
     items: [
       { 'Overview': 'readme.md' },
-      { 'Architecture': 'direct/architecture.md' },
-      { 'Release Notes': 'direct/release-notes.md' },
-      { 'Roadmap': 'direct/roadmap.md' }
+      { 'Architecture': 'kubestellar/architecture.md' },
+      { 'Release Notes': 'kubestellar/release-notes.md' },
+      { 'Roadmap': 'kubestellar/roadmap.md' }
     ]
   },
   {
     title: 'User Guide',
     items: [
-      { 'Quick Start': 'direct/get-started.md' },
-      { 'Guide Overview': 'direct/user-guide-intro.md' },
-      { 'Observability': 'direct/observability.md' },
-      { 'Getting Started': 'direct/get-started.md' },
-      { 'Getting Started from OCM': 'direct/start-from-ocm.md' },
+      { 'Quick Start': 'kubestellar/get-started.md' },
+      { 'Guide Overview': 'kubestellar/user-guide-intro.md' },
+      { 'Observability': 'kubestellar/observability.md' },
+      { 'Getting Started': 'kubestellar/get-started.md' },
+      { 'Getting Started from OCM': 'kubestellar/start-from-ocm.md' },
       {
         'General Setup': [
-          { 'Overview': 'direct/setup-overview.md' },
-          { 'Setup Limitations': 'direct/setup-limitations.md' },
-          { 'Prerequisites': 'direct/pre-reqs.md' },
+          { 'Overview': 'kubestellar/setup-overview.md' },
+          { 'Setup Limitations': 'kubestellar/setup-limitations.md' },
+          { 'Prerequisites': 'kubestellar/pre-reqs.md' },
           {
             'KubeFlex Hosting Cluster': [
-              { 'Acquire Cluster for KubeFlex Hosting': 'direct/acquire-hosting-cluster.md' },
-              { 'Initialize KubeFlex Hosting Cluster': 'direct/init-hosting-cluster.md' }
+              { 'Acquire Cluster for KubeFlex Hosting': 'kubestellar/acquire-hosting-cluster.md' },
+              { 'Initialize KubeFlex Hosting Cluster': 'kubestellar/init-hosting-cluster.md' }
             ]
           },
           {
             'Core Spaces': [
-              { 'Inventory and Transport Spaces': 'direct/its.md' },
-              { 'Workload Description Spaces': 'direct/wds.md' }
+              { 'Inventory and Transport Spaces': 'kubestellar/its.md' },
+              { 'Workload Description Spaces': 'kubestellar/wds.md' }
             ]
           },
-          { 'Core Helm Chart': 'direct/core-chart.md' },
-          { 'Argo CD Integration': 'direct/core-chart-argocd.md' },
+          { 'Core Helm Chart': 'kubestellar/core-chart.md' },
+          { 'Argo CD Integration': 'kubestellar/core-chart-argocd.md' },
           {
             'Workload Execution Clusters': [
-              { 'About Workload Execution Clusters': 'direct/wec.md' },
-              { 'Register a Workload Execution Cluster': 'direct/wec-registration.md' }
+              { 'About Workload Execution Clusters': 'kubestellar/wec.md' },
+              { 'Register a Workload Execution Cluster': 'kubestellar/wec-registration.md' }
             ]
           }
         ]
       },
       {
         'Usage': [
-          { 'Usage Limitations': 'direct/usage-limitations.md' },
+          { 'Usage Limitations': 'kubestellar/usage-limitations.md' },
           {
             'KubeStellar API': [
-              { 'Overview': 'direct/control.md' },
-              { 'Binding': 'direct/binding.md' },
-              { 'Transforming Desired State': 'direct/transforming.md' },
-              { 'Combining Reported State': 'direct/combined-status.md' },
-              { 'Multi-WEC Aggregated Status': 'direct/multi-wec-aggregated-status.md' }
+              { 'Overview': 'kubestellar/control.md' },
+              { 'Binding': 'kubestellar/binding.md' },
+              { 'Transforming Desired State': 'kubestellar/transforming.md' },
+              { 'Combining Reported State': 'kubestellar/combined-status.md' },
+              { 'Multi-WEC Aggregated Status': 'kubestellar/multi-wec-aggregated-status.md' }
             ]
           },
-          { 'Authorization in WECs': 'direct/authorization.md' },
-          { 'Example Scenarios': 'direct/example-scenarios.md' },
+          { 'Authorization in WECs': 'kubestellar/authorization.md' },
+          { 'Example Scenarios': 'kubestellar/example-scenarios.md' },
           {
             'Third-party Integrations': [
-              { 'ArgoCD to WDS': 'direct/argo-to-wds1.md' },
-              { 'Claude Code': 'direct/claude-code.md' }
+              { 'ArgoCD to WDS': 'kubestellar/argo-to-wds1.md' },
+              { 'Claude Code': 'kubestellar/claude-code.md' }
             ]
           },
-          { 'Troubleshooting': 'direct/troubleshooting.md' },
+          { 'Troubleshooting': 'kubestellar/troubleshooting.md' },
           {
             'Known Issues': [
-              { 'Overview': 'direct/known-issues.md' },
-              { 'Hidden State in Kubeconfig': 'direct/knownissue-kflex-extension.md' },
-              { 'Kind Needs OS Reconfig': 'direct/knownissue-kind-config.md' },
-              { 'Helm Chart Auth Failure': 'direct/knownissue-helm-ghcr.md' },
-              { 'Missing CombinedStatus Results': 'direct/knownissue-collector-miss.md' },
-              { 'Kind Host Configuration': 'direct/installation-errors.md' },
-              { 'Insufficient CPU': 'direct/knownissue-cpu-insufficient-for-its1.md' }
+              { 'Overview': 'kubestellar/known-issues.md' },
+              { 'Hidden State in Kubeconfig': 'kubestellar/knownissue-kflex-extension.md' },
+              { 'Kind Needs OS Reconfig': 'kubestellar/knownissue-kind-config.md' },
+              { 'Helm Chart Auth Failure': 'kubestellar/knownissue-helm-ghcr.md' },
+              { 'Missing CombinedStatus Results': 'kubestellar/knownissue-collector-miss.md' },
+              { 'Kind Host Configuration': 'kubestellar/installation-errors.md' },
+              { 'Insufficient CPU': 'kubestellar/knownissue-cpu-insufficient-for-its1.md' }
             ]
           }
         ]
       },
       { 'UI (User Interface)': 'ui-docs/ui-overview.md' },
-      { 'Teardown': 'direct/teardown.md' }
+      { 'Teardown': 'kubestellar/teardown.md' }
     ]
   },
   {
     title: 'Contributing',
     items: [
-      { 'Overview': 'direct/contribute.md' },
+      { 'Overview': 'kubestellar/contribute.md' },
       { 'Code of Conduct': 'contribution-guidelines/coc-inc.md' },
       { 'Guidelines': 'contribution-guidelines/contributing-inc.md' },
       { 'Contributor Ladder': 'contribution-guidelines/contributor_ladder.md' },
@@ -296,11 +296,11 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
           { 'Contacts': 'contribution-guidelines/security/security_contacts-inc.md' }
         ]
       },
-      { 'Testing': 'direct/testing.md' },
-      { 'Packaging': 'direct/packaging.md' },
-      { 'Release Process': 'direct/release.md' },
-      { 'Release Testing': 'direct/release-testing.md' },
-      { 'Sign-off': 'direct/pr-signoff.md' }
+      { 'Testing': 'kubestellar/testing.md' },
+      { 'Packaging': 'kubestellar/packaging.md' },
+      { 'Release Process': 'kubestellar/release.md' },
+      { 'Release Testing': 'kubestellar/release-testing.md' },
+      { 'Sign-off': 'kubestellar/pr-signoff.md' }
     ]
   },
   {
