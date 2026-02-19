@@ -308,18 +308,24 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Overview': 'kubestellar/contribute.md' },
       { 'Code of Conduct': 'contribution-guidelines/coc-inc.md' },
-      { 'Guidelines': 'contribution-guidelines/contributing-inc.md' },
+      { 'Contributing to Code': 'contribution-guidelines/CONTRIBUTINGKS.md' },
+      { 'Contributing to Docs/Website': [
+          {'Docs Structure': 'contribution-guidelines/documentation/docs-structure-inc.md'} ,
+          {'Simple Changes' : 'contribution-guidelines/documentation/simple-docs-inc.md'},
+          {'Detailed Contribution Guide': 'contribution-guidelines/documentation/contributing-inc.md' },
+          {'Style Guide': 'contribution-guidelines/documentation/docs-styleguide.md' }
+          ]},
       { 'Contributor Ladder': 'contribution-guidelines/contributor_ladder.md' },
       { 'License': 'contribution-guidelines/license-inc.md' },
       { 'Governance': 'contribution-guidelines/governance-inc.md' },
       { 'Onboarding': 'contribution-guidelines/onboarding-inc.md' },
-      {
+     /* {
         'Website': [
           { 'Docs Management': 'contribution-guidelines/operations/document-management.md' },
           { 'Style Guide': 'contribution-guidelines/operations/docs-styleguide.md' },
           { 'Testing PRs': 'contribution-guidelines/operations/testing-doc-prs.md' }
         ]
-      },
+      },*/
       {
         'CI/CD': [
           { 'GitHub Actions': 'contribution-guidelines/operations/github-actions.md' }
