@@ -285,7 +285,7 @@ This documentation site is built using **Nextra**, a powerful Next.js-based docu
 For edits to a single page, we have enabled a suggest edits function in the site itself: 
 
 1. Sign into GitHub in your browser.
-2.  Open a second tab and visit the page in the website you wish to modify. _(Make sure have selected the appropriate version of the docs with the dropdown in the masthead)_
+2.  Open a second tab and visit the page in the website you wish to modify. <br />**_(Make sure you have selected the appropriate version of the docs with the dropdown in the masthead)_** The site defaults to showing "latest"; the main branch of kubestellar/docs corresponds to "dev"
 3. Find and click on the Edit This Page (Pencil) icon near the upper right page
 4. A GitHub editor session will open for you and when you commit your changes, you will be presented with the option to create a corresponding PR. 
 5. You may have to make some adjustments to the PR title, etc to fulfill some requirements for a PR.
@@ -402,6 +402,19 @@ The documentation supports multiple versions through the `versions.ts` config:
 - **Default Version**: Set in `getDefaultVersion()`
 - **Branch Mapping**: Map versions to Git branches in `getBranchForVersion()`
 - **Version Switching**: Users can switch versions via query parameter: `?version=0.23.0`
+
+The site supports multiple versions of the docs for the assorted components of KubeStellar via branches of the [kubestellar/docs](https://github.com/kubestellar/docs) repository.
+
+The site when first loaded shows the **latest** tagged version of the KubeStellar docs. The _main_ branch of the repository corresponds to the **dev** version on the site. Edits to the _main_ branch of the docs repository may not show unless the **dev** version is selected.
+
+
+#### Versioning Strategy:
+ - Each project has its own version scheme
+ - Branch naming convention:
+   - KubeStellar: main (latest), docs/\{version\} (e.g., docs/0.28.0)
+   - a2a: main (latest), docs/a2a/\{version\} (e.g., docs/a2a/0.1.0)
+   - kubeflex: main (latest), docs/kubeflex/\{version\} (e.g., docs/kubeflex/0.8.0)
+ - The main branch always contains the latest version of the content files for all projects
 
 ### Testing Your Changes
 

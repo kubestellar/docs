@@ -312,6 +312,7 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
       { 'Contributing to Docs/Website': [
           {'Docs Structure': 'contribution-guidelines/documentation/docs-structure-inc.md'} ,
           {'Simple Changes' : 'contribution-guidelines/documentation/simple-docs-inc.md'},
+          {'Version Management' : 'contribution-guidelines/documentation/docs-version-inc.md'},
           {'Detailed Contribution Guide': 'contribution-guidelines/documentation/contributing-inc.md' },
           {'Style Guide': 'contribution-guidelines/documentation/docs-styleguide.md' }
           ]},

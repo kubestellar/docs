@@ -1,7 +1,7 @@
-# Understanding the KubeStellar Documentation Architecture
+# Version Management in the KubeStellar Documentation Architecture
 {% include-markdown "../../../CONTRIBUTING.md"
-    start='## Understanding the Documentation Architecture'
-    end = '## Working Effectively on the KubeStellar Docs'
+    start='### Version Management'
+    end = '### Testing Your Changes'
 
 
  %}
