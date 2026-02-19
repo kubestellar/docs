@@ -5,6 +5,7 @@ import { evaluate } from 'nextra/evaluate'
 import { useMDXComponents as getMDXComponents } from '../../../../mdx-components'
 import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
 import { MermaidComponent } from '@/lib/Mermaid'
+import { getMessages } from 'next-intl/server'
 import { buildPageMap, docsContentPath } from '../page-map'
 import { CURRENT_VERSION, type ProjectId } from '@/config/versions'
 import fs from 'fs'
@@ -55,13 +56,13 @@ function resolvePath(baseFile: string, relativePath: string) {
     }
   }
   const resolved = stack.join('/')
-  
+
   // If path goes above content root (empty or has ../), try just the filename
   if (resolved === '' || resolved.startsWith('..')) {
     // Return just the filename
     return parts[parts.length - 1]
   }
-  
+
   return resolved
 }
 
@@ -76,7 +77,7 @@ function wrapMarkdownImagesWithFigures(markdown: string) {
     const safeAlt = alt || ''
     const safeSrc = src || ''
     const safeTitle = title || ''
-    
+
     const captionText = safeTitle || safeAlt
     const titleAttr = safeTitle ? ` title="${safeTitle}"` : ''
     const figcaptionElement = captionText ? `\n  <figcaption>${captionText}</figcaption>` : ''
@@ -145,29 +146,29 @@ function wrapBadgeLinksInGrid(markdown: string) {
 
 function removeCommentPatterns(content: string): string {
   let cleaned = content
-  
+
   // Remove all HTML comments
   cleaned = cleaned.replace(/<!--[\s\S]*?-->/g, '')
-  
+
   // Remove Jinja-style comments
   cleaned = cleaned.replace(/\{#[\s\S]*?#\}/g, '')
-  
+
   // Remove JSX-style comments that aren't valid
   cleaned = cleaned.replace(/\{\/[^}]*\/\}/g, '')
-  
+
   return cleaned
 }
 
 // Sanitize HTML for MDX compatibility
 function sanitizeHtmlForMdx(content: string): string {
   let sanitized = content
-  
+
   // Convert contributors table to a grid of contributor cards
   sanitized = sanitized.replace(/<table>[\s\S]*?<\/table>/gi, (tableMatch) => {
     // Extract all contributor info from table cells
     const contributors: Array<{ name: string; github: string; avatar: string; profileUrl: string }> = []
     const tdRegex = /<td[^>]*>[\s\S]*?<a href="([^"]+)"[^>]*><img src="([^"]+)"[^>]*\/?><br\s*\/?><sub><b>([^<]+)<\/b><\/sub><\/a>[\s\S]*?<\/td>/gi
-    
+
     let tdMatch
     while ((tdMatch = tdRegex.exec(tableMatch)) !== null) {
       const profileUrl = tdMatch[1]
@@ -175,51 +176,51 @@ function sanitizeHtmlForMdx(content: string): string {
       const name = tdMatch[3]
       const githubMatch = profileUrl.match(/github\.com\/([^\/]+)/)
       const github = githubMatch ? githubMatch[1] : ''
-      
+
       if (name && avatar) {
         contributors.push({ name, github, avatar, profileUrl })
       }
     }
-    
+
     if (contributors.length === 0) return ''
-    
+
     // Generate a CSS grid of contributor cards
-    const cards = contributors.map(c => 
+    const cards = contributors.map(c =>
       `<a href="${c.profileUrl}" className="contributor-card" target="_blank" rel="noopener noreferrer">
         <img src="${c.avatar}" alt="${c.name}" />
         <span>${c.name}</span>
       </a>`
     ).join('\n')
-    
+
     return `<div className="contributors-grid">\n${cards}\n</div>`
   })
-  
+
   // Remove leftover tr/td that aren't part of tables we converted
   sanitized = sanitized.replace(/<tr>[\s\S]*?<\/tr>/gi, '')
   sanitized = sanitized.replace(/<td[^>]*>[\s\S]*?<\/td>/gi, '')
-  
+
   // Remove all iframe tags - they cause issues with MDX and event handlers
   sanitized = sanitized.replace(/<iframe[\s\S]*?<\/iframe>/gi, '')
-  
+
   // Normalize all img tags - handle both <img ...> and <img ... />
   sanitized = sanitized.replace(/<img\s+([^>]*?)\/?>/gi, (match, attrs) => {
     // Keep only src, alt, and title attributes
     const srcMatch = attrs.match(/src=["']([^"']+)["']/i)
     const altMatch = attrs.match(/alt=["']([^"']*)["']/i)
     const titleMatch = attrs.match(/title=["']([^"']*)["']/i)
-    
+
     const src = srcMatch ? srcMatch[1] : ''
     const alt = altMatch ? altMatch[1] : ''
     const title = titleMatch ? ` title="${titleMatch[1]}"` : ''
-    
+
     if (!src) return ''
     return `<img src="${src}" alt="${alt}"${title} />`
   })
-  
+
   // Fix self-closing tags
   sanitized = sanitized.replace(/<br\s*\/?>/gi, '<br />')
   sanitized = sanitized.replace(/<hr\s*\/?>/gi, '<hr />')
-  
+
   // Remove inline event handlers - must be done before other attribute fixes
   // Handle complex event handlers with nested quotes
   sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][^"']*["']/gi, '')
@@ -227,7 +228,7 @@ function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/\s+on\w+\s*=\s*'[^']*'/gi, '')
   // Fallback for complex nested quotes - remove the entire event handler
   sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][\s\S]*?["'](?=\s|>)/gi, '')
-  
+
   // Remove other problematic attributes from remaining tags
   sanitized = sanitized.replace(/\s+align=["']?[^"'\s>]+["']?/gi, '')
   sanitized = sanitized.replace(/\s+width=["']?[^"'\s>]+["']?/gi, '')
@@ -236,25 +237,25 @@ function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/\s+allowfullscreen(?:=["'][^"']*["'])?/gi, '')
   sanitized = sanitized.replace(/\s+scrolling=["']?[^"'\s>]+["']?/gi, '')
   sanitized = sanitized.replace(/\sclass=/gi, ' className=')
-  
+
   // Remove style attributes that might cause issues
   sanitized = sanitized.replace(/\s+style=["'][^"']*["']/gi, '')
-  
+
   // Remove style tags
   sanitized = sanitized.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
-  
+
   // Remove script tags
   sanitized = sanitized.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
-  
+
   // Remove <sub> and other problematic inline tags that may have issues
   sanitized = sanitized.replace(/<sub>/gi, '')
   sanitized = sanitized.replace(/<\/sub>/gi, '')
-  
+
   return sanitized
 }
 
 // Replace template variables with actual values
-function replaceTemplateVariables(content: string): string {
+function replaceTemplateVariables(content: string, messages?: Record<string, any>): string {
   // Use CURRENT_VERSION from config to support versioned documentation
   // When a version branch is created, CURRENT_VERSION is updated to that version
   const version = CURRENT_VERSION as string
@@ -270,15 +271,35 @@ function replaceTemplateVariables(content: string): string {
     'config.repo_url': 'https://github.com/kubestellar/kubestellar',
     'config.site_url': 'https://docs.kubestellar.io'
   }
-  
+
   let result = content
+
+  // 1. Process basic config variables
   for (const [key, value] of Object.entries(vars)) {
     result = result.replace(new RegExp(`\\{\\{\\s*${key.replace('.', '\\.')}\\s*\\}\\}`, 'g'), value)
   }
-  
-  // Remove any remaining template variables
+
+  // 2. Process translation variables: {{ t('key.path') }}
+  if (messages) {
+    result = result.replace(/\{\{\s*t\s*\(\s*['"]([^'"]+)['"]\s*\)\s*\}\}/g, (match, keyPath) => {
+      const keys = keyPath.split('.')
+      let current: any = messages
+
+      for (const key of keys) {
+        if (current && typeof current === 'object' && key in current) {
+          current = current[key]
+        } else {
+          return match // Return original if path doesn't exist
+        }
+      }
+
+      return typeof current === 'string' ? current : match
+    })
+  }
+
+  // 3. Remove any remaining template variables
   result = result.replace(/\{\{[^}]+\}\}/g, '')
-  
+
   return result
 }
 
@@ -291,7 +312,7 @@ function readLocalFile(filePath: string, contentPath: string = docsContentPath):
   } catch {
     // File doesn't exist in content directory
   }
-  
+
   // If not found in content directory, try repository root
   const repoRootPath = path.join(process.cwd(), filePath)
   try {
@@ -301,7 +322,7 @@ function readLocalFile(filePath: string, contentPath: string = docsContentPath):
   } catch {
     // File doesn't exist in repository root either
   }
-  
+
   return null
 }
 
@@ -315,22 +336,23 @@ function processInclude(
 ): string {
   const resolvedPath = resolvePath(filePath, relativePath)
   const includeContent = readLocalFile(resolvedPath, contentPath)
-  
+
   if (includeContent) {
     const content = extractContent ? extractContent(includeContent) : includeContent
     return removeCommentPatterns(content)
   }
-  
+
   if (relativePath.includes('coming-soon.md')) {
     return ''
   }
-  
+
   return `> **Note**: Include file \`${relativePath}\` not found`
 }
 
 export default async function Page(props: PageProps) {
   const params = await props.params
   const slug = params.slug ?? []
+  const messages = await getMessages()
 
   // Detect project from URL slug
   const projectId = getProjectFromSlug(slug)
@@ -365,14 +387,14 @@ export default async function Page(props: PageProps) {
       return processInclude(match, relativePath, filePath, contentPath, (content) => {
         // If markers are empty, return whole content
         if (!startMarker && !endMarker) return content
-        
+
         const startIndex = content.indexOf(startMarker)
         const endIndex = content.indexOf(endMarker)
-        
+
         if (startIndex !== -1 && endIndex !== -1) {
           return content.substring(startIndex + startMarker.length, endIndex).trim()
         }
-        
+
         return `> **Note**: Markers not found in \`${relativePath}\``
       })
     }
@@ -451,8 +473,8 @@ export default async function Page(props: PageProps) {
   rewrittenText = wrapBadgeLinksInGrid(rewrittenText)
 
   // Pre-process Jinja and Pymdown syntax before MDX compilation
-  let preProcessedText = replaceTemplateVariables(rewrittenText)
-  
+  let preProcessedText = replaceTemplateVariables(rewrittenText, messages)
+
   // Handle code block attributes
   preProcessedText = preProcessedText.replace(/```\s*{([^}]+)}\s*\n/g, (_match, attrs) => {
     const normalizedAttrs = attrs.replace(/^\./, '').replace(/\s+\./g, ' ')

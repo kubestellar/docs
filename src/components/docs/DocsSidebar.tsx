@@ -188,8 +188,10 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
       return null;
     }
 
+    const childrenId = `children-${itemKey}`;
+
     return (
-      <div key={itemKey} className="relative space-y-1">
+      <li key={itemKey} className="relative space-y-1">
         <div className="flex items-center group relative">
           {/* Vertical line for nested items */}
           {depth > 0 && (
@@ -204,6 +206,8 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
             // Folder - clickable to toggle
             <button
               onClick={() => toggleCollapse(itemKey)}
+              aria-expanded={!isCollapsed}
+              aria-controls={childrenId}
               className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10"
               style={{ paddingLeft: `${depth * 16 + 12}px`, color: textColor }}
             >
@@ -243,7 +247,9 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
 
         {/* Render children */}
         {hasChildren && (
-          <div
+          <ul
+            id={childrenId}
+            aria-hidden={isCollapsed}
             className={`
               relative space-y-1 overflow-hidden transition-all duration-300 ease-in-out
               ${isCollapsed ? 'max-h-0 opacity-0' : 'max-h-500 opacity-100'}
@@ -255,9 +261,9 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
               style={{ left: `${depth * 16 + 20}px` }}
             />
             {item.children!.map(child => renderMenuItem(child, depth + 1, itemKey))}
-          </div>
+          </ul>
         )}
-      </div>
+      </li>
     );
   };
 
@@ -266,8 +272,10 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     <>
       {/* Scrollable navigation area */}
       <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-        <nav className="p-4 pb-6 w-full space-y-2">
-          {pageMap.map(item => renderMenuItem(item))}
+        <nav className="p-4 pb-6 w-full" aria-label="Documentation navigation">
+          <ul className="space-y-2">
+            {pageMap.map(item => renderMenuItem(item))}
+          </ul>
         </nav>
       </div>
 

@@ -5,14 +5,19 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 // Mock localStorage for server-side build to prevent TypeError from client-side dependencies
 if (typeof window === "undefined") {
-  (global as any).localStorage = {
+  const mockLocalStorage = {
     getItem: () => null,
-    setItem: () => {},
-    removeItem: () => {},
-    clear: () => {},
+    setItem: () => { },
+    removeItem: () => { },
+    clear: () => { },
     length: 0,
     key: () => null,
   };
+
+  const globalAny = global as any;
+  if (!globalAny.localStorage || typeof globalAny.localStorage.getItem !== "function") {
+    globalAny.localStorage = mockLocalStorage;
+  }
 }
 
 const withNextra = nextra({
