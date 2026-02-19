@@ -37,25 +37,25 @@ KubeStellar Console has **6 components** that work together:
   │ (optional)  │   │             │   │             │   │              │
   │  Login via  │   │  Dashboard, │   │  API server,│   │  Talks to    │
   │  GitHub     │   │  cards, AI  │   │  auth, data │   │  clusters    │
-  └─────────────┘   └─────────────┘   └─────────────┘   └──────┬───────┘
+  └─────────────┘   └─────────────┘   └─────────────┘   └───────┬──────┘
                                                                 │
-  ┌──────────────────────────────────────────────────┐          │
-  │           5. Claude Code Plugins                 │          │
-  │                                                  │          │
-  │  ┌──────────────────┐  ┌──────────────────────┐  │          │
-  │  │  kubestellar-ops │  │  kubestellar-deploy  │  │          │
-  │  │ - List clusters  │  │  - Deploy apps       │  │          │
-  │  │ - Find pod issues│  │  - GitOps sync       │  │          │
-  │  │ - Check security │  │  - Scale apps        │  │          │
-  │  │ - Analyze RBAC   │  │  - Check drift       │  │          │
-  │  └──────────────────┘  └──────────────────────┘  │          │
-  └──────────────────────────────────────────────────┘          │
+  ┌─────────────────────────────────────────────────────────────┤
+  │                 5. Claude Code Plugins                      │
+  │                                                             │
+  │  ┌─────────────────────┐   ┌──────────────────────────┐     │
+  │  │   kubestellar-ops   │   │   kubestellar-deploy     │     │
+  │  │  - List clusters    │   │  - Deploy apps           │     │
+  │  │  - Find pod issues  │   │  - GitOps sync           │     │
+  │  │  - Check security   │   │  - Scale apps            │     │
+  │  │  - Analyze RBAC     │   │  - Check drift           │     │
+  │  └─────────────────────┘   └──────────────────────────┘     │
+  └─────────────────────────────────────────────────────────────┤
                                                                 │
-  ┌─────────────────────────────────────────────────────────────▼──┐
-  │                        6. Kubeconfig                           │
-  │    ~/.kube/config with access to your clusters                 │
-  │    [cluster-1]   [cluster-2]   [cluster-3]   [cluster-n]      │
-  └────────────────────────────────────────────────────────────────┘
+  ┌─────────────────────────────────────────────────────────────▼───┐
+  │                         6. Kubeconfig                           │
+  │     ~/.kube/config with access to your clusters                 │
+  │     [cluster-1]   [cluster-2]   [cluster-3]   [cluster-n]       │
+  └─────────────────────────────────────────────────────────────────┘
 ```
 
 ### Component Summary
