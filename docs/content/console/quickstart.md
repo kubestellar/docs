@@ -12,32 +12,35 @@ Get KubeStellar Console running locally for development or evaluation.
 
 > **Try it first!** See a live preview at [kubestellarconsole.netlify.app](https://kubestellarconsole.netlify.app) - no installation needed.
 
+## Fastest Path (curl)
+
+One command — downloads pre-built binaries, starts the backend + agent, and opens your browser:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
+```
+
+Typically under 45 seconds. No GitHub OAuth credentials required — a local `dev-user` session is created automatically.
+
 ## What You Need
 
-The console has 6 components. This quick start covers getting them all running:
-
-| Component | What it is |
-|-----------|------------|
-| GitHub OAuth App | Lets users sign in |
-| Frontend + Backend | The console itself |
-| kubestellar-mcp plugins | Connect to your clusters |
-| kubeconfig | Your cluster credentials |
+| Component | What it is | Required? |
+|-----------|------------|-----------|
+| kubestellar-mcp plugins | Connect to your clusters | Yes |
+| kubeconfig | Your cluster credentials | Yes |
+| Frontend + Backend | The console itself | Yes (bundled) |
+| GitHub OAuth App | Lets users sign in via GitHub | Optional |
 
 See [Installation](installation.md) for the full architecture diagram.
 
 ## Prerequisites
 
-- Go 1.23+
-- Node.js 20+
-- Docker (for containerized deployment)
 - kubectl configured with at least one cluster
-- GitHub OAuth App credentials
 - [Claude Code](https://claude.ai/claude-code) CLI installed
 - kubestellar-mcp plugins (see below)
+- For source builds: Go 1.24+ and Node.js 20+
 
-## Local Development
-
-### 1. Install kubestellar-mcp Tools
+## Step 1: Install kubestellar-mcp Tools
 
 The console uses kubestellar-mcp plugins to talk to your clusters. See [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for full details.
 
@@ -58,73 +61,80 @@ brew install kubestellar-ops kubestellar-deploy
 
 Verify installation with `/mcp` in Claude Code - you should see both plugins connected.
 
-### 2. Clone the Repository
+## Step 2: Run the Console
+
+### Option A: Pre-built binaries (recommended)
+
+```bash
+curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
+```
+
+### Option B: Run from source (no OAuth)
 
 ```bash
 git clone https://github.com/kubestellar/console.git
 cd console
+./start-dev.sh
 ```
 
-### 3. Create a GitHub OAuth App
+Compiles from source and starts a Vite dev server on port 5174. No GitHub credentials needed.
 
-Go to [GitHub Developer Settings](https://github.com/settings/developers) → OAuth Apps → New OAuth App
+### Option C: Run from source with GitHub OAuth
 
-- **Application name**: `KubeStellar Console (dev)`
-- **Homepage URL**: `http://localhost:5174`
-- **Authorization callback URL**: `http://localhost:8080/auth/github/callback`
+If you want GitHub login (for multi-user or testing the full auth flow):
 
-### 4. Configure Environment
+1. Create a GitHub OAuth App at [GitHub Developer Settings](https://github.com/settings/developers) → OAuth Apps → New OAuth App:
+   - **Application name**: `KubeStellar Console (dev)`
+   - **Homepage URL**: `http://localhost:8080`
+   - **Authorization callback URL**: `http://localhost:8080/auth/github/callback`
 
-Create a `.env` file in the project root:
+2. Create a `.env` file in the project root:
+   ```bash
+   GITHUB_CLIENT_ID=your_client_id
+   GITHUB_CLIENT_SECRET=your_client_secret
+   ```
 
-```bash
-# .env file
-GITHUB_CLIENT_ID=your_github_client_id
-GITHUB_CLIENT_SECRET=your_github_client_secret
-DEV_MODE=false
-FRONTEND_URL=http://localhost:5174
-JWT_SECRET=your-secret-key-here
-DATABASE_PATH=./data/console.db
-```
-
-Or export directly:
-
-```bash
-export GITHUB_CLIENT_ID=your_client_id
-export GITHUB_CLIENT_SECRET=your_client_secret
-```
-
-### 5. Run the Development Server
-
-```bash
-./dev.sh
-```
-
-This starts both the backend (port 8080) and frontend (port 5174).
-
-### 6. Access the Console
+3. Start the console:
+   ```bash
+   git clone https://github.com/kubestellar/console.git
+   cd console
+   ./startup-oauth.sh
+   ```
 
 Open http://localhost:5174 and sign in with GitHub.
+
+## Step 3: Access the Console
+
+Open http://localhost:5174 (source builds) or http://localhost:8080 (curl quickstart).
+
+Your clusters from `~/.kube/config` appear automatically. If running with OAuth, sign in with GitHub. Without OAuth, you're logged in as `dev-user`.
 
 ## Kubernetes Deployment
 
 ### Using Helm
 
 ```bash
-# Create namespace
+# Create namespace and secrets
 kubectl create namespace ksc
 
-# Create secrets
 kubectl create secret generic ksc-secrets \
   --namespace ksc \
   --from-literal=github-client-id=$GITHUB_CLIENT_ID \
   --from-literal=github-client-secret=$GITHUB_CLIENT_SECRET
 
 # Install chart
-helm install ksc ./deploy/helm/kubestellar-console \
+helm install ksc oci://ghcr.io/kubestellar/charts/console \
   --namespace ksc \
   --set github.existingSecret=ksc-secrets
 ```
+
+### Using deploy script
+
+```bash
+curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/deploy.sh | bash
+```
+
+Supports `--context`, `--openshift`, `--ingress <host>`, and `--github-oauth` flags.
 
 ### OpenShift
 
