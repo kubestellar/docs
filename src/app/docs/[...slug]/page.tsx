@@ -255,7 +255,7 @@ function sanitizeHtmlForMdx(content: string): string {
 }
 
 // Replace template variables with actual values
-function replaceTemplateVariables(content: string, messages?: Record<string, any>): string {
+function replaceTemplateVariables(content: string, messages?: Record<string, unknown>): string {
   // Use CURRENT_VERSION from config to support versioned documentation
   // When a version branch is created, CURRENT_VERSION is updated to that version
   const version = CURRENT_VERSION as string
@@ -283,11 +283,11 @@ function replaceTemplateVariables(content: string, messages?: Record<string, any
   if (messages) {
     result = result.replace(/\{\{\s*t\s*\(\s*['"]([^'"]+)['"]\s*\)\s*\}\}/g, (match, keyPath) => {
       const keys = keyPath.split('.')
-      let current: any = messages
+      let current: unknown = messages
 
       for (const key of keys) {
-        if (current && typeof current === 'object' && key in current) {
-          current = current[key]
+        if (current && typeof current === 'object' && key in (current as Record<string, unknown>)) {
+          current = (current as Record<string, unknown>)[key]
         } else {
           return match // Return original if path doesn't exist
         }
