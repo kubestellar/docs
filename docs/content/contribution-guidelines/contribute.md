@@ -34,11 +34,11 @@ If you are contributing via the command line terminal, run the `git commit --sig
 Read the resources to gain a better understanding of the contribution processes.
 
 - **[Code of Conduct](../contribution-guidelines/coc-inc.md)** The CNCF code of conduct for the KubeStellar community
-- **[Contribution Guidelines](../contribution-guidelines/contributing.md)** General Guidelines for our Github processes
 - **[Contributor Ladder](../contribution-guidelines/contributor_ladder.md)** Path for becoming a KubeStellar maintainer by contributing
 - **[License](../contribution-guidelines/license-inc.md)** The Apache 2.0 license under which KubeStellar is published
 - **[Governance](../contribution-guidelines/governance-inc.md)** The protocols under which the KubeStellar project is run
 - **[Onboarding](../contribution-guidelines/onboarding-inc.md)** The procedures for adding/removing members of our Github organization
+- **[Code Contribution Guidelines](../contribution-guidelines/CONTRIBUTINGKS.md)** General Guidelines for contributing to code via our Github processes
 - **Docs/Website**
     - **[Docs Structure](../contribution-guidelines/documentation/docs-structure-inc.md)** Overview of how our website is built with from the source file content and Nextra pagemap
     - **[Simple Changes](../contribution-guidelines/documentation/simple-docs-inc.md)** How to make quick edit suggestions
@@ -49,8 +49,8 @@ Read the resources to gain a better understanding of the contribution processes.
     - **[Policy](../contribution-guidelines/security/security-inc.md)** Security Policies
     - **[Contacts](../contribution-guidelines/security/security_contacts-inc.md)** Who to contact with security concerns
 - **[Testing](testing.md)** How to use the preconfigured tests in the repository
-- **[Packaging](packaging.md)** How the components of KubeStellar are organized
-- **[Release Process](release.md)** All the steps involved in creating and publishing a new release of KubeStellar
-- **[Release Testing](release-testing.md)** Steps involved in testing a release or release candidate before merging it into the main branch.
-- **[Sign-off and Signing Contributions](pr-signoff.md)** How to properly configure your commits so they are both signed and "signed off" (and how those terms differ)
+- **[Packaging](../kubestellar/packaging.md)** How the components of KubeStellar are organized
+- **[Release Process](../kubestellar/release.md)** All the steps involved in creating and publishing a new release of KubeStellar
+- **[Release Testing](../kubestellar/release-testing.md)** Steps involved in testing a release or release candidate before merging it into the main branch.
+- **[Sign-off and Signing Contributions](../kubestellar/pr-signoff.md)** How to properly configure your commits so they are both signed and "signed off" (and how those terms differ)
 
