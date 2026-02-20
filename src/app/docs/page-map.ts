@@ -55,17 +55,17 @@ const pretty = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/
 // Recursively get all markdown files from the local docs directory
 function getAllDocFiles(dir: string, baseDir: string = dir): string[] {
   const files: string[] = []
-  
+
   if (!fs.existsSync(dir)) {
     return files
   }
-  
+
   const entries = fs.readdirSync(dir, { withFileTypes: true })
-  
+
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name)
     const relativePath = path.relative(baseDir, fullPath)
-    
+
     if (entry.isDirectory()) {
       // Skip hidden directories and node_modules
       if (!entry.name.startsWith('.') && entry.name !== 'node_modules') {
@@ -76,7 +76,7 @@ function getAllDocFiles(dir: string, baseDir: string = dir): string[] {
       files.push(relativePath.replace(/\\/g, '/'))
     }
   }
-  
+
   return files
 }
 
@@ -294,10 +294,11 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
           }
         ]
       },
-      { 
-        'UI': [
+      {
+        'UI (User Interface)': [
           { 'Overview': 'ui-docs/ui-overview.md' },
-          { 'ITS cluster management': 'ui-docs/its-cluster-management.md'}
+          { 'WECS Remote Monitoring': 'ui-docs/wecs-remote-monitoring.md' },
+          { 'ITS cluster management': 'ui-docs/its-cluster-management.md' }
         ]
       },
       { 'Teardown': 'kubestellar/teardown.md' }
