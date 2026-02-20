@@ -37,8 +37,8 @@ Read the resources to gain a better understanding of the contribution processes.
 - **[Contributor Ladder](../contribution-guidelines/contributor_ladder.md)** Path for becoming a KubeStellar maintainer by contributing
 - **[License](../contribution-guidelines/license-inc.md)** The Apache 2.0 license under which KubeStellar is published
 - **[Governance](../contribution-guidelines/governance-inc.md)** The protocols under which the KubeStellar project is run
-- **[Onboarding](../contribution-guidelines/onboarding-inc.md)** The procedures for adding/removing members of our Github organization
-- **[Code Contribution Guidelines](../contribution-guidelines/CONTRIBUTINGKS.md)** General Guidelines for contributing to code via our Github processes
+- **[Onboarding](../contribution-guidelines/onboarding-inc.md)** The procedures for adding/removing members of our GitHub organization
+- **[Code Contribution Guidelines](../contribution-guidelines/CONTRIBUTINGKS.md)** General Guidelines for contributing to code via our GitHub processes
 - **Docs/Website**
     - **[Docs Structure](../contribution-guidelines/documentation/docs-structure-inc.md)** Overview of how our website is built with from the source file content and Nextra pagemap
     - **[Simple Changes](../contribution-guidelines/documentation/simple-docs-inc.md)** How to make quick edit suggestions
