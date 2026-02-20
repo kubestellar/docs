@@ -181,9 +181,9 @@ helm upgrade --install kubeflex-operator oci://ghcr.io/kubestellar/kubeflex/char
 --set externalPort=9443
 ```
 
-The `kubeflex-system` namespace is required for installing and running KubeFlex.
-If it does not already exists, the Helm chart will create one.
-Do not use any other namespace for this purpose.
+The Helm chart installs KubeFlex into the `kubeflex-system` namespace.
+If the namespace does not already exist, it will be created automatically.
+No manual namespace creation or selection is required.
 
 ### Installing KubeFlex with Helm on OpenShift
 
