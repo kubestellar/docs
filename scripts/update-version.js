@@ -282,6 +282,18 @@ if (fs.existsSync(sharedJsonPath)) {
   // Update timestamp
   sharedConfig.updatedAt = new Date().toISOString();
 
+  // Update editBaseUrls for kubestellar to always point to the current branch.
+  // The NEXT_PUBLIC_BRANCH env var (set in netlify.toml) takes precedence at build
+  // time, but keeping shared.json in sync helps as a documentation reference and
+  // serves as the fallback value for any deploy that pre-dates the env-var approach.
+  if (project === 'kubestellar' && sharedConfig.editBaseUrls) {
+    const newEditBaseUrl = `https://github.com/kubestellar/docs/edit/${branch}/docs/content`;
+    if (sharedConfig.editBaseUrls.kubestellar !== newEditBaseUrl) {
+      sharedConfig.editBaseUrls.kubestellar = newEditBaseUrl;
+      console.log(`  Updated editBaseUrls.kubestellar to ${newEditBaseUrl}`);
+    }
+  }
+
   // Write updated shared.json
   fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedConfig, null, 2) + '\n');
   console.log(`✅ Updated ${sharedJsonPath}`);

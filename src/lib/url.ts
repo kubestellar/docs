@@ -1,4 +1,21 @@
 /**
+ * The current git branch, baked into the bundle at Netlify build time via the
+ * NEXT_PUBLIC_BRANCH=${BRANCH:-main} build command in netlify.toml.
+ * Falls back to 'main' for local development or any build that doesn't set the var.
+ */
+export const CURRENT_BRANCH = process.env.NEXT_PUBLIC_BRANCH || 'main';
+
+/**
+ * Returns the GitHub edit base URL for KubeStellar docs, targeting the branch
+ * that was actually deployed.  Using CURRENT_BRANCH instead of a hard-coded
+ * 'main' ensures version-pinned branches (e.g. docs/0.29.0) link to their own
+ * content rather than to main, where the directory layout may differ.
+ */
+export function getKubestellarEditBaseUrl(): string {
+  return `https://github.com/kubestellar/docs/edit/${CURRENT_BRANCH}/docs/content`;
+}
+
+/**
  * Get the base URL for the application.
  * In preview/deploy contexts, uses the current host.
  * In production, uses the configured production URL.

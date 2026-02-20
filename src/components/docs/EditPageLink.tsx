@@ -2,9 +2,10 @@
 
 import { useSharedConfig } from '@/hooks/useSharedConfig';
 import type { ProjectId } from '@/config/versions';
+import { getKubestellarEditBaseUrl } from '@/lib/url';
 
 const STATIC_EDIT_BASE_URLS: Record<ProjectId, string> = {
-  kubestellar: 'https://github.com/kubestellar/docs/edit/main/docs/content',
+  kubestellar: getKubestellarEditBaseUrl(),
   a2a: 'https://github.com/kubestellar/a2a/edit/main/docs',
   kubeflex: 'https://github.com/kubestellar/kubeflex/edit/main/docs',
   "multi-plugin": 'https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs',
@@ -39,8 +40,13 @@ export function buildGitHubEditUrl(
   projectId: ProjectId,
   editBaseUrls?: Record<string, string>
 ): string | null {
+  // For kubestellar, always use the branch-aware static URL so that the edit link
+  // correctly targets the deployed branch (e.g. docs/0.29.0) rather than whatever
+  // branch value the shared config happens to carry.
   const baseUrl =
-    editBaseUrls?.[projectId] ?? STATIC_EDIT_BASE_URLS[projectId];
+    projectId === 'kubestellar'
+      ? STATIC_EDIT_BASE_URLS[projectId]
+      : (editBaseUrls?.[projectId] ?? STATIC_EDIT_BASE_URLS[projectId]);
 
   if (!baseUrl) return null;
 
