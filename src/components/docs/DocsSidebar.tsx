@@ -4,9 +4,10 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
-import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
+import { ChevronRight, ChevronDown, FileText} from 'lucide-react';
 import { RelatedProjects } from './RelatedProjects';
 import { useDocsMenu } from './DocsProvider';
+import { SidebarFooter } from './SidebarFooter';
 
 interface MenuItem {
   name: string;
@@ -48,30 +49,46 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   const textColor = isDark ? '#e5e7eb' : '#374151'; // gray-200 : gray-700
   // Stable layout values - only recalculate on resize or banner change
   const [layoutValues, setLayoutValues] = useState({ top: '4rem', height: 'calc(100vh - 4rem)' });
-  const layoutCalculatedRef = useRef(false);
+
+  const calculateOffsets = () => {
+    const navbar = document.querySelector('.nextra-nav-container') as HTMLElement | null;
+    if (!navbar) return;
+
+    const navbarBottomY = navbar.getBoundingClientRect().bottom;
+
+    setLayoutValues({
+      top: `${navbarBottomY}px`,
+      height: `calc(100vh - ${navbarBottomY}px)`
+    });
+  };
+
 
   useEffect(() => {
-    const calculateOffsets = () => {
-      const navbar = document.querySelector('.nextra-nav-container');
-      if (navbar) {
-        const navbarHeight = (navbar as HTMLElement).offsetHeight;
-        const newTop = `${navbarHeight}px`;
-        const newHeight = `calc(100vh - ${navbarHeight}px)`;
-        setLayoutValues({ top: newTop, height: newHeight });
-        layoutCalculatedRef.current = true;
+    let ticking = false;
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          calculateOffsets();
+          ticking = false;
+        });
       }
     };
 
-    // Calculate on mount and when banner state changes
-    // Use setTimeout to allow DOM to update after banner dismiss
-    const timeoutId = setTimeout(calculateOffsets, 50);
+    const t = setTimeout(calculateOffsets, 300);
 
     window.addEventListener('resize', calculateOffsets);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
     return () => {
-      clearTimeout(timeoutId);
+      clearTimeout(t);
       window.removeEventListener('resize', calculateOffsets);
+      window.removeEventListener('scroll', onScroll);
     };
   }, [bannerDismissed]);
+
+
 
   // Store initial pathname for initialization
   const initialPathnameRef = useRef(pathname);
@@ -128,7 +145,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     findActivePath(pageMap);
     collapseAll(pageMap);
     setCollapsed(initialCollapsed);
-  }, [pageMap]);
+  }, [pageMap, navInitialized, setCollapsed]);
 
   const toggleCollapse = (itemKey: string) => {
     toggleNavCollapsed(itemKey);
@@ -233,12 +250,9 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
         <nav className="p-4 pb-6 w-full space-y-2">
           {pageMap.map(item => renderMenuItem(item))}
         </nav>
+      <RelatedProjects bannerActive={!bannerDismissed} />
       </div>
-
-      {/* Related Projects - fixed at bottom, shrink-0 prevents shrinking */}
-      <div className="shrink-0">
-        <RelatedProjects onCollapse={toggleSidebar} isMobile={menuOpen} bannerActive={!bannerDismissed} />
-      </div>
+      <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
     </>
   );
 
@@ -249,7 +263,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
       <div className="flex-1"></div>
 
       {/* Footer with icon buttons */}
-      <RelatedProjects onCollapse={toggleSidebar} variant="slim" />
+      <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} variant="slim" />
     </div>
   );
 
