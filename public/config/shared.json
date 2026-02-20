@@ -239,7 +239,7 @@
     "kubestellar": "https://github.com/kubestellar/docs/edit/main/docs/content",
     "a2a": "https://github.com/kubestellar/a2a/edit/main/docs",
     "kubeflex": "https://github.com/kubestellar/kubeflex/edit/main/docs",
-    "multi-plugin": "https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs",
+    "multi-plugin": "https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin",
     "kubestellar-mcp": "https://github.com/kubestellar/kubestellar-mcp/edit/main/docs",
     "console": "https://github.com/kubestellar/docs/edit/main/docs/content/console"
   },
