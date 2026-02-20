@@ -7,13 +7,13 @@ This section provides information on the Code of Conduct, guidelines, terms, and
 
 There are different ways you can contribute to the KubeStellar development:
 
-- **Documentation:** Enhance the documentation by fixing typos, enabling semantic clarity, adding links, updating information on changelogs and release versions, and implementing content strategy.
+- **Documentation:** Enhance the documentation by fixing typos, enabling semantic clarity, adding links, updating information on changelogs and release versions, and implementing content strategy. _Note that the KubeStellar documentation is consolidated into its own repository now._
   
 - **Code:** Indicate your interest in developing new features, modifying existing features, raising concerns, or fixing bugs.
 
 Before you start contributing, familiarize yourself with our community [Code of Conduct](../contribution-guidelines/coc-inc.md).
 
-## Visit the GitHub repository
+## Visit the GitHub organization and repositories
 
 The KubeStellar [GitHub organization](https://github.com/kubestellar) is a collection of the different KubeStellar repositories that you can start contributing to.
 
@@ -23,7 +23,7 @@ Ensure that you comply with the rules and policy guiding the repository contribu
 
 If you are contributing via the GitHub web interface, navigate to the **Settings** section of your forked repository and enable the **Require contributors to sign off on web-based commits** setting. This will allow you to automatically sign off your commits via GitHub directly, as shown below.
 
-![signoff-via-github-ui](./images/signoff-via-github-ui.png)
+![signoff-via-github-ui](../images/signoff-via-github-ui.png)
 
 If you are contributing via the command line terminal, run the `git commit --signoff --message [commit message]` or `git commit -s -m [commit message]` command when making each commit. For more detailed information about signing and signing off on commits, including steps to create signing keys and use both the `-s` and `-S` options, see [Sign-off and Signing Contributions](pr-signoff.md).
 
@@ -34,15 +34,17 @@ If you are contributing via the command line terminal, run the `git commit --sig
 Read the resources to gain a better understanding of the contribution processes.
 
 - **[Code of Conduct](../contribution-guidelines/coc-inc.md)** The CNCF code of conduct for the KubeStellar community
-- **[Contribution Guidelines](../contribution-guidelines/contributing-inc.md)** General Guidelines for our Github processes
+- **[Contribution Guidelines](../contribution-guidelines/contributing.md)** General Guidelines for our Github processes
 - **[Contributor Ladder](../contribution-guidelines/contributor_ladder.md)** Path for becoming a KubeStellar maintainer by contributing
 - **[License](../contribution-guidelines/license-inc.md)** The Apache 2.0 license under which KubeStellar is published
 - **[Governance](../contribution-guidelines/governance-inc.md)** The protocols under which the KubeStellar project is run
 - **[Onboarding](../contribution-guidelines/onboarding-inc.md)** The procedures for adding/removing members of our Github organization
-- **Website**
-    - **[Build Overview](../contribution-guidelines/operations/document-management.md)** How our website is built and how to collaboratively work on changes to it using Github staging
-    - **[Style Guide](../contribution-guidelines/operations/docs-styleguide.md)** Guidelines on writing the prose parts of our documentation/website
-    - **[Testing website PRs](../contribution-guidelines/operations/testing-doc-prs.md)** how to test website changes using only your local workstation
+- **Docs/Website**
+    - **[Docs Structure](../contribution-guidelines/documentation/docs-structure-inc.md)** Overview of how our website is built with from the source file content and Nextra pagemap
+    - **[Simple Changes](../contribution-guidelines/documentation/simple-docs-inc.md)** How to make quick edit suggestions
+    - **[Version Management](../contribution-guidelines/documentation/docs-version-inc.md)** Brief summary of the multi-version support
+    - **[Detailed Contribution Guide](../contribution-guidelines/documentation/contributing-inc.md)** All the gory details on the site structure and rendering and making more complex changes <br /> (includes the info in the previous topics)
+    - **[Style Guide](../contribution-guidelines/documentation/docs-styleguide.md)** Guidelines on writing the prose parts of our documentation/website
 - **Security**
     - **[Policy](../contribution-guidelines/security/security-inc.md)** Security Policies
     - **[Contacts](../contribution-guidelines/security/security_contacts-inc.md)** Who to contact with security concerns
