@@ -387,7 +387,7 @@
       },
       "docsGuidelines": {
         "title": "Docs Guidelines",
-        "description": "Detailed guidelines for contributing to KubeStellar documentation and website"
+        "description": "Detailed guidelines for contributing to KubeStellar documentation and website."
       },
       "releaseProcess": {
         "title": "Release Process",
