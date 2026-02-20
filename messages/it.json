@@ -357,8 +357,8 @@
         "title": "Codice di condotta",
         "description": "Il nostro impegno per creare una community accogliente e inclusiva in cui tutti possano contribuire e crescere."
       },
-      "guidelines": {
-        "title": "Linee guida",
+      "codeGuidelines": {
+        "title": "Linee guida per il codice",
         "description": "Best practice per contribuire al progetto KubeStellar. Linee guida essenziali per contributi di qualità."
       },
       "license": {
@@ -381,9 +381,9 @@
         "title": "Gestione della documentazione",
         "description": "Panoramica sulla gestione e l'aggiornamento della documentazione. Workflow completo per la documentazione."
       },
-      "testingWebsitePRs": {
-        "title": "Test delle PR del sito",
-        "description": "Come testare le pull request per il sito web di KubeStellar. Garanzia di qualità per le modifiche web."
+      "docsGuidelines": {
+        "title": "Linee guida per la documentazione",
+        "description": "Linee guida dettagliate per contribuire alla documentazione e al sito web di KubeStellar."
       },
       "releaseProcess": {
         "title": "Processo di rilascio",

@@ -327,9 +327,9 @@
         "title": "行為準則",
         "description": "我們承諾建立一個歡迎且包容的社群，讓每個人都能貢獻並茁壯成長。"
       },
-      "guidelines": {
-        "title": "指南",
-        "description": "為 KubeStellar 專案做出貢獻的最佳實務。品質貢獻的基本指南。"
+      "codeGuidelines": {
+        "title": "程式碼指南",
+        "description": "向KubeStellar專案貢獻程式碼的最佳實踐。高品質貢獻的基本指南。"
       },
       "license": {
         "title": "授權",
@@ -351,9 +351,9 @@
         "title": "文件管理概覽",
         "description": "文件管理和更新的概覽。全面的文件工作流程。"
       },
-      "testingWebsitePRs": {
-        "title": "測試網站 PR",
-        "description": "如何測試 KubeStellar 網站的拉取請求。網頁變更的品質保證。"
+      "docsGuidelines": {
+        "title": "文件指南",
+        "description": "向KubeStellar文件和網站貢獻的詳細指南。"
       },
       "releaseProcess": {
         "title": "發布流程",
