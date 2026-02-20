@@ -7,7 +7,7 @@ const STATIC_EDIT_BASE_URLS: Record<ProjectId, string> = {
   kubestellar: 'https://github.com/kubestellar/docs/edit/main/docs/content',
   a2a: 'https://github.com/kubestellar/a2a/edit/main/docs',
   kubeflex: 'https://github.com/kubestellar/kubeflex/edit/main/docs',
-  "multi-plugin": 'https://github.com/kubestellar/kubectl-multi-plugin/edit/main/docs',
+  "multi-plugin": 'https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin',
   "kubestellar-mcp": 'https://github.com/kubestellar/kubectl-claude/edit/main/docs',
   console: 'https://github.com/kubestellar/console/edit/main/docs',
 };
