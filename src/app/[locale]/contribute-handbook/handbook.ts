@@ -9,7 +9,7 @@ export interface HandbookCard {
 }
 
 export const handbookCards: HandbookCard[] = [
-{
+  {
     id: "onboarding",
     iconType: "user-plus",
     iconPath:
