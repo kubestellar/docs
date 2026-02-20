@@ -1,6 +1,6 @@
 <!--onboarding-start-->
-KubeStellar GitHub Organization
-On-boarding and Off-boarding Policy
+# KubeStellar GitHub Organization
+## On-boarding and Off-boarding Policy
 
 Effective Date: June 1st, 2023
 

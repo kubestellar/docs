@@ -361,9 +361,9 @@
         "title": "Code of Conduct",
         "description": "Our pledge to create a welcoming and inclusive community for everyone to contribute and thrive."
       },
-      "guidelines": {
-        "title": "Guidelines",
-        "description": "Best practices for contributing to the KubeStellar project. Essential guidelines for quality contributions."
+      "codeGuidelines": {
+        "title": "Code Guidelines",
+        "description": "Best practices for contributing code to the KubeStellar project. Essential guidelines for quality contributions."
       },
       "license": {
         "title": "License",
@@ -385,9 +385,9 @@
         "title": "Docs Management Overview",
         "description": "Overview of how documentation is managed and updated. Comprehensive documentation workflow."
       },
-      "testingWebsitePRs": {
-        "title": "Testing Website PRs",
-        "description": "How to test pull requests for the KubeStellar website. Quality assurance for web changes."
+      "docsGuidelines": {
+        "title": "Docs Guidelines",
+        "description": "Detailed guidelines for contributing to KubeStellar documentation and website."
       },
       "releaseProcess": {
         "title": "Release Process",
