@@ -327,9 +327,9 @@
         "title": "Código de Conduta",
         "description": "Nosso compromisso de criar uma comunidade acolhedora e inclusiva para todos contribuírem e prosperarem."
       },
-      "guidelines": {
-        "title": "Diretrizes",
-        "description": "Melhores práticas para contribuir com o projeto KubeStellar. Diretrizes essenciais para contribuições de qualidade."
+      "codeGuidelines": {
+        "title": "Diretrizes de código",
+        "description": "Melhores práticas para contribuir com código ao projeto KubeStellar. Diretrizes essenciais para contribuições de qualidade."
       },
       "license": {
         "title": "Licença",
@@ -351,9 +351,9 @@
         "title": "Visão Geral do Gerenciamento de Documentação",
         "description": "Visão geral de como a documentação é gerenciada e atualizada. Fluxo de trabalho abrangente de documentação."
       },
-      "testingWebsitePRs": {
-        "title": "Testando PRs do Website",
-        "description": "Como testar pull requests para o website do KubeStellar. Garantia de qualidade para mudanças web."
+      "docsGuidelines": {
+        "title": "Diretrizes de documentação",
+        "description": "Diretrizes detalhadas para contribuir com a documentação e o site do KubeStellar."
       },
       "releaseProcess": {
         "title": "Processo de Lançamento",

@@ -331,8 +331,8 @@
         "title": "Verhaltenskodex",
         "description": "Unser Versprechen, eine einladende und inklusive Community zu schaffen, in der alle beitragen und wachsen können."
       },
-      "guidelines": {
-        "title": "Richtlinien",
+      "codeGuidelines": {
+        "title": "Code-Richtlinien",
         "description": "Best Practices für Beiträge zum KubeStellar-Projekt. Zentrale Leitlinien für hochwertige Contributions."
       },
       "license": {
@@ -355,9 +355,9 @@
         "title": "Übersicht zur Dokumentationsverwaltung",
         "description": "Überblick darüber, wie Dokumentation verwaltet und aktualisiert wird. Ein umfassender Dokumentations-Workflow."
       },
-      "testingWebsitePRs": {
-        "title": "Testen von Website-PRs",
-        "description": "Wie Pull Requests für die KubeStellar-Website getestet werden. Qualitätssicherung für Web-Änderungen."
+      "docsGuidelines": {
+        "title": "Dokumentationsrichtlinien",
+        "description": "Detaillierte Richtlinien für Beiträge zur KubeStellar-Dokumentation und Website."
       },
       "releaseProcess": {
         "title": "Release-Prozess",

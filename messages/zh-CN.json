@@ -331,9 +331,9 @@
         "title": "行为准则",
         "description": "我们致力于打造一个欢迎、包容的社区环境，让每个人都能安心贡献并共同成长。"
       },
-      "guidelines": {
-        "title": "贡献指南",
-        "description": "参与 KubeStellar 项目的最佳实践指南，是高质量贡献的重要参考。"
+      "codeGuidelines": {
+        "title": "代码贡献指南",
+        "description": "向KubeStellar项目贡献代码的最佳实践。高质量贡献的基本指南。"
       },
       "license": {
         "title": "许可证",
@@ -355,9 +355,9 @@
         "title": "文档管理概览",
         "description": "文档是如何被管理和更新的整体说明，涵盖完整的文档工作流程。"
       },
-      "testingWebsitePRs": {
-        "title": "网站 PR 测试",
-        "description": "介绍如何测试 KubeStellar 网站的拉取请求，确保网页变更的质量。"
+      "docsGuidelines": {
+        "title": "文档指南",
+        "description": "向KubeStellar文档和网站贡献的详细指南。"
       },
       "releaseProcess": {
         "title": "发布流程",

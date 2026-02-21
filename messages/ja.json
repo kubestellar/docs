@@ -360,9 +360,9 @@
         "title": "行動規範",
         "description": "すべての人が安心して貢献し、成長できる包括的で歓迎されるコミュニティを作るための取り組みです。"
       },
-      "guidelines": {
-        "title": "ガイドライン",
-        "description": "KubeStellar プロジェクトへ貢献するためのベストプラクティス。高品質な貢献のための重要な指針です。"
+      "codeGuidelines": {
+        "title": "コードガイドライン",
+        "description": "KubeStellar プロジェクトへのコード貢献に関するベストプラクティス。高品質な貢献のための重要な指針です。"
       },
       "license": {
         "title": "ライセンス",
@@ -384,9 +384,9 @@
         "title": "ドキュメント管理概要",
         "description": "ドキュメントがどのように管理・更新されているかの概要。包括的なドキュメントワークフローです。"
       },
-      "testingWebsitePRs": {
-        "title": "Web サイト PR のテスト",
-        "description": "KubeStellar Web サイトのプルリクエストをテストする方法。Web 変更の品質保証を行います。"
+      "docsGuidelines": {
+        "title": "ドキュメントガイドライン",
+        "description": "KubeStellar のドキュメントおよびウェブサイトへの貢献に関する詳細なガイドラインです。"
       },
       "releaseProcess": {
         "title": "リリースプロセス",
