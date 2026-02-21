@@ -323,7 +323,8 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
       { 'Onboarding': 'contribution-guidelines/onboarding-inc.md' },
       {
         'CI/CD': [
-          { 'GitHub Actions': 'contribution-guidelines/operations/github-actions.md' }
+          { 'GitHub Actions': 'contribution-guidelines/operations/github-actions.md' },
+          { 'Demoting Component Repo Docs': 'contribution-guidelines/operations/demote-component-docs.md' }
         ]
       },
       {
