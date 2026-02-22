@@ -436,8 +436,9 @@ export default function GetStartedSection() {
                     className="flex items-center justify-center px-3 py-2.5 rounded-lg bg-gradient-to-r from-blue-600/80 to-blue-700/80 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium transition-all duration-200 border border-blue-500/30"
                   >
                     <svg
-                      className="h-4 w-4 mr-2"
+                      className="h-5 w-5 mr-2"
                       viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         fill="#FF0000"
