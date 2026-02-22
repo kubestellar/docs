@@ -149,7 +149,9 @@ export default function Navbar() {
           "https://api.github.com/repos/kubestellar/kubestellar"
         );
         if (!response.ok) {
-          throw new Error("Network response was not okay");
+          // Silently fail and keep default values
+          console.warn("GitHub API request failed with status:", response.status);
+          return;
         }
         const data = await response.json();
         const formatNumber = (num: number): string => {
@@ -164,7 +166,8 @@ export default function Navbar() {
           watchers: formatNumber(data.subscribers_count),
         });
       } catch (err) {
-        console.error("Failed to fetch Github stats: ", err);
+        // Silently fail - don't show errors to users
+        console.warn("Could not fetch GitHub stats:", err);
       }
     };
     fetchGithubStats();
