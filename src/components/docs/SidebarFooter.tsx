@@ -41,21 +41,19 @@ export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }
           onClick={() => setTheme(isDark ? 'light' : 'dark')}
           title="Change theme"
           className="group p-2 rounded-md hover:font-bold transition-all"
-          style={{ 
+          style={{
             color: isDark ? '#f3f4f6' : '#111827',
           }}
           suppressHydrationWarning
         >
           <div className="relative w-5 h-5">
-            <Moon 
-              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
-                isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
-              }`}
+            <Moon
+              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+                }`}
             />
-            <Sun 
-              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
-                !isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
-              }`}
+            <Sun
+              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${!isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
+                }`}
             />
           </div>
         </button>
@@ -65,7 +63,7 @@ export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }
           onClick={onCollapse}
           title="Expand sidebar"
           className="p-2 rounded-md hover:font-bold transition-all"
-          style={{ 
+          style={{
             color: isDark ? '#f3f4f6' : '#111827',
           }}
           suppressHydrationWarning
@@ -80,8 +78,9 @@ export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }
   if (!mounted) {
     return (
       <div
-        className="shrink-0 flex items-center gap-2 py-4 px-4 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800"
+        className="shrink-0 flex items-center gap-2 py-4 px-4 border-t border-gray-200"
         style={{
+          backgroundColor: '#ffffff',
           boxShadow: '0 -1px 6px 0 rgba(0,0,0,0.07)',
         }}
         suppressHydrationWarning
@@ -93,8 +92,10 @@ export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }
 
   return (
     <div
-      className="shrink-0 flex items-center gap-2 py-4 px-4 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800"
+      className="shrink-0 flex items-center gap-2 py-4 px-4 border-t"
       style={{
+        backgroundColor: isDark ? '#111827' : '#ffffff',
+        borderTopColor: isDark ? '#1f2937' : '#e5e7eb',
         boxShadow: '0 -1px 6px 0 rgba(0,0,0,0.07)',
       }}
       suppressHydrationWarning
@@ -104,21 +105,19 @@ export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }
         onClick={() => setTheme(isDark ? 'light' : 'dark')}
         title="Change theme"
         className="group cursor-pointer h-7 rounded-md px-2 space-x-3 text-sm font-thin transition-all hover:font-bold flex items-center gap-2 flex-1"
-        style={{ 
+        style={{
           color: isDark ? '#f3f4f6' : '#111827',
         }}
         suppressHydrationWarning
       >
         <div className="relative w-5 h-5">
-          <Moon 
-            className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
-              isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
-            }`}
+          <Moon
+            className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+              }`}
           />
-          <Sun 
-            className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
-              !isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
-            }`}
+          <Sun
+            className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${!isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
+              }`}
           />
         </div>
         <span>{isDark ? 'Dark' : 'Light'}</span>
@@ -129,7 +128,7 @@ export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }
         <button
           onClick={onCollapse}
           className="transition-all cursor-pointer rounded-md p-2 hover:font-bold"
-          style={{ 
+          style={{
             color: isDark ? '#f3f4f6' : '#111827',
           }}
           title="Collapse sidebar"

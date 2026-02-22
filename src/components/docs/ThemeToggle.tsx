@@ -59,7 +59,7 @@ export function ThemeToggle({ variant = 'fixed' }: ThemeToggleProps) {
   if (!mounted) {
     return (
       <button
-        className="fixed top-4 right-4 z-50 p-2.5 rounded-full bg-gray-200 dark:bg-gray-800 transition-colors shadow-md"
+        className="fixed top-4 right-4 z-50 p-2.5 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 transition-colors shadow-lg"
         aria-label="Toggle theme"
       >
         <div className="w-5 h-5" />
