@@ -26,12 +26,19 @@ interface RelatedProjectsProps {
 export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false }: RelatedProjectsProps) {
   const [isExpanded, setIsExpanded] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const [isProduction, setIsProduction] = useState(true); // Default to true to match SSR
   const pathname = usePathname();
   const { config } = useSharedConfig();
   const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
+    // Check if we're on production only after mount
+    const checkProduction = 
+      window.location.hostname === 'kubestellar.io' || 
+      window.location.hostname === 'www.kubestellar.io' ||
+      window.location.hostname === 'localhost';
+    setIsProduction(checkProduction);
   }, []);
 
   const isDark = mounted && resolvedTheme === 'dark';
@@ -108,12 +115,6 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
 
   const currentProject = getCurrentProject();
 
-  // Check if we're on production or a branch deploy
-  const isProduction = typeof window !== 'undefined' && 
-    (window.location.hostname === 'kubestellar.io' || 
-     window.location.hostname === 'www.kubestellar.io' ||
-     window.location.hostname === 'localhost');
-
   // Get the full URL for a project link
   // On branch deploys, use absolute URL to production for cross-project links
   const getProjectUrl = (href: string) => {
@@ -157,6 +158,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
             <a
               key={project.title}
               href={projectUrl}
+              suppressHydrationWarning
               className={`
                 block px-3 text-sm rounded-md transition-colors
                 ${bannerActive ? 'py-0.5' : 'py-1.5'}
