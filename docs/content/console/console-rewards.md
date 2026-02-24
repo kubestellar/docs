@@ -88,3 +88,36 @@ The coins system is designed for future expansion:
 - Coin balances are stored locally in your browser
 - Activity is tracked anonymously for analytics
 - You can reset your rewards in settings
+
+## GitHub Activity Rewards
+
+Earn coins from your GitHub contributions across kubestellar and llm-d organizations:
+
+| Activity | Coins | Description |
+|----------|-------|-------------|
+| Bug Issue | 300 | Open a bug report issue |
+| Feature Issue | 100 | Open a feature request |
+| Other Issue | 50 | Open any other issue type |
+| PR Opened | 200 | Open a pull request |
+| PR Merged | 500 | Get a pull request merged |
+
+### Personal GitHub Token
+
+When you connect your GitHub account, the console uses your personal token for reward calculation. This provides accurate attribution of your contributions.
+
+## Contributor Ladder
+
+The console features an 8-tier contributor ladder based on accumulated coins:
+
+| Level | Tier Name | Coin Threshold |
+|-------|-----------|----------------|
+| 1 | Observer | 0 |
+| 2 | Participant | 100 |
+| 3 | Contributor | 500 |
+| 4 | Active Contributor | 1,500 |
+| 5 | Reviewer | 5,000 |
+| 6 | Maintainer | 15,000 |
+| 7 | Lead | 50,000 |
+| 8 | Legend | 150,000 |
+
+Your current level badge and progress bar appear in the profile dropdown. Share your contributor stats on LinkedIn with the built-in share button.
