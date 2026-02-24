@@ -580,3 +580,266 @@ A new community-contributed card monitors Cloud Native Buildpacks:
 - Displays build counts, success rates, and active builders
 - Shows recent builds with status, duration, and builder information
 - Tracks buildpack versions and update availability
+
+---
+
+## Add Cluster Dialog
+
+![Add Cluster - Command Line](images/add-cluster-command-line-feb23.jpg)
+
+The console now provides a multi-method dialog for adding clusters, accessible from the **Add Cluster** button on the My Clusters page.
+
+### Command Line
+
+Step-by-step kubectl commands with copy buttons:
+
+1. `kubectl config set-cluster` — Add cluster credentials
+2. `kubectl config set-credentials` — Add authentication
+3. `kubectl config set-context` — Create a context
+4. `kubectl config use-context` — Switch to the new context
+
+The console automatically detects kubeconfig changes and displays new clusters within seconds.
+
+### Import Kubeconfig
+
+![Add Cluster - Import Kubeconfig](images/add-cluster-import-kubeconfig-feb23.jpg)
+
+Paste or upload a kubeconfig file to import clusters:
+
+- Preview which contexts are new vs. already existing
+- One-click merge into your active kubeconfig
+- Automatic backup of your current kubeconfig (`~/.kube/config.bak-<timestamp>`)
+- Requires kc-agent to be connected
+
+### Connect Manually
+
+![Add Cluster - Connect Manually](images/add-cluster-connect-manually-feb23.jpg)
+
+A 3-step wizard for manual cluster connection:
+
+1. **Server URL**: Enter the Kubernetes API server address
+2. **Authentication**: Choose between bearer token or client certificate
+3. **Context settings**: Name and configure the context
+
+A **Test Connection** button verifies the cluster is reachable before adding it.
+
+---
+
+## GPU Node Health Monitor
+
+A new **Proactive GPU Node Health Monitor** card provides comprehensive health checking for GPU nodes across all connected clusters.
+
+### Health Check Tiers
+
+The monitor runs checks at four configurable tiers:
+
+| Tier | Name | What It Checks |
+|------|------|----------------|
+| **Tier 1** | Critical | Node ready, cordoned status, stuck pods, NVIDIA operator pods, GPU reset/XID events |
+| **Tier 2** | Standard | + Capacity vs allocatable mismatch, pending GPU pods, pressure conditions |
+| **Tier 3** | Full | + Zero utilization, MIG drift, RDMA pods, failed jobs, evicted pods |
+| **Tier 4** | Deep | + nvidia-smi (ECC errors, temperature), dmesg GPU kernel errors, NVLink status |
+
+### CronJob Management
+
+Install and manage GPU health check CronJobs directly from the card:
+
+- Configure target namespace and cron schedule
+- Install/uninstall per cluster
+- Results stored in ConfigMaps with version stamps
+- RBAC-aware: only authorized users see install/uninstall buttons
+
+### Alert Integration
+
+GPU health issues integrate with the alert system:
+
+- `gpu_health_cronjob` condition type
+- Browser notifications with deep-link to affected nodes
+- AI Diagnose button for automated troubleshooting
+
+---
+
+## Accessibility (WCAG 2.1 AA)
+
+![Settings - Accessibility](images/settings-accessibility-feb23.jpg)
+
+The console now meets WCAG 2.1 AA accessibility standards with three phases of improvements.
+
+### Keyboard Navigation
+
+- **Tab**: Navigate between dashboard cards with visible focus rings
+- **Enter/Space**: Open expanded card view
+- **Arrow keys**: Navigate the card grid
+- **Escape**: Close modals with automatic focus restoration
+- **Skip-to-content**: Press Tab on page load to skip navigation
+
+### Screen Reader Support
+
+- ARIA live regions announce dynamic content changes (demo/live badges, failure indicators, refresh status)
+- Accessible names on cluster status badges, run dots, and chart containers
+- Semantic ARIA landmarks for page regions
+- Card menus use `role="menu"` and `role="menuitem"`
+
+### Visual Accessibility
+
+Configure in **Settings > Appearance > Accessibility**:
+- Color blind mode
+- Reduce motion
+- High contrast mode
+
+---
+
+## GA4 Product Telemetry
+
+![Settings - Analytics](images/settings-analytics-feb23.jpg)
+
+Anonymous Google Analytics 4 telemetry helps improve the product experience.
+
+### What Is Collected
+
+- Page views and navigation patterns
+- Card interactions (add, remove, drag, expand, configure)
+- AI mission lifecycle events
+- Auth events and tour progress
+- All events prefixed with `ksc_` — no PII is collected
+
+### Opting Out
+
+Navigate to **Settings > Analytics** and toggle the analytics switch off.
+
+### Admin Configuration
+
+Set the GA4 measurement ID via environment variable:
+
+```bash
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+---
+
+## AI Coding Agent Providers
+
+![AI Agents Dashboard](images/ai-agents-feb23.jpg)
+
+The console now supports 17+ AI coding agent providers with a mixed-mode architecture.
+
+### Supported Providers
+
+| Category | Providers |
+|----------|-----------|
+| **CLI Agents** | Claude Code, Codex, Gemini CLI, Antigravity, Bob |
+| **IDE Agents** | GitHub Copilot, Cursor, VS Code, Windsurf, JetBrains, Zed |
+| **API Agents** | Claude Desktop, Open WebUI, Raycast |
+| **Frameworks** | Cline, Continue |
+
+### Mixed-Mode Architecture
+
+API agents (thinking) and CLI agents (execution) can work together:
+- API agent reasons about the task
+- CLI agent executes tools and commands
+- API agent analyzes results
+
+Provider capabilities are defined by a bitmask: Chat (1), ToolExec (2), or both (3).
+
+---
+
+## Contribute Dialog
+
+![Contribute Dialog](images/contribute-dialog-feb23.jpg)
+
+The feedback system has been redesigned as a unified **Contribute** dialog.
+
+### Entry Points
+
+- **Navbar bug icon**: Opens the Contribute dialog
+- **Per-card bug button**: Every card toolbar now has a bug report icon that pre-fills context
+- **Profile dropdown**: "Contribute" menu item
+
+### Submit Tab
+
+- **Bug Report** (+300 coins) and **Feature Request** (+100 coins)
+- First line auto-extracts as title
+- Enlarged textarea with example prompts
+- Submissions open GitHub issues for tracking
+
+### Updates Tab
+
+Merged view of your requests, notifications, and GitHub contributions in a single scrollable list.
+
+### GitHub Activity Rewards
+
+Earn coins from GitHub activity across kubestellar and llm-d organizations:
+
+| Activity | Coins |
+|----------|-------|
+| Bug issue opened | 300 |
+| Feature issue opened | 100 |
+| Other issue opened | 50 |
+| PR opened | 200 |
+| PR merged | 500 |
+
+---
+
+## Contributor Ladder
+
+An 8-tier progression system rewards sustained community contributions:
+
+| Tier | Level | Coin Threshold |
+|------|-------|----------------|
+| 1 | Observer | 0 |
+| 2 | Participant | 100 |
+| 3 | Contributor | 500 |
+| 4 | Active Contributor | 1,500 |
+| 5 | Reviewer | 5,000 |
+| 6 | Maintainer | 15,000 |
+| 7 | Lead | 50,000 |
+| 8 | Legend | 150,000 |
+
+Your level badge appears in the profile dropdown with a progress bar showing advancement toward the next tier.
+
+---
+
+## Marketplace Author Profiles
+
+![Marketplace](images/marketplace-feb23.jpg)
+
+Marketplace items now display author attribution:
+
+- **GitHub handle**: Linked `@handle` with profile URL
+- **Hover cards**: Show GitHub avatar, coin count (100 coins per merged PR), and per-repo PR breakdown
+- **Grid view**: Full hover card on author name
+- **List view**: Compact clickable link
+
+---
+
+## Flatcar Container Linux Card
+
+A new **Flatcar Container Linux Status** card in the Provisioning category:
+
+- Node count running Flatcar Container Linux
+- OS version distribution across nodes
+- Update status — whether all Flatcar nodes are up to date
+- Health indicator based on update currency
+- Demo mode with realistic mock data; live mode from Kubernetes Node info
+
+---
+
+## Real-Time Cluster Creation Progress
+
+Creating or deleting clusters now shows phased progress with real-time WebSocket updates:
+
+- **Progress states**: `validating` → `creating`/`deleting` → `done`/`failed`
+- Inline progress banner with spinner and progress bar
+- **Docker pre-flight check**: Catches missing Docker daemon before kind/k3d creation fails
+- Auto-refreshes cluster list on completion
+- Auto-dismiss on success
+
+---
+
+## KeepAlive Route Caching
+
+Dashboard navigation is ~18% faster with KeepAlive route caching:
+
+- Previously visited dashboards render instantly without re-mounting or re-fetching
+- LRU cache preserves up to 8 route component instances
+- No configuration needed — transparent performance improvement

@@ -39,9 +39,47 @@ Nightly releases include:
 - Experimental functionality
 - May contain bugs or incomplete features
 
+### Developer
+
+The developer channel tracks the `main` branch by commit SHA:
+
+- **Version format**: Tracks latest commit SHA on `main`
+- **Release frequency**: Every commit to main
+- **Recommended for**: Console developers and contributors
+
+Developer channel features:
+- Environment prerequisites checklist (kc-agent, coding agent, OAuth, install mode, git status)
+- Collapsible list of recent commits between your build and latest `main` HEAD
+- Commit list items link to their GitHub PRs
+- 2-step manual update instructions (Pull & Build, then Restart)
+
+### Auto-Update System
+
+![Settings - Updates](images/settings-updates-feb23.jpg)
+
+The console includes a built-in auto-update system:
+
+- **Automatic Updates toggle**: Enable/disable in Settings > System Updates
+- **Update Now button**: Manually trigger an update check and apply
+- **Real-time progress**: WebSocket-powered progress banner during updates
+- **Safety features**:
+  - Uncommitted changes detection before updating
+  - Health check after restart
+  - Automatic rollback on failure
+- **Install method detection**: `dev` (source), `binary` (downloaded), `helm` (in-cluster — auto-update disabled)
+
+#### kc-agent Self-Update
+
+The local agent (kc-agent) can self-update:
+
+1. Pulls latest source from GitHub
+2. Rebuilds itself
+3. `exec()`s into the new binary seamlessly
+4. No manual restart required
+
 ## Checking for Updates
 
-![Settings Page - Updates](images/settings-page.png)
+![Settings Page - Updates](images/settings-updates-feb23.jpg)
 
 ### From the Settings Page
 

@@ -25,6 +25,8 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | `GITHUB_TOKEN` | GitHub token for nightly E2E status data | (optional) |
 | `GOOGLE_DRIVE_API_KEY` | Google Drive API key for benchmark data | (optional) |
 | `ENABLED_DASHBOARDS` | Comma-separated list of dashboard routes to show in sidebar | (all dashboards) |
+| `VITE_GA_MEASUREMENT_ID` | Google Analytics 4 measurement ID | (optional) |
+| `FEEDBACK_GITHUB_TOKEN` | GitHub token for feedback issue creation | (optional) |
 
 ## Helm Values
 
@@ -141,6 +143,28 @@ ENABLED_DASHBOARDS=clusters,workloads,events,security,alerts
 ```
 
 When set, only the listed dashboard routes will appear in the sidebar navigation. All other dashboards are hidden but still accessible via direct URL.
+
+## Analytics Configuration
+
+The console includes optional Google Analytics 4 telemetry for product usage insights.
+
+### Enabling Analytics
+
+Set the GA4 measurement ID:
+
+```bash
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+### User Opt-Out
+
+Users can opt out of analytics in **Settings > Analytics**. The toggle is off by default on self-hosted installations.
+
+### What Is Collected
+
+- Page views and navigation patterns (prefixed with `ksc_`)
+- Card interactions (add, remove, expand, configure)
+- No personally identifiable information (PII) is ever collected
 
 ## Security Considerations
 

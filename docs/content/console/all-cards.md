@@ -3,7 +3,7 @@ title: "All Cards"
 linkTitle: "Cards"
 weight: 7
 description: >
-  Complete list of all 110+ card types
+  Complete list of all 115+ card types
 ---
 
 # Dashboard Cards
@@ -23,7 +23,7 @@ Every card has:
 
 ## All 110+ Card Types
 
-The console ships with 110+ built-in cards, and you can create more using the Card Factory. Below are the main categories.
+The console ships with 115+ built-in cards, and you can create more using the Card Factory. Below are the main categories.
 
 ### Cluster Health Cards (7)
 
@@ -303,6 +303,30 @@ The console ships with 110+ built-in cards, and you can create more using the Ca
 | 93 | **Deployment Missions** | AI-assisted deployment missions with status tracking |
 | 94 | **Resource Marshall** | Cascading cluster/namespace/workload selector for resource placement |
 | 95 | **Deployment History** | Timeline of recent deployments with rollback options |
+
+---
+
+### GPU Node Health Monitor (1)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 96 | **GPU Node Health Monitor** | Proactive GPU health checks across 4 tiers (Critical, Standard, Full, Deep). CronJob management, per-node results, alert integration, AI Diagnose button |
+
+---
+
+### Flatcar Container Linux Card (1)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 97 | **Flatcar Container Linux Status** | Flatcar node count, OS version distribution, update status and health |
+
+---
+
+### Nightly E2E Test Cards (1)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 98 | **Nightly E2E Status** | Run history dots (green=pass, red=fail, amber=GPU unavailable, blue=running), per-run metadata, log/artifact links, AI Diagnose on failures |
 
 ---
 
