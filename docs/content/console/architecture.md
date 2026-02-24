@@ -10,9 +10,9 @@ description: >
 
 KubeStellar Console uses a modern, modular architecture designed for extensibility and real-time updates.
 
-## The 6 Components
+## The 7 Components
 
-The console consists of 6 components working together. See [Installation](installation.md) for how to set up each one.
+The console consists of 7 components working together. See [Configuration](configuration.md) for how to set up each one.
 
 | # | Component | Purpose |
 |---|-----------|---------|
@@ -21,7 +21,8 @@ The console consists of 6 components working together. See [Installation](instal
 | 3 | **Backend** | Go server - API, auth, data storage |
 | 4 | **MCP Bridge** | Connects backend to kubestellar-mcp tools |
 | 5 | **Claude Code Plugins** | kubestellar-ops + kubestellar-deploy ([docs](/docs/kubestellar-mcp/overview/introduction)) |
-| 6 | **Kubeconfig** | Your cluster credentials |
+| 6 | **kc-agent** | Local agent bridging browser to your kubeconfig and Claude Code CLI |
+| 7 | **Kubeconfig** | Your cluster credentials |
 
 > **Note on "GitHub OAuth App":**
 > - This is a *registration*, not a running process.
@@ -41,7 +42,7 @@ The console consists of 6 components working together. See [Installation](instal
            │ (in exchange for auth code)
            │
 ┌──────────▼──────────────────────────────────────────────────────┐
-│                  KubeStellar Console Backend                     │
+│                  KubeStellar Console Backend (:8080)              │
 │                                                                  │
 │   API Handlers    Auth (OAuth Client)   Claude AI   WebSocket    │
 │   (REST/WS)       exchanges code→token  (Proactive) Events       │
@@ -53,15 +54,21 @@ The console consists of 6 components working together. See [Installation](instal
 ┌────────────────────┐    ┌────────────────────────────────────────┐
 │   User Browser     │    │           MCP Bridge                   │
 │   React + Vite SPA │    │  kubestellar-ops + kubestellar-deploy  │
-│                    │    │  (Claude Code Plugins)                 │
+│         │          │    │  (Claude Code Plugins)                 │
 │  2. user authorizes│    └───────────────────┬────────────────────┘
 │     on GitHub,     │                        │
 │     gets JWT back  │                        │ kubeconfig
-└────────────────────┘                        ▼
-                           ┌────────────────────────────────────────┐
-                           │          Kubernetes Clusters           │
-                           │  [cluster-1]  [cluster-2]  ...         │
-                           └────────────────────────────────────────┘
+│         │          │                        ▼
+│         │ WebSocket│         ┌────────────────────────────────────────┐
+└─────────┼──────────┘         │          Kubernetes Clusters           │
+          │                    │  [cluster-1]  [cluster-2]  ...         │
+          ▼                    └────────────────────────────────────────┘
+┌────────────────────┐                        ▲
+│   kc-agent (:8585) │  kubectl / kubeconfig  │
+│   Local Agent      │────────────────────────┘
+│   (runs on user's  │
+│    machine)        │
+└────────────────────┘
 ```
 
 **Credential flows:**
@@ -105,9 +112,22 @@ A separate process (bundled in the console image) that exposes the kubestellar-m
 
 The `kubestellar-ops` and `kubestellar-deploy` MCP tools that the MCP Bridge exposes. These are Claude Code extensions installed locally (on the server or developer machine) and invoked via the MCP protocol. See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for details.
 
+### kc-agent (Local Agent)
+
+A lightweight WebSocket server (port 8585) that runs on the user's machine and bridges the browser-based console to the local kubeconfig and Claude Code CLI. When the console is hosted remotely (e.g., `console.kubestellar.io`), the kc-agent allows it to access clusters on the user's machine without exposing kubeconfig over the internet.
+
+| Aspect | Detail |
+|--------|--------|
+| **Port** | 8585 (configurable via `--port`) |
+| **Protocol** | WebSocket (JSON messages) |
+| **Origin validation** | Localhost by default; extend via `--allowed-origins` flag or `KC_ALLOWED_ORIGINS` env var |
+| **Capabilities** | kubectl execution, local cluster detection, hardware tracking, AI provider integration |
+
+See [Configuration](configuration.md#kc-agent-configuration) for all CLI flags and environment variables.
+
 ### Kubeconfig
 
-Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `KUBECONFIG`). The Backend and MCP Bridge read this file on the server to authenticate to your clusters. The kubeconfig credentials are **not** sent to the browser and are **not** involved in the GitHub OAuth flow; GitHub login is only used to establish your identity within the console.
+Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `KUBECONFIG`). The Backend, MCP Bridge, and kc-agent read this file to authenticate to your clusters. The kubeconfig credentials are **not** sent to the browser and are **not** involved in the GitHub OAuth flow; GitHub login is only used to establish your identity within the console.
 
 ### Data Flow
 
@@ -120,7 +140,8 @@ Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `K
    6. Backend issues a session JWT → stored in the browser
 2. **Dashboard Load**: Frontend sends JWT → Backend validates JWT → Backend fetches user preferences → Backend queries MCP Bridge for cluster data (using kubeconfig) → render cards
 3. **Real-time Updates**: WebSocket connection from Frontend → Backend forwards MCP Bridge event stream → card updates
-4. **Card Recommendations**: Analyze cluster state via MCP Bridge → AI generates suggestions → user accepts/snoozes
+4. **Local Agent**: Frontend connects to kc-agent (:8585) via WebSocket → kc-agent executes kubectl commands using local kubeconfig → results streamed back to browser
+5. **Card Recommendations**: Analyze cluster state via MCP Bridge → AI generates suggestions → user accepts/snoozes
 
 ## AI Mode Levels
 

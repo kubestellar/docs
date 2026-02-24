@@ -28,6 +28,52 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | `VITE_GA_MEASUREMENT_ID` | Google Analytics 4 measurement ID | (optional) |
 | `FEEDBACK_GITHUB_TOKEN` | GitHub token for feedback issue creation | (optional) |
 
+## kc-agent Configuration
+
+The local agent (`kc-agent`) runs on your machine and bridges the browser-based console to your kubeconfig. It supports CLI flags and environment variables.
+
+### CLI Flags
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--port` | Port to listen on | `8585` |
+| `--kubeconfig` | Path to kubeconfig file | `~/.kube/config` |
+| `--allowed-origins` | Comma-separated additional allowed WebSocket origins | (none) |
+| `--version` | Print version and exit | |
+
+### Agent Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `KC_ALLOWED_ORIGINS` | Comma-separated list of allowed origins for CORS | localhost only |
+| `KC_AGENT_TOKEN` | Optional shared secret for authentication | (none) |
+
+### Default Allowed Origins
+
+The agent allows connections from these origins by default:
+
+- `http://localhost`, `https://localhost`
+- `http://127.0.0.1`, `https://127.0.0.1`
+- `https://console.kubestellar.io`
+- `https://*.ibm.com`
+
+### Adding Custom Origins
+
+Use the `--allowed-origins` CLI flag or `KC_ALLOWED_ORIGINS` environment variable to allow additional origins. Both are additive — they merge on top of the defaults.
+
+```bash
+# Via CLI flag
+kc-agent --allowed-origins "https://my-console.example.com"
+
+# Via environment variable
+KC_ALLOWED_ORIGINS="https://my-console.example.com" kc-agent
+
+# Both together (all origins are merged)
+KC_ALLOWED_ORIGINS="https://env-origin.example.com" kc-agent --allowed-origins "https://flag-origin.example.com"
+```
+
+Wildcard subdomains are supported (e.g., `https://*.example.com`).
+
 ## Helm Values
 
 ### Basic Configuration
