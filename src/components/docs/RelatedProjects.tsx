@@ -27,12 +27,19 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   const [isExpanded, setIsExpanded] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [isProduction, setIsProduction] = useState(true); // Default to true to match SSR
   const pathname = usePathname();
   const { config } = useSharedConfig();
   const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
+    // Check if we're on production only after mount
+    const checkProduction =
+      window.location.hostname === 'kubestellar.io' ||
+      window.location.hostname === 'www.kubestellar.io' ||
+      window.location.hostname === 'localhost';
+    setIsProduction(checkProduction);
   }, []);
 
   const isDark = mounted && resolvedTheme === 'dark';
@@ -69,12 +76,14 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
         >
           <div className="relative w-5 h-5">
             <Moon
-              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
-                }`}
+              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
+                isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+              }`}
             />
             <Sun
-              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${!isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
-                }`}
+              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
+                !isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
+              }`}
             />
           </div>
         </button>
@@ -106,12 +115,6 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   };
 
   const currentProject = getCurrentProject();
-
-  // Check if we're on production or a branch deploy
-  const isProduction = typeof window !== 'undefined' &&
-    (window.location.hostname === 'kubestellar.io' ||
-      window.location.hostname === 'www.kubestellar.io' ||
-      window.location.hostname === 'localhost');
 
   // Get the full URL for a project link
   // On branch deploys, use absolute URL to production for cross-project links
@@ -167,6 +170,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
             <a
               key={project.title}
               href={projectUrl}
+              suppressHydrationWarning
               className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-1.5'} ${isCurrentProject ? 'font-medium' : ''}`}
               style={{
                 color: isCurrentProject
