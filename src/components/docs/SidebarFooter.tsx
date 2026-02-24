@@ -48,12 +48,14 @@ export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }
         >
           <div className="relative w-5 h-5">
             <Moon
-              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
-                }`}
+              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
+                isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+              }`}
             />
             <Sun
-              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${!isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
-                }`}
+              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
+                !isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
+              }`}
             />
           </div>
         </button>
@@ -94,6 +96,7 @@ export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }
     <div
       className="shrink-0 flex items-center gap-2 py-4 px-4 border-t"
       style={{
+        // Tailwind color equivalents: gray-900 (#111827), white (#ffffff), gray-800 (#1f2937), gray-200 (#e5e7eb), gray-100 (#f3f4f6)
         backgroundColor: isDark ? '#111827' : '#ffffff',
         borderTopColor: isDark ? '#1f2937' : '#e5e7eb',
         boxShadow: '0 -1px 6px 0 rgba(0,0,0,0.07)',
@@ -112,12 +115,14 @@ export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }
       >
         <div className="relative w-5 h-5">
           <Moon
-            className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
-              }`}
+            className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
+              isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+            }`}
           />
           <Sun
-            className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${!isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
-              }`}
+            className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
+              !isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
+            }`}
           />
         </div>
         <span>{isDark ? 'Dark' : 'Light'}</span>
