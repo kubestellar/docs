@@ -54,7 +54,8 @@ export default function DocsNavbar() {
           "https://api.github.com/repos/kubestellar/kubestellar"
         );
         if (!response.ok) {
-          throw new Error("Network response was not okay");
+          console.warn(`GitHub API returned ${response.status} — using fallback stats`);
+          return;
         }
         const data = await response.json();
         const formatNumber = (num: number): string => {
@@ -69,11 +70,13 @@ export default function DocsNavbar() {
           watchers: formatNumber(data.subscribers_count),
         });
       } catch (err) {
-        console.error("Failed to fetch Github stats: ", err);
+        console.warn("Failed to fetch GitHub stats — using fallback values:", err);
       }
     };
     fetchGithubStats();
+  }, []);
 
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         if (isSearchOpen) {
@@ -90,7 +93,7 @@ export default function DocsNavbar() {
         setIsSearchOpen(!isSearchOpen);
         setTimeout(() => searchInputRef.current?.focus(), 100);
       }
-      
+
       // Navigation in search results
       if (isSearchOpen && searchResults.length > 0) {
         if (e.key === "ArrowDown") {
@@ -105,7 +108,7 @@ export default function DocsNavbar() {
         }
       }
     };
-    
+
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isSearchOpen, searchResults, selectedIndex]);
