@@ -27,6 +27,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   const [isExpanded, setIsExpanded] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [isProduction, setIsProduction] = useState(true); // Default to true to match SSR
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const pathname = usePathname();
   const { config } = useSharedConfig();
   const { resolvedTheme, setTheme } = useTheme();
@@ -34,8 +35,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   useEffect(() => {
     setMounted(true);
     // Check if we're on production only after mount
-    const checkProduction = 
-      window.location.hostname === 'kubestellar.io' || 
+    const checkProduction =
+      window.location.hostname === 'kubestellar.io' ||
       window.location.hostname === 'www.kubestellar.io' ||
       window.location.hostname === 'localhost';
     setIsProduction(checkProduction);
@@ -75,14 +76,12 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
         >
           <div className="relative w-5 h-5">
             <Moon
-              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
-                isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
-              }`}
+              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+                }`}
             />
             <Sun
-              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${
-                !isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
-              }`}
+              className={`absolute inset-0 w-5 h-5 transition-all duration-300 group-hover:rotate-45 ${!isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-0'
+                }`}
             />
           </div>
         </button>
@@ -153,28 +152,32 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
         {relatedProjects.map((project: { title: string; href: string; description?: string }) => {
           const isCurrentProject = project.title === currentProject;
           const projectUrl = getProjectUrl(project.href);
+          const isHovered = hoveredProject === project.title;
+
+          // Determine background color explicitly — never rely on dark: Tailwind prefix
+          let bgColor: string | undefined;
+          if (isCurrentProject) {
+            bgColor = isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)';
+          } else if (isHovered) {
+            bgColor = isDark ? 'rgba(55, 65, 81, 0.6)' : 'rgba(243, 244, 246, 1)'; // gray-700/60 : gray-100
+          } else {
+            bgColor = undefined;
+          }
 
           return (
             <a
               key={project.title}
               href={projectUrl}
               suppressHydrationWarning
-              className={`
-                block px-3 text-sm rounded-md transition-colors
-                ${bannerActive ? 'py-0.5' : 'py-1.5'}
-                ${isCurrentProject
-                  ? 'font-medium'
-                  : 'hover:bg-gray-100 dark:hover:bg-gray-800'
-                }
-              `}
+              className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-1.5'} ${isCurrentProject ? 'font-medium' : ''}`}
               style={{
                 color: isCurrentProject
-                  ? (isDark ? '#60a5fa' : '#2563eb')  // blue-400 : blue-600
+                  ? (isDark ? '#60a5fa' : '#2563eb')
                   : textColor,
-                backgroundColor: isCurrentProject
-                  ? (isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)')  // blue-500/20 : blue-50
-                  : undefined
+                backgroundColor: bgColor,
               }}
+              onMouseEnter={() => !isCurrentProject && setHoveredProject(project.title)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
               {project.title}
             </a>
