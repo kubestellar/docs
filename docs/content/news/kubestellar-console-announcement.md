@@ -25,7 +25,7 @@ That's it — one command, no dependencies beyond curl. It downloads the console
 
 ## What Is It?
 
-KubeStellar Console is a multi-cluster Kubernetes dashboard that's AI-powered and adapts to how you work. It's multi-cluster from day one — OpenShift, EKS, GKE, kind, k3s, whatever you have in your kubeconfig shows up automatically.
+KubeStellar Console is a multi-cluster Kubernetes dashboard that's AI-powered and adapts to how you work. It's multi-cluster from day&nbsp;one — OpenShift, EKS, GKE, kind, k3s, whatever you have in your kubeconfig shows up automatically.
 
 ---
 
