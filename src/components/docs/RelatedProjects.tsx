@@ -97,6 +97,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   }
 
   // Determine current project from pathname
+  // THIS HIGHLIGHTS THE ACTIVE PROJECT IN THE PROJECT LIST IN THE SIDEBAR
   const getCurrentProject = () => {
     if (pathname.startsWith('/docs/a2a')) return 'A2A';
     if (pathname.startsWith('/docs/kubeflex')) return 'KubeFlex';
@@ -131,7 +132,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
         className={`flex items-center justify-between w-full text-xs font-semibold uppercase tracking-wider transition-colors ${bannerActive ? 'py-1' : 'py-2'}`}
         style={{ color: mutedTextColor }}
       >
-        <span>Related Projects</span>
+        <span>Select a KubeStellar Component</span>
         <span className="ml-auto">
           {isExpanded ? (
             <ChevronDown className="w-3 h-3" />

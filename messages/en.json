@@ -597,6 +597,11 @@
     "websiteButton": "Website",
     "watchDemoButton": "Watch Demo",
     "products": {
+       "console": {
+        "name": "KubeStellar Console",
+        "fullName": "KubeStellar Console",
+        "description": "An AI-powered, multi-cluster Kubernetes dashboard that adapts to how you work. Try it or install locally it locally in under a minute. It's multi-cluster from day one — OpenShift, EKS, GKE, kind, k3s, whatever you have in your kubeconfig shows up automatically."
+      },
       "kubestellar": {
         "name": "KubeStellar",
         "fullName": "KubeStellar",
