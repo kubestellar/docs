@@ -276,7 +276,7 @@ export default function HeroSection() {
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
                     
-                    {/* Configuring OCM */}
+                    {/* Waiting for console to start */}
                     <div className="output-line flex animate-slide-in-left [animation-delay:1.6s]">
                       <span className="text-yellow-400 font-bold w-22 inline-block">
                         {t("terminalOutputWait")}
