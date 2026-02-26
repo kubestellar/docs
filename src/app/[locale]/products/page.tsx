@@ -29,6 +29,15 @@ export default function ProductsPage() {
   // Product data with translatable strings
   const products: Product[] = [
     {
+      id: "console",
+      logo: "/products/ks-console.png",
+      website: "https://kubestellar.io/docs/console",
+      repository: "https://github.com/kubestellar/console",
+      name: t("products.console.name"),
+      fullName: t("products.console.fullName"),
+      description: t("products.console.description"),
+    },
+    {
       id: "kubestellar",
       logo: "/products/kubestellar.png",
       website: "https://kubestellar.io",
