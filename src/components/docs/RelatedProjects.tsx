@@ -12,7 +12,7 @@ const PRODUCTION_URL = 'https://kubestellar.io';
 // Generic fallback for related projects - uses safe URLs that won't break
 // The actual project list is fetched from production config
 const STATIC_RELATED_PROJECTS = [
-  { title: 'KubeStellar', href: '/docs', description: 'Multi-cluster management' },
+  { title: 'Console', href: '/docs/console', description: 'AI-enabled multi-cluster management' },
   { title: 'Loading projects...', href: '/docs', description: 'Fetching from config' },
 ];
 
@@ -105,11 +105,11 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   // Determine current project from pathname
   // THIS HIGHLIGHTS THE ACTIVE PROJECT IN THE PROJECT LIST IN THE SIDEBAR
   const getCurrentProject = () => {
+    if (pathname.startsWith('/docs/console')) return 'Console';
     if (pathname.startsWith('/docs/a2a')) return 'A2A';
     if (pathname.startsWith('/docs/kubeflex')) return 'KubeFlex';
     if (pathname.startsWith('/docs/multi-plugin')) return 'Multi Plugin';
     if (pathname.startsWith('/docs/kubestellar-mcp')) return 'KubeStellar MCP';
-    if (pathname.startsWith('/docs/console')) return 'Console';
     return 'KubeStellar';
   };
 

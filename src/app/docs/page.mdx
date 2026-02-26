@@ -5,17 +5,51 @@ KubeStellar simplifies multi-cluster Kubernetes management, enabling you to depl
 
 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', margin: '2rem 0' }}>
   <div style={{ border: '2px solid #3b82f6', borderRadius: '12px', padding: '1.5rem', background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.05))' }}>
-    <h3 style={{ marginTop: 0, color: '#3b82f6', fontSize: '1.25rem' }}><a href='https://kubestellar.github.io/kubestellar'>📖 Looking for Legacy Docs?</a></h3>
+    <h4 style={{ marginTop: 0, color: '#3b82f6', fontSize: '1.25rem' }}><a href='https://kubestellar.github.io/kubestellar'>📖 Looking for Legacy Docs?</a></h4>
     <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>This unified site currently only includes docs for the version of KubeStellar tagged <em>Latest</em>. For other versions you may visit the <a 
      href="https://kubestellar.github.io/kubestellar" style={{  textDecoration: 'underline', color: '#3b82f6', fontWeight: '999' }}>Legacy Docs Site</a> hosted via GitHub Pages and mkdocs.</p>
   </div>
 </div>
 
-## Choose Your Installation Path
+## Get Started Immediately via KubeStellar Console
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', margin: '2rem 0' }}>
+
+  <div style={{ border: '2px solid #3b82f6', borderRadius: '12px', padding: '1.5rem', background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.05))' }}>
+    <h3 style={{ marginTop: 0, color: '#3b82f6', fontSize: '1.25rem' }}>✨ Get Right to Work with KubeStellar Console</h3>
+    <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>Day One multi-cluster management with your existing resources</p>
+    <ul style={{ fontSize: '0.85rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+      <li>✓ Free to use</li>
+      <li>✓ Easy to Install</li>
+      <li>✓ Immediate Setup: under a minute!</li>
+      <li>✓ Check the demo at <a href="https://console.kubestellar.io" target="_blank">console.kubestellar.io</a></li>
+    </ul>
+    <a href="docs/console/readme" style={{ display: 'inline-block', padding: '0.5rem 1rem', background: '#3b82f6', color: 'white', borderRadius: '6px', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Get Going Now with Console →</a>
+  </div>
+</div>
+<p>Kubestellar Console is an AI-powered, multi-cluster Kubernetes dashboard that adapts to how you work. Try it or install locally it locally in under a minute. It's multi-cluster from day one — OpenShift, EKS, GKE, kind, k3s, whatever you have in your kubeconfig shows up automatically.</p>
+<p><b>KubeStellar Console</b> is <i>the</i> recommended route for installing and using KubeStellar</p>
+
+
+###  New to KubeStellar?
+
+Start here to understand what KubeStellar is and how it works:
+
+- **[Overview](/docs/what-is-kubestellar/overview)** - Learn about KubeStellar's architecture and core concepts
+- **[Architecture](/docs/what-is-kubestellar/architecture)** - Understand the system design
+
+
+<hr />
+
+### Want to customize by hand? Choose Your Development Installation Path
 
 Select the installation path that best fits your needs:
 
+
+ #### Customize the code in a development environment
 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', margin: '2rem 0' }}>
+ 
+  
   <div style={{ border: '2px solid #3b82f6', borderRadius: '12px', padding: '1.5rem', background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.05))' }}>
     <h3 style={{ marginTop: 0, color: '#3b82f6', fontSize: '1.25rem' }}>🚀 Local Development</h3>
     <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>For testing, learning, and development</p>
@@ -27,6 +61,8 @@ Select the installation path that best fits your needs:
     </ul>
     <a href="/quick-installation" style={{ display: 'inline-block', padding: '0.5rem 1rem', background: '#3b82f6', color: 'white', borderRadius: '6px', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '500' }}>Start Local Install →</a>
   </div>
+
+
 
   <div style={{ border: '2px solid #f59e0b', borderRadius: '12px', padding: '1.5rem', background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(251, 146, 60, 0.05))' }}>
     <h3 style={{ marginTop: 0, color: '#f59e0b', fontSize: '1.25rem' }}>☁️ AWS EKS Cloud</h3>
@@ -41,7 +77,8 @@ Select the installation path that best fits your needs:
   </div>
 </div>
 
-### Quick Comparison
+
+#### Quick Comparison
 
 | Feature              | Local Development | AWS EKS Cloud        |
 |---------------------|-------------------|----------------------|
@@ -53,10 +90,8 @@ Select the installation path that best fits your needs:
 | **Kubernetes Version** | 1.34+          | EKS 1.34             |
 | **Region**          | N/A               | us-east-1 recommended |
 | **Minimum Quotas**  | N/A               | vCPU: 12, Elastic IPs: 4, Target Groups: 5, NLBs: 2 |
-
-## Quick Navigation
-
-###  New to KubeStellar?
+-->
+### Quick Navigation for Developers
 
 Start here to understand what KubeStellar is and how it works:
 
@@ -64,6 +99,7 @@ Start here to understand what KubeStellar is and how it works:
 - **[Architecture](/docs/what-is-kubestellar/architecture)** - Understand the system design
 - **[Quick Installation](/quick-installation)** - Get up and running in minutes (Local)
 - **[AWS EKS Install](/docs/getting-started/aws-eks)** - Production guide for EKS (Cloud)
+
 
 ###  Install & Configure
 

@@ -10,9 +10,7 @@ export default function HeroSection() {
   const t = useTranslations("heroSection");
   const [copied, setCopied] = useState(false);
 
-  const installScript = `bash <(curl -s \\
-  https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v0.27.2/scripts/create-kubestellar-demo-env.sh) \\
-  --platform kind`;
+  const installScript = `curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash`; 
 
   const handleCopy = async () => {
     try {
@@ -222,13 +220,11 @@ export default function HeroSection() {
                           $
                         </span>
                         <div className="typing-text text-blue-300 leading-relaxed text-xs sm:text-sm">
-                          <div>bash &lt;(curl -s \</div>
+                          <div>bash &lt;(curl -ssL \</div>
                           <div className="ml-4">
-                            https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v0.27.2/scripts/create-kubestellar-demo-env.sh) \
+                            https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash \
                           </div>
-                          <div className="ml-4">
-                            --platform kind
-                          </div>
+                          
                         </div>
                       </div>
                     </div>
@@ -271,7 +267,7 @@ export default function HeroSection() {
 
                     {/* Configuring OCM */}
                     <div className="output-line flex animate-slide-in-left [animation-delay:1.6s]">
-                      <span className="text-yellow-400 font-bold w-22 inline-block">
+                      <span className="text-purple-400 font-bold w-22 inline-block">
                         {t("terminalOutputConfig")}
                       </span>
                       <span className="text-gray-300 flex-1">
@@ -279,7 +275,18 @@ export default function HeroSection() {
                       </span>
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
-
+                    
+                    {/* Configuring OCM */}
+                    <div className="output-line flex animate-slide-in-left [animation-delay:1.6s]">
+                      <span className="text-yellow-400 font-bold w-22 inline-block">
+                        {t("terminalOutputWait")}
+                      </span>
+                      <span className="text-gray-300 flex-1">
+                        {t("terminalOutputWaitText")}
+                      </span>
+                      <span className="text-emerald-400 ml-2 text-xs">✓</span>
+                    </div>
+                    
                     {/* Final Success */}
                     <div className="output-line flex animate-slide-in-left [animation-delay:1.8s]">
                       <span className="text-emerald-400 font-bold w-22 inline-block">
@@ -287,6 +294,16 @@ export default function HeroSection() {
                       </span>
                       <span className="text-gray-300 flex-1">
                         {t("terminalOutputSuccessText")}
+                      </span>
+                      <span className="text-emerald-400 ml-2 text-xs">✓</span>
+                    </div>
+                    {/* Final Success 2 */}
+                    <div className="output-line flex animate-slide-in-left [animation-delay:1.8s]">
+                      <span className="text-emerald-400 font-bold w-22 inline-block">
+                        {t("terminalOutputSuccess2")}
+                      </span>
+                      <span className="text-gray-300 flex-1">
+                        {t("terminalOutputSuccess2Text")}
                       </span>
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
@@ -315,6 +332,65 @@ export default function HeroSection() {
 
               {/* Installation Buttons Row */}
               <div className="flex flex-col sm:flex-row gap-4">
+                <h3 className="text-sm text-blue-100/80"><b>
+                  {t("immediateStart")}
+                </b></h3>
+                {/* Kubestellar Button */}
+                <IntlLink
+                  href="/docs/console/installation"
+                  className="group relative overflow-hidden flex items-center justify-between px-5 py-4 rounded-lg text-white 
+                            bg-slate-800/60 backdrop-blur-sm
+                            hover:bg-slate-800/80
+                            transition-all duration-300 transform hover:scale-[1.02]
+                            border border-blue-500/30 hover:border-blue-400/50
+                            hover:shadow-lg hover:shadow-blue-500/20"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                      <svg
+                        className="w-5 h-5 text-blue-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm font-semibold text-white">
+                        {t("consoleInstall")}
+                      </div>
+                      <div className="text-xs text-blue-200/70">
+                        {t("consoleInstallTime")}
+                      </div>
+                    </div>
+                  </div>
+                  <svg
+                    className="w-5 h-5 text-blue-400 transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </IntlLink>
+              </div>
+              <hr />
+              {/* Installation Buttons Row 2 */}
+              <div className="flex flex-col sm:flex-row gap-4">  
+                <p className="text-sm text-blue-100/80">
+                  {t("developmentStart")}
+                </p>
                 {/* Local Development Button */}
                 <IntlLink
                   href="/quick-installation"

@@ -247,6 +247,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     <>
       {/* Scrollable navigation area */}
       <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
+        <Link href="/docs" >Docs Home</Link>
         <RelatedProjects bannerActive={!bannerDismissed} />
         <nav className="p-4 pb-6 w-full space-y-2">
           {pageMap.map(item => renderMenuItem(item))}
