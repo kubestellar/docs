@@ -220,7 +220,7 @@ export default function HeroSection() {
                           $
                         </span>
                         <div className="typing-text text-blue-300 leading-relaxed text-xs sm:text-sm">
-                          <div>bash &lt;(curl -ssL \</div>
+                          <div>bash &lt;(curl -sSL \</div>
                           <div className="ml-4">
                             https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash \
                           </div>
