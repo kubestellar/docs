@@ -27,6 +27,7 @@ export interface RelatedProject {
   title: string;
   href: string;
   description?: string;
+  legacy?: boolean;
 }
 
 export interface SharedConfig {

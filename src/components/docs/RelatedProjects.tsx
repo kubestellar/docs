@@ -49,8 +49,8 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
 
   // Get related projects from config or fallback
   const allProjects = config?.relatedProjects ?? STATIC_RELATED_PROJECTS;
-  const activeProjects = allProjects.filter((p: { legacy?: boolean }) => !p.legacy);
-  const legacyProjects = allProjects.filter((p: { legacy?: boolean }) => p.legacy);
+  const activeProjects = allProjects.filter((p) => !('legacy' in p && p.legacy));
+  const legacyProjects = allProjects.filter((p) => 'legacy' in p && p.legacy);
   const [legacyExpanded, setLegacyExpanded] = useState(false);
 
   // Slim variant - icon-only vertical layout
