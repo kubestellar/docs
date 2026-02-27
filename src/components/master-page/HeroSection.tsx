@@ -148,84 +148,28 @@ export default function HeroSection() {
               {t("subtitle")}
             </p>
 
-            {/* Interactive Command Center */}
+            {/* Install Command */}
             <div className="command-center-container">
-              <div className="bg-black/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 shadow-2xl animate-command-glow">
-                {/* Terminal Header */}
-                <div className="terminal-header flex items-center space-x-3 mb-4">
-                  {/* Terminal Control Buttons */}
-                  <div className="terminal-controls flex space-x-2">
-                    <div className="w-4 h-4 rounded-full bg-red-500 animate-pulse"></div>
-                    <div className="w-4 h-4 rounded-full bg-yellow-500 animate-pulse [animation-delay:0.2s]"></div>
-                    <div className="w-4 h-4 rounded-full bg-green-500 animate-pulse [animation-delay:0.4s]"></div>
+              <div className="bg-black/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-5 shadow-2xl animate-command-glow">
+                <div className="flex items-center justify-between">
+                  <div className="font-mono text-sm text-blue-300 leading-relaxed overflow-x-auto">
+                    <span className="text-green-400 mr-2">$</span>
+                    curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
                   </div>
-
-                  {/* Terminal Title */}
-                  <span className="text-gray-400 text-sm font-mono">
-                    {t("terminalTitle")}
-                  </span>
-
-                  <div className="flex-1"></div>
-
-                  {/* Connection Status */}
-                  <div className="connection-status flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
-                    <span className="text-green-400 text-xs">{t("terminalStatus")}</span>
-                  </div>
-
-                  {/* Copy Button */}
                   <button
                     onClick={handleCopy}
-                    className={`copy-button ml-3 rounded-md p-2 
-                              transition-all duration-200 group relative ${copied ? "copy-success" : ""}`}
+                    className="copy-button ml-4 rounded-md p-2 flex-shrink-0 transition-all duration-200"
                   >
                     {copied ? (
-                      <svg
-                        className="w-4 h-4 text-green-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
+                      <svg className="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     ) : (
-                      <svg
-                        className="w-4 h-4 text-sky-400 hover:text-sky-300 transition-colors"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                        />
+                      <svg className="w-4 h-4 text-sky-400 hover:text-sky-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                       </svg>
                     )}
                   </button>
-                </div>
-
-                {/* Terminal Content */}
-                <div className="terminal-content space-y-3 font-mono text-sm">
-                  {/* Command Line */}
-                  <div className="command-line animate-command-typing">
-                    <div className="flex flex-col space-y-1">
-                      <div className="flex items-start">
-                        <span className="text-green-400 mr-2 flex-shrink-0">
-                          $
-                        </span>
-                        <div className="typing-text text-blue-300 leading-relaxed text-xs sm:text-sm">
-                          <div>curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
