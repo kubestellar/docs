@@ -62,7 +62,7 @@ Also some doc improvements, and bumps to some build-time dependencies.
 
 ## 0.27.1
 
-Bumps version of ingrex-nginx used to 0.12.1, to avoid recently disclosed vulnerabilities in older versions.
+Bumps version of ingress-nginx used to 0.12.1, to avoid recently disclosed vulnerabilities in older versions.
 
 Avoids use of release 0.11 of clusteradm, **which introduced an incompatible change in the name of a ServiceAccount**.
 

@@ -9,7 +9,7 @@
 - [Argo CD Integration](#argo-cd-integration)
 - [Uninstalling the KubeStellar Core Chart](#uninstalling-the-kubestellar-core-chart)
 
-This documents explains how to use KubeStellar Core chart to do three
+This document explains how to use KubeStellar Core chart to do three
 of the 11 installation and usage steps; please see [the
 full outline](user-guide-intro.md#the-full-story) for generalities and [Getting Started](get-started.md) for an example of usage.
 

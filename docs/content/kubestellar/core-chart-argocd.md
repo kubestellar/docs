@@ -8,7 +8,7 @@
 
 ## Overview
 
-This documents explains how to use the KubeStellar core Helm chart to:
+This document explains how to use the KubeStellar core Helm chart to:
 
 - deploy Argo CD in KubeFlex hosting cluster;
 - register every WDS as a target cluster in Argo CD; and
