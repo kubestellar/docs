@@ -231,9 +231,9 @@ export default function HeroSection() {
                   </div>
 
                   {/* Command Output */}
-                  <div className="command-output space-y-2 ml-6 animate-fade-in [animation-delay:0.8s] [animation-fill-mode:forwards]">
+                  <div id="output1" className="command-output space-y-2 ml-6 animate-text-reveal [animation-delay=5s]">
                     {/* Header */}
-                    <div className="output-line flex animate-slide-in-left [animation-delay:1s]">
+                    <div className="output-line flex animate-slide-in-left">
                       <span className="text-cyan-400 font-bold w-22 inline-block">
                         {t("terminalOutputInfo")}
                       </span>
@@ -243,8 +243,8 @@ export default function HeroSection() {
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
 
-                    {/* Creating clusters */}
-                    <div className="output-line flex animate-slide-in-left [animation-delay:1.2s]">
+                    {/* Setup Message */}
+                    <div id="output2" className="output-line flex animate-slide-in-left-2">
                       <span className="text-blue-400 font-bold w-22 inline-block">
                         {t("terminalOutputSetup")}
                       </span>
@@ -254,8 +254,8 @@ export default function HeroSection() {
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
 
-                    {/* Installing KubeFlex */}
-                    <div className="output-line flex animate-slide-in-left [animation-delay:1.4s]">
+                    {/* Install Message */}
+                    <div id="output3" className="output-line flex animate-slide-in-left-3">
                       <span className="text-purple-400 font-bold w-22 inline-block">
                         {t("terminalOutputInstall")}
                       </span>
@@ -265,8 +265,8 @@ export default function HeroSection() {
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
 
-                    {/* Configuring OCM */}
-                    <div className="output-line flex animate-slide-in-left [animation-delay:1.6s]">
+                    {/* Config Message */}
+                    <div id="output4" className="output-line flex animate-slide-in-left-4">
                       <span className="text-purple-400 font-bold w-22 inline-block">
                         {t("terminalOutputConfig")}
                       </span>
@@ -276,8 +276,8 @@ export default function HeroSection() {
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
                     
-                    {/* Waiting for console to start */}
-                    <div className="output-line flex animate-slide-in-left [animation-delay:1.6s]">
+                    {/* Wait Message */}
+                    <div id="output5" className="output-line flex animate-slide-in-left-5">
                       <span className="text-yellow-400 font-bold w-22 inline-block">
                         {t("terminalOutputWait")}
                       </span>
@@ -287,8 +287,8 @@ export default function HeroSection() {
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
                     
-                    {/* Final Success */}
-                    <div className="output-line flex animate-slide-in-left [animation-delay:1.8s]">
+                    {/* Success 1 Message */}
+                    <div id="output5" className="output-line flex animate-slide-in-left-6">
                       <span className="text-emerald-400 font-bold w-22 inline-block">
                         {t("terminalOutputSuccess")}
                       </span>
@@ -297,8 +297,8 @@ export default function HeroSection() {
                       </span>
                       <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
-                    {/* Final Success 2 */}
-                    <div className="output-line flex animate-slide-in-left [animation-delay:1.8s]">
+                    {/* Success 2 Message */}
+                    <div id="output6" className="output-line flex animate-slide-in-left-6">
                       <span className="text-emerald-400 font-bold w-22 inline-block">
                         {t("terminalOutputSuccess2")}
                       </span>
@@ -326,19 +326,16 @@ export default function HeroSection() {
                   </span>
                 </h3>
                 <p className="text-sm text-blue-100/80">
-                  {t("chooseEnvironment")}
+                  {t("immediateStart")}
                 </p>
               </div>
 
               {/* Installation Buttons Row */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <h3 className="text-sm text-blue-100/80"><b>
-                  {t("immediateStart")}
-                </b></h3>
-                {/* Kubestellar Button */}
+                {/* Kubestellar Console Button */}
                 <IntlLink
                   href="/docs/console/installation"
-                  className="group relative overflow-hidden flex items-center justify-between px-5 py-4 rounded-lg text-white 
+                  className="group relative overflow-hidden flex w-150 items-center justify-between px-5 py-4 rounded-lg text-white 
                             bg-slate-800/60 backdrop-blur-sm
                             hover:bg-slate-800/80
                             transition-all duration-300 transform hover:scale-[1.02]
@@ -362,10 +359,10 @@ export default function HeroSection() {
                       </svg>
                     </div>
                     <div className="text-left">
-                      <div className="text-sm font-semibold text-white">
+                      <div className=" font-semibold text-white">
                         {t("consoleInstall")}
                       </div>
-                      <div className="text-xs text-blue-200/70">
+                      <div className=" text-blue-200/70">
                         {t("consoleInstallTime")}
                       </div>
                     </div>
@@ -385,122 +382,18 @@ export default function HeroSection() {
                   </svg>
                 </IntlLink>
               </div>
-              <hr />
-              {/* Installation Buttons Row 2 */}
-              <div className="flex flex-col sm:flex-row gap-4">  
-                <p className="text-sm text-blue-100/80">
-                  {t("developmentStart")}
-                </p>
-                {/* Local Development Button */}
-                <IntlLink
-                  href="/quick-installation"
-                  className="group relative overflow-hidden flex items-center justify-between px-5 py-4 rounded-lg text-white 
-                            bg-slate-800/60 backdrop-blur-sm
-                            hover:bg-slate-800/80
-                            transition-all duration-300 transform hover:scale-[1.02]
-                            border border-blue-500/30 hover:border-blue-400/50
-                            hover:shadow-lg hover:shadow-blue-500/20"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                      <svg
-                        className="w-5 h-5 text-blue-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <div className="text-left">
-                      <div className="text-sm font-semibold text-white">
-                        {t("localDevelopment")}
-                      </div>
-                      <div className="text-xs text-blue-200/70">
-                        {t("localDevelopmentTime")}
-                      </div>
-                    </div>
-                  </div>
-                  <svg
-                    className="w-5 h-5 text-blue-400 transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </IntlLink>
-
-                {/* AWS EKS Cloud Button */}
-                <Link
-                  href="/docs/getting-started/aws-eks"
-                  className="group relative overflow-hidden flex items-center justify-between px-5 py-4 rounded-lg text-white 
-                            bg-slate-800/60 backdrop-blur-sm
-                            hover:bg-slate-800/80
-                            transition-all duration-300 transform hover:scale-[1.02]
-                            border border-purple-500/30 hover:border-purple-400/50
-                            hover:shadow-lg hover:shadow-purple-500/20"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-                      <svg
-                        className="w-5 h-5 text-purple-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                        />
-                      </svg>
-                    </div>
-                    <div className="text-left">
-                      <div className="text-sm font-semibold text-white">
-                        {t("awsEksProduction")}
-                      </div>
-                      <div className="text-xs text-purple-200/70">
-                        {t("awsEksProductionTime")}
-                      </div>
-                    </div>
-                  </div>
-                  <svg
-                    className="w-5 h-5 text-purple-400 transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
-              </div>
+              
 
               {/* Explore Docs Button */}
-              <div className="flex justify-center sm:justify-start">
+              <div className="flex justify-center sm:justify-start" >
                 <Link
                   href="/docs"
                   className="secondary-action-btn inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-lg text-gray-200 
                             bg-gray-800/40 hover:bg-gray-800/60 
                             backdrop-blur-md border border-gray-700/50 hover:border-gray-600/50 
                             transition-all duration-500 transform hover:-translate-y-1 
-                            animate-btn-float"
+                            animate-btn-float
+                            w-150"
                   style={{ animationDelay: "0.2s" }}
                 >
                   <svg
