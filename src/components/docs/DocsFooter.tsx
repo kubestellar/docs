@@ -74,8 +74,8 @@ export default function Footer() {
                 />
               </div>
               <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-base sm:text-base">
-                Multi-Cluster Kubernetes orchestration platform that simplifies
-                distributed workload management across diverse infrastructure.
+                AI-enabled multi-cluster management ecosystem featuring Console,
+                MCP server, and A2A agent for seamless Kubernetes orchestration.
               </p>
             </div>
           </div>
@@ -126,8 +126,8 @@ export default function Footer() {
             <p className={`mb-4 sm:mb-6 leading-relaxed text-base sm:text-base ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Multi-Cluster Kubernetes orchestration platform that simplifies
-              distributed workload management across diverse infrastructure.
+              AI-enabled multi-cluster management ecosystem featuring Console,
+              MCP server, and A2A agent for seamless Kubernetes orchestration.
             </p>
             <div className="flex space-x-3 sm:space-x-4">
               <a
@@ -230,50 +230,50 @@ export default function Footer() {
               <ul className="space-y-1 sm:space-y-3">
                 <li>
                   <Link
-                    href="/docs"
+                    href="/docs/console/readme"
                     className={`text-xs sm:text-sm transition-colors duration-200 inline-block ${
                       isDark
                         ? 'text-gray-400 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    Overview
+                    Console
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/docs/user-guide/guide-overview"
+                    href="/docs/console/quick-start"
                     className={`text-xs sm:text-sm transition-colors duration-200 inline-block ${
                       isDark
                         ? 'text-gray-400 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    User Guide
+                    Quick Start
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/docs/contribution-guidelines/onboarding-inc"
+                    href="/docs/console/marketplace"
                     className={`text-xs sm:text-sm transition-colors duration-200 inline-block ${
                       isDark
                         ? 'text-gray-400 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    Onboarding
+                    Marketplace
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/docs/what-is-kubestellar/release-notes"
+                    href="/docs/kubestellar-mcp/readme"
                     className={`text-xs sm:text-sm transition-colors duration-200 inline-block ${
                       isDark
                         ? 'text-gray-400 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    Release Notes
+                    MCP Server
                   </Link>
                 </li>
               </ul>
