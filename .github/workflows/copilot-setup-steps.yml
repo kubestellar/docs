@@ -1,0 +1,29 @@
+name: Copilot Setup Steps
+# Pre-configures the Copilot coding agent's Ubuntu VM with build tools
+# so it can validate changes to the docs site (Next.js + Nextra).
+
+on: workflow_dispatch
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build docs site
+        run: npm run build
+
+      - name: Lint
+        run: npm run lint
