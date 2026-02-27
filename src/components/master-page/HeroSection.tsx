@@ -147,6 +147,14 @@ export default function HeroSection() {
               {t("subtitle")}
             </p>
 
+            {/* Get Started Heading */}
+            <h3 className="text-xl font-bold text-white">
+              Get Started with{" "}
+              <span className="text-gradient animated-gradient bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+                KubeStellar Console
+              </span>
+            </h3>
+
             {/* Install Command */}
             <div className="command-center-container">
               <div className="bg-black/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-5 shadow-2xl animate-command-glow">
