@@ -51,7 +51,7 @@ export default function DocsNavbar() {
     const fetchGithubStats = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/repos/kubestellar/kubestellar"
+          "https://api.github.com/repos/kubestellar/console"
         );
         if (!response.ok) {
           console.warn(`GitHub API returned ${response.status} — using fallback stats`);
