@@ -279,57 +279,24 @@ function InstallModal({
                 Install KubeStellar Console first, then install this {config.label.toLowerCase()} with one click.
               </p>
 
-              {/* Quick install methods */}
+              {/* Quick install */}
               <div className="space-y-2">
                 <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Install Console
                 </h4>
 
-                {/* Homebrew */}
                 <div className="rounded-lg bg-gray-800/50 border border-gray-700/30 p-3">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-medium text-gray-300">Homebrew (macOS/Linux)</span>
+                    <span className="text-xs font-medium text-gray-300">Quick Install</span>
                     <button
-                      onClick={() => copyToClipboard("brew install kubestellar/tap/console", "brew")}
+                      onClick={() => copyToClipboard("curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash", "curl")}
                       className="flex items-center gap-1 text-xs text-gray-500 hover:text-white transition-colors"
                     >
-                      {copied === "brew" ? <CheckCircle2 size={12} className="text-emerald-400" /> : <Copy size={12} />}
+                      {copied === "curl" ? <CheckCircle2 size={12} className="text-emerald-400" /> : <Copy size={12} />}
                     </button>
                   </div>
-                  <code className="block text-xs text-blue-300 bg-black/30 rounded px-2 py-1.5 font-mono">
-                    brew install kubestellar/tap/console
-                  </code>
-                </div>
-
-                {/* Docker */}
-                <div className="rounded-lg bg-gray-800/50 border border-gray-700/30 p-3">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-medium text-gray-300">Docker</span>
-                    <button
-                      onClick={() => copyToClipboard("docker run -p 8080:8080 ghcr.io/kubestellar/console:latest", "docker")}
-                      className="flex items-center gap-1 text-xs text-gray-500 hover:text-white transition-colors"
-                    >
-                      {copied === "docker" ? <CheckCircle2 size={12} className="text-emerald-400" /> : <Copy size={12} />}
-                    </button>
-                  </div>
-                  <code className="block text-xs text-blue-300 bg-black/30 rounded px-2 py-1.5 font-mono">
-                    docker run -p 8080:8080 ghcr.io/kubestellar/console:latest
-                  </code>
-                </div>
-
-                {/* Binary */}
-                <div className="rounded-lg bg-gray-800/50 border border-gray-700/30 p-3">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-medium text-gray-300">Binary (Go install)</span>
-                    <button
-                      onClick={() => copyToClipboard("go install github.com/kubestellar/console@latest", "go")}
-                      className="flex items-center gap-1 text-xs text-gray-500 hover:text-white transition-colors"
-                    >
-                      {copied === "go" ? <CheckCircle2 size={12} className="text-emerald-400" /> : <Copy size={12} />}
-                    </button>
-                  </div>
-                  <code className="block text-xs text-blue-300 bg-black/30 rounded px-2 py-1.5 font-mono">
-                    go install github.com/kubestellar/console@latest
+                  <code className="block text-xs text-blue-300 bg-black/30 rounded px-2 py-1.5 font-mono break-all">
+                    curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
                   </code>
                 </div>
               </div>
@@ -337,7 +304,7 @@ function InstallModal({
               <div className="flex items-center gap-2 pt-2">
                 <Terminal size={14} className="text-gray-500" />
                 <p className="text-xs text-gray-500">
-                  After installing, run <code className="text-blue-300">console</code> and click &quot;Install to Console&quot; above.
+                  After installing, click &quot;Install to Console&quot; above.
                 </p>
               </div>
             </div>
