@@ -16,14 +16,23 @@ const STATIC_RELATED_PROJECTS = [
   { title: 'Loading projects...', href: '/docs', description: 'Fetching from config' },
 ];
 
+interface LegacyMenuItem {
+  name: string;
+  route?: string;
+  children?: LegacyMenuItem[];
+  kind?: string;
+}
+
 interface RelatedProjectsProps {
   variant?: 'full' | 'slim';
   onCollapse?: () => void;
   isMobile?: boolean;
   bannerActive?: boolean;
+  projectId?: string;
+  legacyPageMap?: LegacyMenuItem[];
 }
 
-export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false }: RelatedProjectsProps) {
+export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false, legacyPageMap }: RelatedProjectsProps) {
   const [mounted, setMounted] = useState(false);
   const [isProduction, setIsProduction] = useState(true); // Default to true to match SSR
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
@@ -186,7 +195,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
             <div
               className={`
                 overflow-hidden transition-all duration-200 ease-in-out
-                ${legacyExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
+                ${legacyExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
               `}
             >
               {legacyProjects.map((project: { title: string; href: string; description?: string }) => {
@@ -204,22 +213,38 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
                 }
 
                 return (
-                  <a
-                    key={project.title}
-                    href={projectUrl}
-                    suppressHydrationWarning
-                    className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-1.5'} ${isCurrentProject ? 'font-medium' : ''}`}
-                    style={{
-                      color: isCurrentProject
-                        ? (isDark ? '#60a5fa' : '#2563eb')
-                        : mutedTextColor,
-                      backgroundColor: bgColor,
-                    }}
-                    onMouseEnter={() => !isCurrentProject && setHoveredProject(project.title)}
-                    onMouseLeave={() => setHoveredProject(null)}
-                  >
-                    {project.title}
-                  </a>
+                  <div key={project.title}>
+                    <a
+                      href={projectUrl}
+                      suppressHydrationWarning
+                      className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-1.5'} ${isCurrentProject ? 'font-medium' : ''}`}
+                      style={{
+                        color: isCurrentProject
+                          ? (isDark ? '#60a5fa' : '#2563eb')
+                          : mutedTextColor,
+                        backgroundColor: bgColor,
+                      }}
+                      onMouseEnter={() => !isCurrentProject && setHoveredProject(project.title)}
+                      onMouseLeave={() => setHoveredProject(null)}
+                    >
+                      {project.title}
+                    </a>
+                    {/* Render legacy project nav items inline */}
+                    {isCurrentProject && legacyPageMap && legacyPageMap.length > 0 && (
+                      <div className="ml-4 mt-1 space-y-0.5 border-l border-gray-700/50 pl-2">
+                        {legacyPageMap.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.route || '#'}
+                            className="block px-2 py-1 text-xs rounded transition-colors"
+                            style={{ color: mutedTextColor }}
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 );
               })}
             </div>
