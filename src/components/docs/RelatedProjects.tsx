@@ -24,7 +24,6 @@ interface RelatedProjectsProps {
 }
 
 export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false }: RelatedProjectsProps) {
-  const [isExpanded, setIsExpanded] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [isProduction, setIsProduction] = useState(true); // Default to true to match SSR
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
@@ -129,29 +128,9 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
 
   return (
     <div className={`shrink-0 px-4 border-t border-gray-200 dark:border-gray-700 ${bannerActive ? 'py-1' : 'py-2'}`}>
-      {/* Header - clickable to toggle */}
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className={`flex items-center justify-between w-full text-xs font-semibold uppercase tracking-wider transition-colors ${bannerActive ? 'py-1' : 'py-2'}`}
-        style={{ color: mutedTextColor }}
-      >
-        <span>Select a KubeStellar Component</span>
-        <span className="ml-auto">
-          {isExpanded ? (
-            <ChevronDown className="w-3 h-3" />
-          ) : (
-            <ChevronRight className="w-3 h-3" />
-          )}
-        </span>
-      </button>
-
-      {/* Project links */}
+      {/* Project links - always visible */}
       <div
-        className={`
-          overflow-hidden transition-all duration-200 ease-in-out
-          ${isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}
-          ${bannerActive ? 'space-y-0' : 'space-y-1 pb-2'}
-        `}
+        className={`${bannerActive ? 'space-y-0' : 'space-y-1 py-2'}`}
       >
         {activeProjects.map((project: { title: string; href: string; description?: string }) => {
           const isCurrentProject = project.title === currentProject;
