@@ -119,33 +119,34 @@ export default function HeroSection() {
 
       {/* Main Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen lg:min-h-[70vh]">
+        {/* Full-width Title */}
+        <div className="heading-container mb-8 lg:mb-12 pt-8 md:pt-0">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-none">
+            {/* First Line */}
+            <span className="block text-white mb-3 animate-text-reveal pt-5">
+              <span className="text-gradient">{t("line1")}</span>
+            </span>
+
+            {/* Second Line with delay */}
+            <span className="block animate-text-reveal">
+              <span className="text-gradient-animated">{t("line2")}</span>
+            </span>
+
+            {/* Third Line with longer delay */}
+            <span className="block animate-text-reveal [animation-delay:0.4s]">
+              <span className="text-gradient-animated">{t("line3")}</span>
+            </span>
+          </h1>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Interactive Content */}
-          <div className="hero-content space-y-6 sm:space-y-8 lg:space-y-12 min-h-[calc(100vh-4rem)] lg:min-h-0 flex flex-col justify-center lg:block pt-8 md:pt-0">
-            {/* Dynamic Main Heading */}
-            <div className="heading-container">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none">
-                {/* First Line */}
-                <span className="block text-white mb-3 animate-text-reveal pt-5">
-                  <span className="text-gradient">{t("line1")}</span>
-                </span>
+          <div className="hero-content space-y-6 sm:space-y-8 lg:space-y-12 flex flex-col justify-center lg:block">
 
-                {/* Second Line with delay */}
-                <span className="block animate-text-reveal">
-                  <span className="text-gradient-animated">{t("line2")}</span>
-                </span>
-
-                {/* Third Line with longer delay */}
-                <span className="block animate-text-reveal [animation-delay:0.4s]">
-                  <span className="text-gradient-animated">{t("line3")}</span>
-                </span>
-              </h1>
-
-              {/* Paragraph with fade-in-up effect and delay */}
-              <p className="sm:text-xl text-gray-300 max-w-2xl leading-snug animate-fade-in-up opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards] mt-4">
-                {t("subtitle")}
-              </p>
-            </div>
+            {/* Paragraph with fade-in-up effect and delay */}
+            <p className="sm:text-xl text-gray-300 max-w-2xl leading-snug animate-fade-in-up opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards]">
+              {t("subtitle")}
+            </p>
 
             {/* Interactive Command Center */}
             <div className="command-center-container">
