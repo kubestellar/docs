@@ -202,18 +202,12 @@
       "basePath": "kubestellar-mcp",
       "currentVersion": "0.8.1"
     }
-
   },
   "relatedProjects": [
     {
-      "title": "KubeStellar Console",
+      "title": "Console",
       "href": "/docs/console/readme",
       "description": "AI-powered multi-cluster dashboard"
-    },
-    {
-      "title": "KubeStellar",
-      "href": "/docs/what-is-kubestellar/overview",
-      "description": "Multi-cluster configuration management"
     },
     {
       "title": "KubeStellar MCP",
@@ -221,21 +215,28 @@
       "description": "AI-powered Kubernetes MCP tools"
     },
     {
-      "title": "KubeFlex",
-      "href": "/docs/kubeflex/overview/introduction",
-      "description": "Lightweight Kubernetes control planes"
-    },
-    {
       "title": "A2A",
       "href": "/docs/a2a/overview/introduction",
       "description": "Agent-to-Agent protocol"
     },
     {
+      "title": "KubeStellar",
+      "href": "/docs/what-is-kubestellar/overview",
+      "description": "Multi-cluster configuration management",
+      "legacy": true
+    },
+    {
+      "title": "KubeFlex",
+      "href": "/docs/kubeflex/overview/introduction",
+      "description": "Lightweight Kubernetes control planes",
+      "legacy": true
+    },
+    {
       "title": "Multi Plugin",
       "href": "/docs/multi-plugin/overview/introduction",
-      "description": "Multi-cluster kubectl plugin"
+      "description": "Multi-cluster kubectl plugin",
+      "legacy": true
     }
-
   ],
   "editBaseUrls": {
     "console": "https://github.com/kubestellar/docs/edit/main/docs/content/console",

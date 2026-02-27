@@ -68,16 +68,16 @@ export default function GetStartedSection() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
-          {/* Local Development Installation Card */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-1 gap-6 lg:gap-8 mb-12 max-w-2xl mx-auto">
+          {/* KubeStellar Console Installation Card */}
           <Link
-            href="/quick-installation"
+            href="/docs/console/installation"
             className="group bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:border-blue-500/60 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
           >
             <div className="p-8 flex flex-col h-full">
               {/* Header */}
               <div className="mb-6">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-600/20 mb-4 group-hover:scale-110 transition-transform duration-300">
                   <svg
                     className="w-7 h-7 text-blue-400"
                     fill="none"
@@ -93,16 +93,16 @@ export default function GetStartedSection() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-1.5">
-                  {t("localDev.title")}
+                  {t("console.title")}
                 </h3>
                 <p className="text-sm text-blue-300/80 font-medium">
-                  {t("localDev.subtitle")}
+                  {t("console.subtitle")}
                 </p>
               </div>
 
               {/* Description */}
               <p className="text-sm text-gray-300/90 mb-6 leading-relaxed">
-                {t("localDev.description")}
+                {t("console.description")}
               </p>
 
               {/* Features Grid */}
@@ -119,7 +119,7 @@ export default function GetStartedSection() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>{t("localDev.noCloudCosts")}</span>
+                  <span>{t("console.underOneMin")}</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-300">
                   <svg
@@ -133,7 +133,7 @@ export default function GetStartedSection() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>{t("localDev.setupTime")}</span>
+                  <span>{t("console.anyK8s")}</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-300">
                   <svg
@@ -147,7 +147,7 @@ export default function GetStartedSection() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>{t("localDev.dockerKind")}</span>
+                  <span>{t("console.aiMissions")}</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-300">
                   <svg
@@ -161,7 +161,7 @@ export default function GetStartedSection() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>{t("localDev.k8sVersion")}</span>
+                  <span>{t("console.githubOAuth")}</span>
                 </div>
               </div>
 
@@ -169,127 +169,7 @@ export default function GetStartedSection() {
               <div className="mt-auto pt-4 border-t border-slate-700/50">
                 <div className="flex items-center justify-between text-blue-400 group-hover:text-blue-300 transition-colors">
                   <span className="text-sm font-semibold">
-                    {t("localDev.cta")}
-                  </span>
-                  <svg
-                    className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </Link>
-
-          {/* AWS EKS Cloud Installation Card */}
-          <Link
-            href="/docs/getting-started/aws-eks"
-            className="group bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:border-purple-500/60 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1"
-          >
-            <div className="p-8 flex flex-col h-full">
-              {/* Header */}
-              <div className="mb-6">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <svg
-                    className="w-7 h-7 text-purple-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-1.5">
-                  {t("awsEks.title")}
-                </h3>
-                <p className="text-sm text-purple-300/80 font-medium">
-                  {t("awsEks.subtitle")}
-                </p>
-              </div>
-
-              {/* Description */}
-              <p className="text-sm text-gray-300/90 mb-6 leading-relaxed">
-                {t("awsEks.description")}
-              </p>
-
-              {/* Features Grid */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="flex items-center text-sm text-gray-300">
-                  <svg
-                    className="w-4 h-4 text-emerald-400 mr-2 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>{t("awsEks.eksVersion")}</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-300">
-                  <svg
-                    className="w-4 h-4 text-emerald-400 mr-2 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>{t("awsEks.setupTime")}</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-300">
-                  <svg
-                    className="w-4 h-4 text-emerald-400 mr-2 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>{t("awsEks.autoScaling")}</span>
-                </div>
-                <div className="flex items-center text-sm text-gray-300">
-                  <svg
-                    className="w-4 h-4 text-emerald-400 mr-2 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>{t("awsEks.awsAccount")}</span>
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              <div className="mt-auto pt-4 border-t border-slate-700/50">
-                <div className="flex items-center justify-between text-purple-400 group-hover:text-purple-300 transition-colors">
-                  <span className="text-sm font-semibold">
-                    {t("awsEks.cta")}
+                    {t("console.cta")}
                   </span>
                   <svg
                     className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"

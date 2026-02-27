@@ -26,7 +26,7 @@
   "navigation": {
     "docs": "Documentación",
     "blog": "Blog",
-    "playground": "Playground",
+    "liveDemo": "Playground",
     "contribute": "Contribuir",
     "joinIn": "Únete",
     "contributeHandbook": "Manual de contribución",
@@ -77,7 +77,7 @@
     "products": "Productos",
     "contributeHandbook": "Manual de contribución",
     "resources": "Recursos",
-    "playground": "Playground",
+    "liveDemo": "Playground",
     "programs": "Programas",
     "partners": "Socios",
     "blog": "Blog",

@@ -36,7 +36,7 @@
     "products": "專案",
     "contributeHandbook": "貢獻手冊",
     "resources": "資源",
-    "playground": "遊樂場",
+    "liveDemo": "遊樂場",
     "programs": "專案",
     "partners": "合作夥伴",
     "blog": "部落格",
@@ -69,7 +69,7 @@
   "navigation": {
     "docs": "文件",
     "blog": "部落格",
-    "playground": "遊樂場",
+    "liveDemo": "遊樂場",
     "marketplace": "市集",
     "contribute": "貢獻",
     "joinIn": "加入我們",

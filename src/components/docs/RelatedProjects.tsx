@@ -48,7 +48,10 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   const mutedTextColor = isDark ? '#9ca3af' : '#6b7280'; // gray-400 : gray-500
 
   // Get related projects from config or fallback
-  const relatedProjects = config?.relatedProjects ?? STATIC_RELATED_PROJECTS;
+  const allProjects = config?.relatedProjects ?? STATIC_RELATED_PROJECTS;
+  const activeProjects = allProjects.filter((p: { legacy?: boolean }) => !p.legacy);
+  const legacyProjects = allProjects.filter((p: { legacy?: boolean }) => p.legacy);
+  const [legacyExpanded, setLegacyExpanded] = useState(false);
 
   // Slim variant - icon-only vertical layout
   if (variant === 'slim') {
@@ -146,21 +149,20 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
       <div
         className={`
           overflow-hidden transition-all duration-200 ease-in-out
-          ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
+          ${isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}
           ${bannerActive ? 'space-y-0' : 'space-y-1 pb-2'}
         `}
       >
-        {relatedProjects.map((project: { title: string; href: string; description?: string }) => {
+        {activeProjects.map((project: { title: string; href: string; description?: string }) => {
           const isCurrentProject = project.title === currentProject;
           const projectUrl = getProjectUrl(project.href);
           const isHovered = hoveredProject === project.title;
 
-          // Determine background color explicitly — never rely on dark: Tailwind prefix
           let bgColor: string | undefined;
           if (isCurrentProject) {
             bgColor = isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)';
           } else if (isHovered) {
-            bgColor = isDark ? 'rgba(55, 65, 81, 0.6)' : 'rgba(243, 244, 246, 1)'; // gray-700/60 : gray-100
+            bgColor = isDark ? 'rgba(55, 65, 81, 0.6)' : 'rgba(243, 244, 246, 1)';
           } else {
             bgColor = undefined;
           }
@@ -184,6 +186,66 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
             </a>
           );
         })}
+
+        {/* Legacy section - collapsed by default */}
+        {legacyProjects.length > 0 && (
+          <div className={`${bannerActive ? 'mt-0' : 'mt-2'}`}>
+            <button
+              onClick={() => setLegacyExpanded(!legacyExpanded)}
+              className="flex items-center w-full px-3 py-1 text-xs uppercase tracking-wider transition-colors"
+              style={{ color: mutedTextColor }}
+            >
+              <span>Legacy</span>
+              <span className="ml-auto">
+                {legacyExpanded ? (
+                  <ChevronDown className="w-3 h-3" />
+                ) : (
+                  <ChevronRight className="w-3 h-3" />
+                )}
+              </span>
+            </button>
+            <div
+              className={`
+                overflow-hidden transition-all duration-200 ease-in-out
+                ${legacyExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
+              `}
+            >
+              {legacyProjects.map((project: { title: string; href: string; description?: string }) => {
+                const isCurrentProject = project.title === currentProject;
+                const projectUrl = getProjectUrl(project.href);
+                const isHovered = hoveredProject === project.title;
+
+                let bgColor: string | undefined;
+                if (isCurrentProject) {
+                  bgColor = isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)';
+                } else if (isHovered) {
+                  bgColor = isDark ? 'rgba(55, 65, 81, 0.6)' : 'rgba(243, 244, 246, 1)';
+                } else {
+                  bgColor = undefined;
+                }
+
+                return (
+                  <a
+                    key={project.title}
+                    href={projectUrl}
+                    suppressHydrationWarning
+                    className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-1.5'} ${isCurrentProject ? 'font-medium' : ''}`}
+                    style={{
+                      color: isCurrentProject
+                        ? (isDark ? '#60a5fa' : '#2563eb')
+                        : mutedTextColor,
+                      backgroundColor: bgColor,
+                    }}
+                    onMouseEnter={() => !isCurrentProject && setHoveredProject(project.title)}
+                    onMouseLeave={() => setHoveredProject(null)}
+                  >
+                    {project.title}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

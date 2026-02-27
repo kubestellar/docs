@@ -36,7 +36,7 @@
     "products": "Produits",
     "contributeHandbook": "Guide de Contribution",
     "resources": "Ressources",
-    "playground": "Terrain de Jeu",
+    "liveDemo": "Terrain de Jeu",
     "programs": "Programmes",
     "partners": "Partenaires",
     "blog": "Blog",
@@ -69,7 +69,7 @@
   "navigation": {
     "docs": "Documentation",
     "blog": "Blog",
-    "playground": "Terrain de Jeu",
+    "liveDemo": "Terrain de Jeu",
     "contribute": "Contribuer",
     "joinIn": "Rejoindre",
     "contributeHandbook": "Guide de Contribution",

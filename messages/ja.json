@@ -42,7 +42,7 @@
     "products": "製品",
     "contributeHandbook": "コントリビューターハンドブック",
     "resources": "リソース",
-    "playground": "プレイグラウンド",
+    "liveDemo": "プレイグラウンド",
     "programs": "プログラム",
     "partners": "パートナー",
     "blog": "ブログ",
@@ -75,7 +75,7 @@
   "navigation": {
     "docs": "ドキュメント",
     "blog": "ブログ",
-    "playground": "プレイグラウンド",
+    "liveDemo": "プレイグラウンド",
     "marketplace": "マーケットプレイス",
     "contribute": "貢献する",
     "joinIn": "参加する",

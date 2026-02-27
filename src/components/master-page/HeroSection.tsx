@@ -220,92 +220,9 @@ export default function HeroSection() {
                           $
                         </span>
                         <div className="typing-text text-blue-300 leading-relaxed text-xs sm:text-sm">
-                          <div>bash &lt;(curl -sSL \</div>
-                          <div className="ml-4">
-                            https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
-                          </div>
-                          
+                          <div>curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash</div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Command Output */}
-                  <div id="output1" className="command-output space-y-2 ml-6 animate-text-reveal [animation-delay=5s]">
-                    {/* Header */}
-                    <div className="output-line flex animate-slide-in-left">
-                      <span className="text-cyan-400 font-bold w-22 inline-block">
-                        {t("terminalOutputInfo")}
-                      </span>
-                      <span className="text-gray-300 flex-1">
-                        {t("terminalOutputInfoText")}
-                      </span>
-                      <span className="text-emerald-400 ml-2 text-xs">✓</span>
-                    </div>
-
-                    {/* Setup Message */}
-                    <div id="output2" className="output-line flex animate-slide-in-left-2">
-                      <span className="text-blue-400 font-bold w-22 inline-block">
-                        {t("terminalOutputSetup")}
-                      </span>
-                      <span className="text-gray-300 flex-1">
-                        {t("terminalOutputSetupText")}
-                      </span>
-                      <span className="text-emerald-400 ml-2 text-xs">✓</span>
-                    </div>
-
-                    {/* Install Message */}
-                    <div id="output3" className="output-line flex animate-slide-in-left-3">
-                      <span className="text-purple-400 font-bold w-22 inline-block">
-                        {t("terminalOutputInstall")}
-                      </span>
-                      <span className="text-gray-300 flex-1">
-                        {t("terminalOutputInstallText")}
-                      </span>
-                      <span className="text-emerald-400 ml-2 text-xs">✓</span>
-                    </div>
-
-                    {/* Config Message */}
-                    <div id="output4" className="output-line flex animate-slide-in-left-4">
-                      <span className="text-purple-400 font-bold w-22 inline-block">
-                        {t("terminalOutputConfig")}
-                      </span>
-                      <span className="text-gray-300 flex-1">
-                        {t("terminalOutputConfigText")}
-                      </span>
-                      <span className="text-emerald-400 ml-2 text-xs">✓</span>
-                    </div>
-                    
-                    {/* Wait Message */}
-                    <div id="output5" className="output-line flex animate-slide-in-left-5">
-                      <span className="text-yellow-400 font-bold w-22 inline-block">
-                        {t("terminalOutputWait")}
-                      </span>
-                      <span className="text-gray-300 flex-1">
-                        {t("terminalOutputWaitText")}
-                      </span>
-                      <span className="text-emerald-400 ml-2 text-xs">✓</span>
-                    </div>
-                    
-                    {/* Success 1 Message */}
-                    <div id="output5" className="output-line flex animate-slide-in-left-6">
-                      <span className="text-emerald-400 font-bold w-22 inline-block">
-                        {t("terminalOutputSuccess")}
-                      </span>
-                      <span className="text-gray-300 flex-1">
-                        {t("terminalOutputSuccessText")}
-                      </span>
-                      <span className="text-emerald-400 ml-2 text-xs">✓</span>
-                    </div>
-                    {/* Success 2 Message */}
-                    <div id="output6" className="output-line flex animate-slide-in-left-6">
-                      <span className="text-emerald-400 font-bold w-22 inline-block">
-                        {t("terminalOutputSuccess2")}
-                      </span>
-                      <span className="text-gray-300 flex-1">
-                        {t("terminalOutputSuccess2Text")}
-                      </span>
-                      <span className="text-emerald-400 ml-2 text-xs">✓</span>
                     </div>
                   </div>
                 </div>
