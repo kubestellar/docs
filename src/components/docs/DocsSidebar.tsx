@@ -249,17 +249,9 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     <>
       {/* Scrollable navigation area */}
       <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-        <div className="px-4 pt-4 pb-2 border-b border-gray-200 dark:border-gray-800">
-          <Link
-            href="/docs"
-            className="text-sm font-medium text-gray-400 hover:text-gray-900 dark:text-white dark:hover:text-white"
-          >
-            Docs Home
-          </Link>
-        </div>
         <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} />
         {!isLegacyProject && (
-          <nav className="p-4 pb-6 w-full space-y-2">
+          <nav className="px-4 pt-2 pb-6 w-full space-y-1">
             {pageMap.map(item => renderMenuItem(item))}
           </nav>
         )}
