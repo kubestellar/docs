@@ -12,19 +12,27 @@ const PRODUCTION_URL = 'https://kubestellar.io';
 // Generic fallback for related projects - uses safe URLs that won't break
 // The actual project list is fetched from production config
 const STATIC_RELATED_PROJECTS = [
-  { title: 'KubeStellar', href: '/docs', description: 'Multi-cluster management' },
+  { title: 'Console', href: '/docs/console', description: 'AI-enabled multi-cluster management' },
   { title: 'Loading projects...', href: '/docs', description: 'Fetching from config' },
 ];
+
+interface LegacyMenuItem {
+  name: string;
+  route?: string;
+  children?: LegacyMenuItem[];
+  kind?: string;
+}
 
 interface RelatedProjectsProps {
   variant?: 'full' | 'slim';
   onCollapse?: () => void;
   isMobile?: boolean;
   bannerActive?: boolean;
+  projectId?: string;
+  legacyPageMap?: LegacyMenuItem[];
 }
 
-export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false }: RelatedProjectsProps) {
-  const [isExpanded, setIsExpanded] = useState(true);
+export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false, legacyPageMap }: RelatedProjectsProps) {
   const [mounted, setMounted] = useState(false);
   const [isProduction, setIsProduction] = useState(true); // Default to true to match SSR
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
@@ -48,7 +56,10 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   const mutedTextColor = isDark ? '#9ca3af' : '#6b7280'; // gray-400 : gray-500
 
   // Get related projects from config or fallback
-  const relatedProjects = config?.relatedProjects ?? STATIC_RELATED_PROJECTS;
+  const allProjects = config?.relatedProjects ?? STATIC_RELATED_PROJECTS;
+  const activeProjects = allProjects.filter((p) => !('legacy' in p && p.legacy));
+  const legacyProjects = allProjects.filter((p) => 'legacy' in p && p.legacy);
+  const [legacyExpanded, setLegacyExpanded] = useState(false);
 
   // Slim variant - icon-only vertical layout
   if (variant === 'slim') {
@@ -105,11 +116,11 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   // Determine current project from pathname
   // THIS HIGHLIGHTS THE ACTIVE PROJECT IN THE PROJECT LIST IN THE SIDEBAR
   const getCurrentProject = () => {
+    if (pathname.startsWith('/docs/console')) return 'Console';
     if (pathname.startsWith('/docs/a2a')) return 'A2A';
     if (pathname.startsWith('/docs/kubeflex')) return 'KubeFlex';
     if (pathname.startsWith('/docs/multi-plugin')) return 'Multi Plugin';
     if (pathname.startsWith('/docs/kubestellar-mcp')) return 'KubeStellar MCP';
-    if (pathname.startsWith('/docs/console')) return 'Console';
     return 'KubeStellar';
   };
 
@@ -126,41 +137,20 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
 
   return (
     <div className={`shrink-0 px-4 border-t border-gray-200 dark:border-gray-700 ${bannerActive ? 'py-1' : 'py-2'}`}>
-      {/* Header - clickable to toggle */}
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className={`flex items-center justify-between w-full text-xs font-semibold uppercase tracking-wider transition-colors ${bannerActive ? 'py-1' : 'py-2'}`}
-        style={{ color: mutedTextColor }}
-      >
-        <span>Select a KubeStellar Component</span>
-        <span className="ml-auto">
-          {isExpanded ? (
-            <ChevronDown className="w-3 h-3" />
-          ) : (
-            <ChevronRight className="w-3 h-3" />
-          )}
-        </span>
-      </button>
-
-      {/* Project links */}
+      {/* Project links - always visible */}
       <div
-        className={`
-          overflow-hidden transition-all duration-200 ease-in-out
-          ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
-          ${bannerActive ? 'space-y-0' : 'space-y-1 pb-2'}
-        `}
+        className={`${bannerActive ? 'space-y-0' : 'space-y-1 py-2'}`}
       >
-        {relatedProjects.map((project: { title: string; href: string; description?: string }) => {
+        {activeProjects.map((project: { title: string; href: string; description?: string }) => {
           const isCurrentProject = project.title === currentProject;
           const projectUrl = getProjectUrl(project.href);
           const isHovered = hoveredProject === project.title;
 
-          // Determine background color explicitly — never rely on dark: Tailwind prefix
           let bgColor: string | undefined;
           if (isCurrentProject) {
             bgColor = isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)';
           } else if (isHovered) {
-            bgColor = isDark ? 'rgba(55, 65, 81, 0.6)' : 'rgba(243, 244, 246, 1)'; // gray-700/60 : gray-100
+            bgColor = isDark ? 'rgba(55, 65, 81, 0.6)' : 'rgba(243, 244, 246, 1)';
           } else {
             bgColor = undefined;
           }
@@ -184,6 +174,82 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
             </a>
           );
         })}
+
+        {/* Legacy section - collapsed by default */}
+        {legacyProjects.length > 0 && (
+          <div className={`${bannerActive ? 'mt-0' : 'mt-2'}`}>
+            <button
+              onClick={() => setLegacyExpanded(!legacyExpanded)}
+              className="flex items-center w-full px-3 py-1 text-xs uppercase tracking-wider transition-colors"
+              style={{ color: mutedTextColor }}
+            >
+              <span>Legacy</span>
+              <span className="ml-auto">
+                {legacyExpanded ? (
+                  <ChevronDown className="w-3 h-3" />
+                ) : (
+                  <ChevronRight className="w-3 h-3" />
+                )}
+              </span>
+            </button>
+            <div
+              className={`
+                overflow-hidden transition-all duration-200 ease-in-out
+                ${legacyExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
+              `}
+            >
+              {legacyProjects.map((project: { title: string; href: string; description?: string }) => {
+                const isCurrentProject = project.title === currentProject;
+                const projectUrl = getProjectUrl(project.href);
+                const isHovered = hoveredProject === project.title;
+
+                let bgColor: string | undefined;
+                if (isCurrentProject) {
+                  bgColor = isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)';
+                } else if (isHovered) {
+                  bgColor = isDark ? 'rgba(55, 65, 81, 0.6)' : 'rgba(243, 244, 246, 1)';
+                } else {
+                  bgColor = undefined;
+                }
+
+                return (
+                  <div key={project.title}>
+                    <a
+                      href={projectUrl}
+                      suppressHydrationWarning
+                      className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-1.5'} ${isCurrentProject ? 'font-medium' : ''}`}
+                      style={{
+                        color: isCurrentProject
+                          ? (isDark ? '#60a5fa' : '#2563eb')
+                          : mutedTextColor,
+                        backgroundColor: bgColor,
+                      }}
+                      onMouseEnter={() => !isCurrentProject && setHoveredProject(project.title)}
+                      onMouseLeave={() => setHoveredProject(null)}
+                    >
+                      {project.title}
+                    </a>
+                    {/* Render legacy project nav items inline */}
+                    {isCurrentProject && legacyPageMap && legacyPageMap.length > 0 && (
+                      <div className="ml-4 mt-1 space-y-0.5 border-l border-gray-700/50 pl-2">
+                        {legacyPageMap.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.route || '#'}
+                            className="block px-2 py-1 text-xs rounded transition-colors"
+                            style={{ color: mutedTextColor }}
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

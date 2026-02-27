@@ -36,7 +36,7 @@
     "products": "产品",
     "contributeHandbook": "贡献者手册",
     "resources": "资源",
-    "playground": "演示环境",
+    "liveDemo": "演示环境",
     "programs": "项目",
     "partners": "合作伙伴",
     "blog": "博客",
@@ -69,7 +69,7 @@
   "navigation": {
     "docs": "文档",
     "blog": "博客",
-    "playground": "演练场",
+    "liveDemo": "演练场",
     "marketplace": "市场",
     "contribute": "参与贡献",
     "joinIn": "加入我们",

@@ -895,8 +895,33 @@ html:not(.dark) .contributor-card:hover {
 }
 
 .animate-slide-in-left {
-  animation: slide-in-left 0.8s ease-out forwards;
+  animation: slide-in-left 0.8s ease-out 1s forwards;
 }
+
+.animate-slide-in-left-2 {
+  animation: slide-in-left 0.8s ease-out 2s forwards;
+}
+
+.animate-slide-in-left-3{
+  animation: slide-in-left 0.8s ease-out 3s forwards;
+}
+
+.animate-slide-in-left-4 {
+  animation: slide-in-left 0.8s ease-out 4s forwards;
+}
+
+.animate-slide-in-left-5{
+  animation: slide-in-left 0.8s ease-out 5s forwards;
+}
+
+.animate-slide-in-left-6 {
+  animation: slide-in-left 0.8s ease-out 6s forwards;
+}
+
+.animate-slide-in-left-7{
+  animation: slide-in-left 0.8s ease-out 7s forwards;
+}
+
 
 .animate-typing {
   animation: typing 2s steps(40, end) forwards;

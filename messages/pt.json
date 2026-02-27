@@ -36,7 +36,7 @@
     "products": "Projetos",
     "contributeHandbook": "Manual de Contribuição",
     "resources": "Recursos",
-    "playground": "Playground",
+    "liveDemo": "Playground",
     "programs": "Programas",
     "partners": "Parceiros",
     "blog": "Blog",
@@ -69,7 +69,7 @@
   "navigation": {
     "docs": "Documentação",
     "blog": "Blog",
-    "playground": "Playground",
+    "liveDemo": "Playground",
     "marketplace": "Marketplace",
     "contribute": "Contribuir",
     "joinIn": "Junte-se",

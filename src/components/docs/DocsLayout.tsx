@@ -45,7 +45,7 @@ export function DocsLayout({ children, pageMap, toc, metadata, filePath, project
   return (
     <div className="flex flex-1 relative">
       {/* Sidebar - Self-contained with all logic */}
-      <DocsSidebar pageMap={pageMap} />
+      <DocsSidebar pageMap={pageMap} projectId={projectId} />
 
       {/* Mobile overlay */}
       {menuOpen && (

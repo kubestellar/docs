@@ -27,6 +27,7 @@ export interface RelatedProject {
   title: string;
   href: string;
   description?: string;
+  legacy?: boolean;
 }
 
 export interface SharedConfig {
@@ -61,9 +62,21 @@ async function fetchConfig(forceRefresh: boolean = false): Promise<SharedConfig 
 
   fetchPromise = (async () => {
     try {
-      // Try production URL first (works for all branch deploys)
+      // Try local config first (ensures branch deploys/previews use their own config)
+      const res = await fetch('/config/shared.json');
+      if (res.ok) {
+        configCache = await res.json();
+        cacheTimestamp = Date.now();
+        return configCache;
+      }
+    } catch (e) {
+      console.warn('Failed to fetch local config:', e);
+    }
+
+    try {
+      // Fallback to production URL (if local config unavailable)
       const res = await fetch(PRODUCTION_CONFIG_URL, {
-        cache: 'no-store', // Always fetch fresh from network
+        cache: 'no-store',
         headers: {
           'Accept': 'application/json',
         },
@@ -75,18 +88,6 @@ async function fetchConfig(forceRefresh: boolean = false): Promise<SharedConfig 
       }
     } catch (e) {
       console.warn('Failed to fetch config from production:', e);
-    }
-
-    try {
-      // Fallback to local config (for local dev or if production unreachable)
-      const res = await fetch('/config/shared.json');
-      if (res.ok) {
-        configCache = await res.json();
-        cacheTimestamp = Date.now();
-        return configCache;
-      }
-    } catch (e) {
-      console.warn('Failed to fetch local config:', e);
     }
 
     return null;

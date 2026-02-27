@@ -22,9 +22,10 @@ interface MenuItem {
 interface DocsSidebarProps {
   pageMap: MenuItem[];
   className?: string;
+  projectId?: string;
 }
 
-export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
+export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps) {
   const pathname = usePathname();
   const sidebarRef = useRef<HTMLElement>(null);
   const { resolvedTheme } = useTheme();
@@ -45,6 +46,7 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
   }, []);
 
   const isDark = mounted && resolvedTheme === 'dark';
+  const isLegacyProject = projectId === 'kubestellar' || projectId === 'kubeflex' || projectId === 'multi-plugin';
   // Text colors based on theme
   const textColor = isDark ? '#e5e7eb' : '#374151'; // gray-200 : gray-700
   // Stable layout values - only recalculate on resize or banner change
@@ -247,10 +249,20 @@ export function DocsSidebar({ pageMap, className }: DocsSidebarProps) {
     <>
       {/* Scrollable navigation area */}
       <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-        <RelatedProjects bannerActive={!bannerDismissed} />
-        <nav className="p-4 pb-6 w-full space-y-2">
-          {pageMap.map(item => renderMenuItem(item))}
-        </nav>
+        <div className="px-4 pt-4 pb-2 border-b border-gray-200 dark:border-gray-800">
+          <Link
+            href="/docs"
+            className="text-sm font-medium text-gray-400 hover:text-gray-900 dark:text-white dark:hover:text-white"
+          >
+            Docs Home
+          </Link>
+        </div>
+        <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} />
+        {!isLegacyProject && (
+          <nav className="p-4 pb-6 w-full space-y-2">
+            {pageMap.map(item => renderMenuItem(item))}
+          </nav>
+        )}
       </div>
       <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
     </>

@@ -51,7 +51,7 @@ export default function DocsNavbar() {
     const fetchGithubStats = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/repos/kubestellar/kubestellar"
+          "https://api.github.com/repos/kubestellar/console"
         );
         if (!response.ok) {
           console.warn(`GitHub API returned ${response.status} — using fallback stats`);
@@ -225,8 +225,10 @@ export default function DocsNavbar() {
         <div className="flex-1" />
 
         <div className="hidden md:flex items-center gap-1.5">
-          <Link
-            href="/playground"
+          <a
+            href="https://console.kubestellar.io"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`${buttonClasses} cursor-pointer relative hidden xl:flex`}
           >
             <svg
@@ -239,11 +241,17 @@ export default function DocsNavbar() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+              ></path>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               ></path>
             </svg>
-            <span className="ml-2">Playground</span>
-          </Link>
+            <span className="ml-2">Live Demo</span>
+          </a>
 
           <Link
             href="/marketplace"
@@ -835,16 +843,17 @@ export default function DocsNavbar() {
           isDark ? 'border-neutral-800 bg-[#111]' : 'border-gray-200 bg-white'
         }`}>
           <div className="px-4 py-3 space-y-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
-            <Link href="/playground" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
+            <a href="https://console.kubestellar.io" target="_blank" rel="noopener noreferrer" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'
             }`}>
               <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Playground
-            </Link>
+              Live Demo
+            </a>
             <Link href="/marketplace" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'

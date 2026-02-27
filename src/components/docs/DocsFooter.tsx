@@ -347,16 +347,18 @@ export default function Footer() {
               </h3>
               <ul className="space-y-1 sm:space-y-3">
                 <li>
-                  <Link
-                    href="/playground"
+                  <a
+                    href="https://console.kubestellar.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`text-xs sm:text-sm transition-colors duration-200 inline-block ${
                       isDark
                         ? 'text-gray-400 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    Playground
-                  </Link>
+                    Live Demo
+                  </a>
                 </li>
                 <li>
                   <Link

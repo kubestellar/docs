@@ -223,7 +223,7 @@ export default function ContactSection() {
 
             {/* Contact card 3 */}
             <a
-              href="https://github.com/kubestellar/kubestellar"
+              href="https://github.com/kubestellar/console"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-green-500/50 cursor-pointer"

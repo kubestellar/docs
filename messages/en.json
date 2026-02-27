@@ -1,36 +1,20 @@
 {
   "heroSection": {
     "line1": "Multi-Cluster",
-    "line2": "Kubernetes",
-    "line3": "Orchestration",
-    "subtitle": "Experience the future of cloud-native orchestration. KubeStellar revolutionizes multi-cluster management with AI-powered automation and real-time intelligence.",
-    "terminalTitle": "kubestellar-control-center",
+    "line2": "Kubernetes Operations",
+    "line3": "and Orchestration",
+    "subtitle": "Experience the future of multi-cluster Kubernetes. KubeStellar Console is an AI-powered dashboard that manages all your clusters with natural language missions, real-time monitoring, and community-driven automation.",
+    "terminalTitle": "kubestellar-console",
     "terminalStatus": "READY",
-    "terminalCommandL1": "bash <(curl -s \\",
-    "terminalCommandL2": "  https://raw.githubusercontent.com/kubestellar/kubestellar/ \\",
-    "terminalCommandL3": "  refs/tags/v0.27.2/scripts/ \\",
-    "terminalCommandL4": "  create-kubestellar-demo-env.sh) --platform kind",
-    "terminalOutputInfo": "INFO",
-    "terminalOutputInfoText": "Installing KubeStellar demo environment...",
-    "terminalOutputSetup": "SETUP",
-    "terminalOutputSetupText": "Creating kind clusters: kubeflex, cluster1, cluster2",
-    "terminalOutputInstall": "INSTALL",
-    "terminalOutputInstallText": "Deploying KubeFlex control plane components",
-    "terminalOutputConfig": "CONFIG",
-    "terminalOutputConfigText": "Configuring Open Cluster Management",
-    "terminalOutputSuccess": "SUCCESS",
-    "terminalOutputSuccessText": "KubeStellar demo environment ready! Setup complete",
-    "buttonInstall": "Install KubeStellar",
+    "buttonInstall": "Install KubeStellar Console",
     "buttonDocs": "Explore Docs",
     "getStartedWith": "Get Started with",
-    "chooseEnvironment": "Choose your deployment environment",
-    "localDevelopment": "Local Development",
-    "localDevelopmentTime": "Docker + Kind • 15 mins",
-    "awsEksProduction": "AWS EKS Production",
-    "awsEksProductionTime": "Enterprise Ready • 30 mins"
+    "immediateStart": "Less than a minute to get installed and started with your own KubeStellar Console.",
+    "consoleInstall": "KubeStellar Console",
+    "consoleInstallTime": "Sets up in less than a minute"
   },
   "footer": {
-    "description": "Multi-Cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure.",
+    "description": "AI-powered multi-cluster Kubernetes dashboard. Manage all your clusters with natural language, real-time monitoring, and community-driven extensions.",
     "docs": "Docs",
     "overview": "Overview",
     "userGuide": "User Guide",
@@ -42,7 +26,7 @@
     "products": "Products",
     "contributeHandbook": "Contributor Handbook",
     "resources": "Resources",
-    "playground": "Playground",
+    "liveDemo": "Live Demo",
     "programs": "Programs",
     "partners": "Partners",
     "blog": "Blog",
@@ -64,18 +48,18 @@
     "subscribe": "Subscribe",
     "subscribed": "Subscribed!",
     "privacyNotice": "We respect your privacy. No spam.",
-    "copyright": "© {year} KubeStellar. All rights reserved. Apache 2.0 Licence",
+    "copyright": "© {year} KubeStellar Console. All rights reserved. Apache 2.0 Licence",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "cookiePolicy": "Cookie Policy",
-    "madeWithLove": "Made with ❤️ by the KubeStellar Team",
+    "madeWithLove": "Made with ❤️ by the KubeStellar Console Team",
     "backToTop": "Back to top",
     "news": "News"
   },
   "navigation": {
     "docs": "Docs",
     "blog": "Blog",
-    "playground": "Playground",
+    "liveDemo": "Live Demo",
     "marketplace": "Marketplace",
     "contribute": "Contribute",
     "joinIn": "Join In",
@@ -116,20 +100,20 @@
   },
   "aboutSection": {
     "title": "What is",
-    "titleSpan": "KubeStellar",
-    "subtitle": "A multi-cluster Kubernetes orchestration platform that simplifies how organizations manage distributed workloads across multiple Kubernetes clusters.",
-    "card1Title": "Single Control Plane",
-    "card1Description": "Work with Kubernetes objects in their native format without wrapping or bundling. Store and manage workload definitions centrally through Workload Definition Spaces (WDS) and efficiently manage cluster inventory through Inventory and Transport Spaces (ITS).",
-    "card2Title": "Intelligent Workload Placement",
-    "card2Description": "Use label-based selection and binding policies to specify what workloads run where. Support for standard Kubernetes resources, Custom Resources (CRDs), Helm charts, and out-of-tree workload types with automatic synchronization to keep workloads in sync across clusters.",
-    "card3Title": "Policy-Driven Management",
-    "card3Description": "Implement comprehensive governance through the BindingPolicy system. Manage singleton status for individual cluster monitoring and combined status aggregation. Apply custom transforms with automatic recovery after disruptions.",
+    "titleSpan": "KubeStellar Console",
+    "subtitle": "An AI-powered multi-cluster Kubernetes dashboard that gives you unified visibility and control across all your clusters — installed in under a minute.",
+    "card1Title": "AI-Powered Operations",
+    "card1Description": "Use natural language AI Missions to manage your clusters. Ask questions, deploy workloads, and troubleshoot issues through an intelligent assistant that understands your infrastructure.",
+    "card2Title": "Unified Multi-Cluster Dashboard",
+    "card2Description": "See all your Kubernetes clusters in a single pane of glass. Monitor resources, view logs, and manage workloads across any cluster — cloud, on-prem, or edge — from one interface.",
+    "card3Title": "Extensible Marketplace",
+    "card3Description": "Customize your Console with dashboards, card presets, and themes from the community marketplace. Build and share your own extensions to tailor the experience to your needs.",
     "learnMore": "Learn more"
   },
   "contactSection": {
     "title": "Get",
     "titleSpan": "in Touch",
-    "subtitle": "Have questions about KubeStellar? We're here to help!",
+    "subtitle": "Have questions about KubeStellar Console? We're here to help!",
     "card1Title": "Email Support",
     "card1Description": "Get direct support from our team",
     "card1Link": "support@kubestellar.io",
@@ -165,13 +149,13 @@
     "formPrivacyCont": "and consent to being contacted by the KubeStellar team.",
     "formSubmit": "Send Message",
     "formSubmitting": "Sending...",
-    "formSuccess": "Your email will be sent to the KubeStellar development mailing list. Please check your email client to complete sending!"
+    "formSuccess": "Your email will be sent to the KubeStellar Console development mailing list. Please check your email client to complete sending!"
   },
   "getStartedSection": {
     "title": "Ready to",
     "titleSpan": "Get Started?",
     "installSubtitle": "Start with local testing or deploy to production infrastructure",
-    "subtitle": "Join the growing community of KubeStellar users and contributors.",
+    "subtitle": "Join the growing community of KubeStellar Console users and contributors.",
     "localDev": {
       "title": "Local Development",
       "subtitle": "Perfect for testing and learning",
@@ -263,86 +247,86 @@
     "showMoreSteps": "Show More Steps"
   },
   "useCasesSection": {
-    "title": "Use",
-    "titleSpan": "Cases",
-    "subtitle": "Discover how organizations leverage KubeStellar for their multi-cluster needs.",
+    "title": "What You Can",
+    "titleSpan": "Do",
+    "subtitle": "Discover how KubeStellar Console simplifies multi-cluster Kubernetes operations.",
     "learnMore": "Learn more",
     "cases": {
       "edge": {
-        "title": "Edge Computing",
-        "description": "Deploy applications across edge locations with centralized management. Ideal for retail, manufacturing, and telecom with distributed infrastructure.",
+        "title": "AI Missions",
+        "description": "Manage clusters using natural language. Deploy workloads, troubleshoot issues, and get intelligent recommendations — all through conversational AI.",
         "backContent": {
-          "title": "Declarative Multi-Cluster Workload Management",
-          "description": "Deploy and manage Kubernetes workloads across multiple clusters using native Kubernetes objects without wrapping or bundling.",
+          "title": "Intelligent Cluster Management",
+          "description": "AI Missions let you interact with your clusters through natural language, powered by MCP and A2A protocols.",
           "features": [
-            "Deploy native Kubernetes objects across clusters",
-            "Use label-based cluster selection for workload targeting",
-            "Centralized management through Workload Definition Spaces (WDS)"
+            "Natural language cluster operations",
+            "AI-powered troubleshooting and recommendations",
+            "MCP and A2A agent integration"
           ]
         }
       },
       "compliance": {
-        "title": "Multi-Region Compliance",
-        "description": "Deploy applications with specific regional compliance requirements. Ensure data residency and regulatory compliance across global operations.",
+        "title": "Multi-Cluster Visibility",
+        "description": "Monitor all your Kubernetes clusters from a single dashboard. See resource usage, pod status, and cluster health at a glance across your entire fleet.",
         "backContent": {
-          "title": "Custom Resource Distribution",
-          "description": "Distribute and manage custom resources (CRDs) across multiple clusters while maintaining proper synchronization and lifecycle management.",
+          "title": "Unified Dashboard",
+          "description": "Get a real-time view of all clusters with customizable dashboards and card presets.",
           "features": [
-            "Support for out-of-tree workload types",
-            "Automatic CRD synchronization",
-            "Flexible RBAC configuration"
+            "Real-time cluster health monitoring",
+            "Cross-cluster resource views",
+            "Customizable dashboard layouts"
           ]
         }
       },
       "hybrid": {
-        "title": "Hybrid/Multi-Cloud",
-        "description": "Seamlessly manage workloads across multiple cloud providers and on-premises infrastructure with unified policies and consistent experience.",
+        "title": "One-Minute Setup",
+        "description": "Install KubeStellar Console with a single curl command. GitHub OAuth authentication, automatic cluster discovery, and a ready-to-use dashboard in under 60 seconds.",
         "backContent": {
-          "title": "Resilient Multi-Cluster Operations",
-          "description": "Maintain reliable workload distribution and management even during control plane disruptions or network issues.",
+          "title": "Instant Deployment",
+          "description": "Get started immediately with minimal prerequisites — just curl and a GitHub account.",
           "features": [
-            "Resilient architecture with multiple spaces",
-            "Automatic recovery after disruptions",
-            "State reconciliation across clusters"
+            "Single command installation",
+            "GitHub OAuth out of the box",
+            "Automatic cluster auto-discovery"
           ]
         }
       },
       "dr": {
-        "title": "Disaster Recovery",
-        "description": "Implement robust disaster recovery strategies with automatic workload replication and failover across multiple clusters in different regions.",
+        "title": "Marketplace & Themes",
+        "description": "Extend your Console with community-built dashboards, card presets, and themes. Install from the marketplace or create and share your own customizations.",
         "backContent": {
-          "title": "Advanced Status Management",
-          "description": "Monitor and manage workload status across multiple clusters with options for both individual and aggregated status reporting.",
+          "title": "Community Extensions",
+          "description": "The marketplace provides a growing library of extensions built by the community.",
           "features": [
-            "Singleton status reporting for individual cluster monitoring",
-            "Combined status aggregation across clusters",
-            "Real-time status updates through OCM Status Add-On"
+            "70+ card presets available",
+            "Custom dashboard templates",
+            "Theme support for personalization"
           ]
         }
       },
       "multitenant": {
-        "title": "Multi-Tenant Isolation",
-        "description": "Create isolated environments for different teams or customers while maintaining centralized control. Ideal for SaaS providers and large enterprises.",
+        "title": "Secure Access Control",
+        "description": "Team-based access with GitHub OAuth. Control who can see and manage which clusters with role-based permissions and organization-level authentication.",
         "backContent": {
-          "title": "Helm Chart Distribution",
-          "description": "Deploy and manage Helm charts across multiple clusters while maintaining chart metadata and release information.",
+          "title": "Enterprise Security",
+          "description": "Built-in security with GitHub OAuth and configurable access controls.",
           "features": [
-            "Native Helm chart support",
-            "Consistent release management across clusters",
-            "Label-based chart distribution"
+            "GitHub OAuth authentication",
+            "Team and org-based access",
+            "Configurable via environment variables"
           ]
         }
       },
       "performance": {
-        "title": "Performance Optimization",
-        "description": "Deploy workloads closest to users or data sources for optimal performance, reducing latency and improving user experience across global operations.",
+        "title": "Agent & MCP Integration",
+        "description": "Connect AI agents to your clusters through the Model Context Protocol (MCP) and Agent-to-Agent (A2A) protocol for automated operations and intelligent orchestration.",
         "backContent": {
-          "title": "Template-Based Customization",
-          "description": "Customize workload configurations for different clusters while maintaining a single source of truth.",
+          "title": "AI-Native Architecture",
+          "description": "Console is built from the ground up to work with AI agents and automation.",
           "features": [
-            "Support for template expansion",
-            "Cluster-specific customization",
-            "Property-based configuration"
+            "MCP server for AI tool integration",
+            "A2A protocol for agent collaboration",
+            "Extensible agent framework"
           ]
         }
       }
@@ -592,20 +576,20 @@
   "productsPage": {
     "title": "Our",
     "titleSpan": "Projects",
-    "subtitle": "Discover our suite of tools and platforms that enhance the KubeStellar ecosystem and empower multi-cluster Kubernetes management.",
+    "subtitle": "Discover our suite of tools and platforms that enhance the KubeStellar Console ecosystem.",
     "repoButton": "Repository",
     "websiteButton": "Website",
     "watchDemoButton": "Watch Demo",
     "products": {
-       "console": {
+      "console": {
         "name": "KubeStellar Console",
         "fullName": "KubeStellar Console",
         "description": "An AI-powered, multi-cluster Kubernetes dashboard that adapts to how you work. Try it or install locally it locally in under a minute. It's multi-cluster from day one — OpenShift, EKS, GKE, kind, k3s, whatever you have in your kubeconfig shows up automatically."
       },
       "kubestellar": {
-        "name": "KubeStellar",
-        "fullName": "KubeStellar",
-        "description": "Multi-cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure environments. Provides unified control plane, intelligent workload placement, and policy-driven governance for complex multi-cluster deployments with automated scaling, resource optimization, and seamless integration capabilities across cloud providers."
+        "name": "KubeStellar (Legacy)",
+        "fullName": "KubeStellar (Legacy)",
+        "description": "The original multi-cluster Kubernetes orchestration engine. Now integrated into KubeStellar Console for a unified experience."
       },
       "kubestellarUI": {
         "name": "KubeStellar UI",
@@ -814,14 +798,14 @@
   "comingSoonPage": {
     "title": "Coming",
     "titleSpan": "Soon",
-    "subtitle": "We're working on something amazing for the KubeStellar community",
+    "subtitle": "We're working on something amazing for the KubeStellar Console community",
     "description": "This exciting new feature is currently under development. Our team is crafting an exceptional experience that will enhance your multi-cluster Kubernetes orchestration journey.",
     "statusBadge": "Under Development",
     "demoTitle": "See It In Action",
     "demoSubtitle": "Watch our marketplace demo to get a glimpse of what's coming",
     "cta": {
-      "title": "Explore KubeStellar Now",
-      "subtitle": "While you wait, discover what KubeStellar can do for you today",
+      "title": "Explore KubeStellar Console Now",
+      "subtitle": "While you wait, discover what KubeStellar Console can do for you today",
       "documentsButton": "View Documentation",
       "documentsDescription": "Comprehensive guides and API references",
       "documentsAction": "Explore Docs",
@@ -839,9 +823,9 @@
   },
   "marketplace": {
     "hero": {
-      "title": "KubeStellar Galaxy",
+      "title": "KubeStellar Console Marketplace",
       "titleSuffix": "Marketplace",
-      "subtitle": "Extend your KubeStellar deployment with powerful plugins and tools. From free community projects to enterprise solutions.",
+      "subtitle": "Extend your KubeStellar Console with dashboards, card presets, and themes from the community.",
       "stats": {
         "pluginsAvailable": "Plugins Available",
         "freePlugins": "Free Plugins",
@@ -855,7 +839,7 @@
     },
     "browse": {
       "title": "Browse All Plugins",
-      "subtitle": "Find the perfect tools to extend your KubeStellar deployment",
+      "subtitle": "Find the perfect extensions for your KubeStellar Console",
       "searchPlaceholder": "Search plugins...",
       "categoryFilter": "All",
       "pricingFilter": {
@@ -962,7 +946,7 @@
     }
   },
   "networkGlobe": {
-    "kubestellar": "KubeStellar",
+    "kubestellar": "KubeStellar Console",
     "controlPlane": "Control Plane",
     "clusters": {
       "kubeflexCore": {
@@ -988,7 +972,7 @@
     }
   },
   "metadata": {
-    "title": "KubeStellar - Multi-Cluster Kubernetes Orchestration",
+    "title": "KubeStellar Console - AI-Powered Multi-Cluster Kubernetes Dashboard",
     "description": "Simplify multi-cluster Kubernetes operations with intelligent workload distribution, unified management, and seamless orchestration across any infrastructure."
   },
   "notFound": {
