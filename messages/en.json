@@ -14,7 +14,7 @@
     "consoleInstallTime": "Sets up in less than a minute"
   },
   "footer": {
-    "description": "Multi-Cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure.",
+    "description": "AI-powered multi-cluster Kubernetes dashboard. Manage all your clusters with natural language, real-time monitoring, and community-driven extensions.",
     "docs": "Docs",
     "overview": "Overview",
     "userGuide": "User Guide",
@@ -587,9 +587,9 @@
         "description": "An AI-powered, multi-cluster Kubernetes dashboard that adapts to how you work. Try it or install locally it locally in under a minute. It's multi-cluster from day one — OpenShift, EKS, GKE, kind, k3s, whatever you have in your kubeconfig shows up automatically."
       },
       "kubestellar": {
-        "name": "KubeStellar",
-        "fullName": "KubeStellar",
-        "description": "Multi-cluster Kubernetes orchestration platform that simplifies distributed workload management across diverse infrastructure environments. Provides unified control plane, intelligent workload placement, and policy-driven governance for complex multi-cluster deployments with automated scaling, resource optimization, and seamless integration capabilities across cloud providers."
+        "name": "KubeStellar (Legacy)",
+        "fullName": "KubeStellar (Legacy)",
+        "description": "The original multi-cluster Kubernetes orchestration engine. Now integrated into KubeStellar Console for a unified experience."
       },
       "kubestellarUI": {
         "name": "KubeStellar UI",
