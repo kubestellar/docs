@@ -136,10 +136,10 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   };
 
   return (
-    <div className={`shrink-0 px-4 border-t border-gray-200 dark:border-gray-700 ${bannerActive ? 'py-1' : 'py-2'}`}>
+    <div className={`shrink-0 px-4 ${bannerActive ? 'py-1' : 'pt-4 pb-2'}`}>
       {/* Project links - always visible */}
       <div
-        className={`${bannerActive ? 'space-y-0' : 'space-y-1 py-2'}`}
+        className={`${bannerActive ? 'space-y-0' : 'space-y-0.5'}`}
       >
         {activeProjects.map((project: { title: string; href: string; description?: string }) => {
           const isCurrentProject = project.title === currentProject;
@@ -160,7 +160,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
               key={project.title}
               href={projectUrl}
               suppressHydrationWarning
-              className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-1.5'} ${isCurrentProject ? 'font-medium' : ''}`}
+              className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-2'} ${isCurrentProject ? 'font-medium' : ''}`}
               style={{
                 color: isCurrentProject
                   ? (isDark ? '#60a5fa' : '#2563eb')
@@ -217,7 +217,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
                     <a
                       href={projectUrl}
                       suppressHydrationWarning
-                      className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-1.5'} ${isCurrentProject ? 'font-medium' : ''}`}
+                      className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-2'} ${isCurrentProject ? 'font-medium' : ''}`}
                       style={{
                         color: isCurrentProject
                           ? (isDark ? '#60a5fa' : '#2563eb')
