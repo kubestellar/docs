@@ -139,7 +139,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
     <div className={`shrink-0 px-4 ${bannerActive ? 'py-1' : 'pt-4 pb-2'}`}>
       {/* Project links - always visible */}
       <div
-        className={`${bannerActive ? 'space-y-0' : 'space-y-0.5'}`}
+        className={`${bannerActive ? 'space-y-0' : 'space-y-1.5'}`}
       >
         {activeProjects.map((project: { title: string; href: string; description?: string }) => {
           const isCurrentProject = project.title === currentProject;
