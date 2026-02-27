@@ -50,7 +50,7 @@ We have a rewards program! Open issues and feature requests directly through the
 
 - **Live site:** [https://console.kubestellar.io](https://console.kubestellar.io)
 - **GitHub:** [https://github.com/kubestellar/console](https://github.com/kubestellar/console)
-- **Local agent install:** `brew tap kubestellar/tap && brew install --head kc-agent`
+- **Local install:** `curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash`
 
 ---
 
