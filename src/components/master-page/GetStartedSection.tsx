@@ -254,7 +254,7 @@ export default function GetStartedSection() {
                     {t("card2Button1")}
                   </a>
                   <a
-                    href="https://github.com/kubestellar/kubestellar"
+                    href="https://github.com/kubestellar/console"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center px-3 py-2.5 rounded-lg bg-gradient-to-r from-slate-700/80 to-slate-800/80 hover:from-slate-700 hover:to-slate-800 text-white text-sm font-medium transition-all duration-200 border border-slate-600/30"

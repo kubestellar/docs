@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { Link as IntlLink } from "@/i18n/navigation";
 import { GridLines, StarField, GlobeAnimation } from "../index";
 import { useTranslations } from "next-intl";
@@ -174,106 +173,17 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Interactive Action Buttons */}
-            <div
-              className="action-buttons-container space-y-5 animate-btn-float"
-              style={{ animationDelay: "0.8s" }}
-            >
-              {/* Installation Path Heading */}
-              <div className="text-center sm:text-left">
-                <h3 className="text-xl font-bold text-white mb-2">
-                  {t("getStartedWith")}{" "}
-                  <span className="text-gradient animated-gradient bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
-                    KubeStellar
-                  </span>
-                </h3>
-                <p className="text-sm text-blue-100/80">
-                  {t("immediateStart")}
-                </p>
-              </div>
-
-              {/* Installation Buttons Row */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                {/* Kubestellar Console Button */}
-                <IntlLink
-                  href="/docs/console/installation"
-                  className="group relative overflow-hidden flex w-150 items-center justify-between px-5 py-4 rounded-lg text-white 
-                            bg-slate-800/60 backdrop-blur-sm
-                            hover:bg-slate-800/80
-                            transition-all duration-300 transform hover:scale-[1.02]
-                            border border-blue-500/30 hover:border-blue-400/50
-                            hover:shadow-lg hover:shadow-blue-500/20"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                      <svg
-                        className="w-5 h-5 text-blue-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <div className="text-left">
-                      <div className=" font-semibold text-white">
-                        {t("consoleInstall")}
-                      </div>
-                      <div className=" text-blue-200/70">
-                        {t("consoleInstallTime")}
-                      </div>
-                    </div>
-                  </div>
-                  <svg
-                    className="w-5 h-5 text-blue-400 transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </IntlLink>
-              </div>
-              
-
-              {/* Explore Docs Button */}
-              <div className="flex justify-center sm:justify-start" >
-                <Link
-                  href="/docs"
-                  className="secondary-action-btn inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-lg text-gray-200 
-                            bg-gray-800/40 hover:bg-gray-800/60 
-                            backdrop-blur-md border border-gray-700/50 hover:border-gray-600/50 
-                            transition-all duration-500 transform hover:-translate-y-1 
-                            animate-btn-float
-                            w-150"
-                  style={{ animationDelay: "0.2s" }}
-                >
-                  <svg
-                    className="mr-2 h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    ></path>
-                  </svg>
-                  {t("buttonDocs")}
-                </Link>
-              </div>
+            {/* Console Docs Link */}
+            <div className="mt-4 animate-btn-float" style={{ animationDelay: "0.8s" }}>
+              <IntlLink
+                href="/docs/console/readme"
+                className="inline-flex items-center text-sm text-blue-400 hover:text-blue-300 transition-colors font-medium"
+              >
+                Console Documentation
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </IntlLink>
             </div>
           </div>
 
