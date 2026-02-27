@@ -39,6 +39,7 @@ interface RegistryData {
   version: string;
   updatedAt: string;
   items: MarketplaceItem[];
+  presets?: MarketplaceItem[];
 }
 
 const TYPE_CONFIG = {
@@ -85,7 +86,8 @@ export default function MarketplacePage() {
         return res.json();
       })
       .then((d: RegistryData) => {
-        setData(d);
+        const allItems = [...(d.items || []), ...(d.presets || [])];
+        setData({ ...d, items: allItems });
         setLoading(false);
       })
       .catch((e) => {
