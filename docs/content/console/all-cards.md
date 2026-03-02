@@ -330,6 +330,15 @@ The console ships with 115+ built-in cards, and you can create more using the Ca
 
 ---
 
+### Monitoring Cards (2)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 99 | **Thanos Monitoring Status** | Thanos sidecar, store gateway, compactor, and query health across clusters. Shows component status, replication lag, and query performance |
+| 100 | **wasmCloud Monitoring** | wasmCloud host status, running actors, capability providers, and lattice health |
+
+---
+
 ### Community-Contributed Cards (2)
 
 | Card | What it shows |

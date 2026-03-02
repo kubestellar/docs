@@ -14,7 +14,7 @@ This guide covers the main features of the KubeStellar Console.
 
 The main dashboard provides a customizable view of your multi-cluster environment.
 
-![Dashboard Overview](images/dashboard-overview-feb16.jpg)
+![Dashboard Overview](images/dashboard-overview-mar01.png)
 
 ### Stats Overview
 
@@ -165,6 +165,7 @@ The console supports multiple AI backends:
 
 - **Claude (Anthropic)**: Primary AI backend with API access
 - **Claude Code (Local)**: Uses your local Claude Code installation for missions
+- **GitHub Copilot CLI**: Uses Copilot CLI for agent tasks
 - **GPT-4 (OpenAI)**: Alternative LLM backend
 - **Gemini (Google)**: Alternative LLM backend
 
@@ -843,3 +844,126 @@ Dashboard navigation is ~18% faster with KeepAlive route caching:
 - Previously visited dashboards render instantly without re-mounting or re-fetching
 - LRU cache preserves up to 8 route component instances
 - No configuration needed — transparent performance improvement
+
+---
+
+## What's New (2026-02-24 to 2026-03-01)
+
+This section summarizes features and improvements added in the week of 2026-02-24 through 2026-03-01.
+
+### Mission Browser: Installers & Solutions
+
+The AI Mission sidebar now includes a **Mission Browser** with two tabs:
+
+- **Installers** — Pre-packaged missions for deploying tools and infrastructure (Prometheus, Gatekeeper, etc.) from the curated knowledge base. Cards show CNCF category tags, GitHub author avatars, and install buttons.
+- **Solutions** — Higher-level solutions combining multiple installers.
+
+Cards load progressively as they are fetched, showing results immediately. Each card includes author attribution with GitHub avatar and profile link.
+
+### Mission Recommendations
+
+The Mission Browser now shows **personalized recommendations** with explanations. Each recommendation includes a "match reason" explaining why it's relevant — for example, "Recommended because your clusters have GPU nodes but no monitoring configured."
+
+### AI Mission Sharing & Security Scanning
+
+Missions can be shared via the new **Share** dialog:
+
+- Export missions as JSON or push to a watched repository
+- Automatic security scanning before sharing to detect secrets or sensitive data
+- Import missions from external sources with lazy knowledge base matching
+
+### Token Guidance Banner
+
+A new banner in the Mission Browser shows estimated token costs for browsing and installing missions, helping teams manage AI spending.
+
+### AI-Driven Policy Creation
+
+The OPA Policies card now includes a **Create Policy** modal powered by AI. Describe the policy you want in plain English, and the AI generates the ConstraintTemplate and Constraint YAML. Review and apply to selected clusters.
+
+### Thanos Monitoring Card
+
+New **Thanos Monitoring Status** card showing sidecar, store gateway, compactor, and query health across clusters.
+
+### wasmCloud Monitoring Card
+
+New **wasmCloud Monitoring** card displaying host status, running actors, capability providers, and lattice health.
+
+### GitHub Copilot CLI as Agent Provider
+
+GitHub Copilot CLI is now supported as an AI agent provider alongside Claude and other providers. The console includes refactored Copilot agents (from kagenti skills) for cluster analysis, code review, and security recommendations.
+
+### GitHub Enterprise OAuth
+
+The console now supports GitHub Enterprise Server as an OAuth provider. Set `GITHUB_URL` to your GHE instance URL and the console adjusts all OAuth and API endpoints automatically. The `public_repo` scope has been removed — only basic user profile data is requested.
+
+### kc-agent Background Daemon
+
+The `start.sh` script now runs kc-agent as a background daemon automatically, eliminating the need for a separate terminal.
+
+### Active User Count in Navbar
+
+The navbar header now displays the count of active users currently connected to the console.
+
+### Theme Uninstall
+
+Marketplace-installed themes can now be uninstalled from **Settings > Appearance**.
+
+### Dashboard Import Suggestions
+
+When opening the dashboard import dialog, the console suggests matching missions from the knowledge base with lazy loading.
+
+### Performance Improvements
+
+- **Vendor chunk splitting** — Framework bundles are separated from application code for better caching
+- **Gzip compression** — All responses compressed, reducing transfer sizes by ~70%
+- **Two-phase OPA loading** — OPA card renders instantly with cached data, background refresh follows
+- **Parallel OPA cluster checks** — Cluster Gatekeeper detection now runs in parallel instead of sequentially
+- **OPA timeout increase** — Phase 1 timeout raised to 25s with 60-minute cache TTL for slow clusters
+- **Fix for ERR_INCOMPLETE_CHUNKED_ENCODING** — Resolved streaming errors on slow networks
+
+### GPU Reservations Improvements
+
+- Eye icon toggle for viewing reservation details
+- Auto-approval workflow for GPU reservation requests
+- Always-live data mode (no demo fallback on connected clusters)
+- Demo fallback restored for localhost development
+
+### OPA / Gatekeeper Detection Fixes
+
+Multiple fixes to improve OPA Gatekeeper detection across different cluster types:
+
+- Fixed detection on platform-eval and vllm-d clusters
+- Fixed detection on late-reachable clusters (slow network)
+- Better handling of slow clusters with progressive timeouts
+
+### Accessibility Improvements
+
+- Added missing `aria-labels` to all `role="button"` elements
+- Added keyboard navigation (Tab, Enter, Escape) to dropdown menus and tab bars
+- Added keyboard support for dialog backdrop dismissal
+- Confirmation dialogs added for all destructive actions
+
+### Theme & UI Quality
+
+- Replaced hardcoded hex colors with CSS variables and Tailwind theme tokens across all components
+- Dark mode variants added for all light-only gray color classes
+- Normalized spacing to 4px/8px grid system
+- Fixed gradient action button contrast in light themes
+- Improved tour accuracy for sidebar sections and card headers
+- Health indicators added to dashboard components and card wrappers
+
+### Code Quality & Reliability
+
+- Fixed 25 `any` type usages across card components for better type safety
+- Added `ErrorBoundary` to `CardWrapper` for graceful card failure handling
+- Added `isDemoData` support to status cards missing demo mode wiring
+- Wrapped all `localStorage` calls in try/catch for private browsing compatibility
+- Cleared all `setTimeout`/`setInterval` on unmount to prevent memory leaks
+- Added toast notifications to error catch blocks (replacing silent failures)
+- Replaced wildcard lucide-react imports with named imports for smaller bundles
+
+### Analytics & Tracking
+
+- Added UTM tracking parameters and live demo links
+- New analytics event emitters for Deploy, Compliance, and Login flows
+- GA-driven UX improvements: session tracking, agent activity, tour completion, dashboard usage

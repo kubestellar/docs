@@ -57,6 +57,46 @@ The container is failing because it can't bind to port 80. There's already a pro
 
 ---
 
+## Mission Browser
+
+The Mission Browser lets you discover, install, and share pre-built AI missions from a curated knowledge base. Access it from the AI Missions sidebar.
+
+### Installers & Solutions Tabs
+
+The browser is organized into two tabs:
+
+- **Installers** — Pre-packaged missions for setting up tools and infrastructure (e.g., install Prometheus, deploy Gatekeeper, set up GitOps). Each installer card shows the CNCF category, author avatar, and a one-click install button.
+- **Solutions** — Higher-level solutions that combine multiple components to solve common problems (e.g., "Full observability stack", "Zero-trust network policies").
+
+Cards load progressively as they are fetched from the knowledge base, so you see results immediately rather than waiting for all missions to load.
+
+### Recommendations
+
+The browser shows personalized recommendations based on your cluster configuration and installed tools. Each recommendation explains **why** it's suggested — for example, "Recommended because you have GPU nodes but no monitoring" or "Your clusters use Helm but lack drift detection."
+
+### Token Guidance Banner
+
+A banner at the top of the Mission Browser shows estimated token usage for browsing and installing missions, helping you budget AI costs.
+
+### Sharing Missions
+
+You can share missions with your team:
+
+1. Click the **Share** button on any mission
+2. Choose to share via link, export as JSON, or push to a repository
+3. Security scanning runs automatically before sharing to detect sensitive data
+
+### Importing Missions
+
+Import missions from external sources:
+
+1. Click **Import** in the Mission Browser
+2. Paste a mission JSON, URL, or select from a repository
+3. The browser suggests matching missions from the knowledge base
+4. Preview before importing to your dashboard
+
+---
+
 ## AI Diagnose
 
 Every card has an "Ask AI" button. Click it to get AI analysis of that specific data.
@@ -305,6 +345,52 @@ The Provider Health card shows you the status of AI services and cloud providers
 ### Why It Matters
 
 If AI features stop working or respond slowly, check the Provider Health card first. It tells you whether the issue is on your side or the provider's side.
+
+---
+
+## AI-Driven Policy Creation
+
+The OPA Policies card includes an AI-powered "Create Policy" modal that helps you write Gatekeeper policies using natural language.
+
+### How to Use
+
+1. Navigate to the **Security Posture** dashboard
+2. Find the **OPA Policies** card
+3. Click **Create Policy**
+4. Describe the policy you want in plain English (e.g., "require all pods to have resource limits")
+5. AI generates the ConstraintTemplate and Constraint YAML
+6. Review, edit if needed, and apply to selected clusters
+
+### Supported Policy Types
+
+- Resource limits enforcement
+- Label requirements
+- Image registry restrictions
+- Network policy requirements
+- Security context constraints
+- Custom policy logic
+
+---
+
+## GitHub Copilot CLI as Agent Provider
+
+The console supports GitHub Copilot CLI as an AI agent provider alongside Claude and other providers.
+
+### Setup
+
+1. Ensure GitHub Copilot CLI is installed and authenticated
+2. Navigate to **Settings > AI & Intelligence > Local Agent**
+3. The console auto-detects available providers
+4. Copilot CLI appears as a provider option
+
+### Copilot Agents
+
+The console includes refactored Copilot agents (from kagenti skills) that can:
+
+- Analyze cluster health
+- Review code and configurations
+- Provide security recommendations
+- Assist with deployments
 
 ---
 

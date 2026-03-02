@@ -27,6 +27,7 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | `ENABLED_DASHBOARDS` | Comma-separated list of dashboard routes to show in sidebar | (all dashboards) |
 | `VITE_GA_MEASUREMENT_ID` | Google Analytics 4 measurement ID | (optional) |
 | `FEEDBACK_GITHUB_TOKEN` | GitHub token for feedback issue creation | (optional) |
+| `GITHUB_URL` | GitHub Enterprise Server URL for OAuth (e.g., `https://github.mycompany.com`) | (optional — defaults to github.com) |
 
 ## kc-agent Configuration
 
@@ -211,6 +212,52 @@ Users can opt out of analytics in **Settings > Analytics**. The toggle is off by
 - Page views and navigation patterns (prefixed with `ksc_`)
 - Card interactions (add, remove, expand, configure)
 - No personally identifiable information (PII) is ever collected
+
+## GitHub Enterprise OAuth
+
+The console supports GitHub Enterprise Server (GHE) as an OAuth provider in addition to github.com.
+
+### Setup
+
+1. On your GHE instance, create an OAuth App under **Settings > Developer settings > OAuth Apps**
+2. Set the callback URL to `https://your-console-url/api/auth/callback`
+3. Configure the console with:
+
+```bash
+GITHUB_URL=https://github.mycompany.com
+GITHUB_CLIENT_ID=your-ghe-client-id
+GITHUB_CLIENT_SECRET=your-ghe-client-secret
+```
+
+The console automatically adjusts OAuth and API endpoints based on `GITHUB_URL`. The `public_repo` scope is **not** requested — only basic user profile data is needed.
+
+## kc-agent Background Daemon
+
+When using `start.sh`, the kc-agent automatically runs as a background daemon process. This means:
+
+- The agent starts automatically with the console
+- It runs in the background without occupying a terminal
+- Logs are written to the console's log output
+- The agent is stopped when the console shuts down
+
+To run kc-agent independently:
+
+```bash
+# Run as foreground process
+./kc-agent --port 8585
+
+# Or with custom origins
+./kc-agent --allowed-origins "https://my-console.example.com"
+```
+
+## Performance Optimizations
+
+The console includes several performance optimizations for faster load times:
+
+- **Vendor chunk splitting** — JavaScript bundles are split into vendor chunks for better caching. Framework code (React, Recharts) is separated from application code.
+- **Gzip compression** — All responses are gzip-compressed, reducing transfer sizes by ~70%.
+- **Two-phase OPA loading** — The OPA Policies card renders instantly with cached data, then updates in the background. Cluster checks run in parallel rather than sequentially.
+- **Progressive card loading** — Mission Browser cards appear one-by-one as they load rather than waiting for all data.
 
 ## Security Considerations
 
