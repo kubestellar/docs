@@ -8,6 +8,7 @@ import {
   Footer,
 } from "../../../components/index";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function MaintainerLadderPage() {
   const t = useTranslations("ladderPage");
@@ -226,8 +227,8 @@ export default function MaintainerLadderPage() {
                 {t("subtitle")}
               </p>
 
-              {/* Tracking Sheet CTA */}
-              <div className="mt-8 flex justify-center">
+              {/* CTAs */}
+              <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                 <div className="relative group">
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
                   <a
@@ -249,6 +250,15 @@ export default function MaintainerLadderPage() {
                     </div>
                   </a>
                 </div>
+                <Link
+                  href="/leaderboard"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-800/60 backdrop-blur-md rounded-lg border border-white/10 hover:border-purple-500/30 hover:bg-gray-800/80 transition-all duration-300"
+                >
+                  <span className="text-lg">🏆</span>
+                  <span className="text-sm font-semibold text-white">
+                    Contributor Leaderboard
+                  </span>
+                </Link>
               </div>
             </div>
           </div>
