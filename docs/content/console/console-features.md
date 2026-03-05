@@ -14,7 +14,7 @@ This guide covers the main features of the KubeStellar Console.
 
 The main dashboard provides a customizable view of your multi-cluster environment.
 
-![Dashboard Overview](images/dashboard-overview-feb16.jpg)
+![Dashboard Overview](images/dashboard-overview-mar05.jpg)
 
 ### Stats Overview
 
@@ -843,3 +843,325 @@ Dashboard navigation is ~18% faster with KeepAlive route caching:
 - Previously visited dashboards render instantly without re-mounting or re-fetching
 - LRU cache preserves up to 8 route component instances
 - No configuration needed — transparent performance improvement
+
+---
+
+## Mission Explorer / Browser (New in March 2026)
+
+The Deploy page now includes a full-featured **Mission Browser** for discovering, sharing, and importing deployment missions across your multi-cluster environment.
+
+![Deploy Page with Mission Browser](images/deploy-mar05.jpg)
+
+### Mission Discovery
+
+The Mission Browser provides a searchable, filterable catalog of deployment missions:
+
+- **Installer Tab**: Pre-built installer missions for common infrastructure (Helm charts, operators, CNCF projects)
+- **Solution Tab**: End-to-end solution missions that combine multiple components
+- **Progressive Loading**: Missions load incrementally with shimmer skeleton placeholders for smooth UX
+- **Deep-Links**: Every mission has a shareable URL that preserves query parameters through OAuth login flows
+
+### Mission Sharing and Import
+
+- **Share Missions**: Generate shareable links to specific missions with embedded configuration
+- **Smart Import Browser**: Browse and import missions from the community with AI-powered recommendations
+- **Security Scanning**: Imported missions are automatically scanned for security issues before deployment
+- **Saved Missions Panel**: Quick access to previously saved missions from the sidebar
+
+### Mission Detail View
+
+Clicking a mission opens a detail view with:
+
+- Full description and prerequisites
+- Step-by-step installation instructions
+- Configuration options with sensible defaults
+- Target cluster selection with compatibility checks
+- Shimmer loading skeleton during data fetch for polished UX
+
+---
+
+## Declarative GitOps Restart (Argo CD Integration)
+
+![GitOps Dashboard](images/gitops-mar05.jpg)
+
+The GitOps dashboard now includes enhanced Argo CD integration with declarative restart capabilities.
+
+### Sync Now Button
+
+The Argo CD card now includes a **Sync Now** button that triggers an immediate sync of ArgoCD applications:
+
+- One-click sync for individual applications
+- Bulk sync for all applications in a cluster
+- Real-time sync status updates via SSE streaming
+
+### GitOps Restart Tab
+
+A new **GitOps Restart** tab in the Argo CD drilldown view provides:
+
+- Declarative restart of ArgoCD-managed applications
+- Rolling restart with configurable strategy (RollingUpdate, Recreate)
+- Restart history with timestamps and initiator tracking
+- Integration with the alert system for restart failures
+
+---
+
+## Developer Setup Dialog
+
+![Settings - Updates and Developer Setup](images/settings-updates-mar05.jpg)
+
+A new **Developer Setup** dialog helps contributors run the console from source with full OAuth integration.
+
+### Environment Prerequisites
+
+The Developer channel in Settings > Updates now shows a comprehensive environment checklist:
+
+- **kc-agent**: Connection status to the local Kubernetes agent
+- **Coding agent**: Whether a coding agent (Claude Code, Cursor, etc.) is detected
+- **OAuth**: GitHub OAuth configuration status (Detected/Configured/Not Set)
+- **GitHub token**: Token status for API access
+- **Install mode**: Source (dev) vs binary vs Helm detection
+- **Git status**: Uncommitted changes warning
+
+### Source Update Workflow
+
+For developers running from source:
+
+1. **Pull & Build**: One-click command to pull latest code and rebuild
+2. **Restart**: Restart all processes (frontend, backend, kc-agent)
+3. **Automatic Updates**: Toggle to automatically apply updates when detected
+4. **Version tracking**: Shows current commit, latest on main, and commit diff
+
+---
+
+## Contributor Leaderboard
+
+The Updates tab in the Settings page now includes a **Contributor Leaderboard** that ranks community members by their contributions.
+
+### Ranking Criteria
+
+Contributors are ranked by a composite score including:
+
+- Pull requests merged
+- Issues opened and resolved
+- Code review activity
+- Documentation contributions
+
+### Display
+
+- Top contributors shown with GitHub avatars and contribution counts
+- Per-repository breakdown of activity
+- Historical trend showing contribution velocity
+
+---
+
+## AI Agent Improvements
+
+![AI Agents Dashboard](images/ai-agents-mar05.jpg)
+
+The AI Agents dashboard has received significant usability improvements.
+
+### Agent On/Off Toggle
+
+- New toggle switch to enable/disable individual AI agents
+- Agent state persists across sessions with agent memory
+- Visual "Live" indicator shows when an agent is actively processing
+
+### None Option
+
+- A new "None" option allows disabling all AI agents while keeping the dashboard visible
+- Useful for monitoring agent status without active AI assistance
+- The header AI indicator shows the current agent state (AI On/Off/None)
+
+### Agent Fleet Enhancements
+
+The Agent Fleet card now shows:
+
+- Framework information (LangGraph, CrewAI, AG2) per agent
+- Build status with recent build history
+- MCP Tool Registry with searchable tool listing
+- Agent Discovery with skill tags and cost analysis capabilities
+
+---
+
+## New Monitoring Cards
+
+Several new monitoring cards have been added to the card catalog.
+
+### CRI-O Runtime Card
+
+Monitors CRI-O container runtime across clusters:
+
+- Container count and runtime version
+- Image pull statistics and cache hit rates
+- Runtime health status per node
+
+### Contour Ingress Card
+
+Monitors Contour/Envoy ingress controllers:
+
+- HTTP proxy count and status
+- Request throughput and latency metrics
+- TLS certificate expiry tracking
+
+### CoreDNS Card
+
+Monitors CoreDNS instances across clusters:
+
+- Query rate and cache hit percentage
+- Error rate and SERVFAIL tracking
+- Per-zone query distribution
+
+### Thanos Card
+
+Monitors Thanos components for long-term Prometheus storage:
+
+- Store gateway status and block count
+- Query frontend cache hit rates
+- Compactor progress and retention status
+
+---
+
+## OPA Policy Improvements
+
+![Security Posture with OPA Policies](images/security-posture-mar05.jpg)
+
+The OPA (Open Policy Agent) integration has been significantly enhanced.
+
+### AI-Driven Create Policy Modal
+
+- New **Create Policy** modal with AI-assisted policy generation
+- Describe your policy intent in natural language
+- AI generates Rego policy code with proper constraint templates
+- Preview and test policies before deployment
+
+### Parallel Cluster Checks
+
+- OPA policy checks now run in parallel across all connected clusters
+- Dramatically reduced check times for environments with many clusters
+- Progress indicator shows check completion per cluster
+
+### Two-Phase Loading
+
+- Phase 1: Load policy metadata (fast, cached)
+- Phase 2: Load violation data (background, per-cluster)
+- Cards show policy structure immediately, then populate violation counts
+
+---
+
+## Alert Deduplication
+
+![Alerts Dashboard](images/alerts-mar05.jpg)
+
+The alert system now includes **type-aware deduplication** to prevent duplicate alerts from cluttering the dashboard.
+
+### How It Works
+
+- Alerts are deduplicated based on a composite key of: alert type, source cluster, affected resource, and severity
+- When duplicate alerts arrive, the system increments a count rather than showing separate entries
+- The most recent occurrence timestamp is preserved
+- Deduplication works across both real-time SSE streams and REST polling
+
+### Benefits
+
+- Cleaner alert view during cluster-wide events (e.g., node failures that trigger many pod alerts)
+- Accurate alert counts without inflation from duplicate sources
+- Faster alert page rendering with fewer DOM elements
+
+---
+
+## macOS Native Notifications
+
+Console notifications now integrate with macOS native notifications:
+
+- Alerts and critical events trigger native macOS notification banners
+- **Clicking a notification opens the console** and navigates to the relevant page
+- Notification grouping by severity level
+- Configurable in Settings > Notifications
+
+---
+
+## Marketplace Theme Persistence
+
+Marketplace themes now survive localStorage clears:
+
+- Theme selections are backed up to the server-side user profile
+- On localStorage clear (e.g., browser cache wipe), themes are restored from the server
+- No more losing custom theme selections after clearing browser data
+
+---
+
+## OAuth Status Improvements
+
+The OAuth status indicator in the developer panel has been improved:
+
+- **No more false "not configured" flash** during startup
+- OAuth status shows accurate state immediately: Detecting -> Configured/Not Set
+- Deep-link query parameters are preserved through the OAuth login flow
+- Returning from GitHub OAuth redirects to the original deep-linked page
+
+---
+
+## Performance Improvements
+
+### Vendor Splitting and Compression
+
+- JavaScript bundles are now split by vendor to optimize caching
+- Gzip and Brotli compression reduce transfer sizes
+- Vendor chunks (React, D3, etc.) are cached separately from application code
+- Cache headers ensure vendor chunks survive application updates
+
+### Dashboard Import Suggestions
+
+- Lazy Knowledge Base matching for import suggestions
+- Suggestions load progressively as the KB is indexed
+- Reduced initial page load by deferring suggestion computation
+
+---
+
+## GA4 Analytics Enhancements
+
+### Campaign Tracking
+
+- UTM parameter support for tracking traffic sources
+- Campaign-aware event tagging for marketing attribution
+- Referrer tracking for community link sharing
+
+### Engagement Time Fix
+
+- Corrected engagement time calculation for accurate session duration reporting
+- Page visibility API integration ensures background tabs don't inflate metrics
+
+---
+
+## Shimmer Loading Skeleton
+
+Mission detail views and other data-heavy pages now use **shimmer loading skeletons** instead of spinners:
+
+- Anatomically correct placeholders that match the final layout
+- Smooth shimmer animation for perceived performance
+- Progressive content reveal as data arrives
+- Applied to mission details, cluster cards, and agent fleet views
+
+---
+
+## Accessibility Improvements
+
+Additional accessibility improvements in this release:
+
+### ARIA Labels
+
+- Comprehensive ARIA labels on all interactive elements
+- Screen reader announcements for dynamic state changes
+- Improved focus management in modals and dropdowns
+
+### Touch Targets
+
+- All interactive elements now meet the 44px minimum touch target size
+- Improved tap accuracy on mobile and tablet devices
+- Consistent button sizing across the sidebar and toolbar
+
+### Keyboard Navigation
+
+- Full keyboard navigation support for the mission browser
+- Arrow key navigation in card grids
+- Escape key handling in all modal and dropdown contexts

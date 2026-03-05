@@ -55,7 +55,7 @@ Developer channel features:
 
 ### Auto-Update System
 
-![Settings - Updates](images/settings-updates-feb23.jpg)
+![Settings - Updates](images/settings-updates-mar05.jpg)
 
 The console includes a built-in auto-update system:
 

@@ -10,7 +10,7 @@ description: >
 
 KubeStellar Console isn't just for monitoring — it's a full deployment and orchestration control plane for your workloads across multiple clusters.
 
-![Deploy Dashboard](images/deploy-dashboard.png)
+![Deploy Dashboard](images/deploy-mar05.jpg)
 
 ---
 
@@ -163,3 +163,66 @@ With the console:
 - **Use AI** — Let AI diagnose failed deployments instead of digging through logs manually
 - **Watch the missions** — The Deployment Missions panel shows you exactly what's happening
 - **Filter workloads** — Use the status filters to focus on what needs attention (Failed, Degraded, Pending)
+
+---
+
+## Mission Browser (New in March 2026)
+
+The Deploy page now includes a full-featured **Mission Browser** for discovering, managing, and sharing deployment missions.
+
+### Installer and Solution Tabs
+
+The Mission Browser organizes missions into two primary tabs:
+
+- **Installer**: Pre-built missions for installing infrastructure components — Helm charts, operators, CNCF projects, and common tools
+- **Solution**: End-to-end solution missions that combine multiple components into a complete deployment (e.g., "Deploy a full observability stack" which installs Prometheus, Grafana, and alerting rules together)
+
+### Progressive Loading
+
+Missions load incrementally with shimmer skeleton placeholders:
+
+- The browser renders immediately with anatomically correct loading skeletons
+- Missions appear as they load, avoiding the "blank screen" experience
+- Lazy Knowledge Base matching provides import suggestions as the catalog is indexed
+
+### Deep-Linking and Sharing
+
+Every mission has a unique, shareable URL:
+
+- **Deep-links** preserve query parameters through the OAuth login flow
+- Share a mission URL with a teammate, and they land directly on that mission after authenticating
+- Import missions from shared links with one-click import
+- AI-powered recommendations suggest related missions
+
+### Saved Missions Panel
+
+Quick-access panel for previously saved missions:
+
+- Pin frequently-used missions
+- Quick-deploy with last-used configuration
+- Sort by recent use or alphabetically
+
+---
+
+## Declarative GitOps Restart (Argo CD)
+
+![GitOps Dashboard with Sync Now](images/gitops-mar05.jpg)
+
+The GitOps dashboard now includes enhanced Argo CD integration for declarative application restarts.
+
+### Sync Now Button
+
+The Argo CD application card now features a **Sync Now** action button:
+
+- Triggers an immediate sync of the selected ArgoCD application
+- Shows real-time sync progress with status updates
+- Supports both single-app and bulk sync operations
+
+### GitOps Restart Tab
+
+A new tab in the Argo CD application drilldown provides restart capabilities:
+
+- **Rolling restart**: Triggers a rolling restart of all pods managed by the application
+- **Strategy selection**: Choose between RollingUpdate or Recreate strategies
+- **Restart history**: View past restarts with timestamps, initiator, and outcome
+- **Alert integration**: Failed restarts automatically create alerts for follow-up

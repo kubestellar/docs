@@ -3,12 +3,12 @@ title: "Dashboards"
 linkTitle: "Dashboards"
 weight: 6
 description: >
-  All 27+ dashboard pages in KubeStellar Console
+  All 28+ dashboard pages in KubeStellar Console
 ---
 
 # Dashboards
 
-KubeStellar Console has 27+ different dashboards. Each one shows you different information about your Kubernetes clusters.
+KubeStellar Console has 28+ different dashboards. Each one shows you different information about your Kubernetes clusters.
 
 ## Main Dashboard
 
@@ -26,7 +26,7 @@ The main dashboard learns what you care about and shows those things first.
 
 ---
 
-## Dedicated Dashboards (27)
+## Dedicated Dashboards (28)
 
 ### Clusters Dashboard
 
@@ -132,17 +132,46 @@ Find security issues:
 
 ---
 
+### Security Posture Dashboard
+
+**Route:** `/security-posture`
+
+![Security Posture Dashboard](images/security-posture-mar05.jpg)
+
+Comprehensive security scanning, vulnerability assessment, and policy enforcement:
+
+- **Compliance Score**: Overall security score across all clusters (e.g., 78%)
+- **Total Checks**: Count of all security checks performed (405+)
+- **Benchmark Scores**: CIS, NSA, PCI-DSS benchmark compliance percentages
+- **Policy Violations**: Real-time violation tracking with severity breakdown
+- **OPA Policies**: Create, manage, and enforce OPA Gatekeeper policies with AI-assisted policy generation
+- **Kyverno Policies**: Install and manage Kyverno for Kubernetes-native policy management
+- **Vulnerability Scanning**: Critical and high CVE tracking across container images
+- **Kubescape Integration**: Automated security posture scanning with 80%+ benchmark scores
+
+**New in March 2026:**
+
+- AI-driven **Create Policy** modal for natural language policy generation
+- Parallel cluster checks for faster policy evaluation across many clusters
+- Two-phase loading: policy metadata loads instantly, violations populate in background
+
+**Best for:** Enterprise security compliance and policy enforcement
+
+---
+
 ### GitOps Dashboard
 
 **Route:** `/gitops`
 
-![GitOps Dashboard](images/gitops-dashboard.png)
+![GitOps Dashboard](images/gitops-mar05.jpg)
 
 Manage GitOps:
-- Helm releases and their status
+- Helm releases and their status (295 releases)
 - Kustomizations
-- ArgoCD applications
-- Drift detection (when clusters don't match git)
+- ArgoCD applications with **Sync Now** button for immediate sync
+- **GitOps Restart** tab in ArgoCD drilldown for declarative application restarts
+- Drift detection with deployment status tracking (391 deployments)
+- Operator sync status (60 operators, 4 pending)
 
 **Best for:** Managing deployments from git
 
@@ -152,13 +181,16 @@ Manage GitOps:
 
 **Route:** `/alerts`
 
-![Alerts Dashboard](images/alerts-dashboard.png)
+![Alerts Dashboard](images/alerts-mar05.jpg)
 
 Manage alerts:
-- Firing alerts
+- Firing alerts with type-aware deduplication
 - Pending alerts
-- Alert rules you've created
-- Resolved alerts
+- Alert rules you've created (4 enabled, 3 disabled)
+- Resolved alerts (119 resolved)
+- Falco integration for runtime security monitoring
+- Warning Events feed
+- macOS native notifications with click-to-navigate
 
 **Best for:** Knowing when things need attention
 
@@ -360,14 +392,18 @@ The Nightly E2E Status card features:
 
 **Route:** `/ai-agents`
 
-![AI Agents Dashboard](images/ai-agents-dashboard.jpg)
+![AI Agents Dashboard](images/ai-agents-mar05.jpg)
 
 Manage Kagenti AI agents:
-- Agent fleet overview across clusters
-- MCP tools and framework breakdown (LangGraph, CrewAI, AG2)
+- Agent fleet overview across clusters with on/off toggle and "Live" indicator
+- MCP Tool Registry with searchable tool listing
+- Agent Discovery with skill tags and cost analysis capabilities
+- Build Pipeline with recent build history and status
+- Framework breakdown (LangGraph, CrewAI, AG2)
 - Agent build status and history
 - SPIFFE identity coverage
 - Per-agent replica status and cluster placement
+- Agent memory persistence across sessions
 
 **Best for:** Deploying, securing, and monitoring AI agents
 
@@ -377,15 +413,16 @@ Manage Kagenti AI agents:
 
 **Route:** `/ci-cd`
 
-![CI/CD Dashboard](images/prow-ci.jpg)
+![CI/CD Dashboard](images/ci-cd-mar05.jpg)
 
 Monitor continuous integration and deployment:
 - PROW CI status and success rates
-- PROW Jobs with type/state filtering
+- PROW Jobs with type/state filtering and pagination
+- PROW CI Monitor with success rate tracking
 - PROW revision history
-- Helm release tracking
+- Helm release tracking (295 releases)
 - Kustomize and ArgoCD sync status
-- Operator deployments and synced counts
+- Operator deployments (5,412 total, 287 deployed, 4 pending)
 
 **Best for:** Monitoring CI/CD pipelines and PROW test infrastructure
 
@@ -395,12 +432,15 @@ Monitor continuous integration and deployment:
 
 **Route:** `/deploy`
 
-![Deploy Dashboard](images/deploy-missions-new.jpg)
+![Deploy Dashboard](images/deploy-mar05.jpg)
 
 Multi-cluster deployment management:
-- Workloads overview with drag-to-deploy
+- Workloads overview with drag-to-deploy (659 total, 553 unique)
 - Cluster Groups for targeting deployments
-- Deployment Missions with AI-assisted rollouts
+- Deployment Missions with AI-assisted rollouts and Mission Browser
+- Mission Browser with Installer and Solution tabs for discovering pre-built missions
+- Deep-linking and sharing for missions with OAuth flow support
+- Saved Missions panel for quick access
 - Resource Marshall for workload placement
 - Deployment history and rollback
 
