@@ -10,7 +10,7 @@ description: >
 
 Stay informed about what's happening in your clusters with configurable alerts. Plus, track and control your AI token usage.
 
-![Alerts Dashboard](images/alerts-dashboard.png)
+![Alerts Dashboard](images/alerts-mar05.jpg)
 
 ---
 
@@ -265,4 +265,47 @@ The Settings page shows:
 
 1. **Use Slack for teams** - Everyone sees important alerts
 2. **Keep browser on** - For personal notifications
-3. **Don't over-notify** - Only critical to Slack, rest to browser
+3. **Don&#39;t over-notify** - Only critical to Slack, rest to browser
+
+---
+
+## Alert Deduplication (New in March 2026)
+
+The alert system now includes **type-aware deduplication** to prevent duplicate alerts from flooding the dashboard during cluster-wide events.
+
+### How Deduplication Works
+
+Alerts are deduplicated based on a composite key combining:
+
+- Alert type (e.g., `PodCrashLoopBackOff`, `NodeNotReady`)
+- Source cluster name
+- Affected resource identifier
+- Severity level
+
+When duplicate alerts arrive (e.g., multiple pods reporting the same issue), the system:
+
+1. Increments a count on the existing alert
+2. Updates the timestamp to the most recent occurrence
+3. Preserves the original alert context for investigation
+
+### Benefits
+
+- **Cleaner dashboard** during cascading failures (e.g., a node going down triggers alerts for all its pods)
+- **Accurate counts** without inflation from duplicate sources
+- **Faster rendering** with fewer DOM elements in the alert list
+
+---
+
+## macOS Native Notifications (New in March 2026)
+
+Console alerts now integrate with macOS native notifications:
+
+- Critical and warning alerts trigger native macOS notification banners
+- **Clicking a notification opens the console** and navigates directly to the relevant alert or resource
+- Notifications are grouped by severity level to reduce notification noise
+- Configure notification preferences in **Settings > User & Alerts > Notifications**
+
+### Requirements
+
+- macOS with notification permissions granted to the browser
+- Browser notifications must be enabled in Settings

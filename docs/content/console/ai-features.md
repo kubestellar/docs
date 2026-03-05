@@ -397,3 +397,52 @@ When you hit the warning threshold, you'll see a notification. At the critical t
 - According to Anthropic's data usage policy, data sent via their API is not used to train Anthropic models by default. For details, see [Anthropic's privacy and data usage documentation](https://www.anthropic.com/legal/privacy).
 - Conversations are stored locally
 - You can delete mission history anytime
+
+---
+
+## Mission Sharing & Security Scanning (New in March 2026)
+
+AI missions can now be shared with team members and the community, with automatic security scanning.
+
+### Sharing Missions
+
+- **Generate share link**: Click the share icon on any mission to create a shareable URL
+- **Embedded configuration**: Share links include the mission configuration, target clusters, and parameters
+- **Deep-link support**: Share links preserve query parameters through OAuth login flows
+- **Import from link**: Recipients can import shared missions with one click
+
+### Security Scanning
+
+When importing missions from external sources:
+
+- Missions are scanned for potentially dangerous operations (e.g., `kubectl delete`, privilege escalation)
+- Security scan results are displayed before import with severity ratings
+- Users must acknowledge security findings before proceeding
+- Scans check for: resource deletion, RBAC escalation, host path mounts, privileged containers
+
+---
+
+## AI Agent On/Off Toggle (New in March 2026)
+
+![AI Agents Dashboard](images/ai-agents-mar05.jpg)
+
+The AI Agent system now includes fine-grained control over agent activation:
+
+### Toggle Control
+
+- **On**: Agent is active and processing cluster data
+- **Off**: Agent is paused but retains its memory and configuration
+- **None**: All agents disabled with a clean dashboard view
+
+### Agent Memory
+
+- Agents now maintain persistent memory across sessions
+- Memory includes past diagnoses, resolutions, and cluster-specific context
+- Memory is used to improve future responses and avoid repeated analysis
+- Memory can be cleared per-agent from the Agent Fleet card
+
+### Live Indicator
+
+- A **"Live"** badge appears next to active agents in the header
+- The badge pulses when the agent is actively processing a request
+- Click the badge to jump to the AI Agents dashboard

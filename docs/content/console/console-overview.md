@@ -10,7 +10,7 @@ description: >
 
 The KubeStellar Console is a modern, AI-powered multi-cluster management interface that provides real-time monitoring, intelligent insights, and a customizable dashboard experience for managing Kubernetes clusters at scale.
 
-![Dashboard Overview](images/dashboard-overview.png)
+![Dashboard Overview](images/dashboard-overview-mar05.jpg)
 
 ## Key Features
 
