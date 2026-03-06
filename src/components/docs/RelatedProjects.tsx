@@ -57,9 +57,9 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
 
   // Get related projects from config or fallback
   const allProjects = config?.relatedProjects ?? STATIC_RELATED_PROJECTS;
-  const activeProjects = allProjects.filter((p) => !('legacy' in p && p.legacy));
-  const legacyProjects = allProjects.filter((p) => 'legacy' in p && p.legacy);
-  const [legacyExpanded, setLegacyExpanded] = useState(false);
+  const activeProjects = allProjects.filter((p) => !('secondary' in p && p.secondary));
+  const secondaryProjects = allProjects.filter((p) => 'secondary' in p && p.secondary);
+  const [secondaryExpanded, setSecondaryExpanded] = useState(false);
 
   // Slim variant - icon-only vertical layout
   if (variant === 'slim') {
@@ -175,17 +175,17 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
           );
         })}
 
-        {/* Legacy section - collapsed by default */}
-        {legacyProjects.length > 0 && (
+        {/* Secondary section - collapsed by default */}
+        {secondaryProjects.length > 0 && (
           <div className={`${bannerActive ? 'mt-0' : 'mt-2'}`}>
             <button
-              onClick={() => setLegacyExpanded(!legacyExpanded)}
+              onClick={() => setSecondaryExpanded(!secondaryExpanded)}
               className="flex items-center w-full px-3 py-1 text-xs uppercase tracking-wider transition-colors"
               style={{ color: mutedTextColor }}
             >
               <span>Legacy</span>
               <span className="ml-auto">
-                {legacyExpanded ? (
+                {secondaryExpanded ? (
                   <ChevronDown className="w-3 h-3" />
                 ) : (
                   <ChevronRight className="w-3 h-3" />
@@ -195,10 +195,10 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
             <div
               className={`
                 overflow-hidden transition-all duration-200 ease-in-out
-                ${legacyExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
+                ${secondaryExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
               `}
             >
-              {legacyProjects.map((project: { title: string; href: string; description?: string }) => {
+              {secondaryProjects.map((project: { title: string; href: string; description?: string }) => {
                 const isCurrentProject = project.title === currentProject;
                 const projectUrl = getProjectUrl(project.href);
                 const isHovered = hoveredProject === project.title;

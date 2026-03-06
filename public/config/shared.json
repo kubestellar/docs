@@ -223,19 +223,19 @@
       "title": "KubeStellar",
       "href": "/docs/what-is-kubestellar/overview",
       "description": "Multi-cluster configuration management",
-      "legacy": true
+      "secondary": true
     },
     {
       "title": "KubeFlex",
       "href": "/docs/kubeflex/overview/introduction",
       "description": "Lightweight Kubernetes control planes",
-      "legacy": true
+      "secondary": true
     },
     {
       "title": "Multi Plugin",
       "href": "/docs/multi-plugin/overview/introduction",
       "description": "Multi-cluster kubectl plugin",
-      "legacy": true
+      "secondary": true
     }
   ],
   "editBaseUrls": {
