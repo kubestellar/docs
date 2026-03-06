@@ -303,7 +303,10 @@ const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
       },
       { 'Teardown': 'kubestellar/teardown.md' }
     ]
-  },
+  }
+]
+
+const NAV_STRUCTURE_CONTRIBUTING: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Contributing',
     items: [
@@ -339,7 +342,10 @@ const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
       { 'Release Testing': 'kubestellar/release-testing.md' },
       { 'Sign-off': 'kubestellar/pr-signoff.md' }
     ]
-  },
+  }
+]
+
+const NAV_STRUCTURE_COMMUNITY: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Community',
     items: [
@@ -355,7 +361,10 @@ const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
         ]
       }
     ]
-  },
+  }
+]
+
+const NAV_STRUCTURE_NEWS: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'News',
     items: [
