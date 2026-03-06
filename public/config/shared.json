@@ -217,7 +217,8 @@
     {
       "title": "A2A",
       "href": "/docs/a2a/overview/introduction",
-      "description": "Agent-to-Agent protocol"
+      "description": "Agent-to-Agent protocol",
+      "secondary": true
     },
     {
       "title": "KubeStellar",
