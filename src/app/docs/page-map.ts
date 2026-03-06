@@ -214,7 +214,7 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
 ]
 
 // KubeStellar Navigation Structure
-const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
+const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
 
   {
     title: 'What is KubeStellar?',
@@ -379,7 +379,7 @@ function getNavStructure(projectId: ProjectId): Array<{ title: string; items: Na
     case 'console':
       return NAV_STRUCTURE_CONSOLE
     default:
-      return NAV_STRUCTURE
+      return NAV_STRUCTURE_KUBESTELLAR
   }
 }
 
