@@ -30,12 +30,14 @@ interface RelatedProjectsProps {
   bannerActive?: boolean;
   projectId?: string;
   legacyPageMap?: LegacyMenuItem[];
+  autoExpandLegacy?: boolean;
 }
 
-export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false, legacyPageMap }: RelatedProjectsProps) {
+export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false, legacyPageMap, autoExpandLegacy = false }: RelatedProjectsProps) {
   const [mounted, setMounted] = useState(false);
   const [isProduction, setIsProduction] = useState(true); // Default to true to match SSR
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const pathname = usePathname();
   const { config } = useSharedConfig();
   const { resolvedTheme, setTheme } = useTheme();
@@ -50,6 +52,96 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
     setIsProduction(checkProduction);
   }, []);
 
+  // Toggle expand state for nested items
+  const toggleExpandItem = (itemKey: string) => {
+    setExpandedItems((prev) => {
+      const next = new Set(prev);
+      if (next.has(itemKey)) {
+        next.delete(itemKey);
+      } else {
+        next.add(itemKey);
+      }
+      return next;
+    });
+  };
+
+  // Recursively render menu items with full hierarchy
+  // Depth 0: Top-level categories
+  // Depth 1: First-level items under categories
+  // Depth 2+: Nested items - expandable if they have children
+  const renderLegacyMenuTree = (items: LegacyMenuItem[], depth: number = 0, parentKey: string = ''): React.ReactNode => {
+    return items.map((item, index) => {
+      const hasChildren = item.children && item.children.length > 0;
+      const paddingLeft = depth * 12;
+      const itemKey = `${parentKey}-${depth}-${index}-${item.name}`;
+      const isExpanded = expandedItems.has(itemKey);
+
+      // Level 0-1: Always show all items
+      if (depth < 2) {
+        if (hasChildren) {
+          return (
+            <div key={itemKey}>
+              <div
+                className="block px-2 py-1 text-xs rounded transition-colors font-medium"
+                style={{ color: mutedTextColor, paddingLeft: `${paddingLeft + 8}px` }}
+              >
+                {item.name}
+              </div>
+              <div style={{ paddingLeft: `${depth > 0 ? paddingLeft + 4 : 0}px` }}>
+                {item.children && renderLegacyMenuTree(item.children, depth + 1, itemKey)}
+              </div>
+            </div>
+          );
+        } else {
+          return (
+            <a
+              key={itemKey}
+              href={item.route || '#'}
+              className="block px-2 py-1 text-xs rounded transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+              style={{ color: mutedTextColor, paddingLeft: `${paddingLeft + 8}px` }}
+            >
+              {item.name}
+            </a>
+          );
+        }
+      }
+
+      // Level 2+: Make expandable if has children
+      if (hasChildren) {
+        return (
+          <div key={itemKey}>
+            <button
+              onClick={() => toggleExpandItem(itemKey)}
+              className="flex items-center w-full px-2 py-1 text-xs rounded transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 text-left"
+              style={{ color: mutedTextColor, paddingLeft: `${paddingLeft + 8}px` }}
+            >
+              <span className="mr-1 transition-transform" style={{ transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)' }}>
+                ▶
+              </span>
+              <span className="flex-1">{item.name}</span>
+            </button>
+            {isExpanded && (
+              <div style={{ paddingLeft: `${paddingLeft + 4}px` }}>
+                {item.children && renderLegacyMenuTree(item.children, depth + 1, itemKey)}
+              </div>
+            )}
+          </div>
+        );
+      } else {
+        return (
+          <a
+            key={itemKey}
+            href={item.route || '#'}
+            className="block px-2 py-1 text-xs rounded transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+            style={{ color: mutedTextColor, paddingLeft: `${paddingLeft + 12}px` }}
+          >
+            {item.name}
+          </a>
+        );
+      }
+    });
+  };
+
   const isDark = mounted && resolvedTheme === 'dark';
   // Text colors based on theme
   const textColor = isDark ? '#e5e7eb' : '#374151'; // gray-200 : gray-700
@@ -59,7 +151,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   const allProjects = config?.relatedProjects ?? STATIC_RELATED_PROJECTS;
   const activeProjects = allProjects.filter((p) => !('secondary' in p && p.secondary));
   const secondaryProjects = allProjects.filter((p) => 'secondary' in p && p.secondary);
-  const [secondaryExpanded, setSecondaryExpanded] = useState(false);
+  const [secondaryExpanded, setSecondaryExpanded] = useState(autoExpandLegacy);
 
   // Slim variant - icon-only vertical layout
   if (variant === 'slim') {
@@ -229,19 +321,10 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
                     >
                       {project.title}
                     </a>
-                    {/* Render legacy project nav items inline */}
+                    {/* Render legacy project nav items with full hierarchy */}
                     {isCurrentProject && legacyPageMap && legacyPageMap.length > 0 && (
-                      <div className="ml-4 mt-1 space-y-0.5 border-l border-gray-700/50 pl-2">
-                        {legacyPageMap.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.route || '#'}
-                            className="block px-2 py-1 text-xs rounded transition-colors"
-                            style={{ color: mutedTextColor }}
-                          >
-                            {item.name}
-                          </a>
-                        ))}
+                      <div className="ml-4 mt-1 space-y-0 border-l border-gray-700/50 pl-2">
+                        {renderLegacyMenuTree(legacyPageMap)}
                       </div>
                     )}
                   </div>

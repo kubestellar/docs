@@ -47,6 +47,10 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
 
   const isDark = mounted && resolvedTheme === 'dark';
   const isLegacyProject = projectId === 'kubestellar' || projectId === 'kubeflex' || projectId === 'multi-plugin';
+
+  // Auto-expand legacy menu if viewing a legacy page (not Community, Contributing, News)
+  const shouldAutoExpandLegacy = isLegacyProject && !pathname.includes('/community') && !pathname.includes('/contributing') && !pathname.includes('/news');
+
   // Text colors based on theme
   const textColor = isDark ? '#e5e7eb' : '#374151'; // gray-200 : gray-700
   // Stable layout values - only recalculate on resize or banner change
@@ -249,7 +253,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     <>
       {/* Scrollable navigation area */}
       <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-        <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} />
+        <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} autoExpandLegacy={shouldAutoExpandLegacy} />
         {!isLegacyProject && (
           <nav className="px-4 pt-2 pb-6 w-full space-y-1.5">
             {pageMap.map(item => renderMenuItem(item))}
