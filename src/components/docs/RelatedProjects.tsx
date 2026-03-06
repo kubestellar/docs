@@ -208,7 +208,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   // Determine current project from pathname
   // THIS HIGHLIGHTS THE ACTIVE PROJECT IN THE PROJECT LIST IN THE SIDEBAR
   const getCurrentProject = () => {
-    if (pathname.startsWith('/docs/console')) return 'Console';
+    if (pathname.startsWith('/docs/console')) return 'KubeStellar Console';
     if (pathname.startsWith('/docs/a2a')) return 'A2A';
     if (pathname.startsWith('/docs/kubeflex')) return 'KubeFlex';
     if (pathname.startsWith('/docs/multi-plugin')) return 'Multi Plugin';

@@ -249,20 +249,28 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
   };
 
   // Render full sidebar (expanded state)
-  const renderFullSidebar = () => (
-    <>
-      {/* Scrollable navigation area */}
-      <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-        <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} autoExpandLegacy={shouldAutoExpandLegacy} />
-        {!isLegacyProject && (
-          <nav className="px-4 pt-2 pb-6 w-full space-y-1.5">
-            {pageMap.map(item => renderMenuItem(item))}
-          </nav>
-        )}
-      </div>
-      <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
-    </>
-  );
+  const renderFullSidebar = () => {
+    // For legacy projects, exclude their project docs but show general sections
+    // For non-legacy projects, show all items (they're not part of legacy menu)
+    const itemsToShow = isLegacyProject
+      ? pageMap.filter(item => ['Contributing', 'Community', 'News'].includes(item.name || item.title || ''))
+      : pageMap;
+
+    return (
+      <>
+        {/* Scrollable navigation area */}
+        <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
+          <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} autoExpandLegacy={shouldAutoExpandLegacy} />
+          {itemsToShow.length > 0 && (
+            <nav className="px-4 pt-2 pb-6 w-full space-y-1.5">
+              {itemsToShow.map(item => renderMenuItem(item))}
+            </nav>
+          )}
+        </div>
+        <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
+      </>
+    );
+  };
 
   // Render slim sidebar (collapsed state) - Desktop only
   const renderSlimSidebar = () => (

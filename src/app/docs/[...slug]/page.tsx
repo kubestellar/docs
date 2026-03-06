@@ -20,12 +20,12 @@ function getProjectFromSlug(slug: string[]): ProjectId {
     if (slug[0] === 'console') return 'console'
     if (slug[0] === 'kubestellar') return 'kubestellar'
   }
-  return 'kubestellar'
+  return 'console'
 }
 
 // Get route without project prefix
 function getRouteFromSlug(slug: string[], projectId: ProjectId): string {
-  if (projectId === 'kubestellar') {
+  if (projectId === 'console' || projectId === 'kubestellar') {
     return slug.join('/')
   }
   // Remove the project prefix from the slug
