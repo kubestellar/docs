@@ -284,6 +284,7 @@ function replaceTemplateVariables(content: string): string {
 }
 
 function readLocalFile(filePath: string, contentPath: string = docsContentPath): string | null {
+  // Try the project-specific content path first
   const fullPath = path.join(contentPath, filePath)
   try {
     if (fs.existsSync(fullPath)) {
@@ -292,8 +293,21 @@ function readLocalFile(filePath: string, contentPath: string = docsContentPath):
   } catch {
     // File doesn't exist in content directory
   }
-  
-  // If not found in content directory, try repository root
+
+  // If not found in project directory, try main KubeStellar content path
+  // This is needed for general sections (Contributing, Community, News) on non-KubeStellar projects
+  if (contentPath !== docsContentPath) {
+    const kubestellarPath = path.join(docsContentPath, filePath)
+    try {
+      if (fs.existsSync(kubestellarPath)) {
+        return fs.readFileSync(kubestellarPath, 'utf-8')
+      }
+    } catch {
+      // File doesn't exist in KubeStellar directory either
+    }
+  }
+
+  // If not found in content directories, try repository root
   const repoRootPath = path.join(process.cwd(), filePath)
   try {
     if (fs.existsSync(repoRootPath)) {
@@ -302,7 +316,7 @@ function readLocalFile(filePath: string, contentPath: string = docsContentPath):
   } catch {
     // File doesn't exist in repository root either
   }
-  
+
   return null
 }
 
