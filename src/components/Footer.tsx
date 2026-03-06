@@ -171,7 +171,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href={getLocalizedUrl(
-                      "https://kubestellar.io/docs/contribution-guidelines/onboarding-inc"
+                      "https://kubestellar.io/docs/contributing/onboarding-inc"
                     )}
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
                   >

@@ -1,6 +1,6 @@
 # Testing a KubeStellar documentation PR
 
-If a contributor has _**not**_ created a sharable preview of a documentation PR [as documented in the documents management overview](document-management.md#serving-up-documents-globally-from-a-fork-of-the-repository-via-github) , here are the steps to checkout a git pull request for local testing.
+If a contributor has _**not**_ created a sharable preview of a documentation PR, here are the steps to checkout a git pull request for local testing.
 
 ## STEP 1: Checkout the Pull Request**
 
@@ -30,5 +30,4 @@ At this point, you can do anything you want with this branch. You can run some l
 
 ## STEP 2: Test and Build the Documentation (optional)**
 
-See [Serving up documents locally](document-management.md#serving-up-documents-locally) for how
-to view and modify the documentation in the branch that you have checked out.
+You can now run tests or build the documentation locally to view and verify changes in the branch that you have checked out.

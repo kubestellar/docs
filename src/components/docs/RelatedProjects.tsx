@@ -30,25 +30,121 @@ interface RelatedProjectsProps {
   bannerActive?: boolean;
   projectId?: string;
   legacyPageMap?: LegacyMenuItem[];
+  autoExpandLegacy?: boolean;
+  generalSections?: Array<{ title: string; href: string }>;
 }
 
-export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false, legacyPageMap }: RelatedProjectsProps) {
+export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false, legacyPageMap, autoExpandLegacy = false, generalSections = [] }: RelatedProjectsProps) {
   const [mounted, setMounted] = useState(false);
   const [isProduction, setIsProduction] = useState(true); // Default to true to match SSR
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const pathname = usePathname();
   const { config } = useSharedConfig();
   const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
-    // Check if we're on production only after mount
+    // Check if we should use relative URLs
+    // Use relative URLs on: localhost, kubestellar.io, and preview/staging deploys (netlify)
+    // Only use absolute URLs if explicitly on a different domain
     const checkProduction =
+      window.location.hostname === 'localhost' ||
       window.location.hostname === 'kubestellar.io' ||
       window.location.hostname === 'www.kubestellar.io' ||
-      window.location.hostname === 'localhost';
+      window.location.hostname.includes('netlify.app');
     setIsProduction(checkProduction);
   }, []);
+
+  // Toggle expand state for nested items
+  const toggleExpandItem = (itemKey: string) => {
+    setExpandedItems((prev) => {
+      const next = new Set(prev);
+      if (next.has(itemKey)) {
+        next.delete(itemKey);
+      } else {
+        next.add(itemKey);
+      }
+      return next;
+    });
+  };
+
+  // Recursively render menu items with full hierarchy
+  // Depth 0: Top-level categories
+  // Depth 1: First-level items under categories
+  // Depth 2+: Nested items - expandable if they have children
+  const renderLegacyMenuTree = (items: LegacyMenuItem[], depth: number = 0, parentKey: string = ''): React.ReactNode => {
+    return items.map((item, index) => {
+      const hasChildren = item.children && item.children.length > 0;
+      const paddingLeft = depth * 12;
+      const itemKey = `${parentKey}-${depth}-${index}-${item.name}`;
+      const isExpanded = expandedItems.has(itemKey);
+
+      // Level 0-1: Always show all items
+      if (depth < 2) {
+        if (hasChildren) {
+          return (
+            <div key={itemKey}>
+              <div
+                className="block px-2 py-1 text-xs rounded transition-colors font-medium"
+                style={{ color: mutedTextColor, paddingLeft: `${paddingLeft + 8}px` }}
+              >
+                {item.name}
+              </div>
+              <div style={{ paddingLeft: `${depth > 0 ? paddingLeft + 4 : 0}px` }}>
+                {item.children && renderLegacyMenuTree(item.children, depth + 1, itemKey)}
+              </div>
+            </div>
+          );
+        } else {
+          return (
+            <a
+              key={itemKey}
+              href={item.route || '#'}
+              className="block px-2 py-1 text-xs rounded transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+              style={{ color: mutedTextColor, paddingLeft: `${paddingLeft + 8}px` }}
+            >
+              {item.name}
+            </a>
+          );
+        }
+      }
+
+      // Level 2+: Make expandable if has children
+      if (hasChildren) {
+        return (
+          <div key={itemKey}>
+            <button
+              onClick={() => toggleExpandItem(itemKey)}
+              className="flex items-center w-full px-2 py-1 text-xs rounded transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 text-left"
+              style={{ color: mutedTextColor, paddingLeft: `${paddingLeft + 8}px` }}
+            >
+              <span className="mr-1 transition-transform" style={{ transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)' }}>
+                ▶
+              </span>
+              <span className="flex-1">{item.name}</span>
+            </button>
+            {isExpanded && (
+              <div style={{ paddingLeft: `${paddingLeft + 4}px` }}>
+                {item.children && renderLegacyMenuTree(item.children, depth + 1, itemKey)}
+              </div>
+            )}
+          </div>
+        );
+      } else {
+        return (
+          <a
+            key={itemKey}
+            href={item.route || '#'}
+            className="block px-2 py-1 text-xs rounded transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+            style={{ color: mutedTextColor, paddingLeft: `${paddingLeft + 12}px` }}
+          >
+            {item.name}
+          </a>
+        );
+      }
+    });
+  };
 
   const isDark = mounted && resolvedTheme === 'dark';
   // Text colors based on theme
@@ -57,9 +153,14 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
 
   // Get related projects from config or fallback
   const allProjects = config?.relatedProjects ?? STATIC_RELATED_PROJECTS;
-  const activeProjects = allProjects.filter((p) => !('legacy' in p && p.legacy));
-  const legacyProjects = allProjects.filter((p) => 'legacy' in p && p.legacy);
-  const [legacyExpanded, setLegacyExpanded] = useState(false);
+  const activeProjects = allProjects.filter((p) => !('secondary' in p && p.secondary));
+  const secondaryProjects = allProjects.filter((p) => 'secondary' in p && p.secondary);
+  const [secondaryExpanded, setSecondaryExpanded] = useState(autoExpandLegacy);
+
+  // Sync secondaryExpanded state when autoExpandLegacy prop changes (e.g., on page navigation)
+  useEffect(() => {
+    setSecondaryExpanded(autoExpandLegacy);
+  }, [autoExpandLegacy]);
 
   // Slim variant - icon-only vertical layout
   if (variant === 'slim') {
@@ -113,14 +214,17 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
     );
   }
 
-  // Determine current project from pathname
-  // THIS HIGHLIGHTS THE ACTIVE PROJECT IN THE PROJECT LIST IN THE SIDEBAR
+  // Determine current project or section from pathname
+  // THIS HIGHLIGHTS THE ACTIVE PROJECT/SECTION IN THE PROJECT LIST IN THE SIDEBAR
   const getCurrentProject = () => {
-    if (pathname.startsWith('/docs/console')) return 'Console';
+    if (pathname.startsWith('/docs/console')) return 'KubeStellar Console';
     if (pathname.startsWith('/docs/a2a')) return 'A2A';
     if (pathname.startsWith('/docs/kubeflex')) return 'KubeFlex';
     if (pathname.startsWith('/docs/multi-plugin')) return 'Multi Plugin';
     if (pathname.startsWith('/docs/kubestellar-mcp')) return 'KubeStellar MCP';
+    if (pathname.startsWith('/docs/contributing')) return 'Contributing';
+    if (pathname.startsWith('/docs/community')) return 'Community';
+    if (pathname.startsWith('/docs/news')) return 'News';
     return 'KubeStellar';
   };
 
@@ -175,17 +279,56 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
           );
         })}
 
-        {/* Legacy section - collapsed by default */}
-        {legacyProjects.length > 0 && (
+        {/* General info sections - Contributing, Community, News */}
+        {generalSections.length > 0 && (
+          <div className={`${bannerActive ? 'space-y-0' : 'space-y-1.5'}`}>
+            {generalSections.map((section: { title: string; href: string }) => {
+              const isCurrentSection = section.title === currentProject;
+              const sectionUrl = getProjectUrl(section.href);
+              const isHovered = hoveredProject === section.title;
+
+              let bgColor: string | undefined;
+              if (isCurrentSection) {
+                bgColor = isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)';
+              } else if (isHovered) {
+                bgColor = isDark ? 'rgba(55, 65, 81, 0.6)' : 'rgba(243, 244, 246, 1)';
+              } else {
+                bgColor = undefined;
+              }
+
+              return (
+                <a
+                  key={section.title}
+                  href={sectionUrl}
+                  suppressHydrationWarning
+                  className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-2'} ${isCurrentSection ? 'font-medium' : ''}`}
+                  style={{
+                    color: isCurrentSection
+                      ? (isDark ? '#60a5fa' : '#2563eb')
+                      : textColor,
+                    backgroundColor: bgColor,
+                  }}
+                  onMouseEnter={() => !isCurrentSection && setHoveredProject(section.title)}
+                  onMouseLeave={() => setHoveredProject(null)}
+                >
+                  {section.title}
+                </a>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Secondary section - collapsed by default */}
+        {secondaryProjects.length > 0 && (
           <div className={`${bannerActive ? 'mt-0' : 'mt-2'}`}>
             <button
-              onClick={() => setLegacyExpanded(!legacyExpanded)}
+              onClick={() => setSecondaryExpanded(!secondaryExpanded)}
               className="flex items-center w-full px-3 py-1 text-xs uppercase tracking-wider transition-colors"
               style={{ color: mutedTextColor }}
             >
               <span>Legacy</span>
               <span className="ml-auto">
-                {legacyExpanded ? (
+                {secondaryExpanded ? (
                   <ChevronDown className="w-3 h-3" />
                 ) : (
                   <ChevronRight className="w-3 h-3" />
@@ -195,10 +338,10 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
             <div
               className={`
                 overflow-hidden transition-all duration-200 ease-in-out
-                ${legacyExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
+                ${secondaryExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
               `}
             >
-              {legacyProjects.map((project: { title: string; href: string; description?: string }) => {
+              {secondaryProjects.map((project: { title: string; href: string; description?: string }) => {
                 const isCurrentProject = project.title === currentProject;
                 const projectUrl = getProjectUrl(project.href);
                 const isHovered = hoveredProject === project.title;
@@ -229,19 +372,10 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
                     >
                       {project.title}
                     </a>
-                    {/* Render legacy project nav items inline */}
+                    {/* Render legacy project nav items with full hierarchy */}
                     {isCurrentProject && legacyPageMap && legacyPageMap.length > 0 && (
-                      <div className="ml-4 mt-1 space-y-0.5 border-l border-gray-700/50 pl-2">
-                        {legacyPageMap.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.route || '#'}
-                            className="block px-2 py-1 text-xs rounded transition-colors"
-                            style={{ color: mutedTextColor }}
-                          >
-                            {item.name}
-                          </a>
-                        ))}
+                      <div className="ml-4 mt-1 space-y-0 border-l border-gray-700/50 pl-2">
+                        {renderLegacyMenuTree(legacyPageMap)}
                       </div>
                     )}
                   </div>

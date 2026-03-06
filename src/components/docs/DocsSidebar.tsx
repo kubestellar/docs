@@ -47,6 +47,10 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
 
   const isDark = mounted && resolvedTheme === 'dark';
   const isLegacyProject = projectId === 'kubestellar' || projectId === 'kubeflex' || projectId === 'multi-plugin';
+
+  // Auto-expand legacy menu if viewing a legacy page (not Community, Contributing, News)
+  const shouldAutoExpandLegacy = isLegacyProject && !pathname.includes('/community') && !pathname.includes('/contributing') && !pathname.includes('/news');
+
   // Text colors based on theme
   const textColor = isDark ? '#e5e7eb' : '#374151'; // gray-200 : gray-700
   // Stable layout values - only recalculate on resize or banner change
@@ -105,6 +109,9 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     const pathToActive = new Set<string>();
     const currentPath = initialPathnameRef.current;
 
+    // Check if viewing a general section
+    const isViewingGeneralSection = currentPath.includes('/contributing') || currentPath.includes('/community') || currentPath.includes('/news');
+
     // Find the path to the active item
     function findActivePath(items: MenuItem[], parentKey: string = ''): boolean {
       for (const item of items) {
@@ -133,7 +140,12 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
         const hasChildren = item.children && item.children.length > 0;
 
         if (hasChildren) {
-          const shouldStayExpanded = item.theme?.collapsed === false;
+          // For general sections, check if we're viewing that section
+          const isGeneralSection = ['Contributing', 'Community', 'News'].includes(item.name || item.title || '');
+          const isCurrentGeneralSection = isGeneralSection && isViewingGeneralSection &&
+            currentPath.includes('/' + (item.name || item.title || '').toLowerCase());
+
+          const shouldStayExpanded = item.theme?.collapsed === false || isCurrentGeneralSection;
           if (!pathToActive.has(itemKey) && !shouldStayExpanded) {
             initialCollapsed.add(itemKey);
           }
@@ -245,20 +257,46 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
   };
 
   // Render full sidebar (expanded state)
-  const renderFullSidebar = () => (
-    <>
-      {/* Scrollable navigation area */}
-      <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-        <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} />
-        {!isLegacyProject && (
-          <nav className="px-4 pt-2 pb-6 w-full space-y-1.5">
-            {pageMap.map(item => renderMenuItem(item))}
-          </nav>
-        )}
-      </div>
-      <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
-    </>
-  );
+  const renderFullSidebar = () => {
+    // Detect if we're viewing a general section page
+    const isViewingGeneralSection = pathname.includes('/contributing') || pathname.includes('/community') || pathname.includes('/news');
+
+    // Extract general sections from pageMap to pass to RelatedProjects
+    const generalSectionItems = pageMap.filter(item => ['Contributing', 'Community', 'News'].includes(item.name || item.title || ''));
+    const generalSections = generalSectionItems.map(item => ({
+      title: item.name || item.title || '',
+      href: item.route || ''
+    })).filter(s => s.title && s.href);
+
+    // When viewing a general section page, show that section's nav items
+    // Otherwise, show project-specific items (excluding general sections)
+    let itemsToShow: MenuItem[] = [];
+    if (isViewingGeneralSection) {
+      // Find which general section we're in and show its nav items
+      const currentSection = pathname.includes('/contributing') ? 'Contributing'
+        : pathname.includes('/community') ? 'Community'
+        : 'News';
+      itemsToShow = pageMap.filter(item => (item.name || item.title || '') === currentSection);
+    } else {
+      // Show project-specific items, excluding general sections
+      itemsToShow = pageMap.filter(item => !['Contributing', 'Community', 'News'].includes(item.name || item.title || ''));
+    }
+
+    return (
+      <>
+        {/* Scrollable navigation area */}
+        <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
+          <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} autoExpandLegacy={shouldAutoExpandLegacy} generalSections={generalSections} />
+          {itemsToShow.length > 0 && (
+            <nav className="px-4 pt-2 pb-6 w-full space-y-1.5">
+              {itemsToShow.map(item => renderMenuItem(item))}
+            </nav>
+          )}
+        </div>
+        <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
+      </>
+    );
+  };
 
   // Render slim sidebar (collapsed state) - Desktop only
   const renderSlimSidebar = () => (

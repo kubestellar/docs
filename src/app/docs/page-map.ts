@@ -107,9 +107,9 @@ const NAV_STRUCTURE_A2A: Array<{ title: string; items: NavItem[] }> = [
     ]
   },
   {
-    title: 'Contributing',
+    title: 'Contribute to A2A',
     items: [
-      { 'Contributing': 'CONTRIBUTING.md' },
+      { 'Contribute to A2A': 'CONTRIBUTING.md' },
     ]
   }
 ]
@@ -214,7 +214,7 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
 ]
 
 // KubeStellar Navigation Structure
-const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
+const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
 
   {
     title: 'What is KubeStellar?',
@@ -303,34 +303,37 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
       },
       { 'Teardown': 'kubestellar/teardown.md' }
     ]
-  },
+  }
+]
+
+const NAV_STRUCTURE_CONTRIBUTING: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Contributing',
     items: [
-      { 'Overview': 'contribution-guidelines/contribute.md' },
-      { 'Code of Conduct': 'contribution-guidelines/coc-inc.md' },
-      { 'Contributing to Code': 'contribution-guidelines/CONTRIBUTINGKS.md' },
+      { 'Overview': 'contributing/contribute.md' },
+      { 'Code of Conduct': 'contributing/coc-inc.md' },
+      { 'Contributing to Code': 'contributing/CONTRIBUTINGKS.md' },
       { 'Contributing to Docs/Website': [
-          {'Docs Structure': 'contribution-guidelines/documentation/docs-structure-inc.md'} ,
-          {'Simple Changes' : 'contribution-guidelines/documentation/simple-docs-inc.md'},
-          {'Version Management' : 'contribution-guidelines/documentation/docs-version-inc.md'},
-          {'Detailed Contribution Guide': 'contribution-guidelines/documentation/contributing-inc.md' },
-          {'Style Guide': 'contribution-guidelines/documentation/docs-styleguide.md' }
+          {'Docs Structure': 'contributing/documentation/docs-structure-inc.md'} ,
+          {'Simple Changes' : 'contributing/documentation/simple-docs-inc.md'},
+          {'Version Management' : 'contributing/documentation/docs-version-inc.md'},
+          {'Detailed Contribution Guide': 'contributing/documentation/contributing-inc.md' },
+          {'Style Guide': 'contributing/documentation/docs-styleguide.md' }
           ]},
-      { 'Contributor Ladder': 'contribution-guidelines/contributor_ladder.md' },
-      { 'License': 'contribution-guidelines/license-inc.md' },
-      { 'Governance': 'contribution-guidelines/governance-inc.md' },
-      { 'Onboarding': 'contribution-guidelines/onboarding-inc.md' },
+      { 'Contributor Ladder': 'contributing/contributor_ladder.md' },
+      { 'License': 'contributing/license-inc.md' },
+      { 'Governance': 'contributing/governance-inc.md' },
+      { 'Onboarding': 'contributing/onboarding-inc.md' },
       {
         'CI/CD': [
-          { 'GitHub Actions': 'contribution-guidelines/operations/github-actions.md' },
-          { 'Demoting Component Repo Docs': 'contribution-guidelines/operations/demote-component-docs.md' }
+          { 'GitHub Actions': 'contributing/operations/github-actions.md' },
+          { 'Demoting Component Repo Docs': 'contributing/operations/demote-component-docs.md' }
         ]
       },
       {
         'Security': [
-          { 'Policy': 'contribution-guidelines/security/security-inc.md' },
-          { 'Contacts': 'contribution-guidelines/security/security_contacts-inc.md' }
+          { 'Policy': 'contributing/security/security-inc.md' },
+          { 'Contacts': 'contributing/security/security_contacts-inc.md' }
         ]
       },
       { 'Testing': 'kubestellar/testing.md' },
@@ -339,23 +342,29 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
       { 'Release Testing': 'kubestellar/release-testing.md' },
       { 'Sign-off': 'kubestellar/pr-signoff.md' }
     ]
-  },
+  }
+]
+
+const NAV_STRUCTURE_COMMUNITY: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Community',
     items: [
-      { 'Get Involved': 'Community/_index.md' },
+      { 'Get Involved': 'community/index.md' },
       {
         'Partners': [
-          { 'ArgoCD': 'Community/partners/argocd.md' },
-          { 'Turbonomic': 'Community/partners/turbonomic.md' },
-          { 'MVI': 'Community/partners/mvi.md' },
-          { 'FluxCD': 'Community/partners/fluxcd.md' },
-          { 'OpenZiti': 'Community/partners/openziti.md' },
-          { 'Kyverno': 'Community/partners/kyverno.md' }
+          { 'ArgoCD': 'community/partners/argocd.md' },
+          { 'Turbonomic': 'community/partners/turbonomic.md' },
+          { 'MVI': 'community/partners/mvi.md' },
+          { 'FluxCD': 'community/partners/fluxcd.md' },
+          { 'OpenZiti': 'community/partners/openziti.md' },
+          { 'Kyverno': 'community/partners/kyverno.md' }
         ]
       }
     ]
-  },
+  }
+]
+
+const NAV_STRUCTURE_NEWS: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'News',
     items: [
@@ -367,20 +376,30 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
 
 // Get navigation structure for a project
 function getNavStructure(projectId: ProjectId): Array<{ title: string; items: NavItem[] }> {
+  let baseStructure: Array<{ title: string; items: NavItem[] }>;
+
   switch (projectId) {
     case 'a2a':
-      return NAV_STRUCTURE_A2A
+      baseStructure = NAV_STRUCTURE_A2A
+      break
     case 'kubeflex':
-      return NAV_STRUCTURE_KUBEFLEX
+      baseStructure = NAV_STRUCTURE_KUBEFLEX
+      break
     case 'multi-plugin':
-      return NAV_STRUCTURE_MULTI_PLUGIN
+      baseStructure = NAV_STRUCTURE_MULTI_PLUGIN
+      break
     case 'kubestellar-mcp':
-      return NAV_STRUCTURE_KUBESTELLAR_MCP
+      baseStructure = NAV_STRUCTURE_KUBESTELLAR_MCP
+      break
     case 'console':
-      return NAV_STRUCTURE_CONSOLE
+      baseStructure = NAV_STRUCTURE_CONSOLE
+      break
     default:
-      return NAV_STRUCTURE
+      baseStructure = NAV_STRUCTURE_KUBESTELLAR
   }
+
+  // Add general sections to all projects
+  return [...baseStructure, ...NAV_STRUCTURE_CONTRIBUTING, ...NAV_STRUCTURE_COMMUNITY, ...NAV_STRUCTURE_NEWS]
 }
 
 export function buildPageMap(projectId: ProjectId = 'kubestellar') {
@@ -388,7 +407,15 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
   const projectBasePath = getBasePath(projectId)
   const navStructure = getNavStructure(projectId)
 
-  const allDocFiles = getAllDocFiles(contentPath)
+  // For all projects, include files from both project-specific and main KubeStellar directories
+  let allDocFiles = getAllDocFiles(contentPath)
+  if (projectId !== 'kubestellar') {
+    // Add general sections files from main KubeStellar directory
+    const generalFiles = getAllDocFiles(docsContentPath).filter(f =>
+      f.startsWith('contributing/') || f.startsWith('community/') || f.startsWith('news/')
+    )
+    allDocFiles = [...allDocFiles, ...generalFiles]
+  }
   const processedFiles = new Set<string>()
   const routeMap: Record<string, string> = {}
   const _pageMap: PageMapNode[] = []
@@ -403,7 +430,10 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
         if (allDocFiles.includes(item)) {
           processedFiles.add(item)
           const baseName = item.replace(/\.(md|mdx)$/i, '').split('/').pop()!
-          const route = `/${projectBasePath}/${parentSlug}/${baseName}`
+          // Use /docs path for general sections, project path for everything else
+          const isGeneralSection = item.startsWith('contributing/') || item.startsWith('community/') || item.startsWith('news/')
+          const basePathForRoute = isGeneralSection ? 'docs' : projectBasePath
+          const route = `/${basePathForRoute}/${parentSlug}/${baseName}`
           routeMap[`${parentSlug}/${baseName}`] = item
           nodes.push({ kind: 'MdxPage', name: pretty(baseName), route })
           meta[pretty(baseName)] = pretty(baseName)
@@ -423,7 +453,10 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
             processedFiles.add(value)
             // const baseName = value.replace(/\.(md|mdx)$/i, '').split('/').pop()!
             const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-            const route = `/${projectBasePath}/${parentSlug ? parentSlug + '/' : ''}${slug}`
+            // Use /docs path for general sections, project path for everything else
+            const isGeneralSection = value.startsWith('contributing/') || value.startsWith('community/') || value.startsWith('news/')
+            const basePathForRoute = isGeneralSection ? 'docs' : projectBasePath
+            const route = `/${basePathForRoute}/${parentSlug ? parentSlug + '/' : ''}${slug}`
             routeMap[`${parentSlug ? parentSlug + '/' : ''}${slug}`] = value
             nodes.push({ kind: 'MdxPage', name: title, route })
             meta[title] = title
@@ -434,10 +467,28 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
           const newParentSlug = parentSlug ? `${parentSlug}/${slug}` : slug
           const children = buildNavNodes(value, newParentSlug)
           if (children.length > 0) {
+            // Use /docs path for general sections, project path for everything else
+            // Check both direct string entries and nested values in objects
+            const isGeneralSection = Array.isArray(value) &&
+              value.some(v => {
+                if (typeof v === 'string') {
+                  return v.startsWith('contributing/') || v.startsWith('community/') || v.startsWith('news/')
+                }
+                // For object entries, check if any value starts with general section path
+                if (typeof v === 'object' && v !== null) {
+                  const objValues = Object.values(v);
+                  return objValues.some(val =>
+                    typeof val === 'string' &&
+                    (val.startsWith('contributing/') || val.startsWith('community/') || val.startsWith('news/'))
+                  );
+                }
+                return false;
+              })
+            const basePathForRoute = isGeneralSection ? 'docs' : projectBasePath
             nodes.push({
               kind: 'Folder',
               name: title,
-              route: `/${projectBasePath}/${newParentSlug}`,
+              route: `/${basePathForRoute}/${newParentSlug}`,
               children
             })
             meta[title] = title
@@ -459,10 +510,14 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
     const children = buildNavNodes(category.items, categorySlug)
 
     if (children.length > 0) {
+      // Use /docs path for general sections, project path for project-specific sections
+      const isGeneralSection = ['Contributing', 'Community', 'News'].includes(category.title)
+      const basePath = isGeneralSection ? 'docs' : projectBasePath
+
       const folderNode: FolderNode = {
         kind: 'Folder',
         name: category.title,
-        route: `/${projectBasePath}/${categorySlug}`,
+        route: `/${basePath}/${categorySlug}`,
         children
       }
 

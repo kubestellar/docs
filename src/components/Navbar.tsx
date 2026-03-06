@@ -648,7 +648,7 @@ export default function Navbar() {
                       {t("ladder")}
                     </LocalizedLink>
                     <Link
-                      href="/docs/contribution-guidelines/security/security-inc"
+                      href="/docs/contributing/security/security-inc"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                     >
                       <svg
@@ -1229,7 +1229,7 @@ export default function Navbar() {
                 </div>
                 <div className="relative mb-4">
                   <Link
-                    href="/docs/contribution-guidelines/security/security-inc"
+                    href="/docs/contributing/security/security-inc"
                     className="text-sm sm:text-base font-medium text-gray-300 flex items-center space-x-1 px-3 py-2 rounded-lg"
                   >
                     <div className="relative">

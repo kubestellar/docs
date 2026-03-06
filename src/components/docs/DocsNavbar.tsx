@@ -392,7 +392,7 @@ export default function DocsNavbar() {
               </a>
 
               <Link
-                href="/docs/contribution-guidelines/security/security-inc"
+                href="/docs/contributing/security/security-inc"
                 className={dropdownItemClasses}
               >
                 <svg className="w-5 h-5 mr-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -918,7 +918,7 @@ export default function DocsNavbar() {
               </svg>
               Ladder
             </a>
-            <Link href="/docs/contribution-guidelines/security/security-inc" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
+            <Link href="/docs/contributing/security/security-inc" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
                 ? 'text-gray-300 hover:bg-neutral-800'
                 : 'text-gray-700 hover:bg-gray-100'

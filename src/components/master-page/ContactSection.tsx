@@ -524,7 +524,7 @@ export default function ContactSection() {
                     >
                       {t("formPrivacy")}{" "}
                       <Link
-                        href="/docs/contribution-guidelines/license-inc"
+                        href="/docs/contributing/license-inc"
                         className="text-blue-400 hover:text-blue-300 underline transition-colors duration-200"
                       >
                         {t("formPrivacyLink")}
