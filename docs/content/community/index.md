@@ -17,7 +17,7 @@
 - [GitHub]({{ config.repo_url }}): Development takes place here!
 - [#kubestellar-dev Slack channel](https://cloud-native.slack.com/archives/C097094RZ3M) in the [CNCF slack workspace](https://communityinviter.com/apps/cloud-native/cncf): Chat with other project developers
 - [Developer mailing list](https://groups.google.com/g/kubestellar-dev): Discuss development issues around the project
-- You can find out how to contribute to KubeStellar in our [Contribution Guidelines](../contributing/contributing-inc.md)
+- You can find out how to contribute to KubeStellar in our [Contribution Guidelines](../contributing/documentation/contributing-inc.md)
 
 
 ### Community Meetings
