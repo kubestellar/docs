@@ -157,6 +157,11 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
   const secondaryProjects = allProjects.filter((p) => 'secondary' in p && p.secondary);
   const [secondaryExpanded, setSecondaryExpanded] = useState(autoExpandLegacy);
 
+  // Sync secondaryExpanded state when autoExpandLegacy prop changes (e.g., on page navigation)
+  useEffect(() => {
+    setSecondaryExpanded(autoExpandLegacy);
+  }, [autoExpandLegacy]);
+
   // Slim variant - icon-only vertical layout
   if (variant === 'slim') {
     if (!mounted) {

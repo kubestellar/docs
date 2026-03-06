@@ -468,8 +468,22 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
           const children = buildNavNodes(value, newParentSlug)
           if (children.length > 0) {
             // Use /docs path for general sections, project path for everything else
-            const isGeneralSection = value && typeof value === 'object' && Array.isArray(value) &&
-              value.some(v => typeof v === 'string' && (v.startsWith('contributing/') || v.startsWith('community/') || v.startsWith('news/')))
+            // Check both direct string entries and nested values in objects
+            const isGeneralSection = Array.isArray(value) &&
+              value.some(v => {
+                if (typeof v === 'string') {
+                  return v.startsWith('contributing/') || v.startsWith('community/') || v.startsWith('news/')
+                }
+                // For object entries, check if any value starts with general section path
+                if (typeof v === 'object' && v !== null) {
+                  const objValues = Object.values(v);
+                  return objValues.some(val =>
+                    typeof val === 'string' &&
+                    (val.startsWith('contributing/') || val.startsWith('community/') || val.startsWith('news/'))
+                  );
+                }
+                return false;
+              })
             const basePathForRoute = isGeneralSection ? 'docs' : projectBasePath
             nodes.push({
               kind: 'Folder',
