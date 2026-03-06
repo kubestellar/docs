@@ -307,30 +307,30 @@ const NAV_STRUCTURE: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Contributing',
     items: [
-      { 'Overview': 'contribution-guidelines/contribute.md' },
-      { 'Code of Conduct': 'contribution-guidelines/coc-inc.md' },
-      { 'Contributing to Code': 'contribution-guidelines/CONTRIBUTINGKS.md' },
+      { 'Overview': 'contributing/contribute.md' },
+      { 'Code of Conduct': 'contributing/coc-inc.md' },
+      { 'Contributing to Code': 'contributing/CONTRIBUTINGKS.md' },
       { 'Contributing to Docs/Website': [
-          {'Docs Structure': 'contribution-guidelines/documentation/docs-structure-inc.md'} ,
-          {'Simple Changes' : 'contribution-guidelines/documentation/simple-docs-inc.md'},
-          {'Version Management' : 'contribution-guidelines/documentation/docs-version-inc.md'},
-          {'Detailed Contribution Guide': 'contribution-guidelines/documentation/contributing-inc.md' },
-          {'Style Guide': 'contribution-guidelines/documentation/docs-styleguide.md' }
+          {'Docs Structure': 'contributing/documentation/docs-structure-inc.md'} ,
+          {'Simple Changes' : 'contributing/documentation/simple-docs-inc.md'},
+          {'Version Management' : 'contributing/documentation/docs-version-inc.md'},
+          {'Detailed Contribution Guide': 'contributing/documentation/contributing-inc.md' },
+          {'Style Guide': 'contributing/documentation/docs-styleguide.md' }
           ]},
-      { 'Contributor Ladder': 'contribution-guidelines/contributor_ladder.md' },
-      { 'License': 'contribution-guidelines/license-inc.md' },
-      { 'Governance': 'contribution-guidelines/governance-inc.md' },
-      { 'Onboarding': 'contribution-guidelines/onboarding-inc.md' },
+      { 'Contributor Ladder': 'contributing/contributor_ladder.md' },
+      { 'License': 'contributing/license-inc.md' },
+      { 'Governance': 'contributing/governance-inc.md' },
+      { 'Onboarding': 'contributing/onboarding-inc.md' },
       {
         'CI/CD': [
-          { 'GitHub Actions': 'contribution-guidelines/operations/github-actions.md' },
-          { 'Demoting Component Repo Docs': 'contribution-guidelines/operations/demote-component-docs.md' }
+          { 'GitHub Actions': 'contributing/operations/github-actions.md' },
+          { 'Demoting Component Repo Docs': 'contributing/operations/demote-component-docs.md' }
         ]
       },
       {
         'Security': [
-          { 'Policy': 'contribution-guidelines/security/security-inc.md' },
-          { 'Contacts': 'contribution-guidelines/security/security_contacts-inc.md' }
+          { 'Policy': 'contributing/security/security-inc.md' },
+          { 'Contacts': 'contributing/security/security_contacts-inc.md' }
         ]
       },
       { 'Testing': 'kubestellar/testing.md' },

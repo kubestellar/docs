@@ -480,7 +480,7 @@ export default function Footer() {
             {/* Right side - policy links */}
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 order-1 md:order-2">
               <Link
-                href="/docs/contribution-guidelines/license-inc"
+                href="/docs/contributing/license-inc"
                 className={`text-xs sm:text-sm transition-colors duration-300 whitespace-nowrap ${
                   isDark
                     ? 'text-gray-400 hover:text-white'
@@ -490,7 +490,7 @@ export default function Footer() {
                 Privacy Policy
               </Link>
               <Link
-                href="/docs/contribution-guidelines/security/security-inc"
+                href="/docs/contributing/security/security-inc"
                 className={`text-xs sm:text-sm transition-colors duration-300 whitespace-nowrap ${
                   isDark
                     ? 'text-gray-400 hover:text-white'
@@ -500,7 +500,7 @@ export default function Footer() {
                 Terms of Service
               </Link>
               <Link
-                href="/docs/contribution-guidelines/security/security_contacts-inc"
+                href="/docs/contributing/security/security_contacts-inc"
                 className={`text-xs sm:text-sm transition-colors duration-300 whitespace-nowrap ${
                   isDark
                     ? 'text-gray-400 hover:text-white'
