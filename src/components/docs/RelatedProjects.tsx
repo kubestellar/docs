@@ -45,11 +45,14 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
 
   useEffect(() => {
     setMounted(true);
-    // Check if we're on production only after mount
+    // Check if we should use relative URLs
+    // Use relative URLs on: localhost, kubestellar.io, and preview/staging deploys (netlify)
+    // Only use absolute URLs if explicitly on a different domain
     const checkProduction =
+      window.location.hostname === 'localhost' ||
       window.location.hostname === 'kubestellar.io' ||
       window.location.hostname === 'www.kubestellar.io' ||
-      window.location.hostname === 'localhost';
+      window.location.hostname.includes('netlify.app');
     setIsProduction(checkProduction);
   }, []);
 
