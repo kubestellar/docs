@@ -206,7 +206,7 @@
   "relatedProjects": [
     {
       "title": "KubeStellar Console",
-      "href": "/docs/readme",
+      "href": "/docs/console/readme",
       "description": "AI-powered multi-cluster dashboard"
     },
     {

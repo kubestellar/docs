@@ -31,9 +31,10 @@ interface RelatedProjectsProps {
   projectId?: string;
   legacyPageMap?: LegacyMenuItem[];
   autoExpandLegacy?: boolean;
+  generalSections?: Array<{ title: string; href: string }>;
 }
 
-export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false, legacyPageMap, autoExpandLegacy = false }: RelatedProjectsProps) {
+export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = false, legacyPageMap, autoExpandLegacy = false, generalSections = [] }: RelatedProjectsProps) {
   const [mounted, setMounted] = useState(false);
   const [isProduction, setIsProduction] = useState(true); // Default to true to match SSR
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
@@ -205,14 +206,17 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
     );
   }
 
-  // Determine current project from pathname
-  // THIS HIGHLIGHTS THE ACTIVE PROJECT IN THE PROJECT LIST IN THE SIDEBAR
+  // Determine current project or section from pathname
+  // THIS HIGHLIGHTS THE ACTIVE PROJECT/SECTION IN THE PROJECT LIST IN THE SIDEBAR
   const getCurrentProject = () => {
     if (pathname.startsWith('/docs/console')) return 'KubeStellar Console';
     if (pathname.startsWith('/docs/a2a')) return 'A2A';
     if (pathname.startsWith('/docs/kubeflex')) return 'KubeFlex';
     if (pathname.startsWith('/docs/multi-plugin')) return 'Multi Plugin';
     if (pathname.startsWith('/docs/kubestellar-mcp')) return 'KubeStellar MCP';
+    if (pathname.startsWith('/docs/contributing')) return 'Contributing';
+    if (pathname.startsWith('/docs/community')) return 'Community';
+    if (pathname.startsWith('/docs/news')) return 'News';
     return 'KubeStellar';
   };
 
@@ -266,6 +270,45 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
             </a>
           );
         })}
+
+        {/* General info sections - Contributing, Community, News */}
+        {generalSections.length > 0 && (
+          <div className={`${bannerActive ? 'space-y-0' : 'space-y-1.5'}`}>
+            {generalSections.map((section: { title: string; href: string }) => {
+              const isCurrentSection = section.title === currentProject;
+              const sectionUrl = getProjectUrl(section.href);
+              const isHovered = hoveredProject === section.title;
+
+              let bgColor: string | undefined;
+              if (isCurrentSection) {
+                bgColor = isDark ? 'rgba(59, 130, 246, 0.2)' : 'rgba(239, 246, 255, 1)';
+              } else if (isHovered) {
+                bgColor = isDark ? 'rgba(55, 65, 81, 0.6)' : 'rgba(243, 244, 246, 1)';
+              } else {
+                bgColor = undefined;
+              }
+
+              return (
+                <a
+                  key={section.title}
+                  href={sectionUrl}
+                  suppressHydrationWarning
+                  className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-2'} ${isCurrentSection ? 'font-medium' : ''}`}
+                  style={{
+                    color: isCurrentSection
+                      ? (isDark ? '#60a5fa' : '#2563eb')
+                      : textColor,
+                    backgroundColor: bgColor,
+                  }}
+                  onMouseEnter={() => !isCurrentSection && setHoveredProject(section.title)}
+                  onMouseLeave={() => setHoveredProject(null)}
+                >
+                  {section.title}
+                </a>
+              );
+            })}
+          </div>
+        )}
 
         {/* Secondary section - collapsed by default */}
         {secondaryProjects.length > 0 && (

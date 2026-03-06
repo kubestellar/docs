@@ -107,9 +107,9 @@ const NAV_STRUCTURE_A2A: Array<{ title: string; items: NavItem[] }> = [
     ]
   },
   {
-    title: 'Contributing',
+    title: 'Contribute to A2A',
     items: [
-      { 'Contributing': 'CONTRIBUTING.md' },
+      { 'Contribute to A2A': 'CONTRIBUTING.md' },
     ]
   }
 ]
@@ -349,15 +349,15 @@ const NAV_STRUCTURE_COMMUNITY: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Community',
     items: [
-      { 'Get Involved': 'Community/_index.md' },
+      { 'Get Involved': 'community/index.md' },
       {
         'Partners': [
-          { 'ArgoCD': 'Community/partners/argocd.md' },
-          { 'Turbonomic': 'Community/partners/turbonomic.md' },
-          { 'MVI': 'Community/partners/mvi.md' },
-          { 'FluxCD': 'Community/partners/fluxcd.md' },
-          { 'OpenZiti': 'Community/partners/openziti.md' },
-          { 'Kyverno': 'Community/partners/kyverno.md' }
+          { 'ArgoCD': 'community/partners/argocd.md' },
+          { 'Turbonomic': 'community/partners/turbonomic.md' },
+          { 'MVI': 'community/partners/mvi.md' },
+          { 'FluxCD': 'community/partners/fluxcd.md' },
+          { 'OpenZiti': 'community/partners/openziti.md' },
+          { 'Kyverno': 'community/partners/kyverno.md' }
         ]
       }
     ]
@@ -412,7 +412,7 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
   if (projectId !== 'kubestellar') {
     // Add general sections files from main KubeStellar directory
     const generalFiles = getAllDocFiles(docsContentPath).filter(f =>
-      f.startsWith('contributing/') || f.startsWith('Community/') || f.startsWith('news/')
+      f.startsWith('contributing/') || f.startsWith('community/') || f.startsWith('news/')
     )
     allDocFiles = [...allDocFiles, ...generalFiles]
   }
@@ -431,7 +431,7 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
           processedFiles.add(item)
           const baseName = item.replace(/\.(md|mdx)$/i, '').split('/').pop()!
           // Use /docs path for general sections, project path for everything else
-          const isGeneralSection = item.startsWith('contributing/') || item.startsWith('Community/') || item.startsWith('news/')
+          const isGeneralSection = item.startsWith('contributing/') || item.startsWith('community/') || item.startsWith('news/')
           const basePathForRoute = isGeneralSection ? 'docs' : projectBasePath
           const route = `/${basePathForRoute}/${parentSlug}/${baseName}`
           routeMap[`${parentSlug}/${baseName}`] = item
@@ -454,7 +454,7 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
             // const baseName = value.replace(/\.(md|mdx)$/i, '').split('/').pop()!
             const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
             // Use /docs path for general sections, project path for everything else
-            const isGeneralSection = value.startsWith('contributing/') || value.startsWith('Community/') || value.startsWith('news/')
+            const isGeneralSection = value.startsWith('contributing/') || value.startsWith('community/') || value.startsWith('news/')
             const basePathForRoute = isGeneralSection ? 'docs' : projectBasePath
             const route = `/${basePathForRoute}/${parentSlug ? parentSlug + '/' : ''}${slug}`
             routeMap[`${parentSlug ? parentSlug + '/' : ''}${slug}`] = value
@@ -469,7 +469,7 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
           if (children.length > 0) {
             // Use /docs path for general sections, project path for everything else
             const isGeneralSection = value && typeof value === 'object' && Array.isArray(value) &&
-              value.some(v => typeof v === 'string' && (v.startsWith('contributing/') || v.startsWith('Community/') || v.startsWith('news/')))
+              value.some(v => typeof v === 'string' && (v.startsWith('contributing/') || v.startsWith('community/') || v.startsWith('news/')))
             const basePathForRoute = isGeneralSection ? 'docs' : projectBasePath
             nodes.push({
               kind: 'Folder',
@@ -496,10 +496,14 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
     const children = buildNavNodes(category.items, categorySlug)
 
     if (children.length > 0) {
+      // Use /docs path for general sections, project path for project-specific sections
+      const isGeneralSection = ['Contributing', 'Community', 'News'].includes(category.title)
+      const basePath = isGeneralSection ? 'docs' : projectBasePath
+
       const folderNode: FolderNode = {
         kind: 'Folder',
         name: category.title,
-        route: `/${projectBasePath}/${categorySlug}`,
+        route: `/${basePath}/${categorySlug}`,
         children
       }
 
