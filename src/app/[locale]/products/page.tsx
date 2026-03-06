@@ -31,7 +31,7 @@ export default function ProductsPage() {
     {
       id: "console",
       logo: "/products/ks-console.png",
-      website: "https://kubestellar.io/docs/console",
+      website: "https://console.kubestellar.io",
       repository: "https://github.com/kubestellar/console",
       name: t("products.console.name"),
       fullName: t("products.console.fullName"),
