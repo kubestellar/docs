@@ -194,6 +194,32 @@ async function main() {
     }
   }
 
+  // 1b. Discover issue-only contributors via Search API.
+  //     The /repos/{repo}/contributors endpoint only returns users with commits,
+  //     so contributors who only filed issues (no PRs/commits) are missed.
+  console.log("\nDiscovering issue-only contributors...");
+  for (const repo of REPOS) {
+    try {
+      const query = `repo:${repo} type:issue`;
+      const url = `${API_BASE}/search/issues?q=${encodeURIComponent(query)}&per_page=${SEARCH_PER_PAGE}&page=1&sort=created&order=desc`;
+      await delay(SEARCH_RATE_LIMIT_DELAY_MS);
+      const data = await ghFetch(url);
+      let added = 0;
+      for (const item of data.items || []) {
+        const login = item.user?.login;
+        if (login && item.user?.type === "User" && !contributorMap.has(login)) {
+          contributorMap.set(login, item.user.avatar_url);
+          added++;
+        }
+      }
+      if (added > 0) {
+        console.log(`  ${repo}: found ${added} issue-only contributors`);
+      }
+    } catch (err) {
+      console.warn(`  Warning: issue search failed for ${repo}: ${err.message}`);
+    }
+  }
+
   console.log(`\nTotal unique contributors: ${contributorMap.size}`);
   console.log("Scoring contributors (this takes a while due to Search API rate limits)...\n");
 
