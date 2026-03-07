@@ -41,12 +41,14 @@ When something doesn't work right, report it!
 
 ### How to Report a Bug
 
-1. Click **"Report a bug or request a feature"** (top bar)
+1. Click the **bug icon** in the top navigation bar, or navigate directly to `/issue` in your browser
 2. Select **"Bug Report"** tab
 3. Fill in:
    - **Title** - Short description
    - **Description** - What happened, what you expected, steps to reproduce
 4. Click **Submit**
+
+> **Tip:** Bookmark `http://localhost:8080/issue` (or your deployed URL + `/issue`) to jump straight to the feedback dialog.
 
 ### What Happens Next
 

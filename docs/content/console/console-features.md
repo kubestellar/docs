@@ -14,7 +14,7 @@ This guide covers the main features of the KubeStellar Console.
 
 The main dashboard provides a customizable view of your multi-cluster environment.
 
-![Dashboard Overview](images/dashboard-overview-mar05.jpg)
+![Dashboard Overview](images/dashboard-overview-mar07.png)
 
 ### Stats Overview
 
@@ -850,7 +850,7 @@ Dashboard navigation is ~18% faster with KeepAlive route caching:
 
 The Deploy page now includes a full-featured **Mission Browser** for discovering, sharing, and importing deployment missions across your multi-cluster environment.
 
-![Deploy Page with Mission Browser](images/deploy-mar05.jpg)
+![Deploy Page with Mission Browser](images/deploy-mar07.png)
 
 ### Mission Discovery
 
@@ -1165,3 +1165,133 @@ Additional accessibility improvements in this release:
 - Full keyboard navigation support for the mission browser
 - Arrow key navigation in card grids
 - Escape key handling in all modal and dropdown contexts
+
+---
+
+## Direct Issue Route (New in March 2026)
+
+Navigate to `/issue` in your running console to immediately open the feedback modal. This route can be shared as a direct link for bug reports and feature requests (e.g., `http://localhost:8080/issue`).
+
+- Requires GitHub OAuth to be configured
+- The route redirects to the dashboard and opens the Contribute dialog automatically
+- Referenced in [CONTRIBUTING.md](https://github.com/kubestellar/console/blob/main/CONTRIBUTING.md) for quick issue filing
+
+---
+
+## Resizable Sidebar (New in March 2026)
+
+![Sidebar](images/sidebar-mar07.png)
+
+The sidebar is now resizable by dragging its edge:
+
+- Drag to adjust sidebar width to your preference
+- Width persists across sessions
+- Aligned item counts for cleaner visual hierarchy
+- Labels that don't fit show full text on hover via tooltip
+- Cluster status section shows healthy/unhealthy/offline counts at a glance
+
+---
+
+## Getting Started Banner (New in March 2026)
+
+The dashboard now features a consolidated **Getting Started** banner that guides new users through setup:
+
+- Context-aware CTAs that progress based on what you've already done
+- Install locally via `curl` command, connect clusters, or explore demo mode
+- The banner auto-hides once setup is complete
+- Replaces the previous scattered mission CTAs for a cleaner onboarding experience
+
+---
+
+## WSL Support (New in March 2026)
+
+WSL (Windows Subsystem for Linux) is now supported across all installation methods:
+
+- Installation CTAs include WSL instructions alongside macOS and Linux
+- `start.sh` and `startup-oauth.sh` work inside WSL environments
+- Documented in the Getting Started banner and deploy page
+
+---
+
+## Recommendation Panel Improvements (New in March 2026)
+
+Recommendation panels (Recommended Cards, Recommended Actions) have been streamlined:
+
+- Panels auto-collapse by default to reduce visual noise
+- Collapse/expand state persists across sessions
+- Neutralized panel colors for a less distracting appearance
+- SmartCardSuggestions feature removed in favor of the simplified panels
+
+---
+
+## 3D Globe Visualization Refresh (New in March 2026)
+
+The 3D globe on the login page has been polished:
+
+- Updated cluster labels: "Console" replaces "KubeStellar", "AI Cortex" replaces "KubeFlex Core"
+- More professional rendering with improved materials and lighting
+- Smoother animations and label placement
+
+---
+
+## Design System Standardization (New in March 2026)
+
+A comprehensive design system overhaul improves visual consistency:
+
+- **Color palette consolidated**: Indigo merged into blue, pink merged into purple — fewer colors, more consistent
+- **Semantic design tokens**: All hardcoded gray/emerald/rose values replaced with theme-aware tokens
+- **StatusBadge component**: 200+ inline badge spans migrated to a shared component for consistent status display
+- **Button component**: 88+ inline button elements migrated to a shared component
+- **Modal backdrop blur**: Standardized 24px blur across all overlays
+
+---
+
+## Helm Chart Security Defaults (New in March 2026)
+
+The Helm chart now includes production-grade security defaults out of the box:
+
+- **NetworkPolicy**: Restricts ingress/egress traffic
+- **PodDisruptionBudget**: Ensures availability during node maintenance
+- **securityContext**: Non-root user, read-only filesystem, dropped capabilities
+- **Dockerfile hardened**: Non-root user, healthcheck endpoint, `.dockerignore` for smaller images
+
+---
+
+## Lima Card (New in March 2026)
+
+A new monitoring card for [Lima](https://lima-vm.io/) — Linux virtual machine manager:
+
+- Monitors Lima VM instances
+- Shows VM status, resource usage, and health
+- Available in the card catalog under the Compute category
+
+---
+
+## CI/CD Dashboard Layout (New in March 2026)
+
+![CI/CD Dashboard](images/ci-cd-mar07.png)
+
+The CI/CD dashboard has been reorganized:
+
+- GitHub-related cards (GitHub CI Monitor, GitHub Activity) moved to the top for better visibility
+- Improved card ordering for the most common CI/CD workflows
+
+---
+
+## Cluster Admin Dashboard (New in March 2026)
+
+![Cluster Admin](images/cluster-admin-mar07.png)
+
+The Cluster Admin dashboard has been reordered for better workflow:
+
+- Most important operational cards prioritized at the top
+- Kubectl Terminal and Node Debug prominently placed
+- Cluster Health and Control Plane cards in the second row
+
+---
+
+## AI/ML Dashboard Updates (New in March 2026)
+
+![AI/ML Dashboard](images/ai-ml-mar07.png)
+
+The AI/ML dashboard now properly shows demo data badges on all cards when running in demo mode, ensuring users can distinguish between real and sample data across all 13 AI/ML monitoring cards.
