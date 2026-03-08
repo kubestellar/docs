@@ -1,14 +1,27 @@
 ---
-title: "KubeStellar Console"
+title: "KubeStellar Console — AI-Powered Multi-Cluster Kubernetes Dashboard for Operations & Deployment"
 linkTitle: "Console"
 weight: 5
 description: >
-  AI-powered multi-cluster Kubernetes dashboard
+  KubeStellar Console is the open source multi-cluster Kubernetes dashboard with AI Missions that automate deployment, troubleshooting, and repair across your entire fleet. 110+ monitoring cards, 400+ CNCF project missions, a community marketplace, and a resolution knowledge base — all designed to save you time and tokens.
+keywords:
+  - multi-cluster kubernetes dashboard
+  - kubernetes multi-cluster management
+  - AI kubernetes operations
+  - kubernetes deployment automation
+  - multi-cluster monitoring
+  - kubernetes troubleshooting AI
+  - CNCF project management dashboard
+  - kubernetes fleet management
+  - AI missions kubernetes
+  - cloud native operations platform
+  - kubernetes observability dashboard
+  - multi-cluster deployment tool
 ---
 
-# KubeStellar Console
+# KubeStellar Console — Multi-Cluster Kubernetes Operations with AI
 
-**Your clusters, your way - AI that learns how you work**
+**Your clusters, your way — AI Missions that save you time and tokens**
 
 ![Main Dashboard](images/main-dashboard.png)
 
@@ -214,7 +227,9 @@ helm install ksc oci://ghcr.io/kubestellar/charts/console \
 - [Dashboards](dashboards.md) - All dashboards
 - [Cards](all-cards.md) - All 110+ cards
 - [Stats Blocks](stats-blocks.md) - All 93+ stats
-- [AI Features](ai-features.md) - Missions, diagnose, repair, card creation
+- [AI Features](ai-features.md) - AI Missions, diagnose, repair, card creation
+- [Marketplace](marketplace.md) - Community dashboards, cards, and themes for multi-cluster Kubernetes
+- [Knowledge Base](knowledge-base.md) - 400+ AI Mission prompts for CNCF project installation and repair
 - [Feedback System](feedback.md) - Bug-to-squash workflow
 - [Alerts](alerts.md) - Notifications and token usage
 - [Architecture](architecture.md) - How it works

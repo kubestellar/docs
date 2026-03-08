@@ -1,14 +1,23 @@
 ---
-title: "Dashboards"
+title: "Dashboards — 28+ Multi-Cluster Kubernetes Monitoring Dashboards"
 linkTitle: "Dashboards"
 weight: 6
 description: >
-  All 28+ dashboard pages in KubeStellar Console
+  28+ pre-built dashboards for multi-cluster Kubernetes monitoring — workloads, compute, storage, network, security, GitOps, GPU, cost, and AI-powered insights. KubeStellar Console dashboards give you fleet-wide visibility across all your Kubernetes clusters in a single view.
+keywords:
+  - kubernetes monitoring dashboard
+  - multi-cluster kubernetes dashboard
+  - kubernetes observability
+  - kubernetes workload monitoring
+  - kubernetes GPU monitoring dashboard
+  - kubernetes security dashboard
+  - kubernetes cost monitoring
+  - multi-cluster observability
 ---
 
-# Dashboards
+# Dashboards — Multi-Cluster Kubernetes Monitoring
 
-KubeStellar Console has 28+ different dashboards. Each one shows you different information about your Kubernetes clusters.
+KubeStellar Console has 28+ dashboards for multi-cluster Kubernetes monitoring. Each dashboard gives you fleet-wide visibility into a specific operational area across all your connected clusters.
 
 ## Main Dashboard
 

@@ -1,9 +1,15 @@
 ---
-title: "Alerts & Token Usage"
+title: "Alerts & Token Usage — Multi-Cluster Kubernetes Alerting with AI Token Tracking"
 linkTitle: "Alerts"
 weight: 11
 description: >
-  Configurable alerts and AI token tracking
+  Configurable multi-cluster Kubernetes alerts with AI token tracking. Set up alerts across your entire fleet, get notified via browser, Slack, or webhooks, and track AI token usage to control costs. KubeStellar Console alerting saves you time and tokens.
+keywords:
+  - kubernetes alerts
+  - multi-cluster kubernetes alerting
+  - kubernetes notification system
+  - AI token usage tracking
+  - kubernetes fleet alerting
 ---
 
 # Alerts & Token Usage
