@@ -247,25 +247,32 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     // Detect if we're viewing a general section page
     const isViewingGeneralSection = pathname.includes('/contributing') || pathname.includes('/community') || pathname.includes('/news');
 
-    // Extract general sections from pageMap to pass to RelatedProjects
-    const generalSectionItems = pageMap.filter(item => ['Contributing', 'Community', 'News'].includes(item.name || item.title || ''));
-    const generalSections = generalSectionItems.map(item => ({
-      title: item.name || item.title || '',
-      href: item.route || ''
-    })).filter(s => s.title && s.href);
+    // Extract general sections from pageMap to pass to RelatedProjects.
+    // Use the first child's route as href since folder routes (/docs/news)
+    // don't resolve to actual pages.
+    const generalSectionNames = ['Contributing', 'Community', 'News'];
+    const generalSectionItems = pageMap.filter(item => generalSectionNames.includes(item.name || item.title || ''));
+    const generalSections = generalSectionItems.map(item => {
+      const firstChildRoute = item.children?.[0]?.route;
+      return {
+        title: item.name || item.title || '',
+        href: firstChildRoute || item.route || ''
+      };
+    }).filter(s => s.title && s.href);
 
-    // When viewing a general section page, show that section's nav items
-    // Otherwise, show project-specific items (excluding general sections)
+    // When viewing a general section page, show that section's CHILDREN
+    // directly (not the folder wrapper, which would duplicate the link
+    // already shown in RelatedProjects).
+    // Otherwise, show project-specific items (excluding general sections).
     let itemsToShow: MenuItem[] = [];
     if (isViewingGeneralSection) {
-      // Find which general section we're in and show its nav items
       const currentSection = pathname.includes('/contributing') ? 'Contributing'
         : pathname.includes('/community') ? 'Community'
         : 'News';
-      itemsToShow = pageMap.filter(item => (item.name || item.title || '') === currentSection);
+      const sectionFolder = pageMap.find(item => (item.name || item.title || '') === currentSection);
+      itemsToShow = sectionFolder?.children || [];
     } else {
-      // Show project-specific items, excluding general sections
-      itemsToShow = pageMap.filter(item => !['Contributing', 'Community', 'News'].includes(item.name || item.title || ''));
+      itemsToShow = pageMap.filter(item => !generalSectionNames.includes(item.name || item.title || ''));
     }
 
     return (
