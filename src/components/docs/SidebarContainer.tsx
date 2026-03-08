@@ -29,7 +29,7 @@ interface SidebarContainerProps {
 export function SidebarContainer({ allPageMaps }: SidebarContainerProps) {
   const pathname = usePathname()
   const projectId = getProjectFromPathname(pathname)
-  const pageMap = allPageMaps[projectId] || allPageMaps['kubestellar']
+  const pageMap = allPageMaps[projectId] || allPageMaps['console']
 
   return <DocsSidebar pageMap={pageMap} projectId={projectId} allPageMaps={allPageMaps} />
 }

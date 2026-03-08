@@ -29,12 +29,12 @@ const GENERAL_SECTION_NAMES = ['Contributing', 'Community', 'News'];
 
 // Project display order and labels
 const PRIMARY_PROJECTS = [
-  { id: 'kubestellar', label: 'KubeStellar' },
   { id: 'console', label: 'KubeStellar Console' },
   { id: 'kubestellar-mcp', label: 'KubeStellar MCP' },
 ] as const;
 
 const LEGACY_PROJECTS = [
+  { id: 'kubestellar', label: 'KubeStellar' },
   { id: 'a2a', label: 'A2A' },
   { id: 'kubeflex', label: 'KubeFlex' },
   { id: 'multi-plugin', label: 'Multi Plugin' },
@@ -120,7 +120,7 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
     const currentPath = initialPathnameRef.current;
 
     // Determine active project from pathname
-    const activeProjectId = projectId || 'kubestellar';
+    const activeProjectId = projectId || 'console';
 
     // Collapse all non-active project sections
     const allProjectIds = [...PRIMARY_PROJECTS, ...LEGACY_PROJECTS].map(p => p.id);
@@ -219,12 +219,12 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
     }
 
     return (
-      <div key={itemKey} className="relative space-y-1">
+      <div key={itemKey} className="relative">
         <div className="flex items-center group relative">
           {/* Vertical line for nested items */}
           {depth > 0 && (
             <div
-              className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700"
+              className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700/50"
               style={{ left: `${(depth - 1) * 16 + 20}px` }}
             />
           )}
@@ -233,15 +233,15 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
           {hasChildren ? (
             <button
               onClick={() => toggleCollapse(itemKey)}
-              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10 text-gray-700 dark:text-gray-200"
+              className="flex items-center gap-2 px-3 py-1.5 text-[13px] font-normal text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-md transition-colors text-left w-full relative z-10"
               style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
-              <span className="flex-1 wrap-break-word">{displayTitle}</span>
-              <span className="ml-auto shrink-0 mt-0.5">
+              <span className="flex-1 truncate">{displayTitle}</span>
+              <span className="ml-auto shrink-0">
                 {isCollapsed ? (
-                  <ChevronRight className="w-4 h-4 transition-all duration-200" />
+                  <ChevronRight className="w-3.5 h-3.5 text-gray-400 transition-transform duration-200" />
                 ) : (
-                  <ChevronDown className="w-4 h-4 transition-all duration-200" />
+                  <ChevronDown className="w-3.5 h-3.5 text-gray-400 transition-transform duration-200" />
                 )}
               </span>
             </button>
@@ -249,19 +249,19 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
             <Link
               href={item.route || '#'}
               className={`
-                flex-1 flex items-start gap-2 px-3 py-2 text-sm rounded-lg transition-all relative z-10
+                flex items-center gap-2 px-3 py-1.5 text-[13px] rounded-md transition-colors relative z-10 w-full
                 ${
                   isActive
-                    ? 'font-thin text-blue-500 bg-blue-500/10'
-                    : 'hover:font-semibold text-gray-700 dark:text-gray-200'
+                    ? 'font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30'
+                    : 'font-normal text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800/50'
                 }
               `}
               style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
               <FileText
-                className={`w-4 h-4 shrink-0 mt-0.5 ${isActive ? 'text-blue-500' : 'text-gray-700 dark:text-gray-200'}`}
+                className={`w-3.5 h-3.5 shrink-0 ${isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-400 dark:text-gray-500'}`}
               />
-              <span className="flex-1 wrap-break-word">{displayTitle}</span>
+              <span className="flex-1 truncate">{displayTitle}</span>
             </Link>
           )}
         </div>
@@ -270,12 +270,12 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
         {hasChildren && (
           <div
             className={`
-              relative space-y-1 overflow-hidden transition-all duration-300 ease-in-out
+              relative overflow-hidden transition-all duration-300 ease-in-out
               ${isCollapsed ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}
             `}
           >
             <div
-              className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700"
+              className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700/50"
               style={{ left: `${depth * 16 + 20}px` }}
             />
             {item.children!.map(child => renderMenuItem(child, depth + 1, itemKey))}
@@ -295,31 +295,31 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
     const isActiveProject = projId === projectId;
 
     return (
-      <div key={projId} className="relative space-y-1">
+      <div key={projId} className="relative">
         <button
           onClick={() => toggleCollapse(sectionKey)}
           className={`
-            flex-1 flex items-start gap-2 px-3 py-2 text-sm rounded-lg transition-all text-left w-full
+            flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full
             ${isActiveProject
-              ? 'font-medium text-blue-500 dark:text-blue-400'
-              : 'font-thin hover:font-semibold text-gray-700 dark:text-gray-200'
+              ? 'font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30'
+              : 'font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800/50'
             }
           `}
           style={{ paddingLeft: `${depth * 16 + 12}px` }}
         >
-          <span className="flex-1 wrap-break-word">{label}</span>
-          <span className="ml-auto shrink-0 mt-0.5">
+          <span className="flex-1 truncate">{label}</span>
+          <span className="ml-auto shrink-0">
             {isExpanded ? (
-              <ChevronDown className="w-4 h-4 transition-all duration-200" />
+              <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200" />
             ) : (
-              <ChevronRight className="w-4 h-4 transition-all duration-200" />
+              <ChevronRight className="w-3.5 h-3.5 transition-transform duration-200" />
             )}
           </span>
         </button>
 
         <div
           className={`
-            relative space-y-1 overflow-hidden transition-all duration-300 ease-in-out
+            relative overflow-hidden transition-all duration-300 ease-in-out
             ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
           `}
         >
@@ -335,14 +335,14 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
     const isActiveLegacy = LEGACY_PROJECTS.some(p => p.id === projectId);
 
     return (
-      <div className="relative space-y-1">
+      <div className="relative pt-1">
         <button
           onClick={() => toggleCollapse(LEGACY_GROUP_KEY)}
           className={`
-            flex items-center w-full px-3 py-2 text-xs uppercase tracking-wider transition-all rounded-lg
+            flex items-center w-full px-3 py-1.5 text-[10px] uppercase tracking-widest transition-colors rounded-md
             ${isActiveLegacy
-              ? 'text-blue-500 dark:text-blue-400 font-medium'
-              : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+              ? 'text-blue-600 dark:text-blue-400 font-semibold'
+              : 'text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300'
             }
           `}
         >
@@ -358,7 +358,7 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
 
         <div
           className={`
-            relative space-y-1 overflow-hidden transition-all duration-300 ease-in-out
+            relative overflow-hidden transition-all duration-300 ease-in-out
             ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
           `}
         >
@@ -377,18 +377,24 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
       <>
         {/* Scrollable navigation area */}
         <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-          <nav className={`px-4 pb-6 w-full space-y-1 ${bannerDismissed ? 'pt-4' : 'pt-2'}`}>
+          <nav className="px-3 pt-6 pb-6 w-full">
             {/* Primary projects — each as an expandable tree */}
-            {PRIMARY_PROJECTS.map(proj => renderProjectSection(proj.id, proj.label))}
+            <div className="space-y-1">
+              {PRIMARY_PROJECTS.map(proj => renderProjectSection(proj.id, proj.label))}
+            </div>
 
             {/* Legacy group */}
-            {renderLegacyGroup()}
+            <div className="mt-4">
+              {renderLegacyGroup()}
+            </div>
 
             {/* Separator */}
-            <div className="border-t border-gray-200 dark:border-gray-700 my-2" />
+            <div className="border-t border-gray-200 dark:border-gray-700 my-4" />
 
             {/* General sections — Contributing, Community, News */}
-            {generalSections.map(item => renderMenuItem(item))}
+            <div className="space-y-1">
+              {generalSections.map(item => renderMenuItem(item))}
+            </div>
           </nav>
         </div>
         <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
@@ -423,7 +429,7 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
         top: layoutValues.top,
         height: layoutValues.height,
         maxHeight: layoutValues.height,
-        boxShadow: '0 1px 6px 0 rgba(0,0,0,0.07)',
+        boxShadow: '1px 0 3px 0 rgba(0,0,0,0.04)',
         backgroundColor: 'var(--background)',
       }}
       suppressHydrationWarning
