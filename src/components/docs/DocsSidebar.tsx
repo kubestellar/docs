@@ -19,7 +19,6 @@ interface MenuItem {
 
 interface DocsSidebarProps {
   pageMap: MenuItem[];
-  allPageMaps?: Record<string, MenuItem[]>;
   className?: string;
   projectId?: string;
 }
@@ -27,17 +26,17 @@ interface DocsSidebarProps {
 // General sections that appear in every project's pageMap — show once at bottom
 const GENERAL_SECTION_NAMES = ['Contributing', 'Community', 'News'];
 
-// Project display order and labels
+// Project display order and labels — each with a landing href for navigation links
 const PRIMARY_PROJECTS = [
-  { id: 'console', label: 'KubeStellar Console' },
-  { id: 'kubestellar-mcp', label: 'KubeStellar MCP' },
+  { id: 'console', label: 'KubeStellar Console', href: '/docs/console/overview/introduction' },
+  { id: 'kubestellar-mcp', label: 'KubeStellar MCP', href: '/docs/kubestellar-mcp/overview/introduction' },
 ] as const;
 
 const LEGACY_PROJECTS = [
-  { id: 'kubestellar', label: 'KubeStellar' },
-  { id: 'a2a', label: 'A2A' },
-  { id: 'kubeflex', label: 'KubeFlex' },
-  { id: 'multi-plugin', label: 'Multi Plugin' },
+  { id: 'kubestellar', label: 'KubeStellar', href: '/docs/what-is-kubestellar-/overview' },
+  { id: 'a2a', label: 'A2A', href: '/docs/a2a/overview/introduction' },
+  { id: 'kubeflex', label: 'KubeFlex', href: '/docs/kubeflex/overview/introduction' },
+  { id: 'multi-plugin', label: 'Multi Plugin', href: '/docs/multi-plugin/overview/introduction' },
 ] as const;
 
 // Key prefix for project-level collapse state (avoids collision with nav item keys)
@@ -52,7 +51,7 @@ function getGeneralSections(items: MenuItem[]): MenuItem[] {
   return items.filter(item => GENERAL_SECTION_NAMES.includes(item.name || item.title || ''));
 }
 
-export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: DocsSidebarProps) {
+export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps) {
   const pathname = usePathname();
   const sidebarRef = useRef<HTMLElement>(null);
   const {
@@ -122,15 +121,6 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
     // Determine active project from pathname
     const activeProjectId = projectId || 'console';
 
-    // Collapse all non-active project sections
-    const allProjectIds = [...PRIMARY_PROJECTS, ...LEGACY_PROJECTS].map(p => p.id);
-    for (const pid of allProjectIds) {
-      const key = `${PROJECT_KEY_PREFIX}${pid}`;
-      if (pid !== activeProjectId) {
-        initialCollapsed.add(key);
-      }
-    }
-
     // Collapse legacy group if active project is not a legacy project
     const legacyIds = LEGACY_PROJECTS.map(p => p.id) as readonly string[];
     if (!legacyIds.includes(activeProjectId)) {
@@ -138,8 +128,7 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
     }
 
     // For the active project, find the path to the active page and collapse non-active folders
-    const activePageMap = allPageMaps?.[activeProjectId] || pageMap;
-    const activeItems = getProjectItems(activePageMap);
+    const activeItems = getProjectItems(pageMap);
     const activeParentKey = `${PROJECT_KEY_PREFIX}${activeProjectId}`;
 
     function findActivePath(items: MenuItem[], parentKey: string): boolean {
@@ -179,7 +168,7 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
     collapseAll(activeItems, activeParentKey);
 
     // Also handle general sections
-    const generalSections = getGeneralSections(allPageMaps?.['kubestellar'] || pageMap);
+    const generalSections = getGeneralSections(pageMap);
     const isViewingGeneralSection = currentPath.includes('/contributing') || currentPath.includes('/community') || currentPath.includes('/news');
 
     for (const section of generalSections) {
@@ -195,7 +184,7 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
     }
 
     setCollapsed(initialCollapsed);
-  }, [pageMap, allPageMaps, projectId, navInitialized, setCollapsed]);
+  }, [pageMap, projectId, navInitialized, setCollapsed]);
 
   const toggleCollapse = (itemKey: string) => {
     toggleNavCollapsed(itemKey);
@@ -285,26 +274,19 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
     );
   };
 
-  // Render a project section as a collapsible tree
-  const renderProjectSection = (projId: string, label: string, depth: number = 0) => {
-    const items = getProjectItems(allPageMaps?.[projId] || []);
+  // Render the active project's nav tree (full expandable tree from pageMap)
+  const renderActiveProjectTree = (projId: string, label: string, depth: number = 0) => {
+    const items = getProjectItems(pageMap);
     if (items.length === 0) return null;
 
     const sectionKey = `${PROJECT_KEY_PREFIX}${projId}`;
     const isExpanded = !collapsed.has(sectionKey);
-    const isActiveProject = projId === projectId;
 
     return (
       <div key={projId} className="relative">
         <button
           onClick={() => toggleCollapse(sectionKey)}
-          className={`
-            flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full
-            ${isActiveProject
-              ? 'font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30'
-              : 'font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800/50'
-            }
-          `}
+          className="flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30"
           style={{ paddingLeft: `${depth * 16 + 12}px` }}
         >
           <span className="flex-1 truncate">{label}</span>
@@ -327,6 +309,30 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
         </div>
       </div>
     );
+  };
+
+  // Render a non-active project as a navigation link (no tree — loads on click)
+  const renderProjectLink = (projId: string, label: string, href: string, depth: number = 0) => {
+    return (
+      <div key={projId} className="relative">
+        <Link
+          href={href}
+          className="flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800/50"
+          style={{ paddingLeft: `${depth * 16 + 12}px` }}
+        >
+          <span className="flex-1 truncate">{label}</span>
+          <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
+        </Link>
+      </div>
+    );
+  };
+
+  // Render a project — full tree if active, navigation link if not
+  const renderProject = (proj: { id: string; label: string; href: string }, depth: number = 0) => {
+    if (proj.id === projectId) {
+      return renderActiveProjectTree(proj.id, proj.label, depth);
+    }
+    return renderProjectLink(proj.id, proj.label, proj.href, depth);
   };
 
   // Render the Legacy group with sub-projects
@@ -362,7 +368,7 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
             ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
           `}
         >
-          {LEGACY_PROJECTS.map(proj => renderProjectSection(proj.id, proj.label, 1))}
+          {LEGACY_PROJECTS.map(proj => renderProject(proj, 1))}
         </div>
       </div>
     );
@@ -370,17 +376,17 @@ export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: Docs
 
   // Render full sidebar (expanded state)
   const renderFullSidebar = () => {
-    // General sections (Contributing, Community, News) from KubeStellar pageMap
-    const generalSections = getGeneralSections(allPageMaps?.['kubestellar'] || pageMap);
+    // General sections (Contributing, Community, News) from current project's pageMap
+    const generalSections = getGeneralSections(pageMap);
 
     return (
       <>
         {/* Scrollable navigation area */}
         <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
           <nav className="px-3 pt-6 pb-6 w-full">
-            {/* Primary projects — each as an expandable tree */}
+            {/* Primary projects — active shows tree, others show link */}
             <div className="space-y-1">
-              {PRIMARY_PROJECTS.map(proj => renderProjectSection(proj.id, proj.label))}
+              {PRIMARY_PROJECTS.map(proj => renderProject(proj))}
             </div>
 
             {/* Legacy group */}
