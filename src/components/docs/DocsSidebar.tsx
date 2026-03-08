@@ -244,42 +244,15 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
 
   // Render full sidebar (expanded state)
   const renderFullSidebar = () => {
-    // Detect if we're viewing a general section page
-    const isViewingGeneralSection = pathname.includes('/contributing') || pathname.includes('/community') || pathname.includes('/news');
-
-    // Extract general sections from pageMap to pass to RelatedProjects.
-    // Use the first child's route as href since folder routes (/docs/news)
-    // don't resolve to actual pages.
-    const generalSectionNames = ['Contributing', 'Community', 'News'];
-    const generalSectionItems = pageMap.filter(item => generalSectionNames.includes(item.name || item.title || ''));
-    const generalSections = generalSectionItems.map(item => {
-      const firstChildRoute = item.children?.[0]?.route;
-      return {
-        title: item.name || item.title || '',
-        href: firstChildRoute || item.route || ''
-      };
-    }).filter(s => s.title && s.href);
-
-    // When viewing a general section page, show that section's CHILDREN
-    // directly (not the folder wrapper, which would duplicate the link
-    // already shown in RelatedProjects).
-    // Otherwise, show project-specific items (excluding general sections).
-    let itemsToShow: MenuItem[] = [];
-    if (isViewingGeneralSection) {
-      const currentSection = pathname.includes('/contributing') ? 'Contributing'
-        : pathname.includes('/community') ? 'Community'
-        : 'News';
-      const sectionFolder = pageMap.find(item => (item.name || item.title || '') === currentSection);
-      itemsToShow = sectionFolder?.children || [];
-    } else {
-      itemsToShow = pageMap.filter(item => !generalSectionNames.includes(item.name || item.title || ''));
-    }
+    // All page map items render as expandable tree folders in the nav area.
+    // Contributing, Community, and News are regular folders — no special treatment.
+    const itemsToShow = pageMap;
 
     return (
       <>
         {/* Scrollable navigation area */}
         <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-          <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} autoExpandLegacy={shouldAutoExpandLegacy} generalSections={generalSections} />
+          <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} autoExpandLegacy={shouldAutoExpandLegacy} />
           {itemsToShow.length > 0 && (
             <nav className="px-4 pt-2 pb-6 w-full space-y-1.5">
               {itemsToShow.map(item => renderMenuItem(item))}
