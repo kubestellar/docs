@@ -3,8 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronRight, ChevronDown, FileText} from 'lucide-react';
-import { RelatedProjects } from './RelatedProjects';
+import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
 import { useDocsMenu } from './DocsProvider';
 import { SidebarFooter } from './SidebarFooter';
 
@@ -20,11 +19,40 @@ interface MenuItem {
 
 interface DocsSidebarProps {
   pageMap: MenuItem[];
+  allPageMaps?: Record<string, MenuItem[]>;
   className?: string;
   projectId?: string;
 }
 
-export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps) {
+// General sections that appear in every project's pageMap — show once at bottom
+const GENERAL_SECTION_NAMES = ['Contributing', 'Community', 'News'];
+
+// Project display order and labels
+const PRIMARY_PROJECTS = [
+  { id: 'kubestellar', label: 'KubeStellar' },
+  { id: 'console', label: 'KubeStellar Console' },
+  { id: 'kubestellar-mcp', label: 'KubeStellar MCP' },
+] as const;
+
+const LEGACY_PROJECTS = [
+  { id: 'a2a', label: 'A2A' },
+  { id: 'kubeflex', label: 'KubeFlex' },
+  { id: 'multi-plugin', label: 'Multi Plugin' },
+] as const;
+
+// Key prefix for project-level collapse state (avoids collision with nav item keys)
+const PROJECT_KEY_PREFIX = '__project_';
+const LEGACY_GROUP_KEY = '__legacy';
+
+function getProjectItems(items: MenuItem[]): MenuItem[] {
+  return items.filter(item => !GENERAL_SECTION_NAMES.includes(item.name || item.title || ''));
+}
+
+function getGeneralSections(items: MenuItem[]): MenuItem[] {
+  return items.filter(item => GENERAL_SECTION_NAMES.includes(item.name || item.title || ''));
+}
+
+export function DocsSidebar({ pageMap, allPageMaps, className, projectId }: DocsSidebarProps) {
   const pathname = usePathname();
   const sidebarRef = useRef<HTMLElement>(null);
   const {
@@ -37,11 +65,6 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     toggleNavCollapsed,
     navInitialized
   } = useDocsMenu();
-
-  const isLegacyProject = projectId === 'kubestellar' || projectId === 'kubeflex' || projectId === 'multi-plugin';
-
-  // Auto-expand legacy menu if viewing a legacy page (not Community, Contributing, News)
-  const shouldAutoExpandLegacy = isLegacyProject && !pathname.includes('/community') && !pathname.includes('/contributing') && !pathname.includes('/news');
 
   // Stable layout values - only recalculate on resize or banner change
   const [layoutValues, setLayoutValues] = useState({ top: '4rem', height: 'calc(100vh - 4rem)' });
@@ -58,7 +81,6 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     });
   };
 
-
   useEffect(() => {
     let ticking = false;
 
@@ -72,7 +94,8 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
       }
     };
 
-    const t = setTimeout(calculateOffsets, 300);
+    const LAYOUT_INIT_DELAY_MS = 300;
+    const t = setTimeout(calculateOffsets, LAYOUT_INIT_DELAY_MS);
 
     window.addEventListener('resize', calculateOffsets);
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -84,13 +107,10 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     };
   }, [bannerDismissed]);
 
-
-
   // Store initial pathname for initialization
   const initialPathnameRef = useRef(pathname);
 
-  // Initialize collapsed state once on mount - collapse folders not in path to active
-  // After initialization, user controls expand/collapse manually
+  // Initialize collapsed state once on mount
   useEffect(() => {
     if (navInitialized.current) return;
     navInitialized.current = true;
@@ -99,19 +119,35 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     const pathToActive = new Set<string>();
     const currentPath = initialPathnameRef.current;
 
-    // Check if viewing a general section
-    const isViewingGeneralSection = currentPath.includes('/contributing') || currentPath.includes('/community') || currentPath.includes('/news');
+    // Determine active project from pathname
+    const activeProjectId = projectId || 'kubestellar';
 
-    // Find the path to the active item
-    function findActivePath(items: MenuItem[], parentKey: string = ''): boolean {
+    // Collapse all non-active project sections
+    const allProjectIds = [...PRIMARY_PROJECTS, ...LEGACY_PROJECTS].map(p => p.id);
+    for (const pid of allProjectIds) {
+      const key = `${PROJECT_KEY_PREFIX}${pid}`;
+      if (pid !== activeProjectId) {
+        initialCollapsed.add(key);
+      }
+    }
+
+    // Collapse legacy group if active project is not a legacy project
+    const legacyIds = LEGACY_PROJECTS.map(p => p.id) as readonly string[];
+    if (!legacyIds.includes(activeProjectId)) {
+      initialCollapsed.add(LEGACY_GROUP_KEY);
+    }
+
+    // For the active project, find the path to the active page and collapse non-active folders
+    const activePageMap = allPageMaps?.[activeProjectId] || pageMap;
+    const activeItems = getProjectItems(activePageMap);
+    const activeParentKey = `${PROJECT_KEY_PREFIX}${activeProjectId}`;
+
+    function findActivePath(items: MenuItem[], parentKey: string): boolean {
       for (const item of items) {
-        const itemKey = parentKey ? `${parentKey}-${item.name}` : item.name;
-        const isActive = item.route && currentPath === item.route;
-
-        if (isActive) {
+        const itemKey = `${parentKey}-${item.name}`;
+        if (item.route && currentPath === item.route) {
           return true;
         }
-
         if (item.children) {
           const childActive = findActivePath(item.children, itemKey);
           if (childActive) {
@@ -123,19 +159,12 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
       return false;
     }
 
-    // Collapse all folders except those in the active path or with theme.collapsed: false
-    function collapseAll(items: MenuItem[], parentKey: string = '') {
+    function collapseAll(items: MenuItem[], parentKey: string) {
       for (const item of items) {
-        const itemKey = parentKey ? `${parentKey}-${item.name}` : item.name;
+        const itemKey = `${parentKey}-${item.name}`;
         const hasChildren = item.children && item.children.length > 0;
-
         if (hasChildren) {
-          // For general sections, check if we're viewing that section
-          const isGeneralSection = ['Contributing', 'Community', 'News'].includes(item.name || item.title || '');
-          const isCurrentGeneralSection = isGeneralSection && isViewingGeneralSection &&
-            currentPath.includes('/' + (item.name || item.title || '').toLowerCase());
-
-          const shouldStayExpanded = item.theme?.collapsed === false || isCurrentGeneralSection;
+          const shouldStayExpanded = item.theme?.collapsed === false;
           if (!pathToActive.has(itemKey) && !shouldStayExpanded) {
             initialCollapsed.add(itemKey);
           }
@@ -146,10 +175,27 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
       }
     }
 
-    findActivePath(pageMap);
-    collapseAll(pageMap);
+    findActivePath(activeItems, activeParentKey);
+    collapseAll(activeItems, activeParentKey);
+
+    // Also handle general sections
+    const generalSections = getGeneralSections(allPageMaps?.['kubestellar'] || pageMap);
+    const isViewingGeneralSection = currentPath.includes('/contributing') || currentPath.includes('/community') || currentPath.includes('/news');
+
+    for (const section of generalSections) {
+      const sectionKey = section.name;
+      const isCurrent = isViewingGeneralSection && currentPath.includes('/' + (section.name || '').toLowerCase());
+      if (!isCurrent) {
+        initialCollapsed.add(sectionKey);
+      }
+      if (isCurrent && section.children) {
+        findActivePath(section.children, sectionKey);
+        collapseAll(section.children, sectionKey);
+      }
+    }
+
     setCollapsed(initialCollapsed);
-  }, [pageMap, navInitialized, setCollapsed]);
+  }, [pageMap, allPageMaps, projectId, navInitialized, setCollapsed]);
 
   const toggleCollapse = (itemKey: string) => {
     toggleNavCollapsed(itemKey);
@@ -166,7 +212,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     if (item.kind === 'Separator' || item.kind === 'Meta' || !displayTitle || displayTitle.trim() === '') {
       return null;
     }
-    
+
     // Skip index files and hidden items
     if (item.name === 'index' || item.name === '_meta' || item.route === '#') {
       return null;
@@ -177,15 +223,14 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
         <div className="flex items-center group relative">
           {/* Vertical line for nested items */}
           {depth > 0 && (
-            <div 
+            <div
               className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700"
               style={{ left: `${(depth - 1) * 16 + 20}px` }}
             />
           )}
-          
+
           {/* Folder or Page */}
           {hasChildren ? (
-            // Folder - clickable to toggle
             <button
               onClick={() => toggleCollapse(itemKey)}
               className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10 text-gray-700 dark:text-gray-200"
@@ -201,7 +246,6 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
               </span>
             </button>
           ) : (
-            // Page - clickable link with icon
             <Link
               href={item.route || '#'}
               className={`
@@ -224,14 +268,13 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
 
         {/* Render children */}
         {hasChildren && (
-          <div 
+          <div
             className={`
               relative space-y-1 overflow-hidden transition-all duration-300 ease-in-out
               ${isCollapsed ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}
             `}
           >
-            {/* Vertical line connecting children */}
-            <div 
+            <div
               className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700"
               style={{ left: `${depth * 16 + 20}px` }}
             />
@@ -242,22 +285,111 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     );
   };
 
+  // Render a project section as a collapsible tree
+  const renderProjectSection = (projId: string, label: string, depth: number = 0) => {
+    const items = getProjectItems(allPageMaps?.[projId] || []);
+    if (items.length === 0) return null;
+
+    const sectionKey = `${PROJECT_KEY_PREFIX}${projId}`;
+    const isExpanded = !collapsed.has(sectionKey);
+    const isActiveProject = projId === projectId;
+
+    return (
+      <div key={projId} className="relative space-y-1">
+        <button
+          onClick={() => toggleCollapse(sectionKey)}
+          className={`
+            flex-1 flex items-start gap-2 px-3 py-2 text-sm rounded-lg transition-all text-left w-full
+            ${isActiveProject
+              ? 'font-medium text-blue-500 dark:text-blue-400'
+              : 'font-thin hover:font-semibold text-gray-700 dark:text-gray-200'
+            }
+          `}
+          style={{ paddingLeft: `${depth * 16 + 12}px` }}
+        >
+          <span className="flex-1 wrap-break-word">{label}</span>
+          <span className="ml-auto shrink-0 mt-0.5">
+            {isExpanded ? (
+              <ChevronDown className="w-4 h-4 transition-all duration-200" />
+            ) : (
+              <ChevronRight className="w-4 h-4 transition-all duration-200" />
+            )}
+          </span>
+        </button>
+
+        <div
+          className={`
+            relative space-y-1 overflow-hidden transition-all duration-300 ease-in-out
+            ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
+          `}
+        >
+          {items.map(item => renderMenuItem(item, depth + 1, sectionKey))}
+        </div>
+      </div>
+    );
+  };
+
+  // Render the Legacy group with sub-projects
+  const renderLegacyGroup = () => {
+    const isExpanded = !collapsed.has(LEGACY_GROUP_KEY);
+    const isActiveLegacy = LEGACY_PROJECTS.some(p => p.id === projectId);
+
+    return (
+      <div className="relative space-y-1">
+        <button
+          onClick={() => toggleCollapse(LEGACY_GROUP_KEY)}
+          className={`
+            flex items-center w-full px-3 py-2 text-xs uppercase tracking-wider transition-all rounded-lg
+            ${isActiveLegacy
+              ? 'text-blue-500 dark:text-blue-400 font-medium'
+              : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+            }
+          `}
+        >
+          <span>Legacy</span>
+          <span className="ml-auto shrink-0">
+            {isExpanded ? (
+              <ChevronDown className="w-3 h-3" />
+            ) : (
+              <ChevronRight className="w-3 h-3" />
+            )}
+          </span>
+        </button>
+
+        <div
+          className={`
+            relative space-y-1 overflow-hidden transition-all duration-300 ease-in-out
+            ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}
+          `}
+        >
+          {LEGACY_PROJECTS.map(proj => renderProjectSection(proj.id, proj.label, 1))}
+        </div>
+      </div>
+    );
+  };
+
   // Render full sidebar (expanded state)
   const renderFullSidebar = () => {
-    // All page map items render as expandable tree folders in the nav area.
-    // Contributing, Community, and News are regular folders — no special treatment.
-    const itemsToShow = pageMap;
+    // General sections (Contributing, Community, News) from KubeStellar pageMap
+    const generalSections = getGeneralSections(allPageMaps?.['kubestellar'] || pageMap);
 
     return (
       <>
         {/* Scrollable navigation area */}
         <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
-          <RelatedProjects bannerActive={!bannerDismissed} legacyPageMap={isLegacyProject ? pageMap : undefined} autoExpandLegacy={shouldAutoExpandLegacy} />
-          {itemsToShow.length > 0 && (
-            <nav className="px-4 pt-2 pb-6 w-full space-y-1.5">
-              {itemsToShow.map(item => renderMenuItem(item))}
-            </nav>
-          )}
+          <nav className={`px-4 pb-6 w-full space-y-1 ${bannerDismissed ? 'pt-4' : 'pt-2'}`}>
+            {/* Primary projects — each as an expandable tree */}
+            {PRIMARY_PROJECTS.map(proj => renderProjectSection(proj.id, proj.label))}
+
+            {/* Legacy group */}
+            {renderLegacyGroup()}
+
+            {/* Separator */}
+            <div className="border-t border-gray-200 dark:border-gray-700 my-2" />
+
+            {/* General sections — Contributing, Community, News */}
+            {generalSections.map(item => renderMenuItem(item))}
+          </nav>
         </div>
         <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} />
       </>
@@ -267,10 +399,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
   // Render slim sidebar (collapsed state) - Desktop only
   const renderSlimSidebar = () => (
     <div className="flex flex-col h-full">
-      {/* Spacer */}
       <div className="flex-1"></div>
-
-      {/* Footer with icon buttons */}
       <SidebarFooter onCollapse={toggleSidebar} isMobile={menuOpen} variant="slim" />
     </div>
   );

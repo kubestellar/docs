@@ -31,5 +31,5 @@ export function SidebarContainer({ allPageMaps }: SidebarContainerProps) {
   const projectId = getProjectFromPathname(pathname)
   const pageMap = allPageMaps[projectId] || allPageMaps['kubestellar']
 
-  return <DocsSidebar pageMap={pageMap} projectId={projectId} />
+  return <DocsSidebar pageMap={pageMap} projectId={projectId} allPageMaps={allPageMaps} />
 }
