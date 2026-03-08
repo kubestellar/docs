@@ -222,7 +222,7 @@
     },
     {
       "title": "KubeStellar",
-      "href": "/docs/what-is-kubestellar/overview",
+      "href": "/docs/readme",
       "description": "Multi-cluster configuration management",
       "secondary": true
     },
