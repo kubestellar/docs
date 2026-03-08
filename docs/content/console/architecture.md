@@ -1,9 +1,14 @@
 ---
-title: "Architecture"
+title: "Architecture — Multi-Cluster Kubernetes Dashboard System Design"
 linkTitle: "Architecture"
 weight: 3
 description: >
-  System design and component overview
+  System design and component architecture of KubeStellar Console — the multi-cluster Kubernetes dashboard with AI Missions. Learn how the agent proxy, WebSocket data pipeline, and AI integration work together to provide fleet-wide Kubernetes operations.
+keywords:
+  - kubernetes dashboard architecture
+  - multi-cluster kubernetes architecture
+  - kubernetes management tool design
+  - AI kubernetes system design
 ---
 
 # Architecture

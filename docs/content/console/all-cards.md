@@ -1,9 +1,17 @@
 ---
-title: "All Cards"
+title: "115+ Multi-Cluster Kubernetes Monitoring Cards — Workloads, GPU, Security, Cost & More"
 linkTitle: "Cards"
 weight: 7
 description: >
-  Complete list of all 115+ card types
+  115+ monitoring cards for multi-cluster Kubernetes operations — cluster health, workload status, GPU utilization, security compliance, cost tracking, and CNCF project monitoring. Build custom dashboards for your fleet with KubeStellar Console's AI-powered card system.
+keywords:
+  - kubernetes monitoring cards
+  - multi-cluster monitoring
+  - kubernetes GPU monitoring
+  - kubernetes security monitoring
+  - kubernetes cost monitoring cards
+  - kubernetes workload monitoring
+  - CNCF project monitoring cards
 ---
 
 # Dashboard Cards

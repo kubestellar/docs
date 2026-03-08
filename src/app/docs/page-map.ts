@@ -210,6 +210,13 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
       { 'Alerts': 'alerts.md' },
       { 'Feedback System': 'feedback.md' },
     ]
+  },
+  {
+    title: 'Programs',
+    items: [
+      { 'Marketplace': 'marketplace.md' },
+      { 'Knowledge Base': 'knowledge-base.md' },
+    ]
   }
 ]
 
@@ -350,16 +357,6 @@ const NAV_STRUCTURE_COMMUNITY: Array<{ title: string; items: NavItem[] }> = [
     title: 'Community',
     items: [
       { 'Get Involved': 'community/index.md' },
-      {
-        'Partners': [
-          { 'ArgoCD': 'community/partners/argocd.md' },
-          { 'Turbonomic': 'community/partners/turbonomic.md' },
-          { 'MVI': 'community/partners/mvi.md' },
-          { 'FluxCD': 'community/partners/fluxcd.md' },
-          { 'OpenZiti': 'community/partners/openziti.md' },
-          { 'Kyverno': 'community/partners/kyverno.md' }
-        ]
-      }
     ]
   }
 ]
@@ -369,6 +366,7 @@ const NAV_STRUCTURE_NEWS: Array<{ title: string; items: NavItem[] }> = [
     title: 'News',
     items: [
       { 'Latest News': 'news/index.md' },
+      { 'Marketplace & KB Launch': 'news/marketplace-and-kb-launch.md' },
       { 'KubeStellar Console Announcement': 'news/kubestellar-console-announcement.md' }
     ]
   }

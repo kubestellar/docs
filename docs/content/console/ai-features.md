@@ -1,14 +1,25 @@
 ---
-title: "AI Features"
+title: "AI Features — AI Missions for Multi-Cluster Kubernetes Operations, Troubleshooting & Deployment"
 linkTitle: "AI Features"
 weight: 9
 description: >
-  AI Missions, Diagnose & Repair, Smart Suggestions, and AI Card Creation
+  AI Missions automate multi-cluster Kubernetes operations — troubleshoot, deploy, repair, and upgrade across your entire fleet. KubeStellar Console's AI features include missions for 400+ CNCF projects, diagnose and repair automation, smart suggestions, and AI-powered card creation that saves you time and tokens.
+keywords:
+  - AI kubernetes operations
+  - AI missions kubernetes
+  - kubernetes troubleshooting automation
+  - multi-cluster kubernetes AI
+  - kubernetes deployment AI
+  - AI repair kubernetes
+  - kubernetes automation tool
+  - CNCF project AI missions
+  - kubernetes fleet management AI
+  - AI kubernetes dashboard
 ---
 
-# AI Features
+# AI Features — Multi-Cluster Kubernetes Operations Powered by AI
 
-KubeStellar Console uses AI to help you manage your clusters. Think of it as having a helpful assistant who knows Kubernetes.
+KubeStellar Console uses AI Missions to automate multi-cluster Kubernetes operations. Think of it as having an expert Kubernetes engineer who knows every CNCF project and can troubleshoot, deploy, and repair across your entire fleet — saving you time and tokens.
 
 ![AI Missions Panel](images/ai-missions-panel.png)
 

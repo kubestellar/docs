@@ -1,9 +1,15 @@
 ---
-title: "Stats Blocks"
+title: "93+ Stats Blocks — Multi-Cluster Kubernetes Metrics at a Glance"
 linkTitle: "Stats Blocks"
 weight: 8
 description: >
-  All 93+ stats blocks across dashboard types
+  93+ stats blocks for multi-cluster Kubernetes fleet metrics — cluster counts, pod status, resource utilization, alert summaries, cost breakdowns, and compliance scores. KubeStellar Console stats blocks give you fleet-wide metrics at a glance.
+keywords:
+  - kubernetes metrics dashboard
+  - multi-cluster kubernetes metrics
+  - kubernetes resource monitoring
+  - kubernetes fleet metrics
+  - kubernetes stats overview
 ---
 
 # Stats Blocks

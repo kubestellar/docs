@@ -1,14 +1,21 @@
 ---
-title: "Installation"
+title: "Installation — Deploy KubeStellar Console for Multi-Cluster Kubernetes Management"
 linkTitle: "Installation"
 weight: 2
 description: >
-  Detailed deployment options for KubeStellar Console
+  Install KubeStellar Console locally, in Kubernetes, or via Helm. Deploy the multi-cluster Kubernetes dashboard with AI Missions, 110+ monitoring cards, and fleet-wide observability in minutes.
+keywords:
+  - install kubernetes dashboard
+  - kubernetes console installation
+  - multi-cluster dashboard setup
+  - kubernetes helm install dashboard
+  - deploy kubernetes management tool
+  - kubernetes fleet management setup
 ---
 
-# Installation
+# Installation — Deploy KubeStellar Console
 
-This guide covers all deployment options for KubeStellar Console.
+This guide covers all deployment options for KubeStellar Console, the multi-cluster Kubernetes dashboard with AI-powered operations.
 
 > **Try it first!** See a live preview at [kubestellarconsole.netlify.app](https://kubestellarconsole.netlify.app)
 

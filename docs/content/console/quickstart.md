@@ -1,12 +1,18 @@
 ---
-title: "Quick Start"
+title: "Quick Start — Get the Multi-Cluster Kubernetes Dashboard Running in Minutes"
 linkTitle: "Quick Start"
 weight: 1
 description: >
-  Get KubeStellar Console running in minutes
+  Get KubeStellar Console running in minutes. Start managing multi-cluster Kubernetes operations with AI Missions, 110+ monitoring cards, and fleet-wide deployment automation — no complex setup required.
+keywords:
+  - kubernetes quick start
+  - multi-cluster kubernetes setup
+  - kubernetes dashboard quick start
+  - kubernetes management tool getting started
+  - AI kubernetes operations setup
 ---
 
-# Quick Start
+# Quick Start — Multi-Cluster Kubernetes in Minutes
 
 Get KubeStellar Console running locally for development or evaluation.
 
