@@ -33,7 +33,7 @@ const PRIMARY_PROJECTS = [
 ] as const;
 
 const LEGACY_PROJECTS = [
-  { id: 'kubestellar', label: 'KubeStellar', href: '/docs/what-is-kubestellar-/overview' },
+  { id: 'kubestellar', label: 'KubeStellar', href: '/docs/what-is-kubestellar/overview' },
   { id: 'a2a', label: 'A2A', href: '/docs/a2a/overview/introduction' },
   { id: 'kubeflex', label: 'KubeFlex', href: '/docs/kubeflex/overview/introduction' },
   { id: 'multi-plugin', label: 'Multi Plugin', href: '/docs/multi-plugin/overview/introduction' },
