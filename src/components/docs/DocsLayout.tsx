@@ -1,7 +1,6 @@
 "use client";
 
 import { ReactNode } from 'react';
-import { DocsSidebar } from './DocsSidebar';
 import { TableOfContents } from './TableOfContents';
 import { MobileTOC } from './MobileTOC';
 import { MobileHeader } from './MobileSidebarToggle';
@@ -15,15 +14,6 @@ interface TOCItem {
   depth: number;
 }
 
-interface PageMapItem {
-  name: string;
-  route?: string;
-  title?: string;
-  children?: PageMapItem[];
-  frontMatter?: Record<string, unknown>;
-  kind?: string;
-}
-
 interface Metadata {
   title?: string;
   description?: string;
@@ -32,29 +22,17 @@ interface Metadata {
 
 interface DocsLayoutProps {
   children: ReactNode;
-  pageMap: PageMapItem[];
   toc?: TOCItem[];
   metadata?: Metadata;
   filePath?: string;
   projectId?: ProjectId;
 }
 
-export function DocsLayout({ children, pageMap, toc, metadata, filePath, projectId }: DocsLayoutProps) {
-  const { menuOpen, toggleMenu } = useDocsMenu();
+export function DocsLayout({ children, toc, metadata, filePath, projectId }: DocsLayoutProps) {
+  const { toggleMenu } = useDocsMenu();
 
   return (
-    <div className="flex flex-1 relative">
-      {/* Sidebar - Self-contained with all logic */}
-      <DocsSidebar pageMap={pageMap} projectId={projectId} />
-
-      {/* Mobile overlay */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-20 lg:hidden"
-          onClick={toggleMenu}
-        />
-      )}
-
+    <>
       {/* Main content area */}
       <main className="flex-1 min-w-0 lg:ml-0">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -92,6 +70,6 @@ export function DocsLayout({ children, pageMap, toc, metadata, filePath, project
 
       {/* Table of Contents - Right sidebar on desktop */}
       <TableOfContents toc={toc} />
-    </div>
+    </>
   );
 }

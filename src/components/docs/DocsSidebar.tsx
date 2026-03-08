@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
 import { ChevronRight, ChevronDown, FileText} from 'lucide-react';
 import { RelatedProjects } from './RelatedProjects';
 import { useDocsMenu } from './DocsProvider';
@@ -28,8 +27,6 @@ interface DocsSidebarProps {
 export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps) {
   const pathname = usePathname();
   const sidebarRef = useRef<HTMLElement>(null);
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const {
     sidebarCollapsed,
     toggleSidebar,
@@ -41,18 +38,11 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
     navInitialized
   } = useDocsMenu();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const isDark = mounted && resolvedTheme === 'dark';
   const isLegacyProject = projectId === 'kubestellar' || projectId === 'kubeflex' || projectId === 'multi-plugin';
 
   // Auto-expand legacy menu if viewing a legacy page (not Community, Contributing, News)
   const shouldAutoExpandLegacy = isLegacyProject && !pathname.includes('/community') && !pathname.includes('/contributing') && !pathname.includes('/news');
 
-  // Text colors based on theme
-  const textColor = isDark ? '#e5e7eb' : '#374151'; // gray-200 : gray-700
   // Stable layout values - only recalculate on resize or banner change
   const [layoutValues, setLayoutValues] = useState({ top: '4rem', height: 'calc(100vh - 4rem)' });
 
@@ -198,8 +188,8 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
             // Folder - clickable to toggle
             <button
               onClick={() => toggleCollapse(itemKey)}
-              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10"
-              style={{ paddingLeft: `${depth * 16 + 12}px`, color: textColor }}
+              className="flex-1 flex items-start gap-2 px-3 py-2 text-sm font-thin hover:font-semibold rounded-lg transition-all text-left w-full relative z-10 text-gray-700 dark:text-gray-200"
+              style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
               <span className="flex-1 wrap-break-word">{displayTitle}</span>
               <span className="ml-auto shrink-0 mt-0.5">
@@ -219,17 +209,13 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
                 ${
                   isActive
                     ? 'font-thin text-blue-500 bg-blue-500/10'
-                    : 'hover:font-semibold'
+                    : 'hover:font-semibold text-gray-700 dark:text-gray-200'
                 }
               `}
-              style={{
-                paddingLeft: `${depth * 16 + 12}px`,
-                color: isActive ? undefined : textColor
-              }}
+              style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
               <FileText
-                className="w-4 h-4 shrink-0 mt-0.5"
-                style={{ color: isActive ? '#3b82f6' : textColor }}
+                className={`w-4 h-4 shrink-0 mt-0.5 ${isActive ? 'text-blue-500' : 'text-gray-700 dark:text-gray-200'}`}
               />
               <span className="flex-1 wrap-break-word">{displayTitle}</span>
             </Link>
@@ -241,7 +227,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
           <div 
             className={`
               relative space-y-1 overflow-hidden transition-all duration-300 ease-in-out
-              ${isCollapsed ? 'max-h-0 opacity-0' : 'max-h-500 opacity-100'}
+              ${isCollapsed ? 'max-h-0 opacity-0' : 'max-h-[2000px] opacity-100'}
             `}
           >
             {/* Vertical line connecting children */}
