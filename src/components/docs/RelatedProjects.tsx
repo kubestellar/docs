@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 import { ChevronRight, ChevronDown, Moon, Sun, PanelLeftOpen } from 'lucide-react';
 import { useSharedConfig } from '@/hooks/useSharedConfig';
 
@@ -97,15 +98,17 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
             </div>
           );
         } else {
+          const route = item.route || '#';
+          const LinkOrA = route.startsWith('/') ? Link : 'a';
           return (
-            <a
+            <LinkOrA
               key={itemKey}
-              href={item.route || '#'}
+              href={route}
               className="block px-2 py-1 text-xs rounded transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
               style={{ color: mutedTextColor, paddingLeft: `${paddingLeft + 8}px` }}
             >
               {item.name}
-            </a>
+            </LinkOrA>
           );
         }
       }
@@ -132,15 +135,17 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
           </div>
         );
       } else {
+        const route = item.route || '#';
+        const LinkOrA = route.startsWith('/') ? Link : 'a';
         return (
-          <a
+          <LinkOrA
             key={itemKey}
-            href={item.route || '#'}
+            href={route}
             className="block px-2 py-1 text-xs rounded transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
             style={{ color: mutedTextColor, paddingLeft: `${paddingLeft + 12}px` }}
           >
             {item.name}
-          </a>
+          </LinkOrA>
         );
       }
     });
@@ -259,8 +264,9 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
             bgColor = undefined;
           }
 
+          const LinkOrA = projectUrl.startsWith('/') ? Link : 'a';
           return (
-            <a
+            <LinkOrA
               key={project.title}
               href={projectUrl}
               suppressHydrationWarning
@@ -275,7 +281,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
               onMouseLeave={() => setHoveredProject(null)}
             >
               {project.title}
-            </a>
+            </LinkOrA>
           );
         })}
 
@@ -296,8 +302,9 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
                 bgColor = undefined;
               }
 
+              const LinkOrA = sectionUrl.startsWith('/') ? Link : 'a';
               return (
-                <a
+                <LinkOrA
                   key={section.title}
                   href={sectionUrl}
                   suppressHydrationWarning
@@ -312,7 +319,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
                   onMouseLeave={() => setHoveredProject(null)}
                 >
                   {section.title}
-                </a>
+                </LinkOrA>
               );
             })}
           </div>
@@ -355,9 +362,10 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
                   bgColor = undefined;
                 }
 
+                const LinkOrA = projectUrl.startsWith('/') ? Link : 'a';
                 return (
                   <div key={project.title}>
-                    <a
+                    <LinkOrA
                       href={projectUrl}
                       suppressHydrationWarning
                       className={`block px-3 text-sm rounded-md transition-colors ${bannerActive ? 'py-0.5' : 'py-2'} ${isCurrentProject ? 'font-medium' : ''}`}
@@ -371,7 +379,7 @@ export function RelatedProjects({ variant = 'full', onCollapse, bannerActive = f
                       onMouseLeave={() => setHoveredProject(null)}
                     >
                       {project.title}
-                    </a>
+                    </LinkOrA>
                     {/* Render legacy project nav items with full hierarchy */}
                     {isCurrentProject && legacyPageMap && legacyPageMap.length > 0 && (
                       <div className="ml-4 mt-1 space-y-0 border-l border-gray-700/50 pl-2">
