@@ -1,17 +1,13 @@
 import { DocsLayout } from './src/components/docs/DocsLayout';
-import { buildPageMap } from './src/app/docs/page-map';
 
 // Custom MDX components without nextra-theme-docs
 export function useMDXComponents(components) {
   return {
     // Wrapper component that wraps the entire MDX content with DocsLayout
-    // pageMap can be passed from server-side for project-specific navigation
-    wrapper: ({ children, toc, metadata, sourceCode, pageMap: providedPageMap, filePath, projectId, ...props }) => {
-      // Use provided pageMap (from server) or fall back to default (KubeStellar)
-      const pageMap = providedPageMap || buildPageMap().pageMap;
-
+    // Sidebar is now in the Next.js layout (persists across navigations)
+    wrapper: ({ children, toc, metadata, sourceCode, pageMap: _pageMap, filePath, projectId, ...props }) => {
       return (
-        <DocsLayout pageMap={pageMap} toc={toc} metadata={metadata} filePath={filePath} projectId={projectId}>
+        <DocsLayout toc={toc} metadata={metadata} filePath={filePath} projectId={projectId}>
           {children}
         </DocsLayout>
       );
