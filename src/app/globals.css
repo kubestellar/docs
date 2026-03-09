@@ -2440,3 +2440,38 @@ aside::-webkit-scrollbar-thumb:hover {
 html.dark aside::-webkit-scrollbar-thumb:hover {
   background: #4b5563;
 }
+
+/* DocsSidebar dark mode - active items with bg-blue-50 (light mode) */
+html.dark aside[data-sidebar="docs"] a[class~="bg-blue-50"],
+html.dark aside[data-sidebar="docs"] button[class~="bg-blue-50"] {
+  background-color: transparent !important;
+  color: #60a5fa !important; /* blue-400 - more saturated, distinctly blue */
+}
+
+/* Active page items in dark mode - identified by font-medium and text-blue-600 classes */
+html.dark aside[data-sidebar="docs"] a[class~="font-medium"][class*="text-blue"] {
+  color: #60a5fa !important; /* blue-400 - more saturated, distinctly blue */
+}
+
+/* Hover background in dark mode - subtle but visible */
+html.dark aside[data-sidebar="docs"] a:hover,
+html.dark aside[data-sidebar="docs"] button:hover {
+  background-color: rgb(55, 65, 81) !important; /* gray-700 */
+}
+
+/* Non-active menu items text color in dark mode */
+html.dark aside[data-sidebar="docs"] button:not([class~="bg-blue-50"]):not([class*="text-blue"]),
+html.dark aside[data-sidebar="docs"] a:not([class~="bg-blue-50"]):not([class*="text-blue"]) {
+  color: #d1d5db; /* gray-300 - balanced contrast */
+}
+
+/* Chevrons and icons in dark mode */
+html.dark aside[data-sidebar="docs"] svg[class~="text-gray"] {
+  color: #d1d5db; /* gray-300 */
+}
+
+/* Project link text in dark mode */
+html.dark aside[data-sidebar="docs"] a[class~="font-medium"] {
+  color: #fafafa; /* gray-50 */
+}
+
