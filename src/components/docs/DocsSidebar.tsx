@@ -222,7 +222,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
           {hasChildren ? (
             <button
               onClick={() => toggleCollapse(itemKey)}
-              className="flex items-center gap-2 px-3 py-1.5 text-[13px] font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-md transition-colors text-left w-full relative z-10"
+              className="flex items-center gap-2 px-3 py-1.5 text-[13px] font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors text-left w-full relative z-10"
               style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
               <span className="flex-1 truncate">{displayTitle}</span>
@@ -242,7 +242,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
                 ${
                   isActive
                     ? 'font-medium text-blue-600 dark:text-blue-100 bg-blue-50'
-                    : 'font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                    : 'font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700'
                 }
               `}
               style={{ paddingLeft: `${depth * 16 + 12}px` }}

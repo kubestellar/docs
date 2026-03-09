@@ -2453,10 +2453,10 @@ html.dark aside[data-sidebar="docs"] a[class~="font-medium"][class*="text-blue"]
   color: #60a5fa !important; /* blue-400 - more saturated, distinctly blue */
 }
 
-/* Remove hover backgrounds in dark mode - they occlude text */
+/* Hover background in dark mode - subtle but visible */
 html.dark aside[data-sidebar="docs"] a:hover,
 html.dark aside[data-sidebar="docs"] button:hover {
-  background-color: transparent !important;
+  background-color: rgb(55, 65, 81) !important; /* gray-700 */
 }
 
 /* Non-active menu items text color in dark mode */
