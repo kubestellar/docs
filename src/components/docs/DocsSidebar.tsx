@@ -222,15 +222,15 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
           {hasChildren ? (
             <button
               onClick={() => toggleCollapse(itemKey)}
-              className="flex items-center gap-2 px-3 py-1.5 text-[13px] font-normal text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-md transition-colors text-left w-full relative z-10"
+              className="flex items-center gap-2 px-3 py-1.5 text-[13px] font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-md transition-colors text-left w-full relative z-10"
               style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
               <span className="flex-1 truncate">{displayTitle}</span>
               <span className="ml-auto shrink-0">
                 {isCollapsed ? (
-                  <ChevronRight className="w-3.5 h-3.5 text-gray-400 transition-transform duration-200" />
+                  <ChevronRight className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300 transition-transform duration-200" />
                 ) : (
-                  <ChevronDown className="w-3.5 h-3.5 text-gray-400 transition-transform duration-200" />
+                  <ChevronDown className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300 transition-transform duration-200" />
                 )}
               </span>
             </button>
@@ -241,14 +241,14 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
                 flex items-center gap-2 px-3 py-1.5 text-[13px] rounded-md transition-colors relative z-10 w-full
                 ${
                   isActive
-                    ? 'font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30'
-                    : 'font-normal text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                    ? 'font-medium text-blue-600 dark:text-blue-100 bg-blue-50 dark:bg-blue-950/50'
+                    : 'font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-800/50'
                 }
               `}
               style={{ paddingLeft: `${depth * 16 + 12}px` }}
             >
               <FileText
-                className={`w-3.5 h-3.5 shrink-0 ${isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-400 dark:text-gray-500'}`}
+                className={`w-3.5 h-3.5 shrink-0 ${isActive ? 'text-blue-600 dark:text-blue-100' : 'text-gray-500 dark:text-gray-300'}`}
               />
               <span className="flex-1 truncate">{displayTitle}</span>
             </Link>
@@ -286,7 +286,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
       <div key={projId} className="relative">
         <button
           onClick={() => toggleCollapse(sectionKey)}
-          className="flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/30"
+          className="flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-semibold text-blue-600 dark:text-blue-100 bg-blue-50 dark:bg-blue-950/50"
           style={{ paddingLeft: `${depth * 16 + 12}px` }}
         >
           <span className="flex-1 truncate">{label}</span>
@@ -317,11 +317,11 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
       <div key={projId} className="relative">
         <Link
           href={href}
-          className="flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-medium text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800/50"
+          className="flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-medium text-gray-800 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-800/50"
           style={{ paddingLeft: `${depth * 16 + 12}px` }}
         >
           <span className="flex-1 truncate">{label}</span>
-          <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
+          <ChevronRight className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300" />
         </Link>
       </div>
     );
@@ -347,8 +347,8 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
           className={`
             flex items-center w-full px-3 py-1.5 text-[10px] uppercase tracking-widest transition-colors rounded-md
             ${isActiveLegacy
-              ? 'text-blue-600 dark:text-blue-400 font-semibold'
-              : 'text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300'
+              ? 'text-blue-600 dark:text-blue-100 font-semibold'
+              : 'text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100'
             }
           `}
         >

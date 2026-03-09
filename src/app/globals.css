@@ -2440,3 +2440,31 @@ aside::-webkit-scrollbar-thumb:hover {
 html.dark aside::-webkit-scrollbar-thumb:hover {
   background: #4b5563;
 }
+
+/* DocsSidebar dark mode text color overrides - ensure readability */
+html.dark aside button:not([class*="bg-blue"]),
+html.dark aside a:not([class*="bg-blue"]),
+html.dark aside a:not([class*="text-blue"]) {
+  color: #f3f4f6 !important; /* gray-100 */
+}
+
+/* Chevrons and icons in dark mode */
+html.dark aside svg[class*="text-gray"] {
+  color: #d1d5db !important; /* gray-300 */
+}
+
+/* Project link text in dark mode */
+html.dark aside a[class*="font-medium"] {
+  color: #fafafa !important; /* gray-50 */
+}
+
+/* Active menu items in dark mode - ensure very light blue text for contrast */
+html.dark aside [class*="bg-blue-950"] {
+  color: #dbeafe !important; /* blue-100 */
+  background-color: rgba(30, 58, 138, 0.5) !important; /* blue-950 with increased opacity */
+}
+
+html.dark aside [class*="dark:bg-blue"] {
+  color: #dbeafe !important; /* blue-100 */
+  background-color: rgba(30, 58, 138, 0.5) !important; /* blue-950 with increased opacity */
+}
