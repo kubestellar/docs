@@ -345,10 +345,10 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
         <button
           onClick={() => toggleCollapse(LEGACY_GROUP_KEY)}
           className={`
-            flex items-center w-full px-3 py-1.5 text-[10px] uppercase tracking-widest transition-colors rounded-md
+            flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-semibold
             ${isActiveLegacy
-              ? 'text-blue-600 dark:text-blue-100 font-semibold'
-              : 'text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100'
+              ? 'text-blue-600 dark:text-blue-100 bg-blue-50'
+              : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
             }
           `}
         >
