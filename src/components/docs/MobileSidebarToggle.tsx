@@ -32,7 +32,7 @@ export function MobileHeader({ onToggleSidebar, pageTitle }: MobileHeaderProps) 
     <div className="lg:hidden">
       <button
         onClick={handleToggle}
-        className="flex items-center px-4 sm:px-6 md:px-8 py-3 focus:outline-none transition-colors w-full"
+        className="flex items-center py-3 focus:outline-none transition-colors w-full gap-3"
         aria-label="Open sidebar"
         style={{
           color: isHovered
@@ -43,11 +43,46 @@ export function MobileHeader({ onToggleSidebar, pageTitle }: MobileHeaderProps) 
         onMouseLeave={() => setIsHovered(false)}
         suppressHydrationWarning
       >
+        {/* Book icon + Hamburger icon container */}
+        <div className="flex items-center gap-2">
+          {/* Book icon */}
+          <svg
+            className="w-4 h-4 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            />
+          </svg>
+
+          {/* Hamburger icon */}
+          <svg
+            className="w-5 h-5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </div>
+
         <span className="text-sm font-medium flex-1 text-left">
           {pageTitle || 'Menu'}
         </span>
+
+        {/* Chevron icon */}
         <svg
-          className="w-5 h-5 rotate-90 ml-2"
+          className="w-5 h-5 rotate-90 shrink-0"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
