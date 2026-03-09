@@ -241,7 +241,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
                 flex items-center gap-2 px-3 py-1.5 text-[13px] rounded-md transition-colors relative z-10 w-full
                 ${
                   isActive
-                    ? 'font-medium text-blue-600 dark:text-blue-100 bg-blue-50 dark:bg-blue-950/50'
+                    ? 'font-medium text-blue-600 dark:text-blue-100 bg-blue-50'
                     : 'font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-800/50'
                 }
               `}
@@ -286,7 +286,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
       <div key={projId} className="relative">
         <button
           onClick={() => toggleCollapse(sectionKey)}
-          className="flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-semibold text-blue-600 dark:text-blue-100 bg-blue-50 dark:bg-blue-950/50"
+          className="flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-semibold text-blue-600 dark:text-blue-100 bg-blue-50"
           style={{ paddingLeft: `${depth * 16 + 12}px` }}
         >
           <span className="flex-1 truncate">{label}</span>
@@ -352,7 +352,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
             }
           `}
         >
-          <span>Legacy</span>
+          <span>Legacy Components</span>
           <span className="ml-auto shrink-0">
             {isExpanded ? (
               <ChevronDown className="w-3 h-3" />
@@ -419,6 +419,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
   return (
     <aside
       ref={sidebarRef}
+      data-sidebar="docs"
       className={`
         fixed lg:sticky left-0
         shadow-sm dark:shadow-none
