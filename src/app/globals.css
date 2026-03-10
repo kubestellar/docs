@@ -2469,7 +2469,7 @@ html.dark aside[data-sidebar="docs"] a:not([class~="bg-blue-50"]):not([class*="t
 }
 
 /* Chevrons and icons in dark mode */
-html.dark aside[data-sidebar="docs"] svg[class~="text-gray"] {
+html.dark aside[data-sidebar="docs"] svg[class*="text-gray-"] {
   color: #d1d5db; /* gray-300 */
 }
 
