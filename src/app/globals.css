@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --breakpoint-lgcustom: 900px;
   --breakpoint-xl: 1200px;
@@ -2469,7 +2471,11 @@ html.dark aside[data-sidebar="docs"] a:not([class~="bg-blue-50"]):not([class*="t
 }
 
 /* Chevrons and icons in dark mode */
+<<<<<<< main
 html.dark aside[data-sidebar="docs"] svg[class*="text-gray-"] {
+=======
+html.dark aside[data-sidebar="docs"] svg[class~="text-gray"] {
+>>>>>>> main
   color: #d1d5db; /* gray-300 */
 }
 

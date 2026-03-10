@@ -147,6 +147,8 @@ Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `K
 3. **Real-time Updates**: WebSocket connection from Frontend → Backend forwards MCP Bridge event stream → card updates
 4. **Local Agent**: Frontend connects to kc-agent (:8585) via WebSocket → kc-agent executes kubectl commands using local kubeconfig → results streamed back to browser
 5. **Card Recommendations**: Analyze cluster state via MCP Bridge → AI generates suggestions → user accepts/snoozes
+6. **Caching Layer**: All cards use `useCachedData` hooks with category-based TTL refresh (GPU: 45s, Helm: 120s, Operators: 300s). Data persists in localStorage for instant revisit loads. Stale-while-revalidate pattern keeps UI responsive while fetching fresh data in the background.
+7. **SSE Streaming**: Progressive loading endpoints (`/mcp/workloads/stream`, `/mcp/pods/stream`, etc.) stream per-cluster results as Server-Sent Events so data appears incrementally instead of blocking until all clusters respond.
 
 ## AI Mode Levels
 

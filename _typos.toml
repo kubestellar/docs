@@ -1,0 +1,28 @@
+# Typos configuration
+# https://github.com/crate-ci/typos
+
+[default.extend-words]
+# KubeStellar terms
+KubeStellar = "KubeStellar"
+kubestellar = "kubestellar"
+KubeFlex = "KubeFlex"
+kubeflex = "kubeflex"
+# Abbreviations
+WDS = "WDS"
+ITS = "ITS"
+WEC = "WEC"
+wec = "wec"
+WMCS = "WMCS"
+OCM = "OCM"
+MCP = "MCP"
+# Kubernetes abbreviations
+AKS = "AKS"
+aks = "aks"
+EKS = "EKS"
+GKE = "GKE"
+# Common false positives
+ND = "ND"
+IST = "IST"
+
+# Add repo-specific false positives here:
+# word = "word"

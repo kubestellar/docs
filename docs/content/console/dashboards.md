@@ -249,13 +249,28 @@ Track your spending:
 
 **Route:** `/compliance`
 
-Check compliance:
-- Compliance score
-- Passing and failing checks
-- Critical findings
-- Policy violations
+![Compliance Dashboard](images/compliance-dashboard-mar10.jpg)
 
-**Best for:** Meeting security requirements
+Comprehensive security scanning, vulnerability assessment, and policy enforcement across your entire fleet:
+
+- **Compliance Score**: Composite score computed from OPA Gatekeeper, Kyverno, Kubescape, and Trivy data
+- **Stats Overview**: Score, total checks, passing, failing, CIS/NSA/PCI-DSS benchmarks, Gatekeeper violations, Kyverno violations, Kubescape score
+- **Policy Violations**: Aggregated violations from OPA + Kyverno with per-policy cluster attribution
+- **Fleet Compliance Heatmap**: Clusters × compliance tools grid with color-coded status (green/yellow/red). Shows install CTA icons when Kyverno/Kubescape/Trivy aren't detected, linking to AI Mission install flows
+- **Compliance Drift**: Flags clusters deviating >1 standard deviation from fleet baseline compliance scores
+- **Cross-Cluster Policy Comparison**: Select up to 4 clusters and compare policy pass/fail in a table sorted by most discrepancies
+- **Kyverno Policies**: Live per-cluster policy data via CRD auto-detection
+- **Kubescape Scan**: Per-cluster framework scores via API aggregation or CRD check
+- **Trivy Scan**: Per-cluster vulnerability counts by severity
+- **Cert Manager**: Certificate expiry tracking across clusters
+
+**New in March 2026:**
+- All compliance cards rewritten to use live per-cluster data (previously static demo data)
+- New `useKyverno`, `useTrivy`, `useKubescape` hooks with CRD auto-detection, localStorage caching, and demo fallback
+- 3 new cross-cluster comparison cards (Fleet Compliance Heatmap, Compliance Drift, Cross-Cluster Policy Comparison)
+- Install CTA icons in heatmap headers link to AI Missions for one-click tool installation
+
+**Best for:** Enterprise security compliance, fleet-wide posture assessment, and identifying outlier clusters
 
 ---
 
@@ -467,6 +482,37 @@ Monitor data compliance:
 - Policy enforcement across clusters
 
 **Best for:** Meeting data governance requirements
+
+---
+
+### Insights Dashboard
+
+**Route:** `/insights`
+
+![Insights Dashboard](images/insights-ai-enrichment-mar10.jpg)
+
+Cross-cluster correlation and pattern detection using heuristic algorithms and optional AI enrichment:
+
+- **Stats Overview**: Clusters, insights detected, critical count, warnings count
+- **7 Insight Cards**:
+  - **Cross-Cluster Event Correlation**: Detects simultaneous warning events across clusters within a 5-minute window, suggesting common upstream causes
+  - **Resource Imbalance Detector**: Identifies CPU/memory imbalances across the fleet (e.g., one cluster at 87% while others sit at 22%)
+  - **Config Drift Heatmap**: Visualizes configuration differences between clusters for the same workloads
+  - **Cluster Delta Detector**: Tracks changes in cluster state over time, flagging unusual deltas
+  - **Restart Correlation Matrix**: Correlates pod restart patterns across clusters
+  - **Cascade Impact Map**: Shows how failures in one cluster propagate to dependent services
+  - **Deployment Rollout Tracker**: Monitors deployment rollout progress across clusters
+- **AI Enrichment**: When kc-agent is connected, heuristic insights are enriched with AI-generated root cause analysis, remediation suggestions, and confidence scores
+- **Insight Source Badge**: Each insight shows **(H)** for heuristic or **(AI)** for AI-enriched
+- **Remediation Blocks**: AI suggestions appear as blue-highlighted blocks with actionable remediation steps
+
+**New in March 2026:**
+- AI enrichment via `useInsightEnrichment` hook with debounced requests, WebSocket broadcast, and TTL cache
+- Backend `InsightWorker` with rule-based fallback when no AI provider is connected
+- Remediation blocks added to all 7 insight cards
+- All cards respect global cluster filters
+
+**Best for:** Identifying cross-cluster patterns that are invisible when monitoring clusters individually
 
 ---
 

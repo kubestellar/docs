@@ -64,8 +64,15 @@ The console includes a built-in auto-update system:
 - **Real-time progress**: WebSocket-powered progress banner during updates
 - **Safety features**:
   - Uncommitted changes detection before updating
-  - Health check after restart
+  - Health check after restart with configurable timeout
   - Automatic rollback on failure
+  - Graceful shutdown of running processes before update
+  - Progress reporting via WebSocket with percentage steps
+- **Resilience** (New in March 2026):
+  - Retry logic with exponential backoff for git pull and build steps
+  - Process cleanup ensures no orphan Go or npm processes after update
+  - Health check verifies the backend responds on the expected port before declaring success
+  - Detailed error messages when updates fail, with instructions to recover manually
 - **Install method detection**: `dev` (source), `binary` (downloaded), `helm` (in-cluster — auto-update disabled)
 
 #### kc-agent Self-Update
