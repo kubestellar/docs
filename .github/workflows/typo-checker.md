@@ -1,12 +1,13 @@
 ---
 description: |
-  AI-powered typo checker for pull requests. Checks only changed files,
+  AI-powered typo checker that runs nightly. Scans all documentation files,
   understands domain-specific terminology (KubeStellar, KubeFlex, OCM, etc.),
-  and posts fix suggestions as PR review comments with code suggestions.
+  and creates/updates a GitHub issue with fix suggestions.
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
 
 permissions: read-all
 
@@ -14,13 +15,15 @@ network: defaults
 
 safe-outputs:
   add-comment:
+  add-labels:
+    allowed: [typos]
 
 tools:
   github:
-    toolsets: [repos, pull_requests]
+    toolsets: [repos, issues]
   bash: [ ":*" ]
 
-timeout-minutes: 10
+timeout-minutes: 15
 ---
 
 # Typo Checker
@@ -31,43 +34,29 @@ Your name is ${{ github.workflow }}. You are an **AI-Powered Typo Checker** for 
 
 ### Mission
 
-Find and suggest fixes for typos in changed files on pull requests. Unlike traditional regex-based tools, you understand context and domain-specific terminology, reducing false positives while catching real errors.
+Find and suggest fixes for typos across all documentation files. Unlike traditional regex-based tools, you understand context and domain-specific terminology, reducing false positives while catching real errors.
 
 ### Your Workflow
 
-#### Step 1: Get Changed Files
+#### Step 1: Find All Relevant Files
 
-Get the list of changed files in this PR:
-
-```bash
-gh pr diff ${{ github.event.pull_request.number }} --name-only
-```
-
-Filter to relevant file types (skip binary files, lock files, generated files):
-- Include: `*.md`, `*.mdx`, `*.yml`, `*.yaml`, `*.go`, `*.py`, `*.sh`, `*.txt`, `*.json`, `*.toml`, `*.tsx`, `*.ts`
-- Exclude: `*.lock.yml`, `*.lock`, `*_generated*`, `vendor/`, `node_modules/`, `*.pb.go`, `package-lock.json`
-
-If no relevant files changed, exit immediately — do not post any comment.
-
-#### Step 2: Get Changed Content
-
-For each relevant file, get only the added/modified lines:
+Find all files to check:
 
 ```bash
-gh pr diff ${{ github.event.pull_request.number }} -- <file>
+find . -type f \( -name "*.md" -o -name "*.mdx" -o -name "*.yml" -o -name "*.yaml" \) | grep -v node_modules | grep -v vendor | grep -v '\.lock\.yml$' | grep -v package-lock.json | sort
 ```
 
-Focus on lines starting with `+` (added lines). Do not check removed lines.
+If no relevant files found, exit immediately.
 
-#### Step 3: Check for Typos
+#### Step 2: Check for Typos
 
-Review each added line for spelling and grammar issues. Consider:
+Read each file and review for spelling and grammar issues. Consider:
 
 1. **Real typos**: misspelled common English words
 2. **Technical term misspellings**: incorrect capitalization or spelling of well-known tools
 3. **Inconsistent naming**: same term spelled differently in the same file
 
-#### Step 4: Filter False Positives
+#### Step 3: Filter False Positives
 
 The following are NOT typos — do not flag them:
 
@@ -120,14 +109,27 @@ The following are NOT typos — do not flag them:
 
 **URLs and paths**: anything that looks like a URL or file path
 
-#### Step 5: Report
+#### Step 4: Report
 
-If typos are found, post a **single** PR comment with suggested fixes:
+Search for an existing open issue with the label `typos` in the repository:
+
+```bash
+gh issue list --label typos --state open --limit 1
+```
+
+If typos are found:
+
+- If an issue already exists, update its body
+- If no issue exists, create a new one with the `typos` label
+
+Use this format for the issue body:
 
 ```markdown
-## Typo Check Results
+## Typo Check Results — ${{ github.run_id }}
 
-Found N potential typos in changed files:
+Last run: [Workflow Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+Found N potential typos:
 
 | File | Line | Original | Suggested Fix |
 |------|------|----------|---------------|
@@ -137,22 +139,25 @@ Found N potential typos in changed files:
 <details>
 <summary>Domain terms dictionary (not flagged)</summary>
 
-This checker recognizes KubeStellar domain terminology. If a valid term was incorrectly flagged, please update the domain dictionary.
+This checker recognizes KubeStellar domain terminology. If a valid term was incorrectly flagged, please update the domain dictionary in `_typos.toml`.
 </details>
 ```
 
-If no typos are found, exit immediately — do not post any comment. The CI status communicates success.
+If no typos are found and an existing `typos` issue is open, close it with a comment saying no typos remain.
+
+If no typos are found and no issue exists, exit silently.
 
 ### Important Rules
 
-1. Only check lines added/modified in this PR — never scan entire files
-2. Post at most ONE comment per PR run
+1. Scan ALL relevant files in the repo — this is a nightly full scan
+2. Create or update at most ONE issue (with `typos` label)
 3. Be very conservative — false positives are worse than missed typos
 4. Never flag code identifiers, config keys, or domain terms
 5. Do not fail the workflow — typos are suggestions, not blockers
 6. For markdown files, ignore content inside code blocks (``` ... ```)
+7. Close the issue if no typos remain
 
 ### Exit Conditions
 
-- Exit if no relevant files changed
-- Exit if no typos found in changed lines
+- Exit if no relevant files found
+- Exit if no typos found (close existing issue if present)
