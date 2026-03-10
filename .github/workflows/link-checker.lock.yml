@@ -25,7 +25,7 @@
 # distinguishes real broken links from transient failures, and creates/updates
 # a GitHub issue with actionable results.
 #
-# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"8cd35c3b0b951b75db54e598e0713cd35d85d4a027f8acf01c3e235478ab6ab5","compiler_version":"v0.53.4"}
+# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"d03f5fd9b34896e4383341fceced532159442456541b92295cb86427793363da","compiler_version":"v0.53.4"}
 
 name: "Link Checker"
 "on":
@@ -674,7 +674,7 @@ jobs:
       - name: Execute GitHub Copilot CLI
         id: agentic_execution
         # Copilot CLI tool arguments (sorted):
-        timeout-minutes: 15
+        timeout-minutes: 30
         run: |
           set -o pipefail
           # shellcheck disable=SC1003
@@ -1032,7 +1032,7 @@ jobs:
           GH_AW_CHECKOUT_PR_SUCCESS: ${{ needs.agent.outputs.checkout_pr_success }}
           GH_AW_INFERENCE_ACCESS_ERROR: ${{ needs.agent.outputs.inference_access_error }}
           GH_AW_GROUP_REPORTS: "false"
-          GH_AW_TIMEOUT_MINUTES: "15"
+          GH_AW_TIMEOUT_MINUTES: "30"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |

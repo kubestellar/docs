@@ -27,7 +27,7 @@ tools:
   web-fetch:
   bash: [ ":*" ]
 
-timeout-minutes: 15
+timeout-minutes: 30
 ---
 
 # Link Checker
