@@ -4,6 +4,9 @@
   --breakpoint-lgcustom: 900px;
   --breakpoint-xl: 1200px;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   /* Dark mode colors (default) */
   --background: #0a0a0a;

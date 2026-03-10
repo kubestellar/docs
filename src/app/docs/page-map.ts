@@ -528,6 +528,12 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
     }
   }
 
+  // Add top-level introduction page (accessible at /docs/introduction)
+  // Route map entry only - sidebar renders this separately above projects
+  if (projectId === 'kubestellar' && allDocFiles.includes('intro.md')) {
+    routeMap['introduction'] = 'intro.md'
+  }
+
   // Add top-level meta - only include our defined navigation structure
   const meta: Record<string, string> = {}
   for (const category of navStructure) {
