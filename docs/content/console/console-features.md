@@ -94,6 +94,16 @@ Monitor and limit AI token consumption:
 
 The sidebar provides access to all major sections:
 
+![Sidebar with Card Counts](images/dashboard-sidebar-counts-mar10.jpg)
+
+### Sidebar Card Counts
+
+Each sidebar item displays a live count badge showing the number of cards available on that dashboard. For example, "Workloads (12)" means 12 cards are registered for the Workloads dashboard. This helps you understand the depth of monitoring available for each area at a glance.
+
+- Counts update dynamically based on registered cards
+- Badges use muted styling to avoid visual clutter
+- Collapsed sidebar hides counts but shows them on hover
+
 ### Primary Navigation
 
 - **Dashboard**: Main multi-cluster overview
