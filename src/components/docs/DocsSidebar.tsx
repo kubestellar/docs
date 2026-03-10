@@ -54,6 +54,7 @@ function getGeneralSections(items: MenuItem[]): MenuItem[] {
 export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps) {
   const pathname = usePathname();
   const sidebarRef = useRef<HTMLElement>(null);
+  const isDocsGuide = pathname === '/docs/introduction';
   const {
     sidebarCollapsed,
     toggleSidebar,
@@ -329,8 +330,9 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
   };
 
   // Render a project — full tree if active, navigation link if not
+  // When viewing docs guide, treat all projects as non-active (show as links)
   const renderProject = (proj: { id: string; label: string; href: string }, depth: number = 0) => {
-    if (proj.id === projectId) {
+    if (proj.id === projectId && !isDocsGuide) {
       return renderActiveProjectTree(proj.id, proj.label, depth);
     }
     return renderProjectLink(proj.id, proj.label, proj.href, depth);
@@ -339,7 +341,8 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
   // Render the Legacy group with sub-projects
   const renderLegacyGroup = () => {
     const isExpanded = !collapsed.has(LEGACY_GROUP_KEY);
-    const isActiveLegacy = LEGACY_PROJECTS.some(p => p.id === projectId);
+    // Don't highlight Legacy Components when viewing docs guide
+    const isActiveLegacy = !isDocsGuide && LEGACY_PROJECTS.some(p => p.id === projectId);
 
     return (
       <div className="relative pt-1">
@@ -398,8 +401,25 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
         {/* Scrollable navigation area */}
         <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
           <nav className="px-3 pt-6 pb-6 w-full">
-            {/* Primary projects — active shows tree, others show link */}
+            {/* Docs Guide link — always visible above projects */}
             <div className="space-y-1">
+              <Link
+                href="/docs/introduction"
+                className={`
+                  flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-medium
+                  ${isDocsGuide
+                    ? 'text-blue-600 dark:text-blue-100 bg-blue-50'
+                    : 'text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700'
+                  }
+                `}
+              >
+                <FileText className="w-4 h-4 shrink-0" />
+                <span className="flex-1 truncate">Docs Guide</span>
+              </Link>
+            </div>
+
+            {/* Primary projects — active shows tree, others show link */}
+            <div className="space-y-1 mt-4">
               {PRIMARY_PROJECTS.map(proj => renderProject(proj))}
             </div>
 
