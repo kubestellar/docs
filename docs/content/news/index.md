@@ -6,6 +6,7 @@ Stay up to date with the latest announcements, press releases, and community new
 
 ## March 2026
 
+- **[Compliance Excellence: Recommended Policies, Framework Context, and Drill-Down Modals](./compliance-excellence-and-drill-down-modals.md)** — New AI-powered Recommended Policies card, contextual framework descriptions on all compliance cards, 5 new drill-down detail modals across Insights/Compliance/Deploy dashboards, and progressive streaming for compliance hooks.
 - **[Community Meeting Demos](./community-meeting-demos-march-2026.md)** — Watch live demos of KubeStellar Console from the latest community meetings, including AI Missions, marketplace, and multi-cluster deployments.
 - **[Solving Complex Cluster Issues with AI Missions](./ai-missions-solving-cluster-problems.md)** — How AI Missions help you diagnose RBAC drift, resource quota bottlenecks, and GitOps drift across all your clusters at once.
 - **[Community-Contributed Monitoring Cards Are Here](./marketplace-and-community-cards.md)** — The new marketplace lets anyone contribute and install monitoring cards for their favorite tools — wasmCloud, Metal3, CoreDNS, Lima, and more.
