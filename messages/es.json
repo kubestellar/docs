@@ -21,7 +21,7 @@
     "terminalOutputSuccess": "ÉXITO",
     "terminalOutputSuccessText": "¡El entorno de demostración de KubeStellar está listo! Configuración completada",
     "buttonInstall": "Prueba la consola",
-    "buttonDocs": "Explora la documentación"
+    "buttonDocs": "Explora la documentación de la consola"
   },
   "navigation": {
     "docs": "Documentación",

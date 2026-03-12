@@ -21,7 +21,7 @@
     "terminalOutputSuccess": "SUCESSO",
     "terminalOutputSuccessText": "Ambiente de demonstração KubeStellar pronto! Configuração completa",
     "buttonInstall": "Experimentar console",
-    "buttonDocs": "Explorar documentação"
+    "buttonDocs": "Explorar documentação da console"
   },
   "footer": {
     "description": "Plataforma de orquestração Kubernetes multi-cluster que simplifica o gerenciamento de cargas de trabalho distribuídas em infraestrutura diversa.",

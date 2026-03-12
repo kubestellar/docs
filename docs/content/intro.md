@@ -19,7 +19,7 @@ Enabled via  ***[KubeStellar Console](/docs/console/overview/introduction)***, a
 
 ### KubeStellar Console
 
-Most users will wish to explore the demo and documentation for KubeStellar Console and the KubeStellar-MCP plugin for multicluster management and workload deployment. KubeStellar console is a new, nimbler, from-the-ground-up AI-enabled control layer that does not use the legacy components.
+Most users will wish to explore the demo and documentation for KubeStellar Console and the KubeStellar-MCP plugin for multicluster management and workload deployment. KubeStellar Console is a new, nimbler, from-the-ground-up AI-enabled control layer that does not use the legacy components.
 
 - [KubeStellar Console Documentation](/docs/console/overview/introduction): Architecture, Features, Installation and Configuration
 - [KubeStellar-MCP Documentation](/docs/kubestellar-mcp/overview/introduction): More details about the Claude Code-enabled plugin for app-centric deployment management
