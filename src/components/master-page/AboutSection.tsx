@@ -154,7 +154,7 @@ export default function AboutSection() {
 
                 {/* Animated arrow on hover */}
                 <Link
-                  href="/docs/kubestellar/architecture"
+                  href="/docs/console/features/ai-features"
                   className="block h-8 overflow-hidden"
                 >
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 text-primary-600 dark:text-primary-400 flex items-center">
@@ -211,7 +211,7 @@ export default function AboutSection() {
 
                 {/* Animated arrow on hover */}
                 <Link
-                  href="/docs/kubestellar/binding"
+                  href="/docs/console/features/dashboards"
                   className="block h-8 overflow-hidden"
                 >
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 text-primary-600 dark:text-primary-400 flex items-center">
@@ -268,7 +268,7 @@ export default function AboutSection() {
 
                 {/* Animated arrow on hover */}
                 <Link
-                  href="/docs/kubestellar/control"
+                  href="docs/console/programs/marketplace"
                   className="block h-8 overflow-hidden"
                 >
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 text-primary-600 dark:text-primary-400 flex items-center">
@@ -294,7 +294,20 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
+
+        <div className="mt-20 text-center relative z-10">
+          <p className="max-w-3xl mx-auto text-lg text-gray-300 mb-4">
+            {t("appendix")}
+          </p>
+          <Link
+            href="/docs/introduction"
+            className="inline-block text-primary-400 hover:text-primary-300 font-medium transition-colors"
+          >
+            {t("learnMore")}
+          </Link>
+        </div>
       </div>
+      
     </section>
   );
 }

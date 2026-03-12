@@ -1,4 +1,7 @@
 {
+  "aboutSection": {
+    "appendix": "KubeStellar Console 和 KubeStellar-MCP 一起形成了對傳統 KubeStellar 組件功能的新的獨立替代。有關這些前身的信息包含在文檔的遺留部分中"
+  },
   "navigation": {
     "docs": "文檔",
     "blog": "部落格",
