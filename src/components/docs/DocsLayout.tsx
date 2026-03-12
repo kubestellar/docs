@@ -43,6 +43,8 @@ export function DocsLayout({ children, toc, metadata, filePath, projectId }: Doc
               <MobileHeader
                 onToggleSidebar={toggleMenu}
                 pageTitle={metadata?.title}
+                filePath={filePath}
+                projectId={projectId}
               />
             </div>
 
