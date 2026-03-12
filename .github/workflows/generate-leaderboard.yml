@@ -2,7 +2,7 @@ name: Generate Leaderboard Data
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # Daily at 6am UTC
+    - cron: '0 2,6,10,14,18,22 * * *'  # Every 4 hours (6x daily)
   workflow_dispatch:       # Manual trigger
 
 permissions:

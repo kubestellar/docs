@@ -151,16 +151,22 @@ function BreakdownPills({ breakdown }: { breakdown: LeaderboardBreakdown }) {
 const LEADERBOARD_DATA_PATH = "/data/leaderboard.json";
 
 // ── Refresh schedule ─────────────────────────────────────────────────
-/** Hour (UTC) when the GitHub Actions workflow regenerates leaderboard data. */
-const REFRESH_HOUR_UTC = 6;
+/** Hours (UTC) when the GitHub Actions workflow regenerates leaderboard data. */
+const REFRESH_HOURS_UTC = [2, 6, 10, 14, 18, 22];
 /** Interval (ms) between countdown ticks — once per minute is sufficient. */
 const COUNTDOWN_TICK_MS = 60_000;
 
-/** Returns a human-readable countdown string like "5h 23m" until next 06:00 UTC. */
+/** Returns a human-readable countdown string like "1h 23m" until the next refresh. */
 function getCountdown(): string {
   const now = new Date();
+  const currentHour = now.getUTCHours();
+
+  // Find the next scheduled hour
+  const nextHour = REFRESH_HOURS_UTC.find((h) => h > currentHour)
+    ?? REFRESH_HOURS_UTC[0]; // wrap to first slot tomorrow
+
   const next = new Date(now);
-  next.setUTCHours(REFRESH_HOUR_UTC, 0, 0, 0);
+  next.setUTCHours(nextHour, 0, 0, 0);
   if (next <= now) next.setUTCDate(next.getUTCDate() + 1);
 
   const diffMs = next.getTime() - now.getTime();
