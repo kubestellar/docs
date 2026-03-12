@@ -20,8 +20,8 @@
     "terminalOutputConfigText": "Configurando Open Cluster Management",
     "terminalOutputSuccess": "ÉXITO",
     "terminalOutputSuccessText": "¡El entorno de demostración de KubeStellar está listo! Configuración completada",
-    "buttonInstall": "Instalar KubeStellar",
-    "buttonDocs": "Explorar documentación"
+    "buttonInstall": "Prueba la consola",
+    "buttonDocs": "Explora la documentación"
   },
   "navigation": {
     "docs": "Documentación",

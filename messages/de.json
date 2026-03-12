@@ -20,8 +20,8 @@
     "terminalOutputConfigText": "Open Cluster Management wird konfiguriert",
     "terminalOutputSuccess": "ERFOLG",
     "terminalOutputSuccessText": "KubeStellar-Demo-Umgebung ist bereit! Einrichtung abgeschlossen",
-    "buttonInstall": "KubeStellar installieren",
-    "buttonDocs": "Dokumentation erkunden"
+    "buttonInstall": "Konsole ausprobieren",
+    "buttonDocs": "Konsolen-Dokumentation erkunden"
   },
   "footer": {
     "description": "Plattform zur Orchestrierung von Kubernetes in Multi-Cluster-Umgebungen, die das Management verteilter Workloads über unterschiedliche Infrastrukturen vereinfacht.",
