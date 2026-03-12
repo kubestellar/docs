@@ -150,6 +150,27 @@ function BreakdownPills({ breakdown }: { breakdown: LeaderboardBreakdown }) {
 // ── Leaderboard data URL ──────────────────────────────────────────────
 const LEADERBOARD_DATA_PATH = "/data/leaderboard.json";
 
+// ── Refresh schedule ─────────────────────────────────────────────────
+/** Hour (UTC) when the GitHub Actions workflow regenerates leaderboard data. */
+const REFRESH_HOUR_UTC = 6;
+/** Interval (ms) between countdown ticks — once per minute is sufficient. */
+const COUNTDOWN_TICK_MS = 60_000;
+
+/** Returns a human-readable countdown string like "5h 23m" until next 06:00 UTC. */
+function getCountdown(): string {
+  const now = new Date();
+  const next = new Date(now);
+  next.setUTCHours(REFRESH_HOUR_UTC, 0, 0, 0);
+  if (next <= now) next.setUTCDate(next.getUTCDate() + 1);
+
+  const diffMs = next.getTime() - now.getTime();
+  const hours = Math.floor(diffMs / (1000 * 60 * 60));
+  const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+
+  if (hours === 0) return `${minutes}m`;
+  return `${hours}h ${minutes}m`;
+}
+
 // ── Page component ────────────────────────────────────────────────────
 
 export default function LeaderboardPage() {
@@ -157,6 +178,14 @@ export default function LeaderboardPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
+  const [countdown, setCountdown] = useState("");
+
+  // Tick countdown every minute
+  useEffect(() => {
+    setCountdown(getCountdown());
+    const id = setInterval(() => setCountdown(getCountdown()), COUNTDOWN_TICK_MS);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     fetch(LEADERBOARD_DATA_PATH)
@@ -218,6 +247,11 @@ export default function LeaderboardPage() {
               {lastUpdated && (
                 <p className="mt-3 text-sm text-gray-500">
                   Last updated: {lastUpdated}
+                  {countdown && (
+                    <span className="ml-2 text-gray-600">
+                      · Next refresh in {countdown}
+                    </span>
+                  )}
                 </p>
               )}
 
