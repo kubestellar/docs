@@ -19,7 +19,7 @@ Enabled via  ***[KubeStellar Console](/docs/console/overview/introduction)***, a
 
 ### KubeStellar Console
 
-Most users will wish to explore the demo and documentation for KubeStellar Console and the KubeStellar-MCP plugin for multicluster management and workload deployment.
+Most users will wish to explore the demo and documentation for KubeStellar Console and the KubeStellar-MCP plugin for multicluster management and workload deployment. KubeStellar console is a new, nimbler, from-the-ground-up AI-enabled control layer that does not use the legacy components.
 
 - [KubeStellar Console Documentation](/docs/console/overview/introduction): Architecture, Features, Installation and Configuration
 - [KubeStellar-MCP Documentation](/docs/kubestellar-mcp/overview/introduction): More details about the Claude Code-enabled plugin for app-centric deployment management
@@ -27,12 +27,12 @@ Most users will wish to explore the demo and documentation for KubeStellar Conso
 
 ### Legacy KubeStellar Components
 
-Deeper Documentation on the components underlying KubeStellar Console
+Deeper Documentation on the components which preceded the new standalone KubeStellar Console
 
-- [KubeStellar](/docs/kubestellar/overview): the foundation underlying the KubeStellar project
+- [KubeStellar](/docs/kubestellar/overview): the foundation that began the KubeStellar project
 - [KubeFlex](/docs/kubeflex/overview/introduction): A flexible and scalable platform for running Kubernetes control plane APIs with multi-tenancy support.
 - [KubeStellar A2A](/docs/a2a/overview/introduction): The first iteration of the KubeStellar agentic management tools embodied in KubeStellar Console
-- [kubectl-multi](/docs/multi-plugin/overview/introduction): A comprehensive kubectl plugin for multi-cluster operations with KubeStellar. The predecessor to the KubeStellar-MCP with KubeStellar Console
+- [kubectl-multi](/docs/multi-plugin/overview/introduction): A comprehensive kubectl plugin for multi-cluster operations with KubeStellar. The predecessor to the KubeStellar-MCP plugin which KubeStellar Console uses.
 
 ### Community and Support Information
 
