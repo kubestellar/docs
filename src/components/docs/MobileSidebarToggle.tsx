@@ -7,12 +7,9 @@ import { useDocsMenu } from './DocsProvider';
 
 interface MobileHeaderProps {
   onToggleSidebar: () => void;
-  pageTitle?: string;
-  filePath?: string;
-  projectId?: string;
 }
 
-export function MobileHeader({ onToggleSidebar, pageTitle, filePath, projectId }: MobileHeaderProps) {
+export function MobileHeader({ onToggleSidebar }: MobileHeaderProps) {
   const pathname = usePathname();
   const { resolvedTheme } = useTheme();
   const { dismissBanner } = useDocsMenu();
