@@ -124,7 +124,8 @@
     "card2Description": "ラベルベースのセレクションと BindingPolicy を使用して、どのワークロードをどこで実行するかを指定できます。標準 Kubernetes リソース、カスタムリソース（CRD）、Helm チャート、外部ワークロードタイプをサポートし、自動同期によりクラスター間で一貫性を維持します。",
     "card3Title": "ポリシー駆動の管理",
     "card3Description": "BindingPolicy システムを通じて包括的なガバナンスを実現します。個々のクラスター監視のためのシングルトンステータス管理や、統合ステータスの集約を行い、障害発生時には自動復旧機能付きのカスタム変換を適用できます。",
-    "learnMore": "詳細を見る"
+    "learnMore": "詳細を見る",
+    "appendix": "KubeStellar Console と KubeStellar-MCP は、従来の KubeStellar コンポーネントの機能の新しい独立した代替として機能します。これらの前身に関する情報は、ドキュメントのレガシー セクションに含まれています"
   },
   "contactSection": {
     "title": "お問い合わせ",

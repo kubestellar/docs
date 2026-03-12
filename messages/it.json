@@ -124,7 +124,8 @@
     "card2Description": "Usa selettori basati su label e policy di binding per specificare quali workload vengono eseguiti su quali cluster. Supporto per risorse Kubernetes standard, Custom Resource (CRD), chart Helm e tipi di workload esterni con sincronizzazione automatica tra i cluster.",
     "card3Title": "Gestione guidata dalle policy",
     "card3Description": "Implementa una governance completa tramite il sistema BindingPolicy. Gestisci lo stato singleton per il monitoraggio dei singoli cluster e l'aggregazione combinata dello stato. Applica trasformazioni personalizzate con ripristino automatico dopo le interruzioni.",
-    "learnMore": "Scopri di più"
+    "learnMore": "Scopri di più",
+    "appendix": "KubeStellar Console e KubeStellar-MCP insieme formano un nuovo sostituto indipendente delle funzioni dei vecchi componenti KubeStellar. Le informazioni su questi predecessori sono incluse nella sezione Legacy della documentazione"
   },
   "contactSection": {
     "title": "Mettiti",

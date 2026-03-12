@@ -117,7 +117,8 @@
     "card2Description": "Utilisez la sélection basée sur les étiquettes et les politiques de liaison pour spécifier quelles charges de travail s'exécutent où. Support pour les ressources Kubernetes standard, les Ressources Personnalisées (CRD), les charts Helm, et les types de charges de travail hors arbre avec synchronisation automatique pour maintenir les charges de travail synchronisées à travers les clusters.",
     "card3Title": "Gestion Dirigée par les Politiques",
     "card3Description": "Implémentez une gouvernance complète via le système BindingPolicy. Gérez le statut singleton pour le monitoring individuel des clusters et l'agrégation de statut combiné. Appliquez des transformations personnalisées avec récupération automatique après les perturbations.",
-    "learnMore": "En savoir plus"
+    "learnMore": "En savoir plus",
+    "appendix": "KubeStellar Console et KubeStellar-MCP forment ensemble un nouveau remplacement autonome des fonctions des anciens composants KubeStellar. Les informations sur ces prédécesseurs sont incluses dans la section Héritage de la documentation"
   },
   "contactSection": {
     "title": "Entrer",
