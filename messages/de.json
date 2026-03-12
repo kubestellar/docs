@@ -118,9 +118,8 @@
     "card2Description": "Verwenden Sie labelbasierte Auswahl und Binding-Richtlinien, um festzulegen, welche Workloads wo ausgeführt werden. Unterstützung für Standard-Kubernetes-Ressourcen, Custom Resources (CRDs), Helm-Charts und externe Workload-Typen mit automatischer Synchronisierung, um Workloads clusterübergreifend konsistent zu halten.",
     "card3Title": "Richtliniengesteuertes Management",
     "card3Description": "Implementieren Sie umfassende Governance über das BindingPolicy-System. Verwalten Sie Singleton-Status für die Überwachung einzelner Cluster sowie aggregierte Statusinformationen. Wenden Sie benutzerdefinierte Transformationen mit automatischer Wiederherstellung nach Störungen an.",
-    "learnMore": "Weitere Informationen",
-    "appendix": "KubeStellar Console und KubeStellar-MCP bilden zusammen einen neuen, unabhängigen Ersatz für die Funktionen der älteren KubeStellar-Komponenten. Informationen zu diesen Vorgängern finden Sie im Legacy-Abschnitt der Dokumentation",
-    "learnMore": "Mehr erfahren"
+    "learnMore": "Mehr erfahren",
+    "appendix": "KubeStellar Console und KubeStellar-MCP bilden zusammen einen neuen, unabhängigen Ersatz für die Funktionen der älteren KubeStellar-Komponenten. Informationen zu diesen Vorgängern finden Sie im Legacy-Abschnitt der Dokumentation"
   },
   "contactSection": {
     "title": "Kontakt",
