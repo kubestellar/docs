@@ -2,14 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
+import { usePathname } from 'next/navigation';
 import { useDocsMenu } from './DocsProvider';
 
 interface MobileHeaderProps {
   onToggleSidebar: () => void;
-  pageTitle?: string;
 }
 
-export function MobileHeader({ onToggleSidebar, pageTitle }: MobileHeaderProps) {
+export function MobileHeader({ onToggleSidebar }: MobileHeaderProps) {
+  const pathname = usePathname();
   const { resolvedTheme } = useTheme();
   const { dismissBanner } = useDocsMenu();
   const [mounted, setMounted] = useState(false);
@@ -18,6 +19,28 @@ export function MobileHeader({ onToggleSidebar, pageTitle }: MobileHeaderProps) 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Build breadcrumb from pathname: '/docs/console/features/dashboards' -> 'Docs > Console > Features > Dashboards'
+  const getBreadcrumb = () => {
+    // Special case for docs introduction page
+    if (pathname === '/docs/introduction') return 'Docs > Guide';
+
+    // Remove '/docs/' prefix and split into parts
+    const match = pathname.match(/^\/docs\/(.+)$/);
+    if (!match) return 'Docs';
+
+    const parts = match[1]
+      .split('/')
+      .map(part =>
+        // Convert kebab-case and underscores to title case
+        part
+          .split(/[-_]/)
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ')
+      );
+
+    return ['Docs', ...parts].join(' > ');
+  };
 
   const handleToggle = () => {
     // Dismiss the banner when opening the sidebar on mobile
@@ -76,8 +99,8 @@ export function MobileHeader({ onToggleSidebar, pageTitle }: MobileHeaderProps) 
           </svg>
         </div>
 
-        <span className="text-sm font-medium flex-1 text-left">
-          {pageTitle || 'Menu'}
+        <span className="text-sm font-medium flex-1 text-left truncate">
+          {getBreadcrumb()}
         </span>
 
         {/* Chevron icon */}

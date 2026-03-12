@@ -20,8 +20,8 @@
     "terminalOutputConfigText": "正在配置 Open Cluster Management",
     "terminalOutputSuccess": "成功",
     "terminalOutputSuccessText": "KubeStellar 演示环境已就绪！设置完成",
-    "buttonInstall": "安装 KubeStellar",
-    "buttonDocs": "查看文档"
+    "buttonInstall": "试用控制台",
+    "buttonDocs": "探索控制台文档"
   },
   "footer": {
     "description": "多集群 Kubernetes 编排平台，简化跨多种基础设施的分布式工作负载管理。",

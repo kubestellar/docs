@@ -40,10 +40,7 @@ export function DocsLayout({ children, toc, metadata, filePath, projectId }: Doc
           <div className="flex items-center justify-between mb-4">
             {/* Mobile Header with Sidebar Toggle - Only visible on mobile/tablet */}
             <div className="flex-1">
-              <MobileHeader
-                onToggleSidebar={toggleMenu}
-                pageTitle={metadata?.title}
-              />
+              <MobileHeader onToggleSidebar={toggleMenu} />
             </div>
 
             {/* Edit page icon - top right */}

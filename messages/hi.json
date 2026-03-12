@@ -20,8 +20,8 @@
     "terminalOutputConfigText": "ओपन क्लस्टर मैनेजमेंट को कॉन्फ़िगर कर रहा है",
     "terminalOutputSuccess": "SUCCESS",
     "terminalOutputSuccessText": "KubeStellar डेमो वातावरण तैयार! सेटअप पूरा",
-    "buttonInstall": "KubeStellar इंस्टॉल करें",
-    "buttonDocs": "डॉक्स एक्सप्लोर करें"
+    "buttonInstall": "कंसोल आजमाएं",
+    "buttonDocs": "कंसोल दस्तावेज़ देखें"
   },
   "footer": {
     "description": "मल्टी-क्लस्टर क्यूबेरनेटिस ऑर्केस्ट्रेशन प्लेटफ़ॉर्म जो विविध इंफ्रास्ट्रक्चर में वितरित वर्कलोड प्रबंधन को सरल बनाता है।",
