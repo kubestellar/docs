@@ -197,21 +197,34 @@ async function main() {
   // 1b. Discover issue-only contributors via Search API.
   //     The /repos/{repo}/contributors endpoint only returns users with commits,
   //     so contributors who only filed issues (no PRs/commits) are missed.
+  //     Paginate to avoid missing contributors beyond the first page.
   console.log("\nDiscovering issue-only contributors...");
   for (const repo of REPOS) {
     try {
       const query = `repo:${repo} type:issue`;
-      const url = `${API_BASE}/search/issues?q=${encodeURIComponent(query)}&per_page=${SEARCH_PER_PAGE}&page=1&sort=created&order=desc`;
-      await delay(SEARCH_RATE_LIMIT_DELAY_MS);
-      const data = await ghFetch(url);
       let added = 0;
-      for (const item of data.items || []) {
-        const login = item.user?.login;
-        if (login && item.user?.type === "User" && !contributorMap.has(login)) {
-          contributorMap.set(login, item.user.avatar_url);
-          added++;
+
+      for (let page = 1; page <= SEARCH_MAX_PAGES; page++) {
+        const url = `${API_BASE}/search/issues?q=${encodeURIComponent(query)}&per_page=${SEARCH_PER_PAGE}&page=${page}&sort=created&order=desc`;
+        await delay(SEARCH_RATE_LIMIT_DELAY_MS);
+        const data = await ghFetch(url);
+        const items = data.items || [];
+
+        for (const item of items) {
+          const login = item.user?.login;
+          if (login && item.user?.type === "User" && !contributorMap.has(login)) {
+            contributorMap.set(login, item.user.avatar_url);
+            added++;
+          }
+        }
+
+        // Stop when we've seen all results or this page was incomplete
+        const totalSeen = (page - 1) * SEARCH_PER_PAGE + items.length;
+        if (totalSeen >= data.total_count || items.length < SEARCH_PER_PAGE) {
+          break;
         }
       }
+
       if (added > 0) {
         console.log(`  ${repo}: found ${added} issue-only contributors`);
       }
