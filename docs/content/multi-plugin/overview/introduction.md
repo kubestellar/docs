@@ -1,6 +1,6 @@
 # kubectl-multi Overview
 
-**kubectl-multi** is a comprehensive kubectl plugin for multi-cluster operations with KubeStellar. This plugin extends kubectl to work seamlessly across all KubeStellar managed clusters, providing unified views and operations while filtering out workflow staging clusters (WDS).
+**kubectl-multi** is a comprehensive kubectl plugin for multi-cluster operations with KubeStellar. This plugin extends kubectl to work seamlessly across all KubeStellar managed clusters, providing unified views and operations while filtering out Workload Description Space (WDS) clusters.
 
 ## What is kubectl-multi?
 
