@@ -215,8 +215,14 @@ export default function LeaderboardPage() {
                 Top contributors ranked by activity across KubeStellar Console
                 repositories
               </p>
+              <p className="mt-3 text-sm text-gray-500 max-w-2xl mx-auto">
+                Tracking all-time contributions across{" "}
+                <a href="https://github.com/kubestellar/console" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">console</a>,{" "}
+                <a href="https://github.com/kubestellar/console-marketplace" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">console-marketplace</a>, and{" "}
+                <a href="https://github.com/kubestellar/console-kb" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">console-kb</a>
+              </p>
               {lastUpdated && (
-                <p className="mt-3 text-sm text-gray-500">
+                <p className="mt-2 text-sm text-gray-500">
                   Last updated: {lastUpdated}
                 </p>
               )}
