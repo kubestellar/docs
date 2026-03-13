@@ -228,6 +228,7 @@ const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Overview': 'readme.md' },
       { 'Architecture': 'kubestellar/architecture.md' },
+      { 'OCM Status Addon': 'kubestellar/ocm-status-addon-intro.md' },
       { 'Release Notes': 'kubestellar/release-notes.md' },
       { 'Roadmap': 'kubestellar/roadmap.md' }
     ]
@@ -532,6 +533,11 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
   // Route map entry only - sidebar renders this separately above projects
   if (projectId === 'kubestellar' && allDocFiles.includes('intro.md')) {
     routeMap['introduction'] = 'intro.md'
+  }
+
+  // Add legacy components overview page (accessible at /docs/legacy-components)
+  if (allDocFiles.includes('legacy-components.md')) {
+    routeMap['legacy-components'] = 'legacy-components.md'
   }
 
   // Add top-level meta - only include our defined navigation structure
