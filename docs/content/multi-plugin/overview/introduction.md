@@ -38,7 +38,7 @@ kubectl multi get pods -A
 - **Go 1.21+**: Primary language for the plugin
 - **Cobra**: CLI framework for command structure and parsing
 - **Kubernetes client-go**: Official Kubernetes Go client library
-- **KubeStellar APIs**: For managed cluster discovery
+- **KubeStellar APIs**: For discovering and managing clusters
 
 ## Related Projects
 
