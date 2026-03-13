@@ -477,6 +477,11 @@ export default async function Page(props: PageProps) {
   // Sanitize HTML for MDX
   let processedData = sanitizeHtmlForMdx(preProcessedText)
   processedData = convertHtmlScriptsToJsxComments(processedData)
+  // Convert ```mermaid code fences to <Mermaid> JSX so the component renders
+  processedData = processedData.replace(
+    /```mermaid\n([\s\S]*?)```/g,
+    (_match, chart: string) => `<Mermaid>{\`${chart.trimEnd()}\`}</Mermaid>`
+  )
 
   const rawJs = await compileMdx(processedData, { filePath })
   const { default: MDXContent, toc, metadata } = evaluate(rawJs, component)
