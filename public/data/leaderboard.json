@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-03-13T14:19:49.587Z",
+  "generated_at": "2026-03-13T18:15:48.963Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 565950,
+      "total_points": 654450,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
@@ -12,7 +12,7 @@
         "feature_issues": 208,
         "other_issues": 83,
         "prs_opened": 1000,
-        "prs_merged": 622
+        "prs_merged": 799
       },
       "rank": 1
     },
@@ -64,12 +64,12 @@
     {
       "login": "arnavgogia20",
       "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-      "total_points": 5600,
+      "total_points": 6600,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
+        "bug_issues": 3,
+        "feature_issues": 1,
         "other_issues": 0,
         "prs_opened": 8,
         "prs_merged": 8
@@ -79,15 +79,15 @@
     {
       "login": "aaradhychinche-alt",
       "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-      "total_points": 4500,
-      "level": "Navigator",
-      "level_rank": 3,
+      "total_points": 5000,
+      "level": "Pilot",
+      "level_rank": 4,
       "breakdown": {
         "bug_issues": 3,
         "feature_issues": 2,
         "other_issues": 0,
         "prs_opened": 7,
-        "prs_merged": 4
+        "prs_merged": 5
       },
       "rank": 6
     },
@@ -109,13 +109,13 @@
     {
       "login": "Abhishek-Punhani",
       "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-      "total_points": 3350,
+      "total_points": 4050,
       "level": "Navigator",
       "level_rank": 3,
       "breakdown": {
-        "bug_issues": 6,
+        "bug_issues": 8,
         "feature_issues": 1,
-        "other_issues": 3,
+        "other_issues": 5,
         "prs_opened": 4,
         "prs_merged": 1
       },
@@ -154,13 +154,13 @@
     {
       "login": "MikeSpreitzer",
       "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-      "total_points": 2300,
+      "total_points": 2350,
       "level": "Navigator",
       "level_rank": 3,
       "breakdown": {
         "bug_issues": 7,
         "feature_issues": 0,
-        "other_issues": 4,
+        "other_issues": 5,
         "prs_opened": 0,
         "prs_merged": 0
       },
