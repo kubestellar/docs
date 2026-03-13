@@ -15,7 +15,7 @@ export const MermaidComponent = ({ children }: MermaidProps) => {
 
   useEffect(() => {
     if (ref.current && chart) {
-      ref.current.innerHTML = "";
+      ref.current.innerHTML = chart;
       mermaid.run({
         nodes: [ref.current],
       });
