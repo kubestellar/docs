@@ -51,6 +51,20 @@ function getGeneralSections(items: MenuItem[]): MenuItem[] {
   return items.filter(item => GENERAL_SECTION_NAMES.includes(item.name || item.title || ''));
 }
 
+// Find the first navigable route in a menu item's children
+function getFirstChildRoute(item: MenuItem): string | undefined {
+  if (!item.children) return undefined;
+  for (const child of item.children) {
+    if (child.kind === 'Meta' || child.kind === 'Separator') continue;
+    if (child.route && child.route !== '#') return child.route;
+    const nested = getFirstChildRoute(child);
+    if (nested) return nested;
+  }
+  return undefined;
+}
+
+const LEGACY_OVERVIEW_HREF = '/docs/legacy-components';
+
 export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps) {
   const pathname = usePathname();
   const sidebarRef = useRef<HTMLElement>(null);
@@ -221,22 +235,49 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
           )}
 
           {/* Folder or Page */}
-          {hasChildren ? (
-            <button
-              onClick={() => toggleCollapse(itemKey)}
-              className="flex items-center gap-2 px-3 py-1.5 text-[13px] font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors text-left w-full relative z-10"
-              style={{ paddingLeft: `${depth * 16 + 12}px` }}
-            >
-              <span className="flex-1 truncate">{displayTitle}</span>
-              <span className="ml-auto shrink-0">
-                {isCollapsed ? (
-                  <ChevronRight className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300 transition-transform duration-200" />
-                ) : (
-                  <ChevronDown className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300 transition-transform duration-200" />
-                )}
-              </span>
-            </button>
-          ) : (
+          {hasChildren ? (() => {
+            const firstRoute = getFirstChildRoute(item);
+            return firstRoute ? (
+              <div
+                className="flex items-center gap-0 px-3 py-1.5 text-[13px] font-normal text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors w-full relative z-10"
+                style={{ paddingLeft: `${depth * 16 + 12}px` }}
+              >
+                <Link
+                  href={firstRoute}
+                  onClick={() => { if (isCollapsed) toggleCollapse(itemKey); }}
+                  className="flex-1 truncate hover:text-gray-900 dark:hover:text-gray-50"
+                >
+                  {displayTitle}
+                </Link>
+                <button
+                  onClick={(e) => { e.stopPropagation(); toggleCollapse(itemKey); }}
+                  className="ml-auto shrink-0 p-0.5 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                  aria-label={isCollapsed ? 'Expand section' : 'Collapse section'}
+                >
+                  {isCollapsed ? (
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300 transition-transform duration-200" />
+                  ) : (
+                    <ChevronDown className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300 transition-transform duration-200" />
+                  )}
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => toggleCollapse(itemKey)}
+                className="flex items-center gap-2 px-3 py-1.5 text-[13px] font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors text-left w-full relative z-10"
+                style={{ paddingLeft: `${depth * 16 + 12}px` }}
+              >
+                <span className="flex-1 truncate">{displayTitle}</span>
+                <span className="ml-auto shrink-0">
+                  {isCollapsed ? (
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300 transition-transform duration-200" />
+                  ) : (
+                    <ChevronDown className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300 transition-transform duration-200" />
+                  )}
+                </span>
+              </button>
+            );
+          })() : (
             <Link
               href={item.route || '#'}
               className={`
@@ -346,25 +387,34 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
 
     return (
       <div className="relative pt-1">
-        <button
-          onClick={() => toggleCollapse(LEGACY_GROUP_KEY)}
+        <div
           className={`
-            flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-semibold
+            flex items-center gap-0 px-3 py-2 text-[13px] rounded-md transition-colors w-full font-semibold
             ${isActiveLegacy
               ? 'text-blue-600 dark:text-blue-100 bg-blue-50'
               : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
             }
           `}
         >
-          <span>Legacy Components</span>
-          <span className="ml-auto shrink-0">
+          <Link
+            href={LEGACY_OVERVIEW_HREF}
+            onClick={() => { if (!isExpanded) toggleCollapse(LEGACY_GROUP_KEY); }}
+            className="flex-1 truncate"
+          >
+            Legacy Components
+          </Link>
+          <button
+            onClick={(e) => { e.stopPropagation(); toggleCollapse(LEGACY_GROUP_KEY); }}
+            className="ml-auto shrink-0 p-0.5 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+            aria-label={isExpanded ? 'Collapse section' : 'Expand section'}
+          >
             {isExpanded ? (
               <ChevronDown className="w-3 h-3" />
             ) : (
               <ChevronRight className="w-3 h-3" />
             )}
-          </span>
-        </button>
+          </button>
+        </div>
 
         <div
           className={`

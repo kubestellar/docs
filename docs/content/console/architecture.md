@@ -13,6 +13,8 @@ keywords:
 
 # Architecture
 
+> This is the canonical architecture reference for KubeStellar Console. The [console README](https://github.com/kubestellar/console#architecture) links here.
+
 KubeStellar Console uses a modern, modular architecture designed for extensibility and real-time updates.
 
 ## The 7 Components
@@ -37,43 +39,24 @@ The console consists of 7 components working together. See [Configuration](confi
 
 ## System Overview
 
-```
-  ┌──────────────────┐
-  │  GitHub OAuth    │  ← OAuth Authorization Server (user identity only)
-  │  (Authorization  │
-  │   Server)        │
-  └────────┬─────────┘
-           │ 3. issues access token
-           │ (in exchange for auth code)
-           │
-┌──────────▼──────────────────────────────────────────────────────┐
-│                  KubeStellar Console Backend (:8080)              │
-│                                                                  │
-│   API Handlers    Auth (OAuth Client)   Claude AI   WebSocket    │
-│   (REST/WS)       exchanges code→token  (Proactive) Events       │
-│                   issues session JWT                             │
-└──────────┬──────────────────────────┬───────────────────────────┘
-           │ 1. initiates OAuth flow   │
-           │    + REST/WebSocket API   │ uses kubeconfig credentials
-           ▼                           ▼
-┌────────────────────┐    ┌────────────────────────────────────────┐
-│   User Browser     │    │           MCP Bridge                   │
-│   React + Vite SPA │    │  kubestellar-ops + kubestellar-deploy  │
-│         │          │    │  (Claude Code Plugins)                 │
-│  2. user authorizes│    └───────────────────┬────────────────────┘
-│     on GitHub,     │                        │
-│     gets JWT back  │                        │ kubeconfig
-│         │          │                        ▼
-│         │ WebSocket│         ┌────────────────────────────────────────┐
-└─────────┼──────────┘         │          Kubernetes Clusters           │
-          │                    │  [cluster-1]  [cluster-2]  ...         │
-          ▼                    └────────────────────────────────────────┘
-┌────────────────────┐                        ▲
-│   kc-agent (:8585) │  kubectl / kubeconfig  │
-│   Local Agent      │────────────────────────┘
-│   (runs on user's  │
-│    machine)        │
-└────────────────────┘
+```mermaid
+graph TB
+    GitHub["GitHub OAuth<br/>(Authorization Server)"]
+    Backend["KubeStellar Console Backend :8080<br/>API Handlers · Auth (OAuth Client) · Claude AI · WebSocket"]
+    Browser["User Browser<br/>React + Vite SPA"]
+    MCP["MCP Bridge<br/>kubestellar-ops + kubestellar-deploy"]
+    K8s["Kubernetes Clusters<br/>cluster-1 · cluster-2 · ..."]
+    Agent["kc-agent :8585<br/>Local Agent (user's machine)"]
+
+    Browser -- "1. initiates OAuth flow" --> Backend
+    Browser -- "2. user authorizes on GitHub" --> GitHub
+    GitHub -- "3. issues access token<br/>(in exchange for auth code)" --> Backend
+    Backend -- "session JWT" --> Browser
+    Browser -- "WebSocket" --> Agent
+    Backend -- "REST / WebSocket API" --> Browser
+    Backend -- "kubeconfig credentials" --> MCP
+    MCP -- "kubeconfig" --> K8s
+    Agent -- "kubectl / kubeconfig" --> K8s
 ```
 
 **Credential flows:**
