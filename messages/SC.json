@@ -1,5 +1,24 @@
 {
   "aboutSection": {
+    "title": "什么是",
+    "titleSpan": "KubeStellar Console",
+    "subtitle": "一个由人工智能驱动的多集群 Kubernetes 仪表板，为你提供所有集群的统一可见性和控制 — 在一分钟内安装。",
+    "card1Title": "AI 驱动的操作",
+    "card1Description": "使用自然语言 AI 任务来管理你的集群。提出问题、部署工作负载并通过理解你的基础设施的智能助手来解决问题。",
+    "card2Title": "统一的多集群仪表板",
+    "card2Description": "在单个屏幕上查看所有 Kubernetes 集群。监控资源、查看日志并从一个界面管理任何集群上的工作负载 — 云、本地或边缘。",
+    "card3Title": "可扩展的市场",
+    "card3Description": "使用社区市场中的仪表板、卡片预设和主题来自定义你的 Console。构建和共享你自己的扩展，以根据你的需求定制体验。",
+    "card4Title": "使用 Lens？",
+    "card4Description": "所有 Lens 有的。加上它没有的。",
+    "card4Details": "KubeStellar Console 超越基本的集群管理，内置了 AI、安全、成本和 GitOps。",
+    "card5Title": "使用 Headlamp？",
+    "card5Description": "Headlamp 是一个很好的 Kubernetes 仪表板。",
+    "card5Details": "KubeStellar Console 添加了多集群 AI、GPU 可见性和内置的 ops 工具。",
+    "card6Title": "你的品牌。我们的平台",
+    "card6Description": "在几分钟内为你的 CNCF 项目提供一个可用于生产的 Kubernetes 仪表板。",
+    "card6Details": "150+ 张卡片，30 个仪表板，AI 任务 — 全部重新品牌化以适应你的项目。",
+    "learnMore": "了解更多",
     "appendix": "KubeStellar Console 和 KubeStellar-MCP 一起形成了对传统 KubeStellar 组件功能的新的独立替代。有关这些前身的信息包含在文档的遗留部分中"
   },
   "navigation": {
