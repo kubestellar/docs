@@ -41,22 +41,27 @@ The console consists of 7 components working together. See [Configuration](confi
 
 ```mermaid
 graph TB
-    GitHub["GitHub OAuth<br/>(Authorization Server)"]
-    Backend["KubeStellar Console Backend :8080<br/>API Handlers · Auth (OAuth Client) · Claude AI · WebSocket"]
-    Browser["User Browser<br/>React + Vite SPA"]
-    MCP["MCP Bridge<br/>kubestellar-ops + kubestellar-deploy"]
-    K8s["Kubernetes Clusters<br/>cluster-1 · cluster-2 · ..."]
-    Agent["kc-agent :8585<br/>Local Agent (user's machine)"]
+    GitHub["GitHub OAuth"]
+    Backend["Console Backend :8080"]
+    Browser["User Browser"]
+    MCP["MCP Bridge"]
+    K8s["Kubernetes Clusters"]
+    Agent["kc-agent :8585"]
+    CLI["Claude Code CLI"]
+    API["GPT API"]
 
-    Browser -- "1. initiates OAuth flow" --> Backend
-    Browser -- "2. user authorizes on GitHub" --> GitHub
-    GitHub -- "3. issues access token<br/>(in exchange for auth code)" --> Backend
+    Browser -- "OAuth flow" --> Backend
+    Browser -- "authorize" --> GitHub
+    GitHub -- "access token" --> Backend
     Backend -- "session JWT" --> Browser
+    Backend -- "REST / WebSocket" --> Browser
     Browser -- "WebSocket" --> Agent
-    Backend -- "REST / WebSocket API" --> Browser
-    Backend -- "kubeconfig credentials" --> MCP
+    Backend -- "kubeconfig" --> MCP
     MCP -- "kubeconfig" --> K8s
-    Agent -- "kubectl / kubeconfig" --> K8s
+    Agent -- "kubectl" --> K8s
+    Agent -- "MCP protocol" --> CLI
+    CLI -- "kubestellar-ops" --> K8s
+    API -- "read-only queries" --> Backend
 ```
 
 **Credential flows:**
