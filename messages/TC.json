@@ -1,5 +1,15 @@
 {
   "aboutSection": {
+    "card4Title": "使用 Lens？",
+    "card4Description": "所有 Lens 有的。加上它沒有的。",
+    "card4Details": "KubeStellar Console 超越基本的叢集管理，內置了 AI、安全、成本和 GitOps。",
+    "card5Title": "使用 Headlamp？",
+    "card5Description": "Headlamp 是一個很好的 Kubernetes 儀表板。",
+    "card5Details": "KubeStellar Console 新增了多叢集 AI、GPU 可見性和內置的 ops 工具。",
+    "card6Title": "你的品牌。我們的平台",
+    "card6Description": "在幾分鐘內為你的 CNCF 專案提供一個可用於生產的 Kubernetes 儀表板。",
+    "card6Details": "150+ 張卡片，30 個儀表板，AI 任務 — 全部重新品牌化以適應你的專案。",
+    "learnMore": "了解更多",
     "appendix": "KubeStellar Console 和 KubeStellar-MCP 一起形成了對傳統 KubeStellar 組件功能的新的獨立替代。有關這些前身的信息包含在文檔的遺留部分中"
   },
   "navigation": {
