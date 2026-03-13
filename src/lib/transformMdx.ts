@@ -38,8 +38,11 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
   s = s.replace(/<script\b[^>]*\/>/gi, "");
   s = s.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "");
 
+  // Strip HTML event-handler attributes (onclick, onload, etc.).
+  // Require `=` after the attribute name so normal prose words like
+  // "onto", "once", "one", "only" are NOT removed.
   s = s.replace(
-    /\s+on[a-z]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|\{[^}]*\}|[^\s>]+))?/gi,
+    /\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|\{[^}]*\}|[^\s>]+)/gi,
     ""
   );
   s = s.replace(/\sstyle\s*=\s*(?:"[\s\S]*?"|'[\s\S]*?')/gi, "");
