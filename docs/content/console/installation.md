@@ -193,24 +193,31 @@ To enable GitHub login (for multi-user deployments or to test the full auth flow
 
 4. Copy the **Client ID** and generate a **Client Secret**
 
-### 2. Configure Environment
+### 2. Clone the Repository
 
-Create a `.env` file in the project root with only these two variables:
+```bash
+git clone https://github.com/kubestellar/console.git
+cd console
+```
+
+### 3. Configure Environment
+
+Create a `.env` file **inside the cloned `console/` directory** (the repo root) with your OAuth credentials:
 
 ```bash
 GITHUB_CLIENT_ID=your_client_id
 GITHUB_CLIENT_SECRET=your_client_secret
 ```
 
-### 3. Start the Console
+> **Important**: The `.env` file must be in the same directory as `startup-oauth.sh`. The script loads it from its own directory, so creating it elsewhere will not work.
+
+### 4. Start the Console
 
 ```bash
-git clone https://github.com/kubestellar/console.git
-cd console
 ./startup-oauth.sh
 ```
 
-Open http://localhost:5174 and sign in with GitHub.
+Open http://localhost:8080 and sign in with GitHub.
 
 > **Tip**: Once running, click your profile avatar → the **Developer** panel shows your OAuth status, console version, and quick links.
 
