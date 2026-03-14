@@ -34,10 +34,10 @@ Typically under 45 seconds. No GitHub OAuth credentials required — a local `de
 |-----------|------------|-----------|
 | kubestellar-mcp plugins | Connect to your clusters | Yes |
 | kubeconfig | Your cluster credentials | Yes |
-| Frontend + Backend | The console itself | Yes (bundled) |
+| Frontend + Backend | The console itself | Yes (included in the console executable) |
 | GitHub OAuth App | Lets users sign in via GitHub | Optional |
 
-See [Installation](installation.md) for the full architecture diagram.
+See the [Architecture](architecture.md) page for the full system diagram and component details.
 
 ## Prerequisites
 

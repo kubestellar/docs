@@ -39,30 +39,7 @@ The console consists of 7 components working together. See [Configuration](confi
 
 ## System Overview
 
-```mermaid
-graph TB
-    GitHub["GitHub OAuth"]
-    Backend["Console Backend :8080"]
-    Browser["User Browser"]
-    MCP["MCP Bridge"]
-    K8s["Kubernetes Clusters"]
-    Agent["kc-agent :8585"]
-    CLI["Claude Code CLI"]
-    API["GPT API"]
-
-    Browser -- "OAuth flow" --> Backend
-    Browser -- "authorize" --> GitHub
-    GitHub -- "access token" --> Backend
-    Backend -- "session JWT" --> Browser
-    Backend -- "REST / WebSocket" --> Browser
-    Browser -- "WebSocket" --> Agent
-    Backend -- "kubeconfig" --> MCP
-    MCP -- "kubeconfig" --> K8s
-    Agent -- "kubectl" --> K8s
-    Agent -- "MCP protocol" --> CLI
-    CLI -- "kubestellar-ops" --> K8s
-    API -- "read-only queries" --> Backend
-```
+{% include-markdown "_architecture-diagram.md" %}
 
 **Credential flows:**
 - **GitHub OAuth** (user identity): Browser → GitHub → Backend. The user (Resource Owner) authorizes the console to read their GitHub profile. The Backend (OAuth Client) exchanges the authorization code for a token, verifies identity, and issues a session JWT to the browser.
@@ -99,7 +76,7 @@ The Backend is the OAuth Client in the OAuth 2.0 flow. It receives the authoriza
 
 ### MCP Bridge
 
-A separate process (bundled in the console image) that exposes the kubestellar-mcp tools over HTTP/WebSocket so the Backend can query cluster state. The MCP Bridge uses the **kubeconfig** on the server to authenticate to Kubernetes clusters. It does not participate in the GitHub OAuth flow.
+A separate process that is spawned by the console executable at startup. The MCP Bridge code is compiled into the same binary as the Backend, but runs as its own child process. It exposes the kubestellar-mcp tools over HTTP/WebSocket so the Backend can query cluster state. The MCP Bridge uses the **kubeconfig** on the server to authenticate to Kubernetes clusters. It does not participate in the GitHub OAuth flow.
 
 ### Claude Code Plugins
 
