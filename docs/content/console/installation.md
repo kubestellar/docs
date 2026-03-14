@@ -35,44 +35,18 @@ This typically takes under 45 seconds. No OAuth or GitHub credentials required �
 
 ## System Components
 
-KubeStellar Console has **6 components** that work together:
+KubeStellar Console has **6 components** that work together. For the full architectural deep-dive, data flow diagrams, and component interactions, see the [Architecture](architecture.md) page.
 
-```
-  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐   ┌──────────────┐
-  │  1. GitHub  │   │ 2. Frontend │   │ 3. Backend  │   │   4. Agent   │
-  │  OAuth App  │──▶│  (React UI) │◀─▶│    (Go)     │──▶│ (MCP Bridge) │
-  │ (optional)  │   │             │   │             │   │              │
-  │  Login via  │   │  Dashboard, │   │  API server,│   │  Talks to    │
-  │  GitHub     │   │  cards, AI  │   │  auth, data │   │  clusters    │
-  └─────────────┘   └─────────────┘   └─────────────┘   └───────┬──────┘
-                                                                │
-  ┌─────────────────────────────────────────────────────────────┤
-  │                 5. Claude Code Plugins                      │
-  │                                                             │
-  │  ┌─────────────────────┐   ┌──────────────────────────┐     │
-  │  │   kubestellar-ops   │   │   kubestellar-deploy     │     │
-  │  │  - List clusters    │   │  - Deploy apps           │     │
-  │  │  - Find pod issues  │   │  - GitOps sync           │     │
-  │  │  - Check security   │   │  - Scale apps            │     │
-  │  │  - Analyze RBAC     │   │  - Check drift           │     │
-  │  └─────────────────────┘   └──────────────────────────┘     │
-  └─────────────────────────────────────────────────────────────┤
-                                                                │
-  ┌─────────────────────────────────────────────────────────────▼───┐
-  │                         6. Kubeconfig                           │
-  │     ~/.kube/config with access to your clusters                 │
-  │     [cluster-1]   [cluster-2]   [cluster-3]   [cluster-n]       │
-  └─────────────────────────────────────────────────────────────────┘
-```
+{% include-markdown "_architecture-diagram.md" %}
 
 ### Component Summary
 
 | # | Component | What it does | Required? |
 |---|-----------|--------------|-----------|
 | 1 | **GitHub OAuth App** | Lets users sign in with GitHub | Optional — without it, a local `dev-user` session is created |
-| 2 | **Frontend** | React web app you see in browser | Yes — bundled in console image |
-| 3 | **Backend** | Go server that handles API calls | Yes — bundled in console image |
-| 4 | **Agent (MCP Bridge)** | Connects backend to your clusters | Yes — bundled in console image |
+| 2 | **Frontend** | React web app you see in browser | Yes — included in the console executable |
+| 3 | **Backend** | Go server that handles API calls | Yes — included in the console executable |
+| 4 | **Agent (MCP Bridge)** | Connects backend to your clusters | Yes — spawned as a child process by the console executable |
 | 5 | **Claude Code Plugins** | kubestellar-ops + kubestellar-deploy tools | Yes — [Claude Marketplace](#step-1-install-claude-code-plugins) or Homebrew |
 | 6 | **Kubeconfig** | Your cluster credentials | Yes — your existing `~/.kube/config` |
 
