@@ -1,6 +1,6 @@
 # Legacy Components
 
-The KubeStellar project includes several legacy components that form the foundation of the original multi-cluster configuration management system. These components are still maintained for existing deployments but are being superseded by the [KubeStellar Console](/docs/console/overview/introduction) and [KubeStellar MCP](/docs/kubestellar-mcp/overview/introduction) for new installations.
+The KubeStellar project includes several legacy components that form the foundation of the original multi-cluster configuration management system. These components are still maintained for existing deployments but are being superseded by the [KubeStellar Console](/docs/console/) and [KubeStellar MCP](/docs/kubestellar-mcp/overview/introduction) for new installations.
 
 ## Components
 
