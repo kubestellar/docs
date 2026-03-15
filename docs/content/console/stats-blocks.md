@@ -24,6 +24,24 @@ Stats blocks show you important numbers at a glance:
 - **Subtitle** - Extra context
 - **Color** - Indicates status (green = good, red = bad, etc.)
 
+### Visualization Modes
+
+Stats blocks support 9 display modes. Hover over any stat block and click the gear icon to change the mode:
+
+| Mode | Visual | Best for |
+|------|--------|----------|
+| **numeric** | Big number (default) | Everything |
+| **sparkline** | Mini area chart + number | Trends over time |
+| **gauge** | Semicircular arc | Percentages, scores |
+| **ring** | Circular progress | Utilization, completion |
+| **mini-bar** | Horizontal progress bar | Any bounded value |
+| **trend** | Number + ▲/▼ arrow + % change | Issue counts, alerts |
+| **stacked-bar** | Segmented horizontal bar | Breakdowns |
+| **heatmap** | Background color intensity | Severity (errors, issues) |
+| **horseshoe** | 270° arc gauge | Percentages, scores |
+
+Some stats have smart defaults: unhealthy clusters use **heatmap** mode (glows red), workload health uses **horseshoe** gauge, and resource utilization uses **ring** progress.
+
 ---
 
 ## Customize Your Stats

@@ -14,7 +14,7 @@ This guide covers the main features of the KubeStellar Console.
 
 The main dashboard provides a customizable view of your multi-cluster environment.
 
-![Dashboard Overview](images/dashboard-overview-mar07.png)
+![Dashboard Overview](images/dashboard-overview-mar14.jpg)
 
 ### Stats Overview
 
@@ -1305,3 +1305,584 @@ The Cluster Admin dashboard has been reordered for better workflow:
 ![AI/ML Dashboard](images/ai-ml-mar07.png)
 
 The AI/ML dashboard now properly shows demo data badges on all cards when running in demo mode, ensuring users can distinguish between real and sample data across all 13 AI/ML monitoring cards.
+
+---
+
+## Helm Self-Upgrade (New in March 2026)
+
+The console can now upgrade itself when deployed via Helm — no manual `helm upgrade` required.
+
+### How it works
+
+1. Backend discovers its own Deployment via `app.kubernetes.io/name=kubestellar-console` labels
+2. Uses `SelfSubjectAccessReview` to verify the ServiceAccount can patch Deployments
+3. When triggered from Settings, applies a JSON patch to update the container image tag
+4. Kubernetes rolls the new pod; the console shows a progress UI with restart polling
+
+### Configuration
+
+- Opt-in via `selfUpgrade.enabled=true` in Helm values (enabled by default for new Helm installs)
+- JWT-authenticated API endpoint prevents unauthorized upgrades
+- Progress bar and restart detection in the Settings page
+
+### Related PRs
+
+- Helm self-upgrade via Deployment image patch (#2318)
+- Restart polling and progress UI (#2413)
+- JWT auth for self-upgrade API calls (#2334)
+- Enable selfUpgrade by default for Helm installs (#2330)
+
+---
+
+## Pod Exec Terminal (New in March 2026)
+
+![Pod Exec Terminal](images/pod-exec-terminal-mar14.png)
+
+Interactive shell sessions directly from the console — no need to switch to `kubectl exec`.
+
+### Features
+
+- Full interactive terminal powered by xterm.js
+- Accessible as an "Exec" tab in pod drill-down views
+- Container picker for multi-container pods
+- Auto-reconnect on connection drops
+- JWT-authenticated WebSocket connection
+
+### How to use
+
+1. Navigate to a pod (via Workloads dashboard or search)
+2. Click the **Exec** tab
+3. Select a container (if the pod has multiple)
+4. Start typing commands in the terminal
+
+### Related PRs
+
+- Add pod exec terminal (#2213)
+- Fix exec WebSocket blocked by middleware (#2250)
+- Fix container name extraction (#2247)
+- Add JWT authentication to /ws/exec endpoint (#2416)
+
+---
+
+## Helm Write Operations (New in March 2026)
+
+Full Helm release management — not just read-only monitoring:
+
+| Operation | Where | Safety |
+|-----------|-------|--------|
+| **Rollback** | Revision history row → Rollback button | Confirmation dialog |
+| **Uninstall** | Release overview → Danger Zone | Confirmation dialog + release name verification |
+| **Upgrade** | Release overview → Upgrade button | Version selection + dry-run preview |
+
+Completes Helm release management feature parity with Lens.
+
+### Related PRs
+
+- Add Helm write operations: rollback, uninstall, upgrade (#2214)
+
+---
+
+## CRD Browser (New in March 2026)
+
+The CRD Browser is now wired to real backend data:
+
+- Lists all CRDs across all connected clusters via the Kubernetes dynamic client
+- Shows group, scope, versions, and status conditions (Established/NotEstablished/Terminating)
+- Local cache with 5-minute expiry and auto-refresh every 2 minutes
+- Falls back to demo data when no clusters are connected
+
+### Related PRs
+
+- Wire CRD browser to real backend API (#2210)
+
+---
+
+## White-Label System (New in March 2026)
+
+![White-Label Page](images/white-label-mar14.jpg)
+
+The console can now be deployed as a branded dashboard for any CNCF or open-source project.
+
+### How it works
+
+Set `CONSOLE_PROJECT=crossplane` (or any project name) and the console shows only generic Kubernetes cards — no KubeStellar branding or features.
+
+### Two independent systems
+
+1. **Project system** — `CONSOLE_PROJECT` env var controls which cards, dashboards, and routes are active
+2. **Theme system** — Custom colors and branding per project
+
+### Landing page
+
+The `/white-label` page explains the system with:
+- Deployment tabs (binary, Helm, Docker)
+- Branding env var reference table
+- Feature overview and visibility matrix
+- Analytics tracking for engagement
+
+### Related PRs
+
+- White-label project system for CNCF adoption (#2520)
+- Add /white-label landing page (#2536)
+
+---
+
+## CNCF Ecosystem Cards (New in March 2026)
+
+Five new cards for monitoring popular CNCF projects across your fleet:
+
+### KubeVela Application Delivery
+
+- Shows controller health, OAM application delivery status, workflow progress
+- Component and trait counts across clusters
+- Category: App Definition
+
+### KEDA Autoscaler Status
+
+- Detects KEDA operator pods via label-filtered query
+- Shows operator health, scaled object stats with replica progress bars
+- Trigger details (consumer groups, Prometheus queries, etc.)
+- Category: Orchestration
+
+### Strimzi Kafka Status
+
+- Detects Kafka broker and operator pods via label matching
+- Displays cluster health, broker readiness, topic status
+- Consumer group lag monitoring
+- Category: Streaming & Messaging
+
+### OpenFeature Status
+
+- Detects flagd/OpenFeature operator pods
+- Shows provider health (flagd, LaunchDarkly, Split, etc.)
+- Feature flag stats and evaluation counts
+- Category: App Definition
+
+### Compliance Trestle (OSCAL)
+
+- Integrates OSCAL-based compliance assessment from the CNCF Sandbox project
+- Shows overall compliance score and per-profile breakdowns (NIST 800-53, FedRAMP)
+- Per-cluster compliance status
+- AI mission prompts for installation and troubleshooting
+- Category: Compliance
+
+### Related PRs
+
+- Add KubeVela application delivery status card (#2427)
+- Add KEDA autoscaler status card (#2420)
+- Add Strimzi Kafka status card (#2419)
+- Add OpenFeature status card (#2418)
+- Add Compliance Trestle (OSCAL) card (#2553)
+
+---
+
+## Recommended Policies Card (New in March 2026)
+
+AI-powered fleet-wide compliance gap analysis on the compliance dashboard:
+
+- Analyzes policy gaps across the entire fleet
+- Identifies which recommended security policies are missing from which clusters
+- One-click **"Deploy All"** button triggers an AI mission that deploys missing policies across every eligible cluster
+- Individual **"Deploy"** buttons per recommendation for granular control
+- Fleet coverage gauge showing overall policy adoption
+
+### Related PRs
+
+- Recommended Policies card — AI-powered fleet-wide compliance gap analysis (#2163)
+
+---
+
+## Compliance Dashboard Streaming (New in March 2026)
+
+![Compliance Dashboard](images/compliance-dashboard-mar14.jpg)
+
+The compliance dashboard now loads data progressively:
+
+- **Progressive streaming** — Cards appear as data arrives from each cluster, rather than waiting for all clusters to respond
+- **Progress rings** — Visual indicators show data loading progress per card
+- **Framework descriptions** — Each compliance card now includes context about the framework it monitors
+- **Cluster badges** — Always visible on compliance cards showing which clusters participate
+
+### Related PRs
+
+- Add progressive streaming to all compliance dashboard cards (#2578)
+- Add progress ring to remaining compliance cards (#2585)
+- Progressive streaming for compliance hooks (#2167)
+- Add framework descriptions and context (#2166)
+
+---
+
+## Stat Block Visualization Modes (New in March 2026)
+
+Stats blocks now support **9 display modes** instead of just numbers:
+
+| Mode | Visual | Best for |
+|------|--------|----------|
+| **numeric** | Big number (default) | Everything |
+| **sparkline** | Mini area chart + number | Trends over time |
+| **gauge** | Semicircular arc | Percentages, scores |
+| **ring** | Circular progress | Utilization, completion |
+| **mini-bar** | Horizontal progress bar | Any bounded value |
+| **trend** | Number + ▲/▼ arrow + % change | Issue counts, alerts |
+| **stacked-bar** | Segmented horizontal bar | Breakdowns |
+| **heatmap** | Background color intensity | Severity (errors, issues) |
+| **horseshoe** | 270° arc gauge | Percentages, scores |
+
+### How to switch modes
+
+Hover over any stat block → click the gear icon → select a mode from the dropdown.
+
+### Smart defaults
+
+- Clusters unhealthy/unreachable → **heatmap** (glows red as count increases)
+- Workload healthy % → **horseshoe** gauge
+- Resource utilization → **ring** progress
+
+### Related PRs
+
+- Add configurable visualization modes for stat blocks (#2561)
+- Add trend, stacked-bar, heatmap, and horseshoe stat block modes (#2566)
+
+---
+
+## Undo/Redo for All Dashboards (New in March 2026)
+
+Every dashboard now supports undo and redo:
+
+- Snapshot-based history (max 30 levels)
+- Tracks all card mutations: add, remove, configure, resize, reorder, reset
+- Keyboard shortcuts: `Ctrl+Z` (undo), `Ctrl+Shift+Z` (redo)
+- Also accessible via the FAB (floating action button) menu
+- Reset button now always works correctly (compares current layout to defaults)
+
+### Related PRs
+
+- Fix Reset button + add undo/redo for all dashboards (#2252)
+- Wire undo/redo into main dashboard + collapse update prereqs (#2261)
+
+---
+
+## Mission Improvements (New in March 2026)
+
+![Missions](images/missions-mar14.jpg)
+
+Several improvements to the AI Missions system:
+
+- **YAML export** — Share Mission dialog now includes a YAML export option for mission configurations
+- **Inline title rename** — Rename missions directly from the chat header without opening a separate dialog
+- **Virtualized browser** — Mission browser uses virtualization for large mission lists (better performance with 100+ missions)
+- **AI actions in Trivy modal** — Vulnerability modal now includes AI mission actions for remediation
+- **Back button** — All mission conversation states now have a back button for navigation
+- **429 quota handling** — Graceful handling when AI provider rate limits are hit, with message size validation
+- **Stuck mission fix** — Missions no longer get stuck in Running/Processing state indefinitely
+
+### Related PRs
+
+- Add YAML export option to Share Mission dialog (#2363)
+- Add inline mission title rename from chat header (#2628)
+- Virtualize MissionBrowser for large mission lists (#2507)
+- Add AI Mission actions to Trivy vulnerability modal (#2181)
+- Add back button to all mission conversation states (#2304)
+- Fix AI Mission 429 quota errors and add message size validation (#2495)
+- Fix AI missions remaining in Running/Processing state indefinitely (#2498)
+
+---
+
+## From-Lens Migration Page (New in March 2026)
+
+![From Lens](images/from-lens-mar14.jpg)
+
+A dedicated landing page at `/from-lens` for users migrating from Lens:
+
+- Step-by-step installation (binary, Helm, Docker)
+- Cluster deployment option with Helm ingress template
+- Feature comparison positioning Console as a complement, not competitor
+- Analytics tracking for tab switches and command copies
+
+### Related PRs
+
+- Wire live backends for topology/ArgoCD cards and add Lens migration page (#2206)
+- Fix /from-lens: split commands, remove false claims (#2262)
+- Add cluster deployment option to from-lens page (#2321)
+
+---
+
+## From-Headlamp Landing Page (New in March 2026)
+
+![From Headlamp](images/from-headlamp-mar14.jpg)
+
+A landing page at `/from-headlamp` for users coming from the Headlamp Kubernetes dashboard:
+
+- Collegial tone — Headlamp is a fellow CNCF Sandbox project
+- Positions Console as a complement, not a competitor
+- Teal accent color and respectful messaging with link to headlamp.dev
+- Same installation structure as the from-lens page
+
+### Related PRs
+
+- Add /from-headlamp landing page (#2475)
+
+---
+
+## In-Cluster Agent Banner (New in March 2026)
+
+When the console is running in-cluster (Helm) without a kc-agent connection:
+
+- Blue **"Agent Not Detected"** banner appears
+- Clicking opens a modal with two paths:
+  1. **Install the kc-agent** — brew install or build from source
+  2. **Already have an agent?** — Configure CORS with `KC_ALLOWED_ORIGINS`
+- Collapsible "Why is CORS needed?" section
+- Auto-dismisses when agent connects
+
+### Related PRs
+
+- In-cluster agent banner with setup dialog (#2310)
+
+---
+
+## Auto Demo Mode for Helm (New in March 2026)
+
+When deployed via Helm with no OAuth and no kc-agent, the console auto-enables demo mode:
+
+- Same instant-dashboard experience as console.kubestellar.io
+- Eliminates login page friction for the `helm install → port-forward → open browser` flow
+- When OAuth IS configured, the login page still appears as normal
+
+### Related PRs
+
+- Auto-enable demo mode for Helm installs (#2292)
+
+---
+
+## New User Cluster Prompt (New in March 2026)
+
+New users are now prompted to create or connect a cluster:
+
+- Appears on first visit when no clusters are detected
+- Guides users through the setup process
+- Reduces time-to-value for new installations
+
+### Related PRs
+
+- Prompt new users to create/connect a cluster (#2315)
+
+---
+
+## DiskPressure & MemoryPressure Alerts (New in March 2026)
+
+New built-in alert evaluators for node resource pressure:
+
+- **DiskPressure** — Fires when nodes report disk pressure condition (critical severity, enabled by default)
+- **MemoryPressure** — Fires when nodes report memory pressure condition
+- **PIDPressure** — Fires when nodes report PID pressure condition
+- Backend detects conditions from cluster health data and reports affected node names
+- Browser notifications with deep links to affected nodes
+- Auto-resolves when conditions clear
+
+### Related PRs
+
+- Add DiskPressure/MemoryPressure node condition alerts (#2317)
+
+---
+
+## Analytics Dashboard (New in March 2026)
+
+A comprehensive analytics dashboard for understanding console usage:
+
+- **Mission analytics** — Track AI mission creation, completion, and engagement
+- **Card analytics** — Per-card error breakdown with sparkline trends
+- **Feature analytics** — Usage tracking across features
+- **Retention analytics** — User return rates and session depth
+- **Error tracking** — GA4-tracked runtime errors with sparkline trends
+- **Bot filtering** — Automated/bot traffic is filtered out of analytics
+- **Umami dual tracking** — Running alongside GA4 for validation
+
+### Related PRs
+
+- Add mission, card, feature, retention & error analytics sections (#2173)
+- Add sparkline trends to analytics error tracking (#2178)
+- Add per-card error breakdown (#2179)
+- Filter localhost dev traffic (#2195)
+
+---
+
+## GA4 Error Monitor (New in March 2026)
+
+Automated error monitoring that creates GitHub issues from production error spikes:
+
+- Monitors GA4 error events (card_render, uncaught_render, chunk_load)
+- Automatically creates GitHub issues when error counts spike
+- Reduces manual monitoring overhead
+
+### Related PRs
+
+- Add GA4 error monitor — auto-creates issues from production error spikes (#2570)
+
+---
+
+## Install Conversion Funnel (New in March 2026)
+
+Track the full user journey from page view to agent connection:
+
+- Unified `ksc_install_command_copied` analytics event across all copy buttons
+- 6-step funnel: Page View → Login → Command Copied → Agent Connected → Dashboard → Retention
+- Daily install conversion rate chart on the analytics dashboard
+- Replaced bounce rate KPI with install conversion rate
+
+### Related PRs
+
+- Add install conversion funnel (#2590)
+- Add daily install conversion rate line (#2592)
+
+---
+
+## Settings Improvements (New in March 2026)
+
+![Settings](images/settings-mar14.jpg)
+
+- **Close/back button** — Settings page now has a close button to return to the previous page
+- **Feedback GitHub token** — New settings section for configuring the FEEDBACK_GITHUB_TOKEN
+- **Sidebar scroll fix** — Sidebar no longer scrolls back to top on navigation click
+
+### Related PRs
+
+- Add close/back button to Settings page (#2625)
+- Add feedback GitHub token settings support (#2414)
+- Add FEEDBACK_GITHUB_TOKEN status display to Settings (#2511)
+
+---
+
+## Security Hardening Sprint (March 2026)
+
+A comprehensive security hardening effort covering the full stack:
+
+### Authentication & Authorization
+
+- **JWT auth on WebSocket exec** — Pod exec terminal now requires JWT authentication
+- **JWT auth for SSE** — Server-sent events use fetch-based delivery instead of EventSource for secure JWT delivery
+- **HttpOnly cookies** — JWT auth plumbing for HTTP-only cookie delivery
+- **Server-side token revocation** — JTI-based blocklist for revoking tokens
+- **Rate limiting** — Auth and API endpoints now have rate limits
+- **OAuth scope reduction** — Only requests `user:email` scope (removed `read:user`)
+- **TTL expiry for OAuth state** — Prevents stale/replayed OAuth state values
+
+### Input Validation & Sanitization
+
+- **Helm/kubectl param validation** — Input validation for command parameters
+- **Path/ref sanitization** — Sanitize path and ref params in mission handlers
+- **Repo allowlist** — Validate repo params against an allowlist in nightly E2E handler
+- **XSS fix** — RSS parser switched from `innerHTML` to `DOMParser`
+
+### Infrastructure Security
+
+- **Security response headers** — Added to Go backend (CSP, HSTS, X-Frame-Options, etc.)
+- **CodeQL analysis** — Automated security scanning workflow
+- **Dependabot** — Enabled for Go, npm, and GitHub Actions dependencies
+- **Pin CI tools to SHA** — Reusable workflows pinned to commit SHA
+- **Sandbox hardening** — Dynamic card sandbox blocks global access and prototype pollution
+
+### Data Protection
+
+- **PAT moved to backend** — GitHub PAT stored in backend-only storage via API proxy
+- **Webhook secret required** — Origin validation bypass fixed
+- **SQLite data loss prevention** — Prevents data loss during Helm upgrades
+- **Ownership verification** — Feedback issue handlers verify resource ownership
+
+### Related PRs
+
+- Add JWT auth to /ws/exec (#2416), self-upgrade API (#2334), SSE (#2449)
+- Add security response headers (#2428)
+- Add rate limiting (#2448)
+- Server-side token revocation (#2451)
+- CodeQL analysis (#2454)
+- Enable Dependabot (#2421)
+- Fix XSS in RSS parser (#2422)
+- Harden dynamic card sandbox (#2473)
+- HttpOnly cookie for JWT auth (#2474)
+- Require webhook secret (#2453)
+- Sanitize path and ref params (#2430)
+- Add input validation for helm/kubectl params (#2424)
+- Pin reusable workflows to SHA (#2426)
+- Fix critical script injection in copilot-recovery workflow (#2415)
+- Move GitHub PAT to backend-only storage (#2460)
+- Remove read:user OAuth scope (#2521)
+- Add TTL expiry to OAuth state store (#2557)
+- Add ownership verification to feedback handlers (#2556)
+- Prevent SQLite data loss during Helm upgrades (#2535)
+- Fix undici vulnerability (#2550)
+
+---
+
+## Generic Custom Resources API (New in March 2026)
+
+New backend endpoint for querying any custom resource across clusters:
+
+- `GET /api/custom-resources` with group, version, resource parameters
+- Enables the CRD browser to display actual CR instances
+- Used by ecosystem cards (KubeVela, KEDA, Strimzi, OpenFeature) for data fetching
+
+### Related PRs
+
+- Add generic custom resources API endpoint (#2455)
+
+---
+
+## Lazy-loaded Event Drill-Down (New in March 2026)
+
+The Events drill-down view is now lazy-loaded for better initial bundle size:
+
+- Reduces the main bundle by deferring event-related code
+- Improves initial page load performance
+- Transparent to users — loads on first navigation to events
+
+### Related PRs
+
+- Lazy-load EventsDrillDown for better initial bundle size (#2619)
+
+---
+
+## Console Documentation Issue Reporting (New in March 2026)
+
+Users can now report documentation issues directly from the console:
+
+- New option in the feedback/help menu
+- Creates a GitHub issue on the docs repository with relevant context
+- Streamlines the feedback loop between users and documentation maintainers
+
+### Related PRs
+
+- Add console documentation issue reporting option (#2529)
+
+---
+
+## SEO & Discovery (New in March 2026)
+
+Improved discoverability of the console:
+
+- **29 landing pages** — One for each dashboard route, optimized for Google indexing
+- **Full internal link graph** — All landing pages cross-link for crawler discovery
+- **Artifact Hub listing** — Helm chart published to Artifact Hub for discovery
+- **Helm chart validation CI** — Automated validation of chart metadata
+
+### Related PRs
+
+- SEO: Add landing pages for all 29 dashboard routes (#2202)
+- SEO: Add full internal link graph (#2203)
+- Add Artifact Hub metadata (#2201)
+- Add Helm chart validation CI (#2204)
+
+---
+
+## Trestle Card Streaming (New in March 2026)
+
+The Trestle/OSCAL compliance card uses progressive streaming with parallel cluster checks:
+
+- Race CRD/deployment checks in parallel for instant Trestle detection
+- Stream data progressively from each cluster as it arrives
+- Significantly faster time-to-first-data on the compliance dashboard
+
+### Related PRs
+
+- Stream Trestle card data progressively with parallel cluster checks (#2564)
+- Race CRD/deployment checks in parallel for instant Trestle detection (#2565)

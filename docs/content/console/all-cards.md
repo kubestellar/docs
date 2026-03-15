@@ -1,9 +1,9 @@
 ---
-title: "115+ Multi-Cluster Kubernetes Monitoring Cards — Workloads, GPU, Security, Cost & More"
+title: "120+ Multi-Cluster Kubernetes Monitoring Cards — Workloads, GPU, Security, Cost & More"
 linkTitle: "Cards"
 weight: 7
 description: >
-  115+ monitoring cards for multi-cluster Kubernetes operations — cluster health, workload status, GPU utilization, security compliance, cost tracking, and CNCF project monitoring. Build custom dashboards for your fleet with KubeStellar Console's AI-powered card system.
+  120+ monitoring cards for multi-cluster Kubernetes operations — cluster health, workload status, GPU utilization, security compliance, cost tracking, and CNCF project monitoring. Build custom dashboards for your fleet with KubeStellar Console's AI-powered card system.
 keywords:
   - kubernetes monitoring cards
   - multi-cluster monitoring
@@ -31,7 +31,7 @@ Every card has:
 
 ## All 110+ Card Types
 
-The console ships with 115+ built-in cards, and you can create more using the Card Factory. Below are the main categories.
+The console ships with 120+ built-in cards, and you can create more using the Card Factory. Below are the main categories.
 
 ### Cluster Health Cards (7)
 
@@ -118,6 +118,17 @@ The console ships with 115+ built-in cards, and you can create more using the Ca
 
 ---
 
+### CNCF Ecosystem Cards (4)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 118 | **KubeVela** | Controller health, OAM application delivery status, workflow progress, component/trait counts |
+| 119 | **KEDA** | Operator health, scaled object stats with replica progress bars, trigger details |
+| 120 | **Strimzi Kafka** | Cluster health, broker readiness, topic status, consumer group lag |
+| 121 | **OpenFeature** | Provider health (flagd, LaunchDarkly, Split), feature flag stats, evaluation counts |
+
+---
+
 ### Operator Cards (3)
 
 | # | Card | What it shows |
@@ -198,13 +209,15 @@ The console ships with 115+ built-in cards, and you can create more using the Ca
 
 ---
 
-### Compliance Cards (3)
+### Compliance Cards (5)
 
 | # | Card | What it shows |
 |---|------|---------------|
 | 61 | **Compliance Score** | Overall compliance percentage (CIS, NSA, PCI) |
 | 62 | **Compliance Findings** | Table of compliance findings by severity |
 | 63 | **Security Posture** | Combined security posture overview |
+| 116 | **Compliance Trestle (OSCAL)** | OSCAL-based compliance assessment — overall score, per-profile breakdowns (NIST 800-53, FedRAMP), per-cluster status |
+| 117 | **Recommended Policies** | AI-powered fleet-wide compliance gap analysis — identifies missing policies with one-click Deploy All |
 
 ---
 
