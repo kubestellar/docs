@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-15T03:06:17.179Z",
+  "generated_at": "2026-03-15T06:23:35.959Z",
   "entries": [
     {
       "login": "clubanderson",
@@ -49,14 +49,14 @@
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 7700,
+      "total_points": 8000,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
         "bug_issues": 0,
-        "feature_issues": 3,
+        "feature_issues": 4,
         "other_issues": 2,
-        "prs_opened": 14,
+        "prs_opened": 15,
         "prs_merged": 9
       },
       "rank": 4
@@ -79,11 +79,11 @@
     {
       "login": "aaradhychinche-alt",
       "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-      "total_points": 5000,
+      "total_points": 5900,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
-        "bug_issues": 3,
+        "bug_issues": 6,
         "feature_issues": 2,
         "other_issues": 0,
         "prs_opened": 7,
