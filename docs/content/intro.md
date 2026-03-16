@@ -2,7 +2,7 @@
 
 Multi-cluster configuration management for edge, multi-cloud, and hybrid cloud environments.
 
-Enabled via  ***[KubeStellar Console](/docs/console/overview/introduction)***, a modern, AI-powered multi-cluster management interface that provides real-time monitoring, intelligent insights, and a customizable dashboard experience for managing Kubernetes clusters at scale.
+Enabled via  ***[KubeStellar Console](/docs/console/)***, a modern, AI-powered multi-cluster management interface that provides real-time monitoring, intelligent insights, and a customizable dashboard experience for managing Kubernetes clusters at scale.
 
 <div className="flex flex-wrap gap-2 my-4">
   <a href="https://artifacthub.io/packages/search?repo=kubestellar" target="_blank" rel="noopener noreferrer">
@@ -21,7 +21,7 @@ Enabled via  ***[KubeStellar Console](/docs/console/overview/introduction)***, a
 
 Most users will wish to explore the demo and documentation for KubeStellar Console and the KubeStellar-MCP plugin for multicluster management and workload deployment. KubeStellar Console is a new, nimbler, from-the-ground-up AI-enabled control layer that does not use the legacy components.
 
-- [KubeStellar Console Documentation](/docs/console/overview/introduction): Architecture, Features, Installation and Configuration
+- [KubeStellar Console Documentation](/docs/console/): Architecture, Features, Installation and Configuration
 - [KubeStellar-MCP Documentation](/docs/kubestellar-mcp/overview/introduction): More details about the Claude Code-enabled plugin for app-centric deployment management
 - [KubeStellar Console Demo](https://console.kubestellar.io): Live online demo of the KubeStellar Console UI/UX
 
