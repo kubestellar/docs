@@ -31,8 +31,7 @@ export default function DocsNavbar() {
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  // Fallback values shown when GitHub API is rate-limited (60 req/hr unauthenticated).
-  // Update these periodically to keep them roughly current.
+  // Fallback values shown until shields.io responds.
   const [githubStats, setGithubStats] = useState({
     stars: "30",
     forks: "25",
@@ -49,33 +48,37 @@ export default function DocsNavbar() {
     setMounted(true);
   }, []);
 
+  // Fetch stats via shields.io JSON endpoints — no rate-limit issues unlike api.github.com
   useEffect(() => {
-    const fetchGithubStats = async () => {
-      try {
-        const response = await fetch(
-          "https://api.github.com/repos/kubestellar/console"
-        );
-        if (!response.ok) {
-          console.warn(`GitHub API returned ${response.status} — using fallback stats`);
-          return;
-        }
-        const data = await response.json();
-        const formatNumber = (num: number): string => {
-          if (num >= 1000) {
-            return (num / 1000).toFixed(1) + "K";
+    const REPO = "kubestellar/console";
+    const SHIELDS_BASE = "https://img.shields.io/github";
+    const endpoints: Array<{ key: keyof typeof githubStats; metric: string }> = [
+      { key: "stars", metric: "stars" },
+      { key: "forks", metric: "forks" },
+      { key: "watchers", metric: "watchers" },
+    ];
+
+    const fetchStats = async () => {
+      const results = await Promise.allSettled(
+        endpoints.map(async ({ key, metric }) => {
+          const res = await fetch(`${SHIELDS_BASE}/${metric}/${REPO}.json`);
+          if (!res.ok) return { key, value: null };
+          const data = await res.json();
+          return { key, value: data.value as string };
+        })
+      );
+
+      setGithubStats(prev => {
+        const next = { ...prev };
+        for (const r of results) {
+          if (r.status === "fulfilled" && r.value.value) {
+            next[r.value.key] = r.value.value;
           }
-          return num.toString();
-        };
-        setGithubStats({
-          stars: formatNumber(data.stargazers_count),
-          forks: formatNumber(data.forks_count),
-          watchers: formatNumber(data.subscribers_count),
-        });
-      } catch (err) {
-        console.warn("Failed to fetch GitHub stats — using fallback values:", err);
-      }
+        }
+        return next;
+      });
     };
-    fetchGithubStats();
+    fetchStats();
   }, []);
 
   useEffect(() => {
