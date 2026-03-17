@@ -42,6 +42,8 @@ const LEGACY_PROJECTS = [
   { id: 'multi-plugin', label: 'Multi Plugin', href: '/docs/multi-plugin/overview/introduction' },
 ] as const;
 
+const ALL_PROJECTS = [...PRIMARY_PROJECTS, ...LEGACY_PROJECTS] as const;
+
 // Key prefix for project-level collapse state (avoids collision with nav item keys)
 const PROJECT_KEY_PREFIX = '__project_';
 const LEGACY_GROUP_KEY = '__legacy';
@@ -147,6 +149,14 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
 
     // Determine active project from pathname
     const activeProjectId = projectId || 'console';
+
+    // Keep non-active project sections collapsed by default
+    for (const proj of ALL_PROJECTS) {
+      const isProjectLink = currentPath === '/docs/introduction' || proj.id !== activeProjectId;
+      if (isProjectLink) {
+        initialCollapsed.add(`${PROJECT_KEY_PREFIX}${proj.id}`);
+      }
+    }
 
     // Collapse legacy group if active project is not a legacy project
     const legacyIds = LEGACY_PROJECTS.map(p => p.id) as readonly string[];
@@ -264,19 +274,24 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
             const firstRoute = getFirstChildRoute(item);
             return firstRoute ? (
               <div
-                className="flex items-center gap-0 px-3 py-1.5 text-[13px] font-normal text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors w-full relative z-10"
+                className="flex items-center gap-0 px-3 py-1.5 text-[13px] font-normal text-gray-600 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors w-full relative z-10"
                 style={{ paddingLeft: `${depth * 16 + 12}px` }}
               >
                 <Link
                   href={firstRoute}
                   onClick={() => { if (isCollapsed) toggleCollapse(itemKey); }}
-                  className="flex-1 truncate hover:text-gray-900 dark:hover:text-gray-50"
+                  className="flex-1 min-w-0 truncate hover:text-gray-900 dark:hover:text-gray-50"
                 >
                   {displayTitle}
                 </Link>
                 <button
-                  onClick={(e) => { e.stopPropagation(); toggleCollapse(itemKey); }}
-                  className="ml-auto shrink-0 p-0.5 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleCollapse(itemKey);
+                  }}
+                  className="ks-sidebar-chevron ml-auto shrink-0 p-0.5 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                   aria-label={isCollapsed ? 'Expand section' : 'Collapse section'}
                 >
                   {isCollapsed ? (
@@ -289,7 +304,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
             ) : (
               <button
                 onClick={() => toggleCollapse(itemKey)}
-                className="flex items-center gap-2 px-3 py-1.5 text-[13px] font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors text-left w-full relative z-10"
+                className="flex items-center gap-2 px-3 py-1.5 text-[13px] font-normal text-gray-600 dark:text-gray-50 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors text-left w-full relative z-10"
                 style={{ paddingLeft: `${depth * 16 + 12}px` }}
               >
                 <span className="flex-1 truncate">{displayTitle}</span>
@@ -310,7 +325,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
                 ${
                   isActive
                     ? 'font-medium text-blue-600 dark:text-blue-100 bg-blue-50 dark:bg-blue-900/30'
-                    : 'font-normal text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700'
+                    : 'font-normal text-gray-600 dark:text-gray-50 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700'
                 }
               `}
               style={{ paddingLeft: `${depth * 16 + 12}px` }}
@@ -381,16 +396,55 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
 
   // Render a non-active project as a navigation link (no tree — loads on click)
   const renderProjectLink = (projId: string, label: string, href: string, depth: number = 0) => {
+    const sectionKey = `${PROJECT_KEY_PREFIX}${projId}`;
+    const isExpanded = !collapsed.has(sectionKey);
+
     return (
       <div key={projId} className="relative">
-        <Link
-          href={href}
-          className="flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-medium text-gray-800 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-800/50"
+        <div
+          className="flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-medium text-gray-600 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700"
           style={{ paddingLeft: `${depth * 16 + 12}px` }}
         >
-          <span className="flex-1 truncate">{label}</span>
-          <ChevronRight className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300" />
-        </Link>
+          <Link
+            href={href}
+            onClick={() => { if (!isExpanded) toggleCollapse(sectionKey); }}
+            className="flex-1 min-w-0 truncate"
+          >
+            {label}
+          </Link>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleCollapse(sectionKey);
+            }}
+            className="ks-sidebar-chevron ml-auto shrink-0 p-0.5 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+            aria-label={isExpanded ? 'Collapse section' : 'Expand section'}
+          >
+            {isExpanded ? (
+              <ChevronDown className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300 transition-transform duration-200" />
+            ) : (
+              <ChevronRight className="w-3.5 h-3.5 text-gray-500 dark:text-gray-300 transition-transform duration-200" />
+            )}
+          </button>
+        </div>
+
+        <div
+          className={`
+            relative overflow-hidden transition-all duration-300 ease-in-out
+            ${isExpanded ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}
+          `}
+        >
+          <Link
+            href={href}
+            className="flex items-center gap-2 px-3 py-1.5 text-[13px] rounded-md transition-colors w-full font-normal text-gray-600 dark:text-gray-50 hover:text-gray-900 dark:hover:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700"
+            style={{ paddingLeft: `${(depth + 1) * 16 + 12}px` }}
+          >
+            <FileText className="w-3.5 h-3.5 shrink-0 text-gray-500 dark:text-gray-300" />
+            <span className="flex-1 truncate">Overview</span>
+          </Link>
+        </div>
       </div>
     );
   };
@@ -418,7 +472,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
             flex items-center gap-0 px-3 py-2 text-[13px] rounded-md transition-colors w-full font-semibold
             ${isActiveLegacy
               ? 'text-blue-600 dark:text-blue-100 bg-blue-50 dark:bg-blue-900/30'
-              : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
+              : 'text-gray-500 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700'
             }
           `}
         >
@@ -430,8 +484,13 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
             Legacy Components
           </Link>
           <button
-            onClick={(e) => { e.stopPropagation(); toggleCollapse(LEGACY_GROUP_KEY); }}
-            className="ml-auto shrink-0 p-0.5 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleCollapse(LEGACY_GROUP_KEY);
+            }}
+            className="ks-sidebar-chevron ml-auto shrink-0 p-0.5 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             aria-label={isExpanded ? 'Collapse section' : 'Expand section'}
           >
             {isExpanded ? (
@@ -485,7 +544,7 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
                   flex items-center gap-2 px-3 py-2 text-[13px] rounded-md transition-colors text-left w-full font-medium
                   ${isDocsGuide
                     ? 'text-blue-600 dark:text-blue-100 bg-blue-50 dark:bg-blue-900/30'
-                    : 'text-gray-700 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700'
+                    : 'text-gray-600 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-700'
                   }
                 `}
               >
