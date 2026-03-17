@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-03-16T22:13:07.763Z",
+  "generated_at": "2026-03-17T03:02:06.329Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 720150,
+      "total_points": 724150,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
@@ -12,7 +12,7 @@
         "feature_issues": 226,
         "other_issues": 85,
         "prs_opened": 1000,
-        "prs_merged": 917
+        "prs_merged": 925
       },
       "rank": 1
     },
@@ -92,21 +92,6 @@
       "rank": 6
     },
     {
-      "login": "khushal-winner",
-      "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
-      "total_points": 5500,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 6,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 11,
-        "prs_merged": 3
-      },
-      "rank": 7
-    },
-    {
       "login": "Abhishek-Punhani",
       "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
       "total_points": 5250,
@@ -119,7 +104,7 @@
         "prs_opened": 4,
         "prs_merged": 1
       },
-      "rank": 8
+      "rank": 7
     },
     {
       "login": "ghanshyam2005singh",
@@ -134,7 +119,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 9
+      "rank": 8
     },
     {
       "login": "Arpit529Srivastava",
@@ -149,7 +134,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 10
+      "rank": 9
     },
     {
       "login": "MikeSpreitzer",
@@ -164,7 +149,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 11
+      "rank": 10
     },
     {
       "login": "AAdIprog",
@@ -179,7 +164,7 @@
         "prs_opened": 5,
         "prs_merged": 2
       },
-      "rank": 12
+      "rank": 11
     },
     {
       "login": "shivansh-source",
@@ -194,7 +179,7 @@
         "prs_opened": 3,
         "prs_merged": 1
       },
-      "rank": 13
+      "rank": 12
     },
     {
       "login": "sicaario",
@@ -209,7 +194,7 @@
         "prs_opened": 3,
         "prs_merged": 2
       },
-      "rank": 14
+      "rank": 13
     },
     {
       "login": "p172913",
@@ -224,7 +209,7 @@
         "prs_opened": 2,
         "prs_merged": 2
       },
-      "rank": 15
+      "rank": 14
     },
     {
       "login": "antedotee",
@@ -239,7 +224,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 16
+      "rank": 15
     },
     {
       "login": "KPRoche",
@@ -254,7 +239,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 17
+      "rank": 16
     },
     {
       "login": "AresPhoenix345",
@@ -269,7 +254,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 18
+      "rank": 17
     },
     {
       "login": "kchiranjewee63",
@@ -284,7 +269,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 19
+      "rank": 18
     },
     {
       "login": "mjb-it",
@@ -299,7 +284,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 20
+      "rank": 19
     },
     {
       "login": "mmagram0926",
@@ -314,7 +299,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 21
+      "rank": 20
     },
     {
       "login": "MAVRICK-1",
@@ -329,7 +314,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 22
+      "rank": 21
     },
     {
       "login": "namasl",
@@ -340,6 +325,21 @@
       "breakdown": {
         "bug_issues": 0,
         "feature_issues": 1,
+        "other_issues": 0,
+        "prs_opened": 0,
+        "prs_merged": 0
+      },
+      "rank": 22
+    },
+    {
+      "login": "khushal-winner",
+      "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
+      "total_points": 0,
+      "level": "Observer",
+      "level_rank": 1,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
         "other_issues": 0,
         "prs_opened": 0,
         "prs_merged": 0
