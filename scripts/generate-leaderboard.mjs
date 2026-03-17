@@ -3,6 +3,13 @@
 /**
  * Generates leaderboard data by fetching contributor activity from GitHub.
  *
+ * Uses the REST API (/repos/{repo}/issues) to bulk-fetch all issues and PRs
+ * per repo, then groups by author and scores locally. This avoids the GitHub
+ * Search API's strict rate limit (30 req/min) that caused contributors to
+ * get 0 points when the script hit 403 errors mid-run.
+ *
+ * REST API rate limit: 5,000 req/hr (vs Search API: 30 req/min).
+ *
  * Replicates the scoring logic from the KubeStellar Console backend
  * (pkg/api/handlers/rewards.go) so that results are consistent.
  *
@@ -16,21 +23,21 @@ import { writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// ── Point values (mirrors rewards.go lines 23-31) ─────────────────────
+// ── Point values (mirrors rewards.go) ─────────────────────────────────
 const POINTS_BUG_ISSUE = 300;
 const POINTS_FEATURE_ISSUE = 100;
 const POINTS_OTHER_ISSUE = 50;
 const POINTS_PR_OPENED = 200;
 const POINTS_PR_MERGED = 500;
 
-// ── Repos to scan (mirrors REWARDS_GITHUB_ORGS default in server.go:928) ──
+// ── Repos to scan ─────────────────────────────────────────────────────
 const REPOS = [
   "kubestellar/console",
   "kubestellar/console-marketplace",
   "kubestellar/console-kb",
 ];
 
-// ── Contributor levels (mirrors rewards.go lines 138-147) ─────────────
+// ── Contributor levels ────────────────────────────────────────────────
 const CONTRIBUTOR_LEVELS = [
   { rank: 1, name: "Observer", minCoins: 0 },
   { rank: 2, name: "Explorer", minCoins: 500 },
@@ -43,11 +50,21 @@ const CONTRIBUTOR_LEVELS = [
 ];
 
 // ── GitHub API constants ──────────────────────────────────────────────
-const MAX_CONTRIBUTORS_PER_REPO = 50;
-const SEARCH_PER_PAGE = 100;
-const SEARCH_MAX_PAGES = 10;
+/** Items per page for REST API pagination */
+const REST_PER_PAGE = 100;
+/** Maximum pages to fetch per repo (100 items/page = 10,000 items max) */
+const REST_MAX_PAGES = 100;
+/** Delay between REST API pages to be a good citizen (ms) */
+const REST_PAGE_DELAY_MS = 100;
 const API_BASE = "https://api.github.com";
-const SEARCH_RATE_LIMIT_DELAY_MS = 2500; // GitHub Search API: 30 req/min for authenticated
+
+// ── Bot/service accounts to exclude from the leaderboard ──────────────
+const EXCLUDED_LOGINS = new Set([
+  "web-flow",
+  "dependabot[bot]",
+  "github-actions[bot]",
+  "netlify[bot]",
+]);
 
 // ── Helpers ───────────────────────────────────────────────────────────
 
@@ -57,13 +74,13 @@ if (!TOKEN) {
   process.exit(1);
 }
 
-const headers = {
+const defaultHeaders = {
   Accept: "application/vnd.github.v3+json",
   Authorization: `Bearer ${TOKEN}`,
 };
 
 async function ghFetch(url) {
-  const res = await fetch(url, { headers });
+  const res = await fetch(url, { headers: defaultHeaders });
   if (!res.ok) {
     const body = await res.text().catch(() => "");
     throw new Error(`GitHub API ${res.status}: ${url}\n${body.slice(0, 200)}`);
@@ -71,12 +88,11 @@ async function ghFetch(url) {
   return res.json();
 }
 
-/** Delay to avoid hitting GitHub Search API rate limit (30 req/min). */
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// ── Bug / feature label sets (mirrors classifyIssue in rewards.go:386) ──
+// ── Label classification ──────────────────────────────────────────────
 const BUG_LABELS = new Set(["bug", "kind/bug", "type/bug"]);
 const FEATURE_LABELS = new Set([
   "enhancement",
@@ -87,7 +103,8 @@ const FEATURE_LABELS = new Set([
 
 function classifyIssueLabels(labels) {
   for (const label of labels) {
-    if (BUG_LABELS.has(label.name)) return { type: "issue_bug", points: POINTS_BUG_ISSUE };
+    if (BUG_LABELS.has(label.name))
+      return { type: "issue_bug", points: POINTS_BUG_ISSUE };
     if (FEATURE_LABELS.has(label.name))
       return { type: "issue_feature", points: POINTS_FEATURE_ISSUE };
   }
@@ -105,171 +122,141 @@ function getLevelForPoints(totalPoints) {
   return level;
 }
 
-// ── Search API with pagination (mirrors searchItems in rewards.go:336) ──
-async function searchItems(login, itemType) {
-  const repoFilter = REPOS.map((r) => `repo:${r}`).join(" ");
-  const query = `author:${login} ${repoFilter} type:${itemType}`;
+// ── Bulk fetch all issues+PRs for a repo via REST API ─────────────────
+/**
+ * Fetches ALL issues and PRs for a repo using the REST API.
+ * The /repos/{owner}/{repo}/issues endpoint returns both issues and PRs
+ * (PRs have a `pull_request` field). state=all includes open+closed.
+ *
+ * This uses the REST API (5,000 req/hr) instead of the Search API
+ * (30 req/min), avoiding rate limit failures on large contributor lists.
+ */
+async function fetchAllItems(repo) {
   const allItems = [];
 
-  for (let page = 1; page <= SEARCH_MAX_PAGES; page++) {
-    const url = `${API_BASE}/search/issues?q=${encodeURIComponent(query)}&per_page=${SEARCH_PER_PAGE}&page=${page}&sort=created&order=desc`;
+  for (let page = 1; page <= REST_MAX_PAGES; page++) {
+    const url = `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&page=${page}&sort=created&direction=desc`;
 
-    await delay(SEARCH_RATE_LIMIT_DELAY_MS);
-    const data = await ghFetch(url);
-    allItems.push(...(data.items || []));
+    if (page > 1) await delay(REST_PAGE_DELAY_MS);
 
-    if (allItems.length >= data.total_count || (data.items || []).length < SEARCH_PER_PAGE) {
-      break;
-    }
+    const items = await ghFetch(url);
+    allItems.push(...items);
+
+    // Stop when we get fewer items than a full page (last page)
+    if (items.length < REST_PER_PAGE) break;
   }
 
   return allItems;
 }
 
-// ── Score a single contributor ────────────────────────────────────────
-async function scoreContributor(login) {
-  const breakdown = {
-    bug_issues: 0,
-    feature_issues: 0,
-    other_issues: 0,
-    prs_opened: 0,
-    prs_merged: 0,
-  };
-  let totalPoints = 0;
+// ── Score all contributors from bulk data ─────────────────────────────
+/**
+ * Groups items by author login and computes scores.
+ * Each item is either an issue (no pull_request field) or a PR.
+ */
+function scoreAllContributors(allItems) {
+  /** Map of login -> { avatarUrl, totalPoints, breakdown } */
+  const contributors = new Map();
 
-  // Fetch issues
-  try {
-    const issues = await searchItems(login, "issue");
-    for (const item of issues) {
-      const { type, points } = classifyIssueLabels(item.labels || []);
-      totalPoints += points;
-      if (type === "issue_bug") breakdown.bug_issues++;
-      else if (type === "issue_feature") breakdown.feature_issues++;
-      else breakdown.other_issues++;
+  for (const item of allItems) {
+    const login = item.user?.login;
+    if (!login || item.user?.type !== "User") continue;
+    if (EXCLUDED_LOGINS.has(login)) continue;
+
+    if (!contributors.has(login)) {
+      contributors.set(login, {
+        avatarUrl: item.user.avatar_url,
+        totalPoints: 0,
+        breakdown: {
+          bug_issues: 0,
+          feature_issues: 0,
+          other_issues: 0,
+          prs_opened: 0,
+          prs_merged: 0,
+        },
+      });
     }
-  } catch (err) {
-    console.warn(`  Warning: issue search failed for ${login}: ${err.message}`);
-  }
 
-  // Fetch PRs
-  try {
-    const prs = await searchItems(login, "pr");
-    for (const item of prs) {
-      // pr_opened always
-      totalPoints += POINTS_PR_OPENED;
-      breakdown.prs_opened++;
+    const entry = contributors.get(login);
+
+    if (item.pull_request) {
+      // It's a PR — score pr_opened always
+      entry.totalPoints += POINTS_PR_OPENED;
+      entry.breakdown.prs_opened++;
 
       // pr_merged if merged_at is set
-      if (item.pull_request?.merged_at) {
-        totalPoints += POINTS_PR_MERGED;
-        breakdown.prs_merged++;
+      if (item.pull_request.merged_at) {
+        entry.totalPoints += POINTS_PR_MERGED;
+        entry.breakdown.prs_merged++;
       }
+    } else {
+      // It's an issue — classify by labels
+      const { type, points } = classifyIssueLabels(item.labels || []);
+      entry.totalPoints += points;
+      if (type === "issue_bug") entry.breakdown.bug_issues++;
+      else if (type === "issue_feature") entry.breakdown.feature_issues++;
+      else entry.breakdown.other_issues++;
     }
-  } catch (err) {
-    console.warn(`  Warning: PR search failed for ${login}: ${err.message}`);
   }
 
-  return { totalPoints, breakdown };
+  return contributors;
 }
 
 // ── Main ──────────────────────────────────────────────────────────────
 async function main() {
-  console.log("Fetching contributors from repos...");
+  console.log("Fetching all issues and PRs from repos (bulk REST API)...\n");
 
-  // 1. Discover contributors from each repo
-  const contributorMap = new Map(); // login -> avatar_url
+  // 1. Bulk-fetch all items from each repo
+  const allItems = [];
 
   for (const repo of REPOS) {
     try {
-      const url = `${API_BASE}/repos/${repo}/contributors?per_page=${MAX_CONTRIBUTORS_PER_REPO}`;
-      const contributors = await ghFetch(url);
-      for (const c of contributors) {
-        if (c.type === "User" && !contributorMap.has(c.login)) {
-          contributorMap.set(c.login, c.avatar_url);
-        }
-      }
-      console.log(`  ${repo}: ${contributors.filter((c) => c.type === "User").length} contributors`);
+      const items = await fetchAllItems(repo);
+      allItems.push(...items);
+      /** Count of pure issues (no pull_request field) */
+      const issueCount = items.filter((i) => !i.pull_request).length;
+      /** Count of PRs (has pull_request field) */
+      const prCount = items.filter((i) => i.pull_request).length;
+      console.log(
+        `  ${repo}: ${items.length} items (${issueCount} issues, ${prCount} PRs)`
+      );
     } catch (err) {
-      console.warn(`  Warning: failed to fetch contributors for ${repo}: ${err.message}`);
+      console.warn(`  Warning: failed to fetch ${repo}: ${err.message}`);
     }
   }
 
-  // 1b. Discover issue-only contributors via Search API.
-  //     The /repos/{repo}/contributors endpoint only returns users with commits,
-  //     so contributors who only filed issues (no PRs/commits) are missed.
-  //     Paginate to avoid missing contributors beyond the first page.
-  console.log("\nDiscovering issue-only contributors...");
-  for (const repo of REPOS) {
-    try {
-      const query = `repo:${repo} type:issue`;
-      let added = 0;
+  console.log(`\nTotal items fetched: ${allItems.length}`);
 
-      for (let page = 1; page <= SEARCH_MAX_PAGES; page++) {
-        const url = `${API_BASE}/search/issues?q=${encodeURIComponent(query)}&per_page=${SEARCH_PER_PAGE}&page=${page}&sort=created&order=desc`;
-        await delay(SEARCH_RATE_LIMIT_DELAY_MS);
-        const data = await ghFetch(url);
-        const items = data.items || [];
+  // 2. Score all contributors from the bulk data (no additional API calls)
+  console.log("Scoring contributors from fetched data...\n");
+  const contributorMap = scoreAllContributors(allItems);
 
-        for (const item of items) {
-          const login = item.user?.login;
-          if (login && item.user?.type === "User" && !contributorMap.has(login)) {
-            contributorMap.set(login, item.user.avatar_url);
-            added++;
-          }
-        }
-
-        // Stop when we've seen all results or this page was incomplete
-        const totalSeen = (page - 1) * SEARCH_PER_PAGE + items.length;
-        if (totalSeen >= data.total_count || items.length < SEARCH_PER_PAGE) {
-          break;
-        }
-      }
-
-      if (added > 0) {
-        console.log(`  ${repo}: found ${added} issue-only contributors`);
-      }
-    } catch (err) {
-      console.warn(`  Warning: issue search failed for ${repo}: ${err.message}`);
-    }
-  }
-
-  console.log(`\nTotal unique contributors: ${contributorMap.size}`);
-  console.log("Scoring contributors (this takes a while due to Search API rate limits)...\n");
-
-  // 2. Score each contributor
+  // 3. Build sorted entries
   const entries = [];
-
-  for (const [login, avatarUrl] of contributorMap) {
-    try {
-      console.log(`  Scoring ${login}...`);
-      const { totalPoints, breakdown } = await scoreContributor(login);
-      const level = getLevelForPoints(totalPoints);
-
-      entries.push({
-        login,
-        avatar_url: avatarUrl,
-        total_points: totalPoints,
-        level: level.name,
-        level_rank: level.rank,
-        breakdown,
-      });
-    } catch (err) {
-      console.warn(`  Warning: failed to score ${login}: ${err.message}`);
-    }
+  for (const [login, data] of contributorMap) {
+    const level = getLevelForPoints(data.totalPoints);
+    entries.push({
+      login,
+      avatar_url: data.avatarUrl,
+      total_points: data.totalPoints,
+      level: level.name,
+      level_rank: level.rank,
+      breakdown: data.breakdown,
+    });
   }
 
-  // 3. Sort by points descending, then alphabetically
+  // Sort by points descending, then alphabetically
   entries.sort((a, b) => {
     if (a.total_points !== b.total_points) return b.total_points - a.total_points;
     return a.login.localeCompare(b.login);
   });
 
-  // 4. Assign ranks
+  // Assign ranks
   entries.forEach((entry, i) => {
     entry.rank = i + 1;
   });
 
-  // 5. Write output
+  // 4. Write output
   const output = {
     generated_at: new Date().toISOString(),
     entries,
@@ -279,10 +266,12 @@ async function main() {
   const outPath = join(__dirname, "..", "public", "data", "leaderboard.json");
   writeFileSync(outPath, JSON.stringify(output, null, 2) + "\n");
 
-  console.log(`\nDone! Wrote ${entries.length} entries to ${outPath}`);
-  console.log(`Top 5:`);
-  for (const e of entries.slice(0, 5)) {
-    console.log(`  #${e.rank} ${e.login}: ${e.total_points} pts (${e.level})`);
+  console.log(`Done! Wrote ${entries.length} contributors to ${outPath}`);
+  console.log(`\nTop 10:`);
+  for (const e of entries.slice(0, 10)) {
+    console.log(
+      `  #${e.rank} ${e.login}: ${e.total_points} pts (${e.level})`
+    );
   }
 }
 
