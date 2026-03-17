@@ -15,10 +15,12 @@ export default function Navbar() {
   const [isCommunityOpen, setIsCommunityOpen] = useState(false);
   const [isGithubOpen, setIsGithubOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  // Fallback values shown when GitHub API is rate-limited (60 req/hr unauthenticated).
+  // Update these periodically to keep them roughly current.
   const [githubStats, setGithubStats] = useState({
-    stars: "0",
-    forks: "0",
-    watchers: "0",
+    stars: "30",
+    forks: "25",
+    watchers: "1",
   });
 
   const t = useTranslations("navigation");

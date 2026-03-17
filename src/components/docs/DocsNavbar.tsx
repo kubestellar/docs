@@ -31,10 +31,12 @@ export default function DocsNavbar() {
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  // Fallback values shown when GitHub API is rate-limited (60 req/hr unauthenticated).
+  // Update these periodically to keep them roughly current.
   const [githubStats, setGithubStats] = useState({
-    stars: "0",
-    forks: "0",
-    watchers: "0",
+    stars: "30",
+    forks: "25",
+    watchers: "1",
   });
 
   // const searchParams = useSearchParams()
