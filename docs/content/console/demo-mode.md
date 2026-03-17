@@ -55,7 +55,7 @@ registered at startup from
 
 The registry produces data for clusters, pod issues, deployment issues,
 events, security findings, GPU nodes, Helm releases, operators, and
-services.  For example, the demo cluster list contains 12 realistic
+services.  For example, the demo cluster list contains a set of realistic
 clusters (EKS, GKE, AKS, OKE, OpenShift, etc.) with plausible
 configurations.
 
@@ -106,9 +106,10 @@ The decision path for each dashboard card is:
 ```
 
 The card component then reports its state up to `CardWrapper` via the
-`useCardLoadingState` or `useReportCardDataState` hook.  `CardWrapper`
-reads the `isDemoData` flag and, when it is `true`, renders the yellow
-outline and **Demo** badge.
+`useCardLoadingState` or `useReportCardDataState` hook.  Inside the hooks
+the flag is called `isDemoFallback`; the card passes it to `CardWrapper`
+as the `isDemoData` prop.  When `isDemoData` is `true`, `CardWrapper`
+renders the yellow outline and **Demo** badge.
 
 ### Loading vs. Demo Data
 

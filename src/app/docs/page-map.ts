@@ -197,6 +197,7 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
       { 'Quick Start': 'quickstart.md' },
       { 'Installation': 'installation.md' },
       { 'Architecture': 'architecture.md' },
+      { 'Demo Mode': 'demo-mode.md' },
       { 'Configuration': 'configuration.md' },
     ]
   },
