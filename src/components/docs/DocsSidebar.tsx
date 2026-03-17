@@ -43,6 +43,8 @@ const LEGACY_PROJECTS = [
 const PROJECT_KEY_PREFIX = '__project_';
 const LEGACY_GROUP_KEY = '__legacy';
 
+const GENERAL_SECTION_PATH_REGEX = /^\/docs\/(contributing|community|news)(\/|$)/;
+
 function getProjectItems(items: MenuItem[]): MenuItem[] {
   return items.filter(item => !GENERAL_SECTION_NAMES.includes(item.name || item.title || ''));
 }
@@ -382,8 +384,9 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
   // Render the Legacy group with sub-projects
   const renderLegacyGroup = () => {
     const isExpanded = !collapsed.has(LEGACY_GROUP_KEY);
-    // Don't highlight Legacy Components when viewing docs guide
-    const isActiveLegacy = !isDocsGuide && LEGACY_PROJECTS.some(p => p.id === projectId);
+    // Don't highlight Legacy Components when viewing docs guide or general sections
+    const isGeneralSectionPath = GENERAL_SECTION_PATH_REGEX.test(pathname);
+    const isActiveLegacy = !isDocsGuide && !isGeneralSectionPath && LEGACY_PROJECTS.some(p => p.id === projectId);
 
     return (
       <div className="relative pt-1">
