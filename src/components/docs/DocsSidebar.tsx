@@ -24,7 +24,10 @@ interface DocsSidebarProps {
 }
 
 // General sections that appear in every project's pageMap — show once at bottom
-const GENERAL_SECTION_NAMES = ['Contributing', 'Community', 'News'];
+const GENERAL_SECTION_SLUGS = ['contributing', 'community', 'news'] as const;
+const GENERAL_SECTION_NAMES = GENERAL_SECTION_SLUGS.map(
+  (slug) => slug.charAt(0).toUpperCase() + slug.slice(1),
+);
 
 // Project display order and labels — each with a landing href for navigation links
 const PRIMARY_PROJECTS = [
@@ -42,8 +45,14 @@ const LEGACY_PROJECTS = [
 // Key prefix for project-level collapse state (avoids collision with nav item keys)
 const PROJECT_KEY_PREFIX = '__project_';
 const LEGACY_GROUP_KEY = '__legacy';
+const GENERAL_SECTION_PATH_REGEX = new RegExp(
+  `^/docs/(${GENERAL_SECTION_SLUGS.join('|')})(/|$)`,
+);
 
-const GENERAL_SECTION_PATH_REGEX = /^\/docs\/(contributing|community|news)(\/|$)/;
+function getGeneralSectionSlugFromPath(path: string): string | null {
+  const match = path.match(GENERAL_SECTION_PATH_REGEX);
+  return match?.[1] ?? null;
+}
 
 function getProjectItems(items: MenuItem[]): MenuItem[] {
   return items.filter(item => !GENERAL_SECTION_NAMES.includes(item.name || item.title || ''));
@@ -187,11 +196,13 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
 
     // Also handle general sections
     const generalSections = getGeneralSections(pageMap);
-    const isViewingGeneralSection = currentPath.includes('/contributing') || currentPath.includes('/community') || currentPath.includes('/news');
+    const currentGeneralSectionSlug = getGeneralSectionSlugFromPath(currentPath);
+    const isViewingGeneralSection = Boolean(currentGeneralSectionSlug);
 
     for (const section of generalSections) {
       const sectionKey = section.name;
-      const isCurrent = isViewingGeneralSection && currentPath.includes('/' + (section.name || '').toLowerCase());
+      const sectionSlug = (section.name || section.title || '').toLowerCase();
+      const isCurrent = isViewingGeneralSection && sectionSlug === currentGeneralSectionSlug;
       if (!isCurrent) {
         initialCollapsed.add(sectionKey);
       }
@@ -203,6 +214,18 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
 
     setCollapsed(initialCollapsed);
   }, [pageMap, projectId, navInitialized, setCollapsed]);
+
+  // Keep legacy group collapsed while browsing general sections
+  useEffect(() => {
+    if (!GENERAL_SECTION_PATH_REGEX.test(pathname)) return;
+
+    setCollapsed(prev => {
+      if (prev.has(LEGACY_GROUP_KEY)) return prev;
+      const next = new Set(prev);
+      next.add(LEGACY_GROUP_KEY);
+      return next;
+    });
+  }, [pathname, setCollapsed]);
 
   const toggleCollapse = (itemKey: string) => {
     toggleNavCollapsed(itemKey);
