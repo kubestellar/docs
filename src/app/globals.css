@@ -2458,25 +2458,20 @@ html.dark aside[data-sidebar="docs"] a[class~="font-medium"][class*="text-blue"]
   color: #60a5fa !important; /* blue-400 - more saturated, distinctly blue */
 }
 
-/* Hover background in dark mode - subtle but visible */
-html.dark aside[data-sidebar="docs"] a:hover,
-html.dark aside[data-sidebar="docs"] button:hover {
+/* Hover background in dark mode for chevron controls only */
+html.dark aside[data-sidebar="docs"] .ks-sidebar-chevron:hover {
   background-color: rgb(55, 65, 81) !important; /* gray-700 */
 }
 
 /* Non-active menu items text color in dark mode */
 html.dark aside[data-sidebar="docs"] button:not([class~="bg-blue-50"]):not([class*="text-blue"]),
 html.dark aside[data-sidebar="docs"] a:not([class~="bg-blue-50"]):not([class*="text-blue"]) {
-  color: #d1d5db; /* gray-300 - balanced contrast */
+  color: #d1d5db; /* gray-300 - consistent darker tone across all sections */
 }
 
 /* Chevrons and icons in dark mode */
 html.dark aside[data-sidebar="docs"] svg[class*="text-gray-"] {
   color: #d1d5db; /* gray-300 */
 }
-
 /* Project link text in dark mode */
-html.dark aside[data-sidebar="docs"] a[class~="font-medium"] {
-  color: #fafafa; /* gray-50 */
-}
 
