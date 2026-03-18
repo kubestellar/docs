@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-18T03:02:00.948Z",
+  "generated_at": "2026-03-18T06:23:01.004Z",
   "entries": [
     {
       "login": "clubanderson",
@@ -17,6 +17,21 @@
       "rank": 1
     },
     {
+      "login": "rishi-jat",
+      "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
+      "total_points": 14200,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 31,
+        "feature_issues": 0,
+        "other_issues": 98,
+        "prs_opened": 0,
+        "prs_merged": 0
+      },
+      "rank": 2
+    },
+    {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
       "total_points": 13000,
@@ -28,21 +43,6 @@
         "other_issues": 2,
         "prs_opened": 20,
         "prs_merged": 16
-      },
-      "rank": 2
-    },
-    {
-      "login": "rishi-jat",
-      "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-      "total_points": 11200,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 21,
-        "feature_issues": 0,
-        "other_issues": 98,
-        "prs_opened": 0,
-        "prs_merged": 0
       },
       "rank": 3
     },
@@ -154,13 +154,13 @@
     {
       "login": "MikeSpreitzer",
       "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-      "total_points": 3550,
+      "total_points": 3650,
       "level": "Navigator",
       "level_rank": 3,
       "breakdown": {
         "bug_issues": 11,
         "feature_issues": 0,
-        "other_issues": 5,
+        "other_issues": 7,
         "prs_opened": 0,
         "prs_merged": 0
       },
