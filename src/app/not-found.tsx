@@ -1,6 +1,5 @@
 import { Footer, GridLines, Navbar, StarField } from "@/components";
 import { NextIntlClientProvider } from "next-intl";
-import "./globals.css";
 import { getLocale, getMessages } from "next-intl/server";
 import NotFoundUI from "@/components/NotFoundUI";
 
