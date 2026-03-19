@@ -35,6 +35,7 @@ const REPOS = [
   "kubestellar/console",
   "kubestellar/console-marketplace",
   "kubestellar/console-kb",
+  "kubestellar/docs",
 ];
 
 // ── Contributor levels ────────────────────────────────────────────────
