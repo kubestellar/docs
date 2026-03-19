@@ -4,9 +4,11 @@ import { useEffect } from "react";
 import { GridLines, StarField } from "../index";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function AboutSection() {
   const t = useTranslations("aboutSection");
+  const router = useRouter();
   useEffect(() => {
     // Feature cards animation
     const initFeatureCards = () => {
@@ -124,7 +126,7 @@ export default function AboutSection() {
 
         <div className="mt-20 grid gap-10 gap-y-20 lg:grid-cols-3 feature-cards">
           {/* Feature 1 - Advanced card with 3D hover effect */}
-          <div className="feature-card relative group perspective">
+          <div className="feature-card relative group perspective cursor-pointer" onClick={() => router.push("/docs/console/features/ai-features")}>
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
               <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 h-full flex flex-col justify-between h-full">
@@ -181,7 +183,7 @@ export default function AboutSection() {
           </div>
 
           {/* Feature 2 - Advanced card with 3D hover effect */}
-          <div className="feature-card relative group perspective">
+          <div className="feature-card relative group perspective cursor-pointer" onClick={() => router.push("/docs/console/features/dashboards")}>
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
               <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 flex flex-col justify-between h-full">
@@ -238,7 +240,7 @@ export default function AboutSection() {
           </div>
 
           {/* Feature 3 - Advanced card with 3D hover effect */}
-          <div className="feature-card relative group perspective">
+          <div className="feature-card relative group perspective cursor-pointer" onClick={() => router.push("/docs/console/programs/marketplace")}>
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
               <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 flex flex-col justify-between h-full">
@@ -295,7 +297,7 @@ export default function AboutSection() {
           </div>
            {/* SECOND ROW OF CARDS */}
            {/* Feature 4 - Coming from Lens Advanced card with 3D hover effect */}
-          <div className="feature-card relative group perspective">
+          <div className="feature-card relative group perspective cursor-pointer" onClick={() => window.open("https://console.kubestellar.io/from-lens", "_blank")}>
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
               <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 h-full flex flex-col justify-between h-full">
@@ -350,7 +352,7 @@ export default function AboutSection() {
           </div>
 
           {/* Feature 5 - Coming from Headlamp Advanced card with 3D hover effect */}
-          <div className="feature-card relative group perspective">
+          <div className="feature-card relative group perspective cursor-pointer" onClick={() => window.open("https://console.kubestellar.io/from-headlamp", "_blank")}>
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
               <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 flex flex-col justify-between h-full">
@@ -403,7 +405,7 @@ export default function AboutSection() {
           </div>
 
           {/* Feature 6 - Advanced WhiteLabel card with 3D hover effect */}
-          <div className="feature-card relative group perspective">
+          <div className="feature-card relative group perspective cursor-pointer" onClick={() => window.open("https://console.kubestellar.io/white-label", "_blank")}>
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
               <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 flex flex-col justify-between h-full">
