@@ -73,7 +73,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-[100vh] flex items-center">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-screen flex items-center">
       {/* Animated Background Universe */}
       <div className="absolute inset-0 z-0">
         {/*!-- Floating Nebula Clouds */}
@@ -117,30 +117,24 @@ export default function HeroSection() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        {/* Full-width Title */}
-        <div className="heading-container mb-8 lg:mb-12 pt-8 md:pt-0">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-none">
-            {/* First Line */}
-            <span className="block text-white mb-3 animate-text-reveal pt-5">
-              <span className="text-gradient">{t("line1")}</span>
-            </span>
-
-            {/* Second Line with delay */}
-            <span className="block animate-text-reveal">
-              <span className="text-gradient-animated">{t("line2")}</span>
-            </span>
-
-            {/* Third Line with longer delay */}
-            <span className="block animate-text-reveal [animation-delay:0.4s]">
-              <span className="text-gradient-animated">{t("line3")}</span>
-            </span>
-          </h1>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Left Column: Interactive Content */}
-          <div className="hero-content space-y-6 sm:space-y-8 lg:space-y-12 flex flex-col justify-center lg:block">
+          <div className="hero-content space-y-5 sm:space-y-6 lg:space-y-7 flex flex-col">
+            {/* Heading now sits in the left column so globe and heading share the same top alignment on desktop */}
+            <div className="heading-container pt-0">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.03]">
+                <span className="block text-white mb-2 animate-text-reveal pt-1">
+                  <span className="text-gradient lg:whitespace-nowrap">{t("line1")}</span>
+                </span>
+                <span className="block animate-text-reveal">
+                  <span className="text-gradient-animated lg:whitespace-nowrap">{t("line2")}</span>
+                </span>
+                <span className="block animate-text-reveal [animation-delay:0.4s]">
+                  <span className="text-gradient-animated lg:whitespace-nowrap">{t("line3")}</span>
+                </span>
+              </h1>
+            </div>
 
             {/* Paragraph with fade-in-up effect and delay */}
             <p className="sm:text-xl text-gray-300 max-w-2xl leading-snug animate-fade-in-up opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards]">
@@ -182,31 +176,31 @@ export default function HeroSection() {
             </div>
 
             {/* Console Links */}
-            <div className="mt-4 flex flex-wrap items-center gap-4 animate-btn-float" style={{ animationDelay: "0.8s" }}>
+            <div className="mt-4 flex flex-wrap items-center gap-3 animate-btn-float" style={{ animationDelay: "0.8s" }}>
               <a
                 href="https://console.kubestellar.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-lg text-purple-400 hover:text-purple-300 transition-colors font-medium"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-purple-400/80 bg-transparent px-4 py-2.5 text-sm sm:text-base font-semibold text-purple-200 transition-all duration-200 hover:border-purple-300 hover:bg-purple-400/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
               >
-                <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
                 {t("buttonInstall")}
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
               <IntlLink
                 href="/docs/console/overview/introduction"
-                className="inline-flex items-center text-lg text-blue-400 hover:text-blue-300 transition-colors font-medium"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-sky-400/80 bg-transparent px-4 py-2.5 text-sm sm:text-base font-semibold text-sky-200 transition-all duration-200 hover:border-sky-300 hover:bg-sky-400/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
               >
-                <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
                 {t("buttonDocs")}
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </IntlLink>
@@ -214,11 +208,11 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column: Globe Animation */}
-          <div className="globe-animation-container relative h-[500px] flex items-center justify-center">
+          <div className="globe-animation-container relative h-[360px] sm:h-[430px] lg:h-[560px] xl:h-[620px] flex items-center justify-center lg:justify-end self-center lg:translate-x-4 xl:translate-x-6">
             <GlobeAnimation
               width="100%"
-              height="600px"
-              className="rounded-xl overflow-hidden"
+              height="100%"
+              className="h-full w-full max-w-[680px] rounded-xl overflow-hidden"
               showLoader={true}
               enableControls={true}
               enablePan={false}
