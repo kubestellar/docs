@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-03-19T22:05:59.412Z",
+  "generated_at": "2026-03-20T02:58:06.705Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2057800,
+      "total_points": 2059050,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 151,
-        "feature_issues": 238,
-        "other_issues": 106,
-        "prs_opened": 3037,
-        "prs_merged": 2752
+        "bug_issues": 152,
+        "feature_issues": 240,
+        "other_issues": 107,
+        "prs_opened": 3038,
+        "prs_merged": 2753
       },
       "rank": 1
     },
@@ -34,12 +34,12 @@
     {
       "login": "KPRoche",
       "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
-      "total_points": 24050,
+      "total_points": 24550,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 4,
-        "feature_issues": 2,
+        "bug_issues": 5,
+        "feature_issues": 4,
         "other_issues": 9,
         "prs_opened": 46,
         "prs_merged": 26
@@ -482,6 +482,21 @@
       "rank": 32
     },
     {
+      "login": "mjb-it",
+      "avatar_url": "https://avatars.githubusercontent.com/u/79097408?v=4",
+      "total_points": 1400,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 2,
+        "prs_merged": 2
+      },
+      "rank": 33
+    },
+    {
       "login": "sarafarajnasardi",
       "avatar_url": "https://avatars.githubusercontent.com/u/75375728?v=4",
       "total_points": 1400,
@@ -494,7 +509,7 @@
         "prs_opened": 2,
         "prs_merged": 2
       },
-      "rank": 33
+      "rank": 34
     },
     {
       "login": "zyzzmohit",
@@ -509,7 +524,7 @@
         "prs_opened": 4,
         "prs_merged": 1
       },
-      "rank": 34
+      "rank": 35
     },
     {
       "login": "antedotee",
@@ -524,7 +539,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 35
+      "rank": 36
     },
     {
       "login": "waltforme",
@@ -539,7 +554,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 36
+      "rank": 37
     },
     {
       "login": "ANAMASGARD",
@@ -554,7 +569,7 @@
         "prs_opened": 2,
         "prs_merged": 1
       },
-      "rank": 37
+      "rank": 38
     },
     {
       "login": "zamadye",
@@ -569,7 +584,7 @@
         "prs_opened": 2,
         "prs_merged": 1
       },
-      "rank": 38
+      "rank": 39
     },
     {
       "login": "Krishiv-Mahajan",
@@ -584,7 +599,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 39
+      "rank": 40
     },
     {
       "login": "ngvanthanggit",
@@ -599,7 +614,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 40
+      "rank": 41
     },
     {
       "login": "AKHIL-149",
@@ -614,7 +629,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 41
+      "rank": 42
     },
     {
       "login": "francostellari",
@@ -629,7 +644,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 42
+      "rank": 43
     },
     {
       "login": "harshakumar25",
@@ -644,7 +659,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 43
+      "rank": 44
     },
     {
       "login": "immortal71",
@@ -659,7 +674,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 44
+      "rank": 45
     },
     {
       "login": "kchiranjewee63",
@@ -674,7 +689,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 45
+      "rank": 46
     },
     {
       "login": "krishivsaini",
@@ -689,26 +704,11 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 46
+      "rank": 47
     },
     {
       "login": "mikeshng",
       "avatar_url": "https://avatars.githubusercontent.com/u/58747157?v=4",
-      "total_points": 700,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 1,
-        "prs_merged": 1
-      },
-      "rank": 47
-    },
-    {
-      "login": "mjb-it",
-      "avatar_url": "https://avatars.githubusercontent.com/u/79097408?v=4",
       "total_points": 700,
       "level": "Explorer",
       "level_rank": 2,
