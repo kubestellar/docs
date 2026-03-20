@@ -239,7 +239,7 @@ function InstallModal({
 
           {/* Install to Console (when running) */}
           {consoleStatus === "running" && (
-            <div className="space-y-3">
+            <div className="space-y-3 pb-2">
               {installResult === "success" ? (
                 <div className="flex items-center gap-2 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm">
                   <CheckCircle2 size={16} />
@@ -249,7 +249,7 @@ function InstallModal({
                 <button
                   onClick={handleInstallToConsole}
                   disabled={installing}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:from-blue-500 hover:to-purple-500 transition-all hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:from-blue-500 hover:to-purple-500 transition-all hover:shadow-lg hover:shadow-purple-500/25 disabled:opacity-50"
                 >
                   {installing ? (
                     <>
@@ -696,3 +696,4 @@ function MarketplaceCard({ item }: { item: MarketplaceItem }) {
     </div>
   );
 }
+

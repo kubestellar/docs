@@ -15,10 +15,10 @@ graph TB
     Backend -- "session JWT" --> Browser
     Backend -- "REST / WebSocket" --> Browser
     Browser -- "WebSocket" --> Agent
-    Backend -- "kubeconfig" --> MCP
-    MCP -- "kubeconfig" --> K8s
-    Agent -- "kubectl" --> K8s
-    Agent -- "MCP protocol" --> CLI
+    Backend -- "MCP/HTTP tool calls" --> MCP
+    MCP -- "Kubernetes API (auth via kubeconfig)" --> K8s
+    Agent -- "kubectl (auth via kubeconfig)" --> K8s
+    CLI -- "MCP protocol" --> Agent
     CLI -- "kubestellar-ops" --> K8s
     API -- "read-only queries" --> Backend
 ```
