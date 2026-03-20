@@ -26,9 +26,9 @@ The console consists of 7 components working together. See [Configuration](confi
 | 1 | **GitHub OAuth App** | GitHub OAuth Client registration used to authenticate console users |
 | 2 | **Frontend** | React SPA - dashboards, cards, AI UI |
 | 3 | **Backend** | Go server - API, auth, data storage |
-| 4 | **MCP Bridge** | Connects backend to kubestellar-mcp tools |
+| 4 | **MCP Bridge** | Runs the kubestellar-mcp tools; Backend queries it via HTTP/MCP to get cluster data |
 | 5 | **Claude Code Plugins** | kubestellar-ops + kubestellar-deploy ([docs](/docs/kubestellar-mcp/overview/introduction)) |
-| 6 | **kc-agent** | Local agent bridging browser to your kubeconfig and Claude Code CLI |
+| 6 | **kc-agent** | Local MCP+WebSocket server on port 8585; Claude Code connects to it as an MCP client to execute kubectl commands |
 | 7 | **Kubeconfig** | Your cluster credentials |
 
 > **Note on "GitHub OAuth App":**
@@ -43,7 +43,7 @@ The console consists of 7 components working together. See [Configuration](confi
 
 **Credential flows:**
 - **GitHub OAuth** (user identity): Browser → GitHub → Backend. The user (Resource Owner) authorizes the console to read their GitHub profile. The Backend (OAuth Client) exchanges the authorization code for a token, verifies identity, and issues a session JWT to the browser.
-- **Kubeconfig** (cluster access): The kubeconfig file is read by the Backend and MCP Bridge on the server. Cluster credentials (certificates, tokens) never pass through the browser or GitHub.
+- **Kubeconfig** (cluster access): The kubeconfig file is read by the MCP Bridge and kc-agent on the server/local machine. Cluster credentials (certificates, tokens) never pass through the browser or GitHub.
 
 ## Components
 
@@ -76,20 +76,32 @@ The Backend is the OAuth Client in the OAuth 2.0 flow. It receives the authoriza
 
 ### MCP Bridge
 
-A separate process that is spawned by the console executable at startup. The MCP Bridge code is compiled into the same binary as the Backend, but runs as its own child process. It exposes the kubestellar-mcp tools over HTTP/WebSocket so the Backend can query cluster state. The MCP Bridge uses the **kubeconfig** on the server to authenticate to Kubernetes clusters. It does not participate in the GitHub OAuth flow.
+A separate process that is spawned by the console executable at startup. The MCP Bridge code is compiled into the same binary as the Backend, but runs as its own child process. It hosts the kubestellar-mcp tools (`kubestellar-ops`, `kubestellar-deploy`) and exposes them over HTTP/MCP so the Backend can query cluster state. The Backend sends MCP tool calls to the MCP Bridge (e.g., "list nodes", "get workloads") and the MCP Bridge executes them against your Kubernetes clusters using your kubeconfig.
+
+> **Why does the Backend use MCP?** MCP (Model Context Protocol) is a standard protocol for calling tools. The Backend uses it to invoke the same kubestellar-ops/kubestellar-deploy tools that Claude Code uses, so cluster data flows through a single, consistent interface. The MCP Bridge is not related to AI inference — it is purely a tool execution layer.
+
+The MCP Bridge authenticates to Kubernetes clusters using the kubeconfig file on the server. It does not participate in the GitHub OAuth flow.
 
 ### Claude Code Plugins
 
-The `kubestellar-ops` and `kubestellar-deploy` MCP tools that the MCP Bridge exposes. These are Claude Code extensions installed locally (on the server or developer machine) and invoked via the MCP protocol. See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for details.
+The `kubestellar-ops` and `kubestellar-deploy` plugins are Claude Code extensions that each provide:
+- A set of MCP **tools** (e.g., list clusters, get nodes, deploy workloads)
+- Optionally, skills and hooks
+
+These plugins are installed locally on the server or developer machine. The MCP Bridge loads them and exposes their tools to the Backend. Claude Code can also connect to these tools directly. See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for the full tool listing.
 
 ### kc-agent (Local Agent)
 
-A lightweight WebSocket server (port 8585) that runs on the user's machine and bridges the browser-based console to the local kubeconfig and Claude Code CLI. When the console is hosted remotely (e.g., `console.kubestellar.io`), the kc-agent allows it to access clusters on the user's machine without exposing kubeconfig over the internet.
+A lightweight WebSocket + MCP server (port 8585) that runs on the **user's machine**. It has two roles:
+
+1. **Browser bridge**: The browser-based console connects to kc-agent via WebSocket to execute `kubectl` commands using the local kubeconfig. This allows the console to access clusters on the user's machine when the console itself is hosted remotely (e.g., `console.kubestellar.io`).
+
+2. **MCP server for Claude Code**: kc-agent exposes MCP tools that Claude Code (acting as an MCP client) can call. Claude Code connects **to** kc-agent — not the other way around. This lets Claude Code invoke kubectl-based tools on the user's machine without requiring the user to configure a separate MCP server.
 
 | Aspect | Detail |
 |--------|--------|
 | **Port** | 8585 (configurable via `--port`) |
-| **Protocol** | WebSocket (JSON messages) |
+| **Protocols** | WebSocket (browser) + MCP (Claude Code) |
 | **Origin validation** | Localhost by default; extend via `--allowed-origins` flag or `KC_ALLOWED_ORIGINS` env var |
 | **Capabilities** | kubectl execution, local cluster detection, hardware tracking, AI provider integration |
 
@@ -97,7 +109,9 @@ See [Configuration](configuration.md#kc-agent-configuration) for all CLI flags a
 
 ### Kubeconfig
 
-Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `KUBECONFIG`). The Backend, MCP Bridge, and kc-agent read this file to authenticate to your clusters. The kubeconfig credentials are **not** sent to the browser and are **not** involved in the GitHub OAuth flow; GitHub login is only used to establish your identity within the console.
+Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `KUBECONFIG`). The MCP Bridge reads this file on the server to authenticate to your clusters when the console queries cluster data. The kc-agent reads it on your local machine for local kubectl execution. The kubeconfig credentials are **not** sent to the browser and are **not** involved in the GitHub OAuth flow; GitHub login is only used to establish your identity within the console.
+
+> **Why does the Backend not directly read kubeconfig?** The Backend delegates all cluster access to the MCP Bridge. The Backend sends high-level queries ("get all nodes across all clusters") to the MCP Bridge, which handles the kubeconfig loading, API server connections, and parallel cluster queries. This separation keeps cluster credentials out of the Backend's HTTP layer.
 
 ### Data Flow
 
@@ -108,9 +122,9 @@ Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `K
    4. Backend exchanges the code for a GitHub access token (using OAuth App `client_id`/`client_secret`)
    5. Backend fetches the user's GitHub profile to establish identity
    6. Backend issues a session JWT → stored in the browser
-2. **Dashboard Load**: Frontend sends JWT → Backend validates JWT → Backend fetches user preferences → Backend queries MCP Bridge for cluster data (using kubeconfig) → render cards
+2. **Dashboard Load**: Frontend sends JWT → Backend validates JWT → Backend fetches user preferences → Backend calls MCP Bridge tools for cluster data (MCP Bridge uses kubeconfig to authenticate) → render cards
 3. **Real-time Updates**: WebSocket connection from Frontend → Backend forwards MCP Bridge event stream → card updates
-4. **Local Agent**: Frontend connects to kc-agent (:8585) via WebSocket → kc-agent executes kubectl commands using local kubeconfig → results streamed back to browser
+4. **Local Agent**: Browser connects to kc-agent (:8585) via WebSocket → kc-agent executes kubectl commands using local kubeconfig → results streamed back to browser. Separately, Claude Code connects to kc-agent as an MCP client to invoke kubectl-based tools.
 5. **Card Recommendations**: Analyze cluster state via MCP Bridge → AI generates suggestions → user accepts/snoozes
 6. **Caching Layer**: All cards use `useCachedData` hooks with category-based TTL refresh (GPU: 45s, Helm: 120s, Operators: 300s). Data persists in localStorage for instant revisit loads. Stale-while-revalidate pattern keeps UI responsive while fetching fresh data in the background.
 7. **SSE Streaming**: Progressive loading endpoints (`/mcp/workloads/stream`, `/mcp/pods/stream`, etc.) stream per-cluster results as Server-Sent Events so data appears incrementally instead of blocking until all clusters respond.
