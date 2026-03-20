@@ -457,16 +457,28 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
-
-        <div className="mt-20 text-center relative z-10">
-          <p className="max-w-3xl mx-auto text-lg text-gray-300 mb-4">
+        <div className="mt-20 flex flex-col items-center text-center relative z-10 space-y-4">
+          <p className="max-w-3xl text-lg text-gray-300">
             {t("appendix")}
           </p>
+
           <Link
             href="/docs/introduction"
-            className="inline-block text-primary-400 hover:text-primary-300 font-medium transition-colors"
+            className="inline-flex items-center gap-1 text-primary-400 font-medium transition-all duration-200 hover:text-primary-300 hover:underline cursor-pointer"
           >
             {t("learnMore")}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 transition-transform duration-200 hover:translate-x-1"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
           </Link>
         </div>
       </div>
