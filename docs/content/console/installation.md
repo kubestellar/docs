@@ -23,13 +23,15 @@ This guide covers all deployment options for KubeStellar Console, the multi-clus
 
 ## Fastest Path
 
+> **Prerequisites**: You must install the kubestellar-mcp plugins **before** running this command — they are not installed by `start.sh`. See [Step 1: Install Claude Code Plugins](#step-1-install-claude-code-plugins) first.
+
 One command downloads pre-built binaries, starts the backend + agent, and opens your browser:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
 ```
 
-This typically takes under 45 seconds. No OAuth or GitHub credentials required — you get a local `dev-user` session automatically.
+This downloads and starts the console binary only. It does **not** install kubestellar-mcp plugins. Typically takes under 45 seconds. No OAuth or GitHub credentials required — you get a local `dev-user` session automatically.
 
 ---
 
