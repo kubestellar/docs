@@ -20,19 +20,21 @@ Get KubeStellar Console running locally for development or evaluation.
 
 ## Fastest Path (curl)
 
+> **Prerequisites**: You must install the kubestellar-mcp plugins **before** running this command — they are not installed by `start.sh`. See [Step 1](#step-1-install-kubestellar-mcp-tools) below.
+
 One command — downloads pre-built binaries, starts the backend + agent, and opens your browser:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
 ```
 
-Typically under 45 seconds. No GitHub OAuth credentials required — a local `dev-user` session is created automatically.
+This downloads and starts the console only. It does **not** install kubestellar-mcp plugins. Typically under 45 seconds. No GitHub OAuth credentials required — a local `dev-user` session is created automatically.
 
 ## What You Need
 
 | Component | What it is | Required? |
 |-----------|------------|-----------|
-| kubestellar-mcp plugins | Connect to your clusters | Yes |
+| kubestellar-mcp plugins | Connect to your clusters | Yes — install separately (Step 1) |
 | kubeconfig | Your cluster credentials | Yes |
 | Frontend + Backend | The console itself | Yes (included in the console executable) |
 | GitHub OAuth App | Lets users sign in via GitHub | Optional |
@@ -48,7 +50,7 @@ See the [Architecture](architecture.md) page for the full system diagram and com
 
 ## Step 1: Install kubestellar-mcp Tools
 
-The console uses kubestellar-mcp plugins to talk to your clusters. See [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for full details.
+The console uses kubestellar-mcp plugins to talk to your clusters. **This step is required and must be done before running the console.** See [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for full details.
 
 **Option A: From Claude Code Marketplace (recommended)**
 
@@ -74,6 +76,8 @@ Verify installation with `/mcp` in Claude Code - you should see both plugins con
 ```bash
 curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
 ```
+
+This downloads the console binary, starts the backend (port 8080), and opens your browser. It does **not** install kubestellar-mcp plugins — complete Step 1 first.
 
 ### Option B: Run from source (no OAuth)
 
@@ -150,6 +154,40 @@ helm install ksc ./deploy/helm/kubestellar-console \
   --set github.existingSecret=ksc-secrets \
   --set route.enabled=true \
   --set route.host=ksc.apps.your-cluster.com
+```
+
+## Cleanup / Uninstall
+
+### Curl quickstart (`start.sh`)
+
+The script downloads a binary to a local directory (typically `~/.kubestellar/`). To remove it:
+
+```bash
+# Stop the running console (Ctrl+C in the terminal where it's running, or find the process)
+pkill -f kubestellar-console || true
+
+# Remove downloaded files
+rm -rf ~/.kubestellar/
+```
+
+The kubestellar-mcp plugins are managed separately by Claude Code — use `/plugin` → your plugin manager to uninstall them, or via Homebrew:
+
+```bash
+brew uninstall kubestellar-ops kubestellar-deploy
+```
+
+### Source build
+
+```bash
+# Stop the running processes (Ctrl+C), then remove the cloned directory
+rm -rf ./console
+```
+
+### Helm / Kubernetes deployment
+
+```bash
+helm uninstall ksc --namespace ksc
+kubectl delete namespace ksc
 ```
 
 ## Next Steps
