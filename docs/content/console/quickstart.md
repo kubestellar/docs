@@ -42,7 +42,7 @@ See the [Architecture](architecture.md) page for the full system diagram and com
 ## Prerequisites
 
 - kubectl configured with at least one cluster
-- [Claude Code](https://claude.ai/claude-code) CLI installed
+- [Claude Code](https://claude.com/product/claude-code) CLI installed
 - kubestellar-mcp plugins (see below)
 - For source builds: Go 1.24+ and Node.js 20+
 
