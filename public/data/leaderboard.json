@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-03-22T18:07:10.557Z",
+  "generated_at": "2026-03-22T22:05:26.608Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2171550,
+      "total_points": 2183450,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 157,
-        "feature_issues": 251,
+        "bug_issues": 158,
+        "feature_issues": 253,
         "other_issues": 111,
-        "prs_opened": 3219,
-        "prs_merged": 2900
+        "prs_opened": 3236,
+        "prs_merged": 2916
       },
       "rank": 1
     },
@@ -214,11 +214,11 @@
     {
       "login": "MikeSpreitzer",
       "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-      "total_points": 9300,
+      "total_points": 10500,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
-        "bug_issues": 21,
+        "bug_issues": 25,
         "feature_issues": 1,
         "other_issues": 26,
         "prs_opened": 3,
