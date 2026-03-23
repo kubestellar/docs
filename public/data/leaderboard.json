@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T03:03:09.171Z",
+  "generated_at": "2026-03-23T06:25:17.655Z",
   "entries": [
     {
       "login": "clubanderson",
@@ -197,6 +197,21 @@
       "rank": 13
     },
     {
+      "login": "MikeSpreitzer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
+      "total_points": 11200,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 27,
+        "feature_issues": 2,
+        "other_issues": 26,
+        "prs_opened": 3,
+        "prs_merged": 2
+      },
+      "rank": 14
+    },
+    {
       "login": "arnavgogia20",
       "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
       "total_points": 11100,
@@ -208,21 +223,6 @@
         "other_issues": 0,
         "prs_opened": 10,
         "prs_merged": 9
-      },
-      "rank": 14
-    },
-    {
-      "login": "MikeSpreitzer",
-      "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-      "total_points": 10500,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 25,
-        "feature_issues": 1,
-        "other_issues": 26,
-        "prs_opened": 3,
-        "prs_merged": 2
       },
       "rank": 15
     },
