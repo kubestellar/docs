@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-03-26T10:20:11.566Z",
+  "generated_at": "2026-03-26T14:32:18.601Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2345900,
+      "total_points": 2355950,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 193,
-        "feature_issues": 274,
-        "other_issues": 116,
-        "prs_opened": 3459,
-        "prs_merged": 3126
+        "feature_issues": 276,
+        "other_issues": 117,
+        "prs_opened": 3473,
+        "prs_merged": 3140
       },
       "rank": 1
     },
@@ -34,11 +34,11 @@
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 26600,
+      "total_points": 29900,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 23,
+        "bug_issues": 34,
         "feature_issues": 8,
         "other_issues": 4,
         "prs_opened": 31,
@@ -182,6 +182,21 @@
       "rank": 12
     },
     {
+      "login": "ghanshyam2005singh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
+      "total_points": 13000,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 38,
+        "feature_issues": 0,
+        "other_issues": 4,
+        "prs_opened": 2,
+        "prs_merged": 2
+      },
+      "rank": 13
+    },
+    {
       "login": "Abhishek-Punhani",
       "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
       "total_points": 12950,
@@ -194,7 +209,7 @@
         "prs_opened": 6,
         "prs_merged": 3
       },
-      "rank": 13
+      "rank": 14
     },
     {
       "login": "oksaumya",
@@ -208,21 +223,6 @@
         "other_issues": 39,
         "prs_opened": 17,
         "prs_merged": 13
-      },
-      "rank": 14
-    },
-    {
-      "login": "ghanshyam2005singh",
-      "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
-      "total_points": 12100,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 35,
-        "feature_issues": 0,
-        "other_issues": 4,
-        "prs_opened": 2,
-        "prs_merged": 2
       },
       "rank": 15
     },
