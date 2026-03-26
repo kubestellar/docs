@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-03-26T18:20:48.542Z",
+  "generated_at": "2026-03-26T22:05:51.162Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2355950,
+      "total_points": 2356150,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 193,
-        "feature_issues": 276,
+        "feature_issues": 278,
         "other_issues": 117,
         "prs_opened": 3473,
         "prs_merged": 3140
@@ -167,6 +167,21 @@
       "rank": 11
     },
     {
+      "login": "Abhishek-Punhani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
+      "total_points": 14350,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 37,
+        "feature_issues": 1,
+        "other_issues": 5,
+        "prs_opened": 7,
+        "prs_merged": 3
+      },
+      "rank": 12
+    },
+    {
       "login": "arnavgogia20",
       "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
       "total_points": 13500,
@@ -179,7 +194,22 @@
         "prs_opened": 10,
         "prs_merged": 9
       },
-      "rank": 12
+      "rank": 13
+    },
+    {
+      "login": "shivansh-source",
+      "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
+      "total_points": 13250,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 39,
+        "feature_issues": 4,
+        "other_issues": 1,
+        "prs_opened": 3,
+        "prs_merged": 1
+      },
+      "rank": 14
     },
     {
       "login": "ghanshyam2005singh",
@@ -194,22 +224,7 @@
         "prs_opened": 2,
         "prs_merged": 2
       },
-      "rank": 13
-    },
-    {
-      "login": "Abhishek-Punhani",
-      "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-      "total_points": 12950,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 33,
-        "feature_issues": 1,
-        "other_issues": 5,
-        "prs_opened": 6,
-        "prs_merged": 3
-      },
-      "rank": 14
+      "rank": 15
     },
     {
       "login": "oksaumya",
@@ -224,7 +239,7 @@
         "prs_opened": 17,
         "prs_merged": 13
       },
-      "rank": 15
+      "rank": 16
     },
     {
       "login": "MikeSpreitzer",
@@ -239,31 +254,16 @@
         "prs_opened": 3,
         "prs_merged": 2
       },
-      "rank": 16
-    },
-    {
-      "login": "shivansh-source",
-      "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
-      "total_points": 11150,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 32,
-        "feature_issues": 4,
-        "other_issues": 1,
-        "prs_opened": 3,
-        "prs_merged": 1
-      },
       "rank": 17
     },
     {
       "login": "AAdIprog",
       "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
-      "total_points": 7300,
+      "total_points": 7600,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
-        "bug_issues": 11,
+        "bug_issues": 12,
         "feature_issues": 2,
         "other_issues": 0,
         "prs_opened": 9,
