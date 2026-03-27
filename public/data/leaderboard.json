@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-03-27T03:03:27.695Z",
+  "generated_at": "2026-03-27T06:26:22.634Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2356350,
+      "total_points": 2356400,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 193,
         "feature_issues": 280,
-        "other_issues": 117,
+        "other_issues": 118,
         "prs_opened": 3473,
         "prs_merged": 3140
       },
@@ -977,6 +977,21 @@
       "rank": 65
     },
     {
+      "login": "yizha1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/107919912?v=4",
+      "total_points": 200,
+      "level": "Observer",
+      "level_rank": 1,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 1,
+        "prs_merged": 0
+      },
+      "rank": 66
+    },
+    {
       "login": "gaurab-khanal",
       "avatar_url": "https://avatars.githubusercontent.com/u/40165867?v=4",
       "total_points": 100,
@@ -989,7 +1004,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 66
+      "rank": 67
     },
     {
       "login": "namasl",
@@ -1004,7 +1019,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 67
+      "rank": 68
     },
     {
       "login": "redpinecube",
@@ -1019,7 +1034,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 68
+      "rank": 69
     },
     {
       "login": "Aryan-Bagale",
@@ -1034,7 +1049,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 69
+      "rank": 70
     },
     {
       "login": "eeshaanSA",
@@ -1049,7 +1064,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 70
+      "rank": 71
     },
     {
       "login": "KlementMultiverse",
@@ -1064,7 +1079,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 71
+      "rank": 72
     },
     {
       "login": "thisisvaishnav",
@@ -1079,7 +1094,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 72
+      "rank": 73
     },
     {
       "login": "utsavbhardwaj",
@@ -1094,7 +1109,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 73
+      "rank": 74
     }
   ]
 }
