@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-03-28T06:20:40.629Z",
+  "generated_at": "2026-03-28T10:08:52.610Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2397950,
+      "total_points": 2412200,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 194,
-        "feature_issues": 287,
-        "other_issues": 119,
-        "prs_opened": 3533,
-        "prs_merged": 3197
+        "feature_issues": 289,
+        "other_issues": 120,
+        "prs_opened": 3553,
+        "prs_merged": 3217
       },
       "rank": 1
     },
@@ -34,11 +34,11 @@
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 34700,
+      "total_points": 35300,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 50,
+        "bug_issues": 52,
         "feature_issues": 8,
         "other_issues": 4,
         "prs_opened": 31,
@@ -197,6 +197,21 @@
       "rank": 13
     },
     {
+      "login": "ghanshyam2005singh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
+      "total_points": 13300,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 39,
+        "feature_issues": 0,
+        "other_issues": 4,
+        "prs_opened": 2,
+        "prs_merged": 2
+      },
+      "rank": 14
+    },
+    {
       "login": "shivansh-source",
       "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
       "total_points": 13250,
@@ -208,21 +223,6 @@
         "other_issues": 1,
         "prs_opened": 3,
         "prs_merged": 1
-      },
-      "rank": 14
-    },
-    {
-      "login": "ghanshyam2005singh",
-      "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
-      "total_points": 13000,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 38,
-        "feature_issues": 0,
-        "other_issues": 4,
-        "prs_opened": 2,
-        "prs_merged": 2
       },
       "rank": 15
     },
