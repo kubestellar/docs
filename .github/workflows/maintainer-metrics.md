@@ -14,12 +14,10 @@ on:
         required: true
         type: choice
         options:
-          - btwshivam
           - clubanderson
           - dumb0002
           - francostellari
           - kproche
-          - mavrick-1
           - mikespreitzer
           - oksaumya
           - onkar717
@@ -188,12 +186,10 @@ safe-outputs:
 
               // Maintainer email mapping
               const maintainerEmails = {
-                'btwshivam': 'shivam200446@gmail.com',
                 'clubanderson': 'andy@clubanderson.com',
                 'dumb0002': 'Braulio.Dumba@ibm.com',
                 'francostellari': 'stellari@us.ibm.com',
                 'kproche': 'kproche@us.ibm.com',
-                'mavrick-1': 'mavrickrishi@gmail.com',
                 'mikespreitzer': 'mspreitz@us.ibm.com',
                 'oksaumya': 'saumyakr2006@gmail.com',
                 'onkar717': 'onkarwork2234@gmail.com',
@@ -273,12 +269,10 @@ Your task is to **generate ONE metrics email** for the selected maintainer using
 
 **Email mapping:**
 
-- btwshivam → shivam200446@gmail.com
 - clubanderson → andy@clubanderson.com
 - dumb0002 → Braulio.Dumba@ibm.com
 - francostellari → stellari@us.ibm.com
 - kproche → kproche@us.ibm.com
-- mavrick-1 → mavrickrishi@gmail.com
 - mikespreitzer → mspreitz@us.ibm.com
 - oksaumya → saumyakr2006@gmail.com
 - onkar717 → onkarwork2234@gmail.com
