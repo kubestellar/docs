@@ -21,12 +21,10 @@ jobs:
         run: |
           # List of all maintainers
           MAINTAINERS=(
-            "btwshivam"
             "clubanderson"
             "dumb0002"
             "francostellari"
             "kproche"
-            "mavrick-1"
             "mikespreitzer"
             "oksaumya"
             "onkar717"
