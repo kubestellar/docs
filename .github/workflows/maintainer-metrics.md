@@ -19,7 +19,6 @@ on:
           - francostellari
           - kproche
           - mikespreitzer
-          - oksaumya
           - pdettori
           - waltforme
 
@@ -190,7 +189,6 @@ safe-outputs:
                 'francostellari': 'stellari@us.ibm.com',
                 'kproche': 'kproche@us.ibm.com',
                 'mikespreitzer': 'mspreitz@us.ibm.com',
-                'oksaumya': 'saumyakr2006@gmail.com',
                 'pdettori': 'dettori@us.ibm.com',
                 'waltforme': 'jun.duan@ibm.com'
               };
@@ -272,7 +270,6 @@ Your task is to **generate ONE metrics email** for the selected maintainer using
 - francostellari → stellari@us.ibm.com
 - kproche → kproche@us.ibm.com
 - mikespreitzer → mspreitz@us.ibm.com
-- oksaumya → saumyakr2006@gmail.com
 - pdettori → dettori@us.ibm.com
 - waltforme → jun.duan@ibm.com
 
