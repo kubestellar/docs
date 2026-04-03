@@ -23,6 +23,8 @@ KubeStellar Console uses AI Missions to automate multi-cluster Kubernetes operat
 
 ![AI Missions Panel](images/ai-missions-panel.png)
 
+> **Getting started?** See the [AI Missions Setup](ai-missions-setup.md) guide for step-by-step instructions on configuring API keys, selecting a model, and running your first mission.
+
 ---
 
 ## AI Missions

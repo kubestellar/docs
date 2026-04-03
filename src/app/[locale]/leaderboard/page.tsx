@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -188,14 +188,7 @@ export default function LeaderboardPage() {
   const [search, setSearch] = useState("");
   const [countdown, setCountdown] = useState("");
 
-  // Tick countdown every minute
-  useEffect(() => {
-    setCountdown(getCountdown());
-    const id = setInterval(() => setCountdown(getCountdown()), COUNTDOWN_TICK_MS);
-    return () => clearInterval(id);
-  }, []);
-
-  useEffect(() => {
+  const fetchLeaderboard = useCallback(() => {
     fetch(LEADERBOARD_DATA_PATH)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -210,6 +203,34 @@ export default function LeaderboardPage() {
         setIsLoading(false);
       });
   }, []);
+
+  // Tick countdown every minute and auto-refetch when a refresh window arrives
+  useEffect(() => {
+    setCountdown(getCountdown());
+    let lastRefreshHour = -1;
+    const id = setInterval(() => {
+      setCountdown(getCountdown());
+      // Re-fetch data when we cross a scheduled refresh boundary
+      const currentHour = new Date().getUTCHours();
+      const currentMinute = new Date().getUTCMinutes();
+      /** Grace period (minutes) after a scheduled refresh to trigger a re-fetch. */
+      const REFETCH_GRACE_MINUTES = 5;
+      if (
+        REFRESH_HOURS_UTC.includes(currentHour) &&
+        currentMinute < REFETCH_GRACE_MINUTES &&
+        lastRefreshHour !== currentHour
+      ) {
+        lastRefreshHour = currentHour;
+        fetchLeaderboard();
+      }
+    }, COUNTDOWN_TICK_MS);
+    return () => clearInterval(id);
+  }, [fetchLeaderboard]);
+
+  // Initial data fetch
+  useEffect(() => {
+    fetchLeaderboard();
+  }, [fetchLeaderboard]);
 
   const filteredEntries = useMemo(() => {
     if (!data?.entries) return [];
