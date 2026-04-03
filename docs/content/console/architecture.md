@@ -26,8 +26,8 @@ The console consists of 7 components working together. See [Configuration](confi
 | 1 | **GitHub OAuth App** | GitHub OAuth Client registration used to authenticate console users |
 | 2 | **Frontend** | React SPA - dashboards, cards, AI UI |
 | 3 | **Backend** | Go server - API, auth, data storage |
-| 4 | **MCP Bridge** | Runs the kubestellar-mcp tools; Backend queries it via HTTP/MCP to get cluster data |
-| 5 | **Claude Code Plugins** | kubestellar-ops + kubestellar-deploy ([docs](/docs/kubestellar-mcp/overview/introduction)) |
+| 4 | **MCP Bridge** | Hosts the kubestellar-ops and kubestellar-deploy **MCP servers**; Backend queries them via HTTP/MCP to get cluster data |
+| 5 | **Claude Code Plugins** | kubestellar-ops and kubestellar-deploy **Claude Code extensions** that register the MCP servers with Claude Code and add skills/hooks ([docs](/docs/kubestellar-mcp/overview/introduction)) |
 | 6 | **kc-agent** | Local MCP+WebSocket server on port 8585; Claude Code connects to it as an MCP client to execute kubectl commands |
 | 7 | **Kubeconfig** | Your cluster credentials |
 
@@ -84,11 +84,21 @@ The MCP Bridge authenticates to Kubernetes clusters using the kubeconfig file on
 
 ### Claude Code Plugins
 
-The `kubestellar-ops` and `kubestellar-deploy` plugins are Claude Code extensions that each provide:
-- A set of MCP **tools** (e.g., list clusters, get nodes, deploy workloads)
-- Optionally, skills and hooks
+> **Naming clarification:** The names `kubestellar-ops` and `kubestellar-deploy` refer to two distinct things each:
+> 1. **MCP servers** — the tool implementations that query Kubernetes clusters. These run inside the MCP Bridge and are invoked by the Backend.
+> 2. **Claude Code plugins** — extensions that register these MCP servers with Claude Code and add skills/hooks. These are installed on the developer's machine.
+>
+> When this document says "kubestellar-ops MCP server" it means the tool implementation. When it says "kubestellar-ops plugin" it means the Claude Code extension.
 
-These plugins are installed locally on the server or developer machine. The MCP Bridge loads them and exposes their tools to the Backend. Claude Code can also connect to these tools directly. See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for the full tool listing.
+The plugins are Claude Code extensions that each provide:
+- A set of MCP **tools** (e.g., list clusters, get nodes, deploy workloads)
+- Optionally, Claude Code **skills** (slash commands) and **hooks** (event triggers)
+
+The MCP Bridge loads the MCP server implementations and exposes their tools to the Backend via HTTP/MCP. Claude Code connects to kc-agent, which also exposes these tools — so both the Console Backend and Claude Code CLI use the same underlying tool implementations through different paths.
+
+**How Claude Code connects:** Claude Code is a CLI tool that runs on the developer's machine. The user invokes it manually (e.g., `claude` in a terminal). When the kubestellar-ops/kubestellar-deploy plugins are installed, Claude Code connects to kc-agent on `localhost:8585` as an MCP client. This connection is initiated by Claude Code — kc-agent does not call out to Claude Code.
+
+See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for the full tool listing.
 
 ### kc-agent (Local Agent)
 
