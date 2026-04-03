@@ -419,6 +419,7 @@ See [kubestellar-mcp troubleshooting](/docs/kubestellar-mcp/overview/introductio
 ## Related Documentation
 
 - **[kubestellar-mcp Documentation](/docs/kubestellar-mcp/overview/introduction)** - Full guide to kubestellar-ops and kubestellar-deploy plugins
+- **[AI Missions Setup](ai-missions-setup.md)** - Configure AI providers, select a model, and run your first mission
 - **[Architecture](architecture.md)** - How the console components work together
 - **[Configuration](configuration.md)** - AI mode, token limits, and customization
 - **[Quick Start](quickstart.md)** - Get running in 5 minutes

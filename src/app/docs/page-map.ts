@@ -208,6 +208,7 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
       { 'Cards': 'all-cards.md' },
       { 'Stats Blocks': 'stats-blocks.md' },
       { 'AI Features': 'ai-features.md' },
+      { 'AI Missions Setup': 'ai-missions-setup.md' },
       { 'Alerts': 'alerts.md' },
       { 'Feedback System': 'feedback.md' },
     ]
