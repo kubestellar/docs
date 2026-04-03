@@ -29,7 +29,14 @@ KubeStellar Console uses AI Missions to automate multi-cluster Kubernetes operat
 
 ## AI Missions
 
-AI Missions are conversations with AI to solve problems. Click the mission button in the bottom right to start.
+AI Missions are conversations with AI to solve problems. You can start a mission from two places:
+
+- The **AI Missions** button in the top navigation bar (desktop and overflow menu on narrow viewports)
+- The **AI Missions** floating button at the bottom right
+
+![AI Missions Navbar Button](images/ai-missions-navbar-apr02.jpg)
+
+The navbar button shows an attention badge when missions need your input.
 
 ### What Can You Do?
 
@@ -432,6 +439,40 @@ When importing missions from external sources:
 - Security scan results are displayed before import with severity ratings
 - Users must acknowledge security findings before proceeding
 - Scans check for: resource deletion, RBAC escalation, host path mounts, privileged containers
+
+---
+
+## Mission Control Enhancements (New in April 2026)
+
+### Target Cluster Selector
+
+Mission Control now lets you scope missions to specific clusters instead of always targeting the full fleet. In the "Define Mission" step, a **Target Clusters** field lets you click to select individual clusters or leave it on "All clusters" to analyze your full fleet.
+
+![Mission Control Cluster Selector](images/mission-control-cluster-selector-apr02.jpg)
+
+When specific clusters are selected, AI prompts are automatically scoped to those clusters, reducing token usage and focusing the analysis.
+
+### Dry-Run Mode
+
+The Flight Plan step now includes a **Dry Run** button that performs server-side validation (`--dry-run=server`) without creating actual resources. Dry-run missions are visually marked with a `[DRY RUN]` prefix and a yellow badge. Server-side dry runs catch issues that client-side validation misses, including missing CRDs, RBAC denials, and quota violations.
+
+### Edit Before Running
+
+You can now edit a mission's description and steps before executing it. The description and step fields are editable in the mission detail view. Press **Cmd/Ctrl+Enter** to save and run the edited mission immediately.
+
+### Cancellation State
+
+Cancelling a running mission now shows a "Cancelling..." intermediate state with visual feedback, rather than immediately removing the mission.
+
+### Kubara Platform Catalog
+
+The Mission Browser now includes **Kubara Platform Catalog** as a source alongside KubeStellar Community, GitHub Repositories, and Local Files. Kubara is a curated catalog of platform engineering missions covering common operational patterns.
+
+![Mission Browser with Kubara](images/mission-browser-kubara-apr02.jpg)
+
+### Fixer Missions (Renamed from Solutions)
+
+The mission type previously called "Solution" has been renamed to **Fixer**. The knowledge base path changed from `solutions/` to `fixes/`, and all related analytics events now use the `ksc_fixer_*` prefix. The concept of "Resolutions" (saved outcomes) is unchanged.
 
 ---
 

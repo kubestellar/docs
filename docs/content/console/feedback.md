@@ -107,6 +107,28 @@ Have an idea? Request it!
 
 ---
 
+## Draft Save & Restore (New in April 2026)
+
+The Contribute dialog now includes a **Drafts** tab between Submit and Updates that lets you save work-in-progress bug reports and feature requests.
+
+![Feedback Drafts Tab](images/feedback-drafts-tab-apr02.jpg)
+
+### How Drafts Work
+
+- **Save a draft**: Click "Save Draft" while composing a bug report or feature request. The draft is saved to localStorage.
+- **Restore a draft**: Switch to the Drafts tab, find your draft, and click "Edit" to load it back into the form. An "Editing a saved draft" banner appears.
+- **Update a draft**: Modify a restored draft and click "Update Draft" to save changes.
+- **Auto-cleanup**: When you successfully submit a report from a draft, the draft is automatically deleted.
+- **Close protection**: If you close the modal with unsaved content, a 3-way dialog offers **Save Draft & Close**, **Discard**, or **Keep Editing**.
+
+### Draft Limits
+
+- Up to 20 drafts can be stored locally
+- Drafts are synced across browser tabs via the `storage` event
+- Each draft shows its type (Bug/Feature), target repo, and relative timestamp
+
+---
+
 ## Tracking Your Requests
 
 ### View Your Submissions
