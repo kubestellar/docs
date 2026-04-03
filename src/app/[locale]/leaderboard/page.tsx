@@ -71,19 +71,21 @@ const LEVEL_STYLES: Record<string, LevelStyle> = {
     border: "border-purple-500/30",
   },
   Captain: {
-    bg: "bg-amber-500/20",
-    text: "text-amber-400",
-    border: "border-amber-500/30",
-  },
-  Admiral: {
     bg: "bg-orange-500/20",
     text: "text-orange-400",
     border: "border-orange-500/30",
   },
+
+  Admiral: {
+    bg: "bg-red-500/20",
+    text: "text-red-400",
+    border: "border-red-500/30",
+  },
+
   Legend: {
-    bg: "bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20",
-    text: "text-yellow-400",
-    border: "border-yellow-500/40",
+    bg: "bg-gradient-to-r from-yellow-400/30 via-amber-300/30 to-yellow-500/30 shadow-[0_0_10px_rgba(255,215,0,0.3)]",
+    text: "text-yellow-300",
+    border: "border-yellow-400/50",
   },
 };
 
