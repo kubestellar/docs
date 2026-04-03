@@ -1,9 +1,9 @@
 ---
-title: "Dashboards — 28+ Multi-Cluster Kubernetes Monitoring Dashboards"
+title: "Dashboards — 29+ Multi-Cluster Kubernetes Monitoring Dashboards"
 linkTitle: "Dashboards"
 weight: 6
 description: >
-  28+ pre-built dashboards for multi-cluster Kubernetes monitoring — workloads, compute, storage, network, security, GitOps, GPU, cost, and AI-powered insights. KubeStellar Console dashboards give you fleet-wide visibility across all your Kubernetes clusters in a single view.
+  29+ pre-built dashboards for multi-cluster Kubernetes monitoring — workloads, compute, storage, network, security, GitOps, GPU, cost, and AI-powered insights. KubeStellar Console dashboards give you fleet-wide visibility across all your Kubernetes clusters in a single view.
 keywords:
   - kubernetes monitoring dashboard
   - multi-cluster kubernetes dashboard
@@ -17,7 +17,7 @@ keywords:
 
 # Dashboards — Multi-Cluster Kubernetes Monitoring
 
-KubeStellar Console has 28+ dashboards for multi-cluster Kubernetes monitoring. Each dashboard gives you fleet-wide visibility into a specific operational area across all your connected clusters.
+KubeStellar Console has 29+ dashboards for multi-cluster Kubernetes monitoring. Each dashboard gives you fleet-wide visibility into a specific operational area across all your connected clusters.
 
 ## Main Dashboard
 
@@ -35,7 +35,7 @@ The main dashboard learns what you care about and shows those things first.
 
 ---
 
-## Dedicated Dashboards (28)
+## Dedicated Dashboards (29)
 
 ### Clusters Dashboard
 
@@ -462,7 +462,7 @@ Multi-cluster deployment management:
 - Workloads overview with drag-to-deploy (659 total, 553 unique)
 - Cluster Groups for targeting deployments
 - Deployment Missions with AI-assisted rollouts and Mission Browser
-- Mission Browser with Installer and Solution tabs for discovering pre-built missions
+- Mission Browser with Installer and Fixer tabs for discovering pre-built missions
 - Deep-linking and sharing for missions with OAuth flow support
 - Saved Missions panel for quick access
 - Resource Marshall for workload placement
@@ -516,6 +516,25 @@ Cross-cluster correlation and pattern detection using heuristic algorithms and o
 
 ---
 
+### Karmada Ops Dashboard (New in April 2026)
+
+**Route:** `/karmada-ops`
+
+![Karmada Ops Dashboard](images/karmada-ops-dashboard-apr02.jpg)
+
+A dedicated dashboard for operating Karmada-based multi-cluster environments, AI inference, and data platform operations:
+
+- **Karmada Status**: Cluster membership, propagation health, and resource bindings
+- **KubeRay Fleet**: Ray cluster status across the fleet with upgrade tracking
+- **SLO Compliance**: Service level objective monitoring with compliance percentages
+- **Failover Timeline**: History of cluster failover events
+- **Trino Gateway**: Trino query gateway health and routing status
+- **Cluster Health**: Fleet-wide cluster connectivity and readiness
+
+**Best for:** Teams running Karmada for multi-cluster orchestration, KubeRay for distributed computing, or Trino for federated queries
+
+---
+
 ### Arcade Dashboard
 
 **Route:** `/arcade`
@@ -559,6 +578,31 @@ These aren't counted as dashboards but are useful:
 | Settings | `/settings` | Configure your preferences |
 | User Management | `/users` | Manage users (admin only) |
 | Namespaces | `/namespaces` | Manage namespace access |
+
+---
+
+## Multi-Project Selection (New in April 2026)
+
+The **All Projects** button in the top navigation bar lets you organize clusters into projects and filter the entire dashboard by one or more projects at a time.
+
+![Project Selector](images/project-selector-apr02.jpg)
+
+### Creating Projects
+
+1. Click **All Projects** in the navbar
+2. Click **Create Project**
+3. Name the project and assign a color
+4. Add clusters to the project
+
+### Filtering by Project
+
+- Select one or more projects to narrow all dashboard cards, stats, and cluster lists to only clusters in those projects
+- The filter applies globally across all dashboards and persists in localStorage
+- Deselect all projects to return to the full fleet view
+
+### Project Colors
+
+Each project has an assignable color for quick visual identification in the selector dropdown.
 
 ---
 

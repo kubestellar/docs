@@ -548,6 +548,67 @@ Stat blocks in the Stats Overview bar automatically format large numbers to prev
 
 ---
 
+## What's New in April 2026
+
+### Custom Card Data Fetching (useCardFetch)
+
+Tier 2 custom cards can now fetch data from external APIs using the new `useCardFetch(url, options)` hook. The hook proxies requests through the Go backend at `/api/card-proxy` with comprehensive SSRF protection:
+
+- **URL validation**: Only http/https, max 2048 characters
+- **Private IP blocking**: DNS resolution blocks RFC 1918, loopback, and link-local addresses
+- **Response limits**: 5 MB max response body, 15-second timeout
+- **Concurrency**: Max 5 concurrent fetches per card
+- `fetch`/`XMLHttpRequest` remain blocked in the sandbox -- `useCardFetch` is the only permitted way for card code to access external data
+
+### Landing Page Performance
+
+Public landing pages (`/from-holmesgpt`, `/from-lens`, `/from-headlamp`, `/welcome`, etc.) now load via a lightweight shell that skips the full authentication and provider stack. This reduces initial JavaScript from ~1.8 MB to ~200 KB and eliminates the "Loading" spinner that previously appeared on `console.kubestellar.io` where the Go backend is unavailable.
+
+### Visit Streak and Rotating Tips
+
+Subtle engagement features added to the dashboard:
+
+- **Visit streak badge**: A flame emoji and day count in the navbar tracks consecutive daily visits (appears only when streak >= 2 days)
+- **Rotating tips**: The Getting Started banner shows a "Did you know?" line that cycles through 18 tips without repeating
+
+### Security Improvements
+
+- **JWT HS256 enforcement**: All JWT parsing now uses a centralized `middleware.ParseJWT()` function that restricts token algorithms to HS256 only, preventing algorithm confusion attacks. This was a prerequisite for the CNCF TAG-Security self-assessment.
+- **JWT URL leakage fix**: Token data is no longer exposed in URLs or query parameters.
+- **Stale build detection**: A `<meta name="app-build-id">` tag and visibility/interval checks automatically reload the page when a newer build is deployed, preventing stale JavaScript chunk errors after deploys.
+
+### CNCF Incubation Readiness
+
+New governance and security documents were added to the console repository:
+
+- **ROADMAP.md** -- Near-term, mid-term, and long-term plans with non-goals
+- **ARCHITECTURE.md** -- System diagram, component descriptions, data flows, and security architecture
+- **SUPPORT.md** -- Version support policy and platform compatibility matrix
+- **COMMUNITY.md** -- Communication channels and meeting schedule
+- **SELF-ASSESSMENT.md** -- TAG-Security self-assessment covering actors, actions, and threat model
+- Updated OWNERS and SECURITY_CONTACTS
+
+### Mission Explorer UX
+
+The Mission Explorer file browser received several UX improvements:
+
+- **File-type icons**: Orange for YAML, green for Markdown, blue for JSON
+- **Resizable sidebar**: Drag the edge to resize between 180--500px
+- **Source and PR links**: Click to view or edit files directly on GitHub
+- **CNCF project icons**: Files are annotated with CNCF project icons based on API group detection
+- **Refresh**: Re-fetches file contents instead of just toggling expand/collapse
+
+### CI Quality Infrastructure
+
+A comprehensive quality assurance infrastructure was introduced:
+
+- **Post-build safety checks**: Detect Vite define corruption, MSW leaks, and bundle size regressions before deploy
+- **Post-merge Playwright verification**: Runs Playwright tests against production after merge to catch deployment regressions
+- **Coverage suite**: Sharded test coverage running on push to main, with auto-issue creation when coverage drops >5%
+- **AI Quality Assurance documentation**: Describes the full CI pipeline from PR gate through coverage suite
+
+---
+
 ## Improved Modal Safety
 
 Form modals throughout the console have been hardened against accidental data loss:
