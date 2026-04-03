@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-04-03T14:16:54.455Z",
+  "generated_at": "2026-04-03T18:12:06.846Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2665000,
+      "total_points": 2724700,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 225,
         "feature_issues": 326,
-        "other_issues": 138,
-        "prs_opened": 3970,
-        "prs_merged": 3528
+        "other_issues": 140,
+        "prs_opened": 3993,
+        "prs_merged": 3638
       },
       "rank": 1
     },
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 57450,
+      "total_points": 60450,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 123,
+        "bug_issues": 133,
         "feature_issues": 11,
         "other_issues": 5,
         "prs_opened": 31,
@@ -107,6 +107,21 @@
       "rank": 7
     },
     {
+      "login": "ghanshyam2005singh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
+      "total_points": 19900,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 61,
+        "feature_issues": 0,
+        "other_issues": 4,
+        "prs_opened": 2,
+        "prs_merged": 2
+      },
+      "rank": 8
+    },
+    {
       "login": "Abhishek-Punhani",
       "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
       "total_points": 19750,
@@ -119,7 +134,7 @@
         "prs_opened": 7,
         "prs_merged": 3
       },
-      "rank": 8
+      "rank": 9
     },
     {
       "login": "vedansh-5",
@@ -133,21 +148,6 @@
         "other_issues": 19,
         "prs_opened": 28,
         "prs_merged": 26
-      },
-      "rank": 9
-    },
-    {
-      "login": "ghanshyam2005singh",
-      "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
-      "total_points": 19300,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 59,
-        "feature_issues": 0,
-        "other_issues": 4,
-        "prs_opened": 2,
-        "prs_merged": 2
       },
       "rank": 10
     },
@@ -167,6 +167,21 @@
       "rank": 11
     },
     {
+      "login": "shivansh-source",
+      "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
+      "total_points": 18350,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 56,
+        "feature_issues": 4,
+        "other_issues": 1,
+        "prs_opened": 3,
+        "prs_merged": 1
+      },
+      "rank": 12
+    },
+    {
       "login": "mrhapile",
       "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
       "total_points": 16750,
@@ -179,7 +194,7 @@
         "prs_opened": 20,
         "prs_merged": 16
       },
-      "rank": 12
+      "rank": 13
     },
     {
       "login": "arnavgogia20",
@@ -194,7 +209,7 @@
         "prs_opened": 10,
         "prs_merged": 9
       },
-      "rank": 13
+      "rank": 14
     },
     {
       "login": "adity1raut",
@@ -208,21 +223,6 @@
         "other_issues": 5,
         "prs_opened": 29,
         "prs_merged": 19
-      },
-      "rank": 14
-    },
-    {
-      "login": "shivansh-source",
-      "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
-      "total_points": 15350,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 46,
-        "feature_issues": 4,
-        "other_issues": 1,
-        "prs_opened": 3,
-        "prs_merged": 1
       },
       "rank": 15
     },
@@ -379,13 +379,13 @@
     {
       "login": "XxSURYANSHxX",
       "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-      "total_points": 3750,
+      "total_points": 3800,
       "level": "Navigator",
       "level_rank": 3,
       "breakdown": {
         "bug_issues": 12,
         "feature_issues": 0,
-        "other_issues": 3,
+        "other_issues": 4,
         "prs_opened": 0,
         "prs_merged": 0
       },
