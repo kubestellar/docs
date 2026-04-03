@@ -150,15 +150,17 @@ The alert system keeps you informed:
 
 AI-powered automation for common tasks:
 
-![AI Missions Panel](images/ai-missions-panel.png)
+![AI Missions Panel](images/ai-missions-panel-apr02.jpg)
 
 ### Starting a Mission
 
 Missions can be started from:
 
+- **AI Missions navbar button**: Click "AI Missions" in the top navigation bar (new in April 2026)
 - **Card AI buttons**: Click the AI icon on any card
 - **Stats bar actions**: Click "Address Security Issues" or similar action buttons
 - **Keyboard shortcut**: Press `M` to open the missions panel
+- **Mission Control**: Full-screen wizard for complex multi-project missions
 
 ### Mission Types
 
@@ -1292,6 +1294,291 @@ Recommendation panels (Recommended Cards, Recommended Actions) have been streaml
 - Collapse/expand state persists across sessions
 - Neutralized panel colors for a less distracting appearance
 - SmartCardSuggestions feature removed in favor of the simplified panels
+
+---
+
+## Mission Control Modal (New in April 2026)
+
+![Mission Control](images/mission-control-apr02.jpg)
+
+Mission Control has been redesigned as a proper full-screen modal with a 3-step wizard: **Define Mission**, **Chart Course**, and **Flight Plan**.
+
+### Define Mission
+
+The first step collects your mission requirements:
+
+- **Mission Title**: Name your mission (e.g., "Production Security Compliance")
+- **Describe Your Solution**: Free-text description of what you want to deploy or fix
+- **AI Suggest**: Click the Suggest button to have AI auto-fill solution details based on your title
+
+### Cluster Selector (Phase 1)
+
+![Mission Control Cluster Selector](images/mission-control-cluster-selector-apr02.jpg)
+
+The **Target Clusters** section lets you scope missions to specific clusters:
+
+- **All clusters** (default) — AI analyzes your full fleet
+- **Click to scope** — Select individual clusters to target
+- AI will analyze only the scoped clusters, reducing token usage and focusing results
+
+### Selected Payload
+
+- **Add Manually** — Add CNCF projects, Helm charts, or custom resources as payload
+- **Click a project card** — View AI reasoning, install steps, dependencies, and alternatives
+- Projects and dependencies counter in the Mission Summary sidebar
+
+### Mission Editing Before Execution
+
+Missions can now be edited before they start executing. Review and modify the mission title, solution description, target clusters, and payload before committing to execution.
+
+### Draft Bug Reports
+
+The Contribute dialog now includes a **Drafts** tab alongside Submit and Updates, allowing you to save bug reports and feature requests as drafts before submitting them.
+
+---
+
+## AI Missions Navbar Button (New in April 2026)
+
+![AI Missions Navbar](images/ai-missions-navbar-apr02.jpg)
+
+The **AI Missions** button has been promoted to the top navigation bar for faster access:
+
+- Purple sparkle icon with "AI Missions" label, always visible in the header
+- One-click access to Start Custom Mission, Browse Community Missions, or Mission Control
+- Replaces the previous bottom-right floating button as the primary entry point
+- The floating button remains as a secondary access point on the dashboard
+
+---
+
+## Mission Explorer Enhancements (New in April 2026)
+
+![Mission Explorer](images/mission-explorer-apr02.jpg)
+
+The Mission Explorer (formerly Mission Browser) has received significant UX improvements.
+
+### Kubara Platform Catalog
+
+**Kubara Platform Catalog** is now a built-in mission source alongside KubeStellar Community and GitHub Repositories. It provides curated platform missions for common infrastructure patterns.
+
+### Resizable Sidebar
+
+The Mission Explorer sidebar is now resizable, matching the main navigation sidebar behavior. Drag the edge to adjust the source panel width.
+
+### File Icons and Source Links
+
+- Missions display file-type icons (YAML, Markdown) for quick visual identification
+- Source and PR links connect each mission back to its origin repository
+- CNCF project detection highlights missions related to CNCF graduated and incubating projects
+
+### YAML and Markdown Runbook Support
+
+Missions now support YAML and Markdown runbooks with automatic CNCF project detection:
+
+- YAML missions define structured deployment steps
+- Markdown runbooks provide narrative deployment guides
+- CNCF project references are automatically detected and linked
+
+### GitHub Repository Browsing Fixes
+
+Repository browsing has been improved with fixes for navigation, file listing, and content rendering when browsing missions directly from GitHub repositories.
+
+### Filtering and Discovery
+
+- **Class filter**: All, Fixer (troubleshooting missions)
+- **Tags filter**: feature, app-deploy, graduated, incubating, sandbox, and more
+- **Source filter**: Cluster, Community, custom
+- **Category filter**: All, Troubleshoot, Ingress, Sandbox, Repair, Custom
+- **Difficulty filter**: Beginner, Advanced, Intermediate, Expert
+- **Match mode**: Any or All tags
+- Showing count of matching recommendations (e.g., "Showing 458 of 1087 recommendations")
+
+---
+
+## Multi-Project Selection (New in April 2026)
+
+The **All Projects** dropdown in the navbar now supports multi-project selection:
+
+- Filter the entire dashboard by one or more CNCF projects
+- When projects are selected, only cards and data relevant to those projects are displayed
+- Quick "All" filter toggle to show everything
+- Project selection persists across page navigation
+
+---
+
+## Karmada Ops Dedicated Page (New in April 2026)
+
+![Karmada Ops](images/karmada-ops-apr02.jpg)
+
+Karmada Ops now has its own dedicated page in the sidebar navigation, separate from the Multi-Tenancy dashboard.
+
+### Karmada Fleet Overview
+
+- **Karmada card**: Cluster count, ready/failed status, member clusters with search, resource bindings
+- **KubeRay Fleet card**: Ray clusters, workers, GPUs, jobs with per-cluster breakdown
+- **Activity Trail**: Recent operations timeline
+- **Serving Endpoints**: Service status across regions with upgrade pending indicators
+
+### Member Cluster Details
+
+Each member cluster shows:
+- Version and sync status
+- Node and pod counts
+- GPU allocation per cluster
+- Ready/pending state indicators
+
+---
+
+## Security Hardening (New in April 2026)
+
+### JWT HS256-Only Enforcement
+
+JWT token validation now strictly enforces HS256 algorithm only, preventing algorithm confusion attacks. Tokens signed with other algorithms are rejected.
+
+### JWT URL Leakage Prevention
+
+JWT tokens are no longer included in URLs or query parameters. All token transmission uses HTTP-only cookies or Authorization headers, preventing token exposure in server logs and browser history.
+
+### WebSocket Authentication Hardening
+
+WebSocket connections now require authentication on every connection and reconnection:
+
+- Initial connection validates the JWT before upgrading to WebSocket
+- Reconnection after disconnection re-validates credentials
+- Expired tokens during an active WebSocket session trigger a graceful disconnect with re-authentication prompt
+
+### CNCF Incubation Readiness
+
+The project has been prepared for CNCF incubation with:
+
+- **Governance documentation**: GOVERNANCE.md, SECURITY.md, and OWNERS files
+- **Security self-assessment**: Comprehensive security self-assessment following TAG-Security guidelines, including architecture diagrams
+- **Roadmap**: Public roadmap document for transparency
+- **TAG-Security submission**: Self-assessment submitted to CNCF TOC (cncf/toc#2106)
+
+---
+
+## Custom Card External Data (New in April 2026)
+
+### useCardFetch Hook
+
+A new `useCardFetch` React hook enables custom cards to fetch data from external APIs:
+
+- Declarative data fetching with automatic loading, error, and refresh states
+- Built-in caching and deduplication to prevent redundant requests
+- Compatible with the card lifecycle (pause fetching when card is collapsed, resume on expand)
+
+### Card Proxy with SSRF Protection
+
+Custom cards that need to fetch external data go through a server-side proxy that includes SSRF (Server-Side Request Forgery) protection:
+
+- Allowlist-based URL validation
+- Private IP range blocking (10.x, 172.16-31.x, 192.168.x, localhost)
+- Rate limiting per card per user
+- Request timeout enforcement
+
+---
+
+## CI and Quality Improvements (New in April 2026)
+
+### Post-Build Safety Checks
+
+Five automated safety checks run after every build to catch regressions:
+
+1. **Bundle size check** — Fails if the production bundle exceeds the size threshold
+2. **TypeScript strict mode** — Verifies no `any` types leaked into the build
+3. **Import cycle detection** — Catches circular import dependencies
+4. **Dead code detection** — Identifies unreachable exports
+5. **Console.log audit** — Flags stray console.log statements in production code
+
+### Post-Merge Playwright Verification
+
+After PRs merge to main, an automated Playwright test suite runs to verify end-to-end functionality:
+
+- Smoke tests for critical user flows (login, dashboard load, card interactions)
+- Screenshot comparison for visual regression detection
+- Results posted as GitHub check status on the merge commit
+
+### AI Quality Assurance
+
+Five ratcheted AI antipattern checks prevent common code quality issues:
+
+1. **Magic numbers** — All numeric literals must be named constants
+2. **Array safety** — All array operations must guard against undefined
+3. **Unsafe type assertions** — Two-value form required for type assertions
+4. **Hardcoded strings** — User-facing strings must use constants or i18n
+5. **Missing error handling** — Async operations must have try/catch or .catch()
+
+The ratchet mechanism ensures the count of violations never increases — new code must not introduce new violations, while existing violations are tracked and reduced over time.
+
+---
+
+## UX Improvements (New in April 2026)
+
+### Visit Streak and Rotating Tips
+
+The dashboard now tracks your visit streak and displays rotating tips:
+
+- **Visit streak counter**: Shows consecutive days you have used the console
+- **Rotating tips**: Context-aware tips that cycle through useful features and shortcuts
+- Tips are personalized based on which features you have and have not used
+
+### Hover Tooltips for Technical Abbreviations
+
+Technical abbreviations throughout the console now show explanatory tooltips on hover:
+
+- Abbreviations like OPA, RBAC, CRD, CSI, CNI, SPIFFE show their full names
+- First-time users can learn Kubernetes terminology without leaving the console
+- Tooltips are unobtrusive and only appear on hover
+
+### Card Shadows in Light Mode
+
+Card shadow rendering has been fixed in light mode themes:
+
+- Cards now display proper depth shadows in all light themes
+- Shadow intensity scales with the theme's brightness level
+- Consistent shadow appearance across KubeStellar, Nord, and Tokyo Night light variants
+
+### Touch Target Accessibility
+
+All interactive elements now meet WCAG 2.1 AA touch target requirements:
+
+- Minimum 44x44px touch targets for all buttons, links, and interactive elements
+- Improved tap accuracy on mobile and tablet devices
+- Sidebar icons, card action buttons, and toolbar items all meet the standard
+
+### Landing Pages Lightweight Shell
+
+Landing pages (login, onboarding) now use a lightweight shell that loads faster:
+
+- Reduced JavaScript bundle for unauthenticated pages
+- Faster time-to-interactive for first-time visitors
+- Core dashboard code is not loaded until after authentication
+
+### Solution Missions Renamed to Fixer
+
+"Solution missions" in the Mission Explorer have been renamed to **Fixer** missions for clarity:
+
+- The "Solution" class filter is now "Fixer"
+- Fixer missions focus on troubleshooting and remediation
+- Naming aligns with the mission categories: Installer, Fixer, Custom
+
+---
+
+## Adopter Ecosystem (New in April 2026)
+
+Three new projects have been added as adopters of KubeStellar Console:
+
+### KitOps
+
+KitOps provides ModelKits for packaging and sharing AI/ML models. The console includes a KitOps card for monitoring ModelKit deployments across clusters.
+
+### Easegress
+
+Easegress is a cloud-native traffic orchestration system. The console provides monitoring cards for Easegress traffic routing, pipeline status, and filter chain health.
+
+### Cadence
+
+Cadence is Uber's workflow orchestration engine. The console includes cards for monitoring Cadence workflow domains, task lists, and worker health across clusters
 
 ---
 

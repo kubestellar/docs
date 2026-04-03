@@ -36,7 +36,7 @@ AI Missions are conversations with AI to solve problems. You can start a mission
 
 ![AI Missions Navbar Button](images/ai-missions-navbar-apr02.jpg)
 
-The navbar button shows an attention badge when missions need your input.
+The navbar button shows an attention badge when missions need your input. For complex multi-project deployments, use the **Mission Control** wizard (accessible from the AI Missions panel).
 
 ### What Can You Do?
 
@@ -50,8 +50,8 @@ The navbar button shows an attention badge when missions need your input.
 
 ### How It Works
 
-1. Click **"AI Missions"** button (bottom right)
-2. Choose a mission type or describe your problem
+1. Click **"AI Missions"** button in the top navigation bar (or the floating button at bottom right)
+2. Choose a mission type, describe your problem, or open **Mission Control** for guided multi-step missions
 3. AI asks questions to understand the issue
 4. AI runs commands and analyzes results
 5. AI suggests fixes or takes action
