@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-04T06:21:46.718Z",
+  "generated_at": "2026-04-04T10:09:44.950Z",
   "entries": [
     {
       "login": "clubanderson",
@@ -19,13 +19,13 @@
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 61750,
+      "total_points": 62700,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 137,
+        "bug_issues": 140,
         "feature_issues": 12,
-        "other_issues": 5,
+        "other_issues": 6,
         "prs_opened": 31,
         "prs_merged": 26
       },
@@ -227,6 +227,21 @@
       "rank": 15
     },
     {
+      "login": "MikeSpreitzer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
+      "total_points": 13750,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 35,
+        "feature_issues": 3,
+        "other_issues": 27,
+        "prs_opened": 3,
+        "prs_merged": 2
+      },
+      "rank": 16
+    },
+    {
       "login": "AAdIprog",
       "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
       "total_points": 12400,
@@ -238,21 +253,6 @@
         "other_issues": 0,
         "prs_opened": 9,
         "prs_merged": 4
-      },
-      "rank": 16
-    },
-    {
-      "login": "MikeSpreitzer",
-      "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-      "total_points": 12200,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 30,
-        "feature_issues": 3,
-        "other_issues": 26,
-        "prs_opened": 3,
-        "prs_merged": 2
       },
       "rank": 17
     },
