@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-04-05T03:03:23.427Z",
+  "generated_at": "2026-04-05T06:26:07.886Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2742750,
+      "total_points": 2744850,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 227,
         "feature_issues": 333,
         "other_issues": 149,
-        "prs_opened": 4017,
-        "prs_merged": 3661
+        "prs_opened": 4020,
+        "prs_merged": 3664
       },
       "rank": 1
     },
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 62700,
+      "total_points": 65800,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 140,
-        "feature_issues": 12,
+        "bug_issues": 150,
+        "feature_issues": 13,
         "other_issues": 6,
         "prs_opened": 31,
         "prs_merged": 26
