@@ -7,7 +7,7 @@ graph TB
     MCP["MCP Bridge<br/>(kubestellar-ops MCP server +<br/>kubestellar-deploy MCP server)"]
     K8s["Kubernetes Clusters"]
     Agent["kc-agent :8585"]
-    CLI["Claude Code<br/>(MCP client)"]
+    CLI["AI Coding Agent<br/>(Claude Code, Copilot, Cursor,<br/>Gemini CLI, etc.)"]
     OpsStdio["kubestellar-ops<br/>MCP server (stdio)"]
     DeployStdio["kubestellar-deploy<br/>MCP server (stdio)"]
     AI["AI Provider API<br/>(OpenAI-compatible endpoint:<br/>Claude / OpenAI / Gemini)"]

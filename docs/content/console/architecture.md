@@ -27,8 +27,8 @@ The console consists of 7 components working together. See [Configuration](confi
 | 2 | **Frontend** | React SPA - dashboards, cards, AI UI |
 | 3 | **Backend** | Go server - API, auth, data storage |
 | 4 | **MCP Bridge** | Hosts the kubestellar-ops and kubestellar-deploy **MCP servers** in-process; Backend queries them via HTTP/MCP to get cluster data |
-| 5 | **Claude Code + Plugins** | Claude Code acts as an **MCP client**. The kubestellar-ops and kubestellar-deploy **plugins** launch their respective MCP servers as **stdio child processes** and add skills/hooks ([docs](/docs/kubestellar-mcp/overview/introduction)). Users invoke Claude Code from a terminal, VS Code, JetBrains, or via the GitHub Action (`@claude` mentions in PRs). |
-| 6 | **kc-agent** | Local MCP+WebSocket server on port 8585; provides kubectl execution for the browser (WebSocket) and for Claude Code (MCP client) |
+| 5 | **AI Coding Agent + Plugins** | Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI, etc.) acts as an **MCP client**. The kubestellar-ops and kubestellar-deploy **plugins** launch their respective MCP servers as **stdio child processes** and add skills/hooks ([docs](/docs/kubestellar-mcp/overview/introduction)). |
+| 6 | **kc-agent** | Local MCP+WebSocket server on port 8585; provides kubectl execution for the browser (WebSocket) and for AI coding agents (MCP client) |
 | 7 | **Kubeconfig** | Your cluster credentials |
 
 > **Note on "GitHub OAuth App":**
@@ -87,38 +87,42 @@ A separate process that is spawned by the console executable at startup. The MCP
 
 The MCP Bridge authenticates to Kubernetes clusters using the kubeconfig file on the server. It does not participate in the GitHub OAuth flow.
 
-### Claude Code + Plugins
+### AI Coding Agents + Plugins
 
 > **Naming clarification:** The names `kubestellar-ops` and `kubestellar-deploy` each refer to two distinct things:
 >
-> 1. **MCP servers** — the tool implementations (Go binaries) that query Kubernetes clusters. Each binary can run as an MCP server in two ways: (a) as a **stdio child process** launched by Claude Code, or (b) **in-process** inside the MCP Bridge for the Console Backend.
-> 2. **Claude Code plugins** — extensions that tell Claude Code how to launch the MCP servers and that add skills (slash commands) and hooks (event triggers).
+> 1. **MCP servers** — the tool implementations (Go binaries) that query Kubernetes clusters. Each binary can run as an MCP server in two ways: (a) as a **stdio child process** launched by an AI coding agent, or (b) **in-process** inside the MCP Bridge for the Console Backend.
+> 2. **Agent plugins** — extensions that tell the AI coding agent how to launch the MCP servers and that add skills (slash commands) and hooks (event triggers).
 >
-> This document uses **"kubestellar-ops MCP server"** for the tool implementation and **"kubestellar-ops plugin"** for the Claude Code extension. The same convention applies to kubestellar-deploy.
+> This document uses **"kubestellar-ops MCP server"** for the tool implementation and **"kubestellar-ops plugin"** for the agent extension. The same convention applies to kubestellar-deploy.
 
-**What Claude Code is:** Claude Code is Anthropic's CLI agent for software engineering. It acts as an **MCP client** — it connects to MCP servers and invokes their tools. Users invoke Claude Code in several ways:
+**Supported AI coding agents:** The console's MCP servers work with any MCP-compatible AI coding agent, including:
 
-- **Terminal:** Run `claude` in a shell
-- **IDE extensions:** VS Code or JetBrains extensions that embed Claude Code
-- **GitHub Action:** Mention `@claude` in a PR comment to trigger Claude Code in CI
+- **Claude Code** — Anthropic's CLI agent (`claude` command, VS Code/JetBrains extensions, GitHub Action)
+- **GitHub Copilot** — via MCP server configuration
+- **Cursor** — via MCP server configuration
+- **Gemini CLI** — Google's CLI agent
+- **Google Anti-Gravity / OpenCode** — via MCP server configuration
 
-**How the plugins work:** When the kubestellar-ops and kubestellar-deploy plugins are installed, Claude Code **launches each MCP server as a stdio child process** (e.g., `kubestellar-ops --mcp-server`). Claude Code communicates with these child processes over stdin/stdout using the MCP protocol. This is a direct, local connection — the MCP servers are **not** accessed through kc-agent or the MCP Bridge.
+All of these act as **MCP clients** — they connect to MCP servers and invoke their tools.
+
+**How the plugins work:** When the kubestellar-ops and kubestellar-deploy plugins are installed, the AI coding agent **launches each MCP server as a stdio child process** (e.g., `kubestellar-ops --mcp-server`). The agent communicates with these child processes over stdin/stdout using the MCP protocol. This is a direct, local connection — the MCP servers are **not** accessed through kc-agent or the MCP Bridge.
 
 Each plugin provides:
 
 - A set of MCP **tools** (e.g., list clusters, get nodes, deploy workloads)
-- Optionally, Claude Code **skills** (slash commands) and **hooks** (event triggers)
+- Optionally, **skills** (slash commands) and **hooks** (event triggers) for agents that support them
 
-**Two paths to the same tools:** The Console Backend and Claude Code both use the same kubestellar-ops/kubestellar-deploy tool implementations, but through different paths:
+**Two paths to the same tools:** The Console Backend and AI coding agents both use the same kubestellar-ops/kubestellar-deploy tool implementations, but through different paths:
 
 | Consumer | Path to MCP servers |
 |----------|-------------------|
 | **Console Backend** | Calls tools via HTTP/MCP on the **MCP Bridge** (which hosts the MCP servers in-process) |
-| **Claude Code** | Launches the MCP servers as **stdio child processes** directly (via the plugins) |
+| **AI Coding Agent** | Launches the MCP servers as **stdio child processes** directly (via the plugins) |
 
 Both paths execute the same Go code and read the same kubeconfig, so they return identical cluster data.
 
-**kc-agent is separate:** Claude Code also connects to kc-agent (port 8585) as an MCP client for kubectl execution. kc-agent is a distinct MCP server — it does not host the kubestellar-ops or kubestellar-deploy tools.
+**kc-agent is separate:** AI coding agents also connect to kc-agent (port 8585) as an MCP client for kubectl execution. kc-agent is a distinct MCP server — it does not host the kubestellar-ops or kubestellar-deploy tools.
 
 See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for the full tool listing.
 
@@ -128,9 +132,11 @@ A lightweight WebSocket + MCP server (port 8585) that runs on the **user's machi
 
 1. **Browser bridge**: The browser-based console connects to kc-agent via WebSocket to execute `kubectl` commands using the local kubeconfig. This allows the console to access clusters on the user's machine when the console itself is hosted remotely (e.g., `console.kubestellar.io`).
 
-2. **MCP server for Claude Code**: kc-agent exposes kubectl-based MCP tools that Claude Code (acting as an MCP client) can call. Claude Code connects **to** kc-agent — not the other way around.
+2. **MCP server for AI coding agents**: kc-agent exposes kubectl-based MCP tools that any AI coding agent (acting as an MCP client) can call. The agent connects **to** kc-agent — not the other way around.
 
-> **kc-agent vs. kubestellar-ops/kubestellar-deploy:** kc-agent provides low-level kubectl execution. The kubestellar-ops and kubestellar-deploy MCP servers provide higher-level multi-cluster tools (diagnostics, deployment, RBAC analysis, etc.). Claude Code connects to all three as separate MCP servers — kc-agent over TCP (port 8585), and kubestellar-ops/kubestellar-deploy over stdio.
+> **kc-agent vs. kubestellar-ops/kubestellar-deploy:** kc-agent provides low-level kubectl execution. The kubestellar-ops and kubestellar-deploy MCP servers provide higher-level multi-cluster tools (diagnostics, deployment, RBAC analysis, etc.). AI coding agents connect to all three as separate MCP servers — kc-agent over TCP (port 8585), and kubestellar-ops/kubestellar-deploy over stdio.
+
+> **In-cluster AI agents (kagent/kagenti):** For clusters that have [kagent](https://github.com/kagent-dev/kagent) or kagenti deployed, the console discovers and connects to these in-cluster AI agents. Unlike the local MCP servers above, kagent/kagenti run inside the Kubernetes cluster and provide cluster-native AI capabilities (agent orchestration, tool execution within the cluster context). The console's kagent integration is separate from the local MCP plugin architecture.
 
 | Aspect | Detail |
 |--------|--------|
