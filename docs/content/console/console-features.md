@@ -552,6 +552,99 @@ Stat blocks in the Stats Overview bar automatically format large numbers to prev
 
 ## What's New in April 2026
 
+### Updated Screenshots (April 6, 2026)
+
+![Dashboard Overview](images/dashboard-overview-apr06.jpg)
+
+The dashboard with Stats Overview showing cluster health, pod counts, node metrics, and the Getting Started banner with quick actions.
+
+![Compliance Page](images/compliance-apr06.jpg)
+
+The Security Posture page with compliance scoring, policy coverage, and fleet-wide security assessment cards.
+
+![AI/ML Dashboard](images/ai-ml-apr06.jpg)
+
+The AI/ML dashboard showing llm-d inference monitoring with KV Cache, EPP Routing, and throughput metrics.
+
+![Deploy Page](images/deploy-apr06.jpg)
+
+The Deploy page with workload deployment cards, cluster group targeting, and mission browser.
+
+![Settings Page](images/settings-apr06.jpg)
+
+The Settings page with AI Mode configuration, Predictive Failure Detection settings, and the full settings sidebar.
+
+![Light Mode](images/light-mode-apr06.jpg)
+
+The KubeStellar Light theme providing a clean, high-contrast experience for well-lit environments.
+
+![AI Missions Panel](images/mission-panel-apr06.jpg)
+
+The AI Missions side panel with saved missions and mission execution controls.
+
+### Security Hardening (April 3-6)
+
+Several security improvements were shipped across ~80 merged PRs:
+
+- **XSS sanitization**: Eliminated all `dangerouslySetInnerHTML` usage in favor of DOMPurify-based safe rendering
+- **Path traversal protection**: API endpoints now validate and reject directory traversal sequences (`../`)
+- **CORS hardening**: Stricter origin validation on the Go backend
+- **MCP query validation**: All MCP endpoint query parameters are validated before being passed to cluster operations, preventing injection attacks
+- **WebSocket logout enforcement**: Active WebSocket connections are now properly closed on logout, preventing stale authenticated sessions
+- **SSE recovery**: SSE connections now auto-reconnect with exponential backoff after disconnection
+
+### Global Filter Wiring (April 3-6)
+
+Multiple cards have been wired to the global cluster filter so they properly respond to cluster selection changes:
+
+- **Stats Overview**: Stats bar now reflects only selected clusters
+- **Predictive Health**: Predictions filter to selected clusters
+- All 14 cards with missing `isRefreshing` state have been wired to show accurate loading indicators
+
+### Performance Optimizations (April 3-6)
+
+- **AlertsContext optimization**: Condition evaluation now runs in constant time instead of linear, eliminating jank on dashboards with many alert rules
+- **Bundle splitting**: Large vendor chunks (React, D3, Recharts) are split into separate cacheable files, reducing re-download on app updates
+- **Lazy loading**: Dashboard card components are lazy-loaded, reducing initial JavaScript payload
+- **Unmount guards**: Cards with async data fetching (UpgradeStatus, PodHealthTrend) now cancel in-flight requests on unmount, preventing stale state updates
+
+### i18n Extraction (April 3-6)
+
+278 hardcoded UI strings were extracted to i18n translation keys using `react-i18next`, preparing the console for future localization support.
+
+### Lint Cleanup (April 3-6)
+
+Lint problems were reduced from 960 to 513 (47% reduction) across the codebase, improving code quality and developer experience.
+
+### Light Mode Improvements (April 3-6)
+
+- Fixed theme toggle reliability between dark and light modes
+- Improved contrast ratios in light mode for all flagged components
+- Removed debug logging that was polluting the browser console during theme switches
+
+### Accessibility (April 3-6)
+
+- Added missing ARIA labels to all interactive elements across the console
+- Improved keyboard navigation in mission browser and card grids
+
+### Dashboard Tips (April 3-6)
+
+All 28 dashboards now display rotating tips in the Getting Started banner. Tips cycle through contextual suggestions relevant to each dashboard without repeating.
+
+### Bug Fixes (April 3-6)
+
+Key bug fixes across this period:
+
+- Fixed Mission Control dialog UX bugs (11 issues in one PR)
+- Fixed marketplace install flow and added mission history pagination
+- Fixed WebSocket race condition in kubectlProxy causing Safari errors
+- Fixed cache clearing, session state, and key corruption issues
+- Fixed Kube Chess castling-while-in-check rule violation
+- Fixed blank card empty state and persist collapse/expand state across sessions
+- Fixed node confirmation, etcd parsing, DNS scope, and RBAC performance issues
+- Fixed duplicate notifications and filter analytics tracking
+- Fixed dev startup scripts to handle stale port processes
+
 ### Custom Card Data Fetching (useCardFetch)
 
 Tier 2 custom cards can now fetch data from external APIs using the new `useCardFetch(url, options)` hook. The hook proxies requests through the Go backend at `/api/card-proxy` with comprehensive SSRF protection:

@@ -76,7 +76,12 @@ The KubeStellar Console consists of:
 
 ## Documentation
 
+- [Quick Start](quickstart.md) - Get running in minutes
+- [Installation](installation.md) - All deployment options (curl, source, Helm, Docker, OpenShift)
 - [Features Guide](console-features.md) - Detailed feature documentation
+- [Local Setup Guide](local-setup.md) - Complete local development setup
+- [Authentication](authentication.md) - OAuth flow, sessions, and security
+- [Architecture](architecture.md) - System design and component details
 - [Card Reference](console-cards.md) - Complete list of available cards
 - [Rewards System](console-rewards.md) - Community engagement and rewards
 - [Updates](console-updates.md) - Release channels and version management
