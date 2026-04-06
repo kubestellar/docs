@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-04-06T10:25:12.708Z",
+  "generated_at": "2026-04-06T14:20:43.498Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2769150,
+      "total_points": 2770750,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 227,
-        "feature_issues": 337,
-        "other_issues": 165,
-        "prs_opened": 4053,
-        "prs_merged": 3697
+        "feature_issues": 338,
+        "other_issues": 167,
+        "prs_opened": 4055,
+        "prs_merged": 3699
       },
       "rank": 1
     },
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 68800,
+      "total_points": 71300,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 160,
-        "feature_issues": 13,
+        "bug_issues": 168,
+        "feature_issues": 14,
         "other_issues": 6,
         "prs_opened": 31,
         "prs_merged": 26
@@ -49,11 +49,11 @@
     {
       "login": "aaradhychinche-alt",
       "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-      "total_points": 29850,
+      "total_points": 30150,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 66,
+        "bug_issues": 67,
         "feature_issues": 2,
         "other_issues": 3,
         "prs_opened": 16,
@@ -317,6 +317,21 @@
       "rank": 21
     },
     {
+      "login": "aashu2006",
+      "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
+      "total_points": 5700,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 19,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 0,
+        "prs_merged": 0
+      },
+      "rank": 22
+    },
+    {
       "login": "khushal-winner",
       "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
       "total_points": 5500,
@@ -329,7 +344,7 @@
         "prs_opened": 11,
         "prs_merged": 3
       },
-      "rank": 22
+      "rank": 23
     },
     {
       "login": "rudy128",
@@ -344,7 +359,7 @@
         "prs_opened": 7,
         "prs_merged": 6
       },
-      "rank": 23
+      "rank": 24
     },
     {
       "login": "btwshivam",
@@ -359,7 +374,7 @@
         "prs_opened": 7,
         "prs_merged": 7
       },
-      "rank": 24
+      "rank": 25
     },
     {
       "login": "onkar717",
@@ -374,7 +389,22 @@
         "prs_opened": 8,
         "prs_merged": 5
       },
-      "rank": 25
+      "rank": 26
+    },
+    {
+      "login": "khushiiagrawal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
+      "total_points": 4300,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 2,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 6,
+        "prs_merged": 5
+      },
+      "rank": 27
     },
     {
       "login": "MAVRICK-1",
@@ -389,22 +419,7 @@
         "prs_opened": 3,
         "prs_merged": 1
       },
-      "rank": 26
-    },
-    {
-      "login": "khushiiagrawal",
-      "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-      "total_points": 3700,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 6,
-        "prs_merged": 5
-      },
-      "rank": 27
+      "rank": 28
     },
     {
       "login": "dakshhhhh16",
@@ -419,7 +434,7 @@
         "prs_opened": 6,
         "prs_merged": 4
       },
-      "rank": 28
+      "rank": 29
     },
     {
       "login": "AresPhoenix345",
@@ -433,21 +448,6 @@
         "other_issues": 1,
         "prs_opened": 4,
         "prs_merged": 4
-      },
-      "rank": 29
-    },
-    {
-      "login": "aashu2006",
-      "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-      "total_points": 3000,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 10,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 0,
-        "prs_merged": 0
       },
       "rank": 30
     },
