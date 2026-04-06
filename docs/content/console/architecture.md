@@ -178,11 +178,35 @@ Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `K
 | **Medium** | ~50% | AI analysis and summaries on demand |
 | **High** | ~100% | Proactive suggestions, auto-analysis |
 
-## Database Schema
+## State Storage
 
-The console uses SQLite for persistence:
+The console persists state in two places: a **server-side SQLite database** and **browser localStorage**.
 
-- `users` - GitHub user info and preferences
-- `dashboards` - User dashboard configurations
-- `cards` - Card instances with positions and config
-- `onboarding_responses` - Initial setup answers
+### SQLite Database (Server-Side)
+
+The Backend stores structured data in a SQLite database file. The default path is `./data/console.db` (relative to the working directory where the console process starts). You can override this with:
+
+- **Environment variable**: `DATABASE_PATH=/path/to/console.db`
+- **CLI flag**: `--db /path/to/console.db`
+
+The Backend creates the database file and its parent directories automatically on first run. The database uses WAL (Write-Ahead Logging) mode for concurrent read performance.
+
+**Database schema:**
+
+- `users` — GitHub user info and preferences
+- `dashboards` — User dashboard configurations
+- `cards` — Card instances with positions and config
+- `onboarding_responses` — Initial setup answers
+
+### Browser localStorage (Client-Side)
+
+The Frontend stores ephemeral UI state and caches in the browser's `localStorage`. This data is per-browser and is not synced between devices or users. Key categories:
+
+| Category | Examples | Persistence |
+|----------|----------|-------------|
+| **AI Missions** | Active mission definitions, mission history, mission cache | Survives page reload; cleared when browser storage is cleared |
+| **Dashboard caches** | Cluster data, security scan results, compliance data | TTL-based (45s–5min depending on category); stale-while-revalidate |
+| **UI preferences** | Theme, cluster layout mode, navigation history | Permanent until manually cleared |
+| **Wizard state** | Mission Control wizard progress | Expires after 7 days of inactivity |
+
+**AI Missions are stored entirely in localStorage**, not in the SQLite database. Mission definitions (including the mission name, type, target clusters, and deployment state) are written to `localStorage` keys such as `kubestellar-missions-active` and `kubestellar-missions-history`. The mission catalog cache (fetched from the console-kb repository) is stored under `kc-mission-cache` with a 6-hour TTL. Because this data lives in the browser, missions are **not shared between users or devices** — each browser maintains its own set of active and historical missions.
