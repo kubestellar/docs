@@ -199,17 +199,18 @@ const KUBESTELLAR_MCP_VERSIONS: Record<string, VersionInfo> = {
 }
 
 // console versions
+// Console docs are actively developed on main — default to main so users
+// always see the latest content instead of a stale release branch (#1350).
 const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
-  latest: {
-    label: "v0.3.6 (Latest)",
-    branch: "docs/console/0.3.6",
+  main: {
+    label: "main (latest)",
+    branch: "main",
     isDefault: true,
   },
-  main: {
-    label: "main (dev)",
-    branch: "main",
+  "0.3.6": {
+    label: "v0.3.6",
+    branch: "docs/console/0.3.6",
     isDefault: false,
-    isDev: true,
   },
   "0.1.0": {
     label: "v0.1.0",
@@ -264,7 +265,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "console",
     name: "Console",
     basePath: "console",
-    currentVersion: "0.3.6",
+    currentVersion: "main",
     contentPath: "docs/content/console",
     versions: CONSOLE_VERSIONS,
   },

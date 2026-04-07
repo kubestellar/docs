@@ -133,6 +133,7 @@ nav:
       - Alerts: console/alerts.md
       - Configuration: console/configuration.md
       - Architecture: console/architecture.md
+      - Persistence: console/persistence.md
   - KubeStellar MCP:
       - Overview: kubestellar-mcp/index.md
       - Getting Started: kubestellar-mcp/overview/intro.md

@@ -15,15 +15,22 @@ interface VersionSelectorProps {
   isMobile?: boolean;
 }
 
+// Find the default version key for a given set of versions.
+// Returns the key of the version marked isDefault, or 'latest' as a fallback.
+function findDefaultVersionKey(versions: Array<{ key: string; isDefault?: boolean }>): string {
+  const defaultVersion = versions.find(v => v.isDefault);
+  return defaultVersion?.key ?? 'latest';
+}
+
 // Detect current version from hostname
-function detectCurrentVersionKey(versions: Array<{ key: string; branch: string; isDev?: boolean }>): string {
-  if (typeof window === 'undefined') return 'latest';
+function detectCurrentVersionKey(versions: Array<{ key: string; branch: string; isDev?: boolean; isDefault?: boolean }>): string {
+  if (typeof window === 'undefined') return findDefaultVersionKey(versions);
 
   const hostname = window.location.hostname;
 
-  // Production site = latest
+  // Production site = whichever version is marked as default for this project
   if (hostname === 'kubestellar.io' || hostname === 'www.kubestellar.io') {
-    return 'latest';
+    return findDefaultVersionKey(versions);
   }
 
   // Netlify branch deploys: {branch-slug}--{site-name}.netlify.app
@@ -38,7 +45,7 @@ function detectCurrentVersionKey(versions: Array<{ key: string; branch: string; 
 
     // Check for deploy previews (deploy-preview-XXX)
     if (branchSlug.startsWith('deploy-preview-')) {
-      return 'latest'; // Preview shows as latest
+      return findDefaultVersionKey(versions);
     }
 
     // Match branch slug to version (e.g., docs-0-28-0 -> 0.28.0)
@@ -50,8 +57,8 @@ function detectCurrentVersionKey(versions: Array<{ key: string; branch: string; 
     }
   }
 
-  // Default to latest
-  return 'latest';
+  // Default to whichever version is marked as default
+  return findDefaultVersionKey(versions);
 }
 
 export function VersionSelector({ className = '', isMobile = false }: VersionSelectorProps) {
@@ -93,7 +100,7 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
 
   // Get the label for the current version
   const currentVersion = versions.find(v => v.key === currentVersionKey);
-  const currentVersionLabel = currentVersion?.label || `v${currentProject.currentVersion}`;
+  const currentVersionLabel = currentVersion?.label || currentProject.currentVersion;
 
   // Show project name for non-KubeStellar projects
   const showProjectName = projectId !== 'kubestellar';
