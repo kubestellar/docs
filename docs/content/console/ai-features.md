@@ -21,7 +21,7 @@ keywords:
 
 KubeStellar Console uses AI Missions to automate multi-cluster Kubernetes operations. Think of it as having an expert Kubernetes engineer who knows every CNCF project and can troubleshoot, deploy, and repair across your entire fleet — saving you time and tokens.
 
-![AI Missions Panel](images/ai-missions-panel.png)
+![AI Missions Panel](images/ai-missions-sidebar-apr07.jpg)
 
 > **Getting started?** See the [AI Missions Setup](ai-missions-setup.md) guide for step-by-step instructions on configuring API keys, selecting a model, and running your first mission.
 
@@ -47,6 +47,8 @@ The navbar button shows an attention badge when missions need your input. For co
 | **Repair** | Fix problems automatically |
 | **Upgrade** | Plan and execute upgrades |
 | **Deploy** | Help deploy applications |
+| **Orbit** | Recurring maintenance (health checks, cert rotation, version drift) |
+| **Mission Control** | Multi-project deployment orchestration with Flight Plan blueprint |
 
 ### How It Works
 
@@ -473,6 +475,119 @@ The Mission Browser now includes **Kubara Platform Catalog** as a source alongsi
 ### Fixer Missions (Renamed from Solutions)
 
 The mission type previously called "Solution" has been renamed to **Fixer**. The knowledge base path changed from `solutions/` to `fixes/`, and all related analytics events now use the `ksc_fixer_*` prefix. The concept of "Resolutions" (saved outcomes) is unchanged.
+
+### Flight Plan Blueprint Visualization
+
+Mission Control now renders a full SVG **Flight Plan Blueprint** that maps your deployment across clusters:
+
+![Flight Plan Blueprint](images/flight-plan-blueprint-apr07.jpg)
+
+The blueprint shows:
+
+- **Cluster zones** with health status indicators (EKS, AKS, OpenShift, etc.)
+- **Project icons** using GitHub avatar images with colored letter-initial fallback
+- **Cross-cluster dependency edges** rendered as dashed lines between cluster zones (e.g., falco -> prometheus for metrics, kyverno -> cert-manager for TLS)
+- **Intra-cluster dependency edges** as solid lines within cluster zones
+- **Per-cluster resource stats** (DISK, PVC, CPU, MEM) at the bottom of each cluster
+- **Launch Sequence** phases with progress indicators (e.g., "Core Infrastructure" then "Security & Observability")
+- **Phased Rollout** sidebar showing deployment phases with time estimates and manual/AI-assisted modes
+
+Click the **Flight Plan** tab in Mission Control to see this view. In demo mode, the blueprint is pre-populated with a Security & Observability Stack deployment (Prometheus, Grafana, Falco, Kyverno, cert-manager across 3 clusters).
+
+### Heartbeat for Long-Running Tool Calls
+
+The backend now sends periodic heartbeat events during mission execution (every 30 seconds). Previously, long-running tool calls that only produced progress events would trigger a false "Agent Not Responding" timeout after 90 seconds. Progress events now also reset the stream-inactivity timer on the frontend.
+
+---
+
+## Orbital Maintenance Missions (New in April 2026)
+
+After deploying applications, you need ongoing maintenance. **Orbital Maintenance** is the mission class that handles recurring health checks, certificate rotations, version drift scans, and more.
+
+![AI Missions Sidebar with Orbit Missions](images/ai-missions-sidebar-apr07.jpg)
+
+### The Full Lifecycle: Launch, Orbit, Ground Control
+
+1. **Launch** (Install/Deploy mission) -- Deploy a CNCF project or multi-project stack
+2. **Orbit** (Maintenance mission) -- Schedule recurring checks to keep it healthy
+3. **Ground Control** (Auto-generated dashboard) -- Monitor the deployed stack from a dedicated dashboard
+
+### Orbit Mission Types
+
+| Type | What it checks |
+|------|---------------|
+| **Health Check** | Overall application health, pod status, readiness |
+| **Cert Rotation** | TLS certificate expiry, auto-renewal status |
+| **Version Drift** | Whether deployed versions match desired versions |
+| **Resource Quota** | Quota utilization, approaching limits |
+| **Backup Verification** | Backup freshness and restore readiness |
+
+### Setting Up Orbit Maintenance
+
+After an install or deploy mission completes successfully, the console offers an **OrbitSetupOffer** at the bottom of the mission chat:
+
+1. Choose an orbit type (health-check, cert-rotation, version-drift, resource-quota, backup-verification)
+2. Set cadence (daily, weekly, or monthly)
+3. Toggle **auto-run** (opt-in, off by default)
+4. Select target clusters
+
+You can also create standalone orbit missions from the **Add Orbit** button in the mission sidebar without needing a prior install mission.
+
+### Auto-Run
+
+When auto-run is enabled for an orbit mission:
+
+- The console checks every 60 seconds for overdue missions
+- Due missions are started automatically when the console is open
+- A toast notification appears when an auto-run mission starts
+- Session deduplication prevents re-triggering the same mission twice per session
+
+### Orbit Reminders
+
+A reminder banner appears in the sidebar header when orbit missions are due or overdue:
+
+- **Amber** -- Mission is overdue (past its cadence schedule)
+- **Purple** -- Mission is upcoming (within the next period)
+- **Run Now** and **Dismiss** actions are available directly from the banner
+- Multiple reminders are grouped to save space
+
+### Orbit Status on Deploy Dashboard
+
+The Deploy dashboard's Deployment Missions card shows orbit status for deployed applications:
+
+- Orbit icon with cadence label (daily/weekly/monthly)
+- Last run result (success, warning, or failure)
+- "Overdue" flag when maintenance is past due
+
+### Backend Orbit Scheduler
+
+Four API endpoints manage orbit missions behind JWT authentication:
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/orbit/missions` | GET | List all orbit missions |
+| `/api/orbit/missions` | POST | Create a new orbit mission |
+| `/api/orbit/missions/:id/run` | POST | Trigger an orbit mission run |
+| `/api/orbit/schedule` | GET | View the orbit schedule |
+
+A background scheduler goroutine checks every 60 seconds for auto-run missions past their cadence and marks them as executed. Missions are persisted to `orbit_missions.json` in the data directory.
+
+### Ground Control Dashboards
+
+When an orbit mission is created for a project, the console auto-generates a **Ground Control dashboard** with cards relevant to that project's orbit type. A small purple **Satellite** icon appears next to Ground Control dashboard names in the sidebar.
+
+---
+
+## Mission Type Explainer (New in April 2026)
+
+On console.kubestellar.io (demo mode), the AI Missions sidebar includes a collapsible **"How AI Missions work"** section that explains all four mission types:
+
+- **Install** (blue rocket) -- Deploy CNCF projects with guided steps
+- **Fix** (orange wrench) -- AI root cause analysis and auto-fix
+- **Mission Control** (purple sparkles) -- Multi-project, multi-cluster deployment orchestration
+- **Orbit** (satellite) -- Recurring maintenance automation
+
+This section is visible only in demo mode to help new users understand the mission system.
 
 ---
 

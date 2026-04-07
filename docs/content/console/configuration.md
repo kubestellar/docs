@@ -27,6 +27,16 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | `ENABLED_DASHBOARDS` | Comma-separated list of dashboard routes to show in sidebar | (all dashboards) |
 | `VITE_GA_MEASUREMENT_ID` | Google Analytics 4 measurement ID | (optional) |
 | `FEEDBACK_GITHUB_TOKEN` | GitHub token for feedback issue creation | (optional) |
+| `KAGENT_NAMESPACE` | Namespace where kagent is deployed | `kagent` |
+| `KAGENT_SERVICE_NAME` | kagent Kubernetes service name | `kagent` |
+| `KAGENT_SERVICE_PORT` | kagent service port | `8080` |
+| `KAGENT_SERVICE_PROTOCOL` | kagent service protocol (http or https) | `http` |
+| `KAGENTI_NAMESPACE` | Namespace where kagenti is deployed | `kagenti` |
+| `KAGENTI_SERVICE_NAME` | kagenti Kubernetes service name | `kagenti` |
+| `KAGENTI_SERVICE_PORT` | kagenti service port | `8080` |
+| `KAGENTI_SERVICE_PROTOCOL` | kagenti service protocol (http or https) | `http` |
+
+The `KAGENT_*` and `KAGENTI_*` variables allow configuring kagent/kagenti auto-detection for non-standard deployments, HTTPS endpoints, or custom namespaces.
 
 ## kc-agent Configuration
 

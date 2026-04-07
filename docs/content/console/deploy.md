@@ -10,7 +10,7 @@ description: >
 
 KubeStellar Console isn't just for monitoring — it's a full deployment and orchestration control plane for your workloads across multiple clusters.
 
-![Deploy Dashboard](images/deploy-mar05.jpg)
+![Deploy Dashboard](images/deploy-apr07.jpg)
 
 ---
 
@@ -134,6 +134,35 @@ The Deploy dashboard also integrates with GitOps tools:
 - **Kustomizations** — Track Kustomize-based deployments
 
 This means you can use the console alongside your existing GitOps workflow, or as a standalone deployment tool.
+
+---
+
+## Workload Import Dialog (New in April 2026)
+
+The Deploy page now includes an **Add Workload** button that opens a multi-tab import dialog for adding new workloads:
+
+| Tab | Method |
+|-----|--------|
+| **YAML** | Paste or upload YAML manifests. Supports multi-document YAML with client-side validation via `js-yaml`. |
+| **Helm** | Import from a Helm chart repository. |
+| **GitHub** | Import directly from a GitHub repository URL. |
+| **Kustomize** | Apply a Kustomize overlay. |
+
+The "+ Add" button sits inline with the workload search bar for easy access.
+
+---
+
+## Orbit Status on Deployment Missions (New in April 2026)
+
+When a deployment is "In Orbit" (successfully deployed) and has an associated orbit maintenance mission, the Deployment Missions card shows:
+
+- **Orbit icon** with cadence label (daily/weekly/monthly)
+- **Last run result** -- success, warning, or failure indicator
+- **"Overdue" flag** when maintenance is past its scheduled cadence
+
+This connects the deployment lifecycle to ongoing maintenance, so you can see at a glance whether deployed applications are being actively maintained.
+
+See [AI Features > Orbital Maintenance](ai-features.md#orbital-maintenance-missions-new-in-april-2026) for full documentation on orbit missions.
 
 ---
 
