@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-07T03:03:25.638Z",
+  "generated_at": "2026-04-07T06:30:58.544Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2802750,
+      "total_points": 2806400,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 234,
+        "bug_issues": 238,
         "feature_issues": 342,
-        "other_issues": 183,
-        "prs_opened": 4096,
-        "prs_merged": 3740
+        "other_issues": 190,
+        "prs_opened": 4099,
+        "prs_merged": 3743
       },
       "rank": 1
     },
@@ -49,17 +49,32 @@
     {
       "login": "aaradhychinche-alt",
       "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-      "total_points": 30150,
+      "total_points": 31450,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 67,
-        "feature_issues": 2,
+        "bug_issues": 71,
+        "feature_issues": 3,
         "other_issues": 3,
         "prs_opened": 16,
         "prs_merged": 13
       },
       "rank": 4
+    },
+    {
+      "login": "mrhapile",
+      "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
+      "total_points": 28650,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 52,
+        "feature_issues": 1,
+        "other_issues": 3,
+        "prs_opened": 24,
+        "prs_merged": 16
+      },
+      "rank": 5
     },
     {
       "login": "XxSURYANSHxX",
@@ -73,21 +88,6 @@
         "other_issues": 4,
         "prs_opened": 0,
         "prs_merged": 0
-      },
-      "rank": 5
-    },
-    {
-      "login": "mrhapile",
-      "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-      "total_points": 26350,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 45,
-        "feature_issues": 1,
-        "other_issues": 3,
-        "prs_opened": 23,
-        "prs_merged": 16
       },
       "rank": 6
     },
