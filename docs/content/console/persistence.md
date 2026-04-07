@@ -86,6 +86,15 @@ restores settings from the backend. See
 | `kubestellar-missions-active` | Active AI Missions |
 | `kubestellar-missions-history` | AI Mission history |
 
+**Orbit Maintenance**
+
+| Key | Description |
+|---|---|
+| `kc-orbit-missions` | Orbit mission configurations (type, cadence, auto-run, target clusters) |
+| `kc-ground-control-dashboards` | Mapping of Ground Control dashboards to orbit missions |
+
+On the backend, orbit missions are also persisted to `orbit_missions.json` in the data directory, with a background scheduler that checks for auto-run missions every 60 seconds.
+
 **Engagement & Nudges**
 
 Keys such as `kc-nudge-dismissed`, `kc-session-count`, `kc-visit-count`,

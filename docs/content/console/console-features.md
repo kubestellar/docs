@@ -14,7 +14,7 @@ This guide covers the main features of the KubeStellar Console.
 
 The main dashboard provides a customizable view of your multi-cluster environment.
 
-![Dashboard Overview](images/dashboard-overview-mar14.jpg)
+![Dashboard Overview](images/dashboard-overview-apr07.jpg)
 
 ### Stats Overview
 
@@ -150,7 +150,7 @@ The alert system keeps you informed:
 
 AI-powered automation for common tasks:
 
-![AI Missions Panel](images/ai-missions-panel-apr02.jpg)
+![AI Missions Panel](images/ai-missions-sidebar-apr07.jpg)
 
 ### Starting a Mission
 
@@ -164,6 +164,10 @@ Missions can be started from:
 
 ### Mission Types
 
+- **Install**: Deploy CNCF projects with guided steps
+- **Fix** (Fixer): AI root cause analysis and auto-fix
+- **Mission Control**: Multi-project, multi-cluster deployment orchestration with Flight Plan blueprint
+- **Orbit**: Recurring maintenance automation (health checks, cert rotation, version drift, resource quota, backup verification)
 - **Security Analysis**: Investigate security issues and vulnerabilities
 - **Performance Investigation**: Analyze slow pods or resource constraints
 - **Troubleshooting**: Debug failing deployments or pods
@@ -227,11 +231,104 @@ The Hardware Health card provides IPMI-style monitoring for GPU and accelerator 
 - **Predicted**: Yellow bubble for AI-predicted future failures
 - **Drill-Down**: Click counts to navigate to affected resources
 
+## Console Studio (New in April 2026)
+
+Console Studio is a unified customization panel that replaces the separate card add modal, sidebar customizer, and template modal with a single coherent experience.
+
+![Console Studio](images/console-studio-apr07.jpg)
+
+### Opening Console Studio
+
+- Press **Cmd/Ctrl + K** to open Console Studio
+- Or click the palette icon FAB (floating action button) on the dashboard
+
+### What You Can Do
+
+Console Studio has a flat left navigation with these sections:
+
+| Section | Description |
+|---------|-------------|
+| **Add Cards** | Browse the card catalog by dashboard category with an AI-powered search bar |
+| **Add Card Collections** | Apply pre-built card collections by category |
+| **Manage Dashboards** | Create, rename, or delete custom dashboards |
+| **Create Custom Dashboard** | Build a new dashboard from scratch |
+| **Create Custom Card** | Design a custom card with AI assistance |
+| **Create Stat Blocks** | Add custom stat blocks to the dashboard header |
+| **Export Widgets** | Export cards as embeddable widgets |
+
+### AI-Powered Card Search
+
+The card catalog includes an AI suggestion bar at the top. Type a description of what you want to monitor (e.g., "GPU utilization and availability") and click **AI Suggest** to get recommended cards. Quick suggestion chips are provided for common queries like "Helm releases and chart versions" or "Namespace quotas and RBAC".
+
+### Live Preview
+
+The right panel shows a live preview of the selected card or dashboard layout before you add it.
+
+---
+
+## NPS Survey System (New in April 2026)
+
+An in-product Net Promoter Score (NPS) survey helps collect user feedback:
+
+- **4 emoji reactions**: Not great, Meh, Good, Love it!
+- **Session-based trigger**: Hidden for the first 4 sessions, appears after 30 seconds of idle time on session 5+
+- **Re-prompt cadence**: Every 30 days after submission; retries 7 days after dismiss (max 3 dismissals)
+- **Authenticated users only**: Skips in demo mode
+- **Optional feedback text**: Users can provide written feedback (minimum 20 characters, forwarded to the backend)
+- **GA4 tracking**: Events `ksc_nps_survey_shown`, `ksc_nps_score_submitted`, `ksc_nps_feedback_submitted`
+
+---
+
+## Learn Dropdown with Medium Blog (New in April 2026)
+
+The **Learn** button in the top navigation bar now includes a **Blog** section with the latest articles from the KubeStellar Medium publication:
+
+![Learn Dropdown](images/learn-dropdown-apr07.jpg)
+
+The dropdown organizes learning resources into sections:
+
+- **Take the Tour** -- Interactive walkthrough of the console
+- **Blog** -- Latest Medium articles with author and date
+- **Documentation** -- Links to console and cluster docs
+- **Getting Started** -- Quick setup guides
+- **YouTube Channel** -- Video tutorials and playlists
+
+---
+
+## Workload Import Dialog (New in April 2026)
+
+The Workloads dashboard and Deploy page now include an **Add Workload** button that opens a multi-tab import dialog:
+
+![Workloads Page](images/workloads-apr07.jpg)
+
+| Tab | Import Method |
+|-----|--------------|
+| **YAML** | Paste or upload YAML manifests with client-side parsing via `js-yaml` and multi-document support |
+| **Helm** | Deploy from a Helm chart repository |
+| **GitHub** | Import directly from a GitHub repository |
+| **Kustomize** | Apply a Kustomize overlay |
+
+The Workloads dashboard also shows an "Add Workload" button in the header and a "Deploy a Workload" call-to-action in the empty state (both navigate to the Deploy page).
+
+---
+
+## System Updates Settings Clarification (New in April 2026)
+
+The System Updates settings page now includes a collapsible **"What do these settings control?"** info section that explains three distinct update scopes:
+
+| Scope | What it does |
+|-------|-------------|
+| **System Updates** | Updates the entire console to a new version (controlled by Update Channel and Auto-Update) |
+| **Auto-Reload** | Browser reloads when a new build is deployed (chunk hash mismatch detection) |
+| **Card/Content Updates** | Individual cards check for new data on their own refresh intervals |
+
+---
+
 ## Deploy Page
 
 The Deploy page provides tools for managing deployments across clusters.
 
-![Deploy Page](images/deploy-page.png)
+![Deploy Page](images/deploy-apr07.jpg)
 
 ### Deployment Cards
 

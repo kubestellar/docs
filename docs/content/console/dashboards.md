@@ -23,12 +23,13 @@ KubeStellar Console has 29+ dashboards for multi-cluster Kubernetes monitoring. 
 
 **Route:** `/`
 
-![Main Dashboard](images/main-dashboard.png)
+![Main Dashboard](images/dashboard-overview-apr07.jpg)
 
 This is your home page. It shows:
 - Overview of all your clusters
 - Cards you've chosen to see
 - Quick stats at the top
+- Console Studio access via Cmd/Ctrl+K for card and dashboard customization
 - AI suggestions for what to look at
 
 The main dashboard learns what you care about and shows those things first.
