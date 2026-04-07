@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-04-07T06:30:58.544Z",
+  "generated_at": "2026-04-07T10:22:35.768Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 2806400,
+      "total_points": 2807400,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 238,
-        "feature_issues": 342,
-        "other_issues": 190,
-        "prs_opened": 4099,
-        "prs_merged": 3743
+        "feature_issues": 344,
+        "other_issues": 192,
+        "prs_opened": 4100,
+        "prs_merged": 3744
       },
       "rank": 1
     },
@@ -47,6 +47,21 @@
       "rank": 3
     },
     {
+      "login": "mrhapile",
+      "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
+      "total_points": 31950,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 63,
+        "feature_issues": 1,
+        "other_issues": 3,
+        "prs_opened": 24,
+        "prs_merged": 16
+      },
+      "rank": 4
+    },
+    {
       "login": "aaradhychinche-alt",
       "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
       "total_points": 31450,
@@ -58,21 +73,6 @@
         "other_issues": 3,
         "prs_opened": 16,
         "prs_merged": 13
-      },
-      "rank": 4
-    },
-    {
-      "login": "mrhapile",
-      "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-      "total_points": 28650,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 52,
-        "feature_issues": 1,
-        "other_issues": 3,
-        "prs_opened": 24,
-        "prs_merged": 16
       },
       "rank": 5
     },
@@ -214,12 +214,12 @@
     {
       "login": "arnavgogia20",
       "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-      "total_points": 18000,
+      "total_points": 18400,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 38,
-        "feature_issues": 1,
+        "bug_issues": 39,
+        "feature_issues": 2,
         "other_issues": 0,
         "prs_opened": 10,
         "prs_merged": 9
