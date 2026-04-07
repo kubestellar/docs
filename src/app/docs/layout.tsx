@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { DocsNavbar, DocsFooter, DocsBanner } from '@/components/docs/index'
 import { DocsProvider } from '@/components/docs/DocsProvider'
 import { MobileOverlay } from '@/components/docs/MobileOverlay'
@@ -17,9 +18,47 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 })
 
-export const metadata = {
-  title: 'KubeStellar - Multi-Cluster Kubernetes Orchestration',
-  description: 'Official documentation for KubeStellar - Multi-cluster orchestration platform',
+const SITE_URL = 'https://kubestellar.io'
+const SITE_TITLE = 'KubeStellar Docs - Multi-Cluster Kubernetes Orchestration'
+const SITE_DESCRIPTION =
+  'Official documentation for KubeStellar. Learn how to orchestrate workloads across multiple Kubernetes clusters with intelligent distribution, unified management, and seamless multi-cluster operations.'
+
+export const metadata: Metadata = {
+  title: {
+    default: SITE_TITLE,
+    template: '%s | KubeStellar Docs',
+  },
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: '/docs',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: `${SITE_URL}/docs`,
+    siteName: 'KubeStellar',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: '/KubeStellar-with-Logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'KubeStellar - Multi-Cluster Kubernetes Orchestration',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ['/KubeStellar-with-Logo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 type Props = {
