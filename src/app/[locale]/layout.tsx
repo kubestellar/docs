@@ -20,6 +20,8 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://kubestellar.io";
+
 export async function generateMetadata({
   params,
 }: {
@@ -28,9 +30,42 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
 
+  const title = t("title");
+  const description = t("description");
+
   return {
-    title: t("title"),
-    description: t("description"),
+    title,
+    description,
+    metadataBase: new URL(SITE_URL),
+    alternates: {
+      canonical: `/${locale}`,
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "en" ? "en_US" : locale,
+      url: `${SITE_URL}/${locale}`,
+      siteName: "KubeStellar",
+      title,
+      description,
+      images: [
+        {
+          url: "/KubeStellar-with-Logo.png",
+          width: 1200,
+          height: 630,
+          alt: "KubeStellar - Multi-Cluster Kubernetes Orchestration",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/KubeStellar-with-Logo.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
