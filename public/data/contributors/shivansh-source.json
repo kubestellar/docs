@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-08T01:13:06.091Z",
+  "generated_at": "2026-04-08T01:31:36.119Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -316,34 +316,34 @@
     ],
     "stretch": [
       {
-        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "title": "card: Implement Flatcar Container Linux monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       },
       {
-        "title": "card: Implement Lima monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "title": "card: Implement Contour monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/34",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },

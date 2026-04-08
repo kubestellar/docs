@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-08T01:13:06.119Z",
+  "generated_at": "2026-04-08T01:31:36.146Z",
   "total_issues_opened": 47,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 19600,
@@ -323,34 +323,34 @@
     "deepen": [],
     "stretch": [
       {
-        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
-        "url": "https://github.com/kubestellar/console/issues/4189",
-        "repo": "console",
-        "topic_match": "uncategorized"
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
-        "title": "card: Implement Flatcar Container Linux monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "title": "card: Implement Lima monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },

@@ -1,6 +1,6 @@
 {
   "login": "SakshamDutt",
-  "generated_at": "2026-04-08T01:13:06.121Z",
+  "generated_at": "2026-04-08T01:31:36.149Z",
   "total_issues_opened": 6,
   "avatar_url": "https://avatars.githubusercontent.com/u/72153648?v=4",
   "total_points": 18500,
@@ -127,34 +127,34 @@
     "deepen": [],
     "stretch": [
       {
-        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
-        "url": "https://github.com/kubestellar/console/issues/4189",
-        "repo": "console",
-        "topic_match": "uncategorized"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
-        "title": "card: Implement Flatcar Container Linux monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       },
       {
-        "title": "card: Implement Lima monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       }
     ]
   },

@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-08T01:13:06.259Z",
+  "generated_at": "2026-04-08T01:31:36.300Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 3850,
@@ -197,34 +197,34 @@
     "deepen": [],
     "stretch": [
       {
-        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "title": "card: Implement Flatcar Container Linux monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "title": "card: Implement Lima monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       },
       {
-        "title": "card: Implement Contour monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/34",
-        "repo": "console-marketplace",
-        "topic_match": "uncategorized"
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       }
     ]
   },

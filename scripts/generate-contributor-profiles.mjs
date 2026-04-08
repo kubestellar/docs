@@ -49,8 +49,8 @@ const BODY_CHAR_LIMIT = 500;
 const CLUSTER_MERGE_THRESHOLD = 0.15;
 /** Minimum cosine similarity for a "deepen" suggestion match */
 const DEEPEN_SIMILARITY_THRESHOLD = 0.2;
-/** Maximum cosine similarity for a "stretch" suggestion (must be dissimilar) */
-const STRETCH_SIMILARITY_THRESHOLD = 0.1;
+/** Minimum cosine similarity for a codebase area to be considered "covered" by a contributor */
+const AREA_COVERED_THRESHOLD = 0.1;
 /** Number of top terms used to name a cluster */
 const CLUSTER_NAME_TERM_COUNT = 3;
 /** Number of suggestions per category (deepen/stretch) */
@@ -459,36 +459,160 @@ function findDeepenSuggestions(
     .map(({ similarity, ...rest }) => rest);
 }
 
+// ── Console codebase areas ────────────────────────────────────────────
 /**
- * Find "stretch" suggestions: open issues dissimilar to all of the contributor's clusters.
+ * Areas of the kubestellar/console codebase that contributors can explore.
+ * Each area has keywords that map to its domain — used to check overlap with
+ * a contributor's existing topic clusters via TF-IDF cosine similarity.
  */
-function findStretchSuggestions(clusterCentroids, openIssues, login) {
-  const suggestions = [];
+const CONSOLE_CODEBASE_AREAS = [
+  {
+    name: "Dashboard & Cards",
+    path: "web/src/components/cards/, web/src/components/dashboard/",
+    description: "Dashboard layout, card framework, card registry, and individual monitoring cards",
+    keywords: "dashboard card widget customizer layout grid drag drop monitor status",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/cards",
+  },
+  {
+    name: "GPU & AI/ML",
+    path: "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+    description: "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+    keywords: "gpu ai ml inference model benchmark latency throughput vllm llm performance",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/gpu",
+  },
+  {
+    name: "Cluster Management",
+    path: "web/src/components/clusters/, pkg/k8s/",
+    description: "Multi-cluster views, cluster health, add/remove clusters, Kubernetes client",
+    keywords: "cluster node kubeconfig context multicluster health add remove connect",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/clusters",
+  },
+  {
+    name: "Security & RBAC",
+    path: "web/src/components/security/, web/src/components/rbac/",
+    description: "Security scanning, RBAC management, role bindings, compliance",
+    keywords: "security rbac role permission policy vulnerability scan compliance trivy kubescape",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/security",
+  },
+  {
+    name: "Deployments & GitOps",
+    path: "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+    description: "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+    keywords: "deploy deployment gitops helm chart cicd pipeline release rollout canary",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/deploy",
+  },
+  {
+    name: "Missions & AI Agent",
+    path: "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+    description: "AI-driven missions, mission browser, agent protocol, MCP integration",
+    keywords: "mission agent mcp protocol ai assist automate task goal objective",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/missions",
+  },
+  {
+    name: "Authentication & Settings",
+    path: "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+    description: "OAuth flow, user settings, preferences, API middleware, authentication",
+    keywords: "auth oauth login session token settings preference user profile middleware",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/auth",
+  },
+  {
+    name: "Observability & Logs",
+    path: "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+    description: "Log streaming, event timeline, alerting, notifications",
+    keywords: "log event alert notification observe monitor stream terminal watch",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/logs",
+  },
+  {
+    name: "Networking & Services",
+    path: "web/src/components/network/, web/src/components/services/",
+    description: "Service mesh, ingress, network policies, service discovery",
+    keywords: "network service ingress mesh policy dns endpoint load balance",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/network",
+  },
+  {
+    name: "Storage & Compute",
+    path: "web/src/components/storage/, web/src/components/compute/",
+    description: "Persistent volumes, storage classes, compute resource management",
+    keywords: "storage volume pvc pv class compute resource capacity provision",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/storage",
+  },
+  {
+    name: "Backend API & Handlers",
+    path: "pkg/api/, pkg/models/, pkg/store/",
+    description: "Go backend REST API, request handlers, data models, persistence layer",
+    keywords: "api handler endpoint rest backend server route model store database",
+    url: "https://github.com/kubestellar/console/tree/main/pkg/api",
+  },
+  {
+    name: "Marketplace & Operators",
+    path: "web/src/components/marketplace/, web/src/components/operators/",
+    description: "Plugin marketplace, operator management, extensions",
+    keywords: "marketplace plugin operator extension install catalog addon",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace",
+  },
+  {
+    name: "Onboarding & Rewards",
+    path: "web/src/components/onboarding/, web/src/components/rewards/",
+    description: "New user onboarding, gamification, contributor rewards system",
+    keywords: "onboard tour wizard reward point level badge gamification leaderboard",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding",
+  },
+  {
+    name: "Charts & Visualizations",
+    path: "web/src/components/charts/, web/src/components/drilldown/",
+    description: "Data visualization components, chart library, drill-down views",
+    keywords: "chart graph visualize bar line pie sparkline drilldown timeseries",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/charts",
+  },
+  {
+    name: "Cost Management",
+    path: "web/src/components/cost/",
+    description: "Cloud cost analysis, resource cost allocation, budgeting",
+    keywords: "cost budget spend allocation cloud resource optimize expense",
+    url: "https://github.com/kubestellar/console/tree/main/web/src/components/cost",
+  },
+];
 
-  for (const issue of openIssues) {
-    if (issue.login === login) continue;
+/**
+ * Find "stretch" suggestions: console codebase areas the contributor hasn't focused on.
+ * Compares the contributor's topic cluster centroids against each codebase area's
+ * keyword vector. Areas with low similarity to all clusters are "new territory."
+ *
+ * @param {Map<string, number>[]} clusterCentroids - Contributor's topic centroids
+ * @param {Map<string, number>[]} areaVectors - Pre-computed TF-IDF vectors for codebase areas
+ * @returns {object[]} Codebase areas the contributor hasn't explored
+ */
+function findStretchAreas(clusterCentroids, areaVectors) {
+  const uncovered = [];
 
+  for (let i = 0; i < CONSOLE_CODEBASE_AREAS.length; i++) {
+    const area = CONSOLE_CODEBASE_AREAS[i];
+    const areaVec = areaVectors[i];
+
+    // Check max similarity to any of the contributor's clusters
     let maxSim = 0;
     for (const c of clusterCentroids) {
-      const sim = cosineSimilarity(issue.vector, c);
+      const sim = cosineSimilarity(areaVec, c);
       if (sim > maxSim) maxSim = sim;
     }
 
-    if (maxSim < STRETCH_SIMILARITY_THRESHOLD) {
-      suggestions.push({
-        title: issue.title,
-        url: issue.url,
-        repo: issue.repo,
-        topic_match: issue.topicName || "uncategorized",
-        engagement: issue.engagement,
+    // If the area doesn't overlap with any cluster, it's a stretch
+    if (maxSim < AREA_COVERED_THRESHOLD) {
+      uncovered.push({
+        name: area.name,
+        path: area.path,
+        description: area.description,
+        url: area.url,
+        similarity: maxSim,
       });
     }
   }
 
-  return suggestions
-    .sort((a, b) => b.engagement - a.engagement)
+  // Sort by least similar first (most novel areas)
+  return uncovered
+    .sort((a, b) => a.similarity - b.similarity)
     .slice(0, SUGGESTION_COUNT)
-    .map(({ engagement, ...rest }) => rest);
+    .map(({ similarity, ...rest }) => rest);
 }
 
 // ── Data fetching ────────────────────────────────────────────────────
@@ -587,6 +711,17 @@ async function main() {
 
   console.log(`Open issues for suggestions: ${openIssues.length}\n`);
 
+  // 3b. Compute TF-IDF vectors for console codebase areas
+  console.log("Computing codebase area vectors...");
+  const areaTexts = CONSOLE_CODEBASE_AREAS.map((area) =>
+    `${area.name} ${area.description} ${area.keywords}`
+  );
+  const areaTokenized = areaTexts.map((text) => tokenize(cleanText(text)));
+  const { vectors: areaVectors } = computeTfIdf([...allTokenized, ...areaTokenized]);
+  // The area vectors are the last N entries (after all issue vectors)
+  const areaVectorSlice = areaVectors.slice(allTokenized.length);
+  console.log(`  ${areaVectorSlice.length} codebase areas vectorized\n`);
+
   // 4. Build per-contributor profiles
   const outDir = join(__dirname, "..", "public", "data", "contributors");
   if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
@@ -673,7 +808,7 @@ async function main() {
           : [],
       stretch:
         myIssues.length >= MIN_ISSUES_FOR_CLUSTERING
-          ? findStretchSuggestions(clusterCentroids, openIssues, login)
+          ? findStretchAreas(clusterCentroids, areaVectorSlice)
           : [],
     };
 

@@ -28,6 +28,13 @@ interface Suggestion {
   topic_match: string;
 }
 
+interface StretchArea {
+  name: string;
+  path: string;
+  description: string;
+  url: string;
+}
+
 interface CadenceData {
   avg_per_week: number;
   avg_per_day: number;
@@ -58,7 +65,7 @@ interface ContributorProfile {
   topics: TopicCluster[];
   suggestions: {
     deepen: Suggestion[];
-    stretch: Suggestion[];
+    stretch: StretchArea[];
   };
   activity_timeline: TimelineEntry[];
 }
@@ -668,11 +675,27 @@ export default function ContributorProfilePage({
                           Stretch Into New Areas
                         </h2>
                         <p className="text-sm text-gray-400 mb-4">
-                          High-impact issues outside your usual focus
+                          Console codebase areas outside your usual focus
                         </p>
                         <div className="space-y-3">
-                          {(profile.suggestions?.stretch || []).map((s) => (
-                            <SuggestionCard key={s.url} suggestion={s} />
+                          {(profile.suggestions?.stretch || []).map((area: StretchArea) => (
+                            <a
+                              key={area.name}
+                              href={area.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block p-3 bg-gray-800/40 rounded-lg border border-white/5 hover:border-white/10 hover:bg-gray-800/60 transition-all"
+                            >
+                              <p className="text-sm text-white font-medium mb-1">
+                                {area.name}
+                              </p>
+                              <p className="text-xs text-gray-400 mb-2">
+                                {area.description}
+                              </p>
+                              <span className="text-[10px] text-gray-500 font-mono">
+                                {area.path}
+                              </span>
+                            </a>
                           ))}
                         </div>
                       </div>
