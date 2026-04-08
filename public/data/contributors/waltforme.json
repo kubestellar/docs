@@ -1,0 +1,183 @@
+{
+  "login": "waltforme",
+  "generated_at": "2026-04-08T01:13:06.262Z",
+  "total_issues_opened": 4,
+  "avatar_url": "https://avatars.githubusercontent.com/u/8633434?v=4",
+  "total_points": 1150,
+  "level": "Explorer",
+  "level_rank": 2,
+  "rank": 40,
+  "cadence": {
+    "avg_per_week": 0.2,
+    "avg_per_day": 0.04,
+    "by_day_of_week": [
+      0,
+      1,
+      0,
+      3,
+      0,
+      0,
+      0
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 1,
+    "trend": "slowing_down",
+    "first_issue_at": "2025-12-11T15:03:28.000Z",
+    "last_issue_at": "2026-03-10T15:30:18.000Z"
+  },
+  "topics": [
+    {
+      "name": "translate, simplify, chinese",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: 'Meeting Agendas' on homepage is never translated",
+        "url": "https://github.com/kubestellar/docs/issues/908",
+        "created_at": "2026-01-29T06:08:56Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "group, workload, statement",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "doc: Unclear statements on https://kubestellar.io/docs/console/deploy",
+        "url": "https://github.com/kubestellar/docs/issues/1262",
+        "created_at": "2026-03-10T15:30:18Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "mouse, cursor, home",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Unexpected behavior of buttons on the website home page",
+        "url": "https://github.com/kubestellar/docs/issues/384",
+        "created_at": "2025-12-11T15:03:28Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+        "url": "https://github.com/kubestellar/console/issues/4189",
+        "repo": "console",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 1
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 2
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 1
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 0
+    }
+  ]
+}

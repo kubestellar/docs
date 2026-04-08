@@ -1,0 +1,351 @@
+{
+  "login": "XxSURYANSHxX",
+  "generated_at": "2026-04-08T01:13:04.572Z",
+  "total_issues_opened": 94,
+  "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
+  "total_points": 27900,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 6,
+  "cadence": {
+    "avg_per_week": 7.8,
+    "avg_per_day": 5.26,
+    "by_day_of_week": [
+      16,
+      3,
+      0,
+      8,
+      20,
+      17,
+      30
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      15,
+      0,
+      0,
+      4,
+      15,
+      1,
+      18,
+      0,
+      7,
+      14,
+      17,
+      3,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 3,
+    "longest_streak_weeks": 3,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-03-19T18:23:23.000Z",
+    "last_issue_at": "2026-04-06T15:08:00.000Z"
+  },
+  "topics": [
+    {
+      "name": "@xxsuryanshxx, pass, card",
+      "issue_count": 77,
+      "recent_issue": {
+        "title": "### Issue 15: Missing tier field bounds validation in GPU health CronJob endpoint (`mcp_resources.go`)",
+        "url": "https://github.com/kubestellar/console/issues/5026",
+        "created_at": "2026-04-06T15:08:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 77
+    },
+    {
+      "name": "tail, log, fake",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Incomplete Implementation: Logs DrillDown feature is hardcoded placeholder",
+        "url": "https://github.com/kubestellar/console/issues/4605",
+        "created_at": "2026-04-04T18:04:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "hardcodes, persistence, endpoint",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Persistence Sync API endpoint hardcodes 501 Not Implemented",
+        "url": "https://github.com/kubestellar/console/issues/4604",
+        "created_at": "2026-04-04T18:02:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "reconciliation, loop, kick",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "WorkloadDeployment backend reconciliation loop is unimplemented",
+        "url": "https://github.com/kubestellar/console/issues/4603",
+        "created_at": "2026-04-04T18:02:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "stdin, m., size",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 14: Unbounded stdin message size in pod exec WebSocket handler (`exec.go`)",
+        "url": "https://github.com/kubestellar/console/issues/5025",
+        "created_at": "2026-04-06T15:07:47Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "traversal, path, filepath",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 5: Path traversal in static file serving handler (`server.go`)",
+        "url": "https://github.com/kubestellar/console/issues/5015",
+        "created_at": "2026-04-06T15:05:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "prediction, cardinality, p.",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 4: Unbounded Prometheus label cardinality from AI predictions (`prediction_metrics.go`)",
+        "url": "https://github.com/kubestellar/console/issues/5014",
+        "created_at": "2026-04-06T15:05:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "configuration, read, permission",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 14: World-readable config file permissions expose cluster configuration (`persistence_config.go`)",
+        "url": "https://github.com/kubestellar/console/issues/4806",
+        "created_at": "2026-04-05T13:39:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "smtp, plaintext, send",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 15: SMTP credentials sent in plaintext without enforcing TLS in `email.go`",
+        "url": "https://github.com/kubestellar/console/issues/4730",
+        "created_at": "2026-04-05T09:09:02Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "process, zombie, kill",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 12: Zombie process leak in MCP Client `Stop` method in `client.go`",
+        "url": "https://github.com/kubestellar/console/issues/4727",
+        "created_at": "2026-04-05T09:08:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "parent, worker, context",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 6: `prediction_worker.go` uses `context.Background()` instead of parent context",
+        "url": "https://github.com/kubestellar/console/issues/4720",
+        "created_at": "2026-04-05T09:06:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "panic, bypass, websocket",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unhandled API Panic Recovery bypasses WebSocket connection cleanup",
+        "url": "https://github.com/kubestellar/console/issues/4608",
+        "created_at": "2026-04-04T18:05:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "omission, c95, a484",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Missing target=\"_blank\" vulnerability (rel=\"noopener noreferrer\" omission)",
+        "url": "https://github.com/kubestellar/console/issues/4607",
+        "created_at": "2026-04-04T18:04:55Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "xss, vulnerability, a97311",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Potential XSS Security Vulnerability via dangerouslySetInnerHTML",
+        "url": "https://github.com/kubestellar/console/issues/4592",
+        "created_at": "2026-04-04T17:49:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "window, endtime, starttime",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: MaintenanceWindows.tsx: No validation that endTime is after startTime — allows impossible windows",
+        "url": "https://github.com/kubestellar/console/issues/4417",
+        "created_at": "2026-04-03T12:21:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+        "url": "https://github.com/kubestellar/console/issues/4189",
+        "repo": "console",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 4
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 90
+    }
+  ]
+}

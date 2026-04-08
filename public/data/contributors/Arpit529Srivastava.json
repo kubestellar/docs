@@ -1,0 +1,424 @@
+{
+  "login": "Arpit529Srivastava",
+  "generated_at": "2026-04-08T01:13:05.803Z",
+  "total_issues_opened": 72,
+  "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
+  "total_points": 22950,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 9,
+  "cadence": {
+    "avg_per_week": 5.8,
+    "avg_per_day": 0.57,
+    "by_day_of_week": [
+      0,
+      8,
+      18,
+      15,
+      12,
+      2,
+      17
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      3,
+      18,
+      7,
+      21,
+      1,
+      7,
+      5,
+      4,
+      0,
+      2,
+      0,
+      1,
+      0,
+      0
+    ],
+    "current_streak_weeks": 5,
+    "longest_streak_weeks": 5,
+    "trend": "ramping_up",
+    "first_issue_at": "2025-11-27T13:42:14.000Z",
+    "last_issue_at": "2026-04-03T11:43:34.000Z"
+  },
+  "topics": [
+    {
+      "name": "@arpit529srivastava, api, vcluster",
+      "issue_count": 43,
+      "recent_issue": {
+        "title": "checking for ss how it is working",
+        "url": "https://github.com/kubestellar/console/issues/4398",
+        "created_at": "2026-04-03T11:43:34Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 43
+    },
+    {
+      "name": "theme, light, browser",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Frontend LocalStorage Cross-Session Data Leakage",
+        "url": "https://github.com/kubestellar/console/issues/3147",
+        "created_at": "2026-03-22T11:23:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "button, cta, modal",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "bug: Primary CTA Button (“Install to Console”) is Partially Overlapped in Security Audit Modal",
+        "url": "https://github.com/kubestellar/docs/issues/1318",
+        "created_at": "2026-03-20T16:07:42Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "products, page, kubectl",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "bug: shows zero star and all zero matrix",
+        "url": "https://github.com/kubestellar/docs/issues/1300",
+        "created_at": "2026-03-17T17:01:07Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "upload, screenshots, report",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "The screenshot upload functionality is not working",
+        "url": "https://github.com/kubestellar/console/issues/4118",
+        "created_at": "2026-04-01T12:42:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "node, drill, gpunodedrilldown",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "GPU Type Incorrectly Formatted or Blank in drill-down",
+        "url": "https://github.com/kubestellar/console/issues/3030",
+        "created_at": "2026-03-20T15:13:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "leaderboard, coin, appear",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: contributors who only file issues are missing from leaderboard due to single-page discovery",
+        "url": "https://github.com/kubestellar/docs/issues/1266",
+        "created_at": "2026-03-12T17:39:37Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "replica, scale, getdeployments",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Scale controls in deployment drill-down are hardcoded to a maximum of 10 replicas",
+        "url": "https://github.com/kubestellar/console/issues/2243",
+        "created_at": "2026-03-12T13:22:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "tour, blink, guide",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Tour guide causes the background to blink",
+        "url": "https://github.com/kubestellar/console/issues/3437",
+        "created_at": "2026-03-24T15:47:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "positive, duplicate, possible",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "False-Positive \"Possible-Duplicate\" CI Spam `(duplicate-detection.yml)`",
+        "url": "https://github.com/kubestellar/console/issues/3151",
+        "created_at": "2026-03-22T12:10:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "infinite, time, idle",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "WebSocket Denial of Service (DoS) via Infinite Idle Connections",
+        "url": "https://github.com/kubestellar/console/issues/3150",
+        "created_at": "2026-03-22T11:25:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "tool, e80bfa33, e5d",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "MCP Bridge Silently Swallows LLM Tool Execution Errors",
+        "url": "https://github.com/kubestellar/console/issues/3148",
+        "created_at": "2026-03-22T11:24:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "helm, host, release",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Swallowed Local Host Errors on Native Executables (/api/gitops/helm-releases)",
+        "url": "https://github.com/kubestellar/console/issues/3141",
+        "created_at": "2026-03-22T11:05:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "clusteradmin, acf9ddfd, cc8c",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ClusterAdmin Playwright test no available",
+        "url": "https://github.com/kubestellar/console/issues/3135",
+        "created_at": "2026-03-22T10:27:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "spa, e914f5, adf2ffece110",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Backend Dev Server Returns 404 for SPA Routes",
+        "url": "https://github.com/kubestellar/console/issues/3046",
+        "created_at": "2026-03-20T17:31:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "healthy, filter, count",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Mismatch Between Stats Overview Count and Filtered Grid Logic",
+        "url": "https://github.com/kubestellar/console/issues/3045",
+        "created_at": "2026-03-20T17:30:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sort, inventory, device",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Applicable Sort Fields Missing or Incorrect in Inventory View",
+        "url": "https://github.com/kubestellar/console/issues/3031",
+        "created_at": "2026-03-20T15:13:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "reward, org, repo",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Feedback and rewards default targets are hardcoded to kubestellar repositories",
+        "url": "https://github.com/kubestellar/console/issues/2826",
+        "created_at": "2026-03-17T16:53:55Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sidebar, expand, item",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Navbar items truncate with `...` but sidebar cannot expand",
+        "url": "https://github.com/kubestellar/console/issues/1746",
+        "created_at": "2026-03-06T08:04:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "markdown, mkdocs, syntax",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Empty pages due to MkDocs include-markdown syntax not supported by Nextra",
+        "url": "https://github.com/kubestellar/docs/issues/485",
+        "created_at": "2026-01-01T21:17:56Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Contour monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/34",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 2
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 1
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 2
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 52
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 15
+    }
+  ]
+}

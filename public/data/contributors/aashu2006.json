@@ -1,0 +1,358 @@
+{
+  "login": "aashu2006",
+  "generated_at": "2026-04-08T01:13:06.158Z",
+  "total_issues_opened": 54,
+  "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
+  "total_points": 17600,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 16,
+  "cadence": {
+    "avg_per_week": 4.5,
+    "avg_per_day": 16.41,
+    "by_day_of_week": [
+      13,
+      31,
+      0,
+      0,
+      0,
+      1,
+      9
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      5,
+      0,
+      0,
+      2,
+      7,
+      4,
+      20,
+      11,
+      0,
+      0
+    ],
+    "current_streak_weeks": 1,
+    "longest_streak_weeks": 1,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-04-04T14:25:33.000Z",
+    "last_issue_at": "2026-04-07T21:23:30.000Z"
+  },
+  "topics": [
+    {
+      "name": "@aashu2006, spinner, destructures",
+      "issue_count": 40,
+      "recent_issue": {
+        "title": "All agent fetch errors silently swallowed - users see demo data instead of error state",
+        "url": "https://github.com/kubestellar/console/issues/5355",
+        "created_at": "2026-04-07T21:22:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 40
+    },
+    {
+      "name": "extract, identitybinding, ffb011",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "identityBinding extracted from wrong nested path inflating SPIFFE-bound security metric",
+        "url": "https://github.com/kubestellar/console/issues/5357",
+        "created_at": "2026-04-07T21:23:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "configs, share, model",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "handleKagentCRDSummary makes 6 sequential Kubernetes API calls under one shared timeout silently zeroing out counts",
+        "url": "https://github.com/kubestellar/console/issues/5354",
+        "created_at": "2026-04-07T21:22:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "hardcodes, detection, service",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "kagent/kagenti auto-detection hardcodes insecure HTTP URLs with fixed namespace and port",
+        "url": "https://github.com/kubestellar/console/issues/5352",
+        "created_at": "2026-04-07T21:22:02Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "default, unset, a414fae",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "validateToken defaults to open when KC_AGENT_TOKEN is unset exposing all endpoints",
+        "url": "https://github.com/kubestellar/console/issues/5351",
+        "created_at": "2026-04-07T21:21:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "tool, natural, string",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CallTool passes tool arguments as natural language string enabling prompt injection",
+        "url": "https://github.com/kubestellar/console/issues/5350",
+        "created_at": "2026-04-07T21:21:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "construct, invoke, dc78145e",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "kagenti_provider Invoke doesn't URL-encode namespace/agentName allowing path injection",
+        "url": "https://github.com/kubestellar/console/issues/5349",
+        "created_at": "2026-04-07T21:21:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "stub, a3f1, be7a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ListAgents() is an unimplemented stub - agent list endpoints always return empty",
+        "url": "https://github.com/kubestellar/console/issues/5346",
+        "created_at": "2026-04-07T21:19:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "watchdog, probe, crashloopbackoff",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Watchdog probe timing gap causes CrashLoopBackOff before main backend is ready",
+        "url": "https://github.com/kubestellar/console/issues/5328",
+        "created_at": "2026-04-07T20:04:35Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "initcontainer, backup, db",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "initContainer DB size check using stat always returns 0 triggering unnecessary backup restore on every restart",
+        "url": "https://github.com/kubestellar/console/issues/5325",
+        "created_at": "2026-04-07T20:03:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "wizard, advance, malformed",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Connect cluster wizard allows advancing with malformed server URL",
+        "url": "https://github.com/kubestellar/console/issues/5323",
+        "created_at": "2026-04-07T20:03:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "engineer, platform, append",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "generateDefaultCards appends duplicate card for Platform Engineer role",
+        "url": "https://github.com/kubestellar/console/issues/5322",
+        "created_at": "2026-04-07T20:03:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "priority, frontend, c6d4d690",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Frontend sends monitoring_priorities but backend reads monitoring_priority causing missing dashboard cards",
+        "url": "https://github.com/kubestellar/console/issues/5321",
+        "created_at": "2026-04-07T20:02:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "unknown, unauthenticated, case",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "TestClusterConnection has no default case for unknown authType allowing unauthenticated connections",
+        "url": "https://github.com/kubestellar/console/issues/5316",
+        "created_at": "2026-04-07T20:01:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "mobile, tip, px",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Mobile layout: RotatingTip overlaps UI on small screens",
+        "url": "https://github.com/kubestellar/console/issues/4565",
+        "created_at": "2026-04-04T14:25:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [
+      {
+        "title": "card: Implement SPIFFE monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/18",
+        "repo": "console-marketplace",
+        "topic_match": "extract, identitybinding, ffb011"
+      }
+    ],
+    "stretch": [
+      {
+        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+        "url": "https://github.com/kubestellar/console/issues/4189",
+        "repo": "console",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 54
+    }
+  ]
+}

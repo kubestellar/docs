@@ -1,0 +1,281 @@
+{
+  "login": "MAVRICK-1",
+  "generated_at": "2026-04-08T01:13:06.259Z",
+  "total_issues_opened": 14,
+  "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
+  "total_points": 3850,
+  "level": "Navigator",
+  "level_rank": 3,
+  "rank": 28,
+  "cadence": {
+    "avg_per_week": 0.9,
+    "avg_per_day": 0.07,
+    "by_day_of_week": [
+      0,
+      0,
+      0,
+      7,
+      2,
+      1,
+      4
+    ],
+    "by_hour_of_day": [
+      0,
+      2,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      2,
+      2,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 2,
+    "longest_streak_weeks": 2,
+    "trend": "ramping_up",
+    "first_issue_at": "2025-09-18T09:43:07.000Z",
+    "last_issue_at": "2026-03-26T05:26:09.000Z"
+  },
+  "topics": [
+    {
+      "name": "ai, terminate, @mavrick",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Bug: AI Card Creation Fails with “Could not extract valid JSON from AI response”",
+        "url": "https://github.com/kubestellar/console/issues/3610",
+        "created_at": "2026-03-26T05:26:09Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "claude, permission, access",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Fix unauthorized access to Claude Code sessions",
+        "url": "https://github.com/kubestellar/console/issues/3159",
+        "created_at": "2026-03-22T14:08:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "eks, host, homepage",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Add AWS EKS Cloud Installation Path to Homepage",
+        "url": "https://github.com/kubestellar/docs/issues/398",
+        "created_at": "2025-12-11T20:14:12Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "compliance, kind, tab",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Bug: Data Compliance Tab is Hardcoded (Not Dynamic in Kind Cluster)",
+        "url": "https://github.com/kubestellar/console/issues/3607",
+        "created_at": "2026-03-26T05:11:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "teleport, kubeconfig, tsh",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Cannot access Teleport-managed kubeconfig clusters — repeated 'tsh login/tsh kube login' relogin errors",
+        "url": "https://github.com/kubestellar/console/issues/3158",
+        "created_at": "2026-03-22T14:02:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "oauth, jwt, secret",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "/startup-oauth.sh  script not working",
+        "url": "https://github.com/kubestellar/console/issues/3155",
+        "created_at": "2026-03-22T13:53:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "declarative, gitops, restart",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Support Declarative GitOps Integration for Deployment Restart",
+        "url": "https://github.com/kubestellar/console/issues/1517",
+        "created_at": "2026-02-28T18:14:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "alert, channel, email",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Alert Components Configuration Incorrect - Need Slack/Email Integration",
+        "url": "https://github.com/kubestellar/console/issues/232",
+        "created_at": "2026-01-30T01:55:02Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "pop, screen, different",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug:  Loading screen poping up quite often",
+        "url": "https://github.com/kubestellar/console/issues/229",
+        "created_at": "2026-01-30T01:44:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "prow, config, add",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Add Prow config",
+        "url": "https://github.com/kubestellar/docs/issues/50",
+        "created_at": "2025-09-18T09:43:07Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Contour monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/34",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 1
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 2
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 2
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 1
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 8
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 0
+    }
+  ]
+}

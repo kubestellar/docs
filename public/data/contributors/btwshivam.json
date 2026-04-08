@@ -1,0 +1,197 @@
+{
+  "login": "btwshivam",
+  "generated_at": "2026-04-08T01:13:06.257Z",
+  "total_issues_opened": 5,
+  "avatar_url": "https://avatars.githubusercontent.com/u/127589548?v=4",
+  "total_points": 5200,
+  "level": "Pilot",
+  "level_rank": 4,
+  "rank": 25,
+  "cadence": {
+    "avg_per_week": 0.3,
+    "avg_per_day": 0.05,
+    "by_day_of_week": [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      3
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      2,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 1,
+    "trend": "slowing_down",
+    "first_issue_at": "2025-11-12T18:37:28.000Z",
+    "last_issue_at": "2026-02-22T20:06:47.000Z"
+  },
+  "topics": [
+    {
+      "name": "dark, light, mode",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Related Project Hover looks dark in light mode",
+        "url": "https://github.com/kubestellar/docs/issues/1193",
+        "created_at": "2026-02-22T20:06:47Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "duplicate, icon, remove",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Remove duplicate icons in cards",
+        "url": "https://github.com/kubestellar/docs/issues/1191",
+        "created_at": "2026-02-22T19:57:16Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "downside, increse, box",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Remove Stay Updated and place it below downside the sections and Increse the length of input box",
+        "url": "https://github.com/kubestellar/docs/issues/273",
+        "created_at": "2025-11-12T18:45:31Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "hover, background, cases",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: After hover Background text is showing",
+        "url": "https://github.com/kubestellar/docs/issues/272",
+        "created_at": "2025-11-12T18:37:28Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+        "url": "https://github.com/kubestellar/console/issues/4189",
+        "repo": "console",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 2
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 3
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 0
+    }
+  ]
+}

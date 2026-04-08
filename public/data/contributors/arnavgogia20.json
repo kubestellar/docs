@@ -1,0 +1,407 @@
+{
+  "login": "arnavgogia20",
+  "generated_at": "2026-04-08T01:13:06.119Z",
+  "total_issues_opened": 47,
+  "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
+  "total_points": 19600,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 13,
+  "cadence": {
+    "avg_per_week": 3.9,
+    "avg_per_day": 1.89,
+    "by_day_of_week": [
+      9,
+      14,
+      0,
+      3,
+      10,
+      11,
+      0
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      5,
+      0,
+      2,
+      3,
+      7,
+      5,
+      4,
+      7,
+      0,
+      2,
+      0,
+      0,
+      4,
+      0,
+      0,
+      6,
+      0
+    ],
+    "current_streak_weeks": 4,
+    "longest_streak_weeks": 4,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-03-13T14:35:21.000Z",
+    "last_issue_at": "2026-04-07T11:25:00.000Z"
+  },
+  "topics": [
+    {
+      "name": "@arnavgogia20, problem, mission",
+      "issue_count": 27,
+      "recent_issue": {
+        "title": "Mission Cache Accumulates Duplicates on Stale-Cache Refresh",
+        "url": "https://github.com/kubestellar/console/issues/5217",
+        "created_at": "2026-04-07T11:25:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 27
+    },
+    {
+      "name": "router, cors, gin",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "CORS Headers Set After Middleware That Returns Early",
+        "url": "https://github.com/kubestellar/console/issues/3901",
+        "created_at": "2026-03-30T07:35:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "slice, character, ids",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "DeviceTracker.ClearAlert : Panics on Malformed Alert IDs via Incorrect String Slicing",
+        "url": "https://github.com/kubestellar/console/issues/3289",
+        "created_at": "2026-03-23T14:36:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "missiondetailview, english, cd871",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "MissionDetailView Tab Labels Are Hardcoded English : Bypass i18n System",
+        "url": "https://github.com/kubestellar/console/issues/5216",
+        "created_at": "2026-04-07T11:20:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "deletion, ids, backend",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Dashboard Card Deletion Silently Skips Backend Persistence for Multiple ID Prefixes",
+        "url": "https://github.com/kubestellar/console/issues/5215",
+        "created_at": "2026-04-07T11:17:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "countdown, import, toast",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "First-Import Toast Timer (setInterval) Leaks on Rapid Re-imports or Unmount",
+        "url": "https://github.com/kubestellar/console/issues/5211",
+        "created_at": "2026-04-07T11:01:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "ai, power, model",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ReplaceCardModal \"AI-Powered\" Tab Uses Hardcoded Keyword-Matching Instead of Actual AI",
+        "url": "https://github.com/kubestellar/console/issues/5200",
+        "created_at": "2026-04-07T10:02:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "fullscreen, sidebar, escape",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Escape Key in Fullscreen Mission Sidebar Performs Double-Action (Exits Fullscreen AND Closes Sidebar)",
+        "url": "https://github.com/kubestellar/console/issues/5199",
+        "created_at": "2026-04-07T09:51:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "nodes, stat, dashboard",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Dashboard \"Nodes\" Stat Block Falls Through to Universal Getter : Inconsistent Click Behavior",
+        "url": "https://github.com/kubestellar/console/issues/4556",
+        "created_at": "2026-04-04T12:33:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "dismiss, dropdown, recommendation",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CardRecommendations \"Dismiss\" Button Only Closes the Dropdown, Does Not Actually Dismiss the Recommendation",
+        "url": "https://github.com/kubestellar/console/issues/4227",
+        "created_at": "2026-04-02T12:51:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "time, clientset, tick",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "time.Tick Goroutine Leaks in Cluster Onboarding",
+        "url": "https://github.com/kubestellar/console/issues/3947",
+        "created_at": "2026-03-30T19:33:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "readpump, c., select",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "WebSocket readPump Tight CPU Spin-Loop",
+        "url": "https://github.com/kubestellar/console/issues/3902",
+        "created_at": "2026-03-30T07:40:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "err, filepath, header",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Zip Slip Path Traversal in Plugin Installation",
+        "url": "https://github.com/kubestellar/console/issues/3898",
+        "created_at": "2026-03-30T07:11:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "point, leaderboard, total",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Contributor leaderboard shows incorrect point total compared to dashboard (under-counting contributions)",
+        "url": "https://github.com/kubestellar/console/issues/3463",
+        "created_at": "2026-03-24T19:11:41Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "iterate, websocket, client",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Agent WebSocket BroadcastToClients Holds wsMux While Iterating : Slow Client Blocks All Broadcasts",
+        "url": "https://github.com/kubestellar/console/issues/3368",
+        "created_at": "2026-03-24T06:03:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "mutates, migratelegacygithubtoken, fffee90",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Settings Manager migrateLegacyGitHubToken Mutates State Under RLock",
+        "url": "https://github.com/kubestellar/console/issues/3367",
+        "created_at": "2026-03-24T05:50:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "exec, sessions, canceled",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Exec WebSocket Uses context.Background() : Remote Sessions Cannot Be Cancelled",
+        "url": "https://github.com/kubestellar/console/issues/3292",
+        "created_at": "2026-03-23T14:48:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "configuration, decrypted, secrets",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Settings API Returns Decrypted Secrets to Viewers",
+        "url": "https://github.com/kubestellar/console/issues/2614",
+        "created_at": "2026-03-14T16:31:41Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "dynamic, operator, cef9d7",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Broken `contains` Operator Nullifies Dynamic Cluster Group Evaluation",
+        "url": "https://github.com/kubestellar/console/issues/2606",
+        "created_at": "2026-03-14T10:20:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+        "url": "https://github.com/kubestellar/console/issues/4189",
+        "repo": "console",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 31
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 16
+    }
+  ]
+}

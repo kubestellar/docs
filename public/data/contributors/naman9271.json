@@ -1,0 +1,365 @@
+{
+  "login": "naman9271",
+  "generated_at": "2026-04-08T01:13:04.031Z",
+  "total_issues_opened": 41,
+  "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
+  "total_points": 50000,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 3,
+  "cadence": {
+    "avg_per_week": 0,
+    "avg_per_day": 0.36,
+    "by_day_of_week": [
+      9,
+      3,
+      7,
+      11,
+      0,
+      7,
+      4
+    ],
+    "by_hour_of_day": [
+      1,
+      1,
+      0,
+      2,
+      7,
+      2,
+      6,
+      1,
+      0,
+      0,
+      1,
+      0,
+      2,
+      1,
+      0,
+      0,
+      6,
+      5,
+      1,
+      5,
+      0,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 4,
+    "trend": "inactive",
+    "first_issue_at": "2025-09-10T16:14:01.000Z",
+    "last_issue_at": "2026-01-01T01:39:56.000Z"
+  },
+  "topics": [
+    {
+      "name": "nextra, heading, image",
+      "issue_count": 8,
+      "recent_issue": {
+        "title": "Fix Contributing.md",
+        "url": "https://github.com/kubestellar/docs/issues/369",
+        "created_at": "2025-12-08T04:20:52Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 8
+    },
+    {
+      "name": "page, handbook, margin",
+      "issue_count": 6,
+      "recent_issue": {
+        "title": "Refactpr Installation Page redirection",
+        "url": "https://github.com/kubestellar/docs/issues/167",
+        "created_at": "2025-10-23T06:32:25Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 6
+    },
+    {
+      "name": "refactor, componenet, figma",
+      "issue_count": 6,
+      "recent_issue": {
+        "title": "Refactor `UseCasesSection.tsx`",
+        "url": "https://github.com/kubestellar/docs/issues/36",
+        "created_at": "2025-09-10T16:16:37Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 6
+    },
+    {
+      "name": "dropdown, navbar, blur",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "Inconsistent Animation in the navbar",
+        "url": "https://github.com/kubestellar/docs/issues/361",
+        "created_at": "2025-12-07T19:18:37Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 5
+    },
+    {
+      "name": "ladder, contribution, thing",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Feat: Revamp Contribution Ladder",
+        "url": "https://github.com/kubestellar/docs/issues/362",
+        "created_at": "2025-12-07T19:25:25Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "readme, irrelevant, kinda",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Fix Readme",
+        "url": "https://github.com/kubestellar/docs/issues/368",
+        "created_at": "2025-12-08T04:20:12Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "light, theme, docnavbar",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Add Light Theme for `DocsFooter.tsx`",
+        "url": "https://github.com/kubestellar/docs/issues/366",
+        "created_at": "2025-12-08T04:16:48Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "io, redirect, doc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Redirect bug to always to kubestellar.io/docs",
+        "url": "https://github.com/kubestellar/docs/issues/477",
+        "created_at": "2026-01-01T01:39:56Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "speed, star, animation",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Animation Issue",
+        "url": "https://github.com/kubestellar/docs/issues/359",
+        "created_at": "2025-12-07T19:12:11Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "contact, section, docsfooter",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Fix Contact Section",
+        "url": "https://github.com/kubestellar/docs/issues/324",
+        "created_at": "2025-11-24T18:43:23Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "banner, changer, overlapping",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Bug: CSS Issue in Docs",
+        "url": "https://github.com/kubestellar/docs/issues/318",
+        "created_at": "2025-11-24T10:30:58Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "overview, shouold, doc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Wrong Doc on overview",
+        "url": "https://github.com/kubestellar/docs/issues/317",
+        "created_at": "2025-11-24T06:05:32Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "husky, pre, contributingh",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Implement Husky",
+        "url": "https://github.com/kubestellar/docs/issues/265",
+        "created_at": "2025-11-11T03:46:48Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "globe, animation, hero",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Change the hero section Animation",
+        "url": "https://github.com/kubestellar/docs/issues/164",
+        "created_at": "2025-10-23T06:25:55Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "cloud, oracle, roadmap",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[Roadmap LFX -25t3]: KubeStellar Design System Implementation and Cloud Hosting",
+        "url": "https://github.com/kubestellar/docs/issues/67",
+        "created_at": "2025-09-20T13:38:18Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "progress, @vedansh, md",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Create a Workflow for progress.md",
+        "url": "https://github.com/kubestellar/docs/issues/40",
+        "created_at": "2025-09-13T07:21:51Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Contour monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/34",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 9
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 10
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 13
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 9
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 0
+    }
+  ]
+}

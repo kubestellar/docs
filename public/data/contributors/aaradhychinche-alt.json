@@ -1,0 +1,380 @@
+{
+  "login": "aaradhychinche-alt",
+  "generated_at": "2026-04-08T01:13:04.382Z",
+  "total_issues_opened": 88,
+  "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
+  "total_points": 34550,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 5,
+  "cadence": {
+    "avg_per_week": 7.3,
+    "avg_per_day": 2.08,
+    "by_day_of_week": [
+      29,
+      17,
+      4,
+      0,
+      8,
+      0,
+      30
+    ],
+    "by_hour_of_day": [
+      4,
+      0,
+      0,
+      0,
+      2,
+      9,
+      14,
+      5,
+      9,
+      12,
+      5,
+      14,
+      10,
+      2,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "current_streak_weeks": 4,
+    "longest_streak_weeks": 4,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-02-24T05:05:19.000Z",
+    "last_issue_at": "2026-04-07T13:49:36.000Z"
+  },
+  "topics": [
+    {
+      "name": "@aaradhychinche, alt, endpoint",
+      "issue_count": 66,
+      "recent_issue": {
+        "title": "bug: mission browser API returns non-mission internal repository files",
+        "url": "https://github.com/kubestellar/console/issues/5227",
+        "created_at": "2026-04-07T12:51:54Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 66
+    },
+    {
+      "name": "kube, game, craft",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "Card: Kube Chess (kube_chess)",
+        "url": "https://github.com/kubestellar/console/issues/4083",
+        "created_at": "2026-04-01T06:46:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 4
+    },
+    {
+      "name": "typescript, branch, late",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "bug: Unused `children` prop causes TypeScript build failure and prevents console startup",
+        "url": "https://github.com/kubestellar/console/issues/5163",
+        "created_at": "2026-04-07T04:48:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "revoke, token, eviction",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: revoked token cache grows indefinitely due to missing eviction for backfilled entries",
+        "url": "https://github.com/kubestellar/console/issues/4759",
+        "created_at": "2026-04-05T09:28:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "coin, balance, leaderboard",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: coin balance inconsistency between console profile and leaderboard",
+        "url": "https://github.com/kubestellar/console/issues/5239",
+        "created_at": "2026-04-07T13:49:36Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "newly, dashboard, search",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: newly created dashboard does not appear in dashboard list or search",
+        "url": "https://github.com/kubestellar/console/issues/5177",
+        "created_at": "2026-04-07T05:41:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "breadcrumb, navigation, hierarchy",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "  Enhancement: improve navigation clarity, visual hierarchy, and empty state UX across console",
+        "url": "https://github.com/kubestellar/console/issues/5167",
+        "created_at": "2026-04-07T05:21:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "close, merge, others",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: inconsistent status badges for merged issues (some show \"Fix Complete\" + \"Closed\", others only show \"Closed\")",
+        "url": "https://github.com/kubestellar/console/issues/4953",
+        "created_at": "2026-04-06T11:57:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "listener, abort, callback",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: abort signal listeners are not cleaned up causing event listener leaks and post-unmount callbacks",
+        "url": "https://github.com/kubestellar/console/issues/4772",
+        "created_at": "2026-04-05T10:51:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "watcher, context, persistence",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: persistence watcher stops immediately due to request-scoped context usage",
+        "url": "https://github.com/kubestellar/console/issues/4749",
+        "created_at": "2026-04-05T09:15:55Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "heartbeat, unmount, continue",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: active user heartbeat continues after component unmount due to missing cleanup",
+        "url": "https://github.com/kubestellar/console/issues/4696",
+        "created_at": "2026-04-05T08:07:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "enable, change, flag",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: useClusterCapabilities does not react to enabled flag changes due to stale closure",
+        "url": "https://github.com/kubestellar/console/issues/4695",
+        "created_at": "2026-04-05T08:05:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "glow, bleed, adjacent",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: filter icon glow overlaps adjacent header controls causing visual bleed",
+        "url": "https://github.com/kubestellar/console/issues/4380",
+        "created_at": "2026-04-03T08:50:35Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "artifact, green, appear",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: unintended green line appears across top of page due to layout/CSS issue",
+        "url": "https://github.com/kubestellar/console/issues/4080",
+        "created_at": "2026-04-01T06:23:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "dot, menu, resize",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: card menu (three-dot options) disappears after resizing the card",
+        "url": "https://github.com/kubestellar/console/issues/3501",
+        "created_at": "2026-03-25T04:00:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "notification, success, low",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: success notification toast is too low contrast and difficult to see",
+        "url": "https://github.com/kubestellar/console/issues/3259",
+        "created_at": "2026-03-23T11:26:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "bundle, eagerly, import",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: cardRegistry eagerly loads bundles instead of lazy loading them",
+        "url": "https://github.com/kubestellar/console/issues/2694",
+        "created_at": "2026-03-16T00:18:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+        "url": "https://github.com/kubestellar/console/issues/4189",
+        "repo": "console",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Contour monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/34",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 1
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 32
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 55
+    }
+  ]
+}

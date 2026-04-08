@@ -1,0 +1,513 @@
+{
+  "login": "xonas1101",
+  "generated_at": "2026-04-08T01:13:04.022Z",
+  "total_issues_opened": 202,
+  "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
+  "total_points": 75500,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 2,
+  "cadence": {
+    "avg_per_week": 16.8,
+    "avg_per_day": 3.59,
+    "by_day_of_week": [
+      25,
+      29,
+      26,
+      34,
+      34,
+      21,
+      33
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      4,
+      26,
+      15,
+      11,
+      10,
+      1,
+      1,
+      2,
+      19,
+      19,
+      33,
+      23,
+      2,
+      25,
+      9,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 4,
+    "longest_streak_weeks": 4,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-02-10T08:19:08.000Z",
+    "last_issue_at": "2026-04-07T14:43:33.000Z"
+  },
+  "topics": [
+    {
+      "name": "@xonas1101, automatically, console",
+      "issue_count": 175,
+      "recent_issue": {
+        "title": "Unescaped path segments in agent URLs",
+        "url": "https://github.com/kubestellar/console/issues/5264",
+        "created_at": "2026-04-07T14:43:33Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 175
+    },
+    {
+      "name": "playwright, script, sh",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Environment-variable injection pattern is unsafe/brittle in Playwright wrappers",
+        "url": "https://github.com/kubestellar/console/issues/4464",
+        "created_at": "2026-04-03T16:06:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "vscode, workbench, usr",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "feature: Add integration-ish API coverage for high-traffic handlers (events, RBAC, GPU)",
+        "url": "https://github.com/kubestellar/console/issues/2764",
+        "created_at": "2026-03-16T16:43:57Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "ts, spec, swallow",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Error swallowing patterns",
+        "url": "https://github.com/kubestellar/console/issues/5240",
+        "created_at": "2026-04-07T13:51:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "memo, comparator, stringify",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Memo comparator uses JSON.stringify on config in SharedSortableCard",
+        "url": "https://github.com/kubestellar/console/issues/4665",
+        "created_at": "2026-04-05T05:17:57Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "plan, functionality, control",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Clarification: Is the Mission Control functionality only to plan the course of action for a job?",
+        "url": "https://github.com/kubestellar/console/issues/4550",
+        "created_at": "2026-04-04T06:40:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "restoration, env, smoke",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "OAuth smoke test mutates .env without guaranteed restoration on abrupt exits",
+        "url": "https://github.com/kubestellar/console/issues/4466",
+        "created_at": "2026-04-03T16:06:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "kill, sh, port",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Broad port-kill logic can terminate unrelated local processes",
+        "url": "https://github.com/kubestellar/console/issues/4465",
+        "created_at": "2026-04-03T16:06:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "createdat, model, example",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Inconsistent JSON naming convention across model package",
+        "url": "https://github.com/kubestellar/console/issues/4428",
+        "created_at": "2026-04-03T12:38:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "startdate, dd83665f, b7aabe58d172",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "GPU reservation date fields have no format guarantees",
+        "url": "https://github.com/kubestellar/console/issues/4426",
+        "created_at": "2026-04-03T12:37:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "reader, ping, backpressure",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "WebSocket ping handling can block reader loop under backpressure",
+        "url": "https://github.com/kubestellar/console/issues/4280",
+        "created_at": "2026-04-02T17:49:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sessionid, chat, ids",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Chat cancellation key collision when sessionId is omitted",
+        "url": "https://github.com/kubestellar/console/issues/4263",
+        "created_at": "2026-04-02T16:41:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "t., devicetracker, nil",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Nil-pointer crash path in DeviceTracker when k8s client init fails",
+        "url": "https://github.com/kubestellar/console/issues/4261",
+        "created_at": "2026-04-02T16:40:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "writemu, mutex, websocket",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "WebSocket concurrent-write race due to split mutexes",
+        "url": "https://github.com/kubestellar/console/issues/4260",
+        "created_at": "2026-04-02T16:40:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "creategithubissue, dead, screenshots",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "createGitHubIssue is dead code but shadows the real function",
+        "url": "https://github.com/kubestellar/console/issues/3932",
+        "created_at": "2026-03-30T14:26:57Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "pull, byte, url",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "GitHub issue fetch ignores pull requests only by URL substring — fragile filter",
+        "url": "https://github.com/kubestellar/console/issues/3931",
+        "created_at": "2026-03-30T14:26:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "lock, cache, dc3c7ed8",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "PR cache race condition — upgrade from read lock without re-check",
+        "url": "https://github.com/kubestellar/console/issues/3930",
+        "created_at": "2026-03-30T14:26:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "decoder, fetchgithubissues, body",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Response body read after decoder in fetchGitHubIssues",
+        "url": "https://github.com/kubestellar/console/issues/3928",
+        "created_at": "2026-03-30T14:25:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "weird, arcade, key",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Weird issue when visiting Arcade dashboard",
+        "url": "https://github.com/kubestellar/console/issues/3717",
+        "created_at": "2026-03-27T11:35:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "shell, check, kubectl",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Shell metacharacter check is post-split",
+        "url": "https://github.com/kubestellar/console/issues/3650",
+        "created_at": "2026-03-26T12:29:36Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "upgrade, vite, v8",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Upgrade Vite to v8",
+        "url": "https://github.com/kubestellar/console/issues/3500",
+        "created_at": "2026-03-25T03:53:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "coin, marketplace, reward",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Contributions to console-marketplace repo should also reward coins",
+        "url": "https://github.com/kubestellar/console/issues/2943",
+        "created_at": "2026-03-19T03:19:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "invalid, mess, weird",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "clicking submit button on invalid feature requests gives a messed up UI",
+        "url": "https://github.com/kubestellar/console/issues/1596",
+        "created_at": "2026-03-04T04:45:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "┌─────────────┐, diagram, readability",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "docs: Improve Console README diagrams for readability and consistency",
+        "url": "https://github.com/kubestellar/console/issues/776",
+        "created_at": "2026-02-10T08:19:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "arrow, inactive, expand",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: When clicking on drop down arrow for one of the inactive options of sidebar, we are navigated to that page instead of just expanding the view.",
+        "url": "https://github.com/kubestellar/docs/issues/1297",
+        "created_at": "2026-03-17T09:37:40Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "v0, manage, site",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "doc: Documentation content mismatch in release v0.29.0 (latest)",
+        "url": "https://github.com/kubestellar/docs/issues/1154",
+        "created_at": "2026-02-11T16:48:32Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [
+      {
+        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+        "url": "https://github.com/kubestellar/console/issues/4189",
+        "repo": "console",
+        "topic_match": "playwright, script, sh"
+      }
+    ],
+    "stretch": [
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Contour monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/34",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement wasmCloud monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/57",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 5
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 86
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 111
+    }
+  ]
+}

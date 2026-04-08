@@ -1,0 +1,183 @@
+{
+  "login": "rudy128",
+  "generated_at": "2026-04-08T01:13:06.256Z",
+  "total_issues_opened": 3,
+  "avatar_url": "https://avatars.githubusercontent.com/u/77375030?v=4",
+  "total_points": 5300,
+  "level": "Pilot",
+  "level_rank": 4,
+  "rank": 24,
+  "cadence": {
+    "avg_per_week": 0.2,
+    "avg_per_day": 0.06,
+    "by_day_of_week": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 2,
+    "trend": "slowing_down",
+    "first_issue_at": "2026-01-13T05:14:13.000Z",
+    "last_issue_at": "2026-03-08T07:53:08.000Z"
+  },
+  "topics": [
+    {
+      "name": "accordion, light, inconsistent",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: SidebarMenu has UI issues in Light mode",
+        "url": "https://github.com/kubestellar/docs/issues/1247",
+        "created_at": "2026-03-08T07:53:08Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "iframe, content, embed",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Embedded iframes are not rendering in documentation pages",
+        "url": "https://github.com/kubestellar/docs/issues/731",
+        "created_at": "2026-01-15T09:04:58Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "language, ladder, english",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Language selection resets to EN on Ladder page",
+        "url": "https://github.com/kubestellar/docs/issues/605",
+        "created_at": "2026-01-13T05:14:13Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+        "url": "https://github.com/kubestellar/console/issues/4189",
+        "repo": "console",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/99",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/96",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      },
+      {
+        "title": "card: Implement Lima monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/44",
+        "repo": "console-marketplace",
+        "topic_match": "uncategorized"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 2
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 1
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 0
+    }
+  ]
+}
