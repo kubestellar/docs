@@ -183,7 +183,10 @@ Create a `.env` file **inside the cloned `console/` directory** (the repo root) 
 ```bash
 GITHUB_CLIENT_ID=your_client_id
 GITHUB_CLIENT_SECRET=your_client_secret
+FEEDBACK_GITHUB_TOKEN=ghp_your_personal_access_token
 ```
+
+> **Recommended**: `FEEDBACK_GITHUB_TOKEN` is a GitHub Personal Access Token (PAT) with `public_repo` scope that enables users to submit bug reports, feature requests, and feedback directly from the console. Without it, the in-app feedback and issue submission features are disabled. We strongly encourage setting this token so your users can contribute feedback seamlessly. You can create one at [GitHub Settings → Tokens](https://github.com/settings/tokens).
 
 > **Important**: The `.env` file must be in the same directory as `startup-oauth.sh`. The script loads it from its own directory, so creating it elsewhere will not work.
 
@@ -220,14 +223,17 @@ kubectl create secret generic ksc-secrets \
   --from-literal=github-client-secret=YOUR_CLIENT_SECRET
 ```
 
-Optionally add Claude API key for AI features:
+**Recommended**: Add a `FEEDBACK_GITHUB_TOKEN` to enable in-app feedback and issue submission. This is a GitHub Personal Access Token (PAT) with `public_repo` scope that allows users to submit bug reports, feature requests, and feedback directly from the console UI. Without it, these features are disabled. We strongly encourage including this token. You can create one at [GitHub Settings → Tokens](https://github.com/settings/tokens).
+
+Optionally add Claude API key for AI features and the feedback token:
 
 ```bash
 kubectl create secret generic ksc-secrets \
   --namespace ksc \
   --from-literal=github-client-id=YOUR_CLIENT_ID \
   --from-literal=github-client-secret=YOUR_CLIENT_SECRET \
-  --from-literal=claude-api-key=YOUR_CLAUDE_API_KEY
+  --from-literal=claude-api-key=YOUR_CLAUDE_API_KEY \
+  --from-literal=feedback-github-token=YOUR_FEEDBACK_GITHUB_TOKEN
 ```
 
 ### 2. Install Chart
@@ -295,6 +301,7 @@ docker run -d \
   -p 8080:8080 \
   -e GITHUB_CLIENT_ID=your_client_id \
   -e GITHUB_CLIENT_SECRET=your_client_secret \
+  -e FEEDBACK_GITHUB_TOKEN=ghp_your_personal_access_token \
   -v ~/.kube:/root/.kube:ro \
   -v ksc-data:/app/data \
   ghcr.io/kubestellar/console:latest
