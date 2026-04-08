@@ -28,7 +28,8 @@ The KubeStellar Console is a modern, AI-powered multi-cluster management interfa
 
 - AI missions for automated issue detection and remediation
 - **Orbital Maintenance** for recurring health checks, cert rotation, and version drift scans
-- **Mission Control** with Flight Plan blueprint for multi-project, multi-cluster deployments
+- **Mission Control** with Flight Plan blueprint for multi-project, multi-cluster deployments, now with visible cross-cluster dependency edges and draggable project nodes
+- **Kubara Catalog** with tree-view resource browsing, file preview, and AI reasoning demo
 - Intelligent recommendations for cluster optimization
 - Natural language queries about cluster state and resources
 

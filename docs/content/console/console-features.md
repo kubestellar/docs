@@ -1772,6 +1772,236 @@ Cadence is Uber's workflow orchestration engine. The console includes cards for 
 
 ---
 
+## Cross-Cluster Dependency Edges in Flight Plan (New in April 2026)
+
+![Flight Plan with Dependency Edges](images/flight-plan-apr08.jpg)
+
+The Flight Plan blueprint view now renders visible dependency edges between clusters, showing how workloads and configurations flow across your multi-cluster environment:
+
+- **Directed edges**: Arrows show the direction of dependency between source and target clusters
+- **Color-coded lines**: Edge colors indicate dependency type (deployment, config sync, data replication)
+- **Hover details**: Hovering an edge reveals the specific resources that create the dependency
+- **Auto-layout**: The graph automatically arranges clusters to minimize edge crossings
+- **Drag-and-drop project nodes**: Users can drag project nodes in the blueprint to reposition them, with edges updating in real time
+
+### Related PRs
+
+- Add cross-cluster dependency edges to Flight Plan (#5384)
+- Add drag-and-drop for blueprint project nodes (#5547)
+
+---
+
+## Kubara Catalog with AI Reasoning Demo (New in April 2026)
+
+![Kubara Catalog](images/kubara-apr08.jpg)
+
+A new **Kubara Catalog** provides a tree-view browser for exploring Kubernetes resources with integrated AI reasoning:
+
+- **Tree-view navigation**: Browse resources hierarchically by API group, version, and kind
+- **File preview**: Select any resource to see its full YAML/JSON definition inline
+- **AI reasoning demo**: Watch the AI agent's step-by-step reasoning as it analyzes resources, providing educational insight into how AI-driven operations work
+- **Search and filter**: Quickly locate resources across the catalog with full-text search
+
+### Related PRs
+
+- Add Kubara catalog with tree-view browsing and file preview (#5387)
+
+---
+
+## Helm Chart OCI Registry (New in April 2026)
+
+The KubeStellar Console Helm chart is now published to an OCI-compliant container registry, enabling standard Helm install workflows:
+
+```bash
+# Add the OCI registry
+helm install ks-console oci://ghcr.io/kubestellar/console/helm/ks-console
+
+# Or pull and inspect the chart
+helm pull oci://ghcr.io/kubestellar/console/helm/ks-console --version 0.3.17
+```
+
+- **OCI distribution**: Chart is hosted alongside container images for simplified supply chain
+- **Versioned releases**: Each console release automatically publishes a matching Helm chart version
+- **Install documentation**: The installation guide has been updated with OCI registry instructions
+
+### Related PRs
+
+- Publish Helm chart to OCI registry with install docs (#5527)
+
+---
+
+## Improved Modal and Dialog Behavior (New in April 2026)
+
+![Alerts Dashboard](images/alerts-apr08.jpg)
+
+### Escape Key Scoping
+
+The Escape key now only closes the **topmost** modal or dialog, rather than dismissing all open layers at once. This prevents accidentally closing a parent dialog when dismissing a nested confirmation.
+
+### Two-Click Delete Confirmation
+
+Browser `confirm()` dialogs have been replaced with in-app two-click delete flows throughout the console:
+
+- First click reveals an inline "Confirm Delete" button with a brief countdown
+- Second click executes the deletion
+- Eliminates inconsistent browser-native styling across platforms
+- Provides a safer, more predictable deletion experience
+
+### Related PRs
+
+- Scope Escape key to topmost modal only (#5540)
+- Replace browser confirm dialogs with two-click delete (#5595)
+
+---
+
+## Skeleton Loading and Keyboard Navigation (New in April 2026)
+
+### Skeleton Loading States
+
+Cards and data tables now display content-aware skeleton placeholders during loading instead of generic spinners:
+
+- Skeletons match the shape and layout of the content they replace
+- Reduces perceived load time and layout shift
+- Applied to dashboard cards, table rows, and detail panels
+
+### Keyboard Navigation Improvements
+
+- **Arrow key navigation**: Navigate between dashboard cards with arrow keys
+- **Enter to expand**: Press Enter on a focused card to expand its detail view
+- **Tab order**: Improved tab order across all dashboard elements for screen reader compatibility
+
+### Related PRs
+
+- Add skeleton loading states for dashboard cards (#5437)
+- Improve keyboard navigation across dashboard (#5492)
+
+---
+
+## Updated Roadmap (New in April 2026)
+
+The public roadmap has been updated to reflect current priorities and completed milestones:
+
+- Near-term items updated with April 2026 deliverables
+- New mid-term goals for multi-tenancy and RBAC improvements
+- Long-term vision items refined based on community feedback
+
+### Related PRs
+
+- Update roadmap with April 2026 priorities (#5603)
+
+---
+
+## RBAC Endpoint Restrictions (New in April 2026)
+
+Seven API endpoints have been restricted to the **admin** role, tightening access control for sensitive operations:
+
+| Endpoint | Description |
+|----------|-------------|
+| `POST /api/cluster-sync` | Trigger cluster synchronization |
+| `POST /api/webhooks` | Manage webhook configurations |
+| `DELETE /api/sessions` | Terminate user sessions |
+| `POST /api/settings/system` | Modify system-wide settings |
+| `POST /api/backup` | Trigger configuration backup |
+| `POST /api/restore` | Restore from backup |
+| `DELETE /api/cache` | Clear server-side cache |
+
+Non-admin users attempting these operations receive a `403 Forbidden` response with a descriptive error message.
+
+### Related PRs
+
+- Restrict 7 sensitive endpoints to admin role (#5472)
+
+---
+
+## Server-Side GPU Capacity Validation (New in April 2026)
+
+GPU capacity requests are now validated on the server before being forwarded to clusters:
+
+- **Range checks**: Requested GPU counts must be within the cluster's available capacity
+- **Type validation**: GPU model identifiers are validated against known hardware types
+- **Quota enforcement**: Namespace GPU quotas are checked before allocation
+- Prevents over-provisioning and invalid GPU requests from reaching the Kubernetes API
+
+### Related PRs
+
+- Add server-side GPU capacity validation (#5432)
+
+---
+
+## Body Size Limits on API Endpoints (New in April 2026)
+
+Webhook and cluster sync endpoints now enforce request body size limits to prevent denial-of-service through oversized payloads:
+
+- **Webhook endpoints**: Maximum 1 MB request body
+- **Cluster sync endpoints**: Maximum 5 MB request body
+- Oversized requests receive a `413 Payload Too Large` response
+- Limits are configurable via environment variables (`MAX_WEBHOOK_BODY_BYTES`, `MAX_CLUSTER_SYNC_BODY_BYTES`)
+
+### Related PRs
+
+- Add body size limits on webhook and cluster sync endpoints (#5610)
+
+---
+
+## OpenSSF Silver, SLSA Provenance, and Cosign Signing (New in April 2026)
+
+The console has achieved **OpenSSF Best Practices Silver** badge status and now ships with verifiable supply chain artifacts:
+
+### OpenSSF Silver Badge
+
+- All Silver-level criteria met, including security review, vulnerability disclosure process, and test coverage thresholds
+- Badge displayed in the repository README and on the documentation site
+
+### SLSA Provenance
+
+- Build provenance is generated for every release using SLSA Level 3 workflows
+- Provenance attestations are published alongside release artifacts
+- Consumers can verify that release binaries were built from the expected source commit
+
+### Cosign Signing
+
+- All container images are signed with [Sigstore Cosign](https://docs.sigstore.dev/cosign/overview/)
+- Helm charts include cosign signatures for verification before installation
+- Verification commands are documented in the installation guide:
+
+```bash
+# Verify container image signature
+cosign verify ghcr.io/kubestellar/console:v0.3.17
+
+# Verify Helm chart signature
+cosign verify-blob --signature ks-console-0.3.17.tgz.sig ks-console-0.3.17.tgz
+```
+
+### Related PRs
+
+- Achieve OpenSSF Silver badge (#5543)
+- Add SLSA provenance to release workflow (#5548)
+- Add cosign signing for container images (#5588)
+- Add cosign signing for Helm charts (#5594)
+- Document supply chain verification in installation guide (#5598)
+
+---
+
+## Updated Screenshots (April 8, 2026)
+
+![Dashboard](images/dashboard-apr08.jpg)
+
+The main dashboard showing the updated card grid with skeleton loading states and keyboard-navigable cards.
+
+![Flight Plan](images/flight-plan-apr08.jpg)
+
+The Flight Plan blueprint with cross-cluster dependency edges and draggable project nodes.
+
+![Kubara Catalog](images/kubara-apr08.jpg)
+
+The Kubara Catalog tree-view browser with AI reasoning panel.
+
+![Alerts](images/alerts-apr08.jpg)
+
+The Alerts dashboard with two-click delete confirmation and scoped Escape key behavior.
+
+---
+
 ## 3D Globe Visualization Refresh (New in March 2026)
 
 The 3D globe on the login page has been polished:

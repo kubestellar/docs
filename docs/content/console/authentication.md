@@ -151,6 +151,32 @@ The backend enforces strict CORS rules:
 - All MCP (Model Context Protocol) query parameters are validated before being passed to cluster operations
 - Invalid or malicious inputs are rejected with descriptive error messages
 
+### RBAC Endpoint Restrictions
+
+Seven sensitive API endpoints are restricted to the **admin** role:
+
+- Cluster sync triggers, webhook management, session termination
+- System-wide settings modification, backup/restore operations, cache clearing
+- Non-admin users receive a `403 Forbidden` response with a descriptive error message
+
+See [Console Features — RBAC Endpoint Restrictions](console-features.md#rbac-endpoint-restrictions-new-in-april-2026) for the full endpoint list.
+
+### Body Size Limits
+
+Webhook and cluster sync endpoints enforce request body size limits to prevent denial-of-service:
+
+- Webhook endpoints: 1 MB max
+- Cluster sync endpoints: 5 MB max
+- Configurable via `MAX_WEBHOOK_BODY_BYTES` and `MAX_CLUSTER_SYNC_BODY_BYTES` environment variables
+
+### Supply Chain Security
+
+- **OpenSSF Silver** badge achieved
+- **SLSA Level 3** provenance attestations published with every release
+- **Cosign signatures** on all container images and Helm charts
+
+See [Console Features — OpenSSF Silver, SLSA, and Cosign](console-features.md#openssf-silver-slsa-provenance-and-cosign-signing-new-in-april-2026) for verification commands.
+
 ---
 
 ## Configuring OAuth for Different Environments
