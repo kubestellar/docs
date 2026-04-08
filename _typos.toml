@@ -1,6 +1,14 @@
 # Typos configuration
 # https://github.com/crate-ci/typos
 
+[files]
+extend-exclude = [
+    "*.svg",
+    "public/data/contributors/",
+    "public/data/leaderboard.json",
+    "messages/",
+]
+
 [default.extend-words]
 # KubeStellar terms
 KubeStellar = "KubeStellar"
@@ -23,6 +31,17 @@ GKE = "GKE"
 # Common false positives
 ND = "ND"
 IST = "IST"
+
+# Technical terms
+Hashi = "Hashi"
+RTO = "RTO"
+IFoS = "IFoS"
+Fo = "Fo"
+
+# Contributor usernames (not typos)
+MAVRICK = "MAVRICK"
+mavrick = "mavrick"
+Parth = "Parth"
 
 # Add repo-specific false positives here:
 # word = "word"

@@ -19,7 +19,7 @@ Please read the following guidelines if you're interested in contributing to Kub
 ### Contributing Code -- Prerequisites
 
 
-Please make sure that your environment has all the necessary versions as spelled out in the prerequisites section of our [user guide](docs/content/kubestellar/pre-reqs.md)
+Please make sure that your environment has all the necessary versions as spelled out in the prerequisites section of our [user guide](../kubestellar/pre-reqs.md)
 
 ### Issues
 
@@ -74,7 +74,7 @@ A recommended format for final commit messages is as follows:
 In conformance with CNCF expectations, we will only merge commits that indicate your agreement with the [Developer Certificate of Origin](#certificate-of-origin). The CNCF defines how to do this, and there are two cases: one for developers working for an organization that is a CNCF member, and one for contributors acting as individuals. For the latter, assent is indicated by doing a Git "sign-off" on the commit. 
 
 
-See [Git Commit Signoff and Signing](docs/content/kubestellar/pr-signoff.md) for more information on how to do that.
+See [Git Commit Signoff and Signing](../kubestellar/pr-signoff.md) for more information on how to do that.
 
 ### Pull Requests
 [View active Pull Requests on GitHub](https://github.com/kubestellar/kubestellar/pulls)
@@ -187,14 +187,14 @@ If you have any questions about contributing, don't hesitate to reach out to us 
 ## Testing Locally
 
 
-Our [Getting Started](docs/content/kubestellar/get-started.md) guide shows a user how to install a simple "kick the tires" instance of KubeStellar using a helm chart and kind.
+Our [Getting Started](../kubestellar/get-started.md) guide shows a user how to install a simple "kick the tires" instance of KubeStellar using a helm chart and kind.
 
 To set up and test a development system, please refer to the _test/e2e/README.md_ file in the GitHub repository.
 After running any of those e2e (end to end) tests you will be left with a running system that can be exercised further.
 
 ### Testing changes to the helm chart
 
-If you are interested in modifying the Helm chart itself, look at the User Guide page on the [Core Helm chart](docs/content/kubestellar/core-chart.md) for more information on its many options before you begin, notably on how to specify using a local version of the script.
+If you are interested in modifying the Helm chart itself, look at the User Guide page on the [Core Helm chart](../kubestellar/core-chart.md) for more information on its many options before you begin, notably on how to specify using a local version of the script.
 
 ### Testing the script against an upcoming release
 
@@ -204,7 +204,7 @@ appear in the new release.
 
 ## Licensing
 
-KubeStellar is [Apache 2.0 licensed](LICENSE) and we accept contributions via GitHub pull requests.
+KubeStellar is [Apache 2.0 licensed](https://github.com/kubestellar/docs/blob/main/LICENSE) and we accept contributions via GitHub pull requests.
 
 ## Certificate of Origin
 

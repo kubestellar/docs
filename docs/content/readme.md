@@ -66,7 +66,7 @@ For a complete walkthrough, see the [Quick Start Guide](kubestellar/get-started.
 - **Slack**: [`#kubestellar-dev`](https://cloud-native.slack.com/archives/C097094RZ3M) in the [CNCF Slack workspace](https://communityinviter.com/apps/cloud-native/cncf)
 - **Mailing Lists**: [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) and [kubestellar-users](https://groups.google.com/g/kubestellar-users)
 - **YouTube**: [Community meetings and demos](https://www.youtube.com/@kubestellar)
-- **Contributing**: [Contribution guide](contributing/contributing-inc.md)
+- **Contributing**: [Contribution guide](contributing/documentation/contributing-inc.md)
 
 ## License
 
