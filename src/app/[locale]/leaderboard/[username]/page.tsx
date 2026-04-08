@@ -325,8 +325,8 @@ function ContributionRadarChart({ topics }: { topics: TopicCluster[] }) {
 
       <div className="flex justify-center">
         <svg
-          viewBox="0 0 300 300"
-          className="w-full max-w-[320px] h-auto"
+          viewBox="-40 -10 380 330"
+          className="w-full max-w-[400px] h-auto"
           role="img"
           aria-label="Radar chart showing contribution distribution across 6 expertise areas"
         >
