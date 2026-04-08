@@ -262,7 +262,7 @@ helm install ksc ./deploy/helm/kubestellar-console \
 **Port forward (development):**
 
 ```bash
-kubectl port-forward -n ksc svc/ksc 8080:8080
+kubectl port-forward -n ksc svc/ksc-kubestellar-console 8080:8080
 ```
 
 Open http://localhost:8080
@@ -276,6 +276,30 @@ helm upgrade ksc ./deploy/helm/kubestellar-console \
   --set ingress.enabled=true \
   --set ingress.hosts[0].host=ksc.your-domain.com
 ```
+
+### 4. Run kc-agent Locally
+
+The Helm chart deploys the console backend inside your cluster, but **kc-agent is not included in the Helm deployment**. kc-agent is a lightweight local process that bridges your browser to your local kubeconfig via WebSocket and MCP. You must run it separately on your workstation.
+
+**Install kc-agent:**
+
+```bash
+# Via Homebrew
+brew tap kubestellar/tap
+brew install kc-agent
+```
+
+**Start kc-agent:**
+
+```bash
+kc-agent
+```
+
+This starts the agent on port 8585. It reads your local `~/.kube/config` and exposes kubectl execution over WebSocket (for the browser console) and MCP (for AI coding agents).
+
+> **Why local?** kc-agent runs on your machine because it needs direct access to your kubeconfig and kubectl. The in-cluster console connects to kc-agent over WebSocket to execute commands against clusters that are only reachable from your workstation.
+
+> **Without kc-agent:** The console will still load, but cluster interactions that require kubectl (terminal commands, AI missions that modify resources) will not work. If the console was deployed without OAuth, it will fall back to demo mode. See [Architecture](architecture.md#kc-agent-local-agent) for details.
 
 ## OpenShift Installation
 
@@ -372,7 +396,7 @@ brew install kubestellar-ops kubestellar-deploy
 **Solutions**:
 1. Verify the secret contains correct credentials
 2. Check callback URL matches exactly (see [Run from Source with OAuth](#run-from-source-with-oauth))
-3. View pod logs: `kubectl logs -n ksc deployment/ksc`
+3. View pod logs: `kubectl logs -n ksc deployment/ksc-kubestellar-console`
 
 ### "GITHUB_CLIENT_SECRET is not set"
 
