@@ -1,0 +1,380 @@
+{
+  "login": "MikeSpreitzer",
+  "generated_at": "2026-04-08T01:31:36.282Z",
+  "total_issues_opened": 66,
+  "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
+  "total_points": 13850,
+  "level": "Pilot",
+  "level_rank": 4,
+  "rank": 19,
+  "cadence": {
+    "avg_per_week": 5.2,
+    "avg_per_day": 0.56,
+    "by_day_of_week": [
+      8,
+      6,
+      7,
+      10,
+      22,
+      9,
+      4
+    ],
+    "by_hour_of_day": [
+      1,
+      0,
+      2,
+      0,
+      3,
+      9,
+      6,
+      7,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      4,
+      2,
+      8,
+      5,
+      13,
+      3,
+      0,
+      0
+    ],
+    "current_streak_weeks": 4,
+    "longest_streak_weeks": 4,
+    "trend": "ramping_up",
+    "first_issue_at": "2025-12-11T19:58:02.000Z",
+    "last_issue_at": "2026-04-07T21:10:46.000Z"
+  },
+  "topics": [
+    {
+      "name": "describe, following, width",
+      "issue_count": 44,
+      "recent_issue": {
+        "title": "doc: More storage questions about ks/console",
+        "url": "https://github.com/kubestellar/docs/issues/1339",
+        "created_at": "2026-04-04T07:50:15Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 44
+    },
+    {
+      "name": "privilege, github, person",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Does the console need more than my GitHub email address?",
+        "url": "https://github.com/kubestellar/console/issues/2369",
+        "created_at": "2026-03-13T05:56:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "pid, test6, mspreitz",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "feature: Console exposes its version",
+        "url": "https://github.com/kubestellar/console/issues/3223",
+        "created_at": "2026-03-23T04:37:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "tenant, architecture, connection",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Questions about Tenant Architecture and similar cards",
+        "url": "https://github.com/kubestellar/console/issues/2870",
+        "created_at": "2026-03-18T05:29:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "tour, kubestellarconsole, netlify",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Two hosted consoles",
+        "url": "https://github.com/kubestellar/console/issues/2456",
+        "created_at": "2026-03-13T18:06:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "access, fmaas, apps",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: chrome asks mysterious question about access",
+        "url": "https://github.com/kubestellar/console/issues/1483",
+        "created_at": "2026-02-27T06:09:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "update, suspect, setting",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Clarity on updating",
+        "url": "https://github.com/kubestellar/console/issues/5345",
+        "created_at": "2026-04-07T21:10:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "usage, historical, gpus",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Historical view of Inventory of GPUs",
+        "url": "https://github.com/kubestellar/console/issues/3946",
+        "created_at": "2026-03-30T18:22:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "uis, thing, plumbing",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "What IS the console?",
+        "url": "https://github.com/kubestellar/console/issues/2948",
+        "created_at": "2026-03-19T14:49:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "stat, layer, isolation",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "More questions about the multi-tenancy dashboard",
+        "url": "https://github.com/kubestellar/console/issues/2871",
+        "created_at": "2026-03-18T05:44:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "write, runnable, concurrency",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: start.sh writes to a file that may be in use",
+        "url": "https://github.com/kubestellar/console/issues/2526",
+        "created_at": "2026-03-13T20:20:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "image, process, mean",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "doc: confusing wording about MCP bundling with console",
+        "url": "https://github.com/kubestellar/docs/issues/1286",
+        "created_at": "2026-03-13T20:34:33Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "vertex, leaf, overview",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "doc: Some missing overview pages",
+        "url": "https://github.com/kubestellar/docs/issues/1273",
+        "created_at": "2026-03-13T05:45:14Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "kubeflex, remark, namespace",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "doc: outdated remark about kubeflex-system namespace",
+        "url": "https://github.com/kubestellar/docs/issues/1163",
+        "created_at": "2026-02-16T15:18:13Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "periphery, hub, home",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: metaphorical strangeness in the home page",
+        "url": "https://github.com/kubestellar/docs/issues/788",
+        "created_at": "2026-01-16T21:42:02Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "button, shared, branch",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: proper generic buttons on each documentation page",
+        "url": "https://github.com/kubestellar/docs/issues/780",
+        "created_at": "2026-01-16T18:32:33Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "coding, standard, checklist",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "PR template references \"the project's coding standards\"",
+        "url": "https://github.com/kubestellar/docs/issues/671",
+        "created_at": "2026-01-14T16:47:26Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 3
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 8
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 12
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 36
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 7
+    }
+  ]
+}

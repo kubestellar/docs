@@ -1,0 +1,351 @@
+{
+  "login": "mrhapile",
+  "generated_at": "2026-04-08T01:31:34.171Z",
+  "total_issues_opened": 84,
+  "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
+  "total_points": 35250,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 4,
+  "cadence": {
+    "avg_per_week": 7,
+    "avg_per_day": 1.77,
+    "by_day_of_week": [
+      10,
+      47,
+      7,
+      3,
+      4,
+      0,
+      13
+    ],
+    "by_hour_of_day": [
+      0,
+      12,
+      0,
+      0,
+      0,
+      5,
+      9,
+      4,
+      4,
+      9,
+      11,
+      4,
+      0,
+      0,
+      6,
+      0,
+      0,
+      8,
+      6,
+      3,
+      3,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 1,
+    "longest_streak_weeks": 3,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-02-19T09:46:00.000Z",
+    "last_issue_at": "2026-04-07T17:36:07.000Z"
+  },
+  "topics": [
+    {
+      "name": "@mrhapile, cluster, crash",
+      "issue_count": 67,
+      "recent_issue": {
+        "title": "Weak Test: useCardLoadingState Mocked Timeouts",
+        "url": "https://github.com/kubestellar/console/issues/5285",
+        "created_at": "2026-04-07T17:36:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 67
+    },
+    {
+      "name": "d., readyreplicas, undefined",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "DeploymentProgress.tsx — Accessing d.readyReplicas < d.replicas without null check",
+        "url": "https://github.com/kubestellar/console/issues/5190",
+        "created_at": "2026-04-07T07:05:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "fork, sharetogithub, github",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Race condition when resolving fork HEAD SHA immediately after fork creation",
+        "url": "https://github.com/kubestellar/console/issues/2382",
+        "created_at": "2026-03-13T11:17:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "contributor, 📝, guideline",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "📝 Proposal: Add AGENT.md to Standardize AI-Assisted Contributions",
+        "url": "https://github.com/kubestellar/console/issues/1346",
+        "created_at": "2026-02-22T20:07:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "svg, clusterlocations, controller",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ClusterLocations — SVG fetch race condition on rapid re-render",
+        "url": "https://github.com/kubestellar/console/issues/5205",
+        "created_at": "2026-04-07T10:16:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "space, excessive, padding",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Excessive Top Padding Causing Unused Empty Space in Dashboard",
+        "url": "https://github.com/kubestellar/console/issues/4940",
+        "created_at": "2026-04-06T09:01:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "hierarchy, poor, contrast",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Light mode UI has poor contrast, broken visual hierarchy, and degraded usability",
+        "url": "https://github.com/kubestellar/console/issues/4880",
+        "created_at": "2026-04-05T19:40:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "theme, toggle, light",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "When switching the application theme from dark mode to light mode, the theme toggle control (sun/moon icon in the top navigation bar) disappears after a page refresh.",
+        "url": "https://github.com/kubestellar/console/issues/4874",
+        "created_at": "2026-04-05T19:13:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "analytics, track, fb5ed2a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Global Filter Analytics Not Triggering Properly",
+        "url": "https://github.com/kubestellar/console/issues/4865",
+        "created_at": "2026-04-05T18:46:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "log, f98ad36, edd",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Bug in Bug submission ",
+        "url": "https://github.com/kubestellar/console/issues/3518",
+        "created_at": "2026-03-25T09:33:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "globalfiltersprovider, object, render",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "GlobalFiltersProvider Causes Unnecessary Global Re-renders",
+        "url": "https://github.com/kubestellar/console/issues/3354",
+        "created_at": "2026-03-24T01:53:47Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "addpoint, closure, stateful",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Data Loss via Stale Closure in Stateful Trend hook",
+        "url": "https://github.com/kubestellar/console/issues/2231",
+        "created_at": "2026-03-12T09:37:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "worker, initdatabase, cacheworkerrpc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Initialization Race Condition in SQLite Cache Worker",
+        "url": "https://github.com/kubestellar/console/issues/2230",
+        "created_at": "2026-03-12T09:36:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "require, e68135c1, bb0a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Missing documentation for `FEEDBACK_GITHUB_TOKEN` required for issue submission",
+        "url": "https://github.com/kubestellar/console/issues/2192",
+        "created_at": "2026-03-11T10:55:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "eager, import, promise",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unhandled Promise Rejections on Eager Chunk Imports",
+        "url": "https://github.com/kubestellar/console/issues/2190",
+        "created_at": "2026-03-11T09:01:02Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 2
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 17
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 65
+    }
+  ]
+}

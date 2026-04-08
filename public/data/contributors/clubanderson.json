@@ -1,0 +1,915 @@
+{
+  "login": "clubanderson",
+  "generated_at": "2026-04-08T01:31:31.513Z",
+  "total_issues_opened": 788,
+  "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
+  "total_points": 2845450,
+  "level": "Legend",
+  "level_rank": 8,
+  "rank": 1,
+  "cadence": {
+    "avg_per_week": 63.8,
+    "avg_per_day": 3.33,
+    "by_day_of_week": [
+      104,
+      106,
+      177,
+      86,
+      106,
+      119,
+      90
+    ],
+    "by_hour_of_day": [
+      46,
+      23,
+      80,
+      29,
+      39,
+      22,
+      33,
+      47,
+      10,
+      6,
+      5,
+      5,
+      3,
+      57,
+      35,
+      84,
+      26,
+      31,
+      20,
+      118,
+      27,
+      15,
+      20,
+      7
+    ],
+    "current_streak_weeks": 14,
+    "longest_streak_weeks": 14,
+    "trend": "steady",
+    "first_issue_at": "2025-08-14T15:16:28.000Z",
+    "last_issue_at": "2026-04-07T22:40:39.000Z"
+  },
+  "topics": [
+    {
+      "name": "qa, tsx, component",
+      "issue_count": 378,
+      "recent_issue": {
+        "title": "[Auto-QA] Hardcoded colors instead of design tokens",
+        "url": "https://github.com/kubestellar/console/issues/5308",
+        "created_at": "2026-04-07T19:44:58Z"
+      },
+      "repos": [
+        "console",
+        "console-marketplace"
+      ],
+      "open_count": 2,
+      "closed_count": 376
+    },
+    {
+      "name": "test, coverage, suite",
+      "issue_count": 124,
+      "recent_issue": {
+        "title": "🐛 6 test failure(s) in Coverage Suite run #318",
+        "url": "https://github.com/kubestellar/console/issues/5369",
+        "created_at": "2026-04-07T22:40:39Z"
+      },
+      "repos": [
+        "console",
+        "console-marketplace",
+        "docs"
+      ],
+      "open_count": 3,
+      "closed_count": 121
+    },
+    {
+      "name": "monitoring, step, implement",
+      "issue_count": 57,
+      "recent_issue": {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "created_at": "2026-02-11T15:07:38Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 44,
+      "closed_count": 13
+    },
+    {
+      "name": "error, ga4, category",
+      "issue_count": 51,
+      "recent_issue": {
+        "title": "[GA4-Error] 5 card_render errors on / (last 2h)",
+        "url": "https://github.com/kubestellar/console/issues/5170",
+        "created_at": "2026-04-07T05:26:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 51
+    },
+    {
+      "name": "link, break, url",
+      "issue_count": 32,
+      "recent_issue": {
+        "title": "Broken link: https://kubestellar.io/docs/console/overview/introduction...",
+        "url": "https://github.com/kubestellar/docs/issues/1290",
+        "created_at": "2026-03-14T06:26:31Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 32
+    },
+    {
+      "name": "copilot, stall, assignment",
+      "issue_count": 21,
+      "recent_issue": {
+        "title": "[Auto-QA] Copilot assignments stalled — review config",
+        "url": "https://github.com/kubestellar/console/issues/5151",
+        "created_at": "2026-04-07T03:12:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 21
+    },
+    {
+      "name": "cluster, tooltip, status",
+      "issue_count": 12,
+      "recent_issue": {
+        "title": "🐛 Console shows cluster as reachable when API server is externally unreachable",
+        "url": "https://github.com/kubestellar/console/issues/4202",
+        "created_at": "2026-04-01T22:46:20Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 12
+    },
+    {
+      "name": "replace, color, hardcoded",
+      "issue_count": 11,
+      "recent_issue": {
+        "title": "🎨 Extract hardcoded hex colors to named constants in chart components",
+        "url": "https://github.com/kubestellar/console/issues/5051",
+        "created_at": "2026-04-06T16:47:36Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 11
+    },
+    {
+      "name": "dependencies, major, @react",
+      "issue_count": 9,
+      "recent_issue": {
+        "title": "[Auto-QA] Dependencies with major version updates available",
+        "url": "https://github.com/kubestellar/console/issues/5307",
+        "created_at": "2026-04-07T19:44:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 9
+    },
+    {
+      "name": "px, spacing, inconsistent",
+      "issue_count": 9,
+      "recent_issue": {
+        "title": "[Auto-QA] Inconsistent spacing values in styles",
+        "url": "https://github.com/kubestellar/console/issues/4625",
+        "created_at": "2026-04-04T19:35:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 9
+    },
+    {
+      "name": "usecarddata, centralization, usecarddemostate",
+      "issue_count": 8,
+      "recent_issue": {
+        "title": "[Auto-QA] Code centralization opportunities found",
+        "url": "https://github.com/kubestellar/console/issues/4367",
+        "created_at": "2026-04-03T02:02:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 8
+    },
+    {
+      "name": "audit, vulnerability, high",
+      "issue_count": 7,
+      "recent_issue": {
+        "title": "[Auto-QA] npm audit: 0 critical, 1 high vulnerabilities",
+        "url": "https://github.com/kubestellar/console/issues/4207",
+        "created_at": "2026-04-02T02:02:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 7
+    },
+    {
+      "name": "js, vendor, kb",
+      "issue_count": 6,
+      "recent_issue": {
+        "title": "[Auto-QA] Bundle has JS chunks over 300KB",
+        "url": "https://github.com/kubestellar/console/issues/4649",
+        "created_at": "2026-04-05T02:04:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 6
+    },
+    {
+      "name": "typo, readme, fix",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "FINAL TEST: Typo in dashboard title",
+        "url": "https://github.com/kubestellar/console/issues/62",
+        "created_at": "2026-01-21T04:32:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 5
+    },
+    {
+      "name": "prow, repo, ci",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "[TEST] Prow and CI comprehensive verification",
+        "url": "https://github.com/kubestellar/docs/issues/597",
+        "created_at": "2026-01-13T02:54:15Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 5
+    },
+    {
+      "name": "compiler, memoization, react",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🧹 Remove unnecessary useMemo/useCallback after React Compiler",
+        "url": "https://github.com/kubestellar/console/issues/5045",
+        "created_at": "2026-04-06T16:23:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "term, roadmap, md",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "[Auto-QA] ROADMAP.md governance issues",
+        "url": "https://github.com/kubestellar/console/issues/4162",
+        "created_at": "2026-04-01T14:16:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "preview, markdown, textarea",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Add markdown preview toggle for issue description in Contribute dialog",
+        "url": "https://github.com/kubestellar/console/issues/3455",
+        "created_at": "2026-03-24T17:27:14Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "leak, stop, channel",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "MCP client resource leaks: goroutine leak, blocked channel, unclosed stdin",
+        "url": "https://github.com/kubestellar/console/issues/1925",
+        "created_at": "2026-03-07T00:17:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "handler, locations, fetch",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "JSON.parse without try-catch across frontend components",
+        "url": "https://github.com/kubestellar/console/issues/1910",
+        "created_at": "2026-03-07T00:09:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "nil, potential, pointer",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "[Auto-QA] Go nil-safety: 8 potential nil pointer issues",
+        "url": "https://github.com/kubestellar/console/issues/1737",
+        "created_at": "2026-03-06T05:00:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "alert, notification, dupe",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: multiple alerts of the same type and cluster get added to the alerts",
+        "url": "https://github.com/kubestellar/console/issues/1511",
+        "created_at": "2026-02-28T00:37:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "useeffect, cleanup, ensure",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: Fix potential memory leak — missing timer cleanup in PDDisaggregation and NamespaceManager",
+        "url": "https://github.com/kubestellar/console/issues/1329",
+        "created_at": "2026-02-22T19:38:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "game, sudoku, x4",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Sudoku Game Card",
+        "url": "https://github.com/kubestellar/console/issues/91",
+        "created_at": "2026-01-23T20:20:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "cert, manager, cloudflare",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "[Mission Gen] cert-manager: Cloudflare - DNS Challenge Broken",
+        "url": "https://github.com/kubestellar/console-kb/issues/342",
+        "created_at": "2026-03-10T04:56:39Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "projects, products, @mikespreitzer",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "doc: need updates to content in https://github.com/kubestellar/docs/pull/640",
+        "url": "https://github.com/kubestellar/docs/issues/645",
+        "created_at": "2026-01-13T22:28:58Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "io, safari, kubestellar",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: When I go to kubestellar.io in safari, i get redirected to kubestellar.io/docs. When i go to kubestellar.io in chrome, i go to kubestellar.io/en. Chrome is behaving correctly, safari is not",
+        "url": "https://github.com/kubestellar/docs/issues/414",
+        "created_at": "2025-12-15T20:00:53Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "opportunity, ladder, standing",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Issue with page: ladder",
+        "url": "https://github.com/kubestellar/docs/issues/395",
+        "created_at": "2025-12-11T19:29:21Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "worktrees, git, update",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "kc-agent update fails when git worktrees exist",
+        "url": "https://github.com/kubestellar/console/issues/5172",
+        "created_at": "2026-04-07T05:29:57Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "apr, release, job",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🐛 Nightly/weekly releases failing silently since April 1",
+        "url": "https://github.com/kubestellar/console/issues/5055",
+        "created_at": "2026-04-06T17:01:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "outreach, campaign, adopter",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "📋 CNCF outreach campaign — adopter & docs PR tracker",
+        "url": "https://github.com/kubestellar/console/issues/3998",
+        "created_at": "2026-03-31T14:33:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "psychology, adoption, engagement",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[Auto-QA] 1 adoption & engagement psychology opportunities found",
+        "url": "https://github.com/kubestellar/console/issues/3791",
+        "created_at": "2026-03-28T13:44:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "guideline, aud, development",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Many cards missing isRefreshing in useCardLoadingState",
+        "url": "https://github.com/kubestellar/console/issues/3281",
+        "created_at": "2026-03-23T14:02:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "marshall, kind, resource",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🐛 Resource Marshall: agent fallback misses 10 of 16 supported resource types + add missing K8s kinds",
+        "url": "https://github.com/kubestellar/console/issues/2965",
+        "created_at": "2026-03-19T19:38:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "healthcheck, dockerignore, root",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Dockerfile hardening: root user, no healthcheck, no .dockerignore, kill -9 in scripts",
+        "url": "https://github.com/kubestellar/console/issues/1926",
+        "created_at": "2026-03-07T00:17:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "provider, client, http",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "AI provider HTTP clients have no timeout",
+        "url": "https://github.com/kubestellar/console/issues/1924",
+        "created_at": "2026-03-07T00:17:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "token, validation, endpoint",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Agent endpoints missing authentication/token validation",
+        "url": "https://github.com/kubestellar/console/issues/1923",
+        "created_at": "2026-03-07T00:17:45Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "ignore, goroutines, launch",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Go JSON encoding/decoding errors ignored and goroutines without recover",
+        "url": "https://github.com/kubestellar/console/issues/1915",
+        "created_at": "2026-03-07T00:09:47Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "networkpolicy, default, close",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Helm chart hardening: NetworkPolicy, PDB, securityContext defaults",
+        "url": "https://github.com/kubestellar/console/issues/1913",
+        "created_at": "2026-03-07T00:09:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "csp, limit, internal",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Security hardening: error leaking, CSP, rate limiting, target=_blank, console.log",
+        "url": "https://github.com/kubestellar/console/issues/1911",
+        "created_at": "2026-03-07T00:09:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "nfr, analysis, improvement",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[Auto-QA] Weekly NFR analysis: improvement opportunities identified",
+        "url": "https://github.com/kubestellar/console/issues/1688",
+        "created_at": "2026-03-05T14:20:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "testing123, d03b, b4b",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "testing123",
+        "url": "https://github.com/kubestellar/console/issues/1634",
+        "created_at": "2026-03-04T21:53:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "e24, aee, aca5",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "the card for gpu display is not working",
+        "url": "https://github.com/kubestellar/console/issues/1390",
+        "created_at": "2026-02-25T00:17:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "test123, d399ed, aecd",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "test123",
+        "url": "https://github.com/kubestellar/console/issues/1219",
+        "created_at": "2026-02-19T19:20:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "aria, accessibility, landscape",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Accessibility: Add ARIA labels, keyboard navigation, and screen reader support",
+        "url": "https://github.com/kubestellar/console/issues/1151",
+        "created_at": "2026-02-18T19:24:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "style, minor, code",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[Auto-QA] Test: Minor code style improvement in App.tsx",
+        "url": "https://github.com/kubestellar/console/issues/212",
+        "created_at": "2026-01-29T22:41:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "kubectl, assist, terminal",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Kubectl Card with AI-Assisted Configuration",
+        "url": "https://github.com/kubestellar/console/issues/93",
+        "created_at": "2026-01-23T20:23:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "activity, trends, github",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "GitHub Activity Monitoring Card",
+        "url": "https://github.com/kubestellar/console/issues/92",
+        "created_at": "2026-01-23T20:22:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "stock, market, ticker",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Add Stock Market Ticker Card with iPhone-style Design",
+        "url": "https://github.com/kubestellar/console/issues/86",
+        "created_at": "2026-01-23T18:13:09Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "weather, day, forecasts",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Add Weather Card with Animated Conditions and Multi-day Forecasts",
+        "url": "https://github.com/kubestellar/console/issues/80",
+        "created_at": "2026-01-23T12:27:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "app, oauth, github",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "✨ Add GitHub App for easier installation",
+        "url": "https://github.com/kubestellar/console/issues/73",
+        "created_at": "2026-01-22T17:48:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "gpu, workload, pod",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "the gpu workloads card is not showing pods assigned to gpus",
+        "url": "https://github.com/kubestellar/console/issues/66",
+        "created_at": "2026-01-21T05:02:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "localization, route, doc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 Help Wanted: Add localization support to docs routes",
+        "url": "https://github.com/kubestellar/docs/issues/742",
+        "created_at": "2026-01-15T17:01:12Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "collapse, toggle, theme",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🐛 Theme toggle and collapse buttons get pushed off screen when banner is active",
+        "url": "https://github.com/kubestellar/docs/issues/722",
+        "created_at": "2026-01-15T06:08:39Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "marketplace, assistant, home",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Would like KubeStellar Galaxy Marketplace space on new docs that looks and acts like home assistant example",
+        "url": "https://github.com/kubestellar/docs/issues/11",
+        "created_at": "2025-08-14T17:16:53Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 4
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 6
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 74
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 268
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 296
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 140
+    }
+  ]
+}

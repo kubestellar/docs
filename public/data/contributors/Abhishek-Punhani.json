@@ -1,0 +1,218 @@
+{
+  "login": "Abhishek-Punhani",
+  "generated_at": "2026-04-08T01:31:35.936Z",
+  "total_issues_opened": 72,
+  "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
+  "total_points": 22850,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 10,
+  "cadence": {
+    "avg_per_week": 6,
+    "avg_per_day": 2,
+    "by_day_of_week": [
+      17,
+      10,
+      9,
+      13,
+      9,
+      1,
+      13
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      3,
+      1,
+      2,
+      1,
+      2,
+      4,
+      4,
+      7,
+      8,
+      7,
+      9,
+      15,
+      6,
+      0,
+      0
+    ],
+    "current_streak_weeks": 6,
+    "longest_streak_weeks": 6,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-03-01T20:12:28.000Z",
+    "last_issue_at": "2026-04-06T20:33:08.000Z"
+  },
+  "topics": [
+    {
+      "name": "unit, @abhishek, punhani",
+      "issue_count": 66,
+      "recent_issue": {
+        "title": "Resource Quota Status should show live data on the Storage page when `kc-agent` is running",
+        "url": "https://github.com/kubestellar/console/issues/5112",
+        "created_at": "2026-04-06T20:33:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 66
+    },
+    {
+      "name": "linux, ubuntu, pin",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "bug:  make dev silently fails: backend never starts, all API calls ECONNREFUSED",
+        "url": "https://github.com/kubestellar/console/issues/2138",
+        "created_at": "2026-03-10T17:59:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "research, follow, pr",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Automated PR-closed MCP-powered verification and researched follow-ups",
+        "url": "https://github.com/kubestellar/console/issues/4276",
+        "created_at": "2026-04-02T17:30:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "oauth, dev, flow",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Make `make dev` start OAuth dev mode via `./startup-oauth.sh --dev`",
+        "url": "https://github.com/kubestellar/console/issues/3685",
+        "created_at": "2026-03-26T20:02:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "f46b7175, ec2f, b244",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Bug : Auto Update Not Working",
+        "url": "https://github.com/kubestellar/console/issues/2245",
+        "created_at": "2026-03-12T13:49:36Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [
+      {
+        "title": "card: Implement Flatcar Container Linux monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
+        "repo": "console-marketplace",
+        "topic_match": "linux, ubuntu, pin"
+      }
+    ],
+    "stretch": [
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 55
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 17
+    }
+  ]
+}

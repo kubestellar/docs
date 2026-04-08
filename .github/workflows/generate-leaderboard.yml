@@ -25,11 +25,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.LEADERBOARD_GITHUB_TOKEN }}
         run: node scripts/generate-leaderboard.mjs
 
+      - name: Generate contributor profiles
+        env:
+          GITHUB_TOKEN: ${{ secrets.LEADERBOARD_GITHUB_TOKEN }}
+        run: node scripts/generate-contributor-profiles.mjs
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/leaderboard.json
+          git add public/data/leaderboard.json public/data/contributors/
           git diff --cached --quiet && echo "No changes" && exit 0
-          git commit -m "chore: update leaderboard data"
+          git commit -m "chore: update leaderboard and contributor profile data"
           git push

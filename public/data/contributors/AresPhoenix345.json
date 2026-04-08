@@ -1,0 +1,109 @@
+{
+  "login": "AresPhoenix345",
+  "generated_at": "2026-04-08T01:31:36.301Z",
+  "total_issues_opened": 2,
+  "avatar_url": "https://avatars.githubusercontent.com/u/229183175?v=4",
+  "total_points": 3150,
+  "level": "Navigator",
+  "level_rank": 3,
+  "rank": 30,
+  "cadence": {
+    "avg_per_week": 0.2,
+    "avg_per_day": 2,
+    "by_day_of_week": [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 1,
+    "trend": "inactive",
+    "first_issue_at": "2026-01-14T15:18:10.000Z",
+    "last_issue_at": "2026-01-14T15:20:38.000Z"
+  },
+  "topics": [],
+  "suggestions": {
+    "deepen": [],
+    "stretch": []
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 2
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 0
+    }
+  ]
+}

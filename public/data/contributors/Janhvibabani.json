@@ -1,0 +1,225 @@
+{
+  "login": "Janhvibabani",
+  "generated_at": "2026-04-08T01:31:36.296Z",
+  "total_issues_opened": 8,
+  "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
+  "total_points": 6250,
+  "level": "Pilot",
+  "level_rank": 4,
+  "rank": 22,
+  "cadence": {
+    "avg_per_week": 0.7,
+    "avg_per_day": 0.94,
+    "by_day_of_week": [
+      0,
+      2,
+      1,
+      2,
+      2,
+      1,
+      0
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 3,
+    "trend": "inactive",
+    "first_issue_at": "2026-01-21T17:31:42.000Z",
+    "last_issue_at": "2026-01-30T06:38:58.000Z"
+  },
+  "topics": [
+    {
+      "name": "linkedin, link, point",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "doc: Linkedin link in readme doesn't points to kubestellars linkedin page",
+        "url": "https://github.com/kubestellar/docs/issues/927",
+        "created_at": "2026-01-30T06:38:58Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "footer, year, copyright",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: Footer copyright year is hardcoded (2025) in locale files",
+        "url": "https://github.com/kubestellar/docs/issues/837",
+        "created_at": "2026-01-23T08:25:07Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "hover, text, projects",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Text becomes invisible on hover in Related Projects section (dark mode)",
+        "url": "https://github.com/kubestellar/docs/issues/918",
+        "created_at": "2026-01-29T16:37:45Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "windows, backslashes, path",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Page map validation fails on Windows due to path separator mismatch",
+        "url": "https://github.com/kubestellar/docs/issues/914",
+        "created_at": "2026-01-29T15:11:42Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "pull, twice, redundancy",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "doc: Duplicate “Open a Pull Request” section in CONTRIBUTING.md",
+        "url": "https://github.com/kubestellar/docs/issues/868",
+        "created_at": "2026-01-27T17:44:32Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "calendar, google, community",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Outdated Google Calendar link under “Subscribe to our community calendar” in README",
+        "url": "https://github.com/kubestellar/docs/issues/866",
+        "created_at": "2026-01-27T17:01:53Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 8
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 0
+    }
+  ]
+}

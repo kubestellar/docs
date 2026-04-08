@@ -125,6 +125,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
+  // --- Contributor profile pages ---
+  const leaderboardDataPath = path.join(process.cwd(), 'public', 'data', 'leaderboard.json')
+  if (fs.existsSync(leaderboardDataPath)) {
+    try {
+      const leaderboardData = JSON.parse(fs.readFileSync(leaderboardDataPath, 'utf-8'))
+      for (const entry of leaderboardData.entries || []) {
+        entries.push({
+          url: `${SITE_URL}/en/leaderboard/${entry.login}`,
+          lastModified: new Date(leaderboardData.generated_at || new Date()),
+          changeFrequency: MARKETING_CHANGE_FREQ,
+          priority: DOCS_PAGE_PRIORITY,
+        })
+      }
+    } catch {
+      // Skip if leaderboard data is malformed
+    }
+  }
+
   // --- Docs landing page ---
   entries.push({
     url: `${SITE_URL}/docs`,

@@ -1,0 +1,169 @@
+{
+  "login": "onkar717",
+  "generated_at": "2026-04-08T01:31:36.298Z",
+  "total_issues_opened": 5,
+  "avatar_url": "https://avatars.githubusercontent.com/u/144542684?v=4",
+  "total_points": 4350,
+  "level": "Navigator",
+  "level_rank": 3,
+  "rank": 26,
+  "cadence": {
+    "avg_per_week": 0,
+    "avg_per_day": 5,
+    "by_day_of_week": [
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 1,
+    "trend": "inactive",
+    "first_issue_at": "2025-10-07T15:42:39.000Z",
+    "last_issue_at": "2025-10-07T16:43:54.000Z"
+  },
+  "topics": [
+    {
+      "name": "ready, slack, point",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "bug: The links in Ready to Get Started? for Explore Documentation are broken or need to update",
+        "url": "https://github.com/kubestellar/docs/issues/117",
+        "created_at": "2025-10-07T16:43:54Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 4
+    },
+    {
+      "name": "display, github, stats",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Mismatch between GitHub repo stats and UI display",
+        "url": "https://github.com/kubestellar/docs/issues/114",
+        "created_at": "2025-10-07T16:27:33Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 5
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 0
+    }
+  ]
+}

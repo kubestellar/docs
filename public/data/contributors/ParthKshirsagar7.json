@@ -1,0 +1,109 @@
+{
+  "login": "ParthKshirsagar7",
+  "generated_at": "2026-04-08T01:31:36.302Z",
+  "total_issues_opened": 1,
+  "avatar_url": "https://avatars.githubusercontent.com/u/149901357?v=4",
+  "total_points": 1700,
+  "level": "Explorer",
+  "level_rank": 2,
+  "rank": 34,
+  "cadence": {
+    "avg_per_week": 0.1,
+    "avg_per_day": 1,
+    "by_day_of_week": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 1,
+    "trend": "inactive",
+    "first_issue_at": "2026-01-14T11:49:55.000Z",
+    "last_issue_at": "2026-01-14T11:49:55.000Z"
+  },
+  "topics": [],
+  "suggestions": {
+    "deepen": [],
+    "stretch": []
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 1
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 0
+    }
+  ]
+}

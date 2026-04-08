@@ -1,0 +1,576 @@
+{
+  "login": "rishi-jat",
+  "generated_at": "2026-04-08T01:31:35.717Z",
+  "total_issues_opened": 165,
+  "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
+  "total_points": 23100,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 8,
+  "cadence": {
+    "avg_per_week": 13.4,
+    "avg_per_day": 0.86,
+    "by_day_of_week": [
+      7,
+      9,
+      11,
+      8,
+      114,
+      9,
+      7
+    ],
+    "by_hour_of_day": [
+      11,
+      0,
+      0,
+      10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      7,
+      8,
+      1,
+      1,
+      63,
+      42,
+      0,
+      4,
+      2,
+      8,
+      4,
+      0
+    ],
+    "current_streak_weeks": 1,
+    "longest_streak_weeks": 4,
+    "trend": "steady",
+    "first_issue_at": "2025-09-27T20:12:21.000Z",
+    "last_issue_at": "2026-04-07T15:41:27.000Z"
+  },
+  "topics": [
+    {
+      "name": "line, body, pkg",
+      "issue_count": 126,
+      "recent_issue": {
+        "title": "Antigravity provider returns connected when given invalid CLI path.",
+        "url": "https://github.com/kubestellar/console/issues/4637",
+        "created_at": "2026-04-04T21:21:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 126
+    },
+    {
+      "name": "hook, order, render",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "CardRuntime violates React hook order when data hook is missing",
+        "url": "https://github.com/kubestellar/console/issues/2387",
+        "created_at": "2026-03-13T12:55:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "noopener, rel, noreferrer",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "122 anchor/link elements use target=\"_blank\" without rel=\"noopener\"",
+        "url": "https://github.com/kubestellar/console/issues/1847",
+        "created_at": "2026-03-06T16:59:58Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "dompurify, svg, sanitization",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "TypeScript build fails because dompurify is imported but not installed.",
+        "url": "https://github.com/kubestellar/console/issues/4630",
+        "created_at": "2026-04-04T21:20:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "eval, csp, unsafe",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "CSP includes unsafe-inline for script-src",
+        "url": "https://github.com/kubestellar/console/issues/1859",
+        "created_at": "2026-03-06T17:02:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "template, poddisruptionbudget, networkpolicy",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Helm chart has no PodDisruptionBudget",
+        "url": "https://github.com/kubestellar/console/issues/1858",
+        "created_at": "2026-03-06T17:02:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "dockerfile, healthcheck, root",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Dockerfile has no HEALTHCHECK instruction",
+        "url": "https://github.com/kubestellar/console/issues/1818",
+        "created_at": "2026-03-06T16:52:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "style, mkdocs, attach",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Review and fix mkdocs.yml configuration",
+        "url": "https://github.com/kubestellar/docs/issues/87",
+        "created_at": "2025-09-28T19:29:23Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "promoter, feedback, satisfaction",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Request: Add NPS (Net Promoter Score) Feedback in KubeStellar Console",
+        "url": "https://github.com/kubestellar/console/issues/5271",
+        "created_at": "2026-04-07T15:41:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "slackid, u12345, testupdatecurrentuser",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "User update test fails because SlackID is not persisted correctly.",
+        "url": "https://github.com/kubestellar/console/issues/4635",
+        "created_at": "2026-04-04T21:21:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "learn, section, docs",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Add “Learning” section (Docs, Guides, Tutorials) in Console UI",
+        "url": "https://github.com/kubestellar/console/issues/3471",
+        "created_at": "2026-03-24T20:41:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "warm, llmd, a128",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Multiple dashboard cards fall back to demo data instead of using warm cache",
+        "url": "https://github.com/kubestellar/console/issues/3397",
+        "created_at": "2026-03-24T13:31:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "onboarding, redirect, login",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Auth callback does not correctly handle onboarding state",
+        "url": "https://github.com/kubestellar/console/issues/2860",
+        "created_at": "2026-03-18T03:53:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "traffic, session, organic",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Traffic attribution missing – most sessions classified as Direct",
+        "url": "https://github.com/kubestellar/console/issues/2680",
+        "created_at": "2026-03-15T22:21:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "diagram, label, architecture",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Architecture diagram labels are truncated and not clearly visible",
+        "url": "https://github.com/kubestellar/console/issues/2397",
+        "created_at": "2026-03-13T13:50:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "env, f398bc3c, be23",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "`TestManager_ImportDifferentKey` fails when `FEEDBACK_GITHUB_TOKEN` is set, because `GetAll()` falls back to env token even when encrypted token should be absent.",
+        "url": "https://github.com/kubestellar/console/issues/2388",
+        "created_at": "2026-03-13T12:56:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "github, creation, success",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "POST /api/missions/share/github may return success even when GitHub commit or PR creation fails",
+        "url": "https://github.com/kubestellar/console/issues/2384",
+        "created_at": "2026-03-13T12:55:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "broadcast, shutdown, buffer",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Hub.Broadcast() may block indefinitely after shutdown or when broadcast buffer is full",
+        "url": "https://github.com/kubestellar/console/issues/2383",
+        "created_at": "2026-03-13T12:54:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "cast, mismatch, bypass",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "16 TypeScript as-any casts bypass type safety",
+        "url": "https://github.com/kubestellar/console/issues/1893",
+        "created_at": "2026-03-06T17:41:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "runasnonroot, readonlyrootfilesystem, securitycontext",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Helm chart securityContext defaults to empty object",
+        "url": "https://github.com/kubestellar/console/issues/1856",
+        "created_at": "2026-03-06T17:01:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "statement, production, log",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "console.log statements left in production hook code",
+        "url": "https://github.com/kubestellar/console/issues/1848",
+        "created_at": "2026-03-06T17:00:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "negative, nan, formatters",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "formatBytes produces NaN for negative input",
+        "url": "https://github.com/kubestellar/console/issues/1846",
+        "created_at": "2026-03-06T16:59:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "dockerignore, bin, build",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Missing .dockerignore file causes bloated build context",
+        "url": "https://github.com/kubestellar/console/issues/1819",
+        "created_at": "2026-03-06T16:53:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "key, item, prop",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "167 React list items use array index as key prop",
+        "url": "https://github.com/kubestellar/console/issues/1815",
+        "created_at": "2026-03-06T16:52:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "stackcontext, object, value",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "StackContext Provider value object is not memoized",
+        "url": "https://github.com/kubestellar/console/issues/1811",
+        "created_at": "2026-03-06T16:51:35Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "subdomains, ibm, wildcard",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CORS allows all ibm.com subdomains via wildcard",
+        "url": "https://github.com/kubestellar/console/issues/1810",
+        "created_at": "2026-03-06T16:51:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "secret, dev, jwt",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Predictable dev JWT signing secret",
+        "url": "https://github.com/kubestellar/console/issues/1809",
+        "created_at": "2026-03-06T16:51:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "lock, p., save",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "PersistenceStore Save() uses read lock for write operation",
+        "url": "https://github.com/kubestellar/console/issues/1793",
+        "created_at": "2026-03-06T16:37:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "authheader, header, short",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "authHeader[7:] slice panics on short Authorization headers",
+        "url": "https://github.com/kubestellar/console/issues/1785",
+        "created_at": "2026-03-06T16:35:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "readme, mention, md",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "README.md does not document the agent component or MCP bridge",
+        "url": "https://github.com/kubestellar/console/issues/1777",
+        "created_at": "2026-03-06T14:34:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "iskubestellar, space, blank",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "doc: Add a blank space in What isKubeStellar",
+        "url": "https://github.com/kubestellar/docs/issues/83",
+        "created_at": "2025-09-27T20:12:21Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
+  "suggestions": {
+    "deepen": [],
+    "stretch": [
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      }
+    ]
+  },
+  "activity_timeline": [
+    {
+      "month": "2025-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-07",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-09",
+      "issue_count": 4
+    },
+    {
+      "month": "2025-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-11",
+      "issue_count": 0
+    },
+    {
+      "month": "2025-12",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-01",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-02",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-03",
+      "issue_count": 152
+    },
+    {
+      "month": "2026-04",
+      "issue_count": 9
+    }
+  ]
+}
