@@ -1874,8 +1874,6 @@ The console can now upgrade itself when deployed via Helm — no manual `helm up
 
 ## Pod Exec Terminal (New in March 2026)
 
-![Pod Exec Terminal](images/pod-exec-terminal-mar14.png)
-
 Interactive shell sessions directly from the console — no need to switch to `kubectl exec`.
 
 ### Features

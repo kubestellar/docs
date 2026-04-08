@@ -25,7 +25,7 @@ On Mac computers, Docker runs all of your containers in a virtual machine. Examp
 
 For example, the colima default VM is configured to use `--cpu 2 --memory 4` --- which is insufficient for Kubestellar components on KinD clusters. In fact, KinD inherit **colima** resources when created.
 
-To solve this issue, increase colima resource capacity to increase KinD clusters resource capcity:
+To solve this issue, increase colima resource capacity to increase KinD clusters resource capacity:
 
 1. Stop colima VM
 

@@ -48,7 +48,7 @@ For a more detailed guidance on writing alt-texts, we recommend checking out [We
 
 We also recommend keeping the [W3C Guidelines for Accessibility](https://www.w3.org/TR/WCAG21/) in mind when writing/illustrating KubeStellar documentation.
 
-That said, accessibility is an ever-evolving area in technical content. As an open-source contributor, familiarizing yourself with accessibility standards will help you make more thoughtful and inclusive descisions, whether in documentation, or other areas of your work.
+That said, accessibility is an ever-evolving area in technical content. As an open-source contributor, familiarizing yourself with accessibility standards will help you make more thoughtful and inclusive decisions, whether in documentation, or other areas of your work.
 
 If you want to deepen your understanding of accessibility, we recommend checking out the following resources:
 

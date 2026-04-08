@@ -25,7 +25,7 @@ If you are contributing via the GitHub web interface, navigate to the **Settings
 
 ![signoff-via-github-ui](../images/signoff-via-github-ui.png)
 
-If you are contributing via the command line terminal, run the `git commit --signoff --message [commit message]` or `git commit -s -m [commit message]` command when making each commit. For more detailed information about signing and signing off on commits, including steps to create signing keys and use both the `-s` and `-S` options, see [Sign-off and Signing Contributions](pr-signoff.md).
+If you are contributing via the command line terminal, run the `git commit --signoff --message [commit message]` or `git commit -s -m [commit message]` command when making each commit. For more detailed information about signing and signing off on commits, including steps to create signing keys and use both the `-s` and `-S` options, see [Sign-off and Signing Contributions](../kubestellar/pr-signoff.md).
 
 
 
@@ -48,7 +48,7 @@ Read the resources to gain a better understanding of the contribution processes.
 - **Security**
     - **[Policy](../contributing/security/security-inc.md)** Security Policies
     - **[Contacts](../contributing/security/security_contacts-inc.md)** Who to contact with security concerns
-- **[Testing](testing.md)** How to use the preconfigured tests in the repository
+- **[Testing](../kubestellar/testing.md)** How to use the preconfigured tests in the repository
 - **[Packaging](../kubestellar/packaging.md)** How the components of KubeStellar are organized
 - **[Release Process](../kubestellar/release.md)** All the steps involved in creating and publishing a new release of KubeStellar
 - **[Release Testing](../kubestellar/release-testing.md)** Steps involved in testing a release or release candidate before merging it into the main branch.

@@ -139,7 +139,7 @@ argocd:
     syncPolicy: auto # default: manual
 ```
 
-Alternatively, the same result can be achieved from Helm CLI by using the followig minimal argument (note that the default values are not explicitely set):
+Alternatively, the same result can be achieved from Helm CLI by using the following minimal argument (note that the default values are not explicitly set):
 
 ```shell
 --set-json='argocd.applications=[ { "name": "scenario-6", "repoURL": "https://github.com/kubestellar/kubestellar.git", "path": "hack/argo/nginx", "destinationWDS": "wds1", "destinationNamespace": "nginx-sa" } ]'

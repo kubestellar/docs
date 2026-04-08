@@ -264,7 +264,7 @@ There are two controllers in the KubeStellar controller manager:
       client to inventory space).
 
     - This controller maintains an internal data structure called the
-      `BindingPolicyResover` that tracks what `Binding` _should_
+      `BindingPolicyResolver` that tracks what `Binding` _should_
       correspond to each `BindingPolicy`, and uses it to make that so.
 
 - Status controller - one client connected to the WDS and one
@@ -291,7 +291,7 @@ references to workload objects and the concrete list of references to
 inventory objects that were selected by the policy.
 
 The Binding Controller is centered on its workqueue and an internal
-data structure, called a `BindingPolicyResover`, that represents the
+data structure, called a `BindingPolicyResolver`, that represents the
 set of `Binding` objects that _should_ exist based on the controller's
 inputs. The controller has informers for all of its inputs: a static
 collection for the control objects (`BindingPolicy` and inventory
@@ -300,10 +300,10 @@ for the workload objects. The controller also has informers for its
 output objects (i.e., `Binding` objects). Every notification from an
 informer is handled by putting a relevant object reference into the
 work queue. Working on a reference to an input involves updating the
-`BindingPolicyResover` and enqueuing a reference to any output object
+`BindingPolicyResolver` and enqueuing a reference to any output object
 (`Binding`) that might need a change. Working on a reference to a
 `Binding` involves comparing what is actually in that `Binding` with
-what the `BindingPolicyResover` says should be there, and
+what the `BindingPolicyResolver` says should be there, and
 creating/updating/deleting the `Binding` if there is a difference.
 
 The Binding Controller also provides two informer-like services that
@@ -329,7 +329,7 @@ handler and the work queue as follows:
     - Starts Informer
     - Stores informer and lister in a map indexed by GVR
 - Waits for all caches to sync
-- Gets the list of all `BindingPolicy` objects and, for each one, invokes the `BindingPolicyResover` method for the presence of the `BindingPolicy`.
+- Gets the list of all `BindingPolicy` objects and, for each one, invokes the `BindingPolicyResolver` method for the presence of the `BindingPolicy`.
 - Starts N workers to process work queue
 
 The informer and watches specific resources on the WDS API Server; on
@@ -343,14 +343,14 @@ handling functions (`AddFunc`, `UpdateFunc`, `DeleteFunc`)
 For a `BindingPolicy` that is deleted or being deleted, sync consists of the following steps.
 
 1. Ensure the absence of the KubeStellar finalizer on the `BindingPolicy`.
-1. Invoke the `BindingPolicyResover` method for the absence of the `BindingPolicy`.
+1. Invoke the `BindingPolicyResolver` method for the absence of the `BindingPolicy`.
 
 For a `BindingPolicy` that is neither deleted nor being deleted, sync consists of the following steps.
 
 1. Ensure the presence of the KubeStellar finalizer on the `BindingPolicy`.
-1. Invoke the `BindingPolicyResover` method for the presence of the `BindingPolicy`.
+1. Invoke the `BindingPolicyResolver` method for the presence of the `BindingPolicy`.
 1. Find all the WECs (which are represented by inventory objects) that match the `BindingPolicy`.
-1. Invoke the `BindingPolicyResover` method that associates a BindingPolicy's name with its current set of matching WECs.
+1. Invoke the `BindingPolicyResolver` method that associates a BindingPolicy's name with its current set of matching WECs.
 1. Enqueue a reference to every workload object.
 
 #### Sync Workload Object
@@ -379,7 +379,7 @@ Otherwise the controller proceeds as follows, independently for each
 
 #### Sync Binding
 
-If the `BindingPolicyResover` is unaware of the existence of a
+If the `BindingPolicyResolver` is unaware of the existence of a
 corresponding `BindingPolicy` then almost nothing needs to be done:
 the `BindingPolicy` is either being created or deleted and there will
 be more syncing done due to other events. All that need be done here
@@ -392,7 +392,7 @@ nothing more is done.
 In the remaining cases, the controller takes the following steps.
 
 1. The controller generates the proper `BindingSpec` from the
-   information in the `BindingPolicyResover`. The controller compares
+   information in the `BindingPolicyResolver`. The controller compares
    that with the `BindingSpec` (if any) from the `Binding` lister. If
    there is a difference then the controller updates the `Binding`
    object and has the resolver notify the registered handlers for

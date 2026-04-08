@@ -304,7 +304,7 @@ cp1    True     True    5d18h
 ```
 
 In the above example, `SYNCED=True` means that all resources required to run the control plane
-have been succssfully applied on the hosting cluster, and `READY=True` means that the Kube APIServer
+have been successfully applied on the hosting cluster, and `READY=True` means that the Kube APIServer
 for the control plane is available. You may also use `kubectl describe` to get more info about the
 control plane.
 
@@ -633,7 +633,7 @@ Delete a context within your kubeconfig file. If the context deleted is your cur
 With post-create hooks you can automate applying kubernetes templates on the hosting cluster or on
 a hosted control plane right after the creation of a control plane. Some relevant use cases are:
 
-- Applying OpenShift CRDs on a control plane to be used as a Workload Description Space (WDS) for deplying
+- Applying OpenShift CRDs on a control plane to be used as a Workload Description Space (WDS) for deploying
 workloads to OpenShift clusters.
 
 - Starting a new controller in the namespace of a control plane in the hosting cluster that interacts
@@ -823,7 +823,7 @@ Variables are specified using Helm-like syntax:
 
 Note that the double quotes are required for a valid yaml.
 
-Currently avilable built-in objects are:
+Currently available built-in objects are:
 
 - "{{.Namespace}}" - the namespace hosting the control plane
 - "{{.ControlPlaneName}}" - the name of the control plane
