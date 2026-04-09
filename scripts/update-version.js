@@ -47,6 +47,8 @@ const versionConstants = {
   'a2a': 'A2A_VERSIONS',
   'kubeflex': 'KUBEFLEX_VERSIONS',
   'multi-plugin': 'MULTI_PLUGIN_VERSIONS',
+  'kubestellar-mcp': 'KUBESTELLAR_MCP_VERSIONS',
+  'console': 'CONSOLE_VERSIONS',
   'klaude': 'KLAUDE_VERSIONS'
 };
 
