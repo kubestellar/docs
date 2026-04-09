@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   generate:
@@ -42,3 +43,54 @@ jobs:
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "chore: update leaderboard and contributor profile data"
           git push
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.LEADERBOARD_GITHUB_TOKEN }}
+          script: |
+            const tag = '[leaderboard-gen-failure]';
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'ci-failure',
+              per_page: 20,
+            });
+            const existing = issues.find(i => i.title.includes(tag));
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body: `Still failing as of ${new Date().toISOString().slice(0, 10)}. [Run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`,
+              });
+              return;
+            }
+            try {
+              await github.rest.issues.getLabel({ owner: context.repo.owner, repo: context.repo.repo, name: 'ci-failure' });
+            } catch {
+              await github.rest.issues.createLabel({ owner: context.repo.owner, repo: context.repo.repo, name: 'ci-failure', color: 'b60205' });
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `${tag} Leaderboard generation workflow failing`,
+              body: [
+                '## Leaderboard generation is failing',
+                '',
+                `**Run:** [${context.runId}](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`,
+                `**Date:** ${new Date().toISOString().slice(0, 10)}`,
+                '',
+                'The Generate Leaderboard Data workflow failed. Leaderboard scores will be stale until this is fixed.',
+                '',
+                '### Reproduce locally',
+                '```bash',
+                'npm ci && GITHUB_TOKEN=ghp_xxx node scripts/generate-leaderboard.mjs',
+                '```',
+                '',
+                '> Auto-generated. This issue will receive comments on subsequent failures.',
+              ].join('\n'),
+              labels: ['ci-failure'],
+            });
