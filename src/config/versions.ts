@@ -199,13 +199,18 @@ const KUBESTELLAR_MCP_VERSIONS: Record<string, VersionInfo> = {
 }
 
 // console versions
-// Console docs are actively developed on main — default to main so users
-// always see the latest content instead of a stale release branch (#1350).
+// The "latest" entry tracks the most recent stable weekly release.
+// The goodnight workflow auto-updates this when a new release is detected.
 const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
   main: {
     label: "main (latest)",
     branch: "main",
     isDefault: true,
+  },
+  "0.3.19": {
+    label: "v0.3.19",
+    branch: "docs/console/0.3.19",
+    isDefault: false,
   },
   "0.3.6": {
     label: "v0.3.6",
