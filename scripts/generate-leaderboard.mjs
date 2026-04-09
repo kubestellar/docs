@@ -210,7 +210,7 @@ function scoreAllContributors(allItems) {
  *
  * Format: Issue title must match `[bonus] @username +N reason`
  * Only issues created by BONUS_AUTHORIZED_USER and labeled "bonus-points"
- * are honored. Issues must be open (close to revoke).
+ * are honored. Both open and closed issues count (permanent award).
  *
  * Example: "[bonus] @rishi-jat +1000 video challenge submission"
  */
@@ -224,7 +224,7 @@ async function fetchBonusPoints() {
   const bonuses = new Map();
 
   try {
-    const url = `${API_BASE}/repos/${BONUS_REPO}/issues?labels=${BONUS_LABEL}&state=open&per_page=${REST_PER_PAGE}&creator=${BONUS_AUTHORIZED_USER}`;
+    const url = `${API_BASE}/repos/${BONUS_REPO}/issues?labels=${BONUS_LABEL}&state=all&per_page=${REST_PER_PAGE}&creator=${BONUS_AUTHORIZED_USER}`;
     const issues = await ghFetch(url);
 
     for (const issue of issues) {
