@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Generate leaderboard data
         env:
           GITHUB_TOKEN: ${{ secrets.LEADERBOARD_GITHUB_TOKEN }}
@@ -29,6 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.LEADERBOARD_GITHUB_TOKEN }}
         run: node scripts/generate-contributor-profiles.mjs
+        continue-on-error: true
 
       - name: Commit and push if changed
         run: |

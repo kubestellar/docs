@@ -20,6 +20,7 @@
  */
 
 import { writeFileSync } from "node:fs";
+import { execSync } from "node:child_process";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -258,8 +259,16 @@ async function main() {
   });
 
   // 4. Write output
+  let gitHash = "";
+  try {
+    gitHash = execSync("git rev-parse --short HEAD", { encoding: "utf-8" }).trim();
+  } catch {
+    // Not in a git repo — ignore
+  }
+
   const output = {
     generated_at: new Date().toISOString(),
+    git_hash: gitHash,
     entries,
   };
 
