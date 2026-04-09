@@ -1,20 +1,20 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-09T15:57:51.502Z",
-  "total_issues_opened": 110,
+  "generated_at": "2026-04-09T18:24:38.318Z",
+  "total_issues_opened": 111,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 38650,
+  "total_points": 38950,
   "level": "Commander",
   "level_rank": 5,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 9.2,
-    "avg_per_day": 2.5,
+    "avg_per_week": 9.3,
+    "avg_per_day": 2.49,
     "by_day_of_week": [
       29,
       17,
       16,
-      10,
+      11,
       8,
       0,
       30
@@ -36,7 +36,7 @@
       12,
       1,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-09T05:10:39.000Z"
+    "last_issue_at": "2026-04-09T16:50:18.000Z"
   },
   "topics": [
     {
-      "name": "@aaradhychinche, alt, endpoint",
-      "issue_count": 86,
+      "name": "@aaradhychinche, alt, backend",
+      "issue_count": 87,
       "recent_issue": {
-        "title": "bug: cache initialization race causes delayed rendering of cached content",
-        "url": "https://github.com/kubestellar/console/issues/5689",
-        "created_at": "2026-04-09T05:10:39Z"
+        "title": "## 🐛 bug: Application crashes with React error #185 under cluster/API failure conditions",
+        "url": "https://github.com/kubestellar/console/issues/5762",
+        "created_at": "2026-04-09T16:50:18Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 86
+      "closed_count": 87
     },
     {
       "name": "kube, game, craft",
@@ -402,7 +402,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 77
+      "issue_count": 78
     }
   ]
 }

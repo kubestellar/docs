@@ -1,12 +1,12 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-09T15:57:54.028Z",
+  "generated_at": "2026-04-09T18:24:40.844Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 12,
+  "rank": 13,
   "cadence": {
     "avg_per_week": 5.8,
     "avg_per_day": 1.34,
@@ -193,7 +193,7 @@
       "closed_count": 1
     },
     {
-      "name": "row, deployment, clickable",
+      "name": "deployment, row, clickable",
       "issue_count": 1,
       "recent_issue": {
         "title": "title : Deployment issues in ClusterDetailModal are not drill-down clickable",
@@ -263,7 +263,7 @@
       "closed_count": 1
     },
     {
-      "name": "purely, historical, trend",
+      "name": "purely, trend, historical",
       "issue_count": 1,
       "recent_issue": {
         "title": "PredictiveHealth predictions are based purely on current snapshot — no historical trend data",

@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-09T15:57:43.970Z",
-  "total_issues_opened": 817,
+  "generated_at": "2026-04-09T18:24:31.432Z",
+  "total_issues_opened": 821,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 2948900,
+  "total_points": 2958950,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 65.6,
-    "avg_per_day": 3.43,
+    "avg_per_week": 65.8,
+    "avg_per_day": 3.45,
     "by_day_of_week": [
       104,
       106,
       192,
-      100,
+      104,
       106,
       119,
       90
@@ -36,8 +36,8 @@
       60,
       41,
       86,
-      26,
-      31,
+      29,
+      32,
       20,
       120,
       27,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-09T14:26:12.000Z"
+    "last_issue_at": "2026-04-09T17:56:30.000Z"
   },
   "topics": [
     {
@@ -69,11 +69,11 @@
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 136,
+      "issue_count": 138,
       "recent_issue": {
-        "title": "🐛 4 test failure(s) in Coverage Suite run #404",
-        "url": "https://github.com/kubestellar/console/issues/5731",
-        "created_at": "2026-04-09T14:01:08Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #419",
+        "url": "https://github.com/kubestellar/console/issues/5776",
+        "created_at": "2026-04-09T17:56:30Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 3,
-      "closed_count": 133
+      "closed_count": 135
     },
     {
       "name": "monitoring, step, implement",
@@ -250,6 +250,20 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "bonus, award, point",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "[bonus] @clubanderson +50 test award",
+        "url": "https://github.com/kubestellar/console/issues/5760",
+        "created_at": "2026-04-09T16:23:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "compiler, memoization, react",
@@ -814,7 +828,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Kubectl: 6 hardcoded English strings in terminal empty state not using t()",
+        "url": "https://github.com/kubestellar/console/issues/5783",
+        "repo": "console",
+        "topic_match": "kubectl, assist, interactive"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -895,7 +916,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 172
+      "issue_count": 176
     }
   ]
 }

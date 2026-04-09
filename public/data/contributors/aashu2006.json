@@ -1,20 +1,20 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-09T15:57:54.142Z",
-  "total_issues_opened": 72,
+  "generated_at": "2026-04-09T18:24:40.351Z",
+  "total_issues_opened": 84,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 20400,
+  "total_points": 24000,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 13,
+  "rank": 9,
   "cadence": {
-    "avg_per_week": 6,
-    "avg_per_day": 17.05,
+    "avg_per_week": 7,
+    "avg_per_day": 16.28,
     "by_day_of_week": [
       13,
       31,
       18,
-      0,
+      12,
       0,
       1,
       9
@@ -37,34 +37,90 @@
       5,
       0,
       0,
-      2,
-      7,
+      8,
+      13,
       22,
       20,
       11,
       0,
       0
     ],
-    "current_streak_weeks": 1,
-    "longest_streak_weeks": 1,
+    "current_streak_weeks": 2,
+    "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-08T19:45:21.000Z"
+    "last_issue_at": "2026-04-09T18:17:11.000Z"
   },
   "topics": [
     {
-      "name": "@aashu2006, happen, spinner",
-      "issue_count": 56,
+      "name": "@aashu2006, spinner, happen",
+      "issue_count": 65,
       "recent_issue": {
-        "title": "Hardcoded semantic color text-yellow-400 used for UI state indicator in DashboardHeader",
-        "url": "https://github.com/kubestellar/console/issues/5590",
-        "created_at": "2026-04-08T19:45:07Z"
+        "title": "DynamicCard: 4 hardcoded English strings across 2 components not using t()",
+        "url": "https://github.com/kubestellar/console/issues/5785",
+        "created_at": "2026-04-09T18:14:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 4,
+      "closed_count": 61
+    },
+    {
+      "name": "simultaneous, ec3d1fd1, d20",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "mcp/storage.ts: unbounded Promise.all across all clusters - can overload local agent with 30+ simultaneous requests",
+        "url": "https://github.com/kubestellar/console/issues/5786",
+        "created_at": "2026-04-09T18:17:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "iifes, reference, produce",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ComputeOverview: IIFEs produce new array references on every render - useMemo never caches",
+        "url": "https://github.com/kubestellar/console/issues/5774",
+        "created_at": "2026-04-09T17:45:06Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 56
+      "closed_count": 1
+    },
+    {
+      "name": "mock, acd5, e4c270387",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Tests: consecutiveFailures mocked as [] instead of number in 27 test files - failure logic never tested",
+        "url": "https://github.com/kubestellar/console/issues/5771",
+        "created_at": "2026-04-09T17:38:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "filter, service, count",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ServiceStatus: service type counts ignore cluster filter - stats show wrong numbers",
+        "url": "https://github.com/kubestellar/console/issues/5769",
+        "created_at": "2026-04-09T17:33:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "destructive, delete, f04c",
@@ -115,20 +171,6 @@
         "title": "handleKagentCRDSummary makes 6 sequential Kubernetes API calls under one shared timeout silently zeroing out counts",
         "url": "https://github.com/kubestellar/console/issues/5354",
         "created_at": "2026-04-07T21:22:30Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "hardcodes, detection, urls",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "kagent/kagenti auto-detection hardcodes insecure HTTP URLs with fixed namespace and port",
-        "url": "https://github.com/kubestellar/console/issues/5352",
-        "created_at": "2026-04-07T21:22:02Z"
       },
       "repos": [
         "console"
@@ -314,12 +356,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
@@ -330,6 +366,12 @@
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },
@@ -380,7 +422,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 72
+      "issue_count": 84
     }
   ]
 }

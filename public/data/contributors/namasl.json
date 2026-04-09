@@ -1,6 +1,6 @@
 {
   "login": "namasl",
-  "generated_at": "2026-04-09T15:57:54.334Z",
+  "generated_at": "2026-04-09T18:24:41.020Z",
   "total_issues_opened": 1,
   "avatar_url": "https://avatars.githubusercontent.com/u/144150872?v=4",
   "total_points": 100,
@@ -47,7 +47,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "slowing_down",
+    "trend": "inactive",
     "first_issue_at": "2026-02-12T17:00:39.000Z",
     "last_issue_at": "2026-02-12T17:00:39.000Z"
   },

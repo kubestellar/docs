@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-09T15:57:48.649Z",
+  "generated_at": "2026-04-09T18:24:35.720Z",
   "total_issues_opened": 245,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 85900,
@@ -194,7 +194,7 @@
       "closed_count": 1
     },
     {
-      "name": "memo, comparator, stringify",
+      "name": "comparator, memo, stringify",
       "issue_count": 1,
       "recent_issue": {
         "title": "Memo comparator uses JSON.stringify on config in SharedSortableCard",
