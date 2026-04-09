@@ -202,16 +202,15 @@ const KUBESTELLAR_MCP_VERSIONS: Record<string, VersionInfo> = {
 // The "latest" entry tracks the most recent stable weekly release.
 // The goodnight workflow auto-updates this when a new release is detected.
 const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
-  latest: {
-    label: "v0.3.19 (Latest)",
-    branch: "docs/console/0.3.19",
+  main: {
+    label: "main (latest)",
+    branch: "main",
     isDefault: true,
   },
-  main: {
-    label: "main (dev)",
-    branch: "main",
+  "0.3.19": {
+    label: "v0.3.19",
+    branch: "docs/console/0.3.19",
     isDefault: false,
-    isDev: true,
   },
   "0.3.6": {
     label: "v0.3.6",
@@ -271,7 +270,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "console",
     name: "Console",
     basePath: "console",
-    currentVersion: "0.3.19",
+    currentVersion: "main",
     contentPath: "docs/content/console",
     versions: CONSOLE_VERSIONS,
   },
