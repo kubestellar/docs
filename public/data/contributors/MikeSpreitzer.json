@@ -1,20 +1,20 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-08T01:31:36.282Z",
-  "total_issues_opened": 66,
+  "generated_at": "2026-04-09T15:57:54.295Z",
+  "total_issues_opened": 67,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-  "total_points": 13850,
+  "total_points": 13900,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 19,
   "cadence": {
-    "avg_per_week": 5.2,
-    "avg_per_day": 0.56,
+    "avg_per_week": 4.8,
+    "avg_per_day": 0.57,
     "by_day_of_week": [
       8,
       6,
       7,
-      10,
+      11,
       22,
       9,
       4
@@ -26,7 +26,7 @@
       0,
       3,
       9,
-      6,
+      7,
       7,
       0,
       0,
@@ -45,27 +45,27 @@
       0,
       0
     ],
-    "current_streak_weeks": 4,
-    "longest_streak_weeks": 4,
+    "current_streak_weeks": 5,
+    "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2025-12-11T19:58:02.000Z",
-    "last_issue_at": "2026-04-07T21:10:46.000Z"
+    "last_issue_at": "2026-04-09T06:58:12.000Z"
   },
   "topics": [
     {
-      "name": "describe, following, width",
-      "issue_count": 44,
+      "name": "describe, following, snapshot",
+      "issue_count": 47,
       "recent_issue": {
-        "title": "doc: More storage questions about ks/console",
-        "url": "https://github.com/kubestellar/docs/issues/1339",
-        "created_at": "2026-04-04T07:50:15Z"
+        "title": "doc: Two different enumeration of components in console architecture",
+        "url": "https://github.com/kubestellar/docs/issues/1367",
+        "created_at": "2026-04-09T06:58:12Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 44
+      "closed_count": 47
     },
     {
       "name": "privilege, github, person",
@@ -82,40 +82,12 @@
       "closed_count": 3
     },
     {
-      "name": "pid, test6, mspreitz",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "feature: Console exposes its version",
-        "url": "https://github.com/kubestellar/console/issues/3223",
-        "created_at": "2026-03-23T04:37:04Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "tenant, architecture, connection",
       "issue_count": 2,
       "recent_issue": {
         "title": "Questions about Tenant Architecture and similar cards",
         "url": "https://github.com/kubestellar/console/issues/2870",
         "created_at": "2026-03-18T05:29:52Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "tour, kubestellarconsole, netlify",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Two hosted consoles",
-        "url": "https://github.com/kubestellar/console/issues/2456",
-        "created_at": "2026-03-13T18:06:33Z"
       },
       "repos": [
         "console"
@@ -166,6 +138,20 @@
       "closed_count": 1
     },
     {
+      "name": "pid, kc, cat",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: kc-agent alleged to be left running, but isn't",
+        "url": "https://github.com/kubestellar/console/issues/3083",
+        "created_at": "2026-03-21T07:10:35Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "uis, thing, plumbing",
       "issue_count": 1,
       "recent_issue": {
@@ -208,7 +194,35 @@
       "closed_count": 1
     },
     {
-      "name": "image, process, mean",
+      "name": "kubestellarconsole, netlify, host",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Two hosted consoles",
+        "url": "https://github.com/kubestellar/console/issues/2456",
+        "created_at": "2026-03-13T18:06:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "tour, chat, feeling",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Problems with the tour",
+        "url": "https://github.com/kubestellar/console/issues/1248",
+        "created_at": "2026-02-20T06:13:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "image, process, suspect",
       "issue_count": 1,
       "recent_issue": {
         "title": "doc: confusing wording about MCP bundling with console",
@@ -256,20 +270,6 @@
         "title": "bug: metaphorical strangeness in the home page",
         "url": "https://github.com/kubestellar/docs/issues/788",
         "created_at": "2026-01-16T21:42:02Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "button, shared, branch",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature: proper generic buttons on each documentation page",
-        "url": "https://github.com/kubestellar/docs/issues/780",
-        "created_at": "2026-01-16T18:32:33Z"
       },
       "repos": [
         "docs"
@@ -374,7 +374,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 7
+      "issue_count": 8
     }
   ]
 }

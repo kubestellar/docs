@@ -1,19 +1,19 @@
 {
   "login": "KPRoche",
-  "generated_at": "2026-04-08T01:31:34.586Z",
-  "total_issues_opened": 24,
+  "generated_at": "2026-04-09T15:57:51.966Z",
+  "total_issues_opened": 25,
   "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
-  "total_points": 25550,
+  "total_points": 25850,
   "level": "Commander",
   "level_rank": 5,
   "rank": 7,
   "cadence": {
-    "avg_per_week": 1.7,
+    "avg_per_week": 1.8,
     "avg_per_day": 0.17,
     "by_day_of_week": [
       1,
       4,
-      3,
+      4,
       9,
       6,
       1,
@@ -38,7 +38,7 @@
       3,
       1,
       6,
-      3,
+      4,
       1,
       2,
       3,
@@ -47,24 +47,24 @@
     ],
     "current_streak_weeks": 7,
     "longest_streak_weeks": 7,
-    "trend": "ramping_up",
+    "trend": "steady",
     "first_issue_at": "2025-11-13T16:40:18.000Z",
-    "last_issue_at": "2026-04-07T20:43:39.000Z"
+    "last_issue_at": "2026-04-08T18:51:03.000Z"
   },
   "topics": [
     {
       "name": "@kproche, feature, card",
-      "issue_count": 12,
+      "issue_count": 13,
       "recent_issue": {
-        "title": "Feature request: upload yaml file rather than cut and paste",
-        "url": "https://github.com/kubestellar/console/issues/5337",
-        "created_at": "2026-04-07T20:43:39Z"
+        "title": "Bug Report: Claude Code can't surface permission prompts in Console",
+        "url": "https://github.com/kubestellar/console/issues/5550",
+        "created_at": "2026-04-08T18:51:03Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 12
+      "closed_count": 13
     },
     {
       "name": "doc, kubestellar, file",
@@ -127,12 +127,6 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
@@ -155,6 +149,12 @@
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },
@@ -205,7 +205,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 4
+      "issue_count": 5
     }
   ]
 }

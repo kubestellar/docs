@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-08T01:31:36.300Z",
+  "generated_at": "2026-04-09T15:57:54.319Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 3850,
@@ -45,7 +45,7 @@
       0,
       0
     ],
-    "current_streak_weeks": 2,
+    "current_streak_weeks": 0,
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2025-09-18T09:43:07.000Z",
@@ -109,7 +109,7 @@
       "closed_count": 1
     },
     {
-      "name": "teleport, kubeconfig, tsh",
+      "name": "teleport, tsh, kubeconfig",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Cannot access Teleport-managed kubeconfig clusters — repeated 'tsh login/tsh kube login' relogin errors",
@@ -123,7 +123,7 @@
       "closed_count": 1
     },
     {
-      "name": "oauth, jwt, secret",
+      "name": "oauth, jwt, env",
       "issue_count": 1,
       "recent_issue": {
         "title": "/startup-oauth.sh  script not working",
@@ -221,10 +221,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },

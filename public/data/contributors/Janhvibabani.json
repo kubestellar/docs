@@ -1,6 +1,6 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-04-08T01:31:36.296Z",
+  "generated_at": "2026-04-09T15:57:54.312Z",
   "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
   "total_points": 6250,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "linkedin, link, point",
+      "name": "linkedin, link, website",
       "issue_count": 2,
       "recent_issue": {
         "title": "doc: Linkedin link in readme doesn't points to kubestellars linkedin page",

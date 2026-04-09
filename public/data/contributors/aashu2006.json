@@ -1,19 +1,19 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-08T01:31:36.187Z",
-  "total_issues_opened": 54,
+  "generated_at": "2026-04-09T15:57:54.142Z",
+  "total_issues_opened": 72,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 17600,
+  "total_points": 20400,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 16,
+  "rank": 13,
   "cadence": {
-    "avg_per_week": 4.5,
-    "avg_per_day": 16.41,
+    "avg_per_week": 6,
+    "avg_per_day": 17.05,
     "by_day_of_week": [
       13,
       31,
-      0,
+      18,
       0,
       0,
       1,
@@ -39,7 +39,7 @@
       0,
       2,
       7,
-      4,
+      22,
       20,
       11,
       0,
@@ -49,22 +49,50 @@
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-07T21:23:30.000Z"
+    "last_issue_at": "2026-04-08T19:45:21.000Z"
   },
   "topics": [
     {
-      "name": "@aashu2006, spinner, destructures",
-      "issue_count": 40,
+      "name": "@aashu2006, happen, spinner",
+      "issue_count": 56,
       "recent_issue": {
-        "title": "All agent fetch errors silently swallowed - users see demo data instead of error state",
-        "url": "https://github.com/kubestellar/console/issues/5355",
-        "created_at": "2026-04-07T21:22:54Z"
+        "title": "Hardcoded semantic color text-yellow-400 used for UI state indicator in DashboardHeader",
+        "url": "https://github.com/kubestellar/console/issues/5590",
+        "created_at": "2026-04-08T19:45:07Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 40
+      "closed_count": 56
+    },
+    {
+      "name": "destructive, delete, f04c",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "window.confirm() used for destructive delete action in AlertRules breaking accessibility",
+        "url": "https://github.com/kubestellar/console/issues/5591",
+        "created_at": "2026-04-08T19:45:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "spread, enemy, array",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Math.max spread of empty array returns -Infinity breaking KubeGalaga enemy logic",
+        "url": "https://github.com/kubestellar/console/issues/5584",
+        "created_at": "2026-04-08T19:39:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "extract, identitybinding, ffb011",
@@ -95,7 +123,7 @@
       "closed_count": 1
     },
     {
-      "name": "hardcodes, detection, service",
+      "name": "hardcodes, detection, urls",
       "issue_count": 1,
       "recent_issue": {
         "title": "kagent/kagenti auto-detection hardcodes insecure HTTP URLs with fixed namespace and port",
@@ -109,7 +137,7 @@
       "closed_count": 1
     },
     {
-      "name": "default, unset, a414fae",
+      "name": "default, a414fae, faf4",
       "issue_count": 1,
       "recent_issue": {
         "title": "validateToken defaults to open when KC_AGENT_TOKEN is unset exposing all endpoints",
@@ -207,7 +235,7 @@
       "closed_count": 1
     },
     {
-      "name": "engineer, platform, append",
+      "name": "engineer, platform, duplicate",
       "issue_count": 1,
       "recent_issue": {
         "title": "generateDefaultCards appends duplicate card for Platform Engineer role",
@@ -274,16 +302,16 @@
     ],
     "stretch": [
       {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
         "name": "Storage & Compute",
@@ -292,16 +320,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       }
     ]
   },
@@ -352,7 +380,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 54
+      "issue_count": 72
     }
   ]
 }

@@ -1,20 +1,20 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-08T01:31:35.936Z",
-  "total_issues_opened": 72,
+  "generated_at": "2026-04-09T15:57:53.641Z",
+  "total_issues_opened": 73,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-  "total_points": 22850,
+  "total_points": 23150,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 10,
+  "rank": 9,
   "cadence": {
-    "avg_per_week": 6,
-    "avg_per_day": 2,
+    "avg_per_week": 6.1,
+    "avg_per_day": 1.89,
     "by_day_of_week": [
       17,
       10,
       9,
-      13,
+      14,
       9,
       1,
       13
@@ -29,7 +29,7 @@
       0,
       3,
       0,
-      3,
+      4,
       1,
       2,
       1,
@@ -45,29 +45,29 @@
       0,
       0
     ],
-    "current_streak_weeks": 6,
-    "longest_streak_weeks": 6,
+    "current_streak_weeks": 7,
+    "longest_streak_weeks": 7,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-01T20:12:28.000Z",
-    "last_issue_at": "2026-04-06T20:33:08.000Z"
+    "last_issue_at": "2026-04-09T09:43:57.000Z"
   },
   "topics": [
     {
       "name": "unit, @abhishek, punhani",
-      "issue_count": 66,
+      "issue_count": 67,
       "recent_issue": {
-        "title": "Resource Quota Status should show live data on the Storage page when `kc-agent` is running",
-        "url": "https://github.com/kubestellar/console/issues/5112",
-        "created_at": "2026-04-06T20:33:08Z"
+        "title": "Error When Rendering Policy Violations with Protobuf Timestamps",
+        "url": "https://github.com/kubestellar/console/issues/5706",
+        "created_at": "2026-04-09T09:43:57Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 66
+      "closed_count": 67
     },
     {
-      "name": "linux, ubuntu, pin",
+      "name": "linux, ubuntu, dev",
       "issue_count": 3,
       "recent_issue": {
         "title": "bug:  make dev silently fails: backend never starts, all API calls ECONNREFUSED",
@@ -129,7 +129,7 @@
         "title": "card: Implement Flatcar Container Linux monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/59",
         "repo": "console-marketplace",
-        "topic_match": "linux, ubuntu, pin"
+        "topic_match": "linux, ubuntu, dev"
       }
     ],
     "stretch": [
@@ -138,12 +138,6 @@
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
         "name": "Marketplace & Operators",
@@ -156,6 +150,12 @@
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
         "name": "Deployments & GitOps",
@@ -212,7 +212,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 17
+      "issue_count": 18
     }
   ]
 }

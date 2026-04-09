@@ -1,19 +1,19 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-08T01:31:34.580Z",
-  "total_issues_opened": 94,
+  "generated_at": "2026-04-09T15:57:51.960Z",
+  "total_issues_opened": 114,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-  "total_points": 27900,
+  "total_points": 29900,
   "level": "Commander",
   "level_rank": 5,
   "rank": 6,
   "cadence": {
-    "avg_per_week": 7.8,
-    "avg_per_day": 5.26,
+    "avg_per_week": 9.5,
+    "avg_per_day": 5.69,
     "by_day_of_week": [
       16,
       3,
-      0,
+      20,
       8,
       20,
       17,
@@ -39,7 +39,7 @@
       0,
       7,
       14,
-      17,
+      37,
       3,
       0,
       0,
@@ -49,25 +49,25 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-19T18:23:23.000Z",
-    "last_issue_at": "2026-04-06T15:08:00.000Z"
+    "last_issue_at": "2026-04-08T19:27:36.000Z"
   },
   "topics": [
     {
-      "name": "@xxsuryanshxx, pass, card",
-      "issue_count": 77,
+      "name": "@xxsuryanshxx, nil, pass",
+      "issue_count": 95,
       "recent_issue": {
-        "title": "### Issue 15: Missing tier field bounds validation in GPU health CronJob endpoint (`mcp_resources.go`)",
-        "url": "https://github.com/kubestellar/console/issues/5026",
-        "created_at": "2026-04-06T15:08:00Z"
+        "title": "### Issue 20: JSON decode failure silently returns empty array in kagenti_provider client (`kagenti_provider/client.go`)",
+        "url": "https://github.com/kubestellar/console/issues/5572",
+        "created_at": "2026-04-08T19:27:36Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 77
+      "closed_count": 95
     },
     {
-      "name": "tail, log, fake",
+      "name": "tail, log, interact",
       "issue_count": 2,
       "recent_issue": {
         "title": "Incomplete Implementation: Logs DrillDown feature is hardcoded placeholder",
@@ -107,6 +107,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "retain, timestamps, snapshot",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 1: Metrics history retains snapshots with unparseable timestamps forever (`metrics_history.go`)",
+        "url": "https://github.com/kubestellar/console/issues/5552",
+        "created_at": "2026-04-08T19:22:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "stdin, m., size",
@@ -165,7 +179,21 @@
       "closed_count": 1
     },
     {
-      "name": "smtp, plaintext, send",
+      "name": "key, authorization, header",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 6: Unvalidated empty API key sent in Authorization header (`provider_openai_compat.go`)",
+        "url": "https://github.com/kubestellar/console/issues/4798",
+        "created_at": "2026-04-05T13:38:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "plaintext, smtp, send",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 15: SMTP credentials sent in plaintext without enforcing TLS in `email.go`",
@@ -285,16 +313,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       }
     ]
   },
@@ -345,7 +373,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 90
+      "issue_count": 110
     }
   ]
 }

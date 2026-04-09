@@ -1,20 +1,20 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-08T01:31:35.717Z",
-  "total_issues_opened": 165,
+  "generated_at": "2026-04-09T15:57:53.485Z",
+  "total_issues_opened": 167,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-  "total_points": 23100,
+  "total_points": 23450,
   "level": "Commander",
   "level_rank": 5,
   "rank": 8,
   "cadence": {
-    "avg_per_week": 13.4,
+    "avg_per_week": 13.6,
     "avg_per_day": 0.86,
     "by_day_of_week": [
       7,
       9,
       11,
-      8,
+      10,
       114,
       9,
       7
@@ -32,7 +32,7 @@
       0,
       4,
       0,
-      7,
+      9,
       8,
       1,
       1,
@@ -45,15 +45,15 @@
       4,
       0
     ],
-    "current_streak_weeks": 1,
+    "current_streak_weeks": 2,
     "longest_streak_weeks": 4,
     "trend": "steady",
     "first_issue_at": "2025-09-27T20:12:21.000Z",
-    "last_issue_at": "2026-04-07T15:41:27.000Z"
+    "last_issue_at": "2026-04-09T12:22:42.000Z"
   },
   "topics": [
     {
-      "name": "line, body, pkg",
+      "name": "line, body, readall",
       "issue_count": 126,
       "recent_issue": {
         "title": "Antigravity provider returns connected when given invalid CLI path.",
@@ -94,6 +94,20 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "mobile, docs, term",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Docs page layout breaks on mobile (text cutoff on left side)",
+        "url": "https://github.com/kubestellar/console/issues/5718",
+        "created_at": "2026-04-09T12:22:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "dompurify, svg, sanitization",
@@ -166,7 +180,7 @@
       "closed_count": 2
     },
     {
-      "name": "promoter, feedback, satisfaction",
+      "name": "promoter, satisfaction, collect",
       "issue_count": 1,
       "recent_issue": {
         "title": "Request: Add NPS (Net Promoter Score) Feedback in KubeStellar Console",
@@ -570,7 +584,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 9
+      "issue_count": 11
     }
   ]
 }

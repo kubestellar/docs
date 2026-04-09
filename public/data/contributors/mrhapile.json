@@ -1,20 +1,20 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-08T01:31:34.171Z",
-  "total_issues_opened": 84,
+  "generated_at": "2026-04-09T15:57:51.006Z",
+  "total_issues_opened": 179,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 35250,
-  "level": "Commander",
-  "level_rank": 5,
-  "rank": 4,
+  "total_points": 57800,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 3,
   "cadence": {
-    "avg_per_week": 7,
-    "avg_per_day": 1.77,
+    "avg_per_week": 14.9,
+    "avg_per_day": 3.66,
     "by_day_of_week": [
       10,
       47,
-      7,
-      3,
+      74,
+      31,
       4,
       0,
       13
@@ -22,20 +22,20 @@
     "by_hour_of_day": [
       0,
       12,
-      0,
-      0,
-      0,
-      5,
-      9,
+      17,
+      6,
+      1,
+      6,
+      25,
+      16,
       4,
-      4,
-      9,
-      11,
+      19,
+      26,
       4,
       0,
       0,
       6,
-      0,
+      17,
       0,
       8,
       6,
@@ -45,26 +45,40 @@
       0,
       0
     ],
-    "current_streak_weeks": 1,
+    "current_streak_weeks": 2,
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-07T17:36:07.000Z"
+    "last_issue_at": "2026-04-09T06:30:00.000Z"
   },
   "topics": [
     {
-      "name": "@mrhapile, cluster, crash",
-      "issue_count": 67,
+      "name": "@mrhapile, location, severity",
+      "issue_count": 148,
       "recent_issue": {
-        "title": "Weak Test: useCardLoadingState Mocked Timeouts",
-        "url": "https://github.com/kubestellar/console/issues/5285",
-        "created_at": "2026-04-07T17:36:07Z"
+        "title": "Mission history is wiped when localStorage quota is exceeded.",
+        "url": "https://github.com/kubestellar/console/issues/5695",
+        "created_at": "2026-04-09T06:30:00Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 67
+      "closed_count": 148
+    },
+    {
+      "name": "alertscontext, const, queueautoresolve",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "AlertsContext",
+        "url": "https://github.com/kubestellar/console/issues/5204",
+        "created_at": "2026-04-07T10:16:02Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 4
     },
     {
       "name": "d., readyreplicas, undefined",
@@ -81,12 +95,26 @@
       "closed_count": 2
     },
     {
-      "name": "fork, sharetogithub, github",
+      "name": "r., revision, parseint",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Race condition when resolving fork HEAD SHA immediately after fork creation",
-        "url": "https://github.com/kubestellar/console/issues/2382",
-        "created_at": "2026-03-13T11:17:22Z"
+        "title": "HelmReleaseStatus.tsx — Unsafe parseInt() on r.revision",
+        "url": "https://github.com/kubestellar/console/issues/5182",
+        "created_at": "2026-04-07T06:17:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "screenshot, paste, screenshots",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "I am testing this bug report",
+        "url": "https://github.com/kubestellar/console/issues/4875",
+        "created_at": "2026-04-05T19:16:12Z"
       },
       "repos": [
         "console"
@@ -109,12 +137,138 @@
       "closed_count": 2
     },
     {
+      "name": "chat, turn, conversational",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Enable Multi-Turn Conversational AI in Mission Chat",
+        "url": "https://github.com/kubestellar/console/issues/5694",
+        "created_at": "2026-04-09T06:24:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "drag, overflow, stop",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "UI Drag Overflow – Component Exceeds Boundaries and Does Not Stop",
+        "url": "https://github.com/kubestellar/console/issues/5693",
+        "created_at": "2026-04-09T06:05:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "deep, link, missionbrowser",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Deep-Link Race Condition in MissionBrowser",
+        "url": "https://github.com/kubestellar/console/issues/5654",
+        "created_at": "2026-04-09T03:18:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "missionchat, save, immediately",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Stale Closure in MissionChat on \"Save & Run\"",
+        "url": "https://github.com/kubestellar/console/issues/5651",
+        "created_at": "2026-04-09T03:17:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "coin, leaderboard, hour",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Leaderboard Coins Not Updating",
+        "url": "https://github.com/kubestellar/console/issues/5517",
+        "created_at": "2026-04-08T15:30:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "page, height, item",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "useStablePageHeight — Cumulative Layout Shift (CLS)",
+        "url": "https://github.com/kubestellar/console/issues/5255",
+        "created_at": "2026-04-07T14:23:09Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "menu, right, screen",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CardWrapper — Menu position off-screen",
+        "url": "https://github.com/kubestellar/console/issues/5253",
+        "created_at": "2026-04-07T14:21:47Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "svg, clusterlocations, controller",
       "issue_count": 1,
       "recent_issue": {
         "title": "ClusterLocations — SVG fetch race condition on rapid re-render",
         "url": "https://github.com/kubestellar/console/issues/5205",
         "created_at": "2026-04-07T10:16:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "width, division, eventsummary",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "EventSummary.tsx — Division by zero in progress bar width",
+        "url": "https://github.com/kubestellar/console/issues/5144",
+        "created_at": "2026-04-07T01:44:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "snoozed, reappear, f52861",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Snoozed Cards Still Render or Reappear Incorrectly",
+        "url": "https://github.com/kubestellar/console/issues/5137",
+        "created_at": "2026-04-07T01:24:53Z"
       },
       "repos": [
         "console"
@@ -165,6 +319,20 @@
       "closed_count": 1
     },
     {
+      "name": "setisevaluating, true, false",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Loading Indicator Never Shows",
+        "url": "https://github.com/kubestellar/console/issues/4868",
+        "created_at": "2026-04-05T18:59:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "analytics, track, fb5ed2a",
       "issue_count": 1,
       "recent_issue": {
@@ -179,54 +347,26 @@
       "closed_count": 1
     },
     {
+      "name": "concurrent, dcfc3853, cb4d28ea145",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unbounded Concurrent API Requests Across Clusters",
+        "url": "https://github.com/kubestellar/console/issues/3521",
+        "created_at": "2026-03-25T09:39:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "log, f98ad36, edd",
       "issue_count": 1,
       "recent_issue": {
         "title": "Bug in Bug submission ",
         "url": "https://github.com/kubestellar/console/issues/3518",
         "created_at": "2026-03-25T09:33:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "globalfiltersprovider, object, render",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "GlobalFiltersProvider Causes Unnecessary Global Re-renders",
-        "url": "https://github.com/kubestellar/console/issues/3354",
-        "created_at": "2026-03-24T01:53:47Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "addpoint, closure, stateful",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Data Loss via Stale Closure in Stateful Trend hook",
-        "url": "https://github.com/kubestellar/console/issues/2231",
-        "created_at": "2026-03-12T09:37:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "worker, initdatabase, cacheworkerrpc",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Initialization Race Condition in SQLite Cache Worker",
-        "url": "https://github.com/kubestellar/console/issues/2230",
-        "created_at": "2026-03-12T09:36:08Z"
       },
       "repos": [
         "console"
@@ -267,22 +407,22 @@
     "deepen": [],
     "stretch": [
       {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
         "name": "Authentication & Settings",
@@ -291,10 +431,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },
@@ -345,7 +485,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 65
+      "issue_count": 160
     }
   ]
 }

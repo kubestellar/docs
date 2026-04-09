@@ -1,6 +1,6 @@
 {
   "login": "oksaumya",
-  "generated_at": "2026-04-08T01:31:36.295Z",
+  "generated_at": "2026-04-09T15:57:54.310Z",
   "total_issues_opened": 42,
   "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
   "total_points": 12150,
@@ -137,7 +137,7 @@
       "closed_count": 1
     },
     {
-      "name": "hydration, html, client",
+      "name": "hydration, html, href",
       "issue_count": 1,
       "recent_issue": {
         "title": "Hydration mismatch in RelatedProjects component (SSR vs Client HTML)",
@@ -179,7 +179,7 @@
       "closed_count": 1
     },
     {
-      "name": "ladder, contribution, requirement",
+      "name": "ladder, contribution, maintainer",
       "issue_count": 1,
       "recent_issue": {
         "title": "Remove Maintainer requirement activity from contribution ladder",

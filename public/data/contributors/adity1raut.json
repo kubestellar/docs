@@ -1,6 +1,6 @@
 {
   "login": "adity1raut",
-  "generated_at": "2026-04-08T01:31:36.211Z",
+  "generated_at": "2026-04-09T15:57:54.219Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/159172287?v=4",
   "total_points": 15550,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "response, additional, behavior",
+      "name": "response, additional, snapshot",
       "issue_count": 4,
       "recent_issue": {
         "title": "Bug: After hovering, the Docs navbar link is not displaying properly.",

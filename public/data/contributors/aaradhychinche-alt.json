@@ -1,20 +1,20 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-08T01:31:34.358Z",
-  "total_issues_opened": 88,
+  "generated_at": "2026-04-09T15:57:51.502Z",
+  "total_issues_opened": 110,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 34550,
+  "total_points": 38650,
   "level": "Commander",
   "level_rank": 5,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 7.3,
-    "avg_per_day": 2.08,
+    "avg_per_week": 9.2,
+    "avg_per_day": 2.5,
     "by_day_of_week": [
       29,
       17,
-      4,
-      0,
+      16,
+      10,
       8,
       0,
       30
@@ -24,16 +24,16 @@
       0,
       0,
       0,
-      2,
-      9,
+      6,
+      16,
       14,
       5,
       9,
       12,
       5,
       14,
-      10,
-      2,
+      11,
+      12,
       1,
       0,
       0,
@@ -45,27 +45,27 @@
       0,
       0
     ],
-    "current_streak_weeks": 4,
-    "longest_streak_weeks": 4,
+    "current_streak_weeks": 5,
+    "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-07T13:49:36.000Z"
+    "last_issue_at": "2026-04-09T05:10:39.000Z"
   },
   "topics": [
     {
       "name": "@aaradhychinche, alt, endpoint",
-      "issue_count": 66,
+      "issue_count": 86,
       "recent_issue": {
-        "title": "bug: mission browser API returns non-mission internal repository files",
-        "url": "https://github.com/kubestellar/console/issues/5227",
-        "created_at": "2026-04-07T12:51:54Z"
+        "title": "bug: cache initialization race causes delayed rendering of cached content",
+        "url": "https://github.com/kubestellar/console/issues/5689",
+        "created_at": "2026-04-09T05:10:39Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 66
+      "closed_count": 86
     },
     {
       "name": "kube, game, craft",
@@ -108,6 +108,48 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "node, predictive, online",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: predictive health monitor shows all nodes online while system reports zero nodes",
+        "url": "https://github.com/kubestellar/console/issues/5663",
+        "created_at": "2026-04-09T04:08:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "generation, assistant, message",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: AI generation fails when response is split across multiple assistant messages",
+        "url": "https://github.com/kubestellar/console/issues/5483",
+        "created_at": "2026-04-08T13:17:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "unreadable, overlap, chat",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: cluster labels overlap and become unreadable when AI chat panel is opened",
+        "url": "https://github.com/kubestellar/console/issues/5396",
+        "created_at": "2026-04-08T05:02:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "coin, balance, leaderboard",
@@ -166,26 +208,12 @@
       "closed_count": 1
     },
     {
-      "name": "listener, abort, callback",
+      "name": "listener, abort, unmount",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: abort signal listeners are not cleaned up causing event listener leaks and post-unmount callbacks",
         "url": "https://github.com/kubestellar/console/issues/4772",
         "created_at": "2026-04-05T10:51:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "watcher, context, persistence",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: persistence watcher stops immediately due to request-scoped context usage",
-        "url": "https://github.com/kubestellar/console/issues/4749",
-        "created_at": "2026-04-05T09:15:55Z"
       },
       "repos": [
         "console"
@@ -208,7 +236,7 @@
       "closed_count": 1
     },
     {
-      "name": "enable, change, flag",
+      "name": "enable, flag, change",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: useClusterCapabilities does not react to enabled flag changes due to stale closure",
@@ -264,7 +292,7 @@
       "closed_count": 1
     },
     {
-      "name": "notification, success, low",
+      "name": "notification, success, difficult",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: success notification toast is too low contrast and difficult to see",
@@ -296,16 +324,16 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Deployments & GitOps",
         "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
         "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Security & RBAC",
@@ -314,16 +342,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
@@ -374,7 +402,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 55
+      "issue_count": 77
     }
   ]
 }

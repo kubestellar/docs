@@ -1,12 +1,12 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-08T01:31:34.000Z",
+  "generated_at": "2026-04-09T15:57:51.016Z",
   "total_issues_opened": 41,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 50000,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 3,
+  "rank": 4,
   "cadence": {
     "avg_per_week": 0,
     "avg_per_day": 0.36,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "nextra, heading, image",
-      "issue_count": 8,
+      "name": "nextra, heading, doc",
+      "issue_count": 7,
       "recent_issue": {
         "title": "Fix Contributing.md",
         "url": "https://github.com/kubestellar/docs/issues/369",
@@ -64,7 +64,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 8
+      "closed_count": 7
     },
     {
       "name": "page, handbook, margin",
@@ -109,6 +109,20 @@
       "closed_count": 5
     },
     {
+      "name": "light, theme, docnavbar",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Add Light Theme for `DocsFooter.tsx`",
+        "url": "https://github.com/kubestellar/docs/issues/366",
+        "created_at": "2025-12-08T04:16:48Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
       "name": "ladder, contribution, thing",
       "issue_count": 3,
       "recent_issue": {
@@ -129,20 +143,6 @@
         "title": "Fix Readme",
         "url": "https://github.com/kubestellar/docs/issues/368",
         "created_at": "2025-12-08T04:20:12Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "light, theme, docnavbar",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Add Light Theme for `DocsFooter.tsx`",
-        "url": "https://github.com/kubestellar/docs/issues/366",
-        "created_at": "2025-12-08T04:16:48Z"
       },
       "repos": [
         "docs"
@@ -305,10 +305,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       }
     ]
   },
@@ -343,11 +343,11 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 9
+      "issue_count": 8
     },
     {
       "month": "2026-01",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2026-02",

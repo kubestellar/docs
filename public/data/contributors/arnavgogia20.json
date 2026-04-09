@@ -1,12 +1,12 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-08T01:31:36.146Z",
+  "generated_at": "2026-04-09T15:57:54.179Z",
   "total_issues_opened": 47,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 19600,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 13,
+  "rank": 14,
   "cadence": {
     "avg_per_week": 3.9,
     "avg_per_day": 1.89,
@@ -221,7 +221,7 @@
       "closed_count": 1
     },
     {
-      "name": "err, filepath, header",
+      "name": "filepath, err, header",
       "issue_count": 1,
       "recent_issue": {
         "title": "Zip Slip Path Traversal in Plugin Installation",

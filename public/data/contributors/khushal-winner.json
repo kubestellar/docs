@@ -1,6 +1,6 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-08T01:31:36.297Z",
+  "generated_at": "2026-04-09T15:57:54.313Z",
   "total_issues_opened": 6,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
   "total_points": 5500,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "watcher, @khushal, winner",
-      "issue_count": 5,
+      "name": "watcher, leak, @khushal",
+      "issue_count": 3,
       "recent_issue": {
         "title": "# bug: Resource Management Issues in MCP Handler and Console Watcher",
         "url": "https://github.com/kubestellar/console/issues/2664",
@@ -64,10 +64,24 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 5
+      "closed_count": 3
     },
     {
-      "name": "goroutine, mcp, cluster",
+      "name": "database, sqlite, wal",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "**Title**: Database Connection Pool Missing Configuration - Potential Resource Exhaustion",
+        "url": "https://github.com/kubestellar/console/issues/2659",
+        "created_at": "2026-03-15T10:58:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "goroutine, mcp, endpoint",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Goroutine Leak in /api/mcp/clusters endpoint",
@@ -109,10 +123,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       }
     ]
   },

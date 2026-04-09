@@ -1,20 +1,20 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-08T01:31:33.991Z",
-  "total_issues_opened": 202,
+  "generated_at": "2026-04-09T15:57:48.649Z",
+  "total_issues_opened": 245,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 75500,
+  "total_points": 85900,
   "level": "Captain",
   "level_rank": 6,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 16.8,
-    "avg_per_day": 3.59,
+    "avg_per_week": 20.4,
+    "avg_per_day": 4.2,
     "by_day_of_week": [
       25,
       29,
-      26,
-      34,
+      46,
+      57,
       34,
       21,
       33
@@ -23,21 +23,21 @@
       0,
       0,
       0,
-      4,
-      26,
+      5,
+      39,
       15,
       11,
       10,
       1,
-      1,
+      5,
       2,
-      19,
+      27,
       19,
       33,
-      23,
+      24,
       2,
-      25,
-      9,
+      28,
+      22,
       2,
       0,
       0,
@@ -45,27 +45,41 @@
       0,
       0
     ],
-    "current_streak_weeks": 4,
-    "longest_streak_weeks": 4,
+    "current_streak_weeks": 5,
+    "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-07T14:43:33.000Z"
+    "last_issue_at": "2026-04-09T14:59:11.000Z"
   },
   "topics": [
     {
-      "name": "@xonas1101, automatically, console",
-      "issue_count": 175,
+      "name": "@xonas1101, automatically, create",
+      "issue_count": 207,
       "recent_issue": {
-        "title": "Unescaped path segments in agent URLs",
-        "url": "https://github.com/kubestellar/console/issues/5264",
-        "created_at": "2026-04-07T14:43:33Z"
+        "title": "Documented link for helm release is broken",
+        "url": "https://github.com/kubestellar/console/issues/5747",
+        "created_at": "2026-04-09T14:59:11Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 175
+      "closed_count": 207
+    },
+    {
+      "name": "agentselector, approval, selectagent",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Approval path skips provider readiness lifecycle",
+        "url": "https://github.com/kubestellar/console/issues/5677",
+        "created_at": "2026-04-09T04:48:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "playwright, script, sh",
@@ -96,6 +110,76 @@
       "closed_count": 2
     },
     {
+      "name": "severitycolor, tailwind, class",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Dynamic Tailwind class names likely not generated",
+        "url": "https://github.com/kubestellar/console/issues/5715",
+        "created_at": "2026-04-09T11:26:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "diagnosis, cd36eaca, c5e",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "AI diagnosis loading indicator can end too early",
+        "url": "https://github.com/kubestellar/console/issues/5714",
+        "created_at": "2026-04-09T11:26:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "wsl, remove, environment",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Stale clusters remain after underlying environment is removed",
+        "url": "https://github.com/kubestellar/console/issues/5658",
+        "created_at": "2026-04-09T03:57:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "launch, phase, complete",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Launch can complete instantly with zero deployments",
+        "url": "https://github.com/kubestellar/console/issues/5530",
+        "created_at": "2026-04-08T17:27:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "comma, compute, d7c",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Compute compare URL encoding risk",
+        "url": "https://github.com/kubestellar/console/issues/5452",
+        "created_at": "2026-04-08T09:37:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "ts, spec, swallow",
       "issue_count": 1,
       "recent_issue": {
@@ -124,7 +208,7 @@
       "closed_count": 1
     },
     {
-      "name": "plan, functionality, control",
+      "name": "plan, functionality, clarification",
       "issue_count": 1,
       "recent_issue": {
         "title": "Clarification: Is the Mission Control functionality only to plan the course of action for a job?",
@@ -158,6 +242,20 @@
         "title": "Broad port-kill logic can terminate unrelated local processes",
         "url": "https://github.com/kubestellar/console/issues/4465",
         "created_at": "2026-04-03T16:06:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "option, compiler, e8b48fdb",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "TypeScript config uses unsupported compiler option",
+        "url": "https://github.com/kubestellar/console/issues/4432",
+        "created_at": "2026-04-03T12:39:30Z"
       },
       "repos": [
         "console"
@@ -214,6 +312,20 @@
         "title": "Chat cancellation key collision when sessionId is omitted",
         "url": "https://github.com/kubestellar/console/issues/4263",
         "created_at": "2026-04-02T16:41:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "chmod, binary, filesystem",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Binary auto-update ignores critical filesystem errors",
+        "url": "https://github.com/kubestellar/console/issues/4262",
+        "created_at": "2026-04-02T16:41:05Z"
       },
       "repos": [
         "console"
@@ -306,6 +418,20 @@
       "closed_count": 1
     },
     {
+      "name": "flappy, fast, pod",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Card: Flappy Pod (flappy_pod)",
+        "url": "https://github.com/kubestellar/console/issues/3927",
+        "created_at": "2026-03-30T14:20:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "weird, arcade, key",
       "issue_count": 1,
       "recent_issue": {
@@ -334,12 +460,12 @@
       "closed_count": 1
     },
     {
-      "name": "upgrade, vite, v8",
+      "name": "information, new, panel",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Upgrade Vite to v8",
-        "url": "https://github.com/kubestellar/console/issues/3500",
-        "created_at": "2026-03-25T03:53:52Z"
+        "title": "User friendly information panels on unfamiliar use cases",
+        "url": "https://github.com/kubestellar/console/issues/3643",
+        "created_at": "2026-03-26T11:44:12Z"
       },
       "repos": [
         "console"
@@ -348,12 +474,26 @@
       "closed_count": 1
     },
     {
-      "name": "coin, marketplace, reward",
+      "name": "sleep, a6bc872, a332",
       "issue_count": 1,
       "recent_issue": {
-        "title": "feature: Contributions to console-marketplace repo should also reward coins",
-        "url": "https://github.com/kubestellar/console/issues/2943",
-        "created_at": "2026-03-19T03:19:27Z"
+        "title": "Sleep inside mutex",
+        "url": "https://github.com/kubestellar/console/issues/3505",
+        "created_at": "2026-03-25T04:11:02Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "vite, upgrade, v8",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Upgrade Vite to v8",
+        "url": "https://github.com/kubestellar/console/issues/3500",
+        "created_at": "2026-03-25T03:53:52Z"
       },
       "repos": [
         "console"
@@ -429,6 +569,12 @@
     ],
     "stretch": [
       {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
@@ -441,22 +587,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
         "name": "Observability & Logs",
         "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
         "description": "Log streaming, event timeline, alerting, notifications",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       },
       {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
@@ -507,7 +647,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 111
+      "issue_count": 154
     }
   ]
 }
