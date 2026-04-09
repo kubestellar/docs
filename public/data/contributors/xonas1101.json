@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-09T18:24:35.720Z",
+  "generated_at": "2026-04-09T22:18:32.625Z",
   "total_issues_opened": 245,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 85900,
@@ -138,7 +138,7 @@
       "closed_count": 1
     },
     {
-      "name": "wsl, remove, environment",
+      "name": "wsl, remove, delete",
       "issue_count": 1,
       "recent_issue": {
         "title": "Stale clusters remain after underlying environment is removed",
@@ -152,7 +152,7 @@
       "closed_count": 1
     },
     {
-      "name": "launch, phase, complete",
+      "name": "phase, launch, complete",
       "issue_count": 1,
       "recent_issue": {
         "title": "Launch can complete instantly with zero deployments",
@@ -544,7 +544,7 @@
       "closed_count": 1
     },
     {
-      "name": "v0, manage, site",
+      "name": "v0, site, manage",
       "issue_count": 1,
       "recent_issue": {
         "title": "doc: Documentation content mismatch in release v0.29.0 (latest)",

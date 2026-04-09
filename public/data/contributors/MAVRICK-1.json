@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-09T18:24:41.006Z",
+  "generated_at": "2026-04-09T22:18:38.939Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 3850,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "ai, terminate, @mavrick",
+      "name": "ai, @mavrick, terminate",
       "issue_count": 3,
       "recent_issue": {
         "title": "Bug: AI Card Creation Fails with “Could not extract valid JSON from AI response”",

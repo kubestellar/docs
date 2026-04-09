@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-09T18:24:31.432Z",
-  "total_issues_opened": 821,
+  "generated_at": "2026-04-09T22:18:27.994Z",
+  "total_issues_opened": 831,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 2958950,
+  "total_points": 2976350,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 65.8,
-    "avg_per_day": 3.45,
+    "avg_per_week": 66.7,
+    "avg_per_day": 3.49,
     "by_day_of_week": [
       104,
       106,
       192,
-      104,
+      114,
       106,
       119,
       90
@@ -38,10 +38,10 @@
       86,
       29,
       32,
-      20,
-      120,
-      27,
-      15,
+      23,
+      124,
+      28,
+      17,
       20,
       7
     ],
@@ -49,31 +49,31 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-09T17:56:30.000Z"
+    "last_issue_at": "2026-04-09T21:44:15.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, tsx",
-      "issue_count": 415,
+      "issue_count": 417,
       "recent_issue": {
-        "title": "[Auto-QA] Swallowed errors and empty catch blocks",
-        "url": "https://github.com/kubestellar/console/issues/5733",
-        "created_at": "2026-04-09T14:01:31Z"
+        "title": "[Auto-QA] Components missing test coverage",
+        "url": "https://github.com/kubestellar/console/issues/5821",
+        "created_at": "2026-04-09T19:50:21Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 415
+      "closed_count": 417
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 138,
+      "issue_count": 145,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #419",
-        "url": "https://github.com/kubestellar/console/issues/5776",
-        "created_at": "2026-04-09T17:56:30Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #436",
+        "url": "https://github.com/kubestellar/console/issues/5854",
+        "created_at": "2026-04-09T21:44:15Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 3,
-      "closed_count": 135
+      "closed_count": 142
     },
     {
       "name": "monitoring, step, implement",
@@ -224,7 +224,7 @@
       "closed_count": 5
     },
     {
-      "name": "term, roadmap, near",
+      "name": "term, roadmap, md",
       "issue_count": 3,
       "recent_issue": {
         "title": "[Auto-QA] ROADMAP.md governance issues",
@@ -250,6 +250,20 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "chart, default, day",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "feat: daily issues & PRs activity chart on analytics page",
+        "url": "https://github.com/kubestellar/console/issues/5844",
+        "created_at": "2026-04-09T20:45:36Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "bonus, award, point",
@@ -280,7 +294,7 @@
       "closed_count": 2
     },
     {
-      "name": "preview, markdown, textarea",
+      "name": "preview, textarea, markdown",
       "issue_count": 2,
       "recent_issue": {
         "title": "Add markdown preview toggle for issue description in Contribute dialog",
@@ -351,7 +365,7 @@
       "closed_count": 2
     },
     {
-      "name": "useeffect, cleanup, ensure",
+      "name": "cleanup, useeffect, ensure",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: Fix potential memory leak — missing timer cleanup in PDDisaggregation and NamespaceManager",
@@ -575,20 +589,6 @@
       "closed_count": 1
     },
     {
-      "name": "networkpolicy, default, close",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Helm chart hardening: NetworkPolicy, PDB, securityContext defaults",
-        "url": "https://github.com/kubestellar/console/issues/1913",
-        "created_at": "2026-03-07T00:09:43Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "csp, limit, internal",
       "issue_count": 1,
       "recent_issue": {
@@ -603,7 +603,7 @@
       "closed_count": 1
     },
     {
-      "name": "nfr, analysis, improvement",
+      "name": "analysis, nfr, improvement",
       "issue_count": 1,
       "recent_issue": {
         "title": "[Auto-QA] Weekly NFR analysis: improvement opportunities identified",
@@ -828,14 +828,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Kubectl: 6 hardcoded English strings in terminal empty state not using t()",
-        "url": "https://github.com/kubestellar/console/issues/5783",
-        "repo": "console",
-        "topic_match": "kubectl, assist, interactive"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -862,10 +855,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
@@ -916,7 +909,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 176
+      "issue_count": 186
     }
   ]
 }

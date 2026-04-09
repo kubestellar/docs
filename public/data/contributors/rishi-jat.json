@@ -1,12 +1,12 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-09T18:24:40.180Z",
+  "generated_at": "2026-04-09T22:18:38.234Z",
   "total_issues_opened": 167,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 24450,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 8,
+  "rank": 9,
   "cadence": {
     "avg_per_week": 13.6,
     "avg_per_day": 0.86,
@@ -166,7 +166,7 @@
       "closed_count": 2
     },
     {
-      "name": "style, mkdocs, attach",
+      "name": "mkdocs, style, attach",
       "issue_count": 2,
       "recent_issue": {
         "title": "Review and fix mkdocs.yml configuration",
@@ -446,7 +446,7 @@
       "closed_count": 1
     },
     {
-      "name": "lock, p., save",
+      "name": "p., lock, save",
       "issue_count": 1,
       "recent_issue": {
         "title": "PersistenceStore Save() uses read lock for write operation",
@@ -530,10 +530,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },

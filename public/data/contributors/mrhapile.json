@@ -1,20 +1,20 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-09T18:24:37.855Z",
-  "total_issues_opened": 179,
+  "generated_at": "2026-04-09T22:18:35.488Z",
+  "total_issues_opened": 193,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 57800,
+  "total_points": 61750,
   "level": "Captain",
   "level_rank": 6,
   "rank": 3,
   "cadence": {
-    "avg_per_week": 14.9,
-    "avg_per_day": 3.66,
+    "avg_per_week": 16.1,
+    "avg_per_day": 3.9,
     "by_day_of_week": [
       10,
       47,
       74,
-      31,
+      45,
       4,
       0,
       13
@@ -39,46 +39,46 @@
       0,
       8,
       6,
+      6,
+      9,
       3,
-      3,
-      0,
-      0,
+      2,
       0
     ],
     "current_streak_weeks": 2,
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-09T06:30:00.000Z"
+    "last_issue_at": "2026-04-09T22:00:31.000Z"
   },
   "topics": [
     {
       "name": "@mrhapile, location, severity",
-      "issue_count": 148,
+      "issue_count": 161,
       "recent_issue": {
-        "title": "Mission history is wiped when localStorage quota is exceeded.",
-        "url": "https://github.com/kubestellar/console/issues/5695",
-        "created_at": "2026-04-09T06:30:00Z"
+        "title": "SSE accumulation behavior is explicitly skipped and no longer protected",
+        "url": "https://github.com/kubestellar/console/issues/5863",
+        "created_at": "2026-04-09T22:00:31Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 148
+      "closed_count": 161
     },
     {
-      "name": "alertscontext, const, queueautoresolve",
-      "issue_count": 4,
+      "name": "analytics, safetotal, track",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "AlertsContext",
-        "url": "https://github.com/kubestellar/console/issues/5204",
-        "created_at": "2026-04-07T10:16:02Z"
+        "title": "NaN Injection Breaks Analytics State",
+        "url": "https://github.com/kubestellar/console/issues/5838",
+        "created_at": "2026-04-09T20:35:27Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 4
+      "closed_count": 2
     },
     {
       "name": "d., readyreplicas, undefined",
@@ -137,6 +137,76 @@
       "closed_count": 2
     },
     {
+      "name": "vitest, pooloptions, config",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Vitest config uses removed poolOptions, producing deprecation noise on every run",
+        "url": "https://github.com/kubestellar/console/issues/5860",
+        "created_at": "2026-04-09T21:59:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "ws, cancelation, race",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Duplicate Cancellation States via WS + HTTP Race",
+        "url": "https://github.com/kubestellar/console/issues/5839",
+        "created_at": "2026-04-09T20:35:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "freeze, parse, large",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Main Thread Freeze via Large JSON.parse",
+        "url": "https://github.com/kubestellar/console/issues/5836",
+        "created_at": "2026-04-09T20:34:57Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "markdown, rce, f1201",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Full RCE via Markdown XSS → Local Agent Command Injection",
+        "url": "https://github.com/kubestellar/console/issues/5808",
+        "created_at": "2026-04-09T19:20:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "watchdog, lockout, a67069",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "\"Compiling Backend...\" Permanent UI Lockout when 0 Clusters are Reachable (Split-Brain Health Check)",
+        "url": "https://github.com/kubestellar/console/issues/5804",
+        "created_at": "2026-04-09T19:15:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "chat, turn, conversational",
       "issue_count": 1,
       "recent_issue": {
@@ -171,20 +241,6 @@
         "title": "Deep-Link Race Condition in MissionBrowser",
         "url": "https://github.com/kubestellar/console/issues/5654",
         "created_at": "2026-04-09T03:18:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "missionchat, save, immediately",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Stale Closure in MissionChat on \"Save & Run\"",
-        "url": "https://github.com/kubestellar/console/issues/5651",
-        "created_at": "2026-04-09T03:17:03Z"
       },
       "repos": [
         "console"
@@ -319,34 +375,6 @@
       "closed_count": 1
     },
     {
-      "name": "setisevaluating, true, false",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Loading Indicator Never Shows",
-        "url": "https://github.com/kubestellar/console/issues/4868",
-        "created_at": "2026-04-05T18:59:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "analytics, track, fb5ed2a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Global Filter Analytics Not Triggering Properly",
-        "url": "https://github.com/kubestellar/console/issues/4865",
-        "created_at": "2026-04-05T18:46:15Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "concurrent, dcfc3853, cb4d28ea145",
       "issue_count": 1,
       "recent_issue": {
@@ -367,6 +395,20 @@
         "title": "Bug in Bug submission ",
         "url": "https://github.com/kubestellar/console/issues/3518",
         "created_at": "2026-03-25T09:33:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "globalfiltersprovider, object, render",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "GlobalFiltersProvider Causes Unnecessary Global Re-renders",
+        "url": "https://github.com/kubestellar/console/issues/3354",
+        "created_at": "2026-03-24T01:53:47Z"
       },
       "repos": [
         "console"
@@ -425,16 +467,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },
@@ -485,7 +527,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 160
+      "issue_count": 174
     }
   ]
 }

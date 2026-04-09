@@ -1,20 +1,20 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-09T18:24:38.318Z",
-  "total_issues_opened": 111,
+  "generated_at": "2026-04-09T22:18:36.029Z",
+  "total_issues_opened": 115,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 38950,
+  "total_points": 39900,
   "level": "Commander",
   "level_rank": 5,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 9.3,
-    "avg_per_day": 2.49,
+    "avg_per_week": 9.6,
+    "avg_per_day": 2.58,
     "by_day_of_week": [
       29,
       17,
       16,
-      11,
+      15,
       8,
       0,
       30
@@ -38,9 +38,9 @@
       0,
       1,
       0,
-      0,
-      0,
-      0,
+      1,
+      1,
+      2,
       1,
       0,
       0
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-09T16:50:18.000Z"
+    "last_issue_at": "2026-04-09T20:35:25.000Z"
   },
   "topics": [
     {
       "name": "@aaradhychinche, alt, backend",
-      "issue_count": 87,
+      "issue_count": 91,
       "recent_issue": {
-        "title": "## 🐛 bug: Application crashes with React error #185 under cluster/API failure conditions",
-        "url": "https://github.com/kubestellar/console/issues/5762",
-        "created_at": "2026-04-09T16:50:18Z"
+        "title": "# 🐛 Bug: Console stuck on \"Compiling backend\" with `/health` returning `degraded` and 503 on OAuth startup",
+        "url": "https://github.com/kubestellar/console/issues/5837",
+        "created_at": "2026-04-09T20:35:25Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 87
+      "closed_count": 91
     },
     {
       "name": "kube, game, craft",
@@ -82,26 +82,26 @@
       "closed_count": 4
     },
     {
-      "name": "typescript, branch, late",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "bug: Unused `children` prop causes TypeScript build failure and prevents console startup",
-        "url": "https://github.com/kubestellar/console/issues/5163",
-        "created_at": "2026-04-07T04:48:17Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
       "name": "revoke, token, eviction",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: revoked token cache grows indefinitely due to missing eviction for backfilled entries",
         "url": "https://github.com/kubestellar/console/issues/4759",
         "created_at": "2026-04-05T09:28:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "typescript, branch, late",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "chore: remove deprecated 'baseUrl' from tsconfig.json for TypeScript 7.0 compatibility",
+        "url": "https://github.com/kubestellar/console/issues/4527",
+        "created_at": "2026-04-03T21:00:45Z"
       },
       "repos": [
         "console"
@@ -214,6 +214,20 @@
         "title": "bug: abort signal listeners are not cleaned up causing event listener leaks and post-unmount callbacks",
         "url": "https://github.com/kubestellar/console/issues/4772",
         "created_at": "2026-04-05T10:51:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "watcher, context, persistence",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: persistence watcher stops immediately due to request-scoped context usage",
+        "url": "https://github.com/kubestellar/console/issues/4749",
+        "created_at": "2026-04-05T09:15:55Z"
       },
       "repos": [
         "console"
@@ -402,7 +416,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 78
+      "issue_count": 82
     }
   ]
 }

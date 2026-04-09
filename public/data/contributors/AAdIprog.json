@@ -1,20 +1,20 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-09T18:24:40.913Z",
-  "total_issues_opened": 46,
+  "generated_at": "2026-04-09T22:18:38.840Z",
+  "total_issues_opened": 48,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
-  "total_points": 17200,
+  "total_points": 17800,
   "level": "Commander",
   "level_rank": 5,
   "rank": 17,
   "cadence": {
-    "avg_per_week": 3.8,
-    "avg_per_day": 0.55,
+    "avg_per_week": 3.9,
+    "avg_per_day": 0.56,
     "by_day_of_week": [
       16,
       7,
       4,
-      4,
+      6,
       1,
       0,
       14
@@ -39,17 +39,17 @@
       2,
       3,
       2,
-      1,
+      3,
       0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 5,
-    "longest_streak_weeks": 5,
+    "current_streak_weeks": 6,
+    "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-01-14T12:07:09.000Z",
-    "last_issue_at": "2026-04-08T06:48:15.000Z"
+    "last_issue_at": "2026-04-09T19:55:21.000Z"
   },
   "topics": [
     {
@@ -110,20 +110,6 @@
       "closed_count": 2
     },
     {
-      "name": "preflight, wildcard, cors",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Agent root handler uses Access-Control-Allow-Origin:",
-        "url": "https://github.com/kubestellar/console/issues/4937",
-        "created_at": "2026-04-06T08:59:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "ensureconnection, reconnection, websocket",
       "issue_count": 2,
       "recent_issue": {
@@ -136,6 +122,34 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "monolithic, filter, c00bdc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Marketplace Filter Re-render Cascade due to Monolithic State Hook",
+        "url": "https://github.com/kubestellar/console/issues/5823",
+        "created_at": "2026-04-09T19:55:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "rbac, a8329, f930",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Critical Privilege Escalation: Pod Exec Bypass of Kubernetes RBAC",
+        "url": "https://github.com/kubestellar/console/issues/5817",
+        "created_at": "2026-04-09T19:45:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "calendar, reservation, midnight",
@@ -208,6 +222,20 @@
       "closed_count": 1
     },
     {
+      "name": "wildcard, cors, root",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Agent root handler uses Access-Control-Allow-Origin:",
+        "url": "https://github.com/kubestellar/console/issues/4937",
+        "created_at": "2026-04-06T08:59:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "logout, websocket, disconnect",
       "issue_count": 1,
       "recent_issue": {
@@ -242,6 +270,20 @@
         "title": "AlertsContext condition evaluation runs O(rules × alerts) per cycle, blocking main thread",
         "url": "https://github.com/kubestellar/console/issues/4785",
         "created_at": "2026-04-05T12:21:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "preflight, cc81cc, cae",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "runSavedMission bypasses preflight checks and duplicates prompt-building logic (File: useMissions.tsx:1402-1508)",
+        "url": "https://github.com/kubestellar/console/issues/4768",
+        "created_at": "2026-04-05T10:26:10Z"
       },
       "repos": [
         "console"
@@ -338,16 +380,16 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
         "name": "Networking & Services",
@@ -356,16 +398,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Backend API & Handlers",
+        "path": "pkg/api/, pkg/models/, pkg/store/",
+        "description": "Go backend REST API, request handlers, data models, persistence layer",
+        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
       }
     ]
   },
@@ -416,7 +458,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 16
+      "issue_count": 18
     }
   ]
 }

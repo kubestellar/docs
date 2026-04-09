@@ -1,20 +1,20 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-09T18:24:40.351Z",
-  "total_issues_opened": 84,
+  "generated_at": "2026-04-09T22:18:36.729Z",
+  "total_issues_opened": 93,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 24000,
+  "total_points": 26700,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 9,
+  "rank": 7,
   "cadence": {
-    "avg_per_week": 7,
-    "avg_per_day": 16.28,
+    "avg_per_week": 7.8,
+    "avg_per_day": 17.76,
     "by_day_of_week": [
       13,
       31,
       18,
-      12,
+      21,
       0,
       1,
       9
@@ -39,8 +39,8 @@
       0,
       8,
       13,
-      22,
-      20,
+      26,
+      25,
       11,
       0,
       0
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-09T18:17:11.000Z"
+    "last_issue_at": "2026-04-09T20:06:45.000Z"
   },
   "topics": [
     {
-      "name": "@aashu2006, spinner, happen",
-      "issue_count": 65,
+      "name": "@aashu2006, happen, spinner",
+      "issue_count": 71,
       "recent_issue": {
-        "title": "DynamicCard: 4 hardcoded English strings across 2 components not using t()",
-        "url": "https://github.com/kubestellar/console/issues/5785",
-        "created_at": "2026-04-09T18:14:37Z"
+        "title": "gitHubCIUtils: localStorage.setItem called with no try/catch - quota error throws unhandled exception",
+        "url": "https://github.com/kubestellar/console/issues/5831",
+        "created_at": "2026-04-09T20:06:45Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 4,
-      "closed_count": 61
+      "open_count": 0,
+      "closed_count": 71
     },
     {
       "name": "simultaneous, ec3d1fd1, d20",
@@ -77,8 +77,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "iifes, reference, produce",
@@ -129,6 +129,20 @@
         "title": "window.confirm() used for destructive delete action in AlertRules breaking accessibility",
         "url": "https://github.com/kubestellar/console/issues/5591",
         "created_at": "2026-04-08T19:45:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "indicator, color, b2816c",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Hardcoded semantic color text-yellow-400 used for UI state indicator in DashboardHeader",
+        "url": "https://github.com/kubestellar/console/issues/5590",
+        "created_at": "2026-04-08T19:45:07Z"
       },
       "repos": [
         "console"
@@ -221,6 +235,20 @@
       "closed_count": 1
     },
     {
+      "name": "authorization, header, agent",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Agent fetch hooks send no Authorization header - silently breaks when KC_AGENT_TOKEN is set",
+        "url": "https://github.com/kubestellar/console/issues/5348",
+        "created_at": "2026-04-07T21:20:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "stub, a3f1, be7a",
       "issue_count": 1,
       "recent_issue": {
@@ -305,6 +333,20 @@
       "closed_count": 1
     },
     {
+      "name": "actionable, underlie, generic",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "handleKubeconfigAddHTTP returns generic error discarding actionable detail",
+        "url": "https://github.com/kubestellar/console/issues/5317",
+        "created_at": "2026-04-07T20:02:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "unknown, unauthenticated, case",
       "issue_count": 1,
       "recent_issue": {
@@ -356,16 +398,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
         "name": "GPU & AI/ML",
@@ -422,7 +464,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 84
+      "issue_count": 93
     }
   ]
 }
