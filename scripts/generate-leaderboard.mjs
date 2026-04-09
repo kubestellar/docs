@@ -204,6 +204,57 @@ function scoreAllContributors(allItems) {
   return contributors;
 }
 
+// ── Bonus points from [bonus] issues ─────────────────────────────────
+/**
+ * Fetches bonus point awards from GitHub issues.
+ *
+ * Format: Issue title must match `[bonus] @username +N reason`
+ * Only issues created by BONUS_AUTHORIZED_USER and labeled "bonus-points"
+ * are honored. Issues must be open (close to revoke).
+ *
+ * Example: "[bonus] @rishi-jat +1000 video challenge submission"
+ */
+const BONUS_AUTHORIZED_USER = "clubanderson";
+const BONUS_LABEL = "bonus-points";
+const BONUS_REPO = "kubestellar/console";
+const BONUS_TITLE_REGEX = /^\[bonus\]\s+@(\S+)\s+\+(\d+)\s*(.*)/i;
+
+async function fetchBonusPoints() {
+  /** Map of login -> { points, reasons[] } */
+  const bonuses = new Map();
+
+  try {
+    const url = `${API_BASE}/repos/${BONUS_REPO}/issues?labels=${BONUS_LABEL}&state=open&per_page=${REST_PER_PAGE}&creator=${BONUS_AUTHORIZED_USER}`;
+    const issues = await ghFetch(url);
+
+    for (const issue of issues) {
+      // Verify creator (belt-and-suspenders — API already filters by creator)
+      if (issue.user?.login !== BONUS_AUTHORIZED_USER) continue;
+
+      const match = issue.title.match(BONUS_TITLE_REGEX);
+      if (!match) {
+        console.warn(`  Skipping malformed bonus issue #${issue.number}: "${issue.title}"`);
+        continue;
+      }
+
+      const [, login, pointsStr, reason] = match;
+      const points = parseInt(pointsStr, 10);
+      if (isNaN(points) || points <= 0) continue;
+
+      if (!bonuses.has(login)) {
+        bonuses.set(login, { points: 0, reasons: [] });
+      }
+      const entry = bonuses.get(login);
+      entry.points += points;
+      entry.reasons.push(`#${issue.number}: +${points} ${reason.trim() || "(no reason)"}`);
+    }
+  } catch (err) {
+    console.warn(`  Warning: failed to fetch bonus issues: ${err.message}`);
+  }
+
+  return bonuses;
+}
+
 // ── Main ──────────────────────────────────────────────────────────────
 async function main() {
   console.log("Fetching all issues and PRs from repos (bulk REST API)...\n");
@@ -233,10 +284,32 @@ async function main() {
   console.log("Scoring contributors from fetched data...\n");
   const contributorMap = scoreAllContributors(allItems);
 
+  // 2b. Fetch and apply bonus points from [bonus] issues
+  console.log("Fetching bonus point awards...");
+  const bonusMap = await fetchBonusPoints();
+  for (const [login, bonus] of bonusMap) {
+    if (contributorMap.has(login)) {
+      contributorMap.get(login).totalPoints += bonus.points;
+    } else {
+      // Bonus for someone not yet on the board — add them
+      contributorMap.set(login, {
+        avatarUrl: `https://github.com/${login}.png`,
+        totalPoints: bonus.points,
+        breakdown: { bug_issues: 0, feature_issues: 0, other_issues: 0, prs_opened: 0, prs_merged: 0 },
+      });
+    }
+    for (const reason of bonus.reasons) {
+      console.log(`  ${login}: ${reason}`);
+    }
+  }
+  if (bonusMap.size === 0) console.log("  No bonus awards found.");
+  console.log("");
+
   // 3. Build sorted entries
   const entries = [];
   for (const [login, data] of contributorMap) {
     const level = getLevelForPoints(data.totalPoints);
+    const bonus = bonusMap.get(login);
     entries.push({
       login,
       avatar_url: data.avatarUrl,
@@ -244,6 +317,7 @@ async function main() {
       level: level.name,
       level_rank: level.rank,
       breakdown: data.breakdown,
+      ...(bonus ? { bonus_points: bonus.points } : {}),
     });
   }
 
