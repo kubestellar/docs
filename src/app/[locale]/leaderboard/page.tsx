@@ -513,6 +513,9 @@ export default function LeaderboardPage() {
                     <span className="text-gray-400">Other Issue</span>
                   </div>
                 </div>
+                <p className="mt-4 text-xs text-gray-600">
+                  This leaderboard tracks GitHub contributions only (PRs, issues). Your total in the console may be higher because it includes coins earned from in-app activity (missions, games, sharing) which are stored locally in your browser.
+                </p>
               </div>
             )}
           </div>
