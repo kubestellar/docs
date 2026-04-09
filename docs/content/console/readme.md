@@ -190,7 +190,7 @@ cd console
 
 Open http://localhost:5174 and sign in with GitHub.
 
-> **Note**: You'll need kubestellar-mcp plugins installed. See [Installation](installation.md) for the full setup with all 6 components.
+> **Note**: You'll need kubestellar-mcp plugins installed. See [Installation](installation.md) for the full setup with all 7 components.
 
 ### Run in Kubernetes
 
