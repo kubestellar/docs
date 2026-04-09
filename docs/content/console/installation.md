@@ -242,7 +242,7 @@ kubectl create secret generic ksc-secrets \
 **From GitHub Container Registry:**
 
 ```bash
-helm install ksc oci://ghcr.io/kubestellar/charts/console \
+helm install ksc oci://ghcr.io/kubestellar/charts/kubestellar-console \
   --namespace ksc \
   --set github.existingSecret=ksc-secrets
 ```
@@ -362,7 +362,7 @@ The console reads clusters from your kubeconfig. To access multiple clusters:
 ## Upgrading
 
 ```bash
-helm upgrade ksc oci://ghcr.io/kubestellar/charts/console \
+helm upgrade ksc oci://ghcr.io/kubestellar/charts/kubestellar-console \
   --namespace ksc \
   --reuse-values
 ```
