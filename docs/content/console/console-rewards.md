@@ -74,6 +74,21 @@ Your current coin balance is displayed in:
 - The rewards panel
 - The settings page
 
+## Coin Breakdown
+
+The rewards panel shows a detailed breakdown of your total coins:
+
+- **GitHub points** (green) -- Earned from PRs and issues across kubestellar and llm-d organizations, shown on the public leaderboard
+- **Console coins** (purple) -- Earned from in-app activity (missions, games, sharing), stored in browser localStorage
+- **Bonus points** (pink) -- Awarded by maintainers via `[bonus]` issues on kubestellar/console
+- **Total** (yellow) -- Combined GitHub + Console + Bonus
+
+This explains why the console total may be higher than the public leaderboard, which only tracks GitHub contributions.
+
+### Bonus Points
+
+Bonus points are awarded by project maintainers for exceptional contributions. They are tracked via GitHub issues with the `[bonus]` tag in the title and fetched from a Netlify Function at `/api/rewards/bonus`. Bonus data is cached for 15 minutes.
+
 ## Future Rewards
 
 The coins system is designed for future expansion:

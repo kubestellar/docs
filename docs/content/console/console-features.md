@@ -1982,6 +1982,147 @@ cosign verify-blob --signature ks-console-0.3.17.tgz.sig ks-console-0.3.17.tgz
 
 ---
 
+## ACCM Metrics Dashboard (New in April 2026)
+
+The Analytics page now includes an **ACCM (AI Codebase Maturity Model)** section that visualizes real project data to support the ACCM white paper research.
+
+![ACCM Metrics Dashboard](images/analytics-accm-apr09.png)
+
+Four new charts track AI-assisted development maturity:
+
+1. **Weekly PR & Issue Activity** -- Stacked bar chart showing PRs merged/opened and issues closed/opened per week, corresponding to ACCM Level 2-3 (Instructed to Measured)
+2. **AI vs Human Contributions** -- Stacked area chart with KPI cards showing the percentage breakdown of AI-generated vs human contributions (Level 5: Self-Sustaining)
+3. **CI Workflow Pass Rates** -- Line chart tracking CI success rates over time (Level 3: Measured)
+4. **Contributor Growth** -- Bar + line chart showing new vs total contributors (Level 4: Managed)
+
+![ACCM Metrics Lower](images/analytics-accm-lower-apr09.png)
+
+All ACCM data is sourced from the GitHub API with a rolling historical window.
+
+---
+
+## NPS Backend and Analytics Integration (New in April 2026)
+
+The NPS survey system (documented above) now includes a **self-hosted backend** that operates independently of GA4:
+
+- **Netlify Function** at `/api/nps`:
+  - **POST** -- Submit a score (0-10) with optional feedback text, stored in Netlify Blobs
+  - **GET** -- Returns aggregate NPS score, promoter/passive/detractor breakdown, monthly trend, and recent responses
+- **No PII collected** -- Rolling window of 1,000 responses
+- **Dual submission** -- The `useNPSSurvey` hook sends to the NPS backend first, then to GA4 analytics as a secondary channel
+- **Analytics dashboard** -- NPS aggregate scores and trends are displayed in the analytics page
+
+---
+
+## Daily Issues and PRs Chart (New in April 2026)
+
+A new **IssueActivityChart** card on the Analytics page shows daily GitHub activity:
+
+- **Grouped bar chart** -- Issues opened (blue) vs closed (green) per day
+- **PRs merged line overlay** -- Orange line showing merged PR count
+- **Configurable lookback** -- 30, 60, 90, or 180 days with summary statistics
+- **Dark-theme-compatible** styling using ECharts
+- **1-hour cache** -- Data fetched via the existing GitHub proxy endpoint
+
+---
+
+## Coin Breakdown and Bonus Points (New in April 2026)
+
+The rewards panel now shows a detailed breakdown of how coins are earned:
+
+- **GitHub points** (green) -- Earned from PRs and issues across kubestellar and llm-d organizations, shown on the public leaderboard
+- **Console coins** (purple) -- Earned from in-app activity (missions, games, sharing), stored in browser localStorage
+- **Bonus points** (pink) -- Awarded via `[bonus]` issues on kubestellar/console, fetched from a new Netlify Function at `/api/rewards/bonus`
+- **Total** (yellow) -- Combined GitHub + Console + Bonus
+
+The breakdown explains why the console total may be higher than the public leaderboard, which only tracks GitHub contributions.
+
+---
+
+## Remove Cluster Endpoint (New in April 2026)
+
+A new `POST /kubeconfig/remove` endpoint allows cleanup of stale clusters from the dashboard:
+
+- Removes the specified context from kubeconfig
+- Cleans up orphaned cluster and user entries if no other context references them
+- Prevents removing the currently active context
+- Clears cached clients for the removed context
+- Writes the updated kubeconfig back to disk
+
+This addresses the issue of deleted environments (e.g., WSL) leaving permanently "offline" cluster entries in the dashboard.
+
+---
+
+## UX Cohesion Overhaul (New in April 2026)
+
+A comprehensive UX consistency pass unified visual patterns across the console:
+
+- **Unified overlay system** -- All modals, drawers, and dialogs use the same backdrop component with consistent blur and opacity
+- **Z-index scale** -- A standardized z-index token scale prevents stacking context conflicts between overlays, sidebars, and tooltips
+- **Form components** -- Standardized input, select, textarea, and checkbox components with consistent sizing, focus rings, and error states
+- **Design tokens** -- Centralized color, spacing, and typography tokens replace scattered inline values
+
+---
+
+## Security Hardening (April 9, 2026)
+
+Several security improvements were shipped:
+
+- **XSS prevention** -- Block `javascript:` and other dangerous URI schemes in markdown link rendering. Only `http:`, `https:`, `mailto:`, `#`, and `/` prefixes are allowed. Unsafe links render as plain text.
+- **CSP headers tightened** -- Replaced wildcard `img-src https:` with explicit domain allowlist (`github.com`, `*.githubusercontent.com`, `api.dicebear.com`). Added `object-src 'none'`, `base-uri 'self'`, `form-action 'self'`, `frame-src 'none'`, `worker-src 'self' blob:`, `manifest-src 'self'`.
+- **Preflight fail-closed** -- Mission preflight checks now block execution on exceptions instead of silently passing (was fail-open).
+- **WebSocket onerror fix** -- The `onerror` handler no longer nullifies `onclose`, preventing missions from getting stuck in a permanent "running" state.
+
+---
+
+## Mobile Crash Resolution (April 9, 2026)
+
+Two React render loop crashes on mobile viewports (React error #185: Maximum update depth exceeded) were identified and fixed:
+
+1. **Tour effect loop** -- `useTour.tsx` had `isActive` in a `useEffect` dependency array while also calling `setIsActive(false)` in the effect body, creating an infinite loop on mobile
+2. **Sidebar function reference loop** -- `closeMobileSidebar` in a `useEffect` dependency array was recreated on every render (not wrapped in `useCallback`), causing an infinite loop
+
+A **GA4 mobile traffic monitor** workflow now runs daily to detect when mobile session percentage drops below 5% for 3+ consecutive days and automatically creates a GitHub issue.
+
+A **post-merge mobile viewport smoke test** CI workflow validates that the dashboard renders without crashes on mobile-sized viewports after every merge.
+
+---
+
+## Affiliate Clicks API (New in April 2026)
+
+A new `/api/affiliate/clicks` Netlify Function queries GA4 for intern affiliate link click counts:
+
+- Maps intern UTM terms (`intern-01` through `intern-10`) to GitHub user IDs
+- Returns click counts and unique users for each intern
+- 15-minute cache with CORS restricted to `kubestellar.io` origins
+- Used by the docs site leaderboard to populate the Social column
+
+---
+
+## Slack Notification Routing (New in April 2026)
+
+Alert Slack notifications are now routed through the backend API at `/api/notifications/send` instead of direct browser-to-webhook requests, which were blocked by CORS.
+
+---
+
+## Pagination Infinite Loop Fix (April 9, 2026)
+
+Fixed a React error #185 crash caused by `useEffect` hooks that had `currentPage` in both the condition and dependency array. When `totalPages` drops to 0 (all API data fails), the effect would loop infinitely. Fixed in `cardHooks.ts` and two other locations.
+
+---
+
+## Updated Screenshots (April 9, 2026)
+
+![Analytics Dashboard](images/analytics-dashboard-apr09.png)
+
+The analytics dashboard with KPI cards, actionable insights, daily active users chart, adoption funnel, and top events breakdown.
+
+![ACCM Metrics](images/analytics-accm-apr09.png)
+
+The new ACCM Metrics section showing Weekly PR & Issue Activity, AI vs Human Contributions (13% AI, 87% Human), and contribution KPI cards.
+
+---
+
 ## Updated Screenshots (April 8, 2026)
 
 ![Dashboard](images/dashboard-apr08.jpg)
