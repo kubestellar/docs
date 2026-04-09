@@ -33,6 +33,7 @@ interface LeaderboardEntry {
 
 interface LeaderboardData {
   generated_at: string;
+  git_hash?: string;
   entries: LeaderboardEntry[];
 }
 
@@ -515,6 +516,13 @@ export default function LeaderboardPage() {
               </div>
             )}
           </div>
+
+            {/* Build hash */}
+            {data?.git_hash && (
+              <p className="mt-4 text-right text-[10px] text-gray-700 font-mono select-all" title="Leaderboard data generation commit">
+                {data.git_hash}
+              </p>
+            )}
         </section>
 
         {/* CTA Section */}
