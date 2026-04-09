@@ -205,7 +205,7 @@ kubectl create secret generic ksc-secrets \
   --from-literal=github-client-secret="$GITHUB_CLIENT_SECRET"
 
 # Install with Helm
-helm install ksc oci://ghcr.io/kubestellar/charts/console \
+helm install ksc oci://ghcr.io/kubestellar/charts/kubestellar-console \
   --namespace ksc \
   --set github.existingSecret=ksc-secrets
 ```
