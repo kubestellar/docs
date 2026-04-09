@@ -36,6 +36,19 @@ interface LeaderboardData {
   entries: LeaderboardEntry[];
 }
 
+// ── Affiliate/social click data ──────────────────────────────────────
+
+interface AffiliateData {
+  clicks: number;
+  unique_users: number;
+  utm_term: string;
+}
+
+/** URL for the affiliate clicks API (hosted on console.kubestellar.io) */
+const AFFILIATE_API_URL = "https://console.kubestellar.io/api/affiliate/clicks";
+/** Fetch timeout for affiliate data (5 seconds — non-critical) */
+const AFFILIATE_FETCH_TIMEOUT_MS = 5_000;
+
 // ── Contributor level colors (mirrors console's CONTRIBUTOR_LEVELS) ───
 
 interface LevelStyle {
@@ -125,13 +138,13 @@ function BreakdownPills({ breakdown }: { breakdown: LeaderboardBreakdown }) {
   if (breakdown.prs_merged > 0)
     pills.push({ label: `${breakdown.prs_merged} Merged`, color: "text-green-400 bg-green-500/10" });
   if (breakdown.prs_opened > 0)
-    pills.push({ label: `${breakdown.prs_opened} PRs`, color: "text-blue-400 bg-blue-500/10" });
+    pills.push({ label: `${breakdown.prs_opened} ${breakdown.prs_opened === 1 ? "PR" : "PRs"}`, color: "text-blue-400 bg-blue-500/10" });
   if (breakdown.bug_issues > 0)
-    pills.push({ label: `${breakdown.bug_issues} Bugs`, color: "text-red-400 bg-red-500/10" });
+    pills.push({ label: `${breakdown.bug_issues} ${breakdown.bug_issues === 1 ? "Bug" : "Bugs"}`, color: "text-red-400 bg-red-500/10" });
   if (breakdown.feature_issues > 0)
-    pills.push({ label: `${breakdown.feature_issues} Features`, color: "text-purple-400 bg-purple-500/10" });
+    pills.push({ label: `${breakdown.feature_issues} ${breakdown.feature_issues === 1 ? "Feature" : "Features"}`, color: "text-purple-400 bg-purple-500/10" });
   if (breakdown.other_issues > 0)
-    pills.push({ label: `${breakdown.other_issues} Issues`, color: "text-gray-400 bg-gray-500/10" });
+    pills.push({ label: `${breakdown.other_issues} ${breakdown.other_issues === 1 ? "Other" : "Others"}`, color: "text-gray-400 bg-gray-500/10" });
 
   if (pills.length === 0) return null;
 
@@ -146,6 +159,30 @@ function BreakdownPills({ breakdown }: { breakdown: LeaderboardBreakdown }) {
         </span>
       ))}
     </div>
+  );
+}
+
+// ── Social/affiliate badge ────────────────────────────────────────────
+
+function SocialBadge({ data }: { data: AffiliateData | undefined }) {
+  if (!data) return null;
+  if (data.clicks === 0) {
+    return (
+      <span className="text-xs text-gray-600" title="No affiliate clicks yet">
+        —
+      </span>
+    );
+  }
+  return (
+    <span
+      className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium text-pink-400 bg-pink-500/10"
+      title={`${data.clicks} clicks from ${data.unique_users} unique users via affiliate link`}
+    >
+      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+      </svg>
+      {data.clicks}
+    </span>
   );
 }
 
@@ -187,6 +224,7 @@ export default function LeaderboardPage() {
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [countdown, setCountdown] = useState("");
+  const [affiliateData, setAffiliateData] = useState<Record<string, AffiliateData>>({});
 
   const fetchLeaderboard = useCallback(() => {
     fetch(LEADERBOARD_DATA_PATH)
@@ -231,6 +269,18 @@ export default function LeaderboardPage() {
   useEffect(() => {
     fetchLeaderboard();
   }, [fetchLeaderboard]);
+
+  // Fetch affiliate click data (non-blocking, best-effort)
+  useEffect(() => {
+    fetch(AFFILIATE_API_URL, {
+      signal: AbortSignal.timeout(AFFILIATE_FETCH_TIMEOUT_MS),
+    })
+      .then((res) => (res.ok ? res.json() : {}))
+      .then((json: Record<string, AffiliateData>) => setAffiliateData(json))
+      .catch(() => {
+        // Affiliate data is optional — silently ignore failures
+      });
+  }, []);
 
   const filteredEntries = useMemo(() => {
     if (!data?.entries) return [];
@@ -350,11 +400,12 @@ export default function LeaderboardPage() {
             {!isLoading && !error && filteredEntries.length > 0 && (
               <div className="bg-gray-800/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden">
                 {/* Table header */}
-                <div className="hidden sm:grid sm:grid-cols-[60px_1fr_120px_120px_1fr] gap-4 px-6 py-3 border-b border-white/5 text-xs text-gray-500 uppercase tracking-wider">
+                <div className="hidden sm:grid sm:grid-cols-[60px_1fr_120px_120px_60px_1fr] gap-4 px-6 py-3 border-b border-white/5 text-xs text-gray-500 uppercase tracking-wider">
                   <div className="text-center">Rank</div>
                   <div>Contributor</div>
                   <div className="text-right">Points</div>
                   <div className="text-center">Level</div>
+                  <div className="text-center" title="Affiliate link clicks from social sharing">Social</div>
                   <div>Breakdown</div>
                 </div>
 
@@ -362,7 +413,7 @@ export default function LeaderboardPage() {
                 {filteredEntries.map((entry) => (
                   <div
                     key={entry.login}
-                    className="grid grid-cols-1 sm:grid-cols-[60px_1fr_120px_120px_1fr] gap-2 sm:gap-4 px-4 sm:px-6 py-4 border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors items-center"
+                    className="grid grid-cols-1 sm:grid-cols-[60px_1fr_120px_120px_60px_1fr] gap-2 sm:gap-4 px-4 sm:px-6 py-4 border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors items-center"
                   >
                     {/* Rank */}
                     <div className="hidden sm:flex justify-center">
@@ -417,6 +468,11 @@ export default function LeaderboardPage() {
                     {/* Level */}
                     <div className="flex justify-start sm:justify-center pl-11 sm:pl-0">
                       <LevelBadge level={entry.level} />
+                    </div>
+
+                    {/* Social */}
+                    <div className="flex justify-start sm:justify-center pl-11 sm:pl-0">
+                      <SocialBadge data={affiliateData[entry.login]} />
                     </div>
 
                     {/* Breakdown */}
