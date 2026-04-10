@@ -295,7 +295,8 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
-           {/* SECOND ROW OF CARDS */}
+
+            {/* SECOND ROW OF CARDS */}
            {/* Feature 4 - Coming from Lens Advanced card with 3D hover effect */}
           <div className="feature-card relative group perspective cursor-pointer" onClick={() => window.open("https://console.kubestellar.io/from-lens", "_blank")}>
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
@@ -379,6 +380,99 @@ export default function AboutSection() {
                 {/* Animated arrow on hover */}
                 <Link
                   href="https://console.kubestellar.io/from-headlamp"
+                  className="block h-8 overflow-hidden"
+                >
+                  <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 text-primary-600 dark:text-primary-400 flex items-center">
+                    <span className="text-sm font-medium">
+                      {t("learnMore")}
+                    </span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </Link>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 7 - From HolmesGPT card with 3D hover effect */}
+          <div className="feature-card relative group perspective cursor-pointer" onClick={() => window.open("https://console.kubestellar.io/from-holmesgpt", "_blank")}>
+            <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
+              <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 flex flex-col justify-between h-full">
+                {/* Icon with animation */}
+                <div className="text-2xl w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  🔎︎                  
+                </div>
+
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                  {t("card7Title")}
+                </h3>
+
+                <p className="text-gray-300 mb-6">{t("card7Description")}</p>
+                <p className="text-gray-300 mb-6">{t("card7Details")}</p>
+
+                {/* Animated arrow on hover */}
+                <Link
+                  href="https://console.kubestellar.io/from-holmesgpt"
+                  className="block h-8 overflow-hidden"
+                >
+                  <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 text-primary-600 dark:text-primary-400 flex items-center">
+                    <span className="text-sm font-medium">
+                      {t("learnMore")}
+                    </span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </Link>
+
+              </div>
+            </div>
+          </div>
+          {/*Third Row of Cards*/}
+          
+
+          {/* Feature 8 - User Reviews Advanced card with 3D hover effect */}
+          <div className="feature-card relative group perspective cursor-pointer" onClick={() => router.push("docs/news/reviews")}>
+            <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
+              <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 flex flex-col justify-between h-full">
+                {/* Icon with animation */}
+                <div className="w-16 h-16 text-2xl rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                     🎭︎ 
+                  
+                </div>
+
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                  {t("card8Title")}
+                </h3>
+
+                <p className="text-gray-300 mb-6">{t("card8Description")}</p>
+                <p className="text-gray-300 mb-6">{t("card8Details")}</p>
+
+                {/* Animated arrow on hover */}
+                <Link
+                  href="docs/news/reviews"
                   className="block h-8 overflow-hidden"
                 >
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 text-primary-600 dark:text-primary-400 flex items-center">

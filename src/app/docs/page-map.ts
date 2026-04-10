@@ -370,7 +370,8 @@ const NAV_STRUCTURE_NEWS: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Latest News': 'news/index.md' },
       { 'Marketplace & KB Launch': 'news/marketplace-and-kb-launch.md' },
-      { 'KubeStellar Console Announcement': 'news/kubestellar-console-announcement.md' }
+      { 'KubeStellar Console Announcement': 'news/kubestellar-console-announcement.md' },
+      { 'Reviews and Testimonials': 'news/reviews.md'}
     ]
   }
 ]

@@ -752,6 +752,12 @@ export default function Navbar() {
                       </svg>
                       {t("news")}
                     </Link><Link
+                      href="/docs/news/reviews"
+                      className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
+                    >
+                      &#127917;&nbsp;
+                      {t("reviews")}
+                    </Link><Link
                       href="/agenda"
                       target="_blank"
                       className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-cyan-900/30 rounded transition-all duration-200 hover:text-cyan-300 hover:shadow-md"
