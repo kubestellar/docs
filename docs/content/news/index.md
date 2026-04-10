@@ -4,6 +4,13 @@ Stay up to date with the latest announcements, press releases, and community new
 
 ---
 
+## April 2026
+
+- **[Mission Control: Install Missions, AI Missions, and Mission Explorer](./mission-control-overview.md)** — A guided tour of every mission type in KubeStellar Console: Install Missions for one-click CNCF project deployment, AI Missions for cross-cluster diagnostics, and Mission Control for orchestrating them all from one place.
+- **[I Purposely Built a Codebase That Teaches Itself](https://kubestellar.medium.com/i-purposely-built-a-codebase-that-teaches-itself-dbf34915b148)** *(Medium)* — Andy Anderson on the AI Codebase Maturity Model: how the KubeStellar Console codebase is structured so AI agents can read it, understand it, and improve it without human hand-holding.
+
+---
+
 ## March 2026
 
 - **[Compliance Excellence: Recommended Policies, Framework Context, and Drill-Down Modals](./compliance-excellence-and-drill-down-modals.md)** — New AI-powered Recommended Policies card, contextual framework descriptions on all compliance cards, 5 new drill-down detail modals across Insights/Compliance/Deploy dashboards, and progressive streaming for compliance hooks.
