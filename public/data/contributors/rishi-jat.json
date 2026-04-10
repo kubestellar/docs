@@ -1,21 +1,21 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-10T14:28:42.444Z",
-  "total_issues_opened": 167,
+  "generated_at": "2026-04-10T18:20:47.046Z",
+  "total_issues_opened": 172,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-  "total_points": 24450,
+  "total_points": 25950,
   "level": "Commander",
   "level_rank": 5,
   "rank": 9,
   "cadence": {
-    "avg_per_week": 13.6,
-    "avg_per_day": 0.86,
+    "avg_per_week": 14,
+    "avg_per_day": 0.88,
     "by_day_of_week": [
       7,
       9,
       11,
       10,
-      114,
+      119,
       9,
       7
     ],
@@ -37,7 +37,7 @@
       1,
       1,
       63,
-      42,
+      47,
       0,
       4,
       2,
@@ -49,22 +49,36 @@
     "longest_streak_weeks": 4,
     "trend": "slowing_down",
     "first_issue_at": "2025-09-27T20:12:21.000Z",
-    "last_issue_at": "2026-04-09T12:22:42.000Z"
+    "last_issue_at": "2026-04-10T17:51:22.000Z"
   },
   "topics": [
     {
       "name": "line, body, readall",
-      "issue_count": 121,
+      "issue_count": 120,
       "recent_issue": {
-        "title": "K8s package DeleteWorkload test fails with workload not found.",
-        "url": "https://github.com/kubestellar/console/issues/4634",
-        "created_at": "2026-04-04T21:21:04Z"
+        "title": "AI configuration (OpenAI, Claude, Gemini) lacks clarity",
+        "url": "https://github.com/kubestellar/console/issues/6191",
+        "created_at": "2026-04-10T17:51:22Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 121
+      "closed_count": 120
+    },
+    {
+      "name": "event, analytics, day",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "Bug: Event listener memory leak in CardWrapper menu",
+        "url": "https://github.com/kubestellar/console/issues/2929",
+        "created_at": "2026-03-19T00:26:41Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 5
     },
     {
       "name": "hook, order, render",
@@ -130,6 +144,20 @@
         "title": "Antigravity provider returns connected when given invalid CLI path.",
         "url": "https://github.com/kubestellar/console/issues/4637",
         "created_at": "2026-04-04T21:21:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "jsx, syntax, basemodal",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "ConfirmDialog.test.tsx has identical syntax error — missing render() call.",
+        "url": "https://github.com/kubestellar/console/issues/4632",
+        "created_at": "2026-04-04T21:20:46Z"
       },
       "repos": [
         "console"
@@ -474,7 +502,7 @@
       "closed_count": 1
     },
     {
-      "name": "p., lock, save",
+      "name": "lock, p., save",
       "issue_count": 1,
       "recent_issue": {
         "title": "PersistenceStore Save() uses read lock for write operation",
@@ -494,20 +522,6 @@
         "title": "authHeader[7:] slice panics on short Authorization headers",
         "url": "https://github.com/kubestellar/console/issues/1785",
         "created_at": "2026-03-06T16:35:25Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "readme, mention, md",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "README.md does not document the agent component or MCP bridge",
-        "url": "https://github.com/kubestellar/console/issues/1777",
-        "created_at": "2026-03-06T14:34:49Z"
       },
       "repos": [
         "console"
@@ -612,7 +626,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 11
+      "issue_count": 16
     }
   ]
 }

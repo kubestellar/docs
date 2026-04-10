@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-10T14:28:42.945Z",
+  "generated_at": "2026-04-10T18:20:47.573Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -307,12 +307,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "Screenshots are not persisted into draft bug reports",
-        "url": "https://github.com/kubestellar/console/issues/6102",
-        "repo": "console",
-        "topic_match": "draft, discard, autosave"
-      },
       {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",

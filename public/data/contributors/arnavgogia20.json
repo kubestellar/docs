@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-10T14:28:42.980Z",
+  "generated_at": "2026-04-10T18:20:47.607Z",
   "total_issues_opened": 47,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 19600,
@@ -320,14 +320,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Difference in numbers in Nodes stat block and drillDown",
-        "url": "https://github.com/kubestellar/console/issues/6100",
-        "repo": "console",
-        "topic_match": "nodes, stat, dashboard"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Cost Management",

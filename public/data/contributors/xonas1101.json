@@ -1,21 +1,21 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-10T14:28:33.082Z",
-  "total_issues_opened": 271,
+  "generated_at": "2026-04-10T18:20:36.908Z",
+  "total_issues_opened": 278,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 93300,
+  "total_points": 95400,
   "level": "Captain",
   "level_rank": 6,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 22.6,
-    "avg_per_day": 4.57,
+    "avg_per_week": 23.2,
+    "avg_per_day": 4.69,
     "by_day_of_week": [
       25,
       29,
       46,
       57,
-      60,
+      67,
       21,
       33
     ],
@@ -34,8 +34,8 @@
       27,
       23,
       40,
-      25,
-      2,
+      26,
+      8,
       28,
       22,
       2,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-10T14:18:35.000Z"
+    "last_issue_at": "2026-04-10T15:36:11.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 232,
+      "issue_count": 241,
       "recent_issue": {
-        "title": "Bad UI in add button in AI missions",
-        "url": "https://github.com/kubestellar/console/issues/6132",
-        "created_at": "2026-04-10T14:18:35Z"
+        "title": "tests are too shallow and miss core async/error behavior",
+        "url": "https://github.com/kubestellar/console/issues/6159",
+        "created_at": "2026-04-10T15:36:11Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 7,
-      "closed_count": 225
+      "open_count": 1,
+      "closed_count": 240
     },
     {
       "name": "agentselector, approval, selectagent",
@@ -88,20 +88,6 @@
         "title": "Environment-variable injection pattern is unsafe/brittle in Playwright wrappers",
         "url": "https://github.com/kubestellar/console/issues/4464",
         "created_at": "2026-04-03T16:06:16Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "role, enum, rbac",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Issues in rbac_test.go",
-        "url": "https://github.com/kubestellar/console/issues/4460",
-        "created_at": "2026-04-03T15:46:59Z"
       },
       "repos": [
         "console"
@@ -166,7 +152,7 @@
       "closed_count": 1
     },
     {
-      "name": "phase, launch, e1a08df4",
+      "name": "launch, phase, e1a08df4",
       "issue_count": 1,
       "recent_issue": {
         "title": "Launch can complete instantly with zero deployments",
@@ -647,7 +633,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 180
+      "issue_count": 187
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-10T14:28:41.037Z",
+  "generated_at": "2026-04-10T18:20:45.408Z",
   "total_issues_opened": 93,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 26700,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, spinner, happen",
-      "issue_count": 71,
+      "issue_count": 67,
       "recent_issue": {
         "title": "gitHubCIUtils: localStorage.setItem called with no try/catch - quota error throws unhandled exception",
         "url": "https://github.com/kubestellar/console/issues/5831",
@@ -64,7 +64,21 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 71
+      "closed_count": 67
+    },
+    {
+      "name": "ref, timer, settimeout",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "useRef initialized to undefined instead of null causing clearTimeout no-op and masking timer leaks",
+        "url": "https://github.com/kubestellar/console/issues/5576",
+        "created_at": "2026-04-08T19:38:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "simultaneous, ec3d1fd1, d20",
@@ -361,6 +375,20 @@
       "closed_count": 1
     },
     {
+      "name": "alert, eb96b4e6, c3aaad656b1f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "HardwareHealthCard: clearing an alert silently fails - user gets no feedback",
+        "url": "https://github.com/kubestellar/console/issues/4977",
+        "created_at": "2026-04-06T13:58:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "mobile, tip, px",
       "issue_count": 1,
       "recent_issue": {
@@ -377,12 +405,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "Console Studio button overlaps AI Mission UI in full-screen mode",
-        "url": "https://github.com/kubestellar/console/issues/6130",
-        "repo": "console",
-        "topic_match": "mobile, tip, px"
-      },
       {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
@@ -416,10 +438,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },

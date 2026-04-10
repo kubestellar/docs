@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-10T14:28:43.096Z",
+  "generated_at": "2026-04-10T18:20:47.721Z",
   "total_issues_opened": 67,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 13900,
@@ -180,7 +180,7 @@
       "closed_count": 1
     },
     {
-      "name": "stat, layer, isolation",
+      "name": "layer, stat, isolation",
       "issue_count": 1,
       "recent_issue": {
         "title": "More questions about the multi-tenancy dashboard",
@@ -279,20 +279,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Resource Usage card shows \"usage\" but actually uses request values",
-        "url": "https://github.com/kubestellar/console/issues/6105",
-        "repo": "console",
-        "topic_match": "usage, historical, gpus"
-      },
-      {
-        "title": "Difference in numbers in Nodes stat block and drillDown",
-        "url": "https://github.com/kubestellar/console/issues/6100",
-        "repo": "console",
-        "topic_match": "stat, layer, isolation"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Security & RBAC",
@@ -319,10 +306,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       }
     ]
   },

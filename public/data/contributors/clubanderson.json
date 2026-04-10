@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-10T14:28:27.250Z",
-  "total_issues_opened": 841,
+  "generated_at": "2026-04-10T18:20:30.638Z",
+  "total_issues_opened": 845,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3023850,
+  "total_points": 3041400,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 67.5,
-    "avg_per_day": 3.52,
+    "avg_per_week": 67.8,
+    "avg_per_day": 3.53,
     "by_day_of_week": [
       104,
       106,
       192,
       115,
-      115,
+      119,
       119,
       90
     ],
@@ -35,8 +35,8 @@
       3,
       63,
       41,
-      86,
-      29,
+      88,
+      31,
       32,
       23,
       124,
@@ -49,12 +49,12 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-10T13:55:25.000Z"
+    "last_issue_at": "2026-04-10T16:59:38.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, tsx",
-      "issue_count": 466,
+      "issue_count": 465,
       "recent_issue": {
         "title": "[Auto-QA] Code centralization opportunities found",
         "url": "https://github.com/kubestellar/console/issues/6121",
@@ -64,23 +64,23 @@
         "console",
         "console-marketplace"
       ],
-      "open_count": 1,
+      "open_count": 0,
       "closed_count": 465
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 135,
+      "issue_count": 134,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #468",
-        "url": "https://github.com/kubestellar/console/issues/6115",
-        "created_at": "2026-04-10T13:38:38Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #491",
+        "url": "https://github.com/kubestellar/console/issues/6179",
+        "created_at": "2026-04-10T16:59:38Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 4,
+      "open_count": 3,
       "closed_count": 131
     },
     {
@@ -180,6 +180,20 @@
       ],
       "open_count": 0,
       "closed_count": 6
+    },
+    {
+      "name": "testing, greet, contributor",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "Test: verify updated contributor greeting",
+        "url": "https://github.com/kubestellar/console/issues/2762",
+        "created_at": "2026-03-16T15:14:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 5
     },
     {
       "name": "typo, readme, fix",
@@ -419,6 +433,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "flamegraph, profiler, navigation",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "perf: dashboard navigation is slow — 461 React commits per navigation",
+        "url": "https://github.com/kubestellar/console/issues/6149",
+        "created_at": "2026-04-10T15:26:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "worktrees, git, update",
@@ -786,26 +814,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "GPU node cache retains stale data after nodes are removed",
-        "url": "https://github.com/kubestellar/console/issues/6111",
-        "repo": "console",
-        "topic_match": "gpu, workload, pod"
-      },
-      {
-        "title": "Cluster Comparison page always shows Kubernetes version as N/A",
-        "url": "https://github.com/kubestellar/console/issues/6108",
-        "repo": "console",
-        "topic_match": "cluster, status, health"
-      },
-      {
-        "title": "Cluster Comparison marks unknown health as \"Issues detected\"",
-        "url": "https://github.com/kubestellar/console/issues/6109",
-        "repo": "console",
-        "topic_match": "cluster, status, health"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -886,7 +895,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 196
+      "issue_count": 200
     }
   ]
 }
