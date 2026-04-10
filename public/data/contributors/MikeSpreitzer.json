@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-10T18:20:47.721Z",
+  "generated_at": "2026-04-10T22:15:21.065Z",
   "total_issues_opened": 67,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 13900,
@@ -8,7 +8,7 @@
   "level_rank": 4,
   "rank": 19,
   "cadence": {
-    "avg_per_week": 4.8,
+    "avg_per_week": 4.7,
     "avg_per_day": 0.57,
     "by_day_of_week": [
       8,
@@ -47,7 +47,7 @@
     ],
     "current_streak_weeks": 5,
     "longest_streak_weeks": 5,
-    "trend": "ramping_up",
+    "trend": "steady",
     "first_issue_at": "2025-12-11T19:58:02.000Z",
     "last_issue_at": "2026-04-09T06:58:12.000Z"
   },
@@ -306,10 +306,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },

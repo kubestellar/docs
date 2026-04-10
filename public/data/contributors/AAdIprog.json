@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-10T18:20:47.650Z",
+  "generated_at": "2026-04-10T22:15:20.993Z",
   "total_issues_opened": 50,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 18400,
@@ -82,7 +82,7 @@
       "closed_count": 2
     },
     {
-      "name": "closure, stale, sendmessage",
+      "name": "closure, sendmessage, stale",
       "issue_count": 2,
       "recent_issue": {
         "title": "Stale closure in handleWidthChange",
@@ -376,7 +376,7 @@
       "closed_count": 1
     },
     {
-      "name": "pipeline, unit, useinsightenrichment",
+      "name": "pipeline, unit, d3c5b",
       "issue_count": 1,
       "recent_issue": {
         "title": "Missing unit tests for useInsightEnrichment hook",

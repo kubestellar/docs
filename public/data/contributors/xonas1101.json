@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-10T18:20:36.908Z",
+  "generated_at": "2026-04-10T22:15:10.328Z",
   "total_issues_opened": 278,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 95400,
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 240
+      "open_count": 0,
+      "closed_count": 241
     },
     {
       "name": "agentselector, approval, selectagent",
@@ -348,7 +348,7 @@
       "closed_count": 1
     },
     {
-      "name": "policy, webhooks, default",
+      "name": "policy, webhooks, ebec6c",
       "issue_count": 1,
       "recent_issue": {
         "title": "Admission webhook parser reports default policy instead of actual policy",

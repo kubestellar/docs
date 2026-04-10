@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-10T18:20:30.638Z",
-  "total_issues_opened": 845,
+  "generated_at": "2026-04-10T22:15:04.114Z",
+  "total_issues_opened": 851,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3041400,
+  "total_points": 3067000,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 67.8,
-    "avg_per_day": 3.53,
+    "avg_per_week": 68.3,
+    "avg_per_day": 3.56,
     "by_day_of_week": [
       104,
       106,
       192,
       115,
-      119,
+      125,
       119,
       90
     ],
@@ -39,49 +39,49 @@
       31,
       32,
       23,
-      124,
-      28,
-      17,
-      20,
+      126,
+      29,
+      19,
+      21,
       8
     ],
     "current_streak_weeks": 15,
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-10T16:59:38.000Z"
+    "last_issue_at": "2026-04-10T22:05:20.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, tsx",
-      "issue_count": 465,
+      "issue_count": 468,
       "recent_issue": {
-        "title": "[Auto-QA] Code centralization opportunities found",
-        "url": "https://github.com/kubestellar/console/issues/6121",
-        "created_at": "2026-04-10T13:55:25Z"
+        "title": "[Auto-QA] Stale data and freshness indicator issues",
+        "url": "https://github.com/kubestellar/console/issues/6217",
+        "created_at": "2026-04-10T19:39:33Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
-      "open_count": 0,
-      "closed_count": 465
+      "open_count": 1,
+      "closed_count": 467
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 134,
+      "issue_count": 142,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #491",
-        "url": "https://github.com/kubestellar/console/issues/6179",
-        "created_at": "2026-04-10T16:59:38Z"
+        "title": "🐛 20 test failure(s) in Coverage Suite run #517",
+        "url": "https://github.com/kubestellar/console/issues/6254",
+        "created_at": "2026-04-10T22:05:20Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 131
+      "open_count": 4,
+      "closed_count": 138
     },
     {
       "name": "monitoring, step, implement",
@@ -180,20 +180,6 @@
       ],
       "open_count": 0,
       "closed_count": 6
-    },
-    {
-      "name": "testing, greet, contributor",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "Test: verify updated contributor greeting",
-        "url": "https://github.com/kubestellar/console/issues/2762",
-        "created_at": "2026-03-16T15:14:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 5
     },
     {
       "name": "typo, readme, fix",
@@ -351,7 +337,7 @@
       "closed_count": 2
     },
     {
-      "name": "cleanup, useeffect, ensure",
+      "name": "useeffect, cleanup, ensure",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: Fix potential memory leak — missing timer cleanup in PDDisaggregation and NamespaceManager",
@@ -785,7 +771,7 @@
       "closed_count": 1
     },
     {
-      "name": "collapse, toggle, theme",
+      "name": "collapse, theme, toggle",
       "issue_count": 1,
       "recent_issue": {
         "title": "🐛 Theme toggle and collapse buttons get pushed off screen when banner is active",
@@ -895,7 +881,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 200
+      "issue_count": 206
     }
   ]
 }

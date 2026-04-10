@@ -1,6 +1,6 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-04-10T18:20:47.741Z",
+  "generated_at": "2026-04-10T22:15:21.080Z",
   "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
   "total_points": 6250,
@@ -95,7 +95,7 @@
       "closed_count": 1
     },
     {
-      "name": "windows, backslashes, path",
+      "name": "windows, backslashes, separator",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Page map validation fails on Windows due to path separator mismatch",

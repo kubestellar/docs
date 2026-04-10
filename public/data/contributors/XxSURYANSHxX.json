@@ -1,12 +1,12 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-10T18:20:45.173Z",
+  "generated_at": "2026-04-10T22:15:18.853Z",
   "total_issues_opened": 114,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 30700,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 6,
+  "rank": 7,
   "cadence": {
     "avg_per_week": 9.5,
     "avg_per_day": 5.69,
@@ -137,7 +137,7 @@
       "closed_count": 1
     },
     {
-      "name": "traversal, path, filepath",
+      "name": "traversal, filepath, path",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 5: Path traversal in static file serving handler (`server.go`)",

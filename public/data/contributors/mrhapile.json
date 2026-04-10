@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-10T18:20:44.733Z",
+  "generated_at": "2026-04-10T22:15:18.062Z",
   "total_issues_opened": 209,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 66550,
@@ -249,7 +249,7 @@
       "closed_count": 1
     },
     {
-      "name": "missionchat, save, immediately",
+      "name": "missionchat, save, f72fd",
       "issue_count": 1,
       "recent_issue": {
         "title": "Stale Closure in MissionChat on \"Save & Run\"",
@@ -305,7 +305,7 @@
       "closed_count": 1
     },
     {
-      "name": "svg, clusterlocations, controller",
+      "name": "svg, controller, res",
       "issue_count": 1,
       "recent_issue": {
         "title": "ClusterLocations — SVG fetch race condition on rapid re-render",
@@ -445,7 +445,7 @@
       "closed_count": 1
     },
     {
-      "name": "require, e68135c1, bb0a",
+      "name": "e68135c1, bb0a, f9916f7c08",
       "issue_count": 1,
       "recent_issue": {
         "title": "Missing documentation for `FEEDBACK_GITHUB_TOKEN` required for issue submission",

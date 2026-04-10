@@ -1,21 +1,21 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-10T18:20:45.408Z",
-  "total_issues_opened": 93,
+  "generated_at": "2026-04-10T22:15:18.430Z",
+  "total_issues_opened": 107,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 26700,
+  "total_points": 30900,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 7,
+  "rank": 6,
   "cadence": {
-    "avg_per_week": 7.8,
-    "avg_per_day": 17.76,
+    "avg_per_week": 8.9,
+    "avg_per_day": 17.15,
     "by_day_of_week": [
       13,
       31,
       18,
       21,
-      0,
+      14,
       1,
       9
     ],
@@ -39,8 +39,8 @@
       0,
       8,
       13,
-      26,
-      25,
+      36,
+      29,
       11,
       0,
       0
@@ -49,36 +49,78 @@
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-09T20:06:45.000Z"
+    "last_issue_at": "2026-04-10T20:12:22.000Z"
   },
   "topics": [
     {
-      "name": "@aashu2006, spinner, happen",
-      "issue_count": 67,
+      "name": "@aashu2006, happen, line",
+      "issue_count": 82,
       "recent_issue": {
-        "title": "gitHubCIUtils: localStorage.setItem called with no try/catch - quota error throws unhandled exception",
-        "url": "https://github.com/kubestellar/console/issues/5831",
-        "created_at": "2026-04-09T20:06:45Z"
+        "title": "PreflightFailure, FeatureRequestModal, FeedbackModal, CardFactoryModal: Clipboard API called without browser support check - silently fails with no fallback",
+        "url": "https://github.com/kubestellar/console/issues/6229",
+        "created_at": "2026-04-10T20:12:22Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 67
+      "closed_count": 82
     },
     {
-      "name": "ref, timer, settimeout",
-      "issue_count": 3,
+      "name": "download, exception, unhandled",
+      "issue_count": 1,
       "recent_issue": {
-        "title": "useRef initialized to undefined instead of null causing clearTimeout no-op and masking timer leaks",
-        "url": "https://github.com/kubestellar/console/issues/5576",
-        "created_at": "2026-04-08T19:38:08Z"
+        "title": "YAMLDrillDown, RemediationConsole, MissionChat, Kubectl, ParetoFrontier, ShareMissionDialog: export/download has no error handling - unhandled exception on failure",
+        "url": "https://github.com/kubestellar/console/issues/6226",
+        "created_at": "2026-04-10T20:05:56Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 3
+      "closed_count": 1
+    },
+    {
+      "name": "reader, icon, button",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ClusterGroups, NamespaceMonitor, ClusterLocations, Kubedle: icon-only buttons missing aria-label - inaccessible to screen readers",
+        "url": "https://github.com/kubestellar/console/issues/6222",
+        "created_at": "2026-04-10T19:55:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "debounce, keystroke, list",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "KubescapeDetailModal, TrivyDetailModal, KyvernoDetailModal, ClusterLocations: search input missing debounce - full list re-filtered on every keystroke",
+        "url": "https://github.com/kubestellar/console/issues/6213",
+        "created_at": "2026-04-10T19:27:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "namespaces, cap, render",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "NamespaceMonitor: namespace list renders with no pagination or cap - O(namespaces x resources) render cost on every update",
+        "url": "https://github.com/kubestellar/console/issues/6208",
+        "created_at": "2026-04-10T19:20:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "simultaneous, ec3d1fd1, d20",
@@ -151,20 +193,6 @@
       "closed_count": 1
     },
     {
-      "name": "indicator, color, b2816c",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Hardcoded semantic color text-yellow-400 used for UI state indicator in DashboardHeader",
-        "url": "https://github.com/kubestellar/console/issues/5590",
-        "created_at": "2026-04-08T19:45:07Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "spread, enemy, array",
       "issue_count": 1,
       "recent_issue": {
@@ -207,7 +235,7 @@
       "closed_count": 1
     },
     {
-      "name": "default, a414fae, faf4",
+      "name": "a414fae, faf4, a4ad",
       "issue_count": 1,
       "recent_issue": {
         "title": "validateToken defaults to open when KC_AGENT_TOKEN is unset exposing all endpoints",
@@ -375,20 +403,6 @@
       "closed_count": 1
     },
     {
-      "name": "alert, eb96b4e6, c3aaad656b1f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "HardwareHealthCard: clearing an alert silently fails - user gets no feedback",
-        "url": "https://github.com/kubestellar/console/issues/4977",
-        "created_at": "2026-04-06T13:58:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "mobile, tip, px",
       "issue_count": 1,
       "recent_issue": {
@@ -420,28 +434,28 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },
@@ -492,7 +506,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 93
+      "issue_count": 107
     }
   ]
 }

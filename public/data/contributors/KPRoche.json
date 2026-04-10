@@ -1,9 +1,9 @@
 {
   "login": "KPRoche",
-  "generated_at": "2026-04-10T18:20:45.415Z",
+  "generated_at": "2026-04-10T22:15:18.860Z",
   "total_issues_opened": 26,
   "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
-  "total_points": 26150,
+  "total_points": 27550,
   "level": "Commander",
   "level_rank": 5,
   "rank": 8,
@@ -95,7 +95,7 @@
       "closed_count": 2
     },
     {
-      "name": "fact, late, default",
+      "name": "fact, late, main",
       "issue_count": 1,
       "recent_issue": {
         "title": "Bug Report: Console docs default to v.0.3.6 (latest) when in fact main (dev) is where all the changes are happening.",

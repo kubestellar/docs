@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-10T18:17:16.913Z",
-  "git_hash": "003e004",
+  "generated_at": "2026-04-10T22:11:51.518Z",
+  "git_hash": "3629a47",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3041400,
+      "total_points": 3067000,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 247,
-        "feature_issues": 365,
-        "other_issues": 233,
-        "prs_opened": 4428,
-        "prs_merged": 4067
+        "bug_issues": 248,
+        "feature_issues": 366,
+        "other_issues": 237,
+        "prs_opened": 4463,
+        "prs_merged": 4103
       },
       "bonus_points": 50,
       "rank": 1
@@ -79,6 +79,21 @@
       "rank": 5
     },
     {
+      "login": "aashu2006",
+      "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
+      "total_points": 30900,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 95,
+        "feature_issues": 0,
+        "other_issues": 12,
+        "prs_opened": 4,
+        "prs_merged": 2
+      },
+      "rank": 6
+    },
+    {
       "login": "XxSURYANSHxX",
       "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
       "total_points": 30700,
@@ -91,35 +106,20 @@
         "prs_opened": 5,
         "prs_merged": 1
       },
-      "rank": 6
-    },
-    {
-      "login": "aashu2006",
-      "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-      "total_points": 26700,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 81,
-        "feature_issues": 0,
-        "other_issues": 12,
-        "prs_opened": 4,
-        "prs_merged": 2
-      },
       "rank": 7
     },
     {
       "login": "KPRoche",
       "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
-      "total_points": 26150,
+      "total_points": 27550,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 9,
         "feature_issues": 8,
         "other_issues": 9,
-        "prs_opened": 46,
-        "prs_merged": 26
+        "prs_opened": 48,
+        "prs_merged": 28
       },
       "rank": 8
     },

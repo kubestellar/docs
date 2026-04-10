@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-10T18:20:41.251Z",
+  "generated_at": "2026-04-10T22:15:14.684Z",
   "total_issues_opened": 235,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 73100,
@@ -138,7 +138,7 @@
       "closed_count": 1
     },
     {
-      "name": "blocked, resolution, bypass",
+      "name": "blocked, resolution, flow",
       "issue_count": 1,
       "recent_issue": {
         "title": "## 🐛 bug: resolution flow bypasses blocked-state validation",
@@ -292,7 +292,7 @@
       "closed_count": 1
     },
     {
-      "name": "menu, dot, resize",
+      "name": "dot, menu, resize",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: card menu (three-dot options) disappears after resizing the card",
