@@ -105,7 +105,8 @@
     "mobileUseCases": "उपयोग के मामले",
     "mobileGetStarted": "शुरू करें",
     "mobileContact": "संपर्क करें",
-    "news": "समाचार"
+    "news": "समाचार",
+    "reviews": "समीक्षाएं"
   },
   "aboutSection": {
     "title": "क्या है",
@@ -126,6 +127,12 @@
     "card6Title": "आपका ब्रांड। हमारा प्लेटफॉर्म",
     "card6Description": "अपने CNCF प्रोजेक्ट को मिनटों में एक उत्पादन-तैयार Kubernetes डैशबोर्ड दें।",
     "card6Details": "150+ कार्ड, 30 डैशबोर्ड, AI मिशन — सब आपके प्रोजेक्ट के लिए पुनः ब्रांडेड।",
+    "card7Title": "क्या आप HolmesGPT का उपयोग करते हैं?",
+    "card7Description": "जो कुछ HolmesGPT करता है, साथ ही 140+ डैशबोर्ड कार्ड",
+    "card7Details": "KubeStellar Console में AI-संचालित root cause विश्लेषण, investigation runbooks, PagerDuty/OpsGenie एकीकरण और Inspektor Gadget eBPF ट्रेसिंग शामिल है",
+    "card8Title": "उपयोगकर्ता क्या कहते हैं?",
+    "card8Description": "उपयोगकर्ता समीक्षाएं और ट्यूटोरियल",
+    "card8Details": "देखें कि KubeStellar Console के वास्तविक उपयोगकर्ता क्या कहते हैं",
     "learnMore": "और सीखें",
     "appendix": "KubeStellar Console और KubeStellar-MCP मिलकर पुरानी KubeStellar घटकों के कार्यों के लिए एक नया, स्वतंत्र प्रतिस्थापन बनाते हैं। इन पूर्ववर्तियों की जानकारी दस्तावेज़ के विरासत अनुभाग में शामिल है"
   },

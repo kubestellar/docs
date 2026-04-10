@@ -96,7 +96,8 @@
     "mobileUseCases": "Use Cases",
     "mobileGetStarted": "Get Started",
     "mobileContact": "Contact",
-    "news": "News"
+    "news": "News",
+    "reviews": "Reviews"
   },
   "aboutSection": {
     "title": "What is",
@@ -117,6 +118,12 @@
     "card6Title": "Your Brand. Our Platform",
     "card6Description": "Give your CNCF project a production-ready Kubernetes dashboard in minutes.",
     "card6Details": "150+ cards, 30 dashboards, AI missions — all rebranded to your project.",
+    "card7Title": "Using HolmesGPT?",
+    "card7Description": "Everything HolmesGPT does, plus 140+ dashboard cards",
+    "card7Details": "KubeStellar Console includes AI-powered root cause analysis, investigation runbooks, PagerDuty/OpsGenie integration, and Inspektor Gadget eBPF tracing",
+    "card8Title": "What Do Users Say?",
+    "card8Description": "User Reviews and Tutorials",
+    "card8Details": "See what actual KubeStellar Console users have to say",
     "learnMore": "Learn more",
     "appendix" : "KubeStellar Console plus KubeStellar-MCP form a new, standalone replacement for the functions of the legacy KubeStellar components. Information on those predecessors is included in the Legacy section of the documentation"
   },

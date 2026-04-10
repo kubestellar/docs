@@ -106,7 +106,8 @@
     "mobileUseCases": "Anwendungsfälle",
     "mobileGetStarted": "Erste Schritte",
     "mobileContact": "Kontakt",
-    "news": "Neuigkeiten"
+    "news": "Neuigkeiten",
+    "reviews": "Bewertungen"
   },
   "aboutSection": {
     "title": "Was ist",
@@ -127,6 +128,12 @@
     "card6Title": "Ihre Marke. Unsere Plattform",
     "card6Description": "Geben Sie Ihrem CNCF-Projekt in wenigen Minuten ein produktionsreifes Kubernetes-Dashboard.",
     "card6Details": "150+ Karten, 30 Dashboards, KI-Missionen — alles an Ihr Projekt angepasst.",
+    "card7Title": "Verwenden Sie HolmesGPT?",
+    "card7Description": "Alles, was HolmesGPT tut, plus 140+ Dashboard-Karten",
+    "card7Details": "KubeStellar Console bietet KI-gestützte Ursachenanalyse, Investigation Runbooks, PagerDuty/OpsGenie-Integration und Inspektor Gadget eBPF-Tracing",
+    "card8Title": "Was sagen Benutzer?",
+    "card8Description": "Benutzerbewertungen und Tutorials",
+    "card8Details": "Erfahren Sie, was echte KubeStellar Console Benutzer zu sagen haben",
     "learnMore": "Mehr erfahren",
     "appendix": "KubeStellar Console und KubeStellar-MCP bilden zusammen einen neuen, unabhängigen Ersatz für die Funktionen der älteren KubeStellar-Komponenten. Informationen zu diesen Vorgängern finden Sie im Legacy-Abschnitt der Dokumentation"
   },
