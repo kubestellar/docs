@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-10T10:27:25.973Z",
+  "generated_at": "2026-04-10T14:28:42.705Z",
   "total_issues_opened": 72,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 22950,
@@ -210,7 +210,7 @@
       "closed_count": 1
     },
     {
-      "name": "infinite, time, idle",
+      "name": "infinite, time, connections",
       "issue_count": 1,
       "recent_issue": {
         "title": "WebSocket Denial of Service (DoS) via Infinite Idle Connections",
@@ -407,7 +407,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "GPU node cache retains stale data after nodes are removed",
+        "url": "https://github.com/kubestellar/console/issues/6111",
+        "repo": "console",
+        "topic_match": "drill, node, gpunodedrilldown"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",

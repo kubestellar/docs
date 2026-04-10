@@ -1,21 +1,21 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-10T10:27:23.469Z",
-  "total_issues_opened": 170,
+  "generated_at": "2026-04-10T14:28:36.959Z",
+  "total_issues_opened": 226,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 54100,
+  "total_points": 70800,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 4,
+  "rank": 3,
   "cadence": {
-    "avg_per_week": 14.2,
-    "avg_per_day": 3.76,
+    "avg_per_week": 18.8,
+    "avg_per_day": 4.98,
     "by_day_of_week": [
       29,
       17,
       16,
       15,
-      63,
+      119,
       0,
       30
     ],
@@ -30,10 +30,10 @@
       12,
       17,
       19,
-      6,
-      14,
-      11,
       12,
+      14,
+      43,
+      30,
       1,
       0,
       1,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-10T10:23:41.000Z"
+    "last_issue_at": "2026-04-10T13:34:38.000Z"
   },
   "topics": [
     {
-      "name": "@aaradhychinche, alt, mission",
-      "issue_count": 152,
+      "name": "@aaradhychinche, alt, backend",
+      "issue_count": 204,
       "recent_issue": {
-        "title": "bug: gitops endpoints allow non-admin users to perform cluster mutations",
-        "url": "https://github.com/kubestellar/console/issues/6022",
-        "created_at": "2026-04-10T10:23:41Z"
+        "title": "Expose per-cluster completeness metadata in aggregated metrics",
+        "url": "https://github.com/kubestellar/console/issues/6114",
+        "created_at": "2026-04-10T13:34:38Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 4,
-      "closed_count": 148
+      "open_count": 9,
+      "closed_count": 195
     },
     {
       "name": "kube, game, craft",
@@ -82,12 +82,40 @@
       "closed_count": 4
     },
     {
-      "name": "execution, reconnect, prompt",
+      "name": "typescript, branch, late",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "chore: remove deprecated 'baseUrl' from tsconfig.json for TypeScript 7.0 compatibility",
+        "url": "https://github.com/kubestellar/console/issues/4527",
+        "created_at": "2026-04-03T21:00:45Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "utilization, value, zero",
       "issue_count": 1,
       "recent_issue": {
-        "title": "## 🐛 bug: reconnect replays last prompt causing duplicate execution",
-        "url": "https://github.com/kubestellar/console/issues/5930",
-        "created_at": "2026-04-10T05:50:54Z"
+        "title": "Nodes dashboard shows stale utilization when actual value becomes zero",
+        "url": "https://github.com/kubestellar/console/issues/6107",
+        "created_at": "2026-04-10T13:32:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "analysis, ai, failure",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "📝 issue: AI analysis failures are silent",
+        "url": "https://github.com/kubestellar/console/issues/5945",
+        "created_at": "2026-04-10T06:44:48Z"
       },
       "repos": [
         "console"
@@ -96,12 +124,26 @@
       "closed_count": 1
     },
     {
-      "name": "node, predictive, online",
+      "name": "blocked, resolution, bypass",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: predictive health monitor shows all nodes online while system reports zero nodes",
-        "url": "https://github.com/kubestellar/console/issues/5663",
-        "created_at": "2026-04-09T04:08:53Z"
+        "title": "## 🐛 bug: resolution flow bypasses blocked-state validation",
+        "url": "https://github.com/kubestellar/console/issues/5934",
+        "created_at": "2026-04-10T05:52:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "execution, reconnect, prompt",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "## 🐛 bug: reconnect replays last prompt causing duplicate execution",
+        "url": "https://github.com/kubestellar/console/issues/5930",
+        "created_at": "2026-04-10T05:50:54Z"
       },
       "repos": [
         "console"
@@ -166,7 +208,7 @@
       "closed_count": 1
     },
     {
-      "name": "watcher, context, persistence",
+      "name": "watcher, persistence, context",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: persistence watcher stops immediately due to request-scoped context usage",
@@ -279,14 +321,15 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
-    "stretch": [
+    "deepen": [
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
+        "title": "Console Studio button overlaps AI Mission UI in full-screen mode",
+        "url": "https://github.com/kubestellar/console/issues/6130",
+        "repo": "console",
+        "topic_match": "unreadable, overlap, chat"
+      }
+    ],
+    "stretch": [
       {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
@@ -310,6 +353,12 @@
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       }
     ]
   },
@@ -360,7 +409,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 137
+      "issue_count": 193
     }
   ]
 }

@@ -1,21 +1,21 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-10T10:27:26.102Z",
-  "total_issues_opened": 72,
+  "generated_at": "2026-04-10T14:28:42.827Z",
+  "total_issues_opened": 73,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
-  "total_points": 22000,
+  "total_points": 22300,
   "level": "Commander",
   "level_rank": 5,
   "rank": 12,
   "cadence": {
-    "avg_per_week": 5.9,
+    "avg_per_week": 6,
     "avg_per_day": 0.75,
     "by_day_of_week": [
       3,
       1,
       9,
       27,
-      12,
+      13,
       12,
       8
     ],
@@ -34,7 +34,7 @@
       8,
       4,
       6,
-      5,
+      6,
       4,
       1,
       4,
@@ -49,23 +49,37 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-01-03T05:59:20.000Z",
-    "last_issue_at": "2026-04-09T14:33:09.000Z"
+    "last_issue_at": "2026-04-10T14:18:17.000Z"
   },
   "topics": [
     {
-      "name": "mission, @ghanshyam2005singh, ai",
-      "issue_count": 57,
+      "name": "mission, ai, @ghanshyam2005singh",
+      "issue_count": 48,
       "recent_issue": {
-        "title": "Mission count does not update after loading more missions",
-        "url": "https://github.com/kubestellar/console/issues/5741",
-        "created_at": "2026-04-09T14:33:09Z"
+        "title": "Console Studio button overlaps AI Mission UI in full-screen mode",
+        "url": "https://github.com/kubestellar/console/issues/6130",
+        "created_at": "2026-04-10T14:18:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 47
+    },
+    {
+      "name": "screenshot, report, @ghanshyam2005singh",
+      "issue_count": 10,
+      "recent_issue": {
+        "title": "Screenshots Persist in Repository Without Cleanup — Missing 7-Day Retention Policy",
+        "url": "https://github.com/kubestellar/console/issues/4349",
+        "created_at": "2026-04-02T22:44:04Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 57
+      "closed_count": 10
     },
     {
       "name": "guide, gcp, setup",
@@ -194,7 +208,7 @@
       "closed_count": 1
     },
     {
-      "name": "export, yaml, markdown",
+      "name": "yaml, export, markdown",
       "issue_count": 1,
       "recent_issue": {
         "title": "AI Mission export only supports markdown, missing JSON/YAML",
@@ -211,16 +225,16 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "Screenshots are not persisted into draft bug reports",
+        "url": "https://github.com/kubestellar/console/issues/6102",
+        "repo": "console",
+        "topic_match": "screenshot, report, @ghanshyam2005singh"
+      },
+      {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",
         "repo": "console",
-        "topic_match": "mission, @ghanshyam2005singh, ai"
-      },
-      {
-        "title": "bug: coins are permanently lost when browser cache is cleared",
-        "url": "https://github.com/kubestellar/console/issues/6011",
-        "repo": "console",
-        "topic_match": "leaderboard, coin, tracking"
+        "topic_match": "mission, ai, @ghanshyam2005singh"
       }
     ],
     "stretch": [
@@ -231,16 +245,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
         "name": "Networking & Services",
@@ -303,7 +317,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 25
+      "issue_count": 26
     }
   ]
 }

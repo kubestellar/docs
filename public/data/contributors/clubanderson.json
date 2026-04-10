@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-10T10:27:12.538Z",
-  "total_issues_opened": 838,
+  "generated_at": "2026-04-10T14:28:27.250Z",
+  "total_issues_opened": 841,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3004900,
+  "total_points": 3023850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 67.3,
-    "avg_per_day": 3.51,
+    "avg_per_week": 67.5,
+    "avg_per_day": 3.52,
     "by_day_of_week": [
       104,
       106,
       192,
       115,
-      112,
+      115,
       119,
       90
     ],
@@ -33,7 +33,7 @@
       5,
       5,
       3,
-      60,
+      63,
       41,
       86,
       29,
@@ -49,39 +49,39 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-10T08:00:20.000Z"
+    "last_issue_at": "2026-04-10T13:55:25.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, tsx",
-      "issue_count": 438,
+      "issue_count": 466,
       "recent_issue": {
-        "title": "[Auto-QA] Modal safety issues detected",
-        "url": "https://github.com/kubestellar/console/issues/5983",
-        "created_at": "2026-04-10T08:00:20Z"
+        "title": "[Auto-QA] Code centralization opportunities found",
+        "url": "https://github.com/kubestellar/console/issues/6121",
+        "created_at": "2026-04-10T13:55:25Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
-      "open_count": 0,
-      "closed_count": 438
+      "open_count": 1,
+      "closed_count": 465
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 136,
+      "issue_count": 135,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #456",
-        "url": "https://github.com/kubestellar/console/issues/5969",
-        "created_at": "2026-04-10T07:28:02Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #468",
+        "url": "https://github.com/kubestellar/console/issues/6115",
+        "created_at": "2026-04-10T13:38:38Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 133
+      "open_count": 4,
+      "closed_count": 131
     },
     {
       "name": "monitoring, step, implement",
@@ -126,20 +126,6 @@
       "closed_count": 33
     },
     {
-      "name": "copilot, stall, assignment",
-      "issue_count": 24,
-      "recent_issue": {
-        "title": "enhancement: add delayed Copilot comment check for merged PRs",
-        "url": "https://github.com/kubestellar/console/issues/5738",
-        "created_at": "2026-04-09T14:26:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 24
-    },
-    {
       "name": "px, spacing, inconsistent",
       "issue_count": 9,
       "recent_issue": {
@@ -154,6 +140,20 @@
       "closed_count": 9
     },
     {
+      "name": "replace, color, hardcoded",
+      "issue_count": 8,
+      "recent_issue": {
+        "title": "🎨 Extract hardcoded hex colors to named constants in chart components",
+        "url": "https://github.com/kubestellar/console/issues/5051",
+        "created_at": "2026-04-06T16:47:36Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 8
+    },
+    {
       "name": "cluster, status, health",
       "issue_count": 8,
       "recent_issue": {
@@ -166,20 +166,6 @@
       ],
       "open_count": 0,
       "closed_count": 8
-    },
-    {
-      "name": "replace, color, hardcoded",
-      "issue_count": 7,
-      "recent_issue": {
-        "title": "🎨 Extract hardcoded hex colors to named constants in chart components",
-        "url": "https://github.com/kubestellar/console/issues/5051",
-        "created_at": "2026-04-06T16:47:36Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 7
     },
     {
       "name": "js, vendor, kb",
@@ -463,20 +449,6 @@
       "closed_count": 1
     },
     {
-      "name": "context, replace, conditionals",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🔄 Migrate useContext to use(Context) pattern",
-        "url": "https://github.com/kubestellar/console/issues/5044",
-        "created_at": "2026-04-06T16:23:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "outreach, campaign, adopter",
       "issue_count": 1,
       "recent_issue": {
@@ -687,7 +659,7 @@
       "closed_count": 1
     },
     {
-      "name": "kubectl, assist, interactive",
+      "name": "kubectl, assist, terminal",
       "issue_count": 1,
       "recent_issue": {
         "title": "Kubectl Card with AI-Assisted Configuration",
@@ -816,10 +788,22 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "bug: token usage is incorrectly attributed after agent restart",
-        "url": "https://github.com/kubestellar/console/issues/6015",
+        "title": "GPU node cache retains stale data after nodes are removed",
+        "url": "https://github.com/kubestellar/console/issues/6111",
         "repo": "console",
-        "topic_match": "token, validation, endpoint"
+        "topic_match": "gpu, workload, pod"
+      },
+      {
+        "title": "Cluster Comparison page always shows Kubernetes version as N/A",
+        "url": "https://github.com/kubestellar/console/issues/6108",
+        "repo": "console",
+        "topic_match": "cluster, status, health"
+      },
+      {
+        "title": "Cluster Comparison marks unknown health as \"Issues detected\"",
+        "url": "https://github.com/kubestellar/console/issues/6109",
+        "repo": "console",
+        "topic_match": "cluster, status, health"
       }
     ],
     "stretch": [
@@ -836,16 +820,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
         "name": "Onboarding & Rewards",
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
         "name": "Cost Management",
@@ -902,7 +886,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 193
+      "issue_count": 196
     }
   ]
 }

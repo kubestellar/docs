@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-10T10:27:26.260Z",
+  "generated_at": "2026-04-10T14:28:42.980Z",
   "total_issues_opened": 47,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 19600,
@@ -81,7 +81,7 @@
       "closed_count": 2
     },
     {
-      "name": "slice, character, header",
+      "name": "slice, character, ids",
       "issue_count": 2,
       "recent_issue": {
         "title": "DeviceTracker.ClearAlert : Panics on Malformed Alert IDs via Incorrect String Slicing",
@@ -320,7 +320,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Difference in numbers in Nodes stat block and drillDown",
+        "url": "https://github.com/kubestellar/console/issues/6100",
+        "repo": "console",
+        "topic_match": "nodes, stat, dashboard"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",

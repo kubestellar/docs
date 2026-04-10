@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-10T10:27:26.224Z",
+  "generated_at": "2026-04-10T14:28:42.945Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -109,7 +109,7 @@
       "closed_count": 2
     },
     {
-      "name": "test, httptest, backend",
+      "name": "test, httptest, server",
       "issue_count": 2,
       "recent_issue": {
         "title": "feature: Add HTTP-level tests for main API server (pkg/api)",
@@ -249,7 +249,7 @@
       "closed_count": 1
     },
     {
-      "name": "choice, hardwarehealthcard, switch",
+      "name": "choice, hardwarehealthcard, alert",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug report : HardwareHealthCard auto-switches to alerts view whenever activeAlertCount > 0 — overrides user's explicit view choice",
@@ -308,10 +308,16 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "Screenshots are not persisted into draft bug reports",
+        "url": "https://github.com/kubestellar/console/issues/6102",
+        "repo": "console",
+        "topic_match": "draft, discard, autosave"
+      },
+      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
-        "topic_match": "test, httptest, backend"
+        "topic_match": "test, httptest, server"
       }
     ],
     "stretch": [

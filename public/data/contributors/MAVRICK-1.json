@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-10T10:27:26.401Z",
+  "generated_at": "2026-04-10T14:28:43.123Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 3850,
@@ -137,7 +137,7 @@
       "closed_count": 1
     },
     {
-      "name": "declarative, gitops, restart",
+      "name": "declarative, gitops, argo",
       "issue_count": 1,
       "recent_issue": {
         "title": "Support Declarative GitOps Integration for Deployment Restart",

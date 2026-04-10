@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-10T10:27:24.170Z",
+  "generated_at": "2026-04-10T14:28:41.037Z",
   "total_issues_opened": 93,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 26700,
@@ -319,7 +319,7 @@
       "closed_count": 1
     },
     {
-      "name": "priority, frontend, c6d4d690",
+      "name": "priority, c6d4d690, d66e19c77243",
       "issue_count": 1,
       "recent_issue": {
         "title": "Frontend sends monitoring_priorities but backend reads monitoring_priority causing missing dashboard cards",
@@ -378,6 +378,12 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "Console Studio button overlaps AI Mission UI in full-screen mode",
+        "url": "https://github.com/kubestellar/console/issues/6130",
+        "repo": "console",
+        "topic_match": "mobile, tip, px"
+      },
+      {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
@@ -410,10 +416,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       }
     ]
   },

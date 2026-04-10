@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-10T10:27:26.305Z",
+  "generated_at": "2026-04-10T14:28:43.023Z",
   "total_issues_opened": 50,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 18400,
@@ -124,7 +124,7 @@
       "closed_count": 2
     },
     {
-      "name": "acb4, cd7, e4f7239df54",
+      "name": "acb4, e4f7239df54, precisely",
       "issue_count": 1,
       "recent_issue": {
         "title": "Disconnected \"Ghost\" Tooltips During Marketplace Scrolling",
@@ -194,7 +194,7 @@
       "closed_count": 1
     },
     {
-      "name": "stream, dfc210b, ef47",
+      "name": "dfc210b, ef47, f80",
       "issue_count": 1,
       "recent_issue": {
         "title": "AI Streaming UI State Desync (File: web/src/components/mission-control/useMissionControl.ts)",

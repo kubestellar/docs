@@ -1,6 +1,6 @@
 {
   "login": "vedansh-5",
-  "generated_at": "2026-04-10T10:27:26.263Z",
+  "generated_at": "2026-04-10T14:28:42.982Z",
   "total_issues_opened": 19,
   "avatar_url": "https://avatars.githubusercontent.com/u/77830698?v=4",
   "total_points": 19550,
@@ -110,14 +110,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "bug: token category tracking conflicts across multiple tabs",
-        "url": "https://github.com/kubestellar/console/issues/6016",
-        "repo": "console",
-        "topic_match": "tab, tag, links"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "GPU & AI/ML",

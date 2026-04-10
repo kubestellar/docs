@@ -1,19 +1,19 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-10T10:27:21.728Z",
-  "total_issues_opened": 210,
+  "generated_at": "2026-04-10T14:28:40.362Z",
+  "total_issues_opened": 209,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 66550,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 3,
+  "rank": 4,
   "cadence": {
-    "avg_per_week": 17.5,
-    "avg_per_day": 4.24,
+    "avg_per_week": 17.4,
+    "avg_per_day": 4.22,
     "by_day_of_week": [
       10,
       47,
-      75,
+      74,
       61,
       4,
       0,
@@ -27,7 +27,7 @@
       1,
       6,
       25,
-      17,
+      16,
       4,
       19,
       26,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, location, severity",
-      "issue_count": 172,
+      "issue_count": 173,
       "recent_issue": {
         "title": "render without crashing is massively overused across card/component tests, leaving behavior unverified",
         "url": "https://github.com/kubestellar/console/issues/5883",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 172
+      "closed_count": 173
     },
     {
       "name": "alertscontext, const, queueautoresolve",
@@ -151,7 +151,7 @@
       "closed_count": 2
     },
     {
-      "name": "ws, cancelation, race",
+      "name": "cancelation, ws, race",
       "issue_count": 1,
       "recent_issue": {
         "title": "Duplicate Cancellation States via WS + HTTP Race",
@@ -207,7 +207,7 @@
       "closed_count": 1
     },
     {
-      "name": "chat, turn, conversational",
+      "name": "turn, chat, conversational",
       "issue_count": 1,
       "recent_issue": {
         "title": "Enable Multi-Turn Conversational AI in Mission Chat",
@@ -325,20 +325,6 @@
         "title": "EventSummary.tsx — Division by zero in progress bar width",
         "url": "https://github.com/kubestellar/console/issues/5144",
         "created_at": "2026-04-07T01:44:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "math, max, clusterstocompare",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ClusterComparison.tsx — Math.max(...[]) returns -Infinity",
-        "url": "https://github.com/kubestellar/console/issues/5141",
-        "created_at": "2026-04-07T01:41:58Z"
       },
       "repos": [
         "console"
@@ -471,24 +457,17 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "eager, import, chunk",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unhandled Promise Rejections on Eager Chunk Imports",
-        "url": "https://github.com/kubestellar/console/issues/2190",
-        "created_at": "2026-03-11T09:01:02Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Screenshots are not persisted into draft bug reports",
+        "url": "https://github.com/kubestellar/console/issues/6102",
+        "repo": "console",
+        "topic_match": "screenshot, paste, screenshots"
+      }
+    ],
     "stretch": [
       {
         "name": "Marketplace & Operators",
@@ -569,7 +548,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 191
+      "issue_count": 190
     }
   ]
 }

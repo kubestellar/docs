@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-10T10:27:23.920Z",
+  "generated_at": "2026-04-10T14:28:40.801Z",
   "total_issues_opened": 114,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 29900,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xxsuryanshxx, nil, pass",
-      "issue_count": 95,
+      "issue_count": 96,
       "recent_issue": {
         "title": "### Issue 20: JSON decode failure silently returns empty array in kagenti_provider client (`kagenti_provider/client.go`)",
         "url": "https://github.com/kubestellar/console/issues/5572",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 95
+      "closed_count": 96
     },
     {
       "name": "tail, log, interact",
@@ -81,7 +81,7 @@
       "closed_count": 2
     },
     {
-      "name": "persistence, hardcodes, endpoint",
+      "name": "hardcodes, persistence, endpoint",
       "issue_count": 2,
       "recent_issue": {
         "title": "Persistence Sync API endpoint hardcodes 501 Not Implemented",
@@ -171,20 +171,6 @@
         "title": "### Issue 14: World-readable config file permissions expose cluster configuration (`persistence_config.go`)",
         "url": "https://github.com/kubestellar/console/issues/4806",
         "created_at": "2026-04-05T13:39:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "key, authorization, header",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 6: Unvalidated empty API key sent in Authorization header (`provider_openai_compat.go`)",
-        "url": "https://github.com/kubestellar/console/issues/4798",
-        "created_at": "2026-04-05T13:38:22Z"
       },
       "repos": [
         "console"

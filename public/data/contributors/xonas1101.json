@@ -1,21 +1,21 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-10T10:27:18.017Z",
-  "total_issues_opened": 259,
+  "generated_at": "2026-04-10T14:28:33.082Z",
+  "total_issues_opened": 271,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 89900,
+  "total_points": 93300,
   "level": "Captain",
   "level_rank": 6,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 21.6,
-    "avg_per_day": 4.39,
+    "avg_per_week": 22.6,
+    "avg_per_day": 4.57,
     "by_day_of_week": [
       25,
       29,
       46,
       57,
-      48,
+      60,
       21,
       33
     ],
@@ -32,9 +32,9 @@
       5,
       2,
       27,
-      19,
-      33,
-      24,
+      23,
+      40,
+      25,
       2,
       28,
       22,
@@ -49,38 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-10T08:06:11.000Z"
+    "last_issue_at": "2026-04-10T14:18:35.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 216,
+      "issue_count": 232,
       "recent_issue": {
-        "title": "Translation text is manually truncated with split",
-        "url": "https://github.com/kubestellar/console/issues/5991",
-        "created_at": "2026-04-10T08:06:11Z"
+        "title": "Bad UI in add button in AI missions",
+        "url": "https://github.com/kubestellar/console/issues/6132",
+        "created_at": "2026-04-10T14:18:35Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 216
-    },
-    {
-      "name": "feature, additional, link",
-      "issue_count": 7,
-      "recent_issue": {
-        "title": "bug: link styling to OCM install mission is plain",
-        "url": "https://github.com/kubestellar/console/issues/4020",
-        "created_at": "2026-03-31T18:39:35Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 7
+      "open_count": 7,
+      "closed_count": 225
     },
     {
       "name": "agentselector, approval, selectagent",
@@ -103,6 +88,20 @@
         "title": "Environment-variable injection pattern is unsafe/brittle in Playwright wrappers",
         "url": "https://github.com/kubestellar/console/issues/4464",
         "created_at": "2026-04-03T16:06:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "role, enum, rbac",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Issues in rbac_test.go",
+        "url": "https://github.com/kubestellar/console/issues/4460",
+        "created_at": "2026-04-03T15:46:59Z"
       },
       "repos": [
         "console"
@@ -153,7 +152,21 @@
       "closed_count": 1
     },
     {
-      "name": "phase, launch, complete",
+      "name": "bounce, large, increase",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Token bounce retriggers after a large jump",
+        "url": "https://github.com/kubestellar/console/issues/5708",
+        "created_at": "2026-04-09T11:01:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "phase, launch, e1a08df4",
       "issue_count": 1,
       "recent_issue": {
         "title": "Launch can complete instantly with zero deployments",
@@ -307,6 +320,20 @@
       "closed_count": 1
     },
     {
+      "name": "chmod, binary, filesystem",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Binary auto-update ignores critical filesystem errors",
+        "url": "https://github.com/kubestellar/console/issues/4262",
+        "created_at": "2026-04-02T16:41:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "t., devicetracker, nil",
       "issue_count": 1,
       "recent_issue": {
@@ -327,6 +354,20 @@
         "title": "WebSocket concurrent-write race due to split mutexes",
         "url": "https://github.com/kubestellar/console/issues/4260",
         "created_at": "2026-04-02T16:40:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "policy, webhooks, default",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Admission webhook parser reports default policy instead of actual policy",
+        "url": "https://github.com/kubestellar/console/issues/4153",
+        "created_at": "2026-04-01T13:48:33Z"
       },
       "repos": [
         "console"
@@ -397,20 +438,6 @@
         "title": "Card: Flappy Pod (flappy_pod)",
         "url": "https://github.com/kubestellar/console/issues/3927",
         "created_at": "2026-03-30T14:20:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "weird, arcade, key",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Weird issue when visiting Arcade dashboard",
-        "url": "https://github.com/kubestellar/console/issues/3717",
-        "created_at": "2026-03-27T11:35:27Z"
       },
       "repos": [
         "console"
@@ -512,20 +539,6 @@
       },
       "repos": [
         "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "arrow, inactive, expand",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: When clicking on drop down arrow for one of the inactive options of sidebar, we are navigated to that page instead of just expanding the view.",
-        "url": "https://github.com/kubestellar/docs/issues/1297",
-        "created_at": "2026-03-17T09:37:40Z"
-      },
-      "repos": [
-        "docs"
       ],
       "open_count": 0,
       "closed_count": 1
@@ -634,7 +647,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 168
+      "issue_count": 180
     }
   ]
 }

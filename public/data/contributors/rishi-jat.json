@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-10T10:27:25.690Z",
+  "generated_at": "2026-04-10T14:28:42.444Z",
   "total_issues_opened": 167,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 24450,
@@ -47,14 +47,14 @@
     ],
     "current_streak_weeks": 2,
     "longest_streak_weeks": 4,
-    "trend": "steady",
+    "trend": "slowing_down",
     "first_issue_at": "2025-09-27T20:12:21.000Z",
     "last_issue_at": "2026-04-09T12:22:42.000Z"
   },
   "topics": [
     {
       "name": "line, body, readall",
-      "issue_count": 119,
+      "issue_count": 121,
       "recent_issue": {
         "title": "K8s package DeleteWorkload test fails with workload not found.",
         "url": "https://github.com/kubestellar/console/issues/4634",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 119
+      "closed_count": 121
     },
     {
       "name": "hook, order, render",
@@ -130,20 +130,6 @@
         "title": "Antigravity provider returns connected when given invalid CLI path.",
         "url": "https://github.com/kubestellar/console/issues/4637",
         "created_at": "2026-04-04T21:21:43Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "jsx, syntax, basemodal",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "ConfirmDialog.test.tsx has identical syntax error — missing render() call.",
-        "url": "https://github.com/kubestellar/console/issues/4632",
-        "created_at": "2026-04-04T21:20:46Z"
       },
       "repos": [
         "console"
@@ -306,7 +292,7 @@
       "closed_count": 1
     },
     {
-      "name": "diagram, label, architecture",
+      "name": "diagram, architecture, label",
       "issue_count": 1,
       "recent_issue": {
         "title": "Architecture diagram labels are truncated and not clearly visible",

@@ -1,6 +1,6 @@
 {
   "login": "SakshamDutt",
-  "generated_at": "2026-04-10T10:27:26.264Z",
+  "generated_at": "2026-04-10T14:28:42.984Z",
   "total_issues_opened": 6,
   "avatar_url": "https://avatars.githubusercontent.com/u/72153648?v=4",
   "total_points": 18500,
@@ -67,7 +67,7 @@
       "closed_count": 2
     },
     {
-      "name": "translation, languageswitcher, routes",
+      "name": "translation, languageswitcher, change",
       "issue_count": 1,
       "recent_issue": {
         "title": "Modify LanguageSwitcher Routes for non-available translations",
