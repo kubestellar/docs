@@ -1,21 +1,21 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-10T06:40:01.455Z",
-  "total_issues_opened": 253,
+  "generated_at": "2026-04-10T10:27:18.017Z",
+  "total_issues_opened": 259,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 88100,
+  "total_points": 89900,
   "level": "Captain",
   "level_rank": 6,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 21.1,
-    "avg_per_day": 4.3,
+    "avg_per_week": 21.6,
+    "avg_per_day": 4.39,
     "by_day_of_week": [
       25,
       29,
       46,
       57,
-      42,
+      48,
       21,
       33
     ],
@@ -28,7 +28,7 @@
       15,
       11,
       10,
-      1,
+      7,
       5,
       2,
       27,
@@ -49,23 +49,38 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-10T04:08:13.000Z"
+    "last_issue_at": "2026-04-10T08:06:11.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 215,
+      "issue_count": 216,
       "recent_issue": {
-        "title": "No user confirmation or ability to edit before an AI mission",
-        "url": "https://github.com/kubestellar/console/issues/5913",
-        "created_at": "2026-04-10T04:08:13Z"
+        "title": "Translation text is manually truncated with split",
+        "url": "https://github.com/kubestellar/console/issues/5991",
+        "created_at": "2026-04-10T08:06:11Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 215
+      "closed_count": 216
+    },
+    {
+      "name": "feature, additional, link",
+      "issue_count": 7,
+      "recent_issue": {
+        "title": "bug: link styling to OCM install mission is plain",
+        "url": "https://github.com/kubestellar/console/issues/4020",
+        "created_at": "2026-03-31T18:39:35Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 7
     },
     {
       "name": "agentselector, approval, selectagent",
@@ -130,20 +145,6 @@
         "title": "AI diagnosis loading indicator can end too early",
         "url": "https://github.com/kubestellar/console/issues/5714",
         "created_at": "2026-04-09T11:26:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "bounce, large, increase",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Token bounce retriggers after a large jump",
-        "url": "https://github.com/kubestellar/console/issues/5708",
-        "created_at": "2026-04-09T11:01:05Z"
       },
       "repos": [
         "console"
@@ -298,20 +299,6 @@
         "title": "Chat cancellation key collision when sessionId is omitted",
         "url": "https://github.com/kubestellar/console/issues/4263",
         "created_at": "2026-04-02T16:41:25Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "chmod, binary, filesystem",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Binary auto-update ignores critical filesystem errors",
-        "url": "https://github.com/kubestellar/console/issues/4262",
-        "created_at": "2026-04-02T16:41:05Z"
       },
       "repos": [
         "console"
@@ -544,7 +531,7 @@
       "closed_count": 1
     },
     {
-      "name": "v0, site, manage",
+      "name": "v0, manage, site",
       "issue_count": 1,
       "recent_issue": {
         "title": "doc: Documentation content mismatch in release v0.29.0 (latest)",
@@ -647,7 +634,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 162
+      "issue_count": 168
     }
   ]
 }

@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-10T06:39:56.726Z",
-  "total_issues_opened": 834,
+  "generated_at": "2026-04-10T10:27:12.538Z",
+  "total_issues_opened": 838,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 2992300,
+  "total_points": 3004900,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 66.9,
-    "avg_per_day": 3.5,
+    "avg_per_week": 67.3,
+    "avg_per_day": 3.51,
     "by_day_of_week": [
       104,
       106,
       192,
       115,
-      108,
+      112,
       119,
       90
     ],
@@ -27,8 +27,8 @@
       40,
       23,
       34,
-      52,
-      13,
+      54,
+      15,
       7,
       5,
       5,
@@ -49,31 +49,31 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-10T02:02:44.000Z"
+    "last_issue_at": "2026-04-10T08:00:20.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, tsx",
-      "issue_count": 433,
+      "issue_count": 438,
       "recent_issue": {
-        "title": "[Auto-QA] Touch targets may be too small for mobile",
-        "url": "https://github.com/kubestellar/console/issues/5895",
-        "created_at": "2026-04-10T02:02:44Z"
+        "title": "[Auto-QA] Modal safety issues detected",
+        "url": "https://github.com/kubestellar/console/issues/5983",
+        "created_at": "2026-04-10T08:00:20Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 433
+      "closed_count": 438
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 134,
+      "issue_count": 136,
       "recent_issue": {
-        "title": "🐛 4 test failure(s) in Coverage Suite run #440",
-        "url": "https://github.com/kubestellar/console/issues/5886",
-        "created_at": "2026-04-09T23:07:54Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #456",
+        "url": "https://github.com/kubestellar/console/issues/5969",
+        "created_at": "2026-04-10T07:28:02Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 3,
-      "closed_count": 131
+      "closed_count": 133
     },
     {
       "name": "monitoring, step, implement",
@@ -140,20 +140,6 @@
       "closed_count": 24
     },
     {
-      "name": "replace, color, hardcoded",
-      "issue_count": 10,
-      "recent_issue": {
-        "title": "🎨 Extract hardcoded hex colors to named constants in chart components",
-        "url": "https://github.com/kubestellar/console/issues/5051",
-        "created_at": "2026-04-06T16:47:36Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 10
-    },
-    {
       "name": "px, spacing, inconsistent",
       "issue_count": 9,
       "recent_issue": {
@@ -180,6 +166,20 @@
       ],
       "open_count": 0,
       "closed_count": 8
+    },
+    {
+      "name": "replace, color, hardcoded",
+      "issue_count": 7,
+      "recent_issue": {
+        "title": "🎨 Extract hardcoded hex colors to named constants in chart components",
+        "url": "https://github.com/kubestellar/console/issues/5051",
+        "created_at": "2026-04-06T16:47:36Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 7
     },
     {
       "name": "js, vendor, kb",
@@ -252,7 +252,7 @@
       "closed_count": 2
     },
     {
-      "name": "bonus, award, point",
+      "name": "bonus, award, +50",
       "issue_count": 2,
       "recent_issue": {
         "title": "[bonus] @clubanderson +50 test award",
@@ -393,7 +393,7 @@
       "closed_count": 2
     },
     {
-      "name": "projects, products, @mikespreitzer",
+      "name": "projects, products, contribute",
       "issue_count": 2,
       "recent_issue": {
         "title": "doc: need updates to content in https://github.com/kubestellar/docs/pull/640",
@@ -603,7 +603,7 @@
       "closed_count": 1
     },
     {
-      "name": "analysis, nfr, improvement",
+      "name": "nfr, analysis, improvement",
       "issue_count": 1,
       "recent_issue": {
         "title": "[Auto-QA] Weekly NFR analysis: improvement opportunities identified",
@@ -799,7 +799,7 @@
       "closed_count": 1
     },
     {
-      "name": "marketplace, assistant, home",
+      "name": "marketplace, home, assistant",
       "issue_count": 1,
       "recent_issue": {
         "title": "Would like KubeStellar Galaxy Marketplace space on new docs that looks and acts like home assistant example",
@@ -814,7 +814,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "bug: token usage is incorrectly attributed after agent restart",
+        "url": "https://github.com/kubestellar/console/issues/6015",
+        "repo": "console",
+        "topic_match": "token, validation, endpoint"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -835,16 +842,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Onboarding & Rewards",
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       }
     ]
   },
@@ -895,7 +902,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 189
+      "issue_count": 193
     }
   ]
 }

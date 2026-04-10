@@ -1,21 +1,21 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-10T06:40:05.654Z",
-  "total_issues_opened": 134,
+  "generated_at": "2026-04-10T10:27:23.469Z",
+  "total_issues_opened": 170,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 44350,
-  "level": "Commander",
-  "level_rank": 5,
-  "rank": 5,
+  "total_points": 54100,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 4,
   "cadence": {
-    "avg_per_week": 11.2,
-    "avg_per_day": 2.98,
+    "avg_per_week": 14.2,
+    "avg_per_day": 3.76,
     "by_day_of_week": [
       29,
       17,
       16,
       15,
-      27,
+      63,
       0,
       30
     ],
@@ -26,11 +26,11 @@
       0,
       6,
       35,
-      14,
-      5,
-      9,
+      27,
       12,
-      5,
+      17,
+      19,
+      6,
       14,
       11,
       12,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-10T05:56:22.000Z"
+    "last_issue_at": "2026-04-10T10:23:41.000Z"
   },
   "topics": [
     {
-      "name": "@aaradhychinche, alt, backend",
-      "issue_count": 113,
+      "name": "@aaradhychinche, alt, mission",
+      "issue_count": 152,
       "recent_issue": {
-        "title": "## 🐛 bug: prediction errors do not update UI state",
-        "url": "https://github.com/kubestellar/console/issues/5938",
-        "created_at": "2026-04-10T05:56:22Z"
+        "title": "bug: gitops endpoints allow non-admin users to perform cluster mutations",
+        "url": "https://github.com/kubestellar/console/issues/6022",
+        "created_at": "2026-04-10T10:23:41Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 5,
-      "closed_count": 108
+      "open_count": 4,
+      "closed_count": 148
     },
     {
       "name": "kube, game, craft",
@@ -82,18 +82,18 @@
       "closed_count": 4
     },
     {
-      "name": "revoke, token, eviction",
-      "issue_count": 2,
+      "name": "execution, reconnect, prompt",
+      "issue_count": 1,
       "recent_issue": {
-        "title": "bug: revoked token cache grows indefinitely due to missing eviction for backfilled entries",
-        "url": "https://github.com/kubestellar/console/issues/4759",
-        "created_at": "2026-04-05T09:28:29Z"
+        "title": "## 🐛 bug: reconnect replays last prompt causing duplicate execution",
+        "url": "https://github.com/kubestellar/console/issues/5930",
+        "created_at": "2026-04-10T05:50:54Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 1
     },
     {
       "name": "node, predictive, online",
@@ -110,54 +110,12 @@
       "closed_count": 1
     },
     {
-      "name": "generation, assistant, message",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: AI generation fails when response is split across multiple assistant messages",
-        "url": "https://github.com/kubestellar/console/issues/5483",
-        "created_at": "2026-04-08T13:17:46Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "unreadable, overlap, chat",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: cluster labels overlap and become unreadable when AI chat panel is opened",
         "url": "https://github.com/kubestellar/console/issues/5396",
         "created_at": "2026-04-08T05:02:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "coin, balance, leaderboard",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: coin balance inconsistency between console profile and leaderboard",
-        "url": "https://github.com/kubestellar/console/issues/5239",
-        "created_at": "2026-04-07T13:49:36Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "newly, dashboard, search",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: newly created dashboard does not appear in dashboard list or search",
-        "url": "https://github.com/kubestellar/console/issues/5177",
-        "created_at": "2026-04-07T05:41:13Z"
       },
       "repos": [
         "console"
@@ -200,6 +158,20 @@
         "title": "bug: abort signal listeners are not cleaned up causing event listener leaks and post-unmount callbacks",
         "url": "https://github.com/kubestellar/console/issues/4772",
         "created_at": "2026-04-05T10:51:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "watcher, context, persistence",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: persistence watcher stops immediately due to request-scoped context usage",
+        "url": "https://github.com/kubestellar/console/issues/4749",
+        "created_at": "2026-04-05T09:15:55Z"
       },
       "repos": [
         "console"
@@ -310,28 +282,28 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
         "name": "Onboarding & Rewards",
@@ -388,7 +360,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 101
+      "issue_count": 137
     }
   ]
 }

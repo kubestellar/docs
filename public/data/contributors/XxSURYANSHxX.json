@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-10T06:40:06.076Z",
+  "generated_at": "2026-04-10T10:27:23.920Z",
   "total_issues_opened": 114,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 29900,
@@ -292,20 +292,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "## 🐛 bug: AI predictions appear fresh even when backend unavailable",
-        "url": "https://github.com/kubestellar/console/issues/5937",
-        "repo": "console",
-        "topic_match": "prediction, cardinality, p."
-      },
-      {
-        "title": "## 🐛 bug: prediction errors do not update UI state",
-        "url": "https://github.com/kubestellar/console/issues/5938",
-        "repo": "console",
-        "topic_match": "prediction, cardinality, p."
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Marketplace & Operators",

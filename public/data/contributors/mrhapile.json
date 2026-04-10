@@ -1,19 +1,19 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-10T06:40:04.841Z",
-  "total_issues_opened": 209,
+  "generated_at": "2026-04-10T10:27:21.728Z",
+  "total_issues_opened": 210,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 66550,
   "level": "Captain",
   "level_rank": 6,
   "rank": 3,
   "cadence": {
-    "avg_per_week": 17.4,
-    "avg_per_day": 4.22,
+    "avg_per_week": 17.5,
+    "avg_per_day": 4.24,
     "by_day_of_week": [
       10,
       47,
-      74,
+      75,
       61,
       4,
       0,
@@ -27,7 +27,7 @@
       1,
       6,
       25,
-      16,
+      17,
       4,
       19,
       26,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, location, severity",
-      "issue_count": 171,
+      "issue_count": 172,
       "recent_issue": {
         "title": "render without crashing is massively overused across card/component tests, leaving behavior unverified",
         "url": "https://github.com/kubestellar/console/issues/5883",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 171
+      "closed_count": 172
     },
     {
       "name": "alertscontext, const, queueautoresolve",
@@ -137,7 +137,7 @@
       "closed_count": 2
     },
     {
-      "name": "contributor, 📝, guideline",
+      "name": "contributor, guideline, 📝",
       "issue_count": 2,
       "recent_issue": {
         "title": "📝 Proposal: Add AGENT.md to Standardize AI-Assisted Contributions",
@@ -263,7 +263,7 @@
       "closed_count": 1
     },
     {
-      "name": "coin, leaderboard, hour",
+      "name": "leaderboard, coin, hour",
       "issue_count": 1,
       "recent_issue": {
         "title": "Leaderboard Coins Not Updating",
@@ -333,7 +333,7 @@
       "closed_count": 1
     },
     {
-      "name": "max, math, clusterstocompare",
+      "name": "math, max, clusterstocompare",
       "issue_count": 1,
       "recent_issue": {
         "title": "ClusterComparison.tsx — Math.max(...[]) returns -Infinity",
@@ -569,7 +569,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 190
+      "issue_count": 191
     }
   ]
 }

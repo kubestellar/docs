@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-10T06:40:08.085Z",
+  "generated_at": "2026-04-10T10:27:26.102Z",
   "total_issues_opened": 72,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 22000,
@@ -211,22 +211,16 @@
   "suggestions": {
     "deepen": [
       {
-        "title": " 📝 issue: cancelled missions are labeled as failed",
-        "url": "https://github.com/kubestellar/console/issues/5935",
-        "repo": "console",
-        "topic_match": "mission, @ghanshyam2005singh, ai"
-      },
-      {
-        "title": "## 🐛 bug: missing final result leaves mission stuck indefinitely",
-        "url": "https://github.com/kubestellar/console/issues/5936",
-        "repo": "console",
-        "topic_match": "mission, @ghanshyam2005singh, ai"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",
         "repo": "console",
         "topic_match": "mission, @ghanshyam2005singh, ai"
+      },
+      {
+        "title": "bug: coins are permanently lost when browser cache is cleared",
+        "url": "https://github.com/kubestellar/console/issues/6011",
+        "repo": "console",
+        "topic_match": "leaderboard, coin, tracking"
       }
     ],
     "stretch": [
