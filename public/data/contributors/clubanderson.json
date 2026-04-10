@@ -1,28 +1,28 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-09T22:18:27.994Z",
-  "total_issues_opened": 831,
+  "generated_at": "2026-04-10T03:07:48.175Z",
+  "total_issues_opened": 834,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 2976350,
+  "total_points": 2984600,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 66.7,
-    "avg_per_day": 3.49,
+    "avg_per_week": 66.9,
+    "avg_per_day": 3.5,
     "by_day_of_week": [
       104,
       106,
       192,
-      114,
-      106,
+      115,
+      108,
       119,
       90
     ],
     "by_hour_of_day": [
       46,
       23,
-      84,
+      86,
       29,
       40,
       23,
@@ -43,37 +43,37 @@
       28,
       17,
       20,
-      7
+      8
     ],
     "current_streak_weeks": 15,
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-09T21:44:15.000Z"
+    "last_issue_at": "2026-04-10T02:02:44.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, tsx",
-      "issue_count": 417,
+      "issue_count": 433,
       "recent_issue": {
-        "title": "[Auto-QA] Components missing test coverage",
-        "url": "https://github.com/kubestellar/console/issues/5821",
-        "created_at": "2026-04-09T19:50:21Z"
+        "title": "[Auto-QA] Touch targets may be too small for mobile",
+        "url": "https://github.com/kubestellar/console/issues/5895",
+        "created_at": "2026-04-10T02:02:44Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 417
+      "closed_count": 433
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 145,
+      "issue_count": 134,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #436",
-        "url": "https://github.com/kubestellar/console/issues/5854",
-        "created_at": "2026-04-09T21:44:15Z"
+        "title": "🐛 4 test failure(s) in Coverage Suite run #440",
+        "url": "https://github.com/kubestellar/console/issues/5886",
+        "created_at": "2026-04-09T23:07:54Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 3,
-      "closed_count": 142
+      "closed_count": 131
     },
     {
       "name": "monitoring, step, implement",
@@ -127,7 +127,7 @@
     },
     {
       "name": "copilot, stall, assignment",
-      "issue_count": 23,
+      "issue_count": 24,
       "recent_issue": {
         "title": "enhancement: add delayed Copilot comment check for merged PRs",
         "url": "https://github.com/kubestellar/console/issues/5738",
@@ -137,7 +137,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 23
+      "closed_count": 24
     },
     {
       "name": "replace, color, hardcoded",
@@ -236,20 +236,6 @@
       ],
       "open_count": 1,
       "closed_count": 2
-    },
-    {
-      "name": "tooltip, technical, recommend",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
-        "url": "https://github.com/kubestellar/console/issues/3345",
-        "created_at": "2026-03-23T20:21:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
     },
     {
       "name": "chart, default, day",
@@ -519,6 +505,20 @@
       "closed_count": 1
     },
     {
+      "name": "recommend, expand, dropdown",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
+        "url": "https://github.com/kubestellar/console/issues/3345",
+        "created_at": "2026-03-23T20:21:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "guideline, aud, development",
       "issue_count": 1,
       "recent_issue": {
@@ -665,20 +665,6 @@
         "title": "Accessibility: Add ARIA labels, keyboard navigation, and screen reader support",
         "url": "https://github.com/kubestellar/console/issues/1151",
         "created_at": "2026-02-18T19:24:32Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "style, minor, code",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[Auto-QA] Test: Minor code style improvement in App.tsx",
-        "url": "https://github.com/kubestellar/console/issues/212",
-        "created_at": "2026-01-29T22:41:58Z"
       },
       "repos": [
         "console"
@@ -909,7 +895,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 186
+      "issue_count": 189
     }
   ]
 }

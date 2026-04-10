@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-09T22:18:38.234Z",
+  "generated_at": "2026-04-10T03:07:59.186Z",
   "total_issues_opened": 167,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 24450,
@@ -54,17 +54,17 @@
   "topics": [
     {
       "name": "line, body, readall",
-      "issue_count": 126,
+      "issue_count": 119,
       "recent_issue": {
-        "title": "Antigravity provider returns connected when given invalid CLI path.",
-        "url": "https://github.com/kubestellar/console/issues/4637",
-        "created_at": "2026-04-04T21:21:43Z"
+        "title": "K8s package DeleteWorkload test fails with workload not found.",
+        "url": "https://github.com/kubestellar/console/issues/4634",
+        "created_at": "2026-04-04T21:21:04Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 126
+      "closed_count": 119
     },
     {
       "name": "hook, order, render",
@@ -96,12 +96,54 @@
       "closed_count": 3
     },
     {
+      "name": "module, setinterval, poll",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "useActiveUsers module-level singleton polling never stops",
+        "url": "https://github.com/kubestellar/console/issues/1845",
+        "created_at": "2026-03-06T16:59:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
       "name": "mobile, docs, term",
       "issue_count": 2,
       "recent_issue": {
         "title": "Docs page layout breaks on mobile (text cutoff on left side)",
         "url": "https://github.com/kubestellar/console/issues/5718",
         "created_at": "2026-04-09T12:22:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "handshake, testantigravityprovider, cli",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Antigravity provider returns connected when given invalid CLI path.",
+        "url": "https://github.com/kubestellar/console/issues/4637",
+        "created_at": "2026-04-04T21:21:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "jsx, syntax, basemodal",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "ConfirmDialog.test.tsx has identical syntax error — missing render() call.",
+        "url": "https://github.com/kubestellar/console/issues/4632",
+        "created_at": "2026-04-04T21:20:46Z"
       },
       "repos": [
         "console"
@@ -166,7 +208,7 @@
       "closed_count": 2
     },
     {
-      "name": "mkdocs, style, attach",
+      "name": "style, mkdocs, attach",
       "issue_count": 2,
       "recent_issue": {
         "title": "Review and fix mkdocs.yml configuration",

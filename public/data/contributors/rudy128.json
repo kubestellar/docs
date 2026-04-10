@@ -1,6 +1,6 @@
 {
   "login": "rudy128",
-  "generated_at": "2026-04-09T22:18:38.935Z",
+  "generated_at": "2026-04-10T03:07:59.897Z",
   "total_issues_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/77375030?v=4",
   "total_points": 5300,
@@ -67,7 +67,7 @@
       "closed_count": 1
     },
     {
-      "name": "iframe, embed, content",
+      "name": "iframe, embed, documentation",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Embedded iframes are not rendering in documentation pages",

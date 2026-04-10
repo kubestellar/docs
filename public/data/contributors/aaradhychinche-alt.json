@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-09T22:18:36.029Z",
+  "generated_at": "2026-04-10T03:07:57.017Z",
   "total_issues_opened": 115,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 39900,
@@ -344,16 +344,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Security & RBAC",
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Charts & Visualizations",
