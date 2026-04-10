@@ -6,7 +6,7 @@ Stay up to date with the latest announcements, press releases, and community new
 
 ## April 2026
 
-- **[Mission Control: Install Missions, AI Missions, and Mission Explorer](./mission-control-overview.md)** — A guided tour of every mission type in KubeStellar Console: Install Missions for one-click CNCF project deployment, AI Missions for cross-cluster diagnostics, and Mission Control for orchestrating them all from one place.
+- **[Mission Control: Install, Fix, Orbit, and Mission Control](./mission-control-overview.md)** — A guided tour of every mission type in KubeStellar Console: **Install Missions** for one-click CNCF project deployment, **Fix Missions** for diagnose-and-repair workflows, **Orbit Missions** for recurring maintenance on a cadence, and **Mission Control** for orchestrating them all across your fleet — all surfaced through the AI Missions sidebar.
 - **[I Purposely Built a Codebase That Teaches Itself](https://kubestellar.medium.com/i-purposely-built-a-codebase-that-teaches-itself-dbf34915b148)** *(Medium)* — Andy Anderson on the AI Codebase Maturity Model: how the KubeStellar Console codebase is structured so AI agents can read it, understand it, and improve it without human hand-holding.
 
 ---

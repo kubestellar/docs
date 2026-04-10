@@ -1,4 +1,4 @@
-# Mission Control: Install Missions, AI Missions, and Mission Explorer
+# Mission Control: Install, Fix, Orbit, and Mission Control
 
 *April 2026*
 
@@ -39,20 +39,65 @@ Other Install Missions endorsed by their upstream maintainers include OpenCost, 
 
 ---
 
-## AI Missions: Diagnostics That Span Every Cluster
+## Fix Missions: Diagnose, Repair, Verify
 
-Where Install Missions answer "how do I deploy this?", **AI Missions** answer "what is wrong, and where?"
+Where Install Missions answer *"how do I deploy this?"*, **Fix Missions** answer *"what is broken and how do I make it stop?"*
 
-AI Missions are guided diagnostic workflows that observe patterns across all your connected clusters and proactively surface issues. Instead of writing kubectl commands across 10 clusters, you describe the problem and the AI does the legwork.
+Fix Missions take a symptom — a CrashLoopBackOff pod, an OOMKilled deployment, a stuck rollout, an ImagePullBackOff — and walk through diagnosis, root cause, and repair as a single guided workflow.
 
-Recent diagnostic missions include:
+A typical Fix Mission:
+
+1. **Reads the symptom** from cluster events, pod logs, and resource state
+2. **Identifies the root cause** (deleted secret, bad image tag, missing CRD, RBAC denial, OOM, etc.)
+3. **Proposes a fix** with the exact `kubectl` / Helm / GitOps change required
+4. **Asks for your approval** before touching anything
+5. **Applies the fix** and **verifies** the resource is healthy
+6. **Surfaces the upstream cause** (e.g. "your nightly cleanup job deleted this secret — here's the patch to exclude it")
+
+Fix Missions are not autonomous. Every action is reviewed and approved by you before anything changes in a cluster.
+
+Beyond pod-level issues, the same Fix workflow handles cross-cluster problems:
 
 - **Cross-cluster RBAC drift** — find service accounts that work in one cluster but fail in another
 - **Resource quota bottlenecks** — surface namespaces that are silently blocking deployments
 - **GitOps drift** — compare what's in Git to what's actually running, across every cluster at once
-- **Repair workflows** — propose a fix, show you the diff, and apply it with your approval
 
-AI Missions are not autonomous. Every action is reviewed and approved by you before anything changes in a cluster.
+---
+
+## Orbit Missions: Recurring Maintenance That Runs Itself
+
+**Orbit Missions** are recurring missions that run on a cadence — daily, weekly, or monthly — without you having to remember to launch them.
+
+Think of an Orbit Mission as a scheduled health check that lives inside the console. It owns its own dashboard ("Ground Control"), keeps a history of every run, and knows when it's overdue.
+
+Common Orbit patterns:
+
+- **Nightly compliance scan** — run a CIS / PCI / SOC2 check across every connected cluster, surface drift in a dashboard, alert on regressions
+- **Weekly drift check** — diff Git vs. cluster state for every GitOps-managed namespace
+- **Monthly upgrade audit** — list every Helm release, flag any that are more than one minor version behind upstream
+- **Daily security posture** — rerun Trivy / Falco / Kyverno scans and chart the trend
+
+Each Orbit Mission has:
+
+- A **cadence** (daily / weekly / monthly) with a configurable grace period before it's flagged as overdue
+- A **run history** (the last 50 runs by default) with success/failure outcomes and summaries
+- A **Ground Control dashboard** auto-generated for the mission, where every panel reflects the latest run
+- An **auto-run scheduler** that wakes up every minute and launches any mission whose next-run window has arrived
+
+Orbit Missions turn one-shot fixes into standing operations.
+
+---
+
+## AI Missions: The Umbrella
+
+**AI Missions** is the unified sidebar that brings Install, Fix, Orbit, and Mission Control together in one place. It is how you actually *use* the mission system day-to-day:
+
+- See every active, scheduled, and completed mission across all clusters
+- Filter by type, cluster, status, or feedback
+- Resume a mission that's waiting on your input
+- Provide thumbs-up / thumbs-down feedback on AI-driven runs to improve future suggestions
+
+When you click the **AI Missions** button in the navbar, this is what you get — a single view of every guided workflow in flight, regardless of which mission type spawned it.
 
 ---
 
@@ -101,7 +146,7 @@ Three things make this approach work:
 ## Try It
 
 - **Mission Explorer**: [console.kubestellar.io/missions](https://console.kubestellar.io/missions)
-- **AI Missions**: [console.kubestellar.io/missions/ai](https://console.kubestellar.io/missions/ai)
+- **AI Missions sidebar** (Install + Fix + Orbit + Mission Control in one view): [console.kubestellar.io/missions/ai](https://console.kubestellar.io/missions/ai)
 - **Submariner Install Mission**: [console.kubestellar.io/missions/install-submariner](https://console.kubestellar.io/missions/install-submariner)
 - **Source code**: [github.com/kubestellar/console](https://github.com/kubestellar/console)
 - **Mission catalog repo**: [github.com/kubestellar/console-kb](https://github.com/kubestellar/console-kb)
