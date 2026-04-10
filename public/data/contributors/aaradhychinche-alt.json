@@ -1,21 +1,21 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-10T03:07:57.017Z",
-  "total_issues_opened": 115,
+  "generated_at": "2026-04-10T06:40:05.654Z",
+  "total_issues_opened": 134,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 39900,
+  "total_points": 44350,
   "level": "Commander",
   "level_rank": 5,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 9.6,
-    "avg_per_day": 2.58,
+    "avg_per_week": 11.2,
+    "avg_per_day": 2.98,
     "by_day_of_week": [
       29,
       17,
       16,
       15,
-      8,
+      27,
       0,
       30
     ],
@@ -25,7 +25,7 @@
       0,
       0,
       6,
-      16,
+      35,
       14,
       5,
       9,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-09T20:35:25.000Z"
+    "last_issue_at": "2026-04-10T05:56:22.000Z"
   },
   "topics": [
     {
       "name": "@aaradhychinche, alt, backend",
-      "issue_count": 91,
+      "issue_count": 113,
       "recent_issue": {
-        "title": "# 🐛 Bug: Console stuck on \"Compiling backend\" with `/health` returning `degraded` and 503 on OAuth startup",
-        "url": "https://github.com/kubestellar/console/issues/5837",
-        "created_at": "2026-04-09T20:35:25Z"
+        "title": "## 🐛 bug: prediction errors do not update UI state",
+        "url": "https://github.com/kubestellar/console/issues/5938",
+        "created_at": "2026-04-10T05:56:22Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 91
+      "open_count": 5,
+      "closed_count": 108
     },
     {
       "name": "kube, game, craft",
@@ -88,20 +88,6 @@
         "title": "bug: revoked token cache grows indefinitely due to missing eviction for backfilled entries",
         "url": "https://github.com/kubestellar/console/issues/4759",
         "created_at": "2026-04-05T09:28:29Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "typescript, branch, late",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "chore: remove deprecated 'baseUrl' from tsconfig.json for TypeScript 7.0 compatibility",
-        "url": "https://github.com/kubestellar/console/issues/4527",
-        "created_at": "2026-04-03T21:00:45Z"
       },
       "repos": [
         "console"
@@ -222,20 +208,6 @@
       "closed_count": 1
     },
     {
-      "name": "watcher, context, persistence",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: persistence watcher stops immediately due to request-scoped context usage",
-        "url": "https://github.com/kubestellar/console/issues/4749",
-        "created_at": "2026-04-05T09:15:55Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "heartbeat, unmount, continue",
       "issue_count": 1,
       "recent_issue": {
@@ -292,7 +264,7 @@
       "closed_count": 1
     },
     {
-      "name": "dot, menu, resize",
+      "name": "menu, dot, resize",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: card menu (three-dot options) disappears after resizing the card",
@@ -416,7 +388,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 82
+      "issue_count": 101
     }
   ]
 }

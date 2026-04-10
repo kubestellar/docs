@@ -1,6 +1,6 @@
 {
   "login": "waltforme",
-  "generated_at": "2026-04-10T03:07:59.906Z",
+  "generated_at": "2026-04-10T06:40:08.371Z",
   "total_issues_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/8633434?v=4",
   "total_points": 1150,
@@ -67,7 +67,7 @@
       "closed_count": 2
     },
     {
-      "name": "statement, group, workload",
+      "name": "statement, workload, group",
       "issue_count": 1,
       "recent_issue": {
         "title": "doc: Unclear statements on https://kubestellar.io/docs/console/deploy",

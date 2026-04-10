@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-10T03:07:59.473Z",
+  "generated_at": "2026-04-10T06:40:07.970Z",
   "total_issues_opened": 72,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 22950,
@@ -53,8 +53,22 @@
   },
   "topics": [
     {
-      "name": "@arpit529srivastava, api, vcluster",
-      "issue_count": 43,
+      "name": "api, vcluster, @arpit529srivastava",
+      "issue_count": 33,
+      "recent_issue": {
+        "title": "Regression test coverage for vcluster API failures in nightly pipeline",
+        "url": "https://github.com/kubestellar/console/issues/4144",
+        "created_at": "2026-04-01T13:17:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 33
+    },
+    {
+      "name": "ss, testing, @arpit529srivastava",
+      "issue_count": 6,
       "recent_issue": {
         "title": "checking for ss how it is working",
         "url": "https://github.com/kubestellar/console/issues/4398",
@@ -65,7 +79,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 43
+      "closed_count": 6
     },
     {
       "name": "theme, light, browser",
@@ -224,12 +238,40 @@
       "closed_count": 1
     },
     {
+      "name": "import, database, c346",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Partial Database Import Failure (No Transaction Rollback) - /api/dashboards/import",
+        "url": "https://github.com/kubestellar/console/issues/3145",
+        "created_at": "2026-03-22T11:22:41Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "helm, host, release",
       "issue_count": 1,
       "recent_issue": {
         "title": "Swallowed Local Host Errors on Native Executables (/api/gitops/helm-releases)",
         "url": "https://github.com/kubestellar/console/issues/3141",
         "created_at": "2026-03-22T11:05:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "c39bdb, b487, dec66b03fa1",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "this is just to test",
+        "url": "https://github.com/kubestellar/console/issues/3136",
+        "created_at": "2026-03-22T10:28:51Z"
       },
       "repos": [
         "console"
@@ -280,6 +322,20 @@
       "closed_count": 1
     },
     {
+      "name": "unauthorized, repository, ec0e629e",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "unauthorized on creating issue in docs from console",
+        "url": "https://github.com/kubestellar/console/issues/3036",
+        "created_at": "2026-03-20T16:06:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "sort, inventory, device",
       "issue_count": 1,
       "recent_issue": {
@@ -300,6 +356,20 @@
         "title": "Feedback and rewards default targets are hardcoded to kubestellar repositories",
         "url": "https://github.com/kubestellar/console/issues/2826",
         "created_at": "2026-03-17T16:53:55Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "github, githubproxyapibase, b9c70",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Hardcoded githubProxyAPIBase prevents GitHub Enterprise Server compatibility",
+        "url": "https://github.com/kubestellar/console/issues/2821",
+        "created_at": "2026-03-17T15:20:03Z"
       },
       "repos": [
         "console"

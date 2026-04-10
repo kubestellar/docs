@@ -1,21 +1,21 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-10T03:07:52.811Z",
-  "total_issues_opened": 245,
+  "generated_at": "2026-04-10T06:40:01.455Z",
+  "total_issues_opened": 253,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 85900,
+  "total_points": 88100,
   "level": "Captain",
   "level_rank": 6,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 20.4,
-    "avg_per_day": 4.2,
+    "avg_per_week": 21.1,
+    "avg_per_day": 4.3,
     "by_day_of_week": [
       25,
       29,
       46,
       57,
-      34,
+      42,
       21,
       33
     ],
@@ -23,8 +23,8 @@
       0,
       0,
       0,
-      5,
-      39,
+      10,
+      42,
       15,
       11,
       10,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-09T14:59:11.000Z"
+    "last_issue_at": "2026-04-10T04:08:13.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 207,
+      "issue_count": 215,
       "recent_issue": {
-        "title": "Documented link for helm release is broken",
-        "url": "https://github.com/kubestellar/console/issues/5747",
-        "created_at": "2026-04-09T14:59:11Z"
+        "title": "No user confirmation or ability to edit before an AI mission",
+        "url": "https://github.com/kubestellar/console/issues/5913",
+        "created_at": "2026-04-10T04:08:13Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 207
+      "closed_count": 215
     },
     {
       "name": "agentselector, approval, selectagent",
@@ -138,12 +138,12 @@
       "closed_count": 1
     },
     {
-      "name": "wsl, remove, delete",
+      "name": "bounce, large, increase",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Stale clusters remain after underlying environment is removed",
-        "url": "https://github.com/kubestellar/console/issues/5658",
-        "created_at": "2026-04-09T03:57:14Z"
+        "title": "Token bounce retriggers after a large jump",
+        "url": "https://github.com/kubestellar/console/issues/5708",
+        "created_at": "2026-04-09T11:01:05Z"
       },
       "repos": [
         "console"
@@ -200,20 +200,6 @@
         "title": "Memo comparator uses JSON.stringify on config in SharedSortableCard",
         "url": "https://github.com/kubestellar/console/issues/4665",
         "created_at": "2026-04-05T05:17:57Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "plan, functionality, clarification",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Clarification: Is the Mission Control functionality only to plan the course of action for a job?",
-        "url": "https://github.com/kubestellar/console/issues/4550",
-        "created_at": "2026-04-04T06:40:56Z"
       },
       "repos": [
         "console"
@@ -502,6 +488,20 @@
       "closed_count": 1
     },
     {
+      "name": "backendport, s., a96745ca",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "backendURL() ignores BackendPort",
+        "url": "https://github.com/kubestellar/console/issues/3362",
+        "created_at": "2026-03-24T04:03:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "invalid, mess, weird",
       "issue_count": 1,
       "recent_issue": {
@@ -647,7 +647,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 154
+      "issue_count": 162
     }
   ]
 }

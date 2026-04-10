@@ -1,6 +1,6 @@
 {
   "login": "KPRoche",
-  "generated_at": "2026-04-10T03:07:57.725Z",
+  "generated_at": "2026-04-10T06:40:06.317Z",
   "total_issues_opened": 26,
   "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
   "total_points": 26150,
@@ -54,17 +54,17 @@
   "topics": [
     {
       "name": "@kproche, feature, card",
-      "issue_count": 13,
+      "issue_count": 14,
       "recent_issue": {
-        "title": "Bug Report: Claude Code can't surface permission prompts in Console",
-        "url": "https://github.com/kubestellar/console/issues/5550",
-        "created_at": "2026-04-08T18:51:03Z"
+        "title": "Bug in Custom Dashboard: can't switch away from it",
+        "url": "https://github.com/kubestellar/console/issues/5856",
+        "created_at": "2026-04-09T21:44:57Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 13
+      "closed_count": 14
     },
     {
       "name": "doc, kubestellar, file",
@@ -93,20 +93,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "address, change, custom",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Bug in Custom Dashboard: can't switch away from it",
-        "url": "https://github.com/kubestellar/console/issues/5856",
-        "created_at": "2026-04-09T21:44:57Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "fact, late, default",
@@ -153,6 +139,12 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
@@ -163,12 +155,6 @@
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       }
     ]
   },
