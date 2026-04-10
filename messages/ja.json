@@ -112,7 +112,8 @@
     "mobileUseCases": "ユースケース",
     "mobileGetStarted": "始める",
     "mobileContact": "お問い合わせ",
-    "news": "ニュース"
+    "news": "ニュース",
+    "reviews": "レビュー"
   },
   "aboutSection": {
     "title": "KubeStellar とは",
@@ -133,6 +134,12 @@
     "card6Title": "あなたのブランド。私たちのプラットフォーム",
     "card6Description": "CNCF プロジェクトに、数分で本番環境対応の Kubernetes ダッシュボードを提供できます。",
     "card6Details": "150+ カード、30 ダッシュボード、AI ミッション — すべてあなたのプロジェクトにリブランドされています。",
+    "card7Title": "HolmesGPT を使用していますか?",
+    "card7Description": "HolmesGPT が行うすべてのこと、プラス 140+ ダッシュボード カード",
+    "card7Details": "KubeStellar Console には、AI を活用したroot cause分析、investigation runbooks、PagerDuty/OpsGenie 統合、Inspektor Gadget eBPF トレースが含まれています",
+    "card8Title": "ユーザーはなんと言っていますか?",
+    "card8Description": "ユーザーレビューとチュートリアル",
+    "card8Details": "KubeStellar Console の実際のユーザーが何を言っているかを確認してください",
     "learnMore": "詳細を見る",
     "appendix": "KubeStellar Console と KubeStellar-MCP は、従来の KubeStellar コンポーネントの機能の新しい独立した代替として機能します。これらの前身に関する情報は、ドキュメントのレガシー セクションに含まれています"
   },

@@ -18,6 +18,12 @@
     "card6Title": "你的品牌。我们的平台",
     "card6Description": "在几分钟内为你的 CNCF 项目提供一个可用于生产的 Kubernetes 仪表板。",
     "card6Details": "150+ 张卡片，30 个仪表板，AI 任务 — 全部重新品牌化以适应你的项目。",
+    "card7Title": "使用 HolmesGPT？",
+    "card7Description": "HolmesGPT 所做的一切，加上 140+ 仪表板卡片",
+    "card7Details": "KubeStellar Console 包括 AI 驱动的根本原因分析、调查 Runbook、PagerDuty/OpsGenie 集成和 Inspektor Gadget eBPF 追踪",
+    "card8Title": "用户们怎么说？",
+    "card8Description": "用户评论和教程",
+    "card8Details": "看看 KubeStellar Console 的真实用户有什么要说的",
     "learnMore": "了解更多",
     "appendix": "KubeStellar Console 和 KubeStellar-MCP 一起形成了对传统 KubeStellar 组件功能的新的独立替代。有关这些前身的信息包含在文档的遗留部分中"
   },
@@ -61,6 +67,7 @@
     "mobileUseCases": "使用案例",
     "mobileGetStarted": "开始使用",
     "mobileContact": "联系方式",
-    "news": "新闻"
+    "news": "新闻",
+    "reviews": "评论"
   }
 }
