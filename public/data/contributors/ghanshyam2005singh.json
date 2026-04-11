@@ -1,12 +1,12 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-11T18:13:40.975Z",
+  "generated_at": "2026-04-11T22:11:59.164Z",
   "total_issues_opened": 77,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 23500,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 11,
+  "rank": 12,
   "cadence": {
     "avg_per_week": 6.3,
     "avg_per_day": 0.79,
@@ -216,12 +216,6 @@
         "url": "https://github.com/kubestellar/console/issues/6455",
         "repo": "console",
         "topic_match": "mission, ai, @ghanshyam2005singh"
-      },
-      {
-        "title": "Sidebar Collapse Toggle",
-        "url": "https://github.com/kubestellar/console/issues/6502",
-        "repo": "console",
-        "topic_match": "collapse, sidebar, popup"
       },
       {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",

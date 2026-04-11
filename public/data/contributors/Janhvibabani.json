@@ -1,6 +1,6 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-04-11T18:13:41.435Z",
+  "generated_at": "2026-04-11T22:11:59.491Z",
   "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
   "total_points": 6250,
@@ -109,7 +109,7 @@
       "closed_count": 1
     },
     {
-      "name": "pull, twice, redundancy",
+      "name": "pull, redundancy, contribute",
       "issue_count": 1,
       "recent_issue": {
         "title": "doc: Duplicate “Open a Pull Request” section in CONTRIBUTING.md",

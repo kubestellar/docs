@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-11T18:13:40.833Z",
+  "generated_at": "2026-04-11T22:11:58.845Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -179,7 +179,7 @@
       "closed_count": 3
     },
     {
-      "name": "button, cta, primary",
+      "name": "button, cta, modal",
       "issue_count": 3,
       "recent_issue": {
         "title": "bug: Primary CTA Button (“Install to Console”) is Partially Overlapped in Security Audit Modal",
@@ -359,8 +359,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "unreachable, available, capability",
@@ -674,16 +674,28 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Workload deployment reconciliation is a stub (no deployment happens)",
-        "url": "https://github.com/kubestellar/console/issues/6482",
+        "title": "Same lazy-client enumeration bug in cluster capability API",
+        "url": "https://github.com/kubestellar/console/issues/6661",
         "repo": "console",
-        "topic_match": "deployment, statstype, config"
+        "topic_match": "m., listargoapplications, client"
       },
       {
         "title": "Hosted demo limitations are not presented as a strict capability boundary",
         "url": "https://github.com/kubestellar/docs/issues/1401",
         "repo": "docs",
         "topic_match": "helm, host, release"
+      },
+      {
+        "title": "Same lazy-client enumeration bug in MCS APIs",
+        "url": "https://github.com/kubestellar/console/issues/6662",
+        "repo": "console",
+        "topic_match": "m., listargoapplications, client"
+      },
+      {
+        "title": "Cluster enumeration uses lazy-initialized client map in Gateway APIs",
+        "url": "https://github.com/kubestellar/console/issues/6663",
+        "repo": "console",
+        "topic_match": "m., listargoapplications, client"
       }
     ],
     "stretch": [

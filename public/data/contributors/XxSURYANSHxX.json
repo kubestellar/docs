@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-11T18:13:40.669Z",
+  "generated_at": "2026-04-11T22:11:58.678Z",
   "total_issues_opened": 114,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 30700,
@@ -300,16 +300,10 @@
         "topic_match": "reconciliation, loop, kick"
       },
       {
-        "title": "ListArgoApplications uses stale m.clients snapshot, misses newly-added clusters",
-        "url": "https://github.com/kubestellar/console/issues/6476",
+        "title": "Shutdown responsiveness bug in prediction worker startup delay",
+        "url": "https://github.com/kubestellar/console/issues/6652",
         "repo": "console",
-        "topic_match": "stdin, m., size"
-      },
-      {
-        "title": "Workload deployment reconciliation is a stub (no deployment happens)",
-        "url": "https://github.com/kubestellar/console/issues/6482",
-        "repo": "console",
-        "topic_match": "reconciliation, loop, kick"
+        "topic_match": "parent, worker, context"
       },
       {
         "title": "docs(console): port-forward example leaks background process (no cleanup)",

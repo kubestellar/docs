@@ -1,22 +1,22 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-11T18:13:30.979Z",
-  "total_issues_opened": 291,
+  "generated_at": "2026-04-11T22:11:47.832Z",
+  "total_issues_opened": 306,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 91150,
+  "total_points": 95650,
   "level": "Captain",
   "level_rank": 6,
   "rank": 3,
   "cadence": {
-    "avg_per_week": 24.3,
-    "avg_per_day": 5.67,
+    "avg_per_week": 25.5,
+    "avg_per_day": 5.94,
     "by_day_of_week": [
       10,
       47,
       74,
       61,
       4,
-      82,
+      97,
       13
     ],
     "by_hour_of_day": [
@@ -41,7 +41,7 @@
       6,
       6,
       9,
-      3,
+      18,
       18,
       0
     ],
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-11T16:39:56.000Z"
+    "last_issue_at": "2026-04-11T21:57:34.000Z"
   },
   "topics": [
     {
       "name": "@mrhapile, location, phase",
-      "issue_count": 222,
+      "issue_count": 241,
       "recent_issue": {
-        "title": "FlightPlan Panel Wrap",
-        "url": "https://github.com/kubestellar/console/issues/6541",
-        "created_at": "2026-04-11T16:38:36Z"
+        "title": "planningMission Staleness After Reset",
+        "url": "https://github.com/kubestellar/console/issues/6670",
+        "created_at": "2026-04-11T21:57:34Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 9,
-      "closed_count": 213
+      "open_count": 10,
+      "closed_count": 231
     },
     {
       "name": "alertscontext, const, queueautoresolve",
@@ -81,6 +81,20 @@
       "closed_count": 4
     },
     {
+      "name": "launchsequence, launchproject, phasesignature",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "launchProject Fire-and-Forget",
+        "url": "https://github.com/kubestellar/console/issues/6634",
+        "created_at": "2026-04-11T21:17:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "pb, safe, inset",
       "issue_count": 2,
       "recent_issue": {
@@ -91,8 +105,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "snoozed, reappear, cards",
@@ -115,20 +129,6 @@
         "title": "extractBalancedBlocks Infinite Loop Trap",
         "url": "https://github.com/kubestellar/console/issues/6426",
         "created_at": "2026-04-11T14:14:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "log, f98ad36, edd",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "One-Shot Log Recovery Lockout",
-        "url": "https://github.com/kubestellar/console/issues/6415",
-        "created_at": "2026-04-11T13:39:12Z"
       },
       "repos": [
         "console"
@@ -207,6 +207,20 @@
       "closed_count": 2
     },
     {
+      "name": "retry, wssend, call",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "wsSend Retry Leak",
+        "url": "https://github.com/kubestellar/console/issues/6629",
+        "created_at": "2026-04-11T21:16:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "resizer, bdde7, be3b",
       "issue_count": 1,
       "recent_issue": {
@@ -217,8 +231,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "tooltips, a44df46a, cdb",
@@ -231,8 +245,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "pacity, :o, hover",
@@ -245,8 +259,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "truncate, c5b, cad",
@@ -259,8 +273,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "chips, a4f11, e4d5",
@@ -273,8 +287,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "snackbar, ba49b2, b473",
@@ -347,20 +361,6 @@
       "closed_count": 1
     },
     {
-      "name": "tab, clashing, cf284b4",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "deploy:started Event Clashing",
-        "url": "https://github.com/kubestellar/console/issues/6436",
-        "created_at": "2026-04-11T14:20:08Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "arbitrary, yaml, execute",
       "issue_count": 1,
       "recent_issue": {
@@ -381,20 +381,6 @@
         "title": "Dry-Run Privilege Escalation Warning",
         "url": "https://github.com/kubestellar/console/issues/6434",
         "created_at": "2026-04-11T14:18:55Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "schema, missionexport, ignorance",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "MissionExport Schema Drift Ignorance:",
-        "url": "https://github.com/kubestellar/console/issues/6430",
-        "created_at": "2026-04-11T14:17:30Z"
       },
       "repos": [
         "console"
@@ -473,7 +459,7 @@
       "closed_count": 1
     },
     {
-      "name": "bombing, oom, b3e3d646",
+      "name": "bombing, b3e3d646, dd36ebad722",
       "issue_count": 1,
       "recent_issue": {
         "title": "Cache Bombing (OOM Attack)",
@@ -487,54 +473,12 @@
       "closed_count": 1
     },
     {
-      "name": "a8cb, d2e3, webhookurl",
+      "name": "a8cb, d2e3, hasprefix",
       "issue_count": 1,
       "recent_issue": {
         "title": "Slack SSRF Hook Exposure",
         "url": "https://github.com/kubestellar/console/issues/6416",
         "created_at": "2026-04-11T13:39:35Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "expire, phantom, bc8042",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Phantom Auth Failures Masking 404s",
-        "url": "https://github.com/kubestellar/console/issues/6414",
-        "created_at": "2026-04-11T13:37:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "mark, second, catastrophe",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "The 6-Failed-Ping Catastrophe",
-        "url": "https://github.com/kubestellar/console/issues/6412",
-        "created_at": "2026-04-11T13:36:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "10s, active, min",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Partial Status Race on 10-Second Grace",
-        "url": "https://github.com/kubestellar/console/issues/6409",
-        "created_at": "2026-04-11T13:36:07Z"
       },
       "repos": [
         "console"
@@ -549,20 +493,6 @@
         "title": "needsRestart is introduced in mission context for stale reconnects",
         "url": "https://github.com/kubestellar/console/issues/6380",
         "created_at": "2026-04-11T12:59:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "map, b0e31, bfef",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Pending Requests Memory Leak",
-        "url": "https://github.com/kubestellar/console/issues/6377",
-        "created_at": "2026-04-11T12:56:42Z"
       },
       "repos": [
         "console"
@@ -837,6 +767,20 @@
       "closed_count": 1
     },
     {
+      "name": "log, f98ad36, edd",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Bug in Bug submission ",
+        "url": "https://github.com/kubestellar/console/issues/3518",
+        "created_at": "2026-03-25T09:33:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "globalfiltersprovider, object, render",
       "issue_count": 1,
       "recent_issue": {
@@ -960,7 +904,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 272
+      "issue_count": 287
     }
   ]
 }

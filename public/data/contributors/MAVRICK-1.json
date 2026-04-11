@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-11T18:13:41.443Z",
+  "generated_at": "2026-04-11T22:11:59.500Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 3850,
@@ -137,7 +137,7 @@
       "closed_count": 1
     },
     {
-      "name": "declarative, gitops, argo",
+      "name": "declarative, gitops, restart",
       "issue_count": 1,
       "recent_issue": {
         "title": "Support Declarative GitOps Integration for Deployment Restart",
@@ -151,7 +151,7 @@
       "closed_count": 1
     },
     {
-      "name": "alert, channel, email",
+      "name": "alert, email, grafana",
       "issue_count": 1,
       "recent_issue": {
         "title": "Alert Components Configuration Incorrect - Need Slack/Email Integration",

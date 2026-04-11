@@ -1,12 +1,12 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-11T18:13:39.865Z",
+  "generated_at": "2026-04-11T22:11:58.252Z",
   "total_issues_opened": 222,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 40950,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 6,
+  "rank": 7,
   "cadence": {
     "avg_per_week": 18.2,
     "avg_per_day": 1.13,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "line, @rishi, jat",
-      "issue_count": 166,
+      "name": "line, body, @rishi",
+      "issue_count": 161,
       "recent_issue": {
         "title": "ux(console): missing kc-agent connection status indicator in UI",
         "url": "https://github.com/kubestellar/console/issues/6363",
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 24,
-      "closed_count": 142
+      "open_count": 21,
+      "closed_count": 140
     },
     {
       "name": "event, analytics, day",
@@ -126,7 +126,7 @@
       "closed_count": 3
     },
     {
-      "name": "module, setinterval, poll",
+      "name": "module, setinterval, singleton",
       "issue_count": 3,
       "recent_issue": {
         "title": "useActiveUsers module-level singleton polling never stops",
@@ -168,7 +168,7 @@
       "closed_count": 2
     },
     {
-      "name": "parameter, mission, encodes",
+      "name": "mission, parameter, encodes",
       "issue_count": 2,
       "recent_issue": {
         "title": "MissionSidebar double encodes URL parameters",
@@ -196,6 +196,20 @@
       "closed_count": 2
     },
     {
+      "name": "template, poddisruptionbudget, networkpolicy",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Helm chart has no PodDisruptionBudget",
+        "url": "https://github.com/kubestellar/console/issues/1858",
+        "created_at": "2026-03-06T17:02:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "dockerfile, healthcheck, root",
       "issue_count": 2,
       "recent_issue": {
@@ -208,6 +222,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "datum, doc, persistence",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Demo data vs real cluster data not clearly differentiated in UI/docs",
+        "url": "https://github.com/kubestellar/docs/issues/1410",
+        "created_at": "2026-04-11T08:39:48Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 2,
+      "closed_count": 0
     },
     {
       "name": "minikube, caveat, official",
@@ -350,7 +378,7 @@
       "closed_count": 1
     },
     {
-      "name": "traffic, session, organic",
+      "name": "traffic, organic, session",
       "issue_count": 1,
       "recent_issue": {
         "title": "Traffic attribution missing – most sessions classified as Direct",
@@ -560,6 +588,20 @@
       "closed_count": 0
     },
     {
+      "name": "anchor, readme, setup",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CONTRIBUTING.md links to a non-existent OAuth section anchor",
+        "url": "https://github.com/kubestellar/docs/issues/1397",
+        "created_at": "2026-04-11T08:37:33Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "apps, oauth, template",
       "issue_count": 1,
       "recent_issue": {
@@ -591,10 +633,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Server shutdown is not idempotent",
-        "url": "https://github.com/kubestellar/console/issues/6478",
+        "title": "Scope hardening is shallow, so dynamic code can mutate shared runtime objects.",
+        "url": "https://github.com/kubestellar/console/issues/6677",
         "repo": "console",
-        "topic_match": "broadcast, shutdown, buffer"
+        "topic_match": "stackcontext, object, value"
       }
     ],
     "stretch": [
@@ -611,16 +653,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
         "name": "Security & RBAC",

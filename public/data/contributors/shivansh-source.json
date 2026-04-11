@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-11T18:13:41.302Z",
+  "generated_at": "2026-04-11T22:11:59.348Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -193,7 +193,7 @@
       "closed_count": 1
     },
     {
-      "name": "deployment, row, clickable",
+      "name": "deployment, clickable, row",
       "issue_count": 1,
       "recent_issue": {
         "title": "title : Deployment issues in ClusterDetailModal are not drill-down clickable",
@@ -221,7 +221,7 @@
       "closed_count": 1
     },
     {
-      "name": "logout, module, level",
+      "name": "module, logout, db219ec",
       "issue_count": 1,
       "recent_issue": {
         "title": "Permissions cache is module-level and never invalidated on logout",

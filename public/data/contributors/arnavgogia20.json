@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-11T18:13:41.179Z",
+  "generated_at": "2026-04-11T22:11:59.228Z",
   "total_issues_opened": 57,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 22600,
@@ -263,7 +263,7 @@
       "closed_count": 1
     },
     {
-      "name": "iterate, websocket, client",
+      "name": "iterate, websocket, slow",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent WebSocket BroadcastToClients Holds wsMux While Iterating : Slow Client Blocks All Broadcasts",

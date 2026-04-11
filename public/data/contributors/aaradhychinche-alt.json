@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-11T18:13:36.334Z",
+  "generated_at": "2026-04-11T22:11:53.268Z",
   "total_issues_opened": 251,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 76700,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aaradhychinche, alt, reproduce",
-      "issue_count": 226,
+      "issue_count": 224,
       "recent_issue": {
         "title": "Improve responsive transition behavior at breakpoint boundaries",
         "url": "https://github.com/kubestellar/console/issues/6401",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 226
+      "closed_count": 224
     },
     {
       "name": "kube, game, craft",
@@ -138,12 +138,40 @@
       "closed_count": 1
     },
     {
+      "name": "sourcecluster, deploy, validate",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "## 🐛 bug: deploy api does not validate sourceCluster",
+        "url": "https://github.com/kubestellar/console/issues/5957",
+        "created_at": "2026-04-10T06:48:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "analysis, ai, failure",
       "issue_count": 1,
       "recent_issue": {
         "title": "📝 issue: AI analysis failures are silent",
         "url": "https://github.com/kubestellar/console/issues/5945",
         "created_at": "2026-04-10T06:44:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "blocked, resolution, bypass",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "## 🐛 bug: resolution flow bypasses blocked-state validation",
+        "url": "https://github.com/kubestellar/console/issues/5934",
+        "created_at": "2026-04-10T05:52:04Z"
       },
       "repos": [
         "console"
@@ -194,7 +222,7 @@
       "closed_count": 1
     },
     {
-      "name": "listener, abort, unmount",
+      "name": "listener, abort, callback",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: abort signal listeners are not cleaned up causing event listener leaks and post-unmount callbacks",
@@ -264,7 +292,7 @@
       "closed_count": 1
     },
     {
-      "name": "artifact, green, appear",
+      "name": "artifact, appear, green",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: unintended green line appears across top of page due to layout/CSS issue",
@@ -337,10 +365,16 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #560",
-        "url": "https://github.com/kubestellar/console/issues/6517",
+        "title": "reloadAndNotify suppresses watcher.Remove error allowing stale inode watch to persist",
+        "url": "https://github.com/kubestellar/console/issues/6692",
         "repo": "console",
         "topic_match": "watcher, persistence, context"
+      },
+      {
+        "title": "card: Implement Artifact Hub monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/58",
+        "repo": "console-marketplace",
+        "topic_match": "artifact, appear, green"
       }
     ],
     "stretch": [
