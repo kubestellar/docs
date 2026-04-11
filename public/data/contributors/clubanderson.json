@@ -1,14 +1,14 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-10T22:15:04.114Z",
-  "total_issues_opened": 851,
+  "generated_at": "2026-04-11T03:05:55.648Z",
+  "total_issues_opened": 852,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3067000,
+  "total_points": 3076900,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 68.3,
+    "avg_per_week": 68.4,
     "avg_per_day": 3.56,
     "by_day_of_week": [
       104,
@@ -16,13 +16,13 @@
       192,
       115,
       125,
-      119,
+      120,
       90
     ],
     "by_hour_of_day": [
       46,
       23,
-      86,
+      87,
       29,
       40,
       23,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-10T22:05:20.000Z"
+    "last_issue_at": "2026-04-11T02:02:25.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, tsx",
-      "issue_count": 468,
+      "issue_count": 469,
       "recent_issue": {
-        "title": "[Auto-QA] Stale data and freshness indicator issues",
-        "url": "https://github.com/kubestellar/console/issues/6217",
-        "created_at": "2026-04-10T19:39:33Z"
+        "title": "[Auto-QA] Event handler accessibility parity issues",
+        "url": "https://github.com/kubestellar/console/issues/6275",
+        "created_at": "2026-04-11T02:02:25Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
-      "open_count": 1,
-      "closed_count": 467
+      "open_count": 0,
+      "closed_count": 469
     },
     {
       "name": "test, coverage, suite",
@@ -80,8 +80,8 @@
         "console-marketplace",
         "docs"
       ],
-      "open_count": 4,
-      "closed_count": 138
+      "open_count": 3,
+      "closed_count": 139
     },
     {
       "name": "monitoring, step, implement",
@@ -881,7 +881,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 206
+      "issue_count": 207
     }
   ]
 }
