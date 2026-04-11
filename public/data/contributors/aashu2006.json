@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-11T10:15:21.506Z",
+  "generated_at": "2026-04-11T14:16:54.260Z",
   "total_issues_opened": 107,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 30900,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "@aashu2006, happen, line",
-      "issue_count": 82,
+      "name": "@aashu2006, line, happen",
+      "issue_count": 80,
       "recent_issue": {
         "title": "PreflightFailure, FeatureRequestModal, FeedbackModal, CardFactoryModal: Clipboard API called without browser support check - silently fails with no fallback",
         "url": "https://github.com/kubestellar/console/issues/6229",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 82
+      "closed_count": 80
     },
     {
       "name": "download, exception, unhandled",
@@ -227,6 +227,20 @@
         "title": "handleKagentCRDSummary makes 6 sequential Kubernetes API calls under one shared timeout silently zeroing out counts",
         "url": "https://github.com/kubestellar/console/issues/5354",
         "created_at": "2026-04-07T21:22:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "hardcodes, urls, detection",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "kagent/kagenti auto-detection hardcodes insecure HTTP URLs with fixed namespace and port",
+        "url": "https://github.com/kubestellar/console/issues/5352",
+        "created_at": "2026-04-07T21:22:02Z"
       },
       "repos": [
         "console"
@@ -403,7 +417,21 @@
       "closed_count": 1
     },
     {
-      "name": "mobile, tip, px",
+      "name": "port, invalid, warning",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Silent fmt.Sscanf for PORT env var gives no warning on invalid value",
+        "url": "https://github.com/kubestellar/console/issues/5311",
+        "created_at": "2026-04-07T20:00:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "mobile, tip, overlap",
       "issue_count": 1,
       "recent_issue": {
         "title": "Mobile layout: RotatingTip overlaps UI on small screens",
@@ -419,6 +447,24 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "Access docs do not explicitly warn that Service port is 8080 (not 80)",
+        "url": "https://github.com/kubestellar/docs/issues/1398",
+        "repo": "docs",
+        "topic_match": "port, invalid, warning"
+      },
+      {
+        "title": "docs(console): port-forward example leaks background process (no cleanup)",
+        "url": "https://github.com/kubestellar/docs/issues/1414",
+        "repo": "docs",
+        "topic_match": "port, invalid, warning"
+      },
+      {
+        "title": "Missing pre-port-forward diagnostic commands in docs",
+        "url": "https://github.com/kubestellar/docs/issues/1400",
+        "repo": "docs",
+        "topic_match": "port, invalid, warning"
+      },
       {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
@@ -440,16 +486,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       },
       {
         "name": "Deployments & GitOps",

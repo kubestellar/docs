@@ -1,22 +1,22 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-11T10:15:17.780Z",
-  "total_issues_opened": 209,
+  "generated_at": "2026-04-11T14:16:50.379Z",
+  "total_issues_opened": 238,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 66550,
+  "total_points": 75250,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 17.4,
-    "avg_per_day": 4.22,
+    "avg_per_week": 19.8,
+    "avg_per_day": 4.65,
     "by_day_of_week": [
       10,
       47,
       74,
       61,
       4,
-      0,
+      29,
       13
     ],
     "by_hour_of_day": [
@@ -32,8 +32,8 @@
       19,
       26,
       4,
-      0,
-      0,
+      9,
+      20,
       6,
       17,
       0,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-09T22:42:15.000Z"
+    "last_issue_at": "2026-04-11T13:42:06.000Z"
   },
   "topics": [
     {
-      "name": "@mrhapile, location, severity",
-      "issue_count": 173,
+      "name": "@mrhapile, location, phase",
+      "issue_count": 192,
       "recent_issue": {
-        "title": "render without crashing is massively overused across card/component tests, leaving behavior unverified",
-        "url": "https://github.com/kubestellar/console/issues/5883",
-        "created_at": "2026-04-09T22:42:15Z"
+        "title": "Fork Readiness Race Limit",
+        "url": "https://github.com/kubestellar/console/issues/6420",
+        "created_at": "2026-04-11T13:41:18Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 173
+      "open_count": 2,
+      "closed_count": 190
     },
     {
       "name": "alertscontext, const, queueautoresolve",
@@ -151,12 +151,82 @@
       "closed_count": 2
     },
     {
-      "name": "cancelation, ws, race",
+      "name": "d6093c66, fd5, be0",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Duplicate Cancellation States via WS + HTTP Race",
-        "url": "https://github.com/kubestellar/console/issues/5839",
-        "created_at": "2026-04-09T20:35:53Z"
+        "title": "MissionBrowser Render Desync",
+        "url": "https://github.com/kubestellar/console/issues/6421",
+        "created_at": "2026-04-11T13:42:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "base64, github, faf",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "GitHub Base64 30-Second API Hang",
+        "url": "https://github.com/kubestellar/console/issues/6419",
+        "created_at": "2026-04-11T13:41:01Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "decode, path, bypass",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Path Traversal Bypass via Double URL Encoding",
+        "url": "https://github.com/kubestellar/console/issues/6418",
+        "created_at": "2026-04-11T13:40:35Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "bombing, oom, b3e3d646",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cache Bombing (OOM Attack)",
+        "url": "https://github.com/kubestellar/console/issues/6417",
+        "created_at": "2026-04-11T13:39:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "ssrf, a8cb, d2e3",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Slack SSRF Hook Exposure",
+        "url": "https://github.com/kubestellar/console/issues/6416",
+        "created_at": "2026-04-11T13:39:35Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "priority, recommend, sort",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Priority Sort Undefined Crash",
+        "url": "https://github.com/kubestellar/console/issues/6402",
+        "created_at": "2026-04-11T13:32:32Z"
       },
       "repos": [
         "console"
@@ -165,12 +235,82 @@
       "closed_count": 1
     },
     {
-      "name": "freeze, parse, large",
+      "name": "escape, inside, balanced",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Main Thread Freeze via Large JSON.parse",
-        "url": "https://github.com/kubestellar/console/issues/5836",
-        "created_at": "2026-04-09T20:34:57Z"
+        "title": "Balanced Block Nesting Illusion",
+        "url": "https://github.com/kubestellar/console/issues/6382",
+        "created_at": "2026-04-11T13:02:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "needsrestart, reconnects, introduce",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "needsRestart is introduced in mission context for stale reconnects",
+        "url": "https://github.com/kubestellar/console/issues/6380",
+        "created_at": "2026-04-11T12:59:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "map, b0e31, bfef",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Pending Requests Memory Leak",
+        "url": "https://github.com/kubestellar/console/issues/6377",
+        "created_at": "2026-04-11T12:56:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "tool, second, phony",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "The \"Background Tool\" Phony Timeout",
+        "url": "https://github.com/kubestellar/console/issues/6376",
+        "created_at": "2026-04-11T12:56:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "exponential, backoff, reset",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Exponential Backoff \"Reset Storms\"",
+        "url": "https://github.com/kubestellar/console/issues/6375",
+        "created_at": "2026-04-11T12:55:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "cancelation, ws, race",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Duplicate Cancellation States via WS + HTTP Race",
+        "url": "https://github.com/kubestellar/console/issues/5839",
+        "created_at": "2026-04-09T20:35:53Z"
       },
       "repos": [
         "console"
@@ -193,7 +333,7 @@
       "closed_count": 1
     },
     {
-      "name": "watchdog, lockout, a67069",
+      "name": "watchdog, a67069, bd5c",
       "issue_count": 1,
       "recent_issue": {
         "title": "\"Compiling Backend...\" Permanent UI Lockout when 0 Clusters are Reachable (Split-Brain Health Check)",
@@ -269,6 +409,20 @@
         "title": "Leaderboard Coins Not Updating",
         "url": "https://github.com/kubestellar/console/issues/5517",
         "created_at": "2026-04-08T15:30:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "replicaset, event, da2d04",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Clicking a ReplicaSet event opens a Deployment drilldown with the wrong resource name.",
+        "url": "https://github.com/kubestellar/console/issues/5429",
+        "created_at": "2026-04-08T07:34:40Z"
       },
       "repos": [
         "console"
@@ -361,7 +515,7 @@
       "closed_count": 1
     },
     {
-      "name": "hierarchy, poor, contrast",
+      "name": "poor, hierarchy, contrast",
       "issue_count": 1,
       "recent_issue": {
         "title": "Light mode UI has poor contrast, broken visual hierarchy, and degraded usability",
@@ -409,20 +563,6 @@
         "title": "Unbounded Concurrent API Requests Across Clusters",
         "url": "https://github.com/kubestellar/console/issues/3521",
         "created_at": "2026-03-25T09:39:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "log, f98ad36, edd",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Bug in Bug submission ",
-        "url": "https://github.com/kubestellar/console/issues/3518",
-        "created_at": "2026-03-25T09:33:58Z"
       },
       "repos": [
         "console"
@@ -548,7 +688,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 190
+      "issue_count": 219
     }
   ]
 }

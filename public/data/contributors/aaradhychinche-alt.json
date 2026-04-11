@@ -1,22 +1,22 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-11T10:15:14.165Z",
-  "total_issues_opened": 235,
+  "generated_at": "2026-04-11T14:16:45.441Z",
+  "total_issues_opened": 251,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 73100,
+  "total_points": 76700,
   "level": "Captain",
   "level_rank": 6,
   "rank": 3,
   "cadence": {
-    "avg_per_week": 19.6,
-    "avg_per_day": 5.17,
+    "avg_per_week": 20.9,
+    "avg_per_day": 5.42,
     "by_day_of_week": [
       29,
       17,
       16,
       15,
       128,
-      0,
+      16,
       30
     ],
     "by_hour_of_day": [
@@ -33,7 +33,7 @@
       12,
       14,
       43,
-      30,
+      46,
       1,
       9,
       1,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-10T15:42:30.000Z"
+    "last_issue_at": "2026-04-11T13:25:26.000Z"
   },
   "topics": [
     {
-      "name": "@aaradhychinche, alt, backend",
-      "issue_count": 212,
+      "name": "@aaradhychinche, alt, reproduce",
+      "issue_count": 224,
       "recent_issue": {
-        "title": "Add connectivity status and reachability checks for services",
-        "url": "https://github.com/kubestellar/console/issues/6167",
-        "created_at": "2026-04-10T15:42:30Z"
+        "title": "Improve responsive transition behavior at breakpoint boundaries",
+        "url": "https://github.com/kubestellar/console/issues/6401",
+        "created_at": "2026-04-11T13:25:26Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 212
+      "closed_count": 224
     },
     {
       "name": "kube, game, craft",
@@ -80,6 +80,20 @@
       ],
       "open_count": 0,
       "closed_count": 4
+    },
+    {
+      "name": "breadcrumb, navigation, deep",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Add breadcrumb navigation for better page hierarchy awareness",
+        "url": "https://github.com/kubestellar/console/issues/6396",
+        "created_at": "2026-04-11T13:23:35Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "typescript, branch, late",
@@ -116,6 +130,20 @@
         "title": "Nodes dashboard shows stale utilization when actual value becomes zero",
         "url": "https://github.com/kubestellar/console/issues/6107",
         "created_at": "2026-04-10T13:32:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sourcecluster, deploy, validate",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "## 🐛 bug: deploy api does not validate sourceCluster",
+        "url": "https://github.com/kubestellar/console/issues/5957",
+        "created_at": "2026-04-10T06:48:42Z"
       },
       "repos": [
         "console"
@@ -172,20 +200,6 @@
         "title": "bug: cluster labels overlap and become unreadable when AI chat panel is opened",
         "url": "https://github.com/kubestellar/console/issues/5396",
         "created_at": "2026-04-08T05:02:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "breadcrumb, navigation, hierarchy",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "  Enhancement: improve navigation clarity, visual hierarchy, and empty state UX across console",
-        "url": "https://github.com/kubestellar/console/issues/5167",
-        "created_at": "2026-04-07T05:21:06Z"
       },
       "repos": [
         "console"
@@ -332,6 +346,20 @@
       ],
       "open_count": 0,
       "closed_count": 1
+    },
+    {
+      "name": "documentation, implementation, repository",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: documentation references deprecated kubestellar/ui project instead of current console implementation",
+        "url": "https://github.com/kubestellar/docs/issues/1340",
+        "created_at": "2026-04-06T05:53:56Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -416,7 +444,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 202
+      "issue_count": 218
     }
   ]
 }

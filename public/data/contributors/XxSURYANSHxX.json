@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-11T10:15:21.954Z",
+  "generated_at": "2026-04-11T14:16:54.678Z",
   "total_issues_opened": 114,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 30700,
@@ -249,7 +249,7 @@
       "closed_count": 1
     },
     {
-      "name": "omission, c95, a484",
+      "name": "omission, a484, ee874a25ff49",
       "issue_count": 1,
       "recent_issue": {
         "title": "Missing target=\"_blank\" vulnerability (rel=\"noopener noreferrer\" omission)",
@@ -292,7 +292,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Path Traversal Bypass via Double URL Encoding",
+        "url": "https://github.com/kubestellar/console/issues/6418",
+        "repo": "console",
+        "topic_match": "traversal, filepath, path"
+      },
+      {
+        "title": "docs(console): port-forward example leaks background process (no cleanup)",
+        "url": "https://github.com/kubestellar/docs/issues/1414",
+        "repo": "docs",
+        "topic_match": "process, zombie, kill"
+      }
+    ],
     "stretch": [
       {
         "name": "Marketplace & Operators",

@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-11T10:11:45.804Z",
-  "git_hash": "f2d3196",
+  "generated_at": "2026-04-11T14:13:22.549Z",
+  "git_hash": "ccc5c82",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3096250,
+      "total_points": 3104550,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 248,
         "feature_issues": 367,
-        "other_issues": 238,
-        "prs_opened": 4506,
-        "prs_merged": 4144
+        "other_issues": 240,
+        "prs_opened": 4517,
+        "prs_merged": 4156
       },
       "bonus_points": 50,
       "rank": 1
@@ -36,12 +36,12 @@
     {
       "login": "aaradhychinche-alt",
       "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-      "total_points": 73100,
+      "total_points": 76700,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 204,
-        "feature_issues": 13,
+        "bug_issues": 214,
+        "feature_issues": 19,
         "other_issues": 18,
         "prs_opened": 16,
         "prs_merged": 13
@@ -51,11 +51,11 @@
     {
       "login": "mrhapile",
       "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-      "total_points": 66550,
+      "total_points": 75250,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 171,
+        "bug_issues": 200,
         "feature_issues": 11,
         "other_issues": 27,
         "prs_opened": 24,
@@ -81,13 +81,13 @@
     {
       "login": "rishi-jat",
       "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-      "total_points": 38300,
+      "total_points": 40950,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 101,
+        "bug_issues": 110,
         "feature_issues": 1,
-        "other_issues": 112,
+        "other_issues": 111,
         "prs_opened": 4,
         "prs_merged": 1
       },

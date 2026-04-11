@@ -1,22 +1,22 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-11T10:15:21.115Z",
-  "total_issues_opened": 213,
+  "generated_at": "2026-04-11T14:16:53.901Z",
+  "total_issues_opened": 222,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-  "total_points": 38300,
+  "total_points": 40950,
   "level": "Commander",
   "level_rank": 5,
   "rank": 6,
   "cadence": {
-    "avg_per_week": 17.4,
-    "avg_per_day": 1.09,
+    "avg_per_week": 18.2,
+    "avg_per_day": 1.13,
     "by_day_of_week": [
       7,
       9,
       11,
       10,
       119,
-      50,
+      59,
       7
     ],
     "by_hour_of_day": [
@@ -31,7 +31,7 @@
       35,
       0,
       4,
-      0,
+      9,
       9,
       8,
       1,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 4,
     "trend": "steady",
     "first_issue_at": "2025-09-27T20:12:21.000Z",
-    "last_issue_at": "2026-04-11T08:46:34.000Z"
+    "last_issue_at": "2026-04-11T11:34:06.000Z"
   },
   "topics": [
     {
-      "name": "line, body, readall",
-      "issue_count": 154,
+      "name": "line, @rishi, jat",
+      "issue_count": 168,
       "recent_issue": {
-        "title": "OAuth can be enabled without validating required secrets",
-        "url": "https://github.com/kubestellar/console/issues/6342",
-        "created_at": "2026-04-11T08:46:34Z"
+        "title": "docs/build(console): Go version mismatch between go.mod (1.25) and docs (1.24+)",
+        "url": "https://github.com/kubestellar/console/issues/6364",
+        "created_at": "2026-04-11T11:34:06Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 21,
-      "closed_count": 133
+      "open_count": 25,
+      "closed_count": 143
     },
     {
       "name": "event, analytics, day",
@@ -82,27 +82,12 @@
       "closed_count": 5
     },
     {
-      "name": "requirement, kubernetes, docs",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "Missing Kubernetes version and resource requirements for Console",
-        "url": "https://github.com/kubestellar/docs/issues/1406",
-        "created_at": "2026-04-11T08:39:14Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 2,
-      "closed_count": 2
-    },
-    {
-      "name": "hook, order, render",
+      "name": "windows, setpgid, unix",
       "issue_count": 3,
       "recent_issue": {
-        "title": "CardRuntime violates React hook order when data hook is missing",
-        "url": "https://github.com/kubestellar/console/issues/2387",
-        "created_at": "2026-03-13T12:55:48Z"
+        "title": "ci(console): no Windows/macOS runners → platform-specific failures go undetected",
+        "url": "https://github.com/kubestellar/console/issues/6361",
+        "created_at": "2026-04-11T11:33:19Z"
       },
       "repos": [
         "console"
@@ -138,20 +123,6 @@
       ],
       "open_count": 0,
       "closed_count": 3
-    },
-    {
-      "name": "windows, setpgid, unix",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "kc-agent build fails on Windows due to syscall.SysProcAttr.Setpgid usage",
-        "url": "https://github.com/kubestellar/console/issues/6297",
-        "created_at": "2026-04-11T06:19:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
     },
     {
       "name": "jsx, syntax, basemodal",
@@ -196,22 +167,7 @@
       "closed_count": 2
     },
     {
-      "name": "env, apps, oauth",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
-        "url": "https://github.com/kubestellar/docs/issues/1396",
-        "created_at": "2026-04-11T08:37:23Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 1,
-      "closed_count": 1
-    },
-    {
-      "name": "eval, csp, unsafe",
+      "name": "eval, unsafe, csp",
       "issue_count": 2,
       "recent_issue": {
         "title": "CSP includes unsafe-inline for script-src",
@@ -281,7 +237,21 @@
       "closed_count": 2
     },
     {
-      "name": "promoter, satisfaction, collect",
+      "name": "timeout, rollout, indefinitely",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "docs(console): rollout status command missing timeout can block indefinitely",
+        "url": "https://github.com/kubestellar/console/issues/6360",
+        "created_at": "2026-04-11T11:28:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "promoter, satisfaction, feedback",
       "issue_count": 1,
       "recent_issue": {
         "title": "Request: Add NPS (Net Promoter Score) Feedback in KubeStellar Console",
@@ -393,7 +363,7 @@
       "closed_count": 1
     },
     {
-      "name": "broadcast, shutdown, buffer",
+      "name": "broadcast, shutdown, hub",
       "issue_count": 1,
       "recent_issue": {
         "title": "Hub.Broadcast() may block indefinitely after shutdown or when broadcast buffer is full",
@@ -441,6 +411,20 @@
         "title": "formatBytes produces NaN for negative input",
         "url": "https://github.com/kubestellar/console/issues/1846",
         "created_at": "2026-03-06T16:59:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sh, script, kill",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Scripts use kill -9 instead of graceful shutdown signals",
+        "url": "https://github.com/kubestellar/console/issues/1820",
+        "created_at": "2026-03-06T16:53:15Z"
       },
       "repos": [
         "console"
@@ -561,6 +545,20 @@
       "closed_count": 0
     },
     {
+      "name": "apps, oauth, template",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
+        "url": "https://github.com/kubestellar/docs/issues/1396",
+        "created_at": "2026-04-11T08:37:23Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "iskubestellar, space, blank",
       "issue_count": 1,
       "recent_issue": {
@@ -591,16 +589,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
         "name": "Security & RBAC",
@@ -657,7 +655,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 57
+      "issue_count": 66
     }
   ]
 }

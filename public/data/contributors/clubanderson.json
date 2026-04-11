@@ -1,14 +1,14 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-11T10:15:02.072Z",
-  "total_issues_opened": 853,
+  "generated_at": "2026-04-11T14:16:33.123Z",
+  "total_issues_opened": 855,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3096250,
+  "total_points": 3104550,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 68.5,
+    "avg_per_week": 68.7,
     "avg_per_day": 3.56,
     "by_day_of_week": [
       104,
@@ -16,7 +16,7 @@
       192,
       115,
       125,
-      121,
+      123,
       90
     ],
     "by_hour_of_day": [
@@ -32,8 +32,8 @@
       8,
       5,
       5,
-      3,
-      63,
+      4,
+      64,
       41,
       88,
       31,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-11T09:20:23.000Z"
+    "last_issue_at": "2026-04-11T13:35:47.000Z"
   },
   "topics": [
     {
@@ -69,11 +69,11 @@
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 146,
+      "issue_count": 142,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #546",
-        "url": "https://github.com/kubestellar/console/issues/6347",
-        "created_at": "2026-04-11T09:20:23Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #551",
+        "url": "https://github.com/kubestellar/console/issues/6407",
+        "created_at": "2026-04-11T13:35:47Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 3,
-      "closed_count": 143
+      "closed_count": 139
     },
     {
       "name": "monitoring, step, implement",
@@ -168,12 +168,26 @@
       "closed_count": 8
     },
     {
-      "name": "js, vendor, kb",
+      "name": "js, vendor, bundle",
       "issue_count": 6,
       "recent_issue": {
         "title": "[Auto-QA] Bundle has JS chunks over 300KB",
         "url": "https://github.com/kubestellar/console/issues/4649",
         "created_at": "2026-04-05T02:04:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 6
+    },
+    {
+      "name": "testing, greet, close",
+      "issue_count": 6,
+      "recent_issue": {
+        "title": "Test: verify updated contributor greeting",
+        "url": "https://github.com/kubestellar/console/issues/2762",
+        "created_at": "2026-03-16T15:14:10Z"
       },
       "repos": [
         "console"
@@ -224,7 +238,7 @@
       "closed_count": 2
     },
     {
-      "name": "chart, default, day",
+      "name": "chart, default, networkpolicy",
       "issue_count": 2,
       "recent_issue": {
         "title": "feat: daily issues & PRs activity chart on analytics page",
@@ -818,12 +832,6 @@
         "url": "https://github.com/kubestellar/docs/issues/1388",
         "repo": "docs",
         "topic_match": "marshall, resource, kind"
-      },
-      {
-        "title": "Chart enables backup PVC by default, increasing local install failure surface",
-        "url": "https://github.com/kubestellar/docs/issues/1386",
-        "repo": "docs",
-        "topic_match": "chart, default, day"
       }
     ],
     "stretch": [
@@ -906,7 +914,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 208
+      "issue_count": 210
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-11T10:15:22.550Z",
+  "generated_at": "2026-04-11T14:16:55.240Z",
   "total_issues_opened": 47,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 19600,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@arnavgogia20, problem, mission",
-      "issue_count": 27,
+      "issue_count": 25,
       "recent_issue": {
         "title": "Mission Cache Accumulates Duplicates on Stale-Cache Refresh",
         "url": "https://github.com/kubestellar/console/issues/5217",
@@ -64,7 +64,21 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 27
+      "closed_count": 25
+    },
+    {
+      "name": "recommend, collapse, panel",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "MissionSuggestions and CardRecommendations Auto-Collapse After 20 Seconds and Never Re-Expand",
+        "url": "https://github.com/kubestellar/console/issues/4557",
+        "created_at": "2026-04-04T12:42:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "router, cors, gin",
@@ -81,7 +95,7 @@
       "closed_count": 2
     },
     {
-      "name": "slice, character, ids",
+      "name": "slice, character, alert",
       "issue_count": 2,
       "recent_issue": {
         "title": "DeviceTracker.ClearAlert : Panics on Malformed Alert IDs via Incorrect String Slicing",

@@ -1,6 +1,6 @@
 {
   "login": "antedotee",
-  "generated_at": "2026-04-11T10:15:22.703Z",
+  "generated_at": "2026-04-11T14:16:55.383Z",
   "total_issues_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/151192805?v=4",
   "total_points": 1150,
@@ -47,7 +47,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "slowing_down",
+    "trend": "inactive",
     "first_issue_at": "2025-12-22T18:01:38.000Z",
     "last_issue_at": "2026-02-14T10:17:07.000Z"
   },
