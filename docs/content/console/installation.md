@@ -406,7 +406,7 @@ helm install kc oci://ghcr.io/kubestellar/charts/kubestellar-console \
 
 # 4. Verify (see "Verification commands" below for full checks)
 kubectl -n kubestellar-console rollout status deploy \
-  -l app.kubernetes.io/name=kubestellar-console
+  -l app.kubernetes.io/name=kubestellar-console --timeout=300s
 
 # 5. Port-forward — service port is 8080, NOT 80
 kubectl -n kubestellar-console port-forward svc/kc-kubestellar-console 8080:8080
@@ -447,7 +447,7 @@ helm install kc oci://ghcr.io/kubestellar/charts/kubestellar-console \
 
 # 4. Verify
 kubectl -n kubestellar-console rollout status deploy \
-  -l app.kubernetes.io/name=kubestellar-console
+  -l app.kubernetes.io/name=kubestellar-console --timeout=300s
 
 # 5. Port-forward
 kubectl -n kubestellar-console port-forward svc/kc-kubestellar-console 8080:8080
