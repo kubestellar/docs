@@ -1,6 +1,6 @@
 {
   "login": "oksaumya",
-  "generated_at": "2026-04-11T06:26:26.687Z",
+  "generated_at": "2026-04-11T10:15:22.691Z",
   "total_issues_opened": 42,
   "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
   "total_points": 12150,
@@ -221,7 +221,7 @@
       "closed_count": 1
     },
     {
-      "name": "lfx, cloud, host",
+      "name": "lfx, cloud, prs",
       "issue_count": 1,
       "recent_issue": {
         "title": "[LFX TERM - 3 2025] KubeStellar Design System Implementation and Cloud Hosting",

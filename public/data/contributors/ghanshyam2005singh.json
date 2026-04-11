@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-11T06:26:26.102Z",
+  "generated_at": "2026-04-11T10:15:22.112Z",
   "total_issues_opened": 77,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 23500,
@@ -54,17 +54,18 @@
   "topics": [
     {
       "name": "mission, ai, @ghanshyam2005singh",
-      "issue_count": 52,
+      "issue_count": 56,
       "recent_issue": {
         "title": "Mission count mismatch between AI Missions list and mission chat view",
         "url": "https://github.com/kubestellar/console/issues/6137",
         "created_at": "2026-04-10T14:29:12Z"
       },
       "repos": [
-        "console"
+        "console",
+        "docs"
       ],
       "open_count": 0,
-      "closed_count": 52
+      "closed_count": 56
     },
     {
       "name": "screenshot, report, @ghanshyam2005singh",
@@ -80,20 +81,6 @@
       ],
       "open_count": 0,
       "closed_count": 10
-    },
-    {
-      "name": "guide, gcp, setup",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "AI Missions Setup guide not included in sidebar navigation",
-        "url": "https://github.com/kubestellar/docs/issues/1322",
-        "created_at": "2026-03-21T04:15:53Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 4
     },
     {
       "name": "fork, nightly, repository",

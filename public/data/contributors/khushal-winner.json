@@ -1,6 +1,6 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-11T06:26:26.691Z",
+  "generated_at": "2026-04-11T10:15:22.694Z",
   "total_issues_opened": 6,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
   "total_points": 5500,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "watcher, leak, @khushal",
-      "issue_count": 3,
+      "name": "watcher, leak, mcp",
+      "issue_count": 4,
       "recent_issue": {
         "title": "# bug: Resource Management Issues in MCP Handler and Console Watcher",
         "url": "https://github.com/kubestellar/console/issues/2664",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 3
+      "closed_count": 4
     },
     {
       "name": "database, sqlite, wal",
@@ -79,20 +79,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "goroutine, mcp, endpoint",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Goroutine Leak in /api/mcp/clusters endpoint",
-        "url": "https://github.com/kubestellar/console/issues/2599",
-        "created_at": "2026-03-14T08:41:29Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -123,10 +109,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       }
     ]
   },

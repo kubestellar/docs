@@ -1,14 +1,14 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-11T06:26:07.939Z",
-  "total_issues_opened": 852,
+  "generated_at": "2026-04-11T10:15:02.072Z",
+  "total_issues_opened": 853,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3080800,
+  "total_points": 3096250,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 68.4,
+    "avg_per_week": 68.5,
     "avg_per_day": 3.56,
     "by_day_of_week": [
       104,
@@ -16,7 +16,7 @@
       192,
       115,
       125,
-      120,
+      121,
       90
     ],
     "by_hour_of_day": [
@@ -29,7 +29,7 @@
       34,
       54,
       15,
-      7,
+      8,
       5,
       5,
       3,
@@ -49,12 +49,12 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-11T02:02:25.000Z"
+    "last_issue_at": "2026-04-11T09:20:23.000Z"
   },
   "topics": [
     {
-      "name": "test, qa, auto",
-      "issue_count": 580,
+      "name": "qa, auto, tsx",
+      "issue_count": 466,
       "recent_issue": {
         "title": "[Auto-QA] Event handler accessibility parity issues",
         "url": "https://github.com/kubestellar/console/issues/6275",
@@ -62,11 +62,26 @@
       },
       "repos": [
         "console",
+        "console-marketplace"
+      ],
+      "open_count": 0,
+      "closed_count": 466
+    },
+    {
+      "name": "test, coverage, suite",
+      "issue_count": 146,
+      "recent_issue": {
+        "title": "🐛 1 test failure(s) in Coverage Suite run #546",
+        "url": "https://github.com/kubestellar/console/issues/6347",
+        "created_at": "2026-04-11T09:20:23Z"
+      },
+      "repos": [
+        "console",
         "console-marketplace",
         "docs"
       ],
       "open_count": 3,
-      "closed_count": 577
+      "closed_count": 143
     },
     {
       "name": "monitoring, step, implement",
@@ -109,20 +124,6 @@
       ],
       "open_count": 0,
       "closed_count": 33
-    },
-    {
-      "name": "copilot, stall, assignment",
-      "issue_count": 23,
-      "recent_issue": {
-        "title": "enhancement: add delayed Copilot comment check for merged PRs",
-        "url": "https://github.com/kubestellar/console/issues/5738",
-        "created_at": "2026-04-09T14:26:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 23
     },
     {
       "name": "px, spacing, inconsistent",
@@ -181,20 +182,6 @@
       "closed_count": 6
     },
     {
-      "name": "testing, greet, close",
-      "issue_count": 6,
-      "recent_issue": {
-        "title": "Test: verify updated contributor greeting",
-        "url": "https://github.com/kubestellar/console/issues/2762",
-        "created_at": "2026-03-16T15:14:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 6
-    },
-    {
       "name": "typo, readme, fix",
       "issue_count": 5,
       "recent_issue": {
@@ -235,20 +222,6 @@
       ],
       "open_count": 1,
       "closed_count": 2
-    },
-    {
-      "name": "tooltip, technical, recommend",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
-        "url": "https://github.com/kubestellar/console/issues/3345",
-        "created_at": "2026-03-23T20:21:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
     },
     {
       "name": "chart, default, day",
@@ -518,6 +491,20 @@
       "closed_count": 1
     },
     {
+      "name": "recommend, expand, dropdown",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
+        "url": "https://github.com/kubestellar/console/issues/3345",
+        "created_at": "2026-03-23T20:21:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "guideline, aud, development",
       "issue_count": 1,
       "recent_issue": {
@@ -532,7 +519,7 @@
       "closed_count": 1
     },
     {
-      "name": "marshall, kind, resource",
+      "name": "marshall, resource, kind",
       "issue_count": 1,
       "recent_issue": {
         "title": "🐛 Resource Marshall: agent fallback misses 10 of 16 supported resource types + add missing K8s kinds",
@@ -686,7 +673,7 @@
       "closed_count": 1
     },
     {
-      "name": "kubectl, assist, terminal",
+      "name": "kubectl, assist, interactive",
       "issue_count": 1,
       "recent_issue": {
         "title": "Kubectl Card with AI-Assisted Configuration",
@@ -813,7 +800,32 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
+        "url": "https://github.com/kubestellar/docs/issues/1396",
+        "repo": "docs",
+        "topic_match": "app, oauth, github"
+      },
+      {
+        "title": "Title: Missing verification commands for Console and kc-agent health",
+        "url": "https://github.com/kubestellar/docs/issues/1404",
+        "repo": "docs",
+        "topic_match": "kubectl, assist, interactive"
+      },
+      {
+        "title": "No official Kind quickstart (cluster creation + deploy + validation)",
+        "url": "https://github.com/kubestellar/docs/issues/1388",
+        "repo": "docs",
+        "topic_match": "marshall, resource, kind"
+      },
+      {
+        "title": "Chart enables backup PVC by default, increasing local install failure surface",
+        "url": "https://github.com/kubestellar/docs/issues/1386",
+        "repo": "docs",
+        "topic_match": "chart, default, day"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -894,7 +906,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 207
+      "issue_count": 208
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-11T06:26:26.673Z",
+  "generated_at": "2026-04-11T10:15:22.677Z",
   "total_issues_opened": 67,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 13900,
@@ -110,7 +110,7 @@
       "closed_count": 2
     },
     {
-      "name": "access, fmaas, apps",
+      "name": "access, fmaas, chrome",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: chrome asks mysterious question about access",

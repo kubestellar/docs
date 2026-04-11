@@ -1,22 +1,22 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-11T06:26:25.953Z",
-  "total_issues_opened": 173,
+  "generated_at": "2026-04-11T10:15:21.115Z",
+  "total_issues_opened": 213,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-  "total_points": 26250,
+  "total_points": 38300,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 9,
+  "rank": 6,
   "cadence": {
-    "avg_per_week": 14.1,
-    "avg_per_day": 0.89,
+    "avg_per_week": 17.4,
+    "avg_per_day": 1.09,
     "by_day_of_week": [
       7,
       9,
       11,
       10,
       119,
-      10,
+      50,
       7
     ],
     "by_hour_of_day": [
@@ -27,8 +27,8 @@
       0,
       0,
       1,
-      0,
-      0,
+      5,
+      35,
       0,
       4,
       0,
@@ -47,24 +47,25 @@
     ],
     "current_streak_weeks": 2,
     "longest_streak_weeks": 4,
-    "trend": "slowing_down",
+    "trend": "steady",
     "first_issue_at": "2025-09-27T20:12:21.000Z",
-    "last_issue_at": "2026-04-11T06:19:03.000Z"
+    "last_issue_at": "2026-04-11T08:46:34.000Z"
   },
   "topics": [
     {
       "name": "line, body, readall",
-      "issue_count": 121,
+      "issue_count": 154,
       "recent_issue": {
-        "title": "kc-agent build fails on Windows due to syscall.SysProcAttr.Setpgid usage",
-        "url": "https://github.com/kubestellar/console/issues/6297",
-        "created_at": "2026-04-11T06:19:03Z"
+        "title": "OAuth can be enabled without validating required secrets",
+        "url": "https://github.com/kubestellar/console/issues/6342",
+        "created_at": "2026-04-11T08:46:34Z"
       },
       "repos": [
-        "console"
+        "console",
+        "docs"
       ],
-      "open_count": 1,
-      "closed_count": 120
+      "open_count": 21,
+      "closed_count": 133
     },
     {
       "name": "event, analytics, day",
@@ -79,6 +80,21 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "requirement, kubernetes, docs",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "Missing Kubernetes version and resource requirements for Console",
+        "url": "https://github.com/kubestellar/docs/issues/1406",
+        "created_at": "2026-04-11T08:39:14Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 2,
+      "closed_count": 2
     },
     {
       "name": "hook, order, render",
@@ -124,26 +140,12 @@
       "closed_count": 3
     },
     {
-      "name": "mobile, docs, term",
+      "name": "windows, setpgid, unix",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Docs page layout breaks on mobile (text cutoff on left side)",
-        "url": "https://github.com/kubestellar/console/issues/5718",
-        "created_at": "2026-04-09T12:22:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "handshake, testantigravityprovider, cli",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Antigravity provider returns connected when given invalid CLI path.",
-        "url": "https://github.com/kubestellar/console/issues/4637",
-        "created_at": "2026-04-04T21:21:43Z"
+        "title": "kc-agent build fails on Windows due to syscall.SysProcAttr.Setpgid usage",
+        "url": "https://github.com/kubestellar/console/issues/6297",
+        "created_at": "2026-04-11T06:19:03Z"
       },
       "repos": [
         "console"
@@ -178,6 +180,35 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "mission, parameter, encodes",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "MissionSidebar double encodes URL parameters",
+        "url": "https://github.com/kubestellar/console/issues/2868",
+        "created_at": "2026-03-18T03:54:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "env, apps, oauth",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
+        "url": "https://github.com/kubestellar/docs/issues/1396",
+        "created_at": "2026-04-11T08:37:23Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 1
     },
     {
       "name": "eval, csp, unsafe",
@@ -220,6 +251,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "minikube, caveat, official",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "No official Minikube quickstart (including storage/access caveats)",
+        "url": "https://github.com/kubestellar/docs/issues/1389",
+        "created_at": "2026-04-11T08:35:28Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 2,
+      "closed_count": 0
     },
     {
       "name": "style, mkdocs, attach",
@@ -320,26 +365,12 @@
       "closed_count": 1
     },
     {
-      "name": "diagram, architecture, label",
+      "name": "diagram, label, architecture",
       "issue_count": 1,
       "recent_issue": {
         "title": "Architecture diagram labels are truncated and not clearly visible",
         "url": "https://github.com/kubestellar/console/issues/2397",
         "created_at": "2026-03-13T13:50:56Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "env, f398bc3c, be23",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "`TestManager_ImportDifferentKey` fails when `FEEDBACK_GITHUB_TOKEN` is set, because `GetAll()` falls back to env token even when encrypted token should be absent.",
-        "url": "https://github.com/kubestellar/console/issues/2388",
-        "created_at": "2026-03-13T12:56:29Z"
       },
       "repos": [
         "console"
@@ -382,20 +413,6 @@
         "title": "16 TypeScript as-any casts bypass type safety",
         "url": "https://github.com/kubestellar/console/issues/1893",
         "created_at": "2026-03-06T17:41:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "runasnonroot, readonlyrootfilesystem, securitycontext",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Helm chart securityContext defaults to empty object",
-        "url": "https://github.com/kubestellar/console/issues/1856",
-        "created_at": "2026-03-06T17:01:39Z"
       },
       "repos": [
         "console"
@@ -488,20 +505,6 @@
       "closed_count": 1
     },
     {
-      "name": "secret, dev, jwt",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Predictable dev JWT signing secret",
-        "url": "https://github.com/kubestellar/console/issues/1809",
-        "created_at": "2026-03-06T16:51:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "lock, p., save",
       "issue_count": 1,
       "recent_issue": {
@@ -530,6 +533,34 @@
       "closed_count": 1
     },
     {
+      "name": "logout, sign, host",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Forced demo-mode logout behavior is not documented as intentional",
+        "url": "https://github.com/kubestellar/docs/issues/1402",
+        "created_at": "2026-04-11T08:38:23Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "anchor, readme, setup",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CONTRIBUTING.md links to a non-existent OAuth section anchor",
+        "url": "https://github.com/kubestellar/docs/issues/1397",
+        "created_at": "2026-04-11T08:37:33Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "iskubestellar, space, blank",
       "issue_count": 1,
       "recent_issue": {
@@ -554,12 +585,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
@@ -576,6 +601,12 @@
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },
@@ -626,7 +657,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 17
+      "issue_count": 57
     }
   ]
 }

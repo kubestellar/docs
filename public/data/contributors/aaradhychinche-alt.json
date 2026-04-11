@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-11T06:26:19.676Z",
+  "generated_at": "2026-04-11T10:15:14.165Z",
   "total_issues_opened": 235,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 73100,
@@ -138,7 +138,7 @@
       "closed_count": 1
     },
     {
-      "name": "blocked, resolution, flow",
+      "name": "blocked, resolution, bypass",
       "issue_count": 1,
       "recent_issue": {
         "title": "## 🐛 bug: resolution flow bypasses blocked-state validation",
@@ -250,7 +250,7 @@
       "closed_count": 1
     },
     {
-      "name": "enable, flag, change",
+      "name": "enable, change, flag",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: useClusterCapabilities does not react to enabled flag changes due to stale closure",

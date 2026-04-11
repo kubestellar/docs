@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-11T06:26:26.697Z",
+  "generated_at": "2026-04-11T10:15:22.700Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 3850,
@@ -123,7 +123,7 @@
       "closed_count": 1
     },
     {
-      "name": "oauth, env, secret",
+      "name": "oauth, env, jwt",
       "issue_count": 1,
       "recent_issue": {
         "title": "/startup-oauth.sh  script not working",
@@ -194,7 +194,38 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "JWT secret behavior differs by mode but is not clearly documented",
+        "url": "https://github.com/kubestellar/docs/issues/1394",
+        "repo": "docs",
+        "topic_match": "oauth, env, jwt"
+      },
+      {
+        "title": "Secret key contract is undocumented (kc-oauth-secret naming/key mismatch confusion)",
+        "url": "https://github.com/kubestellar/docs/issues/1392",
+        "repo": "docs",
+        "topic_match": "oauth, env, jwt"
+      },
+      {
+        "title": "Kubernetes OAuth secret creation is undocumented in the primary install flow",
+        "url": "https://github.com/kubestellar/docs/issues/1391",
+        "repo": "docs",
+        "topic_match": "oauth, env, jwt"
+      },
+      {
+        "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
+        "url": "https://github.com/kubestellar/docs/issues/1396",
+        "repo": "docs",
+        "topic_match": "oauth, env, jwt"
+      },
+      {
+        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
+        "url": "https://github.com/kubestellar/console/issues/6313",
+        "repo": "console",
+        "topic_match": "ai, @mavrick, terminate"
+      }
+    ],
     "stretch": [
       {
         "name": "Storage & Compute",

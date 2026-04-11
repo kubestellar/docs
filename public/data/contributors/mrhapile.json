@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-11T06:26:23.395Z",
+  "generated_at": "2026-04-11T10:15:17.780Z",
   "total_issues_opened": 209,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 66550,
@@ -460,7 +460,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "FEEDBACK_GITHUB_TOKEN prerequisite for /issue is not surfaced in onboarding",
+        "url": "https://github.com/kubestellar/docs/issues/1395",
+        "repo": "docs",
+        "topic_match": "e68135c1, bb0a, f9916f7c08"
+      }
+    ],
     "stretch": [
       {
         "name": "Marketplace & Operators",

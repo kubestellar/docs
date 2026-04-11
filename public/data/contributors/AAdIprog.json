@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-11T06:26:26.592Z",
+  "generated_at": "2026-04-11T10:15:22.596Z",
   "total_issues_opened": 50,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 18400,
@@ -292,7 +292,7 @@
       "closed_count": 1
     },
     {
-      "name": "thread, condition, main",
+      "name": "thread, condition, f841",
       "issue_count": 1,
       "recent_issue": {
         "title": "AlertsContext condition evaluation runs O(rules × alerts) per cycle, blocking main thread",
@@ -405,7 +405,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Forced demo-mode logout behavior is not documented as intentional",
+        "url": "https://github.com/kubestellar/docs/issues/1402",
+        "repo": "docs",
+        "topic_match": "logout, websocket, disconnect"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",

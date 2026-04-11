@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-11T06:26:26.380Z",
+  "generated_at": "2026-04-11T10:15:22.388Z",
   "total_issues_opened": 72,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 22950,
@@ -96,7 +96,7 @@
       "closed_count": 3
     },
     {
-      "name": "button, cta, primary",
+      "name": "button, cta, modal",
       "issue_count": 3,
       "recent_issue": {
         "title": "bug: Primary CTA Button (“Install to Console”) is Partially Overlapped in Security Audit Modal",
@@ -111,7 +111,7 @@
       "closed_count": 3
     },
     {
-      "name": "products, page, kubectl",
+      "name": "products, page, link",
       "issue_count": 3,
       "recent_issue": {
         "title": "bug: shows zero star and all zero matrix",
@@ -407,7 +407,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Hosted demo limitations are not presented as a strict capability boundary",
+        "url": "https://github.com/kubestellar/docs/issues/1401",
+        "repo": "docs",
+        "topic_match": "helm, host, release"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",
@@ -428,16 +435,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       }
     ]
   },

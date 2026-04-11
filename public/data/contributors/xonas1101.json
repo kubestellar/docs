@@ -1,22 +1,22 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-11T06:26:15.026Z",
-  "total_issues_opened": 284,
+  "generated_at": "2026-04-11T10:15:09.485Z",
+  "total_issues_opened": 290,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 97200,
+  "total_points": 98750,
   "level": "Captain",
   "level_rank": 6,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 23.7,
-    "avg_per_day": 4.74,
+    "avg_per_week": 24.2,
+    "avg_per_day": 4.84,
     "by_day_of_week": [
       25,
       29,
       46,
       57,
       67,
-      27,
+      33,
       33
     ],
     "by_hour_of_day": [
@@ -26,8 +26,8 @@
       10,
       42,
       20,
-      12,
-      10,
+      17,
+      11,
       7,
       5,
       2,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-11T06:05:13.000Z"
+    "last_issue_at": "2026-04-11T07:03:11.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 245,
+      "issue_count": 248,
       "recent_issue": {
-        "title": "Card: Cluster Upgrade Status (upgrade_status)",
-        "url": "https://github.com/kubestellar/console/issues/6292",
-        "created_at": "2026-04-11T06:05:13Z"
+        "title": "When clicking on AI mission in cards no validation or edits can be done by user",
+        "url": "https://github.com/kubestellar/console/issues/6309",
+        "created_at": "2026-04-11T06:58:09Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 4,
-      "closed_count": 241
+      "open_count": 0,
+      "closed_count": 248
     },
     {
       "name": "agentselector, approval, selectagent",
@@ -122,6 +122,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "terminate, rollback, session",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
+        "url": "https://github.com/kubestellar/console/issues/6313",
+        "created_at": "2026-04-11T07:03:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "comment, late, sqlite",
@@ -194,6 +208,34 @@
       "closed_count": 1
     },
     {
+      "name": "0.0.0, imagepullbackoff, image",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Default image tag (0.0.0) causes ImagePullBackOff",
+        "url": "https://github.com/kubestellar/console/issues/5526",
+        "created_at": "2026-04-08T17:04:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "//ghcr.io/kubestellar/charts/console, oci, maybe",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "The Helm chart at oci://ghcr.io/kubestellar/charts/console returns a 404 error.",
+        "url": "https://github.com/kubestellar/console/issues/5524",
+        "created_at": "2026-04-08T16:54:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "comma, compute, d7c",
       "issue_count": 1,
       "recent_issue": {
@@ -236,20 +278,6 @@
       "closed_count": 1
     },
     {
-      "name": "plan, functionality, clarification",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Clarification: Is the Mission Control functionality only to plan the course of action for a job?",
-        "url": "https://github.com/kubestellar/console/issues/4550",
-        "created_at": "2026-04-04T06:40:56Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "restoration, env, smoke",
       "issue_count": 1,
       "recent_issue": {
@@ -264,7 +292,7 @@
       "closed_count": 1
     },
     {
-      "name": "kill, sh, port",
+      "name": "kill, sh, process",
       "issue_count": 1,
       "recent_issue": {
         "title": "Broad port-kill logic can terminate unrelated local processes",
@@ -334,12 +362,12 @@
       "closed_count": 1
     },
     {
-      "name": "sessionid, chat, ids",
+      "name": "redirect, jwt, a3ab131",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Chat cancellation key collision when sessionId is omitted",
-        "url": "https://github.com/kubestellar/console/issues/4263",
-        "created_at": "2026-04-02T16:41:25Z"
+        "title": "JWT is embedded in OAuth redirect URL query",
+        "url": "https://github.com/kubestellar/console/issues/4278",
+        "created_at": "2026-04-02T17:48:19Z"
       },
       "repos": [
         "console"
@@ -452,6 +480,20 @@
         "title": "Card: Flappy Pod (flappy_pod)",
         "url": "https://github.com/kubestellar/console/issues/3927",
         "created_at": "2026-03-30T14:20:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "float, comparison, equality",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unsafe float equality comparison",
+        "url": "https://github.com/kubestellar/console/issues/3722",
+        "created_at": "2026-03-27T11:50:33Z"
       },
       "repos": [
         "console"
@@ -581,12 +623,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "Observability & Logs",
         "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
         "description": "Log streaming, event timeline, alerting, notifications",
@@ -597,6 +633,12 @@
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },
@@ -647,7 +689,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 193
+      "issue_count": 199
     }
   ]
 }

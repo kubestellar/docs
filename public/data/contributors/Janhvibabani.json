@@ -1,6 +1,6 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-04-11T06:26:26.689Z",
+  "generated_at": "2026-04-11T10:15:22.693Z",
   "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
   "total_points": 6250,
@@ -138,14 +138,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "kc-agent build fails on Windows due to syscall.SysProcAttr.Setpgid usage",
-        "url": "https://github.com/kubestellar/console/issues/6297",
-        "repo": "console",
-        "topic_match": "windows, backslashes, separator"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Dashboard & Cards",
