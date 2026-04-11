@@ -1,22 +1,22 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-11T03:06:01.881Z",
-  "total_issues_opened": 278,
+  "generated_at": "2026-04-11T06:26:15.026Z",
+  "total_issues_opened": 284,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 95400,
+  "total_points": 97200,
   "level": "Captain",
   "level_rank": 6,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 23.2,
-    "avg_per_day": 4.69,
+    "avg_per_week": 23.7,
+    "avg_per_day": 4.74,
     "by_day_of_week": [
       25,
       29,
       46,
       57,
       67,
-      21,
+      27,
       33
     ],
     "by_hour_of_day": [
@@ -25,8 +25,8 @@
       0,
       10,
       42,
-      15,
-      11,
+      20,
+      12,
       10,
       7,
       5,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-10T15:36:11.000Z"
+    "last_issue_at": "2026-04-11T06:05:13.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 241,
+      "issue_count": 245,
       "recent_issue": {
-        "title": "tests are too shallow and miss core async/error behavior",
-        "url": "https://github.com/kubestellar/console/issues/6159",
-        "created_at": "2026-04-10T15:36:11Z"
+        "title": "Card: Cluster Upgrade Status (upgrade_status)",
+        "url": "https://github.com/kubestellar/console/issues/6292",
+        "created_at": "2026-04-11T06:05:13Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
+      "open_count": 4,
       "closed_count": 241
     },
     {
@@ -96,6 +96,20 @@
       "closed_count": 2
     },
     {
+      "name": "role, enum, rbac",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Issues in rbac_test.go",
+        "url": "https://github.com/kubestellar/console/issues/4460",
+        "created_at": "2026-04-03T15:46:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "vscode, workbench, usr",
       "issue_count": 2,
       "recent_issue": {
@@ -108,6 +122,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "comment, late, sqlite",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Missing feature_requests.latest_comment column but code writes to it",
+        "url": "https://github.com/kubestellar/console/issues/6284",
+        "created_at": "2026-04-11T05:33:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "severitycolor, tailwind, class",
@@ -200,6 +228,20 @@
         "title": "Memo comparator uses JSON.stringify on config in SharedSortableCard",
         "url": "https://github.com/kubestellar/console/issues/4665",
         "created_at": "2026-04-05T05:17:57Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "plan, functionality, clarification",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Clarification: Is the Mission Control functionality only to plan the course of action for a job?",
+        "url": "https://github.com/kubestellar/console/issues/4550",
+        "created_at": "2026-04-04T06:40:56Z"
       },
       "repos": [
         "console"
@@ -312,20 +354,6 @@
         "title": "Binary auto-update ignores critical filesystem errors",
         "url": "https://github.com/kubestellar/console/issues/4262",
         "created_at": "2026-04-02T16:41:05Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "t., devicetracker, nil",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Nil-pointer crash path in DeviceTracker when k8s client init fails",
-        "url": "https://github.com/kubestellar/console/issues/4261",
-        "created_at": "2026-04-02T16:40:49Z"
       },
       "repos": [
         "console"
@@ -466,20 +494,6 @@
         "title": "Sleep inside mutex",
         "url": "https://github.com/kubestellar/console/issues/3505",
         "created_at": "2026-03-25T04:11:02Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "vite, upgrade, v8",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Upgrade Vite to v8",
-        "url": "https://github.com/kubestellar/console/issues/3500",
-        "created_at": "2026-03-25T03:53:52Z"
       },
       "repos": [
         "console"
@@ -633,7 +647,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 187
+      "issue_count": 193
     }
   ]
 }

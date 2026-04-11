@@ -1,9 +1,9 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-11T03:05:55.648Z",
+  "generated_at": "2026-04-11T06:26:07.939Z",
   "total_issues_opened": 852,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3076900,
+  "total_points": 3080800,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "qa, auto, tsx",
-      "issue_count": 469,
+      "name": "test, qa, auto",
+      "issue_count": 580,
       "recent_issue": {
         "title": "[Auto-QA] Event handler accessibility parity issues",
         "url": "https://github.com/kubestellar/console/issues/6275",
@@ -62,26 +62,11 @@
       },
       "repos": [
         "console",
-        "console-marketplace"
-      ],
-      "open_count": 0,
-      "closed_count": 469
-    },
-    {
-      "name": "test, coverage, suite",
-      "issue_count": 142,
-      "recent_issue": {
-        "title": "🐛 20 test failure(s) in Coverage Suite run #517",
-        "url": "https://github.com/kubestellar/console/issues/6254",
-        "created_at": "2026-04-10T22:05:20Z"
-      },
-      "repos": [
-        "console",
         "console-marketplace",
         "docs"
       ],
       "open_count": 3,
-      "closed_count": 139
+      "closed_count": 577
     },
     {
       "name": "monitoring, step, implement",
@@ -124,6 +109,20 @@
       ],
       "open_count": 0,
       "closed_count": 33
+    },
+    {
+      "name": "copilot, stall, assignment",
+      "issue_count": 23,
+      "recent_issue": {
+        "title": "enhancement: add delayed Copilot comment check for merged PRs",
+        "url": "https://github.com/kubestellar/console/issues/5738",
+        "created_at": "2026-04-09T14:26:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 23
     },
     {
       "name": "px, spacing, inconsistent",
@@ -182,6 +181,20 @@
       "closed_count": 6
     },
     {
+      "name": "testing, greet, close",
+      "issue_count": 6,
+      "recent_issue": {
+        "title": "Test: verify updated contributor greeting",
+        "url": "https://github.com/kubestellar/console/issues/2762",
+        "created_at": "2026-03-16T15:14:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 6
+    },
+    {
       "name": "typo, readme, fix",
       "issue_count": 5,
       "recent_issue": {
@@ -222,6 +235,20 @@
       ],
       "open_count": 1,
       "closed_count": 2
+    },
+    {
+      "name": "tooltip, technical, recommend",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
+        "url": "https://github.com/kubestellar/console/issues/3345",
+        "created_at": "2026-03-23T20:21:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "chart, default, day",
@@ -483,20 +510,6 @@
         "title": "[Auto-QA] 1 adoption & engagement psychology opportunities found",
         "url": "https://github.com/kubestellar/console/issues/3791",
         "created_at": "2026-03-28T13:44:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "recommend, expand, dropdown",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
-        "url": "https://github.com/kubestellar/console/issues/3345",
-        "created_at": "2026-03-23T20:21:23Z"
       },
       "repos": [
         "console"
