@@ -125,6 +125,7 @@ nav:
       - Overview: console/readme.md
       - Quick Start: console/quickstart.md
       - Installation: console/installation.md
+      - Troubleshooting: console/troubleshooting.md
       - Dashboards: console/dashboards.md
       - Cards: console/all-cards.md
       - Stats Blocks: console/stats-blocks.md

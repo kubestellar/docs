@@ -21,6 +21,30 @@ This guide covers all deployment options for KubeStellar Console, the multi-clus
 
 ---
 
+## Prerequisites and resource requirements
+
+Before installing into a Kubernetes cluster, make sure your target meets
+these requirements. For local-only evaluation (curl one-liner or run from
+source) you only need the entries marked **Local**.
+
+| Requirement | Minimum | Notes |
+|---|---|---|
+| Kubernetes version | **1.28+** | Matches the Pod Security `restricted` profile the chart targets. Tested on 1.28 – 1.31. |
+| Default StorageClass | One must exist | Needed when `persistence.enabled=true` (the default). Disable persistence on clusters without one. See [Troubleshooting → PVC stuck Pending](troubleshooting.md#pod-stuck-pending-on-a-persistentvolumeclaim). |
+| Node CPU (request) | 250 m | Burstable — no hard limit set by the chart. |
+| Node memory (request) | 256 Mi | Startup probe takes ~30 s on cold start. |
+| Node memory (recommended) | 512 Mi+ | Real clusters with many contexts. |
+| Ephemeral / PVC storage | 1 Gi | SQLite database + backup snapshots. |
+| Service port | **8080** | The service listens on 8080, not 80. Port-forward with `8080:8080`. |
+| Namespace PodSecurity | `baseline` or `restricted` OK | The chart is compliant with `restricted` out of the box. |
+| GitHub OAuth App | Optional | Only required for multi-user logins; omit for demo or single-user local. |
+| **Local**: Go | 1.24+ | Only for "run from source". |
+| **Local**: Node.js | 20+ | Only for "run from source". |
+| **Local**: kubectl | latest | |
+| **Local**: kubeconfig | ≥ 1 context | `kubectl config get-contexts` must list at least one context. |
+
+---
+
 ## Fastest Path
 
 > **Prerequisites**: You must install the kubestellar-mcp plugins **before** running this command — they are not installed by `start.sh`. See [Step 1: Install Claude Code Plugins](#step-1-install-claude-code-plugins) first.
@@ -358,6 +382,264 @@ The console reads clusters from your kubeconfig. To access multiple clusters:
    ```bash
    kubectl config get-contexts
    ```
+
+## Kind quickstart (zero to browser)
+
+A full local path from nothing to a running console in a Kind cluster.
+Tested on Kind v0.27 and Kubernetes 1.31.
+
+```bash
+# 1. Create a Kind cluster
+kind create cluster --name kc-demo
+
+# 2. Pre-pull the console image into Kind to avoid deploy.sh timeouts
+docker pull ghcr.io/kubestellar/console:latest
+kind load docker-image ghcr.io/kubestellar/console:latest --name kc-demo
+
+# 3. Install the chart with no overrides — JWT secret auto-generates,
+#    everything else falls back to demo mode.
+kubectl create namespace kubestellar-console
+
+helm install kc oci://ghcr.io/kubestellar/charts/kubestellar-console \
+  -n kubestellar-console \
+  --wait --timeout 10m
+
+# 4. Verify (see "Verification commands" below for full checks)
+kubectl -n kubestellar-console rollout status deploy \
+  -l app.kubernetes.io/name=kubestellar-console
+
+# 5. Port-forward — service port is 8080, NOT 80
+kubectl -n kubestellar-console port-forward svc/kc-kubestellar-console 8080:8080
+```
+
+Open [http://localhost:8080](http://localhost:8080). Because no GitHub OAuth
+was configured, you'll land directly in demo mode.
+
+**Tear down:**
+
+```bash
+helm uninstall kc -n kubestellar-console
+kind delete cluster --name kc-demo
+```
+
+If `helm install` fails with `context deadline exceeded`, see
+[Troubleshooting → deploy.sh timeouts](troubleshooting.md#deploysh-fails-with-context-deadline-exceeded)
+— pre-pulling and loading the image (step 2 above) is the standard workaround.
+
+## Minikube quickstart (zero to browser)
+
+Same idea as Kind, on Minikube. Tested on Minikube v1.35 with the default
+`docker` driver.
+
+```bash
+# 1. Create a Minikube profile
+minikube start -p kc-demo --memory=4096 --cpus=2
+
+# 2. Load the image into Minikube's Docker
+minikube -p kc-demo image load ghcr.io/kubestellar/console:latest
+
+# 3. Install the chart
+kubectl create namespace kubestellar-console
+
+helm install kc oci://ghcr.io/kubestellar/charts/kubestellar-console \
+  -n kubestellar-console \
+  --wait --timeout 10m
+
+# 4. Verify
+kubectl -n kubestellar-console rollout status deploy \
+  -l app.kubernetes.io/name=kubestellar-console
+
+# 5. Port-forward
+kubectl -n kubestellar-console port-forward svc/kc-kubestellar-console 8080:8080
+```
+
+Open [http://localhost:8080](http://localhost:8080).
+
+Minikube ships with a default `standard` StorageClass, so the default
+`persistence.enabled=true` works without any extra setup. If you're on a
+stripped-down profile without storage, add `--set persistence.enabled=false`
+and `--set backup.enabled=false`.
+
+**Tear down:**
+
+```bash
+helm uninstall kc -n kubestellar-console
+minikube delete -p kc-demo
+```
+
+## Verification commands
+
+After any install, run these to confirm everything is healthy. These are
+the same commands [Troubleshooting](troubleshooting.md#pre-port-forward-diagnostics)
+tells you to run **before** opening a support issue.
+
+```bash
+NS=kubestellar-console
+
+# 1. Deployment rolled out
+kubectl -n "$NS" rollout status deploy \
+  -l app.kubernetes.io/name=kubestellar-console --timeout=180s
+
+# 2. Pods Ready 1/1
+kubectl -n "$NS" get pods -l app.kubernetes.io/name=kubestellar-console
+
+# 3. PVC bound (if persistence.enabled=true — the default)
+kubectl -n "$NS" get pvc
+
+# 4. Service exists on port 8080 and has at least one endpoint
+kubectl -n "$NS" get svc,endpoints
+
+# 5. No errors in the last 200 log lines
+kubectl -n "$NS" logs -l app.kubernetes.io/name=kubestellar-console \
+  --tail=200 --all-containers
+
+# 6. HTTP health check through the port-forward
+kubectl -n "$NS" port-forward svc/kc-kubestellar-console 8080:8080 &
+sleep 2
+curl -sSf http://localhost:8080/api/health && echo OK
+```
+
+### kc-agent health (Helm / in-cluster mode only)
+
+kc-agent runs **on your workstation**, not in the cluster. After starting
+`kc-agent`, verify it:
+
+```bash
+# Process is running and listening on 8585
+lsof -nP -iTCP:8585 -sTCP:LISTEN
+
+# Agent responds to a health probe
+curl -sSf http://127.0.0.1:8585/healthz && echo OK
+```
+
+If kc-agent is not running, the console will show an "Agent Not Connected"
+banner. See [Troubleshooting → Agent Not Connected](troubleshooting.md#agent-not-connected--cluster-actions-fail).
+
+## Values and secrets reference
+
+The chart accepts secret material in one of two modes. The full list lives
+in the
+[chart README](https://github.com/kubestellar/console/tree/main/deploy/helm/kubestellar-console#secrets-and-configuration);
+the common keys are:
+
+| Value | Default | `existingSecret` alternative | Auto-generated? |
+|---|---|---|---|
+| `github.clientId` / `github.clientSecret` | *(empty)* | `github.existingSecret` + `github.existingSecretKeys.clientId` / `.clientSecret` | No — OAuth disabled if unset |
+| `jwt.secret` | *(empty)* | `jwt.existingSecret` + `jwt.existingSecretKey` (default `jwt-secret`) | **Yes** — chart generates a 64-char random value on first install |
+| `googleDrive.apiKey` | *(empty)* | `googleDrive.existingSecret` + `googleDrive.existingSecretKey` | No — benchmark cards fall back to demo data |
+| `claude.apiKey` | *(empty)* | `claude.existingSecret` + `claude.existingSecretKey` | No — AI features disabled |
+| `feedbackGithubToken.token` | *(empty)* | `feedbackGithubToken.existingSecret` + `feedbackGithubToken.existingSecretKey` | No — in-app feedback disabled |
+
+### Secret creation — mode 1: chart-managed
+
+The chart renders a Secret named `{release-name}-kubestellar-console` for
+you. Pass values inline:
+
+```bash
+helm install kc oci://ghcr.io/kubestellar/charts/kubestellar-console \
+  -n kubestellar-console --create-namespace \
+  --set github.clientId=YOUR_CLIENT_ID \
+  --set github.clientSecret=YOUR_CLIENT_SECRET
+```
+
+The JWT secret is auto-generated; you don't need to set anything.
+
+### Secret creation — mode 2: bring-your-own
+
+Create the Secret **before** `helm install` — if you pass
+`*.existingSecret` for a Secret that doesn't exist, the pod fails with
+`CreateContainerConfigError`. The chart does **not** create it for you.
+
+```bash
+kubectl create namespace kubestellar-console
+
+kubectl -n kubestellar-console create secret generic kc-oauth-secret \
+  --from-literal=github-client-id="YOUR_CLIENT_ID" \
+  --from-literal=github-client-secret="YOUR_CLIENT_SECRET" \
+  --from-literal=jwt-secret="$(openssl rand -hex 32)"
+
+helm install kc oci://ghcr.io/kubestellar/charts/kubestellar-console \
+  -n kubestellar-console \
+  --set github.existingSecret=kc-oauth-secret \
+  --set jwt.existingSecret=kc-oauth-secret
+```
+
+The default key names the chart expects are `github-client-id`,
+`github-client-secret`, and `jwt-secret`. If your Secret uses different
+keys, override `github.existingSecretKeys.clientId`,
+`github.existingSecretKeys.clientSecret`, and `jwt.existingSecretKey`
+accordingly.
+
+### JWT secret behavior (by mode)
+
+| Scenario | What happens |
+|---|---|
+| Neither `jwt.secret` nor `jwt.existingSecret` set (default) | Chart generates a 64-char random JWT secret on first install and reuses it on upgrades. |
+| `jwt.secret` set inline | Chart uses that value. Changing it rotates the key and invalidates active sessions. |
+| `jwt.existingSecret` set | Chart reads key `jwt-secret` (or `jwt.existingSecretKey`) from the named Secret. The Secret must exist first. |
+
+### `FEEDBACK_GITHUB_TOKEN` — enables in-app feedback
+
+The in-app feedback / `/issue` flow posts to GitHub on the user's behalf.
+It requires a GitHub Personal Access Token with `public_repo` scope. In
+the Helm chart it's `feedbackGithubToken.token` (or
+`feedbackGithubToken.existingSecret`). In local dev it's the
+`FEEDBACK_GITHUB_TOKEN` environment variable or `.env` entry. Without it,
+the feedback buttons in the UI are disabled.
+
+## Data persistence and storage behavior
+
+By default the chart sets:
+
+- `persistence.enabled: true` — a PVC is created for the SQLite database
+  that holds sessions, user preferences, and the feedback queue.
+- `backup.enabled: true` — a CronJob periodically snapshots the SQLite
+  database into a `backup` volume, and an init container restores the
+  latest snapshot on pod startup.
+
+**This means:**
+
+- On clusters **without** a default StorageClass, the pod will stay `Pending`
+  until the PVC is bound. Set `persistence.enabled=false` and
+  `backup.enabled=false` for a stateless evaluation install.
+- `helm uninstall` **does not** delete PVCs by default. Run
+  `kubectl -n kubestellar-console delete pvc -l app.kubernetes.io/instance=kc`
+  if you want a fresh install.
+- On local clusters (Kind, Minikube) the default StorageClass uses
+  `volumeBindingMode: WaitForFirstConsumer`, which means the PV is not
+  provisioned until a pod requests it. This is **expected** and not a
+  failure — only act if the PVC is still `Pending` after the pod exists.
+
+See [Persistence](persistence.md) for the data model and backup CronJob
+details.
+
+## `deploy.sh` vs direct Helm
+
+The `deploy.sh` convenience script wraps Helm plus a few extras. It is **not
+a superset of Helm** — behavior differs in ways users have hit:
+
+| Behavior | `deploy.sh` | Direct `helm install` |
+|---|---|---|
+| Installs the chart | Yes — wraps `helm install`/`upgrade` | Yes |
+| Helm `--wait` | **Hardcoded `--timeout 120s`** | You control it |
+| Creates namespace | Yes | Only with `--create-namespace` |
+| Creates GitHub OAuth Secret | With `--github-oauth` | You create it yourself |
+| Configures Ingress | With `--ingress <host>` | Via `--set ingress.*` |
+| Configures OpenShift Route | With `--openshift` | Via `--set route.*` |
+| Uses `--context` | Yes, respects it | Respects current kube context |
+| Loads image into Kind | **No** | No |
+
+**Practical rule of thumb:**
+
+- On Kind / Minikube / anywhere image pull might exceed 120 s, **skip
+  `deploy.sh`** and use direct Helm with `--wait --timeout 10m` (see the
+  [Kind quickstart](#kind-quickstart-zero-to-browser)).
+- On real clusters where the image is already cached on the node, the
+  `deploy.sh --github-oauth --ingress` one-liner is genuinely the fastest
+  path.
+- In either case, `deploy.sh` abstracts **which** values it sets; read the
+  script or pass the equivalent `--set` flags directly if you want the
+  change visible in your shell history or GitOps diff.
 
 ## Upgrading
 
