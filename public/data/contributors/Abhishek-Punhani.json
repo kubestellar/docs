@@ -1,12 +1,12 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-11T14:16:54.967Z",
+  "generated_at": "2026-04-11T18:13:41.117Z",
   "total_issues_opened": 73,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
   "total_points": 23150,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 11,
+  "rank": 12,
   "cadence": {
     "avg_per_week": 6.1,
     "avg_per_day": 1.89,
@@ -67,7 +67,7 @@
       "closed_count": 67
     },
     {
-      "name": "linux, pin, dev",
+      "name": "linux, dev, ubuntu",
       "issue_count": 3,
       "recent_issue": {
         "title": "bug:  make dev silently fails: backend never starts, all API calls ECONNREFUSED",
@@ -129,7 +129,7 @@
         "title": "card: Implement Flatcar Container Linux monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/59",
         "repo": "console-marketplace",
-        "topic_match": "linux, pin, dev"
+        "topic_match": "linux, dev, ubuntu"
       },
       {
         "title": "Kubernetes OAuth secret creation is undocumented in the primary install flow",

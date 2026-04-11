@@ -1,12 +1,12 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-11T14:16:45.441Z",
+  "generated_at": "2026-04-11T18:13:36.334Z",
   "total_issues_opened": 251,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 76700,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 3,
+  "rank": 4,
   "cadence": {
     "avg_per_week": 20.9,
     "avg_per_day": 5.42,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aaradhychinche, alt, reproduce",
-      "issue_count": 224,
+      "issue_count": 226,
       "recent_issue": {
         "title": "Improve responsive transition behavior at breakpoint boundaries",
         "url": "https://github.com/kubestellar/console/issues/6401",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 224
+      "closed_count": 226
     },
     {
       "name": "kube, game, craft",
@@ -138,40 +138,12 @@
       "closed_count": 1
     },
     {
-      "name": "sourcecluster, deploy, validate",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "## 🐛 bug: deploy api does not validate sourceCluster",
-        "url": "https://github.com/kubestellar/console/issues/5957",
-        "created_at": "2026-04-10T06:48:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "analysis, ai, failure",
       "issue_count": 1,
       "recent_issue": {
         "title": "📝 issue: AI analysis failures are silent",
         "url": "https://github.com/kubestellar/console/issues/5945",
         "created_at": "2026-04-10T06:44:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "blocked, resolution, bypass",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "## 🐛 bug: resolution flow bypasses blocked-state validation",
-        "url": "https://github.com/kubestellar/console/issues/5934",
-        "created_at": "2026-04-10T05:52:04Z"
       },
       "repos": [
         "console"
@@ -194,7 +166,7 @@
       "closed_count": 1
     },
     {
-      "name": "unreadable, overlap, chat",
+      "name": "unreadable, overlap, panel",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: cluster labels overlap and become unreadable when AI chat panel is opened",
@@ -264,7 +236,7 @@
       "closed_count": 1
     },
     {
-      "name": "enable, change, flag",
+      "name": "enable, flag, change",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: useClusterCapabilities does not react to enabled flag changes due to stale closure",
@@ -363,7 +335,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "🐛 1 test failure(s) in Coverage Suite run #560",
+        "url": "https://github.com/kubestellar/console/issues/6517",
+        "repo": "console",
+        "topic_match": "watcher, persistence, context"
+      }
+    ],
     "stretch": [
       {
         "name": "Charts & Visualizations",

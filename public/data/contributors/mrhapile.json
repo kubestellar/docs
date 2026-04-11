@@ -1,22 +1,22 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-11T14:16:50.379Z",
-  "total_issues_opened": 238,
+  "generated_at": "2026-04-11T18:13:30.979Z",
+  "total_issues_opened": 291,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 75250,
+  "total_points": 91150,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 4,
+  "rank": 3,
   "cadence": {
-    "avg_per_week": 19.8,
-    "avg_per_day": 4.65,
+    "avg_per_week": 24.3,
+    "avg_per_day": 5.67,
     "by_day_of_week": [
       10,
       47,
       74,
       61,
       4,
-      29,
+      82,
       13
     ],
     "by_hour_of_day": [
@@ -34,9 +34,9 @@
       4,
       9,
       20,
-      6,
+      19,
       17,
-      0,
+      40,
       8,
       6,
       6,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-11T13:42:06.000Z"
+    "last_issue_at": "2026-04-11T16:39:56.000Z"
   },
   "topics": [
     {
       "name": "@mrhapile, location, phase",
-      "issue_count": 192,
+      "issue_count": 222,
       "recent_issue": {
-        "title": "Fork Readiness Race Limit",
-        "url": "https://github.com/kubestellar/console/issues/6420",
-        "created_at": "2026-04-11T13:41:18Z"
+        "title": "FlightPlan Panel Wrap",
+        "url": "https://github.com/kubestellar/console/issues/6541",
+        "created_at": "2026-04-11T16:38:36Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 2,
-      "closed_count": 190
+      "open_count": 9,
+      "closed_count": 213
     },
     {
       "name": "alertscontext, const, queueautoresolve",
@@ -79,6 +79,62 @@
       ],
       "open_count": 0,
       "closed_count": 4
+    },
+    {
+      "name": "pb, safe, inset",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "iOS Bottom Bar Safe Area",
+        "url": "https://github.com/kubestellar/console/issues/6545",
+        "created_at": "2026-04-11T16:39:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
+      "name": "snoozed, reappear, cards",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Snoozed Cards List",
+        "url": "https://github.com/kubestellar/console/issues/6532",
+        "created_at": "2026-04-11T16:35:47Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "escape, extractbalancedblocks, inside",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "extractBalancedBlocks Infinite Loop Trap",
+        "url": "https://github.com/kubestellar/console/issues/6426",
+        "created_at": "2026-04-11T14:14:45Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "log, f98ad36, edd",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "One-Shot Log Recovery Lockout",
+        "url": "https://github.com/kubestellar/console/issues/6415",
+        "created_at": "2026-04-11T13:39:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "analytics, safetotal, track",
@@ -151,6 +207,230 @@
       "closed_count": 2
     },
     {
+      "name": "resizer, bdde7, be3b",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Desktop-specific Resizer",
+        "url": "https://github.com/kubestellar/console/issues/6544",
+        "created_at": "2026-04-11T16:39:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "tooltips, a44df46a, cdb",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Tooltips Blocking UI",
+        "url": "https://github.com/kubestellar/console/issues/6543",
+        "created_at": "2026-04-11T16:39:20Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "pacity, :o, hover",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Hover Actions on Touch",
+        "url": "https://github.com/kubestellar/console/issues/6542",
+        "created_at": "2026-04-11T16:38:57Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "truncate, c5b, cad",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Feature Request Modal",
+        "url": "https://github.com/kubestellar/console/issues/6531",
+        "created_at": "2026-04-11T16:35:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "chips, a4f11, e4d5",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Filter Chips Container",
+        "url": "https://github.com/kubestellar/console/issues/6530",
+        "created_at": "2026-04-11T16:35:09Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "snackbar, ba49b2, b473",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Snackbar Overrides Modal",
+        "url": "https://github.com/kubestellar/console/issues/6498",
+        "created_at": "2026-04-11T16:07:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sticky, dropdown, de7e22e",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Agent Selector Dropdown",
+        "url": "https://github.com/kubestellar/console/issues/6494",
+        "created_at": "2026-04-11T16:06:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sweeper, flaw, a93569e8",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Agent Disconnected Sweeper Flaw",
+        "url": "https://github.com/kubestellar/console/issues/6440",
+        "created_at": "2026-04-11T14:23:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "repo, req, a1aa",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ShareToGitHub Repo Traversal",
+        "url": "https://github.com/kubestellar/console/issues/6439",
+        "created_at": "2026-04-11T14:22:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "wipe, map, finalizecancellation",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Race in finalizeCancellation Map Wipe",
+        "url": "https://github.com/kubestellar/console/issues/6438",
+        "created_at": "2026-04-11T14:21:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "tab, clashing, cf284b4",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "deploy:started Event Clashing",
+        "url": "https://github.com/kubestellar/console/issues/6436",
+        "created_at": "2026-04-11T14:20:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "arbitrary, yaml, execute",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "YAML Import Arbitrary Payload Eval",
+        "url": "https://github.com/kubestellar/console/issues/6435",
+        "created_at": "2026-04-11T14:19:45Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "dry, f2692457, caa5825a9cc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Dry-Run Privilege Escalation Warning",
+        "url": "https://github.com/kubestellar/console/issues/6434",
+        "created_at": "2026-04-11T14:18:55Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "schema, missionexport, ignorance",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "MissionExport Schema Drift Ignorance:",
+        "url": "https://github.com/kubestellar/console/issues/6430",
+        "created_at": "2026-04-11T14:17:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "history, prompt, saturation",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Agent Prompt History Saturation",
+        "url": "https://github.com/kubestellar/console/issues/6429",
+        "created_at": "2026-04-11T14:16:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "tempo, installedprojects, a11e",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "installedProjects Namespace Collision",
+        "url": "https://github.com/kubestellar/console/issues/6428",
+        "created_at": "2026-04-11T14:15:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "d6093c66, fd5, be0",
       "issue_count": 1,
       "recent_issue": {
@@ -161,8 +441,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "base64, github, faf",
@@ -175,8 +455,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "decode, path, bypass",
@@ -189,8 +469,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "bombing, oom, b3e3d646",
@@ -203,11 +483,11 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
-      "name": "ssrf, a8cb, d2e3",
+      "name": "a8cb, d2e3, webhookurl",
       "issue_count": 1,
       "recent_issue": {
         "title": "Slack SSRF Hook Exposure",
@@ -217,16 +497,16 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
-      "name": "priority, recommend, sort",
+      "name": "expire, phantom, bc8042",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Priority Sort Undefined Crash",
-        "url": "https://github.com/kubestellar/console/issues/6402",
-        "created_at": "2026-04-11T13:32:32Z"
+        "title": "Phantom Auth Failures Masking 404s",
+        "url": "https://github.com/kubestellar/console/issues/6414",
+        "created_at": "2026-04-11T13:37:26Z"
       },
       "repos": [
         "console"
@@ -235,12 +515,26 @@
       "closed_count": 1
     },
     {
-      "name": "escape, inside, balanced",
+      "name": "mark, second, catastrophe",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Balanced Block Nesting Illusion",
-        "url": "https://github.com/kubestellar/console/issues/6382",
-        "created_at": "2026-04-11T13:02:46Z"
+        "title": "The 6-Failed-Ping Catastrophe",
+        "url": "https://github.com/kubestellar/console/issues/6412",
+        "created_at": "2026-04-11T13:36:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "10s, active, min",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Partial Status Race on 10-Second Grace",
+        "url": "https://github.com/kubestellar/console/issues/6409",
+        "created_at": "2026-04-11T13:36:07Z"
       },
       "repos": [
         "console"
@@ -389,12 +683,12 @@
       "closed_count": 1
     },
     {
-      "name": "missionchat, save, f72fd",
+      "name": "leaderboard, coin, hour",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Stale Closure in MissionChat on \"Save & Run\"",
-        "url": "https://github.com/kubestellar/console/issues/5651",
-        "created_at": "2026-04-09T03:17:03Z"
+        "title": "Leaderboard Coins Not Updating",
+        "url": "https://github.com/kubestellar/console/issues/5517",
+        "created_at": "2026-04-08T15:30:39Z"
       },
       "repos": [
         "console"
@@ -403,12 +697,12 @@
       "closed_count": 1
     },
     {
-      "name": "leaderboard, coin, hour",
+      "name": "presence, metric, trivially",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Leaderboard Coins Not Updating",
-        "url": "https://github.com/kubestellar/console/issues/5517",
-        "created_at": "2026-04-08T15:30:39Z"
+        "title": "Demo presence counts are trivially spoofable.",
+        "url": "https://github.com/kubestellar/console/issues/5448",
+        "created_at": "2026-04-08T09:13:47Z"
       },
       "repos": [
         "console"
@@ -431,26 +725,12 @@
       "closed_count": 1
     },
     {
-      "name": "page, height, item",
+      "name": "exec, pod, b66963",
       "issue_count": 1,
       "recent_issue": {
-        "title": "useStablePageHeight — Cumulative Layout Shift (CLS)",
-        "url": "https://github.com/kubestellar/console/issues/5255",
-        "created_at": "2026-04-07T14:23:09Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "menu, right, screen",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "CardWrapper — Menu position off-screen",
-        "url": "https://github.com/kubestellar/console/issues/5253",
-        "created_at": "2026-04-07T14:21:47Z"
+        "title": "Pod exec allows any authenticated user to open a shell in any pod.",
+        "url": "https://github.com/kubestellar/console/issues/5406",
+        "created_at": "2026-04-08T06:42:25Z"
       },
       "repos": [
         "console"
@@ -479,20 +759,6 @@
         "title": "EventSummary.tsx — Division by zero in progress bar width",
         "url": "https://github.com/kubestellar/console/issues/5144",
         "created_at": "2026-04-07T01:44:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "snoozed, reappear, f52861",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Snoozed Cards Still Render or Reappear Incorrectly",
-        "url": "https://github.com/kubestellar/console/issues/5137",
-        "created_at": "2026-04-07T01:24:53Z"
       },
       "repos": [
         "console"
@@ -602,6 +868,12 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "backend: enforce dryRun as a hard gate in the agent execution path (follow-up to #6434)",
+        "url": "https://github.com/kubestellar/console/issues/6442",
+        "repo": "console",
+        "topic_match": "dry, f2692457, caa5825a9cc"
+      },
+      {
         "title": "FEEDBACK_GITHUB_TOKEN prerequisite for /issue is not surfaced in onboarding",
         "url": "https://github.com/kubestellar/docs/issues/1395",
         "repo": "docs",
@@ -628,16 +900,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },
@@ -688,7 +960,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 219
+      "issue_count": 272
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "KPRoche",
-  "generated_at": "2026-04-11T14:16:54.686Z",
+  "generated_at": "2026-04-11T18:13:40.676Z",
   "total_issues_opened": 26,
   "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
   "total_points": 27550,
@@ -67,7 +67,7 @@
       "closed_count": 13
     },
     {
-      "name": "doc, kubestellar, file",
+      "name": "doc, file, kubestellar",
       "issue_count": 8,
       "recent_issue": {
         "title": "bug: kubestellar.io/docs sidebar unreadable in Dark mode",
@@ -138,7 +138,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Navbar Hamburger",
+        "url": "https://github.com/kubestellar/console/issues/6499",
+        "repo": "console",
+        "topic_match": "hamburger, narrow, menu"
+      }
+    ],
     "stretch": [
       {
         "name": "Storage & Compute",

@@ -1,12 +1,12 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-11T14:16:54.825Z",
+  "generated_at": "2026-04-11T18:13:40.975Z",
   "total_issues_opened": 77,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 23500,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 10,
+  "rank": 11,
   "cadence": {
     "avg_per_week": 6.3,
     "avg_per_day": 0.79,
@@ -139,7 +139,7 @@
       "closed_count": 1
     },
     {
-      "name": "unhealthy, f4d40dd1, fa7",
+      "name": "unhealthy, f4d40dd1, b8afd3622aaf",
       "issue_count": 1,
       "recent_issue": {
         "title": "Cluster Drilldown Fails When Switching Between Unhealthy Clusters",
@@ -195,7 +195,7 @@
       "closed_count": 1
     },
     {
-      "name": "yaml, export, markdown",
+      "name": "export, yaml, markdown",
       "issue_count": 1,
       "recent_issue": {
         "title": "AI Mission export only supports markdown, missing JSON/YAML",
@@ -211,6 +211,18 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "While the review AI mission modal is very nice, it is not available for all AI missions.",
+        "url": "https://github.com/kubestellar/console/issues/6455",
+        "repo": "console",
+        "topic_match": "mission, ai, @ghanshyam2005singh"
+      },
+      {
+        "title": "Sidebar Collapse Toggle",
+        "url": "https://github.com/kubestellar/console/issues/6502",
+        "repo": "console",
+        "topic_match": "collapse, sidebar, popup"
+      },
       {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",

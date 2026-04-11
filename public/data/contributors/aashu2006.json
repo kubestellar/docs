@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-11T14:16:54.260Z",
+  "generated_at": "2026-04-11T18:13:40.236Z",
   "total_issues_opened": 107,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 30900,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "@aashu2006, line, happen",
+      "name": "@aashu2006, happen, line",
       "issue_count": 80,
       "recent_issue": {
         "title": "PreflightFailure, FeatureRequestModal, FeedbackModal, CardFactoryModal: Clipboard API called without browser support check - silently fails with no fallback",
@@ -95,7 +95,7 @@
       "closed_count": 1
     },
     {
-      "name": "debounce, keystroke, list",
+      "name": "keystroke, debounce, list",
       "issue_count": 1,
       "recent_issue": {
         "title": "KubescapeDetailModal, TrivyDetailModal, KyvernoDetailModal, ClusterLocations: search input missing debounce - full list re-filtered on every keystroke",
@@ -207,7 +207,7 @@
       "closed_count": 1
     },
     {
-      "name": "extract, identitybinding, ffb011",
+      "name": "extract, ffb011, f6f",
       "issue_count": 1,
       "recent_issue": {
         "title": "identityBinding extracted from wrong nested path inflating SPIFFE-bound security metric",
@@ -460,16 +460,22 @@
         "topic_match": "port, invalid, warning"
       },
       {
-        "title": "Missing pre-port-forward diagnostic commands in docs",
-        "url": "https://github.com/kubestellar/docs/issues/1400",
-        "repo": "docs",
-        "topic_match": "port, invalid, warning"
+        "title": "Agent Selector Mobile",
+        "url": "https://github.com/kubestellar/console/issues/6504",
+        "repo": "console",
+        "topic_match": "mobile, tip, overlap"
       },
       {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
-        "topic_match": "extract, identitybinding, ffb011"
+        "topic_match": "extract, ffb011, f6f"
+      },
+      {
+        "title": "Missing pre-port-forward diagnostic commands in docs",
+        "url": "https://github.com/kubestellar/docs/issues/1400",
+        "repo": "docs",
+        "topic_match": "port, invalid, warning"
       }
     ],
     "stretch": [

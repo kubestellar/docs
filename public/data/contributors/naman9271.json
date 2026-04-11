@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-11T14:16:50.389Z",
+  "generated_at": "2026-04-11T18:13:36.345Z",
   "total_issues_opened": 41,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 50000,
@@ -284,6 +284,12 @@
         "url": "https://github.com/kubestellar/docs/issues/1397",
         "repo": "docs",
         "topic_match": "readme, irrelevant, kinda"
+      },
+      {
+        "title": "Demo Banner Overlap",
+        "url": "https://github.com/kubestellar/console/issues/6491",
+        "repo": "console",
+        "topic_match": "banner, changer, overlapping"
       }
     ],
     "stretch": [

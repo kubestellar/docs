@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-11T14:16:53.901Z",
+  "generated_at": "2026-04-11T18:13:39.865Z",
   "total_issues_opened": 222,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 40950,
@@ -54,18 +54,18 @@
   "topics": [
     {
       "name": "line, @rishi, jat",
-      "issue_count": 168,
+      "issue_count": 166,
       "recent_issue": {
-        "title": "docs/build(console): Go version mismatch between go.mod (1.25) and docs (1.24+)",
-        "url": "https://github.com/kubestellar/console/issues/6364",
-        "created_at": "2026-04-11T11:34:06Z"
+        "title": "ux(console): missing kc-agent connection status indicator in UI",
+        "url": "https://github.com/kubestellar/console/issues/6363",
+        "created_at": "2026-04-11T11:33:47Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 25,
-      "closed_count": 143
+      "open_count": 24,
+      "closed_count": 142
     },
     {
       "name": "event, analytics, day",
@@ -80,6 +80,21 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "requirement, mod, version",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "docs/build(console): Go version mismatch between go.mod (1.25) and docs (1.24+)",
+        "url": "https://github.com/kubestellar/console/issues/6364",
+        "created_at": "2026-04-11T11:34:06Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 2,
+      "closed_count": 1
     },
     {
       "name": "windows, setpgid, unix",
@@ -153,7 +168,7 @@
       "closed_count": 2
     },
     {
-      "name": "mission, parameter, encodes",
+      "name": "parameter, mission, encodes",
       "issue_count": 2,
       "recent_issue": {
         "title": "MissionSidebar double encodes URL parameters",
@@ -173,20 +188,6 @@
         "title": "CSP includes unsafe-inline for script-src",
         "url": "https://github.com/kubestellar/console/issues/1859",
         "created_at": "2026-03-06T17:02:08Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "template, poddisruptionbudget, networkpolicy",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Helm chart has no PodDisruptionBudget",
-        "url": "https://github.com/kubestellar/console/issues/1858",
-        "created_at": "2026-03-06T17:02:00Z"
       },
       "repos": [
         "console"
@@ -249,6 +250,34 @@
       ],
       "open_count": 1,
       "closed_count": 0
+    },
+    {
+      "name": "docs, mobile, cutoff",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Docs page layout breaks on mobile (text cutoff on left side)",
+        "url": "https://github.com/kubestellar/console/issues/5718",
+        "created_at": "2026-04-09T12:22:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "term, tooltips, mobile",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Improve UX: Add tooltips for K8s terms + fix mobile Docs layout",
+        "url": "https://github.com/kubestellar/console/issues/5717",
+        "created_at": "2026-04-09T12:13:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "promoter, satisfaction, feedback",
@@ -363,7 +392,7 @@
       "closed_count": 1
     },
     {
-      "name": "broadcast, shutdown, hub",
+      "name": "broadcast, shutdown, buffer",
       "issue_count": 1,
       "recent_issue": {
         "title": "Hub.Broadcast() may block indefinitely after shutdown or when broadcast buffer is full",
@@ -531,20 +560,6 @@
       "closed_count": 0
     },
     {
-      "name": "anchor, readme, setup",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "CONTRIBUTING.md links to a non-existent OAuth section anchor",
-        "url": "https://github.com/kubestellar/docs/issues/1397",
-        "created_at": "2026-04-11T08:37:33Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
       "name": "apps, oauth, template",
       "issue_count": 1,
       "recent_issue": {
@@ -574,7 +589,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Server shutdown is not idempotent",
+        "url": "https://github.com/kubestellar/console/issues/6478",
+        "repo": "console",
+        "topic_match": "broadcast, shutdown, buffer"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",

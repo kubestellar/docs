@@ -1,22 +1,22 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-11T14:16:55.086Z",
-  "total_issues_opened": 72,
+  "generated_at": "2026-04-11T18:13:40.833Z",
+  "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
-  "total_points": 22950,
+  "total_points": 26250,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 12,
+  "rank": 10,
   "cadence": {
-    "avg_per_week": 5.8,
-    "avg_per_day": 0.57,
+    "avg_per_week": 6.7,
+    "avg_per_day": 0.61,
     "by_day_of_week": [
       0,
       8,
       18,
       15,
       12,
-      2,
+      13,
       17
     ],
     "by_hour_of_day": [
@@ -35,8 +35,8 @@
       7,
       21,
       1,
-      7,
-      5,
+      8,
+      15,
       4,
       0,
       2,
@@ -45,16 +45,44 @@
       0,
       0
     ],
-    "current_streak_weeks": 5,
-    "longest_streak_weeks": 5,
+    "current_streak_weeks": 6,
+    "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2025-11-27T13:42:14.000Z",
-    "last_issue_at": "2026-04-03T11:43:34.000Z"
+    "last_issue_at": "2026-04-11T16:14:10.000Z"
   },
   "topics": [
     {
-      "name": "api, vcluster, @arpit529srivastava",
-      "issue_count": 33,
+      "name": "deployment, statstype, config",
+      "issue_count": 8,
+      "recent_issue": {
+        "title": "CI/CD stats type mismatch between config and rendered page",
+        "url": "https://github.com/kubestellar/console/issues/2841",
+        "created_at": "2026-03-17T19:55:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 8
+    },
+    {
+      "name": "ss, testing, @arpit529srivastava",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "checking for ss how it is working",
+        "url": "https://github.com/kubestellar/console/issues/4398",
+        "created_at": "2026-04-03T11:43:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 5
+    },
+    {
+      "name": "vcluster, events, nodes",
+      "issue_count": 5,
       "recent_issue": {
         "title": "Regression test coverage for vcluster API failures in nightly pipeline",
         "url": "https://github.com/kubestellar/console/issues/4144",
@@ -64,22 +92,77 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 33
+      "closed_count": 5
     },
     {
-      "name": "ss, testing, @arpit529srivastava",
-      "issue_count": 6,
+      "name": "replica, scale, replicas",
+      "issue_count": 4,
       "recent_issue": {
-        "title": "checking for ss how it is working",
-        "url": "https://github.com/kubestellar/console/issues/4398",
-        "created_at": "2026-04-03T11:43:34Z"
+        "title": "checkDeploymentHealth in resource_health.go does not check updatedReplicas, can report HealthStatusHealthy during an in-progress rolling update",
+        "url": "https://github.com/kubestellar/console/issues/6511",
+        "created_at": "2026-04-11T16:13:27Z"
       },
       "repos": [
-        "console",
-        "docs"
+        "console"
       ],
       "open_count": 0,
-      "closed_count": 6
+      "closed_count": 4
+    },
+    {
+      "name": "redirect, widget, api",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "Storage/network/namespaces widget API paths redirect instead of returning data",
+        "url": "https://github.com/kubestellar/console/issues/4142",
+        "created_at": "2026-04-01T13:12:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 4
+    },
+    {
+      "name": "mcs, crds, topology",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "ServiceExport / ServiceImport listing silently swallows ALL errors (including auth/network) by treating every error as \"CRD not installed\"",
+        "url": "https://github.com/kubestellar/console/issues/6510",
+        "created_at": "2026-04-11T16:13:01Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "deadline, second, cluster",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "probeAPIServer uses a 5-second TCP timeout per cluster during GetClusterHealth, but health is fetched for ALL clusters in GetAllClusterHealth — total wall-clock is unbounded with no global deadline",
+        "url": "https://github.com/kubestellar/console/issues/6506",
+        "created_at": "2026-04-11T16:09:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "guide, tour, nightly",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Tour guide causes the background to blink",
+        "url": "https://github.com/kubestellar/console/issues/3437",
+        "created_at": "2026-03-24T15:47:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "theme, light, browser",
@@ -96,7 +179,7 @@
       "closed_count": 3
     },
     {
-      "name": "button, cta, modal",
+      "name": "button, cta, primary",
       "issue_count": 3,
       "recent_issue": {
         "title": "bug: Primary CTA Button (“Install to Console”) is Partially Overlapped in Security Audit Modal",
@@ -125,6 +208,20 @@
       "closed_count": 3
     },
     {
+      "name": "namespaces, getaccessiblenamespaces, common",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
+        "url": "https://github.com/kubestellar/console/issues/6512",
+        "created_at": "2026-04-11T16:14:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "upload, screenshots, contribute",
       "issue_count": 2,
       "recent_issue": {
@@ -139,12 +236,40 @@
       "closed_count": 2
     },
     {
+      "name": "groupname, group, deploy",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Cluster Group Bulk-Sync Bypasses K8s Node Labeling",
+        "url": "https://github.com/kubestellar/console/issues/3149",
+        "created_at": "2026-03-22T11:24:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "drill, node, gpunodedrilldown",
       "issue_count": 2,
       "recent_issue": {
         "title": "GPU Type Incorrectly Formatted or Blank in drill-down",
         "url": "https://github.com/kubestellar/console/issues/3030",
         "created_at": "2026-03-20T15:13:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "base, url, api",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Frontend API requests fallback to localhost in deployed environments",
+        "url": "https://github.com/kubestellar/console/issues/2825",
+        "created_at": "2026-03-17T16:48:33Z"
       },
       "repos": [
         "console"
@@ -168,26 +293,82 @@
       "closed_count": 2
     },
     {
-      "name": "replica, scale, getdeployments",
-      "issue_count": 2,
+      "name": "getworkload, listworkloadsforcluster, linear",
+      "issue_count": 1,
       "recent_issue": {
-        "title": "Scale controls in deployment drill-down are hardcoded to a maximum of 10 replicas",
-        "url": "https://github.com/kubestellar/console/issues/2243",
-        "created_at": "2026-03-12T13:22:58Z"
+        "title": "GetWorkload does a full ListWorkloadsForCluster and then does a linear search to find one workload - O(N) full-cluster list for a single resource lookup",
+        "url": "https://github.com/kubestellar/console/issues/6509",
+        "created_at": "2026-04-11T16:12:14Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 1
     },
     {
-      "name": "tour, blink, guide",
+      "name": "classifyerror, branch, find",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Tour guide causes the background to blink",
-        "url": "https://github.com/kubestellar/console/issues/3437",
-        "created_at": "2026-03-24T15:47:40Z"
+        "title": "classifyError returns \"auth\" for messages containing \"not found\" when the actual error is \"executable not found\" (exec-plugin missing), causing a 10-minute authFailureCacheTTL to apply incorrectly",
+        "url": "https://github.com/kubestellar/console/issues/6508",
+        "created_at": "2026-04-11T16:10:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "deployworkload, error, networkerror",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "DeployWorkload does not propagate errors from NetworkError on Get during create-or-update, silently drops the cluster into the failed list without a proper error message",
+        "url": "https://github.com/kubestellar/console/issues/6501",
+        "created_at": "2026-04-11T16:08:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "getallpermissionssummaries, getallclusterpermissions, rbac",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "GetAllPermissionsSummaries and GetAllClusterPermissions query ALL clusters sequentially (no parallelism), blocking the UI for multi-cluster setups",
+        "url": "https://github.com/kubestellar/console/issues/6487",
+        "created_at": "2026-04-11T16:03:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "m., listargoapplications, client",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ListArgoApplications uses stale m.clients snapshot, misses newly-added clusters",
+        "url": "https://github.com/kubestellar/console/issues/6476",
+        "created_at": "2026-04-11T15:53:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "unreachable, available, capability",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Deployment capabilities mark unreachable clusters as available=true",
+        "url": "https://github.com/kubestellar/console/issues/4139",
+        "created_at": "2026-04-01T13:10:32Z"
       },
       "repos": [
         "console"
@@ -252,12 +433,68 @@
       "closed_count": 1
     },
     {
+      "name": "aggressive, bad, fabe5265",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Overly Aggressive 400 Bad Requests on Base API Routes (/api/mcp/custom-resources & /api/gitops/helm-history)",
+        "url": "https://github.com/kubestellar/console/issues/3144",
+        "created_at": "2026-03-22T11:07:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "tracking, boot, fcad",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Background Health Aggregation Race Condition on Boot (/api/mcp/clusters)",
+        "url": "https://github.com/kubestellar/console/issues/3143",
+        "created_at": "2026-03-22T11:07:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "helm, host, release",
       "issue_count": 1,
       "recent_issue": {
         "title": "Swallowed Local Host Errors on Native Executables (/api/gitops/helm-releases)",
         "url": "https://github.com/kubestellar/console/issues/3141",
         "created_at": "2026-03-22T11:05:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "operator, schema, fe177ec6",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Inconsistent JSON Schema in /api/mcp/nvidia-operators",
+        "url": "https://github.com/kubestellar/console/issues/3138",
+        "created_at": "2026-03-22T11:03:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "d8bb9cc0, d3f, e84bf59d5b00",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Global Role-Based Access Control (RBAC) Escalation via API",
+        "url": "https://github.com/kubestellar/console/issues/3137",
+        "created_at": "2026-03-22T11:02:45Z"
       },
       "repos": [
         "console"
@@ -350,12 +587,12 @@
       "closed_count": 1
     },
     {
-      "name": "reward, org, repo",
+      "name": "deploy, emit, result",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Feedback and rewards default targets are hardcoded to kubestellar repositories",
-        "url": "https://github.com/kubestellar/console/issues/2826",
-        "created_at": "2026-03-17T16:53:55Z"
+        "title": "Deploy failure path does not emit terminal deploy result event",
+        "url": "https://github.com/kubestellar/console/issues/2876",
+        "created_at": "2026-03-18T11:39:38Z"
       },
       "repos": [
         "console"
@@ -364,12 +601,26 @@
       "closed_count": 1
     },
     {
-      "name": "github, githubproxyapibase, b9c70",
+      "name": "source, metadata, cluster",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Hardcoded githubProxyAPIBase prevents GitHub Enterprise Server compatibility",
-        "url": "https://github.com/kubestellar/console/issues/2821",
-        "created_at": "2026-03-17T15:20:03Z"
+        "title": "Wrong source-cluster metadata is written on deployed resources",
+        "url": "https://github.com/kubestellar/console/issues/2874",
+        "created_at": "2026-03-18T11:35:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "reward, org, repo",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Feedback and rewards default targets are hardcoded to kubestellar repositories",
+        "url": "https://github.com/kubestellar/console/issues/2826",
+        "created_at": "2026-03-17T16:53:55Z"
       },
       "repos": [
         "console"
@@ -392,6 +643,20 @@
       "closed_count": 1
     },
     {
+      "name": "resolve, cce, d67652c81",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "checking of the issue, if resolved or not?",
+        "url": "https://github.com/kubestellar/docs/issues/1319",
+        "created_at": "2026-03-20T16:41:49Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "markdown, mkdocs, syntax",
       "issue_count": 1,
       "recent_issue": {
@@ -408,6 +673,12 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "Workload deployment reconciliation is a stub (no deployment happens)",
+        "url": "https://github.com/kubestellar/console/issues/6482",
+        "repo": "console",
+        "topic_match": "deployment, statstype, config"
+      },
       {
         "title": "Hosted demo limitations are not presented as a strict capability boundary",
         "url": "https://github.com/kubestellar/docs/issues/1401",
@@ -429,22 +700,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },
@@ -495,7 +766,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 15
+      "issue_count": 26
     }
   ]
 }

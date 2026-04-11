@@ -1,22 +1,22 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-11T14:16:33.123Z",
-  "total_issues_opened": 855,
+  "generated_at": "2026-04-11T18:13:13.350Z",
+  "total_issues_opened": 860,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3104550,
+  "total_points": 3111850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 68.7,
-    "avg_per_day": 3.56,
+    "avg_per_week": 69.1,
+    "avg_per_day": 3.58,
     "by_day_of_week": [
       104,
       106,
       192,
       115,
       125,
-      123,
+      128,
       90
     ],
     "by_hour_of_day": [
@@ -34,9 +34,9 @@
       5,
       4,
       64,
-      41,
+      44,
       88,
-      31,
+      33,
       32,
       23,
       126,
@@ -49,12 +49,12 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-11T13:35:47.000Z"
+    "last_issue_at": "2026-04-11T16:23:52.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, tsx",
-      "issue_count": 466,
+      "issue_count": 469,
       "recent_issue": {
         "title": "[Auto-QA] Event handler accessibility parity issues",
         "url": "https://github.com/kubestellar/console/issues/6275",
@@ -65,23 +65,23 @@
         "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 466
+      "closed_count": 469
     },
     {
       "name": "test, coverage, suite",
       "issue_count": 142,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #551",
-        "url": "https://github.com/kubestellar/console/issues/6407",
-        "created_at": "2026-04-11T13:35:47Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #560",
+        "url": "https://github.com/kubestellar/console/issues/6517",
+        "created_at": "2026-04-11T16:23:52Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 139
+      "open_count": 4,
+      "closed_count": 138
     },
     {
       "name": "monitoring, step, implement",
@@ -98,7 +98,7 @@
       "closed_count": 13
     },
     {
-      "name": "error, ga4, window",
+      "name": "error, ga4, category",
       "issue_count": 52,
       "recent_issue": {
         "title": "[GA4-Error] 5 card_render errors on / (last 2h)",
@@ -140,20 +140,6 @@
       "closed_count": 9
     },
     {
-      "name": "replace, color, hardcoded",
-      "issue_count": 8,
-      "recent_issue": {
-        "title": "🎨 Extract hardcoded hex colors to named constants in chart components",
-        "url": "https://github.com/kubestellar/console/issues/5051",
-        "created_at": "2026-04-06T16:47:36Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 8
-    },
-    {
       "name": "cluster, status, health",
       "issue_count": 8,
       "recent_issue": {
@@ -166,6 +152,20 @@
       ],
       "open_count": 0,
       "closed_count": 8
+    },
+    {
+      "name": "replace, color, hardcoded",
+      "issue_count": 7,
+      "recent_issue": {
+        "title": "🎨 Extract hardcoded hex colors to named constants in chart components",
+        "url": "https://github.com/kubestellar/console/issues/5051",
+        "created_at": "2026-04-06T16:47:36Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 7
     },
     {
       "name": "js, vendor, bundle",
@@ -295,7 +295,7 @@
       "closed_count": 2
     },
     {
-      "name": "leak, stop, channel",
+      "name": "leak, stop, resource",
       "issue_count": 2,
       "recent_issue": {
         "title": "MCP client resource leaks: goroutine leak, blocked channel, unclosed stdin",
@@ -351,7 +351,7 @@
       "closed_count": 2
     },
     {
-      "name": "useeffect, cleanup, ensure",
+      "name": "cleanup, useeffect, ensure",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: Fix potential memory leak — missing timer cleanup in PDDisaggregation and NamespaceManager",
@@ -393,7 +393,7 @@
       "closed_count": 2
     },
     {
-      "name": "projects, products, contribute",
+      "name": "projects, products, want",
       "issue_count": 2,
       "recent_issue": {
         "title": "doc: need updates to content in https://github.com/kubestellar/docs/pull/640",
@@ -435,6 +435,34 @@
       "closed_count": 2
     },
     {
+      "name": "reconciliation, follow, clients",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Implement WorkloadDeployment reconciliation loop (follow-up to #6482)",
+        "url": "https://github.com/kubestellar/console/issues/6513",
+        "created_at": "2026-04-11T16:17:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "llm, prompt, gap",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "backend: enforce dryRun as a hard gate in the agent execution path (follow-up to #6434)",
+        "url": "https://github.com/kubestellar/console/issues/6442",
+        "created_at": "2026-04-11T14:41:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "flamegraph, profiler, navigation",
       "issue_count": 1,
       "recent_issue": {
@@ -469,6 +497,20 @@
         "title": "🐛 Nightly/weekly releases failing silently since April 1",
         "url": "https://github.com/kubestellar/console/issues/5055",
         "created_at": "2026-04-06T17:01:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "context, replace, conditionals",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🔄 Migrate useContext to use(Context) pattern",
+        "url": "https://github.com/kubestellar/console/issues/5044",
+        "created_at": "2026-04-06T16:23:12Z"
       },
       "repos": [
         "console"
@@ -687,7 +729,7 @@
       "closed_count": 1
     },
     {
-      "name": "kubectl, assist, interactive",
+      "name": "kubectl, assist, terminal",
       "issue_count": 1,
       "recent_issue": {
         "title": "Kubectl Card with AI-Assisted Configuration",
@@ -816,22 +858,34 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "Workload deployment reconciliation is a stub (no deployment happens)",
+        "url": "https://github.com/kubestellar/console/issues/6482",
+        "repo": "console",
+        "topic_match": "reconciliation, follow, clients"
+      },
+      {
         "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
         "url": "https://github.com/kubestellar/docs/issues/1396",
         "repo": "docs",
         "topic_match": "app, oauth, github"
       },
       {
-        "title": "Title: Missing verification commands for Console and kc-agent health",
-        "url": "https://github.com/kubestellar/docs/issues/1404",
-        "repo": "docs",
-        "topic_match": "kubectl, assist, interactive"
+        "title": "Sidebar Collapse Toggle",
+        "url": "https://github.com/kubestellar/console/issues/6502",
+        "repo": "console",
+        "topic_match": "collapse, theme, toggle"
       },
       {
-        "title": "No official Kind quickstart (cluster creation + deploy + validation)",
-        "url": "https://github.com/kubestellar/docs/issues/1388",
-        "repo": "docs",
-        "topic_match": "marshall, resource, kind"
+        "title": "Navbar Hamburger",
+        "url": "https://github.com/kubestellar/console/issues/6499",
+        "repo": "console",
+        "topic_match": "px, spacing, inconsistent"
+      },
+      {
+        "title": "Theme Toggle",
+        "url": "https://github.com/kubestellar/console/issues/6505",
+        "repo": "console",
+        "topic_match": "px, spacing, inconsistent"
       }
     ],
     "stretch": [
@@ -914,7 +968,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 210
+      "issue_count": 215
     }
   ]
 }

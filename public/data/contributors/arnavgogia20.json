@@ -1,22 +1,22 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-11T14:16:55.240Z",
-  "total_issues_opened": 47,
+  "generated_at": "2026-04-11T18:13:41.179Z",
+  "total_issues_opened": 57,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-  "total_points": 19600,
+  "total_points": 22600,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 14,
+  "rank": 13,
   "cadence": {
-    "avg_per_week": 3.9,
-    "avg_per_day": 1.89,
+    "avg_per_week": 4.8,
+    "avg_per_day": 1.96,
     "by_day_of_week": [
       9,
       14,
       0,
       3,
       10,
-      11,
+      21,
       0
     ],
     "by_hour_of_day": [
@@ -35,7 +35,7 @@
       5,
       4,
       7,
-      0,
+      10,
       2,
       0,
       0,
@@ -45,40 +45,26 @@
       6,
       0
     ],
-    "current_streak_weeks": 4,
-    "longest_streak_weeks": 4,
+    "current_streak_weeks": 5,
+    "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-13T14:35:21.000Z",
-    "last_issue_at": "2026-04-07T11:25:00.000Z"
+    "last_issue_at": "2026-04-11T15:57:53.000Z"
   },
   "topics": [
     {
       "name": "@arnavgogia20, problem, mission",
-      "issue_count": 25,
+      "issue_count": 36,
       "recent_issue": {
-        "title": "Mission Cache Accumulates Duplicates on Stale-Cache Refresh",
-        "url": "https://github.com/kubestellar/console/issues/5217",
-        "created_at": "2026-04-07T11:25:00Z"
+        "title": "Inconsistent Points Display Between Console Profile and Docs Leaderboard",
+        "url": "https://github.com/kubestellar/console/issues/6481",
+        "created_at": "2026-04-11T15:57:53Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 25
-    },
-    {
-      "name": "recommend, collapse, panel",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "MissionSuggestions and CardRecommendations Auto-Collapse After 20 Seconds and Never Re-Expand",
-        "url": "https://github.com/kubestellar/console/issues/4557",
-        "created_at": "2026-04-04T12:42:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
+      "open_count": 1,
+      "closed_count": 35
     },
     {
       "name": "router, cors, gin",
@@ -107,6 +93,48 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "selectcardmission, deep, installer",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "MissionBrowser selectCardMission Has Ref-Prop Mismatch in Deep-Link Effect Dependencies",
+        "url": "https://github.com/kubestellar/console/issues/6467",
+        "created_at": "2026-04-11T15:39:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "mergeprojects, payloadproject, refinement",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "mergeProjects Discards Non-Custom User-Added Projects on AI Refinement",
+        "url": "https://github.com/kubestellar/console/issues/6465",
+        "created_at": "2026-04-11T15:36:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "mount, launchsequence, useeffect",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "LaunchSequence Auto-Starts on Mount : No User Confirmation Before Deploying to Clusters",
+        "url": "https://github.com/kubestellar/console/issues/6462",
+        "created_at": "2026-04-11T15:30:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "missiondetailview, english, cd871",
@@ -179,20 +207,6 @@
       "closed_count": 1
     },
     {
-      "name": "nodes, stat, dashboard",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Dashboard \"Nodes\" Stat Block Falls Through to Universal Getter : Inconsistent Click Behavior",
-        "url": "https://github.com/kubestellar/console/issues/4556",
-        "created_at": "2026-04-04T12:33:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "dismiss, dropdown, recommendation",
       "issue_count": 1,
       "recent_issue": {
@@ -241,20 +255,6 @@
         "title": "Zip Slip Path Traversal in Plugin Installation",
         "url": "https://github.com/kubestellar/console/issues/3898",
         "created_at": "2026-03-30T07:11:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "point, leaderboard, total",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Contributor leaderboard shows incorrect point total compared to dashboard (under-counting contributions)",
-        "url": "https://github.com/kubestellar/console/issues/3463",
-        "created_at": "2026-03-24T19:11:41Z"
       },
       "repos": [
         "console"
@@ -349,16 +349,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
         "name": "Security & RBAC",
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
         "name": "Charts & Visualizations",
@@ -415,7 +415,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 16
+      "issue_count": 26
     }
   ]
 }

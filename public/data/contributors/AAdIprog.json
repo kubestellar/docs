@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-11T14:16:55.286Z",
+  "generated_at": "2026-04-11T18:13:41.347Z",
   "total_issues_opened": 50,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 18400,
@@ -208,7 +208,7 @@
       "closed_count": 1
     },
     {
-      "name": "usestableeffect, sever, a855",
+      "name": "usestableeffect, sever, c92b14c12d69",
       "issue_count": 1,
       "recent_issue": {
         "title": "useStableEffect severs cleanup function on every re-render (File: useStableEffect.ts:34-53)",
@@ -439,10 +439,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Backend API & Handlers",
-        "path": "pkg/api/, pkg/models/, pkg/store/",
-        "description": "Go backend REST API, request handlers, data models, persistence layer",
-        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       }
     ]
   },
