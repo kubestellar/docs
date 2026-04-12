@@ -1,14 +1,14 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-12T10:18:14.324Z",
-  "total_issues_opened": 873,
+  "generated_at": "2026-04-12T14:19:02.116Z",
+  "total_issues_opened": 874,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3151650,
+  "total_points": 3156500,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 70.2,
+    "avg_per_week": 70.3,
     "avg_per_day": 3.63,
     "by_day_of_week": [
       104,
@@ -17,7 +17,7 @@
       115,
       125,
       132,
-      99
+      100
     ],
     "by_hour_of_day": [
       46,
@@ -34,7 +34,7 @@
       5,
       4,
       64,
-      44,
+      45,
       88,
       33,
       32,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-12T07:19:38.000Z"
+    "last_issue_at": "2026-04-12T14:06:52.000Z"
   },
   "topics": [
     {
@@ -64,16 +64,16 @@
         "console",
         "console-marketplace"
       ],
-      "open_count": 1,
-      "closed_count": 469
+      "open_count": 0,
+      "closed_count": 470
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 152,
+      "issue_count": 153,
       "recent_issue": {
-        "title": "🐛 4 test failure(s) in Coverage Suite run #597",
-        "url": "https://github.com/kubestellar/console/issues/6885",
-        "created_at": "2026-04-12T07:19:38Z"
+        "title": "🐛 12 test failure(s) in Coverage Suite run #605",
+        "url": "https://github.com/kubestellar/console/issues/6921",
+        "created_at": "2026-04-12T14:06:52Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 4,
-      "closed_count": 148
+      "closed_count": 149
     },
     {
       "name": "monitoring, card, step",
@@ -459,8 +459,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "flamegraph, profiler, navigation",
@@ -729,7 +729,7 @@
       "closed_count": 1
     },
     {
-      "name": "kubectl, assist, interactive",
+      "name": "kubectl, assist, terminal",
       "issue_count": 1,
       "recent_issue": {
         "title": "Kubectl Card with AI-Assisted Configuration",
@@ -870,6 +870,12 @@
         "topic_match": "app, oauth, github"
       },
       {
+        "title": "Marketplace Link Conflict Between Header and Footer",
+        "url": "https://github.com/kubestellar/docs/issues/1450",
+        "repo": "docs",
+        "topic_match": "marketplace, home, assistant"
+      },
+      {
         "title": "Marketplace Page Permanently Loading",
         "url": "https://github.com/kubestellar/docs/issues/1433",
         "repo": "docs",
@@ -879,13 +885,7 @@
         "title": "Title: Missing verification commands for Console and kc-agent health",
         "url": "https://github.com/kubestellar/docs/issues/1404",
         "repo": "docs",
-        "topic_match": "kubectl, assist, interactive"
-      },
-      {
-        "title": "Scenario 3 Title Has Typo : \"Multi-Custer\" Instead of \"Multi-Cluster\"",
-        "url": "https://github.com/kubestellar/docs/issues/1436",
-        "repo": "docs",
-        "topic_match": "typo, readme, fix"
+        "topic_match": "kubectl, assist, terminal"
       }
     ],
     "stretch": [
@@ -968,7 +968,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 228
+      "issue_count": 229
     }
   ]
 }

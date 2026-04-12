@@ -1,15 +1,15 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-12T10:19:00.241Z",
-  "total_issues_opened": 80,
+  "generated_at": "2026-04-12T14:19:48.581Z",
+  "total_issues_opened": 91,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-  "total_points": 29500,
+  "total_points": 32800,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 9,
+  "rank": 8,
   "cadence": {
-    "avg_per_week": 6.7,
-    "avg_per_day": 2.68,
+    "avg_per_week": 7.6,
+    "avg_per_day": 3.05,
     "by_day_of_week": [
       9,
       14,
@@ -17,7 +17,7 @@
       3,
       10,
       21,
-      23
+      34
     ],
     "by_hour_of_day": [
       0,
@@ -30,7 +30,7 @@
       5,
       1,
       16,
-      11,
+      22,
       7,
       5,
       4,
@@ -49,23 +49,37 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-13T14:35:21.000Z",
-    "last_issue_at": "2026-04-12T10:11:35.000Z"
+    "last_issue_at": "2026-04-12T10:47:22.000Z"
   },
   "topics": [
     {
-      "name": "@arnavgogia20, problem, page",
-      "issue_count": 53,
+      "name": "page, @arnavgogia20, md",
+      "issue_count": 48,
       "recent_issue": {
-        "title": "Scenario 3 Title Has Typo : \"Multi-Custer\" Instead of \"Multi-Cluster\"",
-        "url": "https://github.com/kubestellar/docs/issues/1436",
-        "created_at": "2026-04-12T10:11:35Z"
+        "title": "Marketplace Link Conflict Between Header and Footer",
+        "url": "https://github.com/kubestellar/docs/issues/1450",
+        "created_at": "2026-04-12T10:47:22Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 19,
-      "closed_count": 34
+      "open_count": 29,
+      "closed_count": 19
+    },
+    {
+      "name": "fiber, func, map",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "Unbounded onboardingEvents Map : Server Memory Exhaustion",
+        "url": "https://github.com/kubestellar/console/issues/3948",
+        "created_at": "2026-03-30T19:42:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 5
     },
     {
       "name": "leaderboard, points, point",
@@ -78,8 +92,22 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "installer, selectcardmission, deep",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "MissionBrowser selectCardMission Has Ref-Prop Mismatch in Deep-Link Effect Dependencies",
+        "url": "https://github.com/kubestellar/console/issues/6467",
+        "created_at": "2026-04-11T15:39:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "recommend, collapse, panel",
@@ -88,6 +116,20 @@
         "title": "MissionSuggestions and CardRecommendations Auto-Collapse After 20 Seconds and Never Re-Expand",
         "url": "https://github.com/kubestellar/console/issues/4557",
         "created_at": "2026-04-04T12:42:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "preview, submission, markdown",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Preview Renderer Does Not Match GitHub Markdown Rendering",
+        "url": "https://github.com/kubestellar/console/issues/3974",
+        "created_at": "2026-03-31T13:39:04Z"
       },
       "repos": [
         "console"
@@ -124,12 +166,40 @@
       "closed_count": 2
     },
     {
+      "name": "authentication, oauth, accept",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "WebSocket authentication accepts hardcoded \"demo-token\" bypass in all environments",
+        "url": "https://github.com/kubestellar/console/issues/2546",
+        "created_at": "2026-03-13T22:36:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "updates, indicator, feedback",
       "issue_count": 1,
       "recent_issue": {
         "title": "Inconsistent Request Count Between Dashboard Indicator and Feedback “Updates” Tab",
         "url": "https://github.com/kubestellar/console/issues/6475",
         "created_at": "2026-04-11T15:50:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "debouncing, f7abf9d91, db0",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Mission Control persistState Fires on Every State Change Without Debouncing",
+        "url": "https://github.com/kubestellar/console/issues/6468",
+        "created_at": "2026-04-11T15:41:35Z"
       },
       "repos": [
         "console"
@@ -208,6 +278,20 @@
       "closed_count": 1
     },
     {
+      "name": "overwrite, condition, race",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "selectCardMission Race Condition : Stale Closure Can Overwrite Fresh Navigation",
+        "url": "https://github.com/kubestellar/console/issues/5213",
+        "created_at": "2026-04-07T11:11:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "countdown, import, toast",
       "issue_count": 1,
       "recent_issue": {
@@ -242,6 +326,20 @@
         "title": "Escape Key in Fullscreen Mission Sidebar Performs Double-Action (Exits Fullscreen AND Closes Sidebar)",
         "url": "https://github.com/kubestellar/console/issues/5199",
         "created_at": "2026-04-07T09:51:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "nodes, stat, dashboard",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Dashboard \"Nodes\" Stat Block Falls Through to Universal Getter : Inconsistent Click Behavior",
+        "url": "https://github.com/kubestellar/console/issues/4556",
+        "created_at": "2026-04-04T12:33:33Z"
       },
       "repos": [
         "console"
@@ -376,6 +474,20 @@
       "closed_count": 1
     },
     {
+      "name": "sustain, c9b33a03, b2fe",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "In-memory OAuth state store can grow unbounded under sustained login requests",
+        "url": "https://github.com/kubestellar/console/issues/2548",
+        "created_at": "2026-03-13T22:46:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "advisory, d8f9303, d94b",
       "issue_count": 1,
       "recent_issue": {
@@ -388,6 +500,20 @@
       ],
       "open_count": 0,
       "closed_count": 1
+    },
+    {
+      "name": "🚀, survey, banner",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Survey Banner Is Overly Prominent and Persistent",
+        "url": "https://github.com/kubestellar/docs/issues/1443",
+        "created_at": "2026-04-12T10:35:11Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     }
   ],
   "suggestions": {
@@ -472,7 +598,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 49
+      "issue_count": 60
     }
   ]
 }

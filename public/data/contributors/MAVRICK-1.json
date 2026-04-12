@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-12T10:19:01.006Z",
+  "generated_at": "2026-04-12T14:19:49.803Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 3850,
@@ -202,6 +202,12 @@
         "topic_match": "oauth, env, jwt"
       },
       {
+        "title": "Console Quick Start Dependencies on Claude Code Are Not Made Clear Enough",
+        "url": "https://github.com/kubestellar/docs/issues/1438",
+        "repo": "docs",
+        "topic_match": "claude, permission, access"
+      },
+      {
         "title": "Secret key contract is undocumented (kc-oauth-secret naming/key mismatch confusion)",
         "url": "https://github.com/kubestellar/docs/issues/1392",
         "repo": "docs",
@@ -218,12 +224,6 @@
         "url": "https://github.com/kubestellar/docs/issues/1396",
         "repo": "docs",
         "topic_match": "oauth, env, jwt"
-      },
-      {
-        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
-        "url": "https://github.com/kubestellar/console/issues/6313",
-        "repo": "console",
-        "topic_match": "ai, @mavrick, terminate"
       }
     ],
     "stretch": [

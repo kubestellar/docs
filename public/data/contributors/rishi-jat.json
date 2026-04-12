@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-12T10:18:59.656Z",
+  "generated_at": "2026-04-12T14:19:48.347Z",
   "total_issues_opened": 222,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 40950,
@@ -276,8 +276,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "docs, mobile, cutoff",
@@ -378,7 +378,7 @@
       "closed_count": 1
     },
     {
-      "name": "traffic, organic, session",
+      "name": "traffic, session, organic",
       "issue_count": 1,
       "recent_issue": {
         "title": "Traffic attribution missing – most sessions classified as Direct",
@@ -632,6 +632,12 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "Architecture Page Has No Diagrams Visible in Next.js Rendering",
+        "url": "https://github.com/kubestellar/docs/issues/1439",
+        "repo": "docs",
+        "topic_match": "diagram, label, architecture"
+      },
       {
         "title": "Font Name Typo in mkdocs.yml (SapceMono instead of SpaceMono)",
         "url": "https://github.com/kubestellar/docs/issues/1429",

@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-12T10:19:00.412Z",
+  "generated_at": "2026-04-12T14:19:49.195Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -670,12 +670,6 @@
         "url": "https://github.com/kubestellar/docs/issues/1401",
         "repo": "docs",
         "topic_match": "helm, host, release"
-      },
-      {
-        "title": "Unsafe m.messages.map on Deserialized Mission Without Guard",
-        "url": "https://github.com/kubestellar/console/issues/6792",
-        "repo": "console",
-        "topic_match": "m., listargoapplications, client"
       }
     ],
     "stretch": [

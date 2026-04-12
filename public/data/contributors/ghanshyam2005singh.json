@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-12T10:19:00.731Z",
+  "generated_at": "2026-04-12T14:19:49.515Z",
   "total_issues_opened": 77,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 23500,
@@ -211,12 +211,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "While the review AI mission modal is very nice, it is not available for all AI missions.",
-        "url": "https://github.com/kubestellar/console/issues/6455",
-        "repo": "console",
-        "topic_match": "mission, ai, @ghanshyam2005singh"
-      },
       {
         "title": "Marketplace Page Permanently Loading",
         "url": "https://github.com/kubestellar/docs/issues/1433",

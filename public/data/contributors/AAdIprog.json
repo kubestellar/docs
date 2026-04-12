@@ -1,15 +1,15 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-12T10:19:00.902Z",
-  "total_issues_opened": 55,
+  "generated_at": "2026-04-12T14:19:49.692Z",
+  "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
-  "total_points": 19900,
+  "total_points": 20200,
   "level": "Commander",
   "level_rank": 5,
   "rank": 15,
   "cadence": {
-    "avg_per_week": 4.5,
-    "avg_per_day": 0.63,
+    "avg_per_week": 4.6,
+    "avg_per_day": 0.64,
     "by_day_of_week": [
       16,
       7,
@@ -17,7 +17,7 @@
       6,
       3,
       2,
-      17
+      18
     ],
     "by_hour_of_day": [
       0,
@@ -30,7 +30,7 @@
       6,
       5,
       6,
-      2,
+      3,
       2,
       2,
       6,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-01-14T12:07:09.000Z",
-    "last_issue_at": "2026-04-12T09:43:34.000Z"
+    "last_issue_at": "2026-04-12T10:14:55.000Z"
   },
   "topics": [
     {
@@ -122,6 +122,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "aeaeef9, d77f, abcb",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Dashboard Deletion Cascade Foreign Key Violations (Ghost Cards)",
+        "url": "https://github.com/kubestellar/console/issues/6905",
+        "created_at": "2026-04-12T10:14:55Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "limit, rate, burnout",
@@ -563,7 +577,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 25
+      "issue_count": 26
     }
   ]
 }

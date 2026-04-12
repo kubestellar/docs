@@ -1,6 +1,6 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-12T10:19:00.998Z",
+  "generated_at": "2026-04-12T14:19:49.792Z",
   "total_issues_opened": 6,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
   "total_points": 5500,
@@ -47,7 +47,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "ramping_up",
+    "trend": "slowing_down",
     "first_issue_at": "2026-03-14T08:41:29.000Z",
     "last_issue_at": "2026-03-15T12:28:09.000Z"
   },
