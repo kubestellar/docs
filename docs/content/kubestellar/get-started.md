@@ -143,7 +143,30 @@ helm upgrade --install ks-core oci://ghcr.io/kubestellar/kubestellar/core-chart 
     --set verbosity.default=5  # so we can debug your problem reports
 ```
 
-That command will print some notes about how to get kubeconfig "contexts" named "its1", "wds1", and "wds2" defined. Do that, because those contexts are used in the steps that follow.
+That command will print output similar to the following, indicating a successful installation:
+
+```console
+Release "ks-core" does not exist. Installing it now.
+NAME: ks-core
+LAST DEPLOYED: <timestamp>
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+For your convenience you will probably want to add contexts to your
+kubeconfig named after the non-host-type control planes (WDSes and
+ITSes) that you just created ...
+
+kubectl config use-context $the_one_where_you_installed_this_chart
+kflex ctx --set-current-for-hosting
+
+kflex ctx --overwrite-existing-context its1
+kflex ctx --overwrite-existing-context wds1
+kflex ctx --overwrite-existing-context wds2
+```
+
+Follow the instructions in the NOTES to create kubeconfig contexts named "its1", "wds1", and "wds2". These contexts are used in the steps that follow.
 
 ```shell
 kubectl config use-context kind-kubeflex # this is here only to remind you, it will already be the current context if you are following this recipe exactly

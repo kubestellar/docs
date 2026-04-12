@@ -25,8 +25,10 @@ Our documentation has remarks about using the following sorts of clusters:
     To install kubeflex go to [https://github.com/kubestellar/kubeflex/blob/main/docs/users.md#installation](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md#installation). To upgrade from an existing installation,
 follow [these instructions](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md#upgrading-kubeflex). At the end of the install make sure that the kubeflex CLI, kflex, is in your `$PATH`.
 
-- **OCM CLI (clusteradm)** 0.10 <= version **< 0.11**.
-    To install the latest acceptable version of the OCM CLI use:
+- **OCM CLI (clusteradm)** version 0.10.x (i.e., 0.10 <= version **< 0.11**).
+    **Note:** KubeStellar specifically requires clusteradm **v0.10.x**. Versions 0.11 and later introduced an incompatible change in a ServiceAccount name that breaks KubeStellar's OCM integration. Although OCM has released newer versions (v0.11+, v1.x), you **must** use v0.10.1 with the current KubeStellar release.
+
+    To install the required version of the OCM CLI use:
 
     ```shell
     bash <(curl -L https://raw.githubusercontent.com/open-cluster-management-io/clusteradm/main/install.sh) 0.10.1

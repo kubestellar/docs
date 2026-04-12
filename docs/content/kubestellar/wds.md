@@ -21,9 +21,9 @@ A Workload Description Space (WDS) is a space in the [KubeStellar architecture](
 
 ## Creating a WDS
 
-Currently the only documented way to create a WDS is by using the [core Helm chart](core-chart.md). See [the step-by-step instructions for getting started](get-started.md#use-core-helm-chart-to-initialize-kubeflex-and-create-its-and-wds) for an example.
+The recommended way to create a WDS is by using the [core Helm chart](core-chart.md). See [the step-by-step instructions for getting started](get-started.md#use-core-helm-chart-to-initialize-kubeflex-and-create-its-and-wds) for an example.
 
-The adventurous user could --- after using the core Helm chart to get this `PostCreateHook` object created --- create a WDS directly using the KubeFlex CLI or API to create a suitable `ControlPlane` object that uses the same `PostCreateHook` as the core Helm chart does for creating WDSes.
+Alternatively, after using the core Helm chart to get the `PostCreateHook` object created, you can create a WDS directly using the KubeFlex CLI or API. This involves creating a suitable `ControlPlane` object that uses the same `PostCreateHook` as the core Helm chart does for creating WDSes. This approach gives advanced users more fine-grained control over the WDS configuration.
 
 ### Creating a kubeconfig context for accessing the WDS
 
