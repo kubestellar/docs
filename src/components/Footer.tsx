@@ -207,7 +207,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/ladder"
+                    href={getLocalizedUrl("https://kubestellar.io/docs/contributing/contributor-ladder")}
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
                   >
                     {t("ladder")}
@@ -215,15 +215,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/products"
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
-                  >
-                    {t("products")}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contribute-handbook"
+                    href={getLocalizedUrl("https://kubestellar.io/docs/contributing/overview")}
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
                   >
                     {t("contributeHandbook")}
@@ -249,16 +241,18 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <Link
-                    href="/programs"
+                  <a
+                    href="https://github.com/kubestellar"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
                   >
-                    {t("programs")}
-                  </Link>
+                    GitHub
+                  </a>
                 </li>
                 <li>
                   <Link
-                    href="/partners"
+                    href={getLocalizedUrl("https://kubestellar.io/docs/community/get-involved")}
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
                   >
                     {t("partners")}

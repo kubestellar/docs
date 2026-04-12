@@ -301,38 +301,26 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/ladder"
+                    href="/docs/contributing/contributor-ladder"
                     className={`text-xs sm:text-sm transition-colors duration-200 inline-block ${
                       isDark
                         ? 'text-gray-400 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    Ladder
+                    Contributor Ladder
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/products"
+                    href="/docs/contributing/overview"
                     className={`text-xs sm:text-sm transition-colors duration-200 inline-block ${
                       isDark
                         ? 'text-gray-400 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    Products
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contribute-handbook"
-                    className={`text-xs sm:text-sm transition-colors duration-200 inline-block ${
-                      isDark
-                        ? 'text-gray-400 hover:text-white'
-                        : 'text-gray-600 hover:text-gray-900'
-                    }`}
-                  >
-                    Contributor Handbook
+                    How to Contribute
                   </Link>
                 </li>
               </ul>
@@ -361,27 +349,29 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <Link
-                    href="/programs"
+                  <a
+                    href="https://github.com/kubestellar"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`text-xs sm:text-sm transition-colors duration-200 inline-block ${
                       isDark
                         ? 'text-gray-400 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    Programs
-                  </Link>
+                    GitHub
+                  </a>
                 </li>
                 <li>
                   <Link
-                    href="/partners"
+                    href="/docs/community/get-involved"
                     className={`text-xs sm:text-sm transition-colors duration-200 inline-block ${
                       isDark
                         ? 'text-gray-400 hover:text-white'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
-                    Partners
+                    Community
                   </Link>
                 </li>
                 <li>
@@ -480,34 +470,34 @@ export default function Footer() {
             {/* Right side - policy links */}
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 order-1 md:order-2">
               <Link
-                href="/docs/contributing/license-inc"
+                href="/docs/contributing/license"
                 className={`text-xs sm:text-sm transition-colors duration-300 whitespace-nowrap ${
                   isDark
                     ? 'text-gray-400 hover:text-white'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                Privacy Policy
+                Apache 2.0 License
               </Link>
               <Link
-                href="/docs/contributing/security/security-inc"
+                href="/docs/contributing/security/policy"
                 className={`text-xs sm:text-sm transition-colors duration-300 whitespace-nowrap ${
                   isDark
                     ? 'text-gray-400 hover:text-white'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                Terms of Service
+                Security Policy
               </Link>
               <Link
-                href="/docs/contributing/security/security_contacts-inc"
+                href="/docs/contributing/security/contacts"
                 className={`text-xs sm:text-sm transition-colors duration-300 whitespace-nowrap ${
                   isDark
                     ? 'text-gray-400 hover:text-white'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                Cookie Policy
+                Security Contacts
               </Link>
             </div>
           </div>

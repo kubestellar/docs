@@ -24,13 +24,23 @@ const DocsContext = createContext<DocsContextType | undefined>(undefined)
 export function DocsProvider({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
-  const [bannerDismissed, setBannerDismissed] = useState(false)
+  const [bannerDismissed, setBannerDismissed] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('docs-banner-dismissed') === 'true'
+    }
+    return false
+  })
   const [navCollapsed, setNavCollapsed] = useState<Set<string>>(new Set())
   const navInitialized = useRef(false)
 
   const toggleMenu = () => setMenuOpen((prev) => !prev)
   const toggleSidebar = () => setSidebarCollapsed((prev) => !prev)
-  const dismissBanner = () => setBannerDismissed(true)
+  const dismissBanner = () => {
+    setBannerDismissed(true)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('docs-banner-dismissed', 'true')
+    }
+  }
   const toggleNavCollapsed = (key: string) => {
     setNavCollapsed(prev => {
       const next = new Set(prev)
