@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-12T14:19:17.625Z",
+  "generated_at": "2026-04-12T18:16:47.036Z",
   "total_issues_opened": 373,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 123250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 308,
+      "issue_count": 309,
       "recent_issue": {
         "title": "Sign in breaking in dev mode",
         "url": "https://github.com/kubestellar/console/issues/6850",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 2,
-      "closed_count": 306
+      "closed_count": 307
     },
     {
       "name": "concurrency, ts, task",
@@ -838,20 +838,6 @@
       "closed_count": 1
     },
     {
-      "name": "unclear, kc, agent",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "kc-agent requirement unclear in Kubernetes setup",
-        "url": "https://github.com/kubestellar/docs/issues/1360",
-        "created_at": "2026-04-08T17:07:07Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "leaderboard, timer, f38d2137",
       "issue_count": 1,
       "recent_issue": {
@@ -882,12 +868,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "Missing high-level architecture explanation for multi-cluster + kc-agent model",
-        "url": "https://github.com/kubestellar/docs/issues/1409",
-        "repo": "docs",
-        "topic_match": "unclear, kc, agent"
-      },
       {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
@@ -927,10 +907,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       }
     ]
   },
