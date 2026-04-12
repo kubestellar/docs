@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-12T03:07:55.188Z",
-  "total_issues_opened": 867,
+  "generated_at": "2026-04-12T06:36:30.750Z",
+  "total_issues_opened": 871,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3137200,
+  "total_points": 3144850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 69.7,
-    "avg_per_day": 3.61,
+    "avg_per_week": 70,
+    "avg_per_day": 3.62,
     "by_day_of_week": [
       104,
       106,
@@ -17,7 +17,7 @@
       115,
       125,
       132,
-      93
+      97
     ],
     "by_hour_of_day": [
       46,
@@ -25,8 +25,8 @@
       90,
       29,
       40,
-      23,
-      34,
+      26,
+      35,
       54,
       15,
       8,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-12T02:32:17.000Z"
+    "last_issue_at": "2026-04-12T06:28:15.000Z"
   },
   "topics": [
     {
@@ -69,22 +69,22 @@
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 147,
+      "issue_count": 150,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #583",
-        "url": "https://github.com/kubestellar/console/issues/6776",
-        "created_at": "2026-04-12T02:32:17Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #594",
+        "url": "https://github.com/kubestellar/console/issues/6876",
+        "created_at": "2026-04-12T06:28:15Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 144
+      "open_count": 4,
+      "closed_count": 146
     },
     {
-      "name": "monitoring, step, implement",
+      "name": "monitoring, card, step",
       "issue_count": 57,
       "recent_issue": {
         "title": "card: Implement Flatcar Container Linux monitoring card",
@@ -224,6 +224,20 @@
       "closed_count": 5
     },
     {
+      "name": "nil, potential, panic",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "[Auto-QA] Go nil-safety: 32 potential nil pointer issues",
+        "url": "https://github.com/kubestellar/console/issues/6848",
+        "created_at": "2026-04-12T05:19:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 2
+    },
+    {
       "name": "term, roadmap, md",
       "issue_count": 3,
       "recent_issue": {
@@ -238,7 +252,7 @@
       "closed_count": 2
     },
     {
-      "name": "chart, default, networkpolicy",
+      "name": "chart, default, day",
       "issue_count": 2,
       "recent_issue": {
         "title": "feat: daily issues & PRs activity chart on analytics page",
@@ -315,20 +329,6 @@
         "title": "JSON.parse without try-catch across frontend components",
         "url": "https://github.com/kubestellar/console/issues/1910",
         "created_at": "2026-03-07T00:09:34Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "nil, potential, panic",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "[Auto-QA] Go nil-safety: 8 potential nil pointer issues",
-        "url": "https://github.com/kubestellar/console/issues/1737",
-        "created_at": "2026-03-06T05:00:19Z"
       },
       "repos": [
         "console"
@@ -879,7 +879,13 @@
         "title": "Chart enables backup PVC by default, increasing local install failure surface",
         "url": "https://github.com/kubestellar/docs/issues/1386",
         "repo": "docs",
-        "topic_match": "chart, default, networkpolicy"
+        "topic_match": "chart, default, day"
+      },
+      {
+        "title": "Multi-cluster delta broken",
+        "url": "https://github.com/kubestellar/console/issues/6873",
+        "repo": "console",
+        "topic_match": "cluster, status, health"
       }
     ],
     "stretch": [
@@ -962,7 +968,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 222
+      "issue_count": 226
     }
   ]
 }

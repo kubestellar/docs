@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-12T03:08:31.164Z",
+  "generated_at": "2026-04-12T06:37:16.490Z",
   "total_issues_opened": 175,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 51300,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, happen, error",
-      "issue_count": 126,
+      "issue_count": 125,
       "recent_issue": {
         "title": "loggedClusterError bool in PredictionWorker is read and written without lock protection causing data race",
         "url": "https://github.com/kubestellar/console/issues/6694",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 126
+      "closed_count": 125
     },
     {
       "name": "cookie, csrf, samesite",
@@ -109,7 +109,7 @@
       "closed_count": 2
     },
     {
-      "name": "connection, new, pool",
+      "name": "connection, new, defeat",
       "issue_count": 2,
       "recent_issue": {
         "title": "getGitHubUser and getGitHubPrimaryEmail create a new http.Client per call defeating connection pooling",
@@ -319,7 +319,7 @@
       "closed_count": 1
     },
     {
-      "name": "reader, icon, button",
+      "name": "icon, reader, button",
       "issue_count": 1,
       "recent_issue": {
         "title": "ClusterGroups, NamespaceMonitor, ClusterLocations, Kubedle: icon-only buttons missing aria-label - inaccessible to screen readers",
@@ -431,7 +431,7 @@
       "closed_count": 1
     },
     {
-      "name": "spread, enemy, array",
+      "name": "spread, enemy, b4c8f7e",
       "issue_count": 1,
       "recent_issue": {
         "title": "Math.max spread of empty array returns -Infinity breaking KubeGalaga enemy logic",
@@ -445,7 +445,7 @@
       "closed_count": 1
     },
     {
-      "name": "ref, classlist, settimeout",
+      "name": "classlist, ref, settimeout",
       "issue_count": 1,
       "recent_issue": {
         "title": "Nested setTimeout in GitHubTokenSection has no cleanup ref causing DOM mutation after unmount",
@@ -529,6 +529,20 @@
       "closed_count": 1
     },
     {
+      "name": "authorization, header, agent",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Agent fetch hooks send no Authorization header - silently breaks when KC_AGENT_TOKEN is set",
+        "url": "https://github.com/kubestellar/console/issues/5348",
+        "created_at": "2026-04-07T21:20:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "stub, a3f1, be7a",
       "issue_count": 1,
       "recent_issue": {
@@ -557,7 +571,7 @@
       "closed_count": 1
     },
     {
-      "name": "initcontainer, backup, db",
+      "name": "initcontainer, backup, restore",
       "issue_count": 1,
       "recent_issue": {
         "title": "initContainer DB size check using stat always returns 0 triggering unnecessary backup restore on every restart",

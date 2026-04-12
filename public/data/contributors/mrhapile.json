@@ -1,15 +1,15 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-12T03:08:23.828Z",
-  "total_issues_opened": 328,
+  "generated_at": "2026-04-12T06:37:07.103Z",
+  "total_issues_opened": 371,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 102250,
+  "total_points": 115150,
   "level": "Captain",
   "level_rank": 6,
   "rank": 3,
   "cadence": {
-    "avg_per_week": 27.3,
-    "avg_per_day": 6.36,
+    "avg_per_week": 30.9,
+    "avg_per_day": 7.16,
     "by_day_of_week": [
       10,
       47,
@@ -17,14 +17,14 @@
       61,
       4,
       119,
-      13
+      56
     ],
     "by_hour_of_day": [
       0,
       12,
       17,
-      6,
-      1,
+      14,
+      36,
       6,
       25,
       16,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-11T22:47:59.000Z"
+    "last_issue_at": "2026-04-12T04:55:07.000Z"
   },
   "topics": [
     {
-      "name": "@mrhapile, phase, mission",
-      "issue_count": 244,
+      "name": "@mrhapile, mission, phase",
+      "issue_count": 282,
       "recent_issue": {
-        "title": "Dialog aria-label Uses Dynamic Title That Can Be Empty",
-        "url": "https://github.com/kubestellar/console/issues/6745",
-        "created_at": "2026-04-11T22:47:59Z"
+        "title": "Go: ShareToGitHub Commit Step Does Not Set Content-Type: application/json",
+        "url": "https://github.com/kubestellar/console/issues/6842",
+        "created_at": "2026-04-12T04:55:07Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 244
+      "open_count": 6,
+      "closed_count": 276
     },
     {
       "name": "documentation, 📌, component",
@@ -95,18 +95,32 @@
       "closed_count": 4
     },
     {
-      "name": "alertscontext, const, queueautoresolve",
-      "issue_count": 4,
+      "name": "tool, prevcount, frame",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "AlertsContext",
-        "url": "https://github.com/kubestellar/console/issues/5204",
-        "created_at": "2026-04-07T10:16:02Z"
+        "title": "toolsInFlight Counter Can Underflow to Negative Under Reordered Messages",
+        "url": "https://github.com/kubestellar/console/issues/6837",
+        "created_at": "2026-04-12T04:52:59Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 4
+      "closed_count": 2
+    },
+    {
+      "name": "ok, db, forkdata",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "fetch in useDeployMissions Not Checking res.ok Before Parsing)",
+        "url": "https://github.com/kubestellar/console/issues/6816",
+        "created_at": "2026-04-12T04:36:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
     },
     {
       "name": "priority, payloadcard, recommend",
@@ -123,7 +137,7 @@
       "closed_count": 2
     },
     {
-      "name": "tab, poll, interval",
+      "name": "tab, poll, clashing",
       "issue_count": 2,
       "recent_issue": {
         "title": "Ghost Polling After Tab Suspension",
@@ -207,20 +221,6 @@
       "closed_count": 2
     },
     {
-      "name": "build, node, dependency",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Container build still uses Node 20 while dependencies now require Node 22",
-        "url": "https://github.com/kubestellar/console/issues/5631",
-        "created_at": "2026-04-09T02:14:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "r., revision, parseint",
       "issue_count": 2,
       "recent_issue": {
@@ -263,7 +263,133 @@
       "closed_count": 2
     },
     {
-      "name": "dialog, missioncontroldialog, modal",
+      "name": "bumpusergeneration, usemissioncontrol, c46e5",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "useMissionControl bumpUserGeneration Not Ref-Stabilized for Button Clicks",
+        "url": "https://github.com/kubestellar/console/issues/6833",
+        "created_at": "2026-04-12T04:50:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "strictmode, double, b71f0941",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Mission startMission Double-Execution in React StrictMode",
+        "url": "https://github.com/kubestellar/console/issues/6832",
+        "created_at": "2026-04-12T04:49:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "missionid, cancelmission, twice",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "cancelMission Called Twice for the Same Mission",
+        "url": "https://github.com/kubestellar/console/issues/6830",
+        "created_at": "2026-04-12T04:48:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "setphase, handlenext, mc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "handleNext Button No In-Flight Guard",
+        "url": "https://github.com/kubestellar/console/issues/6828",
+        "created_at": "2026-04-12T04:47:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sleep, goroutine, pool",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Go: ShareToGitHub Retry Loop Uses time.Sleep Blocking Goroutine",
+        "url": "https://github.com/kubestellar/console/issues/6819",
+        "created_at": "2026-04-12T04:37:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "startmission, ensureconnection, call",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "startMission onClick Handler No Try/Catch",
+        "url": "https://github.com/kubestellar/console/issues/6811",
+        "created_at": "2026-04-12T04:34:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "projectnames, a., schema",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unsafe Access assignment.projectNames Without Guard in canAdvance",
+        "url": "https://github.com/kubestellar/console/issues/6796",
+        "created_at": "2026-04-12T04:31:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "oversizedwarnset, module, reset",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "oversizedWarnSet Module-Level Set Never Cleared Across Test Runs",
+        "url": "https://github.com/kubestellar/console/issues/6788",
+        "created_at": "2026-04-12T03:59:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "handlekeydown, stopimmediatepropagation, keydown",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "MissionControlDialog handleKeyDown Listener Attached to document Without capture",
+        "url": "https://github.com/kubestellar/console/issues/6787",
+        "created_at": "2026-04-12T03:58:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "dialog, modal, trap",
       "issue_count": 1,
       "recent_issue": {
         "title": "No Focus Trap in MissionControlDialog",
@@ -297,20 +423,6 @@
         "title": "Backend 500 ↔ Frontend Running State Deadlock",
         "url": "https://github.com/kubestellar/console/issues/6666",
         "created_at": "2026-04-11T21:54:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "retry, wssend, call",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "wsSend Retry Leak",
-        "url": "https://github.com/kubestellar/console/issues/6629",
-        "created_at": "2026-04-11T21:16:03Z"
       },
       "repos": [
         "console"
@@ -367,20 +479,6 @@
         "title": "Feature Request Modal",
         "url": "https://github.com/kubestellar/console/issues/6531",
         "created_at": "2026-04-11T16:35:29Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "chips, a4f11, e4d5",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Filter Chips Container",
-        "url": "https://github.com/kubestellar/console/issues/6530",
-        "created_at": "2026-04-11T16:35:09Z"
       },
       "repos": [
         "console"
@@ -501,7 +599,7 @@
       "closed_count": 1
     },
     {
-      "name": "history, prompt, saturation",
+      "name": "prompt, history, saturation",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent Prompt History Saturation",
@@ -535,20 +633,6 @@
         "title": "MissionBrowser Render Desync",
         "url": "https://github.com/kubestellar/console/issues/6421",
         "created_at": "2026-04-11T13:42:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "base64, github, faf",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "GitHub Base64 30-Second API Hang",
-        "url": "https://github.com/kubestellar/console/issues/6419",
-        "created_at": "2026-04-11T13:41:01Z"
       },
       "repos": [
         "console"
@@ -605,20 +689,6 @@
         "title": "needsRestart is introduced in mission context for stale reconnects",
         "url": "https://github.com/kubestellar/console/issues/6380",
         "created_at": "2026-04-11T12:59:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "tool, second, phony",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "The \"Background Tool\" Phony Timeout",
-        "url": "https://github.com/kubestellar/console/issues/6376",
-        "created_at": "2026-04-11T12:56:16Z"
       },
       "repos": [
         "console"
@@ -781,6 +851,20 @@
       "closed_count": 1
     },
     {
+      "name": "menu, right, screen",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CardWrapper — Menu position off-screen",
+        "url": "https://github.com/kubestellar/console/issues/5253",
+        "created_at": "2026-04-07T14:21:47Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "timer, thrashing, d778",
       "issue_count": 1,
       "recent_issue": {
@@ -795,7 +879,7 @@
       "closed_count": 1
     },
     {
-      "name": "svg, controller, res",
+      "name": "svg, controller, clusterlocations",
       "issue_count": 1,
       "recent_issue": {
         "title": "ClusterLocations — SVG fetch race condition on rapid re-render",
@@ -829,6 +913,34 @@
         "title": "Excessive Top Padding Causing Unused Empty Space in Dashboard",
         "url": "https://github.com/kubestellar/console/issues/4940",
         "created_at": "2026-04-06T09:01:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "progressive, incrementally, af16a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Progressive Fetch Does Not Update UI Incrementally",
+        "url": "https://github.com/kubestellar/console/issues/4935",
+        "created_at": "2026-04-06T08:51:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sse, stream, mid",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "SSE Streaming Stops Midway Without Recovery",
+        "url": "https://github.com/kubestellar/console/issues/4934",
+        "created_at": "2026-04-06T08:51:14Z"
       },
       "repos": [
         "console"
@@ -907,20 +1019,6 @@
       "closed_count": 1
     },
     {
-      "name": "addpoint, closure, d673ecfb",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Data Loss via Stale Closure in Stateful Trend hook",
-        "url": "https://github.com/kubestellar/console/issues/2231",
-        "created_at": "2026-03-12T09:37:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "worker, initdatabase, cacheworkerrpc",
       "issue_count": 1,
       "recent_issue": {
@@ -966,16 +1064,16 @@
     ],
     "stretch": [
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Networking & Services",
@@ -1044,7 +1142,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 309
+      "issue_count": 352
     }
   ]
 }

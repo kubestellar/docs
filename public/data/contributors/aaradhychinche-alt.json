@@ -1,15 +1,15 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-12T03:08:29.578Z",
-  "total_issues_opened": 251,
+  "generated_at": "2026-04-12T06:37:14.866Z",
+  "total_issues_opened": 275,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 76700,
+  "total_points": 83250,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 20.9,
-    "avg_per_day": 5.42,
+    "avg_per_week": 22.9,
+    "avg_per_day": 5.84,
     "by_day_of_week": [
       29,
       17,
@@ -17,16 +17,16 @@
       15,
       128,
       16,
-      30
+      54
     ],
     "by_hour_of_day": [
       4,
       0,
       0,
       0,
-      6,
-      35,
-      27,
+      19,
+      40,
+      33,
       12,
       17,
       19,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-11T13:25:26.000Z"
+    "last_issue_at": "2026-04-12T06:19:08.000Z"
   },
   "topics": [
     {
       "name": "@aaradhychinche, alt, reproduce",
-      "issue_count": 225,
+      "issue_count": 256,
       "recent_issue": {
-        "title": "Improve responsive transition behavior at breakpoint boundaries",
-        "url": "https://github.com/kubestellar/console/issues/6401",
-        "created_at": "2026-04-11T13:25:26Z"
+        "title": "Header vs chart mismatch",
+        "url": "https://github.com/kubestellar/console/issues/6875",
+        "created_at": "2026-04-12T06:19:08Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 225
+      "open_count": 19,
+      "closed_count": 237
     },
     {
       "name": "kube, game, craft",
@@ -82,82 +82,12 @@
       "closed_count": 4
     },
     {
-      "name": "breadcrumb, navigation, deep",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Add breadcrumb navigation for better page hierarchy awareness",
-        "url": "https://github.com/kubestellar/console/issues/6396",
-        "created_at": "2026-04-11T13:23:35Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "typescript, branch, late",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "chore: remove deprecated 'baseUrl' from tsconfig.json for TypeScript 7.0 compatibility",
-        "url": "https://github.com/kubestellar/console/issues/4527",
-        "created_at": "2026-04-03T21:00:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "loadbalancer, ip, external",
       "issue_count": 1,
       "recent_issue": {
         "title": "LoadBalancer external IP shown before provisioning is complete",
         "url": "https://github.com/kubestellar/console/issues/6153",
         "created_at": "2026-04-10T15:33:22Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "utilization, value, zero",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Nodes dashboard shows stale utilization when actual value becomes zero",
-        "url": "https://github.com/kubestellar/console/issues/6107",
-        "created_at": "2026-04-10T13:32:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "analysis, ai, failure",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "📝 issue: AI analysis failures are silent",
-        "url": "https://github.com/kubestellar/console/issues/5945",
-        "created_at": "2026-04-10T06:44:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "blocked, resolution, bypass",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "## 🐛 bug: resolution flow bypasses blocked-state validation",
-        "url": "https://github.com/kubestellar/console/issues/5934",
-        "created_at": "2026-04-10T05:52:04Z"
       },
       "repos": [
         "console"
@@ -186,6 +116,20 @@
         "title": "bug: cluster labels overlap and become unreadable when AI chat panel is opened",
         "url": "https://github.com/kubestellar/console/issues/5396",
         "created_at": "2026-04-08T05:02:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "newly, dashboard, search",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: newly created dashboard does not appear in dashboard list or search",
+        "url": "https://github.com/kubestellar/console/issues/5177",
+        "created_at": "2026-04-07T05:41:13Z"
       },
       "repos": [
         "console"
@@ -377,16 +321,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
         "name": "Deployments & GitOps",
         "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
         "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },
@@ -437,7 +381,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 218
+      "issue_count": 242
     }
   ]
 }

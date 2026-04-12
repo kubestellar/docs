@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-12T03:08:36.255Z",
+  "generated_at": "2026-04-12T06:37:21.614Z",
   "total_issues_opened": 67,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 13900,
@@ -194,7 +194,7 @@
       "closed_count": 1
     },
     {
-      "name": "write, runnable, concurrency",
+      "name": "write, runnable, concurrently",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: start.sh writes to a file that may be in use",

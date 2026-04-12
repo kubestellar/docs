@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-12T03:08:36.175Z",
+  "generated_at": "2026-04-12T06:37:21.532Z",
   "total_issues_opened": 52,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 19000,
@@ -124,7 +124,7 @@
       "closed_count": 2
     },
     {
-      "name": "ephemeral, fdb7, a3ba",
+      "name": "fdb7, a3ba, bfc8",
       "issue_count": 1,
       "recent_issue": {
         "title": "Ephemeral Data Loss of Installed Card Presets on Refresh",
@@ -439,6 +439,12 @@
         "url": "https://github.com/kubestellar/docs/issues/1402",
         "repo": "docs",
         "topic_match": "logout, websocket, disconnect"
+      },
+      {
+        "title": "startMission onClick Handler No Try/Catch",
+        "url": "https://github.com/kubestellar/console/issues/6811",
+        "repo": "console",
+        "topic_match": "ensureconnection, reconnection, websocket"
       }
     ],
     "stretch": [

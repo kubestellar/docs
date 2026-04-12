@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-12T03:08:35.597Z",
+  "generated_at": "2026-04-12T06:37:20.932Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -195,7 +195,7 @@
       "closed_count": 1
     },
     {
-      "name": "classifyerror, branch, find",
+      "name": "classifyerror, find, branch",
       "issue_count": 1,
       "recent_issue": {
         "title": "classifyError returns \"auth\" for messages containing \"not found\" when the actual error is \"executable not found\" (exec-plugin missing), causing a 10-minute authFailureCacheTTL to apply incorrectly",
@@ -482,6 +482,12 @@
         "url": "https://github.com/kubestellar/docs/issues/1401",
         "repo": "docs",
         "topic_match": "helm, host, release"
+      },
+      {
+        "title": "Unsafe m.messages.map on Deserialized Mission Without Guard",
+        "url": "https://github.com/kubestellar/console/issues/6792",
+        "repo": "console",
+        "topic_match": "m., listargoapplications, client"
       }
     ],
     "stretch": [

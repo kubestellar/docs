@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-12T03:08:34.954Z",
+  "generated_at": "2026-04-12T06:37:20.269Z",
   "total_issues_opened": 222,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 40950,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "line, body, @rishi",
-      "issue_count": 160,
+      "name": "line, @rishi, jat",
+      "issue_count": 163,
       "recent_issue": {
         "title": "ux(console): missing kc-agent connection status indicator in UI",
         "url": "https://github.com/kubestellar/console/issues/6363",
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 21,
-      "closed_count": 139
+      "open_count": 23,
+      "closed_count": 140
     },
     {
       "name": "event, analytics, day",
@@ -168,7 +168,7 @@
       "closed_count": 2
     },
     {
-      "name": "mission, parameter, encodes",
+      "name": "parameter, mission, encodes",
       "issue_count": 2,
       "recent_issue": {
         "title": "MissionSidebar double encodes URL parameters",
@@ -224,20 +224,6 @@
       "closed_count": 2
     },
     {
-      "name": "datum, doc, persistence",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Demo data vs real cluster data not clearly differentiated in UI/docs",
-        "url": "https://github.com/kubestellar/docs/issues/1410",
-        "created_at": "2026-04-11T08:39:48Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 2,
-      "closed_count": 0
-    },
-    {
       "name": "minikube, caveat, official",
       "issue_count": 2,
       "recent_issue": {
@@ -264,20 +250,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "flow, e2e, b26",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "testing(console): e2e tests cover frontend only, missing backend + kc-agent + auth flows",
-        "url": "https://github.com/kubestellar/console/issues/6362",
-        "created_at": "2026-04-11T11:33:34Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "timeout, rollout, indefinitely",
@@ -392,7 +364,7 @@
       "closed_count": 1
     },
     {
-      "name": "traffic, session, organic",
+      "name": "traffic, organic, session",
       "issue_count": 1,
       "recent_issue": {
         "title": "Traffic attribution missing – most sessions classified as Direct",
@@ -645,7 +617,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Fake 50% progress",
+        "url": "https://github.com/kubestellar/console/issues/6871",
+        "repo": "console",
+        "topic_match": "timeout, rollout, indefinitely"
+      },
+      {
+        "title": "Rollout tracker wrong target",
+        "url": "https://github.com/kubestellar/console/issues/6869",
+        "repo": "console",
+        "topic_match": "timeout, rollout, indefinitely"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",
@@ -660,16 +645,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
         "name": "Security & RBAC",

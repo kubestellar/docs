@@ -1,15 +1,15 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-12T03:08:10.614Z",
-  "total_issues_opened": 367,
+  "generated_at": "2026-04-12T06:36:47.356Z",
+  "total_issues_opened": 373,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 121450,
+  "total_points": 123250,
   "level": "Captain",
   "level_rank": 6,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 30.6,
-    "avg_per_day": 6.06,
+    "avg_per_week": 31.1,
+    "avg_per_day": 6.13,
     "by_day_of_week": [
       25,
       29,
@@ -17,7 +17,7 @@
       57,
       67,
       110,
-      33
+      39
     ],
     "by_hour_of_day": [
       0,
@@ -25,7 +25,7 @@
       0,
       10,
       42,
-      20,
+      26,
       17,
       11,
       7,
@@ -49,23 +49,37 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-11T22:30:05.000Z"
+    "last_issue_at": "2026-04-12T05:39:10.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 312,
+      "issue_count": 313,
       "recent_issue": {
-        "title": "Keyboard hints are inconsistent with actual supported back key.",
-        "url": "https://github.com/kubestellar/console/issues/6721",
-        "created_at": "2026-04-11T22:30:05Z"
+        "title": "Sign in breaking in dev mode",
+        "url": "https://github.com/kubestellar/console/issues/6850",
+        "created_at": "2026-04-12T05:24:13Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 4,
-      "closed_count": 308
+      "closed_count": 309
+    },
+    {
+      "name": "concurrency, ts, task",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Known shared-mutation hazards inside concurrency callbacks (ratcheted technical debt)",
+        "url": "https://github.com/kubestellar/console/issues/6857",
+        "created_at": "2026-04-12T05:39:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 2
     },
     {
       "name": "concurrent, notifiers, mutex",
@@ -124,7 +138,35 @@
       "closed_count": 2
     },
     {
-      "name": "tabledata, map, array",
+      "name": "redo, useundoredo, undo",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Generic undo/redo hook has non-functional redo pipeline",
+        "url": "https://github.com/kubestellar/console/issues/6856",
+        "created_at": "2026-04-12T05:38:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "useaimode, invalid, e843",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Invalid persisted AI mode can crash hook consumers",
+        "url": "https://github.com/kubestellar/console/issues/6855",
+        "created_at": "2026-04-12T05:38:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "tabledata, map, ca98",
       "issue_count": 1,
       "recent_issue": {
         "title": "able section can crash when configured data key is not an array.",
@@ -558,7 +600,7 @@
       "closed_count": 1
     },
     {
-      "name": "decoder, fetchgithubissues, body",
+      "name": "fetchgithubissues, decoder, body",
       "issue_count": 1,
       "recent_issue": {
         "title": "Response body read after decoder in fetchGitHubIssues",
@@ -797,6 +839,12 @@
         "topic_match": "playwright, script, sh"
       },
       {
+        "title": "Failed PVC count misclassifies non-failure states",
+        "url": "https://github.com/kubestellar/console/issues/6803",
+        "repo": "console",
+        "topic_match": "bind, b75b, cad4"
+      },
+      {
         "title": "docs(console): port-forward example leaks background process (no cleanup)",
         "url": "https://github.com/kubestellar/docs/issues/1414",
         "repo": "docs",
@@ -811,16 +859,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
         "name": "Backend API & Handlers",
@@ -829,10 +871,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },
@@ -883,7 +931,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 276
+      "issue_count": 282
     }
   ]
 }
