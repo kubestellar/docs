@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-12T18:16:47.036Z",
+  "generated_at": "2026-04-12T22:12:59.576Z",
   "total_issues_opened": 373,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 123250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 309,
+      "issue_count": 307,
       "recent_issue": {
         "title": "Sign in breaking in dev mode",
         "url": "https://github.com/kubestellar/console/issues/6850",
@@ -64,7 +64,7 @@
         "console",
         "docs"
       ],
-      "open_count": 2,
+      "open_count": 0,
       "closed_count": 307
     },
     {
@@ -74,6 +74,20 @@
         "title": "Known shared-mutation hazards inside concurrency callbacks (ratcheted technical debt)",
         "url": "https://github.com/kubestellar/console/issues/6857",
         "created_at": "2026-04-12T05:39:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "upgrade, vite, v8",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
+        "url": "https://github.com/kubestellar/console/issues/6313",
+        "created_at": "2026-04-11T07:03:11Z"
       },
       "repos": [
         "console"
@@ -306,20 +320,6 @@
       "closed_count": 1
     },
     {
-      "name": "terminate, rollback, session",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
-        "url": "https://github.com/kubestellar/console/issues/6313",
-        "created_at": "2026-04-11T07:03:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
       "name": "kubedle, f28edfd, e005",
       "issue_count": 1,
       "recent_issue": {
@@ -404,7 +404,7 @@
       "closed_count": 1
     },
     {
-      "name": "0.0.0, image, imagepullbackoff",
+      "name": "0.0.0, imagepullbackoff, image",
       "issue_count": 1,
       "recent_issue": {
         "title": "Default image tag (0.0.0) causes ImagePullBackOff",
@@ -572,7 +572,7 @@
       "closed_count": 1
     },
     {
-      "name": "chmod, binary, os",
+      "name": "chmod, binary, b645",
       "issue_count": 1,
       "recent_issue": {
         "title": "Binary auto-update ignores critical filesystem errors",

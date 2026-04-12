@@ -1,6 +1,6 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-12T18:17:19.233Z",
+  "generated_at": "2026-04-12T22:13:32.449Z",
   "total_issues_opened": 6,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
   "total_points": 5500,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "watcher, leak, mcp",
-      "issue_count": 4,
+      "name": "watcher, @khushal, winner",
+      "issue_count": 5,
       "recent_issue": {
         "title": "# bug: Resource Management Issues in MCP Handler and Console Watcher",
         "url": "https://github.com/kubestellar/console/issues/2664",
@@ -64,21 +64,21 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 4
+      "closed_count": 5
     },
     {
-      "name": "database, sqlite, wal",
-      "issue_count": 2,
+      "name": "goroutine, mcp, endpoint",
+      "issue_count": 1,
       "recent_issue": {
-        "title": "**Title**: Database Connection Pool Missing Configuration - Potential Resource Exhaustion",
-        "url": "https://github.com/kubestellar/console/issues/2659",
-        "created_at": "2026-03-15T10:58:49Z"
+        "title": "bug: Goroutine Leak in /api/mcp/clusters endpoint",
+        "url": "https://github.com/kubestellar/console/issues/2599",
+        "created_at": "2026-03-14T08:41:29Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -109,10 +109,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },

@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-12T18:17:18.478Z",
+  "generated_at": "2026-04-12T22:13:31.692Z",
   "total_issues_opened": 114,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 30700,
@@ -207,7 +207,7 @@
       "closed_count": 1
     },
     {
-      "name": "worker, parent, context",
+      "name": "parent, worker, context",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 6: `prediction_worker.go` uses `context.Background()` instead of parent context",
@@ -279,12 +279,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "Implement WorkloadDeployment reconciliation loop (follow-up to #6482)",
-        "url": "https://github.com/kubestellar/console/issues/6513",
-        "repo": "console",
-        "topic_match": "reconciliation, loop, kick"
-      },
       {
         "title": "docs(console): port-forward example leaks background process (no cleanup)",
         "url": "https://github.com/kubestellar/docs/issues/1414",

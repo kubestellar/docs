@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-12T18:17:05.111Z",
+  "generated_at": "2026-04-12T22:13:17.234Z",
   "total_issues_opened": 371,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 115150,
@@ -417,7 +417,7 @@
       "closed_count": 1
     },
     {
-      "name": "rest, throw, deadlock",
+      "name": "rest, throw, d6c2fc",
       "issue_count": 1,
       "recent_issue": {
         "title": "Backend 500 ↔ Frontend Running State Deadlock",
@@ -515,7 +515,7 @@
       "closed_count": 1
     },
     {
-      "name": "sweeper, flaw, a93569e8",
+      "name": "sweeper, a93569e8, f46",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent Disconnected Sweeper Flaw",

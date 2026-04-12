@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-12T18:17:19.140Z",
+  "generated_at": "2026-04-12T22:13:32.352Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 20200,
@@ -495,6 +495,12 @@
         "url": "https://github.com/kubestellar/docs/issues/1402",
         "repo": "docs",
         "topic_match": "logout, websocket, disconnect"
+      },
+      {
+        "title": "Self-upgrade Role grants patch on all Deployments in namespace with no resourceNames restriction",
+        "url": "https://github.com/kubestellar/console/issues/6978",
+        "repo": "console",
+        "topic_match": "traversal, attacker, self"
       }
     ],
     "stretch": [

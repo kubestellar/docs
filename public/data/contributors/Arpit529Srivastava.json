@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-12T18:17:18.649Z",
+  "generated_at": "2026-04-12T22:13:31.865Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -123,7 +123,7 @@
       "closed_count": 3
     },
     {
-      "name": "deadline, second, cluster",
+      "name": "second, deadline, cluster",
       "issue_count": 3,
       "recent_issue": {
         "title": "probeAPIServer uses a 5-second TCP timeout per cluster during GetClusterHealth, but health is fetched for ALL clusters in GetAllClusterHealth — total wall-clock is unbounded with no global deadline",

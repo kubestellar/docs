@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-12T18:17:17.820Z",
+  "generated_at": "2026-04-12T22:13:31.041Z",
   "total_issues_opened": 225,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 41850,
@@ -420,7 +420,7 @@
       "closed_count": 1
     },
     {
-      "name": "broadcast, shutdown, buffer",
+      "name": "broadcast, shutdown, hub",
       "issue_count": 1,
       "recent_issue": {
         "title": "Hub.Broadcast() may block indefinitely after shutdown or when broadcast buffer is full",
@@ -546,7 +546,7 @@
       "closed_count": 1
     },
     {
-      "name": "lock, p., save",
+      "name": "p., lock, save",
       "issue_count": 1,
       "recent_issue": {
         "title": "PersistenceStore Save() uses read lock for write operation",
@@ -633,6 +633,12 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "Helm template panics with index out of range when ingress.enabled is true but ingress.hosts is empty",
+        "url": "https://github.com/kubestellar/console/issues/6984",
+        "repo": "console",
+        "topic_match": "template, poddisruptionbudget, networkpolicy"
+      },
+      {
         "title": "Architecture Page Has No Diagrams Visible in Next.js Rendering",
         "url": "https://github.com/kubestellar/docs/issues/1439",
         "repo": "docs",
@@ -643,12 +649,6 @@
         "url": "https://github.com/kubestellar/docs/issues/1429",
         "repo": "docs",
         "topic_match": "style, mkdocs, attach"
-      },
-      {
-        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
-        "url": "https://github.com/kubestellar/console/issues/6313",
-        "repo": "console",
-        "topic_match": "session, auth, traffic"
       }
     ],
     "stretch": [

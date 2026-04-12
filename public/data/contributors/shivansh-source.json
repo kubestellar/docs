@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-12T18:17:19.085Z",
+  "generated_at": "2026-04-12T22:13:32.297Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -308,10 +308,22 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "ClusterRole unconditionally grants OpenShift user enumeration regardless of cluster type",
+        "url": "https://github.com/kubestellar/console/issues/6987",
+        "repo": "console",
+        "topic_match": "openshift, kube, dns"
+      },
+      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "test, httptest, server"
+      },
+      {
+        "title": "FRONTEND_URL set to \"https://\" when OpenShift route.host is empty breaking OAuth and CORS",
+        "url": "https://github.com/kubestellar/console/issues/6983",
+        "repo": "console",
+        "topic_match": "openshift, kube, dns"
       }
     ],
     "stretch": [
@@ -340,10 +352,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },

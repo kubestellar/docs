@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-12T18:17:18.051Z",
+  "generated_at": "2026-04-12T22:13:31.272Z",
   "total_issues_opened": 91,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 32800,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "page, @arnavgogia20, md",
-      "issue_count": 48,
+      "name": "@arnavgogia20, page, md",
+      "issue_count": 54,
       "recent_issue": {
         "title": "Marketplace Link Conflict Between Header and Footer",
         "url": "https://github.com/kubestellar/docs/issues/1450",
@@ -65,21 +65,7 @@
         "docs"
       ],
       "open_count": 29,
-      "closed_count": 19
-    },
-    {
-      "name": "fiber, func, map",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "Unbounded onboardingEvents Map : Server Memory Exhaustion",
-        "url": "https://github.com/kubestellar/console/issues/3948",
-        "created_at": "2026-03-30T19:42:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 5
+      "closed_count": 25
     },
     {
       "name": "leaderboard, points, point",
@@ -138,7 +124,7 @@
       "closed_count": 2
     },
     {
-      "name": "router, cors, gin",
+      "name": "router, gin, cors",
       "issue_count": 2,
       "recent_issue": {
         "title": "CORS Headers Set After Middleware That Returns Early",
@@ -166,7 +152,7 @@
       "closed_count": 2
     },
     {
-      "name": "authentication, oauth, accept",
+      "name": "authentication, oauth, bypass",
       "issue_count": 2,
       "recent_issue": {
         "title": "WebSocket authentication accepts hardcoded \"demo-token\" bypass in all environments",
@@ -362,7 +348,7 @@
       "closed_count": 1
     },
     {
-      "name": "time, clientset, tick",
+      "name": "clientset, time, tick",
       "issue_count": 1,
       "recent_issue": {
         "title": "time.Tick Goroutine Leaks in Cluster Onboarding",
@@ -404,7 +390,7 @@
       "closed_count": 1
     },
     {
-      "name": "iterate, websocket, client",
+      "name": "iterate, websocket, slow",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent WebSocket BroadcastToClients Holds wsMux While Iterating : Slow Client Blocks All Broadcasts",
@@ -466,20 +452,6 @@
         "title": "Broken `contains` Operator Nullifies Dynamic Cluster Group Evaluation",
         "url": "https://github.com/kubestellar/console/issues/2606",
         "created_at": "2026-03-14T10:20:00Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sustain, c9b33a03, b2fe",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "In-memory OAuth state store can grow unbounded under sustained login requests",
-        "url": "https://github.com/kubestellar/console/issues/2548",
-        "created_at": "2026-03-13T22:46:15Z"
       },
       "repos": [
         "console"
