@@ -339,7 +339,11 @@ export default function MarketplacePage() {
   const tagRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    fetch(REGISTRY_URL)
+    const FETCH_TIMEOUT_MS = 10000;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+    fetch(REGISTRY_URL, { signal: controller.signal })
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch marketplace data");
         return res.json();
@@ -350,9 +354,13 @@ export default function MarketplacePage() {
         setLoading(false);
       })
       .catch((e) => {
-        setError(e.message);
+        const message = e.name === "AbortError"
+          ? "Request timed out. The marketplace registry may be temporarily unavailable."
+          : e.message;
+        setError(message);
         setLoading(false);
-      });
+      })
+      .finally(() => clearTimeout(timer));
   }, []);
 
   // Close tag dropdown on outside click
@@ -530,8 +538,43 @@ export default function MarketplacePage() {
 
           {error && (
             <div className="text-center py-20">
+              <Package size={48} className="mx-auto text-gray-600 mb-4" />
               <p className="text-red-400 mb-2">Failed to load marketplace</p>
-              <p className="text-gray-500 text-sm">{error}</p>
+              <p className="text-gray-500 text-sm mb-6">{error}</p>
+              <div className="flex items-center justify-center gap-4">
+                <button
+                  onClick={() => {
+                    setError(null);
+                    setLoading(true);
+                    fetch(REGISTRY_URL)
+                      .then((res) => {
+                        if (!res.ok) throw new Error("Failed to fetch marketplace data");
+                        return res.json();
+                      })
+                      .then((d: RegistryData) => {
+                        const allItems = [...(d.items || []), ...(d.presets || [])];
+                        setData({ ...d, items: allItems });
+                        setLoading(false);
+                      })
+                      .catch((e) => {
+                        setError(e.message);
+                        setLoading(false);
+                      });
+                  }}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-600/30 text-gray-400 hover:text-white hover:border-gray-500 transition-colors text-sm"
+                >
+                  Retry
+                </button>
+                <a
+                  href="https://github.com/kubestellar/console-marketplace"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-600/30 text-gray-400 hover:text-white hover:border-gray-500 transition-colors text-sm"
+                >
+                  <ExternalLink size={14} />
+                  Browse on GitHub
+                </a>
+              </div>
             </div>
           )}
 

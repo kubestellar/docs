@@ -343,7 +343,7 @@ metadata:
   name: nginx-singleton-bpolicy
 spec:
   clusterSelectors:
-  - matchLabels: {"name":"cluster1"}
+  - matchLabels: {$(echo "$label_query_one" | tr , $'\n' | while IFS="=" read key val; do echo -n ", \"$key\": \"$val\""; done | tail -c +3)}
   downsync:
   - objectSelectors:
     - matchLabels: {"app.kubernetes.io/name":"nginx-singleton"}
