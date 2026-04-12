@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-12T06:37:14.866Z",
+  "generated_at": "2026-04-12T10:18:54.635Z",
   "total_issues_opened": 275,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 83250,
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 19,
-      "closed_count": 237
+      "open_count": 8,
+      "closed_count": 248
     },
     {
       "name": "kube, game, craft",

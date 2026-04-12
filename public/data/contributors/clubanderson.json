@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-12T06:36:30.750Z",
-  "total_issues_opened": 871,
+  "generated_at": "2026-04-12T10:18:14.324Z",
+  "total_issues_opened": 873,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3144850,
+  "total_points": 3151650,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 70,
-    "avg_per_day": 3.62,
+    "avg_per_week": 70.2,
+    "avg_per_day": 3.63,
     "by_day_of_week": [
       104,
       106,
@@ -17,7 +17,7 @@
       115,
       125,
       132,
-      97
+      99
     ],
     "by_hour_of_day": [
       46,
@@ -26,8 +26,8 @@
       29,
       40,
       26,
-      35,
-      54,
+      36,
+      55,
       15,
       8,
       5,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-12T06:28:15.000Z"
+    "last_issue_at": "2026-04-12T07:19:38.000Z"
   },
   "topics": [
     {
@@ -69,11 +69,11 @@
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 150,
+      "issue_count": 152,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #594",
-        "url": "https://github.com/kubestellar/console/issues/6876",
-        "created_at": "2026-04-12T06:28:15Z"
+        "title": "🐛 4 test failure(s) in Coverage Suite run #597",
+        "url": "https://github.com/kubestellar/console/issues/6885",
+        "created_at": "2026-04-12T07:19:38Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 4,
-      "closed_count": 146
+      "closed_count": 148
     },
     {
       "name": "monitoring, card, step",
@@ -238,7 +238,7 @@
       "closed_count": 2
     },
     {
-      "name": "term, roadmap, md",
+      "name": "term, roadmap, near",
       "issue_count": 3,
       "recent_issue": {
         "title": "[Auto-QA] ROADMAP.md governance issues",
@@ -729,7 +729,7 @@
       "closed_count": 1
     },
     {
-      "name": "kubectl, assist, terminal",
+      "name": "kubectl, assist, interactive",
       "issue_count": 1,
       "recent_issue": {
         "title": "Kubectl Card with AI-Assisted Configuration",
@@ -858,34 +858,34 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "Outdated Roadmap Page References Kubernetes 1.30/1.31",
+        "url": "https://github.com/kubestellar/docs/issues/1423",
+        "repo": "docs",
+        "topic_match": "term, roadmap, near"
+      },
+      {
         "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
         "url": "https://github.com/kubestellar/docs/issues/1396",
         "repo": "docs",
         "topic_match": "app, oauth, github"
       },
       {
+        "title": "Marketplace Page Permanently Loading",
+        "url": "https://github.com/kubestellar/docs/issues/1433",
+        "repo": "docs",
+        "topic_match": "marketplace, home, assistant"
+      },
+      {
         "title": "Title: Missing verification commands for Console and kc-agent health",
         "url": "https://github.com/kubestellar/docs/issues/1404",
         "repo": "docs",
-        "topic_match": "kubectl, assist, terminal"
+        "topic_match": "kubectl, assist, interactive"
       },
       {
-        "title": "No official Kind quickstart (cluster creation + deploy + validation)",
-        "url": "https://github.com/kubestellar/docs/issues/1388",
+        "title": "Scenario 3 Title Has Typo : \"Multi-Custer\" Instead of \"Multi-Cluster\"",
+        "url": "https://github.com/kubestellar/docs/issues/1436",
         "repo": "docs",
-        "topic_match": "marshall, resource, kind"
-      },
-      {
-        "title": "Chart enables backup PVC by default, increasing local install failure surface",
-        "url": "https://github.com/kubestellar/docs/issues/1386",
-        "repo": "docs",
-        "topic_match": "chart, default, day"
-      },
-      {
-        "title": "Multi-cluster delta broken",
-        "url": "https://github.com/kubestellar/console/issues/6873",
-        "repo": "console",
-        "topic_match": "cluster, status, health"
+        "topic_match": "typo, readme, fix"
       }
     ],
     "stretch": [
@@ -902,16 +902,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
         "name": "Storage & Compute",
@@ -968,7 +968,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 226
+      "issue_count": 228
     }
   ]
 }

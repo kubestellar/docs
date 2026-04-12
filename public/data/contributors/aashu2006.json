@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-12T06:37:16.490Z",
+  "generated_at": "2026-04-12T10:18:56.135Z",
   "total_issues_opened": 175,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 51300,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, happen, error",
-      "issue_count": 125,
+      "issue_count": 126,
       "recent_issue": {
         "title": "loggedClusterError bool in PredictionWorker is read and written without lock protection causing data race",
         "url": "https://github.com/kubestellar/console/issues/6694",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 125
+      "closed_count": 126
     },
     {
       "name": "cookie, csrf, samesite",
@@ -319,7 +319,7 @@
       "closed_count": 1
     },
     {
-      "name": "icon, reader, button",
+      "name": "reader, icon, button",
       "issue_count": 1,
       "recent_issue": {
         "title": "ClusterGroups, NamespaceMonitor, ClusterLocations, Kubedle: icon-only buttons missing aria-label - inaccessible to screen readers",
@@ -521,20 +521,6 @@
         "title": "kagenti_provider Invoke doesn't URL-encode namespace/agentName allowing path injection",
         "url": "https://github.com/kubestellar/console/issues/5349",
         "created_at": "2026-04-07T21:21:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "authorization, header, agent",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Agent fetch hooks send no Authorization header - silently breaks when KC_AGENT_TOKEN is set",
-        "url": "https://github.com/kubestellar/console/issues/5348",
-        "created_at": "2026-04-07T21:20:53Z"
       },
       "repos": [
         "console"

@@ -1,12 +1,12 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-12T06:37:21.280Z",
+  "generated_at": "2026-04-12T10:19:00.731Z",
   "total_issues_opened": 77,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 23500,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 12,
+  "rank": 13,
   "cadence": {
     "avg_per_week": 6.3,
     "avg_per_day": 0.79,
@@ -216,6 +216,12 @@
         "url": "https://github.com/kubestellar/console/issues/6455",
         "repo": "console",
         "topic_match": "mission, ai, @ghanshyam2005singh"
+      },
+      {
+        "title": "Marketplace Page Permanently Loading",
+        "url": "https://github.com/kubestellar/docs/issues/1433",
+        "repo": "docs",
+        "topic_match": "install, theme, marketplace"
       },
       {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",

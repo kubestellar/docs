@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-12T06:37:20.726Z",
+  "generated_at": "2026-04-12T10:19:00.079Z",
   "total_issues_opened": 114,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 30700,
@@ -207,7 +207,7 @@
       "closed_count": 1
     },
     {
-      "name": "parent, worker, context",
+      "name": "worker, parent, context",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 6: `prediction_worker.go` uses `context.Background()` instead of parent context",

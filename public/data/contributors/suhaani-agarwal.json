@@ -1,21 +1,21 @@
 {
-  "login": "redpinecube",
-  "generated_at": "2026-04-12T10:19:01.024Z",
-  "total_issues_opened": 2,
-  "avatar_url": "https://avatars.githubusercontent.com/u/113033661?v=4",
-  "total_points": 100,
+  "login": "suhaani-agarwal",
+  "generated_at": "2026-04-12T10:19:01.019Z",
+  "total_issues_opened": 0,
+  "avatar_url": "https://avatars.githubusercontent.com/u/173444684?v=4",
+  "total_points": 400,
   "level": "Observer",
   "level_rank": 1,
-  "rank": 76,
+  "rank": 63,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 2,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
       0,
       0,
       0,
-      2,
+      0,
       0,
       0
     ],
@@ -40,16 +40,16 @@
       0,
       0,
       0,
-      2,
+      0,
       0,
       0,
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
+    "longest_streak_weeks": 0,
     "trend": "inactive",
-    "first_issue_at": "2025-08-22T20:13:32.000Z",
-    "last_issue_at": "2025-08-22T20:17:15.000Z"
+    "first_issue_at": null,
+    "last_issue_at": null
   },
   "topics": [],
   "suggestions": {
@@ -71,7 +71,7 @@
     },
     {
       "month": "2025-08",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2025-09",

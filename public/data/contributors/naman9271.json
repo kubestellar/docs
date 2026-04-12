@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-12T06:37:16.502Z",
+  "generated_at": "2026-04-12T10:18:56.146Z",
   "total_issues_opened": 41,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 50000,
@@ -263,7 +263,7 @@
       "closed_count": 1
     },
     {
-      "name": "progress, @vedansh, md",
+      "name": "progress, @vedansh, idea",
       "issue_count": 1,
       "recent_issue": {
         "title": "Create a Workflow for progress.md",
@@ -280,10 +280,34 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "UI Overview Page References Deprecated Repository",
+        "url": "https://github.com/kubestellar/docs/issues/1435",
+        "repo": "docs",
+        "topic_match": "overview, shouold, doc"
+      },
+      {
         "title": "CONTRIBUTING.md links to a non-existent OAuth section anchor",
         "url": "https://github.com/kubestellar/docs/issues/1397",
         "repo": "docs",
         "topic_match": "readme, irrelevant, kinda"
+      },
+      {
+        "title": "Broken Footer Links : Multiple 404 Destinations",
+        "url": "https://github.com/kubestellar/docs/issues/1422",
+        "repo": "docs",
+        "topic_match": "ladder, contribution, thing"
+      },
+      {
+        "title": "Fabricated Quick Start on Overview Page : brew install kubestellar / kubestellar init Don't Exist",
+        "url": "https://github.com/kubestellar/docs/issues/1416",
+        "repo": "docs",
+        "topic_match": "overview, shouold, doc"
+      },
+      {
+        "title": "Under Construction\" and \"Work in Progress\" Stub Pages Published as Production Content",
+        "url": "https://github.com/kubestellar/docs/issues/1419",
+        "repo": "docs",
+        "topic_match": "progress, @vedansh, idea"
       }
     ],
     "stretch": [

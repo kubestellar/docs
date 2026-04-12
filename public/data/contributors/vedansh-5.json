@@ -1,12 +1,12 @@
 {
   "login": "vedansh-5",
-  "generated_at": "2026-04-12T06:37:21.483Z",
+  "generated_at": "2026-04-12T10:19:00.905Z",
   "total_issues_opened": 19,
   "avatar_url": "https://avatars.githubusercontent.com/u/77830698?v=4",
   "total_points": 19550,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 15,
+  "rank": 16,
   "cadence": {
     "avg_per_week": 0,
     "avg_per_day": 0.39,
@@ -95,7 +95,7 @@
       "closed_count": 4
     },
     {
-      "name": "tab, tag, links",
+      "name": "tab, tag, blog",
       "issue_count": 1,
       "recent_issue": {
         "title": "feature: Links should open in new tabs",
@@ -110,14 +110,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Fake 50% progress",
-        "url": "https://github.com/kubestellar/console/issues/6871",
-        "repo": "console",
-        "topic_match": "workflow, progress, remove"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "GPU & AI/ML",

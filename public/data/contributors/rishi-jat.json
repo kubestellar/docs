@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-12T06:37:20.269Z",
+  "generated_at": "2026-04-12T10:18:59.656Z",
   "total_issues_opened": 222,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 40950,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "line, @rishi, jat",
-      "issue_count": 163,
+      "issue_count": 160,
       "recent_issue": {
         "title": "ux(console): missing kc-agent connection status indicator in UI",
         "url": "https://github.com/kubestellar/console/issues/6363",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 23,
-      "closed_count": 140
+      "closed_count": 137
     },
     {
       "name": "event, analytics, day",
@@ -111,6 +111,20 @@
       "closed_count": 3
     },
     {
+      "name": "hook, order, render",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "CardRuntime violates React hook order when data hook is missing",
+        "url": "https://github.com/kubestellar/console/issues/2387",
+        "created_at": "2026-03-13T12:55:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
       "name": "noopener, rel, noreferrer",
       "issue_count": 3,
       "recent_issue": {
@@ -126,7 +140,7 @@
       "closed_count": 3
     },
     {
-      "name": "module, setinterval, singleton",
+      "name": "module, setinterval, poll",
       "issue_count": 3,
       "recent_issue": {
         "title": "useActiveUsers module-level singleton polling never stops",
@@ -238,7 +252,7 @@
       "closed_count": 0
     },
     {
-      "name": "mkdocs, style, attach",
+      "name": "style, mkdocs, attach",
       "issue_count": 2,
       "recent_issue": {
         "title": "Review and fix mkdocs.yml configuration",
@@ -619,16 +633,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Fake 50% progress",
-        "url": "https://github.com/kubestellar/console/issues/6871",
-        "repo": "console",
-        "topic_match": "timeout, rollout, indefinitely"
-      },
-      {
-        "title": "Rollout tracker wrong target",
-        "url": "https://github.com/kubestellar/console/issues/6869",
-        "repo": "console",
-        "topic_match": "timeout, rollout, indefinitely"
+        "title": "Font Name Typo in mkdocs.yml (SapceMono instead of SpaceMono)",
+        "url": "https://github.com/kubestellar/docs/issues/1429",
+        "repo": "docs",
+        "topic_match": "style, mkdocs, attach"
       }
     ],
     "stretch": [

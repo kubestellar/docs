@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-12T06:37:21.479Z",
+  "generated_at": "2026-04-12T10:19:00.849Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -312,12 +312,6 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "test, httptest, server"
-      },
-      {
-        "title": "PVC rows appear clickable even when drilldown cannot execute",
-        "url": "https://github.com/kubestellar/console/issues/6810",
-        "repo": "console",
-        "topic_match": "deployment, clickable, onclick"
       }
     ],
     "stretch": [

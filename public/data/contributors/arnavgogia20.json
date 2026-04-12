@@ -1,15 +1,15 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-12T06:37:21.348Z",
-  "total_issues_opened": 57,
+  "generated_at": "2026-04-12T10:19:00.241Z",
+  "total_issues_opened": 80,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-  "total_points": 22600,
+  "total_points": 29500,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 13,
+  "rank": 9,
   "cadence": {
-    "avg_per_week": 4.8,
-    "avg_per_day": 1.96,
+    "avg_per_week": 6.7,
+    "avg_per_day": 2.68,
     "by_day_of_week": [
       9,
       14,
@@ -17,7 +17,7 @@
       3,
       10,
       21,
-      0
+      23
     ],
     "by_hour_of_day": [
       0,
@@ -28,9 +28,9 @@
       1,
       1,
       5,
-      0,
-      2,
-      3,
+      1,
+      16,
+      11,
       7,
       5,
       4,
@@ -49,12 +49,27 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-13T14:35:21.000Z",
-    "last_issue_at": "2026-04-11T15:57:53.000Z"
+    "last_issue_at": "2026-04-12T10:11:35.000Z"
   },
   "topics": [
     {
-      "name": "@arnavgogia20, problem, mission",
-      "issue_count": 36,
+      "name": "@arnavgogia20, problem, page",
+      "issue_count": 53,
+      "recent_issue": {
+        "title": "Scenario 3 Title Has Typo : \"Multi-Custer\" Instead of \"Multi-Cluster\"",
+        "url": "https://github.com/kubestellar/docs/issues/1436",
+        "created_at": "2026-04-12T10:11:35Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 19,
+      "closed_count": 34
+    },
+    {
+      "name": "leaderboard, points, point",
+      "issue_count": 2,
       "recent_issue": {
         "title": "Inconsistent Points Display Between Console Profile and Docs Leaderboard",
         "url": "https://github.com/kubestellar/console/issues/6481",
@@ -64,7 +79,21 @@
         "console"
       ],
       "open_count": 1,
-      "closed_count": 35
+      "closed_count": 1
+    },
+    {
+      "name": "recommend, collapse, panel",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "MissionSuggestions and CardRecommendations Auto-Collapse After 20 Seconds and Never Re-Expand",
+        "url": "https://github.com/kubestellar/console/issues/4557",
+        "created_at": "2026-04-04T12:42:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "router, cors, gin",
@@ -95,12 +124,12 @@
       "closed_count": 2
     },
     {
-      "name": "selectcardmission, deep, installer",
+      "name": "updates, indicator, feedback",
       "issue_count": 1,
       "recent_issue": {
-        "title": "MissionBrowser selectCardMission Has Ref-Prop Mismatch in Deep-Link Effect Dependencies",
-        "url": "https://github.com/kubestellar/console/issues/6467",
-        "created_at": "2026-04-11T15:39:27Z"
+        "title": "Inconsistent Request Count Between Dashboard Indicator and Feedback “Updates” Tab",
+        "url": "https://github.com/kubestellar/console/issues/6475",
+        "created_at": "2026-04-11T15:50:13Z"
       },
       "repos": [
         "console"
@@ -129,6 +158,20 @@
         "title": "LaunchSequence Auto-Starts on Mount : No User Confirmation Before Deploying to Clusters",
         "url": "https://github.com/kubestellar/console/issues/6462",
         "created_at": "2026-04-11T15:30:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "cache, mission, duplicates",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Mission Cache Accumulates Duplicates on Stale-Cache Refresh",
+        "url": "https://github.com/kubestellar/console/issues/5217",
+        "created_at": "2026-04-07T11:25:00Z"
       },
       "repos": [
         "console"
@@ -331,16 +374,42 @@
       ],
       "open_count": 0,
       "closed_count": 1
+    },
+    {
+      "name": "advisory, d8f9303, d94b",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Security Advisory: Authorization Bypass in GitHub Issue Management",
+        "url": "https://github.com/kubestellar/console/issues/2544",
+        "created_at": "2026-03-13T22:23:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     }
   ],
   "suggestions": {
     "deepen": [],
     "stretch": [
       {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
         "name": "Storage & Compute",
@@ -349,22 +418,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Deployments & GitOps",
         "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
         "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },
@@ -415,7 +472,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 26
+      "issue_count": 49
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-12T06:36:47.356Z",
+  "generated_at": "2026-04-12T10:18:29.680Z",
   "total_issues_opened": 373,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 123250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 313,
+      "issue_count": 308,
       "recent_issue": {
         "title": "Sign in breaking in dev mode",
         "url": "https://github.com/kubestellar/console/issues/6850",
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 4,
-      "closed_count": 309
+      "open_count": 3,
+      "closed_count": 305
     },
     {
       "name": "concurrency, ts, task",
@@ -79,6 +79,20 @@
         "console"
       ],
       "open_count": 1,
+      "closed_count": 2
+    },
+    {
+      "name": "date, invalid, nan",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Date renderers can leak Invalid Date text instead of fallback.",
+        "url": "https://github.com/kubestellar/console/issues/6711",
+        "created_at": "2026-04-11T22:23:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
       "closed_count": 2
     },
     {
@@ -292,6 +306,20 @@
       "closed_count": 1
     },
     {
+      "name": "terminate, rollback, session",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
+        "url": "https://github.com/kubestellar/console/issues/6313",
+        "created_at": "2026-04-11T07:03:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "kubedle, f28edfd, e005",
       "issue_count": 1,
       "recent_issue": {
@@ -446,6 +474,20 @@
       "closed_count": 1
     },
     {
+      "name": "streak, afec5f5c, ada9",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Behaviour of the \"Streak\" icon",
+        "url": "https://github.com/kubestellar/console/issues/4541",
+        "created_at": "2026-04-04T05:23:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "restoration, env, smoke",
       "issue_count": 1,
       "recent_issue": {
@@ -480,6 +522,20 @@
         "title": "TypeScript config uses unsupported compiler option",
         "url": "https://github.com/kubestellar/console/issues/4432",
         "created_at": "2026-04-03T12:39:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "startdate, dd83665f, b7aabe58d172",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "GPU reservation date fields have no format guarantees",
+        "url": "https://github.com/kubestellar/console/issues/4426",
+        "created_at": "2026-04-03T12:37:38Z"
       },
       "repos": [
         "console"
@@ -544,7 +600,7 @@
       "closed_count": 1
     },
     {
-      "name": "solid, offline, overview",
+      "name": "solid, offline, style",
       "issue_count": 1,
       "recent_issue": {
         "title": "Offline clusters styling in Stats Overview is solid",

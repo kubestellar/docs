@@ -1,15 +1,15 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-12T06:37:21.532Z",
-  "total_issues_opened": 52,
+  "generated_at": "2026-04-12T10:19:00.902Z",
+  "total_issues_opened": 55,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
-  "total_points": 19000,
+  "total_points": 19900,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 16,
+  "rank": 15,
   "cadence": {
-    "avg_per_week": 4.3,
-    "avg_per_day": 0.6,
+    "avg_per_week": 4.5,
+    "avg_per_day": 0.63,
     "by_day_of_week": [
       16,
       7,
@@ -17,7 +17,7 @@
       6,
       3,
       2,
-      14
+      17
     ],
     "by_hour_of_day": [
       0,
@@ -27,9 +27,9 @@
       2,
       0,
       5,
-      4,
+      6,
       5,
-      5,
+      6,
       2,
       2,
       2,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-01-14T12:07:09.000Z",
-    "last_issue_at": "2026-04-11T20:59:19.000Z"
+    "last_issue_at": "2026-04-12T09:43:34.000Z"
   },
   "topics": [
     {
@@ -122,6 +122,48 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "limit, rate, burnout",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unbounded GitHub API Rate Limiting Burnout in Proxy Mode",
+        "url": "https://github.com/kubestellar/console/issues/6899",
+        "created_at": "2026-04-12T09:43:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "clean, fcdb5b48, cc2",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "WebSocket Memory Leak (Zombie Goroutines in Exec Handler)",
+        "url": "https://github.com/kubestellar/console/issues/6891",
+        "created_at": "2026-04-12T07:45:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "bulk, historical, sqlite",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "SQLite Maximum Variable Limit Crash on Bulk Operations",
+        "url": "https://github.com/kubestellar/console/issues/6888",
+        "created_at": "2026-04-12T07:29:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "fdb7, a3ba, bfc8",
@@ -439,12 +481,6 @@
         "url": "https://github.com/kubestellar/docs/issues/1402",
         "repo": "docs",
         "topic_match": "logout, websocket, disconnect"
-      },
-      {
-        "title": "startMission onClick Handler No Try/Catch",
-        "url": "https://github.com/kubestellar/console/issues/6811",
-        "repo": "console",
-        "topic_match": "ensureconnection, reconnection, websocket"
       }
     ],
     "stretch": [
@@ -527,7 +563,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 22
+      "issue_count": 25
     }
   ]
 }

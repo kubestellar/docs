@@ -1,22 +1,22 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-12T06:37:07.103Z",
-  "total_issues_opened": 371,
+  "generated_at": "2026-04-12T10:18:47.582Z",
+  "total_issues_opened": 372,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 115150,
   "level": "Captain",
   "level_rank": 6,
   "rank": 3,
   "cadence": {
-    "avg_per_week": 30.9,
-    "avg_per_day": 7.16,
+    "avg_per_week": 31,
+    "avg_per_day": 7.18,
     "by_day_of_week": [
       10,
       47,
       74,
       61,
       4,
-      119,
+      120,
       56
     ],
     "by_hour_of_day": [
@@ -33,7 +33,7 @@
       26,
       4,
       9,
-      20,
+      21,
       19,
       17,
       40,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "@mrhapile, mission, phase",
-      "issue_count": 282,
+      "name": "@mrhapile, phase, mission",
+      "issue_count": 283,
       "recent_issue": {
         "title": "Go: ShareToGitHub Commit Step Does Not Set Content-Type: application/json",
         "url": "https://github.com/kubestellar/console/issues/6842",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 6,
-      "closed_count": 276
+      "closed_count": 277
     },
     {
       "name": "documentation, 📌, component",
@@ -343,8 +343,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "projectnames, a., schema",
@@ -381,20 +381,6 @@
         "title": "MissionControlDialog handleKeyDown Listener Attached to document Without capture",
         "url": "https://github.com/kubestellar/console/issues/6787",
         "created_at": "2026-04-12T03:58:25Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "dialog, modal, trap",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "No Focus Trap in MissionControlDialog",
-        "url": "https://github.com/kubestellar/console/issues/6738",
-        "created_at": "2026-04-11T22:45:12Z"
       },
       "repos": [
         "console"
@@ -479,6 +465,20 @@
         "title": "Feature Request Modal",
         "url": "https://github.com/kubestellar/console/issues/6531",
         "created_at": "2026-04-11T16:35:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "chips, a4f11, e4d5",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Filter Chips Container",
+        "url": "https://github.com/kubestellar/console/issues/6530",
+        "created_at": "2026-04-11T16:35:09Z"
       },
       "repos": [
         "console"
@@ -627,7 +627,7 @@
       "closed_count": 1
     },
     {
-      "name": "d6093c66, fd5, be0",
+      "name": "d6093c66, fd5, e396db9",
       "issue_count": 1,
       "recent_issue": {
         "title": "MissionBrowser Render Desync",
@@ -675,6 +675,20 @@
         "title": "Slack SSRF Hook Exposure",
         "url": "https://github.com/kubestellar/console/issues/6416",
         "created_at": "2026-04-11T13:39:35Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "startedat, sort, bc056aab",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unstable Sort UI Flicker",
+        "url": "https://github.com/kubestellar/console/issues/6411",
+        "created_at": "2026-04-11T13:36:32Z"
       },
       "repos": [
         "console"
@@ -851,6 +865,20 @@
       "closed_count": 1
     },
     {
+      "name": "page, height, item",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "useStablePageHeight — Cumulative Layout Shift (CLS)",
+        "url": "https://github.com/kubestellar/console/issues/5255",
+        "created_at": "2026-04-07T14:23:09Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "menu, right, screen",
       "issue_count": 1,
       "recent_issue": {
@@ -913,34 +941,6 @@
         "title": "Excessive Top Padding Causing Unused Empty Space in Dashboard",
         "url": "https://github.com/kubestellar/console/issues/4940",
         "created_at": "2026-04-06T09:01:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "progressive, incrementally, af16a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Progressive Fetch Does Not Update UI Incrementally",
-        "url": "https://github.com/kubestellar/console/issues/4935",
-        "created_at": "2026-04-06T08:51:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sse, stream, mid",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "SSE Streaming Stops Midway Without Recovery",
-        "url": "https://github.com/kubestellar/console/issues/4934",
-        "created_at": "2026-04-06T08:51:14Z"
       },
       "repos": [
         "console"
@@ -1142,7 +1142,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 352
+      "issue_count": 353
     }
   ]
 }
