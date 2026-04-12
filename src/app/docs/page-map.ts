@@ -305,7 +305,7 @@ const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
         ]
       },
       {
-        'UI (User Interface)': [
+        'UI (Deprecated → Console)': [
           { 'Overview': 'ui-docs/ui-overview.md' },
           { 'WECS Remote Monitoring': 'ui-docs/wecs-remote-monitoring.md' },
           { 'ITS cluster management': 'ui-docs/its-cluster-management.md' }
