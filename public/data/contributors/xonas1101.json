@@ -1,22 +1,22 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-11T22:11:37.647Z",
-  "total_issues_opened": 344,
+  "generated_at": "2026-04-12T03:08:10.614Z",
+  "total_issues_opened": 367,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 114550,
+  "total_points": 121450,
   "level": "Captain",
   "level_rank": 6,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 28.7,
-    "avg_per_day": 5.68,
+    "avg_per_week": 30.6,
+    "avg_per_day": 6.06,
     "by_day_of_week": [
       25,
       29,
       46,
       57,
       67,
-      87,
+      110,
       33
     ],
     "by_hour_of_day": [
@@ -42,30 +42,30 @@
       0,
       0,
       24,
-      7,
+      30,
       0
     ],
     "current_streak_weeks": 5,
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-11T22:04:33.000Z"
+    "last_issue_at": "2026-04-11T22:30:05.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 295,
+      "issue_count": 312,
       "recent_issue": {
-        "title": "Re-loading from storage is additive and does not reconcile removals.",
-        "url": "https://github.com/kubestellar/console/issues/6681",
-        "created_at": "2026-04-11T22:04:33Z"
+        "title": "Keyboard hints are inconsistent with actual supported back key.",
+        "url": "https://github.com/kubestellar/console/issues/6721",
+        "created_at": "2026-04-11T22:30:05Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 24,
-      "closed_count": 271
+      "open_count": 4,
+      "closed_count": 308
     },
     {
       "name": "concurrent, notifiers, mutex",
@@ -124,6 +124,90 @@
       "closed_count": 2
     },
     {
+      "name": "tabledata, map, array",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "able section can crash when configured data key is not an array.",
+        "url": "https://github.com/kubestellar/console/issues/6718",
+        "created_at": "2026-04-11T22:29:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "ddef0aa1, ab49, abaeff752de9",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "React hook rules violation in combined modal hook.",
+        "url": "https://github.com/kubestellar/console/issues/6717",
+        "created_at": "2026-04-11T22:29:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "usedatasource, remount, churn",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Re-import/HMR can cause avoidable registry churn and remount waves.",
+        "url": "https://github.com/kubestellar/console/issues/6712",
+        "created_at": "2026-04-11T22:23:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "unifiedstatssection, collapse, expand",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Collapsed-state persistence is inverted in stats section.",
+        "url": "https://github.com/kubestellar/console/issues/6708",
+        "created_at": "2026-04-11T22:22:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "cardruntime, a3f121, ae5",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CardRuntime can violate React Rules of Hooks when a data hook is registered/unregistered at runtime.",
+        "url": "https://github.com/kubestellar/console/issues/6700",
+        "created_at": "2026-04-11T22:13:36Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "prototype, object, inherited",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "registry membership check uses in-operator, which includes inherited properties.",
+        "url": "https://github.com/kubestellar/console/issues/6697",
+        "created_at": "2026-04-11T22:11:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "object, scope, freeze",
       "issue_count": 1,
       "recent_issue": {
@@ -134,8 +218,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "constructor, escape, bypassable",
@@ -148,8 +232,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "bind, b75b, cad4",
@@ -200,20 +284,6 @@
         "title": "Edit path can exceed available GPU capacity",
         "url": "https://github.com/kubestellar/console/issues/5989",
         "created_at": "2026-04-10T08:05:27Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "severitycolor, tailwind, class",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Dynamic Tailwind class names likely not generated",
-        "url": "https://github.com/kubestellar/console/issues/5715",
-        "created_at": "2026-04-09T11:26:44Z"
       },
       "repos": [
         "console"
@@ -376,21 +446,7 @@
       "closed_count": 1
     },
     {
-      "name": "startdate, dd83665f, b7aabe58d172",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "GPU reservation date fields have no format guarantees",
-        "url": "https://github.com/kubestellar/console/issues/4426",
-        "created_at": "2026-04-03T12:37:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "reader, ping, backpressure",
+      "name": "ping, reader, backpressure",
       "issue_count": 1,
       "recent_issue": {
         "title": "WebSocket ping handling can block reader loop under backpressure",
@@ -684,6 +740,34 @@
       "closed_count": 1
     },
     {
+      "name": "unclear, kc, agent",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "kc-agent requirement unclear in Kubernetes setup",
+        "url": "https://github.com/kubestellar/docs/issues/1360",
+        "created_at": "2026-04-08T17:07:07Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "leaderboard, timer, f38d2137",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "The timer for leaderboard refreshing is misleading",
+        "url": "https://github.com/kubestellar/docs/issues/1333",
+        "created_at": "2026-04-02T18:04:36Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "v0, manage, site",
       "issue_count": 1,
       "recent_issue": {
@@ -701,22 +785,16 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "loggedClusterError bool in PredictionWorker is read and written without lock protection causing data race",
-        "url": "https://github.com/kubestellar/console/issues/6694",
-        "repo": "console",
-        "topic_match": "lock, cache, dc3c7ed8"
+        "title": "Missing high-level architecture explanation for multi-cluster + kc-agent model",
+        "url": "https://github.com/kubestellar/docs/issues/1409",
+        "repo": "docs",
+        "topic_match": "unclear, kc, agent"
       },
       {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "PredictionWorker initial sleep cannot be interrupted by Stop() delaying graceful shutdown",
-        "url": "https://github.com/kubestellar/console/issues/6682",
-        "repo": "console",
-        "topic_match": "sleep, a6bc872, a332"
       },
       {
         "title": "docs(console): port-forward example leaks background process (no cleanup)",
@@ -727,22 +805,16 @@
     ],
     "stretch": [
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
         "name": "GPU & AI/ML",
@@ -755,6 +827,12 @@
         "path": "pkg/api/, pkg/models/, pkg/store/",
         "description": "Go backend REST API, request handlers, data models, persistence layer",
         "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },
@@ -805,7 +883,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 253
+      "issue_count": 276
     }
   ]
 }

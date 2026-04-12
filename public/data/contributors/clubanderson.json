@@ -1,28 +1,28 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-11T22:11:25.808Z",
-  "total_issues_opened": 861,
+  "generated_at": "2026-04-12T03:07:55.188Z",
+  "total_issues_opened": 867,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3124800,
+  "total_points": 3137200,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 69.2,
-    "avg_per_day": 3.59,
+    "avg_per_week": 69.7,
+    "avg_per_day": 3.61,
     "by_day_of_week": [
       104,
       106,
       192,
       115,
       125,
-      129,
-      90
+      132,
+      93
     ],
     "by_hour_of_day": [
       46,
       23,
-      87,
+      90,
       29,
       40,
       23,
@@ -43,37 +43,37 @@
       29,
       19,
       21,
-      8
+      11
     ],
     "current_streak_weeks": 15,
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-11T18:58:24.000Z"
+    "last_issue_at": "2026-04-12T02:32:17.000Z"
   },
   "topics": [
     {
-      "name": "qa, auto, tsx",
-      "issue_count": 469,
+      "name": "qa, auto, component",
+      "issue_count": 470,
       "recent_issue": {
-        "title": "[Auto-QA] Event handler accessibility parity issues",
-        "url": "https://github.com/kubestellar/console/issues/6275",
-        "created_at": "2026-04-11T02:02:25Z"
+        "title": "[Auto-QA] Components fetching data without loading/error states",
+        "url": "https://github.com/kubestellar/console/issues/6772",
+        "created_at": "2026-04-12T02:03:04Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 469
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 143,
+      "issue_count": 147,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #563",
-        "url": "https://github.com/kubestellar/console/issues/6571",
-        "created_at": "2026-04-11T18:58:24Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #583",
+        "url": "https://github.com/kubestellar/console/issues/6776",
+        "created_at": "2026-04-12T02:32:17Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 3,
-      "closed_count": 140
+      "closed_count": 144
     },
     {
       "name": "monitoring, step, implement",
@@ -127,17 +127,17 @@
     },
     {
       "name": "px, spacing, inconsistent",
-      "issue_count": 9,
+      "issue_count": 10,
       "recent_issue": {
         "title": "[Auto-QA] Inconsistent spacing values in styles",
-        "url": "https://github.com/kubestellar/console/issues/4625",
-        "created_at": "2026-04-04T19:35:21Z"
+        "url": "https://github.com/kubestellar/console/issues/6773",
+        "created_at": "2026-04-12T02:03:04Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 9
+      "closed_count": 10
     },
     {
       "name": "cluster, status, health",
@@ -858,34 +858,28 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Token auth bypass on many sensitive cluster endpoints",
-        "url": "https://github.com/kubestellar/console/issues/6646",
-        "repo": "console",
-        "topic_match": "token, validation, endpoint"
-      },
-      {
         "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
         "url": "https://github.com/kubestellar/docs/issues/1396",
         "repo": "docs",
         "topic_match": "app, oauth, github"
       },
       {
-        "title": "CORS preflight blocks Authorization on token-protected endpoints",
-        "url": "https://github.com/kubestellar/console/issues/6649",
-        "repo": "console",
-        "topic_match": "token, validation, endpoint"
+        "title": "Title: Missing verification commands for Console and kc-agent health",
+        "url": "https://github.com/kubestellar/docs/issues/1404",
+        "repo": "docs",
+        "topic_match": "kubectl, assist, terminal"
       },
       {
-        "title": "Stop methods are non-idempotent and can panic on second call",
-        "url": "https://github.com/kubestellar/console/issues/6650",
-        "repo": "console",
-        "topic_match": "leak, stop, resource"
+        "title": "No official Kind quickstart (cluster creation + deploy + validation)",
+        "url": "https://github.com/kubestellar/docs/issues/1388",
+        "repo": "docs",
+        "topic_match": "marshall, resource, kind"
       },
       {
-        "title": "Additional unauthenticated sensitive endpoints in operations handlers",
-        "url": "https://github.com/kubestellar/console/issues/6648",
-        "repo": "console",
-        "topic_match": "token, validation, endpoint"
+        "title": "Chart enables backup PVC by default, increasing local install failure surface",
+        "url": "https://github.com/kubestellar/docs/issues/1386",
+        "repo": "docs",
+        "topic_match": "chart, default, networkpolicy"
       }
     ],
     "stretch": [
@@ -968,7 +962,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 216
+      "issue_count": 222
     }
   ]
 }

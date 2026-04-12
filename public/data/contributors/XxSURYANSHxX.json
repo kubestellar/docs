@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-11T22:11:58.678Z",
+  "generated_at": "2026-04-12T03:08:35.400Z",
   "total_issues_opened": 114,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 30700,
@@ -298,12 +298,6 @@
         "url": "https://github.com/kubestellar/console/issues/6513",
         "repo": "console",
         "topic_match": "reconciliation, loop, kick"
-      },
-      {
-        "title": "Shutdown responsiveness bug in prediction worker startup delay",
-        "url": "https://github.com/kubestellar/console/issues/6652",
-        "repo": "console",
-        "topic_match": "parent, worker, context"
       },
       {
         "title": "docs(console): port-forward example leaks background process (no cleanup)",

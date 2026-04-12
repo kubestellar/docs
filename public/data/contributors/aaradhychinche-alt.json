@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-11T22:11:53.268Z",
+  "generated_at": "2026-04-12T03:08:29.578Z",
   "total_issues_opened": 251,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 76700,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aaradhychinche, alt, reproduce",
-      "issue_count": 224,
+      "issue_count": 225,
       "recent_issue": {
         "title": "Improve responsive transition behavior at breakpoint boundaries",
         "url": "https://github.com/kubestellar/console/issues/6401",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 224
+      "closed_count": 225
     },
     {
       "name": "kube, game, craft",
@@ -130,20 +130,6 @@
         "title": "Nodes dashboard shows stale utilization when actual value becomes zero",
         "url": "https://github.com/kubestellar/console/issues/6107",
         "created_at": "2026-04-10T13:32:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sourcecluster, deploy, validate",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "## 🐛 bug: deploy api does not validate sourceCluster",
-        "url": "https://github.com/kubestellar/console/issues/5957",
-        "created_at": "2026-04-10T06:48:42Z"
       },
       "repos": [
         "console"
@@ -222,7 +208,7 @@
       "closed_count": 1
     },
     {
-      "name": "listener, abort, callback",
+      "name": "listener, abort, unmount",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: abort signal listeners are not cleaned up causing event listener leaks and post-unmount callbacks",
@@ -292,7 +278,7 @@
       "closed_count": 1
     },
     {
-      "name": "artifact, appear, green",
+      "name": "artifact, green, appear",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: unintended green line appears across top of page due to layout/CSS issue",
@@ -365,16 +351,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "reloadAndNotify suppresses watcher.Remove error allowing stale inode watch to persist",
-        "url": "https://github.com/kubestellar/console/issues/6692",
-        "repo": "console",
-        "topic_match": "watcher, persistence, context"
-      },
-      {
         "title": "card: Implement Artifact Hub monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",
         "repo": "console-marketplace",
-        "topic_match": "artifact, appear, green"
+        "topic_match": "artifact, green, appear"
       }
     ],
     "stretch": [

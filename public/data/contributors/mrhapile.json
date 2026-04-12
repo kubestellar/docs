@@ -1,22 +1,22 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-11T22:11:47.832Z",
-  "total_issues_opened": 306,
+  "generated_at": "2026-04-12T03:08:23.828Z",
+  "total_issues_opened": 328,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 95650,
+  "total_points": 102250,
   "level": "Captain",
   "level_rank": 6,
   "rank": 3,
   "cadence": {
-    "avg_per_week": 25.5,
-    "avg_per_day": 5.94,
+    "avg_per_week": 27.3,
+    "avg_per_day": 6.36,
     "by_day_of_week": [
       10,
       47,
       74,
       61,
       4,
-      97,
+      119,
       13
     ],
     "by_hour_of_day": [
@@ -42,29 +42,57 @@
       6,
       9,
       18,
-      18,
+      40,
       0
     ],
     "current_streak_weeks": 2,
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-11T21:57:34.000Z"
+    "last_issue_at": "2026-04-11T22:47:59.000Z"
   },
   "topics": [
     {
-      "name": "@mrhapile, location, phase",
-      "issue_count": 241,
+      "name": "@mrhapile, phase, mission",
+      "issue_count": 244,
       "recent_issue": {
-        "title": "planningMission Staleness After Reset",
-        "url": "https://github.com/kubestellar/console/issues/6670",
-        "created_at": "2026-04-11T21:57:34Z"
+        "title": "Dialog aria-label Uses Dynamic Title That Can Be Empty",
+        "url": "https://github.com/kubestellar/console/issues/6745",
+        "created_at": "2026-04-11T22:47:59Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 10,
-      "closed_count": 231
+      "open_count": 0,
+      "closed_count": 244
+    },
+    {
+      "name": "documentation, 📌, component",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "Missing documentation for GitOpsDrift dashboard component",
+        "url": "https://github.com/kubestellar/console/issues/4837",
+        "created_at": "2026-04-05T18:16:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 5
+    },
+    {
+      "name": "d., readyreplicas, replica",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "Unsafe Number() Cast on Replica Fields",
+        "url": "https://github.com/kubestellar/console/issues/6729",
+        "created_at": "2026-04-11T22:39:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 4
     },
     {
       "name": "alertscontext, const, queueautoresolve",
@@ -81,12 +109,26 @@
       "closed_count": 4
     },
     {
-      "name": "launchsequence, launchproject, phasesignature",
+      "name": "priority, payloadcard, recommend",
       "issue_count": 2,
       "recent_issue": {
-        "title": "launchProject Fire-and-Forget",
-        "url": "https://github.com/kubestellar/console/issues/6634",
-        "created_at": "2026-04-11T21:17:50Z"
+        "title": "PayloadCard Priority Dropdown Missing Keyboard Dismiss",
+        "url": "https://github.com/kubestellar/console/issues/6743",
+        "created_at": "2026-04-11T22:47:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "tab, poll, interval",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Ghost Polling After Tab Suspension",
+        "url": "https://github.com/kubestellar/console/issues/6641",
+        "created_at": "2026-04-11T21:19:25Z"
       },
       "repos": [
         "console"
@@ -123,12 +165,12 @@
       "closed_count": 2
     },
     {
-      "name": "escape, extractbalancedblocks, inside",
+      "name": "vitest, pooloptions, canvas",
       "issue_count": 2,
       "recent_issue": {
-        "title": "extractBalancedBlocks Infinite Loop Trap",
-        "url": "https://github.com/kubestellar/console/issues/6426",
-        "created_at": "2026-04-11T14:14:45Z"
+        "title": "Canvas-dependent tests run without a canvas mock and pollute suite output with jsdom “Not implemented” errors",
+        "url": "https://github.com/kubestellar/console/issues/5877",
+        "created_at": "2026-04-09T22:40:38Z"
       },
       "repos": [
         "console"
@@ -151,12 +193,26 @@
       "closed_count": 2
     },
     {
-      "name": "d., readyreplicas, undefined",
+      "name": "cli, antigravity, @google",
       "issue_count": 2,
       "recent_issue": {
-        "title": "DeploymentProgress.tsx — Accessing d.readyReplicas < d.replicas without null check",
-        "url": "https://github.com/kubestellar/console/issues/5190",
-        "created_at": "2026-04-07T07:05:15Z"
+        "title": "Antigravity CLI Opens but Does Not Execute AI Missions",
+        "url": "https://github.com/kubestellar/console/issues/5692",
+        "created_at": "2026-04-09T05:59:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "build, node, dependency",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Container build still uses Node 20 while dependencies now require Node 22",
+        "url": "https://github.com/kubestellar/console/issues/5631",
+        "created_at": "2026-04-09T02:14:12Z"
       },
       "repos": [
         "console"
@@ -205,6 +261,48 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "dialog, missioncontroldialog, modal",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "No Focus Trap in MissionControlDialog",
+        "url": "https://github.com/kubestellar/console/issues/6738",
+        "created_at": "2026-04-11T22:45:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "regex, character, fence",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "fencedRe Regex ReDoS on Malformed Fence",
+        "url": "https://github.com/kubestellar/console/issues/6727",
+        "created_at": "2026-04-11T22:38:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "rest, throw, deadlock",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Backend 500 ↔ Frontend Running State Deadlock",
+        "url": "https://github.com/kubestellar/console/issues/6666",
+        "created_at": "2026-04-11T21:54:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "retry, wssend, call",
@@ -381,6 +479,20 @@
         "title": "Dry-Run Privilege Escalation Warning",
         "url": "https://github.com/kubestellar/console/issues/6434",
         "created_at": "2026-04-11T14:18:55Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "schema, missionexport, ignorance",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "MissionExport Schema Drift Ignorance:",
+        "url": "https://github.com/kubestellar/console/issues/6430",
+        "created_at": "2026-04-11T14:17:30Z"
       },
       "repos": [
         "console"
@@ -669,6 +781,20 @@
       "closed_count": 1
     },
     {
+      "name": "timer, thrashing, d778",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "useCache — Timer Thrashing DoS",
+        "url": "https://github.com/kubestellar/console/issues/5252",
+        "created_at": "2026-04-07T14:21:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "svg, controller, res",
       "issue_count": 1,
       "recent_issue": {
@@ -781,12 +907,26 @@
       "closed_count": 1
     },
     {
-      "name": "globalfiltersprovider, object, render",
+      "name": "addpoint, closure, d673ecfb",
       "issue_count": 1,
       "recent_issue": {
-        "title": "GlobalFiltersProvider Causes Unnecessary Global Re-renders",
-        "url": "https://github.com/kubestellar/console/issues/3354",
-        "created_at": "2026-03-24T01:53:47Z"
+        "title": "Data Loss via Stale Closure in Stateful Trend hook",
+        "url": "https://github.com/kubestellar/console/issues/2231",
+        "created_at": "2026-03-12T09:37:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "worker, initdatabase, cacheworkerrpc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Initialization Race Condition in SQLite Cache Worker",
+        "url": "https://github.com/kubestellar/console/issues/2230",
+        "created_at": "2026-03-12T09:36:08Z"
       },
       "repos": [
         "console"
@@ -826,16 +966,16 @@
     ],
     "stretch": [
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
         "name": "Networking & Services",
@@ -904,7 +1044,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 287
+      "issue_count": 309
     }
   ]
 }

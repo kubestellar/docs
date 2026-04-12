@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-11T22:11:59.397Z",
+  "generated_at": "2026-04-12T03:08:36.175Z",
   "total_issues_opened": 52,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 19000,
@@ -82,7 +82,7 @@
       "closed_count": 2
     },
     {
-      "name": "closure, sendmessage, stale",
+      "name": "closure, stale, sendmessage",
       "issue_count": 2,
       "recent_issue": {
         "title": "Stale closure in handleWidthChange",
@@ -138,7 +138,7 @@
       "closed_count": 1
     },
     {
-      "name": "context, c30b334, b114",
+      "name": "context, c30b334, d21a99f1a",
       "issue_count": 1,
       "recent_issue": {
         "title": "GitOps Helm Install Context Cancellation Corruption (Orphaned Releases)",
@@ -434,12 +434,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "WS onclose Fires After Provider Unmount, Scheduling New Reconnect",
-        "url": "https://github.com/kubestellar/console/issues/6667",
-        "repo": "console",
-        "topic_match": "ensureconnection, reconnection, websocket"
-      },
       {
         "title": "Forced demo-mode logout behavior is not documented as intentional",
         "url": "https://github.com/kubestellar/docs/issues/1402",

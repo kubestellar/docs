@@ -1,6 +1,6 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-11T22:11:59.022Z",
+  "generated_at": "2026-04-12T03:08:35.781Z",
   "total_issues_opened": 78,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
   "total_points": 24650,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 4,
-      "closed_count": 68
+      "open_count": 0,
+      "closed_count": 72
     },
     {
       "name": "linux, dev, ubuntu",

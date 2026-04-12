@@ -1,6 +1,6 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-11T22:11:59.493Z",
+  "generated_at": "2026-04-12T03:08:36.274Z",
   "total_issues_opened": 6,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
   "total_points": 5500,
@@ -82,14 +82,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "PredictionWorker runLoop uses time.After leaking timer goroutines on every iteration",
-        "url": "https://github.com/kubestellar/console/issues/6685",
-        "repo": "console",
-        "topic_match": "watcher, leak, mcp"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Dashboard & Cards",

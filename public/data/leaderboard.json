@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-11T22:08:05.068Z",
-  "git_hash": "e4f23fb",
+  "generated_at": "2026-04-12T03:04:26.137Z",
+  "git_hash": "5c88532",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3124800,
+      "total_points": 3137200,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 248,
-        "feature_issues": 369,
-        "other_issues": 245,
-        "prs_opened": 4546,
-        "prs_merged": 4184
+        "feature_issues": 370,
+        "other_issues": 249,
+        "prs_opened": 4564,
+        "prs_merged": 4201
       },
       "bonus_points": 50,
       "rank": 1
@@ -21,11 +21,11 @@
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 114550,
+      "total_points": 121450,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 309,
+        "bug_issues": 332,
         "feature_issues": 18,
         "other_issues": 17,
         "prs_opened": 31,
@@ -36,11 +36,11 @@
     {
       "login": "mrhapile",
       "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-      "total_points": 95650,
+      "total_points": 102250,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 268,
+        "bug_issues": 290,
         "feature_issues": 11,
         "other_issues": 27,
         "prs_opened": 24,
@@ -64,6 +64,21 @@
       "rank": 4
     },
     {
+      "login": "aashu2006",
+      "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
+      "total_points": 51300,
+      "level": "Captain",
+      "level_rank": 6,
+      "breakdown": {
+        "bug_issues": 163,
+        "feature_issues": 0,
+        "other_issues": 12,
+        "prs_opened": 4,
+        "prs_merged": 2
+      },
+      "rank": 5
+    },
+    {
       "login": "naman9271",
       "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
       "total_points": 50000,
@@ -75,21 +90,6 @@
         "other_issues": 40,
         "prs_opened": 71,
         "prs_merged": 67
-      },
-      "rank": 5
-    },
-    {
-      "login": "aashu2006",
-      "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-      "total_points": 49800,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 158,
-        "feature_issues": 0,
-        "other_issues": 12,
-        "prs_opened": 4,
-        "prs_merged": 2
       },
       "rank": 6
     },

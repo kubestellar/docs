@@ -1,12 +1,12 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-11T22:11:54.789Z",
+  "generated_at": "2026-04-12T03:08:31.164Z",
   "total_issues_opened": 175,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 49800,
-  "level": "Commander",
-  "level_rank": 5,
-  "rank": 6,
+  "total_points": 51300,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 5,
   "cadence": {
     "avg_per_week": 14.6,
     "avg_per_day": 23.9,
@@ -63,11 +63,11 @@
       "repos": [
         "console"
       ],
-      "open_count": 10,
-      "closed_count": 116
+      "open_count": 0,
+      "closed_count": 126
     },
     {
-      "name": "cookie, csrf, cross",
+      "name": "cookie, csrf, samesite",
       "issue_count": 3,
       "recent_issue": {
         "title": "RefreshToken exposes new JWT in both HttpOnly cookie and JSON response body",
@@ -91,8 +91,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "insert, primary, key",
@@ -161,8 +161,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "sleep, second, stop",
@@ -175,8 +175,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "timeout, path, handlechatmessage",
@@ -189,8 +189,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "updateconfig, e2747c, b088",
@@ -333,7 +333,7 @@
       "closed_count": 1
     },
     {
-      "name": "keystroke, debounce, list",
+      "name": "debounce, keystroke, list",
       "issue_count": 1,
       "recent_issue": {
         "title": "KubescapeDetailModal, TrivyDetailModal, KyvernoDetailModal, ClusterLocations: search input missing debounce - full list re-filtered on every keystroke",
@@ -501,7 +501,7 @@
       "closed_count": 1
     },
     {
-      "name": "tool, natural, string",
+      "name": "tool, natural, language",
       "issue_count": 1,
       "recent_issue": {
         "title": "CallTool passes tool arguments as natural language string enabling prompt injection",
@@ -557,7 +557,7 @@
       "closed_count": 1
     },
     {
-      "name": "initcontainer, backup, restore",
+      "name": "initcontainer, backup, db",
       "issue_count": 1,
       "recent_issue": {
         "title": "initContainer DB size check using stat always returns 0 triggering unnecessary backup restore on every restart",
@@ -657,18 +657,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "Stop methods are non-idempotent and can panic on second call",
-        "url": "https://github.com/kubestellar/console/issues/6650",
-        "repo": "console",
-        "topic_match": "double, close, protection"
-      },
-      {
-        "title": "Shutdown responsiveness bug in prediction worker startup delay",
-        "url": "https://github.com/kubestellar/console/issues/6652",
-        "repo": "console",
-        "topic_match": "sleep, second, stop"
-      },
       {
         "title": "card: Implement Artifact Hub monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",
