@@ -138,16 +138,14 @@ nav:
   - KubeStellar MCP:
       - Overview: kubestellar-mcp/index.md
       - Getting Started: kubestellar-mcp/overview/intro.md
-  - News:
-      - Latest News: news/index.md
-      - "KubeStellar Console Announcement": news/kubestellar-console-announcement.md
+  # News is already listed under Community above; removed duplicate top-level entry
   # - 'Blog': https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST" target="_blank
   # # - Auto generated:
   #   - ... | auto-generated/*/*.md
 
 theme:
   font:
-    text: 'SapceMono'
+    text: 'Space Mono'
     code: 'Roboto Mono'
   name: material
   icon:
