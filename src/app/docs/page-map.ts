@@ -94,9 +94,9 @@ const NAV_STRUCTURE_A2A: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Getting Started',
     items: [
-      { 'Overview': 'getting-started/index.md' },
-      { 'Installation': 'getting-started/installation.md' },
       { 'Quick Start': 'getting-started/quick-start.md' },
+      { 'Installation': 'getting-started/installation.md' },
+      { 'Guide Overview': 'getting-started/index.md' },
     ]
   },
   {
@@ -226,9 +226,9 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
 const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
 
   {
-    title: 'What is KubeStellar?',
+    title: 'Overview',
     items: [
-      { 'Overview': 'readme.md' },
+      { 'Introduction': 'readme.md' },
       { 'Architecture': 'kubestellar/architecture.md' },
       { 'OCM Status Addon': 'kubestellar/ocm-status-addon-intro.md' },
       { 'Release Notes': 'kubestellar/release-notes.md' },
@@ -236,12 +236,11 @@ const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
     ]
   },
   {
-    title: 'User Guide',
+    title: 'Getting Started',
     items: [
       { 'Quick Start': 'kubestellar/get-started.md' },
       { 'Guide Overview': 'kubestellar/user-guide-intro.md' },
       { 'Observability': 'kubestellar/observability.md' },
-      { 'Getting Started': 'kubestellar/get-started.md' },
       { 'Getting Started from OCM': 'kubestellar/start-from-ocm.md' },
       {
         'General Setup': [
@@ -524,7 +523,7 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
       }
 
       // Set theme for first category to be expanded
-      if (category.title === 'Welcome' || category.title === 'What is KubeStellar?' || category.title === 'Overview') {
+      if (category.title === 'Welcome' || category.title === 'Overview') {
         folderNode.theme = { collapsed: false }
       }
 
