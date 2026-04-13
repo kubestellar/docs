@@ -244,7 +244,7 @@ clusters=("$wds_context" "$wec1_context" "$wec2_context");
 done
 ```
 
-## Scenario 3: Multi-Custer Workload Deployment with Helm
+## Scenario 3: Multi-Cluster Workload Deployment with Helm
 
 Create a BindingPolicy for the helm chart app:
 

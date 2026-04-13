@@ -80,7 +80,7 @@ nav:
               - Missing results in a CombinedStatus object: kubestellar/knownissue-collector-miss.md
               - Kind host not configured for more than two clusters: kubestellar/installation-errors.md
               - Insufficient CPU for your clusters: kubestellar/knownissue-cpu-insufficient-for-its1.md
-      - UI (User Interface): ui-docs/ui-overview.md
+      - UI (Deprecated → Console): ui-docs/ui-overview.md
       - Teardown: kubestellar/teardown.md
   - Contributing:
       - Overview (How to join in): kubestellar/contribute.md
