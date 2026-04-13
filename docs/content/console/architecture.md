@@ -130,9 +130,22 @@ See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduct
 
 A lightweight WebSocket + MCP server (port 8585) that runs on the **user's machine**. It has two roles:
 
-1. **Browser bridge**: The browser-based console connects to kc-agent via WebSocket to execute `kubectl` commands using the local kubeconfig. This allows the console to access clusters on the user's machine when the console itself is hosted remotely (e.g., `console.kubestellar.io`).
+1. **Browser bridge**: In **self-hosted, local, or Helm-installed** console deployments, the browser-based console connects to a kc-agent running on the same machine (or network) via WebSocket to execute `kubectl` commands using the local kubeconfig.
 
 2. **MCP server for AI coding agents**: kc-agent exposes kubectl-based MCP tools that any AI coding agent (acting as an MCP client) can call. The agent connects **to** kc-agent — not the other way around.
+
+#### Hosted demo vs. self-hosted: kubectl capability boundary
+
+The hosted demo at [`console.kubestellar.io`](https://console.kubestellar.io) and a self-hosted / local / Helm install behave differently with respect to `kubectl` execution. The hosted demo is **read-only** and does **not** connect to a local kc-agent; there is no mechanism for a browser pointing at `console.kubestellar.io` to reach a kc-agent on your workstation.
+
+| Capability | Hosted demo (`console.kubestellar.io`) | Self-hosted / local / Helm install |
+|---|---|---|
+| Browse demo dashboards and cards | Yes | Yes |
+| Connect to a local kc-agent | **No** | Yes (port 8585) |
+| Execute `kubectl` commands from the browser | **No** (read-only) | Yes (via kc-agent) |
+| Run AI Missions that apply changes to clusters | **No** | Yes |
+
+> **In short:** kubectl execution via kc-agent is a **self-hosted-only** feature. To use it, install the console locally (from source, via `startup-oauth.sh`, or via Helm) and run `kc-agent` on the same machine as your kubeconfig. The hosted demo exists to showcase the UI against demo data and cannot drive real clusters.
 
 > **kc-agent vs. kubestellar-ops/kubestellar-deploy:** kc-agent provides low-level kubectl execution. The kubestellar-ops and kubestellar-deploy MCP servers provide higher-level multi-cluster tools (diagnostics, deployment, RBAC analysis, etc.). AI coding agents connect to all three as separate MCP servers — kc-agent over TCP (port 8585), and kubestellar-ops/kubestellar-deploy over stdio.
 
@@ -164,7 +177,7 @@ Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `K
    6. Backend issues a session JWT → stored in the browser
 2. **Dashboard Load**: Frontend sends JWT → Backend validates JWT → Backend fetches user preferences → Backend calls MCP Bridge tools for cluster data (MCP Bridge uses kubeconfig to authenticate) → render cards
 3. **Real-time Updates**: WebSocket connection from Frontend → Backend forwards MCP Bridge event stream → card updates
-4. **Local Agent (kc-agent)**: Browser connects to kc-agent (:8585) via WebSocket → kc-agent executes kubectl commands using local kubeconfig → results streamed back to browser. Claude Code also connects to kc-agent as an MCP client for kubectl execution.
+4. **Local Agent (kc-agent)** *(self-hosted / local / Helm installs only)*: Browser connects to kc-agent (:8585) via WebSocket → kc-agent executes kubectl commands using local kubeconfig → results streamed back to browser. Claude Code also connects to kc-agent as an MCP client for kubectl execution. The hosted demo at `console.kubestellar.io` does **not** use this path and cannot execute `kubectl`.
 5. **Claude Code → MCP servers**: Claude Code launches the kubestellar-ops MCP server and kubestellar-deploy MCP server as stdio child processes. It sends MCP tool calls (e.g., "list clusters", "find pod issues") over stdin/stdout. The MCP servers query Kubernetes clusters using the local kubeconfig and return results to Claude Code.
 6. **Card Recommendations**: Analyze cluster state via MCP Bridge → AI generates suggestions → user accepts/snoozes
 7. **Caching Layer**: All cards use `useCachedData` hooks with category-based TTL refresh (GPU: 45s, Helm: 120s, Operators: 300s). Data persists in localStorage for instant revisit loads. Stale-while-revalidate pattern keeps UI responsive while fetching fresh data in the background.

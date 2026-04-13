@@ -286,11 +286,28 @@ helm install ksc ./deploy/helm/kubestellar-console \
 
 **Port forward (development):**
 
+Run the port-forward in the **foreground** in a dedicated terminal. This is the
+simplest pattern — press `Ctrl+C` to stop it, and there is no orphaned
+background process holding port `8080`.
+
 ```bash
 kubectl port-forward -n ksc svc/ksc-kubestellar-console 8080:8080
 ```
 
-Open http://localhost:8080
+Open <http://localhost:8080> in another terminal or your browser.
+
+> **Do not** background the port-forward with a trailing `&` in copy-paste
+> instructions (e.g. `kubectl port-forward ... 8080:8080 &`). It leaks the
+> process, leaves port `8080` held after the shell exits, and causes
+> "port already in use" errors on re-runs. If you genuinely need to run it
+> in the background from a script, capture the PID and clean it up on exit:
+>
+> ```bash
+> kubectl port-forward -n ksc svc/ksc-kubestellar-console 8080:8080 &
+> PF_PID=$!
+> trap 'kill "$PF_PID" 2>/dev/null || true' EXIT INT TERM
+> # ... do work that needs the port-forward ...
+> ```
 
 **Ingress (production):**
 
