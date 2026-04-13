@@ -1,17 +1,17 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-13T10:39:47.677Z",
-  "total_issues_opened": 400,
+  "generated_at": "2026-04-13T14:41:52.734Z",
+  "total_issues_opened": 447,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 117150,
+  "total_points": 131250,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 33.3,
-    "avg_per_day": 8.3,
+    "avg_per_week": 37.3,
+    "avg_per_day": 9.25,
     "by_day_of_week": [
-      149,
+      196,
       17,
       16,
       15,
@@ -30,10 +30,10 @@
       38,
       27,
       20,
-      12,
-      14,
-      48,
-      46,
+      18,
+      30,
+      61,
+      58,
       1,
       9,
       1,
@@ -49,26 +49,40 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-13T09:03:44.000Z"
+    "last_issue_at": "2026-04-13T13:18:06.000Z"
   },
   "topics": [
     {
       "name": "@aaradhychinche, alt, cluster",
-      "issue_count": 380,
+      "issue_count": 420,
       "recent_issue": {
-        "title": "Storage / Metrics: Storage totals represent allocatable capacity without clarifying PVC usage",
-        "url": "https://github.com/kubestellar/console/issues/7421",
-        "created_at": "2026-04-13T09:03:44Z"
+        "title": "Operators / Cache: Old operator data persists after uninstalling all operators",
+        "url": "https://github.com/kubestellar/console/issues/7550",
+        "created_at": "2026-04-13T13:18:06Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 27,
-      "closed_count": 353
+      "open_count": 0,
+      "closed_count": 420
     },
     {
-      "name": "kube, game, craft",
+      "name": "card, registry, directory",
+      "issue_count": 7,
+      "recent_issue": {
+        "title": "bug: placeholder card directories exist without implementation",
+        "url": "https://github.com/kubestellar/console/issues/3257",
+        "created_at": "2026-03-23T11:15:41Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 7
+    },
+    {
+      "name": "game, kube, craft",
       "issue_count": 4,
       "recent_issue": {
         "title": "Card: Kube Chess (kube_chess)",
@@ -82,12 +96,12 @@
       "closed_count": 4
     },
     {
-      "name": "sourcecluster, deploy, validate",
+      "name": "admin, privilege, c09cf9",
       "issue_count": 1,
       "recent_issue": {
-        "title": "## 🐛 bug: deploy api does not validate sourceCluster",
-        "url": "https://github.com/kubestellar/console/issues/5957",
-        "created_at": "2026-04-10T06:48:42Z"
+        "title": "Privilege Escalation: RoleBinding",
+        "url": "https://github.com/kubestellar/console/issues/6859",
+        "created_at": "2026-04-12T05:44:57Z"
       },
       "repos": [
         "console"
@@ -96,12 +110,12 @@
       "closed_count": 1
     },
     {
-      "name": "analysis, ai, failure",
+      "name": "sourcecluster, deploy, validate",
       "issue_count": 1,
       "recent_issue": {
-        "title": "📝 issue: AI analysis failures are silent",
-        "url": "https://github.com/kubestellar/console/issues/5945",
-        "created_at": "2026-04-10T06:44:48Z"
+        "title": "## 🐛 bug: deploy api does not validate sourceCluster",
+        "url": "https://github.com/kubestellar/console/issues/5957",
+        "created_at": "2026-04-10T06:48:42Z"
       },
       "repos": [
         "console"
@@ -180,7 +194,7 @@
       "closed_count": 1
     },
     {
-      "name": "listener, abort, unmount",
+      "name": "listener, abort, callback",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: abort signal listeners are not cleaned up causing event listener leaks and post-unmount callbacks",
@@ -309,18 +323,30 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "card: Implement Harbor Registry monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/16",
+        "repo": "console-marketplace",
+        "topic_match": "card, registry, directory"
+      },
+      {
         "title": "card: Implement Artifact Hub monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",
         "repo": "console-marketplace",
         "topic_match": "artifact, green, appear"
+      },
+      {
+        "title": "Add-cluster auto-close timers can fire after manual close and affect later dialog sessions",
+        "url": "https://github.com/kubestellar/console/issues/7593",
+        "repo": "console",
+        "topic_match": "close, merge, others"
       }
     ],
     "stretch": [
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Charts & Visualizations",
@@ -329,22 +355,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Onboarding & Rewards",
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },
@@ -395,7 +421,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 367
+      "issue_count": 414
     }
   ]
 }

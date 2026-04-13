@@ -1,9 +1,9 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-13T10:39:59.580Z",
+  "generated_at": "2026-04-13T14:42:06.045Z",
   "total_issues_opened": 225,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-  "total_points": 41850,
+  "total_points": 42150,
   "level": "Commander",
   "level_rank": 5,
   "rank": 8,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@rishi, jat, line",
-      "issue_count": 177,
+      "issue_count": 180,
       "recent_issue": {
         "title": "OAuth login failure (token_exchange_failed) lacks actionable diagnostics and guidance",
         "url": "https://github.com/kubestellar/console/issues/6933",
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 24,
-      "closed_count": 153
+      "open_count": 25,
+      "closed_count": 155
     },
     {
       "name": "session, auth, traffic",
@@ -80,21 +80,6 @@
       ],
       "open_count": 0,
       "closed_count": 3
-    },
-    {
-      "name": "requirement, mod, version",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "docs/build(console): Go version mismatch between go.mod (1.25) and docs (1.24+)",
-        "url": "https://github.com/kubestellar/console/issues/6364",
-        "created_at": "2026-04-11T11:34:06Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 2,
-      "closed_count": 1
     },
     {
       "name": "windows, setpgid, unix",
@@ -140,7 +125,7 @@
       "closed_count": 2
     },
     {
-      "name": "parameter, mission, encodes",
+      "name": "mission, parameter, encodes",
       "issue_count": 2,
       "recent_issue": {
         "title": "MissionSidebar double encodes URL parameters",
@@ -160,6 +145,20 @@
         "title": "CSP includes unsafe-inline for script-src",
         "url": "https://github.com/kubestellar/console/issues/1859",
         "created_at": "2026-03-06T17:02:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "template, poddisruptionbudget, networkpolicy",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Helm chart has no PodDisruptionBudget",
+        "url": "https://github.com/kubestellar/console/issues/1858",
+        "created_at": "2026-03-06T17:02:00Z"
       },
       "repos": [
         "console"
@@ -224,34 +223,6 @@
       "closed_count": 1
     },
     {
-      "name": "docs, mobile, f958c",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Docs page layout breaks on mobile (text cutoff on left side)",
-        "url": "https://github.com/kubestellar/console/issues/5718",
-        "created_at": "2026-04-09T12:22:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "term, tooltips, mobile",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Improve UX: Add tooltips for K8s terms + fix mobile Docs layout",
-        "url": "https://github.com/kubestellar/console/issues/5717",
-        "created_at": "2026-04-09T12:13:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "promoter, satisfaction, feedback",
       "issue_count": 1,
       "recent_issue": {
@@ -300,20 +271,6 @@
         "title": "Multiple dashboard cards fall back to demo data instead of using warm cache",
         "url": "https://github.com/kubestellar/console/issues/3397",
         "created_at": "2026-03-24T13:31:15Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "onboarding, redirect, login",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Auth callback does not correctly handle onboarding state",
-        "url": "https://github.com/kubestellar/console/issues/2860",
-        "created_at": "2026-03-18T03:53:28Z"
       },
       "repos": [
         "console"
@@ -518,6 +475,20 @@
       "closed_count": 0
     },
     {
+      "name": "anchor, readme, setup",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CONTRIBUTING.md links to a non-existent OAuth section anchor",
+        "url": "https://github.com/kubestellar/docs/issues/1397",
+        "created_at": "2026-04-11T08:37:33Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "apps, oauth, template",
       "issue_count": 1,
       "recent_issue": {
@@ -549,18 +520,6 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Title: Agent restart path uses `lsof` — Unix-only, silently broken on Windows",
-        "url": "https://github.com/kubestellar/console/issues/7263",
-        "repo": "console",
-        "topic_match": "windows, setpgid, unix"
-      },
-      {
-        "title": "Data race on client factory pointer",
-        "url": "https://github.com/kubestellar/console/issues/7386",
-        "repo": "console",
-        "topic_match": "p., save, lock"
-      },
-      {
         "title": "Architecture Page Has No Diagrams Visible in Next.js Rendering",
         "url": "https://github.com/kubestellar/docs/issues/1439",
         "repo": "docs",
@@ -571,12 +530,6 @@
         "url": "https://github.com/kubestellar/docs/issues/1429",
         "repo": "docs",
         "topic_match": "style, mkdocs, attach"
-      },
-      {
-        "title": "Title: handlePredictionsAnalyze decodes request body with no io.LimitReader — DoS via large body",
-        "url": "https://github.com/kubestellar/console/issues/7235",
-        "repo": "console",
-        "topic_match": "@rishi, jat, line"
       }
     ],
     "stretch": [
@@ -585,6 +538,12 @@
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Networking & Services",
@@ -603,12 +562,6 @@
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },

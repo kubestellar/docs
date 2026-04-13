@@ -1,17 +1,17 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-13T10:38:52.680Z",
-  "total_issues_opened": 436,
+  "generated_at": "2026-04-13T14:40:29.852Z",
+  "total_issues_opened": 494,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 142150,
-  "level": "Captain",
-  "level_rank": 6,
+  "total_points": 158650,
+  "level": "Admiral",
+  "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 36.3,
-    "avg_per_day": 7.03,
+    "avg_per_week": 41.2,
+    "avg_per_day": 7.93,
     "by_day_of_week": [
-      88,
+      146,
       29,
       46,
       57,
@@ -31,10 +31,10 @@
       41,
       13,
       2,
-      27,
-      23,
-      40,
-      26,
+      42,
+      28,
+      57,
+      47,
       30,
       29,
       22,
@@ -49,23 +49,51 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-13T09:08:36.000Z"
+    "last_issue_at": "2026-04-13T14:34:13.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 333,
+      "issue_count": 370,
       "recent_issue": {
-        "title": "Install command analytics can log comment lines instead of real commands",
-        "url": "https://github.com/kubestellar/console/issues/7426",
-        "created_at": "2026-04-13T09:08:36Z"
+        "title": "Add-cluster auto-close timers can fire after manual close and affect later dialog sessions",
+        "url": "https://github.com/kubestellar/console/issues/7593",
+        "created_at": "2026-04-13T14:34:13Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 24,
-      "closed_count": 309
+      "open_count": 16,
+      "closed_count": 354
+    },
+    {
+      "name": "class, tailwind, severitycolor",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Dynamic Tailwind classes likely fail to generate styling for severity UI",
+        "url": "https://github.com/kubestellar/console/issues/7586",
+        "created_at": "2026-04-13T14:31:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 2
+    },
+    {
+      "name": "approval, agentselector, approve",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Agent approval fallback does not match its documented behavior",
+        "url": "https://github.com/kubestellar/console/issues/7561",
+        "created_at": "2026-04-13T13:36:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "infinity, heatmap, valueresolvers",
@@ -96,46 +124,32 @@
       "closed_count": 3
     },
     {
-      "name": "diagnosis, analyze, alert",
+      "name": "meta, tag, welcome",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Diagnosis lock can get stuck after unexpected failure",
-        "url": "https://github.com/kubestellar/console/issues/7401",
-        "created_at": "2026-04-13T08:53:12Z"
+        "title": "Meta description cleanup leaves stale global document state",
+        "url": "https://github.com/kubestellar/console/issues/7553",
+        "created_at": "2026-04-13T13:23:05Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
-      "name": "recipient, envelope, email",
+      "name": "object, callable, scope",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Email To header only includes first recipient",
-        "url": "https://github.com/kubestellar/console/issues/7380",
-        "created_at": "2026-04-13T08:34:14Z"
+        "title": "Card component type validation allows non-callable objects",
+        "url": "https://github.com/kubestellar/console/issues/7508",
+        "created_at": "2026-04-13T11:42:50Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 1
-    },
-    {
-      "name": "manager, default, nest",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Import can persist incomplete plaintext settings without normalization",
-        "url": "https://github.com/kubestellar/console/issues/7372",
-        "created_at": "2026-04-13T08:24:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 2,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "date, invalid, nan",
@@ -144,6 +158,20 @@
         "title": "Date renderers can leak Invalid Date text instead of fallback.",
         "url": "https://github.com/kubestellar/console/issues/6711",
         "created_at": "2026-04-11T22:23:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "tip, splash, f8da1cca",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Can we get tips on the splash page as well",
+        "url": "https://github.com/kubestellar/console/issues/5984",
+        "created_at": "2026-04-10T08:04:09Z"
       },
       "repos": [
         "console"
@@ -162,20 +190,6 @@
       "repos": [
         "console",
         "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "agentselector, approval, selectagent",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Approval path skips provider readiness lifecycle",
-        "url": "https://github.com/kubestellar/console/issues/5677",
-        "created_at": "2026-04-09T04:48:46Z"
-      },
-      "repos": [
-        "console"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -209,54 +223,278 @@
       "closed_count": 2
     },
     {
+      "name": "duration, rule, a240",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Zero-valued rule settings are silently overwritten in AlertRuleEditor",
+        "url": "https://github.com/kubestellar/console/issues/7585",
+        "created_at": "2026-04-13T14:31:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "e4a6, d479, b8c0",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Hardcoded localhost endpoint breaks Events drilldown outside local dev",
+        "url": "https://github.com/kubestellar/console/issues/7580",
+        "created_at": "2026-04-13T14:29:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "widespread, b7b77, c7f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Silent catch-and-drop pattern hides real production failures (widespread)",
+        "url": "https://github.com/kubestellar/console/issues/7576",
+        "created_at": "2026-04-13T14:03:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "middleware, instantiate, c7f7f4",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Compression middleware is instantiated per request",
+        "url": "https://github.com/kubestellar/console/issues/7575",
+        "created_at": "2026-04-13T14:03:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "logout, site, a9c0ded",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Auth refresh/logout calls violate backend CSRF contract (widespread)",
+        "url": "https://github.com/kubestellar/console/issues/7570",
+        "created_at": "2026-04-13T14:02:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "portal, recomputed, f63174a6",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Dropdown portal position is not recomputed after open",
+        "url": "https://github.com/kubestellar/console/issues/7564",
+        "created_at": "2026-04-13T13:36:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "kagenti, kagent, agent",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Potential duplicate kagent/kagenti entries in agent picker",
+        "url": "https://github.com/kubestellar/console/issues/7562",
+        "created_at": "2026-04-13T13:36:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "generatedat, prediction, model",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Prediction timestamp types are inconsistent across related models",
+        "url": "https://github.com/kubestellar/console/issues/7557",
+        "created_at": "2026-04-13T13:29:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "disk, pressure, threshold",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Disk pressure condition string can render undefined threshold",
+        "url": "https://github.com/kubestellar/console/issues/7555",
+        "created_at": "2026-04-13T13:28:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "analytics, ref, ed326a01",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unbounded ref query value is sent to analytics as-is",
+        "url": "https://github.com/kubestellar/console/issues/7551",
+        "created_at": "2026-04-13T13:22:41Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "pagerdutyroutingkey, opsgenieapikey, f8c",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "PagerDuty and OpsGenie key names are inconsistent across notification types",
+        "url": "https://github.com/kubestellar/console/issues/7534",
+        "created_at": "2026-04-13T13:04:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "vi, test, import",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Test file uses vi without importing it",
+        "url": "https://github.com/kubestellar/console/issues/7526",
+        "created_at": "2026-04-13T12:10:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "creation, aeefa40, e6f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Compiler smoke test can pass even when component creation is fully broken",
+        "url": "https://github.com/kubestellar/console/issues/7511",
+        "created_at": "2026-04-13T11:43:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "onboarded, contract, permissive",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Auth contract assertions are too permissive and can false-pass",
+        "url": "https://github.com/kubestellar/console/issues/7509",
+        "created_at": "2026-04-13T11:43:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "scanner, f6cfd98c, fb93e9b7699",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Static scanner logic is vulnerable to parser false positives/negatives",
+        "url": "https://github.com/kubestellar/console/issues/7507",
+        "created_at": "2026-04-13T11:42:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "wscat, websocat, live",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "WebSocket client auto-detection is broken when only wscat is installed",
+        "url": "https://github.com/kubestellar/console/issues/7506",
+        "created_at": "2026-04-13T11:38:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "flag, argument, shift",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Argument parsing with shift inside for-loop can bind wrong values",
+        "url": "https://github.com/kubestellar/console/issues/7504",
+        "created_at": "2026-04-13T11:38:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "json, character, assembly",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Report JSON assembly can produce invalid JSON on unescaped characters",
+        "url": "https://github.com/kubestellar/console/issues/7503",
+        "created_at": "2026-04-13T11:37:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "filename, nightly, dd3f1ec5",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Shell word-splitting in nightly file iteration is fragile",
+        "url": "https://github.com/kubestellar/console/issues/7502",
+        "created_at": "2026-04-13T11:37:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "copy, clipboard, success",
       "issue_count": 1,
       "recent_issue": {
         "title": "Copy-to-clipboard success is not validated before showing success state",
         "url": "https://github.com/kubestellar/console/issues/7425",
         "created_at": "2026-04-13T09:08:27Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "welcome, meta, route",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Meta description leaks across routes in SPA navigation",
-        "url": "https://github.com/kubestellar/console/issues/7423",
-        "created_at": "2026-04-13T09:07:56Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "scenario, worker, c30afa9",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Scenario switching stacks handlers instead of replacing them",
-        "url": "https://github.com/kubestellar/console/issues/7420",
-        "created_at": "2026-04-13T09:01:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "module, test, cc0f252e8db",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Global mutable mock state leaks across tests and user flows",
-        "url": "https://github.com/kubestellar/console/issues/7419",
-        "created_at": "2026-04-13T09:01:04Z"
       },
       "repos": [
         "console"
@@ -279,35 +517,7 @@
       "closed_count": 1
     },
     {
-      "name": "mock, f50a145d, f3aa5b3070",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Authentication mocks always return success, masking failure-path bugs",
-        "url": "https://github.com/kubestellar/console/issues/7417",
-        "created_at": "2026-04-13T09:00:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "browser, persistence, a7cb",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Browser-only APIs are used without environment guards in alert persistence paths",
-        "url": "https://github.com/kubestellar/console/issues/7404",
-        "created_at": "2026-04-13T08:53:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "c6b1df4, ee18a944a5, defensive",
+      "name": "c6b1df4, ee18a944a5, thrown",
       "issue_count": 1,
       "recent_issue": {
         "title": "Unprotected localStorage access can crash context initialization",
@@ -317,8 +527,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "bridge, length, datum",
@@ -335,18 +545,18 @@
       "closed_count": 1
     },
     {
-      "name": "ipv6, origin, colon",
+      "name": "readiness, report, c37629f",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Host normalization breaks IPv6 origins",
-        "url": "https://github.com/kubestellar/console/issues/7385",
-        "created_at": "2026-04-13T08:37:07Z"
+        "title": "Client readiness can report healthy after stop",
+        "url": "https://github.com/kubestellar/console/issues/7397",
+        "created_at": "2026-04-13T08:47:34Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "exec, dd5e4c22, e27b356e4",
@@ -387,8 +597,22 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "bearer, scheme, case",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Lowercase bearer scheme is rejected even though auth scheme is case-insensitive",
+        "url": "https://github.com/kubestellar/console/issues/7374",
+        "created_at": "2026-04-13T08:29:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "entry, size, d1b78c5",
@@ -405,26 +629,12 @@
       "closed_count": 1
     },
     {
-      "name": "notification, ea236c6a, a4cf89159673",
+      "name": "transition, a73103ea, fc45",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Notification settings can be silently dropped",
-        "url": "https://github.com/kubestellar/console/issues/7369",
-        "created_at": "2026-04-13T08:23:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "crypto, temp, key",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Concurrent keyfile creation can return a key that does not match disk",
-        "url": "https://github.com/kubestellar/console/issues/7368",
-        "created_at": "2026-04-13T08:23:12Z"
+        "title": "Idempotent GPU Status Updates Are Rejected",
+        "url": "https://github.com/kubestellar/console/issues/7361",
+        "created_at": "2026-04-13T07:56:45Z"
       },
       "repos": [
         "console"
@@ -447,7 +657,21 @@
       "closed_count": 1
     },
     {
-      "name": "sample, booleans, dd67c24b",
+      "name": "template, apply, layout",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Template Card Layout Sizes Are Dropped On Apply",
+        "url": "https://github.com/kubestellar/console/issues/7253",
+        "created_at": "2026-04-13T05:56:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sample, dd67c24b, d84",
       "issue_count": 1,
       "recent_issue": {
         "title": "ready Sample Values Are Strings, Not Booleans",
@@ -503,12 +727,12 @@
       "closed_count": 1
     },
     {
-      "name": "hint, support, c7634af",
+      "name": "replacement, placeholder, eee41b",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Keyboard hints are inconsistent with actual supported back key.",
-        "url": "https://github.com/kubestellar/console/issues/6721",
-        "created_at": "2026-04-11T22:30:05Z"
+        "title": "Placeholder replacement only handles first occurrence of each key in title.",
+        "url": "https://github.com/kubestellar/console/issues/6720",
+        "created_at": "2026-04-11T22:29:52Z"
       },
       "repos": [
         "console"
@@ -517,12 +741,12 @@
       "closed_count": 1
     },
     {
-      "name": "replacement, placeholder, occurrence",
+      "name": "tab, b6996, b74c4d09befc",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Placeholder replacement only handles first occurrence of each key in title.",
-        "url": "https://github.com/kubestellar/console/issues/6720",
-        "created_at": "2026-04-11T22:29:52Z"
+        "title": "Active tab state can become invalid when modal definition/tabs change.",
+        "url": "https://github.com/kubestellar/console/issues/6719",
+        "created_at": "2026-04-11T22:29:39Z"
       },
       "repos": [
         "console"
@@ -587,68 +811,12 @@
       "closed_count": 1
     },
     {
-      "name": "jsx, codegenerator, f882711",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "generated JSX can be code-injected/broken by unescaped title interpolation.",
-        "url": "https://github.com/kubestellar/console/issues/6705",
-        "created_at": "2026-04-11T22:18:02Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "cardruntime, a3f121, ae5",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "CardRuntime can violate React Rules of Hooks when a data hook is registered/unregistered at runtime.",
-        "url": "https://github.com/kubestellar/console/issues/6700",
-        "created_at": "2026-04-11T22:13:36Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "prototype, object, inherited",
       "issue_count": 1,
       "recent_issue": {
         "title": "registry membership check uses in-operator, which includes inherited properties.",
         "url": "https://github.com/kubestellar/console/issues/6697",
         "created_at": "2026-04-11T22:11:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "object, scope, freeze",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Scope hardening is shallow, so dynamic code can mutate shared runtime objects.",
-        "url": "https://github.com/kubestellar/console/issues/6677",
-        "created_at": "2026-04-11T22:04:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "constructor, escape, c8d3226f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Tier-2 sandbox is bypassable via Function-constructor escape.",
-        "url": "https://github.com/kubestellar/console/issues/6676",
-        "created_at": "2026-04-11T22:03:51Z"
       },
       "repos": [
         "console"
@@ -761,20 +929,6 @@
         "title": "Edit path can exceed available GPU capacity",
         "url": "https://github.com/kubestellar/console/issues/5989",
         "created_at": "2026-04-10T08:05:27Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "unsaved, b04f85d7, bfa5",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unsaved changes dialog misses most edited fields",
-        "url": "https://github.com/kubestellar/console/issues/5988",
-        "created_at": "2026-04-10T08:05:07Z"
       },
       "repos": [
         "console"
@@ -993,6 +1147,20 @@
       "closed_count": 1
     },
     {
+      "name": "blurred, newer, b5aa4e63",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Newer bug/feature requests in Updates tab of Contribute panel are blurred",
+        "url": "https://github.com/kubestellar/console/issues/4392",
+        "created_at": "2026-04-03T11:21:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "ping, reader, backpressure",
       "issue_count": 1,
       "recent_issue": {
@@ -1021,6 +1189,34 @@
       "closed_count": 1
     },
     {
+      "name": "page, dab4f291, a65b",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Mission control should either have its own page or should be a modal",
+        "url": "https://github.com/kubestellar/console/issues/4271",
+        "created_at": "2026-04-02T16:55:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "kyverno, ef97, e2f8b67848de",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Card: Kyverno Policies (kyverno_policies)",
+        "url": "https://github.com/kubestellar/console/issues/4267",
+        "created_at": "2026-04-02T16:49:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "chmod, binary, b645",
       "issue_count": 1,
       "recent_issue": {
@@ -1041,20 +1237,6 @@
         "title": "Admission webhook parser reports default policy instead of actual policy",
         "url": "https://github.com/kubestellar/console/issues/4153",
         "created_at": "2026-04-01T13:48:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "solid, offline, style",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Offline clusters styling in Stats Overview is solid",
-        "url": "https://github.com/kubestellar/console/issues/4127",
-        "created_at": "2026-04-01T12:54:37Z"
       },
       "repos": [
         "console"
@@ -1133,6 +1315,48 @@
       "closed_count": 1
     },
     {
+      "name": "fire, invaders, invader",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Card: Node Invaders (node_invaders)",
+        "url": "https://github.com/kubestellar/console/issues/3926",
+        "created_at": "2026-03-30T14:18:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "protocol, f4c15, c55b",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Mixed-mode chat uses raw string type literals",
+        "url": "https://github.com/kubestellar/console/issues/3832",
+        "created_at": "2026-03-29T04:04:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "nan, exception, c152002e",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "NaN exception",
+        "url": "https://github.com/kubestellar/console/issues/3764",
+        "created_at": "2026-03-28T06:03:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "float, comparison, d17e79",
       "issue_count": 1,
       "recent_issue": {
@@ -1189,6 +1413,20 @@
       "closed_count": 1
     },
     {
+      "name": "ff85, f3f0, a0d1",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cache key not normalized",
+        "url": "https://github.com/kubestellar/console/issues/3506",
+        "created_at": "2026-03-25T04:11:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "sleep, a6bc872, a332",
       "issue_count": 1,
       "recent_issue": {
@@ -1223,6 +1461,20 @@
         "title": "Streaming sub-folder reports lost",
         "url": "https://github.com/kubestellar/console/issues/3502",
         "created_at": "2026-03-25T04:09:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "daea7fae, fe83eaa81c, a551",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Goroutine leak",
+        "url": "https://github.com/kubestellar/console/issues/3429",
+        "created_at": "2026-03-24T14:37:49Z"
       },
       "repos": [
         "console"
@@ -1346,34 +1598,34 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Runbook / Persistence: Diagnosis results are never written back to alert after mission completion",
-        "url": "https://github.com/kubestellar/console/issues/7289",
-        "repo": "console",
-        "topic_match": "diagnosis, analyze, alert"
-      },
-      {
-        "title": "Title: Importing a kubeconfig silently merges exec AuthInfo plugins (RCE vector)",
-        "url": "https://github.com/kubestellar/console/issues/7260",
-        "repo": "console",
-        "topic_match": "exec, dd5e4c22, e27b356e4"
-      },
-      {
         "title": "Missing high-level architecture explanation for multi-cluster + kc-agent model",
         "url": "https://github.com/kubestellar/docs/issues/1409",
         "repo": "docs",
         "topic_match": "unclear, kc, agent"
       },
       {
-        "title": "Deployment / Validation: Launch allowed when all clusters are excluded leaving projects unassigned",
-        "url": "https://github.com/kubestellar/console/issues/7190",
-        "repo": "console",
-        "topic_match": "launch, phase, e1a08df4"
-      },
-      {
         "title": "Access docs do not explicitly warn that Service port is 8080 (not 80)",
         "url": "https://github.com/kubestellar/docs/issues/1398",
         "repo": "docs",
         "topic_match": "ksc, helm, ccc5ee"
+      },
+      {
+        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+        "url": "https://github.com/kubestellar/console/issues/4189",
+        "repo": "console",
+        "topic_match": "playwright, script, sh"
+      },
+      {
+        "title": "Forced demo-mode logout behavior is not documented as intentional",
+        "url": "https://github.com/kubestellar/docs/issues/1402",
+        "repo": "docs",
+        "topic_match": "logout, site, a9c0ded"
+      },
+      {
+        "title": "docs(console): port-forward example leaks background process (no cleanup)",
+        "url": "https://github.com/kubestellar/docs/issues/1414",
+        "repo": "docs",
+        "topic_match": "kill, sh, port"
       }
     ],
     "stretch": [
@@ -1390,16 +1642,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "Security & RBAC",
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
         "name": "Onboarding & Rewards",
@@ -1456,7 +1708,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 345
+      "issue_count": 403
     }
   ]
 }

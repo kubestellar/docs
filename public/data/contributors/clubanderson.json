@@ -1,17 +1,17 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-13T10:38:27.594Z",
-  "total_issues_opened": 884,
+  "generated_at": "2026-04-13T14:39:46.929Z",
+  "total_issues_opened": 886,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3187250,
+  "total_points": 3194400,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 71.1,
+    "avg_per_week": 71.3,
     "avg_per_day": 3.66,
     "by_day_of_week": [
-      111,
+      113,
       106,
       192,
       115,
@@ -34,7 +34,7 @@
       5,
       4,
       64,
-      46,
+      48,
       88,
       33,
       32,
@@ -49,31 +49,31 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-13T08:47:31.000Z"
+    "last_issue_at": "2026-04-13T14:03:13.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 470,
+      "issue_count": 473,
       "recent_issue": {
-        "title": "[Auto-QA] Large components missing lazy loading",
-        "url": "https://github.com/kubestellar/console/issues/7365",
-        "created_at": "2026-04-13T08:02:33Z"
+        "title": "[Auto-QA] Interactive elements missing ARIA labels",
+        "url": "https://github.com/kubestellar/console/issues/7569",
+        "created_at": "2026-04-13T14:00:56Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
-      "open_count": 0,
-      "closed_count": 470
+      "open_count": 1,
+      "closed_count": 472
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 160,
+      "issue_count": 161,
       "recent_issue": {
-        "title": "🐛 5 test failure(s) in Coverage Suite run #629",
-        "url": "https://github.com/kubestellar/console/issues/7396",
-        "created_at": "2026-04-13T08:47:31Z"
+        "title": "🐛 22 test failure(s) in Coverage Suite run #636",
+        "url": "https://github.com/kubestellar/console/issues/7574",
+        "created_at": "2026-04-13T14:03:13Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 4,
-      "closed_count": 156
+      "closed_count": 157
     },
     {
       "name": "monitoring, card, implement",
@@ -126,7 +126,7 @@
       "closed_count": 33
     },
     {
-      "name": "px, spacing, inconsistent",
+      "name": "px, spacing, design",
       "issue_count": 10,
       "recent_issue": {
         "title": "[Auto-QA] Inconsistent spacing values in styles",
@@ -154,7 +154,7 @@
       "closed_count": 8
     },
     {
-      "name": "js, vendor, chunk",
+      "name": "js, vendor, bundle",
       "issue_count": 7,
       "recent_issue": {
         "title": "[Auto-QA] Bundle has JS chunks over 300KB",
@@ -267,20 +267,6 @@
       "closed_count": 2
     },
     {
-      "name": "tooltip, technical, abbreviation",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
-        "url": "https://github.com/kubestellar/console/issues/3345",
-        "created_at": "2026-03-23T20:21:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
       "name": "chart, default, day",
       "issue_count": 2,
       "recent_issue": {
@@ -323,7 +309,7 @@
       "closed_count": 2
     },
     {
-      "name": "preview, textarea, markdown",
+      "name": "preview, markdown, linked",
       "issue_count": 2,
       "recent_issue": {
         "title": "Add markdown preview toggle for issue description in Contribute dialog",
@@ -520,7 +506,7 @@
       "closed_count": 1
     },
     {
-      "name": "outreach, campaign, adopter",
+      "name": "outreach, adopter, adopters",
       "issue_count": 1,
       "recent_issue": {
         "title": "📋 CNCF outreach campaign — adopter & docs PR tracker",
@@ -540,6 +526,20 @@
         "title": "[Auto-QA] 1 adoption & engagement psychology opportunities found",
         "url": "https://github.com/kubestellar/console/issues/3791",
         "created_at": "2026-03-28T13:44:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "recommend, expand, dropdown",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
+        "url": "https://github.com/kubestellar/console/issues/3345",
+        "created_at": "2026-03-23T20:21:23Z"
       },
       "repos": [
         "console"
@@ -851,12 +851,6 @@
         "topic_match": "term, roadmap, near"
       },
       {
-        "title": "Nil config provider can panic migration",
-        "url": "https://github.com/kubestellar/console/issues/7371",
-        "repo": "console",
-        "topic_match": "nil, potential, panic"
-      },
-      {
         "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
         "url": "https://github.com/kubestellar/docs/issues/1396",
         "repo": "docs",
@@ -873,6 +867,12 @@
         "url": "https://github.com/kubestellar/docs/issues/1433",
         "repo": "docs",
         "topic_match": "marketplace, home, assistant"
+      },
+      {
+        "title": "Scenario 3 Title Has Typo : \"Multi-Custer\" Instead of \"Multi-Cluster\"",
+        "url": "https://github.com/kubestellar/docs/issues/1436",
+        "repo": "docs",
+        "topic_match": "typo, readme, fix"
       }
     ],
     "stretch": [
@@ -955,7 +955,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 239
+      "issue_count": 241
     }
   ]
 }

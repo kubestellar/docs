@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-13T10:39:54.300Z",
+  "generated_at": "2026-04-13T14:42:00.117Z",
   "total_issues_opened": 282,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 83400,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, happen, error",
-      "issue_count": 206,
+      "issue_count": 204,
       "recent_issue": {
         "title": "getPlaylistVideos and getMediumPosts have cache stampede with no singleflight on cold cache",
         "url": "https://github.com/kubestellar/console/issues/7066",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 206
+      "closed_count": 204
     },
     {
       "name": "clusterrole, grant, opt",
@@ -193,7 +193,7 @@
       "closed_count": 2
     },
     {
-      "name": "masking, tab, value",
+      "name": "masking, tab, eyeoff",
       "issue_count": 2,
       "recent_issue": {
         "title": "ConfigMapDrillDown: all values rendered in plain text with no masking option - sensitive data immediately visible and copyable",
@@ -235,26 +235,12 @@
       "closed_count": 1
     },
     {
-      "name": "broadcast, iterate, acquire",
+      "name": "broadcast, acquire, iterate",
       "issue_count": 1,
       "recent_issue": {
         "title": "Hub broadcast case releases RLock before iterating clients slice exposing it to concurrent modification",
         "url": "https://github.com/kubestellar/console/issues/7049",
         "created_at": "2026-04-12T23:36:54Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "retry, immediate, enter",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Rate limit 429 responses omit Retry-After header causing well-behaved clients to enter immediate retry loops",
-        "url": "https://github.com/kubestellar/console/issues/7040",
-        "created_at": "2026-04-12T23:18:30Z"
       },
       "repos": [
         "console"
@@ -361,7 +347,7 @@
       "closed_count": 1
     },
     {
-      "name": "send, typeresult, leaving",
+      "name": "send, leaving, ecfafc9f",
       "issue_count": 1,
       "recent_issue": {
         "title": "handleMixedModeChat never sends TypeResult Done true leaving UI stuck in streaming state",
@@ -403,7 +389,7 @@
       "closed_count": 1
     },
     {
-      "name": "openshift, cors, breaking",
+      "name": "openshift, cors, oauth",
       "issue_count": 1,
       "recent_issue": {
         "title": "FRONTEND_URL set to \"https://\" when OpenShift route.host is empty breaking OAuth and CORS",
@@ -417,7 +403,7 @@
       "closed_count": 1
     },
     {
-      "name": "restriction, deployments, grant",
+      "name": "deployments, restriction, grant",
       "issue_count": 1,
       "recent_issue": {
         "title": "Self-upgrade Role grants patch on all Deployments in namespace with no resourceNames restriction",
@@ -479,6 +465,20 @@
         "title": "PredictionWorker initial sleep cannot be interrupted by Stop() delaying graceful shutdown",
         "url": "https://github.com/kubestellar/console/issues/6682",
         "created_at": "2026-04-11T22:04:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "callaiprovider, d3f83b, cf98",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "InsightWorker.callAIProvider uses context.Background() ignoring server shutdown lifecycle",
+        "url": "https://github.com/kubestellar/console/issues/6680",
+        "created_at": "2026-04-11T22:04:26Z"
       },
       "repos": [
         "console"
@@ -655,7 +655,7 @@
       "closed_count": 1
     },
     {
-      "name": "iifes, reference, produce",
+      "name": "iifes, reference, a52e",
       "issue_count": 1,
       "recent_issue": {
         "title": "ComputeOverview: IIFEs produce new array references on every render - useMemo never caches",
@@ -697,7 +697,7 @@
       "closed_count": 1
     },
     {
-      "name": "destructive, delete, f04c",
+      "name": "destructive, f04c, ce1b",
       "issue_count": 1,
       "recent_issue": {
         "title": "window.confirm() used for destructive delete action in AlertRules breaking accessibility",
@@ -753,12 +753,40 @@
       "closed_count": 1
     },
     {
+      "name": "bc1b059b, cde36fd4a3f4, callb",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Untracked setTimeout in AuthCallback catch block causes memory leak on unmount",
+        "url": "https://github.com/kubestellar/console/issues/5573",
+        "created_at": "2026-04-08T19:37:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "extract, ffb011, f6f",
       "issue_count": 1,
       "recent_issue": {
         "title": "identityBinding extracted from wrong nested path inflating SPIFFE-bound security metric",
         "url": "https://github.com/kubestellar/console/issues/5357",
         "created_at": "2026-04-07T21:23:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "configs, model, share",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "handleKagentCRDSummary makes 6 sequential Kubernetes API calls under one shared timeout silently zeroing out counts",
+        "url": "https://github.com/kubestellar/console/issues/5354",
+        "created_at": "2026-04-07T21:22:30Z"
       },
       "repos": [
         "console"
@@ -938,16 +966,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Deployment / Retry: Retry re-executes deployment on all clusters instead of only failed ones",
-        "url": "https://github.com/kubestellar/console/issues/7172",
+        "title": "Card proxy can return attacker-controlled HTML under first-party origin",
+        "url": "https://github.com/kubestellar/console/issues/7573",
         "repo": "console",
-        "topic_match": "retry, immediate, enter"
-      },
-      {
-        "title": "Client write timeout leaks a blocked goroutine and can stall all future writes",
-        "url": "https://github.com/kubestellar/console/issues/7395",
-        "repo": "console",
-        "topic_match": "consuming, stdin, child"
+        "topic_match": "origin, netlify, referer"
       },
       {
         "title": "card: Implement Artifact Hub monitoring card",
@@ -960,12 +982,6 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
         "topic_match": "extract, ffb011, f6f"
-      },
-      {
-        "title": "Self-upgrade patch assumes container index 0 exists",
-        "url": "https://github.com/kubestellar/console/issues/7384",
-        "repo": "console",
-        "topic_match": "restriction, deployments, grant"
       }
     ],
     "stretch": [
@@ -976,16 +992,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
         "name": "Authentication & Settings",

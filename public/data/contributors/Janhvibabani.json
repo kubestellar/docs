@@ -1,6 +1,6 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-04-13T10:40:00.622Z",
+  "generated_at": "2026-04-13T14:42:07.148Z",
   "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
   "total_points": 6250,
@@ -95,7 +95,7 @@
       "closed_count": 1
     },
     {
-      "name": "windows, backslashes, separator",
+      "name": "windows, separator, backslashes",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Page map validation fails on Windows due to path separator mismatch",
@@ -150,12 +150,6 @@
         "url": "https://github.com/kubestellar/docs/issues/1422",
         "repo": "docs",
         "topic_match": "footer, year, copyright"
-      },
-      {
-        "title": "Title: Agent restart path uses `lsof` — Unix-only, silently broken on Windows",
-        "url": "https://github.com/kubestellar/console/issues/7263",
-        "repo": "console",
-        "topic_match": "windows, backslashes, separator"
       },
       {
         "title": "Marketplace Link Conflict Between Header and Footer",

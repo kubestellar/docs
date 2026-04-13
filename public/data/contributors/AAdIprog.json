@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-13T10:40:00.519Z",
+  "generated_at": "2026-04-13T14:42:07.038Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 20200,
@@ -292,7 +292,7 @@
       "closed_count": 1
     },
     {
-      "name": "usestableeffect, sever, c92b14c12d69",
+      "name": "usestableeffect, c92b14c12d69, fingerprint",
       "issue_count": 1,
       "recent_issue": {
         "title": "useStableEffect severs cleanup function on every re-render (File: useStableEffect.ts:34-53)",
@@ -495,18 +495,6 @@
         "url": "https://github.com/kubestellar/docs/issues/1402",
         "repo": "docs",
         "topic_match": "logout, websocket, disconnect"
-      },
-      {
-        "title": "Bulk utilization query returns oldest snapshots, not latest",
-        "url": "https://github.com/kubestellar/console/issues/7388",
-        "repo": "console",
-        "topic_match": "bulk, historical, sqlite"
-      },
-      {
-        "title": "Self-upgrade patch assumes container index 0 exists",
-        "url": "https://github.com/kubestellar/console/issues/7384",
-        "repo": "console",
-        "topic_match": "traversal, attacker, self"
       }
     ],
     "stretch": [

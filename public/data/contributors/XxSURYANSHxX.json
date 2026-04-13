@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-13T10:39:55.860Z",
+  "generated_at": "2026-04-13T14:42:01.858Z",
   "total_issues_opened": 169,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 47600,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 29,
-      "closed_count": 119
+      "open_count": 0,
+      "closed_count": 148
     },
     {
       "name": "tail, log, feature",
@@ -119,8 +119,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "subcommand, args, validateargs",
@@ -133,8 +133,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "dryrunsessionsmu, activechatctxsmu, server",
@@ -193,7 +193,7 @@
       "closed_count": 1
     },
     {
-      "name": "cardinality, prediction, p.",
+      "name": "prediction, cardinality, p.",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 4: Unbounded Prometheus label cardinality from AI predictions (`prediction_metrics.go`)",

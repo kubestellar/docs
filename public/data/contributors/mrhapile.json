@@ -1,17 +1,17 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-13T10:39:25.922Z",
-  "total_issues_opened": 453,
+  "generated_at": "2026-04-13T14:41:16.976Z",
+  "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 139750,
+  "total_points": 148750,
   "level": "Captain",
   "level_rank": 6,
   "rank": 3,
   "cadence": {
-    "avg_per_week": 37.8,
-    "avg_per_day": 8.55,
+    "avg_per_week": 40.3,
+    "avg_per_day": 9.11,
     "by_day_of_week": [
-      92,
+      122,
       47,
       74,
       61,
@@ -30,7 +30,7 @@
       23,
       4,
       25,
-      26,
+      56,
       4,
       9,
       20,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-13T09:39:40.000Z"
+    "last_issue_at": "2026-04-13T10:49:34.000Z"
   },
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 342,
+      "issue_count": 367,
       "recent_issue": {
-        "title": "cancel_chat HTTP Fallback JSON Panic",
-        "url": "https://github.com/kubestellar/console/issues/7433",
-        "created_at": "2026-04-13T09:37:46Z"
+        "title": "Status Timer Javascript Garbage Build Up",
+        "url": "https://github.com/kubestellar/console/issues/7475",
+        "created_at": "2026-04-13T10:49:34Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 12,
-      "closed_count": 330
+      "open_count": 0,
+      "closed_count": 367
     },
     {
       "name": "documentation, 📌, component",
@@ -105,36 +105,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 2
-    },
-    {
-      "name": "tool, prevcount, frame",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Watchdog disabled via tool count underflow",
-        "url": "https://github.com/kubestellar/console/issues/7078",
-        "created_at": "2026-04-13T03:48:50Z"
-      },
-      "repos": [
-        "console"
-      ],
       "open_count": 0,
       "closed_count": 3
-    },
-    {
-      "name": "broadcast, websocket, channel",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "WebSocket Broadcast Channel Full Drop",
-        "url": "https://github.com/kubestellar/console/issues/7434",
-        "created_at": "2026-04-13T09:39:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 1
     },
     {
       "name": "safetotal, nan, payload",
@@ -291,12 +263,166 @@
       "closed_count": 2
     },
     {
-      "name": "activechatctxsmu, deadlock, lock",
+      "name": "strictmode, generation, cbd227eb495",
       "issue_count": 1,
       "recent_issue": {
-        "title": "CancelFunc Deadlock Vulnerability",
-        "url": "https://github.com/kubestellar/console/issues/7432",
-        "created_at": "2026-04-13T09:37:29Z"
+        "title": "React 18 StrictMode Reconnect Blocking",
+        "url": "https://github.com/kubestellar/console/issues/7472",
+        "created_at": "2026-04-13T10:48:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "flush, emit, e86ac7d",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Token Analytics Discrepancy",
+        "url": "https://github.com/kubestellar/console/issues/7471",
+        "created_at": "2026-04-13T10:48:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "assistant, historywithoutlastuser, c13f885",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "historyWithoutLastUser Redundancy",
+        "url": "https://github.com/kubestellar/console/issues/7470",
+        "created_at": "2026-04-13T10:47:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "millisecond, f9def60b, d292",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Millisecond Stream Update Data Drop",
+        "url": "https://github.com/kubestellar/console/issues/7466",
+        "created_at": "2026-04-13T10:45:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "core, command, contamination",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Mixed-Mode Agent History Contamination",
+        "url": "https://github.com/kubestellar/console/issues/7465",
+        "created_at": "2026-04-13T10:45:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "savetokenusage, json, dcea27c",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "saveTokenUsage JSON File Corruption",
+        "url": "https://github.com/kubestellar/console/issues/7452",
+        "created_at": "2026-04-13T10:42:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sessionid, a695983, ec8f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "SessionID Cancellation Leak",
+        "url": "https://github.com/kubestellar/console/issues/7451",
+        "created_at": "2026-04-13T10:40:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "staging, hijacking, b800717ed68",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Tmpfs Privilege Escalation Hijacking",
+        "url": "https://github.com/kubestellar/console/issues/7447",
+        "created_at": "2026-04-13T10:38:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "d9ed1067, a402, f3cfd1eccef",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unbounded Cache Clean Deadlock",
+        "url": "https://github.com/kubestellar/console/issues/7446",
+        "created_at": "2026-04-13T10:38:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "b919, a03a1c653493, copybinarymode",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Atomic Permission Persistence Race",
+        "url": "https://github.com/kubestellar/console/issues/7445",
+        "created_at": "2026-04-13T10:38:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "windows, lock, ce847129",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Windows Executable Locking Crash",
+        "url": "https://github.com/kubestellar/console/issues/7444",
+        "created_at": "2026-04-13T10:37:45Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "d339ea6e, fd3a, e58",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Race Condition in TriggerNow Initialization",
+        "url": "https://github.com/kubestellar/console/issues/7439",
+        "created_at": "2026-04-13T10:35:58Z"
       },
       "repos": [
         "console"
@@ -311,6 +437,20 @@
         "title": "Unbounded WebSocket Write Block Freezing Pinger",
         "url": "https://github.com/kubestellar/console/issues/7429",
         "created_at": "2026-04-13T09:36:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "a273bf19, ba31, b80b6d8e8dce",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "wsSend Dropped Payloads",
+        "url": "https://github.com/kubestellar/console/issues/7327",
+        "created_at": "2026-04-13T07:01:57Z"
       },
       "repos": [
         "console"
@@ -403,7 +543,7 @@
       "closed_count": 1
     },
     {
-      "name": "fiber, payload, b202b17",
+      "name": "fiber, b202b17, a05f",
       "issue_count": 1,
       "recent_issue": {
         "title": "Uncaught JSON Parse Error (websockets.go)",
@@ -511,8 +651,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "format, panic, fd14bba",
@@ -525,8 +665,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "slack, buff, efaea97f",
@@ -539,8 +679,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "array, bfa6c99f, b583",
@@ -553,8 +693,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "endless, d234524, fe9",
@@ -567,8 +707,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "forkfullname, split, string",
@@ -599,40 +739,12 @@
       "closed_count": 1
     },
     {
-      "name": "dialog, modal, trap",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "No Focus Trap in MissionControlDialog",
-        "url": "https://github.com/kubestellar/console/issues/6738",
-        "created_at": "2026-04-11T22:45:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "computelayout, flightplanblueprint, b311dde4",
       "issue_count": 1,
       "recent_issue": {
         "title": "FlightPlanBlueprint computeLayout Called Every Render",
         "url": "https://github.com/kubestellar/console/issues/6731",
         "created_at": "2026-04-11T22:40:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "extractbalancedblocks, thread, text",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "extractBalancedBlocks O(n²) Main Thread Block",
-        "url": "https://github.com/kubestellar/console/issues/6723",
-        "created_at": "2026-04-11T22:36:49Z"
       },
       "repos": [
         "console"
@@ -767,7 +879,7 @@
       "closed_count": 1
     },
     {
-      "name": "wipe, ad77b471, f89",
+      "name": "wipe, ad77b471, fcc1948be",
       "issue_count": 1,
       "recent_issue": {
         "title": "Race in finalizeCancellation Map Wipe",
@@ -809,7 +921,7 @@
       "closed_count": 1
     },
     {
-      "name": "e1b3f7, abc, b191",
+      "name": "e1b3f7, b191, cda233a",
       "issue_count": 1,
       "recent_issue": {
         "title": "\"Orphaned Cluster\" Assignments",
@@ -1061,6 +1173,20 @@
       "closed_count": 1
     },
     {
+      "name": "exec, pod, b66963",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Pod exec allows any authenticated user to open a shell in any pod.",
+        "url": "https://github.com/kubestellar/console/issues/5406",
+        "created_at": "2026-04-08T06:42:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "page, height, item",
       "issue_count": 1,
       "recent_issue": {
@@ -1187,7 +1313,7 @@
       "closed_count": 1
     },
     {
-      "name": "poor, hierarchy, contrast",
+      "name": "hierarchy, poor, contrast",
       "issue_count": 1,
       "recent_issue": {
         "title": "Light mode UI has poor contrast, broken visual hierarchy, and degraded usability",
@@ -1215,7 +1341,7 @@
       "closed_count": 1
     },
     {
-      "name": "setisevaluating, true, false",
+      "name": "setisevaluating, true, e8f04fa0",
       "issue_count": 1,
       "recent_issue": {
         "title": "Loading Indicator Never Shows",
@@ -1271,20 +1397,6 @@
       "closed_count": 1
     },
     {
-      "name": "worker, initdatabase, cacheworkerrpc",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Initialization Race Condition in SQLite Cache Worker",
-        "url": "https://github.com/kubestellar/console/issues/2230",
-        "created_at": "2026-03-12T09:36:08Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "e68135c1, bb0a, f9916f7c08",
       "issue_count": 1,
       "recent_issue": {
@@ -1301,18 +1413,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "Deployment / Validation: Dry-run flag ignored by backend causing real deployment execution",
-        "url": "https://github.com/kubestellar/console/issues/7167",
-        "repo": "console",
-        "topic_match": "dry, f2692457, caa5825a9cc"
-      },
-      {
-        "title": "CLI Provider Failures Reported As Success",
-        "url": "https://github.com/kubestellar/console/issues/7273",
-        "repo": "console",
-        "topic_match": "cli, antigravity, @google"
-      },
       {
         "title": "FEEDBACK_GITHUB_TOKEN prerequisite for /issue is not surfaced in onboarding",
         "url": "https://github.com/kubestellar/docs/issues/1395",
@@ -1346,10 +1446,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+        "name": "Backend API & Handlers",
+        "path": "pkg/api/, pkg/models/, pkg/store/",
+        "description": "Go backend REST API, request handlers, data models, persistence layer",
+        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
       }
     ]
   },
@@ -1400,7 +1500,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 434
+      "issue_count": 464
     }
   ]
 }

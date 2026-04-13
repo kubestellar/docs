@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-13T10:40:00.335Z",
+  "generated_at": "2026-04-13T14:42:06.840Z",
   "total_issues_opened": 77,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 23500,
@@ -204,16 +204,16 @@
         "topic_match": "install, theme, marketplace"
       },
       {
-        "title": "Title: `parseEnrichmentResponse` silently returns empty enrichments when JSON lacks the `enrichments` key",
-        "url": "https://github.com/kubestellar/console/issues/7208",
-        "repo": "console",
-        "topic_match": "model, provider, openai"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",
         "repo": "console",
         "topic_match": "mission, ai, @ghanshyam2005singh"
+      },
+      {
+        "title": "Include-Markdown Files Render as Raw Directives in Next.js",
+        "url": "https://github.com/kubestellar/docs/issues/1425",
+        "repo": "docs",
+        "topic_match": "export, yaml, markdown"
       }
     ],
     "stretch": [

@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-13T10:39:59.818Z",
+  "generated_at": "2026-04-13T14:42:06.298Z",
   "total_issues_opened": 91,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 32800,
@@ -320,7 +320,7 @@
       "closed_count": 1
     },
     {
-      "name": "nodes, stat, dashboard",
+      "name": "nodes, dashboard, stat",
       "issue_count": 1,
       "recent_issue": {
         "title": "Dashboard \"Nodes\" Stat Block Falls Through to Universal Getter : Inconsistent Click Behavior",
@@ -432,7 +432,7 @@
       "closed_count": 1
     },
     {
-      "name": "configuration, decrypted, secrets",
+      "name": "configuration, decrypted, viewers",
       "issue_count": 1,
       "recent_issue": {
         "title": "Settings API Returns Decrypted Secrets to Viewers",
@@ -460,7 +460,7 @@
       "closed_count": 1
     },
     {
-      "name": "sustain, c9b33a03, b2fe",
+      "name": "oauth, sustain, c9b33a03",
       "issue_count": 1,
       "recent_issue": {
         "title": "In-memory OAuth state store can grow unbounded under sustained login requests",
@@ -503,14 +503,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Title: Importing a kubeconfig silently merges exec AuthInfo plugins (RCE vector)",
-        "url": "https://github.com/kubestellar/console/issues/7260",
-        "repo": "console",
-        "topic_match": "exec, b1f91661, bb81"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Charts & Visualizations",
