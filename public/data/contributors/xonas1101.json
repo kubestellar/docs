@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-13T18:31:09.273Z",
+  "generated_at": "2026-04-13T22:21:50.010Z",
   "total_issues_opened": 509,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 164050,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 383,
+      "issue_count": 377,
       "recent_issue": {
         "title": "Role binding name generation can collide after sanitization",
         "url": "https://github.com/kubestellar/console/issues/7608",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 383
+      "closed_count": 377
     },
     {
       "name": "invite, reward, storage",
@@ -158,6 +158,20 @@
         "title": "Card component type validation allows non-callable objects",
         "url": "https://github.com/kubestellar/console/issues/7508",
         "created_at": "2026-04-13T11:42:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "diagnosis, analyze, alert",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Diagnosis lock can get stuck after unexpected failure",
+        "url": "https://github.com/kubestellar/console/issues/7401",
+        "created_at": "2026-04-13T08:53:12Z"
       },
       "repos": [
         "console"
@@ -545,6 +559,20 @@
       "closed_count": 1
     },
     {
+      "name": "mock, f50a145d, f3aa5b3070",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Authentication mocks always return success, masking failure-path bugs",
+        "url": "https://github.com/kubestellar/console/issues/7417",
+        "created_at": "2026-04-13T09:00:45Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "c6b1df4, ee18a944a5, thrown",
       "issue_count": 1,
       "recent_issue": {
@@ -565,6 +593,20 @@
         "title": "Stale MCP data due to coarse fingerprinting in data bridge",
         "url": "https://github.com/kubestellar/console/issues/7400",
         "created_at": "2026-04-13T08:53:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "readiness, report, c37629f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Client readiness can report healthy after stop",
+        "url": "https://github.com/kubestellar/console/issues/7397",
+        "created_at": "2026-04-13T08:47:34Z"
       },
       "repos": [
         "console"
@@ -663,20 +705,6 @@
         "title": "Reordering Cards Does Not Count As Customization",
         "url": "https://github.com/kubestellar/console/issues/7255",
         "created_at": "2026-04-13T05:56:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "template, apply, layout",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Template Card Layout Sizes Are Dropped On Apply",
-        "url": "https://github.com/kubestellar/console/issues/7253",
-        "created_at": "2026-04-13T05:56:31Z"
       },
       "repos": [
         "console"
@@ -817,6 +845,20 @@
         "title": "Collapsed-state persistence is inverted in stats section.",
         "url": "https://github.com/kubestellar/console/issues/6708",
         "created_at": "2026-04-11T22:22:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "jsx, codegenerator, f882711",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "generated JSX can be code-injected/broken by unescaped title interpolation.",
+        "url": "https://github.com/kubestellar/console/issues/6705",
+        "created_at": "2026-04-11T22:18:02Z"
       },
       "repos": [
         "console"
@@ -979,20 +1021,6 @@
       "closed_count": 1
     },
     {
-      "name": "kubescape, scan, e66fe458",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Card: Kubescape Scan (kubescape_scan)",
-        "url": "https://github.com/kubestellar/console/issues/5666",
-        "created_at": "2026-04-09T04:11:17Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "launch, phase, e1a08df4",
       "issue_count": 1,
       "recent_issue": {
@@ -1049,6 +1077,20 @@
       "closed_count": 1
     },
     {
+      "name": "coding, level, contributor",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Contributor level color coding is different in docs and in console",
+        "url": "https://github.com/kubestellar/console/issues/5241",
+        "created_at": "2026-04-07T13:53:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "indexeddb, clear, completion",
       "issue_count": 1,
       "recent_issue": {
@@ -1083,6 +1125,20 @@
         "title": "Same listener-leak pattern in CardRecommendations",
         "url": "https://github.com/kubestellar/console/issues/4661",
         "created_at": "2026-04-05T05:16:36Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "plan, functionality, clarification",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Clarification: Is the Mission Control functionality only to plan the course of action for a job?",
+        "url": "https://github.com/kubestellar/console/issues/4550",
+        "created_at": "2026-04-04T06:40:56Z"
       },
       "repos": [
         "console"
@@ -1231,6 +1287,20 @@
       "closed_count": 1
     },
     {
+      "name": "sessionid, chat, ids",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Chat cancellation key collision when sessionId is omitted",
+        "url": "https://github.com/kubestellar/console/issues/4263",
+        "created_at": "2026-04-02T16:41:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "chmod, binary, b645",
       "issue_count": 1,
       "recent_issue": {
@@ -1329,7 +1399,7 @@
       "closed_count": 1
     },
     {
-      "name": "fire, invaders, invader",
+      "name": "invaders, invader, f4c5b7d",
       "issue_count": 1,
       "recent_issue": {
         "title": "Card: Node Invaders (node_invaders)",
@@ -1427,20 +1497,6 @@
       "closed_count": 1
     },
     {
-      "name": "ff85, f3f0, a0d1",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Cache key not normalized",
-        "url": "https://github.com/kubestellar/console/issues/3506",
-        "created_at": "2026-03-25T04:11:24Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "sleep, a6bc872, a332",
       "issue_count": 1,
       "recent_issue": {
@@ -1511,7 +1567,7 @@
       "closed_count": 1
     },
     {
-      "name": "loadconfig, da92f1, d57",
+      "name": "loadconfig, da92f1, a51a6f41791",
       "issue_count": 1,
       "recent_issue": {
         "title": "k8sClient used after failed LoadConfig()",
@@ -1531,6 +1587,20 @@
         "title": "backendURL() ignores BackendPort",
         "url": "https://github.com/kubestellar/console/issues/3362",
         "created_at": "2026-03-24T04:03:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "mess, invalid, weird",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "clicking submit button on invalid feature requests gives a messed up UI",
+        "url": "https://github.com/kubestellar/console/issues/1596",
+        "created_at": "2026-03-04T04:45:59Z"
       },
       "repos": [
         "console"
@@ -1598,10 +1668,28 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "operatorCacheData check-then-act race allows concurrent requests to double-fetch from Kubernetes",
+        "url": "https://github.com/kubestellar/console/issues/7783",
+        "repo": "console",
+        "topic_match": "lock, cache, dc3c7ed8"
+      },
+      {
+        "title": "runWithTimeout ignores Kill() error allowing zombie processes when timeout fires",
+        "url": "https://github.com/kubestellar/console/issues/7781",
+        "repo": "console",
+        "topic_match": "kill, sh, port"
+      },
+      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
+      },
+      {
+        "title": "topology.go uses bare 503 literal with no named constant inconsistent with other handlers",
+        "url": "https://github.com/kubestellar/console/issues/7795",
+        "repo": "console",
+        "topic_match": "protocol, f4c15, c55b"
       }
     ],
     "stretch": [
@@ -1616,6 +1704,12 @@
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
         "name": "Charts & Visualizations",

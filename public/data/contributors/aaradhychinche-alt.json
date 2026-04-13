@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-13T18:32:25.395Z",
+  "generated_at": "2026-04-13T22:23:02.282Z",
   "total_issues_opened": 447,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 131250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aaradhychinche, alt, cluster",
-      "issue_count": 420,
+      "issue_count": 419,
       "recent_issue": {
         "title": "Operators / Cache: Old operator data persists after uninstalling all operators",
         "url": "https://github.com/kubestellar/console/issues/7550",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 420
+      "closed_count": 419
     },
     {
       "name": "card, registry, directory",
@@ -116,6 +116,20 @@
         "title": "## 🐛 bug: deploy api does not validate sourceCluster",
         "url": "https://github.com/kubestellar/console/issues/5957",
         "created_at": "2026-04-10T06:48:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "resolution, blocked, d1fa8f9",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "## 🐛 bug: resolution flow bypasses blocked-state validation",
+        "url": "https://github.com/kubestellar/console/issues/5934",
+        "created_at": "2026-04-10T05:52:04Z"
       },
       "repos": [
         "console"

@@ -1,17 +1,17 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-13T18:30:25.185Z",
-  "total_issues_opened": 890,
+  "generated_at": "2026-04-13T22:21:07.762Z",
+  "total_issues_opened": 892,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3212300,
+  "total_points": 3228450,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 71.6,
+    "avg_per_week": 71.8,
     "avg_per_day": 3.68,
     "by_day_of_week": [
-      117,
+      119,
       106,
       192,
       115,
@@ -39,8 +39,8 @@
       34,
       34,
       25,
-      127,
-      29,
+      128,
+      30,
       19,
       22,
       11
@@ -49,38 +49,38 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-13T18:03:25.000Z"
+    "last_issue_at": "2026-04-13T20:36:20.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 473,
+      "issue_count": 474,
       "recent_issue": {
-        "title": "[Auto-QA] Interactive elements missing ARIA labels",
-        "url": "https://github.com/kubestellar/console/issues/7569",
-        "created_at": "2026-04-13T14:00:56Z"
+        "title": "[Auto-QA] Refresh icon animation consistency issues",
+        "url": "https://github.com/kubestellar/console/issues/7754",
+        "created_at": "2026-04-13T19:51:12Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 473
+      "closed_count": 474
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 165,
+      "issue_count": 166,
       "recent_issue": {
-        "title": "🐛 7 test failure(s) in Coverage Suite run #661",
-        "url": "https://github.com/kubestellar/console/issues/7666",
-        "created_at": "2026-04-13T18:03:25Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #669",
+        "url": "https://github.com/kubestellar/console/issues/7769",
+        "created_at": "2026-04-13T20:36:20Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
+      "open_count": 4,
       "closed_count": 162
     },
     {
@@ -843,7 +843,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "CronJob Status Card Shows Demo Badge + Displays All Clusters by Default",
+        "url": "https://github.com/kubestellar/console/issues/7791",
+        "repo": "console",
+        "topic_match": "cluster, status, health"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -924,7 +931,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 245
+      "issue_count": 247
     }
   ]
 }

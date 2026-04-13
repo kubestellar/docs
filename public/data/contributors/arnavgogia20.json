@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-13T18:32:38.336Z",
+  "generated_at": "2026-04-13T22:23:23.663Z",
   "total_issues_opened": 92,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 33100,
@@ -166,7 +166,7 @@
       "closed_count": 2
     },
     {
-      "name": "slice, character, ids",
+      "name": "slice, character, header",
       "issue_count": 2,
       "recent_issue": {
         "title": "DeviceTracker.ClearAlert : Panics on Malformed Alert IDs via Incorrect String Slicing",
@@ -460,7 +460,7 @@
       "closed_count": 1
     },
     {
-      "name": "oauth, sustain, c9b33a03",
+      "name": "sustain, c9b33a03, b2fe",
       "issue_count": 1,
       "recent_issue": {
         "title": "In-memory OAuth state store can grow unbounded under sustained login requests",
@@ -474,7 +474,7 @@
       "closed_count": 1
     },
     {
-      "name": "advisory, d8f9303, d94b",
+      "name": "d8f9303, d94b, f71db73bebb7",
       "issue_count": 1,
       "recent_issue": {
         "title": "Security Advisory: Authorization Bypass in GitHub Issue Management",
