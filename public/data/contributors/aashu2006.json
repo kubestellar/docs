@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-13T06:48:38.560Z",
+  "generated_at": "2026-04-13T10:39:54.300Z",
   "total_issues_opened": 282,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 83400,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, happen, error",
-      "issue_count": 209,
+      "issue_count": 206,
       "recent_issue": {
         "title": "getPlaylistVideos and getMediumPosts have cache stampede with no singleflight on cold cache",
         "url": "https://github.com/kubestellar/console/issues/7066",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 209
+      "closed_count": 206
     },
     {
       "name": "clusterrole, grant, opt",
@@ -249,6 +249,20 @@
       "closed_count": 1
     },
     {
+      "name": "retry, immediate, enter",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Rate limit 429 responses omit Retry-After header causing well-behaved clients to enter immediate retry loops",
+        "url": "https://github.com/kubestellar/console/issues/7040",
+        "created_at": "2026-04-12T23:18:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "theft, visit, credential",
       "issue_count": 1,
       "recent_issue": {
@@ -297,6 +311,20 @@
         "title": "Cache stampede on cold analytics proxy script responses hammering upstream CDN",
         "url": "https://github.com/kubestellar/console/issues/7021",
         "created_at": "2026-04-12T22:51:57Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sequentially, goroutines, evaluateclusterquery",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "EvaluateClusterQuery fetches nodes sequentially instead of in parallel causing linear response time growth",
+        "url": "https://github.com/kubestellar/console/issues/7012",
+        "created_at": "2026-04-12T22:30:40Z"
       },
       "repos": [
         "console"
@@ -389,7 +417,7 @@
       "closed_count": 1
     },
     {
-      "name": "restriction, deployments, patch",
+      "name": "restriction, deployments, grant",
       "issue_count": 1,
       "recent_issue": {
         "title": "Self-upgrade Role grants patch on all Deployments in namespace with no resourceNames restriction",
@@ -431,7 +459,7 @@
       "closed_count": 1
     },
     {
-      "name": "stdin, consuming, child",
+      "name": "consuming, stdin, child",
       "issue_count": 1,
       "recent_issue": {
         "title": "MCP client send() blocks indefinitely holding mutex when child process stops consuming stdin",
@@ -479,6 +507,20 @@
         "title": "Migration failures in ALTER TABLE loop only log warnings leaving database in partially-migrated state",
         "url": "https://github.com/kubestellar/console/issues/6614",
         "created_at": "2026-04-11T20:16:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "transaction, incrementusercoins, claimdailybonus",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "IncrementUserCoins, ClaimDailyBonus, AddUserTokenDelta and ConsumeOAuthState use context.Background() in transactions ignoring request cancellation",
+        "url": "https://github.com/kubestellar/console/issues/6613",
+        "created_at": "2026-04-11T20:16:28Z"
       },
       "repos": [
         "console"
@@ -896,6 +938,18 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "Deployment / Retry: Retry re-executes deployment on all clusters instead of only failed ones",
+        "url": "https://github.com/kubestellar/console/issues/7172",
+        "repo": "console",
+        "topic_match": "retry, immediate, enter"
+      },
+      {
+        "title": "Client write timeout leaks a blocked goroutine and can stall all future writes",
+        "url": "https://github.com/kubestellar/console/issues/7395",
+        "repo": "console",
+        "topic_match": "consuming, stdin, child"
+      },
+      {
         "title": "card: Implement Artifact Hub monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",
         "repo": "console-marketplace",
@@ -908,10 +962,10 @@
         "topic_match": "extract, ffb011, f6f"
       },
       {
-        "title": "Network / Metrics: Endpoint count incorrectly reflects number of services instead of actual endpoints",
-        "url": "https://github.com/kubestellar/console/issues/7126",
+        "title": "Self-upgrade patch assumes container index 0 exists",
+        "url": "https://github.com/kubestellar/console/issues/7384",
         "repo": "console",
-        "topic_match": "filter, service, count"
+        "topic_match": "restriction, deployments, grant"
       }
     ],
     "stretch": [
@@ -922,16 +976,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Authentication & Settings",

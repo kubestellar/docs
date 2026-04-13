@@ -1,9 +1,9 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-13T06:48:40.101Z",
+  "generated_at": "2026-04-13T10:39:55.860Z",
   "total_issues_opened": 169,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-  "total_points": 47200,
+  "total_points": 47600,
   "level": "Commander",
   "level_rank": 5,
   "rank": 7,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xxsuryanshxx, agent, pkg",
-      "issue_count": 146,
+      "issue_count": 148,
       "recent_issue": {
         "title": "Title: UpdateChecker.Status holds uc.mu across a 15s network git fetch",
         "url": "https://github.com/kubestellar/console/issues/7282",
@@ -63,11 +63,11 @@
       "repos": [
         "console"
       ],
-      "open_count": 30,
-      "closed_count": 116
+      "open_count": 29,
+      "closed_count": 119
     },
     {
-      "name": "tail, log, fake",
+      "name": "tail, log, feature",
       "issue_count": 2,
       "recent_issue": {
         "title": "Incomplete Implementation: Logs DrillDown feature is hardcoded placeholder",
@@ -137,7 +137,7 @@
       "closed_count": 0
     },
     {
-      "name": "activechatctxsmu, dryrunsessionsmu, server",
+      "name": "dryrunsessionsmu, activechatctxsmu, server",
       "issue_count": 1,
       "recent_issue": {
         "title": "Title: Lock-ordering deadlock between activeChatCtxsMu and dryRunSessionsMu in server_ai.go and server.go",
@@ -221,20 +221,6 @@
       "closed_count": 1
     },
     {
-      "name": "github, a6ca, fca92bf5ef",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 11: Missing context propagation in GitHub proxy requests (`github_proxy.go`)",
-        "url": "https://github.com/kubestellar/console/issues/4803",
-        "created_at": "2026-04-05T13:39:22Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "key, authorization, header",
       "issue_count": 1,
       "recent_issue": {
@@ -249,7 +235,7 @@
       "closed_count": 1
     },
     {
-      "name": "plaintext, smtp, send",
+      "name": "plaintext, smtp, credential",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 15: SMTP credentials sent in plaintext without enforcing TLS in `email.go`",
@@ -269,20 +255,6 @@
         "title": "### Issue 6: `prediction_worker.go` uses `context.Background()` instead of parent context",
         "url": "https://github.com/kubestellar/console/issues/4720",
         "created_at": "2026-04-05T09:06:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "urls, github, repository",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 4: Hardcoded GitHub API URLs in `update_checker.go` limit deployment flexibility",
-        "url": "https://github.com/kubestellar/console/issues/4718",
-        "created_at": "2026-04-05T09:06:01Z"
       },
       "repos": [
         "console"
@@ -357,16 +329,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
         "name": "Onboarding & Rewards",
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
         "name": "Charts & Visualizations",

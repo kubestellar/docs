@@ -1,17 +1,17 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-13T06:47:58.490Z",
-  "total_issues_opened": 421,
+  "generated_at": "2026-04-13T10:39:25.922Z",
+  "total_issues_opened": 453,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 130150,
+  "total_points": 139750,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 2,
+  "rank": 3,
   "cadence": {
-    "avg_per_week": 35.1,
-    "avg_per_day": 7.97,
+    "avg_per_week": 37.8,
+    "avg_per_day": 8.55,
     "by_day_of_week": [
-      60,
+      92,
       47,
       74,
       61,
@@ -26,10 +26,10 @@
       24,
       66,
       16,
-      25,
-      16,
+      44,
+      23,
       4,
-      19,
+      25,
       26,
       4,
       9,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-13T05:03:31.000Z"
+    "last_issue_at": "2026-04-13T09:39:40.000Z"
   },
   "topics": [
     {
-      "name": "@mrhapile, phase, mission",
-      "issue_count": 327,
+      "name": "@mrhapile, mission, phase",
+      "issue_count": 342,
       "recent_issue": {
-        "title": "Poll Memory Allocation Leak",
-        "url": "https://github.com/kubestellar/console/issues/7159",
-        "created_at": "2026-04-13T05:03:31Z"
+        "title": "cancel_chat HTTP Fallback JSON Panic",
+        "url": "https://github.com/kubestellar/console/issues/7433",
+        "created_at": "2026-04-13T09:37:46Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 4,
-      "closed_count": 323
+      "open_count": 12,
+      "closed_count": 330
     },
     {
       "name": "documentation, 📌, component",
@@ -123,6 +123,62 @@
       "closed_count": 3
     },
     {
+      "name": "broadcast, websocket, channel",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "WebSocket Broadcast Channel Full Drop",
+        "url": "https://github.com/kubestellar/console/issues/7434",
+        "created_at": "2026-04-13T09:39:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
+      "name": "safetotal, nan, payload",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Progress Tokens NaN Overwrite",
+        "url": "https://github.com/kubestellar/console/issues/7314",
+        "created_at": "2026-04-13T06:57:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "regex, hostpath, character",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Malicious Scanner RegEx ReDoS (malicious.ts)",
+        "url": "https://github.com/kubestellar/console/issues/7312",
+        "created_at": "2026-04-13T06:57:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "projectnames, a., length",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Unsafe a.projectNames in Advance Logic",
+        "url": "https://github.com/kubestellar/console/issues/7104",
+        "created_at": "2026-04-13T04:28:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "priority, payloadcard, recommend",
       "issue_count": 2,
       "recent_issue": {
@@ -171,20 +227,6 @@
         "title": "Canvas-dependent tests run without a canvas mock and pollute suite output with jsdom “Not implemented” errors",
         "url": "https://github.com/kubestellar/console/issues/5877",
         "created_at": "2026-04-09T22:40:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "analytics, safetotal, track",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "NaN Injection Breaks Analytics State",
-        "url": "https://github.com/kubestellar/console/issues/5838",
-        "created_at": "2026-04-09T20:35:27Z"
       },
       "repos": [
         "console"
@@ -249,6 +291,188 @@
       "closed_count": 2
     },
     {
+      "name": "activechatctxsmu, deadlock, lock",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CancelFunc Deadlock Vulnerability",
+        "url": "https://github.com/kubestellar/console/issues/7432",
+        "created_at": "2026-04-13T09:37:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "pinger, safewrite, aa5c3191",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unbounded WebSocket Write Block Freezing Pinger",
+        "url": "https://github.com/kubestellar/console/issues/7429",
+        "created_at": "2026-04-13T09:36:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "analytics, untyped, afddbb8",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Untyped Analytics Egress",
+        "url": "https://github.com/kubestellar/console/issues/7326",
+        "created_at": "2026-04-13T07:01:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "concurrency, evasion, eef435",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "DEPLOY_POLL_MAX_CONCURRENCY Evasion",
+        "url": "https://github.com/kubestellar/console/issues/7325",
+        "created_at": "2026-04-13T07:01:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "cbd1f371, ab7c6adda1, authmsg",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "RBAC Token Interception",
+        "url": "https://github.com/kubestellar/console/issues/7324",
+        "created_at": "2026-04-13T07:00:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "bottleneck, ed355, b84293b0ae55",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Single-Connection Bottleneck",
+        "url": "https://github.com/kubestellar/console/issues/7322",
+        "created_at": "2026-04-13T07:00:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "err, undefined, preflightcheck",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Deploy Preflight Network Catch All (preflightCheck.ts)",
+        "url": "https://github.com/kubestellar/console/issues/7321",
+        "created_at": "2026-04-13T07:00:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "lastuseridx, slice, streamsinceuser",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "streamSinceUser Substring Extractor Crash",
+        "url": "https://github.com/kubestellar/console/issues/7320",
+        "created_at": "2026-04-13T06:59:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "fiber, payload, b202b17",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Uncaught JSON Parse Error (websockets.go)",
+        "url": "https://github.com/kubestellar/console/issues/7319",
+        "created_at": "2026-04-13T06:59:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "listener, d2ad2, c1f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Dangling Event Listeners",
+        "url": "https://github.com/kubestellar/console/issues/7318",
+        "created_at": "2026-04-13T06:59:01Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "d36f683, c214, cafdbe15acd6",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Preflight Error Re-Propagation",
+        "url": "https://github.com/kubestellar/console/issues/7317",
+        "created_at": "2026-04-13T06:58:45Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "e2e26a, ee45, b7585a01e6",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "activeMissionId Desync on Load",
+        "url": "https://github.com/kubestellar/console/issues/7313",
+        "created_at": "2026-04-13T06:57:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "poll, cb05803, ad87",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Poll Memory Allocation Leak",
+        "url": "https://github.com/kubestellar/console/issues/7159",
+        "created_at": "2026-04-13T05:03:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "visually, pointer, progress",
       "issue_count": 1,
       "recent_issue": {
@@ -305,7 +529,7 @@
       "closed_count": 0
     },
     {
-      "name": "slack, payloads, buff",
+      "name": "slack, buff, efaea97f",
       "issue_count": 1,
       "recent_issue": {
         "title": "Unbounded Slack Payloads buffing buffer",
@@ -345,48 +569,6 @@
       ],
       "open_count": 1,
       "closed_count": 0
-    },
-    {
-      "name": "pointer, getstale, b38a3cf",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "getStale Maps Race Access",
-        "url": "https://github.com/kubestellar/console/issues/7131",
-        "created_at": "2026-04-13T04:56:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "wssendretrytimers, unmount, effect",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "useMissions wsSendRetryTimers Not Cleared in Main Unmount Effect",
-        "url": "https://github.com/kubestellar/console/issues/6836",
-        "created_at": "2026-04-12T04:52:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "startmission, ensureconnection, call",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "startMission onClick Handler No Try/Catch",
-        "url": "https://github.com/kubestellar/console/issues/6811",
-        "created_at": "2026-04-12T04:34:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "forkfullname, split, string",
@@ -437,20 +619,6 @@
         "title": "FlightPlanBlueprint computeLayout Called Every Render",
         "url": "https://github.com/kubestellar/console/issues/6731",
         "created_at": "2026-04-11T22:40:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "regex, character, fence",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fencedRe Regex ReDoS on Malformed Fence",
-        "url": "https://github.com/kubestellar/console/issues/6727",
-        "created_at": "2026-04-11T22:38:33Z"
       },
       "repos": [
         "console"
@@ -599,26 +767,12 @@
       "closed_count": 1
     },
     {
-      "name": "wipe, finalizecancellation, ad77b471",
+      "name": "wipe, ad77b471, f89",
       "issue_count": 1,
       "recent_issue": {
         "title": "Race in finalizeCancellation Map Wipe",
         "url": "https://github.com/kubestellar/console/issues/6438",
         "created_at": "2026-04-11T14:21:39Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "clashing, cf284b4, ae42",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "deploy:started Event Clashing",
-        "url": "https://github.com/kubestellar/console/issues/6436",
-        "created_at": "2026-04-11T14:20:08Z"
       },
       "repos": [
         "console"
@@ -647,6 +801,20 @@
         "title": "Dry-Run Privilege Escalation Warning",
         "url": "https://github.com/kubestellar/console/issues/6434",
         "created_at": "2026-04-11T14:18:55Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "e1b3f7, abc, b191",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "\"Orphaned Cluster\" Assignments",
+        "url": "https://github.com/kubestellar/console/issues/6433",
+        "created_at": "2026-04-11T14:18:30Z"
       },
       "repos": [
         "console"
@@ -893,20 +1061,6 @@
       "closed_count": 1
     },
     {
-      "name": "exec, pod, b66963",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Pod exec allows any authenticated user to open a shell in any pod.",
-        "url": "https://github.com/kubestellar/console/issues/5406",
-        "created_at": "2026-04-08T06:42:25Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "page, height, item",
       "issue_count": 1,
       "recent_issue": {
@@ -1005,6 +1159,34 @@
       "closed_count": 1
     },
     {
+      "name": "progressive, incrementally, af16a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Progressive Fetch Does Not Update UI Incrementally",
+        "url": "https://github.com/kubestellar/console/issues/4935",
+        "created_at": "2026-04-06T08:51:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sse, stream, mid",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "SSE Streaming Stops Midway Without Recovery",
+        "url": "https://github.com/kubestellar/console/issues/4934",
+        "created_at": "2026-04-06T08:51:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "poor, hierarchy, contrast",
       "issue_count": 1,
       "recent_issue": {
@@ -1039,6 +1221,20 @@
         "title": "Loading Indicator Never Shows",
         "url": "https://github.com/kubestellar/console/issues/4868",
         "created_at": "2026-04-05T18:59:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "analytics, track, fb5ed2a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Global Filter Analytics Not Triggering Properly",
+        "url": "https://github.com/kubestellar/console/issues/4865",
+        "created_at": "2026-04-05T18:46:15Z"
       },
       "repos": [
         "console"
@@ -1112,12 +1308,6 @@
         "topic_match": "dry, f2692457, caa5825a9cc"
       },
       {
-        "title": "Title: Importing a kubeconfig silently merges exec AuthInfo plugins (RCE vector)",
-        "url": "https://github.com/kubestellar/console/issues/7260",
-        "repo": "console",
-        "topic_match": "exec, pod, b66963"
-      },
-      {
         "title": "CLI Provider Failures Reported As Success",
         "url": "https://github.com/kubestellar/console/issues/7273",
         "repo": "console",
@@ -1138,28 +1328,28 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },
@@ -1210,7 +1400,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 402
+      "issue_count": 434
     }
   ]
 }

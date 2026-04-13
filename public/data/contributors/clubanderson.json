@@ -1,17 +1,17 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-13T06:47:32.048Z",
-  "total_issues_opened": 879,
+  "generated_at": "2026-04-13T10:38:27.594Z",
+  "total_issues_opened": 884,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3180100,
+  "total_points": 3187250,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 70.7,
-    "avg_per_day": 3.64,
+    "avg_per_week": 71.1,
+    "avg_per_day": 3.66,
     "by_day_of_week": [
-      106,
+      111,
       106,
       192,
       115,
@@ -27,8 +27,8 @@
       41,
       27,
       36,
-      55,
-      15,
+      57,
+      18,
       8,
       5,
       5,
@@ -49,42 +49,42 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-13T05:30:42.000Z"
+    "last_issue_at": "2026-04-13T08:47:31.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 471,
+      "issue_count": 470,
       "recent_issue": {
-        "title": "[Auto-QA] Components missing dark mode support",
-        "url": "https://github.com/kubestellar/console/issues/6939",
-        "created_at": "2026-04-12T19:35:52Z"
+        "title": "[Auto-QA] Large components missing lazy loading",
+        "url": "https://github.com/kubestellar/console/issues/7365",
+        "created_at": "2026-04-13T08:02:33Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 471
+      "closed_count": 470
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 157,
+      "issue_count": 160,
       "recent_issue": {
-        "title": "🐛 2 test failure(s) in Coverage Suite run #620",
-        "url": "https://github.com/kubestellar/console/issues/7203",
-        "created_at": "2026-04-13T05:30:42Z"
+        "title": "🐛 5 test failure(s) in Coverage Suite run #629",
+        "url": "https://github.com/kubestellar/console/issues/7396",
+        "created_at": "2026-04-13T08:47:31Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 154
+      "open_count": 4,
+      "closed_count": 156
     },
     {
-      "name": "monitoring, card, step",
+      "name": "monitoring, card, implement",
       "issue_count": 57,
       "recent_issue": {
         "title": "card: Implement Flatcar Container Linux monitoring card",
@@ -154,6 +154,20 @@
       "closed_count": 8
     },
     {
+      "name": "js, vendor, chunk",
+      "issue_count": 7,
+      "recent_issue": {
+        "title": "[Auto-QA] Bundle has JS chunks over 300KB",
+        "url": "https://github.com/kubestellar/console/issues/7366",
+        "created_at": "2026-04-13T08:02:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 7
+    },
+    {
       "name": "replace, color, hardcoded",
       "issue_count": 7,
       "recent_issue": {
@@ -166,20 +180,6 @@
       ],
       "open_count": 0,
       "closed_count": 7
-    },
-    {
-      "name": "js, vendor, bundle",
-      "issue_count": 6,
-      "recent_issue": {
-        "title": "[Auto-QA] Bundle has JS chunks over 300KB",
-        "url": "https://github.com/kubestellar/console/issues/4649",
-        "created_at": "2026-04-05T02:04:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 6
     },
     {
       "name": "testing, greet, close",
@@ -224,7 +224,7 @@
       "closed_count": 5
     },
     {
-      "name": "projects, alert, want",
+      "name": "projects, want, contribute",
       "issue_count": 4,
       "recent_issue": {
         "title": "bug: multiple alerts of the same type and cluster get added to the alerts",
@@ -265,6 +265,20 @@
       ],
       "open_count": 1,
       "closed_count": 2
+    },
+    {
+      "name": "tooltip, technical, abbreviation",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
+        "url": "https://github.com/kubestellar/console/issues/3345",
+        "created_at": "2026-03-23T20:21:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "chart, default, day",
@@ -380,7 +394,7 @@
       "closed_count": 2
     },
     {
-      "name": "cert, manager, cloudflare",
+      "name": "cert, cloudflare, manager",
       "issue_count": 2,
       "recent_issue": {
         "title": "[Mission Gen] cert-manager: Cloudflare - DNS Challenge Broken",
@@ -526,20 +540,6 @@
         "title": "[Auto-QA] 1 adoption & engagement psychology opportunities found",
         "url": "https://github.com/kubestellar/console/issues/3791",
         "created_at": "2026-03-28T13:44:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "recommend, expand, dropdown",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
-        "url": "https://github.com/kubestellar/console/issues/3345",
-        "created_at": "2026-03-23T20:21:23Z"
       },
       "repos": [
         "console"
@@ -851,6 +851,12 @@
         "topic_match": "term, roadmap, near"
       },
       {
+        "title": "Nil config provider can panic migration",
+        "url": "https://github.com/kubestellar/console/issues/7371",
+        "repo": "console",
+        "topic_match": "nil, potential, panic"
+      },
+      {
         "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
         "url": "https://github.com/kubestellar/docs/issues/1396",
         "repo": "docs",
@@ -867,12 +873,6 @@
         "url": "https://github.com/kubestellar/docs/issues/1433",
         "repo": "docs",
         "topic_match": "marketplace, home, assistant"
-      },
-      {
-        "title": "Title: `KubectlProxy.Execute` has no command timeout — a hung kubectl call hangs the handler",
-        "url": "https://github.com/kubestellar/console/issues/7206",
-        "repo": "console",
-        "topic_match": "kubectl, assist, interactive"
       }
     ],
     "stretch": [
@@ -883,16 +883,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Security & RBAC",
@@ -955,7 +955,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 234
+      "issue_count": 239
     }
   ]
 }

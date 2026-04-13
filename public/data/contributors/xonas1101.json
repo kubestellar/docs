@@ -1,17 +1,17 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-13T06:48:15.914Z",
-  "total_issues_opened": 392,
+  "generated_at": "2026-04-13T10:38:52.680Z",
+  "total_issues_opened": 436,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 128950,
+  "total_points": 142150,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 3,
+  "rank": 2,
   "cadence": {
-    "avg_per_week": 32.7,
-    "avg_per_day": 6.33,
+    "avg_per_week": 36.3,
+    "avg_per_day": 7.03,
     "by_day_of_week": [
-      44,
+      88,
       29,
       46,
       57,
@@ -27,9 +27,9 @@
       45,
       37,
       22,
-      11,
-      7,
-      5,
+      13,
+      41,
+      13,
       2,
       27,
       23,
@@ -49,31 +49,101 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-13T06:15:30.000Z"
+    "last_issue_at": "2026-04-13T09:08:36.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 320,
+      "issue_count": 333,
       "recent_issue": {
-        "title": "Unnecessary use of fmt.Sprintf in kubectl_test.go",
-        "url": "https://github.com/kubestellar/console/issues/7283",
-        "created_at": "2026-04-13T06:15:30Z"
+        "title": "Install command analytics can log comment lines instead of real commands",
+        "url": "https://github.com/kubestellar/console/issues/7426",
+        "created_at": "2026-04-13T09:08:36Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 10,
-      "closed_count": 310
+      "open_count": 24,
+      "closed_count": 309
     },
     {
-      "name": "notifiers, concurrent, mutex",
+      "name": "infinity, heatmap, valueresolvers",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Min/max stat resolvers can return Infinity/-Infinity for non-numeric data.",
+        "url": "https://github.com/kubestellar/console/issues/6713",
+        "created_at": "2026-04-11T22:23:41Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "upgrade, vite, v8",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
+        "url": "https://github.com/kubestellar/console/issues/6313",
+        "created_at": "2026-04-11T07:03:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "diagnosis, analyze, alert",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Missing synchronization on shared notifiers map",
-        "url": "https://github.com/kubestellar/console/issues/6635",
-        "created_at": "2026-04-11T21:17:58Z"
+        "title": "Diagnosis lock can get stuck after unexpected failure",
+        "url": "https://github.com/kubestellar/console/issues/7401",
+        "created_at": "2026-04-13T08:53:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
+      "name": "recipient, envelope, email",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Email To header only includes first recipient",
+        "url": "https://github.com/kubestellar/console/issues/7380",
+        "created_at": "2026-04-13T08:34:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
+      "name": "manager, default, nest",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Import can persist incomplete plaintext settings without normalization",
+        "url": "https://github.com/kubestellar/console/issues/7372",
+        "created_at": "2026-04-13T08:24:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 2,
+      "closed_count": 0
+    },
+    {
+      "name": "date, invalid, nan",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Date renderers can leak Invalid Date text instead of fallback.",
+        "url": "https://github.com/kubestellar/console/issues/6711",
+        "created_at": "2026-04-11T22:23:12Z"
       },
       "repos": [
         "console"
@@ -137,6 +207,230 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "copy, clipboard, success",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Copy-to-clipboard success is not validated before showing success state",
+        "url": "https://github.com/kubestellar/console/issues/7425",
+        "created_at": "2026-04-13T09:08:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "welcome, meta, route",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Meta description leaks across routes in SPA navigation",
+        "url": "https://github.com/kubestellar/console/issues/7423",
+        "created_at": "2026-04-13T09:07:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "scenario, worker, c30afa9",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Scenario switching stacks handlers instead of replacing them",
+        "url": "https://github.com/kubestellar/console/issues/7420",
+        "created_at": "2026-04-13T09:01:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "module, test, cc0f252e8db",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Global mutable mock state leaks across tests and user flows",
+        "url": "https://github.com/kubestellar/console/issues/7419",
+        "created_at": "2026-04-13T09:01:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "memory, share, c6c475",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "In-memory share registries can grow without bounds",
+        "url": "https://github.com/kubestellar/console/issues/7418",
+        "created_at": "2026-04-13T09:00:55Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "mock, f50a145d, f3aa5b3070",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Authentication mocks always return success, masking failure-path bugs",
+        "url": "https://github.com/kubestellar/console/issues/7417",
+        "created_at": "2026-04-13T09:00:45Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "browser, persistence, a7cb",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Browser-only APIs are used without environment guards in alert persistence paths",
+        "url": "https://github.com/kubestellar/console/issues/7404",
+        "created_at": "2026-04-13T08:53:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "c6b1df4, ee18a944a5, defensive",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unprotected localStorage access can crash context initialization",
+        "url": "https://github.com/kubestellar/console/issues/7402",
+        "created_at": "2026-04-13T08:53:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "bridge, length, datum",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Stale MCP data due to coarse fingerprinting in data bridge",
+        "url": "https://github.com/kubestellar/console/issues/7400",
+        "created_at": "2026-04-13T08:53:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "ipv6, origin, colon",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Host normalization breaks IPv6 origins",
+        "url": "https://github.com/kubestellar/console/issues/7385",
+        "created_at": "2026-04-13T08:37:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "exec, dd5e4c22, e27b356e4",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Pod exec missing authorization check",
+        "url": "https://github.com/kubestellar/console/issues/7381",
+        "created_at": "2026-04-13T08:36:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "http, aff2, e38c6d8ab7d",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Webhook notifier allows insecure HTTP transport",
+        "url": "https://github.com/kubestellar/console/issues/7379",
+        "created_at": "2026-04-13T08:33:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "dedup, key, ad80ff",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "PagerDuty dedup key collision risk",
+        "url": "https://github.com/kubestellar/console/issues/7378",
+        "created_at": "2026-04-13T08:33:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "entry, size, d1b78c5",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Revocation cache “max size” is not actually enforced",
+        "url": "https://github.com/kubestellar/console/issues/7373",
+        "created_at": "2026-04-13T08:29:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "notification, ea236c6a, a4cf89159673",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Notification settings can be silently dropped",
+        "url": "https://github.com/kubestellar/console/issues/7369",
+        "created_at": "2026-04-13T08:23:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "crypto, temp, key",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Concurrent keyfile creation can return a key that does not match disk",
+        "url": "https://github.com/kubestellar/console/issues/7368",
+        "created_at": "2026-04-13T08:23:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "customization, reordering, e2257630",
@@ -209,12 +503,12 @@
       "closed_count": 1
     },
     {
-      "name": "replacement, placeholder, occurrence",
+      "name": "hint, support, c7634af",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Placeholder replacement only handles first occurrence of each key in title.",
-        "url": "https://github.com/kubestellar/console/issues/6720",
-        "created_at": "2026-04-11T22:29:52Z"
+        "title": "Keyboard hints are inconsistent with actual supported back key.",
+        "url": "https://github.com/kubestellar/console/issues/6721",
+        "created_at": "2026-04-11T22:30:05Z"
       },
       "repos": [
         "console"
@@ -223,12 +517,12 @@
       "closed_count": 1
     },
     {
-      "name": "tab, b6996, b74c4d09befc",
+      "name": "replacement, placeholder, occurrence",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Active tab state can become invalid when modal definition/tabs change.",
-        "url": "https://github.com/kubestellar/console/issues/6719",
-        "created_at": "2026-04-11T22:29:39Z"
+        "title": "Placeholder replacement only handles first occurrence of each key in title.",
+        "url": "https://github.com/kubestellar/console/issues/6720",
+        "created_at": "2026-04-11T22:29:52Z"
       },
       "repos": [
         "console"
@@ -419,20 +713,6 @@
       "closed_count": 1
     },
     {
-      "name": "terminate, rollback, session",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
-        "url": "https://github.com/kubestellar/console/issues/6313",
-        "created_at": "2026-04-11T07:03:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "kubedle, f28edfd, e005",
       "issue_count": 1,
       "recent_issue": {
@@ -447,12 +727,26 @@
       "closed_count": 1
     },
     {
-      "name": "comment, late, sqlite",
+      "name": "profiler, ea4599a2, b980",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Missing feature_requests.latest_comment column but code writes to it",
-        "url": "https://github.com/kubestellar/console/issues/6284",
-        "created_at": "2026-04-11T05:33:33Z"
+        "title": "React dev tools profiler",
+        "url": "https://github.com/kubestellar/console/issues/6151",
+        "created_at": "2026-04-10T15:30:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "text, split, d681072",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Translation text is manually truncated with split",
+        "url": "https://github.com/kubestellar/console/issues/5991",
+        "created_at": "2026-04-10T08:06:11Z"
       },
       "repos": [
         "console"
@@ -475,12 +769,12 @@
       "closed_count": 1
     },
     {
-      "name": "diagnosis, cd36eaca, c5e",
+      "name": "unsaved, b04f85d7, bfa5",
       "issue_count": 1,
       "recent_issue": {
-        "title": "AI diagnosis loading indicator can end too early",
-        "url": "https://github.com/kubestellar/console/issues/5714",
-        "created_at": "2026-04-09T11:26:33Z"
+        "title": "Unsaved changes dialog misses most edited fields",
+        "url": "https://github.com/kubestellar/console/issues/5988",
+        "created_at": "2026-04-10T08:05:07Z"
       },
       "repos": [
         "console"
@@ -559,6 +853,20 @@
       "closed_count": 1
     },
     {
+      "name": "comma, compute, d7c",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Compute compare URL encoding risk",
+        "url": "https://github.com/kubestellar/console/issues/5452",
+        "created_at": "2026-04-08T09:37:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "indexeddb, clear, completion",
       "issue_count": 1,
       "recent_issue": {
@@ -579,6 +887,20 @@
         "title": "Memo comparator uses JSON.stringify on config in SharedSortableCard",
         "url": "https://github.com/kubestellar/console/issues/4665",
         "created_at": "2026-04-05T05:17:57Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "fe4f3484, a645, f91d309ee6a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Same listener-leak pattern in CardRecommendations",
+        "url": "https://github.com/kubestellar/console/issues/4661",
+        "created_at": "2026-04-05T05:16:36Z"
       },
       "repos": [
         "console"
@@ -713,20 +1035,6 @@
       "closed_count": 1
     },
     {
-      "name": "t., nil, devicetracker",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Nil-pointer crash path in DeviceTracker when k8s client init fails",
-        "url": "https://github.com/kubestellar/console/issues/4261",
-        "created_at": "2026-04-02T16:40:49Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "policy, webhooks, ebec6c",
       "issue_count": 1,
       "recent_issue": {
@@ -825,7 +1133,7 @@
       "closed_count": 1
     },
     {
-      "name": "float, comparison, equality",
+      "name": "float, comparison, d17e79",
       "issue_count": 1,
       "recent_issue": {
         "title": "Unsafe float equality comparison",
@@ -909,6 +1217,20 @@
       "closed_count": 1
     },
     {
+      "name": "d484e727, a911, bb4cec27c0",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Streaming sub-folder reports lost",
+        "url": "https://github.com/kubestellar/console/issues/3502",
+        "created_at": "2026-03-25T04:09:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "order, warndefaultenvvars, ef820e",
       "issue_count": 1,
       "recent_issue": {
@@ -929,6 +1251,20 @@
         "title": "k8sClient used after failed LoadConfig()",
         "url": "https://github.com/kubestellar/console/issues/3363",
         "created_at": "2026-03-24T04:03:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "backendport, s., a96745ca",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "backendURL() ignores BackendPort",
+        "url": "https://github.com/kubestellar/console/issues/3362",
+        "created_at": "2026-03-24T04:03:13Z"
       },
       "repos": [
         "console"
@@ -1013,13 +1349,13 @@
         "title": "Runbook / Persistence: Diagnosis results are never written back to alert after mission completion",
         "url": "https://github.com/kubestellar/console/issues/7289",
         "repo": "console",
-        "topic_match": "diagnosis, cd36eaca, c5e"
+        "topic_match": "diagnosis, analyze, alert"
       },
       {
-        "title": "Runbook / Lifecycle: Diagnosis results are not reconciled back to alert model after mission completion",
-        "url": "https://github.com/kubestellar/console/issues/7299",
+        "title": "Title: Importing a kubeconfig silently merges exec AuthInfo plugins (RCE vector)",
+        "url": "https://github.com/kubestellar/console/issues/7260",
         "repo": "console",
-        "topic_match": "diagnosis, cd36eaca, c5e"
+        "topic_match": "exec, dd5e4c22, e27b356e4"
       },
       {
         "title": "Missing high-level architecture explanation for multi-cluster + kc-agent model",
@@ -1048,18 +1384,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "Backend API & Handlers",
-        "path": "pkg/api/, pkg/models/, pkg/store/",
-        "description": "Go backend REST API, request handlers, data models, persistence layer",
-        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
@@ -1070,6 +1394,18 @@
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
@@ -1120,7 +1456,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 301
+      "issue_count": 345
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-13T06:48:38.573Z",
+  "generated_at": "2026-04-13T10:39:54.316Z",
   "total_issues_opened": 41,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 50000,
@@ -193,7 +193,7 @@
       "closed_count": 1
     },
     {
-      "name": "banner, changer, overlapping",
+      "name": "banner, changer, css",
       "issue_count": 1,
       "recent_issue": {
         "title": "Bug: CSS Issue in Docs",

@@ -1,6 +1,6 @@
 {
   "login": "vedansh-5",
-  "generated_at": "2026-04-13T06:48:44.696Z",
+  "generated_at": "2026-04-13T10:40:00.523Z",
   "total_issues_opened": 19,
   "avatar_url": "https://avatars.githubusercontent.com/u/77830698?v=4",
   "total_points": 19550,
@@ -110,7 +110,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "CONTRIBUTING.md links to a non-existent OAuth section anchor",
+        "url": "https://github.com/kubestellar/docs/issues/1397",
+        "repo": "docs",
+        "topic_match": "tab, tag, blog"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

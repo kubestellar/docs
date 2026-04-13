@@ -1,17 +1,17 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-13T06:48:32.055Z",
-  "total_issues_opened": 363,
+  "generated_at": "2026-04-13T10:39:47.677Z",
+  "total_issues_opened": 400,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 107050,
+  "total_points": 117150,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 30.3,
-    "avg_per_day": 7.55,
+    "avg_per_week": 33.3,
+    "avg_per_day": 8.3,
     "by_day_of_week": [
-      112,
+      149,
       17,
       16,
       15,
@@ -27,9 +27,9 @@
       37,
       90,
       48,
-      12,
-      17,
-      19,
+      38,
+      27,
+      20,
       12,
       14,
       48,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-13T06:34:26.000Z"
+    "last_issue_at": "2026-04-13T09:03:44.000Z"
   },
   "topics": [
     {
       "name": "@aaradhychinche, alt, cluster",
-      "issue_count": 343,
+      "issue_count": 380,
       "recent_issue": {
-        "title": "Runbook / Async: No request versioning allows stale responses to overwrite newer state",
-        "url": "https://github.com/kubestellar/console/issues/7300",
-        "created_at": "2026-04-13T06:34:26Z"
+        "title": "Storage / Metrics: Storage totals represent allocatable capacity without clarifying PVC usage",
+        "url": "https://github.com/kubestellar/console/issues/7421",
+        "created_at": "2026-04-13T09:03:44Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 32,
-      "closed_count": 311
+      "open_count": 27,
+      "closed_count": 353
     },
     {
       "name": "kube, game, craft",
@@ -80,20 +80,6 @@
       ],
       "open_count": 0,
       "closed_count": 4
-    },
-    {
-      "name": "utilization, value, e809a130",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Nodes dashboard shows stale utilization when actual value becomes zero",
-        "url": "https://github.com/kubestellar/console/issues/6107",
-        "created_at": "2026-04-10T13:32:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "sourcecluster, deploy, validate",
@@ -158,6 +144,20 @@
         "title": "bug: cluster labels overlap and become unreadable when AI chat panel is opened",
         "url": "https://github.com/kubestellar/console/issues/5396",
         "created_at": "2026-04-08T05:02:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "newly, dashboard, search",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: newly created dashboard does not appear in dashboard list or search",
+        "url": "https://github.com/kubestellar/console/issues/5177",
+        "created_at": "2026-04-07T05:41:13Z"
       },
       "repos": [
         "console"
@@ -264,12 +264,12 @@
       "closed_count": 1
     },
     {
-      "name": "notification, success, difficult",
+      "name": "bundle, eagerly, import",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: success notification toast is too low contrast and difficult to see",
-        "url": "https://github.com/kubestellar/console/issues/3259",
-        "created_at": "2026-03-23T11:26:18Z"
+        "title": "bug: cardRegistry eagerly loads bundles instead of lazy loading them",
+        "url": "https://github.com/kubestellar/console/issues/2694",
+        "created_at": "2026-03-16T00:18:10Z"
       },
       "repos": [
         "console"
@@ -278,12 +278,12 @@
       "closed_count": 1
     },
     {
-      "name": "bundle, eagerly, import",
+      "name": "authorization, header, production",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: cardRegistry eagerly loads bundles instead of lazy loading them",
-        "url": "https://github.com/kubestellar/console/issues/2694",
-        "created_at": "2026-03-16T00:18:10Z"
+        "title": "Status cards call MCP API without Authorization header causing 401 in production",
+        "url": "https://github.com/kubestellar/console/issues/2643",
+        "created_at": "2026-03-15T07:05:48Z"
       },
       "repos": [
         "console"
@@ -317,6 +317,12 @@
     ],
     "stretch": [
       {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
@@ -335,16 +341,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },
@@ -395,7 +395,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 330
+      "issue_count": 367
     }
   ]
 }

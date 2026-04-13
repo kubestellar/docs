@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-13T06:48:44.006Z",
+  "generated_at": "2026-04-13T10:39:59.818Z",
   "total_issues_opened": 91,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 32800,
@@ -152,7 +152,7 @@
       "closed_count": 2
     },
     {
-      "name": "slice, character, alert",
+      "name": "slice, character, ids",
       "issue_count": 2,
       "recent_issue": {
         "title": "DeviceTracker.ClearAlert : Panics on Malformed Alert IDs via Incorrect String Slicing",
@@ -166,7 +166,7 @@
       "closed_count": 2
     },
     {
-      "name": "authentication, oauth, accept",
+      "name": "authentication, oauth, c034ec02",
       "issue_count": 2,
       "recent_issue": {
         "title": "WebSocket authentication accepts hardcoded \"demo-token\" bypass in all environments",
@@ -390,7 +390,7 @@
       "closed_count": 1
     },
     {
-      "name": "websocket, iterate, slow",
+      "name": "iterate, websocket, slow",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent WebSocket BroadcastToClients Holds wsMux While Iterating : Slow Client Blocks All Broadcasts",

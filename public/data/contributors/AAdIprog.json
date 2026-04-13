@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-13T06:48:44.692Z",
+  "generated_at": "2026-04-13T10:40:00.519Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 20200,
@@ -152,7 +152,7 @@
       "closed_count": 1
     },
     {
-      "name": "clean, fcdb5b48, cc2",
+      "name": "clean, fcdb5b48, caddf779",
       "issue_count": 1,
       "recent_issue": {
         "title": "WebSocket Memory Leak (Zombie Goroutines in Exec Handler)",
@@ -432,7 +432,7 @@
       "closed_count": 1
     },
     {
-      "name": "handleagentmessage, activemissionid, issidebaropen",
+      "name": "handleagentmessage, issidebaropen, activemissionid",
       "issue_count": 1,
       "recent_issue": {
         "title": "useMissions.tsx: handleAgentMessage has empty dependency array — captures stale activeMissionId and isSidebarOpen",
@@ -495,6 +495,18 @@
         "url": "https://github.com/kubestellar/docs/issues/1402",
         "repo": "docs",
         "topic_match": "logout, websocket, disconnect"
+      },
+      {
+        "title": "Bulk utilization query returns oldest snapshots, not latest",
+        "url": "https://github.com/kubestellar/console/issues/7388",
+        "repo": "console",
+        "topic_match": "bulk, historical, sqlite"
+      },
+      {
+        "title": "Self-upgrade patch assumes container index 0 exists",
+        "url": "https://github.com/kubestellar/console/issues/7384",
+        "repo": "console",
+        "topic_match": "traversal, attacker, self"
       }
     ],
     "stretch": [

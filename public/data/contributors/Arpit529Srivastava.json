@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-13T06:48:44.198Z",
+  "generated_at": "2026-04-13T10:40:00.016Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -237,7 +237,7 @@
       "closed_count": 1
     },
     {
-      "name": "m., listargoapplications, client",
+      "name": "listargoapplications, m., client",
       "issue_count": 1,
       "recent_issue": {
         "title": "ListArgoApplications uses stale m.clients snapshot, misses newly-added clusters",
@@ -524,14 +524,14 @@
         "topic_match": "api, @arpit529srivastava, vcluster"
       },
       {
-        "title": "Hosted demo limitations are not presented as a strict capability boundary",
-        "url": "https://github.com/kubestellar/docs/issues/1401",
-        "repo": "docs",
-        "topic_match": "helm, host, release"
-      },
-      {
         "title": "Deployment / Cluster Selection: Unassigned projects silently fallback to \"default\" cluster during launch",
         "url": "https://github.com/kubestellar/console/issues/7164",
+        "repo": "console",
+        "topic_match": "api, @arpit529srivastava, vcluster"
+      },
+      {
+        "title": "Deployment / Multi-Cluster: UI does not show which cluster failed in partial deployment",
+        "url": "https://github.com/kubestellar/console/issues/7170",
         "repo": "console",
         "topic_match": "api, @arpit529srivastava, vcluster"
       }
@@ -562,10 +562,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       },
       {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },
