@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-12T22:12:59.576Z",
+  "generated_at": "2026-04-13T03:09:11.618Z",
   "total_issues_opened": 373,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 123250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 307,
+      "issue_count": 309,
       "recent_issue": {
         "title": "Sign in breaking in dev mode",
         "url": "https://github.com/kubestellar/console/issues/6850",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 307
+      "closed_count": 309
     },
     {
       "name": "concurrency, ts, task",
@@ -74,20 +74,6 @@
         "title": "Known shared-mutation hazards inside concurrency callbacks (ratcheted technical debt)",
         "url": "https://github.com/kubestellar/console/issues/6857",
         "created_at": "2026-04-12T05:39:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "upgrade, vite, v8",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
-        "url": "https://github.com/kubestellar/console/issues/6313",
-        "created_at": "2026-04-11T07:03:11Z"
       },
       "repos": [
         "console"
@@ -110,7 +96,7 @@
       "closed_count": 2
     },
     {
-      "name": "concurrent, notifiers, mutex",
+      "name": "notifiers, concurrent, mutex",
       "issue_count": 2,
       "recent_issue": {
         "title": "Missing synchronization on shared notifiers map",
@@ -250,7 +236,7 @@
       "closed_count": 1
     },
     {
-      "name": "cardruntime, a3f121, ae5",
+      "name": "cardruntime, runtime, a3f121",
       "issue_count": 1,
       "recent_issue": {
         "title": "CardRuntime can violate React Rules of Hooks when a data hook is registered/unregistered at runtime.",
@@ -312,6 +298,20 @@
         "title": "Unbound identities counted as bound",
         "url": "https://github.com/kubestellar/console/issues/6446",
         "created_at": "2026-04-11T15:01:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "terminate, rollback, session",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Does the AI mission have the capability to rollback changes if session terminated in between?",
+        "url": "https://github.com/kubestellar/console/issues/6313",
+        "created_at": "2026-04-11T07:03:11Z"
       },
       "repos": [
         "console"
@@ -404,7 +404,7 @@
       "closed_count": 1
     },
     {
-      "name": "0.0.0, imagepullbackoff, image",
+      "name": "0.0.0, image, imagepullbackoff",
       "issue_count": 1,
       "recent_issue": {
         "title": "Default image tag (0.0.0) causes ImagePullBackOff",
@@ -726,7 +726,7 @@
       "closed_count": 1
     },
     {
-      "name": "information, new, panel",
+      "name": "information, panel, new",
       "issue_count": 1,
       "recent_issue": {
         "title": "User friendly information panels on unfamiliar use cases",

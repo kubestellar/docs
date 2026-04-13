@@ -1,9 +1,9 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-12T22:12:44.272Z",
+  "generated_at": "2026-04-13T03:08:56.208Z",
   "total_issues_opened": 877,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3167200,
+  "total_points": 3172100,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -80,8 +80,8 @@
         "console-marketplace",
         "docs"
       ],
-      "open_count": 4,
-      "closed_count": 151
+      "open_count": 3,
+      "closed_count": 152
     },
     {
       "name": "monitoring, card, step",
@@ -435,7 +435,7 @@
       "closed_count": 2
     },
     {
-      "name": "reconciliation, follow, clients",
+      "name": "reconciliation, follow, tak",
       "issue_count": 1,
       "recent_issue": {
         "title": "Implement WorkloadDeployment reconciliation loop (follow-up to #6482)",

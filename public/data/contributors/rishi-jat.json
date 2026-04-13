@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-12T22:13:31.041Z",
+  "generated_at": "2026-04-13T03:09:47.317Z",
   "total_issues_opened": 225,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 41850,
@@ -53,19 +53,19 @@
   },
   "topics": [
     {
-      "name": "line, @rishi, jat",
-      "issue_count": 160,
+      "name": "@rishi, jat, line",
+      "issue_count": 162,
       "recent_issue": {
-        "title": "ux(console): missing kc-agent connection status indicator in UI",
-        "url": "https://github.com/kubestellar/console/issues/6363",
-        "created_at": "2026-04-11T11:33:47Z"
+        "title": "OAuth login failure (token_exchange_failed) lacks actionable diagnostics and guidance",
+        "url": "https://github.com/kubestellar/console/issues/6933",
+        "created_at": "2026-04-12T16:36:34Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 23,
-      "closed_count": 137
+      "closed_count": 139
     },
     {
       "name": "event, analytics, day",
@@ -168,20 +168,6 @@
       "closed_count": 3
     },
     {
-      "name": "redirect, onboarding, exchange",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "OAuth login failure (token_exchange_failed) lacks actionable diagnostics and guidance",
-        "url": "https://github.com/kubestellar/console/issues/6933",
-        "created_at": "2026-04-12T16:36:34Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "jsx, syntax, basemodal",
       "issue_count": 2,
       "recent_issue": {
@@ -196,7 +182,7 @@
       "closed_count": 2
     },
     {
-      "name": "dompurify, svg, sanitization",
+      "name": "dompurify, svg, ts2307",
       "issue_count": 2,
       "recent_issue": {
         "title": "TypeScript build fails because dompurify is imported but not installed.",
@@ -210,7 +196,7 @@
       "closed_count": 2
     },
     {
-      "name": "parameter, mission, encodes",
+      "name": "mission, parameter, encodes",
       "issue_count": 2,
       "recent_issue": {
         "title": "MissionSidebar double encodes URL parameters",
@@ -224,7 +210,7 @@
       "closed_count": 2
     },
     {
-      "name": "eval, csp, unsafe",
+      "name": "eval, unsafe, csp",
       "issue_count": 2,
       "recent_issue": {
         "title": "CSP includes unsafe-inline for script-src",
@@ -633,12 +619,6 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Helm template panics with index out of range when ingress.enabled is true but ingress.hosts is empty",
-        "url": "https://github.com/kubestellar/console/issues/6984",
-        "repo": "console",
-        "topic_match": "template, poddisruptionbudget, networkpolicy"
-      },
-      {
         "title": "Architecture Page Has No Diagrams Visible in Next.js Rendering",
         "url": "https://github.com/kubestellar/docs/issues/1439",
         "repo": "docs",
@@ -659,6 +639,12 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
@@ -675,12 +661,6 @@
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },

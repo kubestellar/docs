@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-12T22:13:31.865Z",
+  "generated_at": "2026-04-13T03:09:48.140Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -123,7 +123,7 @@
       "closed_count": 3
     },
     {
-      "name": "second, deadline, cluster",
+      "name": "deadline, second, cluster",
       "issue_count": 3,
       "recent_issue": {
         "title": "probeAPIServer uses a 5-second TCP timeout per cluster during GetClusterHealth, but health is fetched for ALL clusters in GetAllClusterHealth — total wall-clock is unbounded with no global deadline",
@@ -279,7 +279,7 @@
       "closed_count": 1
     },
     {
-      "name": "classifyerror, branch, find",
+      "name": "classifyerror, find, branch",
       "issue_count": 1,
       "recent_issue": {
         "title": "classifyError returns \"auth\" for messages containing \"not found\" when the actual error is \"executable not found\" (exec-plugin missing), causing a 10-minute authFailureCacheTTL to apply incorrectly",
@@ -391,7 +391,7 @@
       "closed_count": 1
     },
     {
-      "name": "tool, e80bfa33, e5d",
+      "name": "tool, e80bfa33, ece5acd35c1",
       "issue_count": 1,
       "recent_issue": {
         "title": "MCP Bridge Silently Swallows LLM Tool Execution Errors",

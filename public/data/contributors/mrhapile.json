@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-12T22:13:17.234Z",
+  "generated_at": "2026-04-13T03:09:29.569Z",
   "total_issues_opened": 371,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 115150,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 282,
+      "issue_count": 284,
       "recent_issue": {
         "title": "Go: ShareToGitHub Commit Step Does Not Set Content-Type: application/json",
         "url": "https://github.com/kubestellar/console/issues/6842",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 282
+      "closed_count": 284
     },
     {
       "name": "documentation, 📌, component",
@@ -129,20 +129,6 @@
         "title": "PayloadCard Priority Dropdown Missing Keyboard Dismiss",
         "url": "https://github.com/kubestellar/console/issues/6743",
         "created_at": "2026-04-11T22:47:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "tab, poll, clashing",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Ghost Polling After Tab Suspension",
-        "url": "https://github.com/kubestellar/console/issues/6641",
-        "created_at": "2026-04-11T21:19:25Z"
       },
       "repos": [
         "console"
@@ -557,7 +543,21 @@
       "closed_count": 1
     },
     {
-      "name": "arbitrary, yaml, execute",
+      "name": "tab, clashing, cf284b4",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "deploy:started Event Clashing",
+        "url": "https://github.com/kubestellar/console/issues/6436",
+        "created_at": "2026-04-11T14:20:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "arbitrary, yaml, e674dd66",
       "issue_count": 1,
       "recent_issue": {
         "title": "YAML Import Arbitrary Payload Eval",
@@ -599,7 +599,7 @@
       "closed_count": 1
     },
     {
-      "name": "history, prompt, saturation",
+      "name": "prompt, history, saturation",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent Prompt History Saturation",
@@ -675,20 +675,6 @@
         "title": "Slack SSRF Hook Exposure",
         "url": "https://github.com/kubestellar/console/issues/6416",
         "created_at": "2026-04-11T13:39:35Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "startedat, sort, bc056aab",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unstable Sort UI Flicker",
-        "url": "https://github.com/kubestellar/console/issues/6411",
-        "created_at": "2026-04-11T13:36:32Z"
       },
       "repos": [
         "console"
@@ -823,7 +809,7 @@
       "closed_count": 1
     },
     {
-      "name": "presence, metric, trivially",
+      "name": "presence, metric, spoofable",
       "issue_count": 1,
       "recent_issue": {
         "title": "Demo presence counts are trivially spoofable.",

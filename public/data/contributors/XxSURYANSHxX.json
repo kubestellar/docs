@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-12T22:13:31.692Z",
+  "generated_at": "2026-04-13T03:09:47.972Z",
   "total_issues_opened": 114,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 30700,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "@xxsuryanshxx, nil, card",
-      "issue_count": 96,
+      "name": "@xxsuryanshxx, card, nil",
+      "issue_count": 94,
       "recent_issue": {
         "title": "### Issue 20: JSON decode failure silently returns empty array in kagenti_provider client (`kagenti_provider/client.go`)",
         "url": "https://github.com/kubestellar/console/issues/5572",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 96
+      "closed_count": 94
     },
     {
       "name": "tail, log, interact",
@@ -179,6 +179,20 @@
       "closed_count": 1
     },
     {
+      "name": "github, a6ca, fca92bf5ef",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 11: Missing context propagation in GitHub proxy requests (`github_proxy.go`)",
+        "url": "https://github.com/kubestellar/console/issues/4803",
+        "created_at": "2026-04-05T13:39:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "plaintext, smtp, send",
       "issue_count": 1,
       "recent_issue": {
@@ -213,6 +227,20 @@
         "title": "### Issue 6: `prediction_worker.go` uses `context.Background()` instead of parent context",
         "url": "https://github.com/kubestellar/console/issues/4720",
         "created_at": "2026-04-05T09:06:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "urls, github, repository",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 4: Hardcoded GitHub API URLs in `update_checker.go` limit deployment flexibility",
+        "url": "https://github.com/kubestellar/console/issues/4718",
+        "created_at": "2026-04-05T09:06:01Z"
       },
       "repos": [
         "console"
@@ -278,14 +306,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "docs(console): port-forward example leaks background process (no cleanup)",
-        "url": "https://github.com/kubestellar/docs/issues/1414",
-        "repo": "docs",
-        "topic_match": "process, zombie, kill"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Marketplace & Operators",
@@ -294,16 +315,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Charts & Visualizations",

@@ -1,15 +1,15 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-12T22:13:27.381Z",
-  "total_issues_opened": 216,
+  "generated_at": "2026-04-13T03:09:43.669Z",
+  "total_issues_opened": 282,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 63600,
+  "total_points": 83400,
   "level": "Captain",
   "level_rank": 6,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 18,
-    "avg_per_day": 25.97,
+    "avg_per_week": 23.5,
+    "avg_per_day": 33.59,
     "by_day_of_week": [
       13,
       31,
@@ -17,7 +17,7 @@
       21,
       14,
       69,
-      50
+      116
     ],
     "by_hour_of_day": [
       0,
@@ -42,29 +42,43 @@
       50,
       77,
       11,
-      29,
-      0
+      58,
+      37
     ],
     "current_streak_weeks": 2,
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-12T22:02:53.000Z"
+    "last_issue_at": "2026-04-12T23:55:00.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, happen, error",
-      "issue_count": 160,
+      "issue_count": 207,
       "recent_issue": {
-        "title": "Database restore uses non-atomic cp in initContainer causing corruption if pod is killed mid-copy",
-        "url": "https://github.com/kubestellar/console/issues/6993",
-        "created_at": "2026-04-12T22:02:42Z"
+        "title": "getPlaylistVideos and getMediumPosts have cache stampede with no singleflight on cold cache",
+        "url": "https://github.com/kubestellar/console/issues/7066",
+        "created_at": "2026-04-12T23:55:00Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 9,
-      "closed_count": 151
+      "open_count": 0,
+      "closed_count": 207
+    },
+    {
+      "name": "clusterrole, grant, opt",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "ClusterRole exposes full RBAC topology with no opt-out value",
+        "url": "https://github.com/kubestellar/console/issues/6988",
+        "created_at": "2026-04-12T22:01:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 4
     },
     {
       "name": "cookie, csrf, samesite",
@@ -95,6 +109,62 @@
       "closed_count": 3
     },
     {
+      "name": "viewer, unrecognized, role",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "SSE cache key omits user identity allowing cross-user data leakage between admin and viewer roles",
+        "url": "https://github.com/kubestellar/console/issues/7044",
+        "created_at": "2026-04-12T23:35:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "mb, bodyguard, group",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bodyGuard checks request size after Fiber already buffers up to 20 MB allowing memory exhaustion attacks",
+        "url": "https://github.com/kubestellar/console/issues/7039",
+        "created_at": "2026-04-12T23:18:20Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "origin, netlify, referer",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "*.netlify.app wildcard in analytics origin allowlist permits any Netlify deployment to abuse the proxy",
+        "url": "https://github.com/kubestellar/console/issues/7032",
+        "created_at": "2026-04-12T23:17:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "selector, workload, networkpolicy",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Label selector injection via unsanitized workload name path parameter leaking pods from other workloads",
+        "url": "https://github.com/kubestellar/console/issues/7004",
+        "created_at": "2026-04-12T22:28:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "node, combine, maintenance",
       "issue_count": 2,
       "recent_issue": {
@@ -105,16 +175,16 @@
       "repos": [
         "console"
       ],
-      "open_count": 2,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 2
     },
     {
-      "name": "hardcodes, urls, b5a1",
+      "name": "insert, primary, key",
       "issue_count": 2,
       "recent_issue": {
-        "title": "CheckPreviewStatus hardcodes api.github.com breaking GitHub Enterprise deployments",
-        "url": "https://github.com/kubestellar/console/issues/6564",
-        "created_at": "2026-04-11T18:56:28Z"
+        "title": "InsertUtilizationSnapshot missing ID initialization causing constraint error or unusable record",
+        "url": "https://github.com/kubestellar/console/issues/6608",
+        "created_at": "2026-04-11T20:15:17Z"
       },
       "repos": [
         "console"
@@ -123,7 +193,7 @@
       "closed_count": 2
     },
     {
-      "name": "masking, tab, plain",
+      "name": "masking, tab, value",
       "issue_count": 2,
       "recent_issue": {
         "title": "ConfigMapDrillDown: all values rendered in plain text with no masking option - sensitive data immediately visible and copyable",
@@ -137,6 +207,160 @@
       "closed_count": 2
     },
     {
+      "name": "prewarm, abandon, inner",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "prewarm() abandons inner goroutine and all fetchAll sub-goroutines on timeout with no cancellation",
+        "url": "https://github.com/kubestellar/console/issues/7052",
+        "created_at": "2026-04-12T23:51:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "wire, format, sse",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "writeSSEEvent injects eventName directly into SSE wire format with no newline sanitization",
+        "url": "https://github.com/kubestellar/console/issues/7050",
+        "created_at": "2026-04-12T23:37:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "broadcast, acquire, iterate",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Hub broadcast case releases RLock before iterating clients slice exposing it to concurrent modification",
+        "url": "https://github.com/kubestellar/console/issues/7049",
+        "created_at": "2026-04-12T23:36:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "theft, visit, credential",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Missing Strict-Transport-Security header allows credential theft over HTTP on first visit",
+        "url": "https://github.com/kubestellar/console/issues/7038",
+        "created_at": "2026-04-12T23:18:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "header, xss, policy",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Content-Security-Policy header missing leaving console vulnerable to XSS",
+        "url": "https://github.com/kubestellar/console/issues/7037",
+        "created_at": "2026-04-12T23:17:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "scrape, prometheus, prediction",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Prometheus scrape during SetActivePredictions Reset sees all predictions as zero causing false alerts",
+        "url": "https://github.com/kubestellar/console/issues/7025",
+        "created_at": "2026-04-12T22:52:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "upstream, hammer, cdn",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cache stampede on cold analytics proxy script responses hammering upstream CDN",
+        "url": "https://github.com/kubestellar/console/issues/7021",
+        "created_at": "2026-04-12T22:51:57Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "runanalysis, e03254, d260",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "PredictionWorker running flag has unlocked window between check and runAnalysis allowing concurrent runs",
+        "url": "https://github.com/kubestellar/console/issues/7002",
+        "created_at": "2026-04-12T22:28:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "panic, heartbeat, goroutine",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Heartbeat goroutine leaks when StreamChatWithProgress panics because close is not deferred",
+        "url": "https://github.com/kubestellar/console/issues/7001",
+        "created_at": "2026-04-12T22:28:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "send, typeresult, leaving",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "handleMixedModeChat never sends TypeResult Done true leaving UI stuck in streaming state",
+        "url": "https://github.com/kubestellar/console/issues/6999",
+        "created_at": "2026-04-12T22:28:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "handle, interval, wait",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "PredictionWorker interval wait does not handle ctx.Done() causing latent goroutine stall",
+        "url": "https://github.com/kubestellar/console/issues/6998",
+        "created_at": "2026-04-12T22:27:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "variable, value, configuration",
       "issue_count": 1,
       "recent_issue": {
@@ -147,22 +371,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "networkpolicy, selector, disabled",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "NetworkPolicy disabled by default with no Egress rules and no source selector when enabled",
-        "url": "https://github.com/kubestellar/console/issues/6989",
-        "created_at": "2026-04-12T22:02:00Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "openshift, cors, breaking",
@@ -175,8 +385,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "restriction, deployments, patch",
@@ -189,8 +399,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "getbulkutilizations, f3ffeb12, c385",
@@ -235,6 +445,20 @@
       "closed_count": 1
     },
     {
+      "name": "protection, double, panic",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "DeviceTracker.Stop() panics on double-close with no sync.Once protection",
+        "url": "https://github.com/kubestellar/console/issues/6684",
+        "created_at": "2026-04-11T22:05:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "sleep, second, stop",
       "issue_count": 1,
       "recent_issue": {
@@ -249,82 +473,12 @@
       "closed_count": 1
     },
     {
-      "name": "callaiprovider, d3f83b, cf98",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "InsightWorker.callAIProvider uses context.Background() ignoring server shutdown lifecycle",
-        "url": "https://github.com/kubestellar/console/issues/6680",
-        "created_at": "2026-04-11T22:04:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "timeout, path, handlechatmessage",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "handleChatMessage passes context.Background() with no timeout permanently blocking WebSocket goroutine",
-        "url": "https://github.com/kubestellar/console/issues/6678",
-        "created_at": "2026-04-11T22:04:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "updateconfig, e2747c, b088",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "UpdateConfig only updates in-memory config without persisting to disk causing silent data loss on restart",
-        "url": "https://github.com/kubestellar/console/issues/6615",
-        "created_at": "2026-04-11T20:16:55Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "alter, migrate, migration",
       "issue_count": 1,
       "recent_issue": {
         "title": "Migration failures in ALTER TABLE loop only log warnings leaving database in partially-migrated state",
         "url": "https://github.com/kubestellar/console/issues/6614",
         "created_at": "2026-04-11T20:16:43Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "transaction, incrementusercoins, claimdailybonus",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "IncrementUserCoins, ClaimDailyBonus, AddUserTokenDelta and ConsumeOAuthState use context.Background() in transactions ignoring request cancellation",
-        "url": "https://github.com/kubestellar/console/issues/6613",
-        "created_at": "2026-04-11T20:16:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "unrecognized, viewer, role",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "CountUsersByRole silently counts unrecognized roles as viewers producing incorrect metrics",
-        "url": "https://github.com/kubestellar/console/issues/6607",
-        "created_at": "2026-04-11T20:15:04Z"
       },
       "repos": [
         "console"
@@ -403,7 +557,7 @@
       "closed_count": 1
     },
     {
-      "name": "reader, icon, button",
+      "name": "icon, reader, button",
       "issue_count": 1,
       "recent_issue": {
         "title": "ClusterGroups, NamespaceMonitor, ClusterLocations, Kubedle: icon-only buttons missing aria-label - inaccessible to screen readers",
@@ -571,12 +725,12 @@
       "closed_count": 1
     },
     {
-      "name": "configs, model, share",
+      "name": "hardcodes, urls, detection",
       "issue_count": 1,
       "recent_issue": {
-        "title": "handleKagentCRDSummary makes 6 sequential Kubernetes API calls under one shared timeout silently zeroing out counts",
-        "url": "https://github.com/kubestellar/console/issues/5354",
-        "created_at": "2026-04-07T21:22:30Z"
+        "title": "kagent/kagenti auto-detection hardcodes insecure HTTP URLs with fixed namespace and port",
+        "url": "https://github.com/kubestellar/console/issues/5352",
+        "created_at": "2026-04-07T21:22:02Z"
       },
       "repos": [
         "console"
@@ -697,6 +851,20 @@
       "closed_count": 1
     },
     {
+      "name": "strand, onboarding, leave",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Onboarding silently fails for real users leaving them stranded with no error message",
+        "url": "https://github.com/kubestellar/console/issues/5320",
+        "created_at": "2026-04-07T20:02:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "unknown, unauthenticated, case",
       "issue_count": 1,
       "recent_issue": {
@@ -762,16 +930,16 @@
         "topic_match": "port, invalid, sscanf"
       },
       {
-        "title": "card: Implement Artifact Hub monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/58",
-        "repo": "console-marketplace",
-        "topic_match": "hub, devmode, setjwtsecret"
-      },
-      {
         "title": "docs(console): port-forward example leaks background process (no cleanup)",
         "url": "https://github.com/kubestellar/docs/issues/1414",
         "repo": "docs",
         "topic_match": "port, invalid, sscanf"
+      },
+      {
+        "title": "card: Implement Artifact Hub monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/58",
+        "repo": "console-marketplace",
+        "topic_match": "hub, devmode, setjwtsecret"
       },
       {
         "title": "Missing pre-port-forward diagnostic commands in docs",
@@ -866,7 +1034,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 216
+      "issue_count": 282
     }
   ]
 }

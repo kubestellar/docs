@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-12T22:13:32.429Z",
+  "generated_at": "2026-04-13T03:09:48.702Z",
   "total_issues_opened": 67,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 13900,
@@ -194,7 +194,7 @@
       "closed_count": 1
     },
     {
-      "name": "write, runnable, concurrently",
+      "name": "write, runnable, particular",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: start.sh writes to a file that may be in use",
@@ -208,7 +208,7 @@
       "closed_count": 1
     },
     {
-      "name": "image, process, suspect",
+      "name": "image, suspect, process",
       "issue_count": 1,
       "recent_issue": {
         "title": "doc: confusing wording about MCP bundling with console",
@@ -250,7 +250,7 @@
       "closed_count": 1
     },
     {
-      "name": "periphery, hub, home",
+      "name": "periphery, home, hub",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: metaphorical strangeness in the home page",
