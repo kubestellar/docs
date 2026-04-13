@@ -42,17 +42,9 @@ Organizations adopt multi-cluster architectures for:
 
 ## Quick Start
 
-Get up and running with KubeStellar in minutes:
+Get up and running with KubeStellar by following the [Getting Started Guide](kubestellar/get-started.md), which walks you through the Helm-based installation and environment setup.
 
-```bash
-# Install KubeStellar CLI
-brew install kubestellar/kubestellar/kubestellar
-
-# Initialize your environment
-kubestellar init
-```
-
-For a complete walkthrough, see the [Quick Start Guide](kubestellar/get-started.md).
+For the KubeStellar Console UI experience, see the [Console Quick Start](console/quickstart.md).
 
 ## Documentation
 

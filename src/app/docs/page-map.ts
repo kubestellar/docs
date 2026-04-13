@@ -239,6 +239,12 @@ const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
     title: 'Getting Started',
     items: [
       { 'Quick Start': 'kubestellar/get-started.md' },
+      { 'Console Quick Start': 'console/quickstart.md' },
+    ]
+  },
+  {
+    title: 'User Guide',
+    items: [
       { 'Guide Overview': 'kubestellar/user-guide-intro.md' },
       { 'Observability': 'kubestellar/observability.md' },
       { 'Getting Started from OCM': 'kubestellar/start-from-ocm.md' },

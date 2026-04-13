@@ -25,14 +25,14 @@ Most users will wish to explore the demo and documentation for KubeStellar Conso
 - [KubeStellar-MCP Documentation](/docs/kubestellar-mcp/overview/introduction): More details about the Claude Code-enabled plugin for app-centric deployment management
 - [KubeStellar Console Demo](https://console.kubestellar.io): Live online demo of the KubeStellar Console UI/UX
 
-### Legacy KubeStellar Components
+### Core KubeStellar Components
 
-Deeper Documentation on the components which preceded the new standalone KubeStellar Console
+In-depth documentation for the foundational components that power KubeStellar's multi-cluster capabilities.
 
-- [KubeStellar](/docs/kubestellar/overview): the foundation that began the KubeStellar project
-- [KubeFlex](/docs/kubeflex/overview/introduction): A flexible and scalable platform for running Kubernetes control plane APIs with multi-tenancy support.
-- [KubeStellar A2A](/docs/a2a/overview/introduction): The first iteration of the KubeStellar agentic management tools embodied in KubeStellar Console
-- [kubectl-multi](/docs/multi-plugin/overview/introduction): A comprehensive kubectl plugin for multi-cluster operations with KubeStellar. The predecessor to the KubeStellar-MCP plugin which KubeStellar Console uses.
+- [KubeStellar](/docs/kubestellar/overview): The multi-cluster configuration management engine at the heart of the project
+- [KubeFlex](/docs/kubeflex/overview/introduction): A flexible and scalable platform for running Kubernetes control plane APIs with multi-tenancy support
+- [KubeStellar A2A](/docs/a2a/overview/introduction): Agent-to-agent orchestration for agentic multi-cluster management
+- [kubectl-multi](/docs/multi-plugin/overview/introduction): A kubectl plugin for multi-cluster operations with KubeStellar
 
 ### Community and Support Information
 
