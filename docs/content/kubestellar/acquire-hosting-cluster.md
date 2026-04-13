@@ -16,8 +16,6 @@ The clients in KubeStellar comprise the following.
 - The OCM Agent and the OCM Status Add-On Agent in each WEC.
 - The KubeStellar controller-manager and the transport controller for each WDS, running in the KubeFlex hosting cluster.
 
-TODO: finish writing this subsection for real. Following are some clues.
-
 When everything runs on one machine, the defaults just work. When core and some WECs are on different machines, it gets more challenging. When the KubeFlex hosting cluster is an OpenShift cluster with a public domain name, the defaults just work.
 
 After the Getting Started setup, I looked at an OCM Agent (klusterlet-agent, to be specific) and did not find a clear passing of kubeconfig. I found adjacent Secrets holding kubeconfigs in which `cluster[0].cluster.server` was `https://kubeflex-control-plane:31048`. Note that `kubeflex-control-plane` is the name of the Docker container running `kind` cluster serving as KubeFlex hosting cluster. I could not find an explanation for the port number 31048; that Docker container maps port 443 inside to 9443 on the outside.

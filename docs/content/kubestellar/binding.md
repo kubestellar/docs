@@ -17,7 +17,7 @@ modulations on how downsync is done.
 has a controller that translates each `BindingPolicy` to a
 `Binding`. A user _could_ eschew the `BindingPolicy` and directly
 maintain a `Binding` object or let a different controller maintain the
-`Binding` object (TODO: check that this is true). The `Binding` object
+`Binding` object. The `Binding` object
 shows which workload objects and which WECs matched the predicates in
 the `BindingPolicy` and so is also useful as feedback to the user
 about that.
@@ -74,4 +74,6 @@ spec:
 
 ## Binding
 
-TODO: write this
+A `Binding` object is the lower-level representation that results from resolving a `BindingPolicy`. It records the concrete set of workload objects and the concrete set of WECs that matched the policy's predicates. The `Binding` is maintained by the KubeStellar controller and serves as both the input to the transport layer and as feedback to the user about what matched.
+
+For the full `Binding` type definition, see [the API reference](https://pkg.go.dev/github.com/kubestellar/kubestellar@v{{ config.ks_latest_release }}/api/control/v1alpha1#Binding).

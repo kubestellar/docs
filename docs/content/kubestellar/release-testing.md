@@ -9,7 +9,7 @@ The following section describe the tests that must be executed for each release.
 
 Our release tests consists of:
    * Automatic tests running on Ubuntu X86 (see below)
-   * Manually initiated tests running on OCP (TODO: add specific version and machine details)
+   * Manually initiated tests running on OCP (version and machine details are environment-specific)
 
 Due to the lack of OCP based automatic testing, these tests will be performed only once a release candidate passed all other tests and is a candidate to become a regular release. 
 
@@ -24,8 +24,7 @@ Note: When a new release is created please verify that the automatic tests indee
 As many of the KubeStellar customers are using OCP, the release tests should be executed on an OCP cluster as well.  
 Currently these tests should be initiated manually on a dedicated OCP cluster that is reserved for the release testing process. 
 
-TODO: The details on how to setup and run the test
-![](./images/construction.png){: style="height:100px;width:100px"}
+The OCP release testing process follows the same e2e test scenarios as the automated tests, executed manually against a dedicated OCP cluster. Refer to the [Example Scenarios](example-scenarios.md) for the test procedures.
 
 ## Other platforms
 KubeStellar is also used on other platforms such as ARM64, MacOS, etc.. Currently these platforms are not part of the routine release testing, however the KubeStellar team will try its best to help and solve issues detected on other platforms as well. Users should go through the regular procedure of opening issues against the KubeStellar [project](https://github.com/kubestellar/kubestellar/) .

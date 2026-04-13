@@ -1,7 +1,5 @@
 # Troubleshooting
 
-This guide is a work in progress.
-
 ## Debug log levels
 
 The KubeStellar controllers take an optional command line flag that

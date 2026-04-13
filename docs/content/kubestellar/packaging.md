@@ -293,7 +293,7 @@ Currently only showing kubestellar and ocm-status-addon.
 
 Again, omitting clusteradm and Helm CLI container images for simplicity.
 
-TODO: finish this
+The following diagram shows the relationships between the KubeStellar and OCM Status Add-On packaging artifacts.
 
 ```mermaid
 flowchart LR
