@@ -210,3 +210,84 @@ The Frontend stores ephemeral UI state and caches in the browser's `localStorage
 | **Wizard state** | Mission Control wizard progress | Expires after 7 days of inactivity |
 
 **AI Missions are stored entirely in localStorage**, not in the SQLite database. Mission definitions (including the mission name, type, target clusters, and deployment state) are written to `localStorage` keys such as `kubestellar-missions-active` and `kubestellar-missions-history`. The mission catalog cache (fetched from the console-kb repository) is stored under `kc-mission-cache` with a 6-hour TTL. Because this data lives in the browser, missions are **not shared between users or devices** — each browser maintains its own set of active and historical missions.
+
+## Multi-cluster data flow — the short version
+
+If you only read one section of this page, read this one. The console
+reaches **your** clusters through a clear split of responsibilities:
+
+1. **Your browser** talks to the **Frontend** (React SPA) — only over
+   HTTPS. No kubeconfig lives in the browser.
+2. The **Backend** (Go) handles API, auth, and the SQLite store. It does
+   **not** talk to your clusters directly.
+3. The **MCP Bridge** (in-process with the Backend) hosts the
+   `kubestellar-ops` / `kubestellar-deploy` MCP servers and reads the
+   server-side kubeconfig to answer cluster-data queries.
+4. **kc-agent** runs on **your workstation**, reads *your* local
+   kubeconfig, and exposes kubectl execution over WebSocket (to the
+   browser) and MCP (to AI coding agents). This is how a hosted console
+   like `console.kubestellar.io` can execute `kubectl` against clusters
+   that only *you* can reach.
+
+**Control plane vs data plane:**
+
+| Plane | What flows through it | Components |
+|---|---|---|
+| **Control plane** (read) | Cluster inventory, pod/node/workload listings, metrics snapshots — displayed in cards and dashboards | Backend ↔ MCP Bridge ↔ `kubestellar-ops` / `kubestellar-deploy` ↔ your clusters |
+| **Data plane** (write + interactive) | Terminal `kubectl`, AI Mission apply steps, interactive edits | Browser ↔ kc-agent (WebSocket) ↔ your kubeconfig ↔ your clusters |
+
+This split is why **in-cluster Helm installs need you to run `kc-agent`
+locally**: the cluster can query itself through the MCP Bridge, but it
+cannot reach *other* clusters on your laptop network without the local
+agent. See [Installation → kc-agent health](installation.md#kc-agent-health-helm--in-cluster-mode-only).
+
+## Demo data vs real cluster data
+
+The console deliberately ships with **demo data** so every feature has
+something to render even when no real cluster is wired up. It's important
+to know which one you're looking at.
+
+### When you see demo data
+
+- You opened `https://console.kubestellar.io` (hosted demo — **always**
+  demo data).
+- You ran a local install with no kubeconfig, no OAuth, and no
+  `GOOGLE_DRIVE_API_KEY` / `CLAUDE_API_KEY` — many cards fall back to
+  demo mode individually.
+- A card's upstream API returned an error or timed out and the card's
+  hook fell back to the bundled fixture.
+
+### How the UI tells you
+
+Every card that can fall back to demo data surfaces the state explicitly:
+
+- A yellow **"Demo"** badge in the card header.
+- A yellow dashed outline around the card body.
+- In the Developer panel (profile avatar → Developer), a per-card
+  "demo / live" indicator.
+
+If a card shows neither the badge nor the outline, it is rendering **live
+data** from the cluster it is labeled with. Cards never silently mix demo
+and live data within a single view.
+
+### Hosted demo capability boundary
+
+`console.kubestellar.io` is a **strict read-only demonstration** of the
+UI. It is not a degraded version of the product — it is a different
+product surface with a hard capability ceiling:
+
+| Feature | Hosted demo | Local / Helm install |
+|---|---|---|
+| Click through every card, dashboard, wizard | Yes | Yes |
+| See AI Mission plans | Yes (plan only) | Yes |
+| **Apply** an AI Mission | **No** | Yes |
+| **Execute** `kubectl` in the terminal | **No** | Yes (via kc-agent) |
+| Edit / install / uninstall anything | **No** | Yes |
+| Persistent session | **No** (periodic forced logout) | Yes |
+| Real cluster inventory | **No** (fixtures only) | Yes |
+
+The periodic forced logout on the hosted demo is **intentional** — it
+resets state so the next visitor sees a clean demo. If any of the "No"
+rows above are a problem for you, follow the
+[Quick Start](quickstart.md) or [Installation](installation.md) path
+instead.
