@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-13T14:41:52.734Z",
+  "generated_at": "2026-04-13T18:32:25.395Z",
   "total_issues_opened": 447,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 131250,
@@ -333,12 +333,6 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",
         "repo": "console-marketplace",
         "topic_match": "artifact, green, appear"
-      },
-      {
-        "title": "Add-cluster auto-close timers can fire after manual close and affect later dialog sessions",
-        "url": "https://github.com/kubestellar/console/issues/7593",
-        "repo": "console",
-        "topic_match": "close, merge, others"
       }
     ],
     "stretch": [

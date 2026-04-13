@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-13T14:42:07.159Z",
+  "generated_at": "2026-04-13T18:32:39.164Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 3850,
@@ -194,38 +194,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "JWT secret behavior differs by mode but is not clearly documented",
-        "url": "https://github.com/kubestellar/docs/issues/1394",
-        "repo": "docs",
-        "topic_match": "oauth, env, jwt"
-      },
-      {
-        "title": "Console Quick Start Dependencies on Claude Code Are Not Made Clear Enough",
-        "url": "https://github.com/kubestellar/docs/issues/1438",
-        "repo": "docs",
-        "topic_match": "claude, permission, access"
-      },
-      {
-        "title": "Secret key contract is undocumented (kc-oauth-secret naming/key mismatch confusion)",
-        "url": "https://github.com/kubestellar/docs/issues/1392",
-        "repo": "docs",
-        "topic_match": "oauth, env, jwt"
-      },
-      {
-        "title": "Kubernetes OAuth secret creation is undocumented in the primary install flow",
-        "url": "https://github.com/kubestellar/docs/issues/1391",
-        "repo": "docs",
-        "topic_match": "oauth, env, jwt"
-      },
-      {
-        "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
-        "url": "https://github.com/kubestellar/docs/issues/1396",
-        "repo": "docs",
-        "topic_match": "oauth, env, jwt"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Storage & Compute",

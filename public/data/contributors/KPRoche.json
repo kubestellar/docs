@@ -1,6 +1,6 @@
 {
   "login": "KPRoche",
-  "generated_at": "2026-04-13T14:42:06.307Z",
+  "generated_at": "2026-04-13T18:32:38.343Z",
   "total_issues_opened": 26,
   "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
   "total_points": 27550,
@@ -124,20 +124,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Marketplace Page Permanently Loading",
-        "url": "https://github.com/kubestellar/docs/issues/1433",
-        "repo": "docs",
-        "topic_match": "theme, marketplace, themes"
-      },
-      {
-        "title": "Marketplace Link Conflict Between Header and Footer",
-        "url": "https://github.com/kubestellar/docs/issues/1450",
-        "repo": "docs",
-        "topic_match": "theme, marketplace, themes"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Storage & Compute",

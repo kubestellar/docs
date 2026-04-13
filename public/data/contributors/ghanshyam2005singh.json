@@ -1,17 +1,17 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-13T14:42:06.840Z",
-  "total_issues_opened": 77,
+  "generated_at": "2026-04-13T18:32:38.684Z",
+  "total_issues_opened": 82,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
-  "total_points": 23500,
+  "total_points": 25000,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 13,
+  "rank": 12,
   "cadence": {
-    "avg_per_week": 6.3,
-    "avg_per_day": 0.79,
+    "avg_per_week": 6.8,
+    "avg_per_day": 0.82,
     "by_day_of_week": [
-      3,
+      8,
       1,
       9,
       27,
@@ -34,7 +34,7 @@
       8,
       4,
       6,
-      10,
+      15,
       4,
       1,
       4,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-01-03T05:59:20.000Z",
-    "last_issue_at": "2026-04-10T14:29:12.000Z"
+    "last_issue_at": "2026-04-13T14:53:09.000Z"
   },
   "topics": [
     {
       "name": "mission, ai, @ghanshyam2005singh",
-      "issue_count": 58,
+      "issue_count": 61,
       "recent_issue": {
-        "title": "Mission count mismatch between AI Missions list and mission chat view",
-        "url": "https://github.com/kubestellar/console/issues/6137",
-        "created_at": "2026-04-10T14:29:12Z"
+        "title": "Repeated client disconnection events despite backend being healthy",
+        "url": "https://github.com/kubestellar/console/issues/7614",
+        "created_at": "2026-04-13T14:53:09Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 58
+      "closed_count": 61
     },
     {
       "name": "screenshot, report, @ghanshyam2005singh",
@@ -95,6 +95,34 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "policy, 127.0.0.1:8585, b404ba36",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "API requests to local agent (127.0.0.1:8585) blocked by Content Security Policy (CSP)",
+        "url": "https://github.com/kubestellar/console/issues/7611",
+        "created_at": "2026-04-13T14:50:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "connect, offline, a413d499",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Console stuck on \"Connecting to agent\" and transitions to offline state",
+        "url": "https://github.com/kubestellar/console/issues/7610",
+        "created_at": "2026-04-13T14:50:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "install, theme, marketplace",
@@ -198,22 +226,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Marketplace Page Permanently Loading",
-        "url": "https://github.com/kubestellar/docs/issues/1433",
-        "repo": "docs",
-        "topic_match": "install, theme, marketplace"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",
         "repo": "console",
         "topic_match": "mission, ai, @ghanshyam2005singh"
-      },
-      {
-        "title": "Include-Markdown Files Render as Raw Directives in Next.js",
-        "url": "https://github.com/kubestellar/docs/issues/1425",
-        "repo": "docs",
-        "topic_match": "export, yaml, markdown"
       }
     ],
     "stretch": [
@@ -230,22 +246,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },
@@ -296,7 +312,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 30
+      "issue_count": 35
     }
   ]
 }

@@ -1,12 +1,12 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-13T14:42:06.676Z",
+  "generated_at": "2026-04-13T18:32:38.868Z",
   "total_issues_opened": 78,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-  "total_points": 24950,
+  "total_points": 24650,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 12,
+  "rank": 13,
   "cadence": {
     "avg_per_week": 6.5,
     "avg_per_day": 1.9,
@@ -130,12 +130,6 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/59",
         "repo": "console-marketplace",
         "topic_match": "linux, dev, ubuntu"
-      },
-      {
-        "title": "Kubernetes OAuth secret creation is undocumented in the primary install flow",
-        "url": "https://github.com/kubestellar/docs/issues/1391",
-        "repo": "docs",
-        "topic_match": "oauth, dev, d53ffe2"
       }
     ],
     "stretch": [

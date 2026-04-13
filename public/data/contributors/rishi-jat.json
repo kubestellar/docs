@@ -1,9 +1,9 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-13T14:42:06.045Z",
+  "generated_at": "2026-04-13T18:32:38.079Z",
   "total_issues_opened": 225,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-  "total_points": 42150,
+  "total_points": 41850,
   "level": "Commander",
   "level_rank": 5,
   "rank": 8,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@rishi, jat, line",
-      "issue_count": 180,
+      "issue_count": 179,
       "recent_issue": {
         "title": "OAuth login failure (token_exchange_failed) lacks actionable diagnostics and guidance",
         "url": "https://github.com/kubestellar/console/issues/6933",
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 25,
-      "closed_count": 155
+      "open_count": 0,
+      "closed_count": 179
     },
     {
       "name": "session, auth, traffic",
@@ -139,7 +139,7 @@
       "closed_count": 2
     },
     {
-      "name": "eval, csp, unsafe",
+      "name": "eval, unsafe, csp",
       "issue_count": 2,
       "recent_issue": {
         "title": "CSP includes unsafe-inline for script-src",
@@ -191,8 +191,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 2,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "style, mkdocs, attach",
@@ -271,6 +271,20 @@
         "title": "Multiple dashboard cards fall back to demo data instead of using warm cache",
         "url": "https://github.com/kubestellar/console/issues/3397",
         "created_at": "2026-03-24T13:31:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "onboarding, redirect, login",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Auth callback does not correctly handle onboarding state",
+        "url": "https://github.com/kubestellar/console/issues/2860",
+        "created_at": "2026-03-18T03:53:28Z"
       },
       "repos": [
         "console"
@@ -471,8 +485,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "anchor, readme, setup",
@@ -485,8 +499,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "apps, oauth, template",
@@ -499,8 +513,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "iskubestellar, space, blank",
@@ -518,32 +532,13 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Architecture Page Has No Diagrams Visible in Next.js Rendering",
-        "url": "https://github.com/kubestellar/docs/issues/1439",
-        "repo": "docs",
-        "topic_match": "diagram, label, architecture"
-      },
-      {
-        "title": "Font Name Typo in mkdocs.yml (SapceMono instead of SpaceMono)",
-        "url": "https://github.com/kubestellar/docs/issues/1429",
-        "repo": "docs",
-        "topic_match": "style, mkdocs, attach"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Networking & Services",
@@ -562,6 +557,12 @@
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },

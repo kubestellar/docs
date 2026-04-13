@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-13T14:42:00.117Z",
+  "generated_at": "2026-04-13T18:32:32.483Z",
   "total_issues_opened": 282,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 83400,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, happen, error",
-      "issue_count": 204,
+      "issue_count": 209,
       "recent_issue": {
         "title": "getPlaylistVideos and getMediumPosts have cache stampede with no singleflight on cold cache",
         "url": "https://github.com/kubestellar/console/issues/7066",
@@ -64,21 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 204
-    },
-    {
-      "name": "clusterrole, grant, opt",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "ClusterRole exposes full RBAC topology with no opt-out value",
-        "url": "https://github.com/kubestellar/console/issues/6988",
-        "created_at": "2026-04-12T22:01:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 4
+      "closed_count": 209
     },
     {
       "name": "cookie, csrf, samesite",
@@ -389,21 +375,7 @@
       "closed_count": 1
     },
     {
-      "name": "openshift, cors, oauth",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "FRONTEND_URL set to \"https://\" when OpenShift route.host is empty breaking OAuth and CORS",
-        "url": "https://github.com/kubestellar/console/issues/6983",
-        "created_at": "2026-04-12T22:00:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "deployments, restriction, grant",
+      "name": "deployments, restriction, patch",
       "issue_count": 1,
       "recent_issue": {
         "title": "Self-upgrade Role grants patch on all Deployments in namespace with no resourceNames restriction",
@@ -966,12 +938,6 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Card proxy can return attacker-controlled HTML under first-party origin",
-        "url": "https://github.com/kubestellar/console/issues/7573",
-        "repo": "console",
-        "topic_match": "origin, netlify, referer"
-      },
-      {
         "title": "card: Implement Artifact Hub monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",
         "repo": "console-marketplace",
@@ -992,16 +958,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Authentication & Settings",

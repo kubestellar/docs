@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-13T14:41:16.976Z",
+  "generated_at": "2026-04-13T18:31:53.027Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -1271,7 +1271,7 @@
       "closed_count": 1
     },
     {
-      "name": "space, excessive, padding",
+      "name": "excessive, space, padding",
       "issue_count": 1,
       "recent_issue": {
         "title": "Excessive Top Padding Causing Unused Empty Space in Dashboard",
@@ -1412,14 +1412,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "FEEDBACK_GITHUB_TOKEN prerequisite for /issue is not surfaced in onboarding",
-        "url": "https://github.com/kubestellar/docs/issues/1395",
-        "repo": "docs",
-        "topic_match": "e68135c1, bb0a, f9916f7c08"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Marketplace & Operators",

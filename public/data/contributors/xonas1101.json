@@ -1,17 +1,17 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-13T14:40:29.852Z",
-  "total_issues_opened": 494,
+  "generated_at": "2026-04-13T18:31:09.273Z",
+  "total_issues_opened": 509,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 158650,
+  "total_points": 164050,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 41.2,
-    "avg_per_day": 7.93,
+    "avg_per_week": 42.4,
+    "avg_per_day": 8.17,
     "by_day_of_week": [
-      146,
+      161,
       29,
       46,
       57,
@@ -34,7 +34,7 @@
       42,
       28,
       57,
-      47,
+      62,
       30,
       29,
       22,
@@ -49,23 +49,37 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-13T14:34:13.000Z"
+    "last_issue_at": "2026-04-13T14:48:51.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 370,
+      "issue_count": 383,
       "recent_issue": {
-        "title": "Add-cluster auto-close timers can fire after manual close and affect later dialog sessions",
-        "url": "https://github.com/kubestellar/console/issues/7593",
-        "created_at": "2026-04-13T14:34:13Z"
+        "title": "Role binding name generation can collide after sanitization",
+        "url": "https://github.com/kubestellar/console/issues/7608",
+        "created_at": "2026-04-13T14:48:51Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 16,
-      "closed_count": 354
+      "open_count": 0,
+      "closed_count": 383
+    },
+    {
+      "name": "invite, reward, storage",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Invite storage deserialization is not shape-validated",
+        "url": "https://github.com/kubestellar/console/issues/7601",
+        "created_at": "2026-04-13T14:47:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "class, tailwind, severitycolor",
@@ -78,8 +92,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 2
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "approval, agentselector, approve",
@@ -223,6 +237,34 @@
       "closed_count": 2
     },
     {
+      "name": "confirmation, share, e10de9",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "LinkedIn reward confirmation is trust-based and easy to game",
+        "url": "https://github.com/kubestellar/console/issues/7602",
+        "created_at": "2026-04-13T14:47:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "username, trim, input",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "GitHub username validation runs before trimming input",
+        "url": "https://github.com/kubestellar/console/issues/7600",
+        "created_at": "2026-04-13T14:46:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "duration, rule, a240",
       "issue_count": 1,
       "recent_issue": {
@@ -233,8 +275,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "e4a6, d479, b8c0",
@@ -247,8 +289,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "widespread, b7b77, c7f",
@@ -261,8 +303,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "middleware, instantiate, c7f7f4",
@@ -275,8 +317,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "logout, site, a9c0ded",
@@ -383,20 +425,6 @@
         "title": "Test file uses vi without importing it",
         "url": "https://github.com/kubestellar/console/issues/7526",
         "created_at": "2026-04-13T12:10:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "creation, aeefa40, e6f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Compiler smoke test can pass even when component creation is fully broken",
-        "url": "https://github.com/kubestellar/console/issues/7511",
-        "created_at": "2026-04-13T11:43:25Z"
       },
       "repos": [
         "console"
@@ -537,20 +565,6 @@
         "title": "Stale MCP data due to coarse fingerprinting in data bridge",
         "url": "https://github.com/kubestellar/console/issues/7400",
         "created_at": "2026-04-13T08:53:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "readiness, report, c37629f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Client readiness can report healthy after stop",
-        "url": "https://github.com/kubestellar/console/issues/7397",
-        "created_at": "2026-04-13T08:47:34Z"
       },
       "repos": [
         "console"
@@ -965,6 +979,20 @@
       "closed_count": 1
     },
     {
+      "name": "kubescape, scan, e66fe458",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Card: Kubescape Scan (kubescape_scan)",
+        "url": "https://github.com/kubestellar/console/issues/5666",
+        "created_at": "2026-04-09T04:11:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "launch, phase, e1a08df4",
       "issue_count": 1,
       "recent_issue": {
@@ -1055,20 +1083,6 @@
         "title": "Same listener-leak pattern in CardRecommendations",
         "url": "https://github.com/kubestellar/console/issues/4661",
         "created_at": "2026-04-05T05:16:36Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "plan, functionality, clarification",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Clarification: Is the Mission Control functionality only to plan the course of action for a job?",
-        "url": "https://github.com/kubestellar/console/issues/4550",
-        "created_at": "2026-04-04T06:40:56Z"
       },
       "repos": [
         "console"
@@ -1525,20 +1539,6 @@
       "closed_count": 1
     },
     {
-      "name": "mess, invalid, weird",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "clicking submit button on invalid feature requests gives a messed up UI",
-        "url": "https://github.com/kubestellar/console/issues/1596",
-        "created_at": "2026-03-04T04:45:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "┌─────────────┐, diagram, readability",
       "issue_count": 1,
       "recent_issue": {
@@ -1598,34 +1598,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Missing high-level architecture explanation for multi-cluster + kc-agent model",
-        "url": "https://github.com/kubestellar/docs/issues/1409",
-        "repo": "docs",
-        "topic_match": "unclear, kc, agent"
-      },
-      {
-        "title": "Access docs do not explicitly warn that Service port is 8080 (not 80)",
-        "url": "https://github.com/kubestellar/docs/issues/1398",
-        "repo": "docs",
-        "topic_match": "ksc, helm, ccc5ee"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "Forced demo-mode logout behavior is not documented as intentional",
-        "url": "https://github.com/kubestellar/docs/issues/1402",
-        "repo": "docs",
-        "topic_match": "logout, site, a9c0ded"
-      },
-      {
-        "title": "docs(console): port-forward example leaks background process (no cleanup)",
-        "url": "https://github.com/kubestellar/docs/issues/1414",
-        "repo": "docs",
-        "topic_match": "kill, sh, port"
       }
     ],
     "stretch": [
@@ -1642,22 +1618,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       }
     ]
   },
@@ -1708,7 +1678,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 403
+      "issue_count": 418
     }
   ]
 }

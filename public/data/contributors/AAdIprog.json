@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-13T14:42:07.038Z",
+  "generated_at": "2026-04-13T18:32:39.055Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 20200,
@@ -489,14 +489,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Forced demo-mode logout behavior is not documented as intentional",
-        "url": "https://github.com/kubestellar/docs/issues/1402",
-        "repo": "docs",
-        "topic_match": "logout, websocket, disconnect"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Cost Management",
@@ -511,16 +504,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Authentication & Settings",
