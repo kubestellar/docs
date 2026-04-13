@@ -1,6 +1,6 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-13T03:09:48.314Z",
+  "generated_at": "2026-04-13T06:48:44.372Z",
   "total_issues_opened": 78,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
   "total_points": 24650,
@@ -95,7 +95,7 @@
       "closed_count": 1
     },
     {
-      "name": "oauth, dev, flow",
+      "name": "oauth, dev, d53ffe2",
       "issue_count": 1,
       "recent_issue": {
         "title": "Make `make dev` start OAuth dev mode via `./startup-oauth.sh --dev`",
@@ -135,7 +135,7 @@
         "title": "Kubernetes OAuth secret creation is undocumented in the primary install flow",
         "url": "https://github.com/kubestellar/docs/issues/1391",
         "repo": "docs",
-        "topic_match": "oauth, dev, flow"
+        "topic_match": "oauth, dev, d53ffe2"
       }
     ],
     "stretch": [

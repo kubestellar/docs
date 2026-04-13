@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-13T03:09:48.573Z",
+  "generated_at": "2026-04-13T06:48:44.634Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "@shivansh, cluster, source",
-      "issue_count": 47,
+      "name": "@shivansh, source, cluster",
+      "issue_count": 48,
       "recent_issue": {
         "title": "RBACExplorer: fetchSingleCluster Makes 3 Sequential kubectl Calls Per Cluster, Creating Significant Latency",
         "url": "https://github.com/kubestellar/console/issues/4852",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 47
+      "closed_count": 48
     },
     {
       "name": "openshift, kube, dns",
@@ -109,7 +109,7 @@
       "closed_count": 2
     },
     {
-      "name": "test, httptest, server",
+      "name": "test, httptest, backend",
       "issue_count": 2,
       "recent_issue": {
         "title": "feature: Add HTTP-level tests for main API server (pkg/api)",
@@ -193,7 +193,7 @@
       "closed_count": 1
     },
     {
-      "name": "deployment, clickable, onclick",
+      "name": "clickable, onclick, deployment",
       "issue_count": 1,
       "recent_issue": {
         "title": "title : Deployment issues in ClusterDetailModal are not drill-down clickable",
@@ -241,20 +241,6 @@
         "title": "bug report : NetworkUtils ping uses fetch with mode: 'no-cors' — latency measurements are unreliable and always show \"success\"",
         "url": "https://github.com/kubestellar/console/issues/3799",
         "created_at": "2026-03-28T14:09:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "choice, hardwarehealthcard, alert",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug report : HardwareHealthCard auto-switches to alerts view whenever activeAlertCount > 0 — overrides user's explicit view choice",
-        "url": "https://github.com/kubestellar/console/issues/3798",
-        "created_at": "2026-03-28T14:08:39Z"
       },
       "repos": [
         "console"
@@ -311,7 +297,7 @@
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
-        "topic_match": "test, httptest, server"
+        "topic_match": "test, httptest, backend"
       }
     ],
     "stretch": [

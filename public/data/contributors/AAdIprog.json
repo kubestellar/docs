@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-13T03:09:48.627Z",
+  "generated_at": "2026-04-13T06:48:44.692Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 20200,
@@ -208,7 +208,7 @@
       "closed_count": 1
     },
     {
-      "name": "acb4, e4f7239df54, precisely",
+      "name": "acb4, e4f7239df54, wheel",
       "issue_count": 1,
       "recent_issue": {
         "title": "Disconnected \"Ghost\" Tooltips During Marketplace Scrolling",
@@ -222,7 +222,7 @@
       "closed_count": 1
     },
     {
-      "name": "tab, e4667630, f2db",
+      "name": "e4667630, f2db, bd1",
       "issue_count": 1,
       "recent_issue": {
         "title": "CNCF Banner Desynchronization Across Multi-Tab Sessions",
@@ -404,7 +404,7 @@
       "closed_count": 1
     },
     {
-      "name": "card, duplicate, divergent",
+      "name": "card, divergent, dec8",
       "issue_count": 1,
       "recent_issue": {
         "title": "Triple-duplicated dashboard card default functions with divergent card names",
@@ -511,16 +511,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
         "name": "Onboarding & Rewards",
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
         "name": "Authentication & Settings",

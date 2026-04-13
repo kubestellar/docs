@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-13T03:09:48.702Z",
+  "generated_at": "2026-04-13T06:48:44.772Z",
   "total_issues_opened": 67,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 13900,
@@ -82,7 +82,7 @@
       "closed_count": 3
     },
     {
-      "name": "tenant, architecture, connection",
+      "name": "tenant, architecture, card",
       "issue_count": 2,
       "recent_issue": {
         "title": "Questions about Tenant Architecture and similar cards",
@@ -138,7 +138,7 @@
       "closed_count": 1
     },
     {
-      "name": "usage, historical, gpus",
+      "name": "usage, gpus, historical",
       "issue_count": 1,
       "recent_issue": {
         "title": "feature: Historical view of Inventory of GPUs",
@@ -279,7 +279,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Title: killBackendProcess returns success when zero processes were killed",
+        "url": "https://github.com/kubestellar/console/issues/7264",
+        "repo": "console",
+        "topic_match": "pid, kc, cat"
+      },
+      {
+        "title": "Title: `gitStash` and `gitStashPop` use `exec.Command` with no timeout in the auto-update hot path",
+        "url": "https://github.com/kubestellar/console/issues/7210",
+        "repo": "console",
+        "topic_match": "update, suspect, setting"
+      }
+    ],
     "stretch": [
       {
         "name": "Security & RBAC",

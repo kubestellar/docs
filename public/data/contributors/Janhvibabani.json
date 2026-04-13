@@ -1,6 +1,6 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-04-13T03:09:48.720Z",
+  "generated_at": "2026-04-13T06:48:44.795Z",
   "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
   "total_points": 6250,
@@ -109,7 +109,7 @@
       "closed_count": 1
     },
     {
-      "name": "pull, redundancy, contribute",
+      "name": "pull, contribute, redundancy",
       "issue_count": 1,
       "recent_issue": {
         "title": "doc: Duplicate “Open a Pull Request” section in CONTRIBUTING.md",
@@ -150,6 +150,12 @@
         "url": "https://github.com/kubestellar/docs/issues/1422",
         "repo": "docs",
         "topic_match": "footer, year, copyright"
+      },
+      {
+        "title": "Title: Agent restart path uses `lsof` — Unix-only, silently broken on Windows",
+        "url": "https://github.com/kubestellar/console/issues/7263",
+        "repo": "console",
+        "topic_match": "windows, backslashes, separator"
       },
       {
         "title": "Marketplace Link Conflict Between Header and Footer",

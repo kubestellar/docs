@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-13T03:09:43.669Z",
+  "generated_at": "2026-04-13T06:48:38.560Z",
   "total_issues_opened": 282,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 83400,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, happen, error",
-      "issue_count": 207,
+      "issue_count": 209,
       "recent_issue": {
         "title": "getPlaylistVideos and getMediumPosts have cache stampede with no singleflight on cold cache",
         "url": "https://github.com/kubestellar/console/issues/7066",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 207
+      "closed_count": 209
     },
     {
       "name": "clusterrole, grant, opt",
@@ -235,7 +235,7 @@
       "closed_count": 1
     },
     {
-      "name": "broadcast, acquire, iterate",
+      "name": "broadcast, iterate, acquire",
       "issue_count": 1,
       "recent_issue": {
         "title": "Hub broadcast case releases RLock before iterating clients slice exposing it to concurrent modification",
@@ -431,7 +431,7 @@
       "closed_count": 1
     },
     {
-      "name": "consuming, stdin, child",
+      "name": "stdin, consuming, child",
       "issue_count": 1,
       "recent_issue": {
         "title": "MCP client send() blocks indefinitely holding mutex when child process stops consuming stdin",
@@ -445,12 +445,12 @@
       "closed_count": 1
     },
     {
-      "name": "protection, double, panic",
+      "name": "sleep, second, dc85a8",
       "issue_count": 1,
       "recent_issue": {
-        "title": "DeviceTracker.Stop() panics on double-close with no sync.Once protection",
-        "url": "https://github.com/kubestellar/console/issues/6684",
-        "created_at": "2026-04-11T22:05:34Z"
+        "title": "PredictionWorker initial sleep cannot be interrupted by Stop() delaying graceful shutdown",
+        "url": "https://github.com/kubestellar/console/issues/6682",
+        "created_at": "2026-04-11T22:04:40Z"
       },
       "repos": [
         "console"
@@ -459,12 +459,12 @@
       "closed_count": 1
     },
     {
-      "name": "sleep, second, stop",
+      "name": "timeout, path, handlechatmessage",
       "issue_count": 1,
       "recent_issue": {
-        "title": "PredictionWorker initial sleep cannot be interrupted by Stop() delaying graceful shutdown",
-        "url": "https://github.com/kubestellar/console/issues/6682",
-        "created_at": "2026-04-11T22:04:40Z"
+        "title": "handleChatMessage passes context.Background() with no timeout permanently blocking WebSocket goroutine",
+        "url": "https://github.com/kubestellar/console/issues/6678",
+        "created_at": "2026-04-11T22:04:14Z"
       },
       "repos": [
         "console"
@@ -571,7 +571,7 @@
       "closed_count": 1
     },
     {
-      "name": "debounce, keystroke, list",
+      "name": "keystroke, debounce, list",
       "issue_count": 1,
       "recent_issue": {
         "title": "KubescapeDetailModal, TrivyDetailModal, KyvernoDetailModal, ClusterLocations: search input missing debounce - full list re-filtered on every keystroke",
@@ -725,20 +725,6 @@
       "closed_count": 1
     },
     {
-      "name": "hardcodes, urls, detection",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "kagent/kagenti auto-detection hardcodes insecure HTTP URLs with fixed namespace and port",
-        "url": "https://github.com/kubestellar/console/issues/5352",
-        "created_at": "2026-04-07T21:22:02Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "a414fae, faf4, a4ad",
       "issue_count": 1,
       "recent_issue": {
@@ -781,7 +767,7 @@
       "closed_count": 1
     },
     {
-      "name": "authorization, agent, header",
+      "name": "authorization, header, cbfe0",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent fetch hooks send no Authorization header - silently breaks when KC_AGENT_TOKEN is set",
@@ -851,7 +837,7 @@
       "closed_count": 1
     },
     {
-      "name": "strand, onboarding, leave",
+      "name": "strand, onboarding, c97b",
       "issue_count": 1,
       "recent_issue": {
         "title": "Onboarding silently fails for real users leaving them stranded with no error message",
@@ -871,20 +857,6 @@
         "title": "TestClusterConnection has no default case for unknown authType allowing unauthenticated connections",
         "url": "https://github.com/kubestellar/console/issues/5316",
         "created_at": "2026-04-07T20:01:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "port, invalid, sscanf",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Silent fmt.Sscanf for PORT env var gives no warning on invalid value",
-        "url": "https://github.com/kubestellar/console/issues/5311",
-        "created_at": "2026-04-07T20:00:38Z"
       },
       "repos": [
         "console"
@@ -924,34 +896,22 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Access docs do not explicitly warn that Service port is 8080 (not 80)",
-        "url": "https://github.com/kubestellar/docs/issues/1398",
-        "repo": "docs",
-        "topic_match": "port, invalid, sscanf"
-      },
-      {
-        "title": "docs(console): port-forward example leaks background process (no cleanup)",
-        "url": "https://github.com/kubestellar/docs/issues/1414",
-        "repo": "docs",
-        "topic_match": "port, invalid, sscanf"
-      },
-      {
         "title": "card: Implement Artifact Hub monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",
         "repo": "console-marketplace",
         "topic_match": "hub, devmode, setjwtsecret"
       },
       {
-        "title": "Missing pre-port-forward diagnostic commands in docs",
-        "url": "https://github.com/kubestellar/docs/issues/1400",
-        "repo": "docs",
-        "topic_match": "port, invalid, sscanf"
-      },
-      {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
         "topic_match": "extract, ffb011, f6f"
+      },
+      {
+        "title": "Network / Metrics: Endpoint count incorrectly reflects number of services instead of actual endpoints",
+        "url": "https://github.com/kubestellar/console/issues/7126",
+        "repo": "console",
+        "topic_match": "filter, service, count"
       }
     ],
     "stretch": [
@@ -980,10 +940,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       }
     ]
   },

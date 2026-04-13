@@ -1,17 +1,17 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-13T03:08:56.208Z",
-  "total_issues_opened": 877,
+  "generated_at": "2026-04-13T06:47:32.048Z",
+  "total_issues_opened": 879,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3172100,
+  "total_points": 3180100,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 70.5,
-    "avg_per_day": 3.63,
+    "avg_per_week": 70.7,
+    "avg_per_day": 3.64,
     "by_day_of_week": [
-      104,
+      106,
       106,
       192,
       115,
@@ -24,8 +24,8 @@
       23,
       90,
       29,
-      40,
-      26,
+      41,
+      27,
       36,
       55,
       15,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-12T22:00:19.000Z"
+    "last_issue_at": "2026-04-13T05:30:42.000Z"
   },
   "topics": [
     {
@@ -69,11 +69,11 @@
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 155,
+      "issue_count": 157,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #614",
-        "url": "https://github.com/kubestellar/console/issues/6980",
-        "created_at": "2026-04-12T22:00:19Z"
+        "title": "🐛 2 test failure(s) in Coverage Suite run #620",
+        "url": "https://github.com/kubestellar/console/issues/7203",
+        "created_at": "2026-04-13T05:30:42Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 3,
-      "closed_count": 152
+      "closed_count": 154
     },
     {
       "name": "monitoring, card, step",
@@ -224,6 +224,21 @@
       "closed_count": 5
     },
     {
+      "name": "projects, alert, want",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "bug: multiple alerts of the same type and cluster get added to the alerts",
+        "url": "https://github.com/kubestellar/console/issues/1511",
+        "created_at": "2026-02-28T00:37:12Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 4
+    },
+    {
       "name": "nil, potential, panic",
       "issue_count": 3,
       "recent_issue": {
@@ -337,20 +352,6 @@
       "closed_count": 2
     },
     {
-      "name": "alert, dupe, notification",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: multiple alerts of the same type and cluster get added to the alerts",
-        "url": "https://github.com/kubestellar/console/issues/1511",
-        "created_at": "2026-02-28T00:37:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "cleanup, useeffect, ensure",
       "issue_count": 2,
       "recent_issue": {
@@ -388,20 +389,6 @@
       },
       "repos": [
         "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "projects, products, want",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "doc: need updates to content in https://github.com/kubestellar/docs/pull/640",
-        "url": "https://github.com/kubestellar/docs/issues/645",
-        "created_at": "2026-01-13T22:28:58Z"
-      },
-      "repos": [
-        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -491,7 +478,7 @@
       "closed_count": 1
     },
     {
-      "name": "apr, release, april",
+      "name": "apr, release, job",
       "issue_count": 1,
       "recent_issue": {
         "title": "🐛 Nightly/weekly releases failing silently since April 1",
@@ -561,7 +548,7 @@
       "closed_count": 1
     },
     {
-      "name": "guideline, aud, development",
+      "name": "guideline, card, development",
       "issue_count": 1,
       "recent_issue": {
         "title": "Many cards missing isRefreshing in useCardLoadingState",
@@ -589,7 +576,7 @@
       "closed_count": 1
     },
     {
-      "name": "healthcheck, dockerignore, hardening",
+      "name": "healthcheck, dockerignore, root",
       "issue_count": 1,
       "recent_issue": {
         "title": "Dockerfile hardening: root user, no healthcheck, no .dockerignore, kill -9 in scripts",
@@ -882,9 +869,9 @@
         "topic_match": "marketplace, home, assistant"
       },
       {
-        "title": "Title: Missing verification commands for Console and kc-agent health",
-        "url": "https://github.com/kubestellar/docs/issues/1404",
-        "repo": "docs",
+        "title": "Title: `KubectlProxy.Execute` has no command timeout — a hung kubectl call hangs the handler",
+        "url": "https://github.com/kubestellar/console/issues/7206",
+        "repo": "console",
         "topic_match": "kubectl, assist, interactive"
       }
     ],
@@ -968,7 +955,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 232
+      "issue_count": 234
     }
   ]
 }

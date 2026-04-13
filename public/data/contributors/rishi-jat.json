@@ -1,12 +1,12 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-13T03:09:47.317Z",
+  "generated_at": "2026-04-13T06:48:43.770Z",
   "total_issues_opened": 225,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 41850,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 7,
+  "rank": 8,
   "cadence": {
     "avg_per_week": 18.4,
     "avg_per_day": 1.14,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@rishi, jat, line",
-      "issue_count": 162,
+      "issue_count": 170,
       "recent_issue": {
         "title": "OAuth login failure (token_exchange_failed) lacks actionable diagnostics and guidance",
         "url": "https://github.com/kubestellar/console/issues/6933",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 23,
-      "closed_count": 139
+      "closed_count": 147
     },
     {
       "name": "event, analytics, day",
@@ -125,20 +125,6 @@
       "closed_count": 3
     },
     {
-      "name": "hook, order, render",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "CardRuntime violates React hook order when data hook is missing",
-        "url": "https://github.com/kubestellar/console/issues/2387",
-        "created_at": "2026-03-13T12:55:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
       "name": "noopener, rel, noreferrer",
       "issue_count": 3,
       "recent_issue": {
@@ -152,34 +138,6 @@
       ],
       "open_count": 0,
       "closed_count": 3
-    },
-    {
-      "name": "module, setinterval, poll",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "useActiveUsers module-level singleton polling never stops",
-        "url": "https://github.com/kubestellar/console/issues/1845",
-        "created_at": "2026-03-06T16:59:39Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "jsx, syntax, basemodal",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "ConfirmDialog.test.tsx has identical syntax error — missing render() call.",
-        "url": "https://github.com/kubestellar/console/issues/4632",
-        "created_at": "2026-04-04T21:20:46Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
     },
     {
       "name": "dompurify, svg, ts2307",
@@ -210,7 +168,7 @@
       "closed_count": 2
     },
     {
-      "name": "eval, unsafe, csp",
+      "name": "eval, csp, unsafe",
       "issue_count": 2,
       "recent_issue": {
         "title": "CSP includes unsafe-inline for script-src",
@@ -294,7 +252,7 @@
       "closed_count": 1
     },
     {
-      "name": "docs, mobile, cutoff",
+      "name": "docs, mobile, f958c",
       "issue_count": 1,
       "recent_issue": {
         "title": "Docs page layout breaks on mobile (text cutoff on left side)",
@@ -420,7 +378,7 @@
       "closed_count": 1
     },
     {
-      "name": "cast, mismatch, bypass",
+      "name": "cast, mismatch, f73fd30f",
       "issue_count": 1,
       "recent_issue": {
         "title": "16 TypeScript as-any casts bypass type safety",
@@ -476,7 +434,7 @@
       "closed_count": 1
     },
     {
-      "name": "dockerignore, bin, build",
+      "name": "dockerignore, build, bin",
       "issue_count": 1,
       "recent_issue": {
         "title": "Missing .dockerignore file causes bloated build context",
@@ -532,7 +490,7 @@
       "closed_count": 1
     },
     {
-      "name": "p., lock, save",
+      "name": "p., save, lock",
       "issue_count": 1,
       "recent_issue": {
         "title": "PersistenceStore Save() uses read lock for write operation",
@@ -619,6 +577,12 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "Title: Agent restart path uses `lsof` — Unix-only, silently broken on Windows",
+        "url": "https://github.com/kubestellar/console/issues/7263",
+        "repo": "console",
+        "topic_match": "windows, setpgid, unix"
+      },
+      {
         "title": "Architecture Page Has No Diagrams Visible in Next.js Rendering",
         "url": "https://github.com/kubestellar/docs/issues/1439",
         "repo": "docs",
@@ -629,6 +593,18 @@
         "url": "https://github.com/kubestellar/docs/issues/1429",
         "repo": "docs",
         "topic_match": "style, mkdocs, attach"
+      },
+      {
+        "title": "Title: handlePredictionsAnalyze decodes request body with no io.LimitReader — DoS via large body",
+        "url": "https://github.com/kubestellar/console/issues/7235",
+        "repo": "console",
+        "topic_match": "@rishi, jat, line"
+      },
+      {
+        "title": "Title: handleAutoUpdateConfig POST decodes body without io.LimitReader",
+        "url": "https://github.com/kubestellar/console/issues/7268",
+        "repo": "console",
+        "topic_match": "@rishi, jat, line"
       }
     ],
     "stretch": [

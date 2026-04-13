@@ -1,17 +1,17 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-13T03:09:47.972Z",
-  "total_issues_opened": 114,
+  "generated_at": "2026-04-13T06:48:40.101Z",
+  "total_issues_opened": 169,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-  "total_points": 30700,
+  "total_points": 47200,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 9,
+  "rank": 7,
   "cadence": {
-    "avg_per_week": 9.5,
-    "avg_per_day": 5.69,
+    "avg_per_week": 14.1,
+    "avg_per_day": 6.9,
     "by_day_of_week": [
-      16,
+      71,
       3,
       20,
       8,
@@ -25,8 +25,8 @@
       0,
       0,
       0,
-      0,
-      0,
+      36,
+      19,
       0,
       0,
       15,
@@ -45,29 +45,29 @@
       0,
       0
     ],
-    "current_streak_weeks": 3,
-    "longest_streak_weeks": 3,
+    "current_streak_weeks": 4,
+    "longest_streak_weeks": 4,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-19T18:23:23.000Z",
-    "last_issue_at": "2026-04-08T19:27:36.000Z"
+    "last_issue_at": "2026-04-13T06:15:05.000Z"
   },
   "topics": [
     {
-      "name": "@xxsuryanshxx, card, nil",
-      "issue_count": 94,
+      "name": "@xxsuryanshxx, agent, pkg",
+      "issue_count": 146,
       "recent_issue": {
-        "title": "### Issue 20: JSON decode failure silently returns empty array in kagenti_provider client (`kagenti_provider/client.go`)",
-        "url": "https://github.com/kubestellar/console/issues/5572",
-        "created_at": "2026-04-08T19:27:36Z"
+        "title": "Title: UpdateChecker.Status holds uc.mu across a 15s network git fetch",
+        "url": "https://github.com/kubestellar/console/issues/7282",
+        "created_at": "2026-04-13T06:15:05Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 94
+      "open_count": 30,
+      "closed_count": 116
     },
     {
-      "name": "tail, log, interact",
+      "name": "tail, log, fake",
       "issue_count": 2,
       "recent_issue": {
         "title": "Incomplete Implementation: Logs DrillDown feature is hardcoded placeholder",
@@ -81,7 +81,7 @@
       "closed_count": 2
     },
     {
-      "name": "persistence, hardcodes, endpoint",
+      "name": "hardcodes, persistence, endpoint",
       "issue_count": 2,
       "recent_issue": {
         "title": "Persistence Sync API endpoint hardcodes 501 Not Implemented",
@@ -107,6 +107,48 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "http, listenandserve, addr",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Title: net/http ListenAndServe started with no timeouts (Slowloris)",
+        "url": "https://github.com/kubestellar/console/issues/7262",
+        "created_at": "2026-04-13T06:11:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "subcommand, args, validateargs",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Title: validateArgs config-subcommand check is bypassable by placing a flag before the subcommand",
+        "url": "https://github.com/kubestellar/console/issues/7261",
+        "created_at": "2026-04-13T06:11:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "activechatctxsmu, dryrunsessionsmu, server",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Title: Lock-ordering deadlock between activeChatCtxsMu and dryRunSessionsMu in server_ai.go and server.go",
+        "url": "https://github.com/kubestellar/console/issues/7169",
+        "created_at": "2026-04-13T05:18:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "retain, timestamps, snapshot",
@@ -151,7 +193,7 @@
       "closed_count": 1
     },
     {
-      "name": "prediction, cardinality, p.",
+      "name": "cardinality, prediction, p.",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 4: Unbounded Prometheus label cardinality from AI predictions (`prediction_metrics.go`)",
@@ -193,12 +235,12 @@
       "closed_count": 1
     },
     {
-      "name": "plaintext, smtp, send",
+      "name": "key, authorization, header",
       "issue_count": 1,
       "recent_issue": {
-        "title": "### Issue 15: SMTP credentials sent in plaintext without enforcing TLS in `email.go`",
-        "url": "https://github.com/kubestellar/console/issues/4730",
-        "created_at": "2026-04-05T09:09:02Z"
+        "title": "### Issue 6: Unvalidated empty API key sent in Authorization header (`provider_openai_compat.go`)",
+        "url": "https://github.com/kubestellar/console/issues/4798",
+        "created_at": "2026-04-05T13:38:22Z"
       },
       "repos": [
         "console"
@@ -207,12 +249,12 @@
       "closed_count": 1
     },
     {
-      "name": "process, zombie, kill",
+      "name": "plaintext, smtp, send",
       "issue_count": 1,
       "recent_issue": {
-        "title": "### Issue 12: Zombie process leak in MCP Client `Stop` method in `client.go`",
-        "url": "https://github.com/kubestellar/console/issues/4727",
-        "created_at": "2026-04-05T09:08:15Z"
+        "title": "### Issue 15: SMTP credentials sent in plaintext without enforcing TLS in `email.go`",
+        "url": "https://github.com/kubestellar/console/issues/4730",
+        "created_at": "2026-04-05T09:09:02Z"
       },
       "repos": [
         "console"
@@ -387,7 +429,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 110
+      "issue_count": 165
     }
   ]
 }

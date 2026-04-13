@@ -1,6 +1,6 @@
 {
   "login": "oksaumya",
-  "generated_at": "2026-04-13T03:09:48.718Z",
+  "generated_at": "2026-04-13T06:48:44.792Z",
   "total_issues_opened": 42,
   "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
   "total_points": 12150,
@@ -47,7 +47,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 5,
-    "trend": "slowing_down",
+    "trend": "steady",
     "first_issue_at": "2025-07-08T18:27:03.000Z",
     "last_issue_at": "2026-03-19T17:19:11.000Z"
   },
@@ -95,7 +95,7 @@
       "closed_count": 5
     },
     {
-      "name": "okay, response, docsnavbar",
+      "name": "okay, docsnavbar, response",
       "issue_count": 2,
       "recent_issue": {
         "title": "🐛 Console Error: \"Network response was not okay\" in DocsNavbar GitHub stats fetch",
@@ -109,7 +109,7 @@
       "closed_count": 2
     },
     {
-      "name": "a2a, projects, kubeflex",
+      "name": "a2a, kubeflex, projects",
       "issue_count": 2,
       "recent_issue": {
         "title": "Fix the broken link of a2a and kubeflex in Projects",

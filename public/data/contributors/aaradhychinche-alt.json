@@ -1,17 +1,17 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-13T03:09:37.040Z",
-  "total_issues_opened": 280,
+  "generated_at": "2026-04-13T06:48:32.055Z",
+  "total_issues_opened": 363,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 84750,
+  "total_points": 107050,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 23.3,
-    "avg_per_day": 5.92,
+    "avg_per_week": 30.3,
+    "avg_per_day": 7.55,
     "by_day_of_week": [
-      29,
+      112,
       17,
       16,
       15,
@@ -24,9 +24,9 @@
       0,
       0,
       0,
-      19,
-      40,
-      33,
+      37,
+      90,
+      48,
       12,
       17,
       19,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-12T12:46:06.000Z"
+    "last_issue_at": "2026-04-13T06:34:26.000Z"
   },
   "topics": [
     {
-      "name": "@aaradhychinche, alt, reproduce",
-      "issue_count": 258,
+      "name": "@aaradhychinche, alt, cluster",
+      "issue_count": 343,
       "recent_issue": {
-        "title": "What happened:",
-        "url": "https://github.com/kubestellar/console/issues/6916",
-        "created_at": "2026-04-12T12:46:06Z"
+        "title": "Runbook / Async: No request versioning allows stale responses to overwrite newer state",
+        "url": "https://github.com/kubestellar/console/issues/7300",
+        "created_at": "2026-04-13T06:34:26Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 258
+      "open_count": 32,
+      "closed_count": 311
     },
     {
       "name": "kube, game, craft",
@@ -82,26 +82,12 @@
       "closed_count": 4
     },
     {
-      "name": "runbook, diagnosis, evidence",
+      "name": "utilization, value, e809a130",
       "issue_count": 1,
       "recent_issue": {
-        "title": "What happened:",
-        "url": "https://github.com/kubestellar/console/issues/6915",
-        "created_at": "2026-04-12T12:45:55Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "loadbalancer, ip, external",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "LoadBalancer external IP shown before provisioning is complete",
-        "url": "https://github.com/kubestellar/console/issues/6153",
-        "created_at": "2026-04-10T15:33:22Z"
+        "title": "Nodes dashboard shows stale utilization when actual value becomes zero",
+        "url": "https://github.com/kubestellar/console/issues/6107",
+        "created_at": "2026-04-10T13:32:58Z"
       },
       "repos": [
         "console"
@@ -124,12 +110,12 @@
       "closed_count": 1
     },
     {
-      "name": "blocked, resolution, flow",
+      "name": "analysis, ai, failure",
       "issue_count": 1,
       "recent_issue": {
-        "title": "## 🐛 bug: resolution flow bypasses blocked-state validation",
-        "url": "https://github.com/kubestellar/console/issues/5934",
-        "created_at": "2026-04-10T05:52:04Z"
+        "title": "📝 issue: AI analysis failures are silent",
+        "url": "https://github.com/kubestellar/console/issues/5945",
+        "created_at": "2026-04-10T06:44:48Z"
       },
       "repos": [
         "console"
@@ -152,12 +138,12 @@
       "closed_count": 1
     },
     {
-      "name": "unreadable, overlap, panel",
+      "name": "banner, warning, kubeconfig",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: cluster labels overlap and become unreadable when AI chat panel is opened",
-        "url": "https://github.com/kubestellar/console/issues/5396",
-        "created_at": "2026-04-08T05:02:50Z"
+        "title": "## 🐛 bug: stale kubeconfig warning banner never appears",
+        "url": "https://github.com/kubestellar/console/issues/5921",
+        "created_at": "2026-04-10T05:40:44Z"
       },
       "repos": [
         "console"
@@ -166,12 +152,12 @@
       "closed_count": 1
     },
     {
-      "name": "newly, dashboard, search",
+      "name": "unreadable, overlap, panel",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: newly created dashboard does not appear in dashboard list or search",
-        "url": "https://github.com/kubestellar/console/issues/5177",
-        "created_at": "2026-04-07T05:41:13Z"
+        "title": "bug: cluster labels overlap and become unreadable when AI chat panel is opened",
+        "url": "https://github.com/kubestellar/console/issues/5396",
+        "created_at": "2026-04-08T05:02:50Z"
       },
       "repos": [
         "console"
@@ -242,20 +228,6 @@
         "title": "bug: useClusterCapabilities does not react to enabled flag changes due to stale closure",
         "url": "https://github.com/kubestellar/console/issues/4695",
         "created_at": "2026-04-05T08:05:25Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "glow, bleed, adjacent",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: filter icon glow overlaps adjacent header controls causing visual bleed",
-        "url": "https://github.com/kubestellar/console/issues/4380",
-        "created_at": "2026-04-03T08:50:35Z"
       },
       "repos": [
         "console"
@@ -363,16 +335,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },
@@ -423,7 +395,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 247
+      "issue_count": 330
     }
   ]
 }

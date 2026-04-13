@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-13T03:09:48.729Z",
+  "generated_at": "2026-04-13T06:48:44.808Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 3850,
@@ -81,7 +81,7 @@
       "closed_count": 2
     },
     {
-      "name": "eks, host, homepage",
+      "name": "eks, homepage, host",
       "issue_count": 2,
       "recent_issue": {
         "title": "Add AWS EKS Cloud Installation Path to Homepage",
@@ -95,7 +95,7 @@
       "closed_count": 2
     },
     {
-      "name": "compliance, kind, tab",
+      "name": "compliance, kind, edb7",
       "issue_count": 1,
       "recent_issue": {
         "title": "Bug: Data Compliance Tab is Hardcoded (Not Dynamic in Kind Cluster)",
@@ -137,7 +137,7 @@
       "closed_count": 1
     },
     {
-      "name": "declarative, gitops, restart",
+      "name": "declarative, gitops, argo",
       "issue_count": 1,
       "recent_issue": {
         "title": "Support Declarative GitOps Integration for Deployment Restart",

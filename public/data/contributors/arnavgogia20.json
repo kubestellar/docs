@@ -1,12 +1,12 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-13T03:09:47.545Z",
+  "generated_at": "2026-04-13T06:48:44.006Z",
   "total_issues_opened": 91,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 32800,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 8,
+  "rank": 9,
   "cadence": {
     "avg_per_week": 7.6,
     "avg_per_day": 3.05,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "page, @arnavgogia20, md",
-      "issue_count": 48,
+      "issue_count": 49,
       "recent_issue": {
         "title": "Marketplace Link Conflict Between Header and Footer",
         "url": "https://github.com/kubestellar/docs/issues/1450",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 29,
-      "closed_count": 19
+      "closed_count": 20
     },
     {
       "name": "func, fiber, map",
@@ -194,20 +194,6 @@
       "closed_count": 1
     },
     {
-      "name": "debouncing, f7abf9d91, db0",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Mission Control persistState Fires on Every State Change Without Debouncing",
-        "url": "https://github.com/kubestellar/console/issues/6468",
-        "created_at": "2026-04-11T15:41:35Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "mergeprojects, payloadproject, refinement",
       "issue_count": 1,
       "recent_issue": {
@@ -278,7 +264,7 @@
       "closed_count": 1
     },
     {
-      "name": "overwrite, condition, race",
+      "name": "overwrite, condition, d792f118",
       "issue_count": 1,
       "recent_issue": {
         "title": "selectCardMission Race Condition : Stale Closure Can Overwrite Fresh Navigation",
@@ -404,7 +390,7 @@
       "closed_count": 1
     },
     {
-      "name": "iterate, websocket, slow",
+      "name": "websocket, iterate, slow",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent WebSocket BroadcastToClients Holds wsMux While Iterating : Slow Client Blocks All Broadcasts",
@@ -432,7 +418,7 @@
       "closed_count": 1
     },
     {
-      "name": "exec, b1f91661, cb8",
+      "name": "exec, b1f91661, bb81",
       "issue_count": 1,
       "recent_issue": {
         "title": "Exec WebSocket Uses context.Background() : Remote Sessions Cannot Be Cancelled",
@@ -517,7 +503,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Title: Importing a kubeconfig silently merges exec AuthInfo plugins (RCE vector)",
+        "url": "https://github.com/kubestellar/console/issues/7260",
+        "repo": "console",
+        "topic_match": "exec, b1f91661, bb81"
+      }
+    ],
     "stretch": [
       {
         "name": "Charts & Visualizations",

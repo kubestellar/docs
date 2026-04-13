@@ -1,17 +1,17 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-13T03:09:11.618Z",
-  "total_issues_opened": 373,
+  "generated_at": "2026-04-13T06:48:15.914Z",
+  "total_issues_opened": 392,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 123250,
+  "total_points": 128950,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 2,
+  "rank": 3,
   "cadence": {
-    "avg_per_week": 31.1,
-    "avg_per_day": 6.13,
+    "avg_per_week": 32.7,
+    "avg_per_day": 6.33,
     "by_day_of_week": [
-      25,
+      44,
       29,
       46,
       57,
@@ -24,9 +24,9 @@
       0,
       0,
       10,
-      42,
-      26,
-      17,
+      45,
+      37,
+      22,
       11,
       7,
       5,
@@ -49,51 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-12T05:39:10.000Z"
+    "last_issue_at": "2026-04-13T06:15:30.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 309,
+      "issue_count": 320,
       "recent_issue": {
-        "title": "Sign in breaking in dev mode",
-        "url": "https://github.com/kubestellar/console/issues/6850",
-        "created_at": "2026-04-12T05:24:13Z"
+        "title": "Unnecessary use of fmt.Sprintf in kubectl_test.go",
+        "url": "https://github.com/kubestellar/console/issues/7283",
+        "created_at": "2026-04-13T06:15:30Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 309
-    },
-    {
-      "name": "concurrency, ts, task",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Known shared-mutation hazards inside concurrency callbacks (ratcheted technical debt)",
-        "url": "https://github.com/kubestellar/console/issues/6857",
-        "created_at": "2026-04-12T05:39:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "date, invalid, nan",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Date renderers can leak Invalid Date text instead of fallback.",
-        "url": "https://github.com/kubestellar/console/issues/6711",
-        "created_at": "2026-04-11T22:23:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
+      "open_count": 10,
+      "closed_count": 310
     },
     {
       "name": "notifiers, concurrent, mutex",
@@ -105,6 +77,21 @@
       },
       "repos": [
         "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "ksc, helm, ccc5ee",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Documented link for helm release is broken",
+        "url": "https://github.com/kubestellar/console/issues/5747",
+        "created_at": "2026-04-09T14:59:11Z"
+      },
+      "repos": [
+        "console",
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -152,6 +139,48 @@
       "closed_count": 2
     },
     {
+      "name": "customization, reordering, e2257630",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Reordering Cards Does Not Count As Customization",
+        "url": "https://github.com/kubestellar/console/issues/7255",
+        "created_at": "2026-04-13T05:56:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sample, booleans, dd67c24b",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ready Sample Values Are Strings, Not Booleans",
+        "url": "https://github.com/kubestellar/console/issues/7193",
+        "created_at": "2026-04-13T05:27:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "debt, usecacheddata, ts",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Known shared-mutation hazards inside concurrency callbacks (ratcheted technical debt)",
+        "url": "https://github.com/kubestellar/console/issues/6857",
+        "created_at": "2026-04-12T05:39:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "redo, useundoredo, undo",
       "issue_count": 1,
       "recent_issue": {
@@ -166,7 +195,7 @@
       "closed_count": 1
     },
     {
-      "name": "useaimode, invalid, e843",
+      "name": "useaimode, e843, a4f2",
       "issue_count": 1,
       "recent_issue": {
         "title": "Invalid persisted AI mode can crash hook consumers",
@@ -180,7 +209,35 @@
       "closed_count": 1
     },
     {
-      "name": "tabledata, map, ca98",
+      "name": "replacement, placeholder, occurrence",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Placeholder replacement only handles first occurrence of each key in title.",
+        "url": "https://github.com/kubestellar/console/issues/6720",
+        "created_at": "2026-04-11T22:29:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "tab, b6996, b74c4d09befc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Active tab state can become invalid when modal definition/tabs change.",
+        "url": "https://github.com/kubestellar/console/issues/6719",
+        "created_at": "2026-04-11T22:29:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "tabledata, ca98, fedcf89",
       "issue_count": 1,
       "recent_issue": {
         "title": "able section can crash when configured data key is not an array.",
@@ -236,7 +293,21 @@
       "closed_count": 1
     },
     {
-      "name": "cardruntime, runtime, a3f121",
+      "name": "jsx, codegenerator, f882711",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "generated JSX can be code-injected/broken by unescaped title interpolation.",
+        "url": "https://github.com/kubestellar/console/issues/6705",
+        "created_at": "2026-04-11T22:18:02Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "cardruntime, a3f121, ae5",
       "issue_count": 1,
       "recent_issue": {
         "title": "CardRuntime can violate React Rules of Hooks when a data hook is registered/unregistered at runtime.",
@@ -278,12 +349,54 @@
       "closed_count": 1
     },
     {
-      "name": "constructor, escape, bypassable",
+      "name": "constructor, escape, c8d3226f",
       "issue_count": 1,
       "recent_issue": {
         "title": "Tier-2 sandbox is bypassable via Function-constructor escape.",
         "url": "https://github.com/kubestellar/console/issues/6676",
         "created_at": "2026-04-11T22:03:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "workerrpc, worker, reject",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "worker RPC can leave callers hanging if worker crashes.",
+        "url": "https://github.com/kubestellar/console/issues/6673",
+        "created_at": "2026-04-11T22:01:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "worker, ea0274e, b40a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Shutdown responsiveness bug in prediction worker startup delay",
+        "url": "https://github.com/kubestellar/console/issues/6652",
+        "created_at": "2026-04-11T21:40:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "stopch, consolewatcher, e18d61a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ConsoleWatcher cannot be safely restarted after Stop",
+        "url": "https://github.com/kubestellar/console/issues/6472",
+        "created_at": "2026-04-11T15:46:51Z"
       },
       "repos": [
         "console"
@@ -368,6 +481,20 @@
         "title": "AI diagnosis loading indicator can end too early",
         "url": "https://github.com/kubestellar/console/issues/5714",
         "created_at": "2026-04-09T11:26:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "searchdropdown, overflow, bfc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Search key handlers can duplicate on mobile overflow",
+        "url": "https://github.com/kubestellar/console/issues/5711",
+        "created_at": "2026-04-09T11:01:46Z"
       },
       "repos": [
         "console"
@@ -502,7 +629,7 @@
       "closed_count": 1
     },
     {
-      "name": "kill, sh, process",
+      "name": "kill, sh, port",
       "issue_count": 1,
       "recent_issue": {
         "title": "Broad port-kill logic can terminate unrelated local processes",
@@ -578,6 +705,20 @@
         "title": "Binary auto-update ignores critical filesystem errors",
         "url": "https://github.com/kubestellar/console/issues/4262",
         "created_at": "2026-04-02T16:41:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "t., nil, devicetracker",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Nil-pointer crash path in DeviceTracker when k8s client init fails",
+        "url": "https://github.com/kubestellar/console/issues/4261",
+        "created_at": "2026-04-02T16:40:49Z"
       },
       "repos": [
         "console"
@@ -796,21 +937,7 @@
       "closed_count": 1
     },
     {
-      "name": "backendport, s., a96745ca",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "backendURL() ignores BackendPort",
-        "url": "https://github.com/kubestellar/console/issues/3362",
-        "created_at": "2026-03-24T04:03:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "invalid, mess, weird",
+      "name": "mess, invalid, weird",
       "issue_count": 1,
       "recent_issue": {
         "title": "clicking submit button on invalid feature requests gives a messed up UI",
@@ -833,6 +960,20 @@
       },
       "repos": [
         "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "unclear, kc, agent",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "kc-agent requirement unclear in Kubernetes setup",
+        "url": "https://github.com/kubestellar/docs/issues/1360",
+        "created_at": "2026-04-08T17:07:07Z"
+      },
+      "repos": [
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 1
@@ -869,16 +1010,34 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
-        "url": "https://github.com/kubestellar/console/issues/4189",
+        "title": "Runbook / Persistence: Diagnosis results are never written back to alert after mission completion",
+        "url": "https://github.com/kubestellar/console/issues/7289",
         "repo": "console",
-        "topic_match": "playwright, script, sh"
+        "topic_match": "diagnosis, cd36eaca, c5e"
       },
       {
-        "title": "docs(console): port-forward example leaks background process (no cleanup)",
-        "url": "https://github.com/kubestellar/docs/issues/1414",
+        "title": "Runbook / Lifecycle: Diagnosis results are not reconciled back to alert model after mission completion",
+        "url": "https://github.com/kubestellar/console/issues/7299",
+        "repo": "console",
+        "topic_match": "diagnosis, cd36eaca, c5e"
+      },
+      {
+        "title": "Missing high-level architecture explanation for multi-cluster + kc-agent model",
+        "url": "https://github.com/kubestellar/docs/issues/1409",
         "repo": "docs",
-        "topic_match": "kill, sh, process"
+        "topic_match": "unclear, kc, agent"
+      },
+      {
+        "title": "Deployment / Validation: Launch allowed when all clusters are excluded leaving projects unassigned",
+        "url": "https://github.com/kubestellar/console/issues/7190",
+        "repo": "console",
+        "topic_match": "launch, phase, e1a08df4"
+      },
+      {
+        "title": "Access docs do not explicitly warn that Service port is 8080 (not 80)",
+        "url": "https://github.com/kubestellar/docs/issues/1398",
+        "repo": "docs",
+        "topic_match": "ksc, helm, ccc5ee"
       }
     ],
     "stretch": [
@@ -907,10 +1066,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },
@@ -961,7 +1120,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 282
+      "issue_count": 301
     }
   ]
 }

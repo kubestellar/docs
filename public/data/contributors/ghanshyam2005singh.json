@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-13T03:09:48.455Z",
+  "generated_at": "2026-04-13T06:48:44.514Z",
   "total_issues_opened": 77,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 23500,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "mission, ai, @ghanshyam2005singh",
-      "issue_count": 56,
+      "issue_count": 58,
       "recent_issue": {
         "title": "Mission count mismatch between AI Missions list and mission chat view",
         "url": "https://github.com/kubestellar/console/issues/6137",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 56
+      "closed_count": 58
     },
     {
       "name": "screenshot, report, @ghanshyam2005singh",
@@ -89,20 +89,6 @@
         "title": "GitHub Action for screenshot cleanup runs on forked repositories causing unwanted commits",
         "url": "https://github.com/kubestellar/console/issues/5474",
         "created_at": "2026-04-08T11:23:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "collapse, sidebar, popup",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Sidebar collapse and pin icons appear above floating popup (z-index issue)",
-        "url": "https://github.com/kubestellar/console/issues/3636",
-        "created_at": "2026-03-26T10:23:09Z"
       },
       "repos": [
         "console"
@@ -216,6 +202,12 @@
         "url": "https://github.com/kubestellar/docs/issues/1433",
         "repo": "docs",
         "topic_match": "install, theme, marketplace"
+      },
+      {
+        "title": "Title: `parseEnrichmentResponse` silently returns empty enrichments when JSON lacks the `enrichments` key",
+        "url": "https://github.com/kubestellar/console/issues/7208",
+        "repo": "console",
+        "topic_match": "model, provider, openai"
       },
       {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",

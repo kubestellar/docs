@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-13T03:09:48.140Z",
+  "generated_at": "2026-04-13T06:48:44.198Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -53,32 +53,18 @@
   },
   "topics": [
     {
-      "name": "vcluster, api, redirect",
-      "issue_count": 11,
+      "name": "api, @arpit529srivastava, vcluster",
+      "issue_count": 36,
       "recent_issue": {
-        "title": "Regression test coverage for vcluster API failures in nightly pipeline",
-        "url": "https://github.com/kubestellar/console/issues/4144",
-        "created_at": "2026-04-01T13:17:49Z"
+        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
+        "url": "https://github.com/kubestellar/console/issues/6512",
+        "created_at": "2026-04-11T16:14:10Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 11
-    },
-    {
-      "name": "deployment, statstype, config",
-      "issue_count": 8,
-      "recent_issue": {
-        "title": "CI/CD stats type mismatch between config and rendered page",
-        "url": "https://github.com/kubestellar/console/issues/2841",
-        "created_at": "2026-03-17T19:55:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 8
+      "closed_count": 36
     },
     {
       "name": "ss, testing, @arpit529srivastava",
@@ -107,34 +93,6 @@
       ],
       "open_count": 0,
       "closed_count": 4
-    },
-    {
-      "name": "mcs, crds, topology",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "ServiceExport / ServiceImport listing silently swallows ALL errors (including auth/network) by treating every error as \"CRD not installed\"",
-        "url": "https://github.com/kubestellar/console/issues/6510",
-        "created_at": "2026-04-11T16:13:01Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "deadline, second, cluster",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "probeAPIServer uses a 5-second TCP timeout per cluster during GetClusterHealth, but health is fetched for ALL clusters in GetAllClusterHealth — total wall-clock is unbounded with no global deadline",
-        "url": "https://github.com/kubestellar/console/issues/6506",
-        "created_at": "2026-04-11T16:09:52Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
     },
     {
       "name": "theme, light, browser",
@@ -180,20 +138,6 @@
       "closed_count": 3
     },
     {
-      "name": "namespaces, getaccessiblenamespaces, common",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
-        "url": "https://github.com/kubestellar/console/issues/6512",
-        "created_at": "2026-04-11T16:14:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "upload, screenshots, contribute",
       "issue_count": 2,
       "recent_issue": {
@@ -208,40 +152,12 @@
       "closed_count": 2
     },
     {
-      "name": "groupname, group, deploy",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Cluster Group Bulk-Sync Bypasses K8s Node Labeling",
-        "url": "https://github.com/kubestellar/console/issues/3149",
-        "created_at": "2026-03-22T11:24:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "drill, node, gpunodedrilldown",
       "issue_count": 2,
       "recent_issue": {
         "title": "GPU Type Incorrectly Formatted or Blank in drill-down",
         "url": "https://github.com/kubestellar/console/issues/3030",
         "created_at": "2026-03-20T15:13:15Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "base, url, api",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Frontend API requests fallback to localhost in deployed environments",
-        "url": "https://github.com/kubestellar/console/issues/2825",
-        "created_at": "2026-03-17T16:48:33Z"
       },
       "repos": [
         "console"
@@ -335,20 +251,6 @@
       "closed_count": 1
     },
     {
-      "name": "unreachable, available, capability",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Deployment capabilities mark unreachable clusters as available=true",
-        "url": "https://github.com/kubestellar/console/issues/4139",
-        "created_at": "2026-04-01T13:10:32Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "tour, blink, guide",
       "issue_count": 1,
       "recent_issue": {
@@ -419,34 +321,6 @@
       "closed_count": 1
     },
     {
-      "name": "aggressive, bad, fabe5265",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Overly Aggressive 400 Bad Requests on Base API Routes (/api/mcp/custom-resources & /api/gitops/helm-history)",
-        "url": "https://github.com/kubestellar/console/issues/3144",
-        "created_at": "2026-03-22T11:07:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "tracking, boot, fcad",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Background Health Aggregation Race Condition on Boot (/api/mcp/clusters)",
-        "url": "https://github.com/kubestellar/console/issues/3143",
-        "created_at": "2026-03-22T11:07:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "helm, host, release",
       "issue_count": 1,
       "recent_issue": {
@@ -467,20 +341,6 @@
         "title": "Inconsistent JSON Schema in /api/mcp/nvidia-operators",
         "url": "https://github.com/kubestellar/console/issues/3138",
         "created_at": "2026-03-22T11:03:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "d8bb9cc0, d3f, e84bf59d5b00",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Global Role-Based Access Control (RBAC) Escalation via API",
-        "url": "https://github.com/kubestellar/console/issues/3137",
-        "created_at": "2026-03-22T11:02:45Z"
       },
       "repos": [
         "console"
@@ -573,40 +433,26 @@
       "closed_count": 1
     },
     {
-      "name": "deploy, emit, result",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Deploy failure path does not emit terminal deploy result event",
-        "url": "https://github.com/kubestellar/console/issues/2876",
-        "created_at": "2026-03-18T11:39:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "source, metadata, cluster",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Wrong source-cluster metadata is written on deployed resources",
-        "url": "https://github.com/kubestellar/console/issues/2874",
-        "created_at": "2026-03-18T11:35:37Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "reward, org, repo",
       "issue_count": 1,
       "recent_issue": {
         "title": "Feedback and rewards default targets are hardcoded to kubestellar repositories",
         "url": "https://github.com/kubestellar/console/issues/2826",
         "created_at": "2026-03-17T16:53:55Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "github, githubproxyapibase, b9c70",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Hardcoded githubProxyAPIBase prevents GitHub Enterprise Server compatibility",
+        "url": "https://github.com/kubestellar/console/issues/2821",
+        "created_at": "2026-03-17T15:20:03Z"
       },
       "repos": [
         "console"
@@ -666,10 +512,28 @@
         "topic_match": "markdown, syntax, mkdocs"
       },
       {
+        "title": "Title: handleDeviceInventory skips validateToken — edge device inventory readable without auth",
+        "url": "https://github.com/kubestellar/console/issues/7228",
+        "repo": "console",
+        "topic_match": "sort, inventory, device"
+      },
+      {
+        "title": "Deployment / Validation: Readiness warnings do not block deployment execution",
+        "url": "https://github.com/kubestellar/console/issues/7168",
+        "repo": "console",
+        "topic_match": "api, @arpit529srivastava, vcluster"
+      },
+      {
         "title": "Hosted demo limitations are not presented as a strict capability boundary",
         "url": "https://github.com/kubestellar/docs/issues/1401",
         "repo": "docs",
         "topic_match": "helm, host, release"
+      },
+      {
+        "title": "Deployment / Cluster Selection: Unassigned projects silently fallback to \"default\" cluster during launch",
+        "url": "https://github.com/kubestellar/console/issues/7164",
+        "repo": "console",
+        "topic_match": "api, @arpit529srivastava, vcluster"
       }
     ],
     "stretch": [
@@ -692,16 +556,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       }
     ]
   },

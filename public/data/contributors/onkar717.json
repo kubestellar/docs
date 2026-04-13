@@ -1,6 +1,6 @@
 {
   "login": "onkar717",
-  "generated_at": "2026-04-13T03:09:48.725Z",
+  "generated_at": "2026-04-13T06:48:44.802Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/144542684?v=4",
   "total_points": 4350,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "ready, slack, bar",
+      "name": "slack, ready, bar",
       "issue_count": 4,
       "recent_issue": {
         "title": "bug: The links in Ready to Get Started? for Explore Documentation are broken or need to update",
