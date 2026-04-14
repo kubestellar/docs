@@ -15,6 +15,7 @@ export default function Navbar() {
   const [isCommunityOpen, setIsCommunityOpen] = useState(false);
   const [isGithubOpen, setIsGithubOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const langSwitcherCloseHandlerRef = useRef<((e: Event) => void) | null>(null);
   // Fallback values shown until shields.io responds.
   const [githubStats, setGithubStats] = useState({
     stars: "30",
@@ -60,11 +61,7 @@ export default function Navbar() {
             });
 
             // Close language switcher when hovering other dropdowns
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            if (typeof (window as any).closeLangSwitcher === "function") {
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              (window as any).closeLangSwitcher();
-            }
+            window.dispatchEvent(new CustomEvent("close-lang-switcher"));
 
             // Ensure menu is visible
             menu.style.display = "block";
@@ -133,11 +130,7 @@ export default function Navbar() {
           });
 
           // Also close language switcher
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          if (typeof (window as any).closeLangSwitcher === "function") {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (window as any).closeLangSwitcher();
-          }
+          window.dispatchEvent(new CustomEvent("close-lang-switcher"));
 
           setIsDropdownOpen(false);
         }
@@ -308,9 +301,10 @@ export default function Navbar() {
           }
         };
 
-        // Add method to global scope for other dropdowns to call
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (window as any).closeLangSwitcher = closeLangSwitcher;
+        // Listen for close-lang-switcher events from other dropdowns
+        const handleCloseLangSwitcher = () => closeLangSwitcher();
+        langSwitcherCloseHandlerRef.current = handleCloseLangSwitcher;
+        window.addEventListener("close-lang-switcher", handleCloseLangSwitcher);
 
         langSwitcher.addEventListener("mouseenter", handleMouseEnter);
         langSwitcher.addEventListener("mouseleave", handleMouseLeave);
@@ -370,7 +364,15 @@ export default function Navbar() {
     };
 
     // Small delay to ensure LanguageSwitcher is mounted
-    setTimeout(initLanguageSwitcher, 100);
+    const langTimer = setTimeout(initLanguageSwitcher, 100);
+
+    return () => {
+      clearTimeout(langTimer);
+      if (langSwitcherCloseHandlerRef.current) {
+        window.removeEventListener("close-lang-switcher", langSwitcherCloseHandlerRef.current);
+        langSwitcherCloseHandlerRef.current = null;
+      }
+    };
   }, []);
 
   return (
