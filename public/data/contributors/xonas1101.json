@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-14T10:34:55.405Z",
+  "generated_at": "2026-04-14T14:41:15.412Z",
   "total_issues_opened": 514,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 165550,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 382,
+      "issue_count": 379,
       "recent_issue": {
         "title": "Weird navigation controls in total checks stat block drill down modal",
         "url": "https://github.com/kubestellar/console/issues/7895",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 382
+      "closed_count": 379
     },
     {
       "name": "invite, reward, storage",
@@ -237,6 +237,20 @@
       "closed_count": 2
     },
     {
+      "name": "role, enum, rbac",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Issues in rbac_test.go",
+        "url": "https://github.com/kubestellar/console/issues/4460",
+        "created_at": "2026-04-03T15:46:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "vscode, workbench, usr",
       "issue_count": 2,
       "recent_issue": {
@@ -249,6 +263,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "binding, a512, e12db20c42",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Role binding name generation can collide after sanitization",
+        "url": "https://github.com/kubestellar/console/issues/7608",
+        "created_at": "2026-04-13T14:48:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "confirmation, share, e10de9",
@@ -363,7 +391,7 @@
       "closed_count": 1
     },
     {
-      "name": "kagenti, kagent, agent",
+      "name": "kagent, kagenti, agent",
       "issue_count": 1,
       "recent_issue": {
         "title": "Potential duplicate kagent/kagenti entries in agent picker",
@@ -601,7 +629,7 @@
       "closed_count": 1
     },
     {
-      "name": "readiness, report, c37629f",
+      "name": "report, readiness, c37629f",
       "issue_count": 1,
       "recent_issue": {
         "title": "Client readiness can report healthy after stop",
@@ -1063,20 +1091,6 @@
       "closed_count": 1
     },
     {
-      "name": "comma, compute, d7c",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Compute compare URL encoding risk",
-        "url": "https://github.com/kubestellar/console/issues/5452",
-        "created_at": "2026-04-08T09:37:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "coding, level, contributor",
       "issue_count": 1,
       "recent_issue": {
@@ -1497,6 +1511,20 @@
       "closed_count": 1
     },
     {
+      "name": "ff85, f3f0, a0d1",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cache key not normalized",
+        "url": "https://github.com/kubestellar/console/issues/3506",
+        "created_at": "2026-03-25T04:11:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "sleep, a6bc872, a332",
       "issue_count": 1,
       "recent_issue": {
@@ -1694,16 +1722,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       }
     ]
   },
