@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-14T03:10:35.547Z",
+  "generated_at": "2026-04-14T06:44:15.372Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -298,10 +298,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },

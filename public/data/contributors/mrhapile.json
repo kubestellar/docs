@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-14T03:09:38.338Z",
+  "generated_at": "2026-04-14T06:43:12.849Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 372,
+      "issue_count": 371,
       "recent_issue": {
         "title": "Status Timer Javascript Garbage Build Up",
         "url": "https://github.com/kubestellar/console/issues/7475",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 372
+      "closed_count": 371
     },
     {
       "name": "documentation, 📌, component",
@@ -731,6 +731,20 @@
         "title": "MissionProvider missionsRef.current Assignment Outside useEffect",
         "url": "https://github.com/kubestellar/console/issues/6789",
         "created_at": "2026-04-12T03:59:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "dialog, modal, trap",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "No Focus Trap in MissionControlDialog",
+        "url": "https://github.com/kubestellar/console/issues/6738",
+        "created_at": "2026-04-11T22:45:12Z"
       },
       "repos": [
         "console"

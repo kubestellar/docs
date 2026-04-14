@@ -1,20 +1,20 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-14T03:08:57.150Z",
-  "total_issues_opened": 510,
+  "generated_at": "2026-04-14T06:42:27.809Z",
+  "total_issues_opened": 515,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 164350,
+  "total_points": 165550,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 42.5,
-    "avg_per_day": 8.12,
+    "avg_per_week": 42.9,
+    "avg_per_day": 8.19,
     "by_day_of_week": [
       161,
-      30,
+      34,
       46,
-      57,
+      58,
       67,
       110,
       39
@@ -24,14 +24,14 @@
       0,
       1,
       10,
-      45,
-      37,
+      46,
+      40,
       22,
       13,
       41,
       13,
       2,
-      42,
+      43,
       28,
       57,
       62,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-14T02:51:16.000Z"
+    "last_issue_at": "2026-04-14T05:23:50.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 379,
+      "issue_count": 382,
       "recent_issue": {
-        "title": "Card: Node Conditions (node_conditions)",
-        "url": "https://github.com/kubestellar/console/issues/7881",
-        "created_at": "2026-04-14T02:51:16Z"
+        "title": "Weird navigation controls in total checks stat block drill down modal",
+        "url": "https://github.com/kubestellar/console/issues/7895",
+        "created_at": "2026-04-14T05:23:50Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 378
+      "open_count": 0,
+      "closed_count": 382
     },
     {
       "name": "invite, reward, storage",
@@ -218,6 +218,20 @@
       "repos": [
         "console",
         "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "bounce, large, increase",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Token bounce retriggers after a large jump",
+        "url": "https://github.com/kubestellar/console/issues/5708",
+        "created_at": "2026-04-09T11:01:05Z"
+      },
+      "repos": [
+        "console"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -1007,20 +1021,6 @@
       "closed_count": 1
     },
     {
-      "name": "bounce, large, increase",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Token bounce retriggers after a large jump",
-        "url": "https://github.com/kubestellar/console/issues/5708",
-        "created_at": "2026-04-09T11:01:05Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "launch, phase, e1a08df4",
       "issue_count": 1,
       "recent_issue": {
@@ -1279,6 +1279,20 @@
         "title": "Card: Kyverno Policies (kyverno_policies)",
         "url": "https://github.com/kubestellar/console/issues/4267",
         "created_at": "2026-04-02T16:49:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sessionid, chat, ids",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Chat cancellation key collision when sessionId is omitted",
+        "url": "https://github.com/kubestellar/console/issues/4263",
+        "created_at": "2026-04-02T16:41:25Z"
       },
       "repos": [
         "console"
@@ -1740,7 +1754,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 419
+      "issue_count": 424
     }
   ]
 }
