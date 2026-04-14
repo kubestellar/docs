@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-14T14:42:31.421Z",
+  "generated_at": "2026-04-14T18:32:23.761Z",
   "total_issues_opened": 414,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 123000,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 311,
+      "issue_count": 310,
       "recent_issue": {
         "title": "start.sh port cleanup loop has TOCTOU race allowing unrelated processes to be killed",
         "url": "https://github.com/kubestellar/console/issues/7853",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 311
+      "closed_count": 310
     },
     {
       "name": "clusterrole, openshift, opt",
@@ -1103,6 +1103,20 @@
       "closed_count": 1
     },
     {
+      "name": "authorization, header, cbfe0",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Agent fetch hooks send no Authorization header - silently breaks when KC_AGENT_TOKEN is set",
+        "url": "https://github.com/kubestellar/console/issues/5348",
+        "created_at": "2026-04-07T21:20:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "stub, a3f1, be7a",
       "issue_count": 1,
       "recent_issue": {
@@ -1228,6 +1242,12 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
         "topic_match": "extract, ffb011, f6f"
+      },
+      {
+        "title": "bug: `handleRestartBackend` kills and restarts the backend Go process from within the kc-agent, but the kc-agent itself is started by `startup-oauth.sh` with a watchdog — the restart races against the",
+        "url": "https://github.com/kubestellar/console/issues/7945",
+        "repo": "console",
+        "topic_match": "probe, watchdog, liveness"
       }
     ],
     "stretch": [
