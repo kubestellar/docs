@@ -140,6 +140,9 @@ export default function Navbar() {
           }
 
           setIsDropdownOpen(false);
+          setIsContributeOpen(false);
+          setIsCommunityOpen(false);
+          setIsGithubOpen(false);
         }
       });
     };
