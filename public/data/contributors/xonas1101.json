@@ -1,18 +1,18 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-13T22:21:50.010Z",
-  "total_issues_opened": 509,
+  "generated_at": "2026-04-14T03:08:57.150Z",
+  "total_issues_opened": 510,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 164050,
+  "total_points": 164350,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 42.4,
-    "avg_per_day": 8.17,
+    "avg_per_week": 42.5,
+    "avg_per_day": 8.12,
     "by_day_of_week": [
       161,
-      29,
+      30,
       46,
       57,
       67,
@@ -22,7 +22,7 @@
     "by_hour_of_day": [
       0,
       0,
-      0,
+      1,
       10,
       45,
       37,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-13T14:48:51.000Z"
+    "last_issue_at": "2026-04-14T02:51:16.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 377,
+      "issue_count": 379,
       "recent_issue": {
-        "title": "Role binding name generation can collide after sanitization",
-        "url": "https://github.com/kubestellar/console/issues/7608",
-        "created_at": "2026-04-13T14:48:51Z"
+        "title": "Card: Node Conditions (node_conditions)",
+        "url": "https://github.com/kubestellar/console/issues/7881",
+        "created_at": "2026-04-14T02:51:16Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 377
+      "open_count": 1,
+      "closed_count": 378
     },
     {
       "name": "invite, reward, storage",
@@ -489,7 +489,7 @@
       "closed_count": 1
     },
     {
-      "name": "flag, argument, shift",
+      "name": "flag, shift, argument",
       "issue_count": 1,
       "recent_issue": {
         "title": "Argument parsing with shift inside for-loop can bind wrong values",
@@ -1287,20 +1287,6 @@
       "closed_count": 1
     },
     {
-      "name": "sessionid, chat, ids",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Chat cancellation key collision when sessionId is omitted",
-        "url": "https://github.com/kubestellar/console/issues/4263",
-        "created_at": "2026-04-02T16:41:25Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "chmod, binary, b645",
       "issue_count": 1,
       "recent_issue": {
@@ -1668,28 +1654,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "operatorCacheData check-then-act race allows concurrent requests to double-fetch from Kubernetes",
-        "url": "https://github.com/kubestellar/console/issues/7783",
-        "repo": "console",
-        "topic_match": "lock, cache, dc3c7ed8"
-      },
-      {
-        "title": "runWithTimeout ignores Kill() error allowing zombie processes when timeout fires",
-        "url": "https://github.com/kubestellar/console/issues/7781",
-        "repo": "console",
-        "topic_match": "kill, sh, port"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "topology.go uses bare 503 literal with no named constant inconsistent with other handlers",
-        "url": "https://github.com/kubestellar/console/issues/7795",
-        "repo": "console",
-        "topic_match": "protocol, f4c15, c55b"
       }
     ],
     "stretch": [
@@ -1706,16 +1674,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
         "name": "Marketplace & Operators",
@@ -1772,7 +1740,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 418
+      "issue_count": 419
     }
   ]
 }

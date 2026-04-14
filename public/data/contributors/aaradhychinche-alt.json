@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-13T22:23:02.282Z",
+  "generated_at": "2026-04-14T03:10:08.710Z",
   "total_issues_opened": 447,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 131250,
@@ -68,7 +68,7 @@
       "closed_count": 419
     },
     {
-      "name": "card, registry, directory",
+      "name": "card, registry, register",
       "issue_count": 7,
       "recent_issue": {
         "title": "bug: placeholder card directories exist without implementation",
@@ -222,7 +222,7 @@
       "closed_count": 1
     },
     {
-      "name": "watcher, persistence, context",
+      "name": "watcher, context, persistence",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: persistence watcher stops immediately due to request-scoped context usage",
@@ -340,7 +340,7 @@
         "title": "card: Implement Harbor Registry monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/16",
         "repo": "console-marketplace",
-        "topic_match": "card, registry, directory"
+        "topic_match": "card, registry, register"
       },
       {
         "title": "card: Implement Artifact Hub monitoring card",
@@ -375,10 +375,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },

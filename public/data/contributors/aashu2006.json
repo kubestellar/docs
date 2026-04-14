@@ -1,17 +1,17 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-13T22:23:18.055Z",
-  "total_issues_opened": 374,
+  "generated_at": "2026-04-14T03:10:29.341Z",
+  "total_issues_opened": 414,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 111000,
+  "total_points": 123000,
   "level": "Captain",
   "level_rank": 6,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 31.2,
-    "avg_per_day": 40.21,
+    "avg_per_week": 34.5,
+    "avg_per_day": 44.06,
     "by_day_of_week": [
-      105,
+      145,
       31,
       18,
       21,
@@ -43,28 +43,28 @@
       77,
       37,
       58,
-      37
+      77
     ],
     "current_streak_weeks": 2,
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-13T21:40:50.000Z"
+    "last_issue_at": "2026-04-13T23:55:12.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 281,
+      "issue_count": 311,
       "recent_issue": {
-        "title": "5 Kubernetes fetch errors in server_http.go logged at slog.Warn while returning HTTP 500 to callers",
-        "url": "https://github.com/kubestellar/console/issues/7802",
-        "created_at": "2026-04-13T21:40:04Z"
+        "title": "start.sh port cleanup loop has TOCTOU race allowing unrelated processes to be killed",
+        "url": "https://github.com/kubestellar/console/issues/7853",
+        "created_at": "2026-04-13T23:55:12Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 17,
-      "closed_count": 264
+      "open_count": 0,
+      "closed_count": 311
     },
     {
       "name": "clusterrole, openshift, opt",
@@ -109,26 +109,54 @@
       "closed_count": 3
     },
     {
+      "name": "download, tarball, path",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "start.sh downloads tarball to hardcoded /tmp path instead of secure mktemp directory",
+        "url": "https://github.com/kubestellar/console/issues/7852",
+        "created_at": "2026-04-13T23:55:02Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "tag, supply, cronjob",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "GitHub Actions workflow uses mutable version tags instead of commit SHAs enabling supply chain attacks",
+        "url": "https://github.com/kubestellar/console/issues/7850",
+        "created_at": "2026-04-13T23:54:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "locale, argument, formatting",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "MissionChat.tsx toLocaleString called without locale argument in markdown export and message timestamps",
+        "url": "https://github.com/kubestellar/console/issues/7831",
+        "created_at": "2026-04-13T23:31:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "netlify, hang, youtube",
       "issue_count": 2,
       "recent_issue": {
         "title": "youtube-thumbnail.mts YouTube CDN fetch has no timeout causing Netlify function to hang until platform limit",
         "url": "https://github.com/kubestellar/console/issues/7806",
         "created_at": "2026-04-13T21:40:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 2,
-      "closed_count": 0
-    },
-    {
-      "name": "variable, shell, value",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "start-dev.sh exports .env variables without name validation allowing critical shell variable overwrites",
-        "url": "https://github.com/kubestellar/console/issues/7690",
-        "created_at": "2026-04-13T19:14:53Z"
       },
       "repos": [
         "console"
@@ -235,6 +263,20 @@
       "closed_count": 2
     },
     {
+      "name": "insert, primary, key",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "InsertUtilizationSnapshot missing ID initialization causing constraint error or unusable record",
+        "url": "https://github.com/kubestellar/console/issues/6608",
+        "created_at": "2026-04-11T20:15:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "masking, tab, eyeoff",
       "issue_count": 2,
       "recent_issue": {
@@ -249,6 +291,62 @@
       "closed_count": 2
     },
     {
+      "name": "makefile, d9d5, a71b179",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Makefile test and test-agent targets missing from .PHONY causing silent skip when test file exists",
+        "url": "https://github.com/kubestellar/console/issues/7851",
+        "created_at": "2026-04-13T23:54:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "job, build, runner",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "CI/CD build-deploy.yml jobs have no timeout-minutes allowing hung builds to consume runners indefinitely",
+        "url": "https://github.com/kubestellar/console/issues/7849",
+        "created_at": "2026-04-13T23:54:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "unquoted, word, splitting",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "nightly-compare.sh uses unquoted $(ls ...) in for loop causing word splitting on filenames with spaces",
+        "url": "https://github.com/kubestellar/console/issues/7842",
+        "created_at": "2026-04-13T23:52:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "runnerdeployment, privileged, arc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ARC RunnerDeployment missing securityContext allowing privileged container execution",
+        "url": "https://github.com/kubestellar/console/issues/7840",
+        "created_at": "2026-04-13T23:52:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "catch, raw, affiliate",
       "issue_count": 1,
       "recent_issue": {
@@ -259,8 +357,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "busybox, alpine, sh",
@@ -273,8 +371,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "middleware, getnotificationconfig, savenotificationconfig",
@@ -287,22 +385,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "twice, pollforrestart, cef618",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Multiple polling loops accumulate in useSelfUpgrade with no dedup guard when pollForRestart is called twice",
-        "url": "https://github.com/kubestellar/console/issues/7789",
-        "created_at": "2026-04-13T21:09:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "rejection, unhandled, callback",
@@ -315,8 +399,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "dependency, recinitref, usecardrecommendations",
@@ -329,8 +413,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "reconnect, schedule, presencews",
@@ -343,8 +427,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "rename, write, fsync",
@@ -403,20 +487,6 @@
       "closed_count": 1
     },
     {
-      "name": "ids, know, dashboard",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ENABLED_DASHBOARDS values accepted without validation against known dashboard IDs",
-        "url": "https://github.com/kubestellar/console/issues/7688",
-        "created_at": "2026-04-13T19:14:30Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "oauth, credential, configured",
       "issue_count": 1,
       "recent_issue": {
@@ -431,7 +501,7 @@
       "closed_count": 1
     },
     {
-      "name": "certificate, mitm, attack",
+      "name": "certificate, mitm, argocd",
       "issue_count": 1,
       "recent_issue": {
         "title": "ArgoCD TLS certificate verification skip has no production guard enabling MITM attacks",
@@ -543,7 +613,7 @@
       "closed_count": 1
     },
     {
-      "name": "send, leaving, ecfafc9f",
+      "name": "send, ecfafc9f, f5e5",
       "issue_count": 1,
       "recent_issue": {
         "title": "handleMixedModeChat never sends TypeResult Done true leaving UI stuck in streaming state",
@@ -571,12 +641,40 @@
       "closed_count": 1
     },
     {
+      "name": "variable, value, configuration",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ai.defaultMode and ai.tokenLimits values in values.yaml are never wired to container environment variables",
+        "url": "https://github.com/kubestellar/console/issues/6991",
+        "created_at": "2026-04-12T22:02:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "deployments, restriction, patch",
       "issue_count": 1,
       "recent_issue": {
         "title": "Self-upgrade Role grants patch on all Deployments in namespace with no resourceNames restriction",
         "url": "https://github.com/kubestellar/console/issues/6978",
         "created_at": "2026-04-12T22:00:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "reservation, subsequent, share",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "All GPU reservations share one collection context — slow first cluster starves subsequent reservations",
+        "url": "https://github.com/kubestellar/console/issues/6967",
+        "created_at": "2026-04-12T20:10:13Z"
       },
       "repos": [
         "console"
@@ -725,26 +823,12 @@
       "closed_count": 1
     },
     {
-      "name": "download, exception, unhandled",
+      "name": "cardwrapper, kagentsecurity, f0b23b20",
       "issue_count": 1,
       "recent_issue": {
-        "title": "YAMLDrillDown, RemediationConsole, MissionChat, Kubectl, ParetoFrontier, ShareMissionDialog: export/download has no error handling - unhandled exception on failure",
-        "url": "https://github.com/kubestellar/console/issues/6226",
-        "created_at": "2026-04-10T20:05:56Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "icon, reader, button",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ClusterGroups, NamespaceMonitor, ClusterLocations, Kubedle: icon-only buttons missing aria-label - inaccessible to screen readers",
-        "url": "https://github.com/kubestellar/console/issues/6222",
-        "created_at": "2026-04-10T19:55:16Z"
+        "title": "Weather, FleetComplianceHeatmap, ComplianceCards, KagentTopology, KagentSecurity, NetworkUtils: isFailed not passed to useCardLoadingState - fetch failures invisible to CardWrapper",
+        "url": "https://github.com/kubestellar/console/issues/6219",
+        "created_at": "2026-04-10T19:50:59Z"
       },
       "repos": [
         "console"
@@ -787,6 +871,20 @@
         "title": "mcp/storage.ts: unbounded Promise.all across all clusters - can overload local agent with 30+ simultaneous requests",
         "url": "https://github.com/kubestellar/console/issues/5786",
         "created_at": "2026-04-09T18:17:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "githubcimonitor, b9a327, a96e2f29d0",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "GitHubCIMonitor: consecutiveFailures available from useCache but never destructured or passed to useCardLoadingState",
+        "url": "https://github.com/kubestellar/console/issues/5778",
+        "created_at": "2026-04-09T18:00:33Z"
       },
       "repos": [
         "console"
@@ -857,6 +955,20 @@
         "title": "Hardcoded semantic color text-yellow-400 used for UI state indicator in DashboardHeader",
         "url": "https://github.com/kubestellar/console/issues/5590",
         "created_at": "2026-04-08T19:45:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "pluralization, i18n, inline",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Inline pluralization logic in ChartVersions not using i18n system",
+        "url": "https://github.com/kubestellar/console/issues/5587",
+        "created_at": "2026-04-08T19:40:27Z"
       },
       "repos": [
         "console"
@@ -983,20 +1095,6 @@
         "title": "kagenti_provider Invoke doesn't URL-encode namespace/agentName allowing path injection",
         "url": "https://github.com/kubestellar/console/issues/5349",
         "created_at": "2026-04-07T21:21:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "authorization, header, cbfe0",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Agent fetch hooks send no Authorization header - silently breaks when KC_AGENT_TOKEN is set",
-        "url": "https://github.com/kubestellar/console/issues/5348",
-        "created_at": "2026-04-07T21:20:53Z"
       },
       "repos": [
         "console"
@@ -1140,28 +1238,28 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       }
     ]
   },
@@ -1212,7 +1310,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 374
+      "issue_count": 414
     }
   ]
 }

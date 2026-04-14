@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-13T22:23:24.020Z",
+  "generated_at": "2026-04-14T03:10:35.244Z",
   "total_issues_opened": 82,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 25000,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "mission, ai, @ghanshyam2005singh",
-      "issue_count": 61,
+      "issue_count": 59,
       "recent_issue": {
         "title": "Repeated client disconnection events despite backend being healthy",
         "url": "https://github.com/kubestellar/console/issues/7614",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 61
+      "closed_count": 59
     },
     {
       "name": "screenshot, report, @ghanshyam2005singh",
@@ -89,6 +89,20 @@
         "title": "GitHub Action for screenshot cleanup runs on forked repositories causing unwanted commits",
         "url": "https://github.com/kubestellar/console/issues/5474",
         "created_at": "2026-04-08T11:23:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "collapse, sidebar, popup",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Sidebar collapse and pin icons appear above floating popup (z-index issue)",
+        "url": "https://github.com/kubestellar/console/issues/3636",
+        "created_at": "2026-03-26T10:23:09Z"
       },
       "repos": [
         "console"

@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-13T22:23:23.419Z",
+  "generated_at": "2026-04-14T03:10:34.644Z",
   "total_issues_opened": 225,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 41850,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@rishi, jat, line",
-      "issue_count": 179,
+      "issue_count": 180,
       "recent_issue": {
         "title": "OAuth login failure (token_exchange_failed) lacks actionable diagnostics and guidance",
         "url": "https://github.com/kubestellar/console/issues/6933",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 179
+      "closed_count": 180
     },
     {
       "name": "session, auth, traffic",
@@ -279,21 +279,7 @@
       "closed_count": 1
     },
     {
-      "name": "onboarding, redirect, login",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Auth callback does not correctly handle onboarding state",
-        "url": "https://github.com/kubestellar/console/issues/2860",
-        "created_at": "2026-03-18T03:53:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "diagram, label, architecture",
+      "name": "diagram, architecture, label",
       "issue_count": 1,
       "recent_issue": {
         "title": "Architecture diagram labels are truncated and not clearly visible",
@@ -541,6 +527,12 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
@@ -557,12 +549,6 @@
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },

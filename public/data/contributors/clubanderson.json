@@ -1,18 +1,18 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-13T22:21:07.762Z",
-  "total_issues_opened": 892,
+  "generated_at": "2026-04-14T03:08:15.443Z",
+  "total_issues_opened": 895,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3228450,
+  "total_points": 3245450,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 71.8,
-    "avg_per_day": 3.68,
+    "avg_per_week": 72,
+    "avg_per_day": 3.69,
     "by_day_of_week": [
       119,
-      106,
+      109,
       192,
       115,
       125,
@@ -20,9 +20,9 @@
       103
     ],
     "by_hour_of_day": [
-      46,
+      48,
       23,
-      90,
+      91,
       29,
       41,
       27,
@@ -49,39 +49,39 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-13T20:36:20.000Z"
+    "last_issue_at": "2026-04-14T02:03:10.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 474,
+      "issue_count": 475,
       "recent_issue": {
-        "title": "[Auto-QA] Refresh icon animation consistency issues",
-        "url": "https://github.com/kubestellar/console/issues/7754",
-        "created_at": "2026-04-13T19:51:12Z"
+        "title": "[Auto-QA] DOM nesting and structure violations found",
+        "url": "https://github.com/kubestellar/console/issues/7878",
+        "created_at": "2026-04-14T02:03:10Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 474
+      "closed_count": 475
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 166,
+      "issue_count": 167,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #669",
-        "url": "https://github.com/kubestellar/console/issues/7769",
-        "created_at": "2026-04-13T20:36:20Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #678",
+        "url": "https://github.com/kubestellar/console/issues/7860",
+        "created_at": "2026-04-14T00:20:48Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 4,
-      "closed_count": 162
+      "open_count": 3,
+      "closed_count": 164
     },
     {
       "name": "monitoring, card, implement",
@@ -422,6 +422,20 @@
       "closed_count": 2
     },
     {
+      "name": "clustercache, navigate, single",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "perf: split clusterCache into data + UI-indicator caches to unblock SPA navigation",
+        "url": "https://github.com/kubestellar/console/issues/7865",
+        "created_at": "2026-04-14T00:38:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "reconciliation, follow, tak",
       "issue_count": 1,
       "recent_issue": {
@@ -478,7 +492,7 @@
       "closed_count": 1
     },
     {
-      "name": "apr, release, job",
+      "name": "apr, release, april",
       "issue_count": 1,
       "recent_issue": {
         "title": "🐛 Nightly/weekly releases failing silently since April 1",
@@ -843,14 +857,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "CronJob Status Card Shows Demo Badge + Displays All Clusters by Default",
-        "url": "https://github.com/kubestellar/console/issues/7791",
-        "repo": "console",
-        "topic_match": "cluster, status, health"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -931,7 +938,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 247
+      "issue_count": 250
     }
   ]
 }
