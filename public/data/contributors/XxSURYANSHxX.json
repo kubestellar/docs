@@ -1,18 +1,18 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-14T18:32:25.348Z",
-  "total_issues_opened": 169,
+  "generated_at": "2026-04-14T22:23:25.945Z",
+  "total_issues_opened": 199,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-  "total_points": 47600,
+  "total_points": 49100,
   "level": "Commander",
   "level_rank": 5,
   "rank": 7,
   "cadence": {
-    "avg_per_week": 14.1,
-    "avg_per_day": 6.9,
+    "avg_per_week": 16.6,
+    "avg_per_day": 7.65,
     "by_day_of_week": [
       71,
-      3,
+      33,
       20,
       8,
       20,
@@ -38,7 +38,7 @@
       18,
       0,
       7,
-      14,
+      44,
       37,
       3,
       0,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 4,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-19T18:23:23.000Z",
-    "last_issue_at": "2026-04-13T06:15:05.000Z"
+    "last_issue_at": "2026-04-14T18:40:18.000Z"
   },
   "topics": [
     {
-      "name": "@xxsuryanshxx, pkg, agent",
-      "issue_count": 146,
+      "name": "@xxsuryanshxx, pkg, handler",
+      "issue_count": 178,
       "recent_issue": {
-        "title": "Title: UpdateChecker.Status holds uc.mu across a 15s network git fetch",
-        "url": "https://github.com/kubestellar/console/issues/7282",
-        "created_at": "2026-04-13T06:15:05Z"
+        "title": "### 30. `CheckCanI` delegates to the cluster's apiserver using the console's identity, not the caller's",
+        "url": "https://github.com/kubestellar/console/issues/7979",
+        "created_at": "2026-04-14T18:40:18Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 146
+      "open_count": 1,
+      "closed_count": 177
     },
     {
       "name": "tail, log, feature",
@@ -81,7 +81,7 @@
       "closed_count": 2
     },
     {
-      "name": "hardcodes, persistence, endpoint",
+      "name": "persistence, hardcodes, endpoint",
       "issue_count": 2,
       "recent_issue": {
         "title": "Persistence Sync API endpoint hardcodes 501 Not Implemented",
@@ -95,7 +95,7 @@
       "closed_count": 2
     },
     {
-      "name": "reconciliation, loop, kick",
+      "name": "reconciliation, kick, loop",
       "issue_count": 2,
       "recent_issue": {
         "title": "WorkloadDeployment backend reconciliation loop is unimplemented",
@@ -165,20 +165,6 @@
       "closed_count": 1
     },
     {
-      "name": "stdin, m., size",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 14: Unbounded stdin message size in pod exec WebSocket handler (`exec.go`)",
-        "url": "https://github.com/kubestellar/console/issues/5025",
-        "created_at": "2026-04-06T15:07:47Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "traversal, filepath, path",
       "issue_count": 1,
       "recent_issue": {
@@ -227,20 +213,6 @@
         "title": "### Issue 11: Missing context propagation in GitHub proxy requests (`github_proxy.go`)",
         "url": "https://github.com/kubestellar/console/issues/4803",
         "created_at": "2026-04-05T13:39:22Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "key, authorization, header",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 6: Unvalidated empty API key sent in Authorization header (`provider_openai_compat.go`)",
-        "url": "https://github.com/kubestellar/console/issues/4798",
-        "created_at": "2026-04-05T13:38:22Z"
       },
       "repos": [
         "console"
@@ -429,7 +401,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 165
+      "issue_count": 195
     }
   ]
 }

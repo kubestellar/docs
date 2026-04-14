@@ -1,6 +1,6 @@
 {
   "login": "adity1raut",
-  "generated_at": "2026-04-14T18:32:30.049Z",
+  "generated_at": "2026-04-14T22:23:30.988Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/159172287?v=4",
   "total_points": 15550,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "response, want, additional",
+      "name": "response, additional, want",
       "issue_count": 4,
       "recent_issue": {
         "title": "Bug: After hovering, the Docs navbar link is not displaying properly.",
@@ -82,7 +82,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "bug: aria-expanded Attribute Is Hardcoded to \"false\" on Navbar Dropdown Buttons",
+        "url": "https://github.com/kubestellar/docs/issues/1455",
+        "repo": "docs",
+        "topic_match": "responsive, form, dropdown"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

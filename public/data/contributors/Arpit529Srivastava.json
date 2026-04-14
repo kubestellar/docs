@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-14T18:32:29.507Z",
+  "generated_at": "2026-04-14T22:23:30.409Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -504,7 +504,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Some pages do not adapt to theme changes due to hardcoded colors",
+        "url": "https://github.com/kubestellar/console/issues/8018",
+        "repo": "console",
+        "topic_match": "theme, light, browser"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",

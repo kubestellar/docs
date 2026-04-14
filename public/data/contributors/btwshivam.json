@@ -1,6 +1,6 @@
 {
   "login": "btwshivam",
-  "generated_at": "2026-04-14T18:32:30.142Z",
+  "generated_at": "2026-04-14T22:23:31.097Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/127589548?v=4",
   "total_points": 5200,
@@ -110,7 +110,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Some pages do not adapt to theme changes due to hardcoded colors",
+        "url": "https://github.com/kubestellar/console/issues/8018",
+        "repo": "console",
+        "topic_match": "dark, light, mode"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

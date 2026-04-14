@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-14T18:32:29.993Z",
+  "generated_at": "2026-04-14T22:23:30.927Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -270,6 +270,12 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "test, httptest, backend"
+      },
+      {
+        "title": "🐛 1 test failure(s) in Coverage Suite run #714",
+        "url": "https://github.com/kubestellar/console/issues/8020",
+        "repo": "console",
+        "topic_match": "test, httptest, backend"
       }
     ],
     "stretch": [
@@ -298,10 +304,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },

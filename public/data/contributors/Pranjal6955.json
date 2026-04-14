@@ -1,18 +1,18 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-14T18:32:30.138Z",
-  "total_issues_opened": 2,
+  "generated_at": "2026-04-14T22:23:31.092Z",
+  "total_issues_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-  "total_points": 6500,
+  "total_points": 6600,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 22,
   "cadence": {
-    "avg_per_week": 0,
-    "avg_per_day": 0.08,
+    "avg_per_week": 0.1,
+    "avg_per_day": 0.02,
     "by_day_of_week": [
       1,
-      0,
+      1,
       1,
       0,
       0,
@@ -39,22 +39,96 @@
       0,
       0,
       0,
-      0,
+      1,
       0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 0,
+    "current_streak_weeks": 1,
     "longest_streak_weeks": 1,
-    "trend": "inactive",
+    "trend": "ramping_up",
     "first_issue_at": "2025-10-01T13:51:13.000Z",
-    "last_issue_at": "2025-10-27T05:17:03.000Z"
+    "last_issue_at": "2026-04-14T19:46:59.000Z"
   },
-  "topics": [],
+  "topics": [
+    {
+      "name": "openrouter, llama, model",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: OpenRouter Support",
+        "url": "https://github.com/kubestellar/console/issues/7999",
+        "created_at": "2026-04-14T19:46:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "nextra, footer, docs",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Refactor the Footer Component in Nextra Docs",
+        "url": "https://github.com/kubestellar/docs/issues/181",
+        "created_at": "2025-10-27T05:17:03Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "program, disrupt, page",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Remove Extra spacing between page title and program cards on Program page",
+        "url": "https://github.com/kubestellar/docs/issues/96",
+        "created_at": "2025-10-01T13:51:13Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
   "suggestions": {
     "deepen": [],
-    "stretch": []
+    "stretch": [
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      }
+    ]
   },
   "activity_timeline": [
     {
@@ -103,7 +177,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 0
+      "issue_count": 1
     }
   ]
 }

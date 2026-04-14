@@ -1,18 +1,18 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-14T18:30:07.800Z",
-  "total_issues_opened": 900,
+  "generated_at": "2026-04-14T22:20:50.592Z",
+  "total_issues_opened": 905,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3261050,
+  "total_points": 3276300,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 72.4,
-    "avg_per_day": 3.7,
+    "avg_per_week": 72.8,
+    "avg_per_day": 3.72,
     "by_day_of_week": [
       119,
-      114,
+      119,
       192,
       115,
       125,
@@ -39,9 +39,9 @@
       34,
       34,
       25,
-      128,
+      132,
       30,
-      19,
+      20,
       22,
       11
     ],
@@ -49,38 +49,38 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-14T14:01:23.000Z"
+    "last_issue_at": "2026-04-14T21:46:31.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 477,
+      "issue_count": 478,
       "recent_issue": {
-        "title": "[Auto-QA] Missing user feedback on actions",
-        "url": "https://github.com/kubestellar/console/issues/7932",
-        "created_at": "2026-04-14T14:01:23Z"
+        "title": "[Auto-QA] Hardcoded colors instead of design tokens",
+        "url": "https://github.com/kubestellar/console/issues/8000",
+        "created_at": "2026-04-14T19:51:07Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 477
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 169,
+      "issue_count": 170,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #701",
-        "url": "https://github.com/kubestellar/console/issues/7930",
-        "created_at": "2026-04-14T13:44:03Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #714",
+        "url": "https://github.com/kubestellar/console/issues/8020",
+        "created_at": "2026-04-14T21:46:31Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
+      "open_count": 4,
       "closed_count": 166
     },
     {
@@ -239,6 +239,20 @@
       "closed_count": 4
     },
     {
+      "name": "stdin, leak, channel",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "bug: exec stdin silently dropped under backpressure — pasted commands can be truncated mid-stream",
+        "url": "https://github.com/kubestellar/console/issues/7995",
+        "created_at": "2026-04-14T19:24:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
       "name": "nil, potential, panic",
       "issue_count": 3,
       "recent_issue": {
@@ -319,20 +333,6 @@
       "repos": [
         "console",
         "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "leak, stop, resource",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "MCP client resource leaks: goroutine leak, blocked channel, unclosed stdin",
-        "url": "https://github.com/kubestellar/console/issues/1925",
-        "created_at": "2026-03-07T00:17:50Z"
-      },
-      "repos": [
-        "console"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -420,6 +420,34 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "writer, frame, goroutine",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: WebSocket hub writer never sets a deadline — one stuck client can wedge its writer goroutine (Slowloris)",
+        "url": "https://github.com/kubestellar/console/issues/7994",
+        "created_at": "2026-04-14T19:23:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sa, suppose, pod",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "refactor: backend pod SA must not be used for user-initiated k8s actions (umbrella — was CheckCanI)",
+        "url": "https://github.com/kubestellar/console/issues/7993",
+        "created_at": "2026-04-14T19:21:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "clustercache, navigate, single",
@@ -857,7 +885,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Some pages do not adapt to theme changes due to hardcoded colors",
+        "url": "https://github.com/kubestellar/console/issues/8018",
+        "repo": "console",
+        "topic_match": "replace, color, hardcoded"
+      },
+      {
+        "title": "bug: aria-expanded Attribute Is Hardcoded to \"false\" on Navbar Dropdown Buttons",
+        "url": "https://github.com/kubestellar/docs/issues/1455",
+        "repo": "docs",
+        "topic_match": "recommend, expand, dropdown"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -938,7 +979,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 255
+      "issue_count": 260
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-14T18:31:31.870Z",
+  "generated_at": "2026-04-14T22:22:24.854Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 371,
+      "issue_count": 370,
       "recent_issue": {
         "title": "Status Timer Javascript Garbage Build Up",
         "url": "https://github.com/kubestellar/console/issues/7475",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 371
+      "closed_count": 370
     },
     {
       "name": "documentation, 📌, component",
@@ -319,7 +319,7 @@
       "closed_count": 1
     },
     {
-      "name": "core, command, contamination",
+      "name": "core, contamination, ebc7",
       "issue_count": 1,
       "recent_issue": {
         "title": "Mixed-Mode Agent History Contamination",
@@ -711,6 +711,20 @@
       "closed_count": 1
     },
     {
+      "name": "pointer, getstale, b38a3cf",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "getStale Maps Race Access",
+        "url": "https://github.com/kubestellar/console/issues/7131",
+        "created_at": "2026-04-13T04:56:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "forkfullname, split, string",
       "issue_count": 1,
       "recent_issue": {
@@ -809,7 +823,7 @@
       "closed_count": 1
     },
     {
-      "name": "truncate, c5b, cad",
+      "name": "truncate, c5b, e0ae642",
       "issue_count": 1,
       "recent_issue": {
         "title": "Feature Request Modal",
@@ -1033,7 +1047,7 @@
       "closed_count": 1
     },
     {
-      "name": "a8cb, d2e3, hasprefix",
+      "name": "a8cb, hasprefix, d2e3",
       "issue_count": 1,
       "recent_issue": {
         "title": "Slack SSRF Hook Exposure",
@@ -1145,7 +1159,7 @@
       "closed_count": 1
     },
     {
-      "name": "presence, metric, spoofable",
+      "name": "presence, metric, c9629fcb",
       "issue_count": 1,
       "recent_issue": {
         "title": "Demo presence counts are trivially spoofable.",
@@ -1356,7 +1370,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Some pages do not adapt to theme changes due to hardcoded colors",
+        "url": "https://github.com/kubestellar/console/issues/8018",
+        "repo": "console",
+        "topic_match": "theme, toggle, light"
+      },
+      {
+        "title": "bug: aria-expanded Attribute Is Hardcoded to \"false\" on Navbar Dropdown Buttons",
+        "url": "https://github.com/kubestellar/docs/issues/1455",
+        "repo": "docs",
+        "topic_match": "sticky, dropdown, de7e22e"
+      }
+    ],
     "stretch": [
       {
         "name": "Marketplace & Operators",
@@ -1377,16 +1404,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
         "name": "Security & RBAC",
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },

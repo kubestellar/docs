@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-14T18:26:10.063Z",
-  "git_hash": "a412cd7",
+  "generated_at": "2026-04-14T22:16:51.221Z",
+  "git_hash": "19a06ab",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3261050,
+      "total_points": 3276300,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 252,
-        "feature_issues": 376,
-        "other_issues": 272,
-        "prs_opened": 4746,
-        "prs_merged": 4370
+        "bug_issues": 255,
+        "feature_issues": 377,
+        "other_issues": 273,
+        "prs_opened": 4767,
+        "prs_merged": 4390
       },
       "bonus_points": 50,
       "rank": 1
@@ -66,11 +66,11 @@
     {
       "login": "aashu2006",
       "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-      "total_points": 123000,
+      "total_points": 125100,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 402,
+        "bug_issues": 409,
         "feature_issues": 0,
         "other_issues": 12,
         "prs_opened": 4,
@@ -96,13 +96,13 @@
     {
       "login": "XxSURYANSHxX",
       "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-      "total_points": 47600,
+      "total_points": 49100,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 149,
         "feature_issues": 0,
-        "other_issues": 20,
+        "other_issues": 50,
         "prs_opened": 7,
         "prs_merged": 1
       },
@@ -172,11 +172,11 @@
     {
       "login": "Abhishek-Punhani",
       "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-      "total_points": 25550,
+      "total_points": 25850,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 74,
+        "bug_issues": 75,
         "feature_issues": 2,
         "other_issues": 5,
         "prs_opened": 7,
@@ -307,14 +307,14 @@
     {
       "login": "khushiiagrawal",
       "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-      "total_points": 8500,
+      "total_points": 10200,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
-        "bug_issues": 16,
+        "bug_issues": 21,
         "feature_issues": 0,
         "other_issues": 0,
-        "prs_opened": 6,
+        "prs_opened": 7,
         "prs_merged": 5
       },
       "rank": 21
@@ -322,12 +322,12 @@
     {
       "login": "Pranjal6955",
       "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-      "total_points": 6500,
+      "total_points": 6600,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
         "bug_issues": 0,
-        "feature_issues": 0,
+        "feature_issues": 1,
         "other_issues": 2,
         "prs_opened": 12,
         "prs_merged": 8
@@ -665,6 +665,21 @@
       "rank": 44
     },
     {
+      "login": "xyaz1313",
+      "avatar_url": "https://avatars.githubusercontent.com/u/197202025?v=4",
+      "total_points": 800,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 4,
+        "prs_merged": 0
+      },
+      "rank": 45
+    },
+    {
       "login": "Krishiv-Mahajan",
       "avatar_url": "https://avatars.githubusercontent.com/u/217094107?v=4",
       "total_points": 750,
@@ -677,7 +692,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 45
+      "rank": 46
     },
     {
       "login": "ngvanthanggit",
@@ -692,7 +707,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 46
+      "rank": 47
     },
     {
       "login": "AKHIL-149",
@@ -707,7 +722,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 47
+      "rank": 48
     },
     {
       "login": "francostellari",
@@ -722,7 +737,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 48
+      "rank": 49
     },
     {
       "login": "harshakumar25",
@@ -737,7 +752,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 49
+      "rank": 50
     },
     {
       "login": "immortal71",
@@ -752,7 +767,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 50
+      "rank": 51
     },
     {
       "login": "kchiranjewee63",
@@ -767,7 +782,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 51
+      "rank": 52
     },
     {
       "login": "krishivsaini",
@@ -782,7 +797,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 52
+      "rank": 53
     },
     {
       "login": "mikeshng",
@@ -797,7 +812,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 53
+      "rank": 54
     },
     {
       "login": "Nupurshivani",
@@ -812,7 +827,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 54
+      "rank": 55
     },
     {
       "login": "rahulshendre",
@@ -827,7 +842,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 55
+      "rank": 56
     },
     {
       "login": "yizha1",
@@ -842,7 +857,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 56
+      "rank": 57
     },
     {
       "login": "gulshank0",
@@ -857,7 +872,7 @@
         "prs_opened": 3,
         "prs_merged": 0
       },
-      "rank": 57
+      "rank": 58
     },
     {
       "login": "mmagram0926",
@@ -872,7 +887,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 58
+      "rank": 59
     },
     {
       "login": "alokdangre",
@@ -887,7 +902,7 @@
         "prs_opened": 2,
         "prs_merged": 0
       },
-      "rank": 59
+      "rank": 60
     },
     {
       "login": "Amanc77",
@@ -902,7 +917,7 @@
         "prs_opened": 2,
         "prs_merged": 0
       },
-      "rank": 60
+      "rank": 61
     },
     {
       "login": "omsherikar",
@@ -917,7 +932,7 @@
         "prs_opened": 2,
         "prs_merged": 0
       },
-      "rank": 61
+      "rank": 62
     },
     {
       "login": "sakshar2303",
@@ -932,7 +947,7 @@
         "prs_opened": 2,
         "prs_merged": 0
       },
-      "rank": 62
+      "rank": 63
     },
     {
       "login": "Shreya2005-2005",
@@ -947,7 +962,7 @@
         "prs_opened": 2,
         "prs_merged": 0
       },
-      "rank": 63
+      "rank": 64
     },
     {
       "login": "suhaani-agarwal",
@@ -962,22 +977,22 @@
         "prs_opened": 2,
         "prs_merged": 0
       },
-      "rank": 64
+      "rank": 65
     },
     {
-      "login": "xyaz1313",
-      "avatar_url": "https://avatars.githubusercontent.com/u/197202025?v=4",
-      "total_points": 400,
+      "login": "Va16hav07",
+      "avatar_url": "https://avatars.githubusercontent.com/u/174449060?v=4",
+      "total_points": 300,
       "level": "Observer",
       "level_rank": 1,
       "breakdown": {
-        "bug_issues": 0,
+        "bug_issues": 1,
         "feature_issues": 0,
         "other_issues": 0,
-        "prs_opened": 2,
+        "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 65
+      "rank": 66
     },
     {
       "login": "1PoPTRoN",
@@ -992,7 +1007,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 66
+      "rank": 67
     },
     {
       "login": "bandrose59",
@@ -1007,7 +1022,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 67
+      "rank": 68
     },
     {
       "login": "greninja517",
@@ -1022,7 +1037,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 68
+      "rank": 69
     },
     {
       "login": "jaimitus",
@@ -1037,7 +1052,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 69
+      "rank": 70
     },
     {
       "login": "nehanataraj",
@@ -1052,7 +1067,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 70
+      "rank": 71
     },
     {
       "login": "nil957",
@@ -1067,7 +1082,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 71
+      "rank": 72
     },
     {
       "login": "Provokke",
@@ -1082,7 +1097,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 72
+      "rank": 73
     },
     {
       "login": "Sagar2366",
@@ -1097,7 +1112,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 73
+      "rank": 74
     },
     {
       "login": "xiaoamo22333",
@@ -1112,7 +1127,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 74
+      "rank": 75
     },
     {
       "login": "castrojo",
@@ -1127,7 +1142,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 75
+      "rank": 76
     },
     {
       "login": "gaurab-khanal",
@@ -1142,7 +1157,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 76
+      "rank": 77
     },
     {
       "login": "namasl",
@@ -1157,7 +1172,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 77
+      "rank": 78
     },
     {
       "login": "redpinecube",
@@ -1172,7 +1187,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 78
+      "rank": 79
     },
     {
       "login": "Aryan-Bagale",
@@ -1187,7 +1202,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 79
+      "rank": 80
     },
     {
       "login": "eeshaanSA",
@@ -1202,7 +1217,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 80
+      "rank": 81
     },
     {
       "login": "khushisaifi8626-sketch",
@@ -1217,7 +1232,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 81
+      "rank": 82
     },
     {
       "login": "KlementMultiverse",
@@ -1232,7 +1247,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 82
+      "rank": 83
     },
     {
       "login": "utsavbhardwaj",
@@ -1247,7 +1262,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 83
+      "rank": 84
     }
   ]
 }

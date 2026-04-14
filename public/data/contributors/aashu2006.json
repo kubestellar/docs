@@ -1,18 +1,18 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-14T18:32:23.761Z",
-  "total_issues_opened": 414,
+  "generated_at": "2026-04-14T22:23:23.070Z",
+  "total_issues_opened": 421,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 123000,
+  "total_points": 125100,
   "level": "Captain",
   "level_rank": 6,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 34.5,
-    "avg_per_day": 44.06,
+    "avg_per_week": 35.1,
+    "avg_per_day": 41.04,
     "by_day_of_week": [
       145,
-      31,
+      38,
       18,
       21,
       14,
@@ -40,7 +40,7 @@
       8,
       31,
       116,
-      77,
+      84,
       37,
       58,
       77
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-13T23:55:12.000Z"
+    "last_issue_at": "2026-04-14T20:37:46.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 310,
+      "issue_count": 313,
       "recent_issue": {
-        "title": "start.sh port cleanup loop has TOCTOU race allowing unrelated processes to be killed",
-        "url": "https://github.com/kubestellar/console/issues/7853",
-        "created_at": "2026-04-13T23:55:12Z"
+        "title": "Alerts card does not show any failure state even when data cannot be loaded",
+        "url": "https://github.com/kubestellar/console/issues/8014",
+        "created_at": "2026-04-14T20:36:31Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 310
+      "open_count": 2,
+      "closed_count": 311
     },
     {
       "name": "clusterrole, openshift, opt",
@@ -289,6 +289,76 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "theme, adapt, color",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Some pages do not adapt to theme changes due to hardcoded colors",
+        "url": "https://github.com/kubestellar/console/issues/8018",
+        "created_at": "2026-04-14T20:37:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "language, experience, ff3a0a98",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Some UI text does not change with language selection",
+        "url": "https://github.com/kubestellar/console/issues/8017",
+        "created_at": "2026-04-14T20:37:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "development, time, reload",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "App performance degrades over time during development usage",
+        "url": "https://github.com/kubestellar/console/issues/8016",
+        "created_at": "2026-04-14T20:37:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "item, inconsistently, behave",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Some lists behave inconsistently when items are added or updated",
+        "url": "https://github.com/kubestellar/console/issues/8015",
+        "created_at": "2026-04-14T20:36:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "cost, datum, static",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cost overview displays static data without indicating it is demo data",
+        "url": "https://github.com/kubestellar/console/issues/8012",
+        "created_at": "2026-04-14T20:36:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "makefile, d9d5, a71b179",
@@ -781,7 +851,7 @@
       "closed_count": 1
     },
     {
-      "name": "hub, devmode, setjwtsecret",
+      "name": "devmode, hub, setjwtsecret",
       "issue_count": 1,
       "recent_issue": {
         "title": "SetJWTSecret and SetDevMode write Hub fields without mutex causing data race",
@@ -823,21 +893,7 @@
       "closed_count": 1
     },
     {
-      "name": "cardwrapper, kagentsecurity, f0b23b20",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Weather, FleetComplianceHeatmap, ComplianceCards, KagentTopology, KagentSecurity, NetworkUtils: isFailed not passed to useCardLoadingState - fetch failures invisible to CardWrapper",
-        "url": "https://github.com/kubestellar/console/issues/6219",
-        "created_at": "2026-04-10T19:50:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "keystroke, debounce, list",
+      "name": "debounce, keystroke, list",
       "issue_count": 1,
       "recent_issue": {
         "title": "KubescapeDetailModal, TrivyDetailModal, KyvernoDetailModal, ClusterLocations: search input missing debounce - full list re-filtered on every keystroke",
@@ -1232,10 +1288,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "card: Implement Artifact Hub monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/58",
-        "repo": "console-marketplace",
-        "topic_match": "hub, devmode, setjwtsecret"
+        "title": "### 27. Self-upgrade broadcasts optimistic progress before the patch is applied",
+        "url": "https://github.com/kubestellar/console/issues/7976",
+        "repo": "console",
+        "topic_match": "deployments, restriction, patch"
       },
       {
         "title": "card: Implement SPIFFE monitoring card",
@@ -1244,10 +1300,10 @@
         "topic_match": "extract, ffb011, f6f"
       },
       {
-        "title": "bug: `handleRestartBackend` kills and restarts the backend Go process from within the kc-agent, but the kc-agent itself is started by `startup-oauth.sh` with a watchdog — the restart races against the",
-        "url": "https://github.com/kubestellar/console/issues/7945",
-        "repo": "console",
-        "topic_match": "probe, watchdog, liveness"
+        "title": "card: Implement Artifact Hub monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/58",
+        "repo": "console-marketplace",
+        "topic_match": "devmode, hub, setjwtsecret"
       }
     ],
     "stretch": [
@@ -1330,7 +1386,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 414
+      "issue_count": 421
     }
   ]
 }

@@ -1,18 +1,18 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-14T18:32:30.137Z",
-  "total_issues_opened": 16,
+  "generated_at": "2026-04-14T22:23:31.091Z",
+  "total_issues_opened": 21,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 8500,
+  "total_points": 10200,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 21,
   "cadence": {
-    "avg_per_week": 1.3,
-    "avg_per_day": 1.94,
+    "avg_per_week": 1.8,
+    "avg_per_day": 2.54,
     "by_day_of_week": [
       2,
-      13,
+      18,
       0,
       0,
       0,
@@ -38,7 +38,7 @@
       0,
       1,
       2,
-      2,
+      7,
       0,
       0,
       0,
@@ -49,9 +49,23 @@
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-06T12:23:43.000Z",
-    "last_issue_at": "2026-04-14T18:04:33.000Z"
+    "last_issue_at": "2026-04-14T18:51:18.000Z"
   },
   "topics": [
+    {
+      "name": "@khushiiagrawal, handler, kagenti",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "bug: `handleRolesHTTP` and related RBAC handlers skip token validation",
+        "url": "https://github.com/kubestellar/console/issues/7982",
+        "created_at": "2026-04-14T18:43:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
     {
       "name": "goroutine, heartbeat, heartbeatdo",
       "issue_count": 3,
@@ -63,8 +77,22 @@
       "repos": [
         "console"
       ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "minikube, json, regex",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: Minikube cluster status always reported as \"unknown\" instead of actual state",
+        "url": "https://github.com/kubestellar/console/issues/7984",
+        "created_at": "2026-04-14T18:51:18Z"
+      },
+      "repos": [
+        "console"
+      ],
       "open_count": 1,
-      "closed_count": 2
+      "closed_count": 1
     },
     {
       "name": "pin, overlap, @khushiiagrawal",
@@ -77,8 +105,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "err, dynclient, nil",
@@ -95,6 +123,20 @@
       "closed_count": 1
     },
     {
+      "name": "dropdown, navbar, closelangswitcher",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: Global Window Pollution via window.closeLangSwitcher for Cross-Component Communication",
+        "url": "https://github.com/kubestellar/docs/issues/1456",
+        "created_at": "2026-04-14T18:48:29Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 2,
+      "closed_count": 0
+    },
+    {
       "name": "watchdog, kill, restart",
       "issue_count": 1,
       "recent_issue": {
@@ -105,8 +147,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "pause, intentionally, b0f33cd2",
@@ -119,8 +161,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "final, cd5d93b, ec381595d",
@@ -151,40 +193,12 @@
       "closed_count": 1
     },
     {
-      "name": "minikube, json, d7a4942b",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "`listMinikubeClusters` uses fragile regex against minikube JSON output instead of proper JSON unmarshaling; silently fails for any non-standard output format",
-        "url": "https://github.com/kubestellar/console/issues/7922",
-        "created_at": "2026-04-14T13:27:46Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "vcluster, disconnectvcluster, disconnect",
       "issue_count": 1,
       "recent_issue": {
         "title": "DisconnectVCluster` always runs `vcluster disconnect` with no cluster arguments — disconnects the **current** vCluster regardless of which one is requested",
         "url": "https://github.com/kubestellar/console/issues/7921",
         "created_at": "2026-04-14T13:26:57Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "kagenti, dfe3f0, b6a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handleKagentCRDAgents` returns 500 instead of empty list for `GetDynamicClient` errors, inconsistent with all kagenti handlers",
-        "url": "https://github.com/kubestellar/console/issues/7917",
-        "created_at": "2026-04-14T13:23:49Z"
       },
       "repos": [
         "console"
@@ -225,12 +239,6 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Deployments & GitOps",
         "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
         "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
@@ -243,16 +251,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
         "name": "Onboarding & Rewards",
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       }
     ]
   },
@@ -303,7 +317,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 16
+      "issue_count": 21
     }
   ]
 }

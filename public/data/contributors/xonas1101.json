@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-14T18:30:50.632Z",
+  "generated_at": "2026-04-14T22:21:38.363Z",
   "total_issues_opened": 514,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 165550,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 380,
+      "issue_count": 383,
       "recent_issue": {
         "title": "Weird navigation controls in total checks stat block drill down modal",
         "url": "https://github.com/kubestellar/console/issues/7895",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 380
+      "closed_count": 383
     },
     {
       "name": "invite, reward, storage",
@@ -237,20 +237,6 @@
       "closed_count": 2
     },
     {
-      "name": "role, enum, rbac",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Issues in rbac_test.go",
-        "url": "https://github.com/kubestellar/console/issues/4460",
-        "created_at": "2026-04-03T15:46:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "vscode, workbench, usr",
       "issue_count": 2,
       "recent_issue": {
@@ -263,20 +249,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "binding, a512, e12db20c42",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Role binding name generation can collide after sanitization",
-        "url": "https://github.com/kubestellar/console/issues/7608",
-        "created_at": "2026-04-13T14:48:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "confirmation, share, e10de9",
@@ -629,7 +601,7 @@
       "closed_count": 1
     },
     {
-      "name": "report, readiness, c37629f",
+      "name": "readiness, report, c37629f",
       "issue_count": 1,
       "recent_issue": {
         "title": "Client readiness can report healthy after stop",
@@ -1091,6 +1063,20 @@
       "closed_count": 1
     },
     {
+      "name": "comma, compute, d7c",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Compute compare URL encoding risk",
+        "url": "https://github.com/kubestellar/console/issues/5452",
+        "created_at": "2026-04-08T09:37:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "coding, level, contributor",
       "issue_count": 1,
       "recent_issue": {
@@ -1245,7 +1231,7 @@
       "closed_count": 1
     },
     {
-      "name": "ping, reader, backpressure",
+      "name": "ping, reader, e8039539",
       "issue_count": 1,
       "recent_issue": {
         "title": "WebSocket ping handling can block reader loop under backpressure",
@@ -1301,12 +1287,12 @@
       "closed_count": 1
     },
     {
-      "name": "sessionid, chat, ids",
+      "name": "chmod, binary, b645",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Chat cancellation key collision when sessionId is omitted",
-        "url": "https://github.com/kubestellar/console/issues/4263",
-        "created_at": "2026-04-02T16:41:25Z"
+        "title": "Binary auto-update ignores critical filesystem errors",
+        "url": "https://github.com/kubestellar/console/issues/4262",
+        "created_at": "2026-04-02T16:41:05Z"
       },
       "repos": [
         "console"
@@ -1315,12 +1301,12 @@
       "closed_count": 1
     },
     {
-      "name": "chmod, binary, b645",
+      "name": "t., devicetracker, k8sclient",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Binary auto-update ignores critical filesystem errors",
-        "url": "https://github.com/kubestellar/console/issues/4262",
-        "created_at": "2026-04-02T16:41:05Z"
+        "title": "Nil-pointer crash path in DeviceTracker when k8s client init fails",
+        "url": "https://github.com/kubestellar/console/issues/4261",
+        "created_at": "2026-04-02T16:40:49Z"
       },
       "repos": [
         "console"
@@ -1489,20 +1475,6 @@
         "title": "User friendly information panels on unfamiliar use cases",
         "url": "https://github.com/kubestellar/console/issues/3643",
         "created_at": "2026-03-26T11:44:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "ff85, f3f0, a0d1",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Cache key not normalized",
-        "url": "https://github.com/kubestellar/console/issues/3506",
-        "created_at": "2026-03-25T04:11:24Z"
       },
       "repos": [
         "console"
@@ -1682,22 +1654,22 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "bug:  Race Condition in OrbitHandler causes JSON Data Corruption",
+        "url": "https://github.com/kubestellar/console/issues/8003",
+        "repo": "console",
+        "topic_match": "lock, cache, dc3c7ed8"
+      },
+      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
       },
       {
-        "title": "bug: `handleRestartBackend` kills and restarts the backend Go process from within the kc-agent, but the kc-agent itself is started by `startup-oauth.sh` with a watchdog — the restart races against the",
-        "url": "https://github.com/kubestellar/console/issues/7945",
+        "title": "### 27. Self-upgrade broadcasts optimistic progress before the patch is applied",
+        "url": "https://github.com/kubestellar/console/issues/7976",
         "repo": "console",
-        "topic_match": "kill, sh, port"
-      },
-      {
-        "title": "Bug: defer mu.Unlock() in each goroutine holds the lock until it exits, blocking all 6",
-        "url": "https://github.com/kubestellar/console/issues/7942",
-        "repo": "console",
-        "topic_match": "lock, cache, dc3c7ed8"
+        "topic_match": "upgrade, vite, v8"
       }
     ],
     "stretch": [
@@ -1720,16 +1692,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Dashboard & Cards",
-        "path": "web/src/components/cards/, web/src/components/dashboard/",
-        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       }
     ]
   },

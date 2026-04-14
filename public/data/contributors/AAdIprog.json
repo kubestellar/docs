@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-14T18:32:30.044Z",
+  "generated_at": "2026-04-14T22:23:30.982Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 20200,
@@ -250,7 +250,7 @@
       "closed_count": 1
     },
     {
-      "name": "rbac, a8329, f930",
+      "name": "a8329, f930, b03710c4",
       "issue_count": 1,
       "recent_issue": {
         "title": "Critical Privilege Escalation: Pod Exec Bypass of Kubernetes RBAC",
@@ -278,7 +278,7 @@
       "closed_count": 1
     },
     {
-      "name": "dfc210b, ef47, f80",
+      "name": "dfc210b, ef47, ebebcd",
       "issue_count": 1,
       "recent_issue": {
         "title": "AI Streaming UI State Desync (File: web/src/components/mission-control/useMissionControl.ts)",
@@ -489,7 +489,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "### 27. Self-upgrade broadcasts optimistic progress before the patch is applied",
+        "url": "https://github.com/kubestellar/console/issues/7976",
+        "repo": "console",
+        "topic_match": "traversal, attacker, self"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",

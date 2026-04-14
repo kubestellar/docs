@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-14T18:32:29.074Z",
+  "generated_at": "2026-04-14T22:23:29.947Z",
   "total_issues_opened": 225,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 41850,
@@ -209,7 +209,7 @@
       "closed_count": 2
     },
     {
-      "name": "rollout, timeout, indefinitely",
+      "name": "rollout, timeout, docs",
       "issue_count": 1,
       "recent_issue": {
         "title": "docs(console): rollout status command missing timeout can block indefinitely",
@@ -518,7 +518,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "bug: Minikube cluster status always reported as \"unknown\" instead of actual state",
+        "url": "https://github.com/kubestellar/console/issues/7984",
+        "repo": "console",
+        "topic_match": "minikube, caveat, official"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",
