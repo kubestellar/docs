@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-14T22:23:29.947Z",
+  "generated_at": "2026-04-15T03:10:43.561Z",
   "total_issues_opened": 225,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 41850,
@@ -518,14 +518,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "bug: Minikube cluster status always reported as \"unknown\" instead of actual state",
-        "url": "https://github.com/kubestellar/console/issues/7984",
-        "repo": "console",
-        "topic_match": "minikube, caveat, official"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Cost Management",

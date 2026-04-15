@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-14T22:23:23.070Z",
+  "generated_at": "2026-04-15T03:10:37.109Z",
   "total_issues_opened": 421,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 125100,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 2,
-      "closed_count": 311
+      "open_count": 0,
+      "closed_count": 313
     },
     {
       "name": "clusterrole, openshift, opt",
@@ -301,8 +301,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "language, experience, ff3a0a98",
@@ -315,8 +315,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "development, time, reload",
@@ -329,8 +329,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "item, inconsistently, behave",
@@ -343,8 +343,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "cost, datum, static",
@@ -357,8 +357,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "makefile, d9d5, a71b179",
@@ -1287,12 +1287,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "### 27. Self-upgrade broadcasts optimistic progress before the patch is applied",
-        "url": "https://github.com/kubestellar/console/issues/7976",
-        "repo": "console",
-        "topic_match": "deployments, restriction, patch"
-      },
       {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",

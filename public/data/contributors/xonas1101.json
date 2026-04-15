@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-14T22:21:38.363Z",
+  "generated_at": "2026-04-15T03:09:03.123Z",
   "total_issues_opened": 514,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 165550,
@@ -1654,22 +1654,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "bug:  Race Condition in OrbitHandler causes JSON Data Corruption",
-        "url": "https://github.com/kubestellar/console/issues/8003",
-        "repo": "console",
-        "topic_match": "lock, cache, dc3c7ed8"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "### 27. Self-upgrade broadcasts optimistic progress before the patch is applied",
-        "url": "https://github.com/kubestellar/console/issues/7976",
-        "repo": "console",
-        "topic_match": "upgrade, vite, v8"
       }
     ],
     "stretch": [

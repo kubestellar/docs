@@ -1,6 +1,6 @@
 {
   "login": "rudy128",
-  "generated_at": "2026-04-14T22:23:31.096Z",
+  "generated_at": "2026-04-15T03:10:44.659Z",
   "total_issues_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/77375030?v=4",
   "total_points": 5300,
@@ -96,14 +96,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Some UI text does not change with language selection",
-        "url": "https://github.com/kubestellar/console/issues/8017",
-        "repo": "console",
-        "topic_match": "language, ladder, english"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Dashboard & Cards",

@@ -1,19 +1,19 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-14T22:20:50.592Z",
-  "total_issues_opened": 905,
+  "generated_at": "2026-04-15T03:08:21.067Z",
+  "total_issues_opened": 907,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3276300,
+  "total_points": 3293650,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 72.8,
-    "avg_per_day": 3.72,
+    "avg_per_week": 73,
+    "avg_per_day": 3.73,
     "by_day_of_week": [
       119,
       119,
-      192,
+      194,
       115,
       125,
       132,
@@ -22,7 +22,7 @@
     "by_hour_of_day": [
       48,
       23,
-      91,
+      93,
       29,
       41,
       27,
@@ -49,31 +49,31 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-14T21:46:31.000Z"
+    "last_issue_at": "2026-04-15T02:55:29.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 478,
+      "issue_count": 479,
       "recent_issue": {
-        "title": "[Auto-QA] Hardcoded colors instead of design tokens",
-        "url": "https://github.com/kubestellar/console/issues/8000",
-        "created_at": "2026-04-14T19:51:07Z"
+        "title": "[Auto-QA] Dependencies with major version updates available",
+        "url": "https://github.com/kubestellar/console/issues/8037",
+        "created_at": "2026-04-15T02:03:12Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
-      "open_count": 1,
-      "closed_count": 477
+      "open_count": 0,
+      "closed_count": 479
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 170,
+      "issue_count": 171,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #714",
-        "url": "https://github.com/kubestellar/console/issues/8020",
-        "created_at": "2026-04-14T21:46:31Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #727",
+        "url": "https://github.com/kubestellar/console/issues/8049",
+        "created_at": "2026-04-15T02:55:29Z"
       },
       "repos": [
         "console",
@@ -81,7 +81,7 @@
         "docs"
       ],
       "open_count": 4,
-      "closed_count": 166
+      "closed_count": 167
     },
     {
       "name": "monitoring, card, step",
@@ -885,20 +885,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Some pages do not adapt to theme changes due to hardcoded colors",
-        "url": "https://github.com/kubestellar/console/issues/8018",
-        "repo": "console",
-        "topic_match": "replace, color, hardcoded"
-      },
-      {
-        "title": "bug: aria-expanded Attribute Is Hardcoded to \"false\" on Navbar Dropdown Buttons",
-        "url": "https://github.com/kubestellar/docs/issues/1455",
-        "repo": "docs",
-        "topic_match": "recommend, expand, dropdown"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -979,7 +966,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 260
+      "issue_count": 262
     }
   ]
 }

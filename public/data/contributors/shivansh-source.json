@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-14T22:23:30.927Z",
+  "generated_at": "2026-04-15T03:10:44.501Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -268,12 +268,6 @@
       {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
-        "repo": "console",
-        "topic_match": "test, httptest, backend"
-      },
-      {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #714",
-        "url": "https://github.com/kubestellar/console/issues/8020",
         "repo": "console",
         "topic_match": "test, httptest, backend"
       }

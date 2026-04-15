@@ -1,6 +1,6 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-14T22:23:31.092Z",
+  "generated_at": "2026-04-15T03:10:44.655Z",
   "total_issues_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
   "total_points": 6600,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "nextra, footer, docs",

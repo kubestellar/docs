@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-14T22:23:23.081Z",
+  "generated_at": "2026-04-15T03:10:37.119Z",
   "total_issues_opened": 41,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 50000,
@@ -279,24 +279,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "bug: aria-expanded Attribute Is Hardcoded to \"false\" on Navbar Dropdown Buttons",
-        "url": "https://github.com/kubestellar/docs/issues/1455",
-        "repo": "docs",
-        "topic_match": "dropdown, navbar, blur"
-      },
-      {
-        "title": "Cluster Animation Not Rendering in Production Deployment",
-        "url": "https://github.com/kubestellar/console/issues/8004",
-        "repo": "console",
-        "topic_match": "globe, animation, hero"
-      },
-      {
-        "title": "Some pages do not adapt to theme changes due to hardcoded colors",
-        "url": "https://github.com/kubestellar/console/issues/8018",
-        "repo": "console",
-        "topic_match": "light, theme, docnavbar"
-      },
       {
         "title": "card: Implement Cloud Custodian monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/32",

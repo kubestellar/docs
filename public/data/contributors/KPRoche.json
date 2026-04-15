@@ -1,6 +1,6 @@
 {
   "login": "KPRoche",
-  "generated_at": "2026-04-14T22:23:30.218Z",
+  "generated_at": "2026-04-15T03:10:43.819Z",
   "total_issues_opened": 26,
   "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
   "total_points": 27550,
@@ -124,14 +124,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Some pages do not adapt to theme changes due to hardcoded colors",
-        "url": "https://github.com/kubestellar/console/issues/8018",
-        "repo": "console",
-        "topic_match": "theme, marketplace, themes"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Storage & Compute",

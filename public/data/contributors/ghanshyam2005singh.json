@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-14T22:23:30.799Z",
+  "generated_at": "2026-04-15T03:10:44.378Z",
   "total_issues_opened": 82,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 25000,
@@ -240,22 +240,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "feature: OpenRouter Support",
-        "url": "https://github.com/kubestellar/console/issues/7999",
-        "repo": "console",
-        "topic_match": "model, provider, openai"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",
         "repo": "console",
         "topic_match": "mission, ai, @ghanshyam2005singh"
-      },
-      {
-        "title": "Some pages do not adapt to theme changes due to hardcoded colors",
-        "url": "https://github.com/kubestellar/console/issues/8018",
-        "repo": "console",
-        "topic_match": "install, theme, marketplace"
       }
     ],
     "stretch": [
