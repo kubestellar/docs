@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-15T10:35:46.235Z",
+  "generated_at": "2026-04-15T14:41:27.554Z",
   "total_issues_opened": 41,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 50000,
@@ -284,6 +284,12 @@
         "url": "https://github.com/kubestellar/docs/issues/1468",
         "repo": "docs",
         "topic_match": "dropdown, navbar, blur"
+      },
+      {
+        "title": "fix: correct typo in observability README title",
+        "url": "https://github.com/kubestellar/console-kb/issues/2020",
+        "repo": "console-kb",
+        "topic_match": "readme, irrelevant, kinda"
       },
       {
         "title": "card: Implement Cloud Custodian monitoring card",

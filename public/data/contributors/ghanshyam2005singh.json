@@ -1,19 +1,19 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-15T10:35:53.318Z",
-  "total_issues_opened": 82,
+  "generated_at": "2026-04-15T14:41:34.726Z",
+  "total_issues_opened": 84,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
-  "total_points": 25000,
+  "total_points": 25600,
   "level": "Commander",
   "level_rank": 5,
   "rank": 13,
   "cadence": {
-    "avg_per_week": 6.8,
+    "avg_per_week": 6.9,
     "avg_per_day": 0.82,
     "by_day_of_week": [
       8,
       1,
-      9,
+      11,
       27,
       17,
       12,
@@ -33,7 +33,7 @@
       5,
       8,
       4,
-      6,
+      8,
       15,
       4,
       1,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-01-03T05:59:20.000Z",
-    "last_issue_at": "2026-04-13T14:53:09.000Z"
+    "last_issue_at": "2026-04-15T13:29:04.000Z"
   },
   "topics": [
     {
       "name": "mission, ai, @ghanshyam2005singh",
-      "issue_count": 59,
+      "issue_count": 61,
       "recent_issue": {
-        "title": "Repeated client disconnection events despite backend being healthy",
-        "url": "https://github.com/kubestellar/console/issues/7614",
-        "created_at": "2026-04-13T14:53:09Z"
+        "title": "Deprecated GitHub Copilot Agents in AI agent selection dropdown",
+        "url": "https://github.com/kubestellar/console/issues/8145",
+        "created_at": "2026-04-15T13:29:04Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 59
+      "closed_count": 61
     },
     {
       "name": "screenshot, report, @ghanshyam2005singh",
@@ -244,6 +244,12 @@
         "url": "https://github.com/kubestellar/console/issues/4196",
         "repo": "console",
         "topic_match": "mission, ai, @ghanshyam2005singh"
+      },
+      {
+        "title": "bug: Footer \"Privacy Policy\", \"Terms of Service\", and \"Cookie Policy\" Links Are Non-Functional Placeholders (`href=\"#\"`)",
+        "url": "https://github.com/kubestellar/docs/issues/1461",
+        "repo": "docs",
+        "topic_match": "policy, 127.0.0.1:8585, b404ba36"
       }
     ],
     "stretch": [
@@ -326,7 +332,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 35
+      "issue_count": 37
     }
   ]
 }

@@ -1,19 +1,19 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-15T10:33:30.043Z",
-  "total_issues_opened": 910,
+  "generated_at": "2026-04-15T14:39:10.183Z",
+  "total_issues_opened": 912,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3314450,
+  "total_points": 3316650,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 72.5,
-    "avg_per_day": 3.73,
+    "avg_per_week": 72.7,
+    "avg_per_day": 3.74,
     "by_day_of_week": [
       119,
       119,
-      197,
+      199,
       115,
       125,
       132,
@@ -34,7 +34,7 @@
       5,
       4,
       65,
-      49,
+      51,
       88,
       34,
       34,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-15T08:01:16.000Z"
+    "last_issue_at": "2026-04-15T14:01:37.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 481,
+      "issue_count": 483,
       "recent_issue": {
-        "title": "[Auto-QA] 1 debug console.log statements should be removed",
-        "url": "https://github.com/kubestellar/console/issues/8117",
-        "created_at": "2026-04-15T08:01:16Z"
+        "title": "[Auto-QA] Cards missing demo data support",
+        "url": "https://github.com/kubestellar/console/issues/8150",
+        "created_at": "2026-04-15T14:01:37Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
-      "open_count": 0,
-      "closed_count": 481
+      "open_count": 1,
+      "closed_count": 482
     },
     {
       "name": "test, coverage, suite",
@@ -885,7 +885,26 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "fix: correct typo in observability README title",
+        "url": "https://github.com/kubestellar/console-kb/issues/2020",
+        "repo": "console-kb",
+        "topic_match": "typo, readme, fix"
+      },
+      {
+        "title": "feature: ability to make non-type-specific GPU reservation",
+        "url": "https://github.com/kubestellar/console/issues/8144",
+        "repo": "console",
+        "topic_match": "gpu, workload, pod"
+      },
+      {
+        "title": "bug: GPU Usage Trend card shows no GPUs at all",
+        "url": "https://github.com/kubestellar/console/issues/8081",
+        "repo": "console",
+        "topic_match": "gpu, workload, pod"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -966,7 +985,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 265
+      "issue_count": 267
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-15T10:35:46.225Z",
+  "generated_at": "2026-04-15T14:41:27.544Z",
   "total_issues_opened": 421,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 125100,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 314,
+      "issue_count": 313,
       "recent_issue": {
         "title": "Alerts card does not show any failure state even when data cannot be loaded",
         "url": "https://github.com/kubestellar/console/issues/8014",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 314
+      "closed_count": 313
     },
     {
       "name": "clusterrole, openshift, opt",
@@ -739,6 +739,20 @@
       "closed_count": 1
     },
     {
+      "name": "reservation, subsequent, share",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "All GPU reservations share one collection context — slow first cluster starves subsequent reservations",
+        "url": "https://github.com/kubestellar/console/issues/6967",
+        "created_at": "2026-04-12T20:10:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "getbulkutilizations, f3ffeb12, c385",
       "issue_count": 1,
       "recent_issue": {
@@ -1273,6 +1287,12 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "feature: ability to make non-type-specific GPU reservation",
+        "url": "https://github.com/kubestellar/console/issues/8144",
+        "repo": "console",
+        "topic_match": "reservation, subsequent, share"
+      },
       {
         "title": "bug: `Navbar` `useEffect` Registers Event Listeners and a `MutationObserver` with No Cleanup — Memory Leak",
         "url": "https://github.com/kubestellar/docs/issues/1467",

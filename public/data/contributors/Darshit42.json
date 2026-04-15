@@ -1,19 +1,19 @@
 {
-  "login": "Provokke",
-  "generated_at": "2026-04-15T14:41:35.087Z",
-  "total_issues_opened": 0,
-  "avatar_url": "https://avatars.githubusercontent.com/u/70989453?v=4",
-  "total_points": 200,
-  "level": "Observer",
-  "level_rank": 1,
-  "rank": 75,
+  "login": "Darshit42",
+  "generated_at": "2026-04-15T14:41:35.075Z",
+  "total_issues_opened": 2,
+  "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
+  "total_points": 800,
+  "level": "Explorer",
+  "level_rank": 2,
+  "rank": 44,
   "cadence": {
-    "avg_per_week": 0,
-    "avg_per_day": 0,
+    "avg_per_week": 0.2,
+    "avg_per_day": 2,
     "by_day_of_week": [
       0,
       0,
-      0,
+      2,
       0,
       0,
       0,
@@ -34,7 +34,7 @@
       0,
       0,
       0,
-      0,
+      2,
       0,
       0,
       0,
@@ -45,11 +45,11 @@
       0,
       0
     ],
-    "current_streak_weeks": 0,
-    "longest_streak_weeks": 0,
-    "trend": "inactive",
-    "first_issue_at": null,
-    "last_issue_at": null
+    "current_streak_weeks": 1,
+    "longest_streak_weeks": 1,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-04-15T14:16:40.000Z",
+    "last_issue_at": "2026-04-15T14:29:53.000Z"
   },
   "topics": [],
   "suggestions": {
@@ -103,7 +103,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 0
+      "issue_count": 2
     }
   ]
 }
