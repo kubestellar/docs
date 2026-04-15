@@ -119,30 +119,33 @@ Four layers gate every request to kc-agent:
 
 The console is designed to work in three progressively stricter network postures.
 
+**Posture A — fully online (default):** everything enabled.
+
 ```mermaid
-flowchart TB
-    subgraph A["A — fully online"]
-        direction LR
-        A_KA[kc-agent] --> A_K8S[Kubernetes]
-        A_KA --> A_AI[Public LLM]
-        A_GB[Backend] --> A_GH[GitHub OAuth]
-        A_GB --> A_UP[Update checks]
-    end
+flowchart LR
+    A_KA[kc-agent] --> A_K8S[Kubernetes]
+    A_KA --> A_AI[Public LLM]
+    A_GB[Backend] --> A_GH[GitHub OAuth]
+    A_GB --> A_UP[Update checks]
+```
 
-    subgraph B["B — restricted egress, no AI"]
-        direction LR
-        B_KA[kc-agent] --> B_K8S[Kubernetes]
-        B_KA -.blocked.-> B_AI[Public LLM]
-        B_GB[Backend] --> B_GH[GitHub OAuth]
-    end
+**Posture B — restricted egress, no AI:** all cluster-management features still work.
 
-    subgraph C["C — fully air-gapped"]
-        direction LR
-        C_KA[kc-agent] --> C_K8S[Kubernetes]
-        C_KA --> C_LLM[Local LLM]
-        C_KA -.blocked.-> C_AI[Public LLM]
-        C_GB[Backend] -.blocked.-> C_GH[GitHub OAuth]
-    end
+```mermaid
+flowchart LR
+    B_KA[kc-agent] --> B_K8S[Kubernetes]
+    B_KA -.blocked.-> B_AI[Public LLM]
+    B_GB[Backend] --> B_GH[GitHub OAuth]
+```
+
+**Posture C — fully air-gapped:** no public AI, no GitHub OAuth, optional local LLM.
+
+```mermaid
+flowchart LR
+    C_KA[kc-agent] --> C_K8S[Kubernetes]
+    C_KA --> C_LLM[Local LLM]
+    C_KA -.blocked.-> C_AI[Public LLM]
+    C_GB[Backend] -.blocked.-> C_GH[GitHub OAuth]
 ```
 
 - **Posture A** is the default — everything enabled. Cloud AI, GitHub OAuth, update checks.
