@@ -926,7 +926,7 @@ export default function Navbar() {
                 </div>
                 <div
                   data-dropdown-menu
-                  className="absolute hidden lg:flex right-0 mt-1 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
+                  className="absolute right-0 mt-1 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
                   style={{ display: "none" }}
                 >
                   <a
