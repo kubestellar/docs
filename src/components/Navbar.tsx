@@ -140,6 +140,9 @@ export default function Navbar() {
           }
 
           setIsDropdownOpen(false);
+          setIsContributeOpen(false);
+          setIsCommunityOpen(false);
+          setIsGithubOpen(false);
         }
       });
     };
@@ -511,7 +514,7 @@ export default function Navbar() {
                     className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-100 transform nav-link-hover cursor-pointer"
                     data-dropdown-button
                     aria-haspopup="true"
-                    aria-expanded="false"
+                    aria-expanded={isContributeOpen}
                   >
                     <div className="relative">
                       <svg
@@ -681,7 +684,7 @@ export default function Navbar() {
                     className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-100 transform nav-link-hover cursor-pointer"
                     data-dropdown-button
                     aria-haspopup="true"
-                    aria-expanded="false"
+                    aria-expanded={isCommunityOpen}
                   >
                     <div className="relative">
                       <svg
