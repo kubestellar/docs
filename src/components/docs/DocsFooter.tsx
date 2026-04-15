@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "../index";
 import Link from "next/link";
@@ -12,19 +12,13 @@ export default function Footer() {
   const isDark = resolvedTheme === 'dark';
 
   const [email, setEmail] = useState("");
-  const [subStatus, setSubStatus] = useState<"idle" | "loading" | "success">("idle");
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = (e: FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email.trim()) return;
 
-    setSubStatus("loading");
-    // Simulate a subscription request
-    setTimeout(() => {
-      setSubStatus("success");
-      setEmail("");
-      setTimeout(() => setSubStatus("idle"), 3000);
-    }, 1000);
+    window.alert("Subscriptions are not available yet. Please try again later.");
+    setEmail("");
   };
 
   useEffect(() => {
@@ -462,12 +456,11 @@ export default function Footer() {
 
                   <button
                     type="submit"
-                    disabled={subStatus === "loading" || subStatus === "success"}
-                    className={`w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap disabled:opacity-75 disabled:cursor-not-allowed ${
+                    className={`w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap ${
                       isDark ? 'focus:ring-offset-gray-800' : 'focus:ring-offset-white'
                     }`}
                   >
-                    <span>{subStatus === "success" ? "Subscribed!" : subStatus === "loading" ? "..." : "Subscribe"}</span>
+                    <span>Subscribe</span>
                   </button>
                 </form>
               </div>

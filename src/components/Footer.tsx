@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "./index";
 import { useTranslations } from "next-intl";
@@ -10,19 +10,12 @@ import { getLocalizedUrl } from "@/lib/url";
 export default function Footer() {
   const t = useTranslations("footer");
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
-
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = (e: FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email.trim()) return;
 
-    setStatus("loading");
-    // Simulate a subscription request
-    setTimeout(() => {
-      setStatus("success");
-      setEmail("");
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1000);
+    window.alert("Subscriptions are not available yet. Please try again later.");
+    setEmail("");
   };
   useEffect(() => {
     // Back to top functionality
@@ -335,10 +328,9 @@ export default function Footer() {
 
                   <button
                     type="submit"
-                    disabled={status === "loading" || status === "success"}
-                    className="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap disabled:opacity-75 disabled:cursor-not-allowed"
+                    className="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap"
                   >
-                    <span>{status === "success" ? t("subscribed") || "Subscribed!" : status === "loading" ? "..." : t("subscribe")}</span>
+                    <span>{t("subscribe")}</span>
                   </button>
                 </form>
               </div>
