@@ -24,6 +24,8 @@ export default function Navbar() {
 
   const t = useTranslations("navigation");
   useEffect(() => {
+    const cleanups: (() => void)[] = [];
+
     // Initialize dropdowns functionality
     const initDropdowns = () => {
       const dropdownContainers =
@@ -102,6 +104,10 @@ export default function Navbar() {
 
           container.addEventListener("mouseenter", showMenu);
           container.addEventListener("mouseleave", hideMenu);
+          cleanups.push(() => {
+            container.removeEventListener("mouseenter", showMenu);
+            container.removeEventListener("mouseleave", hideMenu);
+          });
 
           // Clear timeout when hovering the dropdown button/trigger
           // This fixes the issue where moving from menu back to button closes the menu
@@ -110,16 +116,20 @@ export default function Navbar() {
           );
           if (button) {
             button.addEventListener("mouseenter", clearHideTimeout);
+            cleanups.push(() => button.removeEventListener("mouseenter", clearHideTimeout));
           }
 
           menu.addEventListener("mouseenter", clearHideTimeout);
-
           menu.addEventListener("mouseleave", hideMenu);
+          cleanups.push(() => {
+            menu.removeEventListener("mouseenter", clearHideTimeout);
+            menu.removeEventListener("mouseleave", hideMenu);
+          });
         }
       });
 
       // Close on Escape key
-      document.addEventListener("keydown", e => {
+      const handleEscape = (e: KeyboardEvent) => {
         if (e.key === "Escape") {
           dropdownContainers.forEach(container => {
             const menu = container.querySelector(
@@ -144,7 +154,10 @@ export default function Navbar() {
           setIsCommunityOpen(false);
           setIsGithubOpen(false);
         }
-      });
+      };
+
+      document.addEventListener("keydown", handleEscape);
+      cleanups.push(() => document.removeEventListener("keydown", handleEscape));
     };
 
     // Fetch stats via shields.io JSON endpoints — no rate-limit issues unlike api.github.com
@@ -317,6 +330,10 @@ export default function Navbar() {
 
         langSwitcher.addEventListener("mouseenter", handleMouseEnter);
         langSwitcher.addEventListener("mouseleave", handleMouseLeave);
+        cleanups.push(() => {
+          langSwitcher.removeEventListener("mouseenter", handleMouseEnter);
+          langSwitcher.removeEventListener("mouseleave", handleMouseLeave);
+        });
 
         // Handle dropdown menu hover with improved detection
         const observer = new MutationObserver(mutations => {
@@ -369,11 +386,18 @@ export default function Navbar() {
         });
 
         observer.observe(document.body, { childList: true, subtree: true });
+        cleanups.push(() => observer.disconnect());
       }
     };
 
     // Small delay to ensure LanguageSwitcher is mounted
-    setTimeout(initLanguageSwitcher, 100);
+    const timer = setTimeout(initLanguageSwitcher, 100);
+    cleanups.push(() => clearTimeout(timer));
+
+    return () => {
+      cleanups.forEach(cleanup => cleanup());
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, []);
 
   return (
