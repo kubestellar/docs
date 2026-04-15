@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-15T18:32:36.630Z",
+  "generated_at": "2026-04-15T22:22:08.388Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -266,16 +266,16 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "🐛 15 test failure(s) in Coverage Suite run #763",
-        "url": "https://github.com/kubestellar/console/issues/8182",
-        "repo": "console",
-        "topic_match": "test, httptest, backend"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "test, httptest, backend"
+      },
+      {
+        "title": "bug: facing issue while running console",
+        "url": "https://github.com/kubestellar/console/issues/8202",
+        "repo": "console",
+        "topic_match": "cmd, repository, gitignore"
       },
       {
         "title": "bug: Newsletter Subscribe Form Has No `onSubmit` Handler — Form Submission Is Silently Broken",

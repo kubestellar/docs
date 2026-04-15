@@ -1,9 +1,9 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-15T18:32:36.511Z",
+  "generated_at": "2026-04-15T22:22:08.270Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 22200,
+  "total_points": 23200,
   "level": "Commander",
   "level_rank": 5,
   "rank": 14,
@@ -568,8 +568,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "deprecate, mdn, modern",
@@ -582,8 +582,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "closelangswitcher, global, window",

@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-15T18:32:36.475Z",
+  "generated_at": "2026-04-15T22:22:08.235Z",
   "total_issues_opened": 84,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 25600,
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 60
+      "open_count": 0,
+      "closed_count": 61
     },
     {
       "name": "screenshot, report, @ghanshyam2005singh",
@@ -240,28 +240,16 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "docs: confusion between legacy “Post Office” model and new Console architecture",
-        "url": "https://github.com/kubestellar/docs/issues/1472",
-        "repo": "docs",
-        "topic_match": "model, provider, openai"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",
         "repo": "console",
         "topic_match": "mission, ai, @ghanshyam2005singh"
       },
       {
-        "title": "docs(security): no clear security model for kc-agent, data flow, and LLM interaction",
-        "url": "https://github.com/kubestellar/console/issues/8194",
+        "title": "bug: facing issue while running console",
+        "url": "https://github.com/kubestellar/console/issues/8202",
         "repo": "console",
-        "topic_match": "model, provider, openai"
-      },
-      {
-        "title": "bug: Footer \"Privacy Policy\", \"Terms of Service\", and \"Cookie Policy\" Links Are Non-Functional Placeholders (`href=\"#\"`)",
-        "url": "https://github.com/kubestellar/docs/issues/1461",
-        "repo": "docs",
-        "topic_match": "policy, 127.0.0.1:8585, b404ba36"
+        "topic_match": "screenshot, report, @ghanshyam2005singh"
       }
     ],
     "stretch": [

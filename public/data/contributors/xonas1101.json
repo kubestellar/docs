@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-15T18:30:55.209Z",
+  "generated_at": "2026-04-15T22:20:28.744Z",
   "total_issues_opened": 514,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 165750,
@@ -1582,7 +1582,7 @@
       "closed_count": 1
     },
     {
-      "name": "kc, unclear, agent",
+      "name": "unclear, kc, agent",
       "issue_count": 1,
       "recent_issue": {
         "title": "kc-agent requirement unclear in Kubernetes setup",
@@ -1631,12 +1631,6 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "bug: Footer \"Privacy Policy\", \"Terms of Service\", and \"Cookie Policy\" Links Are Non-Functional Placeholders (`href=\"#\"`)",
-        "url": "https://github.com/kubestellar/docs/issues/1461",
-        "repo": "docs",
-        "topic_match": "policy, webhooks, ebec6c"
       },
       {
         "title": "bug: GitHub Stats Dropdown Has Conflicting `className=\"hidden lg:flex\"` and `style={{ display: \"none\" }}` — Layout Bug",
