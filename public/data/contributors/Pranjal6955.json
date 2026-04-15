@@ -1,19 +1,19 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-15T03:10:44.655Z",
-  "total_issues_opened": 3,
+  "generated_at": "2026-04-15T06:44:25.725Z",
+  "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-  "total_points": 6600,
+  "total_points": 7200,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 22,
   "cadence": {
-    "avg_per_week": 0.1,
-    "avg_per_day": 0.02,
+    "avg_per_week": 0.3,
+    "avg_per_day": 0.03,
     "by_day_of_week": [
       1,
       1,
-      1,
+      3,
       0,
       0,
       0,
@@ -25,8 +25,8 @@
       0,
       0,
       0,
+      2,
       1,
-      0,
       0,
       0,
       0,
@@ -49,9 +49,37 @@
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
     "first_issue_at": "2025-10-01T13:51:13.000Z",
-    "last_issue_at": "2026-04-14T19:46:59.000Z"
+    "last_issue_at": "2026-04-15T06:00:51.000Z"
   },
   "topics": [
+    {
+      "name": "namespaces, filter, excessive",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug:  NamespaceMonitor: Excessive re-filtering causes frame drops with 30+ namespaces",
+        "url": "https://github.com/kubestellar/console/issues/8096",
+        "created_at": "2026-04-15T06:00:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "enrichment, field, rootcause",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Missing RootCause Field in Rule-Based Insight Enrichments",
+        "url": "https://github.com/kubestellar/console/issues/8090",
+        "created_at": "2026-04-15T05:42:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
     {
       "name": "openrouter, llama, model",
       "issue_count": 1,
@@ -105,28 +133,28 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
         "name": "Observability & Logs",
         "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
         "description": "Log streaming, event timeline, alerting, notifications",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       },
       {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },
@@ -177,7 +205,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 1
+      "issue_count": 3
     }
   ]
 }

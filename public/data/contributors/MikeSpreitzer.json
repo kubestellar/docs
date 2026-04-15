@@ -1,19 +1,19 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-15T03:10:44.632Z",
-  "total_issues_opened": 67,
+  "generated_at": "2026-04-15T06:44:25.707Z",
+  "total_issues_opened": 73,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-  "total_points": 13900,
-  "level": "Pilot",
-  "level_rank": 4,
+  "total_points": 15700,
+  "level": "Commander",
+  "level_rank": 5,
   "rank": 19,
   "cadence": {
-    "avg_per_week": 4.7,
-    "avg_per_day": 0.57,
+    "avg_per_week": 5.2,
+    "avg_per_day": 0.59,
     "by_day_of_week": [
       8,
       6,
-      7,
+      13,
       11,
       22,
       9,
@@ -24,8 +24,8 @@
       0,
       2,
       0,
-      3,
-      9,
+      4,
+      14,
       7,
       7,
       0,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 5,
     "trend": "steady",
     "first_issue_at": "2025-12-11T19:58:02.000Z",
-    "last_issue_at": "2026-04-09T06:58:12.000Z"
+    "last_issue_at": "2026-04-15T05:49:29.000Z"
   },
   "topics": [
     {
-      "name": "describe, following, snapshot",
-      "issue_count": 47,
+      "name": "describe, following, width",
+      "issue_count": 52,
       "recent_issue": {
-        "title": "doc: Two different enumeration of components in console architecture",
-        "url": "https://github.com/kubestellar/docs/issues/1367",
-        "created_at": "2026-04-09T06:58:12Z"
+        "title": "bug: visual clipping in detail view on \"Cluster Unreachable\" alert",
+        "url": "https://github.com/kubestellar/console/issues/8086",
+        "created_at": "2026-04-15T05:32:03Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 47
+      "closed_count": 52
     },
     {
       "name": "privilege, github, person",
@@ -137,6 +137,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "repair, ai, crescent",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Repair on cluster in Cluster Health card is broken",
+        "url": "https://github.com/kubestellar/console/issues/8093",
+        "created_at": "2026-04-15T05:49:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "usage, historical, gpus",
@@ -281,12 +295,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
@@ -297,6 +305,12 @@
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       }
     ]
   },
@@ -347,7 +361,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 8
+      "issue_count": 14
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-15T03:10:37.109Z",
+  "generated_at": "2026-04-15T06:44:17.739Z",
   "total_issues_opened": 421,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 125100,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 313,
+      "issue_count": 314,
       "recent_issue": {
         "title": "Alerts card does not show any failure state even when data cannot be loaded",
         "url": "https://github.com/kubestellar/console/issues/8014",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 313
+      "closed_count": 314
     },
     {
       "name": "clusterrole, openshift, opt",
@@ -731,20 +731,6 @@
         "title": "Self-upgrade Role grants patch on all Deployments in namespace with no resourceNames restriction",
         "url": "https://github.com/kubestellar/console/issues/6978",
         "created_at": "2026-04-12T22:00:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "reservation, subsequent, share",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "All GPU reservations share one collection context — slow first cluster starves subsequent reservations",
-        "url": "https://github.com/kubestellar/console/issues/6967",
-        "created_at": "2026-04-12T20:10:13Z"
       },
       "repos": [
         "console"

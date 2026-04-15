@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-15T03:10:39.780Z",
+  "generated_at": "2026-04-15T06:44:20.502Z",
   "total_issues_opened": 199,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 49600,
@@ -151,7 +151,7 @@
       "closed_count": 1
     },
     {
-      "name": "retain, snapshot, timestamps",
+      "name": "retain, timestamps, snapshot",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 1: Metrics history retains snapshots with unparseable timestamps forever (`metrics_history.go`)",
@@ -341,16 +341,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },

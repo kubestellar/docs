@@ -1,14 +1,14 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-15T03:08:21.067Z",
+  "generated_at": "2026-04-15T06:41:50.923Z",
   "total_issues_opened": 907,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3293650,
+  "total_points": 3304150,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 73,
+    "avg_per_week": 72.3,
     "avg_per_day": 3.73,
     "by_day_of_week": [
       119,
@@ -80,8 +80,8 @@
         "console-marketplace",
         "docs"
       ],
-      "open_count": 4,
-      "closed_count": 167
+      "open_count": 3,
+      "closed_count": 168
     },
     {
       "name": "monitoring, card, step",
@@ -460,8 +460,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "reconciliation, follow, tak",
@@ -894,16 +894,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Security & RBAC",

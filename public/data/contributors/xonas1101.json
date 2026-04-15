@@ -1,9 +1,9 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-15T03:09:03.123Z",
+  "generated_at": "2026-04-15T06:42:37.394Z",
   "total_issues_opened": 514,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 165550,
+  "total_points": 165750,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
@@ -1658,6 +1658,12 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
+      },
+      {
+        "title": "bug: Footer \"Privacy Policy\", \"Terms of Service\", and \"Cookie Policy\" Links Are Non-Functional Placeholders (`href=\"#\"`)",
+        "url": "https://github.com/kubestellar/docs/issues/1461",
+        "repo": "docs",
+        "topic_match": "policy, webhooks, ebec6c"
       }
     ],
     "stretch": [

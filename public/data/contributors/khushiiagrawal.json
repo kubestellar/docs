@@ -1,19 +1,19 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-15T03:10:44.654Z",
-  "total_issues_opened": 21,
+  "generated_at": "2026-04-15T06:44:25.610Z",
+  "total_issues_opened": 43,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 10700,
-  "level": "Pilot",
-  "level_rank": 4,
-  "rank": 21,
+  "total_points": 17700,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 18,
   "cadence": {
-    "avg_per_week": 1.8,
-    "avg_per_day": 2.54,
+    "avg_per_week": 3.6,
+    "avg_per_day": 4.95,
     "by_day_of_week": [
       2,
       18,
-      0,
+      22,
       0,
       0,
       1,
@@ -24,8 +24,8 @@
       0,
       0,
       0,
-      0,
-      0,
+      21,
+      1,
       0,
       0,
       0,
@@ -49,16 +49,30 @@
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-06T12:23:43.000Z",
-    "last_issue_at": "2026-04-14T18:51:18.000Z"
+    "last_issue_at": "2026-04-15T05:05:19.000Z"
   },
   "topics": [
     {
-      "name": "@khushiiagrawal, handler, kagenti",
+      "name": "goroutine, heartbeat, @khushiiagrawal",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "bug: `runWithTimeout` leaks a goroutine when the process kill fails",
+        "url": "https://github.com/kubestellar/console/issues/8058",
+        "created_at": "2026-04-15T04:46:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 4
+    },
+    {
+      "name": "restart, watchdog, kill",
       "issue_count": 3,
       "recent_issue": {
-        "title": "bug: `handleRolesHTTP` and related RBAC handlers skip token validation",
-        "url": "https://github.com/kubestellar/console/issues/7982",
-        "created_at": "2026-04-14T18:43:14Z"
+        "title": "bug: Agent restart via `handleRestartBackend` races with the watchdog's own restart loop",
+        "url": "https://github.com/kubestellar/console/issues/8060",
+        "created_at": "2026-04-15T04:47:59Z"
       },
       "repos": [
         "console"
@@ -67,18 +81,46 @@
       "closed_count": 3
     },
     {
-      "name": "goroutine, heartbeat, heartbeatdo",
-      "issue_count": 3,
+      "name": "vcluster, disconnectvcluster, disconnect",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "Bug: defer mu.Unlock() in each goroutine holds the lock until it exits, blocking all 6",
-        "url": "https://github.com/kubestellar/console/issues/7942",
-        "created_at": "2026-04-14T17:54:07Z"
+        "title": "bug: `ConnectVCluster` passes `--update-current=false` but `DisconnectVCluster` removes the context using `kubectl config delete-context`, leaving the `current-context` pointing to a deleted context",
+        "url": "https://github.com/kubestellar/console/issues/8076",
+        "created_at": "2026-04-15T04:52:59Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 3
+      "closed_count": 2
+    },
+    {
+      "name": "final, result, deadline",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: `handleChatMessageStreaming` uses `context.Background()` for final result write after deadline expiry, but token usage is still tracked",
+        "url": "https://github.com/kubestellar/console/issues/8073",
+        "created_at": "2026-04-15T04:52:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "body, response, decoder",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: `checkStatuspageHealth` reads the entire response body into a JSON decoder but never drains it, potentially holding a persistent HTTP connection open",
+        "url": "https://github.com/kubestellar/console/issues/8069",
+        "created_at": "2026-04-15T04:50:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "minikube, json, regex",
@@ -95,7 +137,21 @@
       "closed_count": 2
     },
     {
-      "name": "pin, overlap, @khushiiagrawal",
+      "name": "unlike, handler, @khushiiagrawal",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: `handleRolesHTTP` and related RBAC handlers skip token validation",
+        "url": "https://github.com/kubestellar/console/issues/7982",
+        "created_at": "2026-04-14T18:43:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "pin, overlap, dashboard",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: Pin button on dashboard is non-functional",
@@ -137,12 +193,180 @@
       "closed_count": 1
     },
     {
-      "name": "watchdog, kill, restart",
+      "name": "disk, adab4b56, e23e2265cf",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: `handleRestartBackend` kills and restarts the backend Go process from within the kc-agent, but the kc-agent itself is started by `startup-oauth.sh` with a watchdog — the restart races against the",
-        "url": "https://github.com/kubestellar/console/issues/7945",
-        "created_at": "2026-04-14T18:04:33Z"
+        "title": "bug: `loadKubeConfig` in `kubectl.go` calls `s.kubectl.Reload()` on every `/clusters` HTTP request, causing unnecessary disk I/O",
+        "url": "https://github.com/kubestellar/console/issues/8075",
+        "created_at": "2026-04-15T04:52:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "keyword, capable, question",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `promptNeedsToolExecution` uses naive keyword matching — `\"delete\"` in a question triggers tool-capable routing unnecessarily",
+        "url": "https://github.com/kubestellar/console/issues/8074",
+        "created_at": "2026-04-15T04:52:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "confirmation, d5722549, bfa",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `isDestructiveKubectlCommand` does not check for `--force` on `delete`, allowing force-deletion without confirmation",
+        "url": "https://github.com/kubestellar/console/issues/8072",
+        "created_at": "2026-04-15T04:51:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "acknowledgement, cancel, deadlock",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `handleCancelChat` sends cancel acknowledgement with `writeMu` held, but `handleChatMessageStreaming` also tries to acquire `writeMu` on timeout — can deadlock",
+        "url": "https://github.com/kubestellar/console/issues/8071",
+        "created_at": "2026-04-15T04:51:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "bc2b2f5c, d1b9, bf2e3e08f5",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `handleWebSocket` does not enforce a maximum message size, allowing oversized JSON to exhaust memory",
+        "url": "https://github.com/kubestellar/console/issues/8070",
+        "created_at": "2026-04-15T04:51:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "theme, save, b80b5f5f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `handleSettingsAll (PUT)` does not validate individual field values before saving, allowing empty or garbage settings to be persisted",
+        "url": "https://github.com/kubestellar/console/issues/8068",
+        "created_at": "2026-04-15T04:50:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "download, d086b7, b816",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `backup.json` attachment download sets `Content-Disposition` but `Content-Type` is `application/json`, causing browsers to open instead of download",
+        "url": "https://github.com/kubestellar/console/issues/8067",
+        "created_at": "2026-04-15T04:50:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "configured, unprivileged, a091bf",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `handleProvidersHealth` has no token validation — any unprivileged caller can enumerate configured providers",
+        "url": "https://github.com/kubestellar/console/issues/8066",
+        "created_at": "2026-04-15T04:50:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "listing, crd, e1a48fa8",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `handleKagentiAgents` swallows CRD listing errors silently, returning an empty list without an error field",
+        "url": "https://github.com/kubestellar/console/issues/8065",
+        "created_at": "2026-04-15T04:49:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "event, object, abbe63",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `handleEventsHTTP` filters events by object name using `strings.Contains` — partial matches return unintended events",
+        "url": "https://github.com/kubestellar/console/issues/8064",
+        "created_at": "2026-04-15T04:49:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "item, remove, a9ee",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: SSE stream reconnection on error appends duplicate items for clusters already received",
+        "url": "https://github.com/kubestellar/console/issues/8063",
+        "created_at": "2026-04-15T04:49:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "f4f1fb8, a58, f159dbc4660",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `checkBackendAvailability` caches a `true` availability result indefinitely, masking later backend failures",
+        "url": "https://github.com/kubestellar/console/issues/8061",
+        "created_at": "2026-04-15T04:48:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "container, db67cd15, a1a8807de7b1",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `startKindCluster` blindly iterates worker node names up to index 10 with no upper bound based on actual cluster size",
+        "url": "https://github.com/kubestellar/console/issues/8057",
+        "created_at": "2026-04-15T04:46:19Z"
       },
       "repos": [
         "console"
@@ -165,20 +389,6 @@
       "closed_count": 1
     },
     {
-      "name": "final, cd5d93b, ec381595d",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "`handleChatMessageStreaming` calls `safeWrite(ctx, ...)` to send the final result, but `ctx` may already be deadline-exceeded after streaming completes — final message is silently dropped",
-        "url": "https://github.com/kubestellar/console/issues/7925",
-        "created_at": "2026-04-14T13:31:52Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "a6532a00, f78efa28c89, orig",
       "issue_count": 1,
       "recent_issue": {
@@ -193,12 +403,12 @@
       "closed_count": 1
     },
     {
-      "name": "vcluster, disconnectvcluster, disconnect",
+      "name": "kagenti, dfe3f0, b6a",
       "issue_count": 1,
       "recent_issue": {
-        "title": "DisconnectVCluster` always runs `vcluster disconnect` with no cluster arguments — disconnects the **current** vCluster regardless of which one is requested",
-        "url": "https://github.com/kubestellar/console/issues/7921",
-        "created_at": "2026-04-14T13:26:57Z"
+        "title": "bug: `handleKagentCRDAgents` returns 500 instead of empty list for `GetDynamicClient` errors, inconsistent with all kagenti handlers",
+        "url": "https://github.com/kubestellar/console/issues/7917",
+        "created_at": "2026-04-14T13:23:49Z"
       },
       "repos": [
         "console"
@@ -233,6 +443,34 @@
       ],
       "open_count": 0,
       "closed_count": 1
+    },
+    {
+      "name": "policy, terms, footer",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Footer \"Privacy Policy\", \"Terms of Service\", and \"Cookie Policy\" Links Are Non-Functional Placeholders (`href=\"#\"`)",
+        "url": "https://github.com/kubestellar/docs/issues/1461",
+        "created_at": "2026-04-15T05:05:19Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "deprecate, mdn, modern",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `window.pageYOffset` Is Deprecated — Both Footer Components Use It",
+        "url": "https://github.com/kubestellar/docs/issues/1459",
+        "created_at": "2026-04-15T04:55:48Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     }
   ],
   "suggestions": {
@@ -243,12 +481,6 @@
         "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
         "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
         "name": "Onboarding & Rewards",
@@ -263,10 +495,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },
@@ -317,7 +555,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 21
+      "issue_count": 43
     }
   ]
 }

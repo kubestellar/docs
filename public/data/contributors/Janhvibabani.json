@@ -1,6 +1,6 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-04-15T03:10:44.657Z",
+  "generated_at": "2026-04-15T06:44:25.727Z",
   "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
   "total_points": 6250,
@@ -138,7 +138,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "bug: Footer \"Privacy Policy\", \"Terms of Service\", and \"Cookie Policy\" Links Are Non-Functional Placeholders (`href=\"#\"`)",
+        "url": "https://github.com/kubestellar/docs/issues/1461",
+        "repo": "docs",
+        "topic_match": "footer, year, copyright"
+      }
+    ],
     "stretch": [
       {
         "name": "Dashboard & Cards",
