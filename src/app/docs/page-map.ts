@@ -548,6 +548,13 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
     routeMap['legacy-components'] = 'legacy-components.md'
   }
 
+  // Add architecture evolution page (accessible at /docs/architecture-evolution)
+  // Explains the transition from the legacy BindingPolicy / WEC / ITS model
+  // to the kubeconfig-based KubeStellar Console. See kubestellar/docs#1472.
+  if (allDocFiles.includes('architecture-evolution.md')) {
+    routeMap['architecture-evolution'] = 'architecture-evolution.md'
+  }
+
   // Add top-level meta - only include our defined navigation structure
   const meta: Record<string, string> = {}
   for (const category of navStructure) {

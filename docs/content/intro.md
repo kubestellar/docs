@@ -25,6 +25,13 @@ Most users will wish to explore the demo and documentation for KubeStellar Conso
 - [KubeStellar-MCP Documentation](/docs/kubestellar-mcp/overview/introduction): More details about the Claude Code-enabled plugin for app-centric deployment management
 - [KubeStellar Console Demo](https://console.kubestellar.io): Live online demo of the KubeStellar Console UI/UX
 
+!!! info "Coming from the legacy BindingPolicy / WEC / ITS model?"
+    KubeStellar has evolved. The original multi-cluster binding model (WECs,
+    ITSs, `BindingPolicy`, KubeFlex) has been superseded by the Console,
+    which works directly against your kubeconfig. See
+    [Architecture Evolution](/docs/architecture-evolution) for a side-by-side
+    comparison and a short migration note.
+
 ### Core KubeStellar Components
 
 In-depth documentation for the foundational components that power KubeStellar's multi-cluster capabilities.
