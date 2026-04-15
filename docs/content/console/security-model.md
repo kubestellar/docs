@@ -32,37 +32,39 @@ flowchart LR
         B[Browser]
         KA[kc-agent]
         KC[kubeconfig]
-        CFG[AI keys file]
+        CFG[AI keys]
     end
 
     subgraph Console["Console deployment"]
-        GB[Go backend]
+        GB[Backend]
         POD[(Pod SA)]
     end
 
     subgraph Clusters["Managed clusters"]
-        K8S[Kubernetes API]
+        K8S[Kubernetes]
     end
 
-    subgraph AI["AI providers (optional)"]
+    subgraph AI["AI (optional)"]
         PUB[Public LLM]
         LOCAL[Local LLM]
     end
 
-    B -->|UI :8080| GB
-    B -->|cluster ops :8585| KA
+    B --> GB
+    B --> KA
     KA --> KC
     KA --> CFG
-    KA -->|user identity| K8S
-    KA -.->|prompts only| PUB
-    KA -.->|prompts only| LOCAL
-    GB -->|bootstrap only| POD
+    KA --> K8S
+    KA -.-> PUB
+    KA -.-> LOCAL
+    GB --> POD
 ```
 
 **Legend:**
 
-- **kc-agent** binds `127.0.0.1:8585` (loopback only) on the user's machine. Reads `~/.kube/config` and stores AI keys at `~/.kc/config.yaml` (mode `0600`).
-- **Go backend** serves the UI on `:8080` and only uses its pod ServiceAccount for bootstrap, GPU reservation, and self-upgrade — never to act on a managed cluster.
+- **Browser → Backend** serves the UI on port 8080.
+- **Browser → kc-agent** is all cluster operations on `127.0.0.1:8585` (loopback only). kc-agent reads `~/.kube/config` and stores AI keys at `~/.kc/config.yaml` (mode `0600`).
+- **kc-agent → Kubernetes** uses the user's own kubeconfig identity. Per-cluster RBAC is enforced by each apiserver against the user, never against the console's pod SA.
+- **Backend → Pod SA** is bootstrap-only — serving the frontend, GPU reservation, and self-upgrade. The backend never acts on a managed cluster.
 - **Public LLM** = Anthropic, OpenAI, Gemini, Groq, OpenRouter. **Local LLM** = Ollama, vLLM, LM Studio, Open WebUI, or any OpenAI-compatible internal gateway.
 - **Solid arrows** are mandatory for the core cluster-management UX. **Dashed arrows** to AI providers are optional and only used when an API key is configured.
 
@@ -88,19 +90,15 @@ kc-agent binds `127.0.0.1:8585` by default and is not configurable to bind any o
 
 ```mermaid
 flowchart LR
-    RB[Remote browser]
-    LB[Local browser]
+    RB[Remote]
+    LB[Local]
+    BIND[Bind]
+    CORS[CORS]
+    REB[Rebind]
+    TOK[Token]
+    KA[Handlers]
 
-    subgraph Gates["kc-agent gates"]
-        direction TB
-        BIND[1: bind 127.0.0.1]
-        CORS[2: CORS allow-list]
-        REB[3: rebind guard]
-        TOK[4: token check]
-        KA[handlers]
-    end
-
-    RB -.rejected.-> BIND
+    RB -.X.-> BIND
     LB --> BIND
     BIND --> CORS
     CORS --> REB
@@ -158,12 +156,12 @@ Three providers honor a base-URL override, so you can redirect the AI traffic to
 
 ```mermaid
 flowchart LR
-    KA[kc-agent] -->|provider: groq<br/>GROQ_BASE_URL=...| SLOT[Groq provider slot]
-    SLOT -.default.-> GRQ[api.groq.com/v1]
-    SLOT -->|override| OLLA[Ollama<br/>localhost:11434/v1]
-    SLOT -->|override| VLLM[vLLM<br/>local:8000/v1]
-    SLOT -->|override| LM[LM Studio<br/>local:1234/v1]
-    SLOT -->|override| GW[Corporate LLM gateway<br/>llm.internal/v1]
+    KA[kc-agent] --> SLOT[Groq slot]
+    SLOT -.default.-> GRQ[api.groq.com]
+    SLOT --> OLLA[Ollama]
+    SLOT --> VLLM[vLLM]
+    SLOT --> LM[LM Studio]
+    SLOT --> GW[Corporate gateway]
 ```
 
 Override environment variables:
