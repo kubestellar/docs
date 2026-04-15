@@ -1,0 +1,5 @@
+%%{init: {'flowchart': {'htmlLabels': false, 'useMaxWidth': false}}}%%
+flowchart LR
+    B_KA[kc-agent] --> B_K8S[Kubernetes]
+    B_KA -.blocked.-> B_AI[Public LLM]
+    B_GB[Backend] --> B_GH[GitHub OAuth]
