@@ -329,33 +329,11 @@ export default function Footer() {
 
         {/* Divider and bottom section */}
         <div className="border-t border-gray-800 pt-4 sm:pt-6 md:pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
-            {/* Left side - copyright */}
-            <p className="text-gray-400 text-xs sm:text-sm text-center md:text-left order-2 md:order-1">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-3 sm:gap-4">
+            {/* Copyright */}
+            <p className="text-gray-400 text-xs sm:text-sm text-center">
               {t("copyright", { year: new Date().getFullYear() })}
             </p>
-
-            {/* Right side - policy links */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 order-1 md:order-2">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm whitespace-nowrap"
-              >
-                {t("privacyPolicy")}
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm whitespace-nowrap"
-              >
-                {t("termsOfService")}
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm whitespace-nowrap"
-              >
-                {t("cookiePolicy")}
-              </a>
-            </div>
           </div>
         </div>
       </div>
