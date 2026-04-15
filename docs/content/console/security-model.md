@@ -28,35 +28,11 @@ The three-process architecture: your browser, a Go backend (serves UI, bootstrap
 
 ```mermaid
 flowchart LR
-    subgraph User["User machine"]
-        B[Browser]
-        KA[kc-agent]
-        KC[kubeconfig]
-        CFG[AI keys]
-    end
-
-    subgraph Console["Console deployment"]
-        GB[Backend]
-        POD[(Pod SA)]
-    end
-
-    subgraph Clusters["Managed clusters"]
-        K8S[Kubernetes]
-    end
-
-    subgraph AI["AI (optional)"]
-        PUB[Public LLM]
-        LOCAL[Local LLM]
-    end
-
-    B --> GB
-    B --> KA
-    KA --> KC
-    KA --> CFG
-    KA --> K8S
-    KA -.-> PUB
-    KA -.-> LOCAL
-    GB --> POD
+    B[Browser] --> GB[Backend]
+    B --> KA[kc-agent]
+    KA --> K8S[Kubernetes]
+    KA -.-> AI[AI]
+    GB --> POD[Pod SA]
 ```
 
 **Legend:**
