@@ -30,36 +30,41 @@ The three-process architecture: your browser, a Go backend (serves UI, bootstrap
 flowchart LR
     subgraph User["User machine"]
         B[Browser]
-        KA[kc-agent<br/>127.0.0.1:8585<br/>loopback only]
-        KC[~/.kube/config]
-        CFG[~/.kc/config.yaml<br/>AI keys, mode 0600]
+        KA[kc-agent]
+        KC[kubeconfig]
+        CFG[AI keys file]
     end
 
     subgraph Console["Console deployment"]
-        GB[Go backend<br/>:8080]
+        GB[Go backend]
         POD[(Pod SA)]
     end
 
-    subgraph Clusters["Your managed clusters"]
-        K8S[Kubernetes API servers]
+    subgraph Clusters["Managed clusters"]
+        K8S[Kubernetes API]
     end
 
     subgraph AI["AI providers (optional)"]
-        PUB[Public providers<br/>Anthropic / OpenAI /<br/>Gemini]
-        LOCAL[Local / self-hosted<br/>Ollama, vLLM, LM Studio,<br/>internal gateway]
+        PUB[Public LLM]
+        LOCAL[Local LLM]
     end
 
-    B -->|HTTP/WS :8080<br/>serves UI| GB
-    B -->|HTTP/WS :8585<br/>all cluster ops| KA
-    KA -->|reads on disk| KC
-    KA -->|reads on disk| CFG
-    KA -->|kubectl as<br/>user identity| K8S
-    KA -.->|optional HTTPS<br/>chat prompts| PUB
-    KA -.->|optional HTTPS<br/>chat prompts| LOCAL
-    GB -->|bootstrap /<br/>GPU reserve /<br/>self-upgrade ONLY| POD
+    B -->|UI :8080| GB
+    B -->|cluster ops :8585| KA
+    KA --> KC
+    KA --> CFG
+    KA -->|user identity| K8S
+    KA -.->|prompts only| PUB
+    KA -.->|prompts only| LOCAL
+    GB -->|bootstrap only| POD
 ```
 
-Solid lines are mandatory for the core cluster-management UX. Dashed lines to AI providers are optional and only used when an API key is configured.
+**Legend:**
+
+- **kc-agent** binds `127.0.0.1:8585` (loopback only) on the user's machine. Reads `~/.kube/config` and stores AI keys at `~/.kc/config.yaml` (mode `0600`).
+- **Go backend** serves the UI on `:8080` and only uses its pod ServiceAccount for bootstrap, GPU reservation, and self-upgrade — never to act on a managed cluster.
+- **Public LLM** = Anthropic, OpenAI, Gemini, Groq, OpenRouter. **Local LLM** = Ollama, vLLM, LM Studio, Open WebUI, or any OpenAI-compatible internal gateway.
+- **Solid arrows** are mandatory for the core cluster-management UX. **Dashed arrows** to AI providers are optional and only used when an API key is configured.
 
 ## The pod-SA rule
 
@@ -83,19 +88,19 @@ kc-agent binds `127.0.0.1:8585` by default and is not configurable to bind any o
 
 ```mermaid
 flowchart LR
-    RB[Remote browser<br/>any LAN host]
-    LB[Local browser<br/>127.0.0.1]
+    RB[Remote browser]
+    LB[Local browser]
 
-    subgraph Gates["kc-agent defense in depth"]
+    subgraph Gates["kc-agent gates"]
         direction TB
-        BIND[Bind check<br/>127.0.0.1 only]
-        CORS[Origin allow-list<br/>strict match]
-        REB[DNS-rebinding guard]
-        TOK["Token check<br/>(optional, off by default)"]
-        KA[kc-agent handlers<br/>kubectl via user kubeconfig]
+        BIND[1: bind 127.0.0.1]
+        CORS[2: CORS allow-list]
+        REB[3: rebind guard]
+        TOK[4: token check]
+        KA[handlers]
     end
 
-    RB -.rejected at OS<br/>socket layer.-> BIND
+    RB -.rejected.-> BIND
     LB --> BIND
     BIND --> CORS
     CORS --> REB
@@ -103,7 +108,12 @@ flowchart LR
     TOK --> KA
 ```
 
-Set `KC_AGENT_TOKEN` for the fourth layer — recommended when you cannot assume all local processes are trusted.
+Four layers gate every request to kc-agent:
+
+1. **Bind check** — kc-agent listens on `127.0.0.1:8585` only. Remote LAN hosts are rejected at the OS socket layer.
+2. **CORS allow-list** — strict origin matching for browser requests.
+3. **DNS-rebinding guard** — defends against attacker-controlled DNS resolving to `127.0.0.1`.
+4. **Token check** — optional shared secret. Set `KC_AGENT_TOKEN` for this fourth layer; recommended when you cannot assume all local processes are trusted.
 
 ## Network posture options
 
@@ -111,27 +121,27 @@ The console is designed to work in three progressively stricter network postures
 
 ```mermaid
 flowchart TB
-    subgraph A["Posture A — fully online (default)"]
+    subgraph A["A — fully online"]
         direction LR
         A_KA[kc-agent] --> A_K8S[Kubernetes]
-        A_KA --> A_AI[Public AI provider]
-        A_GB[Go backend] --> A_GH[GitHub OAuth]
+        A_KA --> A_AI[Public LLM]
+        A_GB[Backend] --> A_GH[GitHub OAuth]
         A_GB --> A_UP[Update checks]
     end
 
-    subgraph B["Posture B — restricted egress (no AI)"]
+    subgraph B["B — restricted egress, no AI"]
         direction LR
         B_KA[kc-agent] --> B_K8S[Kubernetes]
-        B_KA -.blocked.-> B_AI[Public AI provider]
-        B_GB[Go backend] --> B_GH[GitHub OAuth]
+        B_KA -.blocked.-> B_AI[Public LLM]
+        B_GB[Backend] --> B_GH[GitHub OAuth]
     end
 
-    subgraph C["Posture C — fully air-gapped"]
+    subgraph C["C — fully air-gapped"]
         direction LR
         C_KA[kc-agent] --> C_K8S[Kubernetes]
-        C_KA --> C_LLM[Local LLM<br/>optional]
-        C_KA -.blocked.-> C_AI[Public AI provider]
-        C_GB[Go backend] -.blocked.-> C_GH[GitHub OAuth]
+        C_KA --> C_LLM[Local LLM]
+        C_KA -.blocked.-> C_AI[Public LLM]
+        C_GB[Backend] -.blocked.-> C_GH[GitHub OAuth]
     end
 ```
 
