@@ -1,19 +1,19 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-15T06:41:50.923Z",
-  "total_issues_opened": 907,
+  "generated_at": "2026-04-15T10:33:30.043Z",
+  "total_issues_opened": 910,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3304150,
+  "total_points": 3314450,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 72.3,
+    "avg_per_week": 72.5,
     "avg_per_day": 3.73,
     "by_day_of_week": [
       119,
       119,
-      194,
+      197,
       115,
       125,
       132,
@@ -26,9 +26,9 @@
       29,
       41,
       27,
-      38,
+      39,
       57,
-      19,
+      21,
       8,
       5,
       5,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-15T02:55:29.000Z"
+    "last_issue_at": "2026-04-15T08:01:16.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 479,
+      "issue_count": 481,
       "recent_issue": {
-        "title": "[Auto-QA] Dependencies with major version updates available",
-        "url": "https://github.com/kubestellar/console/issues/8037",
-        "created_at": "2026-04-15T02:03:12Z"
+        "title": "[Auto-QA] 1 debug console.log statements should be removed",
+        "url": "https://github.com/kubestellar/console/issues/8117",
+        "created_at": "2026-04-15T08:01:16Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 479
+      "closed_count": 481
     },
     {
       "name": "test, coverage, suite",
@@ -113,17 +113,17 @@
     },
     {
       "name": "link, break, url",
-      "issue_count": 34,
+      "issue_count": 35,
       "recent_issue": {
         "title": "Broken link: https://kubestellar.io/docs/what-is-kubestellar/overview...",
-        "url": "https://github.com/kubestellar/docs/issues/1453",
-        "created_at": "2026-04-14T06:48:39Z"
+        "url": "https://github.com/kubestellar/docs/issues/1463",
+        "created_at": "2026-04-15T06:49:57Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 34
+      "closed_count": 35
     },
     {
       "name": "px, spacing, design",
@@ -894,16 +894,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Onboarding & Rewards",
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Security & RBAC",
@@ -966,7 +966,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 262
+      "issue_count": 265
     }
   ]
 }

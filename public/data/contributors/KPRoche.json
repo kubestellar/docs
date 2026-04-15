@@ -1,6 +1,6 @@
 {
   "login": "KPRoche",
-  "generated_at": "2026-04-15T06:44:24.818Z",
+  "generated_at": "2026-04-15T10:35:52.773Z",
   "total_issues_opened": 26,
   "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
   "total_points": 27550,
@@ -139,16 +139,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
         "name": "Security & RBAC",

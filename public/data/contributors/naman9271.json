@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-15T06:44:17.750Z",
+  "generated_at": "2026-04-15T10:35:46.235Z",
   "total_issues_opened": 41,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 50000,
@@ -235,7 +235,7 @@
       "closed_count": 1
     },
     {
-      "name": "globe, animation, hero",
+      "name": "animation, globe, hero",
       "issue_count": 1,
       "recent_issue": {
         "title": "Change the hero section Animation",
@@ -279,6 +279,12 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "bug: GitHub Stats Dropdown Has Conflicting `className=\"hidden lg:flex\"` and `style={{ display: \"none\" }}` — Layout Bug",
+        "url": "https://github.com/kubestellar/docs/issues/1468",
+        "repo": "docs",
+        "topic_match": "dropdown, navbar, blur"
+      },
       {
         "title": "card: Implement Cloud Custodian monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/32",

@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-15T06:44:24.811Z",
+  "generated_at": "2026-04-15T10:35:52.766Z",
   "total_issues_opened": 92,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 33100,
@@ -334,7 +334,7 @@
       "closed_count": 1
     },
     {
-      "name": "filepath, err, header",
+      "name": "filepath, err, zip",
       "issue_count": 1,
       "recent_issue": {
         "title": "Zip Slip Path Traversal in Plugin Installation",
@@ -470,16 +470,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Storage & Compute",

@@ -1,19 +1,19 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-15T06:44:25.610Z",
-  "total_issues_opened": 43,
+  "generated_at": "2026-04-15T10:35:53.354Z",
+  "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 17700,
+  "total_points": 22200,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 18,
+  "rank": 14,
   "cadence": {
-    "avg_per_week": 3.6,
-    "avg_per_day": 4.95,
+    "avg_per_week": 4.7,
+    "avg_per_day": 6.34,
     "by_day_of_week": [
       2,
       18,
-      22,
+      35,
       0,
       0,
       1,
@@ -28,7 +28,7 @@
       1,
       0,
       0,
-      0,
+      13,
       0,
       0,
       0,
@@ -49,11 +49,25 @@
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-06T12:23:43.000Z",
-    "last_issue_at": "2026-04-15T05:05:19.000Z"
+    "last_issue_at": "2026-04-15T08:27:31.000Z"
   },
   "topics": [
     {
-      "name": "goroutine, heartbeat, @khushiiagrawal",
+      "name": "restart, watchdog, process",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "bug: `AGENT_PID=$(lsof -i :8585 -t ... | head -1)` in `startup-oauth.sh` may match an unrelated process using port 8585",
+        "url": "https://github.com/kubestellar/console/issues/8127",
+        "created_at": "2026-04-15T08:20:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 4
+    },
+    {
+      "name": "goroutine, heartbeat, heartbeatdo",
       "issue_count": 4,
       "recent_issue": {
         "title": "bug: `runWithTimeout` leaks a goroutine when the process kill fails",
@@ -67,18 +81,32 @@
       "closed_count": 4
     },
     {
-      "name": "restart, watchdog, kill",
-      "issue_count": 3,
+      "name": "cancel, goroutines, acknowledgement",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "bug: Agent restart via `handleRestartBackend` races with the watchdog's own restart loop",
-        "url": "https://github.com/kubestellar/console/issues/8060",
-        "created_at": "2026-04-15T04:47:59Z"
+        "title": "bug: `handleKagentiSummary` fans out 4 goroutines but uses `r.Context()` as the parent — if the HTTP request is cancelled mid-way, all goroutines are cancelled without a partial response",
+        "url": "https://github.com/kubestellar/console/issues/8131",
+        "created_at": "2026-04-15T08:21:36Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 3
+      "closed_count": 2
+    },
+    {
+      "name": "flag, second, vite",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: `startup-oauth.sh` passes `--dev` only to control the Vite server but the backend `go run ./cmd/console` always starts without the `--dev` flag, making the flag's semantics confusing",
+        "url": "https://github.com/kubestellar/console/issues/8126",
+        "created_at": "2026-04-15T08:20:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "vcluster, disconnectvcluster, disconnect",
@@ -123,6 +151,21 @@
       "closed_count": 2
     },
     {
+      "name": "event, object, listener",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: `Navbar` `useEffect` Registers Event Listeners and a `MutationObserver` with No Cleanup — Memory Leak",
+        "url": "https://github.com/kubestellar/docs/issues/1467",
+        "created_at": "2026-04-15T08:26:28Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
       "name": "minikube, json, regex",
       "issue_count": 2,
       "recent_issue": {
@@ -137,7 +180,7 @@
       "closed_count": 2
     },
     {
-      "name": "unlike, handler, @khushiiagrawal",
+      "name": "unlike, handler, da09a5e",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: `handleRolesHTTP` and related RBAC handlers skip token validation",
@@ -179,17 +222,101 @@
       "closed_count": 2
     },
     {
-      "name": "dropdown, navbar, closelangswitcher",
+      "name": "dropdown, stats, layout",
       "issue_count": 2,
       "recent_issue": {
-        "title": "bug: Global Window Pollution via window.closeLangSwitcher for Cross-Component Communication",
-        "url": "https://github.com/kubestellar/docs/issues/1456",
-        "created_at": "2026-04-14T18:48:29Z"
+        "title": "bug: GitHub Stats Dropdown Has Conflicting `className=\"hidden lg:flex\"` and `style={{ display: \"none\" }}` — Layout Bug",
+        "url": "https://github.com/kubestellar/docs/issues/1468",
+        "created_at": "2026-04-15T08:27:31Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 1,
+      "closed_count": 1
+    },
+    {
+      "name": "god, file, cb677b",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `pkg/store/sqlite.go` is 107 KB — likely a god file that handles unrelated concerns in a single file, making auditing and testing difficult",
+        "url": "https://github.com/kubestellar/console/issues/8130",
+        "created_at": "2026-04-15T08:21:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "bootstrap, normal, ce09303",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `safe_npm_install` is defined twice in `startup-oauth.sh` — once in bootstrap mode (lines 92–110) and once in normal mode (lines 130–159) — but with different logic",
+        "url": "https://github.com/kubestellar/console/issues/8128",
+        "created_at": "2026-04-15T08:20:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "response, d3542218000, callers",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `authFetch` does not handle 401 responses — it bypasses `handle401()` logic entirely",
+        "url": "https://github.com/kubestellar/console/issues/8125",
+        "created_at": "2026-04-15T08:19:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "cookie, httponly, ac3eca30",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `silentRefresh()` in `ApiClient` does not set `credentials: 'include'`, so the HttpOnly refresh cookie is never sent",
+        "url": "https://github.com/kubestellar/console/issues/8124",
+        "created_at": "2026-04-15T08:19:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "long, ea119ca, a887",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: The SSE client's `pump` function uses recursion without a base case guard, potentially overflowing the stack for very long streams",
+        "url": "https://github.com/kubestellar/console/issues/8122",
+        "created_at": "2026-04-15T08:18:45Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "a33a99a, c9e, a50",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `handleDeploymentsHTTP` has a no-op namespace default: `if namespace == \"\" { namespace = \"\" }` (lines 341–343)",
+        "url": "https://github.com/kubestellar/console/issues/8121",
+        "created_at": "2026-04-15T08:18:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
       "closed_count": 1
     },
     {
@@ -227,20 +354,6 @@
         "title": "bug: `isDestructiveKubectlCommand` does not check for `--force` on `delete`, allowing force-deletion without confirmation",
         "url": "https://github.com/kubestellar/console/issues/8072",
         "created_at": "2026-04-15T04:51:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "acknowledgement, cancel, deadlock",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handleCancelChat` sends cancel acknowledgement with `writeMu` held, but `handleChatMessageStreaming` also tries to acquire `writeMu` on timeout — can deadlock",
-        "url": "https://github.com/kubestellar/console/issues/8071",
-        "created_at": "2026-04-15T04:51:27Z"
       },
       "repos": [
         "console"
@@ -311,20 +424,6 @@
         "title": "bug: `handleKagentiAgents` swallows CRD listing errors silently, returning an empty list without an error field",
         "url": "https://github.com/kubestellar/console/issues/8065",
         "created_at": "2026-04-15T04:49:46Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "event, object, abbe63",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handleEventsHTTP` filters events by object name using `strings.Contains` — partial matches return unintended events",
-        "url": "https://github.com/kubestellar/console/issues/8064",
-        "created_at": "2026-04-15T04:49:30Z"
       },
       "repos": [
         "console"
@@ -445,6 +544,20 @@
       "closed_count": 1
     },
     {
+      "name": "form, subscribe, newsletter",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Newsletter Subscribe Form Has No `onSubmit` Handler — Form Submission Is Silently Broken",
+        "url": "https://github.com/kubestellar/docs/issues/1466",
+        "created_at": "2026-04-15T08:25:22Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "policy, terms, footer",
       "issue_count": 1,
       "recent_issue": {
@@ -471,23 +584,25 @@
       ],
       "open_count": 1,
       "closed_count": 0
+    },
+    {
+      "name": "closelangswitcher, global, window",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Global Window Pollution via window.closeLangSwitcher for Cross-Component Communication",
+        "url": "https://github.com/kubestellar/docs/issues/1456",
+        "created_at": "2026-04-14T18:48:29Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     }
   ],
   "suggestions": {
     "deepen": [],
     "stretch": [
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
       {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
@@ -495,10 +610,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
         "name": "Storage & Compute",
@@ -555,7 +682,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 43
+      "issue_count": 56
     }
   ]
 }

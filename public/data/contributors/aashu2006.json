@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-15T06:44:17.739Z",
+  "generated_at": "2026-04-15T10:35:46.225Z",
   "total_issues_opened": 421,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 125100,
@@ -1145,7 +1145,7 @@
       "closed_count": 1
     },
     {
-      "name": "authorization, header, cbfe0",
+      "name": "authorization, cbfe0, ccc3061c3e5",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent fetch hooks send no Authorization header - silently breaks when KC_AGENT_TOKEN is set",
@@ -1273,6 +1273,12 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "bug: `Navbar` `useEffect` Registers Event Listeners and a `MutationObserver` with No Cleanup — Memory Leak",
+        "url": "https://github.com/kubestellar/docs/issues/1467",
+        "repo": "docs",
+        "topic_match": "listener, register, simultaneously"
+      },
       {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",

@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-15T06:42:37.394Z",
+  "generated_at": "2026-04-15T10:34:12.590Z",
   "total_issues_opened": 514,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 165750,
@@ -1664,6 +1664,12 @@
         "url": "https://github.com/kubestellar/docs/issues/1461",
         "repo": "docs",
         "topic_match": "policy, webhooks, ebec6c"
+      },
+      {
+        "title": "bug: GitHub Stats Dropdown Has Conflicting `className=\"hidden lg:flex\"` and `style={{ display: \"none\" }}` — Layout Bug",
+        "url": "https://github.com/kubestellar/docs/issues/1468",
+        "repo": "docs",
+        "topic_match": "class, tailwind, severitycolor"
       }
     ],
     "stretch": [

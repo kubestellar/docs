@@ -1,12 +1,12 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-15T06:44:25.531Z",
+  "generated_at": "2026-04-15T10:35:53.474Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 14,
+  "rank": 15,
   "cadence": {
     "avg_per_week": 5.8,
     "avg_per_day": 1.34,
@@ -270,6 +270,12 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "test, httptest, backend"
+      },
+      {
+        "title": "bug: Newsletter Subscribe Form Has No `onSubmit` Handler — Form Submission Is Silently Broken",
+        "url": "https://github.com/kubestellar/docs/issues/1466",
+        "repo": "docs",
+        "topic_match": "group, form, button"
       }
     ],
     "stretch": [
