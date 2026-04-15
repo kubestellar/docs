@@ -134,6 +134,7 @@ nav:
       - Alerts: console/alerts.md
       - Configuration: console/configuration.md
       - Architecture: console/architecture.md
+      - Security Model: console/security-model.md
       - Persistence: console/persistence.md
   - KubeStellar MCP:
       - Overview: kubestellar-mcp/index.md
