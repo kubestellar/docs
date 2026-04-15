@@ -1,5 +1,7 @@
 # KubeStellar Project Documentation 
 
+> **Looking for KubeFlex, BindingPolicy, WECs, ITSs, or the "Post Office" model?** Those are part of a separate project ([`kubestellar/kubestellar`](https://github.com/kubestellar/kubestellar)) and are **not** included in the KubeStellar Console. See [What is KubeStellar Console?](/docs/what-is-console) for details, or [Legacy Components](/docs/legacy-components) for pointers to the original project.
+
 Multi-cluster configuration management for edge, multi-cloud, and hybrid cloud environments.
 
 Enabled via  ***[KubeStellar Console](/docs/console/overview/introduction)***, a modern, AI-powered multi-cluster management interface that provides real-time monitoring, intelligent insights, and a customizable dashboard experience for managing Kubernetes clusters at scale.
@@ -19,8 +21,9 @@ Enabled via  ***[KubeStellar Console](/docs/console/overview/introduction)***, a
 
 ### KubeStellar Console
 
-Most users will wish to explore the demo and documentation for KubeStellar Console and the KubeStellar-MCP plugin for multicluster management and workload deployment. KubeStellar Console is a new, nimbler, from-the-ground-up AI-enabled control layer that does not use the legacy components.
+Most users will wish to explore the demo and documentation for KubeStellar Console and the KubeStellar-MCP plugin for multicluster management and workload deployment. KubeStellar Console is a standalone project — it is not related to and does not include any components from the original `kubestellar/kubestellar` repository (KubeFlex, WECs, ITSs, BindingPolicy, etc.).
 
+- [What is KubeStellar Console?](/docs/what-is-console): Short overview of what the Console is — and what it isn't
 - [KubeStellar Console Documentation](/docs/console/overview/introduction): Architecture, Features, Installation and Configuration
 - [KubeStellar-MCP Documentation](/docs/kubestellar-mcp/overview/introduction): More details about the Claude Code-enabled plugin for app-centric deployment management
 - [KubeStellar Console Demo](https://console.kubestellar.io): Live online demo of the KubeStellar Console UI/UX

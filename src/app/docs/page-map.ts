@@ -548,6 +548,13 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
     routeMap['legacy-components'] = 'legacy-components.md'
   }
 
+  // Add "What is Console" disambiguation page (accessible at /docs/what-is-console)
+  // This is a standalone page that clarifies KubeStellar Console is a separate
+  // project from the original kubestellar/kubestellar repository. See issue #1472.
+  if (allDocFiles.includes('what-is-console.md')) {
+    routeMap['what-is-console'] = 'what-is-console.md'
+  }
+
   // Add top-level meta - only include our defined navigation structure
   const meta: Record<string, string> = {}
   for (const category of navStructure) {
