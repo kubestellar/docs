@@ -1,0 +1,15 @@
+flowchart LR
+  subgraph LAPTOP[Developer Workstation]
+    BROWSER[Browser]
+    KCAGENT[kc-agent<br/>127.0.0.1:8585]
+    LLM[Ollama or LM Studio<br/>127.0.0.1:11434 / 1234]
+  end
+  subgraph REMOTE[Managed Cluster]
+    API[Kubernetes API<br/>kubeconfig]
+  end
+  BROWSER -->|WebSocket chat| KCAGENT
+  KCAGENT -->|chat request<br/>OpenAI format| LLM
+  KCAGENT -->|kubectl via kubeconfig| API
+  style LLM fill:#10b981,stroke:#065f46,color:#fff
+  style KCAGENT fill:#3b82f6,stroke:#1e3a8a,color:#fff
+  style API fill:#6366f1,stroke:#312e81,color:#fff
