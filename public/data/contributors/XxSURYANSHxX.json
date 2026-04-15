@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-15T14:41:30.157Z",
+  "generated_at": "2026-04-15T18:32:31.526Z",
   "total_issues_opened": 199,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 49600,
@@ -151,7 +151,7 @@
       "closed_count": 1
     },
     {
-      "name": "retain, timestamps, snapshot",
+      "name": "retain, snapshot, timestamps",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 1: Metrics history retains snapshots with unparseable timestamps forever (`metrics_history.go`)",

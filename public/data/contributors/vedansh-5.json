@@ -1,6 +1,6 @@
 {
   "login": "vedansh-5",
-  "generated_at": "2026-04-15T14:41:34.940Z",
+  "generated_at": "2026-04-15T18:32:36.684Z",
   "total_issues_opened": 19,
   "avatar_url": "https://avatars.githubusercontent.com/u/77830698?v=4",
   "total_points": 19550,
@@ -95,7 +95,7 @@
       "closed_count": 4
     },
     {
-      "name": "tab, tag, blog",
+      "name": "tab, tag, @btwshivam",
       "issue_count": 1,
       "recent_issue": {
         "title": "feature: Links should open in new tabs",

@@ -1,19 +1,19 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-15T14:41:33.914Z",
-  "total_issues_opened": 225,
+  "generated_at": "2026-04-15T18:32:35.670Z",
+  "total_issues_opened": 234,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-  "total_points": 41850,
+  "total_points": 43950,
   "level": "Commander",
   "level_rank": 5,
   "rank": 8,
   "cadence": {
-    "avg_per_week": 18.4,
-    "avg_per_day": 1.14,
+    "avg_per_week": 19.2,
+    "avg_per_day": 1.17,
     "by_day_of_week": [
       7,
       9,
-      11,
+      20,
       10,
       119,
       59,
@@ -38,7 +38,7 @@
       1,
       65,
       47,
-      0,
+      9,
       4,
       2,
       8,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 4,
     "trend": "steady",
     "first_issue_at": "2025-09-27T20:12:21.000Z",
-    "last_issue_at": "2026-04-12T16:36:34.000Z"
+    "last_issue_at": "2026-04-15T18:19:12.000Z"
   },
   "topics": [
     {
       "name": "@rishi, jat, line",
-      "issue_count": 180,
+      "issue_count": 179,
       "recent_issue": {
-        "title": "OAuth login failure (token_exchange_failed) lacks actionable diagnostics and guidance",
-        "url": "https://github.com/kubestellar/console/issues/6933",
-        "created_at": "2026-04-12T16:36:34Z"
+        "title": "docs: incomplete documentation for local/self-hosted LLM configuration",
+        "url": "https://github.com/kubestellar/console/issues/8196",
+        "created_at": "2026-04-15T18:19:12Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 180
+      "open_count": 3,
+      "closed_count": 176
     },
     {
       "name": "session, auth, traffic",
@@ -77,6 +77,21 @@
       },
       "repos": [
         "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "requirement, mod, version",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "docs/build(console): Go version mismatch between go.mod (1.25) and docs (1.24+)",
+        "url": "https://github.com/kubestellar/console/issues/6364",
+        "created_at": "2026-04-11T11:34:06Z"
+      },
+      "repos": [
+        "console",
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 3
@@ -109,6 +124,34 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "tooltips, terminology, term",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "ux: lack of tooltips and contextual explanations in UI",
+        "url": "https://github.com/kubestellar/console/issues/8192",
+        "created_at": "2026-04-15T18:18:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
+      "name": "onboarding, walkthrough, guide",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "ux: no onboarding flow, walkthrough, or guided first tasks",
+        "url": "https://github.com/kubestellar/console/issues/8191",
+        "created_at": "2026-04-15T18:17:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
     },
     {
       "name": "dompurify, svg, ts2307",
@@ -209,12 +252,54 @@
       "closed_count": 2
     },
     {
+      "name": "secure, air, disable",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "docs(security): missing guidance for secure and air-gapped deployments",
+        "url": "https://github.com/kubestellar/console/issues/8195",
+        "created_at": "2026-04-15T18:19:00Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "understand, product, purpose",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ux: unclear product purpose on first use (users unable to understand Console value quickly)",
+        "url": "https://github.com/kubestellar/console/issues/8190",
+        "created_at": "2026-04-15T18:17:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "rollout, timeout, docs",
       "issue_count": 1,
       "recent_issue": {
         "title": "docs(console): rollout status command missing timeout can block indefinitely",
         "url": "https://github.com/kubestellar/console/issues/6360",
         "created_at": "2026-04-11T11:28:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "docs, mobile, f958c",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Docs page layout breaks on mobile (text cutoff on left side)",
+        "url": "https://github.com/kubestellar/console/issues/5718",
+        "created_at": "2026-04-09T12:22:42Z"
       },
       "repos": [
         "console"
@@ -279,7 +364,7 @@
       "closed_count": 1
     },
     {
-      "name": "diagram, architecture, label",
+      "name": "diagram, label, architecture",
       "issue_count": 1,
       "recent_issue": {
         "title": "Architecture diagram labels are truncated and not clearly visible",
@@ -518,19 +603,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Typo in fixes/troubleshooting/README.md",
+        "url": "https://github.com/kubestellar/console-kb/issues/2023",
+        "repo": "console-kb",
+        "topic_match": "anchor, readme, setup"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Networking & Services",
@@ -549,6 +635,12 @@
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },
@@ -599,7 +691,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 69
+      "issue_count": 78
     }
   ]
 }

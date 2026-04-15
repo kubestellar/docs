@@ -1,19 +1,19 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-15T14:41:35.039Z",
-  "total_issues_opened": 74,
+  "generated_at": "2026-04-15T18:32:36.781Z",
+  "total_issues_opened": 75,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-  "total_points": 15800,
+  "total_points": 15900,
   "level": "Commander",
   "level_rank": 5,
   "rank": 19,
   "cadence": {
     "avg_per_week": 5.3,
-    "avg_per_day": 0.59,
+    "avg_per_day": 0.6,
     "by_day_of_week": [
       8,
       6,
-      14,
+      15,
       11,
       22,
       9,
@@ -36,7 +36,7 @@
       1,
       1,
       2,
-      4,
+      5,
       2,
       8,
       5,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 5,
     "trend": "steady",
     "first_issue_at": "2025-12-11T19:58:02.000Z",
-    "last_issue_at": "2026-04-15T13:28:51.000Z"
+    "last_issue_at": "2026-04-15T16:02:43.000Z"
   },
   "topics": [
     {
@@ -64,8 +64,22 @@
         "console",
         "docs"
       ],
+      "open_count": 0,
+      "closed_count": 52
+    },
+    {
+      "name": "taint, gpu, feature",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "feature: taint sensititivity in GPU Utilization and Inventory",
+        "url": "https://github.com/kubestellar/console/issues/8172",
+        "created_at": "2026-04-15T16:02:43Z"
+      },
+      "repos": [
+        "console"
+      ],
       "open_count": 2,
-      "closed_count": 50
+      "closed_count": 1
     },
     {
       "name": "privilege, github, person",
@@ -80,20 +94,6 @@
       ],
       "open_count": 0,
       "closed_count": 3
-    },
-    {
-      "name": "gpu, feature, gpus",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "feature: ability to make non-type-specific GPU reservation",
-        "url": "https://github.com/kubestellar/console/issues/8144",
-        "created_at": "2026-04-15T13:28:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 1
     },
     {
       "name": "suspect, update, image",
@@ -361,7 +361,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 15
+      "issue_count": 16
     }
   ]
 }

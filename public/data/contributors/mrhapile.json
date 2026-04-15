@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-15T14:40:34.652Z",
+  "generated_at": "2026-04-15T18:31:36.323Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -809,7 +809,7 @@
       "closed_count": 1
     },
     {
-      "name": "truncate, c5b, e0ae642",
+      "name": "truncate, e0ae642, modal",
       "issue_count": 1,
       "recent_issue": {
         "title": "Feature Request Modal",
@@ -1356,7 +1356,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "ux: lack of tooltips and contextual explanations in UI",
+        "url": "https://github.com/kubestellar/console/issues/8192",
+        "repo": "console",
+        "topic_match": "tooltips, a44df46a, cdb"
+      }
+    ],
     "stretch": [
       {
         "name": "Marketplace & Operators",
@@ -1371,16 +1378,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
         "name": "Storage & Compute",

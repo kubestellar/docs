@@ -1,19 +1,19 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-15T14:39:10.183Z",
-  "total_issues_opened": 912,
+  "generated_at": "2026-04-15T18:30:12.978Z",
+  "total_issues_opened": 914,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3316650,
+  "total_points": 3333750,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 72.7,
+    "avg_per_week": 72.8,
     "avg_per_day": 3.74,
     "by_day_of_week": [
       119,
       119,
-      199,
+      201,
       115,
       125,
       132,
@@ -36,8 +36,8 @@
       65,
       51,
       88,
-      34,
-      34,
+      35,
+      35,
       25,
       132,
       30,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 15,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-15T14:01:37.000Z"
+    "last_issue_at": "2026-04-15T17:12:04.000Z"
   },
   "topics": [
     {
@@ -64,27 +64,27 @@
         "console",
         "console-marketplace"
       ],
-      "open_count": 1,
-      "closed_count": 482
+      "open_count": 0,
+      "closed_count": 483
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 171,
+      "issue_count": 173,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #727",
-        "url": "https://github.com/kubestellar/console/issues/8049",
-        "created_at": "2026-04-15T02:55:29Z"
+        "title": "🐛 15 test failure(s) in Coverage Suite run #763",
+        "url": "https://github.com/kubestellar/console/issues/8182",
+        "created_at": "2026-04-15T17:12:04Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 168
+      "open_count": 4,
+      "closed_count": 169
     },
     {
-      "name": "monitoring, card, step",
+      "name": "monitoring, card, implement",
       "issue_count": 57,
       "recent_issue": {
         "title": "card: Implement Flatcar Container Linux monitoring card",
@@ -446,8 +446,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "clustercache, navigate, single",
@@ -893,14 +893,14 @@
         "topic_match": "typo, readme, fix"
       },
       {
-        "title": "feature: ability to make non-type-specific GPU reservation",
-        "url": "https://github.com/kubestellar/console/issues/8144",
-        "repo": "console",
-        "topic_match": "gpu, workload, pod"
+        "title": "Typo in fixes/troubleshooting/README.md",
+        "url": "https://github.com/kubestellar/console-kb/issues/2023",
+        "repo": "console-kb",
+        "topic_match": "typo, readme, fix"
       },
       {
-        "title": "bug: GPU Usage Trend card shows no GPUs at all",
-        "url": "https://github.com/kubestellar/console/issues/8081",
+        "title": "feature: ability to make non-type-specific GPU reservation",
+        "url": "https://github.com/kubestellar/console/issues/8144",
         "repo": "console",
         "topic_match": "gpu, workload, pod"
       }
@@ -913,16 +913,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Security & RBAC",
@@ -985,7 +985,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 267
+      "issue_count": 269
     }
   ]
 }

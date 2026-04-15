@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-15T14:39:52.798Z",
+  "generated_at": "2026-04-15T18:30:55.209Z",
   "total_issues_opened": 514,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 165750,
@@ -1582,7 +1582,7 @@
       "closed_count": 1
     },
     {
-      "name": "unclear, kc, agent",
+      "name": "kc, unclear, agent",
       "issue_count": 1,
       "recent_issue": {
         "title": "kc-agent requirement unclear in Kubernetes setup",
@@ -1626,12 +1626,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "feature: Groq support",
-        "url": "https://github.com/kubestellar/console/issues/8153",
-        "repo": "console",
-        "topic_match": "feature, link, additional"
-      },
       {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",

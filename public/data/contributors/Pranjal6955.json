@@ -1,6 +1,6 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-15T14:41:35.058Z",
+  "generated_at": "2026-04-15T18:32:36.798Z",
   "total_issues_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
   "total_points": 8000,
@@ -152,14 +152,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "bug: resource tree disappears when filtering by \"Issues\" after navigating from notification",
-        "url": "https://github.com/kubestellar/console/issues/8155",
-        "repo": "console",
-        "topic_match": "namespaces, filter, excessive"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Marketplace & Operators",
