@@ -1,0 +1,16 @@
+%%{init: {'flowchart': {'htmlLabels': false, 'useMaxWidth': false}}}%%
+flowchart LR
+    RB[Remote]
+    LB[Local]
+    BIND[Bind]
+    CORS[CORS]
+    REB[Rebind]
+    TOK[Token]
+    KA[Handlers]
+
+    RB -.X.-> BIND
+    LB --> BIND
+    BIND --> CORS
+    CORS --> REB
+    REB --> TOK
+    TOK --> KA

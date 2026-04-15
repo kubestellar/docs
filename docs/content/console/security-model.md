@@ -26,39 +26,7 @@ The canonical, code-grounded version of this document lives in the source tree a
 
 The three-process architecture: your browser, a Go backend (serves UI, bootstrap-only identity), and `kc-agent` running on your own machine (identity is your kubeconfig). Every cluster mutation flows through kc-agent.
 
-```mermaid
-%%{init: {'flowchart': {'htmlLabels': false, 'useMaxWidth': false}}}%%
-flowchart LR
-    subgraph User["User machine"]
-        B[Browser]
-        KA[kc-agent]
-        KC[kubeconfig]
-        CFG[AI keys]
-    end
-
-    subgraph Console["Console deployment"]
-        GB[Backend]
-        POD[(Pod SA)]
-    end
-
-    subgraph Clusters["Managed clusters"]
-        K8S[Kubernetes]
-    end
-
-    subgraph AI["AI (optional)"]
-        PUB[Public LLM]
-        LOCAL[Local LLM]
-    end
-
-    B --> GB
-    B --> KA
-    KA --> KC
-    KA --> CFG
-    KA --> K8S
-    KA -.-> PUB
-    KA -.-> LOCAL
-    GB --> POD
-```
+![Mermaid diagram 1](diagrams/diagram-1.svg)
 
 **Legend:**
 
@@ -89,24 +57,7 @@ Consequences:
 
 kc-agent binds `127.0.0.1:8585` by default and is not configurable to bind any other address. The bind is the primary defense against network-level access. Additional layers protect against local attackers (rogue browser tabs, other processes on the same machine):
 
-```mermaid
-%%{init: {'flowchart': {'htmlLabels': false, 'useMaxWidth': false}}}%%
-flowchart LR
-    RB[Remote]
-    LB[Local]
-    BIND[Bind]
-    CORS[CORS]
-    REB[Rebind]
-    TOK[Token]
-    KA[Handlers]
-
-    RB -.X.-> BIND
-    LB --> BIND
-    BIND --> CORS
-    CORS --> REB
-    REB --> TOK
-    TOK --> KA
-```
+![Mermaid diagram 2](diagrams/diagram-2.svg)
 
 Four layers gate every request to kc-agent:
 
@@ -121,35 +72,15 @@ The console is designed to work in three progressively stricter network postures
 
 **Posture A — fully online (default):** everything enabled.
 
-```mermaid
-%%{init: {'flowchart': {'htmlLabels': false, 'useMaxWidth': false}}}%%
-flowchart LR
-    A_KA[kc-agent] --> A_K8S[Kubernetes]
-    A_KA --> A_AI[Public LLM]
-    A_GB[Backend] --> A_GH[GitHub OAuth]
-    A_GB --> A_UP[Update checks]
-```
+![Mermaid diagram 3](diagrams/diagram-3.svg)
 
 **Posture B — restricted egress, no AI:** all cluster-management features still work.
 
-```mermaid
-%%{init: {'flowchart': {'htmlLabels': false, 'useMaxWidth': false}}}%%
-flowchart LR
-    B_KA[kc-agent] --> B_K8S[Kubernetes]
-    B_KA -.blocked.-> B_AI[Public LLM]
-    B_GB[Backend] --> B_GH[GitHub OAuth]
-```
+![Mermaid diagram 4](diagrams/diagram-4.svg)
 
 **Posture C — fully air-gapped:** no public AI, no GitHub OAuth, optional local LLM.
 
-```mermaid
-%%{init: {'flowchart': {'htmlLabels': false, 'useMaxWidth': false}}}%%
-flowchart LR
-    C_KA[kc-agent] --> C_K8S[Kubernetes]
-    C_KA --> C_LLM[Local LLM]
-    C_KA -.blocked.-> C_AI[Public LLM]
-    C_GB[Backend] -.blocked.-> C_GH[GitHub OAuth]
-```
+![Mermaid diagram 5](diagrams/diagram-5.svg)
 
 - **Posture A** is the default — everything enabled. Cloud AI, GitHub OAuth, update checks.
 - **Posture B** drops AI. Unset every AI API key environment variable and block egress to `api.anthropic.com`, `api.openai.com`, `generativelanguage.googleapis.com`, `api.groq.com`, and `openrouter.ai`. All cluster-management features continue to work; AI-driven features fall back to deterministic/rule-based behavior.
@@ -159,16 +90,7 @@ flowchart LR
 
 Three providers honor a base-URL override, so you can redirect the AI traffic to any OpenAI-compatible endpoint on your own infrastructure:
 
-```mermaid
-%%{init: {'flowchart': {'htmlLabels': false, 'useMaxWidth': false}}}%%
-flowchart LR
-    KA[kc-agent] --> SLOT[Groq slot]
-    SLOT -.default.-> GRQ[api.groq.com]
-    SLOT --> OLLA[Ollama]
-    SLOT --> VLLM[vLLM]
-    SLOT --> LM[LM Studio]
-    SLOT --> GW[Corporate gateway]
-```
+![Mermaid diagram 6](diagrams/diagram-6.svg)
 
 Override environment variables:
 

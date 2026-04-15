@@ -1,0 +1,8 @@
+%%{init: {'flowchart': {'htmlLabels': false, 'useMaxWidth': false}}}%%
+flowchart LR
+    KA[kc-agent] --> SLOT[Groq slot]
+    SLOT -.default.-> GRQ[api.groq.com]
+    SLOT --> OLLA[Ollama]
+    SLOT --> VLLM[vLLM]
+    SLOT --> LM[LM Studio]
+    SLOT --> GW[Corporate gateway]
