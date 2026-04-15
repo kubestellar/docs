@@ -11,6 +11,22 @@ export default function Footer() {
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
+  const [email, setEmail] = useState("");
+  const [subStatus, setSubStatus] = useState<"idle" | "loading" | "success">("idle");
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setSubStatus("loading");
+    // Simulate a subscription request
+    setTimeout(() => {
+      setSubStatus("success");
+      setEmail("");
+      setTimeout(() => setSubStatus("idle"), 3000);
+    }, 1000);
+  };
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -408,6 +424,7 @@ export default function Footer() {
               <div className="flex-1 w-full md:w-auto">
                 <form
                   id="newsletter-form"
+                  onSubmit={handleSubscribe}
                   className="flex flex-col sm:flex-row gap-3 items-center w-full sm:w-auto"
                 >
                   <div className="relative flex-1 w-full min-w-[260px] sm:min-w-[280px] md:min-w-[300px]">
@@ -431,6 +448,8 @@ export default function Footer() {
                     <input
                       id="email-address"
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className={`block w-full pl-10 pr-3 py-3 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 ${
                         isDark
                           ? 'text-white placeholder-gray-400 bg-gray-700/50 border-gray-600'
@@ -443,11 +462,12 @@ export default function Footer() {
 
                   <button
                     type="submit"
-                    className={`w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap ${
+                    disabled={subStatus === "loading" || subStatus === "success"}
+                    className={`w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap disabled:opacity-75 disabled:cursor-not-allowed ${
                       isDark ? 'focus:ring-offset-gray-800' : 'focus:ring-offset-white'
                     }`}
                   >
-                    <span>Subscribe</span>
+                    <span>{subStatus === "success" ? "Subscribed!" : subStatus === "loading" ? "..." : "Subscribe"}</span>
                   </button>
                 </form>
               </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "./index";
 import { useTranslations } from "next-intl";
@@ -9,6 +9,21 @@ import { getLocalizedUrl } from "@/lib/url";
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus("loading");
+    // Simulate a subscription request
+    setTimeout(() => {
+      setStatus("success");
+      setEmail("");
+      setTimeout(() => setStatus("idle"), 3000);
+    }, 1000);
+  };
   useEffect(() => {
     // Back to top functionality
     const initBackToTop = () => {
@@ -286,6 +301,7 @@ export default function Footer() {
               <div className="flex-1 w-full md:w-auto">
                 <form
                   id="newsletter-form"
+                  onSubmit={handleSubscribe}
                   className="flex flex-col sm:flex-row gap-3 items-center w-full sm:w-auto"
                 >
                   <div className="relative flex-1 w-full min-w-[260px] sm:min-w-[280px] md:min-w-[300px]">
@@ -309,6 +325,8 @@ export default function Footer() {
                     <input
                       id="email-address"
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="block w-full pl-10 pr-3 py-3 text-sm text-white placeholder-gray-400 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                       placeholder={t("emailPlaceholder")}
                       required
@@ -317,9 +335,10 @@ export default function Footer() {
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap"
+                    disabled={status === "loading" || status === "success"}
+                    className="w-full sm:w-auto px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 border border-transparent rounded-lg shadow-sm hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap disabled:opacity-75 disabled:cursor-not-allowed"
                   >
-                    <span>{t("subscribe")}</span>
+                    <span>{status === "success" ? t("subscribed") || "Subscribed!" : status === "loading" ? "..." : t("subscribe")}</span>
                   </button>
                 </form>
               </div>
