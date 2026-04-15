@@ -116,7 +116,9 @@ export default function Navbar() {
           );
           if (button) {
             button.addEventListener("mouseenter", clearHideTimeout);
-            cleanups.push(() => button.removeEventListener("mouseenter", clearHideTimeout));
+            cleanups.push(() => {
+              button.removeEventListener("mouseenter", clearHideTimeout);
+            });
           }
 
           menu.addEventListener("mouseenter", clearHideTimeout);
@@ -333,6 +335,11 @@ export default function Navbar() {
         cleanups.push(() => {
           langSwitcher.removeEventListener("mouseenter", handleMouseEnter);
           langSwitcher.removeEventListener("mouseleave", handleMouseLeave);
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          if ((window as any).closeLangSwitcher === closeLangSwitcher) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).closeLangSwitcher = undefined;
+          }
         });
 
         // Handle dropdown menu hover with improved detection
