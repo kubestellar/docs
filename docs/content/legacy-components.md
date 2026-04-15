@@ -6,7 +6,7 @@ The KubeStellar project includes several legacy components that form the foundat
 
 | Component | Description |
 |-----------|-------------|
-| [**KubeStellar**](/docs/what-is-kubestellar/overview) | The core multi-cluster configuration management engine using OCM transport |
+| [**KubeStellar**](/docs/kubestellar/architecture) | The core multi-cluster configuration management engine using OCM transport |
 | [**A2A**](/docs/a2a/overview/introduction) | Agent-to-Agent protocol support for KubeStellar |
 | [**KubeFlex**](/docs/kubeflex/overview/introduction) | Lightweight Kube API Server instances and control planes as a service |
 | [**Multi-Plugin**](/docs/multi-plugin/overview/introduction) | kubectl plugin for managing multiple KubeStellar control planes |
