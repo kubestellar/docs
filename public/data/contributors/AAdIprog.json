@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-16T18:33:30.621Z",
+  "generated_at": "2026-04-16T22:21:49.702Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 20200,
@@ -504,16 +504,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
         "name": "Onboarding & Rewards",
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
         "name": "Authentication & Settings",

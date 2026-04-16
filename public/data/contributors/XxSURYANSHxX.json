@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-16T18:33:25.015Z",
+  "generated_at": "2026-04-16T22:21:44.185Z",
   "total_issues_opened": 199,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 49600,
@@ -81,7 +81,7 @@
       "closed_count": 2
     },
     {
-      "name": "persistence, hardcodes, endpoint",
+      "name": "hardcodes, persistence, endpoint",
       "issue_count": 2,
       "recent_issue": {
         "title": "Persistence Sync API endpoint hardcodes 501 Not Implemented",
@@ -151,7 +151,7 @@
       "closed_count": 1
     },
     {
-      "name": "retain, snapshot, timestamps",
+      "name": "retain, timestamps, snapshot",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 1: Metrics history retains snapshots with unparseable timestamps forever (`metrics_history.go`)",

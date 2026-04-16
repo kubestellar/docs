@@ -1,20 +1,20 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-16T18:33:22.386Z",
-  "total_issues_opened": 421,
+  "generated_at": "2026-04-16T22:21:41.562Z",
+  "total_issues_opened": 437,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 125100,
+  "total_points": 126800,
   "level": "Captain",
   "level_rank": 6,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 35.1,
-    "avg_per_day": 41.04,
+    "avg_per_week": 36.4,
+    "avg_per_day": 35.49,
     "by_day_of_week": [
       145,
       38,
       18,
-      21,
+      37,
       14,
       69,
       116
@@ -40,31 +40,45 @@
       8,
       31,
       116,
-      84,
-      37,
+      94,
+      43,
       58,
       77
     ],
-    "current_streak_weeks": 2,
-    "longest_streak_weeks": 2,
+    "current_streak_weeks": 3,
+    "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-14T20:37:46.000Z"
+    "last_issue_at": "2026-04-16T21:56:17.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 315,
+      "issue_count": 316,
       "recent_issue": {
-        "title": "Alerts card does not show any failure state even when data cannot be loaded",
-        "url": "https://github.com/kubestellar/console/issues/8014",
-        "created_at": "2026-04-14T20:36:31Z"
+        "title": "SWR cache state transition has no test - stale data, spinner, fresh data sequence untested",
+        "url": "https://github.com/kubestellar/console/issues/8506",
+        "created_at": "2026-04-16T21:55:45Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 315
+      "closed_count": 316
+    },
+    {
+      "name": "kubara, chart, control",
+      "issue_count": 9,
+      "recent_issue": {
+        "title": "feat: cache Kubara catalog index server-side to avoid per-user GitHub API rate limits",
+        "url": "https://github.com/kubestellar/console/issues/8487",
+        "created_at": "2026-04-16T20:14:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 9
     },
     {
       "name": "clusterrole, openshift, opt",
@@ -107,6 +121,20 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "soft, ci, test",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "21 soft assertions in user-flows/ tests produce zero CI signal - regressions pass silently",
+        "url": "https://github.com/kubestellar/console/issues/8508",
+        "created_at": "2026-04-16T21:56:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "download, tarball, path",
@@ -277,6 +305,62 @@
       "closed_count": 2
     },
     {
+      "name": "outline, yellow, disappear",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Demo mode toggle has no test - yellow badge and outline may appear/disappear incorrectly",
+        "url": "https://github.com/kubestellar/console/issues/8505",
+        "created_at": "2026-04-16T21:55:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "card, persistence, reload",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Card add and remove persistence has no test - cards may not survive page reload",
+        "url": "https://github.com/kubestellar/console/issues/8504",
+        "created_at": "2026-04-16T21:55:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "kubeconfig, point, context",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cluster deduplication has no regression test - duplicate kubeconfig contexts cause double-counting",
+        "url": "https://github.com/kubestellar/console/issues/8502",
+        "created_at": "2026-04-16T21:54:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "contribution, github, coins",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Contribute panel shows 0 coins and GitHub contributions section shows \"Log in with GitHub\" despite being logged in",
+        "url": "https://github.com/kubestellar/console/issues/8494",
+        "created_at": "2026-04-16T20:44:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "adapt, theme, color",
       "issue_count": 1,
       "recent_issue": {
@@ -333,7 +417,7 @@
       "closed_count": 1
     },
     {
-      "name": "cost, datum, static",
+      "name": "cost, datum, demo",
       "issue_count": 1,
       "recent_issue": {
         "title": "Cost overview displays static data without indicating it is demo data",
@@ -543,6 +627,20 @@
       "closed_count": 1
     },
     {
+      "name": "ids, dashboard, know",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ENABLED_DASHBOARDS values accepted without validation against known dashboard IDs",
+        "url": "https://github.com/kubestellar/console/issues/7688",
+        "created_at": "2026-04-13T19:14:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "oauth, credential, configured",
       "issue_count": 1,
       "recent_issue": {
@@ -717,20 +815,6 @@
         "title": "Self-upgrade Role grants patch on all Deployments in namespace with no resourceNames restriction",
         "url": "https://github.com/kubestellar/console/issues/6978",
         "created_at": "2026-04-12T22:00:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "reservation, subsequent, share",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "All GPU reservations share one collection context — slow first cluster starves subsequent reservations",
-        "url": "https://github.com/kubestellar/console/issues/6967",
-        "created_at": "2026-04-12T20:10:13Z"
       },
       "repos": [
         "console"
@@ -1047,6 +1131,20 @@
       "closed_count": 1
     },
     {
+      "name": "prop, a530, e41e",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ActiveAlerts card missing isRefreshing prop in useCardLoadingState breaking refresh animation",
+        "url": "https://github.com/kubestellar/console/issues/5580",
+        "created_at": "2026-04-08T19:38:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "classlist, ref, settimeout",
       "issue_count": 1,
       "recent_issue": {
@@ -1081,20 +1179,6 @@
         "title": "identityBinding extracted from wrong nested path inflating SPIFFE-bound security metric",
         "url": "https://github.com/kubestellar/console/issues/5357",
         "created_at": "2026-04-07T21:23:30Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "configs, model, share",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "handleKagentCRDSummary makes 6 sequential Kubernetes API calls under one shared timeout silently zeroing out counts",
-        "url": "https://github.com/kubestellar/console/issues/5354",
-        "created_at": "2026-04-07T21:22:30Z"
       },
       "repos": [
         "console"
@@ -1274,12 +1358,6 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "feature: ability to make non-type-specific GPU reservation",
-        "url": "https://github.com/kubestellar/console/issues/8144",
-        "repo": "console",
-        "topic_match": "reservation, subsequent, share"
-      },
-      {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
@@ -1293,12 +1371,6 @@
       }
     ],
     "stretch": [
-      {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
       {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
@@ -1322,6 +1394,12 @@
         "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
         "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      },
+      {
+        "name": "Backend API & Handlers",
+        "path": "pkg/api/, pkg/models/, pkg/store/",
+        "description": "Go backend REST API, request handlers, data models, persistence layer",
+        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
       }
     ]
   },
@@ -1372,7 +1450,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 421
+      "issue_count": 437
     }
   ]
 }
