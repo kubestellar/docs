@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-15T22:22:08.388Z",
+  "generated_at": "2026-04-16T03:11:19.737Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -45,7 +45,7 @@
       0,
       0
     ],
-    "current_streak_weeks": 5,
+    "current_streak_weeks": 0,
     "longest_streak_weeks": 5,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-13T06:35:49.000Z",
@@ -270,18 +270,6 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "test, httptest, backend"
-      },
-      {
-        "title": "bug: facing issue while running console",
-        "url": "https://github.com/kubestellar/console/issues/8202",
-        "repo": "console",
-        "topic_match": "cmd, repository, gitignore"
-      },
-      {
-        "title": "bug: Newsletter Subscribe Form Has No `onSubmit` Handler — Form Submission Is Silently Broken",
-        "url": "https://github.com/kubestellar/docs/issues/1466",
-        "repo": "docs",
-        "topic_match": "group, form, button"
       }
     ],
     "stretch": [

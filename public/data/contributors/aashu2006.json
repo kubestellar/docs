@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-15T22:22:00.710Z",
+  "generated_at": "2026-04-16T03:11:11.298Z",
   "total_issues_opened": 421,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 125100,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 313,
+      "issue_count": 315,
       "recent_issue": {
         "title": "Alerts card does not show any failure state even when data cannot be loaded",
         "url": "https://github.com/kubestellar/console/issues/8014",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 313
+      "closed_count": 315
     },
     {
       "name": "clusterrole, openshift, opt",
@@ -199,20 +199,6 @@
         "title": "*.netlify.app wildcard in analytics origin allowlist permits any Netlify deployment to abuse the proxy",
         "url": "https://github.com/kubestellar/console/issues/7032",
         "created_at": "2026-04-12T23:17:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "restart, memory, disk",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "In-memory clusterGroups map loses all state on server restart diverging from Kubernetes labels permanently",
-        "url": "https://github.com/kubestellar/console/issues/7013",
-        "created_at": "2026-04-12T22:30:52Z"
       },
       "repos": [
         "console"
@@ -1292,12 +1278,6 @@
         "url": "https://github.com/kubestellar/console/issues/8144",
         "repo": "console",
         "topic_match": "reservation, subsequent, share"
-      },
-      {
-        "title": "bug: `Navbar` `useEffect` Registers Event Listeners and a `MutationObserver` with No Cleanup — Memory Leak",
-        "url": "https://github.com/kubestellar/docs/issues/1467",
-        "repo": "docs",
-        "topic_match": "listener, register, simultaneously"
       },
       {
         "title": "card: Implement SPIFFE monitoring card",

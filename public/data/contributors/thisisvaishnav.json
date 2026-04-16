@@ -1,9 +1,9 @@
 {
   "login": "thisisvaishnav",
-  "generated_at": "2026-04-15T22:22:08.567Z",
+  "generated_at": "2026-04-16T03:11:19.934Z",
   "total_issues_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/206579146?v=4",
-  "total_points": 2250,
+  "total_points": 2750,
   "level": "Navigator",
   "level_rank": 3,
   "rank": 31,
@@ -63,8 +63,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 2,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "fresh, clone, start",

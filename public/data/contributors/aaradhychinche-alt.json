@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-15T22:21:38.750Z",
+  "generated_at": "2026-04-16T03:10:46.682Z",
   "total_issues_opened": 447,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 131250,
@@ -68,7 +68,7 @@
       "closed_count": 419
     },
     {
-      "name": "card, registry, register",
+      "name": "card, registry, directory",
       "issue_count": 7,
       "recent_issue": {
         "title": "bug: placeholder card directories exist without implementation",
@@ -337,16 +337,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "bug: `Navbar` `useEffect` Registers Event Listeners and a `MutationObserver` with No Cleanup — Memory Leak",
-        "url": "https://github.com/kubestellar/docs/issues/1467",
-        "repo": "docs",
-        "topic_match": "listener, abort, callback"
-      },
-      {
         "title": "card: Implement Harbor Registry monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/16",
         "repo": "console-marketplace",
-        "topic_match": "card, registry, register"
+        "topic_match": "card, registry, directory"
       },
       {
         "title": "card: Implement Artifact Hub monitoring card",

@@ -1,28 +1,28 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-15T22:19:46.812Z",
-  "total_issues_opened": 922,
+  "generated_at": "2026-04-16T03:08:39.674Z",
+  "total_issues_opened": 929,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3357700,
+  "total_points": 3378300,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 73.5,
-    "avg_per_day": 3.78,
+    "avg_per_week": 74.1,
+    "avg_per_day": 3.8,
     "by_day_of_week": [
       119,
       119,
       209,
-      115,
+      122,
       125,
       132,
       103
     ],
     "by_hour_of_day": [
-      48,
-      23,
-      93,
+      49,
+      26,
+      96,
       29,
       41,
       27,
@@ -45,43 +45,43 @@
       22,
       11
     ],
-    "current_streak_weeks": 15,
-    "longest_streak_weeks": 15,
+    "current_streak_weeks": 16,
+    "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-15T20:15:41.000Z"
+    "last_issue_at": "2026-04-16T02:48:41.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 485,
+      "issue_count": 486,
       "recent_issue": {
-        "title": "[Auto-QA] Potential memory leaks in component cleanup",
-        "url": "https://github.com/kubestellar/console/issues/8225",
-        "created_at": "2026-04-15T19:52:17Z"
+        "title": "[Auto-QA] Inconsistent component patterns detected",
+        "url": "https://github.com/kubestellar/console/issues/8276",
+        "created_at": "2026-04-16T02:03:53Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 485
+      "closed_count": 486
     },
     {
       "name": "test, coverage, suite",
-      "issue_count": 176,
+      "issue_count": 178,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #780",
-        "url": "https://github.com/kubestellar/console/issues/8231",
-        "created_at": "2026-04-15T20:15:41Z"
+        "title": "🐛 3 test failure(s) in Coverage Suite run #802",
+        "url": "https://github.com/kubestellar/console/issues/8282",
+        "created_at": "2026-04-16T02:48:41Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 173
+      "open_count": 4,
+      "closed_count": 174
     },
     {
       "name": "monitoring, card, implement",
@@ -225,6 +225,20 @@
       "closed_count": 5
     },
     {
+      "name": "term, roadmap, near",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "[Auto-QA] ROADMAP.md governance issues",
+        "url": "https://github.com/kubestellar/console/issues/8275",
+        "created_at": "2026-04-16T02:03:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 3
+    },
+    {
       "name": "projects, want, contribute",
       "issue_count": 4,
       "recent_issue": {
@@ -268,17 +282,45 @@
       "closed_count": 3
     },
     {
-      "name": "term, roadmap, near",
-      "issue_count": 3,
+      "name": "worktrees, update, kc",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "[Auto-QA] ROADMAP.md governance issues",
-        "url": "https://github.com/kubestellar/console/issues/5592",
-        "created_at": "2026-04-08T19:51:20Z"
+        "title": "✨ What's New modal + agent-version-available toast (unified for kc-agent and Console backend)",
+        "url": "https://github.com/kubestellar/console/issues/8265",
+        "created_at": "2026-04-16T01:20:43Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 1,
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "release, april, apr",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🔴 Nightly + Release CI health tracking — April 2026 regressions",
+        "url": "https://github.com/kubestellar/console/issues/8262",
+        "created_at": "2026-04-16T01:04:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "provider, client, ai",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Add a per-provider Base URL field to APIKeySettings (Advanced)",
+        "url": "https://github.com/kubestellar/console/issues/8254",
+        "created_at": "2026-04-16T00:02:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
       "closed_count": 2
     },
     {
@@ -521,34 +563,6 @@
       "closed_count": 1
     },
     {
-      "name": "worktrees, git, update",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "kc-agent update fails when git worktrees exist",
-        "url": "https://github.com/kubestellar/console/issues/5172",
-        "created_at": "2026-04-07T05:29:57Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "apr, release, april",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 Nightly/weekly releases failing silently since April 1",
-        "url": "https://github.com/kubestellar/console/issues/5055",
-        "created_at": "2026-04-06T17:01:54Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "context, replace, conditionals",
       "issue_count": 1,
       "recent_issue": {
@@ -639,20 +653,6 @@
         "title": "Dockerfile hardening: root user, no healthcheck, no .dockerignore, kill -9 in scripts",
         "url": "https://github.com/kubestellar/console/issues/1926",
         "created_at": "2026-03-07T00:17:53Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "provider, client, http",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "AI provider HTTP clients have no timeout",
-        "url": "https://github.com/kubestellar/console/issues/1924",
-        "created_at": "2026-03-07T00:17:48Z"
       },
       "repos": [
         "console"
@@ -902,18 +902,6 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "fix: correct typo in observability README title",
-        "url": "https://github.com/kubestellar/console-kb/issues/2020",
-        "repo": "console-kb",
-        "topic_match": "typo, readme, fix"
-      },
-      {
-        "title": "Typo in fixes/troubleshooting/README.md",
-        "url": "https://github.com/kubestellar/console-kb/issues/2023",
-        "repo": "console-kb",
-        "topic_match": "typo, readme, fix"
-      },
-      {
         "title": "feature: ability to make non-type-specific GPU reservation",
         "url": "https://github.com/kubestellar/console/issues/8144",
         "repo": "console",
@@ -1000,7 +988,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 277
+      "issue_count": 284
     }
   ]
 }
