@@ -17,7 +17,7 @@ keywords:
 
 This guide covers all deployment options for KubeStellar Console, the multi-cluster Kubernetes dashboard with AI-powered operations.
 
-> **Try it first!** See a live preview at [kubestellarconsole.netlify.app](https://kubestellarconsole.netlify.app)
+> **Try it first!** See a live preview at [console.kubestellar.io](https://console.kubestellar.io)
 
 ---
 

@@ -16,7 +16,7 @@ keywords:
 
 Get KubeStellar Console running locally for development or evaluation.
 
-> **Try it first!** See a live preview at [kubestellarconsole.netlify.app](https://kubestellarconsole.netlify.app) - no installation needed.
+> **Try it first!** See a live preview at [console.kubestellar.io](https://console.kubestellar.io) - no installation needed.
 
 !!! important "Claude Code is required for AI features"
     This Quick Start uses **[Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview)**, Anthropic's CLI tool, to install and manage the kubestellar-mcp plugins that connect the console to your clusters. Claude Code requires an Anthropic API subscription.
