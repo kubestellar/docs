@@ -1,0 +1,22 @@
+flowchart LR
+  subgraph LAPTOP[Developer Workstation]
+    BROWSER[Browser]
+    KCAGENT[kc-agent<br/>127.0.0.1:8585]
+  end
+  subgraph OCP[OpenShift Cluster]
+    RHAIIS[Red Hat AI Inference Server<br/>vLLM on GPU node]
+    GPUOP[NVIDIA GPU Operator]
+    API[OpenShift API]
+  end
+  subgraph RH[Red Hat]
+    REG[registry.redhat.io<br/>RHAIIS image]
+  end
+  BROWSER -->|WebSocket chat| KCAGENT
+  KCAGENT -->|chat request<br/>OpenAI format| RHAIIS
+  KCAGENT -->|oc via kubeconfig| API
+  RHAIIS -.->|GPU| GPUOP
+  REG -.->|image pull<br/>one time| RHAIIS
+  style RHAIIS fill:#dc2626,stroke:#7f1d1d,color:#fff
+  style KCAGENT fill:#3b82f6,stroke:#1e3a8a,color:#fff
+  style API fill:#6366f1,stroke:#312e81,color:#fff
+  style REG fill:#991b1b,stroke:#450a0a,color:#fff

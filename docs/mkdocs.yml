@@ -135,6 +135,7 @@ nav:
       - Configuration: console/configuration.md
       - Architecture: console/architecture.md
       - Security Model: console/security-model.md
+      - Local LLM Strategy: console/local-llm-strategy.md
       - Persistence: console/persistence.md
   - KubeStellar MCP:
       - Overview: kubestellar-mcp/index.md
