@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-16T03:04:36.216Z",
-  "git_hash": "42e1163",
+  "generated_at": "2026-04-16T06:38:14.883Z",
+  "git_hash": "444b627",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3378300,
+      "total_points": 3388350,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 259,
         "feature_issues": 387,
-        "other_issues": 283,
-        "prs_opened": 4911,
-        "prs_merged": 4531
+        "other_issues": 284,
+        "prs_opened": 4926,
+        "prs_merged": 4545
       },
       "bonus_points": 50,
       "rank": 1
@@ -21,12 +21,12 @@
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 165750,
+      "total_points": 169450,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 479,
-        "feature_issues": 18,
+        "bug_issues": 491,
+        "feature_issues": 19,
         "other_issues": 17,
         "prs_opened": 32,
         "prs_merged": 26
@@ -51,12 +51,12 @@
     {
       "login": "aaradhychinche-alt",
       "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-      "total_points": 131250,
+      "total_points": 131350,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
         "bug_issues": 390,
-        "feature_issues": 34,
+        "feature_issues": 35,
         "other_issues": 23,
         "prs_opened": 16,
         "prs_merged": 13
@@ -277,13 +277,13 @@
     {
       "login": "MikeSpreitzer",
       "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-      "total_points": 15900,
+      "total_points": 15950,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 41,
         "feature_issues": 6,
-        "other_issues": 28,
+        "other_issues": 29,
         "prs_opened": 3,
         "prs_merged": 2
       },

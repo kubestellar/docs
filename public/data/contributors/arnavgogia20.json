@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-16T03:11:18.943Z",
+  "generated_at": "2026-04-16T06:44:56.068Z",
   "total_issues_opened": 92,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 33100,
@@ -461,7 +461,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Nodes stat overview stat block drillDown shows inaccurate information",
+        "url": "https://github.com/kubestellar/console/issues/8312",
+        "repo": "console",
+        "topic_match": "nodes, dashboard, stat"
+      }
+    ],
     "stretch": [
       {
         "name": "Charts & Visualizations",

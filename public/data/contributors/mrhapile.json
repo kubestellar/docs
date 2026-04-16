@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-16T03:10:12.269Z",
+  "generated_at": "2026-04-16T06:43:56.255Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 370,
+      "issue_count": 371,
       "recent_issue": {
         "title": "Status Timer Javascript Garbage Build Up",
         "url": "https://github.com/kubestellar/console/issues/7475",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 370
+      "closed_count": 371
     },
     {
       "name": "documentation, 📌, component",
@@ -753,20 +753,6 @@
       "closed_count": 1
     },
     {
-      "name": "dialog, modal, trap",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "No Focus Trap in MissionControlDialog",
-        "url": "https://github.com/kubestellar/console/issues/6738",
-        "created_at": "2026-04-11T22:45:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "computelayout, flightplanblueprint, b311dde4",
       "issue_count": 1,
       "recent_issue": {
@@ -1370,7 +1356,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Drop down list to select themes rather than cycle through",
+        "url": "https://github.com/kubestellar/console/issues/8293",
+        "repo": "console",
+        "topic_match": "theme, toggle, light"
+      },
+      {
+        "title": "Actual coins not showing in console",
+        "url": "https://github.com/kubestellar/console/issues/8294",
+        "repo": "console",
+        "topic_match": "leaderboard, coin, hour"
+      }
+    ],
     "stretch": [
       {
         "name": "Marketplace & Operators",

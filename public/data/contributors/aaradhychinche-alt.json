@@ -1,20 +1,20 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-16T03:10:46.682Z",
-  "total_issues_opened": 447,
+  "generated_at": "2026-04-16T06:44:26.881Z",
+  "total_issues_opened": 448,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 131250,
+  "total_points": 131350,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
     "avg_per_week": 37.3,
-    "avg_per_day": 9.25,
+    "avg_per_day": 8.79,
     "by_day_of_week": [
       196,
       17,
       16,
-      15,
+      16,
       128,
       16,
       59
@@ -24,7 +24,7 @@
       0,
       0,
       0,
-      37,
+      38,
       90,
       48,
       38,
@@ -45,11 +45,11 @@
       0,
       0
     ],
-    "current_streak_weeks": 5,
-    "longest_streak_weeks": 5,
+    "current_streak_weeks": 6,
+    "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-13T13:18:06.000Z"
+    "last_issue_at": "2026-04-16T04:43:06.000Z"
   },
   "topics": [
     {
@@ -94,6 +94,20 @@
       ],
       "open_count": 0,
       "closed_count": 4
+    },
+    {
+      "name": "stress, framework, control",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "## Mission Control: End-to-End Stress Test Framework (Reliability + Regression Prevention)",
+        "url": "https://github.com/kubestellar/console/issues/8296",
+        "created_at": "2026-04-16T04:43:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "admin, privilege, c09cf9",
@@ -194,7 +208,7 @@
       "closed_count": 1
     },
     {
-      "name": "close, merge, others",
+      "name": "close, merge, complete",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: inconsistent status badges for merged issues (some show \"Fix Complete\" + \"Closed\", others only show \"Closed\")",
@@ -351,16 +365,16 @@
     ],
     "stretch": [
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Onboarding & Rewards",
@@ -429,7 +443,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 414
+      "issue_count": 415
     }
   ]
 }

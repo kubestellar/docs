@@ -1,6 +1,6 @@
 {
   "login": "KPRoche",
-  "generated_at": "2026-04-16T03:11:18.951Z",
+  "generated_at": "2026-04-16T06:44:56.075Z",
   "total_issues_opened": 26,
   "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
   "total_points": 27550,
@@ -81,7 +81,7 @@
       "closed_count": 8
     },
     {
-      "name": "theme, marketplace, themes",
+      "name": "marketplace, theme, themes",
       "issue_count": 2,
       "recent_issue": {
         "title": ":bug Themes installed from KubeSTellar Marketplace are missing",

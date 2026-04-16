@@ -1,20 +1,20 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-16T03:09:26.485Z",
-  "total_issues_opened": 514,
+  "generated_at": "2026-04-16T06:43:16.278Z",
+  "total_issues_opened": 527,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 165750,
+  "total_points": 169450,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 42.8,
-    "avg_per_day": 8.17,
+    "avg_per_week": 43.9,
+    "avg_per_day": 8.12,
     "by_day_of_week": [
       161,
       34,
       46,
-      57,
+      70,
       67,
       110,
       39
@@ -24,8 +24,8 @@
       0,
       1,
       10,
+      53,
       46,
-      40,
       22,
       13,
       41,
@@ -45,27 +45,27 @@
       30,
       0
     ],
-    "current_streak_weeks": 5,
-    "longest_streak_weeks": 5,
+    "current_streak_weeks": 6,
+    "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-14T05:23:50.000Z"
+    "last_issue_at": "2026-04-16T05:58:21.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 380,
+      "issue_count": 388,
       "recent_issue": {
-        "title": "Weird navigation controls in total checks stat block drill down modal",
-        "url": "https://github.com/kubestellar/console/issues/7895",
-        "created_at": "2026-04-14T05:23:50Z"
+        "title": "Different types of icons in the community drop down",
+        "url": "https://github.com/kubestellar/docs/issues/1483",
+        "created_at": "2026-04-16T05:53:44Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 380
+      "open_count": 5,
+      "closed_count": 383
     },
     {
       "name": "feature, link, additional",
@@ -167,12 +167,40 @@
       "closed_count": 2
     },
     {
+      "name": "smtp, range, port",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "RegisterEmailNotifier accepts invalid SMTP ports without validation",
+        "url": "https://github.com/kubestellar/console/issues/7537",
+        "created_at": "2026-04-13T13:04:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "object, callable, scope",
       "issue_count": 2,
       "recent_issue": {
         "title": "Card component type validation allows non-callable objects",
         "url": "https://github.com/kubestellar/console/issues/7508",
         "created_at": "2026-04-13T11:42:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "diagnosis, analyze, alert",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Diagnosis lock can get stuck after unexpected failure",
+        "url": "https://github.com/kubestellar/console/issues/7401",
+        "created_at": "2026-04-13T08:53:12Z"
       },
       "repos": [
         "console"
@@ -250,6 +278,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "slowly, eb0d29, d672",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Switching tabs and getting  back to console causes it to load very slowly, a black screen is shown",
+        "url": "https://github.com/kubestellar/console/issues/8316",
+        "created_at": "2026-04-16T05:58:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "confirmation, share, e10de9",
@@ -594,6 +636,20 @@
         "title": "Stale MCP data due to coarse fingerprinting in data bridge",
         "url": "https://github.com/kubestellar/console/issues/7400",
         "created_at": "2026-04-13T08:53:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "readiness, report, c37629f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Client readiness can report healthy after stop",
+        "url": "https://github.com/kubestellar/console/issues/7397",
+        "created_at": "2026-04-13T08:47:34Z"
       },
       "repos": [
         "console"
@@ -1596,20 +1652,6 @@
       "closed_count": 1
     },
     {
-      "name": "leaderboard, timer, f38d2137",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "The timer for leaderboard refreshing is misleading",
-        "url": "https://github.com/kubestellar/docs/issues/1333",
-        "created_at": "2026-04-02T18:04:36Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "v0, manage, site",
       "issue_count": 1,
       "recent_issue": {
@@ -1719,7 +1761,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 423
+      "issue_count": 436
     }
   ]
 }

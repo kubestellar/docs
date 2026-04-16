@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-16T03:11:11.298Z",
+  "generated_at": "2026-04-16T06:44:49.065Z",
   "total_issues_opened": 421,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 125100,
@@ -277,7 +277,7 @@
       "closed_count": 2
     },
     {
-      "name": "theme, adapt, color",
+      "name": "adapt, theme, color",
       "issue_count": 1,
       "recent_issue": {
         "title": "Some pages do not adapt to theme changes due to hardcoded colors",
@@ -1278,6 +1278,12 @@
         "url": "https://github.com/kubestellar/console/issues/8144",
         "repo": "console",
         "topic_match": "reservation, subsequent, share"
+      },
+      {
+        "title": "Drop down list to select themes rather than cycle through",
+        "url": "https://github.com/kubestellar/console/issues/8293",
+        "repo": "console",
+        "topic_match": "adapt, theme, color"
       },
       {
         "title": "card: Implement SPIFFE monitoring card",
