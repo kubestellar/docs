@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-16T06:44:56.774Z",
+  "generated_at": "2026-04-16T10:36:12.383Z",
   "total_issues_opened": 69,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 20750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@shivansh, source, cluster",
-      "issue_count": 53,
+      "issue_count": 52,
       "recent_issue": {
         "title": "RBACExplorer: fetchSingleCluster Makes 3 Sequential kubectl Calls Per Cluster, Creating Significant Latency",
         "url": "https://github.com/kubestellar/console/issues/4852",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 53
+      "closed_count": 52
     },
     {
       "name": "draft, discard, autosave",
@@ -221,6 +221,20 @@
       "closed_count": 1
     },
     {
+      "name": "networkutils, latency, ping",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug report : NetworkUtils ping uses fetch with mode: 'no-cors' — latency measurements are unreliable and always show \"success\"",
+        "url": "https://github.com/kubestellar/console/issues/3799",
+        "created_at": "2026-03-28T14:09:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "cmd, repository, gitignore",
       "issue_count": 1,
       "recent_issue": {
@@ -278,16 +292,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Missions & AI Agent",
         "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
         "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },

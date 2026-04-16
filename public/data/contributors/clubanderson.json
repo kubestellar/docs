@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-16T06:42:31.413Z",
-  "total_issues_opened": 930,
+  "generated_at": "2026-04-16T10:33:33.686Z",
+  "total_issues_opened": 933,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3388350,
+  "total_points": 3396750,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 74.2,
-    "avg_per_day": 3.8,
+    "avg_per_week": 74.4,
+    "avg_per_day": 3.81,
     "by_day_of_week": [
       119,
       119,
       209,
-      123,
+      126,
       125,
       132,
       103
@@ -26,9 +26,9 @@
       30,
       41,
       27,
-      39,
+      40,
       57,
-      21,
+      23,
       8,
       5,
       5,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-16T03:40:16.000Z"
+    "last_issue_at": "2026-04-16T08:01:23.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 486,
+      "issue_count": 489,
       "recent_issue": {
-        "title": "[Auto-QA] Inconsistent component patterns detected",
-        "url": "https://github.com/kubestellar/console/issues/8276",
-        "created_at": "2026-04-16T02:03:53Z"
+        "title": "[Auto-QA] Navigation and routing improvements needed",
+        "url": "https://github.com/kubestellar/console/issues/8331",
+        "created_at": "2026-04-16T08:01:23Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
-      "open_count": 0,
-      "closed_count": 486
+      "open_count": 1,
+      "closed_count": 488
     },
     {
       "name": "test, coverage, suite",
@@ -988,7 +988,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 285
+      "issue_count": 288
     }
   ]
 }

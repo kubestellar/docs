@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-16T06:44:26.881Z",
+  "generated_at": "2026-04-16T10:35:40.540Z",
   "total_issues_opened": 448,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 131350,
@@ -351,8 +351,8 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "card: Implement Harbor Registry monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/16",
+        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/112",
         "repo": "console-marketplace",
         "topic_match": "card, registry, directory"
       },
@@ -361,6 +361,12 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",
         "repo": "console-marketplace",
         "topic_match": "artifact, green, appear"
+      },
+      {
+        "title": "card: Implement Harbor Registry monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/16",
+        "repo": "console-marketplace",
+        "topic_match": "card, registry, directory"
       }
     ],
     "stretch": [
