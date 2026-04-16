@@ -116,7 +116,9 @@ export default function Navbar() {
           );
           if (button) {
             button.addEventListener("mouseenter", clearHideTimeout);
-            cleanups.push(() => button.removeEventListener("mouseenter", clearHideTimeout));
+            cleanups.push(() => {
+              button.removeEventListener("mouseenter", clearHideTimeout);
+            });
           }
 
           menu.addEventListener("mouseenter", clearHideTimeout);
@@ -333,6 +335,11 @@ export default function Navbar() {
         cleanups.push(() => {
           langSwitcher.removeEventListener("mouseenter", handleMouseEnter);
           langSwitcher.removeEventListener("mouseleave", handleMouseLeave);
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          if ((window as any).closeLangSwitcher === closeLangSwitcher) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).closeLangSwitcher = undefined;
+          }
         });
 
         // Handle dropdown menu hover with improved detection
@@ -941,7 +948,7 @@ export default function Navbar() {
                 </div>
                 <div
                   data-dropdown-menu
-                  className="absolute hidden lg:flex right-0 mt-1 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
+                  className="absolute right-0 mt-1 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
                   style={{ display: "none" }}
                 >
                   <a
