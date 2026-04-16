@@ -118,7 +118,7 @@ The console ships with 120+ built-in cards, and you can create more using the Ca
 
 ---
 
-### CNCF Ecosystem Cards (4)
+### CNCF Ecosystem Cards (6)
 
 | # | Card | What it shows |
 |---|------|---------------|
@@ -126,6 +126,8 @@ The console ships with 120+ built-in cards, and you can create more using the Ca
 | 119 | **KEDA** | Operator health, scaled object stats with replica progress bars, trigger details |
 | 120 | **Strimzi Kafka** | Cluster health, broker readiness, topic status, consumer group lag |
 | 121 | **OpenFeature** | Provider health (flagd, LaunchDarkly, Split), feature flag stats, evaluation counts |
+| 122 | **Drasi Reactive Graph** | Reactive data pipeline visualization — sources, continuous queries, reactions with animated flow lines, live SSE streaming, full CRUD, CodeMirror Cypher editor, per-language stream-consumer code samples, flow discovery. Supports drasi-server, drasi-platform, and drasi-lib. See [Drasi Dashboard](drasi-dashboard.md) for full docs. |
+| 123 | **Keycloak Monitoring** | Keycloak instance health, realm counts, client counts, user session metrics |
 
 ---
 
@@ -357,6 +359,19 @@ The console ships with 120+ built-in cards, and you can create more using the Ca
 |------|--------------|
 | **Crossplane Managed Resources** | Managed resource count, provider health, composite resource status, resource table with sync/ready status |
 | **Cloud Native Buildpacks** | Build counts, success rates, active builders, recent builds with duration and builder info |
+
+### AI Codebase Maturity (ACMM) Cards (4)
+
+| # | Card | What it shows |
+|---|------|---------------|
+| 124 | **ACMM Level** | L1–L5 ring gauge showing the scanned repo's AI codebase maturity level, role, and next-level progress |
+| 125 | **ACMM Balance** | Weekly AI vs human contribution bar chart with a level-anchored target slider |
+| 126 | **ACMM Feedback Loops** | Inventory of 33 feedback loops filtered by source and detected/missing status |
+| 127 | **ACMM Recommendations** | Role-aware top-5 missing criteria prioritized for reaching the next level |
+
+All four cards are driven by a single GitHub scan. See [ACMM Dashboard](acmm-dashboard.md) for full docs.
+
+---
 
 ### Additional Cards (44+)
 
