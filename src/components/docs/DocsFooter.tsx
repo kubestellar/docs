@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "../index";
 import Link from "next/link";
@@ -10,6 +10,16 @@ export default function Footer() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
+
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = (e: FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    window.alert("Subscriptions are not available yet. Please try again later.");
+    setEmail("");
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -408,6 +418,7 @@ export default function Footer() {
               <div className="flex-1 w-full md:w-auto">
                 <form
                   id="newsletter-form"
+                  onSubmit={handleSubscribe}
                   className="flex flex-col sm:flex-row gap-3 items-center w-full sm:w-auto"
                 >
                   <div className="relative flex-1 w-full min-w-[260px] sm:min-w-[280px] md:min-w-[300px]">
@@ -431,6 +442,8 @@ export default function Footer() {
                     <input
                       id="email-address"
                       type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className={`block w-full pl-10 pr-3 py-3 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 ${
                         isDark
                           ? 'text-white placeholder-gray-400 bg-gray-700/50 border-gray-600'
