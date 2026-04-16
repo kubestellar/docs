@@ -21,6 +21,11 @@
         "label": "v0.1.0",
         "branch": "docs/console/0.1.0",
         "isDefault": false
+      },
+      "0.3.20": {
+        "label": "v0.3.20",
+        "branch": "docs/console/0.3.20",
+        "isDefault": false
       }
     },
     "kubestellar": {
@@ -251,5 +256,5 @@
     "multi-plugin": "https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin",
     "kubestellar-mcp": "https://github.com/kubestellar/kubestellar-mcp/edit/main/docs"
   },
-  "updatedAt": "2026-04-09T12:00:00.000Z"
+  "updatedAt": "2026-04-16T01:14:47.569Z"
 }
