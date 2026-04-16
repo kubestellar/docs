@@ -125,11 +125,15 @@ If you want GitHub login (for multi-user or testing the full auth flow):
    ./startup-oauth.sh
    ```
 
-Open http://localhost:5174 and sign in with GitHub.
+Open http://localhost:8080 and sign in with GitHub.
+
+!!! note "Port difference between startup scripts"
+    `startup-oauth.sh` serves both the API and pre-built frontend on **port 8080** (Go backend). There is no separate Vite dev server.
+    `start-dev.sh` uses a Vite dev server on **port 5174** for hot-reload during development.
 
 ## Step 3: Access the Console
 
-Open http://localhost:5174 (source builds) or http://localhost:8080 (curl quickstart).
+Open http://localhost:8080 (curl quickstart or `startup-oauth.sh`) or http://localhost:5174 (`start-dev.sh` source builds).
 
 Your clusters from `~/.kube/config` appear automatically. If running with OAuth, sign in with GitHub. Without OAuth, you're logged in as `dev-user`.
 
