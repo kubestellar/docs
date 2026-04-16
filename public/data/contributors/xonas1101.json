@@ -1,20 +1,20 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-16T10:34:22.914Z",
-  "total_issues_opened": 530,
+  "generated_at": "2026-04-16T14:43:21.939Z",
+  "total_issues_opened": 543,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 170350,
+  "total_points": 174050,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 44.2,
-    "avg_per_day": 8.15,
+    "avg_per_week": 45.3,
+    "avg_per_day": 8.33,
     "by_day_of_week": [
       161,
       34,
       46,
-      73,
+      86,
       67,
       110,
       39
@@ -32,8 +32,8 @@
       13,
       2,
       42,
-      28,
-      57,
+      31,
+      67,
       62,
       30,
       29,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-16T08:50:44.000Z"
+    "last_issue_at": "2026-04-16T13:39:50.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 392,
+      "issue_count": 406,
       "recent_issue": {
-        "title": "Overflow  of the add card button",
-        "url": "https://github.com/kubestellar/console/issues/8337",
-        "created_at": "2026-04-16T08:50:44Z"
+        "title": "Webhook notifier permits plaintext HTTP endpoints",
+        "url": "https://github.com/kubestellar/console/issues/8392",
+        "created_at": "2026-04-16T13:39:50Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 8,
-      "closed_count": 384
+      "open_count": 2,
+      "closed_count": 404
     },
     {
       "name": "feature, link, additional",
@@ -139,6 +139,20 @@
       "closed_count": 3
     },
     {
+      "name": "ts, dynamiccardstore, dynamicstatsstore",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Re-loading from storage is additive and does not reconcile removals.",
+        "url": "https://github.com/kubestellar/console/issues/6681",
+        "created_at": "2026-04-11T22:04:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
       "name": "upgrade, vite, v8",
       "issue_count": 3,
       "recent_issue": {
@@ -159,20 +173,6 @@
         "title": "Meta description cleanup leaves stale global document state",
         "url": "https://github.com/kubestellar/console/issues/7553",
         "created_at": "2026-04-13T13:23:05Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "smtp, range, port",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "RegisterEmailNotifier accepts invalid SMTP ports without validation",
-        "url": "https://github.com/kubestellar/console/issues/7537",
-        "created_at": "2026-04-13T13:04:52Z"
       },
       "repos": [
         "console"
@@ -292,6 +292,20 @@
       ],
       "open_count": 1,
       "closed_count": 0
+    },
+    {
+      "name": "notification, instructions, a334a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Instructions we get when notifications not visible are not the most useful.",
+        "url": "https://github.com/kubestellar/console/issues/8305",
+        "created_at": "2026-04-16T05:08:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "confirmation, share, e10de9",
@@ -644,40 +658,26 @@
       "closed_count": 1
     },
     {
+      "name": "readiness, report, c37629f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Client readiness can report healthy after stop",
+        "url": "https://github.com/kubestellar/console/issues/7397",
+        "created_at": "2026-04-13T08:47:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "exec, dd5e4c22, e27b356e4",
       "issue_count": 1,
       "recent_issue": {
         "title": "Pod exec missing authorization check",
         "url": "https://github.com/kubestellar/console/issues/7381",
         "created_at": "2026-04-13T08:36:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "http, aff2, e38c6d8ab7d",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Webhook notifier allows insecure HTTP transport",
-        "url": "https://github.com/kubestellar/console/issues/7379",
-        "created_at": "2026-04-13T08:33:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "dedup, key, ad80ff",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "PagerDuty dedup key collision risk",
-        "url": "https://github.com/kubestellar/console/issues/7378",
-        "created_at": "2026-04-13T08:33:40Z"
       },
       "repos": [
         "console"
@@ -734,6 +734,20 @@
         "title": "Reordering Cards Does Not Count As Customization",
         "url": "https://github.com/kubestellar/console/issues/7255",
         "created_at": "2026-04-13T05:56:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "mapping, space, direct",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Project Name Whitespace Breaks Direct Mapping",
+        "url": "https://github.com/kubestellar/console/issues/7229",
+        "created_at": "2026-04-13T05:48:28Z"
       },
       "repos": [
         "console"
@@ -938,20 +952,6 @@
       "closed_count": 1
     },
     {
-      "name": "stopch, consolewatcher, e18d61a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ConsoleWatcher cannot be safely restarted after Stop",
-        "url": "https://github.com/kubestellar/console/issues/6472",
-        "created_at": "2026-04-11T15:46:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "bind, b75b, cad4",
       "issue_count": 1,
       "recent_issue": {
@@ -986,20 +986,6 @@
         "title": "React dev tools profiler",
         "url": "https://github.com/kubestellar/console/issues/6151",
         "created_at": "2026-04-10T15:30:43Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "text, split, d681072",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Translation text is manually truncated with split",
-        "url": "https://github.com/kubestellar/console/issues/5991",
-        "created_at": "2026-04-10T08:06:11Z"
       },
       "repos": [
         "console"
@@ -1540,20 +1526,6 @@
       "closed_count": 1
     },
     {
-      "name": "daea7fae, fe83eaa81c, a551",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Goroutine leak",
-        "url": "https://github.com/kubestellar/console/issues/3429",
-        "created_at": "2026-03-24T14:37:49Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "order, warndefaultenvvars, ef820e",
       "issue_count": 1,
       "recent_issue": {
@@ -1659,12 +1631,6 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "bug: GitHub Stats Dropdown Has Conflicting `className=\"hidden lg:flex\"` and `style={{ display: \"none\" }}` — Layout Bug",
-        "url": "https://github.com/kubestellar/docs/issues/1468",
-        "repo": "docs",
-        "topic_match": "class, tailwind, severitycolor"
       }
     ],
     "stretch": [
@@ -1747,7 +1713,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 439
+      "issue_count": 452
     }
   ]
 }

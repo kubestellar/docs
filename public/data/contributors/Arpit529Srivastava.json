@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-16T10:36:11.816Z",
+  "generated_at": "2026-04-16T14:45:09.861Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -505,18 +505,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "Actual coins not showing in console",
-        "url": "https://github.com/kubestellar/console/issues/8294",
-        "repo": "console",
-        "topic_match": "leaderboard, coin, contributor"
-      },
-      {
-        "title": "Drop down list to select themes rather than cycle through",
-        "url": "https://github.com/kubestellar/console/issues/8293",
-        "repo": "console",
-        "topic_match": "theme, light, browser"
-      },
       {
         "title": "ux: no onboarding flow, walkthrough, or guided first tasks",
         "url": "https://github.com/kubestellar/console/issues/8191",

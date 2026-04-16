@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-16T10:35:40.540Z",
+  "generated_at": "2026-04-16T14:44:38.310Z",
   "total_issues_opened": 448,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 131350,
@@ -350,12 +350,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "[Auto-QA] Card Type Existence: 1 error(s), 0 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/112",
-        "repo": "console-marketplace",
-        "topic_match": "card, registry, directory"
-      },
       {
         "title": "card: Implement Artifact Hub monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",

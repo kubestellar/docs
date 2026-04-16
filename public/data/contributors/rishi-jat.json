@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-16T10:36:11.361Z",
+  "generated_at": "2026-04-16T14:45:09.388Z",
   "total_issues_opened": 235,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 44250,
@@ -262,8 +262,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 1
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "secure, air, disable",
@@ -292,20 +292,6 @@
       ],
       "open_count": 1,
       "closed_count": 0
-    },
-    {
-      "name": "exchange, oauth, actionable",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "OAuth login failure (token_exchange_failed) lacks actionable diagnostics and guidance",
-        "url": "https://github.com/kubestellar/console/issues/6933",
-        "created_at": "2026-04-12T16:36:34Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "rollout, timeout, docs",
@@ -594,6 +580,20 @@
         "title": "CONTRIBUTING.md links to a non-existent OAuth section anchor",
         "url": "https://github.com/kubestellar/docs/issues/1397",
         "created_at": "2026-04-11T08:37:33Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "apps, oauth, template",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
+        "url": "https://github.com/kubestellar/docs/issues/1396",
+        "created_at": "2026-04-11T08:37:23Z"
       },
       "repos": [
         "docs"

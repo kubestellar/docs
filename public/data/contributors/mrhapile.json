@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-16T10:35:07.313Z",
+  "generated_at": "2026-04-16T14:44:05.502Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -1356,20 +1356,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Drop down list to select themes rather than cycle through",
-        "url": "https://github.com/kubestellar/console/issues/8293",
-        "repo": "console",
-        "topic_match": "theme, toggle, light"
-      },
-      {
-        "title": "Actual coins not showing in console",
-        "url": "https://github.com/kubestellar/console/issues/8294",
-        "repo": "console",
-        "topic_match": "leaderboard, coin, hour"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Marketplace & Operators",

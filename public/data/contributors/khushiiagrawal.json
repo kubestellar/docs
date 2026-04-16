@@ -1,9 +1,9 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-16T10:36:12.256Z",
+  "generated_at": "2026-04-16T14:45:10.326Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 24200,
+  "total_points": 24700,
   "level": "Commander",
   "level_rank": 5,
   "rank": 14,
@@ -232,8 +232,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "god, file, cb677b",
@@ -558,7 +558,7 @@
       "closed_count": 1
     },
     {
-      "name": "policy, terms, footer",
+      "name": "policy, footer, terms",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Footer \"Privacy Policy\", \"Terms of Service\", and \"Cookie Policy\" Links Are Non-Functional Placeholders (`href=\"#\"`)",
@@ -604,16 +604,16 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
         "name": "Cost Management",

@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-16T10:36:04.152Z",
+  "generated_at": "2026-04-16T14:45:01.959Z",
   "total_issues_opened": 41,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 50000,
@@ -279,24 +279,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "Drop down list to select themes rather than cycle through",
-        "url": "https://github.com/kubestellar/console/issues/8293",
-        "repo": "console",
-        "topic_match": "light, theme, docnavbar"
-      },
-      {
-        "title": "bug: GitHub Stats Dropdown Has Conflicting `className=\"hidden lg:flex\"` and `style={{ display: \"none\" }}` — Layout Bug",
-        "url": "https://github.com/kubestellar/docs/issues/1468",
-        "repo": "docs",
-        "topic_match": "dropdown, navbar, blur"
-      },
-      {
-        "title": "Nodes stat overview stat block drillDown shows inaccurate information",
-        "url": "https://github.com/kubestellar/console/issues/8312",
-        "repo": "console",
-        "topic_match": "overview, shouold, doc"
-      },
       {
         "title": "card: Implement Cloud Custodian monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/32",

@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-16T10:36:04.142Z",
+  "generated_at": "2026-04-16T14:45:01.948Z",
   "total_issues_opened": 421,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 125100,
@@ -1278,12 +1278,6 @@
         "url": "https://github.com/kubestellar/console/issues/8144",
         "repo": "console",
         "topic_match": "reservation, subsequent, share"
-      },
-      {
-        "title": "Drop down list to select themes rather than cycle through",
-        "url": "https://github.com/kubestellar/console/issues/8293",
-        "repo": "console",
-        "topic_match": "adapt, theme, color"
       },
       {
         "title": "card: Implement SPIFFE monitoring card",

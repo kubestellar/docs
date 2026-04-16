@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-16T10:36:12.217Z",
+  "generated_at": "2026-04-16T14:45:10.285Z",
   "total_issues_opened": 84,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 25600,
@@ -240,16 +240,16 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Actual coins not showing in console",
-        "url": "https://github.com/kubestellar/console/issues/8294",
-        "repo": "console",
-        "topic_match": "leaderboard, coin, tracking"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",
         "repo": "console",
         "topic_match": "mission, ai, @ghanshyam2005singh"
+      },
+      {
+        "title": "bug: facing issue while running console",
+        "url": "https://github.com/kubestellar/console/issues/8202",
+        "repo": "console",
+        "topic_match": "screenshot, report, @ghanshyam2005singh"
       }
     ],
     "stretch": [
