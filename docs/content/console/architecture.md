@@ -76,6 +76,15 @@ The Backend is the OAuth Client in the OAuth 2.0 flow. It receives the authoriza
 | `pkg/claude` | AI integration (future) |
 | `pkg/store` | SQLite database layer |
 | `pkg/models` | Data structures |
+| `pkg/auth` | Authentication middleware, session management |
+
+#### kc-agent migration (Apr 2026)
+
+The console is actively migrating cluster-mutating operations from the pod ServiceAccount backend to **kc-agent** running on the user's machine. This means operations like Helm rollback/uninstall/upgrade, ArgoCD sync, drift detection, kubectl sync, GPU health cronjob management, and namespace create/delete now route through kc-agent instead of the backend's pod-SA. The backend retains pod-SA only for bootstrap, GPU reservation, and self-upgrade (the "pod-SA rule" — see [Security Model](security-model.md)).
+
+This migration landed across PRs #8028, #8033, #8036, #8038, #8039, #8044 (phases 2–4 of the #7993 meta-issue). A `Privileged Client Lint` CI check (#8161) now enforces the boundary — new backend code that tries to use the pod-SA for cluster mutations will fail CI.
+
+Additionally, `pods/exec` now has an explicit RBAC authorization check (#8134) — the backend verifies the user has `pods/exec` permission before opening an exec stream, closing a privilege-escalation gap.
 
 ### MCP Bridge
 

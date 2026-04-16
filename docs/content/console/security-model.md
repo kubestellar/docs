@@ -135,6 +135,19 @@ Report security issues following the project's security policy:
 - **KubeStellar Console** — [`docs/security/SECURITY-MODEL.md`](https://github.com/kubestellar/console/blob/main/docs/security/SECURITY-MODEL.md) links to the disclosure process and the upstream self-assessment at [`docs/security/SELF-ASSESSMENT.md`](https://github.com/kubestellar/console/blob/main/docs/security/SELF-ASSESSMENT.md).
 - **Upstream CNCF projects** — every install mission in the console links to the target project's own security policy. Report per-project vulnerabilities upstream, not to us.
 
+## AI automation threat model
+
+The console also has an **AI-specific security document** covering the threat surfaces of its LLM-backed workflows (Claude Code review, auto-qa, GA4 error monitor, kc-agent/MCP). It addresses six threat categories: external prompt injection, insider/compromised credentials, DoS/resource exhaustion, agent drift, supply chain, and agent-to-agent injection.
+
+See [`docs/security/SECURITY-AI.md`](https://github.com/kubestellar/console/blob/main/docs/security/SECURITY-AI.md) in the console repo for the full threat model and audit checklist.
+
+## Recent security hardening (Apr 2026)
+
+- **pods/exec RBAC check** (#8134) — the backend now verifies the user has `pods/exec` permission before opening an exec WebSocket stream, closing a privilege-escalation gap.
+- **RefreshToken body leak** (#8107) — fixed a regression where the token refresh endpoint returned the token in the JSON body in addition to the HttpOnly cookie.
+- **Privileged Client Lint** (#8161) — new CI check that enforces the pod-SA rule: backend code that tries to use the pod ServiceAccount for cluster mutations fails CI automatically.
+- **kc-agent migration (phases 2–4)** — cluster-mutating operations (Helm, ArgoCD, kubectl sync, GPU health, namespaces) moved from the pod-SA backend to kc-agent, reducing the backend's attack surface.
+
 ## Further reading
 
 - [Architecture](architecture.md) — broader system design of the console
@@ -142,3 +155,4 @@ Report security issues following the project's security policy:
 - [AI Features](ai-features.md) — what the AI missions do
 - [Authentication](authentication.md) — GitHub OAuth setup
 - [`docs/security/SECURITY-MODEL.md`](https://github.com/kubestellar/console/blob/main/docs/security/SECURITY-MODEL.md) — the canonical source-grounded version of this document
+- [`docs/security/SECURITY-AI.md`](https://github.com/kubestellar/console/blob/main/docs/security/SECURITY-AI.md) — AI automation threat model (prompt injection, supply chain, agent drift)

@@ -32,11 +32,14 @@ KubeStellar Console uses AI Missions to automate multi-cluster Kubernetes operat
 AI Missions are conversations with AI to solve problems. You can start a mission from two places:
 
 - The **AI Missions** button in the top navigation bar (desktop and overflow menu on narrow viewports)
+- The **Agent** button in the top nav (renamed from "AI" in Apr 2026 for kc-agent connection clarity — PR #8209)
 - The **AI Missions** floating button at the bottom right
 
 ![AI Missions Navbar Button](images/ai-missions-navbar-apr02.jpg)
 
 The navbar button shows an attention badge when missions need your input. For complex multi-project deployments, use the **Mission Control** wizard (accessible from the AI Missions panel).
+
+> **Note (Apr 2026):** The top-level navbar button was renamed from "AI" to "Agent" to clarify that it connects to kc-agent (the local agent bridging your kubeconfig), not a cloud AI service. Existing screenshots may still show the old label.
 
 ### What Can You Do?
 
