@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-16T14:45:09.861Z",
+  "generated_at": "2026-04-16T18:33:30.029Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -54,17 +54,17 @@
   "topics": [
     {
       "name": "@arpit529srivastava, api, vcluster",
-      "issue_count": 36,
+      "issue_count": 35,
       "recent_issue": {
-        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
-        "url": "https://github.com/kubestellar/console/issues/6512",
-        "created_at": "2026-04-11T16:14:10Z"
+        "title": "ServiceExport / ServiceImport listing silently swallows ALL errors (including auth/network) by treating every error as \"CRD not installed\"",
+        "url": "https://github.com/kubestellar/console/issues/6510",
+        "created_at": "2026-04-11T16:13:01Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 36
+      "closed_count": 35
     },
     {
       "name": "ss, testing, @arpit529srivastava",
@@ -179,6 +179,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "namespaces, getaccessiblenamespaces, scoped",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
+        "url": "https://github.com/kubestellar/console/issues/6512",
+        "created_at": "2026-04-11T16:14:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "getworkload, listworkloadsforcluster, linear",

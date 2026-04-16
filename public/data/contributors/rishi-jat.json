@@ -1,20 +1,20 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-16T14:45:09.388Z",
-  "total_issues_opened": 235,
+  "generated_at": "2026-04-16T18:33:29.597Z",
+  "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-  "total_points": 44250,
+  "total_points": 45750,
   "level": "Commander",
   "level_rank": 5,
   "rank": 8,
   "cadence": {
-    "avg_per_week": 19.3,
-    "avg_per_day": 1.18,
+    "avg_per_week": 19.7,
+    "avg_per_day": 1.19,
     "by_day_of_week": [
       7,
       9,
       21,
-      10,
+      15,
       119,
       59,
       10
@@ -37,7 +37,7 @@
       2,
       1,
       65,
-      47,
+      52,
       10,
       4,
       2,
@@ -45,27 +45,41 @@
       4,
       0
     ],
-    "current_streak_weeks": 2,
+    "current_streak_weeks": 3,
     "longest_streak_weeks": 4,
     "trend": "steady",
     "first_issue_at": "2025-09-27T20:12:21.000Z",
-    "last_issue_at": "2026-04-15T18:42:02.000Z"
+    "last_issue_at": "2026-04-16T17:03:39.000Z"
   },
   "topics": [
     {
       "name": "@rishi, jat, line",
-      "issue_count": 179,
+      "issue_count": 182,
       "recent_issue": {
-        "title": "docs: incomplete documentation for local/self-hosted LLM configuration",
-        "url": "https://github.com/kubestellar/console/issues/8196",
-        "created_at": "2026-04-15T18:19:12Z"
+        "title": "docs: outdated Netlify URL redirects to console.kubestellar.io",
+        "url": "https://github.com/kubestellar/docs/issues/1487",
+        "created_at": "2026-04-16T17:03:39Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 179
+      "closed_count": 182
+    },
+    {
+      "name": "screen, responsive, layout",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "ui: layout breaks on small screens (cards and spacing misaligned)",
+        "url": "https://github.com/kubestellar/console/issues/8411",
+        "created_at": "2026-04-16T17:03:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 2
     },
     {
       "name": "session, auth, traffic",
@@ -252,6 +266,20 @@
       "closed_count": 2
     },
     {
+      "name": "dismiss, banner, close",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: banner close (X) button triggers modal instead of dismissing",
+        "url": "https://github.com/kubestellar/console/issues/8410",
+        "created_at": "2026-04-16T17:02:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "cmd, face, bc247e",
       "issue_count": 1,
       "recent_issue": {
@@ -300,20 +328,6 @@
         "title": "docs(console): rollout status command missing timeout can block indefinitely",
         "url": "https://github.com/kubestellar/console/issues/6360",
         "created_at": "2026-04-11T11:28:52Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "docs, mobile, f958c",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Docs page layout breaks on mobile (text cutoff on left side)",
-        "url": "https://github.com/kubestellar/console/issues/5718",
-        "created_at": "2026-04-09T12:22:42Z"
       },
       "repos": [
         "console"
@@ -588,20 +602,6 @@
       "closed_count": 1
     },
     {
-      "name": "apps, oauth, template",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": ".env.example points to GitHub Apps URL instead of GitHub OAuth Apps",
-        "url": "https://github.com/kubestellar/docs/issues/1396",
-        "created_at": "2026-04-11T08:37:23Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "iskubestellar, space, blank",
       "issue_count": 1,
       "recent_issue": {
@@ -698,7 +698,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 79
+      "issue_count": 84
     }
   ]
 }
