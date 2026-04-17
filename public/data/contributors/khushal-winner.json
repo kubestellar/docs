@@ -1,21 +1,21 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-17T18:26:44.919Z",
-  "total_issues_opened": 10,
+  "generated_at": "2026-04-17T22:21:47.064Z",
+  "total_issues_opened": 12,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
-  "total_points": 6300,
+  "total_points": 6500,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 23,
   "cadence": {
-    "avg_per_week": 0.8,
-    "avg_per_day": 0.29,
+    "avg_per_week": 1,
+    "avg_per_day": 0.35,
     "by_day_of_week": [
       0,
       0,
       0,
       0,
-      4,
+      6,
       1,
       5
     ],
@@ -38,8 +38,8 @@
       0,
       0,
       3,
+      2,
       1,
-      0,
       0,
       0,
       0,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 1,
     "trend": "steady",
     "first_issue_at": "2026-03-14T08:41:29.000Z",
-    "last_issue_at": "2026-04-17T18:03:25.000Z"
+    "last_issue_at": "2026-04-17T19:33:51.000Z"
   },
   "topics": [
     {
@@ -67,6 +67,34 @@
       "closed_count": 5
     },
     {
+      "name": "image, default, pull",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Change default Helm image pull policy to IfNotPresent",
+        "url": "https://github.com/kubestellar/console/issues/8716",
+        "created_at": "2026-04-17T19:33:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "runtime, response, zod",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Add targeted runtime validation for critical API responses using Zod",
+        "url": "https://github.com/kubestellar/console/issues/8705",
+        "created_at": "2026-04-17T18:49:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "email, accept, validation",
       "issue_count": 1,
       "recent_issue": {
@@ -77,8 +105,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "csrf, protection, duplication",
@@ -91,8 +119,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "ip, limit, rate",
@@ -141,6 +169,24 @@
     "deepen": [],
     "stretch": [
       {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
         "name": "Dashboard & Cards",
         "path": "web/src/components/cards/, web/src/components/dashboard/",
         "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
@@ -151,24 +197,6 @@
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       }
     ]
   },
@@ -219,7 +247,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 4
+      "issue_count": 6
     }
   ]
 }

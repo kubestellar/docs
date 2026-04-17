@@ -1,6 +1,6 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-04-17T18:26:44.921Z",
+  "generated_at": "2026-04-17T22:21:47.066Z",
   "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
   "total_points": 6250,
@@ -138,7 +138,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "bug:",
+        "url": "https://github.com/kubestellar/console/issues/8755",
+        "repo": "console",
+        "topic_match": "linkedin, link, website"
+      }
+    ],
     "stretch": [
       {
         "name": "Dashboard & Cards",

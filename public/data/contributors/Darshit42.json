@@ -1,21 +1,21 @@
 {
   "login": "Darshit42",
-  "generated_at": "2026-04-17T18:26:44.930Z",
-  "total_issues_opened": 6,
+  "generated_at": "2026-04-17T22:21:47.075Z",
+  "total_issues_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
-  "total_points": 2000,
+  "total_points": 2300,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 33,
+  "rank": 32,
   "cadence": {
-    "avg_per_week": 0.5,
-    "avg_per_day": 2.77,
+    "avg_per_week": 0.6,
+    "avg_per_day": 3.01,
     "by_day_of_week": [
       0,
       0,
       2,
       0,
-      4,
+      5,
       0,
       0
     ],
@@ -42,14 +42,14 @@
       0,
       0,
       0,
-      0,
+      1,
       0
     ],
     "current_streak_weeks": 2,
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-15T14:16:40.000Z",
-    "last_issue_at": "2026-04-17T18:10:38.000Z"
+    "last_issue_at": "2026-04-17T22:05:21.000Z"
   },
   "topics": [
     {
@@ -63,8 +63,22 @@
       "repos": [
         "console"
       ],
-      "open_count": 2,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "linkedin, share, matter",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug:",
+        "url": "https://github.com/kubestellar/console/issues/8755",
+        "created_at": "2026-04-17T22:05:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "widget, bar, export",
@@ -77,8 +91,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "tree, resource, filter",
@@ -125,12 +139,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
         "name": "Backend API & Handlers",
         "path": "pkg/api/, pkg/models/, pkg/store/",
         "description": "Go backend REST API, request handlers, data models, persistence layer",
@@ -141,6 +149,12 @@
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
@@ -191,7 +205,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 6
+      "issue_count": 7
     }
   ]
 }

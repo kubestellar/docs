@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-17T18:24:00.938Z",
-  "total_issues_opened": 986,
+  "generated_at": "2026-04-17T22:18:48.282Z",
+  "total_issues_opened": 991,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3530550,
+  "total_points": 3553900,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
     "avg_per_week": 78.6,
-    "avg_per_day": 4.01,
+    "avg_per_day": 4.02,
     "by_day_of_week": [
       119,
       119,
       209,
       156,
-      148,
+      153,
       132,
       103
     ],
@@ -40,8 +40,8 @@
       40,
       28,
       157,
-      33,
-      20,
+      36,
+      22,
       22,
       11
     ],
@@ -49,16 +49,16 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-17T17:41:07.000Z"
+    "last_issue_at": "2026-04-17T21:32:13.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 698,
+      "issue_count": 699,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #952",
-        "url": "https://github.com/kubestellar/console/issues/8643",
-        "created_at": "2026-04-17T15:38:51Z"
+        "title": "🐛 4 test failure(s) in Coverage Suite run #999",
+        "url": "https://github.com/kubestellar/console/issues/8749",
+        "created_at": "2026-04-17T21:32:13Z"
       },
       "repos": [
         "console",
@@ -66,7 +66,7 @@
         "docs"
       ],
       "open_count": 5,
-      "closed_count": 693
+      "closed_count": 694
     },
     {
       "name": "monitoring, card, implement",
@@ -126,6 +126,21 @@
       "closed_count": 15
     },
     {
+      "name": "repo, ci, prow",
+      "issue_count": 12,
+      "recent_issue": {
+        "title": "feat: AI audit for skipped/stale workflows — clean up or archive",
+        "url": "https://github.com/kubestellar/console/issues/8739",
+        "created_at": "2026-04-17T21:06:33Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 12
+    },
+    {
       "name": "px, spacing, design",
       "issue_count": 10,
       "recent_issue": {
@@ -138,21 +153,6 @@
       ],
       "open_count": 0,
       "closed_count": 10
-    },
-    {
-      "name": "repo, ci, prow",
-      "issue_count": 9,
-      "recent_issue": {
-        "title": "feat: consistent repo display + central selection across all GitHub cards",
-        "url": "https://github.com/kubestellar/console/issues/8675",
-        "created_at": "2026-04-17T17:41:07Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 9
     },
     {
       "name": "cluster, status, health",
@@ -294,6 +294,20 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "engagement, psychology, adoption",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "📊 Console portfolio analysis — 2026-04-17",
+        "url": "https://github.com/kubestellar/console/issues/8734",
+        "created_at": "2026-04-17T20:46:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
     },
     {
       "name": "gpu, msw, node",
@@ -633,20 +647,6 @@
       "closed_count": 1
     },
     {
-      "name": "psychology, adoption, engagement",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[Auto-QA] 1 adoption & engagement psychology opportunities found",
-        "url": "https://github.com/kubestellar/console/issues/3791",
-        "created_at": "2026-03-28T13:44:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "recommend, expand, dropdown",
       "issue_count": 1,
       "recent_issue": {
@@ -930,25 +930,19 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Cluster Network card refresh icon never animates during background data refresh",
-        "url": "https://github.com/kubestellar/console/issues/8678",
-        "repo": "console",
-        "topic_match": "guideline, card, development"
-      },
-      {
         "title": "feature: Implement per-user rate limiting and progressive security for authentication endpoints",
         "url": "https://github.com/kubestellar/console/issues/8676",
         "repo": "console",
         "topic_match": "csp, limit, internal"
-      },
-      {
-        "title": "bug: buttons on cards overlapping on expanding the right or left panels",
-        "url": "https://github.com/kubestellar/console/issues/8695",
-        "repo": "console",
-        "topic_match": "recommend, expand, dropdown"
       }
     ],
     "stretch": [
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
       {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
@@ -960,12 +954,6 @@
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Security & RBAC",
@@ -1028,7 +1016,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 341
+      "issue_count": 346
     }
   ]
 }

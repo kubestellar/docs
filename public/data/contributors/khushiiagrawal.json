@@ -1,9 +1,9 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-17T18:26:44.591Z",
+  "generated_at": "2026-04-17T22:21:46.682Z",
   "total_issues_opened": 57,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 25000,
+  "total_points": 25200,
   "level": "Commander",
   "level_rank": 5,
   "rank": 14,
@@ -615,14 +615,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "VCluster Status Retry button reloads the entire page instead of just retrying that card",
-        "url": "https://github.com/kubestellar/console/issues/8689",
-        "repo": "console",
-        "topic_match": "vcluster, disconnectvcluster, disconnect"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Deployments & GitOps",

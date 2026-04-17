@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-17T18:26:05.868Z",
+  "generated_at": "2026-04-17T22:21:03.541Z",
   "total_issues_opened": 466,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 137000,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 342,
+      "issue_count": 344,
       "recent_issue": {
         "title": "ML Jobs sort dropdown labels are hardcoded in English regardless of language setting",
         "url": "https://github.com/kubestellar/console/issues/8696",
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 9,
-      "closed_count": 333
+      "open_count": 0,
+      "closed_count": 344
     },
     {
       "name": "kubara, chart, control",
@@ -529,20 +529,6 @@
       "closed_count": 1
     },
     {
-      "name": "twice, pollforrestart, cef618",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Multiple polling loops accumulate in useSelfUpgrade with no dedup guard when pollForRestart is called twice",
-        "url": "https://github.com/kubestellar/console/issues/7789",
-        "created_at": "2026-04-13T21:09:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "rejection, unhandled, callback",
       "issue_count": 1,
       "recent_issue": {
@@ -795,20 +781,6 @@
       "closed_count": 1
     },
     {
-      "name": "reservation, subsequent, share",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "All GPU reservations share one collection context — slow first cluster starves subsequent reservations",
-        "url": "https://github.com/kubestellar/console/issues/6967",
-        "created_at": "2026-04-12T20:10:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "getbulkutilizations, f3ffeb12, c385",
       "issue_count": 1,
       "recent_issue": {
@@ -977,7 +949,7 @@
       "closed_count": 1
     },
     {
-      "name": "githubcimonitor, b9a327, a96e2f29d0",
+      "name": "b9a327, a96e2f29d0, destructuring",
       "issue_count": 1,
       "recent_issue": {
         "title": "GitHubCIMonitor: consecutiveFailures available from useCache but never destructured or passed to useCardLoadingState",
@@ -1316,10 +1288,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "feature: Extract CSRF Middleware for Reuse",
-        "url": "https://github.com/kubestellar/console/issues/8680",
+        "title": "Notifications: Mixed UX patterns across alerts, toasts, and system errors (e.g., refresh failure)",
+        "url": "https://github.com/kubestellar/console/issues/8752",
         "repo": "console",
-        "topic_match": "cookie, csrf, samesite"
+        "topic_match": "alert, eb96b4e6, c3aaad656b1f"
       },
       {
         "title": "card: Implement SPIFFE monitoring card",

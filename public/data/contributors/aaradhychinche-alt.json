@@ -1,21 +1,21 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-17T18:26:36.575Z",
-  "total_issues_opened": 448,
+  "generated_at": "2026-04-17T22:21:38.081Z",
+  "total_issues_opened": 451,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 131350,
+  "total_points": 132250,
   "level": "Captain",
   "level_rank": 6,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 37.3,
-    "avg_per_day": 8.79,
+    "avg_per_week": 37.6,
+    "avg_per_day": 8.56,
     "by_day_of_week": [
       196,
       17,
       16,
       16,
-      128,
+      131,
       16,
       59
     ],
@@ -41,7 +41,7 @@
       1,
       1,
       2,
-      1,
+      4,
       0,
       0
     ],
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-16T04:43:06.000Z"
+    "last_issue_at": "2026-04-17T21:39:54.000Z"
   },
   "topics": [
     {
       "name": "@aaradhychinche, alt, cluster",
-      "issue_count": 419,
+      "issue_count": 422,
       "recent_issue": {
-        "title": "Operators / Cache: Old operator data persists after uninstalling all operators",
-        "url": "https://github.com/kubestellar/console/issues/7550",
-        "created_at": "2026-04-13T13:18:06Z"
+        "title": "Notifications: Mixed UX patterns across alerts, toasts, and system errors (e.g., refresh failure)",
+        "url": "https://github.com/kubestellar/console/issues/8752",
+        "created_at": "2026-04-17T21:39:54Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
+      "open_count": 3,
       "closed_count": 419
     },
     {
@@ -82,7 +82,7 @@
       "closed_count": 7
     },
     {
-      "name": "game, kube, craft",
+      "name": "kube, game, craft",
       "issue_count": 4,
       "recent_issue": {
         "title": "Card: Kube Chess (kube_chess)",
@@ -292,7 +292,7 @@
       "closed_count": 1
     },
     {
-      "name": "dot, menu, resize",
+      "name": "menu, dot, resize",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: card menu (three-dot options) disappears after resizing the card",
@@ -350,18 +350,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "bug: buttons on cards overlapping on expanding the right or left panels",
-        "url": "https://github.com/kubestellar/console/issues/8695",
-        "repo": "console",
-        "topic_match": "unreadable, overlap, panel"
-      },
-      {
-        "title": "ArgoCD Health card has no visible title making it unidentifiable on the dashboard",
-        "url": "https://github.com/kubestellar/console/issues/8693",
-        "repo": "console",
-        "topic_match": "card, registry, directory"
-      },
       {
         "title": "card: Implement Artifact Hub monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",
@@ -455,7 +443,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 415
+      "issue_count": 418
     }
   ]
 }

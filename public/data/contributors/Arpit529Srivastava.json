@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-17T18:26:44.163Z",
+  "generated_at": "2026-04-17T22:21:46.218Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -505,18 +505,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "VCluster Status Retry button reloads the entire page instead of just retrying that card",
-        "url": "https://github.com/kubestellar/console/issues/8689",
-        "repo": "console",
-        "topic_match": "@arpit529srivastava, api, vcluster"
-      },
-      {
-        "title": "ML Jobs sort dropdown labels are hardcoded in English regardless of language setting",
-        "url": "https://github.com/kubestellar/console/issues/8696",
-        "repo": "console",
-        "topic_match": "sort, inventory, device"
-      },
       {
         "title": "ux: no onboarding flow, walkthrough, or guided first tasks",
         "url": "https://github.com/kubestellar/console/issues/8191",

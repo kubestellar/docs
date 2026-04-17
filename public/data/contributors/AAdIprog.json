@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-17T18:26:44.770Z",
+  "generated_at": "2026-04-17T22:21:46.903Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 20200,
@@ -334,7 +334,7 @@
       "closed_count": 1
     },
     {
-      "name": "wildcard, cors, e9793834",
+      "name": "wildcard, cors, root",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent root handler uses Access-Control-Allow-Origin:",
@@ -504,16 +504,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Authentication & Settings",
