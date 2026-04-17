@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-17T06:41:55.337Z",
-  "total_issues_opened": 975,
+  "generated_at": "2026-04-17T10:32:31.285Z",
+  "total_issues_opened": 977,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3499150,
+  "total_points": 3499850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 77.8,
-    "avg_per_day": 3.97,
+    "avg_per_week": 78,
+    "avg_per_day": 3.98,
     "by_day_of_week": [
       119,
       119,
       209,
       156,
-      137,
+      139,
       132,
       103
     ],
@@ -28,7 +28,7 @@
       27,
       40,
       57,
-      23,
+      25,
       8,
       5,
       6,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-17T04:10:54.000Z"
+    "last_issue_at": "2026-04-17T08:01:21.000Z"
   },
   "topics": [
     {
       "name": "qa, auto, component",
-      "issue_count": 495,
+      "issue_count": 497,
       "recent_issue": {
-        "title": "[Auto-QA] Components missing test coverage",
-        "url": "https://github.com/kubestellar/console/issues/8554",
-        "created_at": "2026-04-17T02:03:52Z"
+        "title": "[Auto-QA] Touch targets may be too small for mobile",
+        "url": "https://github.com/kubestellar/console/issues/8609",
+        "created_at": "2026-04-17T08:01:21Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
-      "open_count": 0,
+      "open_count": 2,
       "closed_count": 495
     },
     {
@@ -1037,7 +1037,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 330
+      "issue_count": 332
     }
   ]
 }

@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-17T06:37:41.188Z",
-  "git_hash": "beabb29",
+  "generated_at": "2026-04-17T10:27:40.596Z",
+  "git_hash": "74dd574",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3499150,
+      "total_points": 3499850,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 265,
-        "feature_issues": 396,
+        "feature_issues": 398,
         "other_issues": 314,
         "prs_opened": 5079,
-        "prs_merged": 4697
+        "prs_merged": 4698
       },
       "bonus_points": 50,
       "rank": 1
@@ -590,6 +590,21 @@
       "rank": 39
     },
     {
+      "login": "ANAMASGARD",
+      "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
+      "total_points": 1350,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 1,
+        "prs_opened": 4,
+        "prs_merged": 1
+      },
+      "rank": 40
+    },
+    {
       "login": "zyzzmohit",
       "avatar_url": "https://avatars.githubusercontent.com/u/237704724?v=4",
       "total_points": 1300,
@@ -602,7 +617,7 @@
         "prs_opened": 4,
         "prs_merged": 1
       },
-      "rank": 40
+      "rank": 41
     },
     {
       "login": "antedotee",
@@ -617,7 +632,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 41
+      "rank": 42
     },
     {
       "login": "waltforme",
@@ -632,7 +647,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 42
+      "rank": 43
     },
     {
       "login": "ShaistaAfreen09",
@@ -645,21 +660,6 @@
         "feature_issues": 0,
         "other_issues": 0,
         "prs_opened": 1,
-        "prs_merged": 1
-      },
-      "rank": 43
-    },
-    {
-      "login": "ANAMASGARD",
-      "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
-      "total_points": 950,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 1,
-        "prs_opened": 2,
         "prs_merged": 1
       },
       "rank": 44
