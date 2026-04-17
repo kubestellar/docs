@@ -1,6 +1,6 @@
 {
   "login": "onkar717",
-  "generated_at": "2026-04-16T22:21:49.833Z",
+  "generated_at": "2026-04-17T03:11:34.709Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/144542684?v=4",
   "total_points": 4350,
@@ -82,7 +82,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "\"Social\" field in leaderboard shows github ids of the user, instead of clicks on links",
+        "url": "https://github.com/kubestellar/docs/issues/1492",
+        "repo": "docs",
+        "topic_match": "slack, ready, bar"
+      }
+    ],
     "stretch": [
       {
         "name": "Dashboard & Cards",

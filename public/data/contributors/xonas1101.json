@@ -1,28 +1,28 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-16T22:20:04.387Z",
-  "total_issues_opened": 543,
+  "generated_at": "2026-04-17T03:09:45.404Z",
+  "total_issues_opened": 548,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 174050,
+  "total_points": 175550,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 45.3,
+    "avg_per_week": 45.7,
     "avg_per_day": 8.33,
     "by_day_of_week": [
       161,
       34,
       46,
       86,
-      67,
+      72,
       110,
       39
     ],
     "by_hour_of_day": [
       0,
       0,
-      1,
+      6,
       10,
       53,
       46,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-16T13:39:50.000Z"
+    "last_issue_at": "2026-04-17T02:51:42.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 413,
+      "issue_count": 418,
       "recent_issue": {
-        "title": "Webhook notifier permits plaintext HTTP endpoints",
-        "url": "https://github.com/kubestellar/console/issues/8392",
-        "created_at": "2026-04-16T13:39:50Z"
+        "title": "\"Social\" field in leaderboard shows github ids of the user, instead of clicks on links",
+        "url": "https://github.com/kubestellar/docs/issues/1492",
+        "created_at": "2026-04-17T02:51:42Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 412
+      "open_count": 3,
+      "closed_count": 415
     },
     {
       "name": "invite, reward, storage",
@@ -222,7 +222,7 @@
       "closed_count": 2
     },
     {
-      "name": "ksc, helm, ccc5ee",
+      "name": "ksc, ccc5ee, bf27",
       "issue_count": 2,
       "recent_issue": {
         "title": "Documented link for helm release is broken",
@@ -265,6 +265,20 @@
       "closed_count": 2
     },
     {
+      "name": "middle, right, place",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Non Uniform placement of the \"+\" button on cards across dashboards",
+        "url": "https://github.com/kubestellar/console/issues/8561",
+        "created_at": "2026-04-17T02:34:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "slowly, eb0d29, d672",
       "issue_count": 1,
       "recent_issue": {
@@ -275,8 +289,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "notification, instructions, a334a",
@@ -411,20 +425,6 @@
         "title": "Potential duplicate kagent/kagenti entries in agent picker",
         "url": "https://github.com/kubestellar/console/issues/7562",
         "created_at": "2026-04-13T13:36:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "generatedat, prediction, model",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Prediction timestamp types are inconsistent across related models",
-        "url": "https://github.com/kubestellar/console/issues/7557",
-        "created_at": "2026-04-13T13:29:16Z"
       },
       "repos": [
         "console"
@@ -1259,12 +1259,12 @@
       "closed_count": 1
     },
     {
-      "name": "chmod, binary, b645",
+      "name": "sessionid, chat, ids",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Binary auto-update ignores critical filesystem errors",
-        "url": "https://github.com/kubestellar/console/issues/4262",
-        "created_at": "2026-04-02T16:41:05Z"
+        "title": "Chat cancellation key collision when sessionId is omitted",
+        "url": "https://github.com/kubestellar/console/issues/4263",
+        "created_at": "2026-04-02T16:41:25Z"
       },
       "repos": [
         "console"
@@ -1273,12 +1273,12 @@
       "closed_count": 1
     },
     {
-      "name": "t., devicetracker, k8sclient",
+      "name": "chmod, binary, b645",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Nil-pointer crash path in DeviceTracker when k8s client init fails",
-        "url": "https://github.com/kubestellar/console/issues/4261",
-        "created_at": "2026-04-02T16:40:49Z"
+        "title": "Binary auto-update ignores critical filesystem errors",
+        "url": "https://github.com/kubestellar/console/issues/4262",
+        "created_at": "2026-04-02T16:41:05Z"
       },
       "repos": [
         "console"
@@ -1626,16 +1626,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Security & RBAC",
@@ -1698,7 +1698,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 452
+      "issue_count": 457
     }
   ]
 }

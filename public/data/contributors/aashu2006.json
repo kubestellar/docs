@@ -1,20 +1,20 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-16T22:21:41.562Z",
-  "total_issues_opened": 437,
+  "generated_at": "2026-04-17T03:10:55.589Z",
+  "total_issues_opened": 451,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 126800,
+  "total_points": 132500,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 5,
+  "rank": 4,
   "cadence": {
-    "avg_per_week": 36.4,
-    "avg_per_day": 35.49,
+    "avg_per_week": 37.6,
+    "avg_per_day": 36.52,
     "by_day_of_week": [
       145,
       38,
       18,
-      37,
+      51,
       14,
       69,
       116
@@ -42,29 +42,29 @@
       116,
       94,
       43,
-      58,
+      72,
       77
     ],
     "current_streak_weeks": 3,
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-16T21:56:17.000Z"
+    "last_issue_at": "2026-04-16T22:47:31.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 316,
+      "issue_count": 330,
       "recent_issue": {
-        "title": "SWR cache state transition has no test - stale data, spinner, fresh data sequence untested",
-        "url": "https://github.com/kubestellar/console/issues/8506",
-        "created_at": "2026-04-16T21:55:45Z"
+        "title": "Helm History shows multiple loading states sequentially",
+        "url": "https://github.com/kubestellar/console/issues/8524",
+        "created_at": "2026-04-16T22:47:31Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 316
+      "closed_count": 330
     },
     {
       "name": "kubara, chart, control",
@@ -121,6 +121,20 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "layout, mobile, screen",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Cluster Health stats layout breaks on smaller screen widths",
+        "url": "https://github.com/kubestellar/console/issues/8518",
+        "created_at": "2026-04-16T22:46:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "soft, ci, test",
@@ -305,6 +319,20 @@
       "closed_count": 2
     },
     {
+      "name": "fail, pvcs, pvc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Storage Overview incorrectly marks non-failed PVC states as failed",
+        "url": "https://github.com/kubestellar/console/issues/8516",
+        "created_at": "2026-04-16T22:45:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "outline, yellow, disappear",
       "issue_count": 1,
       "recent_issue": {
@@ -487,7 +515,7 @@
       "closed_count": 1
     },
     {
-      "name": "catch, raw, affiliate",
+      "name": "catch, raw, internals",
       "issue_count": 1,
       "recent_issue": {
         "title": "affiliate-clicks.mts JSON.parse outside local try/catch leaks raw error internals to callers",
@@ -605,20 +633,6 @@
         "title": "No UNIQUE constraint on pr_feedback(feature_request_id, user_id) allowing duplicate votes",
         "url": "https://github.com/kubestellar/console/issues/7724",
         "created_at": "2026-04-13T19:22:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "date, sort, order",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "gpu_reservations.start_date is TEXT instead of DATETIME causing silent wrong sort order",
-        "url": "https://github.com/kubestellar/console/issues/7719",
-        "created_at": "2026-04-13T19:21:03Z"
       },
       "repos": [
         "console"
@@ -773,20 +787,6 @@
         "title": "handleMixedModeChat never sends TypeResult Done true leaving UI stuck in streaming state",
         "url": "https://github.com/kubestellar/console/issues/6999",
         "created_at": "2026-04-12T22:28:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "handle, interval, wait",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "PredictionWorker interval wait does not handle ctx.Done() causing latent goroutine stall",
-        "url": "https://github.com/kubestellar/console/issues/6998",
-        "created_at": "2026-04-12T22:27:50Z"
       },
       "repos": [
         "console"
@@ -1339,20 +1339,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "mobile, tip, overlap",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Mobile layout: RotatingTip overlaps UI on small screens",
-        "url": "https://github.com/kubestellar/console/issues/4565",
-        "created_at": "2026-04-04T14:25:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -1371,12 +1357,6 @@
       }
     ],
     "stretch": [
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
       {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
@@ -1450,7 +1430,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 437
+      "issue_count": 451
     }
   ]
 }

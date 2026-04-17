@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-16T22:20:45.525Z",
+  "generated_at": "2026-04-17T03:10:27.170Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 371,
+      "issue_count": 372,
       "recent_issue": {
         "title": "Status Timer Javascript Garbage Build Up",
         "url": "https://github.com/kubestellar/console/issues/7475",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 371
+      "closed_count": 372
     },
     {
       "name": "documentation, 📌, component",
@@ -1151,20 +1151,6 @@
         "title": "Clicking a ReplicaSet event opens a Deployment drilldown with the wrong resource name.",
         "url": "https://github.com/kubestellar/console/issues/5429",
         "created_at": "2026-04-08T07:34:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "page, height, item",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "useStablePageHeight — Cumulative Layout Shift (CLS)",
-        "url": "https://github.com/kubestellar/console/issues/5255",
-        "created_at": "2026-04-07T14:23:09Z"
       },
       "repos": [
         "console"

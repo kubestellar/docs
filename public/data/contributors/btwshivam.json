@@ -1,6 +1,6 @@
 {
   "login": "btwshivam",
-  "generated_at": "2026-04-16T22:21:49.832Z",
+  "generated_at": "2026-04-17T03:11:34.708Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/127589548?v=4",
   "total_points": 5200,
@@ -110,7 +110,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Failed to remove card from backend error on removing cards.",
+        "url": "https://github.com/kubestellar/console/issues/8564",
+        "repo": "console",
+        "topic_match": "icon, duplicate, remove"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

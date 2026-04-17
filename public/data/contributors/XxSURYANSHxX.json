@@ -1,12 +1,12 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-16T22:21:44.185Z",
+  "generated_at": "2026-04-17T03:11:28.946Z",
   "total_issues_opened": 199,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-  "total_points": 49600,
-  "level": "Commander",
-  "level_rank": 5,
-  "rank": 7,
+  "total_points": 50400,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 6,
   "cadence": {
     "avg_per_week": 16.6,
     "avg_per_day": 7.65,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xxsuryanshxx, pkg, handler",
-      "issue_count": 178,
+      "issue_count": 179,
       "recent_issue": {
         "title": "### 30. `CheckCanI` delegates to the cluster's apiserver using the console's identity, not the caller's",
         "url": "https://github.com/kubestellar/console/issues/7979",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 178
+      "closed_count": 179
     },
     {
       "name": "tail, log, interact",
@@ -129,20 +129,6 @@
         "title": "Title: validateArgs config-subcommand check is bypassable by placing a flag before the subcommand",
         "url": "https://github.com/kubestellar/console/issues/7261",
         "created_at": "2026-04-13T06:11:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "dryrunsessionsmu, activechatctxsmu, server",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Title: Lock-ordering deadlock between activeChatCtxsMu and dryRunSessionsMu in server_ai.go and server.go",
-        "url": "https://github.com/kubestellar/console/issues/7169",
-        "created_at": "2026-04-13T05:18:16Z"
       },
       "repos": [
         "console"

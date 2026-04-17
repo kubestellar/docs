@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-16T22:21:48.921Z",
+  "generated_at": "2026-04-17T03:11:33.780Z",
   "total_issues_opened": 92,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 33100,
@@ -138,7 +138,7 @@
       "closed_count": 2
     },
     {
-      "name": "slice, character, ids",
+      "name": "slice, character, header",
       "issue_count": 2,
       "recent_issue": {
         "title": "DeviceTracker.ClearAlert : Panics on Malformed Alert IDs via Incorrect String Slicing",
