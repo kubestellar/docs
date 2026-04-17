@@ -1,6 +1,6 @@
 {
   "login": "SakshamDutt",
-  "generated_at": "2026-04-17T14:35:40.102Z",
+  "generated_at": "2026-04-17T18:26:44.774Z",
   "total_issues_opened": 6,
   "avatar_url": "https://avatars.githubusercontent.com/u/72153648?v=4",
   "total_points": 18500,
@@ -124,7 +124,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Data table empty state shows hardcoded English \"No data available\" regardless of language setting",
+        "url": "https://github.com/kubestellar/console/issues/8694",
+        "repo": "console",
+        "topic_match": "translation, languageswitcher, routes"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

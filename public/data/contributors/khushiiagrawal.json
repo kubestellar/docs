@@ -1,21 +1,21 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-17T14:35:39.928Z",
-  "total_issues_opened": 56,
+  "generated_at": "2026-04-17T18:26:44.591Z",
+  "total_issues_opened": 57,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 24700,
+  "total_points": 25000,
   "level": "Commander",
   "level_rank": 5,
   "rank": 14,
   "cadence": {
-    "avg_per_week": 4.7,
-    "avg_per_day": 6.34,
+    "avg_per_week": 4.8,
+    "avg_per_day": 5.07,
     "by_day_of_week": [
       2,
       18,
       35,
       0,
-      0,
+      1,
       1,
       0
     ],
@@ -38,18 +38,18 @@
       0,
       1,
       2,
-      7,
+      8,
       0,
       0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 2,
-    "longest_streak_weeks": 2,
+    "current_streak_weeks": 3,
+    "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-06T12:23:43.000Z",
-    "last_issue_at": "2026-04-15T08:27:31.000Z"
+    "last_issue_at": "2026-04-17T18:04:46.000Z"
   },
   "topics": [
     {
@@ -180,7 +180,7 @@
       "closed_count": 2
     },
     {
-      "name": "unlike, handler, da09a5e",
+      "name": "unlike, handler, @khushiiagrawal",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: `handleRolesHTTP` and related RBAC handlers skip token validation",
@@ -544,6 +544,20 @@
       "closed_count": 1
     },
     {
+      "name": "highlight, heading, viewport",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `TableOfContents` Active Heading Highlight Doesn't Work Due to `threshold: 1.0` in `IntersectionObserver`",
+        "url": "https://github.com/kubestellar/docs/issues/1494",
+        "created_at": "2026-04-17T18:04:46Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "form, subscribe, newsletter",
       "issue_count": 1,
       "recent_issue": {
@@ -601,14 +615,15 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
-    "stretch": [
+    "deepen": [
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
+        "title": "VCluster Status Retry button reloads the entire page instead of just retrying that card",
+        "url": "https://github.com/kubestellar/console/issues/8689",
+        "repo": "console",
+        "topic_match": "vcluster, disconnectvcluster, disconnect"
+      }
+    ],
+    "stretch": [
       {
         "name": "Deployments & GitOps",
         "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
@@ -620,6 +635,12 @@
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Marketplace & Operators",
@@ -682,7 +703,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 56
+      "issue_count": 57
     }
   ]
 }

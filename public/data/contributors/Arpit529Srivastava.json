@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-17T14:35:39.486Z",
+  "generated_at": "2026-04-17T18:26:44.163Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -47,24 +47,24 @@
     ],
     "current_streak_weeks": 6,
     "longest_streak_weeks": 6,
-    "trend": "ramping_up",
+    "trend": "steady",
     "first_issue_at": "2025-11-27T13:42:14.000Z",
     "last_issue_at": "2026-04-11T16:14:10.000Z"
   },
   "topics": [
     {
       "name": "@arpit529srivastava, api, vcluster",
-      "issue_count": 35,
+      "issue_count": 36,
       "recent_issue": {
-        "title": "ServiceExport / ServiceImport listing silently swallows ALL errors (including auth/network) by treating every error as \"CRD not installed\"",
-        "url": "https://github.com/kubestellar/console/issues/6510",
-        "created_at": "2026-04-11T16:13:01Z"
+        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
+        "url": "https://github.com/kubestellar/console/issues/6512",
+        "created_at": "2026-04-11T16:14:10Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 35
+      "closed_count": 36
     },
     {
       "name": "ss, testing, @arpit529srivastava",
@@ -179,20 +179,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "namespaces, getaccessiblenamespaces, scoped",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
-        "url": "https://github.com/kubestellar/console/issues/6512",
-        "created_at": "2026-04-11T16:14:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "getworkload, listworkloadsforcluster, linear",
@@ -519,6 +505,18 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "VCluster Status Retry button reloads the entire page instead of just retrying that card",
+        "url": "https://github.com/kubestellar/console/issues/8689",
+        "repo": "console",
+        "topic_match": "@arpit529srivastava, api, vcluster"
+      },
+      {
+        "title": "ML Jobs sort dropdown labels are hardcoded in English regardless of language setting",
+        "url": "https://github.com/kubestellar/console/issues/8696",
+        "repo": "console",
+        "topic_match": "sort, inventory, device"
+      },
       {
         "title": "ux: no onboarding flow, walkthrough, or guided first tasks",
         "url": "https://github.com/kubestellar/console/issues/8191",

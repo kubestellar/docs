@@ -1,21 +1,21 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-17T14:35:40.243Z",
-  "total_issues_opened": 6,
+  "generated_at": "2026-04-17T18:26:44.919Z",
+  "total_issues_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
-  "total_points": 5700,
+  "total_points": 6300,
   "level": "Pilot",
   "level_rank": 4,
-  "rank": 24,
+  "rank": 23,
   "cadence": {
-    "avg_per_week": 0.5,
-    "avg_per_day": 5.18,
+    "avg_per_week": 0.8,
+    "avg_per_day": 0.29,
     "by_day_of_week": [
       0,
       0,
       0,
       0,
-      0,
+      4,
       1,
       5
     ],
@@ -37,19 +37,19 @@
       0,
       0,
       0,
-      0,
-      0,
+      3,
+      1,
       0,
       0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 0,
+    "current_streak_weeks": 1,
     "longest_streak_weeks": 1,
-    "trend": "slowing_down",
+    "trend": "steady",
     "first_issue_at": "2026-03-14T08:41:29.000Z",
-    "last_issue_at": "2026-03-15T12:28:09.000Z"
+    "last_issue_at": "2026-04-17T18:03:25.000Z"
   },
   "topics": [
     {
@@ -65,6 +65,62 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "email, accept, validation",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Email validation accepts invalid emails",
+        "url": "https://github.com/kubestellar/console/issues/8688",
+        "created_at": "2026-04-17T18:03:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "csrf, protection, duplication",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Extract CSRF Middleware for Reuse",
+        "url": "https://github.com/kubestellar/console/issues/8680",
+        "created_at": "2026-04-17T17:54:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "ip, limit, rate",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Implement per-user rate limiting and progressive security for authentication endpoints",
+        "url": "https://github.com/kubestellar/console/issues/8676",
+        "created_at": "2026-04-17T17:42:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "logging, audit, rbac",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Add Audit Logging for Sensitive Operations",
+        "url": "https://github.com/kubestellar/console/issues/8670",
+        "created_at": "2026-04-17T17:28:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "goroutine, mcp, endpoint",
@@ -91,12 +147,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       },
       {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
@@ -113,6 +163,12 @@
         "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
         "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       }
     ]
   },
@@ -163,7 +219,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 0
+      "issue_count": 4
     }
   ]
 }

@@ -1,21 +1,21 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-17T14:33:54.778Z",
-  "total_issues_opened": 548,
+  "generated_at": "2026-04-17T18:24:53.775Z",
+  "total_issues_opened": 554,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 175550,
+  "total_points": 177150,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 45.7,
-    "avg_per_day": 8.33,
+    "avg_per_week": 46.2,
+    "avg_per_day": 8.35,
     "by_day_of_week": [
       161,
       34,
       46,
       86,
-      72,
+      78,
       110,
       39
     ],
@@ -35,7 +35,7 @@
       31,
       67,
       62,
-      30,
+      36,
       29,
       22,
       2,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-17T02:51:42.000Z"
+    "last_issue_at": "2026-04-17T15:57:21.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 414,
+      "issue_count": 421,
       "recent_issue": {
-        "title": "\"Social\" field in leaderboard shows github ids of the user, instead of clicks on links",
-        "url": "https://github.com/kubestellar/docs/issues/1492",
-        "created_at": "2026-04-17T02:51:42Z"
+        "title": "Nodes drillDown Dashboard doesn't show nodes",
+        "url": "https://github.com/kubestellar/console/issues/8650",
+        "created_at": "2026-04-17T15:55:49Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 414
+      "closed_count": 421
     },
     {
       "name": "invite, reward, storage",
@@ -152,12 +152,12 @@
       "closed_count": 3
     },
     {
-      "name": "meta, tag, welcome",
+      "name": "origin, ipv6, colon",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Meta description cleanup leaves stale global document state",
-        "url": "https://github.com/kubestellar/console/issues/7553",
-        "created_at": "2026-04-13T13:23:05Z"
+        "title": "Card proxy can return attacker-controlled HTML under first-party origin",
+        "url": "https://github.com/kubestellar/console/issues/7573",
+        "created_at": "2026-04-13T14:03:10Z"
       },
       "repos": [
         "console"
@@ -166,12 +166,12 @@
       "closed_count": 2
     },
     {
-      "name": "mock, order, flaky",
+      "name": "meta, tag, welcome",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Shared localStorage mock state leaks across tests",
-        "url": "https://github.com/kubestellar/console/issues/7512",
-        "created_at": "2026-04-13T11:43:50Z"
+        "title": "Meta description cleanup leaves stale global document state",
+        "url": "https://github.com/kubestellar/console/issues/7553",
+        "created_at": "2026-04-13T13:23:05Z"
       },
       "repos": [
         "console"
@@ -277,6 +277,34 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "enter, ctrl, cmd",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Bug report modal doesn't support cmd+enter/ctrl+enter to submit report",
+        "url": "https://github.com/kubestellar/console/issues/8651",
+        "created_at": "2026-04-17T15:57:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "modal, deep, e7ef91",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Navigating back after going deeper into modals isn't possible",
+        "url": "https://github.com/kubestellar/console/issues/8641",
+        "created_at": "2026-04-17T15:30:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "slowly, eb0d29, d672",
@@ -425,20 +453,6 @@
         "title": "Potential duplicate kagent/kagenti entries in agent picker",
         "url": "https://github.com/kubestellar/console/issues/7562",
         "created_at": "2026-04-13T13:36:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "generatedat, prediction, model",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Prediction timestamp types are inconsistent across related models",
-        "url": "https://github.com/kubestellar/console/issues/7557",
-        "created_at": "2026-04-13T13:29:16Z"
       },
       "repos": [
         "console"
@@ -601,20 +615,6 @@
       "closed_count": 1
     },
     {
-      "name": "module, test, cc0f252e8db",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Global mutable mock state leaks across tests and user flows",
-        "url": "https://github.com/kubestellar/console/issues/7419",
-        "created_at": "2026-04-13T09:01:04Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "memory, share, c6c475",
       "issue_count": 1,
       "recent_issue": {
@@ -747,20 +747,6 @@
         "title": "Reordering Cards Does Not Count As Customization",
         "url": "https://github.com/kubestellar/console/issues/7255",
         "created_at": "2026-04-13T05:56:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "mapping, space, direct",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Project Name Whitespace Breaks Direct Mapping",
-        "url": "https://github.com/kubestellar/console/issues/7229",
-        "created_at": "2026-04-13T05:48:28Z"
       },
       "repos": [
         "console"
@@ -1091,20 +1077,6 @@
       "closed_count": 1
     },
     {
-      "name": "coding, level, contributor",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Contributor level color coding is different in docs and in console",
-        "url": "https://github.com/kubestellar/console/issues/5241",
-        "created_at": "2026-04-07T13:53:07Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "indexeddb, clear, completion",
       "issue_count": 1,
       "recent_issue": {
@@ -1427,6 +1399,20 @@
       "closed_count": 1
     },
     {
+      "name": "c8ee48bf, dbfa, cc1a91fca",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cancel endpoint has no auth and wildcard CORS",
+        "url": "https://github.com/kubestellar/console/issues/3829",
+        "created_at": "2026-03-29T04:02:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "nan, exception, c152002e",
       "issue_count": 1,
       "recent_issue": {
@@ -1658,6 +1644,12 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
+      },
+      {
+        "title": "feature: Extract CSRF Middleware for Reuse",
+        "url": "https://github.com/kubestellar/console/issues/8680",
+        "repo": "console",
+        "topic_match": "logout, site, a9c0ded"
       }
     ],
     "stretch": [
@@ -1668,16 +1660,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
         "name": "Security & RBAC",
@@ -1740,7 +1732,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 457
+      "issue_count": 463
     }
   ]
 }

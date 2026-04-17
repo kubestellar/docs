@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-17T14:34:35.039Z",
+  "generated_at": "2026-04-17T18:25:35.390Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 372,
+      "issue_count": 370,
       "recent_issue": {
         "title": "Status Timer Javascript Garbage Build Up",
         "url": "https://github.com/kubestellar/console/issues/7475",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 372
+      "closed_count": 370
     },
     {
       "name": "documentation, 📌, component",
@@ -171,6 +171,20 @@
         "title": "iOS Bottom Bar Safe Area",
         "url": "https://github.com/kubestellar/console/issues/6545",
         "created_at": "2026-04-11T16:39:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "tooltips, navbar, a8153",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Tooltips Blocking UI",
+        "url": "https://github.com/kubestellar/console/issues/6543",
+        "created_at": "2026-04-11T16:39:20Z"
       },
       "repos": [
         "console"
@@ -725,12 +739,12 @@
       "closed_count": 1
     },
     {
-      "name": "resizer, bdde7, be3b",
+      "name": "missionsref, missionprovider, current",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Desktop-specific Resizer",
-        "url": "https://github.com/kubestellar/console/issues/6544",
-        "created_at": "2026-04-11T16:39:37Z"
+        "title": "MissionProvider missionsRef.current Assignment Outside useEffect",
+        "url": "https://github.com/kubestellar/console/issues/6789",
+        "created_at": "2026-04-12T03:59:39Z"
       },
       "repos": [
         "console"
@@ -739,12 +753,40 @@
       "closed_count": 1
     },
     {
-      "name": "tooltips, a44df46a, cdb",
+      "name": "dialog, modal, trap",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Tooltips Blocking UI",
-        "url": "https://github.com/kubestellar/console/issues/6543",
-        "created_at": "2026-04-11T16:39:20Z"
+        "title": "No Focus Trap in MissionControlDialog",
+        "url": "https://github.com/kubestellar/console/issues/6738",
+        "created_at": "2026-04-11T22:45:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "computelayout, flightplanblueprint, b311dde4",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "FlightPlanBlueprint computeLayout Called Every Render",
+        "url": "https://github.com/kubestellar/console/issues/6731",
+        "created_at": "2026-04-11T22:40:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "resizer, bdde7, be3b",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Desktop-specific Resizer",
+        "url": "https://github.com/kubestellar/console/issues/6544",
+        "created_at": "2026-04-11T16:39:37Z"
       },
       "repos": [
         "console"
@@ -1215,34 +1257,6 @@
       "closed_count": 1
     },
     {
-      "name": "progressive, incrementally, af16a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Progressive Fetch Does Not Update UI Incrementally",
-        "url": "https://github.com/kubestellar/console/issues/4935",
-        "created_at": "2026-04-06T08:51:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sse, stream, mid",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "SSE Streaming Stops Midway Without Recovery",
-        "url": "https://github.com/kubestellar/console/issues/4934",
-        "created_at": "2026-04-06T08:51:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "hierarchy, poor, contrast",
       "issue_count": 1,
       "recent_issue": {
@@ -1357,6 +1371,12 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
@@ -1367,12 +1387,6 @@
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },

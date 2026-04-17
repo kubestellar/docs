@@ -1,21 +1,21 @@
 {
   "login": "Darshit42",
-  "generated_at": "2026-04-17T14:35:40.256Z",
-  "total_issues_opened": 2,
+  "generated_at": "2026-04-17T18:26:44.930Z",
+  "total_issues_opened": 6,
   "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
-  "total_points": 800,
-  "level": "Explorer",
-  "level_rank": 2,
-  "rank": 46,
+  "total_points": 2000,
+  "level": "Navigator",
+  "level_rank": 3,
+  "rank": 33,
   "cadence": {
-    "avg_per_week": 0.2,
-    "avg_per_day": 2,
+    "avg_per_week": 0.5,
+    "avg_per_day": 2.77,
     "by_day_of_week": [
       0,
       0,
       2,
       0,
-      0,
+      4,
       0,
       0
     ],
@@ -35,26 +35,114 @@
       0,
       0,
       2,
+      1,
       0,
-      0,
-      0,
-      0,
+      2,
+      1,
       0,
       0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 1,
-    "longest_streak_weeks": 1,
+    "current_streak_weeks": 2,
+    "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-15T14:16:40.000Z",
-    "last_issue_at": "2026-04-15T14:29:53.000Z"
+    "last_issue_at": "2026-04-17T18:10:38.000Z"
   },
-  "topics": [],
+  "topics": [
+    {
+      "name": "button, expand, deactivate",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "bug: buttons on cards overlapping on expanding the right or left panels",
+        "url": "https://github.com/kubestellar/console/issues/8695",
+        "created_at": "2026-04-17T18:10:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 2,
+      "closed_count": 1
+    },
+    {
+      "name": "widget, bar, export",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: stats bar of export demo widget overflows",
+        "url": "https://github.com/kubestellar/console/issues/8686",
+        "created_at": "2026-04-17T17:59:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "tree, resource, filter",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: resource tree disappears when filtering by \"Issues\" after navigating from notification",
+        "url": "https://github.com/kubestellar/console/issues/8155",
+        "created_at": "2026-04-15T14:29:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "groq, support, feature",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Groq support",
+        "url": "https://github.com/kubestellar/console/issues/8153",
+        "created_at": "2026-04-15T14:16:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
   "suggestions": {
     "deepen": [],
-    "stretch": []
+    "stretch": [
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
+        "name": "Backend API & Handlers",
+        "path": "pkg/api/, pkg/models/, pkg/store/",
+        "description": "Go backend REST API, request handlers, data models, persistence layer",
+        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      }
+    ]
   },
   "activity_timeline": [
     {
@@ -103,7 +191,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 2
+      "issue_count": 6
     }
   ]
 }

@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-17T14:33:04.627Z",
-  "total_issues_opened": 981,
+  "generated_at": "2026-04-17T18:24:00.938Z",
+  "total_issues_opened": 986,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3509550,
+  "total_points": 3530550,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 78.3,
-    "avg_per_day": 3.99,
+    "avg_per_week": 78.6,
+    "avg_per_day": 4.01,
     "by_day_of_week": [
       119,
       119,
       209,
       156,
-      143,
+      148,
       132,
       103
     ],
@@ -35,9 +35,9 @@
       5,
       68,
       55,
-      88,
+      90,
       35,
-      37,
+      40,
       28,
       157,
       33,
@@ -49,24 +49,24 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-17T14:09:30.000Z"
+    "last_issue_at": "2026-04-17T17:41:07.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 696,
+      "issue_count": 698,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #943",
-        "url": "https://github.com/kubestellar/console/issues/8626",
-        "created_at": "2026-04-17T14:09:30Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #952",
+        "url": "https://github.com/kubestellar/console/issues/8643",
+        "created_at": "2026-04-17T15:38:51Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 6,
-      "closed_count": 690
+      "open_count": 5,
+      "closed_count": 693
     },
     {
       "name": "monitoring, card, implement",
@@ -140,6 +140,21 @@
       "closed_count": 10
     },
     {
+      "name": "repo, ci, prow",
+      "issue_count": 9,
+      "recent_issue": {
+        "title": "feat: consistent repo display + central selection across all GitHub cards",
+        "url": "https://github.com/kubestellar/console/issues/8675",
+        "created_at": "2026-04-17T17:41:07Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 9
+    },
+    {
       "name": "cluster, status, health",
       "issue_count": 8,
       "recent_issue": {
@@ -152,21 +167,6 @@
       ],
       "open_count": 0,
       "closed_count": 8
-    },
-    {
-      "name": "repo, prow, ci",
-      "issue_count": 7,
-      "recent_issue": {
-        "title": "feat: embeddable widget support for CI/CD dashboard cards",
-        "url": "https://github.com/kubestellar/console/issues/8571",
-        "created_at": "2026-04-17T02:55:29Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 7
     },
     {
       "name": "js, vendor, bundle",
@@ -254,6 +254,20 @@
       "closed_count": 4
     },
     {
+      "name": "release, nightly, april",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "bug: Nightly Release Pulse shows stale release tag",
+        "url": "https://github.com/kubestellar/console/issues/8666",
+        "created_at": "2026-04-17T17:25:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
       "name": "stdin, leak, channel",
       "issue_count": 3,
       "recent_issue": {
@@ -302,20 +316,6 @@
         "title": "✨ What's New modal + agent-version-available toast (unified for kc-agent and Console backend)",
         "url": "https://github.com/kubestellar/console/issues/8265",
         "created_at": "2026-04-16T01:20:43Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "release, april, apr",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🔴 Nightly + Release CI health tracking — April 2026 regressions",
-        "url": "https://github.com/kubestellar/console/issues/8262",
-        "created_at": "2026-04-16T01:04:11Z"
       },
       "repos": [
         "console"
@@ -928,7 +928,26 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Cluster Network card refresh icon never animates during background data refresh",
+        "url": "https://github.com/kubestellar/console/issues/8678",
+        "repo": "console",
+        "topic_match": "guideline, card, development"
+      },
+      {
+        "title": "feature: Implement per-user rate limiting and progressive security for authentication endpoints",
+        "url": "https://github.com/kubestellar/console/issues/8676",
+        "repo": "console",
+        "topic_match": "csp, limit, internal"
+      },
+      {
+        "title": "bug: buttons on cards overlapping on expanding the right or left panels",
+        "url": "https://github.com/kubestellar/console/issues/8695",
+        "repo": "console",
+        "topic_match": "recommend, expand, dropdown"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -1009,7 +1028,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 336
+      "issue_count": 341
     }
   ]
 }

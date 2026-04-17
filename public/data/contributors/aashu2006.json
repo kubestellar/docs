@@ -1,21 +1,21 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-17T14:35:01.836Z",
-  "total_issues_opened": 451,
+  "generated_at": "2026-04-17T18:26:05.868Z",
+  "total_issues_opened": 466,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 132500,
+  "total_points": 137000,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 37.6,
-    "avg_per_day": 36.52,
+    "avg_per_week": 38.8,
+    "avg_per_day": 35.42,
     "by_day_of_week": [
       145,
       38,
       18,
       51,
-      14,
+      29,
       69,
       116
     ],
@@ -37,8 +37,8 @@
       5,
       0,
       0,
-      8,
-      31,
+      17,
+      37,
       116,
       94,
       43,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-16T22:47:31.000Z"
+    "last_issue_at": "2026-04-17T18:11:40.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 330,
+      "issue_count": 342,
       "recent_issue": {
-        "title": "Helm History shows multiple loading states sequentially",
-        "url": "https://github.com/kubestellar/console/issues/8524",
-        "created_at": "2026-04-16T22:47:31Z"
+        "title": "ML Jobs sort dropdown labels are hardcoded in English regardless of language setting",
+        "url": "https://github.com/kubestellar/console/issues/8696",
+        "created_at": "2026-04-17T18:11:40Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 330
+      "open_count": 9,
+      "closed_count": 333
     },
     {
       "name": "kubara, chart, control",
@@ -79,6 +79,20 @@
       ],
       "open_count": 0,
       "closed_count": 9
+    },
+    {
+      "name": "demo, badge, ml",
+      "issue_count": 6,
+      "recent_issue": {
+        "title": "ML Notebooks card shows Demo badge even when real notebooks are running",
+        "url": "https://github.com/kubestellar/console/issues/8665",
+        "created_at": "2026-04-17T17:22:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 6
     },
     {
       "name": "clusterrole, openshift, opt",
@@ -333,20 +347,6 @@
       "closed_count": 1
     },
     {
-      "name": "outline, yellow, disappear",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Demo mode toggle has no test - yellow badge and outline may appear/disappear incorrectly",
-        "url": "https://github.com/kubestellar/console/issues/8505",
-        "created_at": "2026-04-16T21:55:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "card, persistence, reload",
       "issue_count": 1,
       "recent_issue": {
@@ -403,21 +403,7 @@
       "closed_count": 1
     },
     {
-      "name": "language, experience, ff3a0a98",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Some UI text does not change with language selection",
-        "url": "https://github.com/kubestellar/console/issues/8017",
-        "created_at": "2026-04-14T20:37:27Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "development, time, reload",
+      "name": "development, time, performance",
       "issue_count": 1,
       "recent_issue": {
         "title": "App performance degrades over time during development usage",
@@ -437,20 +423,6 @@
         "title": "Some lists behave inconsistently when items are added or updated",
         "url": "https://github.com/kubestellar/console/issues/8015",
         "created_at": "2026-04-14T20:36:56Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "cost, datum, demo",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Cost overview displays static data without indicating it is demo data",
-        "url": "https://github.com/kubestellar/console/issues/8012",
-        "created_at": "2026-04-14T20:36:13Z"
       },
       "repos": [
         "console"
@@ -557,6 +529,20 @@
       "closed_count": 1
     },
     {
+      "name": "twice, pollforrestart, cef618",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Multiple polling loops accumulate in useSelfUpgrade with no dedup guard when pollForRestart is called twice",
+        "url": "https://github.com/kubestellar/console/issues/7789",
+        "created_at": "2026-04-13T21:09:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "rejection, unhandled, callback",
       "issue_count": 1,
       "recent_issue": {
@@ -641,20 +627,6 @@
       "closed_count": 1
     },
     {
-      "name": "ids, dashboard, know",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ENABLED_DASHBOARDS values accepted without validation against known dashboard IDs",
-        "url": "https://github.com/kubestellar/console/issues/7688",
-        "created_at": "2026-04-13T19:14:30Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "oauth, credential, configured",
       "issue_count": 1,
       "recent_issue": {
@@ -669,12 +641,26 @@
       "closed_count": 1
     },
     {
-      "name": "certificate, mitm, argocd",
+      "name": "certificate, mitm, attack",
       "issue_count": 1,
       "recent_issue": {
         "title": "ArgoCD TLS certificate verification skip has no production guard enabling MITM attacks",
         "url": "https://github.com/kubestellar/console/issues/7683",
         "created_at": "2026-04-13T19:12:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "incremented, d0541d45, e0b4780850f9",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Screenshot upload count incremented at validation time not after successful GitHub API delivery",
+        "url": "https://github.com/kubestellar/console/issues/7062",
+        "created_at": "2026-04-12T23:54:00Z"
       },
       "repos": [
         "console"
@@ -689,20 +675,6 @@
         "title": "writeSSEEvent injects eventName directly into SSE wire format with no newline sanitization",
         "url": "https://github.com/kubestellar/console/issues/7050",
         "created_at": "2026-04-12T23:37:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "retry, immediate, enter",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Rate limit 429 responses omit Retry-After header causing well-behaved clients to enter immediate retry loops",
-        "url": "https://github.com/kubestellar/console/issues/7040",
-        "created_at": "2026-04-12T23:18:30Z"
       },
       "repos": [
         "console"
@@ -823,12 +795,12 @@
       "closed_count": 1
     },
     {
-      "name": "getbulkutilizations, f3ffeb12, c385",
+      "name": "reservation, subsequent, share",
       "issue_count": 1,
       "recent_issue": {
-        "title": "GetBulkUtilizations issues up to 500 sequential database queries for ownership checks",
-        "url": "https://github.com/kubestellar/console/issues/6963",
-        "created_at": "2026-04-12T20:09:19Z"
+        "title": "All GPU reservations share one collection context — slow first cluster starves subsequent reservations",
+        "url": "https://github.com/kubestellar/console/issues/6967",
+        "created_at": "2026-04-12T20:10:13Z"
       },
       "repos": [
         "console"
@@ -837,12 +809,12 @@
       "closed_count": 1
     },
     {
-      "name": "input, title, cluster",
+      "name": "getbulkutilizations, f3ffeb12, c385",
       "issue_count": 1,
       "recent_issue": {
-        "title": "UpdateReservation accepts empty string for Title, Cluster, and Namespace violating schema constraints",
-        "url": "https://github.com/kubestellar/console/issues/6960",
-        "created_at": "2026-04-12T20:08:35Z"
+        "title": "GetBulkUtilizations issues up to 500 sequential database queries for ownership checks",
+        "url": "https://github.com/kubestellar/console/issues/6963",
+        "created_at": "2026-04-12T20:09:19Z"
       },
       "repos": [
         "console"
@@ -1187,6 +1159,20 @@
       "closed_count": 1
     },
     {
+      "name": "configs, model, share",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "handleKagentCRDSummary makes 6 sequential Kubernetes API calls under one shared timeout silently zeroing out counts",
+        "url": "https://github.com/kubestellar/console/issues/5354",
+        "created_at": "2026-04-07T21:22:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "a414fae, faf4, a4ad",
       "issue_count": 1,
       "recent_issue": {
@@ -1221,20 +1207,6 @@
         "title": "kagenti_provider Invoke doesn't URL-encode namespace/agentName allowing path injection",
         "url": "https://github.com/kubestellar/console/issues/5349",
         "created_at": "2026-04-07T21:21:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "authorization, cbfe0, ccc3061c3e5",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Agent fetch hooks send no Authorization header - silently breaks when KC_AGENT_TOKEN is set",
-        "url": "https://github.com/kubestellar/console/issues/5348",
-        "created_at": "2026-04-07T21:20:53Z"
       },
       "repos": [
         "console"
@@ -1344,6 +1316,12 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "feature: Extract CSRF Middleware for Reuse",
+        "url": "https://github.com/kubestellar/console/issues/8680",
+        "repo": "console",
+        "topic_match": "cookie, csrf, samesite"
+      },
+      {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
@@ -1358,12 +1336,6 @@
     ],
     "stretch": [
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
@@ -1374,12 +1346,6 @@
         "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
         "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
-      },
-      {
-        "name": "Backend API & Handlers",
-        "path": "pkg/api/, pkg/models/, pkg/store/",
-        "description": "Go backend REST API, request handlers, data models, persistence layer",
-        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
       }
     ]
   },
@@ -1430,7 +1396,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 451
+      "issue_count": 466
     }
   ]
 }

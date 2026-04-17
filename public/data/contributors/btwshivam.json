@@ -1,6 +1,6 @@
 {
   "login": "btwshivam",
-  "generated_at": "2026-04-17T14:35:40.244Z",
+  "generated_at": "2026-04-17T18:26:44.923Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/127589548?v=4",
   "total_points": 5200,
@@ -67,7 +67,7 @@
       "closed_count": 2
     },
     {
-      "name": "icon, duplicate, remove",
+      "name": "duplicate, icon, remove",
       "issue_count": 1,
       "recent_issue": {
         "title": "Remove duplicate icons in cards",
@@ -110,7 +110,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Cluster Network card refresh icon never animates during background data refresh",
+        "url": "https://github.com/kubestellar/console/issues/8678",
+        "repo": "console",
+        "topic_match": "duplicate, icon, remove"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

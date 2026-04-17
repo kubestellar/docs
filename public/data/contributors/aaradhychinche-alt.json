@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-17T14:35:32.003Z",
+  "generated_at": "2026-04-17T18:26:36.575Z",
   "total_issues_opened": 448,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 131350,
@@ -236,7 +236,7 @@
       "closed_count": 1
     },
     {
-      "name": "watcher, context, persistence",
+      "name": "watcher, persistence, context",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: persistence watcher stops immediately due to request-scoped context usage",
@@ -350,6 +350,18 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "bug: buttons on cards overlapping on expanding the right or left panels",
+        "url": "https://github.com/kubestellar/console/issues/8695",
+        "repo": "console",
+        "topic_match": "unreadable, overlap, panel"
+      },
+      {
+        "title": "ArgoCD Health card has no visible title making it unidentifiable on the dashboard",
+        "url": "https://github.com/kubestellar/console/issues/8693",
+        "repo": "console",
+        "topic_match": "card, registry, directory"
+      },
       {
         "title": "card: Implement Artifact Hub monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/58",

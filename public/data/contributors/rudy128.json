@@ -1,6 +1,6 @@
 {
   "login": "rudy128",
-  "generated_at": "2026-04-17T14:35:40.243Z",
+  "generated_at": "2026-04-17T18:26:44.922Z",
   "total_issues_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/77375030?v=4",
   "total_points": 5300,
@@ -96,7 +96,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Data table empty state shows hardcoded English \"No data available\" regardless of language setting",
+        "url": "https://github.com/kubestellar/console/issues/8694",
+        "repo": "console",
+        "topic_match": "language, ladder, english"
+      },
+      {
+        "title": "ML Jobs sort dropdown labels are hardcoded in English regardless of language setting",
+        "url": "https://github.com/kubestellar/console/issues/8696",
+        "repo": "console",
+        "topic_match": "language, ladder, english"
+      }
+    ],
     "stretch": [
       {
         "name": "Dashboard & Cards",
