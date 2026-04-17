@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-17T10:35:18.958Z",
+  "generated_at": "2026-04-17T14:35:40.221Z",
   "total_issues_opened": 80,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 17150,
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 56
+      "open_count": 0,
+      "closed_count": 57
     },
     {
       "name": "privilege, github, person",
@@ -92,8 +92,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "suspect, update, image",

@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-17T10:33:25.428Z",
+  "generated_at": "2026-04-17T14:33:54.778Z",
   "total_issues_opened": 548,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 175550,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 418,
+      "issue_count": 414,
       "recent_issue": {
         "title": "\"Social\" field in leaderboard shows github ids of the user, instead of clicks on links",
         "url": "https://github.com/kubestellar/docs/issues/1492",
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 417
+      "open_count": 0,
+      "closed_count": 414
     },
     {
       "name": "invite, reward, storage",
@@ -158,6 +158,20 @@
         "title": "Meta description cleanup leaves stale global document state",
         "url": "https://github.com/kubestellar/console/issues/7553",
         "created_at": "2026-04-13T13:23:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "mock, order, flaky",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Shared localStorage mock state leaks across tests",
+        "url": "https://github.com/kubestellar/console/issues/7512",
+        "created_at": "2026-04-13T11:43:50Z"
       },
       "repos": [
         "console"
@@ -263,20 +277,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "middle, right, place",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Non Uniform placement of the \"+\" button on cards across dashboards",
-        "url": "https://github.com/kubestellar/console/issues/8561",
-        "created_at": "2026-04-17T02:34:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "slowly, eb0d29, d672",
@@ -433,6 +433,20 @@
       "closed_count": 1
     },
     {
+      "name": "generatedat, prediction, model",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Prediction timestamp types are inconsistent across related models",
+        "url": "https://github.com/kubestellar/console/issues/7557",
+        "created_at": "2026-04-13T13:29:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "disk, pressure, threshold",
       "issue_count": 1,
       "recent_issue": {
@@ -579,6 +593,20 @@
         "title": "Copy-to-clipboard success is not validated before showing success state",
         "url": "https://github.com/kubestellar/console/issues/7425",
         "created_at": "2026-04-13T09:08:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "module, test, cc0f252e8db",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Global mutable mock state leaks across tests and user flows",
+        "url": "https://github.com/kubestellar/console/issues/7419",
+        "created_at": "2026-04-13T09:01:04Z"
       },
       "repos": [
         "console"
@@ -1055,6 +1083,20 @@
         "title": "The Helm chart at oci://ghcr.io/kubestellar/charts/console returns a 404 error.",
         "url": "https://github.com/kubestellar/console/issues/5524",
         "created_at": "2026-04-08T16:54:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "coding, level, contributor",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Contributor level color coding is different in docs and in console",
+        "url": "https://github.com/kubestellar/console/issues/5241",
+        "created_at": "2026-04-07T13:53:07Z"
       },
       "repos": [
         "console"

@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-17T10:32:31.285Z",
-  "total_issues_opened": 977,
+  "generated_at": "2026-04-17T14:33:04.627Z",
+  "total_issues_opened": 981,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3499850,
+  "total_points": 3509550,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 78,
-    "avg_per_day": 3.98,
+    "avg_per_week": 78.3,
+    "avg_per_day": 3.99,
     "by_day_of_week": [
       119,
       119,
       209,
       156,
-      139,
+      143,
       132,
       103
     ],
@@ -33,8 +33,8 @@
       5,
       6,
       5,
-      65,
-      54,
+      68,
+      55,
       88,
       35,
       37,
@@ -49,39 +49,24 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-17T08:01:21.000Z"
+    "last_issue_at": "2026-04-17T14:09:30.000Z"
   },
   "topics": [
     {
-      "name": "qa, auto, component",
-      "issue_count": 497,
+      "name": "test, qa, auto",
+      "issue_count": 696,
       "recent_issue": {
-        "title": "[Auto-QA] Touch targets may be too small for mobile",
-        "url": "https://github.com/kubestellar/console/issues/8609",
-        "created_at": "2026-04-17T08:01:21Z"
-      },
-      "repos": [
-        "console",
-        "console-marketplace"
-      ],
-      "open_count": 2,
-      "closed_count": 495
-    },
-    {
-      "name": "test, coverage, suite",
-      "issue_count": 195,
-      "recent_issue": {
-        "title": "🐛 8 test failure(s) in Coverage Suite run #933",
-        "url": "https://github.com/kubestellar/console/issues/8596",
-        "created_at": "2026-04-17T04:10:54Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #943",
+        "url": "https://github.com/kubestellar/console/issues/8626",
+        "created_at": "2026-04-17T14:09:30Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 192
+      "open_count": 6,
+      "closed_count": 690
     },
     {
       "name": "monitoring, card, implement",
@@ -943,20 +928,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "feature: ability to make non-type-specific GPU reservation",
-        "url": "https://github.com/kubestellar/console/issues/8144",
-        "repo": "console",
-        "topic_match": "gpu, msw, node"
-      },
-      {
-        "title": "\"Social\" field in leaderboard shows github ids of the user, instead of clicks on links",
-        "url": "https://github.com/kubestellar/docs/issues/1492",
-        "repo": "docs",
-        "topic_match": "link, break, url"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -1037,7 +1009,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 332
+      "issue_count": 336
     }
   ]
 }
