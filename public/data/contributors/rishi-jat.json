@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-17T03:11:33.530Z",
+  "generated_at": "2026-04-17T06:44:31.268Z",
   "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 45750,
@@ -588,7 +588,7 @@
       "closed_count": 1
     },
     {
-      "name": "logout, sign, host",
+      "name": "logout, sign, force",
       "issue_count": 1,
       "recent_issue": {
         "title": "Forced demo-mode logout behavior is not documented as intentional",

@@ -1,21 +1,21 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-17T03:11:34.681Z",
-  "total_issues_opened": 76,
+  "generated_at": "2026-04-17T06:44:32.410Z",
+  "total_issues_opened": 80,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-  "total_points": 15950,
+  "total_points": 17150,
   "level": "Commander",
   "level_rank": 5,
   "rank": 19,
   "cadence": {
-    "avg_per_week": 5.4,
-    "avg_per_day": 0.61,
+    "avg_per_week": 5.8,
+    "avg_per_day": 0.63,
     "by_day_of_week": [
       8,
       6,
       15,
       12,
-      22,
+      26,
       9,
       4
     ],
@@ -23,8 +23,8 @@
       1,
       0,
       2,
-      0,
-      4,
+      2,
+      6,
       15,
       7,
       7,
@@ -49,37 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "steady",
     "first_issue_at": "2025-12-11T19:58:02.000Z",
-    "last_issue_at": "2026-04-16T05:20:03.000Z"
+    "last_issue_at": "2026-04-17T04:42:56.000Z"
   },
   "topics": [
     {
       "name": "describe, following, width",
-      "issue_count": 53,
+      "issue_count": 57,
       "recent_issue": {
-        "title": "Need help copying browser console log",
-        "url": "https://github.com/kubestellar/console/issues/8306",
-        "created_at": "2026-04-16T05:20:03Z"
+        "title": "bug: GPU Inventory falsely empty",
+        "url": "https://github.com/kubestellar/console/issues/8600",
+        "created_at": "2026-04-17T04:42:56Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 53
-    },
-    {
-      "name": "taint, gpu, feature",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "feature: taint sensititivity in GPU Utilization and Inventory",
-        "url": "https://github.com/kubestellar/console/issues/8172",
-        "created_at": "2026-04-15T16:02:43Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 2,
-      "closed_count": 1
+      "open_count": 1,
+      "closed_count": 56
     },
     {
       "name": "privilege, github, person",
@@ -94,6 +80,20 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "taint, gpus, feature",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "feature: taint sensititivity in GPU Utilization and Inventory",
+        "url": "https://github.com/kubestellar/console/issues/8172",
+        "created_at": "2026-04-15T16:02:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
     },
     {
       "name": "suspect, update, image",
@@ -151,6 +151,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "info, oddity, ort",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Cluster Info Card oddities",
+        "url": "https://github.com/kubestellar/console/issues/8597",
+        "created_at": "2026-04-17T04:17:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "repair, ai, crescent",
@@ -361,7 +375,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 17
+      "issue_count": 21
     }
   ]
 }

@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-17T03:04:37.049Z",
-  "git_hash": "887bbc3",
+  "generated_at": "2026-04-17T06:37:41.188Z",
+  "git_hash": "beabb29",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3484800,
+      "total_points": 3499150,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 265,
         "feature_issues": 396,
-        "other_issues": 311,
-        "prs_opened": 5058,
-        "prs_merged": 4677
+        "other_issues": 314,
+        "prs_opened": 5079,
+        "prs_merged": 4697
       },
       "bonus_points": 50,
       "rank": 1
@@ -81,11 +81,11 @@
     {
       "login": "XxSURYANSHxX",
       "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-      "total_points": 50400,
+      "total_points": 50100,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 150,
+        "bug_issues": 149,
         "feature_issues": 0,
         "other_issues": 50,
         "prs_opened": 7,
@@ -277,11 +277,11 @@
     {
       "login": "MikeSpreitzer",
       "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-      "total_points": 15950,
+      "total_points": 17150,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 41,
+        "bug_issues": 45,
         "feature_issues": 6,
         "other_issues": 29,
         "prs_opened": 3,
