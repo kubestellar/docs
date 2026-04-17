@@ -62,11 +62,7 @@ export default function Navbar() {
             });
 
             // Close language switcher when hovering other dropdowns
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            if (typeof (window as any).closeLangSwitcher === "function") {
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              (window as any).closeLangSwitcher();
-            }
+            document.dispatchEvent(new CustomEvent("close-lang-switcher"));
 
             // Ensure menu is visible
             menu.style.display = "block";
@@ -145,11 +141,7 @@ export default function Navbar() {
           });
 
           // Also close language switcher
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          if (typeof (window as any).closeLangSwitcher === "function") {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (window as any).closeLangSwitcher();
-          }
+          document.dispatchEvent(new CustomEvent("close-lang-switcher"));
 
           setIsDropdownOpen(false);
           setIsContributeOpen(false);
@@ -326,20 +318,15 @@ export default function Navbar() {
           }
         };
 
-        // Add method to global scope for other dropdowns to call
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (window as any).closeLangSwitcher = closeLangSwitcher;
+        // Listen for close events dispatched by other dropdowns
+        document.addEventListener("close-lang-switcher", closeLangSwitcher);
 
         langSwitcher.addEventListener("mouseenter", handleMouseEnter);
         langSwitcher.addEventListener("mouseleave", handleMouseLeave);
         cleanups.push(() => {
           langSwitcher.removeEventListener("mouseenter", handleMouseEnter);
           langSwitcher.removeEventListener("mouseleave", handleMouseLeave);
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          if ((window as any).closeLangSwitcher === closeLangSwitcher) {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (window as any).closeLangSwitcher = undefined;
-          }
+          document.removeEventListener("close-lang-switcher", closeLangSwitcher);
         });
 
         // Handle dropdown menu hover with improved detection
