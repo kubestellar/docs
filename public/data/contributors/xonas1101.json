@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-18T18:18:36.920Z",
+  "generated_at": "2026-04-18T22:15:42.476Z",
   "total_issues_opened": 569,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 181650,
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 12,
-      "closed_count": 419
+      "open_count": 11,
+      "closed_count": 420
     },
     {
       "name": "invite, reward, storage",
@@ -317,8 +317,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "modal, deep, e7ef91",

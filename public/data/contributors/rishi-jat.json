@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-18T18:20:25.246Z",
+  "generated_at": "2026-04-18T22:17:44.756Z",
   "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 45750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@rishi, jat, line",
-      "issue_count": 182,
+      "issue_count": 181,
       "recent_issue": {
         "title": "docs: outdated Netlify URL redirects to console.kubestellar.io",
         "url": "https://github.com/kubestellar/docs/issues/1487",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 182
+      "closed_count": 181
     },
     {
       "name": "screen, responsive, layout",
@@ -322,6 +322,20 @@
       "closed_count": 0
     },
     {
+      "name": "exchange, oauth, actionable",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "OAuth login failure (token_exchange_failed) lacks actionable diagnostics and guidance",
+        "url": "https://github.com/kubestellar/console/issues/6933",
+        "created_at": "2026-04-12T16:36:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "rollout, timeout, docs",
       "issue_count": 1,
       "recent_issue": {
@@ -392,7 +406,7 @@
       "closed_count": 1
     },
     {
-      "name": "diagram, label, architecture",
+      "name": "diagram, architecture, label",
       "issue_count": 1,
       "recent_issue": {
         "title": "Architecture diagram labels are truncated and not clearly visible",
@@ -546,7 +560,7 @@
       "closed_count": 1
     },
     {
-      "name": "p., save, lock",
+      "name": "p., lock, save",
       "issue_count": 1,
       "recent_issue": {
         "title": "PersistenceStore Save() uses read lock for write operation",

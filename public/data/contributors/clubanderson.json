@@ -1,22 +1,22 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-18T18:17:41.040Z",
-  "total_issues_opened": 1008,
+  "generated_at": "2026-04-18T22:14:40.767Z",
+  "total_issues_opened": 1010,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3587450,
+  "total_points": 3596950,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 80,
-    "avg_per_day": 4.08,
+    "avg_per_week": 80.2,
+    "avg_per_day": 4.09,
     "by_day_of_week": [
       119,
       119,
       209,
       156,
       153,
-      149,
+      151,
       103
     ],
     "by_hour_of_day": [
@@ -39,7 +39,7 @@
       35,
       40,
       28,
-      157,
+      159,
       36,
       22,
       22,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-18T13:46:34.000Z"
+    "last_issue_at": "2026-04-18T19:37:52.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 708,
+      "issue_count": 710,
       "recent_issue": {
-        "title": "[Auto-QA] Keyboard navigation gaps detected",
-        "url": "https://github.com/kubestellar/console/issues/8837",
-        "created_at": "2026-04-18T13:46:34Z"
+        "title": "[Auto-QA] ARIA label and role gaps detected",
+        "url": "https://github.com/kubestellar/console/issues/8884",
+        "created_at": "2026-04-18T19:37:52Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 9,
+      "open_count": 11,
       "closed_count": 699
     },
     {
@@ -264,8 +264,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 2
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "chart, zoom, default",
@@ -969,7 +969,7 @@
       "closed_count": 1
     },
     {
-      "name": "marketplace, home, assistant",
+      "name": "marketplace, assistant, home",
       "issue_count": 1,
       "recent_issue": {
         "title": "Would like KubeStellar Galaxy Marketplace space on new docs that looks and acts like home assistant example",
@@ -1066,7 +1066,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 363
+      "issue_count": 365
     }
   ]
 }

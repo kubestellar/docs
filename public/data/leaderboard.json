@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-18T18:13:12.939Z",
-  "git_hash": "eb6a8c7",
+  "generated_at": "2026-04-18T22:09:50.165Z",
+  "git_hash": "47fb6b5",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3587450,
+      "total_points": 3596950,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 269,
-        "feature_issues": 415,
+        "feature_issues": 417,
         "other_issues": 324,
-        "prs_opened": 5200,
-        "prs_merged": 4818
+        "prs_opened": 5214,
+        "prs_merged": 4831
       },
       "bonus_points": 50,
       "rank": 1
@@ -51,11 +51,11 @@
     {
       "login": "aashu2006",
       "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-      "total_points": 137000,
+      "total_points": 141500,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 446,
+        "bug_issues": 461,
         "feature_issues": 8,
         "other_issues": 12,
         "prs_opened": 4,
@@ -127,11 +127,11 @@
     {
       "login": "arnavgogia20",
       "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-      "total_points": 33400,
+      "total_points": 34300,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 88,
+        "bug_issues": 91,
         "feature_issues": 5,
         "other_issues": 0,
         "prs_opened": 10,
@@ -307,14 +307,14 @@
     {
       "login": "Pranjal6955",
       "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-      "total_points": 12400,
+      "total_points": 12600,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
         "bug_issues": 6,
         "feature_issues": 2,
         "other_issues": 2,
-        "prs_opened": 19,
+        "prs_opened": 20,
         "prs_merged": 13
       },
       "rank": 21

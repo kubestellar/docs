@@ -1,6 +1,6 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-18T18:20:25.916Z",
+  "generated_at": "2026-04-18T22:17:45.516Z",
   "total_issues_opened": 57,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
   "total_points": 25700,
@@ -194,7 +194,7 @@
       "closed_count": 2
     },
     {
-      "name": "pin, overlap, dashboard",
+      "name": "pin, overlap, e92d6a3",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: Pin button on dashboard is non-functional",
@@ -617,10 +617,16 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "Remove redundant “Pin” icon from Dashboard header",
+        "url": "https://github.com/kubestellar/console/issues/8887",
+        "repo": "console",
+        "topic_match": "pin, overlap, e92d6a3"
+      },
+      {
         "title": "The \"Pin\" button has bad UI.",
         "url": "https://github.com/kubestellar/console/issues/8843",
         "repo": "console",
-        "topic_match": "pin, overlap, dashboard"
+        "topic_match": "pin, overlap, e92d6a3"
       }
     ],
     "stretch": [
@@ -649,10 +655,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       }
     ]
   },

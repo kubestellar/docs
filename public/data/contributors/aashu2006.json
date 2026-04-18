@@ -1,22 +1,22 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-18T18:19:46.783Z",
-  "total_issues_opened": 466,
+  "generated_at": "2026-04-18T22:17:02.780Z",
+  "total_issues_opened": 481,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 137000,
+  "total_points": 141500,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 38.8,
-    "avg_per_day": 35.42,
+    "avg_per_week": 40.1,
+    "avg_per_day": 33.86,
     "by_day_of_week": [
       145,
       38,
       18,
       51,
       29,
-      69,
+      84,
       116
     ],
     "by_hour_of_day": [
@@ -38,8 +38,8 @@
       0,
       0,
       17,
-      37,
-      116,
+      42,
+      126,
       94,
       43,
       72,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-17T18:11:40.000Z"
+    "last_issue_at": "2026-04-18T19:19:55.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 345,
+      "issue_count": 357,
       "recent_issue": {
-        "title": "ML Jobs sort dropdown labels are hardcoded in English regardless of language setting",
-        "url": "https://github.com/kubestellar/console/issues/8696",
-        "created_at": "2026-04-17T18:11:40Z"
+        "title": "PagerDuty \"Testing...\" button label hardcoded in English while idle state is correctly translated",
+        "url": "https://github.com/kubestellar/console/issues/8881",
+        "created_at": "2026-04-18T19:19:55Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 345
+      "closed_count": 357
     },
     {
       "name": "kubara, chart, control",
@@ -529,6 +529,20 @@
       "closed_count": 1
     },
     {
+      "name": "twice, pollforrestart, cef618",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Multiple polling loops accumulate in useSelfUpgrade with no dedup guard when pollForRestart is called twice",
+        "url": "https://github.com/kubestellar/console/issues/7789",
+        "created_at": "2026-04-13T21:09:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "rejection, unhandled, callback",
       "issue_count": 1,
       "recent_issue": {
@@ -591,6 +605,20 @@
         "title": "Helm stdout/stderr buffers reused across two command instances without reset causing potential output corruption",
         "url": "https://github.com/kubestellar/console/issues/7747",
         "created_at": "2026-04-13T19:45:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "column, foreign, card",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "card_history.original_card_id and user_events.card_id lack foreign key references to cards table",
+        "url": "https://github.com/kubestellar/console/issues/7725",
+        "created_at": "2026-04-13T19:22:27Z"
       },
       "repos": [
         "console"
@@ -899,6 +927,20 @@
         "title": "OAuth token exchange uses context.Background() instead of request context causing goroutine leak on client disconnect",
         "url": "https://github.com/kubestellar/console/issues/6565",
         "created_at": "2026-04-11T18:56:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "feedbackmodal, ba43a, adac",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "PreflightFailure, FeatureRequestModal, FeedbackModal, CardFactoryModal: Clipboard API called without browser support check - silently fails with no fallback",
+        "url": "https://github.com/kubestellar/console/issues/6229",
+        "created_at": "2026-04-10T20:12:22Z"
       },
       "repos": [
         "console"
@@ -1257,12 +1299,12 @@
       "closed_count": 1
     },
     {
-      "name": "unknown, unauthenticated, case",
+      "name": "positive, parse, json",
       "issue_count": 1,
       "recent_issue": {
-        "title": "TestClusterConnection has no default case for unknown authType allowing unauthenticated connections",
-        "url": "https://github.com/kubestellar/console/issues/5316",
-        "created_at": "2026-04-07T20:01:50Z"
+        "title": "parseHealthResult defaults to Healthy: true on JSON parse failure causing false positive",
+        "url": "https://github.com/kubestellar/console/issues/5319",
+        "created_at": "2026-04-07T20:02:34Z"
       },
       "repos": [
         "console"
@@ -1271,12 +1313,12 @@
       "closed_count": 1
     },
     {
-      "name": "alert, eb96b4e6, c3aaad656b1f",
+      "name": "unknown, unauthenticated, case",
       "issue_count": 1,
       "recent_issue": {
-        "title": "HardwareHealthCard: clearing an alert silently fails - user gets no feedback",
-        "url": "https://github.com/kubestellar/console/issues/4977",
-        "created_at": "2026-04-06T13:58:23Z"
+        "title": "TestClusterConnection has no default case for unknown authType allowing unauthenticated connections",
+        "url": "https://github.com/kubestellar/console/issues/5316",
+        "created_at": "2026-04-07T20:01:50Z"
       },
       "repos": [
         "console"
@@ -1362,7 +1404,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 466
+      "issue_count": 481
     }
   ]
 }
