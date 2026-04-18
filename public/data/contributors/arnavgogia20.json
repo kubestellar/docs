@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-18T14:23:42.850Z",
+  "generated_at": "2026-04-18T18:20:25.497Z",
   "total_issues_opened": 93,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 33400,
@@ -348,7 +348,7 @@
       "closed_count": 1
     },
     {
-      "name": "iterate, websocket, client",
+      "name": "websocket, iterate, client",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent WebSocket BroadcastToClients Holds wsMux While Iterating : Slow Client Blocks All Broadcasts",
@@ -461,7 +461,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Unable to see nodes in the Dashboard Nodes stat block drillDown",
+        "url": "https://github.com/kubestellar/console/issues/8840",
+        "repo": "console",
+        "topic_match": "nodes, dashboard, stat"
+      }
+    ],
     "stretch": [
       {
         "name": "Charts & Visualizations",

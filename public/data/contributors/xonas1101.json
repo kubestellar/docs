@@ -1,22 +1,22 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-18T14:21:48.401Z",
-  "total_issues_opened": 554,
+  "generated_at": "2026-04-18T18:18:36.920Z",
+  "total_issues_opened": 569,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 177150,
+  "total_points": 181650,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 46.2,
-    "avg_per_day": 8.35,
+    "avg_per_week": 47.4,
+    "avg_per_day": 8.45,
     "by_day_of_week": [
       161,
       34,
       46,
       86,
       78,
-      110,
+      125,
       39
     ],
     "by_hour_of_day": [
@@ -34,9 +34,9 @@
       42,
       31,
       67,
-      62,
-      36,
-      29,
+      67,
+      45,
+      30,
       22,
       2,
       0,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-17T15:57:21.000Z"
+    "last_issue_at": "2026-04-18T16:03:00.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 420,
+      "issue_count": 431,
       "recent_issue": {
-        "title": "Nodes drillDown Dashboard doesn't show nodes",
-        "url": "https://github.com/kubestellar/console/issues/8650",
-        "created_at": "2026-04-17T15:55:49Z"
+        "title": "No values are seen on the contributor leaderboard in the social section on initial load",
+        "url": "https://github.com/kubestellar/console/issues/8858",
+        "created_at": "2026-04-18T16:03:00Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 420
+      "open_count": 12,
+      "closed_count": 419
     },
     {
       "name": "invite, reward, storage",
@@ -279,6 +279,34 @@
       "closed_count": 2
     },
     {
+      "name": "a9a2f, f47, ad1b",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Bad barrier UI in the dashboard",
+        "url": "https://github.com/kubestellar/console/issues/8857",
+        "created_at": "2026-04-18T15:59:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "falco, alert, ac426ddb",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Card: Falco Alerts (falco_alerts)",
+        "url": "https://github.com/kubestellar/console/issues/8846",
+        "created_at": "2026-04-18T15:15:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "enter, ctrl, cmd",
       "issue_count": 1,
       "recent_issue": {
@@ -289,8 +317,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 1
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "modal, deep, e7ef91",
@@ -327,6 +355,20 @@
         "title": "Instructions we get when notifications not visible are not the most useful.",
         "url": "https://github.com/kubestellar/console/issues/8305",
         "created_at": "2026-04-16T05:08:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "serviceaccount, grant, d13d796a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ServiceAccount grant can be submitted without required namespace",
+        "url": "https://github.com/kubestellar/console/issues/7606",
+        "created_at": "2026-04-13T14:48:34Z"
       },
       "repos": [
         "console"
@@ -783,7 +825,7 @@
       "closed_count": 1
     },
     {
-      "name": "debt, usecacheddata, ts",
+      "name": "debt, ts, usecacheddata",
       "issue_count": 1,
       "recent_issue": {
         "title": "Known shared-mutation hazards inside concurrency callbacks (ratcheted technical debt)",
@@ -1497,6 +1539,20 @@
       "closed_count": 1
     },
     {
+      "name": "ff85, f3f0, a0d1",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cache key not normalized",
+        "url": "https://github.com/kubestellar/console/issues/3506",
+        "created_at": "2026-03-25T04:11:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "sleep, a6bc872, a332",
       "issue_count": 1,
       "recent_issue": {
@@ -1746,7 +1802,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 463
+      "issue_count": 478
     }
   ]
 }

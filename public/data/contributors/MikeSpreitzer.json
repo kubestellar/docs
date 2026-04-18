@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-18T14:23:43.810Z",
+  "generated_at": "2026-04-18T18:20:26.461Z",
   "total_issues_opened": 80,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 17150,
@@ -294,7 +294,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Overflow on the sides when hovering cluster info cards",
+        "url": "https://github.com/kubestellar/console/issues/8841",
+        "repo": "console",
+        "topic_match": "info, oddity, ort"
+      }
+    ],
     "stretch": [
       {
         "name": "Security & RBAC",

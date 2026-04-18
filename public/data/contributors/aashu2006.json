@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-18T14:23:02.587Z",
+  "generated_at": "2026-04-18T18:19:46.783Z",
   "total_issues_opened": 466,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 137000,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 344,
+      "issue_count": 345,
       "recent_issue": {
         "title": "ML Jobs sort dropdown labels are hardcoded in English regardless of language setting",
         "url": "https://github.com/kubestellar/console/issues/8696",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 344
+      "closed_count": 345
     },
     {
       "name": "kubara, chart, control",
@@ -95,8 +95,8 @@
       "closed_count": 6
     },
     {
-      "name": "clusterrole, openshift, opt",
-      "issue_count": 5,
+      "name": "clusterrole, opt, grant",
+      "issue_count": 4,
       "recent_issue": {
         "title": "ClusterRole exposes full RBAC topology with no opt-out value",
         "url": "https://github.com/kubestellar/console/issues/6988",
@@ -106,7 +106,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 5
+      "closed_count": 4
     },
     {
       "name": "cookie, csrf, samesite",
@@ -389,7 +389,7 @@
       "closed_count": 1
     },
     {
-      "name": "adapt, theme, color",
+      "name": "theme, adapt, color",
       "issue_count": 1,
       "recent_issue": {
         "title": "Some pages do not adapt to theme changes due to hardcoded colors",

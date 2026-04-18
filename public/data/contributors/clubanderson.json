@@ -1,9 +1,9 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-18T14:20:53.744Z",
+  "generated_at": "2026-04-18T18:17:41.040Z",
   "total_issues_opened": 1008,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3583600,
+  "total_points": 3587450,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -984,7 +984,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Searching for kubestellar/console on the ACMM dashboard falls back to demo data",
+        "url": "https://github.com/kubestellar/console/issues/8848",
+        "repo": "console",
+        "topic_match": "outreach, acmm, file"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",

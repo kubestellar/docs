@@ -1,22 +1,22 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-18T14:23:43.827Z",
-  "total_issues_opened": 7,
+  "generated_at": "2026-04-18T18:20:26.464Z",
+  "total_issues_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-  "total_points": 8900,
+  "total_points": 12400,
   "level": "Pilot",
   "level_rank": 4,
-  "rank": 22,
+  "rank": 21,
   "cadence": {
-    "avg_per_week": 0.4,
-    "avg_per_day": 0.04,
+    "avg_per_week": 0.7,
+    "avg_per_day": 0.05,
     "by_day_of_week": [
       1,
       1,
       5,
       0,
       0,
-      0,
+      3,
       0
     ],
     "by_hour_of_day": [
@@ -35,8 +35,8 @@
       0,
       1,
       0,
-      0,
-      0,
+      2,
+      1,
       0,
       0,
       1,
@@ -45,13 +45,55 @@
       0,
       0
     ],
-    "current_streak_weeks": 1,
-    "longest_streak_weeks": 1,
+    "current_streak_weeks": 2,
+    "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2025-10-01T13:51:13.000Z",
-    "last_issue_at": "2026-04-15T08:13:48.000Z"
+    "last_issue_at": "2026-04-18T16:51:45.000Z"
   },
   "topics": [
+    {
+      "name": "rank, dynamic, contributor",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Dynamic Contributor Rank Badges for GitHub",
+        "url": "https://github.com/kubestellar/console/issues/8862",
+        "created_at": "2026-04-18T16:51:45Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "transaction, method, subsequ",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Brittle SQLite transactions leak resources on context cancellation",
+        "url": "https://github.com/kubestellar/console/issues/8854",
+        "created_at": "2026-04-18T15:48:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "metric, sequential, capturesnapshot",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Sequential metric collection in captureSnapshot leads to timeouts",
+        "url": "https://github.com/kubestellar/console/issues/8853",
+        "created_at": "2026-04-18T15:45:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
     {
       "name": "exec, pod, abl",
       "issue_count": 1,
@@ -161,12 +203,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
@@ -183,6 +219,12 @@
         "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
         "description": "OAuth flow, user settings, preferences, API middleware, authentication",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       }
     ]
   },
@@ -233,7 +275,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 5
+      "issue_count": 8
     }
   ]
 }

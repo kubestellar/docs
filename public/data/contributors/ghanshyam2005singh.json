@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-18T14:23:43.473Z",
+  "generated_at": "2026-04-18T18:20:26.098Z",
   "total_issues_opened": 84,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 25600,
@@ -239,6 +239,18 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "The \"Pin\" button has bad UI.",
+        "url": "https://github.com/kubestellar/console/issues/8843",
+        "repo": "console",
+        "topic_match": "collapse, sidebar, popup"
+      },
+      {
+        "title": "No values are seen on the contributor leaderboard in the social section on initial load",
+        "url": "https://github.com/kubestellar/console/issues/8858",
+        "repo": "console",
+        "topic_match": "leaderboard, coin, tracking"
+      },
       {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",
