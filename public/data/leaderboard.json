@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-18T10:15:34.034Z",
-  "git_hash": "00faeb2",
+  "generated_at": "2026-04-18T14:16:12.852Z",
+  "git_hash": "2016924",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3577950,
+      "total_points": 3583600,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 269,
-        "feature_issues": 414,
-        "other_issues": 322,
-        "prs_opened": 5186,
-        "prs_merged": 4805
+        "feature_issues": 416,
+        "other_issues": 323,
+        "prs_opened": 5193,
+        "prs_merged": 4813
       },
       "bonus_points": 50,
       "rank": 1
@@ -127,11 +127,11 @@
     {
       "login": "arnavgogia20",
       "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-      "total_points": 33100,
+      "total_points": 33400,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 87,
+        "bug_issues": 88,
         "feature_issues": 5,
         "other_issues": 0,
         "prs_opened": 10,
@@ -322,7 +322,7 @@
     {
       "login": "Pranjal6955",
       "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-      "total_points": 8400,
+      "total_points": 8900,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
@@ -330,14 +330,14 @@
         "feature_issues": 1,
         "other_issues": 2,
         "prs_opened": 15,
-        "prs_merged": 8
+        "prs_merged": 9
       },
       "rank": 22
     },
     {
       "login": "khushal-winner",
       "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
-      "total_points": 7700,
+      "total_points": 8200,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
@@ -345,7 +345,7 @@
         "feature_issues": 5,
         "other_issues": 0,
         "prs_opened": 18,
-        "prs_merged": 3
+        "prs_merged": 4
       },
       "rank": 23
     },

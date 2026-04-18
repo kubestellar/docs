@@ -1,6 +1,6 @@
 {
   "login": "Darshit42",
-  "generated_at": "2026-04-18T10:21:45.334Z",
+  "generated_at": "2026-04-18T14:23:43.842Z",
   "total_issues_opened": 9,
   "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
   "total_points": 2900,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 3
+      "open_count": 0,
+      "closed_count": 4
     },
     {
       "name": "flickering, unstoppable, custom",

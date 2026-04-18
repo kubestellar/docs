@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-18T10:21:38.382Z",
+  "generated_at": "2026-04-18T14:23:35.091Z",
   "total_issues_opened": 451,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 132250,
@@ -236,7 +236,7 @@
       "closed_count": 1
     },
     {
-      "name": "watcher, persistence, context",
+      "name": "watcher, context, persistence",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: persistence watcher stops immediately due to request-scoped context usage",

@@ -1,22 +1,22 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-18T10:19:28.857Z",
-  "total_issues_opened": 1005,
+  "generated_at": "2026-04-18T14:20:53.744Z",
+  "total_issues_opened": 1008,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3577950,
+  "total_points": 3583600,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 79.8,
-    "avg_per_day": 4.07,
+    "avg_per_week": 80,
+    "avg_per_day": 4.08,
     "by_day_of_week": [
       119,
       119,
       209,
       156,
       153,
-      146,
+      149,
       103
     ],
     "by_hour_of_day": [
@@ -30,10 +30,10 @@
       59,
       25,
       8,
-      5,
+      6,
       6,
       5,
-      68,
+      70,
       55,
       90,
       35,
@@ -49,16 +49,16 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-18T07:47:12.000Z"
+    "last_issue_at": "2026-04-18T13:46:34.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 706,
+      "issue_count": 708,
       "recent_issue": {
-        "title": "[Auto-QA] Potential console error patterns detected",
-        "url": "https://github.com/kubestellar/console/issues/8816",
-        "created_at": "2026-04-18T07:47:12Z"
+        "title": "[Auto-QA] Keyboard navigation gaps detected",
+        "url": "https://github.com/kubestellar/console/issues/8837",
+        "created_at": "2026-04-18T13:46:34Z"
       },
       "repos": [
         "console",
@@ -66,7 +66,7 @@
         "docs"
       ],
       "open_count": 9,
-      "closed_count": 697
+      "closed_count": 699
     },
     {
       "name": "monitoring, card, implement",
@@ -254,6 +254,20 @@
       "closed_count": 4
     },
     {
+      "name": "analysis, portfolio, nfr",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Portfolio analysis — 2026-04-18",
+        "url": "https://github.com/kubestellar/console/issues/8827",
+        "created_at": "2026-04-18T10:39:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 2
+    },
+    {
       "name": "chart, zoom, default",
       "issue_count": 3,
       "recent_issue": {
@@ -308,20 +322,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "engagement, psychology, adoption",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "📊 Console portfolio analysis — 2026-04-17",
-        "url": "https://github.com/kubestellar/console/issues/8734",
-        "created_at": "2026-04-17T20:46:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 1
     },
     {
       "name": "gpu, msw, node",
@@ -689,6 +689,20 @@
       "closed_count": 1
     },
     {
+      "name": "psychology, adoption, engagement",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[Auto-QA] 1 adoption & engagement psychology opportunities found",
+        "url": "https://github.com/kubestellar/console/issues/3791",
+        "created_at": "2026-03-28T13:44:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "recommend, expand, dropdown",
       "issue_count": 1,
       "recent_issue": {
@@ -765,20 +779,6 @@
         "title": "Security hardening: error leaking, CSP, rate limiting, target=_blank, console.log",
         "url": "https://github.com/kubestellar/console/issues/1911",
         "created_at": "2026-03-07T00:09:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "nfr, analysis, improvement",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[Auto-QA] Weekly NFR analysis: improvement opportunities identified",
-        "url": "https://github.com/kubestellar/console/issues/1688",
-        "created_at": "2026-03-05T14:20:14Z"
       },
       "repos": [
         "console"
@@ -987,22 +987,16 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Security & RBAC",
@@ -1065,7 +1059,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 360
+      "issue_count": 363
     }
   ]
 }

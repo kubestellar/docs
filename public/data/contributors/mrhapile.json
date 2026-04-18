@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-18T10:20:46.498Z",
+  "generated_at": "2026-04-18T14:22:30.466Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 369,
+      "issue_count": 371,
       "recent_issue": {
         "title": "Status Timer Javascript Garbage Build Up",
         "url": "https://github.com/kubestellar/console/issues/7475",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 369
+      "closed_count": 371
     },
     {
       "name": "documentation, 📌, component",
@@ -1257,34 +1257,6 @@
       "closed_count": 1
     },
     {
-      "name": "progressive, incrementally, af16a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Progressive Fetch Does Not Update UI Incrementally",
-        "url": "https://github.com/kubestellar/console/issues/4935",
-        "created_at": "2026-04-06T08:51:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sse, stream, mid",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "SSE Streaming Stops Midway Without Recovery",
-        "url": "https://github.com/kubestellar/console/issues/4934",
-        "created_at": "2026-04-06T08:51:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "hierarchy, poor, contrast",
       "issue_count": 1,
       "recent_issue": {
@@ -1405,16 +1377,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Security & RBAC",
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },
