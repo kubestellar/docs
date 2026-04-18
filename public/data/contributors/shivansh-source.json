@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-18T06:34:18.750Z",
+  "generated_at": "2026-04-18T10:21:45.152Z",
   "total_issues_opened": 76,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 22850,
@@ -265,6 +265,12 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "bug: values in groups of cluster groups card overflow",
+        "url": "https://github.com/kubestellar/console/issues/8825",
+        "repo": "console",
+        "topic_match": "group, form, button"
+      },
       {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",

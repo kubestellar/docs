@@ -1,22 +1,22 @@
 {
   "login": "Darshit42",
-  "generated_at": "2026-04-18T06:34:18.955Z",
-  "total_issues_opened": 8,
+  "generated_at": "2026-04-18T10:21:45.334Z",
+  "total_issues_opened": 9,
   "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
-  "total_points": 2600,
+  "total_points": 2900,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 32,
+  "rank": 31,
   "cadence": {
-    "avg_per_week": 0.7,
-    "avg_per_day": 3.42,
+    "avg_per_week": 0.8,
+    "avg_per_day": 3.19,
     "by_day_of_week": [
       0,
       0,
       2,
       0,
       6,
-      0,
+      1,
       0
     ],
     "by_hour_of_day": [
@@ -30,7 +30,7 @@
       0,
       0,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -49,21 +49,21 @@
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-15T14:16:40.000Z",
-    "last_issue_at": "2026-04-17T22:22:27.000Z"
+    "last_issue_at": "2026-04-18T10:03:19.000Z"
   },
   "topics": [
     {
-      "name": "button, expand, deactivate",
-      "issue_count": 3,
+      "name": "expand, button, panel",
+      "issue_count": 4,
       "recent_issue": {
-        "title": "bug: buttons on cards overlapping on expanding the right or left panels",
-        "url": "https://github.com/kubestellar/console/issues/8695",
-        "created_at": "2026-04-17T18:10:38Z"
+        "title": "bug: values in groups of cluster groups card overflow",
+        "url": "https://github.com/kubestellar/console/issues/8825",
+        "created_at": "2026-04-18T10:03:19Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 3
     },
     {
@@ -219,7 +219,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 8
+      "issue_count": 9
     }
   ]
 }
