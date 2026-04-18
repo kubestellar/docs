@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-17T22:14:18.119Z",
-  "git_hash": "ae87c7f",
+  "generated_at": "2026-04-18T03:04:14.249Z",
+  "git_hash": "9df4109",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3553900,
+      "total_points": 3575150,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 267,
-        "feature_issues": 405,
-        "other_issues": 319,
-        "prs_opened": 5154,
-        "prs_merged": 4773
+        "bug_issues": 268,
+        "feature_issues": 412,
+        "other_issues": 322,
+        "prs_opened": 5182,
+        "prs_merged": 4802
       },
       "bonus_points": 50,
       "rank": 1
@@ -185,6 +185,21 @@
       "rank": 12
     },
     {
+      "login": "khushiiagrawal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
+      "total_points": 25700,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 57,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 13,
+        "prs_merged": 12
+      },
+      "rank": 13
+    },
+    {
       "login": "ghanshyam2005singh",
       "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
       "total_points": 25600,
@@ -196,21 +211,6 @@
         "other_issues": 4,
         "prs_opened": 2,
         "prs_merged": 2
-      },
-      "rank": 13
-    },
-    {
-      "login": "khushiiagrawal",
-      "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-      "total_points": 25200,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 57,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 13,
-        "prs_merged": 11
       },
       "rank": 14
     },
@@ -472,11 +472,11 @@
     {
       "login": "Darshit42",
       "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
-      "total_points": 2300,
+      "total_points": 2600,
       "level": "Navigator",
       "level_rank": 3,
       "breakdown": {
-        "bug_issues": 6,
+        "bug_issues": 7,
         "feature_issues": 1,
         "other_issues": 0,
         "prs_opened": 2,

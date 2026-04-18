@@ -1,21 +1,21 @@
 {
   "login": "Darshit42",
-  "generated_at": "2026-04-17T22:21:47.075Z",
-  "total_issues_opened": 7,
+  "generated_at": "2026-04-18T03:11:39.818Z",
+  "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
-  "total_points": 2300,
+  "total_points": 2600,
   "level": "Navigator",
   "level_rank": 3,
   "rank": 32,
   "cadence": {
-    "avg_per_week": 0.6,
-    "avg_per_day": 3.01,
+    "avg_per_week": 0.7,
+    "avg_per_day": 3.42,
     "by_day_of_week": [
       0,
       0,
       2,
       0,
-      5,
+      6,
       0,
       0
     ],
@@ -42,14 +42,14 @@
       0,
       0,
       0,
-      1,
+      2,
       0
     ],
     "current_streak_weeks": 2,
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-15T14:16:40.000Z",
-    "last_issue_at": "2026-04-17T22:05:21.000Z"
+    "last_issue_at": "2026-04-17T22:22:27.000Z"
   },
   "topics": [
     {
@@ -67,6 +67,20 @@
       "closed_count": 3
     },
     {
+      "name": "flickering, unstoppable, custom",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: creating blank custom dashboard unstoppable flickering and allows empty fields on creating custom dashboard",
+        "url": "https://github.com/kubestellar/console/issues/8757",
+        "created_at": "2026-04-17T22:22:27Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "linkedin, share, matter",
       "issue_count": 1,
       "recent_issue": {
@@ -77,8 +91,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "widget, bar, export",
@@ -205,7 +219,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 7
+      "issue_count": 8
     }
   ]
 }

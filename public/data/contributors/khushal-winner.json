@@ -1,6 +1,6 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-17T22:21:47.064Z",
+  "generated_at": "2026-04-18T03:11:39.808Z",
   "total_issues_opened": 12,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
   "total_points": 6500,
@@ -133,8 +133,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "logging, audit, rbac",
@@ -147,8 +147,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "goroutine, mcp, endpoint",

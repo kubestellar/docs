@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-17T22:21:03.541Z",
+  "generated_at": "2026-04-18T03:11:00.964Z",
   "total_issues_opened": 466,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 137000,
@@ -1287,12 +1287,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "Notifications: Mixed UX patterns across alerts, toasts, and system errors (e.g., refresh failure)",
-        "url": "https://github.com/kubestellar/console/issues/8752",
-        "repo": "console",
-        "topic_match": "alert, eb96b4e6, c3aaad656b1f"
-      },
       {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",

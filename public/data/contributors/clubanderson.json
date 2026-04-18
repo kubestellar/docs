@@ -1,28 +1,28 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-17T22:18:48.282Z",
-  "total_issues_opened": 991,
+  "generated_at": "2026-04-18T03:08:59.304Z",
+  "total_issues_opened": 1002,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3553900,
+  "total_points": 3575150,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 78.6,
-    "avg_per_day": 4.02,
+    "avg_per_week": 79.5,
+    "avg_per_day": 4.07,
     "by_day_of_week": [
       119,
       119,
       209,
       156,
       153,
-      132,
+      143,
       103
     ],
     "by_hour_of_day": [
-      51,
-      28,
-      101,
+      53,
+      34,
+      104,
       32,
       42,
       27,
@@ -49,24 +49,24 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-17T21:32:13.000Z"
+    "last_issue_at": "2026-04-18T02:55:17.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 699,
+      "issue_count": 704,
       "recent_issue": {
-        "title": "🐛 4 test failure(s) in Coverage Suite run #999",
-        "url": "https://github.com/kubestellar/console/issues/8749",
-        "created_at": "2026-04-17T21:32:13Z"
+        "title": "[Auto-QA] UI flicker patterns detected",
+        "url": "https://github.com/kubestellar/console/issues/8796",
+        "created_at": "2026-04-18T02:02:37Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 5,
-      "closed_count": 694
+      "open_count": 7,
+      "closed_count": 697
     },
     {
       "name": "monitoring, card, implement",
@@ -112,6 +112,21 @@
       "closed_count": 35
     },
     {
+      "name": "ci, release, repo",
+      "issue_count": 16,
+      "recent_issue": {
+        "title": "feat: auto-generate nightly release notes from merged PR titles",
+        "url": "https://github.com/kubestellar/console/issues/8778",
+        "created_at": "2026-04-18T01:03:11Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 16
+    },
+    {
       "name": "outreach, acmm, file",
       "issue_count": 15,
       "recent_issue": {
@@ -124,21 +139,6 @@
       ],
       "open_count": 0,
       "closed_count": 15
-    },
-    {
-      "name": "repo, ci, prow",
-      "issue_count": 12,
-      "recent_issue": {
-        "title": "feat: AI audit for skipped/stale workflows — clean up or archive",
-        "url": "https://github.com/kubestellar/console/issues/8739",
-        "created_at": "2026-04-17T21:06:33Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 12
     },
     {
       "name": "px, spacing, design",
@@ -254,12 +254,12 @@
       "closed_count": 4
     },
     {
-      "name": "release, nightly, april",
+      "name": "chart, zoom, default",
       "issue_count": 3,
       "recent_issue": {
-        "title": "bug: Nightly Release Pulse shows stale release tag",
-        "url": "https://github.com/kubestellar/console/issues/8666",
-        "created_at": "2026-04-17T17:25:54Z"
+        "title": "feat: Daily Issues summary cards update on chart zoom/pan",
+        "url": "https://github.com/kubestellar/console/issues/8773",
+        "created_at": "2026-04-18T00:57:36Z"
       },
       "repos": [
         "console"
@@ -296,6 +296,20 @@
       "closed_count": 3
     },
     {
+      "name": "right, fab, circle",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: FAB (+ button) still truncated on some viewports",
+        "url": "https://github.com/kubestellar/console/issues/8777",
+        "created_at": "2026-04-18T01:03:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "engagement, psychology, adoption",
       "issue_count": 2,
       "recent_issue": {
@@ -324,40 +338,12 @@
       "closed_count": 2
     },
     {
-      "name": "worktrees, update, kc",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "✨ What's New modal + agent-version-available toast (unified for kc-agent and Console backend)",
-        "url": "https://github.com/kubestellar/console/issues/8265",
-        "created_at": "2026-04-16T01:20:43Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "provider, client, ai",
       "issue_count": 2,
       "recent_issue": {
         "title": "Add a per-provider Base URL field to APIKeySettings (Advanced)",
         "url": "https://github.com/kubestellar/console/issues/8254",
         "created_at": "2026-04-16T00:02:17Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "chart, default, day",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "feat: daily issues & PRs activity chart on analytics page",
-        "url": "https://github.com/kubestellar/console/issues/5844",
-        "created_at": "2026-04-09T20:45:36Z"
       },
       "repos": [
         "console"
@@ -493,6 +479,48 @@
       "closed_count": 2
     },
     {
+      "name": "upgrade, green, navbar",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "enhancement: show upgrade-in-progress state on navbar update indicator",
+        "url": "https://github.com/kubestellar/console/issues/8799",
+        "created_at": "2026-04-18T02:55:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "suggestion, start, conversion",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ux: mission suggestion cards need richer preview to convert browse → start",
+        "url": "https://github.com/kubestellar/console/issues/8791",
+        "created_at": "2026-04-18T01:46:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "learn, practice, traceability",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ux: ACMM intro modal — trim text, add learning/practice/traceability",
+        "url": "https://github.com/kubestellar/console/issues/8776",
+        "created_at": "2026-04-18T01:03:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "sign, feature, originally",
       "issue_count": 1,
       "recent_issue": {
@@ -513,20 +541,6 @@
         "title": "🐛 Sidebar subtitle shows rotating taglines — not requested",
         "url": "https://github.com/kubestellar/console/issues/8488",
         "created_at": "2026-04-16T20:15:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "fab, circle, clip",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 Add-card \"+\" FAB truncated/clipped at viewport edge",
-        "url": "https://github.com/kubestellar/console/issues/8464",
-        "created_at": "2026-04-16T19:23:42Z"
       },
       "repos": [
         "console"
@@ -625,6 +639,20 @@
         "title": "perf: dashboard navigation is slow — 461 React commits per navigation",
         "url": "https://github.com/kubestellar/console/issues/6149",
         "created_at": "2026-04-10T15:26:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "worktrees, git, update",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "kc-agent update fails when git worktrees exist",
+        "url": "https://github.com/kubestellar/console/issues/5172",
+        "created_at": "2026-04-07T05:29:57Z"
       },
       "repos": [
         "console"
@@ -913,6 +941,20 @@
       "closed_count": 1
     },
     {
+      "name": "edit, site, page",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: I would like the ability to view or edit the code (MD file) that is rendered when I open a page in the web site",
+        "url": "https://github.com/kubestellar/docs/issues/387",
+        "created_at": "2025-12-11T15:39:38Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "marketplace, home, assistant",
       "issue_count": 1,
       "recent_issue": {
@@ -928,14 +970,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "feature: Implement per-user rate limiting and progressive security for authentication endpoints",
-        "url": "https://github.com/kubestellar/console/issues/8676",
-        "repo": "console",
-        "topic_match": "csp, limit, internal"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Onboarding & Rewards",
@@ -1016,7 +1051,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 346
+      "issue_count": 357
     }
   ]
 }

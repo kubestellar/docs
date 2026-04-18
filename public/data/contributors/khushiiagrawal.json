@@ -1,12 +1,12 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-17T22:21:46.682Z",
+  "generated_at": "2026-04-18T03:11:39.271Z",
   "total_issues_opened": 57,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 25200,
+  "total_points": 25700,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 14,
+  "rank": 13,
   "cadence": {
     "avg_per_week": 4.8,
     "avg_per_day": 5.07,
@@ -554,8 +554,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "form, subscribe, newsletter",
@@ -624,16 +624,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Marketplace & Operators",

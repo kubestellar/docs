@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-17T22:19:45.157Z",
+  "generated_at": "2026-04-18T03:09:50.829Z",
   "total_issues_opened": 554,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 177150,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 421,
+      "issue_count": 420,
       "recent_issue": {
         "title": "Nodes drillDown Dashboard doesn't show nodes",
         "url": "https://github.com/kubestellar/console/issues/8650",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 421
+      "closed_count": 420
     },
     {
       "name": "invite, reward, storage",
@@ -1413,6 +1413,20 @@
       "closed_count": 1
     },
     {
+      "name": "c8ee48bf, dbfa, cc1a91fca",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cancel endpoint has no auth and wildcard CORS",
+        "url": "https://github.com/kubestellar/console/issues/3829",
+        "created_at": "2026-03-29T04:02:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "nan, exception, c152002e",
       "issue_count": 1,
       "recent_issue": {
@@ -1640,28 +1654,16 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Notifications: Inconsistent deduplication and repeated notification triggering",
-        "url": "https://github.com/kubestellar/console/issues/8751",
+        "title": "enhancement: show upgrade-in-progress state on navbar update indicator",
+        "url": "https://github.com/kubestellar/console/issues/8799",
         "repo": "console",
-        "topic_match": "notification, instructions, a334a"
+        "topic_match": "upgrade, vite, v8"
       },
       {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "bug:",
-        "url": "https://github.com/kubestellar/console/issues/8755",
-        "repo": "console",
-        "topic_match": "confirmation, share, e10de9"
-      },
-      {
-        "title": "Notifications: Lack of clear separation between alert state and notification events",
-        "url": "https://github.com/kubestellar/console/issues/8750",
-        "repo": "console",
-        "topic_match": "notification, instructions, a334a"
       }
     ],
     "stretch": [

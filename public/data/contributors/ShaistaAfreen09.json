@@ -1,6 +1,6 @@
 {
   "login": "ShaistaAfreen09",
-  "generated_at": "2026-04-17T22:21:47.078Z",
+  "generated_at": "2026-04-18T03:11:39.821Z",
   "total_issues_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/97823364?v=4",
   "total_points": 1400,
@@ -82,20 +82,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Notifications: Mixed UX patterns across alerts, toasts, and system errors (e.g., refresh failure)",
-        "url": "https://github.com/kubestellar/console/issues/8752",
-        "repo": "console",
-        "topic_match": "badge, alert, critical"
-      },
-      {
-        "title": "Notifications: Lack of clear separation between alert state and notification events",
-        "url": "https://github.com/kubestellar/console/issues/8750",
-        "repo": "console",
-        "topic_match": "badge, alert, critical"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "GPU & AI/ML",

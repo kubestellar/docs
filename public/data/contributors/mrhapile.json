@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-17T22:20:30.730Z",
+  "generated_at": "2026-04-18T03:10:30.961Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -213,20 +213,6 @@
         "title": "Canvas-dependent tests run without a canvas mock and pollute suite output with jsdom “Not implemented” errors",
         "url": "https://github.com/kubestellar/console/issues/5877",
         "created_at": "2026-04-09T22:40:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "cli, antigravity, @google",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Antigravity CLI Opens but Does Not Execute AI Missions",
-        "url": "https://github.com/kubestellar/console/issues/5692",
-        "created_at": "2026-04-09T05:59:11Z"
       },
       "repos": [
         "console"
@@ -809,7 +795,7 @@
       "closed_count": 1
     },
     {
-      "name": "truncate, e0ae642, modal",
+      "name": "truncate, e0ae642, c5b",
       "issue_count": 1,
       "recent_issue": {
         "title": "Feature Request Modal",
@@ -1263,6 +1249,34 @@
         "title": "Excessive Top Padding Causing Unused Empty Space in Dashboard",
         "url": "https://github.com/kubestellar/console/issues/4940",
         "created_at": "2026-04-06T09:01:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "progressive, incrementally, af16a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Progressive Fetch Does Not Update UI Incrementally",
+        "url": "https://github.com/kubestellar/console/issues/4935",
+        "created_at": "2026-04-06T08:51:44Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sse, stream, mid",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "SSE Streaming Stops Midway Without Recovery",
+        "url": "https://github.com/kubestellar/console/issues/4934",
+        "created_at": "2026-04-06T08:51:14Z"
       },
       "repos": [
         "console"
