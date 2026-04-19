@@ -1,15 +1,15 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-19T06:41:11.456Z",
-  "total_issues_opened": 572,
+  "generated_at": "2026-04-19T10:20:51.966Z",
+  "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 182550,
+  "total_points": 183750,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 47.7,
-    "avg_per_day": 8.42,
+    "avg_per_week": 48,
+    "avg_per_day": 8.48,
     "by_day_of_week": [
       161,
       34,
@@ -17,7 +17,7 @@
       86,
       78,
       125,
-      42
+      46
     ],
     "by_hour_of_day": [
       0,
@@ -26,7 +26,7 @@
       10,
       53,
       46,
-      25,
+      29,
       13,
       44,
       13,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-19T06:28:13.000Z"
+    "last_issue_at": "2026-04-19T06:45:49.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 431,
+      "issue_count": 437,
       "recent_issue": {
-        "title": "Cluster drillDown has different behaviour for 2 similar operations.",
-        "url": "https://github.com/kubestellar/console/issues/8975",
-        "created_at": "2026-04-19T06:28:13Z"
+        "title": "ACMM badge not being rendered in README",
+        "url": "https://github.com/kubestellar/console/issues/8979",
+        "created_at": "2026-04-19T06:45:49Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 428
+      "open_count": 7,
+      "closed_count": 430
     },
     {
       "name": "invite, reward, storage",
@@ -1063,6 +1063,20 @@
       "closed_count": 1
     },
     {
+      "name": "text, split, d681072",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Translation text is manually truncated with split",
+        "url": "https://github.com/kubestellar/console/issues/5991",
+        "created_at": "2026-04-10T08:06:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "capacity, aacfcb1, f000",
       "issue_count": 1,
       "recent_issue": {
@@ -1139,20 +1153,6 @@
         "title": "The Helm chart at oci://ghcr.io/kubestellar/charts/console returns a 404 error.",
         "url": "https://github.com/kubestellar/console/issues/5524",
         "created_at": "2026-04-08T16:54:53Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "coding, level, contributor",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Contributor level color coding is different in docs and in console",
-        "url": "https://github.com/kubestellar/console/issues/5241",
-        "created_at": "2026-04-07T13:53:07Z"
       },
       "repos": [
         "console"
@@ -1553,34 +1553,6 @@
       "closed_count": 1
     },
     {
-      "name": "ff85, f3f0, a0d1",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Cache key not normalized",
-        "url": "https://github.com/kubestellar/console/issues/3506",
-        "created_at": "2026-03-25T04:11:24Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sleep, a6bc872, a332",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Sleep inside mutex",
-        "url": "https://github.com/kubestellar/console/issues/3505",
-        "created_at": "2026-03-25T04:11:02Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "stage, rate, index",
       "issue_count": 1,
       "recent_issue": {
@@ -1732,16 +1704,16 @@
     ],
     "stretch": [
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Charts & Visualizations",
@@ -1810,7 +1782,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 481
+      "issue_count": 485
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-19T06:43:18.491Z",
+  "generated_at": "2026-04-19T10:22:35.103Z",
   "total_issues_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
   "total_points": 12600,
@@ -194,7 +194,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "feature: GPU Memory Metrics via Metrics-Server Integration",
+        "url": "https://github.com/kubestellar/console/issues/8989",
+        "repo": "console",
+        "topic_match": "metric, sequential, capturesnapshot"
+      }
+    ],
     "stretch": [
       {
         "name": "Marketplace & Operators",

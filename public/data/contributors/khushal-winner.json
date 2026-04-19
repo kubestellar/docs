@@ -1,15 +1,15 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-19T06:43:18.508Z",
-  "total_issues_opened": 12,
+  "generated_at": "2026-04-19T10:22:35.117Z",
+  "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
-  "total_points": 8200,
+  "total_points": 8800,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 23,
   "cadence": {
-    "avg_per_week": 1,
-    "avg_per_day": 0.35,
+    "avg_per_week": 1.2,
+    "avg_per_day": 0.39,
     "by_day_of_week": [
       0,
       0,
@@ -17,7 +17,7 @@
       0,
       6,
       1,
-      5
+      7
     ],
     "by_hour_of_day": [
       0,
@@ -29,7 +29,7 @@
       0,
       0,
       1,
-      0,
+      2,
       3,
       0,
       2,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 1,
     "trend": "steady",
     "first_issue_at": "2026-03-14T08:41:29.000Z",
-    "last_issue_at": "2026-04-17T19:33:51.000Z"
+    "last_issue_at": "2026-04-19T09:36:17.000Z"
   },
   "topics": [
     {
@@ -65,6 +65,20 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "utilization, gpu, feature",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "feature: GPU Utilization Threshold Alerting",
+        "url": "https://github.com/kubestellar/console/issues/8991",
+        "created_at": "2026-04-19T09:36:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 2,
+      "closed_count": 0
     },
     {
       "name": "image, default, pull",
@@ -181,12 +195,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Dashboard & Cards",
         "path": "web/src/components/cards/, web/src/components/dashboard/",
         "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
@@ -197,6 +205,12 @@
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       }
     ]
   },
@@ -247,7 +261,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 6
+      "issue_count": 8
     }
   ]
 }
