@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-19T03:09:26.960Z",
-  "total_issues_opened": 1013,
+  "generated_at": "2026-04-19T06:40:09.659Z",
+  "total_issues_opened": 1014,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3625800,
+  "total_points": 3626100,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 80.4,
-    "avg_per_day": 4.09,
+    "avg_per_week": 80.5,
+    "avg_per_day": 4.1,
     "by_day_of_week": [
       119,
       119,
@@ -17,7 +17,7 @@
       156,
       153,
       151,
-      106
+      107
     ],
     "by_hour_of_day": [
       53,
@@ -25,7 +25,7 @@
       106,
       33,
       42,
-      27,
+      28,
       40,
       59,
       25,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-19T02:03:27.000Z"
+    "last_issue_at": "2026-04-19T05:07:02.000Z"
   },
   "topics": [
     {
@@ -85,16 +85,16 @@
     },
     {
       "name": "error, ga4, category",
-      "issue_count": 52,
+      "issue_count": 53,
       "recent_issue": {
-        "title": "[GA4-Error] 5 card_render errors on / (last 2h)",
-        "url": "https://github.com/kubestellar/console/issues/5170",
-        "created_at": "2026-04-07T05:26:32Z"
+        "title": "Regression: Perf — Bundle size 3266897 > 3225000 budget (12 failures since 2026-04-18)",
+        "url": "https://github.com/kubestellar/console/issues/8971",
+        "created_at": "2026-04-19T05:07:02Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 52
     },
     {
@@ -169,7 +169,7 @@
       "closed_count": 8
     },
     {
-      "name": "js, vendor, bundle",
+      "name": "js, vendor, chunk",
       "issue_count": 7,
       "recent_issue": {
         "title": "[Auto-QA] Bundle has JS chunks over 300KB",
@@ -1059,7 +1059,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 368
+      "issue_count": 369
     }
   ]
 }

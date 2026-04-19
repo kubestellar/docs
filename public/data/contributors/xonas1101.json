@@ -1,15 +1,15 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-19T03:10:26.865Z",
-  "total_issues_opened": 569,
+  "generated_at": "2026-04-19T06:41:11.456Z",
+  "total_issues_opened": 572,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 181650,
+  "total_points": 182550,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 47.4,
-    "avg_per_day": 8.45,
+    "avg_per_week": 47.7,
+    "avg_per_day": 8.42,
     "by_day_of_week": [
       161,
       34,
@@ -17,7 +17,7 @@
       86,
       78,
       125,
-      39
+      42
     ],
     "by_hour_of_day": [
       0,
@@ -26,7 +26,7 @@
       10,
       53,
       46,
-      22,
+      25,
       13,
       44,
       13,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-10T08:19:08.000Z",
-    "last_issue_at": "2026-04-18T16:03:00.000Z"
+    "last_issue_at": "2026-04-19T06:28:13.000Z"
   },
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 430,
+      "issue_count": 431,
       "recent_issue": {
-        "title": "No values are seen on the contributor leaderboard in the social section on initial load",
-        "url": "https://github.com/kubestellar/console/issues/8858",
-        "created_at": "2026-04-18T16:03:00Z"
+        "title": "Cluster drillDown has different behaviour for 2 similar operations.",
+        "url": "https://github.com/kubestellar/console/issues/8975",
+        "created_at": "2026-04-19T06:28:13Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 430
+      "open_count": 3,
+      "closed_count": 428
     },
     {
       "name": "invite, reward, storage",
@@ -102,6 +102,20 @@
         "title": "Agent approval fallback does not match its documented behavior",
         "url": "https://github.com/kubestellar/console/issues/7561",
         "created_at": "2026-04-13T13:36:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "test, mock, order",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Shared localStorage mock state leaks across tests",
+        "url": "https://github.com/kubestellar/console/issues/7512",
+        "created_at": "2026-04-13T11:43:50Z"
       },
       "repos": [
         "console"
@@ -755,7 +769,7 @@
       "closed_count": 1
     },
     {
-      "name": "entry, size, d1b78c5",
+      "name": "entry, d1b78c5, e955",
       "issue_count": 1,
       "recent_issue": {
         "title": "Revocation cache “max size” is not actually enforced",
@@ -1343,20 +1357,6 @@
       "closed_count": 1
     },
     {
-      "name": "sessionid, chat, ids",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Chat cancellation key collision when sessionId is omitted",
-        "url": "https://github.com/kubestellar/console/issues/4263",
-        "created_at": "2026-04-02T16:41:25Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "chmod, binary, b645",
       "issue_count": 1,
       "recent_issue": {
@@ -1810,7 +1810,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 478
+      "issue_count": 481
     }
   ]
 }
