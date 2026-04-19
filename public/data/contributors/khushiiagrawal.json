@@ -1,15 +1,15 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-19T10:22:34.651Z",
-  "total_issues_opened": 57,
+  "generated_at": "2026-04-19T14:23:47.454Z",
+  "total_issues_opened": 63,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 25700,
+  "total_points": 27500,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 13,
+  "rank": 11,
   "cadence": {
-    "avg_per_week": 4.8,
-    "avg_per_day": 5.07,
+    "avg_per_week": 5.3,
+    "avg_per_day": 4.87,
     "by_day_of_week": [
       2,
       18,
@@ -17,7 +17,7 @@
       0,
       1,
       1,
-      0
+      6
     ],
     "by_hour_of_day": [
       0,
@@ -30,8 +30,8 @@
       0,
       13,
       0,
-      0,
-      0,
+      5,
+      1,
       2,
       9,
       0,
@@ -49,9 +49,23 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-06T12:23:43.000Z",
-    "last_issue_at": "2026-04-17T18:04:46.000Z"
+    "last_issue_at": "2026-04-19T11:08:43.000Z"
   },
   "topics": [
+    {
+      "name": "test, share, assert",
+      "issue_count": 6,
+      "recent_issue": {
+        "title": "bug: unsafe shared state in error-resilience.spec with fullyParallel: true",
+        "url": "https://github.com/kubestellar/console/issues/9002",
+        "created_at": "2026-04-19T11:08:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 6
+    },
     {
       "name": "restart, watchdog, process",
       "issue_count": 4,
@@ -180,7 +194,7 @@
       "closed_count": 2
     },
     {
-      "name": "unlike, handler, @khushiiagrawal",
+      "name": "unlike, handler, da09a5e",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: `handleRolesHTTP` and related RBAC handlers skip token validation",
@@ -615,32 +629,13 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Searching for kubestellar/console in ACMM dashboard return request timed out",
-        "url": "https://github.com/kubestellar/console/issues/8978",
-        "repo": "console",
-        "topic_match": "search, bar, properly"
-      },
-      {
-        "title": "The Info bar under the search bar in ACMM dashboard has bad UI",
-        "url": "https://github.com/kubestellar/console/issues/8977",
-        "repo": "console",
-        "topic_match": "search, bar, properly"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Deployments & GitOps",
         "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
         "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Cost Management",
@@ -653,6 +648,12 @@
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Storage & Compute",
@@ -709,7 +710,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 57
+      "issue_count": 63
     }
   ]
 }

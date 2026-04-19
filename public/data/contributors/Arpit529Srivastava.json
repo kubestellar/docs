@@ -1,12 +1,12 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-19T10:22:34.438Z",
+  "generated_at": "2026-04-19T14:23:47.633Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 11,
+  "rank": 12,
   "cadence": {
     "avg_per_week": 6.7,
     "avg_per_day": 0.61,
@@ -54,17 +54,17 @@
   "topics": [
     {
       "name": "@arpit529srivastava, api, vcluster",
-      "issue_count": 35,
+      "issue_count": 36,
       "recent_issue": {
-        "title": "ServiceExport / ServiceImport listing silently swallows ALL errors (including auth/network) by treating every error as \"CRD not installed\"",
-        "url": "https://github.com/kubestellar/console/issues/6510",
-        "created_at": "2026-04-11T16:13:01Z"
+        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
+        "url": "https://github.com/kubestellar/console/issues/6512",
+        "created_at": "2026-04-11T16:14:10Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 35
+      "closed_count": 36
     },
     {
       "name": "ss, testing, @arpit529srivastava",
@@ -179,20 +179,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "namespaces, getaccessiblenamespaces, common",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
-        "url": "https://github.com/kubestellar/console/issues/6512",
-        "created_at": "2026-04-11T16:14:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "getworkload, listworkloadsforcluster, linear",

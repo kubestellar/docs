@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-19T10:20:51.966Z",
+  "generated_at": "2026-04-19T14:21:45.981Z",
   "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 7,
-      "closed_count": 430
+      "open_count": 0,
+      "closed_count": 437
     },
     {
       "name": "invite, reward, storage",
@@ -495,20 +495,6 @@
         "title": "Potential duplicate kagent/kagenti entries in agent picker",
         "url": "https://github.com/kubestellar/console/issues/7562",
         "created_at": "2026-04-13T13:36:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "generatedat, prediction, model",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Prediction timestamp types are inconsistent across related models",
-        "url": "https://github.com/kubestellar/console/issues/7557",
-        "created_at": "2026-04-13T13:29:16Z"
       },
       "repos": [
         "console"
@@ -1063,20 +1049,6 @@
       "closed_count": 1
     },
     {
-      "name": "text, split, d681072",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Translation text is manually truncated with split",
-        "url": "https://github.com/kubestellar/console/issues/5991",
-        "created_at": "2026-04-10T08:06:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "capacity, aacfcb1, f000",
       "issue_count": 1,
       "recent_issue": {
@@ -1545,6 +1517,34 @@
         "title": "User friendly information panels on unfamiliar use cases",
         "url": "https://github.com/kubestellar/console/issues/3643",
         "created_at": "2026-03-26T11:44:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "ff85, f3f0, a0d1",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cache key not normalized",
+        "url": "https://github.com/kubestellar/console/issues/3506",
+        "created_at": "2026-03-25T04:11:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sleep, a6bc872, a332",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Sleep inside mutex",
+        "url": "https://github.com/kubestellar/console/issues/3505",
+        "created_at": "2026-03-25T04:11:02Z"
       },
       "repos": [
         "console"

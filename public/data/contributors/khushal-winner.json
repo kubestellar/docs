@@ -1,15 +1,15 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-19T10:22:35.117Z",
-  "total_issues_opened": 14,
+  "generated_at": "2026-04-19T14:23:48.356Z",
+  "total_issues_opened": 21,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
-  "total_points": 8800,
-  "level": "Pilot",
-  "level_rank": 4,
-  "rank": 23,
+  "total_points": 15400,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 21,
   "cadence": {
-    "avg_per_week": 1.2,
-    "avg_per_day": 0.39,
+    "avg_per_week": 1.8,
+    "avg_per_day": 0.58,
     "by_day_of_week": [
       0,
       0,
@@ -17,7 +17,7 @@
       0,
       6,
       1,
-      7
+      14
     ],
     "by_hour_of_day": [
       0,
@@ -30,11 +30,11 @@
       0,
       1,
       2,
-      3,
+      5,
       0,
+      4,
       2,
-      0,
-      0,
+      1,
       0,
       0,
       3,
@@ -47,14 +47,56 @@
     ],
     "current_streak_weeks": 1,
     "longest_streak_weeks": 1,
-    "trend": "steady",
+    "trend": "ramping_up",
     "first_issue_at": "2026-03-14T08:41:29.000Z",
-    "last_issue_at": "2026-04-19T09:36:17.000Z"
+    "last_issue_at": "2026-04-19T14:08:43.000Z"
   },
   "topics": [
     {
-      "name": "watcher, @khushal, winner",
-      "issue_count": 5,
+      "name": ":/, projects, cci",
+      "issue_count": 7,
+      "recent_issue": {
+        "title": "feature: Add filepath.Clean to isKustomizeDir",
+        "url": "https://github.com/kubestellar/console/issues/9025",
+        "created_at": "2026-04-19T14:08:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 6
+    },
+    {
+      "name": "ip, rate, limit",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: WebSocket endpoint lacks rate limiting (DoS vulnerability)",
+        "url": "https://github.com/kubestellar/console/issues/9011",
+        "created_at": "2026-04-19T12:19:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "rbac, feature, logging",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "feature: Centralize RBAC timeout constant to fix API/agent inconsistency",
+        "url": "https://github.com/kubestellar/console/issues/8997",
+        "created_at": "2026-04-19T10:40:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "watcher, backoff, leak",
+      "issue_count": 2,
       "recent_issue": {
         "title": "# bug: Resource Management Issues in MCP Handler and Console Watcher",
         "url": "https://github.com/kubestellar/console/issues/2664",
@@ -64,20 +106,34 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 5
+      "closed_count": 2
     },
     {
-      "name": "utilization, gpu, feature",
+      "name": "database, sqlite, wal",
       "issue_count": 2,
       "recent_issue": {
-        "title": "feature: GPU Utilization Threshold Alerting",
-        "url": "https://github.com/kubestellar/console/issues/8991",
-        "created_at": "2026-04-19T09:36:17Z"
+        "title": "**Title**: Database Connection Pool Missing Configuration - Potential Resource Exhaustion",
+        "url": "https://github.com/kubestellar/console/issues/2659",
+        "created_at": "2026-03-15T10:58:49Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 2,
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "memory, metric, metrics",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: GPU Memory Metrics via Metrics-Server Integration",
+        "url": "https://github.com/kubestellar/console/issues/8989",
+        "created_at": "2026-04-19T09:17:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
       "closed_count": 0
     },
     {
@@ -137,34 +193,6 @@
       "closed_count": 1
     },
     {
-      "name": "ip, limit, rate",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature: Implement per-user rate limiting and progressive security for authentication endpoints",
-        "url": "https://github.com/kubestellar/console/issues/8676",
-        "created_at": "2026-04-17T17:42:17Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "logging, audit, rbac",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature: Add Audit Logging for Sensitive Operations",
-        "url": "https://github.com/kubestellar/console/issues/8670",
-        "created_at": "2026-04-17T17:28:08Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "goroutine, mcp, endpoint",
       "issue_count": 1,
       "recent_issue": {
@@ -189,16 +217,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Dashboard & Cards",
         "path": "web/src/components/cards/, web/src/components/dashboard/",
         "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
         "name": "Charts & Visualizations",
@@ -207,10 +235,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       }
     ]
   },
@@ -261,7 +289,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 8
+      "issue_count": 15
     }
   ]
 }

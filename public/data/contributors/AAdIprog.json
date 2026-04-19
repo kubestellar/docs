@@ -1,6 +1,6 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-19T10:22:34.987Z",
+  "generated_at": "2026-04-19T14:23:48.224Z",
   "total_issues_opened": 56,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
   "total_points": 20200,
@@ -404,7 +404,7 @@
       "closed_count": 1
     },
     {
-      "name": "card, divergent, dec8",
+      "name": "card, dec8, d5d5",
       "issue_count": 1,
       "recent_issue": {
         "title": "Triple-duplicated dashboard card default functions with divergent card names",
@@ -489,7 +489,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "feature: Add filepath.Clean to isKustomizeDir",
+        "url": "https://github.com/kubestellar/console/issues/9025",
+        "repo": "console",
+        "topic_match": ":/, 0:0, aadishah"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",

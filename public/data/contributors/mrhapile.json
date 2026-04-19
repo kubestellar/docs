@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-19T10:21:27.868Z",
+  "generated_at": "2026-04-19T14:22:27.888Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 370,
+      "issue_count": 369,
       "recent_issue": {
         "title": "Status Timer Javascript Garbage Build Up",
         "url": "https://github.com/kubestellar/console/issues/7475",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 370
+      "closed_count": 369
     },
     {
       "name": "documentation, 📌, component",
@@ -101,6 +101,20 @@
         "title": "Unchecked HTTP res.ok json Parsing",
         "url": "https://github.com/kubestellar/console/issues/7141",
         "created_at": "2026-04-13T05:00:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "pb, safe, inset",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "iOS Bottom Bar Safe Area",
+        "url": "https://github.com/kubestellar/console/issues/6545",
+        "created_at": "2026-04-11T16:39:56Z"
       },
       "repos": [
         "console"
@@ -157,20 +171,6 @@
         "title": "PayloadCard Priority Dropdown Missing Keyboard Dismiss",
         "url": "https://github.com/kubestellar/console/issues/6743",
         "created_at": "2026-04-11T22:47:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "pb, safe, inset",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "iOS Bottom Bar Safe Area",
-        "url": "https://github.com/kubestellar/console/issues/6545",
-        "created_at": "2026-04-11T16:39:56Z"
       },
       "repos": [
         "console"
@@ -781,6 +781,20 @@
       "closed_count": 1
     },
     {
+      "name": "extractbalancedblocks, thread, text",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "extractBalancedBlocks O(n²) Main Thread Block",
+        "url": "https://github.com/kubestellar/console/issues/6723",
+        "created_at": "2026-04-11T22:36:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "resizer, bdde7, be3b",
       "issue_count": 1,
       "recent_issue": {
@@ -815,20 +829,6 @@
         "title": "Feature Request Modal",
         "url": "https://github.com/kubestellar/console/issues/6531",
         "created_at": "2026-04-11T16:35:29Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "chips, a4f11, e4d5",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Filter Chips Container",
-        "url": "https://github.com/kubestellar/console/issues/6530",
-        "created_at": "2026-04-11T16:35:09Z"
       },
       "repos": [
         "console"
@@ -991,7 +991,7 @@
       "closed_count": 1
     },
     {
-      "name": "d6093c66, fd5, e396db9",
+      "name": "d6093c66, e396db9, gitlab",
       "issue_count": 1,
       "recent_issue": {
         "title": "MissionBrowser Render Desync",

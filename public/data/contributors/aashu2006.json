@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-19T10:22:01.444Z",
+  "generated_at": "2026-04-19T14:23:08.272Z",
   "total_issues_opened": 505,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 139200,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 377,
+      "issue_count": 378,
       "recent_issue": {
         "title": "KubeDoom HUD shows \"ammo\" label in hardcoded English regardless of language setting",
         "url": "https://github.com/kubestellar/console/issues/8941",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 377
+      "closed_count": 378
     },
     {
       "name": "kubara, chart, control",
@@ -193,7 +193,7 @@
       "closed_count": 2
     },
     {
-      "name": "tag, supply, cronjob",
+      "name": "tag, cronjob, supply",
       "issue_count": 2,
       "recent_issue": {
         "title": "GitHub Actions workflow uses mutable version tags instead of commit SHAs enabling supply chain attacks",
@@ -683,7 +683,7 @@
       "closed_count": 1
     },
     {
-      "name": "certificate, mitm, attack",
+      "name": "certificate, mitm, argocd",
       "issue_count": 1,
       "recent_issue": {
         "title": "ArgoCD TLS certificate verification skip has no production guard enabling MITM attacks",
@@ -1347,20 +1347,6 @@
         "title": "TestClusterConnection has no default case for unknown authType allowing unauthenticated connections",
         "url": "https://github.com/kubestellar/console/issues/5316",
         "created_at": "2026-04-07T20:01:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "alert, eb96b4e6, c3aaad656b1f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "HardwareHealthCard: clearing an alert silently fails - user gets no feedback",
-        "url": "https://github.com/kubestellar/console/issues/4977",
-        "created_at": "2026-04-06T13:58:23Z"
       },
       "repos": [
         "console"

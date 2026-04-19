@@ -1,15 +1,15 @@
 {
   "login": "Darshit42",
-  "generated_at": "2026-04-19T10:22:35.125Z",
-  "total_issues_opened": 9,
+  "generated_at": "2026-04-19T14:23:48.379Z",
+  "total_issues_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
-  "total_points": 2900,
+  "total_points": 3900,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 31,
+  "rank": 28,
   "cadence": {
     "avg_per_week": 0.8,
-    "avg_per_day": 3.19,
+    "avg_per_day": 2.55,
     "by_day_of_week": [
       0,
       0,
@@ -17,7 +17,7 @@
       0,
       6,
       1,
-      0
+      1
     ],
     "by_hour_of_day": [
       0,
@@ -32,7 +32,7 @@
       0,
       1,
       0,
-      0,
+      1,
       0,
       2,
       1,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-15T14:16:40.000Z",
-    "last_issue_at": "2026-04-18T10:03:19.000Z"
+    "last_issue_at": "2026-04-19T12:22:55.000Z"
   },
   "topics": [
     {
-      "name": "expand, button, panel",
-      "issue_count": 4,
+      "name": "button, expand, panel",
+      "issue_count": 5,
       "recent_issue": {
-        "title": "bug: values in groups of cluster groups card overflow",
-        "url": "https://github.com/kubestellar/console/issues/8825",
-        "created_at": "2026-04-18T10:03:19Z"
+        "title": "bug: buttons and texts overflows and overlaps in cards",
+        "url": "https://github.com/kubestellar/console/issues/9013",
+        "created_at": "2026-04-19T12:22:55Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 4
+      "closed_count": 5
     },
     {
       "name": "flickering, unstoppable, custom",
@@ -219,7 +219,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 9
+      "issue_count": 10
     }
   ]
 }

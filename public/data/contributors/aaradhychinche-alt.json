@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-19T10:22:27.953Z",
+  "generated_at": "2026-04-19T14:23:39.911Z",
   "total_issues_opened": 451,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 132250,
@@ -68,7 +68,7 @@
       "closed_count": 421
     },
     {
-      "name": "card, registry, directory",
+      "name": "card, registry, register",
       "issue_count": 7,
       "recent_issue": {
         "title": "bug: placeholder card directories exist without implementation",
@@ -374,7 +374,7 @@
         "title": "card: Implement Harbor Registry monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/16",
         "repo": "console-marketplace",
-        "topic_match": "card, registry, directory"
+        "topic_match": "card, registry, register"
       }
     ],
     "stretch": [
