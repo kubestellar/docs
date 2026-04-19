@@ -1,14 +1,14 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-19T14:20:46.318Z",
-  "total_issues_opened": 1015,
+  "generated_at": "2026-04-19T18:17:41.797Z",
+  "total_issues_opened": 1018,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3633200,
+  "total_points": 3634750,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 80.6,
+    "avg_per_week": 80.8,
     "avg_per_day": 4.1,
     "by_day_of_week": [
       119,
@@ -17,7 +17,7 @@
       156,
       153,
       151,
-      108
+      111
     ],
     "by_hour_of_day": [
       53,
@@ -35,9 +35,9 @@
       5,
       70,
       55,
-      90,
+      92,
       35,
-      40,
+      41,
       28,
       159,
       36,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-19T07:53:23.000Z"
+    "last_issue_at": "2026-04-19T17:40:30.000Z"
   },
   "topics": [
     {
@@ -211,6 +211,20 @@
       "closed_count": 6
     },
     {
+      "name": "alert, codeql, site",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "security: CodeQL alerts remain after #9031/#9032 merges — sanitizer not recognized by CodeQL taint model",
+        "url": "https://github.com/kubestellar/console/issues/9033",
+        "created_at": "2026-04-19T17:40:30Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 4
+    },
+    {
       "name": "typo, readme, fix",
       "issue_count": 5,
       "recent_issue": {
@@ -237,21 +251,6 @@
       ],
       "open_count": 1,
       "closed_count": 3
-    },
-    {
-      "name": "projects, want, contribute",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "bug: multiple alerts of the same type and cluster get added to the alerts",
-        "url": "https://github.com/kubestellar/console/issues/1511",
-        "created_at": "2026-02-28T00:37:12Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 4
     },
     {
       "name": "analysis, portfolio, nfr",
@@ -446,6 +445,20 @@
       },
       "repos": [
         "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "projects, products, want",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "doc: need updates to content in https://github.com/kubestellar/docs/pull/640",
+        "url": "https://github.com/kubestellar/docs/issues/645",
+        "created_at": "2026-01-13T22:28:58Z"
+      },
+      "repos": [
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -1059,7 +1072,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 370
+      "issue_count": 373
     }
   ]
 }
