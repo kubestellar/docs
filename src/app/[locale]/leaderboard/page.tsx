@@ -47,8 +47,13 @@ interface AffiliateData {
 
 /** URL for the affiliate clicks API (hosted on console.kubestellar.io) */
 const AFFILIATE_API_URL = "https://console.kubestellar.io/api/affiliate/clicks";
-/** Fetch timeout for affiliate data (5 seconds — non-critical) */
-const AFFILIATE_FETCH_TIMEOUT_MS = 5_000;
+/** Fetch timeout for affiliate data (15 seconds — the console.kubestellar.io
+ *  endpoint is served by Netlify Functions which can cold-start past a
+ *  tighter budget on first visit, making the social section appear empty
+ *  until the user refreshes the page). */
+const AFFILIATE_FETCH_TIMEOUT_MS = 15_000;
+/** Delay before retrying a failed affiliate fetch (ms). One retry only. */
+const AFFILIATE_RETRY_DELAY_MS = 2_000;
 
 // ── Contributor level colors (mirrors console's CONTRIBUTOR_LEVELS) ───
 
@@ -271,15 +276,27 @@ export default function LeaderboardPage() {
   }, [fetchLeaderboard]);
 
   // Fetch affiliate click data (non-blocking, best-effort)
+  // Retries once after a short delay so the social section doesn't show
+  // empty after a cold-start timeout on the first page load (#8858).
   useEffect(() => {
-    fetch(AFFILIATE_API_URL, {
-      signal: AbortSignal.timeout(AFFILIATE_FETCH_TIMEOUT_MS),
-    })
-      .then((res) => (res.ok ? res.json() : {}))
-      .then((json: Record<string, AffiliateData>) => setAffiliateData(json))
-      .catch(() => {
-        // Affiliate data is optional — silently ignore failures
-      });
+    const fetchAffiliates = () =>
+      fetch(AFFILIATE_API_URL, {
+        signal: AbortSignal.timeout(AFFILIATE_FETCH_TIMEOUT_MS),
+      })
+        .then((res) => (res.ok ? res.json() : {}))
+        .then((json: Record<string, AffiliateData>) => setAffiliateData(json));
+
+    let retryHandle: ReturnType<typeof setTimeout> | undefined;
+    fetchAffiliates().catch(() => {
+      retryHandle = setTimeout(() => {
+        fetchAffiliates().catch(() => {
+          // Both attempts failed — affiliate data is optional; leave empty.
+        });
+      }, AFFILIATE_RETRY_DELAY_MS);
+    });
+    return () => {
+      if (retryHandle) clearTimeout(retryHandle);
+    };
   }, []);
 
   const filteredEntries = useMemo(() => {
