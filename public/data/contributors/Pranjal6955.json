@@ -1,6 +1,6 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-18T22:17:46.039Z",
+  "generated_at": "2026-04-19T03:12:33.245Z",
   "total_issues_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
   "total_points": 12600,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "transaction, method, subsequ",

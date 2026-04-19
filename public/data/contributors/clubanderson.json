@@ -1,14 +1,14 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-18T22:14:40.767Z",
-  "total_issues_opened": 1010,
+  "generated_at": "2026-04-19T03:09:26.960Z",
+  "total_issues_opened": 1013,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3596950,
+  "total_points": 3625800,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 80.2,
+    "avg_per_week": 80.4,
     "avg_per_day": 4.09,
     "by_day_of_week": [
       119,
@@ -17,12 +17,12 @@
       156,
       153,
       151,
-      103
+      106
     ],
     "by_hour_of_day": [
       53,
-      34,
-      104,
+      35,
+      106,
       33,
       42,
       27,
@@ -49,24 +49,24 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-18T19:37:52.000Z"
+    "last_issue_at": "2026-04-19T02:03:27.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 710,
+      "issue_count": 713,
       "recent_issue": {
-        "title": "[Auto-QA] ARIA label and role gaps detected",
-        "url": "https://github.com/kubestellar/console/issues/8884",
-        "created_at": "2026-04-18T19:37:52Z"
+        "title": "[Auto-QA] Event handler accessibility parity issues",
+        "url": "https://github.com/kubestellar/console/issues/8963",
+        "created_at": "2026-04-19T02:03:27Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 11,
-      "closed_count": 699
+      "open_count": 5,
+      "closed_count": 708
     },
     {
       "name": "monitoring, card, implement",
@@ -80,8 +80,8 @@
         "console",
         "console-marketplace"
       ],
-      "open_count": 42,
-      "closed_count": 17
+      "open_count": 41,
+      "closed_count": 18
     },
     {
       "name": "error, ga4, category",
@@ -489,8 +489,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "upgrade, green, navbar",
@@ -517,8 +517,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "learn, practice, traceability",
@@ -984,14 +984,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "Searching for kubestellar/console on the ACMM dashboard falls back to demo data",
-        "url": "https://github.com/kubestellar/console/issues/8848",
-        "repo": "console",
-        "topic_match": "outreach, acmm, file"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -1066,7 +1059,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 365
+      "issue_count": 368
     }
   ]
 }

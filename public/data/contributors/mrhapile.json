@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-18T22:16:26.630Z",
+  "generated_at": "2026-04-19T03:11:09.957Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 366,
+      "issue_count": 370,
       "recent_issue": {
         "title": "Status Timer Javascript Garbage Build Up",
         "url": "https://github.com/kubestellar/console/issues/7475",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 366
+      "closed_count": 370
     },
     {
       "name": "documentation, 📌, component",
@@ -221,20 +221,6 @@
       "closed_count": 2
     },
     {
-      "name": "cli, antigravity, @google",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Antigravity CLI Opens but Does Not Execute AI Missions",
-        "url": "https://github.com/kubestellar/console/issues/5692",
-        "created_at": "2026-04-09T05:59:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "r., revision, parseint",
       "issue_count": 2,
       "recent_issue": {
@@ -333,7 +319,7 @@
       "closed_count": 1
     },
     {
-      "name": "core, command, contamination",
+      "name": "core, contamination, ebc7",
       "issue_count": 1,
       "recent_issue": {
         "title": "Mixed-Mode Agent History Contamination",
@@ -1277,34 +1263,6 @@
         "title": "Excessive Top Padding Causing Unused Empty Space in Dashboard",
         "url": "https://github.com/kubestellar/console/issues/4940",
         "created_at": "2026-04-06T09:01:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "progressive, incrementally, af16a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Progressive Fetch Does Not Update UI Incrementally",
-        "url": "https://github.com/kubestellar/console/issues/4935",
-        "created_at": "2026-04-06T08:51:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sse, stream, mid",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "SSE Streaming Stops Midway Without Recovery",
-        "url": "https://github.com/kubestellar/console/issues/4934",
-        "created_at": "2026-04-06T08:51:14Z"
       },
       "repos": [
         "console"

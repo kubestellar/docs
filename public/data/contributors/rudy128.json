@@ -1,6 +1,6 @@
 {
   "login": "rudy128",
-  "generated_at": "2026-04-18T22:17:46.060Z",
+  "generated_at": "2026-04-19T03:12:33.263Z",
   "total_issues_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/77375030?v=4",
   "total_points": 5300,
@@ -81,7 +81,7 @@
       "closed_count": 1
     },
     {
-      "name": "language, ladder, english",
+      "name": "language, ladder, navbar",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Language selection resets to EN on Ladder page",

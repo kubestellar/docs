@@ -1,9 +1,9 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-18T22:17:45.046Z",
+  "generated_at": "2026-04-19T03:12:32.256Z",
   "total_issues_opened": 96,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-  "total_points": 34300,
+  "total_points": 34050,
   "level": "Commander",
   "level_rank": 5,
   "rank": 9,
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 2,
-      "closed_count": 67
+      "open_count": 0,
+      "closed_count": 69
     },
     {
       "name": "recommend, collapse, panel",

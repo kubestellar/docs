@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-18T22:17:45.236Z",
+  "generated_at": "2026-04-19T03:12:32.447Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 26250,
@@ -518,20 +518,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "No values are seen on the contributor leaderboard in the social section on initial load",
-        "url": "https://github.com/kubestellar/console/issues/8858",
-        "repo": "console",
-        "topic_match": "leaderboard, coin, contributor"
-      },
-      {
-        "title": "ux: no onboarding flow, walkthrough, or guided first tasks",
-        "url": "https://github.com/kubestellar/console/issues/8191",
-        "repo": "console",
-        "topic_match": "tour, blink, guide"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Cost Management",

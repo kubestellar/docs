@@ -1,27 +1,27 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-18T22:17:02.780Z",
-  "total_issues_opened": 481,
+  "generated_at": "2026-04-19T03:11:51.384Z",
+  "total_issues_opened": 505,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 141500,
+  "total_points": 139200,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 40.1,
-    "avg_per_day": 33.86,
+    "avg_per_week": 42.1,
+    "avg_per_day": 34.95,
     "by_day_of_week": [
       145,
       38,
       18,
       51,
       29,
-      84,
-      116
+      98,
+      126
     ],
     "by_hour_of_day": [
       0,
-      0,
+      10,
       0,
       0,
       0,
@@ -43,28 +43,28 @@
       94,
       43,
       72,
-      77
+      91
     ],
     "current_streak_weeks": 3,
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-18T19:19:55.000Z"
+    "last_issue_at": "2026-04-19T01:15:00.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 357,
+      "issue_count": 377,
       "recent_issue": {
-        "title": "PagerDuty \"Testing...\" button label hardcoded in English while idle state is correctly translated",
-        "url": "https://github.com/kubestellar/console/issues/8881",
-        "created_at": "2026-04-18T19:19:55Z"
+        "title": "KubeDoom HUD shows \"ammo\" label in hardcoded English regardless of language setting",
+        "url": "https://github.com/kubestellar/console/issues/8941",
+        "created_at": "2026-04-19T01:14:19Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 357
+      "closed_count": 377
     },
     {
       "name": "kubara, chart, control",
@@ -81,18 +81,18 @@
       "closed_count": 9
     },
     {
-      "name": "demo, badge, ml",
-      "issue_count": 6,
+      "name": "game, score, pause",
+      "issue_count": 7,
       "recent_issue": {
-        "title": "ML Notebooks card shows Demo badge even when real notebooks are running",
-        "url": "https://github.com/kubestellar/console/issues/8665",
-        "created_at": "2026-04-17T17:22:11Z"
+        "title": "KubeKong has no pause button — especially frustrating in a multi-level game",
+        "url": "https://github.com/kubestellar/console/issues/8944",
+        "created_at": "2026-04-19T01:15:00Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 6
+      "closed_count": 7
     },
     {
       "name": "clusterrole, opt, grant",
@@ -135,6 +135,20 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "rename, write, button",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "RenameModal shows \"Rename\" button text during close animation after successful rename",
+        "url": "https://github.com/kubestellar/console/issues/8927",
+        "created_at": "2026-04-18T23:41:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "layout, mobile, screen",
@@ -319,18 +333,46 @@
       "closed_count": 2
     },
     {
-      "name": "masking, tab, eyeoff",
-      "issue_count": 2,
+      "name": "stats, kubedle, modal",
+      "issue_count": 1,
       "recent_issue": {
-        "title": "ConfigMapDrillDown: all values rendered in plain text with no masking option - sensitive data immediately visible and copyable",
-        "url": "https://github.com/kubestellar/console/issues/6211",
-        "created_at": "2026-04-10T19:25:50Z"
+        "title": "Kubedle stats modal content gets cut off in default card size with no scroll",
+        "url": "https://github.com/kubestellar/console/issues/8939",
+        "created_at": "2026-04-19T01:13:50Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 1
+    },
+    {
+      "name": "confirmation, group, dialog",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cluster group delete button fires immediately with no confirmation dialog",
+        "url": "https://github.com/kubestellar/console/issues/8916",
+        "created_at": "2026-04-18T23:37:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "cloud, authentication, stick",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cloud IAM auth type in Add Cluster has no Next button — flow is stuck with no way to proceed",
+        "url": "https://github.com/kubestellar/console/issues/8914",
+        "created_at": "2026-04-18T23:25:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "fail, pvcs, pvc",
@@ -459,7 +501,7 @@
       "closed_count": 1
     },
     {
-      "name": "unquoted, word, splitting",
+      "name": "unquoted, splitting, word",
       "issue_count": 1,
       "recent_issue": {
         "title": "nightly-compare.sh uses unquoted $(ls ...) in for loop causing word splitting on filenames with spaces",
@@ -577,20 +619,6 @@
         "title": "presenceWs.onclose schedules reconnect with no dedup guard causing duplicate WebSocket connections",
         "url": "https://github.com/kubestellar/console/issues/7784",
         "created_at": "2026-04-13T21:08:35Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "rename, write, fsync",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Encryption key file written without fsync before rename making all encrypted settings unrecoverable on crash",
-        "url": "https://github.com/kubestellar/console/issues/7752",
-        "created_at": "2026-04-13T19:46:38Z"
       },
       "repos": [
         "console"
@@ -1201,7 +1229,7 @@
       "closed_count": 1
     },
     {
-      "name": "tool, natural, language",
+      "name": "tool, natural, string",
       "issue_count": 1,
       "recent_issue": {
         "title": "CallTool passes tool arguments as natural language string enabling prompt injection",
@@ -1325,6 +1353,20 @@
       ],
       "open_count": 0,
       "closed_count": 1
+    },
+    {
+      "name": "alert, eb96b4e6, c3aaad656b1f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "HardwareHealthCard: clearing an alert silently fails - user gets no feedback",
+        "url": "https://github.com/kubestellar/console/issues/4977",
+        "created_at": "2026-04-06T13:58:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -1343,6 +1385,12 @@
       }
     ],
     "stretch": [
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
       {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
@@ -1404,7 +1452,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 481
+      "issue_count": 505
     }
   ]
 }

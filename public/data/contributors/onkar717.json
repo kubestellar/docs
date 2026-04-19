@@ -1,6 +1,6 @@
 {
   "login": "onkar717",
-  "generated_at": "2026-04-18T22:17:46.062Z",
+  "generated_at": "2026-04-19T03:12:33.265Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/144542684?v=4",
   "total_points": 4350,
@@ -67,7 +67,7 @@
       "closed_count": 4
     },
     {
-      "name": "display, github, stats",
+      "name": "display, github, repository",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Mismatch between GitHub repo stats and UI display",
