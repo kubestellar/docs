@@ -1,6 +1,6 @@
 {
   "login": "oksaumya",
-  "generated_at": "2026-04-19T18:20:41.156Z",
+  "generated_at": "2026-04-19T22:17:29.574Z",
   "total_issues_opened": 42,
   "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
   "total_points": 12150,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "section, hero, lading",
-      "issue_count": 13,
+      "issue_count": 12,
       "recent_issue": {
         "title": "🐛 Hero Section UI Regression",
         "url": "https://github.com/kubestellar/docs/issues/1306",
@@ -64,7 +64,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 13
+      "closed_count": 12
     },
     {
       "name": "translation, audit, fix",
@@ -109,7 +109,7 @@
       "closed_count": 2
     },
     {
-      "name": "a2a, kubeflex, projects",
+      "name": "a2a, kubeflex, link",
       "issue_count": 2,
       "recent_issue": {
         "title": "Fix the broken link of a2a and kubeflex in Projects",
@@ -157,6 +157,20 @@
         "title": "Edit icon hover issue in docs",
         "url": "https://github.com/kubestellar/docs/issues/1162",
         "created_at": "2026-02-16T05:09:42Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "landing, duplicate, page",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Remove duplicate “Open Issue”  from landing page",
+        "url": "https://github.com/kubestellar/docs/issues/451",
+        "created_at": "2025-12-25T15:39:08Z"
       },
       "repos": [
         "docs"

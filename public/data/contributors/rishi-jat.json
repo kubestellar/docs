@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-19T18:20:39.906Z",
+  "generated_at": "2026-04-19T22:17:28.283Z",
   "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 45750,
@@ -652,16 +652,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },

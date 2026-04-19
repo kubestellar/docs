@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-19T18:18:40.957Z",
+  "generated_at": "2026-04-19T22:15:27.290Z",
   "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
@@ -755,7 +755,7 @@
       "closed_count": 1
     },
     {
-      "name": "entry, d1b78c5, e955",
+      "name": "entry, size, d1b78c5",
       "issue_count": 1,
       "recent_issue": {
         "title": "Revocation cache “max size” is not actually enforced",

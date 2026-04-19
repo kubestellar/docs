@@ -1,14 +1,14 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-19T18:20:40.186Z",
-  "total_issues_opened": 96,
+  "generated_at": "2026-04-19T22:17:28.591Z",
+  "total_issues_opened": 99,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-  "total_points": 34050,
+  "total_points": 34950,
   "level": "Commander",
   "level_rank": 5,
   "rank": 9,
   "cadence": {
-    "avg_per_week": 8,
+    "avg_per_week": 8.3,
     "avg_per_day": 2.65,
     "by_day_of_week": [
       10,
@@ -17,7 +17,7 @@
       3,
       10,
       25,
-      34
+      37
     ],
     "by_hour_of_day": [
       0,
@@ -41,7 +41,7 @@
       0,
       4,
       1,
-      2,
+      5,
       6,
       0
     ],
@@ -49,37 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-13T14:35:21.000Z",
-    "last_issue_at": "2026-04-18T21:27:16.000Z"
+    "last_issue_at": "2026-04-19T21:36:43.000Z"
   },
   "topics": [
     {
       "name": "@arnavgogia20, page, problem",
-      "issue_count": 69,
+      "issue_count": 72,
       "recent_issue": {
-        "title": "Bug count inconsistency persists across Dashboard and Feedback (Updates) despite merged fix",
-        "url": "https://github.com/kubestellar/console/issues/8893",
-        "created_at": "2026-04-18T21:27:16Z"
+        "title": "Custom Card \"Data (JSON array)\" Field Appends Instead of Replacing Default Data",
+        "url": "https://github.com/kubestellar/console/issues/9061",
+        "created_at": "2026-04-19T21:27:56Z"
       },
       "repos": [
         "console",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 69
-    },
-    {
-      "name": "recommend, collapse, panel",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "MissionSuggestions and CardRecommendations Auto-Collapse After 20 Seconds and Never Re-Expand",
-        "url": "https://github.com/kubestellar/console/issues/4557",
-        "created_at": "2026-04-04T12:42:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
+      "open_count": 2,
+      "closed_count": 70
     },
     {
       "name": "router, gin, cors",
@@ -108,6 +94,34 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "form, feedback, requirement",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Feedback form allows full completion before revealing login requirement",
+        "url": "https://github.com/kubestellar/console/issues/9062",
+        "created_at": "2026-04-19T21:36:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "debouncing, f7abf9d91, db0",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Mission Control persistState Fires on Every State Change Without Debouncing",
+        "url": "https://github.com/kubestellar/console/issues/6468",
+        "created_at": "2026-04-11T15:41:35Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "mergeprojects, payloadproject, refinement",
@@ -486,7 +500,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 65
+      "issue_count": 68
     }
   ]
 }

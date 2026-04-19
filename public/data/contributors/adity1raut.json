@@ -1,6 +1,6 @@
 {
   "login": "adity1raut",
-  "generated_at": "2026-04-19T18:20:41.140Z",
+  "generated_at": "2026-04-19T22:17:29.559Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/159172287?v=4",
   "total_points": 15550,
@@ -82,7 +82,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Feedback form allows full completion before revealing login requirement",
+        "url": "https://github.com/kubestellar/console/issues/9062",
+        "repo": "console",
+        "topic_match": "responsive, form, dropdown"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

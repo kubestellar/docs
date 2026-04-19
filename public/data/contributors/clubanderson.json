@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-19T18:17:41.797Z",
-  "total_issues_opened": 1018,
+  "generated_at": "2026-04-19T22:14:29.214Z",
+  "total_issues_opened": 1019,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3634750,
+  "total_points": 3636950,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 80.8,
-    "avg_per_day": 4.1,
+    "avg_per_week": 80.9,
+    "avg_per_day": 4.11,
     "by_day_of_week": [
       119,
       119,
@@ -17,7 +17,7 @@
       156,
       153,
       151,
-      111
+      112
     ],
     "by_hour_of_day": [
       53,
@@ -39,7 +39,7 @@
       35,
       41,
       28,
-      159,
+      160,
       36,
       22,
       22,
@@ -49,16 +49,16 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-19T17:40:30.000Z"
+    "last_issue_at": "2026-04-19T19:38:07.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 713,
+      "issue_count": 714,
       "recent_issue": {
-        "title": "[Auto-QA] Event handler accessibility parity issues",
-        "url": "https://github.com/kubestellar/console/issues/8963",
-        "created_at": "2026-04-19T02:03:27Z"
+        "title": "[Auto-QA] Components fetching data without loading/error states",
+        "url": "https://github.com/kubestellar/console/issues/9036",
+        "created_at": "2026-04-19T19:38:07Z"
       },
       "repos": [
         "console",
@@ -66,7 +66,7 @@
         "docs"
       ],
       "open_count": 5,
-      "closed_count": 708
+      "closed_count": 709
     },
     {
       "name": "monitoring, card, implement",
@@ -730,7 +730,7 @@
       "closed_count": 1
     },
     {
-      "name": "guideline, card, development",
+      "name": "guideline, aud, card",
       "issue_count": 1,
       "recent_issue": {
         "title": "Many cards missing isRefreshing in useCardLoadingState",
@@ -940,7 +940,7 @@
       "closed_count": 1
     },
     {
-      "name": "localization, route, doc",
+      "name": "localization, doc, route",
       "issue_count": 1,
       "recent_issue": {
         "title": "🌱 Help Wanted: Add localization support to docs routes",
@@ -997,7 +997,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Custom Cards Show \"No Data Available\" on Dashboard Despite Valid Preview",
+        "url": "https://github.com/kubestellar/console/issues/9058",
+        "repo": "console",
+        "topic_match": "preview, markdown, linked"
+      },
+      {
+        "title": "feature: Add Health Check Endpoint for GitHub Token",
+        "url": "https://github.com/kubestellar/console/issues/9063",
+        "repo": "console",
+        "topic_match": "token, validation, endpoint"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -1072,7 +1085,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 373
+      "issue_count": 374
     }
   ]
 }

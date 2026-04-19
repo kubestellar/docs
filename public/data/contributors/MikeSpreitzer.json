@@ -1,12 +1,12 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-19T18:20:41.134Z",
+  "generated_at": "2026-04-19T22:17:29.558Z",
   "total_issues_opened": 80,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 17150,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 19,
+  "rank": 20,
   "cadence": {
     "avg_per_week": 5.8,
     "avg_per_day": 0.63,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "describe, following, width",
-      "issue_count": 57,
+      "issue_count": 58,
       "recent_issue": {
         "title": "bug: GPU Inventory falsely empty",
         "url": "https://github.com/kubestellar/console/issues/8600",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 57
+      "closed_count": 58
     },
     {
       "name": "privilege, github, person",
@@ -91,21 +91,6 @@
       },
       "repos": [
         "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "suspect, update, image",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "feature: Clarity on updating",
-        "url": "https://github.com/kubestellar/console/issues/5345",
-        "created_at": "2026-04-07T21:10:46Z"
-      },
-      "repos": [
-        "console",
-        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -173,6 +158,20 @@
         "title": "bug: Repair on cluster in Cluster Health card is broken",
         "url": "https://github.com/kubestellar/console/issues/8093",
         "created_at": "2026-04-15T05:49:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "update, suspect, story",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: Clarity on updating",
+        "url": "https://github.com/kubestellar/console/issues/5345",
+        "created_at": "2026-04-07T21:10:46Z"
       },
       "repos": [
         "console"

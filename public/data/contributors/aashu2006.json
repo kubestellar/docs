@@ -1,15 +1,15 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-19T18:20:01.457Z",
-  "total_issues_opened": 505,
+  "generated_at": "2026-04-19T22:16:49.951Z",
+  "total_issues_opened": 513,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 139200,
+  "total_points": 141600,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 42.1,
-    "avg_per_day": 34.95,
+    "avg_per_week": 42.8,
+    "avg_per_day": 33.69,
     "by_day_of_week": [
       145,
       38,
@@ -17,7 +17,7 @@
       51,
       29,
       98,
-      126
+      134
     ],
     "by_hour_of_day": [
       0,
@@ -39,7 +39,7 @@
       0,
       17,
       42,
-      126,
+      134,
       94,
       43,
       72,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-19T01:15:00.000Z"
+    "last_issue_at": "2026-04-19T19:51:19.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 378,
+      "issue_count": 383,
       "recent_issue": {
-        "title": "KubeDoom HUD shows \"ammo\" label in hardcoded English regardless of language setting",
-        "url": "https://github.com/kubestellar/console/issues/8941",
-        "created_at": "2026-04-19T01:14:19Z"
+        "title": "Warning Events card shows hardcoded English pluralization and error messages",
+        "url": "https://github.com/kubestellar/console/issues/9043",
+        "created_at": "2026-04-19T19:49:19Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 378
+      "closed_count": 383
     },
     {
       "name": "kubara, chart, control",
@@ -107,6 +107,20 @@
       ],
       "open_count": 0,
       "closed_count": 4
+    },
+    {
+      "name": "tab, switch, symbol",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Events repeat count uses inconsistent symbols across tabs — \"×\" in Timeline and \"x\" in List",
+        "url": "https://github.com/kubestellar/console/issues/9044",
+        "created_at": "2026-04-19T19:51:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "cookie, csrf, samesite",
@@ -165,7 +179,7 @@
       "closed_count": 2
     },
     {
-      "name": "soft, ci, regression",
+      "name": "soft, regression, ci",
       "issue_count": 2,
       "recent_issue": {
         "title": "21 soft assertions in user-flows/ tests produce zero CI signal - regressions pass silently",
@@ -249,7 +263,7 @@
       "closed_count": 2
     },
     {
-      "name": "mb, bodyguard, group",
+      "name": "mb, bodyguard, fiber",
       "issue_count": 2,
       "recent_issue": {
         "title": "bodyGuard checks request size after Fiber already buffers up to 20 MB allowing memory exhaustion attacks",
@@ -669,6 +683,20 @@
       "closed_count": 1
     },
     {
+      "name": "date, sort, order",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "gpu_reservations.start_date is TEXT instead of DATETIME causing silent wrong sort order",
+        "url": "https://github.com/kubestellar/console/issues/7719",
+        "created_at": "2026-04-13T19:21:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "oauth, credential, configured",
       "issue_count": 1,
       "recent_issue": {
@@ -963,7 +991,7 @@
       "closed_count": 1
     },
     {
-      "name": "feedbackmodal, ba43a, adac",
+      "name": "support, feedbackmodal, ba43a",
       "issue_count": 1,
       "recent_issue": {
         "title": "PreflightFailure, FeatureRequestModal, FeedbackModal, CardFactoryModal: Clipboard API called without browser support check - silently fails with no fallback",
@@ -983,6 +1011,20 @@
         "title": "KubescapeDetailModal, TrivyDetailModal, KyvernoDetailModal, ClusterLocations: search input missing debounce - full list re-filtered on every keystroke",
         "url": "https://github.com/kubestellar/console/issues/6213",
         "created_at": "2026-04-10T19:27:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "plain, masking, value",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ConfigMapDrillDown: all values rendered in plain text with no masking option - sensitive data immediately visible and copyable",
+        "url": "https://github.com/kubestellar/console/issues/6211",
+        "created_at": "2026-04-10T19:25:50Z"
       },
       "repos": [
         "console"
@@ -1173,20 +1215,6 @@
       "closed_count": 1
     },
     {
-      "name": "bc1b059b, cde36fd4a3f4, callb",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Untracked setTimeout in AuthCallback catch block causes memory leak on unmount",
-        "url": "https://github.com/kubestellar/console/issues/5573",
-        "created_at": "2026-04-08T19:37:24Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "extract, ffb011, f6f",
       "issue_count": 1,
       "recent_issue": {
@@ -1313,20 +1341,6 @@
       "closed_count": 1
     },
     {
-      "name": "strand, onboarding, c97b",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Onboarding silently fails for real users leaving them stranded with no error message",
-        "url": "https://github.com/kubestellar/console/issues/5320",
-        "created_at": "2026-04-07T20:02:46Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "positive, parse, json",
       "issue_count": 1,
       "recent_issue": {
@@ -1388,6 +1402,12 @@
         "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
         "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
@@ -1438,7 +1458,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 505
+      "issue_count": 513
     }
   ]
 }
