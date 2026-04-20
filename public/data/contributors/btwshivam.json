@@ -1,6 +1,6 @@
 {
   "login": "btwshivam",
-  "generated_at": "2026-04-20T14:44:34.762Z",
+  "generated_at": "2026-04-20T18:29:28.613Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/127589548?v=4",
   "total_points": 5200,
@@ -110,14 +110,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "[Auto-QA] Components missing dark mode support",
-        "url": "https://github.com/kubestellar/console/issues/9071",
-        "repo": "console",
-        "topic_match": "dark, light, mode"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "GPU & AI/ML",

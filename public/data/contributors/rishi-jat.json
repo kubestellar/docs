@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-20T14:44:33.141Z",
+  "generated_at": "2026-04-20T18:29:26.990Z",
   "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 45750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@rishi, jat, line",
-      "issue_count": 181,
+      "issue_count": 180,
       "recent_issue": {
         "title": "docs: outdated Netlify URL redirects to console.kubestellar.io",
         "url": "https://github.com/kubestellar/docs/issues/1487",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 181
+      "closed_count": 180
     },
     {
       "name": "screen, responsive, layout",
@@ -342,6 +342,20 @@
         "title": "docs(console): rollout status command missing timeout can block indefinitely",
         "url": "https://github.com/kubestellar/console/issues/6360",
         "created_at": "2026-04-11T11:28:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "common, troubleshoot, ba44",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Missing troubleshooting guide for common deployment failures",
+        "url": "https://github.com/kubestellar/console/issues/6328",
+        "created_at": "2026-04-11T08:00:01Z"
       },
       "repos": [
         "console"
@@ -633,12 +647,6 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Feedback modal does not close on outside click (backdrop interaction missing)",
-        "url": "https://github.com/kubestellar/console/issues/9159",
-        "repo": "console",
-        "topic_match": "dismiss, banner, close"
-      },
-      {
         "title": "Missions incorrectly marked as \"Failed\" after session expiry despite successful last response",
         "url": "https://github.com/kubestellar/console/issues/9157",
         "repo": "console",
@@ -665,16 +673,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Security & RBAC",
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       }
     ]
   },

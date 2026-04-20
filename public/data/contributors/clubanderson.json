@@ -1,17 +1,17 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-20T14:41:12.527Z",
-  "total_issues_opened": 1033,
+  "generated_at": "2026-04-20T18:26:16.533Z",
+  "total_issues_opened": 1044,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3665150,
+  "total_points": 3686750,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 82.1,
-    "avg_per_day": 4.15,
+    "avg_per_week": 83,
+    "avg_per_day": 4.19,
     "by_day_of_week": [
-      133,
+      144,
       119,
       209,
       156,
@@ -36,9 +36,9 @@
       71,
       56,
       92,
-      35,
-      41,
-      28,
+      38,
+      45,
+      32,
       160,
       36,
       22,
@@ -49,24 +49,24 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-20T14:00:48.000Z"
+    "last_issue_at": "2026-04-20T18:12:38.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 716,
+      "issue_count": 722,
       "recent_issue": {
-        "title": "🐛 7 test failure(s) in Coverage Suite run #1114",
-        "url": "https://github.com/kubestellar/console/issues/9161",
-        "created_at": "2026-04-20T14:00:48Z"
+        "title": "🐛 2 test failure(s) in Coverage Suite run #1125",
+        "url": "https://github.com/kubestellar/console/issues/9209",
+        "created_at": "2026-04-20T17:36:40Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 7,
-      "closed_count": 709
+      "open_count": 5,
+      "closed_count": 717
     },
     {
       "name": "monitoring, card, implement",
@@ -99,47 +99,31 @@
     },
     {
       "name": "link, break, url",
-      "issue_count": 37,
+      "issue_count": 35,
       "recent_issue": {
         "title": "Broken link: https://kubestellar.io/docs/what-is-kubestellar/overview...",
         "url": "https://github.com/kubestellar/docs/issues/1463",
         "created_at": "2026-04-15T06:49:57Z"
       },
       "repos": [
-        "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 37
+      "closed_count": 35
     },
     {
-      "name": "release, ci, repo",
-      "issue_count": 18,
+      "name": "js, alert, codeql",
+      "issue_count": 25,
       "recent_issue": {
-        "title": "security: 223 PinnedDependenciesID — GitHub Actions use unpinned action refs",
-        "url": "https://github.com/kubestellar/console/issues/9128",
-        "created_at": "2026-04-20T12:55:37Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 18
-    },
-    {
-      "name": "js, vendor, alert",
-      "issue_count": 18,
-      "recent_issue": {
-        "title": "security: Go backend — command-injection, allocation-overflow, regex-anchor + medium clusters",
-        "url": "https://github.com/kubestellar/console/issues/9127",
-        "created_at": "2026-04-20T12:55:33Z"
+        "title": "security: go/allocation-size-overflow in github_pipelines.go + js/missing-origin-check in cache worker",
+        "url": "https://github.com/kubestellar/console/issues/9220",
+        "created_at": "2026-04-20T18:12:38Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 3,
-      "closed_count": 15
+      "open_count": 7,
+      "closed_count": 18
     },
     {
       "name": "outreach, acmm, file",
@@ -170,6 +154,21 @@
       "closed_count": 11
     },
     {
+      "name": "repo, ci, prow",
+      "issue_count": 9,
+      "recent_issue": {
+        "title": "feat: CI/CD stat blocks — repo-contextual metrics with mini charts",
+        "url": "https://github.com/kubestellar/console/issues/8727",
+        "created_at": "2026-04-17T20:27:33Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 9
+    },
+    {
       "name": "cluster, status, health",
       "issue_count": 8,
       "recent_issue": {
@@ -182,6 +181,20 @@
       ],
       "open_count": 0,
       "closed_count": 8
+    },
+    {
+      "name": "release, nightly, april",
+      "issue_count": 7,
+      "recent_issue": {
+        "title": "regression(ci): Nightly UX Journey Tests 5-night failure streak (card-opens-drilldown-modal)",
+        "url": "https://github.com/kubestellar/console/issues/9166",
+        "created_at": "2026-04-20T16:47:41Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 7
     },
     {
       "name": "replace, color, hardcoded",
@@ -366,6 +379,21 @@
       "closed_count": 2
     },
     {
+      "name": "preview, markdown, linked",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Add markdown preview toggle for issue description in Contribute dialog",
+        "url": "https://github.com/kubestellar/console/issues/3455",
+        "created_at": "2026-03-24T17:27:14Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "handler, locations, fetch",
       "issue_count": 2,
       "recent_issue": {
@@ -464,6 +492,20 @@
       "closed_count": 2
     },
     {
+      "name": "instruction, l2, vendor",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feat(acmm): L2 Instructed gate should require ANY ONE agent instruction file, not count each separately",
+        "url": "https://github.com/kubestellar/console/issues/9169",
+        "created_at": "2026-04-20T16:53:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "ram, metric, memory",
       "issue_count": 1,
       "recent_issue": {
@@ -478,12 +520,12 @@
       "closed_count": 0
     },
     {
-      "name": "night, tests, journey",
+      "name": "ref, pinneddependenciesid, action",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Regression: Nightly UX Journey Tests failing 6 consecutive nights (onboarding-tour timeout, settings overflow)",
-        "url": "https://github.com/kubestellar/console/issues/9110",
-        "created_at": "2026-04-20T12:21:53Z"
+        "title": "security: 223 PinnedDependenciesID — GitHub Actions use unpinned action refs",
+        "url": "https://github.com/kubestellar/console/issues/9128",
+        "created_at": "2026-04-20T12:55:37Z"
       },
       "repos": [
         "console"
@@ -996,20 +1038,6 @@
       "closed_count": 1
     },
     {
-      "name": "edit, site, page",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature: I would like the ability to view or edit the code (MD file) that is rendered when I open a page in the web site",
-        "url": "https://github.com/kubestellar/docs/issues/387",
-        "created_at": "2025-12-11T15:39:38Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "marketplace, assistant, home",
       "issue_count": 1,
       "recent_issue": {
@@ -1031,12 +1059,6 @@
         "url": "https://github.com/kubestellar/console/issues/8989",
         "repo": "console",
         "topic_match": "ram, metric, memory"
-      },
-      {
-        "title": "Token usage indicator always shows 0 despite active usage (Gemini & Copilot agents)",
-        "url": "https://github.com/kubestellar/console/issues/9160",
-        "repo": "console",
-        "topic_match": "token, validation, endpoint"
       }
     ],
     "stretch": [
@@ -1053,16 +1075,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
         "name": "Onboarding & Rewards",
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },
@@ -1113,7 +1135,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 388
+      "issue_count": 399
     }
   ]
 }

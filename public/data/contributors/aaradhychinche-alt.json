@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-20T14:44:25.325Z",
+  "generated_at": "2026-04-20T18:29:19.445Z",
   "total_issues_opened": 451,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 132250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aaradhychinche, alt, cluster",
-      "issue_count": 421,
+      "issue_count": 422,
       "recent_issue": {
         "title": "Notifications: Mixed UX patterns across alerts, toasts, and system errors (e.g., refresh failure)",
         "url": "https://github.com/kubestellar/console/issues/8752",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 421
+      "closed_count": 422
     },
     {
       "name": "card, registry, register",
@@ -306,20 +306,6 @@
       "closed_count": 1
     },
     {
-      "name": "notification, success, difficult",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: success notification toast is too low contrast and difficult to see",
-        "url": "https://github.com/kubestellar/console/issues/3259",
-        "created_at": "2026-03-23T11:26:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "bundle, eagerly, import",
       "issue_count": 1,
       "recent_issue": {
@@ -365,12 +351,6 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "System freeze/lag when opening “Save Resolution” modal in AI Missions",
-        "url": "https://github.com/kubestellar/console/issues/9163",
-        "repo": "console",
-        "topic_match": "resolution, blocked, d1fa8f9"
-      },
-      {
         "title": "card: Implement Harbor Registry monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/16",
         "repo": "console-marketplace",
@@ -397,16 +377,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
         "name": "Security & RBAC",
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },

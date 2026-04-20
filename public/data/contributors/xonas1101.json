@@ -1,19 +1,19 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-20T14:42:18.182Z",
-  "total_issues_opened": 576,
+  "generated_at": "2026-04-20T18:27:18.700Z",
+  "total_issues_opened": 577,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 48,
-    "avg_per_day": 8.48,
+    "avg_per_week": 48.1,
+    "avg_per_day": 8.49,
     "by_day_of_week": [
       161,
       34,
-      46,
+      47,
       86,
       78,
       125,
@@ -37,7 +37,7 @@
       67,
       45,
       30,
-      22,
+      23,
       2,
       0,
       0,
@@ -166,7 +166,7 @@
       "closed_count": 2
     },
     {
-      "name": "meta, tag, welcome",
+      "name": "meta, welcome, tag",
       "issue_count": 2,
       "recent_issue": {
         "title": "Meta description cleanup leaves stale global document state",
@@ -260,6 +260,20 @@
       "repos": [
         "console",
         "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "image, 0.0.0, imagepullbackoff",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Default image tag (0.0.0) causes ImagePullBackOff",
+        "url": "https://github.com/kubestellar/console/issues/5526",
+        "created_at": "2026-04-08T17:04:54Z"
+      },
+      "repos": [
+        "console"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -1105,20 +1119,6 @@
       "closed_count": 1
     },
     {
-      "name": "0.0.0, image, imagepullbackoff",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Default image tag (0.0.0) causes ImagePullBackOff",
-        "url": "https://github.com/kubestellar/console/issues/5526",
-        "created_at": "2026-04-08T17:04:54Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "//ghcr.io/kubestellar/charts/console, oci, maybe",
       "issue_count": 1,
       "recent_issue": {
@@ -1702,28 +1702,10 @@
         "topic_match": "module, test, cc0f252e8db"
       },
       {
-        "title": "Feedback modal does not close on outside click (backdrop interaction missing)",
-        "url": "https://github.com/kubestellar/console/issues/9159",
-        "repo": "console",
-        "topic_match": "modal, deep, e7ef91"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "Console Studio modal closes unexpectedly on edge/sidebar clicks",
-        "url": "https://github.com/kubestellar/console/issues/9165",
-        "repo": "console",
-        "topic_match": "modal, deep, e7ef91"
-      },
-      {
-        "title": "Stats overview labels truncated with ellipsis on My Clusters page",
-        "url": "https://github.com/kubestellar/console/issues/9164",
-        "repo": "console",
-        "topic_match": "solid, offline, style"
       }
     ],
     "stretch": [
@@ -1806,7 +1788,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 485
+      "issue_count": 486
     }
   ]
 }

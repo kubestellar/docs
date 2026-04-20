@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-20T14:44:34.065Z",
+  "generated_at": "2026-04-20T18:29:27.909Z",
   "total_issues_opened": 91,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 27700,
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 7,
-      "closed_count": 74
+      "open_count": 2,
+      "closed_count": 79
     },
     {
       "name": "fork, nightly, repository",

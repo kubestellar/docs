@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-20T14:43:50.381Z",
+  "generated_at": "2026-04-20T18:28:46.289Z",
   "total_issues_opened": 513,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 141600,
@@ -283,20 +283,6 @@
         "title": "*.netlify.app wildcard in analytics origin allowlist permits any Netlify deployment to abuse the proxy",
         "url": "https://github.com/kubestellar/console/issues/7032",
         "created_at": "2026-04-12T23:17:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "selector, workload, networkpolicy",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Label selector injection via unsanitized workload name path parameter leaking pods from other workloads",
-        "url": "https://github.com/kubestellar/console/issues/7004",
-        "created_at": "2026-04-12T22:28:59Z"
       },
       "repos": [
         "console"
@@ -809,6 +795,20 @@
       "closed_count": 1
     },
     {
+      "name": "workload, label, selector",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Label selector injection via unsanitized workload name path parameter leaking pods from other workloads",
+        "url": "https://github.com/kubestellar/console/issues/7004",
+        "created_at": "2026-04-12T22:28:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "runanalysis, e03254, d260",
       "issue_count": 1,
       "recent_issue": {
@@ -837,12 +837,26 @@
       "closed_count": 1
     },
     {
-      "name": "variable, value, configuration",
+      "name": "variable, configuration, value",
       "issue_count": 1,
       "recent_issue": {
         "title": "ai.defaultMode and ai.tokenLimits values in values.yaml are never wired to container environment variables",
         "url": "https://github.com/kubestellar/console/issues/6991",
         "created_at": "2026-04-12T22:02:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "networkpolicy, selector, disabled",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "NetworkPolicy disabled by default with no Egress rules and no source selector when enabled",
+        "url": "https://github.com/kubestellar/console/issues/6989",
+        "created_at": "2026-04-12T22:02:00Z"
       },
       "repos": [
         "console"

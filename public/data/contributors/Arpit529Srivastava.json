@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-20T14:44:33.810Z",
+  "generated_at": "2026-04-20T18:29:27.655Z",
   "total_issues_opened": 98,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 30750,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 35
+      "open_count": 0,
+      "closed_count": 36
     },
     {
       "name": "ss, testing, @arpit529srivastava",
@@ -123,7 +123,7 @@
       "closed_count": 3
     },
     {
-      "name": "button, cta, modal",
+      "name": "button, cta, primary",
       "issue_count": 3,
       "recent_issue": {
         "title": "bug: Primary CTA Button (“Install to Console”) is Partially Overlapped in Security Audit Modal",
@@ -219,8 +219,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "mutable, module, cb7f8906",
@@ -678,18 +678,6 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/27",
         "repo": "console-marketplace",
         "topic_match": "kustomizations, crds, fd2ed2"
-      },
-      {
-        "title": "Stats overview labels truncated with ellipsis on My Clusters page",
-        "url": "https://github.com/kubestellar/console/issues/9164",
-        "repo": "console",
-        "topic_match": "healthy, filter, count"
-      },
-      {
-        "title": "Popup modal (terminal) overlaps incorrectly with layout causing header to be hidden and navbar to overlap",
-        "url": "https://github.com/kubestellar/console/issues/9150",
-        "repo": "console",
-        "topic_match": "button, cta, modal"
       }
     ],
     "stretch": [

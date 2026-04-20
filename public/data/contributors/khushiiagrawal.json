@@ -1,6 +1,6 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-20T14:44:34.132Z",
+  "generated_at": "2026-04-20T18:29:27.979Z",
   "total_issues_opened": 63,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
   "total_points": 27500,
@@ -629,14 +629,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "\"Create\" button overflows container in Local Clusters form layout",
-        "url": "https://github.com/kubestellar/console/issues/9154",
-        "repo": "console",
-        "topic_match": "form, subscribe, newsletter"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Deployments & GitOps",

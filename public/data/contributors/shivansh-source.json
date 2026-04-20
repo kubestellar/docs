@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-20T14:44:34.539Z",
+  "generated_at": "2026-04-20T18:29:28.390Z",
   "total_issues_opened": 76,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 22850,
@@ -284,12 +284,6 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "test, httptest, backend"
-      },
-      {
-        "title": "\"Create\" button overflows container in Local Clusters form layout",
-        "url": "https://github.com/kubestellar/console/issues/9154",
-        "repo": "console",
-        "topic_match": "group, form, button"
       }
     ],
     "stretch": [
