@@ -1,6 +1,6 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-20T03:09:42.632Z",
+  "generated_at": "2026-04-20T06:49:29.306Z",
   "total_issues_opened": 1020,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
   "total_points": 3641050,
@@ -99,17 +99,18 @@
     },
     {
       "name": "link, break, url",
-      "issue_count": 35,
+      "issue_count": 37,
       "recent_issue": {
         "title": "Broken link: https://kubestellar.io/docs/what-is-kubestellar/overview...",
         "url": "https://github.com/kubestellar/docs/issues/1463",
         "created_at": "2026-04-15T06:49:57Z"
       },
       "repos": [
+        "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 35
+      "closed_count": 37
     },
     {
       "name": "ci, release, repo",
@@ -374,21 +375,6 @@
       },
       "repos": [
         "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "preview, markdown, linked",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Add markdown preview toggle for issue description in Contribute dialog",
-        "url": "https://github.com/kubestellar/console/issues/3455",
-        "created_at": "2026-03-24T17:27:14Z"
-      },
-      "repos": [
-        "console",
-        "docs"
       ],
       "open_count": 0,
       "closed_count": 2

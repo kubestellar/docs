@@ -1,17 +1,17 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-20T03:12:46.642Z",
-  "total_issues_opened": 10,
+  "generated_at": "2026-04-20T06:52:30.190Z",
+  "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-  "total_points": 13100,
+  "total_points": 14500,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 22,
   "cadence": {
-    "avg_per_week": 0.7,
-    "avg_per_day": 0.05,
+    "avg_per_week": 1,
+    "avg_per_day": 0.07,
     "by_day_of_week": [
-      1,
+      5,
       1,
       5,
       0,
@@ -25,7 +25,7 @@
       0,
       0,
       0,
-      2,
+      6,
       1,
       1,
       1,
@@ -49,9 +49,65 @@
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2025-10-01T13:51:13.000Z",
-    "last_issue_at": "2026-04-18T16:51:45.000Z"
+    "last_issue_at": "2026-04-20T05:55:19.000Z"
   },
   "topics": [
+    {
+      "name": "metric, sequential, kubernetes",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "bug: Critical health and metric functions silently swallow Kubernetes API errors",
+        "url": "https://github.com/kubestellar/console/issues/9091",
+        "created_at": "2026-04-20T05:53:38Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
+      "name": "selector, invalid, query",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug:  Invalid Kubernetes label selectors in cluster queries fail silently without error feedback",
+        "url": "https://github.com/kubestellar/console/issues/9092",
+        "created_at": "2026-04-20T05:55:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "intel, gaudi, accelerator",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Intel and Gaudi GPU usage tracking missing in pod resource views",
+        "url": "https://github.com/kubestellar/console/issues/9090",
+        "created_at": "2026-04-20T05:51:01Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "credential, cache, authentication",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Authentication failures bypass health cache, causing exec-plugin spam",
+        "url": "https://github.com/kubestellar/console/issues/9089",
+        "created_at": "2026-04-20T05:41:39Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
     {
       "name": "rank, dynamic, contributor",
       "issue_count": 1,
@@ -73,20 +129,6 @@
         "title": "bug: Brittle SQLite transactions leak resources on context cancellation",
         "url": "https://github.com/kubestellar/console/issues/8854",
         "created_at": "2026-04-18T15:48:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "metric, sequential, capturesnapshot",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Sequential metric collection in captureSnapshot leads to timeouts",
-        "url": "https://github.com/kubestellar/console/issues/8853",
-        "created_at": "2026-04-18T15:45:43Z"
       },
       "repos": [
         "console"
@@ -199,16 +241,10 @@
         "title": "feature: GPU Memory Metrics via Metrics-Server Integration",
         "url": "https://github.com/kubestellar/console/issues/8989",
         "repo": "console",
-        "topic_match": "metric, sequential, capturesnapshot"
+        "topic_match": "metric, sequential, kubernetes"
       }
     ],
     "stretch": [
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
       {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
@@ -222,16 +258,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       }
     ]
   },
@@ -282,7 +324,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 8
+      "issue_count": 12
     }
   ]
 }

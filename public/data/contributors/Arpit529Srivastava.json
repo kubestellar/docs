@@ -1,17 +1,17 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-20T03:12:45.899Z",
-  "total_issues_opened": 83,
+  "generated_at": "2026-04-20T06:52:29.386Z",
+  "total_issues_opened": 98,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
-  "total_points": 26250,
+  "total_points": 30750,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 12,
+  "rank": 10,
   "cadence": {
-    "avg_per_week": 6.7,
-    "avg_per_day": 0.61,
+    "avg_per_week": 7.9,
+    "avg_per_day": 0.68,
     "by_day_of_week": [
-      0,
+      15,
       8,
       18,
       15,
@@ -24,8 +24,8 @@
       0,
       0,
       0,
-      0,
-      0,
+      2,
+      13,
       0,
       0,
       1,
@@ -45,26 +45,26 @@
       0,
       0
     ],
-    "current_streak_weeks": 6,
-    "longest_streak_weeks": 6,
+    "current_streak_weeks": 7,
+    "longest_streak_weeks": 7,
     "trend": "steady",
     "first_issue_at": "2025-11-27T13:42:14.000Z",
-    "last_issue_at": "2026-04-11T16:14:10.000Z"
+    "last_issue_at": "2026-04-20T05:03:26.000Z"
   },
   "topics": [
     {
       "name": "@arpit529srivastava, api, vcluster",
-      "issue_count": 36,
+      "issue_count": 37,
       "recent_issue": {
-        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
-        "url": "https://github.com/kubestellar/console/issues/6512",
-        "created_at": "2026-04-11T16:14:10Z"
+        "title": "[E2E Bug] liveMocks.ts uses Math.random() for API response delays — non-deterministic test timing",
+        "url": "https://github.com/kubestellar/console/issues/9086",
+        "created_at": "2026-04-20T05:02:57Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 36
+      "open_count": 3,
+      "closed_count": 34
     },
     {
       "name": "ss, testing, @arpit529srivastava",
@@ -93,6 +93,20 @@
       ],
       "open_count": 0,
       "closed_count": 4
+    },
+    {
+      "name": "ms, e2e, flakiness",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "[E2E Bug] networkidle waits with .catch(() => {}) silently swallow failures across 45+ locations",
+        "url": "https://github.com/kubestellar/console/issues/9082",
+        "created_at": "2026-04-20T05:01:56Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 3,
+      "closed_count": 0
     },
     {
       "name": "theme, light, browser",
@@ -138,6 +152,20 @@
       "closed_count": 3
     },
     {
+      "name": "fixture, helper, login",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "[E2E Bug] mockAPI fixture routes are never unrouted — handlers stack and earlier mocks win",
+        "url": "https://github.com/kubestellar/console/issues/9085",
+        "created_at": "2026-04-20T05:02:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 2,
+      "closed_count": 0
+    },
+    {
       "name": "upload, screenshots, contribute",
       "issue_count": 2,
       "recent_issue": {
@@ -179,6 +207,118 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "compliance, minute, ci",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "E2E Bug] Compliance suite runs as a single 40-minute monolithic test — blocks CI and has no granular failure isolation",
+        "url": "https://github.com/kubestellar/console/issues/9088",
+        "created_at": "2026-04-20T05:03:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "mutable, module, cb7f8906",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[E2E Bug] deploy-dashboard.spec.ts uses module-level mutable state — tests interfere with each other",
+        "url": "https://github.com/kubestellar/console/issues/9087",
+        "created_at": "2026-04-20T05:03:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "suppress, broad, a483c08c",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[E2E Bug] Overly broad console error suppression hides real production crashes",
+        "url": "https://github.com/kubestellar/console/issues/9083",
+        "created_at": "2026-04-20T05:02:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "setupdemomode, a46610d5, b2db92387d06",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "E2E Bug] Three duplicate setupDemoMode functions with inconsistent implementations",
+        "url": "https://github.com/kubestellar/console/issues/9081",
+        "created_at": "2026-04-20T05:01:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "aea4, f825dd2484, skip",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[E2E Bug] GPUOverview tests silently skip when card is not visible — hides rendering failures",
+        "url": "https://github.com/kubestellar/console/issues/9080",
+        "created_at": "2026-04-20T05:01:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "e17b9d78, a2e3, e53800196",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[E2E Bug] auth.setup.ts is dead code — permanently ignored in config but still in the repo",
+        "url": "https://github.com/kubestellar/console/issues/9076",
+        "created_at": "2026-04-20T05:00:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "f676db1, a1bd, b428c13c01e",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "`[E2E Bug] Dashboard \"cards have proper structure\" test uses vacuous assertion that can never fail`",
+        "url": "https://github.com/kubestellar/console/issues/9074",
+        "created_at": "2026-04-20T04:59:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "mcs, serviceexport, e288939",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ServiceExport / ServiceImport listing silently swallows ALL errors (including auth/network) by treating every error as \"CRD not installed\"",
+        "url": "https://github.com/kubestellar/console/issues/6510",
+        "created_at": "2026-04-11T16:13:01Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "getworkload, listworkloadsforcluster, linear",
@@ -313,6 +453,20 @@
         "title": "Partial Database Import Failure (No Transaction Rollback) - /api/dashboards/import",
         "url": "https://github.com/kubestellar/console/issues/3145",
         "created_at": "2026-03-22T11:22:41Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "kustomizations, crds, fd2ed2",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Swallowed Target Cluster Errors on Missing CRDs (/api/gitops/kustomizations)",
+        "url": "https://github.com/kubestellar/console/issues/3142",
+        "created_at": "2026-03-22T11:07:10Z"
       },
       "repos": [
         "console"
@@ -504,7 +658,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "card: Implement Flux CD monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/27",
+        "repo": "console-marketplace",
+        "topic_match": "kustomizations, crds, fd2ed2"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",
@@ -525,16 +686,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
         "name": "Observability & Logs",
         "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
         "description": "Log streaming, event timeline, alerting, notifications",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       }
     ]
   },
@@ -585,7 +746,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 26
+      "issue_count": 41
     }
   ]
 }

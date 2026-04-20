@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-20T03:10:41.410Z",
+  "generated_at": "2026-04-20T06:50:27.553Z",
   "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
@@ -110,20 +110,6 @@
       "closed_count": 3
     },
     {
-      "name": "test, mock, order",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Shared localStorage mock state leaks across tests",
-        "url": "https://github.com/kubestellar/console/issues/7512",
-        "created_at": "2026-04-13T11:43:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
       "name": "infinity, heatmap, valueresolvers",
       "issue_count": 3,
       "recent_issue": {
@@ -186,6 +172,20 @@
         "title": "Meta description cleanup leaves stale global document state",
         "url": "https://github.com/kubestellar/console/issues/7553",
         "created_at": "2026-04-13T13:23:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "mock, order, flaky",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Shared localStorage mock state leaks across tests",
+        "url": "https://github.com/kubestellar/console/issues/7512",
+        "created_at": "2026-04-13T11:43:50Z"
       },
       "repos": [
         "console"
@@ -657,6 +657,20 @@
       "closed_count": 1
     },
     {
+      "name": "module, test, cc0f252e8db",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Global mutable mock state leaks across tests and user flows",
+        "url": "https://github.com/kubestellar/console/issues/7419",
+        "created_at": "2026-04-13T09:01:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "memory, share, c6c475",
       "issue_count": 1,
       "recent_issue": {
@@ -839,7 +853,7 @@
       "closed_count": 1
     },
     {
-      "name": "debt, ts, usecacheddata",
+      "name": "debt, usecacheddata, ts",
       "issue_count": 1,
       "recent_issue": {
         "title": "Known shared-mutation hazards inside concurrency callbacks (ratcheted technical debt)",
@@ -1682,6 +1696,12 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "[E2E Bug] deploy-dashboard.spec.ts uses module-level mutable state — tests interfere with each other",
+        "url": "https://github.com/kubestellar/console/issues/9087",
+        "repo": "console",
+        "topic_match": "module, test, cc0f252e8db"
+      },
+      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
@@ -1690,16 +1710,16 @@
     ],
     "stretch": [
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Charts & Visualizations",
