@@ -1,15 +1,15 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-19T22:17:29.380Z",
-  "total_issues_opened": 28,
+  "generated_at": "2026-04-20T03:12:46.307Z",
+  "total_issues_opened": 29,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
-  "total_points": 22700,
+  "total_points": 25200,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 16,
+  "rank": 15,
   "cadence": {
-    "avg_per_week": 2.3,
-    "avg_per_day": 0.77,
+    "avg_per_week": 2.4,
+    "avg_per_day": 0.79,
     "by_day_of_week": [
       0,
       0,
@@ -17,7 +17,7 @@
       0,
       6,
       1,
-      21
+      22
     ],
     "by_hour_of_day": [
       0,
@@ -42,29 +42,29 @@
       2,
       4,
       2,
-      0,
+      1,
       0
     ],
     "current_streak_weeks": 1,
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-14T08:41:29.000Z",
-    "last_issue_at": "2026-04-19T21:37:35.000Z"
+    "last_issue_at": "2026-04-19T22:20:58.000Z"
   },
   "topics": [
     {
-      "name": ":/, feature, relate",
-      "issue_count": 19,
+      "name": ":/, feature, limit",
+      "issue_count": 20,
       "recent_issue": {
-        "title": "feature: Add Health Check Endpoint for GitHub Token",
-        "url": "https://github.com/kubestellar/console/issues/9063",
-        "created_at": "2026-04-19T21:37:35Z"
+        "title": "feature: Add resource limits to db-restore init container",
+        "url": "https://github.com/kubestellar/console/issues/9067",
+        "created_at": "2026-04-19T22:20:58Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 3,
-      "closed_count": 16
+      "open_count": 2,
+      "closed_count": 18
     },
     {
       "name": "watcher, backoff, leak",
@@ -247,7 +247,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 22
+      "issue_count": 23
     }
   ]
 }

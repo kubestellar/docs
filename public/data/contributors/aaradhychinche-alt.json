@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-19T22:17:21.139Z",
+  "generated_at": "2026-04-20T03:12:38.084Z",
   "total_issues_opened": 451,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 132250,
@@ -364,12 +364,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "card: Implement Artifact Hub monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/58",
-        "repo": "console-marketplace",
-        "topic_match": "artifact, green, appear"
-      },
       {
         "title": "card: Implement Harbor Registry monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/16",

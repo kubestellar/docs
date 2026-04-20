@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-19T22:17:28.591Z",
+  "generated_at": "2026-04-20T03:12:45.658Z",
   "total_issues_opened": 99,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 34950,
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 2,
-      "closed_count": 70
+      "open_count": 0,
+      "closed_count": 72
     },
     {
       "name": "router, gin, cors",

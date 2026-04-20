@@ -1,6 +1,6 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-04-19T22:17:29.576Z",
+  "generated_at": "2026-04-20T03:12:46.664Z",
   "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
   "total_points": 6250,
@@ -138,7 +138,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "[Auto-QA] Components missing dark mode support",
+        "url": "https://github.com/kubestellar/console/issues/9071",
+        "repo": "console",
+        "topic_match": "hover, text, projects"
+      }
+    ],
     "stretch": [
       {
         "name": "Dashboard & Cards",
