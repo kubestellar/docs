@@ -1,11 +1,11 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-20T10:43:05.429Z",
+  "generated_at": "2026-04-20T14:44:34.742Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-  "total_points": 14900,
-  "level": "Pilot",
-  "level_rank": 4,
+  "total_points": 15400,
+  "level": "Commander",
+  "level_rank": 5,
   "rank": 22,
   "cadence": {
     "avg_per_week": 1,
@@ -53,22 +53,8 @@
   },
   "topics": [
     {
-      "name": "metric, sequential, kubernetes",
+      "name": "selector, kubernetes, v0",
       "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: Critical health and metric functions silently swallow Kubernetes API errors",
-        "url": "https://github.com/kubestellar/console/issues/9091",
-        "created_at": "2026-04-20T05:53:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 1
-    },
-    {
-      "name": "selector, invalid, query",
-      "issue_count": 1,
       "recent_issue": {
         "title": "bug:  Invalid Kubernetes label selectors in cluster queries fail silently without error feedback",
         "url": "https://github.com/kubestellar/console/issues/9092",
@@ -77,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "intel, gaudi, accelerator",
@@ -105,8 +91,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "rank, dynamic, contributor",
@@ -129,6 +115,20 @@
         "title": "bug: Brittle SQLite transactions leak resources on context cancellation",
         "url": "https://github.com/kubestellar/console/issues/8854",
         "created_at": "2026-04-18T15:48:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "metric, sequential, capturesnapshot",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Sequential metric collection in captureSnapshot leads to timeouts",
+        "url": "https://github.com/kubestellar/console/issues/8853",
+        "created_at": "2026-04-18T15:45:43Z"
       },
       "repos": [
         "console"
@@ -238,10 +238,16 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "feature: GPU memory metrics via DCGM exporter (split from #8989)",
+        "url": "https://github.com/kubestellar/console/issues/9135",
+        "repo": "console",
+        "topic_match": "metric, sequential, capturesnapshot"
+      },
+      {
         "title": "feature: GPU Memory Metrics via Metrics-Server Integration",
         "url": "https://github.com/kubestellar/console/issues/8989",
         "repo": "console",
-        "topic_match": "metric, sequential, kubernetes"
+        "topic_match": "metric, sequential, capturesnapshot"
       }
     ],
     "stretch": [

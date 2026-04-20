@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-20T10:41:04.840Z",
+  "generated_at": "2026-04-20T14:42:18.182Z",
   "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
@@ -363,20 +363,6 @@
       "closed_count": 1
     },
     {
-      "name": "serviceaccount, grant, d13d796a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ServiceAccount grant can be submitted without required namespace",
-        "url": "https://github.com/kubestellar/console/issues/7606",
-        "created_at": "2026-04-13T14:48:34Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "confirmation, share, e10de9",
       "issue_count": 1,
       "recent_issue": {
@@ -391,7 +377,7 @@
       "closed_count": 1
     },
     {
-      "name": "username, trim, input",
+      "name": "username, trim, dfbadcc3",
       "issue_count": 1,
       "recent_issue": {
         "title": "GitHub username validation runs before trimming input",
@@ -727,7 +713,7 @@
       "closed_count": 1
     },
     {
-      "name": "report, readiness, c37629f",
+      "name": "readiness, report, c37629f",
       "issue_count": 1,
       "recent_issue": {
         "title": "Client readiness can report healthy after stop",
@@ -769,7 +755,7 @@
       "closed_count": 1
     },
     {
-      "name": "entry, size, d1b78c5",
+      "name": "entry, d1b78c5, e955",
       "issue_count": 1,
       "recent_issue": {
         "title": "Revocation cache “max size” is not actually enforced",
@@ -811,7 +797,7 @@
       "closed_count": 1
     },
     {
-      "name": "template, layout, apply",
+      "name": "template, apply, layout",
       "issue_count": 1,
       "recent_issue": {
         "title": "Template Card Layout Sizes Are Dropped On Apply",
@@ -1371,6 +1357,20 @@
       "closed_count": 1
     },
     {
+      "name": "solid, offline, style",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Offline clusters styling in Stats Overview is solid",
+        "url": "https://github.com/kubestellar/console/issues/4127",
+        "created_at": "2026-04-01T12:54:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "creategithubissue, dead, screenshots",
       "issue_count": 1,
       "recent_issue": {
@@ -1665,7 +1665,7 @@
       "closed_count": 1
     },
     {
-      "name": "kc, unclear, agent",
+      "name": "unclear, kc, agent",
       "issue_count": 1,
       "recent_issue": {
         "title": "kc-agent requirement unclear in Kubernetes setup",
@@ -1702,10 +1702,28 @@
         "topic_match": "module, test, cc0f252e8db"
       },
       {
+        "title": "Feedback modal does not close on outside click (backdrop interaction missing)",
+        "url": "https://github.com/kubestellar/console/issues/9159",
+        "repo": "console",
+        "topic_match": "modal, deep, e7ef91"
+      },
+      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
+      },
+      {
+        "title": "Console Studio modal closes unexpectedly on edge/sidebar clicks",
+        "url": "https://github.com/kubestellar/console/issues/9165",
+        "repo": "console",
+        "topic_match": "modal, deep, e7ef91"
+      },
+      {
+        "title": "Stats overview labels truncated with ellipsis on My Clusters page",
+        "url": "https://github.com/kubestellar/console/issues/9164",
+        "repo": "console",
+        "topic_match": "solid, offline, style"
       }
     ],
     "stretch": [

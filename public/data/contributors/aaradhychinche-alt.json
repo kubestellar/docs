@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-20T10:42:57.002Z",
+  "generated_at": "2026-04-20T14:44:25.325Z",
   "total_issues_opened": 451,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 132250,
@@ -364,6 +364,12 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "System freeze/lag when opening “Save Resolution” modal in AI Missions",
+        "url": "https://github.com/kubestellar/console/issues/9163",
+        "repo": "console",
+        "topic_match": "resolution, blocked, d1fa8f9"
+      },
       {
         "title": "card: Implement Harbor Registry monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/16",

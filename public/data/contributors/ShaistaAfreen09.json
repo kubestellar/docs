@@ -1,6 +1,6 @@
 {
   "login": "ShaistaAfreen09",
-  "generated_at": "2026-04-20T10:43:05.460Z",
+  "generated_at": "2026-04-20T14:44:34.772Z",
   "total_issues_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/97823364?v=4",
   "total_points": 1400,
@@ -82,7 +82,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "security: CodeQL backlog — 78 high/critical alerts (umbrella tracker)",
+        "url": "https://github.com/kubestellar/console/issues/9111",
+        "repo": "console",
+        "topic_match": "badge, alert, critical"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

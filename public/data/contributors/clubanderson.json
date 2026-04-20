@@ -1,17 +1,17 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-20T10:40:06.324Z",
-  "total_issues_opened": 1020,
+  "generated_at": "2026-04-20T14:41:12.527Z",
+  "total_issues_opened": 1033,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3641050,
+  "total_points": 3665150,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 81,
-    "avg_per_day": 4.11,
+    "avg_per_week": 82.1,
+    "avg_per_day": 4.15,
     "by_day_of_week": [
-      120,
+      133,
       119,
       209,
       156,
@@ -32,9 +32,9 @@
       8,
       6,
       6,
-      5,
-      70,
-      55,
+      16,
+      71,
+      56,
       92,
       35,
       41,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-20T02:04:19.000Z"
+    "last_issue_at": "2026-04-20T14:00:48.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 715,
+      "issue_count": 716,
       "recent_issue": {
-        "title": "[Auto-QA] Components missing dark mode support",
-        "url": "https://github.com/kubestellar/console/issues/9071",
-        "created_at": "2026-04-20T02:04:19Z"
+        "title": "🐛 7 test failure(s) in Coverage Suite run #1114",
+        "url": "https://github.com/kubestellar/console/issues/9161",
+        "created_at": "2026-04-20T14:00:48Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 6,
+      "open_count": 7,
       "closed_count": 709
     },
     {
@@ -113,19 +113,33 @@
       "closed_count": 37
     },
     {
-      "name": "ci, release, repo",
-      "issue_count": 16,
+      "name": "release, ci, repo",
+      "issue_count": 18,
       "recent_issue": {
-        "title": "feat: auto-generate nightly release notes from merged PR titles",
-        "url": "https://github.com/kubestellar/console/issues/8778",
-        "created_at": "2026-04-18T01:03:11Z"
+        "title": "security: 223 PinnedDependenciesID — GitHub Actions use unpinned action refs",
+        "url": "https://github.com/kubestellar/console/issues/9128",
+        "created_at": "2026-04-20T12:55:37Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 16
+      "closed_count": 18
+    },
+    {
+      "name": "js, vendor, alert",
+      "issue_count": 18,
+      "recent_issue": {
+        "title": "security: Go backend — command-injection, allocation-overflow, regex-anchor + medium clusters",
+        "url": "https://github.com/kubestellar/console/issues/9127",
+        "created_at": "2026-04-20T12:55:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 3,
+      "closed_count": 15
     },
     {
       "name": "outreach, acmm, file",
@@ -170,20 +184,6 @@
       "closed_count": 8
     },
     {
-      "name": "js, vendor, chunk",
-      "issue_count": 7,
-      "recent_issue": {
-        "title": "[Auto-QA] Bundle has JS chunks over 300KB",
-        "url": "https://github.com/kubestellar/console/issues/7366",
-        "created_at": "2026-04-13T08:02:34Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 7
-    },
-    {
       "name": "replace, color, hardcoded",
       "issue_count": 7,
       "recent_issue": {
@@ -210,20 +210,6 @@
       ],
       "open_count": 0,
       "closed_count": 6
-    },
-    {
-      "name": "alert, codeql, site",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "security: CodeQL alerts remain after #9031/#9032 merges — sanitizer not recognized by CodeQL taint model",
-        "url": "https://github.com/kubestellar/console/issues/9033",
-        "created_at": "2026-04-19T17:40:30Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 4
     },
     {
       "name": "typo, readme, fix",
@@ -476,6 +462,34 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "ram, metric, memory",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feature: GPU memory metrics via DCGM exporter (split from #8989)",
+        "url": "https://github.com/kubestellar/console/issues/9135",
+        "created_at": "2026-04-20T13:04:01Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "night, tests, journey",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Regression: Nightly UX Journey Tests failing 6 consecutive nights (onboarding-tour timeout, settings overflow)",
+        "url": "https://github.com/kubestellar/console/issues/9110",
+        "created_at": "2026-04-20T12:21:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "bounce, 13.6, avg",
@@ -800,6 +814,20 @@
       "closed_count": 1
     },
     {
+      "name": "mac, notification, macos",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: macOS notifications do not opening console console when clicked.",
+        "url": "https://github.com/kubestellar/console/issues/1509",
+        "created_at": "2026-02-28T00:34:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "aca5, d07cc35d7439, bogus",
       "issue_count": 1,
       "recent_issue": {
@@ -926,6 +954,20 @@
       "closed_count": 1
     },
     {
+      "name": "urunc, sandbox, unikernels",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "New install mission: urunc (CNCF Sandbox, 205 stars)",
+        "url": "https://github.com/kubestellar/console-kb/issues/2048",
+        "created_at": "2026-04-20T12:16:10Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "localization, doc, route",
       "issue_count": 1,
       "recent_issue": {
@@ -983,19 +1025,26 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "feature: GPU Memory Metrics via Metrics-Server Integration",
+        "url": "https://github.com/kubestellar/console/issues/8989",
+        "repo": "console",
+        "topic_match": "ram, metric, memory"
+      },
+      {
+        "title": "Token usage indicator always shows 0 despite active usage (Gemini & Copilot agents)",
+        "url": "https://github.com/kubestellar/console/issues/9160",
+        "repo": "console",
+        "topic_match": "token, validation, endpoint"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
         "name": "Security & RBAC",
@@ -1008,6 +1057,12 @@
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
@@ -1058,7 +1113,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 375
+      "issue_count": 388
     }
   ]
 }

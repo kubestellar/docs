@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-20T10:43:05.455Z",
+  "generated_at": "2026-04-20T14:44:34.767Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 3850,
@@ -123,7 +123,7 @@
       "closed_count": 1
     },
     {
-      "name": "oauth, env, secret",
+      "name": "oauth, env, jwt",
       "issue_count": 1,
       "recent_issue": {
         "title": "/startup-oauth.sh  script not working",

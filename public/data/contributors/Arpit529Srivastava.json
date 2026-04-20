@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-20T10:43:04.615Z",
+  "generated_at": "2026-04-20T14:44:33.810Z",
   "total_issues_opened": 98,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 30750,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "@arpit529srivastava, api, vcluster",
-      "issue_count": 37,
+      "name": "api, @arpit529srivastava, vcluster",
+      "issue_count": 36,
       "recent_issue": {
         "title": "[E2E Bug] liveMocks.ts uses Math.random() for API response delays — non-deterministic test timing",
         "url": "https://github.com/kubestellar/console/issues/9086",
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 3,
-      "closed_count": 34
+      "open_count": 1,
+      "closed_count": 35
     },
     {
       "name": "ss, testing, @arpit529srivastava",
@@ -105,8 +105,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 3,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "theme, light, browser",
@@ -152,7 +152,7 @@
       "closed_count": 3
     },
     {
-      "name": "fixture, helper, login",
+      "name": "fixture, login, helper",
       "issue_count": 2,
       "recent_issue": {
         "title": "[E2E Bug] mockAPI fixture routes are never unrouted — handlers stack and earlier mocks win",
@@ -162,8 +162,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 2,
-      "closed_count": 0
+      "open_count": 1,
+      "closed_count": 1
     },
     {
       "name": "upload, screenshots, contribute",
@@ -247,8 +247,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "setupdemomode, a46610d5, b2db92387d06",
@@ -261,8 +261,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "aea4, f825dd2484, skip",
@@ -275,8 +275,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "e17b9d78, a2e3, e53800196",
@@ -289,8 +289,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "f676db1, a1bd, b428c13c01e",
@@ -305,6 +305,20 @@
       ],
       "open_count": 1,
       "closed_count": 0
+    },
+    {
+      "name": "namespaces, getaccessiblenamespaces, scoped",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
+        "url": "https://github.com/kubestellar/console/issues/6512",
+        "created_at": "2026-04-11T16:14:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "mcs, serviceexport, e288939",
@@ -629,7 +643,7 @@
       "closed_count": 1
     },
     {
-      "name": "resolve, cce, d67652c81",
+      "name": "resolve, d67652c81, cce",
       "issue_count": 1,
       "recent_issue": {
         "title": "checking of the issue, if resolved or not?",
@@ -664,6 +678,18 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/27",
         "repo": "console-marketplace",
         "topic_match": "kustomizations, crds, fd2ed2"
+      },
+      {
+        "title": "Stats overview labels truncated with ellipsis on My Clusters page",
+        "url": "https://github.com/kubestellar/console/issues/9164",
+        "repo": "console",
+        "topic_match": "healthy, filter, count"
+      },
+      {
+        "title": "Popup modal (terminal) overlaps incorrectly with layout causing header to be hidden and navbar to overlap",
+        "url": "https://github.com/kubestellar/console/issues/9150",
+        "repo": "console",
+        "topic_match": "button, cta, modal"
       }
     ],
     "stretch": [

@@ -1,12 +1,12 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-20T10:43:04.895Z",
+  "generated_at": "2026-04-20T14:44:34.365Z",
   "total_issues_opened": 85,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
   "total_points": 26750,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 13,
+  "rank": 14,
   "cadence": {
     "avg_per_week": 7.1,
     "avg_per_day": 1.72,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 3,
-      "closed_count": 74
+      "open_count": 1,
+      "closed_count": 76
     },
     {
       "name": "linux, dev, ubuntu",

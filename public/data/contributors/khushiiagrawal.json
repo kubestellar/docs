@@ -1,12 +1,12 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-20T10:43:04.676Z",
+  "generated_at": "2026-04-20T14:44:34.132Z",
   "total_issues_opened": 63,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
   "total_points": 27500,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 12,
+  "rank": 13,
   "cadence": {
     "avg_per_week": 5.3,
     "avg_per_day": 4.87,
@@ -631,16 +631,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Feedback form allows full completion before revealing login requirement",
-        "url": "https://github.com/kubestellar/console/issues/9062",
+        "title": "\"Create\" button overflows container in Local Clusters form layout",
+        "url": "https://github.com/kubestellar/console/issues/9154",
         "repo": "console",
         "topic_match": "form, subscribe, newsletter"
-      },
-      {
-        "title": "[E2E Bug] GPUOverview tests silently skip when card is not visible — hides rendering failures",
-        "url": "https://github.com/kubestellar/console/issues/9080",
-        "repo": "console",
-        "topic_match": "test, share, assert"
       }
     ],
     "stretch": [

@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-20T10:43:04.033Z",
+  "generated_at": "2026-04-20T14:44:33.141Z",
   "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 45750,
@@ -631,7 +631,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Feedback modal does not close on outside click (backdrop interaction missing)",
+        "url": "https://github.com/kubestellar/console/issues/9159",
+        "repo": "console",
+        "topic_match": "dismiss, banner, close"
+      },
+      {
+        "title": "Missions incorrectly marked as \"Failed\" after session expiry despite successful last response",
+        "url": "https://github.com/kubestellar/console/issues/9157",
+        "repo": "console",
+        "topic_match": "session, auth, traffic"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",

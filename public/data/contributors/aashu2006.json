@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-20T10:42:26.244Z",
+  "generated_at": "2026-04-20T14:43:50.381Z",
   "total_issues_opened": 513,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 141600,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 383,
+      "issue_count": 382,
       "recent_issue": {
         "title": "Warning Events card shows hardcoded English pluralization and error messages",
         "url": "https://github.com/kubestellar/console/issues/9043",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 383
+      "closed_count": 382
     },
     {
       "name": "kubara, chart, control",
@@ -1367,16 +1367,24 @@
       ],
       "open_count": 0,
       "closed_count": 1
+    },
+    {
+      "name": "alert, eb96b4e6, c3aaad656b1f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "HardwareHealthCard: clearing an alert silently fails - user gets no feedback",
+        "url": "https://github.com/kubestellar/console/issues/4977",
+        "created_at": "2026-04-06T13:58:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     }
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "bug:  Invalid Kubernetes label selectors in cluster queries fail silently without error feedback",
-        "url": "https://github.com/kubestellar/console/issues/9092",
-        "repo": "console",
-        "topic_match": "selector, workload, networkpolicy"
-      },
       {
         "title": "card: Implement SPIFFE monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
