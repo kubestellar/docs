@@ -227,6 +227,19 @@ export default function MaintainerLadderPage() {
                 {t("subtitle")}
               </p>
 
+              {/* Points-based scoring note — the ladder recently moved from
+                  PR/issue counts to leaderboard points. Explains the system
+                  so contributors know how to read the per-level requirements. */}
+              <p className="mt-4 text-sm text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                {t("pointsNote")}{" "}
+                <Link
+                  href="/leaderboard"
+                  className="text-blue-400 hover:text-blue-300 underline underline-offset-2"
+                >
+                  {t("pointsNoteCtaLeaderboard")}
+                </Link>
+              </p>
+
               {/* CTAs */}
               <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                 <div className="relative group">
