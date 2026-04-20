@@ -559,6 +559,35 @@ export default function LeaderboardPage() {
                   <span><code className="text-pink-400">utm_term</code> = your GitHub handle, lowercase</span>
                   <span><code className="text-pink-400">utm_medium</code> = twitter, linkedin, blog, youtube, devto, etc.</span>
                 </div>
+
+                {/* Why counts may look "stuck" — reduce support churn */}
+                <details className="mt-4 text-xs text-gray-500">
+                  <summary className="cursor-pointer text-gray-400 hover:text-white transition-colors">
+                    Why is my Social count not updating?
+                  </summary>
+                  <ul className="mt-2 ml-4 list-disc space-y-1.5">
+                    <li>
+                      <span className="text-gray-300">Google Analytics attribution lag:</span> The
+                      <code className="mx-1 text-pink-400">utm_campaign</code> /
+                      <code className="mx-1 text-pink-400">utm_term</code> dimensions take
+                      <span className="text-white font-medium"> 24&ndash;48 hours</span> to finalize after a click.
+                      Same-day shares typically appear here the next day.
+                    </li>
+                    <li>
+                      <span className="text-gray-300">Chat apps strip UTM tags:</span> WhatsApp, Discord, Messenger, and some LinkedIn preview renderers strip the
+                      <code className="mx-1 text-pink-400">?utm_*=&hellip;</code> query string when generating link previews. Recipients who click the previewed
+                      (un-tagged) link land as <span className="text-gray-400">direct</span> / <span className="text-gray-400">(not set)</span> traffic and cannot be credited back to you. Prefer plain-text shares via email, SMS, GitHub comments, or blog posts where the query string is preserved.
+                    </li>
+                    <li>
+                      <span className="text-gray-300">Sessions, not page views:</span> One recipient clicking your link multiple times within a 30-minute window counts as a single session. To grow the count, share to
+                      <span className="text-white"> more people</span>, not the same people more often.
+                    </li>
+                    <li>
+                      <span className="text-gray-300">Legacy <code className="text-pink-400">intern-0X</code> links keep working,</span> but new shares should use
+                      <code className="mx-1 text-pink-400">utm_term=your-github-handle</code> so credits roll up under your GitHub identity rather than a numbered slot.
+                    </li>
+                  </ul>
+                </details>
               </div>
             )}
           </div>
