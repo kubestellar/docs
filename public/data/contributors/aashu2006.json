@@ -1,9 +1,9 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-20T18:28:46.289Z",
+  "generated_at": "2026-04-20T22:25:00.249Z",
   "total_issues_opened": 513,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 141600,
+  "total_points": 142000,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
@@ -431,7 +431,7 @@
       "closed_count": 1
     },
     {
-      "name": "theme, adapt, color",
+      "name": "adapt, theme, color",
       "issue_count": 1,
       "recent_issue": {
         "title": "Some pages do not adapt to theme changes due to hardcoded colors",
@@ -1404,6 +1404,12 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
         "topic_match": "extract, ffb011, f6f"
+      },
+      {
+        "title": "i18n compliance test hardcodes `['common.json', 'cards.json', 'status.json', 'errors.json']` — new locale namespaces not automatically tested",
+        "url": "https://github.com/kubestellar/console/issues/9243",
+        "repo": "console",
+        "topic_match": "locale, argument, formatting"
       }
     ],
     "stretch": [

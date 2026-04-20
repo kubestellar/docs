@@ -1,19 +1,19 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-20T18:27:18.700Z",
-  "total_issues_opened": 577,
+  "generated_at": "2026-04-20T22:23:27.189Z",
+  "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 2,
   "cadence": {
-    "avg_per_week": 48.1,
-    "avg_per_day": 8.49,
+    "avg_per_week": 48,
+    "avg_per_day": 8.48,
     "by_day_of_week": [
       161,
       34,
-      47,
+      46,
       86,
       78,
       125,
@@ -37,7 +37,7 @@
       67,
       45,
       30,
-      23,
+      22,
       2,
       0,
       0,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 438,
+      "issue_count": 444,
       "recent_issue": {
         "title": "ACMM badge not being rendered in README",
         "url": "https://github.com/kubestellar/console/issues/8979",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 438
+      "closed_count": 444
     },
     {
       "name": "invite, reward, storage",
@@ -124,20 +124,6 @@
       "closed_count": 3
     },
     {
-      "name": "ts, dynamiccardstore, dynamicstatsstore",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Re-loading from storage is additive and does not reconcile removals.",
-        "url": "https://github.com/kubestellar/console/issues/6681",
-        "created_at": "2026-04-11T22:04:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
       "name": "upgrade, vite, v8",
       "issue_count": 3,
       "recent_issue": {
@@ -166,7 +152,7 @@
       "closed_count": 2
     },
     {
-      "name": "meta, welcome, tag",
+      "name": "meta, tag, welcome",
       "issue_count": 2,
       "recent_issue": {
         "title": "Meta description cleanup leaves stale global document state",
@@ -180,7 +166,7 @@
       "closed_count": 2
     },
     {
-      "name": "mock, order, flaky",
+      "name": "order, mock, flaky",
       "issue_count": 2,
       "recent_issue": {
         "title": "Shared localStorage mock state leaks across tests",
@@ -236,20 +222,6 @@
       "closed_count": 2
     },
     {
-      "name": "tip, splash, f8da1cca",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Can we get tips on the splash page as well",
-        "url": "https://github.com/kubestellar/console/issues/5984",
-        "created_at": "2026-04-10T08:04:09Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "ksc, ccc5ee, bf27",
       "issue_count": 2,
       "recent_issue": {
@@ -260,20 +232,6 @@
       "repos": [
         "console",
         "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "image, 0.0.0, imagepullbackoff",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Default image tag (0.0.0) causes ImagePullBackOff",
-        "url": "https://github.com/kubestellar/console/issues/5526",
-        "created_at": "2026-04-08T17:04:54Z"
-      },
-      "repos": [
-        "console"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -545,7 +503,7 @@
       "closed_count": 1
     },
     {
-      "name": "vi, test, import",
+      "name": "vi, test, dacbbec",
       "issue_count": 1,
       "recent_issue": {
         "title": "Test file uses vi without importing it",
@@ -1119,6 +1077,20 @@
       "closed_count": 1
     },
     {
+      "name": "0.0.0, image, imagepullbackoff",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Default image tag (0.0.0) causes ImagePullBackOff",
+        "url": "https://github.com/kubestellar/console/issues/5526",
+        "created_at": "2026-04-08T17:04:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "//ghcr.io/kubestellar/charts/console, oci, maybe",
       "issue_count": 1,
       "recent_issue": {
@@ -1581,20 +1553,6 @@
       "closed_count": 1
     },
     {
-      "name": "daea7fae, fe83eaa81c, a551",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Goroutine leak",
-        "url": "https://github.com/kubestellar/console/issues/3429",
-        "created_at": "2026-03-24T14:37:49Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "order, warndefaultenvvars, ef820e",
       "issue_count": 1,
       "recent_issue": {
@@ -1696,12 +1654,6 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "[E2E Bug] deploy-dashboard.spec.ts uses module-level mutable state — tests interfere with each other",
-        "url": "https://github.com/kubestellar/console/issues/9087",
-        "repo": "console",
-        "topic_match": "module, test, cc0f252e8db"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
@@ -1788,7 +1740,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 486
+      "issue_count": 485
     }
   ]
 }

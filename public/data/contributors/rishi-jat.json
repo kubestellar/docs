@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-20T18:29:26.990Z",
+  "generated_at": "2026-04-20T22:25:43.452Z",
   "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 45750,
@@ -647,10 +647,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Missions incorrectly marked as \"Failed\" after session expiry despite successful last response",
-        "url": "https://github.com/kubestellar/console/issues/9157",
+        "title": "Missing E2E Coverage — No Onboarding Flow After Login for First-Time User",
+        "url": "https://github.com/kubestellar/console/issues/9238",
         "repo": "console",
-        "topic_match": "session, auth, traffic"
+        "topic_match": "onboarding, walkthrough, guide"
       }
     ],
     "stretch": [

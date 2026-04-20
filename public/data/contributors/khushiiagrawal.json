@@ -1,17 +1,17 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-20T18:29:27.979Z",
-  "total_issues_opened": 63,
+  "generated_at": "2026-04-20T22:25:43.941Z",
+  "total_issues_opened": 76,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 27500,
+  "total_points": 31400,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 13,
+  "rank": 10,
   "cadence": {
-    "avg_per_week": 5.3,
-    "avg_per_day": 4.87,
+    "avg_per_week": 6.3,
+    "avg_per_day": 5.33,
     "by_day_of_week": [
-      2,
+      15,
       18,
       35,
       0,
@@ -38,7 +38,7 @@
       0,
       1,
       2,
-      8,
+      21,
       0,
       0,
       0,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-06T12:23:43.000Z",
-    "last_issue_at": "2026-04-19T11:08:43.000Z"
+    "last_issue_at": "2026-04-20T18:44:16.000Z"
   },
   "topics": [
     {
-      "name": "test, share, assert",
-      "issue_count": 6,
+      "name": "test, @khushiiagrawal, spec",
+      "issue_count": 16,
       "recent_issue": {
-        "title": "bug: unsafe shared state in error-resilience.spec with fullyParallel: true",
-        "url": "https://github.com/kubestellar/console/issues/9002",
-        "created_at": "2026-04-19T11:08:43Z"
+        "title": "i18n compliance test hardcodes `['common.json', 'cards.json', 'status.json', 'errors.json']` — new locale namespaces not automatically tested",
+        "url": "https://github.com/kubestellar/console/issues/9243",
+        "created_at": "2026-04-20T18:44:16Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 6
+      "open_count": 8,
+      "closed_count": 8
     },
     {
       "name": "restart, watchdog, process",
@@ -95,26 +95,26 @@
       "closed_count": 4
     },
     {
+      "name": "vite, dev, flag",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "`security-compliance.spec.ts` ignores `playwright.config.ts` `baseURL` and hardcodes Vite dev server port",
+        "url": "https://github.com/kubestellar/console/issues/9242",
+        "created_at": "2026-04-20T18:43:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
       "name": "cancel, goroutines, acknowledgement",
       "issue_count": 2,
       "recent_issue": {
         "title": "bug: `handleKagentiSummary` fans out 4 goroutines but uses `r.Context()` as the parent — if the HTTP request is cancelled mid-way, all goroutines are cancelled without a partial response",
         "url": "https://github.com/kubestellar/console/issues/8131",
         "created_at": "2026-04-15T08:21:36Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "flag, second, vite",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: `startup-oauth.sh` passes `--dev` only to control the Vite server but the backend `go run ./cmd/console` always starts without the `--dev` flag, making the flag's semantics confusing",
-        "url": "https://github.com/kubestellar/console/issues/8126",
-        "created_at": "2026-04-15T08:20:13Z"
       },
       "repos": [
         "console"
@@ -250,6 +250,48 @@
       "closed_count": 2
     },
     {
+      "name": "scan, report, vector",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "The nightly RCE vector scan generates a report but may not fail the test on findings",
+        "url": "https://github.com/kubestellar/console/issues/9235",
+        "created_at": "2026-04-20T18:39:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "ttfi, performance, ms",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Performance tests in `web/e2e/perf/` measure metrics but don't assert against defined thresholds",
+        "url": "https://github.com/kubestellar/console/issues/9232",
+        "created_at": "2026-04-20T18:38:08Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "shared, locally, redefine",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "`mission-control-e2e.spec.ts` redefines `setupAuth` locally, shadowing any shared import",
+        "url": "https://github.com/kubestellar/console/issues/9230",
+        "created_at": "2026-04-20T18:25:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "god, file, cb677b",
       "issue_count": 1,
       "recent_issue": {
@@ -298,6 +340,20 @@
         "title": "bug: `silentRefresh()` in `ApiClient` does not set `credentials: 'include'`, so the HttpOnly refresh cookie is never sent",
         "url": "https://github.com/kubestellar/console/issues/8124",
         "created_at": "2026-04-15T08:19:34Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "second, flag, reset",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: `handle401()` in `api.ts` sets `handling401 = true` but the 10-second reset timer may fire after a successful re-login, blocking the next legitimate 401",
+        "url": "https://github.com/kubestellar/console/issues/8123",
+        "created_at": "2026-04-15T08:19:17Z"
       },
       "repos": [
         "console"
@@ -382,20 +438,6 @@
         "title": "bug: `handleWebSocket` does not enforce a maximum message size, allowing oversized JSON to exhaust memory",
         "url": "https://github.com/kubestellar/console/issues/8070",
         "created_at": "2026-04-15T04:51:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "theme, save, b80b5f5f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handleSettingsAll (PUT)` does not validate individual field values before saving, allowing empty or garbage settings to be persisted",
-        "url": "https://github.com/kubestellar/console/issues/8068",
-        "created_at": "2026-04-15T04:50:38Z"
       },
       "repos": [
         "console"
@@ -516,7 +558,7 @@
       "closed_count": 1
     },
     {
-      "name": "kagenti, dfe3f0, b6a",
+      "name": "kagenti, dfe3f0, bd144cabb5",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: `handleKagentCRDAgents` returns 500 instead of empty list for `GetDynamicClient` errors, inconsistent with all kagenti handlers",
@@ -650,16 +692,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       }
     ]
   },
@@ -710,7 +752,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 63
+      "issue_count": 76
     }
   ]
 }

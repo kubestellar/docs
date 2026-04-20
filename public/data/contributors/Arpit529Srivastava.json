@@ -1,12 +1,12 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-20T18:29:27.655Z",
+  "generated_at": "2026-04-20T22:25:44.232Z",
   "total_issues_opened": 98,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 30750,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 10,
+  "rank": 11,
   "cadence": {
     "avg_per_week": 7.9,
     "avg_per_day": 0.68,
@@ -162,8 +162,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "upload, screenshots, contribute",
@@ -233,8 +233,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "suppress, broad, a483c08c",
@@ -303,8 +303,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "namespaces, getaccessiblenamespaces, scoped",
