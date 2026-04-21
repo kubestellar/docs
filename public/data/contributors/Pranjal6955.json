@@ -1,6 +1,6 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-20T22:25:45.112Z",
+  "generated_at": "2026-04-21T03:13:17.823Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
   "total_points": 15400,
@@ -236,20 +236,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "feature: GPU memory metrics via DCGM exporter (split from #8989)",
-        "url": "https://github.com/kubestellar/console/issues/9135",
-        "repo": "console",
-        "topic_match": "metric, sequential, capturesnapshot"
-      },
-      {
-        "title": "feature: GPU Memory Metrics via Metrics-Server Integration",
-        "url": "https://github.com/kubestellar/console/issues/8989",
-        "repo": "console",
-        "topic_match": "metric, sequential, capturesnapshot"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Charts & Visualizations",

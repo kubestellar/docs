@@ -1,18 +1,18 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-20T22:22:20.105Z",
-  "total_issues_opened": 1045,
+  "generated_at": "2026-04-21T03:10:01.970Z",
+  "total_issues_opened": 1053,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3696400,
+  "total_points": 3719050,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 83.1,
-    "avg_per_day": 4.19,
+    "avg_per_week": 83.8,
+    "avg_per_day": 4.22,
     "by_day_of_week": [
-      145,
-      119,
+      149,
+      123,
       209,
       156,
       153,
@@ -21,8 +21,8 @@
     ],
     "by_hour_of_day": [
       53,
-      35,
-      107,
+      36,
+      110,
       33,
       42,
       28,
@@ -43,30 +43,30 @@
       36,
       22,
       22,
-      11
+      15
     ],
     "current_streak_weeks": 16,
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-20T18:47:43.000Z"
+    "last_issue_at": "2026-04-21T02:54:36.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 748,
+      "issue_count": 727,
       "recent_issue": {
-        "title": "🐛 7 test failure(s) in Coverage Suite run #1145",
-        "url": "https://github.com/kubestellar/console/issues/9246",
-        "created_at": "2026-04-20T18:47:43Z"
+        "title": "⚠️ Coverage regression: 89% → 0%",
+        "url": "https://github.com/kubestellar/console/issues/9315",
+        "created_at": "2026-04-21T02:54:36Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 11,
-      "closed_count": 737
+      "open_count": 6,
+      "closed_count": 721
     },
     {
       "name": "monitoring, card, implement",
@@ -110,6 +110,20 @@
       ],
       "open_count": 0,
       "closed_count": 35
+    },
+    {
+      "name": "js, alert, codeql",
+      "issue_count": 29,
+      "recent_issue": {
+        "title": "security: 14 PinnedDependenciesID alerts — Dockerfile, CI workflows, scripts",
+        "url": "https://github.com/kubestellar/console/issues/9272",
+        "created_at": "2026-04-20T23:54:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 29
     },
     {
       "name": "outreach, acmm, file",
@@ -502,8 +516,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "ref, pinneddependenciesid, action",
@@ -1039,26 +1053,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "feature: GPU Memory Metrics via Metrics-Server Integration",
-        "url": "https://github.com/kubestellar/console/issues/8989",
-        "repo": "console",
-        "topic_match": "ram, metric, memory"
-      },
-      {
-        "title": "No spec verifies that the 404 / not-found route renders a meaningful error page (not a blank page or crash)",
-        "url": "https://github.com/kubestellar/console/issues/9236",
-        "repo": "console",
-        "topic_match": "link, break, url"
-      },
-      {
-        "title": "`GPUOverview.spec.ts` — GPU-Specific Features Likely Not Covered Under Standard Mock Setup",
-        "url": "https://github.com/kubestellar/console/issues/9231",
-        "repo": "console",
-        "topic_match": "gpu, msw, node"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -1133,7 +1128,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 400
+      "issue_count": 408
     }
   ]
 }

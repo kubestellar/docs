@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-20T22:23:27.189Z",
+  "generated_at": "2026-04-21T03:11:03.078Z",
   "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 444,
+      "issue_count": 443,
       "recent_issue": {
         "title": "ACMM badge not being rendered in README",
         "url": "https://github.com/kubestellar/console/issues/8979",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 444
+      "closed_count": 443
     },
     {
       "name": "invite, reward, storage",
@@ -979,6 +979,20 @@
       "closed_count": 1
     },
     {
+      "name": "stopch, consolewatcher, e18d61a",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ConsoleWatcher cannot be safely restarted after Stop",
+        "url": "https://github.com/kubestellar/console/issues/6472",
+        "created_at": "2026-04-11T15:46:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "bind, b75b, cad4",
       "issue_count": 1,
       "recent_issue": {
@@ -1497,7 +1511,7 @@
       "closed_count": 1
     },
     {
-      "name": "information, panel, new",
+      "name": "information, new, panel",
       "issue_count": 1,
       "recent_issue": {
         "title": "User friendly information panels on unfamiliar use cases",
@@ -1658,6 +1672,12 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
+      },
+      {
+        "title": "🐛 3 test failure(s) in Coverage Suite run #1164",
+        "url": "https://github.com/kubestellar/console/issues/9305",
+        "repo": "console",
+        "topic_match": "module, test, cc0f252e8db"
       }
     ],
     "stretch": [

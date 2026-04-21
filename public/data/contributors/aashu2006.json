@@ -1,18 +1,18 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-20T22:25:00.249Z",
-  "total_issues_opened": 513,
+  "generated_at": "2026-04-21T03:12:34.900Z",
+  "total_issues_opened": 525,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 142000,
+  "total_points": 145600,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 42.8,
-    "avg_per_day": 33.69,
+    "avg_per_week": 43.8,
+    "avg_per_day": 31.95,
     "by_day_of_week": [
-      145,
-      38,
+      153,
+      42,
       18,
       51,
       29,
@@ -20,7 +20,7 @@
       134
     ],
     "by_hour_of_day": [
-      0,
+      4,
       10,
       0,
       0,
@@ -43,28 +43,28 @@
       94,
       43,
       72,
-      91
+      99
     ],
     "current_streak_weeks": 3,
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-19T19:51:19.000Z"
+    "last_issue_at": "2026-04-21T00:49:50.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 382,
+      "issue_count": 394,
       "recent_issue": {
-        "title": "Warning Events card shows hardcoded English pluralization and error messages",
-        "url": "https://github.com/kubestellar/console/issues/9043",
-        "created_at": "2026-04-19T19:49:19Z"
+        "title": "Multiple modals and detail views show all text in English regardless of language setting",
+        "url": "https://github.com/kubestellar/console/issues/9285",
+        "created_at": "2026-04-21T00:49:50Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 382
+      "closed_count": 394
     },
     {
       "name": "kubara, chart, control",
@@ -109,20 +109,6 @@
       "closed_count": 4
     },
     {
-      "name": "tab, switch, symbol",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Events repeat count uses inconsistent symbols across tabs — \"×\" in Timeline and \"x\" in List",
-        "url": "https://github.com/kubestellar/console/issues/9044",
-        "created_at": "2026-04-19T19:51:19Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
       "name": "cookie, csrf, samesite",
       "issue_count": 3,
       "recent_issue": {
@@ -149,6 +135,34 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "inconsistently, behave, item",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Several UI interactions behave unexpectedly or inconsistently",
+        "url": "https://github.com/kubestellar/console/issues/9284",
+        "created_at": "2026-04-21T00:48:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "explorer, rbac, rolebinding",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Several UX issues make RBAC Explorer confusing to use",
+        "url": "https://github.com/kubestellar/console/issues/9268",
+        "created_at": "2026-04-20T23:46:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "rename, write, button",
@@ -451,20 +465,6 @@
         "title": "App performance degrades over time during development usage",
         "url": "https://github.com/kubestellar/console/issues/8016",
         "created_at": "2026-04-14T20:37:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "item, inconsistently, behave",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Some lists behave inconsistently when items are added or updated",
-        "url": "https://github.com/kubestellar/console/issues/8015",
-        "created_at": "2026-04-14T20:36:56Z"
       },
       "repos": [
         "console"
@@ -885,6 +885,20 @@
         "title": "GetBulkUtilizations issues up to 500 sequential database queries for ownership checks",
         "url": "https://github.com/kubestellar/console/issues/6963",
         "created_at": "2026-04-12T20:09:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "unscoped, public, interface",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unscoped MarkNotificationRead remains in public Store interface enabling ownership bypass",
+        "url": "https://github.com/kubestellar/console/issues/6950",
+        "created_at": "2026-04-12T20:06:21Z"
       },
       "repos": [
         "console"
@@ -1381,20 +1395,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "alert, eb96b4e6, c3aaad656b1f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "HardwareHealthCard: clearing an alert silently fails - user gets no feedback",
-        "url": "https://github.com/kubestellar/console/issues/4977",
-        "created_at": "2026-04-06T13:58:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -1404,12 +1404,6 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
         "topic_match": "extract, ffb011, f6f"
-      },
-      {
-        "title": "i18n compliance test hardcodes `['common.json', 'cards.json', 'status.json', 'errors.json']` — new locale namespaces not automatically tested",
-        "url": "https://github.com/kubestellar/console/issues/9243",
-        "repo": "console",
-        "topic_match": "locale, argument, formatting"
       }
     ],
     "stretch": [
@@ -1486,7 +1480,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 513
+      "issue_count": 525
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-20T22:25:43.831Z",
+  "generated_at": "2026-04-21T03:13:16.558Z",
   "total_issues_opened": 103,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 36150,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@arnavgogia20, page, problem",
-      "issue_count": 78,
+      "issue_count": 77,
       "recent_issue": {
         "title": "Console Studio modal closes unexpectedly on edge/sidebar clicks",
         "url": "https://github.com/kubestellar/console/issues/9165",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 78
+      "closed_count": 77
     },
     {
       "name": "router, gin, cors",
@@ -94,6 +94,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "csrf, header, require",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unable to submit bug report via Console due to “CSRF header required” error",
+        "url": "https://github.com/kubestellar/console/issues/8830",
+        "created_at": "2026-04-18T11:54:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "mergeprojects, payloadproject, refinement",
