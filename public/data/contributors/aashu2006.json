@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-21T18:31:36.689Z",
+  "generated_at": "2026-04-21T22:24:52.264Z",
   "total_issues_opened": 525,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 146600,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 395,
+      "issue_count": 396,
       "recent_issue": {
         "title": "Multiple modals and detail views show all text in English regardless of language setting",
         "url": "https://github.com/kubestellar/console/issues/9285",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 395
+      "closed_count": 396
     },
     {
       "name": "kubara, chart, control",
@@ -451,20 +451,6 @@
         "title": "App performance degrades over time during development usage",
         "url": "https://github.com/kubestellar/console/issues/8016",
         "created_at": "2026-04-14T20:37:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "unrelated, kill, pid",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "start.sh port cleanup loop has TOCTOU race allowing unrelated processes to be killed",
-        "url": "https://github.com/kubestellar/console/issues/7853",
-        "created_at": "2026-04-13T23:55:12Z"
       },
       "repos": [
         "console"

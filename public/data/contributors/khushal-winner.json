@@ -1,12 +1,12 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-21T18:32:15.129Z",
+  "generated_at": "2026-04-21T22:25:31.941Z",
   "total_issues_opened": 29,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
   "total_points": 25200,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 15,
+  "rank": 13,
   "cadence": {
     "avg_per_week": 2.4,
     "avg_per_day": 0.79,
@@ -166,7 +166,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "🐛 1 test failure(s) in Coverage Suite run #1243",
+        "url": "https://github.com/kubestellar/console/issues/9451",
+        "repo": "console",
+        "topic_match": "csrf, protection, duplication"
+      }
+    ],
     "stretch": [
       {
         "name": "Onboarding & Rewards",
@@ -181,16 +188,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       },
       {
-        "name": "Dashboard & Cards",
-        "path": "web/src/components/cards/, web/src/components/dashboard/",
-        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
-      },
-      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       },
       {
         "name": "Charts & Visualizations",

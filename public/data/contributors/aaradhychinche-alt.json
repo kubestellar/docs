@@ -1,18 +1,18 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-21T18:32:06.962Z",
-  "total_issues_opened": 451,
+  "generated_at": "2026-04-21T22:25:23.518Z",
+  "total_issues_opened": 452,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 132250,
+  "total_points": 132550,
   "level": "Captain",
   "level_rank": 6,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 37.6,
-    "avg_per_day": 8.56,
+    "avg_per_week": 37.7,
+    "avg_per_day": 7.98,
     "by_day_of_week": [
       196,
-      17,
+      18,
       16,
       16,
       131,
@@ -41,7 +41,7 @@
       1,
       1,
       2,
-      4,
+      5,
       0,
       0
     ],
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-17T21:39:54.000Z"
+    "last_issue_at": "2026-04-21T21:14:16.000Z"
   },
   "topics": [
     {
       "name": "@aaradhychinche, alt, cluster",
-      "issue_count": 422,
+      "issue_count": 423,
       "recent_issue": {
-        "title": "Notifications: Mixed UX patterns across alerts, toasts, and system errors (e.g., refresh failure)",
-        "url": "https://github.com/kubestellar/console/issues/8752",
-        "created_at": "2026-04-17T21:39:54Z"
+        "title": "Contribute: Issue submission fails with \"CSRF header required\" on local setup",
+        "url": "https://github.com/kubestellar/console/issues/9439",
+        "created_at": "2026-04-21T21:14:16Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 422
+      "closed_count": 423
     },
     {
       "name": "card, registry, register",
@@ -437,7 +437,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 418
+      "issue_count": 419
     }
   ]
 }

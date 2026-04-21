@@ -1,12 +1,12 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-21T18:32:15.485Z",
+  "generated_at": "2026-04-21T22:25:32.305Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
-  "total_points": 3850,
+  "total_points": 2750,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 29,
+  "rank": 25,
   "cadence": {
     "avg_per_week": 0.9,
     "avg_per_day": 0.07,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "ai, @mavrick, terminate",
+      "name": "ai, @mavrick, missions",
       "issue_count": 3,
       "recent_issue": {
         "title": "Bug: AI Card Creation Fails with “Could not extract valid JSON from AI response”",
