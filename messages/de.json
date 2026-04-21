@@ -627,78 +627,33 @@
       "contributor": {
         "title": "Beitragender",
         "nextLevel": "Unbezahlter Mentee",
-        "description": "Beginnen Sie Ihre Reise in der KubeStellar-Community",
-        "requirements": [
-          "Mindestens 3 Beiträge (Fehlermeldungen, Dokumentation oder Code-PRs)",
-          "Begeisterung und Interesse an langfristiger Mitwirkung zeigen",
-          "Aktiv auf GitHub und Slack sein",
-          "Informelle Bewerbung oder Nominierung für das Mentee-Programm"
-        ],
-        "goodStanding": "Beitragende mit gutem Status (die ihre Kennzahlen für Help-Wanted-Issues, PR-Reviews und gemergte PRs erfüllen) qualifizieren sich für professionelle Möglichkeiten, einschließlich der Zuweisung zu Mentorprojekten."
+        "description": "Beginnen Sie Ihre Reise in der KubeStellar-Community"
       },
       "unpaidMentee": {
         "title": "Unbezahlter Mentee",
         "nextLevel": "Bezahlter Mentee",
         "description": "12-wöchige Reise zum Nachweis von Engagement und Fähigkeiten",
-        "timeframe": "12 Wochen",
-        "requirements": [
-          "Mindestens 6 „Help Wanted“-Issues eröffnen",
-          "Mindestens 20 PRs mergen (davon 8 in den ersten 6 Wochen)",
-          "An wöchentlichen Teammeetings teilnehmen oder Zusammenfassungen einreichen",
-          "Kollaborativ mit Mentoren zusammenarbeiten",
-          "Empfehlung durch einen Mentor erhalten"
-        ],
-        "goodStanding": "Unbezahlte Mentees mit gutem Status erhalten Abschlusszertifikate, Empfehlungsschreiben und bevorzugte Berücksichtigung für bezahlte Mentoring-Programme (GSoC, LFX usw.)."
+        "timeframe": "12 Wochen"
       },
       "paidMentee": {
         "title": "Bezahlter Mentee",
         "nextLevel": "Mentor",
-        "description": "Anerkannter Beitragender mit Vergütung und Verantwortung",
-        "requirements": [
-          "Erfolgreicher Abschluss mindestens eines 12-wöchigen bezahlten Mentoring-Zyklus",
-          "Unterstützung beim Onboarding mindestens eines neuen Mentees oder Beitragenden",
-          "Mindestens 3 PR-Reviews einreichen",
-          "Mindestens 5 hilfreiche Kommentare zu PRs oder Issues verfassen",
-          "Vortrag oder Co-Vortrag bei einem Community-Call halten"
-        ],
-        "goodStanding": "Bezahlte Mentees mit gutem Status erhalten professionelle Referenzen, Karrierementoring und Möglichkeiten, Projekte zu leiten oder andere zu betreuen."
+        "description": "Anerkannter Beitragender mit Vergütung und Verantwortung"
       },
       "mentor": {
         "title": "Mentor",
         "nextLevel": "Maintainer",
-        "description": "Die nächste Generation von Beitragenden begleiten und unterstützen",
-        "requirements": [
-          "Technische Führung in einem oder mehreren Kernbereichen zeigen",
-          "Kontinuierliche Beitragstätigkeit aufrechterhalten",
-          "Aktive Beteiligung in der Community auf GitHub und Slack",
-          "Genehmigung durch Core-Maintainer nach einem öffentlichen Review-Prozess"
-        ],
-        "goodStanding": "Mentoren mit gutem Status können Initiativen leiten, KubeStellar auf Konferenzen vertreten, Sprecherunterstützung erhalten, Einfluss auf die Projekt-Roadmap nehmen und sind berechtigt, Schulungs- oder Prüfungs-Gutscheine von CNCF für erfolgreich abgeschlossene Projekte zu erhalten."
+        "description": "Die nächste Generation von Beitragenden begleiten und unterstützen"
       },
       "maintainer": {
         "title": "Maintainer",
         "nextLevel": "Botschafter",
-        "description": "Vertrauenswürdige Führungspersönlichkeit mit voller Projektverantwortung",
-        "requirements": [
-          "≥ 2 „Help Wanted“-Issues alle 2 Monate",
-          "≥ 3 gemergte PRs alle 2 Monate",
-          "≥ 8 PR-Reviews oder konstruktive Kommentare alle 2 Monate",
-          "≥ 3 Teilnahmen an Community-Meetings alle 2 Monate"
-        ],
-        "goodStanding": "Maintainer mit gutem Status haben vollständige Schreibrechte, Stimmrechte bei Projektentscheidungen und können als offizielle Projektvertreter auftreten."
+        "description": "Vertrauenswürdige Führungspersönlichkeit mit voller Projektverantwortung"
       },
       "ambassador": {
         "title": "Botschafter",
         "nextLevel": "Stellar Advocate",
-        "description": "Förderung und Verbreitung der KubeStellar-Adoption",
-        "requirements": [
-          "Aktive Förderung von KubeStellar durch Blogbeiträge, Präsentationen oder soziale Medien",
-          "Vertretung von KubeStellar bei Meetups, Konferenzen oder Community-Events",
-          "Erstellung von Lerninhalten (Tutorials, Videos, Demos) zu KubeStellar",
-          "Austausch mit Nutzern zur Sammlung von Feedback und Unterstützung der Adoption",
-          "Aufrechterhaltung der Maintainer-Aktivität (Issues, PRs, Community-Engagement)"
-        ],
-        "goodStanding": "Botschafter mit gutem Status qualifizieren sich für Vortragsmöglichkeiten, Co-Autorenschaft bei Blogposts, frühzeitigen Zugang zu neuen Funktionen und Werbeunterstützung für ihre Advocacy-Aktivitäten."
+        "description": "Förderung und Verbreitung der KubeStellar-Adoption"
       }
     },
     "activityRequirements": {
