@@ -170,7 +170,12 @@ function BreakdownPills({ breakdown }: { breakdown: LeaderboardBreakdown }) {
 
 // ── Social/affiliate badge ────────────────────────────────────────────
 
-function SocialBadge({ data }: { data: AffiliateData | undefined }) {
+function SocialBadge({ data, loading }: { data: AffiliateData | undefined; loading: boolean }) {
+  if (loading) {
+    return (
+      <span className="inline-block w-6 h-4 rounded bg-gray-700/50 animate-pulse" title="Loading social data…" />
+    );
+  }
   if (!data || data.clicks === 0) {
     return (
       <span className="text-xs text-gray-600" title="No affiliate clicks yet">
@@ -230,6 +235,8 @@ export default function LeaderboardPage() {
   const [search, setSearch] = useState("");
   const [countdown, setCountdown] = useState("");
   const [affiliateData, setAffiliateData] = useState<Record<string, AffiliateData>>({});
+  const [affiliateLoading, setAffiliateLoading] = useState(true);
+  const [affiliateBannerOpen, setAffiliateBannerOpen] = useState(false);
 
   const fetchLeaderboard = useCallback(() => {
     fetch(LEADERBOARD_DATA_PATH)
@@ -284,13 +291,16 @@ export default function LeaderboardPage() {
         signal: AbortSignal.timeout(AFFILIATE_FETCH_TIMEOUT_MS),
       })
         .then((res) => (res.ok ? res.json() : {}))
-        .then((json: Record<string, AffiliateData>) => setAffiliateData(json));
+        .then((json: Record<string, AffiliateData>) => {
+          setAffiliateData(json);
+          setAffiliateLoading(false);
+        });
 
     let retryHandle: ReturnType<typeof setTimeout> | undefined;
     fetchAffiliates().catch(() => {
       retryHandle = setTimeout(() => {
         fetchAffiliates().catch(() => {
-          // Both attempts failed — affiliate data is optional; leave empty.
+          setAffiliateLoading(false);
         });
       }, AFFILIATE_RETRY_DELAY_MS);
     });
@@ -386,6 +396,75 @@ export default function LeaderboardPage() {
                 className="w-full max-w-md mx-auto block px-4 py-2.5 bg-gray-800/60 backdrop-blur-md border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-colors"
               />
             </div>
+
+            {/* Affiliate banner — compact, collapsible, above the table */}
+            {!isLoading && !error && filteredEntries.length > 0 && (
+              <div className="mb-6 bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-blue-500/10 backdrop-blur-md rounded-lg border border-white/10 overflow-hidden">
+                <button
+                  onClick={() => setAffiliateBannerOpen((v) => !v)}
+                  className="w-full flex items-center justify-between px-4 py-2.5 text-left hover:bg-white/[0.02] transition-colors"
+                >
+                  <span className="flex items-center gap-2 text-sm text-gray-300">
+                    <svg className="w-4 h-4 text-pink-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span>
+                      <span className="text-white font-medium">Earn Social Clicks</span>
+                      {" — "}share your affiliate link and get credited on the leaderboard
+                    </span>
+                  </span>
+                  <svg
+                    className={`w-4 h-4 text-gray-500 transition-transform flex-shrink-0 ${affiliateBannerOpen ? "rotate-180" : ""}`}
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {affiliateBannerOpen && (
+                  <div className="px-4 pb-4 border-t border-white/5">
+                    <p className="mt-3 text-sm text-gray-300 mb-3">
+                      Share any KubeStellar URL with your personal UTM tag and get credited on the leaderboard.
+                      Open to <span className="text-white font-medium">anyone with a GitHub account</span>.
+                    </p>
+                    <div className="bg-gray-900/60 rounded-md p-3 font-mono text-xs text-gray-400 overflow-x-auto">
+                      <span className="text-gray-500">https://console.kubestellar.io</span>
+                      <span className="text-pink-400">?utm_source=social&amp;utm_medium=</span>
+                      <span className="text-purple-400">linkedin</span>
+                      <span className="text-pink-400">&amp;utm_campaign=contributor_affiliate&amp;utm_term=</span>
+                      <span className="text-blue-400">your-github-handle</span>
+                    </div>
+                    <div className="mt-3 flex flex-wrap gap-4 text-xs text-gray-500">
+                      <span><code className="text-pink-400">utm_term</code> = your GitHub handle, lowercase</span>
+                      <span><code className="text-pink-400">utm_medium</code> = twitter, linkedin, blog, youtube, devto, etc.</span>
+                    </div>
+                    <details className="mt-4 text-xs text-gray-500">
+                      <summary className="cursor-pointer text-gray-400 hover:text-white transition-colors">
+                        Why is my Social count not updating?
+                      </summary>
+                      <ul className="mt-2 ml-4 list-disc space-y-1.5">
+                        <li>
+                          <span className="text-gray-300">Google Analytics attribution lag:</span> The
+                          <code className="mx-1 text-pink-400">utm_campaign</code> /
+                          <code className="mx-1 text-pink-400">utm_term</code> dimensions take
+                          <span className="text-white font-medium"> 24&ndash;48 hours</span> to finalize after a click.
+                        </li>
+                        <li>
+                          <span className="text-gray-300">Chat apps strip UTM tags:</span> WhatsApp, Discord, Messenger strip
+                          <code className="mx-1 text-pink-400">?utm_*</code> query strings from link previews. Prefer plain-text shares via email, SMS, GitHub comments, or blog posts.
+                        </li>
+                        <li>
+                          <span className="text-gray-300">Sessions, not page views:</span> Multiple clicks within 30 minutes count as one session. Share to <span className="text-white">more people</span>, not the same people.
+                        </li>
+                        <li>
+                          <span className="text-gray-300">Legacy <code className="text-pink-400">intern-0X</code> links keep working,</span> but new shares should use
+                          <code className="mx-1 text-pink-400">utm_term=your-github-handle</code>.
+                        </li>
+                      </ul>
+                    </details>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Loading state */}
             {isLoading && (
@@ -489,7 +568,7 @@ export default function LeaderboardPage() {
 
                     {/* Social */}
                     <div className="flex justify-start sm:justify-center pl-11 sm:pl-0">
-                      <SocialBadge data={affiliateData[entry.login]} />
+                      <SocialBadge data={affiliateData[entry.login]} loading={affiliateLoading} />
                     </div>
 
                     {/* Breakdown */}
@@ -535,61 +614,6 @@ export default function LeaderboardPage() {
               </div>
             )}
 
-            {/* Affiliate program CTA */}
-            {!isLoading && !error && filteredEntries.length > 0 && (
-              <div className="mt-8 bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-blue-500/10 backdrop-blur-md rounded-lg border border-white/10 p-6">
-                <h3 className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
-                  <svg className="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                  </svg>
-                  Earn Social Clicks with Your Affiliate Link
-                </h3>
-                <p className="text-sm text-gray-300 mb-3">
-                  Share any KubeStellar URL with your personal UTM tag and get credited on the leaderboard.
-                  Open to <span className="text-white font-medium">anyone with a GitHub account</span>.
-                </p>
-                <div className="bg-gray-900/60 rounded-md p-3 font-mono text-xs text-gray-400 overflow-x-auto">
-                  <span className="text-gray-500">https://console.kubestellar.io</span>
-                  <span className="text-pink-400">?utm_source=social&amp;utm_medium=</span>
-                  <span className="text-purple-400">linkedin</span>
-                  <span className="text-pink-400">&amp;utm_campaign=contributor_affiliate&amp;utm_term=</span>
-                  <span className="text-blue-400">your-github-handle</span>
-                </div>
-                <div className="mt-3 flex flex-wrap gap-4 text-xs text-gray-500">
-                  <span><code className="text-pink-400">utm_term</code> = your GitHub handle, lowercase</span>
-                  <span><code className="text-pink-400">utm_medium</code> = twitter, linkedin, blog, youtube, devto, etc.</span>
-                </div>
-
-                {/* Why counts may look "stuck" — reduce support churn */}
-                <details className="mt-4 text-xs text-gray-500">
-                  <summary className="cursor-pointer text-gray-400 hover:text-white transition-colors">
-                    Why is my Social count not updating?
-                  </summary>
-                  <ul className="mt-2 ml-4 list-disc space-y-1.5">
-                    <li>
-                      <span className="text-gray-300">Google Analytics attribution lag:</span> The
-                      <code className="mx-1 text-pink-400">utm_campaign</code> /
-                      <code className="mx-1 text-pink-400">utm_term</code> dimensions take
-                      <span className="text-white font-medium"> 24&ndash;48 hours</span> to finalize after a click.
-                      Same-day shares typically appear here the next day.
-                    </li>
-                    <li>
-                      <span className="text-gray-300">Chat apps strip UTM tags:</span> WhatsApp, Discord, Messenger, and some LinkedIn preview renderers strip the
-                      <code className="mx-1 text-pink-400">?utm_*=&hellip;</code> query string when generating link previews. Recipients who click the previewed
-                      (un-tagged) link land as <span className="text-gray-400">direct</span> / <span className="text-gray-400">(not set)</span> traffic and cannot be credited back to you. Prefer plain-text shares via email, SMS, GitHub comments, or blog posts where the query string is preserved.
-                    </li>
-                    <li>
-                      <span className="text-gray-300">Sessions, not page views:</span> One recipient clicking your link multiple times within a 30-minute window counts as a single session. To grow the count, share to
-                      <span className="text-white"> more people</span>, not the same people more often.
-                    </li>
-                    <li>
-                      <span className="text-gray-300">Legacy <code className="text-pink-400">intern-0X</code> links keep working,</span> but new shares should use
-                      <code className="mx-1 text-pink-400">utm_term=your-github-handle</code> so credits roll up under your GitHub identity rather than a numbered slot.
-                    </li>
-                  </ul>
-                </details>
-              </div>
-            )}
           </div>
 
             {/* Build hash */}
