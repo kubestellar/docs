@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-21T10:37:03.987Z",
+  "generated_at": "2026-04-21T14:44:43.655Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -963,7 +963,7 @@
       "closed_count": 1
     },
     {
-      "name": "prompt, history, saturation",
+      "name": "history, prompt, saturation",
       "issue_count": 1,
       "recent_issue": {
         "title": "Agent Prompt History Saturation",

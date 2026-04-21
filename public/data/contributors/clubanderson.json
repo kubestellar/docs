@@ -1,18 +1,18 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-21T10:35:39.995Z",
-  "total_issues_opened": 1061,
+  "generated_at": "2026-04-21T14:42:56.671Z",
+  "total_issues_opened": 1065,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3734900,
+  "total_points": 3751250,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 84.4,
-    "avg_per_day": 4.25,
+    "avg_per_week": 84.8,
+    "avg_per_day": 4.26,
     "by_day_of_week": [
       149,
-      131,
+      135,
       209,
       156,
       153,
@@ -31,10 +31,10 @@
       27,
       8,
       6,
-      6,
-      16,
-      71,
-      56,
+      7,
+      17,
+      72,
+      57,
       92,
       38,
       45,
@@ -49,24 +49,24 @@
     "longest_streak_weeks": 16,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-21T08:02:02.000Z"
+    "last_issue_at": "2026-04-21T14:03:17.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 734,
+      "issue_count": 738,
       "recent_issue": {
-        "title": "[Auto-QA] DOM nesting and structure violations found",
-        "url": "https://github.com/kubestellar/console/issues/9348",
-        "created_at": "2026-04-21T08:02:02Z"
+        "title": "[Auto-QA] Silent failures in error handling detected",
+        "url": "https://github.com/kubestellar/console/issues/9390",
+        "created_at": "2026-04-21T14:03:17Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 4,
-      "closed_count": 730
+      "open_count": 3,
+      "closed_count": 735
     },
     {
       "name": "monitoring, card, implement",
@@ -80,8 +80,8 @@
         "console",
         "console-marketplace"
       ],
-      "open_count": 40,
-      "closed_count": 19
+      "open_count": 37,
+      "closed_count": 22
     },
     {
       "name": "error, ga4, category",
@@ -1006,8 +1006,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "localization, doc, route",
@@ -1128,7 +1128,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 416
+      "issue_count": 420
     }
   ]
 }

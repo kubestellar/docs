@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-21T10:36:29.079Z",
+  "generated_at": "2026-04-21T14:43:59.312Z",
   "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 444,
+      "issue_count": 442,
       "recent_issue": {
         "title": "ACMM badge not being rendered in README",
         "url": "https://github.com/kubestellar/console/issues/8979",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 444
+      "closed_count": 442
     },
     {
       "name": "invite, reward, storage",
@@ -363,6 +363,20 @@
       "closed_count": 1
     },
     {
+      "name": "bda4c, fef59a3bb272, queryselector",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Alert component tests rely on weak assertions and brittle selectors",
+        "url": "https://github.com/kubestellar/console/issues/7589",
+        "created_at": "2026-04-13T14:32:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "duration, rule, a240",
       "issue_count": 1,
       "recent_issue": {
@@ -503,12 +517,26 @@
       "closed_count": 1
     },
     {
-      "name": "vi, test, dacbbec",
+      "name": "vi, test, import",
       "issue_count": 1,
       "recent_issue": {
         "title": "Test file uses vi without importing it",
         "url": "https://github.com/kubestellar/console/issues/7526",
         "created_at": "2026-04-13T12:10:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "creation, aeefa40, e6f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Compiler smoke test can pass even when component creation is fully broken",
+        "url": "https://github.com/kubestellar/console/issues/7511",
+        "created_at": "2026-04-13T11:43:25Z"
       },
       "repos": [
         "console"
@@ -1301,12 +1329,12 @@
       "closed_count": 1
     },
     {
-      "name": "kyverno, ef97, e2f8b67848de",
+      "name": "sessionid, chat, ids",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Card: Kyverno Policies (kyverno_policies)",
-        "url": "https://github.com/kubestellar/console/issues/4267",
-        "created_at": "2026-04-02T16:49:10Z"
+        "title": "Chat cancellation key collision when sessionId is omitted",
+        "url": "https://github.com/kubestellar/console/issues/4263",
+        "created_at": "2026-04-02T16:41:25Z"
       },
       "repos": [
         "console"

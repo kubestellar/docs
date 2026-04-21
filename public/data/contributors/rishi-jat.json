@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-21T10:38:13.639Z",
+  "generated_at": "2026-04-21T14:46:12.859Z",
   "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 45750,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "@rishi, jat, readall",
+      "name": "@rishi, jat, line",
       "issue_count": 180,
       "recent_issue": {
         "title": "docs: outdated Netlify URL redirects to console.kubestellar.io",
