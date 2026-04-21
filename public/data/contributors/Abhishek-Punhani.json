@@ -1,18 +1,18 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-21T06:47:08.802Z",
-  "total_issues_opened": 85,
+  "generated_at": "2026-04-21T10:38:14.457Z",
+  "total_issues_opened": 89,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-  "total_points": 27250,
+  "total_points": 28150,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 14,
+  "rank": 12,
   "cadence": {
-    "avg_per_week": 7.1,
-    "avg_per_day": 1.72,
+    "avg_per_week": 7.4,
+    "avg_per_day": 1.76,
     "by_day_of_week": [
       20,
-      13,
+      17,
       9,
       15,
       9,
@@ -29,8 +29,8 @@
       0,
       4,
       1,
+      5,
       4,
-      1,
       2,
       1,
       4,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 8,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-01T20:12:28.000Z",
-    "last_issue_at": "2026-04-20T08:09:45.000Z"
+    "last_issue_at": "2026-04-21T10:31:04.000Z"
   },
   "topics": [
     {
       "name": "@abhishek, punhani, unit",
-      "issue_count": 77,
+      "issue_count": 82,
       "recent_issue": {
-        "title": "Card Timestamps Frozen at Stale Value - SSE Streaming Failures Prevent Data Refresh",
-        "url": "https://github.com/kubestellar/console/issues/9104",
-        "created_at": "2026-04-20T08:09:45Z"
+        "title": "Ingress Status card displays persistent demo badge and empty state when kc-agent is available and returning live ingress data",
+        "url": "https://github.com/kubestellar/console/issues/9357",
+        "created_at": "2026-04-21T10:31:04Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 77
+      "open_count": 3,
+      "closed_count": 79
     },
     {
       "name": "linux, dev, ubuntu",
@@ -79,20 +79,6 @@
       ],
       "open_count": 0,
       "closed_count": 3
-    },
-    {
-      "name": "animation, production, c83cc5f8",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Cluster Animation Not Rendering in Production Deployment",
-        "url": "https://github.com/kubestellar/console/issues/8004",
-        "created_at": "2026-04-14T20:12:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "attention, mission, conversation",
@@ -180,16 +166,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
         "name": "Observability & Logs",
         "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
         "description": "Log streaming, event timeline, alerting, notifications",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },
@@ -240,7 +226,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 30
+      "issue_count": 34
     }
   ]
 }

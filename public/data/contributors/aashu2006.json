@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-21T06:46:29.014Z",
+  "generated_at": "2026-04-21T10:37:41.634Z",
   "total_issues_opened": 525,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 145600,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 394,
+      "issue_count": 395,
       "recent_issue": {
         "title": "Multiple modals and detail views show all text in English regardless of language setting",
         "url": "https://github.com/kubestellar/console/issues/9285",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 394
+      "closed_count": 395
     },
     {
       "name": "kubara, chart, control",
@@ -199,20 +199,6 @@
         "title": "21 soft assertions in user-flows/ tests produce zero CI signal - regressions pass silently",
         "url": "https://github.com/kubestellar/console/issues/8508",
         "created_at": "2026-04-16T21:56:17Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "download, tarball, path",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "start.sh downloads tarball to hardcoded /tmp path instead of secure mktemp directory",
-        "url": "https://github.com/kubestellar/console/issues/7852",
-        "created_at": "2026-04-13T23:55:02Z"
       },
       "repos": [
         "console"
@@ -473,6 +459,20 @@
       "closed_count": 1
     },
     {
+      "name": "unrelated, kill, pid",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "start.sh port cleanup loop has TOCTOU race allowing unrelated processes to be killed",
+        "url": "https://github.com/kubestellar/console/issues/7853",
+        "created_at": "2026-04-13T23:55:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "makefile, d9d5, a71b179",
       "issue_count": 1,
       "recent_issue": {
@@ -501,7 +501,7 @@
       "closed_count": 1
     },
     {
-      "name": "unquoted, splitting, word",
+      "name": "unquoted, word, splitting",
       "issue_count": 1,
       "recent_issue": {
         "title": "nightly-compare.sh uses unquoted $(ls ...) in for loop causing word splitting on filenames with spaces",

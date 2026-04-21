@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-21T06:45:43.621Z",
+  "generated_at": "2026-04-21T10:37:03.987Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -515,7 +515,7 @@
       "closed_count": 1
     },
     {
-      "name": "bottleneck, ed355, b84293b0ae55",
+      "name": "ed355, b84293b0ae55, multiplexed",
       "issue_count": 1,
       "recent_issue": {
         "title": "Single-Connection Bottleneck",

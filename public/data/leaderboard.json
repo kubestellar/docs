@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-21T06:38:31.818Z",
-  "git_hash": "670ab2c",
+  "generated_at": "2026-04-21T10:31:04.811Z",
+  "git_hash": "0fa5455",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3725100,
+      "total_points": 3734900,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 275,
-        "feature_issues": 425,
-        "other_issues": 357,
-        "prs_opened": 5396,
-        "prs_merged": 5006
+        "bug_issues": 276,
+        "feature_issues": 426,
+        "other_issues": 359,
+        "prs_opened": 5410,
+        "prs_merged": 5019
       },
       "bonus_points": 50,
       "rank": 1
@@ -170,6 +170,21 @@
       "rank": 11
     },
     {
+      "login": "Abhishek-Punhani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
+      "total_points": 28150,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 80,
+        "feature_issues": 3,
+        "other_issues": 5,
+        "prs_opened": 8,
+        "prs_merged": 4
+      },
+      "rank": 12
+    },
+    {
       "login": "ghanshyam2005singh",
       "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
       "total_points": 27700,
@@ -182,7 +197,7 @@
         "prs_opened": 2,
         "prs_merged": 2
       },
-      "rank": 12
+      "rank": 13
     },
     {
       "login": "KPRoche",
@@ -196,21 +211,6 @@
         "other_issues": 9,
         "prs_opened": 48,
         "prs_merged": 28
-      },
-      "rank": 13
-    },
-    {
-      "login": "Abhishek-Punhani",
-      "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-      "total_points": 27250,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 77,
-        "feature_issues": 3,
-        "other_issues": 5,
-        "prs_opened": 8,
-        "prs_merged": 4
       },
       "rank": 14
     },
@@ -307,11 +307,11 @@
     {
       "login": "Pranjal6955",
       "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-      "total_points": 15800,
+      "total_points": 17000,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 10,
+        "bug_issues": 14,
         "feature_issues": 2,
         "other_issues": 2,
         "prs_opened": 25,
