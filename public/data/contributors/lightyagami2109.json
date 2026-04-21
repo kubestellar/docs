@@ -1,20 +1,20 @@
 {
-  "login": "KumarADITHYA123",
-  "generated_at": "2026-04-21T18:32:15.493Z",
-  "total_issues_opened": 2,
-  "avatar_url": "https://avatars.githubusercontent.com/u/163162210?v=4",
-  "total_points": 800,
-  "level": "Explorer",
-  "level_rank": 2,
-  "rank": 47,
+  "login": "lightyagami2109",
+  "generated_at": "2026-04-21T18:32:15.503Z",
+  "total_issues_opened": 0,
+  "avatar_url": "https://avatars.githubusercontent.com/u/186868051?v=4",
+  "total_points": 200,
+  "level": "Observer",
+  "level_rank": 1,
+  "rank": 74,
   "cadence": {
-    "avg_per_week": 0.2,
-    "avg_per_day": 2,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
       0,
       0,
-      2,
+      0,
       0,
       0,
       0
@@ -22,7 +22,6 @@
     "by_hour_of_day": [
       0,
       0,
-      1,
       0,
       0,
       0,
@@ -38,18 +37,19 @@
       0,
       0,
       0,
-      1,
+      0,
+      0,
       0,
       0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 1,
-    "longest_streak_weeks": 1,
-    "trend": "ramping_up",
-    "first_issue_at": "2026-04-09T02:11:34.000Z",
-    "last_issue_at": "2026-04-09T18:02:44.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
   "topics": [],
   "suggestions": {
@@ -103,7 +103,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 2
+      "issue_count": 0
     }
   ]
 }

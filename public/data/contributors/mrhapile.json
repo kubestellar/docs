@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-21T14:44:43.655Z",
+  "generated_at": "2026-04-21T18:30:53.486Z",
   "total_issues_opened": 483,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 148750,
@@ -375,7 +375,7 @@
       "closed_count": 1
     },
     {
-      "name": "staging, hijacking, b800717ed68",
+      "name": "staging, payload, hijacking",
       "issue_count": 1,
       "recent_issue": {
         "title": "Tmpfs Privilege Escalation Hijacking",
@@ -557,7 +557,7 @@
       "closed_count": 1
     },
     {
-      "name": "fiber, b202b17, a05f",
+      "name": "fiber, payload, b202b17",
       "issue_count": 1,
       "recent_issue": {
         "title": "Uncaught JSON Parse Error (websockets.go)",

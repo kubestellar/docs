@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-21T14:46:13.634Z",
+  "generated_at": "2026-04-21T18:32:14.612Z",
   "total_issues_opened": 98,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 30750,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "api, @arpit529srivastava, vcluster",
-      "issue_count": 36,
+      "name": "@arpit529srivastava, api, vcluster",
+      "issue_count": 37,
       "recent_issue": {
         "title": "[E2E Bug] liveMocks.ts uses Math.random() for API response delays — non-deterministic test timing",
         "url": "https://github.com/kubestellar/console/issues/9086",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 36
+      "closed_count": 37
     },
     {
       "name": "ss, testing, @arpit529srivastava",
@@ -299,20 +299,6 @@
         "title": "`[E2E Bug] Dashboard \"cards have proper structure\" test uses vacuous assertion that can never fail`",
         "url": "https://github.com/kubestellar/console/issues/9074",
         "created_at": "2026-04-20T04:59:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "namespaces, getaccessiblenamespaces, scoped",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
-        "url": "https://github.com/kubestellar/console/issues/6512",
-        "created_at": "2026-04-11T16:14:10Z"
       },
       "repos": [
         "console"
