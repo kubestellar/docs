@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-21T03:11:03.078Z",
+  "generated_at": "2026-04-21T06:45:02.261Z",
   "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 443,
+      "issue_count": 444,
       "recent_issue": {
         "title": "ACMM badge not being rendered in README",
         "url": "https://github.com/kubestellar/console/issues/8979",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 443
+      "closed_count": 444
     },
     {
       "name": "invite, reward, storage",
@@ -1455,20 +1455,6 @@
       "closed_count": 1
     },
     {
-      "name": "nan, exception, c152002e",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "NaN exception",
-        "url": "https://github.com/kubestellar/console/issues/3764",
-        "created_at": "2026-03-28T06:03:49Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "float, comparison, d17e79",
       "issue_count": 1,
       "recent_issue": {
@@ -1672,12 +1658,6 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "🐛 3 test failure(s) in Coverage Suite run #1164",
-        "url": "https://github.com/kubestellar/console/issues/9305",
-        "repo": "console",
-        "topic_match": "module, test, cc0f252e8db"
       }
     ],
     "stretch": [

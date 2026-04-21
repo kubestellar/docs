@@ -1,6 +1,6 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-21T03:13:17.453Z",
+  "generated_at": "2026-04-21T06:47:08.802Z",
   "total_issues_opened": 85,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
   "total_points": 27250,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "unit, @abhishek, punhani",
+      "name": "@abhishek, punhani, unit",
       "issue_count": 77,
       "recent_issue": {
         "title": "Card Timestamps Frozen at Stale Value - SSE Streaming Failures Prevent Data Refresh",
@@ -109,7 +109,7 @@
       "closed_count": 1
     },
     {
-      "name": "research, follow, pr",
+      "name": "research, follow, f09e28eb",
       "issue_count": 1,
       "recent_issue": {
         "title": "Automated PR-closed MCP-powered verification and researched follow-ups",
