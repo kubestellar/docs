@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-22T18:32:43.370Z",
+  "generated_at": "2026-04-22T22:27:06.605Z",
   "total_issues_opened": 76,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 22850,
@@ -47,7 +47,7 @@
     ],
     "current_streak_weeks": 1,
     "longest_streak_weeks": 5,
-    "trend": "ramping_up",
+    "trend": "steady",
     "first_issue_at": "2026-02-13T06:35:49.000Z",
     "last_issue_at": "2026-04-17T19:03:47.000Z"
   },

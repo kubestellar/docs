@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-22T18:32:43.173Z",
+  "generated_at": "2026-04-22T22:27:06.402Z",
   "total_issues_opened": 98,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 27850,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "@arpit529srivastava, api, vcluster",
+      "name": "api, @arpit529srivastava, vcluster",
       "issue_count": 36,
       "recent_issue": {
         "title": "[E2E Bug] liveMocks.ts uses Math.random() for API response delays — non-deterministic test timing",

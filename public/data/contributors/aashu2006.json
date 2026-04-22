@@ -1,9 +1,9 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-22T18:31:20.279Z",
+  "generated_at": "2026-04-22T22:25:34.154Z",
   "total_issues_opened": 540,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 151500,
+  "total_points": 152000,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 3,
@@ -361,7 +361,7 @@
       "closed_count": 1
     },
     {
-      "name": "kubedle, stats, modal",
+      "name": "stats, kubedle, modal",
       "issue_count": 1,
       "recent_issue": {
         "title": "Kubedle stats modal content gets cut off in default card size with no scroll",
@@ -529,7 +529,7 @@
       "closed_count": 1
     },
     {
-      "name": "unquoted, word, splitting",
+      "name": "unquoted, splitting, word",
       "issue_count": 1,
       "recent_issue": {
         "title": "nightly-compare.sh uses unquoted $(ls ...) in for loop causing word splitting on filenames with spaces",
@@ -1424,6 +1424,12 @@
         "url": "https://github.com/kubestellar/console/issues/9520",
         "repo": "console",
         "topic_match": "adapt, theme, color"
+      },
+      {
+        "title": "Distribution/provider filter does not restrict cluster list display",
+        "url": "https://github.com/kubestellar/console/issues/9541",
+        "repo": "console",
+        "topic_match": "filter, service, count"
       }
     ],
     "stretch": [
