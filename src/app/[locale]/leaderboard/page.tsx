@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   GridLines,
   StarField,
@@ -10,6 +11,14 @@ import {
   Navbar,
   Footer,
 } from "../../../components/index";
+import {
+  RADAR_AXIS_COUNT,
+  RADAR_DIMENSIONS,
+  RADAR_MIN_DISPLAY_SCORE,
+  computeRadarScores,
+  radarPoint,
+} from "../../../lib/radar";
+import type { RadarTopicCluster } from "../../../lib/radar";
 
 // ── Types ─────────────────────────────────────────────────────────────
 
@@ -221,6 +230,7 @@ interface ContributorPreview {
   rank: number;
   cadence: CadenceData;
   activity_timeline: TimelineEntry[];
+  topics?: RadarTopicCluster[];
 }
 
 const TREND_DISPLAY: Record<string, { label: string; color: string; arrow: string }> = {
@@ -237,6 +247,87 @@ const HOVER_FETCH_DELAY_MS = 300;
 
 const profileCache = new Map<string, ContributorPreview>();
 
+// ── Mini Radar Chart for hover card ──────────────────────────────────
+
+const MINI_RADAR_RADIUS = 50;
+const MINI_RADAR_CENTER = 60;
+const MINI_RADAR_GRID_RINGS = 3;
+
+function MiniRadarChart({ topics }: { topics: RadarTopicCluster[] }) {
+  const scores = useMemo(() => computeRadarScores(topics), [topics]);
+  const hasData = scores.some((s) => s > RADAR_MIN_DISPLAY_SCORE);
+
+  if (!hasData) return null;
+
+  const dataPoints = scores.map((score, i) =>
+    radarPoint(i, Math.max(score, RADAR_MIN_DISPLAY_SCORE), MINI_RADAR_RADIUS, MINI_RADAR_CENTER),
+  );
+  const dataPath = dataPoints
+    .map((p, i) => `${i === 0 ? "M" : "L"} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`)
+    .join(" ") + " Z";
+
+  const gridRings = Array.from({ length: MINI_RADAR_GRID_RINGS }, (_, ringIdx) => {
+    const fraction = (ringIdx + 1) / MINI_RADAR_GRID_RINGS;
+    const ringPoints = Array.from({ length: RADAR_AXIS_COUNT }, (_, axisIdx) =>
+      radarPoint(axisIdx, fraction, MINI_RADAR_RADIUS, MINI_RADAR_CENTER),
+    );
+    return ringPoints
+      .map((p, i) => `${i === 0 ? "M" : "L"} ${p.x.toFixed(2)} ${p.y.toFixed(2)}`)
+      .join(" ") + " Z";
+  });
+
+  const axisEndpoints = Array.from({ length: RADAR_AXIS_COUNT }, (_, i) =>
+    radarPoint(i, 1, MINI_RADAR_RADIUS, MINI_RADAR_CENTER),
+  );
+
+  const LABEL_OFFSET_RADIUS = 56;
+  const labelPositions = Array.from({ length: RADAR_AXIS_COUNT }, (_, i) =>
+    radarPoint(i, 1, LABEL_OFFSET_RADIUS, MINI_RADAR_CENTER),
+  );
+
+  return (
+    <div className="px-4 py-3 border-b border-white/5">
+      <div className="text-[10px] uppercase tracking-wider text-gray-500 mb-1">Expertise</div>
+      <div className="flex items-center gap-3">
+        <svg
+          viewBox="0 0 120 120"
+          className="w-[100px] h-[100px] flex-shrink-0"
+          role="img"
+          aria-label="Expertise radar chart"
+        >
+          {gridRings.map((path, i) => (
+            <path key={`ring-${i}`} d={path} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="0.5" />
+          ))}
+          {axisEndpoints.map((point, i) => (
+            <line key={`axis-${i}`} x1={MINI_RADAR_CENTER} y1={MINI_RADAR_CENTER} x2={point.x} y2={point.y} stroke="rgba(255,255,255,0.06)" strokeWidth="0.5" />
+          ))}
+          <path d={dataPath} fill="rgba(34,211,238,0.15)" stroke="rgba(34,211,238,0.6)" strokeWidth="1.5" />
+          {dataPoints.map((point, i) => (
+            <circle key={`dot-${i}`} cx={point.x} cy={point.y} r="2" fill={scores[i] > RADAR_MIN_DISPLAY_SCORE ? "rgba(34,211,238,0.9)" : "rgba(107,114,128,0.4)"} />
+          ))}
+          {labelPositions.map((pos, i) => (
+            <text key={`label-${i}`} x={pos.x} y={pos.y} textAnchor="middle" dominantBaseline="central" className="fill-amber-400" style={{ fontSize: "5px", fontFamily: "inherit" }}>
+              {RADAR_DIMENSIONS[i].label}
+            </text>
+          ))}
+        </svg>
+        <div className="flex flex-col gap-0.5 min-w-0">
+          {RADAR_DIMENSIONS.map((dim, i) => {
+            const pct = Math.round(scores[i] * 100);
+            return (
+              <div key={dim.label} className="flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: pct > 0 ? "rgba(34,211,238,0.8)" : "rgba(107,114,128,0.4)" }} />
+                <span className="text-[9px] text-gray-400 truncate">{dim.label}</span>
+                <span className="text-[9px] text-cyan-300/70 ml-auto">{pct}%</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ContributorHoverCard({
   login,
   onClose,
@@ -244,6 +335,7 @@ function ContributorHoverCard({
   login: string;
   onClose: () => void;
 }) {
+  const router = useRouter();
   const [data, setData] = useState<ContributorPreview | null>(profileCache.get(login) || null);
   const [loading, setLoading] = useState(!profileCache.has(login));
   const cardRef = useRef<HTMLDivElement>(null);
@@ -311,8 +403,12 @@ function ContributorHoverCard({
   return (
     <div
       ref={cardRef}
-      className="absolute left-0 top-full mt-2 z-50 w-96 bg-gray-900/95 backdrop-blur-lg rounded-xl border border-white/10 shadow-2xl overflow-hidden"
+      className="absolute left-0 top-full mt-2 z-50 w-96 bg-gray-900/95 backdrop-blur-lg rounded-xl border border-white/10 shadow-2xl overflow-hidden cursor-pointer"
       onMouseLeave={onClose}
+      onClick={() => router.push(`/leaderboard/${data.login}`)}
+      role="link"
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === "Enter") router.push(`/leaderboard/${data.login}`); }}
     >
       {/* Header */}
       <div className="p-4 pb-3 border-b border-white/5">
@@ -397,7 +493,7 @@ function ContributorHoverCard({
       </div>
 
       {/* Activity Timeline */}
-      <div className="px-4 py-3">
+      <div className="px-4 py-3 border-b border-white/5">
         <div className="text-[10px] uppercase tracking-wider text-gray-500 mb-2">Activity Timeline</div>
         <div className="flex items-end gap-px h-10">
           {data.activity_timeline.map((entry) => {
@@ -418,13 +514,13 @@ function ContributorHoverCard({
         </div>
       </div>
 
-      {/* Footer link */}
-      <Link
-        href={`/leaderboard/${data.login}`}
-        className="block px-4 py-2 text-[10px] text-center text-blue-400 hover:text-blue-300 bg-white/[0.02] border-t border-white/5 transition-colors"
-      >
+      {/* Expertise Radar */}
+      {data.topics && data.topics.length > 0 && <MiniRadarChart topics={data.topics} />}
+
+      {/* Footer */}
+      <div className="block px-4 py-2 text-[10px] text-center text-blue-400 bg-white/[0.02] border-t border-white/5">
         View full profile →
-      </Link>
+      </div>
     </div>
   );
 }
