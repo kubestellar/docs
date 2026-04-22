@@ -1,19 +1,19 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-22T10:40:30.118Z",
-  "total_issues_opened": 76,
+  "generated_at": "2026-04-22T14:46:26.019Z",
+  "total_issues_opened": 85,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 27700,
+  "total_points": 30400,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 12,
+  "rank": 9,
   "cadence": {
-    "avg_per_week": 6.3,
-    "avg_per_day": 5.33,
+    "avg_per_week": 7.1,
+    "avg_per_day": 5.3,
     "by_day_of_week": [
       15,
       18,
-      35,
+      44,
       0,
       1,
       1,
@@ -33,7 +33,7 @@
       5,
       1,
       2,
-      9,
+      18,
       0,
       0,
       1,
@@ -49,77 +49,36 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-06T12:23:43.000Z",
-    "last_issue_at": "2026-04-20T18:44:16.000Z"
+    "last_issue_at": "2026-04-22T13:14:33.000Z"
   },
   "topics": [
     {
-      "name": "test, @khushiiagrawal, spec",
-      "issue_count": 16,
+      "name": "@khushiiagrawal, test, line",
+      "issue_count": 45,
       "recent_issue": {
-        "title": "i18n compliance test hardcodes `['common.json', 'cards.json', 'status.json', 'errors.json']` — new locale namespaces not automatically tested",
-        "url": "https://github.com/kubestellar/console/issues/9243",
-        "created_at": "2026-04-20T18:44:16Z"
+        "title": "`missions browser renders at least one project card` uses brittle `getByText(/sample-mission/i)` to detect project card rendering",
+        "url": "https://github.com/kubestellar/console/issues/9526",
+        "created_at": "2026-04-22T13:14:33Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 16
+      "open_count": 7,
+      "closed_count": 38
     },
     {
-      "name": "restart, watchdog, process",
-      "issue_count": 4,
+      "name": "deprecate, modern, browser",
+      "issue_count": 3,
       "recent_issue": {
-        "title": "bug: `AGENT_PID=$(lsof -i :8585 -t ... | head -1)` in `startup-oauth.sh` may match an unrelated process using port 8585",
-        "url": "https://github.com/kubestellar/console/issues/8127",
-        "created_at": "2026-04-15T08:20:32Z"
+        "title": "`smoke.spec.ts` uses deprecated `>>` Playwright chaining syntax that may break in future versions",
+        "url": "https://github.com/kubestellar/console/issues/9523",
+        "created_at": "2026-04-22T13:13:54Z"
       },
       "repos": [
-        "console"
+        "console",
+        "docs"
       ],
-      "open_count": 0,
-      "closed_count": 4
-    },
-    {
-      "name": "goroutine, heartbeat, heartbeatdo",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "bug: `runWithTimeout` leaks a goroutine when the process kill fails",
-        "url": "https://github.com/kubestellar/console/issues/8058",
-        "created_at": "2026-04-15T04:46:46Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 4
-    },
-    {
-      "name": "vite, dev, flag",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "`security-compliance.spec.ts` ignores `playwright.config.ts` `baseURL` and hardcodes Vite dev server port",
-        "url": "https://github.com/kubestellar/console/issues/9242",
-        "created_at": "2026-04-20T18:43:25Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "cancel, goroutines, acknowledgement",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: `handleKagentiSummary` fans out 4 goroutines but uses `r.Context()` as the parent — if the HTTP request is cancelled mid-way, all goroutines are cancelled without a partial response",
-        "url": "https://github.com/kubestellar/console/issues/8131",
-        "created_at": "2026-04-15T08:21:36Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 2
     },
     {
@@ -129,34 +88,6 @@
         "title": "bug: `ConnectVCluster` passes `--update-current=false` but `DisconnectVCluster` removes the context using `kubectl config delete-context`, leaving the `current-context` pointing to a deleted context",
         "url": "https://github.com/kubestellar/console/issues/8076",
         "created_at": "2026-04-15T04:52:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "final, result, deadline",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: `handleChatMessageStreaming` uses `context.Background()` for final result write after deadline expiry, but token usage is still tracked",
-        "url": "https://github.com/kubestellar/console/issues/8073",
-        "created_at": "2026-04-15T04:52:08Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "body, response, decoder",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: `checkStatuspageHealth` reads the entire response body into a JSON decoder but never drains it, potentially holding a persistent HTTP connection open",
-        "url": "https://github.com/kubestellar/console/issues/8069",
-        "created_at": "2026-04-15T04:50:54Z"
       },
       "repos": [
         "console"
@@ -186,20 +117,6 @@
         "title": "bug: Minikube cluster status always reported as \"unknown\" instead of actual state",
         "url": "https://github.com/kubestellar/console/issues/7984",
         "created_at": "2026-04-14T18:51:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "unlike, handler, da09a5e",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: `handleRolesHTTP` and related RBAC handlers skip token validation",
-        "url": "https://github.com/kubestellar/console/issues/7982",
-        "created_at": "2026-04-14T18:43:14Z"
       },
       "repos": [
         "console"
@@ -248,6 +165,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "el, offsetwidth, collapsedwidth",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Sidebar collapse test measures `offsetWidth` directly — unreliable in headless Playwright",
+        "url": "https://github.com/kubestellar/console/issues/9525",
+        "created_at": "2026-04-22T13:14:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "scan, report, vector",
@@ -348,20 +279,6 @@
       "closed_count": 1
     },
     {
-      "name": "second, flag, reset",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handle401()` in `api.ts` sets `handling401 = true` but the 10-second reset timer may fire after a successful re-login, blocking the next legitimate 401",
-        "url": "https://github.com/kubestellar/console/issues/8123",
-        "created_at": "2026-04-15T08:19:17Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "long, ea119ca, a887",
       "issue_count": 1,
       "recent_issue": {
@@ -382,20 +299,6 @@
         "title": "bug: `handleDeploymentsHTTP` has a no-op namespace default: `if namespace == \"\" { namespace = \"\" }` (lines 341–343)",
         "url": "https://github.com/kubestellar/console/issues/8121",
         "created_at": "2026-04-15T08:18:16Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "disk, adab4b56, e23e2265cf",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `loadKubeConfig` in `kubectl.go` calls `s.kubectl.Reload()` on every `/clusters` HTTP request, causing unnecessary disk I/O",
-        "url": "https://github.com/kubestellar/console/issues/8075",
-        "created_at": "2026-04-15T04:52:42Z"
       },
       "repos": [
         "console"
@@ -446,40 +349,12 @@
       "closed_count": 1
     },
     {
-      "name": "download, d086b7, b816",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `backup.json` attachment download sets `Content-Disposition` but `Content-Type` is `application/json`, causing browsers to open instead of download",
-        "url": "https://github.com/kubestellar/console/issues/8067",
-        "created_at": "2026-04-15T04:50:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "configured, unprivileged, a091bf",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: `handleProvidersHealth` has no token validation — any unprivileged caller can enumerate configured providers",
         "url": "https://github.com/kubestellar/console/issues/8066",
         "created_at": "2026-04-15T04:50:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "listing, crd, e1a48fa8",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handleKagentiAgents` swallows CRD listing errors silently, returning an empty list without an error field",
-        "url": "https://github.com/kubestellar/console/issues/8065",
-        "created_at": "2026-04-15T04:49:46Z"
       },
       "repos": [
         "console"
@@ -558,20 +433,6 @@
       "closed_count": 1
     },
     {
-      "name": "kagenti, dfe3f0, bd144cabb5",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handleKagentCRDAgents` returns 500 instead of empty list for `GetDynamicClient` errors, inconsistent with all kagenti handlers",
-        "url": "https://github.com/kubestellar/console/issues/7917",
-        "created_at": "2026-04-14T13:23:49Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "testing, ddcedd4e, b54b",
       "issue_count": 1,
       "recent_issue": {
@@ -642,20 +503,6 @@
       "closed_count": 1
     },
     {
-      "name": "deprecate, mdn, modern",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `window.pageYOffset` Is Deprecated — Both Footer Components Use It",
-        "url": "https://github.com/kubestellar/docs/issues/1459",
-        "created_at": "2026-04-15T04:55:48Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "closelangswitcher, global, window",
       "issue_count": 1,
       "recent_issue": {
@@ -671,26 +518,19 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "🐛 2 test failure(s) in Coverage Suite run #1264",
-        "url": "https://github.com/kubestellar/console/issues/9509",
-        "repo": "console",
-        "topic_match": "test, @khushiiagrawal, spec"
-      }
-    ],
+    "deepen": [],
     "stretch": [
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
       {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
         "name": "Marketplace & Operators",
@@ -705,10 +545,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       }
     ]
   },
@@ -759,7 +599,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 76
+      "issue_count": 85
     }
   ]
 }

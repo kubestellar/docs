@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-22T10:38:12.511Z",
+  "generated_at": "2026-04-22T14:43:49.792Z",
   "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
@@ -1714,6 +1714,18 @@
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
+      },
+      {
+        "title": "`smoke.spec.ts` uses deprecated `>>` Playwright chaining syntax that may break in future versions",
+        "url": "https://github.com/kubestellar/console/issues/9523",
+        "repo": "console",
+        "topic_match": "playwright, script, sh"
+      },
+      {
+        "title": "Login error handler test mocks auth failure but never asserts an error message is displayed",
+        "url": "https://github.com/kubestellar/console/issues/9519",
+        "repo": "console",
+        "topic_match": "mock, f50a145d, f3aa5b3070"
       }
     ],
     "stretch": [

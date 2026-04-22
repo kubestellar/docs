@@ -1,19 +1,19 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-22T10:40:30.154Z",
-  "total_issues_opened": 40,
+  "generated_at": "2026-04-22T14:46:26.951Z",
+  "total_issues_opened": 42,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-  "total_points": 23200,
+  "total_points": 23800,
   "level": "Commander",
   "level_rank": 5,
   "rank": 14,
   "cadence": {
-    "avg_per_week": 3.2,
-    "avg_per_day": 0.2,
+    "avg_per_week": 3.3,
+    "avg_per_day": 0.21,
     "by_day_of_week": [
       5,
       18,
-      14,
+      16,
       0,
       0,
       3,
@@ -32,8 +32,8 @@
       0,
       0,
       0,
-      0,
-      5,
+      1,
+      6,
       0,
       2,
       1,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 2,
     "trend": "ramping_up",
     "first_issue_at": "2025-10-01T13:51:13.000Z",
-    "last_issue_at": "2026-04-22T05:04:00.000Z"
+    "last_issue_at": "2026-04-22T13:36:13.000Z"
   },
   "topics": [
     {
@@ -67,18 +67,32 @@
       "closed_count": 27
     },
     {
-      "name": "benchmark, yamls, crucially",
-      "issue_count": 1,
+      "name": "benchmark, fetch, google",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "bug: High Latency in Benchmark Fetching",
-        "url": "https://github.com/kubestellar/console/issues/9446",
-        "created_at": "2026-04-21T21:24:08Z"
+        "title": "bug: StreamReports leaks goroutines and API quota on client disconnect",
+        "url": "https://github.com/kubestellar/console/issues/9517",
+        "created_at": "2026-04-22T12:51:26Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 1
+    },
+    {
+      "name": "primary, scan, concurrent",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: ACMM scan fails for all concurrent users if the primary requester disconnects",
+        "url": "https://github.com/kubestellar/console/issues/9527",
+        "created_at": "2026-04-22T13:36:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "token, goroutines, usage",
@@ -331,7 +345,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 38
+      "issue_count": 40
     }
   ]
 }

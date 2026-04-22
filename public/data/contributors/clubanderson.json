@@ -1,6 +1,6 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-22T10:37:10.564Z",
+  "generated_at": "2026-04-22T14:42:38.933Z",
   "total_issues_opened": 1074,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
   "total_points": 3780000,
@@ -69,7 +69,7 @@
       "closed_count": 743
     },
     {
-      "name": "monitoring, implement, step",
+      "name": "monitoring, implement, card",
       "issue_count": 59,
       "recent_issue": {
         "title": "tech-debt: Keycloak card #6893 — useKeycloakStatus return shape deviates from project hook contract",
@@ -1053,7 +1053,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "`Login.spec.ts` — Background Color Assertion Hardcodes `rgb(10, 10, 10)` — Brittle",
+        "url": "https://github.com/kubestellar/console/issues/9520",
+        "repo": "console",
+        "topic_match": "replace, color, hardcoded"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",

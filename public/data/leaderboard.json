@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-22T10:31:26.133Z",
-  "git_hash": "df0cef2",
+  "generated_at": "2026-04-22T14:35:50.734Z",
+  "git_hash": "791ad1d",
   "entries": [
     {
       "login": "clubanderson",
@@ -125,6 +125,21 @@
       "rank": 8
     },
     {
+      "login": "khushiiagrawal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
+      "total_points": 30400,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 85,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 7,
+        "prs_merged": 7
+      },
+      "rank": 9
+    },
+    {
       "login": "Abhishek-Punhani",
       "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
       "total_points": 28050,
@@ -137,7 +152,7 @@
         "prs_opened": 7,
         "prs_merged": 3
       },
-      "rank": 9
+      "rank": 10
     },
     {
       "login": "ghanshyam2005singh",
@@ -152,7 +167,7 @@
         "prs_opened": 2,
         "prs_merged": 2
       },
-      "rank": 10
+      "rank": 11
     },
     {
       "login": "Arpit529Srivastava",
@@ -166,21 +181,6 @@
         "other_issues": 3,
         "prs_opened": 1,
         "prs_merged": 0
-      },
-      "rank": 11
-    },
-    {
-      "login": "khushiiagrawal",
-      "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-      "total_points": 27700,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 76,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 7,
-        "prs_merged": 7
       },
       "rank": 12
     },
@@ -202,11 +202,11 @@
     {
       "login": "Pranjal6955",
       "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-      "total_points": 23200,
+      "total_points": 23800,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 36,
+        "bug_issues": 38,
         "feature_issues": 2,
         "other_issues": 0,
         "prs_opened": 21,

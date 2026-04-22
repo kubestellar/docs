@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-22T10:39:47.632Z",
+  "generated_at": "2026-04-22T14:45:39.021Z",
   "total_issues_opened": 486,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 149650,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 371,
+      "issue_count": 372,
       "recent_issue": {
         "title": "Keyboard ArrowRight Locked on First Pass",
         "url": "https://github.com/kubestellar/console/issues/9501",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 371
+      "closed_count": 372
     },
     {
       "name": "documentation, 📌, component",
@@ -795,20 +795,6 @@
       "closed_count": 1
     },
     {
-      "name": "extractbalancedblocks, thread, text",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "extractBalancedBlocks O(n²) Main Thread Block",
-        "url": "https://github.com/kubestellar/console/issues/6723",
-        "created_at": "2026-04-11T22:36:49Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "resizer, bdde7, be3b",
       "issue_count": 1,
       "recent_issue": {
@@ -1384,7 +1370,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "`Settings.spec.ts` — Theme Persistence Test Only Checks `localStorage`, Not UI Reflection",
+        "url": "https://github.com/kubestellar/console/issues/9521",
+        "repo": "console",
+        "topic_match": "theme, toggle, light"
+      }
+    ],
     "stretch": [
       {
         "name": "Marketplace & Operators",

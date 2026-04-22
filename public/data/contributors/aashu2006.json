@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-22T10:39:03.060Z",
+  "generated_at": "2026-04-22T14:44:47.598Z",
   "total_issues_opened": 535,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 150000,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "@aashu2006, happen, error",
-      "issue_count": 406,
+      "name": "@aashu2006, error, happen",
+      "issue_count": 405,
       "recent_issue": {
         "title": "Network cards show all labels in English regardless of language setting",
         "url": "https://github.com/kubestellar/console/issues/9471",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 406
+      "closed_count": 405
     },
     {
       "name": "kubara, chart, control",
@@ -1257,6 +1257,20 @@
       "closed_count": 1
     },
     {
+      "name": "bc1b059b, cde36fd4a3f4, callb",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Untracked setTimeout in AuthCallback catch block causes memory leak on unmount",
+        "url": "https://github.com/kubestellar/console/issues/5573",
+        "created_at": "2026-04-08T19:37:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "extract, ffb011, f6f",
       "issue_count": 1,
       "recent_issue": {
@@ -1418,6 +1432,12 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
         "topic_match": "extract, ffb011, f6f"
+      },
+      {
+        "title": "`Login.spec.ts` — Background Color Assertion Hardcodes `rgb(10, 10, 10)` — Brittle",
+        "url": "https://github.com/kubestellar/console/issues/9520",
+        "repo": "console",
+        "topic_match": "adapt, theme, color"
       }
     ],
     "stretch": [
