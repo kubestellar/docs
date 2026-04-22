@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-21T22:25:31.022Z",
+  "generated_at": "2026-04-22T03:15:16.960Z",
   "total_issues_opened": 107,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 37350,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@arnavgogia20, page, problem",
-      "issue_count": 81,
+      "issue_count": 82,
       "recent_issue": {
         "title": "Excessive empty header spacing on CLUSTER ADMIN PAGE causing layout imbalance",
         "url": "https://github.com/kubestellar/console/issues/9429",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 81
+      "closed_count": 82
     },
     {
       "name": "router, gin, cors",
@@ -94,20 +94,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "csrf, header, require",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unable to submit bug report via Console due to “CSRF header required” error",
-        "url": "https://github.com/kubestellar/console/issues/8830",
-        "created_at": "2026-04-18T11:54:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "mergeprojects, payloadproject, refinement",
@@ -405,14 +391,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #1243",
-        "url": "https://github.com/kubestellar/console/issues/9451",
-        "repo": "console",
-        "topic_match": "csrf, header, require"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Charts & Visualizations",

@@ -1,19 +1,19 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-21T22:24:08.014Z",
-  "total_issues_opened": 483,
+  "generated_at": "2026-04-22T03:14:30.602Z",
+  "total_issues_opened": 484,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 148750,
+  "total_points": 149050,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 3,
+  "rank": 4,
   "cadence": {
     "avg_per_week": 40.3,
-    "avg_per_day": 9.11,
+    "avg_per_day": 7.85,
     "by_day_of_week": [
       122,
       47,
-      74,
+      75,
       61,
       4,
       119,
@@ -21,7 +21,7 @@
     ],
     "by_hour_of_day": [
       0,
-      12,
+      13,
       17,
       24,
       66,
@@ -45,20 +45,20 @@
       40,
       0
     ],
-    "current_streak_weeks": 2,
+    "current_streak_weeks": 3,
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-13T10:49:34.000Z"
+    "last_issue_at": "2026-04-22T01:46:00.000Z"
   },
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
       "issue_count": 370,
       "recent_issue": {
-        "title": "Status Timer Javascript Garbage Build Up",
-        "url": "https://github.com/kubestellar/console/issues/7475",
-        "created_at": "2026-04-13T10:49:34Z"
+        "title": "\"Cancelling...\" UI Infinite Deadlock",
+        "url": "https://github.com/kubestellar/console/issues/9477",
+        "created_at": "2026-04-22T01:46:00Z"
       },
       "repos": [
         "console"
@@ -305,6 +305,20 @@
       "closed_count": 1
     },
     {
+      "name": "spinlock, e74309, bcc69a875419",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Quota-Exceeded Render Spinlock",
+        "url": "https://github.com/kubestellar/console/issues/7469",
+        "created_at": "2026-04-13T10:47:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "millisecond, f9def60b, d292",
       "issue_count": 1,
       "recent_issue": {
@@ -361,7 +375,7 @@
       "closed_count": 1
     },
     {
-      "name": "staging, payload, hijacking",
+      "name": "staging, hijacking, b800717ed68",
       "issue_count": 1,
       "recent_issue": {
         "title": "Tmpfs Privilege Escalation Hijacking",
@@ -543,7 +557,7 @@
       "closed_count": 1
     },
     {
-      "name": "fiber, payload, b202b17",
+      "name": "fiber, b202b17, a05f",
       "issue_count": 1,
       "recent_issue": {
         "title": "Uncaught JSON Parse Error (websockets.go)",
@@ -1437,7 +1451,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 464
+      "issue_count": 465
     }
   ]
 }

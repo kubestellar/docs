@@ -1,19 +1,19 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-21T22:24:52.264Z",
-  "total_issues_opened": 525,
+  "generated_at": "2026-04-22T03:13:40.331Z",
+  "total_issues_opened": 535,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 146600,
-  "level": "Captain",
-  "level_rank": 6,
-  "rank": 4,
+  "total_points": 150000,
+  "level": "Admiral",
+  "level_rank": 7,
+  "rank": 3,
   "cadence": {
-    "avg_per_week": 43.8,
-    "avg_per_day": 31.95,
+    "avg_per_week": 44.6,
+    "avg_per_day": 30.65,
     "by_day_of_week": [
       153,
-      42,
-      18,
+      47,
+      23,
       51,
       29,
       98,
@@ -21,7 +21,7 @@
     ],
     "by_hour_of_day": [
       4,
-      10,
+      15,
       0,
       0,
       0,
@@ -43,28 +43,28 @@
       94,
       43,
       72,
-      99
+      104
     ],
     "current_streak_weeks": 3,
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-21T00:49:50.000Z"
+    "last_issue_at": "2026-04-22T01:17:41.000Z"
   },
   "topics": [
     {
       "name": "@aashu2006, error, happen",
-      "issue_count": 396,
+      "issue_count": 399,
       "recent_issue": {
-        "title": "Multiple modals and detail views show all text in English regardless of language setting",
-        "url": "https://github.com/kubestellar/console/issues/9285",
-        "created_at": "2026-04-21T00:49:50Z"
+        "title": "Network cards show all labels in English regardless of language setting",
+        "url": "https://github.com/kubestellar/console/issues/9471",
+        "created_at": "2026-04-22T01:17:41Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 396
+      "closed_count": 399
     },
     {
       "name": "kubara, chart, control",
@@ -137,6 +137,20 @@
       "closed_count": 3
     },
     {
+      "name": "light, zoom, kagentsecurity",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Service Topology map has several UX issues that make it confusing to use",
+        "url": "https://github.com/kubestellar/console/issues/9469",
+        "created_at": "2026-04-22T01:13:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "inconsistently, behave, item",
       "issue_count": 2,
       "recent_issue": {
@@ -199,6 +213,20 @@
         "title": "21 soft assertions in user-flows/ tests produce zero CI signal - regressions pass silently",
         "url": "https://github.com/kubestellar/console/issues/8508",
         "created_at": "2026-04-16T21:56:17Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "download, tarball, path",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "start.sh downloads tarball to hardcoded /tmp path instead of secure mktemp directory",
+        "url": "https://github.com/kubestellar/console/issues/7852",
+        "created_at": "2026-04-13T23:55:02Z"
       },
       "repos": [
         "console"
@@ -333,6 +361,34 @@
       "closed_count": 2
     },
     {
+      "name": "gateway, mcs, banner",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Gateway and MCS integration banners show permanently even when resources are already installed",
+        "url": "https://github.com/kubestellar/console/issues/9470",
+        "created_at": "2026-04-22T01:16:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "ping, network, host",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Several network controls give no feedback when they cannot do anything useful",
+        "url": "https://github.com/kubestellar/console/issues/9468",
+        "created_at": "2026-04-22T01:12:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "stats, kubedle, modal",
       "issue_count": 1,
       "recent_issue": {
@@ -451,6 +507,20 @@
         "title": "App performance degrades over time during development usage",
         "url": "https://github.com/kubestellar/console/issues/8016",
         "created_at": "2026-04-14T20:37:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "unrelated, kill, pid",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "start.sh port cleanup loop has TOCTOU race allowing unrelated processes to be killed",
+        "url": "https://github.com/kubestellar/console/issues/7853",
+        "created_at": "2026-04-13T23:55:12Z"
       },
       "repos": [
         "console"
@@ -1466,7 +1536,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 525
+      "issue_count": 535
     }
   ]
 }
