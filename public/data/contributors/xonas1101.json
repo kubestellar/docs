@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-22T03:12:45.437Z",
+  "generated_at": "2026-04-22T06:44:41.472Z",
   "total_issues_opened": 576,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 183750,
@@ -713,7 +713,7 @@
       "closed_count": 1
     },
     {
-      "name": "readiness, report, c37629f",
+      "name": "report, readiness, c37629f",
       "issue_count": 1,
       "recent_issue": {
         "title": "Client readiness can report healthy after stop",
@@ -1259,20 +1259,6 @@
       "closed_count": 1
     },
     {
-      "name": "gitleaks, scan, secret",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Secret scan can report PASS even when scanner execution fails",
-        "url": "https://github.com/kubestellar/console/issues/4461",
-        "created_at": "2026-04-03T16:04:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "option, compiler, e8b48fdb",
       "issue_count": 1,
       "recent_issue": {
@@ -1573,6 +1559,20 @@
         "title": "User friendly information panels on unfamiliar use cases",
         "url": "https://github.com/kubestellar/console/issues/3643",
         "created_at": "2026-03-26T11:44:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sleep, a6bc872, a332",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Sleep inside mutex",
+        "url": "https://github.com/kubestellar/console/issues/3505",
+        "created_at": "2026-03-25T04:11:02Z"
       },
       "repos": [
         "console"

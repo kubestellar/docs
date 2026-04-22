@@ -1,6 +1,6 @@
 {
   "login": "btwshivam",
-  "generated_at": "2026-04-22T03:15:18.400Z",
+  "generated_at": "2026-04-22T06:47:00.546Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/127589548?v=4",
   "total_points": 2250,
@@ -95,7 +95,7 @@
       "closed_count": 1
     },
     {
-      "name": "hover, background, cases",
+      "name": "hover, cases, background",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: After hover Background text is showing",

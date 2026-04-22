@@ -1,6 +1,6 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-22T03:15:17.967Z",
+  "generated_at": "2026-04-22T06:47:00.108Z",
   "total_issues_opened": 29,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
   "total_points": 25200,
@@ -109,7 +109,7 @@
       "closed_count": 1
     },
     {
-      "name": "image, default, pull",
+      "name": "image, pull, default",
       "issue_count": 1,
       "recent_issue": {
         "title": "feature: Change default Helm image pull policy to IfNotPresent",

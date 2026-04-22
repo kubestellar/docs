@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-22T03:15:18.399Z",
+  "generated_at": "2026-04-22T06:47:00.545Z",
   "total_issues_opened": 41,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 2600,
@@ -278,7 +278,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "card: Implement Cloud Custodian monitoring card",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/32",
+        "repo": "console-marketplace",
+        "topic_match": "cloud, oracle, roadmap"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-22T03:15:11.296Z",
+  "generated_at": "2026-04-22T06:46:53.990Z",
   "total_issues_opened": 199,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 50600,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xxsuryanshxx, pkg, handler",
-      "issue_count": 179,
+      "issue_count": 177,
       "recent_issue": {
         "title": "### 30. `CheckCanI` delegates to the cluster's apiserver using the console's identity, not the caller's",
         "url": "https://github.com/kubestellar/console/issues/7979",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 179
+      "closed_count": 177
     },
     {
       "name": "tail, log, interact",
@@ -137,6 +137,20 @@
       "closed_count": 1
     },
     {
+      "name": "dryrunsessionsmu, activechatctxsmu, server",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Title: Lock-ordering deadlock between activeChatCtxsMu and dryRunSessionsMu in server_ai.go and server.go",
+        "url": "https://github.com/kubestellar/console/issues/7169",
+        "created_at": "2026-04-13T05:18:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "retain, snapshot, timestamps",
       "issue_count": 1,
       "recent_issue": {
@@ -199,6 +213,20 @@
         "title": "### Issue 11: Missing context propagation in GitHub proxy requests (`github_proxy.go`)",
         "url": "https://github.com/kubestellar/console/issues/4803",
         "created_at": "2026-04-05T13:39:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "key, authorization, aaccf0",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 6: Unvalidated empty API key sent in Authorization header (`provider_openai_compat.go`)",
+        "url": "https://github.com/kubestellar/console/issues/4798",
+        "created_at": "2026-04-05T13:38:22Z"
       },
       "repos": [
         "console"

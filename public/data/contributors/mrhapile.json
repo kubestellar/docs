@@ -1,19 +1,19 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-22T03:14:30.602Z",
-  "total_issues_opened": 484,
+  "generated_at": "2026-04-22T06:46:17.320Z",
+  "total_issues_opened": 486,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 149050,
+  "total_points": 149650,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 40.3,
-    "avg_per_day": 7.85,
+    "avg_per_week": 40.5,
+    "avg_per_day": 7.86,
     "by_day_of_week": [
       122,
       47,
-      75,
+      77,
       61,
       4,
       119,
@@ -25,7 +25,7 @@
       17,
       24,
       66,
-      16,
+      18,
       44,
       23,
       4,
@@ -49,22 +49,22 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-22T01:46:00.000Z"
+    "last_issue_at": "2026-04-22T05:42:56.000Z"
   },
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 370,
+      "issue_count": 371,
       "recent_issue": {
-        "title": "\"Cancelling...\" UI Infinite Deadlock",
-        "url": "https://github.com/kubestellar/console/issues/9477",
-        "created_at": "2026-04-22T01:46:00Z"
+        "title": "Keyboard ArrowRight Locked on First Pass",
+        "url": "https://github.com/kubestellar/console/issues/9501",
+        "created_at": "2026-04-22T05:42:56Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 370
+      "closed_count": 371
     },
     {
       "name": "documentation, 📌, component",
@@ -795,6 +795,20 @@
       "closed_count": 1
     },
     {
+      "name": "extractbalancedblocks, thread, text",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "extractBalancedBlocks O(n²) Main Thread Block",
+        "url": "https://github.com/kubestellar/console/issues/6723",
+        "created_at": "2026-04-11T22:36:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "resizer, bdde7, be3b",
       "issue_count": 1,
       "recent_issue": {
@@ -1391,16 +1405,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },
@@ -1451,7 +1465,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 465
+      "issue_count": 467
     }
   ]
 }
