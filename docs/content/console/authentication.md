@@ -48,6 +48,15 @@ Full GitHub authentication with multi-user support.
 - The access token is used server-side only to fetch the user profile
 - CSRF protection is enforced on the callback (state parameter validation)
 
+#### First-Time Setup Wizard
+
+When the console starts without `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` configured, the login page displays an interactive setup wizard instead of silently entering demo mode. The wizard offers two paths:
+
+- **"Set up GitHub Sign-In"** — Expands an inline guide that walks you through creating a GitHub OAuth App, with copy-to-clipboard buttons for the callback URL and `.env` template
+- **"Continue in Demo Mode"** — Enters demo mode immediately (same as previous behavior)
+
+This replaces the previous behavior where unconfigured consoles would silently auto-login as a demo user with no indication that GitHub authentication was available.
+
 ### 2. Development Mode (`start-dev.sh`)
 
 No authentication required. A local `dev-user` session is created automatically.

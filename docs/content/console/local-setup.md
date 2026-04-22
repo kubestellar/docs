@@ -81,6 +81,18 @@ The Vite dev server proxies API requests to the Go backend on port 8080.
 
 For multi-user deployments or to test the complete authentication flow.
 
+> **💡 New: Setup Wizard (Recommended)**
+>
+> As of v0.3.18, you can skip the manual steps below. Simply start the console without OAuth credentials:
+>
+> ```bash
+> ./startup-oauth.sh
+> ```
+>
+> Visit `http://localhost:8080` and the login page will show an interactive **Setup Wizard** that walks you through creating a GitHub OAuth App, with copy-to-clipboard buttons for all values. You can also choose "Continue in Demo Mode" to skip OAuth entirely.
+>
+> The manual steps below are still available if you prefer to configure OAuth before first startup.
+
 ### Step 1: Create a GitHub OAuth App
 
 1. Go to **[GitHub Developer Settings](https://github.com/settings/developers)** > **OAuth Apps** > **New OAuth App**
