@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-22T14:46:27.396Z",
+  "generated_at": "2026-04-22T18:32:43.604Z",
   "total_issues_opened": 41,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 2600,
@@ -279,6 +279,12 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "AgentStatusIndicator displays transient \"connecting\" status indefinitely in dropdown when kc-agent is not running",
+        "url": "https://github.com/kubestellar/console/issues/9533",
+        "repo": "console",
+        "topic_match": "dropdown, blur, navbar"
+      },
       {
         "title": "card: Implement Cloud Custodian monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/32",

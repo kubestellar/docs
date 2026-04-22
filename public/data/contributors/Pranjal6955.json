@@ -1,6 +1,6 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-22T14:46:26.951Z",
+  "generated_at": "2026-04-22T18:32:43.212Z",
   "total_issues_opened": 42,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
   "total_points": 23800,
@@ -279,16 +279,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
         "name": "Observability & Logs",

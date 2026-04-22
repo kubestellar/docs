@@ -1,6 +1,6 @@
 {
   "login": "Darshit42",
-  "generated_at": "2026-04-22T14:46:27.361Z",
+  "generated_at": "2026-04-22T18:32:43.573Z",
   "total_issues_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
   "total_points": 5300,
@@ -138,7 +138,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Several buttons in the YAML drilldown panel are completely non-functional",
+        "url": "https://github.com/kubestellar/console/issues/9534",
+        "repo": "console",
+        "topic_match": "button, expand, panel"
+      }
+    ],
     "stretch": [
       {
         "name": "Security & RBAC",

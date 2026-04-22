@@ -1,6 +1,6 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-22T14:42:38.933Z",
+  "generated_at": "2026-04-22T18:29:30.079Z",
   "total_issues_opened": 1074,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
   "total_points": 3780000,
@@ -379,7 +379,7 @@
       "closed_count": 2
     },
     {
-      "name": "preview, linked, markdown",
+      "name": "preview, markdown, linked",
       "issue_count": 2,
       "recent_issue": {
         "title": "Add markdown preview toggle for issue description in Contribute dialog",

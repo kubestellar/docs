@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-22T14:46:25.350Z",
+  "generated_at": "2026-04-22T18:32:41.776Z",
   "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 44250,
@@ -603,7 +603,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "Show the ctrl/cmd+enter icon on the submit button in the contribute modal",
+        "url": "https://github.com/kubestellar/console/issues/9532",
+        "repo": "console",
+        "topic_match": "cmd, face, bc247e"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",
