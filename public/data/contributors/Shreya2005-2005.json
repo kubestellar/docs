@@ -1,6 +1,6 @@
 {
   "login": "Shreya2005-2005",
-  "generated_at": "2026-04-23T18:36:14.265Z",
+  "generated_at": "2026-04-23T22:27:03.624Z",
   "total_issues_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/217235943?v=4",
   "total_points": 1350,
@@ -63,11 +63,11 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
-      "name": "trend, building, stat",
+      "name": "building, trend, stat",
       "issue_count": 1,
       "recent_issue": {
         "title": "## Bug: Stats Overview cards show truncated text with \"Building trend...\" overflow",
@@ -77,8 +77,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "localstorage, load, json",

@@ -1,9 +1,9 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-23T18:36:07.127Z",
+  "generated_at": "2026-04-23T22:26:56.634Z",
   "total_issues_opened": 199,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-  "total_points": 51500,
+  "total_points": 52500,
   "level": "Captain",
   "level_rank": 6,
   "rank": 6,
@@ -305,7 +305,7 @@
       "closed_count": 1
     },
     {
-      "name": "omission, a484, ee874a25ff49",
+      "name": "a484, ee874a25ff49, omission",
       "issue_count": 1,
       "recent_issue": {
         "title": "Missing target=\"_blank\" vulnerability (rel=\"noopener noreferrer\" omission)",

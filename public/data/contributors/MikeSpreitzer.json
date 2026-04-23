@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-23T18:36:14.214Z",
+  "generated_at": "2026-04-23T22:27:03.578Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 17650,
@@ -96,6 +96,20 @@
       "closed_count": 2
     },
     {
+      "name": "test6, mspreitz, pid",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "feature: Console exposes its version",
+        "url": "https://github.com/kubestellar/console/issues/3223",
+        "created_at": "2026-03-23T04:37:04Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "tenant, architecture, card",
       "issue_count": 2,
       "recent_issue": {
@@ -166,20 +180,6 @@
       "closed_count": 1
     },
     {
-      "name": "pid, kc, cat",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: kc-agent alleged to be left running, but isn't",
-        "url": "https://github.com/kubestellar/console/issues/3083",
-        "created_at": "2026-03-21T07:10:35Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "uis, thing, plumbing",
       "issue_count": 1,
       "recent_issue": {
@@ -217,20 +217,6 @@
       },
       "repos": [
         "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "image, suspect, mean",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "doc: confusing wording about MCP bundling with console",
-        "url": "https://github.com/kubestellar/docs/issues/1286",
-        "created_at": "2026-03-13T20:34:33Z"
-      },
-      "repos": [
-        "docs"
       ],
       "open_count": 0,
       "closed_count": 1
@@ -293,14 +279,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "✨ Sigstore/Cosign Image Signature Verification",
-        "url": "https://github.com/kubestellar/console/issues/9646",
-        "repo": "console",
-        "topic_match": "image, suspect, mean"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Security & RBAC",

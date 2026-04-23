@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-23T18:35:28.057Z",
+  "generated_at": "2026-04-23T22:26:19.159Z",
   "total_issues_opened": 487,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 149950,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 379
+      "open_count": 0,
+      "closed_count": 380
     },
     {
       "name": "documentation, 📌, component",

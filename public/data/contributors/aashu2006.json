@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-23T18:34:39.924Z",
+  "generated_at": "2026-04-23T22:25:32.182Z",
   "total_issues_opened": 540,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 153000,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "@aashu2006, error, happen",
+      "name": "@aashu2006, happen, error",
       "issue_count": 405,
       "recent_issue": {
         "title": "Multiple drilldown panels show all text in English regardless of language setting",
@@ -1446,12 +1446,6 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
         "topic_match": "extract, ffb011, f6f"
-      },
-      {
-        "title": "bug: WebSocket Reader Blocking on Hung Providers",
-        "url": "https://github.com/kubestellar/console/issues/9713",
-        "repo": "console",
-        "topic_match": "timeout, path, handlechatmessage"
       }
     ],
     "stretch": [

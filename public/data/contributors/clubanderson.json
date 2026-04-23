@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-23T18:32:34.819Z",
-  "total_issues_opened": 1166,
+  "generated_at": "2026-04-23T22:23:32.865Z",
+  "total_issues_opened": 1179,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3825700,
+  "total_points": 3848900,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 92.3,
-    "avg_per_day": 4.63,
+    "avg_per_week": 93.3,
+    "avg_per_day": 4.67,
     "by_day_of_week": [
       149,
       140,
       215,
-      245,
-      154,
+      259,
+      153,
       151,
       112
     ],
@@ -33,40 +33,54 @@
       6,
       58,
       17,
-      73,
+      72,
       60,
       92,
       39,
       45,
-      34,
-      163,
-      37,
-      23,
-      22,
+      35,
+      166,
+      41,
+      27,
+      24,
       15
     ],
     "current_streak_weeks": 17,
     "longest_streak_weeks": 17,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-23T16:05:22.000Z"
+    "last_issue_at": "2026-04-23T22:00:50.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 755,
+      "issue_count": 759,
       "recent_issue": {
-        "title": "🐛 31 test failure(s) in Coverage Suite run #1291",
-        "url": "https://github.com/kubestellar/console/issues/9704",
-        "created_at": "2026-04-23T16:05:22Z"
+        "title": "🐛 4 test failure(s) in Coverage Suite run #1318",
+        "url": "https://github.com/kubestellar/console/issues/9756",
+        "created_at": "2026-04-23T20:42:03Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 5,
-      "closed_count": 750
+      "open_count": 3,
+      "closed_count": 756
+    },
+    {
+      "name": "error, ga4, category",
+      "issue_count": 60,
+      "recent_issue": {
+        "title": "🐛 GA4 error: auth errors on / (new today, 4 hits)",
+        "url": "https://github.com/kubestellar/console/issues/9770",
+        "created_at": "2026-04-23T22:00:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 59
     },
     {
       "name": "monitoring, implement, card",
@@ -84,20 +98,6 @@
       "closed_count": 25
     },
     {
-      "name": "error, ga4, category",
-      "issue_count": 53,
-      "recent_issue": {
-        "title": "Regression: Perf — Bundle size 3266897 > 3225000 budget (12 failures since 2026-04-18)",
-        "url": "https://github.com/kubestellar/console/issues/8971",
-        "created_at": "2026-04-19T05:07:02Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 53
-    },
-    {
       "name": "outreach, acmm, file",
       "issue_count": 46,
       "recent_issue": {
@@ -113,6 +113,20 @@
       "closed_count": 46
     },
     {
+      "name": "compliance, nist, epic",
+      "issue_count": 41,
+      "recent_issue": {
+        "title": "✨ Segregation of Duties Dashboard",
+        "url": "https://github.com/kubestellar/console/issues/9678",
+        "created_at": "2026-04-23T11:29:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 7,
+      "closed_count": 34
+    },
+    {
       "name": "link, break, url",
       "issue_count": 35,
       "recent_issue": {
@@ -125,20 +139,6 @@
       ],
       "open_count": 0,
       "closed_count": 35
-    },
-    {
-      "name": "compliance, nist, control",
-      "issue_count": 33,
-      "recent_issue": {
-        "title": "✨ Segregation of Duties Dashboard",
-        "url": "https://github.com/kubestellar/console/issues/9678",
-        "created_at": "2026-04-23T11:29:52Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 6,
-      "closed_count": 27
     },
     {
       "name": "js, alert, codeql",
@@ -198,6 +198,21 @@
       "closed_count": 8
     },
     {
+      "name": "projects, safari, doc",
+      "issue_count": 7,
+      "recent_issue": {
+        "title": "bug: opening sidebar in mobile site fades entire ui and there is no way to select a dashboard from the dropdown",
+        "url": "https://github.com/kubestellar/console/issues/9758",
+        "created_at": "2026-04-23T20:51:54Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 6
+    },
+    {
       "name": "release, nightly, april",
       "issue_count": 7,
       "recent_issue": {
@@ -226,21 +241,6 @@
       "closed_count": 7
     },
     {
-      "name": "projects, doc, safari",
-      "issue_count": 6,
-      "recent_issue": {
-        "title": "bug: https://kubestellar.io/en/acmm-leaderboard not showing leaderboard on mobile browser",
-        "url": "https://github.com/kubestellar/console/issues/9568",
-        "created_at": "2026-04-23T01:29:42Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 6
-    },
-    {
       "name": "testing, greet, close",
       "issue_count": 6,
       "recent_issue": {
@@ -253,20 +253,6 @@
       ],
       "open_count": 0,
       "closed_count": 6
-    },
-    {
-      "name": "provider, enterprise, oidc",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "✨ Enterprise Session Management",
-        "url": "https://github.com/kubestellar/console/issues/9658",
-        "created_at": "2026-04-23T11:24:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 5
     },
     {
       "name": "term, roadmap, near",
@@ -323,20 +309,6 @@
       ],
       "open_count": 0,
       "closed_count": 3
-    },
-    {
-      "name": "siem, export, syslog",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "✨ SIEM Export (Splunk/Elastic/Webhook/Syslog)",
-        "url": "https://github.com/kubestellar/console/issues/9643",
-        "created_at": "2026-04-23T11:24:25Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 2,
-      "closed_count": 1
     },
     {
       "name": "analysis, portfolio, nfr",
@@ -548,6 +520,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "branch, verifier, fix",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🚨 PR Verifier startup_failure — 10 consecutive runs across all branches",
+        "url": "https://github.com/kubestellar/console/issues/9763",
+        "created_at": "2026-04-23T21:01:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "cve, risk, score",
@@ -1208,7 +1194,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 521
+      "issue_count": 534
     }
   ]
 }

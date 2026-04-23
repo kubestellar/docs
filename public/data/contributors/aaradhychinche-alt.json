@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-23T18:36:04.206Z",
+  "generated_at": "2026-04-23T22:26:53.827Z",
   "total_issues_opened": 452,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 132550,
@@ -264,7 +264,7 @@
       "closed_count": 1
     },
     {
-      "name": "enable, change, flag",
+      "name": "enable, flag, change",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: useClusterCapabilities does not react to enabled flag changes due to stale closure",
