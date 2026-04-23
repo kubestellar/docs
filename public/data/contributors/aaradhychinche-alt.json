@@ -1,6 +1,6 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-23T10:42:04.005Z",
+  "generated_at": "2026-04-23T14:56:40.299Z",
   "total_issues_opened": 452,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 132550,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aaradhychinche, alt, cluster",
-      "issue_count": 422,
+      "issue_count": 423,
       "recent_issue": {
         "title": "Contribute: Issue submission fails with \"CSRF header required\" on local setup",
         "url": "https://github.com/kubestellar/console/issues/9439",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 422
+      "closed_count": 423
     },
     {
       "name": "card, registry, register",
@@ -130,20 +130,6 @@
         "title": "## 🐛 bug: deploy api does not validate sourceCluster",
         "url": "https://github.com/kubestellar/console/issues/5957",
         "created_at": "2026-04-10T06:48:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "analysis, ai, failure",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "📝 issue: AI analysis failures are silent",
-        "url": "https://github.com/kubestellar/console/issues/5945",
-        "created_at": "2026-04-10T06:44:48Z"
       },
       "repos": [
         "console"
@@ -278,7 +264,7 @@
       "closed_count": 1
     },
     {
-      "name": "enable, flag, change",
+      "name": "enable, change, flag",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: useClusterCapabilities does not react to enabled flag changes due to stale closure",
@@ -348,7 +334,7 @@
       "closed_count": 1
     },
     {
-      "name": "documentation, implementation, repository",
+      "name": "documentation, repository, da4b0349e1",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: documentation references deprecated kubestellar/ui project instead of current console implementation",
@@ -365,12 +351,6 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "bug: AI Analysis Spin-Loop (Denial of Service) via 0 Interval",
-        "url": "https://github.com/kubestellar/console/issues/9620",
-        "repo": "console",
-        "topic_match": "analysis, ai, failure"
-      },
-      {
         "title": "card: Implement Harbor Registry monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/16",
         "repo": "console-marketplace",
@@ -383,6 +363,12 @@
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Onboarding & Rewards",
@@ -401,12 +387,6 @@
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },

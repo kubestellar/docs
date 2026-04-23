@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-23T10:42:13.019Z",
+  "generated_at": "2026-04-23T14:56:49.422Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 17650,
@@ -278,7 +278,7 @@
       "closed_count": 1
     },
     {
-      "name": "coding, standard, checklist",
+      "name": "coding, standard, knowledge",
       "issue_count": 1,
       "recent_issue": {
         "title": "PR template references \"the project's coding standards\"",
@@ -293,7 +293,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "✨ Multi-Tenancy with Namespace-Scoped RBAC",
+        "url": "https://github.com/kubestellar/console/issues/9650",
+        "repo": "console",
+        "topic_match": "tenant, architecture, card"
+      },
+      {
+        "title": "✨ Sigstore/Cosign Image Signature Verification",
+        "url": "https://github.com/kubestellar/console/issues/9646",
+        "repo": "console",
+        "topic_match": "image, suspect, mean"
+      }
+    ],
     "stretch": [
       {
         "name": "Security & RBAC",

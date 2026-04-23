@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-23T10:32:52.680Z",
-  "git_hash": "a4927ab",
+  "generated_at": "2026-04-23T14:47:05.008Z",
+  "git_hash": "c8f15d6",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3802900,
+      "total_points": 3814950,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 279,
-        "feature_issues": 433,
-        "other_issues": 389,
-        "prs_opened": 5497,
-        "prs_merged": 5114
+        "feature_issues": 435,
+        "other_issues": 440,
+        "prs_opened": 5511,
+        "prs_merged": 5127
       },
       "bonus_points": 50,
       "rank": 1
@@ -425,6 +425,21 @@
       "rank": 28
     },
     {
+      "login": "lightyagami2109",
+      "avatar_url": "https://avatars.githubusercontent.com/u/186868051?v=4",
+      "total_points": 2100,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 3,
+        "prs_merged": 3
+      },
+      "rank": 29
+    },
+    {
       "login": "p172913",
       "avatar_url": "https://avatars.githubusercontent.com/u/72274012?v=4",
       "total_points": 2100,
@@ -437,7 +452,7 @@
         "prs_opened": 3,
         "prs_merged": 3
       },
-      "rank": 29
+      "rank": 30
     },
     {
       "login": "sicaario",
@@ -452,7 +467,7 @@
         "prs_opened": 4,
         "prs_merged": 2
       },
-      "rank": 30
+      "rank": 31
     },
     {
       "login": "ParthKshirsagar7",
@@ -467,7 +482,7 @@
         "prs_opened": 3,
         "prs_merged": 2
       },
-      "rank": 31
+      "rank": 32
     },
     {
       "login": "shubhamkumar9199",
@@ -480,21 +495,6 @@
         "feature_issues": 0,
         "other_issues": 0,
         "prs_opened": 2,
-        "prs_merged": 2
-      },
-      "rank": 32
-    },
-    {
-      "login": "lightyagami2109",
-      "avatar_url": "https://avatars.githubusercontent.com/u/186868051?v=4",
-      "total_points": 1600,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 3,
         "prs_merged": 2
       },
       "rank": 33

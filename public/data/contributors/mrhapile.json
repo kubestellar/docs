@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-23T10:41:31.757Z",
+  "generated_at": "2026-04-23T14:56:07.106Z",
   "total_issues_opened": 486,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 149650,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 371,
+      "issue_count": 378,
       "recent_issue": {
         "title": "Keyboard ArrowRight Locked on First Pass",
         "url": "https://github.com/kubestellar/console/issues/9501",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 371
+      "closed_count": 378
     },
     {
       "name": "documentation, 📌, component",
@@ -101,20 +101,6 @@
         "title": "Unchecked HTTP res.ok json Parsing",
         "url": "https://github.com/kubestellar/console/issues/7141",
         "created_at": "2026-04-13T05:00:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "pb, safe, inset",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "iOS Bottom Bar Safe Area",
-        "url": "https://github.com/kubestellar/console/issues/6545",
-        "created_at": "2026-04-11T16:39:56Z"
       },
       "repos": [
         "console"
@@ -297,20 +283,6 @@
         "title": "historyWithoutLastUser Redundancy",
         "url": "https://github.com/kubestellar/console/issues/7470",
         "created_at": "2026-04-13T10:47:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "spinlock, e74309, bcc69a875419",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Quota-Exceeded Render Spinlock",
-        "url": "https://github.com/kubestellar/console/issues/7469",
-        "created_at": "2026-04-13T10:47:03Z"
       },
       "repos": [
         "console"
@@ -613,20 +585,6 @@
       "closed_count": 1
     },
     {
-      "name": "poll, cb05803, ad87",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Poll Memory Allocation Leak",
-        "url": "https://github.com/kubestellar/console/issues/7159",
-        "created_at": "2026-04-13T05:03:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "visually, pointer, progress",
       "issue_count": 1,
       "recent_issue": {
@@ -675,20 +633,6 @@
         "title": "strings.Split panic arrays",
         "url": "https://github.com/kubestellar/console/issues/7138",
         "created_at": "2026-04-13T04:59:32Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "slack, buff, efaea97f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unbounded Slack Payloads buffing buffer",
-        "url": "https://github.com/kubestellar/console/issues/7136",
-        "created_at": "2026-04-13T04:58:51Z"
       },
       "repos": [
         "console"
@@ -1201,20 +1145,6 @@
       "closed_count": 1
     },
     {
-      "name": "menu, right, screen",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "CardWrapper — Menu position off-screen",
-        "url": "https://github.com/kubestellar/console/issues/5253",
-        "created_at": "2026-04-07T14:21:47Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "timer, thrashing, d778",
       "issue_count": 1,
       "recent_issue": {
@@ -1393,6 +1323,12 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
@@ -1403,12 +1339,6 @@
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Security & RBAC",

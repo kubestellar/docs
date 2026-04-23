@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-23T10:40:48.475Z",
+  "generated_at": "2026-04-23T14:55:23.616Z",
   "total_issues_opened": 540,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 153000,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, happen, error",
-      "issue_count": 411,
+      "issue_count": 406,
       "recent_issue": {
         "title": "Multiple drilldown panels show all text in English regardless of language setting",
         "url": "https://github.com/kubestellar/console/issues/9539",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 411
+      "closed_count": 406
     },
     {
       "name": "kubara, chart, control",
@@ -93,6 +93,20 @@
       ],
       "open_count": 0,
       "closed_count": 7
+    },
+    {
+      "name": "clusterrole, opt, grant",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "ClusterRole exposes full RBAC topology with no opt-out value",
+        "url": "https://github.com/kubestellar/console/issues/6988",
+        "created_at": "2026-04-12T22:01:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 4
     },
     {
       "name": "cookie, csrf, samesite",
@@ -283,6 +297,20 @@
         "title": "*.netlify.app wildcard in analytics origin allowlist permits any Netlify deployment to abuse the proxy",
         "url": "https://github.com/kubestellar/console/issues/7032",
         "created_at": "2026-04-12T23:17:14Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "selector, workload, pod",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Label selector injection via unsanitized workload name path parameter leaking pods from other workloads",
+        "url": "https://github.com/kubestellar/console/issues/7004",
+        "created_at": "2026-04-12T22:28:59Z"
       },
       "repos": [
         "console"
@@ -725,12 +753,26 @@
       "closed_count": 1
     },
     {
-      "name": "certificate, mitm, argocd",
+      "name": "mitm, certificate, attack",
       "issue_count": 1,
       "recent_issue": {
         "title": "ArgoCD TLS certificate verification skip has no production guard enabling MITM attacks",
         "url": "https://github.com/kubestellar/console/issues/7683",
         "created_at": "2026-04-13T19:12:46Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "incremented, d0541d45, e0b4780850f9",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Screenshot upload count incremented at validation time not after successful GitHub API delivery",
+        "url": "https://github.com/kubestellar/console/issues/7062",
+        "created_at": "2026-04-12T23:54:00Z"
       },
       "repos": [
         "console"
@@ -809,20 +851,6 @@
       "closed_count": 1
     },
     {
-      "name": "workload, label, selector",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Label selector injection via unsanitized workload name path parameter leaking pods from other workloads",
-        "url": "https://github.com/kubestellar/console/issues/7004",
-        "created_at": "2026-04-12T22:28:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "runanalysis, e03254, d260",
       "issue_count": 1,
       "recent_issue": {
@@ -851,26 +879,12 @@
       "closed_count": 1
     },
     {
-      "name": "variable, configuration, value",
+      "name": "variable, value, configuration",
       "issue_count": 1,
       "recent_issue": {
         "title": "ai.defaultMode and ai.tokenLimits values in values.yaml are never wired to container environment variables",
         "url": "https://github.com/kubestellar/console/issues/6991",
         "created_at": "2026-04-12T22:02:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "networkpolicy, selector, disabled",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "NetworkPolicy disabled by default with no Egress rules and no source selector when enabled",
-        "url": "https://github.com/kubestellar/console/issues/6989",
-        "created_at": "2026-04-12T22:02:00Z"
       },
       "repos": [
         "console"

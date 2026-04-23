@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-23T10:38:56.938Z",
-  "total_issues_opened": 1111,
+  "generated_at": "2026-04-23T14:53:32.486Z",
+  "total_issues_opened": 1164,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3802900,
+  "total_points": 3814950,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 87.8,
-    "avg_per_day": 4.41,
+    "avg_per_week": 92.2,
+    "avg_per_day": 4.62,
     "by_day_of_week": [
       149,
       140,
       215,
-      191,
+      244,
       153,
       151,
       112
@@ -31,10 +31,10 @@
       29,
       8,
       6,
-      7,
+      58,
       17,
       72,
-      58,
+      60,
       92,
       38,
       45,
@@ -49,24 +49,24 @@
     "longest_streak_weeks": 17,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-23T08:03:11.000Z"
+    "last_issue_at": "2026-04-23T14:02:36.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 752,
+      "issue_count": 753,
       "recent_issue": {
-        "title": "[Auto-QA] Inconsistent component patterns detected",
-        "url": "https://github.com/kubestellar/console/issues/9615",
-        "created_at": "2026-04-23T08:03:11Z"
+        "title": "[Auto-QA] Keyboard navigation gaps",
+        "url": "https://github.com/kubestellar/console/issues/9690",
+        "created_at": "2026-04-23T14:02:36Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 4,
-      "closed_count": 748
+      "open_count": 6,
+      "closed_count": 747
     },
     {
       "name": "monitoring, implement, card",
@@ -127,17 +127,31 @@
       "closed_count": 35
     },
     {
-      "name": "js, alert, codeql",
-      "issue_count": 30,
+      "name": "compliance, nist, control",
+      "issue_count": 33,
       "recent_issue": {
-        "title": "[Auto-QA] Bundle has JS chunks over 300KB",
-        "url": "https://github.com/kubestellar/console/issues/9347",
-        "created_at": "2026-04-21T08:02:02Z"
+        "title": "✨ Segregation of Duties Dashboard",
+        "url": "https://github.com/kubestellar/console/issues/9678",
+        "created_at": "2026-04-23T11:29:52Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
+      "open_count": 15,
+      "closed_count": 18
+    },
+    {
+      "name": "js, alert, codeql",
+      "issue_count": 31,
+      "recent_issue": {
+        "title": "✨ Alert Routing (PagerDuty/Slack/Teams)",
+        "url": "https://github.com/kubestellar/console/issues/9649",
+        "created_at": "2026-04-23T11:24:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
       "closed_count": 30
     },
     {
@@ -241,6 +255,20 @@
       "closed_count": 6
     },
     {
+      "name": "provider, enterprise, oidc",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "✨ Enterprise Session Management",
+        "url": "https://github.com/kubestellar/console/issues/9658",
+        "created_at": "2026-04-23T11:24:40Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 4,
+      "closed_count": 1
+    },
+    {
       "name": "term, roadmap, near",
       "issue_count": 5,
       "recent_issue": {
@@ -251,8 +279,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 2,
-      "closed_count": 3
+      "open_count": 1,
+      "closed_count": 4
     },
     {
       "name": "typo, readme, fix",
@@ -267,6 +295,48 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "residency, classification, rule",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "✨ Data Residency Enforcement",
+        "url": "https://github.com/kubestellar/console/issues/9676",
+        "created_at": "2026-04-23T11:29:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "air, gap, offline",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "✨ Air-Gap Support for Disconnected Environments",
+        "url": "https://github.com/kubestellar/console/issues/9667",
+        "created_at": "2026-04-23T11:25:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 2
+    },
+    {
+      "name": "siem, export, syslog",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "✨ SIEM Export (Splunk/Elastic/Webhook/Syslog)",
+        "url": "https://github.com/kubestellar/console/issues/9643",
+        "created_at": "2026-04-23T11:24:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 2,
+      "closed_count": 1
     },
     {
       "name": "analysis, portfolio, nfr",
@@ -325,6 +395,20 @@
       "closed_count": 3
     },
     {
+      "name": "tooltip, technical, abbreviation",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
+        "url": "https://github.com/kubestellar/console/issues/3345",
+        "created_at": "2026-03-23T20:21:23Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
       "name": "right, fab, circle",
       "issue_count": 2,
       "recent_issue": {
@@ -345,20 +429,6 @@
         "title": "🐛 MSW missing passthrough for /gpu-nodes/stream on console.kubestellar.io",
         "url": "https://github.com/kubestellar/console/issues/8476",
         "created_at": "2026-04-16T20:04:54Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "provider, client, ai",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Add a per-provider Base URL field to APIKeySettings (Advanced)",
-        "url": "https://github.com/kubestellar/console/issues/8254",
-        "created_at": "2026-04-16T00:02:17Z"
       },
       "repos": [
         "console"
@@ -480,6 +550,48 @@
       "closed_count": 2
     },
     {
+      "name": "cve, risk, score",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "✨ Threat Intelligence Overlay (CVE/Risk Scoring)",
+        "url": "https://github.com/kubestellar/console/issues/9664",
+        "created_at": "2026-04-23T11:24:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "tenant, scoped, crud",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "✨ Multi-Tenancy with Namespace-Scoped RBAC",
+        "url": "https://github.com/kubestellar/console/issues/9650",
+        "created_at": "2026-04-23T11:24:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "baa, expiry, agreements",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "✨ BAA Tracker (Business Associate Agreements)",
+        "url": "https://github.com/kubestellar/console/issues/9645",
+        "created_at": "2026-04-23T11:24:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "instruction, l2, vendor",
       "issue_count": 1,
       "recent_issue": {
@@ -598,6 +710,20 @@
         "title": "🐛 Sidebar subtitle shows rotating taglines — not requested",
         "url": "https://github.com/kubestellar/console/issues/8488",
         "created_at": "2026-04-16T20:15:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "provider, var, env",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Add a per-provider Base URL field to APIKeySettings (Advanced)",
+        "url": "https://github.com/kubestellar/console/issues/8254",
+        "created_at": "2026-04-16T00:02:17Z"
       },
       "repos": [
         "console"
@@ -738,20 +864,6 @@
         "title": "[Auto-QA] 1 adoption & engagement psychology opportunities found",
         "url": "https://github.com/kubestellar/console/issues/3791",
         "created_at": "2026-03-28T13:44:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "recommend, expand, dropdown",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
-        "url": "https://github.com/kubestellar/console/issues/3345",
-        "created_at": "2026-03-23T20:21:23Z"
       },
       "repos": [
         "console"
@@ -1027,26 +1139,13 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "bug: AI Analysis Spin-Loop (Denial of Service) via 0 Interval",
-        "url": "https://github.com/kubestellar/console/issues/9620",
-        "repo": "console",
-        "topic_match": "analysis, portfolio, nfr"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
         "name": "Onboarding & Rewards",
@@ -1109,7 +1208,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 466
+      "issue_count": 519
     }
   ]
 }

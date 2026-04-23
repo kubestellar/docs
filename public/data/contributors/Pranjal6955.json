@@ -1,6 +1,6 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-23T10:42:12.651Z",
+  "generated_at": "2026-04-23T14:56:49.055Z",
   "total_issues_opened": 47,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
   "total_points": 26500,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 2,
-      "closed_count": 29
+      "open_count": 0,
+      "closed_count": 31
     },
     {
       "name": "interval, analysis, loop",
@@ -77,11 +77,11 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
-      "name": "uncancelable, map, second",
+      "name": "uncancelable, second, map",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Mission State Concurrency Hazard in activeChatCtxs",
@@ -91,8 +91,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "chunk, mission, persistence",
@@ -105,8 +105,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "primary, scan, concurrent",

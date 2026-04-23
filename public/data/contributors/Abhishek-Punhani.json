@@ -1,6 +1,6 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-23T10:42:12.096Z",
+  "generated_at": "2026-04-23T14:56:48.492Z",
   "total_issues_opened": 93,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
   "total_points": 28950,
@@ -67,7 +67,7 @@
       "closed_count": 85
     },
     {
-      "name": "linux, dev, ubuntu",
+      "name": "linux, ubuntu, dev",
       "issue_count": 3,
       "recent_issue": {
         "title": "bug:  make dev silently fails: backend never starts, all API calls ECONNREFUSED",
@@ -157,7 +157,7 @@
         "title": "card: Implement Flatcar Container Linux monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/59",
         "repo": "console-marketplace",
-        "topic_match": "linux, dev, ubuntu"
+        "topic_match": "linux, ubuntu, dev"
       }
     ],
     "stretch": [

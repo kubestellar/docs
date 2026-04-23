@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-23T10:39:58.701Z",
+  "generated_at": "2026-04-23T14:54:34.529Z",
   "total_issues_opened": 581,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 185250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 448,
+      "issue_count": 449,
       "recent_issue": {
         "title": "Show the ctrl/cmd+enter icon on the submit button in the contribute modal",
         "url": "https://github.com/kubestellar/console/issues/9532",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 448
+      "closed_count": 449
     },
     {
       "name": "invite, reward, storage",
@@ -102,20 +102,6 @@
         "title": "Agent approval fallback does not match its documented behavior",
         "url": "https://github.com/kubestellar/console/issues/7561",
         "created_at": "2026-04-13T13:36:04Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "infinity, heatmap, valueresolvers",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Min/max stat resolvers can return Infinity/-Infinity for non-numeric data.",
-        "url": "https://github.com/kubestellar/console/issues/6713",
-        "created_at": "2026-04-11T22:23:41Z"
       },
       "repos": [
         "console"
@@ -186,6 +172,20 @@
         "title": "Diagnosis lock can get stuck after unexpected failure",
         "url": "https://github.com/kubestellar/console/issues/7401",
         "created_at": "2026-04-13T08:53:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "infinity, valueresolvers, heatmap",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Min/max stat resolvers can return Infinity/-Infinity for non-numeric data.",
+        "url": "https://github.com/kubestellar/console/issues/6713",
+        "created_at": "2026-04-11T22:23:41Z"
       },
       "repos": [
         "console"
@@ -321,7 +321,7 @@
       "closed_count": 1
     },
     {
-      "name": "username, trim, dfbadcc3",
+      "name": "trim, username, dfbadcc3",
       "issue_count": 1,
       "recent_issue": {
         "title": "GitHub username validation runs before trimming input",
@@ -503,7 +503,7 @@
       "closed_count": 1
     },
     {
-      "name": "vi, test, import",
+      "name": "vi, test, dacbbec",
       "issue_count": 1,
       "recent_issue": {
         "title": "Test file uses vi without importing it",
@@ -797,7 +797,7 @@
       "closed_count": 1
     },
     {
-      "name": "mapping, direct, space",
+      "name": "direct, mapping, space",
       "issue_count": 1,
       "recent_issue": {
         "title": "Project Name Whitespace Breaks Direct Mapping",
@@ -825,7 +825,7 @@
       "closed_count": 1
     },
     {
-      "name": "debt, usecacheddata, ts",
+      "name": "debt, ts, usecacheddata",
       "issue_count": 1,
       "recent_issue": {
         "title": "Known shared-mutation hazards inside concurrency callbacks (ratcheted technical debt)",
@@ -1049,20 +1049,6 @@
       "closed_count": 1
     },
     {
-      "name": "text, split, d681072",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Translation text is manually truncated with split",
-        "url": "https://github.com/kubestellar/console/issues/5991",
-        "created_at": "2026-04-10T08:06:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "capacity, aacfcb1, f000",
       "issue_count": 1,
       "recent_issue": {
@@ -1139,6 +1125,20 @@
         "title": "The Helm chart at oci://ghcr.io/kubestellar/charts/console returns a 404 error.",
         "url": "https://github.com/kubestellar/console/issues/5524",
         "created_at": "2026-04-08T16:54:53Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "coding, level, contributor",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Contributor level color coding is different in docs and in console",
+        "url": "https://github.com/kubestellar/console/issues/5241",
+        "created_at": "2026-04-07T13:53:07Z"
       },
       "repos": [
         "console"
