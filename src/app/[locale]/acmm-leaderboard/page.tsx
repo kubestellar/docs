@@ -85,6 +85,18 @@ function ScoreBar({ score, max = 26 }: { score: number; max?: number }) {
   );
 }
 
+// ── Participants — projects displaying the ACMM badge on their README ─
+
+const BADGE_PARTICIPANTS = new Set([
+  "kubestellar/console",
+  "kubestellar/kubestellar",
+  "kitops-ml/kitops",
+  "cadence-workflow/cadence",
+  "easegress-io/easegress",
+  "kmesh-net/kmesh",
+  "kube-vip/kube-vip",
+]);
+
 // ── Sort options ──────────────────────────────────────────────────────
 
 type SortField = "rank" | "name" | "level" | "score";
@@ -394,12 +406,12 @@ const TOTAL_SIGNALS = 26;
 export default function AcmmLeaderboardPage() {
   const [search, setSearch] = useState("");
   const [levelFilter, setLevelFilter] = useState<number | null>(null);
-  const [sortField, setSortField] = useState<SortField>("rank");
-  const [sortDir, setSortDir] = useState<SortDir>("asc");
+  const [sortField, setSortField] = useState<SortField>("level");
+  const [sortDir, setSortDir] = useState<SortDir>("desc");
   const [showInfo, setShowInfo] = useState(false);
 
   const levelCounts = useMemo(() => {
-    const counts: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+    const counts: Record<number, number> = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
     for (const p of ACMM_PROJECTS) counts[p.level] = (counts[p.level] || 0) + 1;
     return counts;
   }, []);
@@ -418,7 +430,7 @@ export default function AcmmLeaderboardPage() {
       switch (sortField) {
         case "rank":  cmp = a.rank - b.rank; break;
         case "score": cmp = a.score - b.score; break;
-        case "level": cmp = a.level - b.level; break;
+        case "level": cmp = a.level - b.level || a.repo.localeCompare(b.repo); break;
         case "name":  cmp = a.repo.localeCompare(b.repo); break;
       }
       return sortDir === "asc" ? cmp : -cmp;
@@ -544,14 +556,19 @@ export default function AcmmLeaderboardPage() {
             </div>
           )}
 
-          {/* Results count */}
-          <div className="text-xs text-gray-500 mb-3">
-            Showing {filtered.length} of {ACMM_PROJECTS.length} projects
-            {levelFilter !== null && (
-              <button onClick={() => setLevelFilter(null)} className="ml-2 text-blue-400 hover:underline">
-                Clear filter
-              </button>
-            )}
+          {/* Results count + legend */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-xs text-gray-500 mb-3">
+            <span>
+              Showing {filtered.length} of {ACMM_PROJECTS.length} projects
+              {levelFilter !== null && (
+                <button onClick={() => setLevelFilter(null)} className="ml-2 text-blue-400 hover:underline">
+                  Clear filter
+                </button>
+              )}
+            </span>
+            <span className="flex items-center gap-1">
+              ✨ = displays ACMM badge on README ({BADGE_PARTICIPANTS.size} participants)
+            </span>
           </div>
 
           {/* Table */}
@@ -603,6 +620,11 @@ export default function AcmmLeaderboardPage() {
                     >
                       {project.repo}
                     </a>
+                    {BADGE_PARTICIPANTS.has(project.repo) && (
+                      <span title="ACMM Participant — displays badge on README" className="flex-shrink-0 cursor-help">
+                        ✨
+                      </span>
+                    )}
                     <a
                       href={`https://github.com/${project.repo}`}
                       target="_blank"
