@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-23T03:11:52.702Z",
+  "generated_at": "2026-04-23T06:45:22.644Z",
   "total_issues_opened": 581,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 185250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 449,
+      "issue_count": 448,
       "recent_issue": {
         "title": "Show the ctrl/cmd+enter icon on the submit button in the contribute modal",
         "url": "https://github.com/kubestellar/console/issues/9532",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 449
+      "closed_count": 448
     },
     {
       "name": "invite, reward, storage",
@@ -1349,6 +1349,20 @@
         "title": "Binary auto-update ignores critical filesystem errors",
         "url": "https://github.com/kubestellar/console/issues/4262",
         "created_at": "2026-04-02T16:41:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "t., devicetracker, k8sclient",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Nil-pointer crash path in DeviceTracker when k8s client init fails",
+        "url": "https://github.com/kubestellar/console/issues/4261",
+        "created_at": "2026-04-02T16:40:49Z"
       },
       "repos": [
         "console"

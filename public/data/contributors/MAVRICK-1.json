@@ -1,6 +1,6 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-23T03:14:14.171Z",
+  "generated_at": "2026-04-23T06:47:31.622Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
   "total_points": 2750,
@@ -47,7 +47,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 2,
-    "trend": "steady",
+    "trend": "slowing_down",
     "first_issue_at": "2025-09-18T09:43:07.000Z",
     "last_issue_at": "2026-03-26T05:26:09.000Z"
   },

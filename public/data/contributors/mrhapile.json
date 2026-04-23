@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-23T03:13:30.804Z",
+  "generated_at": "2026-04-23T06:46:51.575Z",
   "total_issues_opened": 486,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 149650,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 373,
+      "issue_count": 371,
       "recent_issue": {
         "title": "Keyboard ArrowRight Locked on First Pass",
         "url": "https://github.com/kubestellar/console/issues/9501",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 373
+      "closed_count": 371
     },
     {
       "name": "documentation, 📌, component",
@@ -171,6 +171,20 @@
         "title": "PayloadCard Priority Dropdown Missing Keyboard Dismiss",
         "url": "https://github.com/kubestellar/console/issues/6743",
         "created_at": "2026-04-11T22:47:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "tooltips, navbar, a8153",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Tooltips Blocking UI",
+        "url": "https://github.com/kubestellar/console/issues/6543",
+        "created_at": "2026-04-11T16:39:20Z"
       },
       "repos": [
         "console"
@@ -1370,14 +1384,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "bug: https://kubestellar.io/en/acmm-leaderboard not showing leaderboard on mobile browser",
-        "url": "https://github.com/kubestellar/console/issues/9568",
-        "repo": "console",
-        "topic_match": "leaderboard, coin, hour"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Marketplace & Operators",

@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-23T03:14:13.437Z",
+  "generated_at": "2026-04-23T06:47:30.954Z",
   "total_issues_opened": 92,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 28000,
@@ -210,12 +210,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "bug: https://kubestellar.io/en/acmm-leaderboard not showing leaderboard on mobile browser",
-        "url": "https://github.com/kubestellar/console/issues/9568",
-        "repo": "console",
-        "topic_match": "leaderboard, coin, tracking"
-      },
       {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",

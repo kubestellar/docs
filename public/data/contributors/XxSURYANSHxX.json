@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-23T03:14:07.425Z",
+  "generated_at": "2026-04-23T06:47:25.355Z",
   "total_issues_opened": 199,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
   "total_points": 51100,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xxsuryanshxx, pkg, handler",
-      "issue_count": 177,
+      "issue_count": 175,
       "recent_issue": {
         "title": "### 30. `CheckCanI` delegates to the cluster's apiserver using the console's identity, not the caller's",
         "url": "https://github.com/kubestellar/console/issues/7979",
@@ -64,7 +64,21 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 177
+      "closed_count": 175
+    },
+    {
+      "name": "crossclusterpolicy, mandate, escalate",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "CrossClusterPolicy fails to track real connection failure depth",
+        "url": "https://github.com/kubestellar/console/issues/4606",
+        "created_at": "2026-04-04T18:04:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "tail, log, interact",
