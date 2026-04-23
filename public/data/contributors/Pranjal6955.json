@@ -1,20 +1,20 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-23T06:47:31.255Z",
-  "total_issues_opened": 42,
+  "generated_at": "2026-04-23T10:42:12.651Z",
+  "total_issues_opened": 47,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-  "total_points": 24800,
+  "total_points": 26500,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 14,
+  "rank": 13,
   "cadence": {
-    "avg_per_week": 3.3,
-    "avg_per_day": 0.21,
+    "avg_per_week": 3.8,
+    "avg_per_day": 0.23,
     "by_day_of_week": [
       5,
       18,
       16,
-      0,
+      5,
       0,
       3,
       0
@@ -28,7 +28,7 @@
       9,
       5,
       1,
-      1,
+      6,
       0,
       0,
       0,
@@ -45,40 +45,68 @@
       0,
       0
     ],
-    "current_streak_weeks": 2,
-    "longest_streak_weeks": 2,
+    "current_streak_weeks": 3,
+    "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2025-10-01T13:51:13.000Z",
-    "last_issue_at": "2026-04-22T13:36:13.000Z"
+    "last_issue_at": "2026-04-23T08:28:05.000Z"
   },
   "topics": [
     {
-      "name": "kc, environment, version",
-      "issue_count": 27,
+      "name": "kc, environment, describe",
+      "issue_count": 31,
       "recent_issue": {
-        "title": "bug: Settings UI Registry Mismatch",
-        "url": "https://github.com/kubestellar/console/issues/9488",
-        "created_at": "2026-04-22T05:04:00Z"
+        "title": "bug: Resource Leak: Orphaned AI Goroutines upon Disconnection",
+        "url": "https://github.com/kubestellar/console/issues/9618",
+        "created_at": "2026-04-23T08:24:32Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 27
+      "open_count": 2,
+      "closed_count": 29
     },
     {
-      "name": "benchmark, fetch, google",
-      "issue_count": 2,
+      "name": "interval, analysis, loop",
+      "issue_count": 1,
       "recent_issue": {
-        "title": "bug: StreamReports leaks goroutines and API quota on client disconnect",
-        "url": "https://github.com/kubestellar/console/issues/9517",
-        "created_at": "2026-04-22T12:51:26Z"
+        "title": "bug: AI Analysis Spin-Loop (Denial of Service) via 0 Interval",
+        "url": "https://github.com/kubestellar/console/issues/9620",
+        "created_at": "2026-04-23T08:28:05Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 2
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "uncancelable, map, second",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Mission State Concurrency Hazard in activeChatCtxs",
+        "url": "https://github.com/kubestellar/console/issues/9619",
+        "created_at": "2026-04-23T08:26:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "chunk, mission, persistence",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Severe Performance Bottleneck in Data Persistence",
+        "url": "https://github.com/kubestellar/console/issues/9617",
+        "created_at": "2026-04-23T08:23:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "primary, scan, concurrent",
@@ -95,12 +123,12 @@
       "closed_count": 1
     },
     {
-      "name": "token, goroutines, usage",
+      "name": "benchmark, yamls, crucially",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: Non-Atomic Token Usage Persistence (Race Condition)",
-        "url": "https://github.com/kubestellar/console/issues/9441",
-        "created_at": "2026-04-21T21:16:53Z"
+        "title": "bug: High Latency in Benchmark Fetching",
+        "url": "https://github.com/kubestellar/console/issues/9446",
+        "created_at": "2026-04-21T21:24:08Z"
       },
       "repos": [
         "console"
@@ -285,16 +313,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Observability & Logs",
         "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
         "description": "Log streaming, event timeline, alerting, notifications",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       }
     ]
   },
@@ -345,7 +373,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 40
+      "issue_count": 45
     }
   ]
 }

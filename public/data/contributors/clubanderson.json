@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-23T06:44:23.552Z",
-  "total_issues_opened": 1109,
+  "generated_at": "2026-04-23T10:38:56.938Z",
+  "total_issues_opened": 1111,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3799000,
+  "total_points": 3802900,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 87.6,
+    "avg_per_week": 87.8,
     "avg_per_day": 4.41,
     "by_day_of_week": [
       149,
       140,
       215,
-      189,
+      191,
       153,
       151,
       112
@@ -28,7 +28,7 @@
       30,
       73,
       61,
-      27,
+      29,
       8,
       6,
       7,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 17,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-23T06:24:30.000Z"
+    "last_issue_at": "2026-04-23T08:03:11.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 751,
+      "issue_count": 752,
       "recent_issue": {
-        "title": "[Auto-QA] Cards missing demo data support",
-        "url": "https://github.com/kubestellar/console/issues/9570",
-        "created_at": "2026-04-23T02:03:52Z"
+        "title": "[Auto-QA] Inconsistent component patterns detected",
+        "url": "https://github.com/kubestellar/console/issues/9615",
+        "created_at": "2026-04-23T08:03:11Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
+      "open_count": 4,
       "closed_count": 748
     },
     {
@@ -241,6 +241,20 @@
       "closed_count": 6
     },
     {
+      "name": "term, roadmap, near",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "[Auto-QA] ROADMAP.md governance issues",
+        "url": "https://github.com/kubestellar/console/issues/9614",
+        "created_at": "2026-04-23T08:03:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 2,
+      "closed_count": 3
+    },
+    {
       "name": "typo, readme, fix",
       "issue_count": 5,
       "recent_issue": {
@@ -253,20 +267,6 @@
       ],
       "open_count": 0,
       "closed_count": 5
-    },
-    {
-      "name": "term, roadmap, near",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "[Auto-QA] ROADMAP.md governance issues",
-        "url": "https://github.com/kubestellar/console/issues/8275",
-        "created_at": "2026-04-16T02:03:53Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 3
     },
     {
       "name": "analysis, portfolio, nfr",
@@ -1027,7 +1027,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "bug: AI Analysis Spin-Loop (Denial of Service) via 0 Interval",
+        "url": "https://github.com/kubestellar/console/issues/9620",
+        "repo": "console",
+        "topic_match": "analysis, portfolio, nfr"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -1102,7 +1109,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 464
+      "issue_count": 466
     }
   ]
 }

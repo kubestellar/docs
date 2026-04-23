@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-23T06:46:10.253Z",
+  "generated_at": "2026-04-23T10:40:48.475Z",
   "total_issues_opened": 540,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 153000,
@@ -711,7 +711,7 @@
       "closed_count": 1
     },
     {
-      "name": "oauth, credential, configured",
+      "name": "oauth, credential, fall",
       "issue_count": 1,
       "recent_issue": {
         "title": "GitHub OAuth silently falls back to dev mode when only one credential is configured",

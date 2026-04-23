@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-23T06:38:47.124Z",
-  "git_hash": "9cee385",
+  "generated_at": "2026-04-23T10:32:52.680Z",
+  "git_hash": "a4927ab",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3799000,
+      "total_points": 3802900,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 278,
-        "feature_issues": 432,
+        "bug_issues": 279,
+        "feature_issues": 433,
         "other_issues": 389,
-        "prs_opened": 5492,
-        "prs_merged": 5109
+        "prs_opened": 5497,
+        "prs_merged": 5114
       },
       "bonus_points": 50,
       "rank": 1
@@ -185,6 +185,21 @@
       "rank": 12
     },
     {
+      "login": "Pranjal6955",
+      "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
+      "total_points": 26500,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 43,
+        "feature_issues": 2,
+        "other_issues": 0,
+        "prs_opened": 22,
+        "prs_merged": 18
+      },
+      "rank": 13
+    },
+    {
       "login": "khushal-winner",
       "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
       "total_points": 25200,
@@ -196,21 +211,6 @@
         "other_issues": 0,
         "prs_opened": 43,
         "prs_merged": 23
-      },
-      "rank": 13
-    },
-    {
-      "login": "Pranjal6955",
-      "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-      "total_points": 24800,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 38,
-        "feature_issues": 2,
-        "other_issues": 0,
-        "prs_opened": 21,
-        "prs_merged": 18
       },
       "rank": 14
     },
@@ -680,6 +680,21 @@
       "rank": 45
     },
     {
+      "login": "Shreya2005-2005",
+      "avatar_url": "https://avatars.githubusercontent.com/u/217235943?v=4",
+      "total_points": 750,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 1,
+        "feature_issues": 0,
+        "other_issues": 1,
+        "prs_opened": 2,
+        "prs_merged": 0
+      },
+      "rank": 46
+    },
+    {
       "login": "francostellari",
       "avatar_url": "https://avatars.githubusercontent.com/u/50019234?v=4",
       "total_points": 700,
@@ -692,7 +707,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 46
+      "rank": 47
     },
     {
       "login": "harshakumar25",
@@ -707,7 +722,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 47
+      "rank": 48
     },
     {
       "login": "immortal71",
@@ -722,7 +737,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 48
+      "rank": 49
     },
     {
       "login": "kchiranjewee63",
@@ -737,7 +752,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 49
+      "rank": 50
     },
     {
       "login": "MichaelSovereign",
@@ -752,7 +767,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 50
+      "rank": 51
     },
     {
       "login": "mikeshng",
@@ -767,7 +782,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 51
+      "rank": 52
     },
     {
       "login": "yizha1",
@@ -782,7 +797,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 52
+      "rank": 53
     },
     {
       "login": "gulshank0",
@@ -797,7 +812,7 @@
         "prs_opened": 3,
         "prs_merged": 0
       },
-      "rank": 53
+      "rank": 54
     },
     {
       "login": "mmagram0926",
@@ -810,21 +825,6 @@
         "feature_issues": 0,
         "other_issues": 0,
         "prs_opened": 0,
-        "prs_merged": 0
-      },
-      "rank": 54
-    },
-    {
-      "login": "Shreya2005-2005",
-      "avatar_url": "https://avatars.githubusercontent.com/u/217235943?v=4",
-      "total_points": 450,
-      "level": "Observer",
-      "level_rank": 1,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 1,
-        "prs_opened": 2,
         "prs_merged": 0
       },
       "rank": 55
