@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-23T14:54:34.529Z",
+  "generated_at": "2026-04-23T18:33:44.633Z",
   "total_issues_opened": 581,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 185250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 449,
+      "issue_count": 448,
       "recent_issue": {
         "title": "Show the ctrl/cmd+enter icon on the submit button in the contribute modal",
         "url": "https://github.com/kubestellar/console/issues/9532",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 449
+      "closed_count": 448
     },
     {
       "name": "invite, reward, storage",
@@ -825,7 +825,7 @@
       "closed_count": 1
     },
     {
-      "name": "debt, ts, usecacheddata",
+      "name": "debt, usecacheddata, ts",
       "issue_count": 1,
       "recent_issue": {
         "title": "Known shared-mutation hazards inside concurrency callbacks (ratcheted technical debt)",
@@ -1027,6 +1027,20 @@
         "title": "Card: Kubedle (kubedle)",
         "url": "https://github.com/kubestellar/console/issues/6306",
         "created_at": "2026-04-11T06:50:13Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "sync, recency, d71a17",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Last sync timestamp is regenerated on render, causing misleading recency",
+        "url": "https://github.com/kubestellar/console/issues/6158",
+        "created_at": "2026-04-10T15:35:50Z"
       },
       "repos": [
         "console"
@@ -1696,10 +1710,22 @@
   "suggestions": {
     "deepen": [
       {
+        "title": "bug: WebSocket Reader Blocking on Hung Providers",
+        "url": "https://github.com/kubestellar/console/issues/9713",
+        "repo": "console",
+        "topic_match": "ping, reader, e8039539"
+      },
+      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
+      },
+      {
+        "title": "Cross-Tab updatedAt Millisecond Erasure",
+        "url": "https://github.com/kubestellar/console/issues/9699",
+        "repo": "console",
+        "topic_match": "tab, b6996, b74c4d09befc"
       }
     ],
     "stretch": [

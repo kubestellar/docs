@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-23T14:56:49.018Z",
+  "generated_at": "2026-04-23T18:36:13.769Z",
   "total_issues_opened": 98,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 27850,
@@ -672,7 +672,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "## Bug: Stats Overview cards show truncated text with \"Building trend...\" overflow",
+        "url": "https://github.com/kubestellar/console/issues/9708",
+        "repo": "console",
+        "topic_match": "healthy, filter, count"
+      }
+    ],
     "stretch": [
       {
         "name": "Cost Management",

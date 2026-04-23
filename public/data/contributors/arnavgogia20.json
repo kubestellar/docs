@@ -1,6 +1,6 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-23T14:56:48.011Z",
+  "generated_at": "2026-04-23T18:36:12.682Z",
   "total_issues_opened": 109,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
   "total_points": 37950,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@arnavgogia20, page, problem",
-      "issue_count": 83,
+      "issue_count": 84,
       "recent_issue": {
         "title": "KubeStellar Console logo and title are not clickable and do not redirect to home page",
         "url": "https://github.com/kubestellar/console/issues/9516",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 83
+      "closed_count": 84
     },
     {
       "name": "router, gin, cors",
@@ -94,20 +94,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "csrf, header, require",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unable to submit bug report via Console due to “CSRF header required” error",
-        "url": "https://github.com/kubestellar/console/issues/8830",
-        "created_at": "2026-04-18T11:54:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "mergeprojects, payloadproject, refinement",

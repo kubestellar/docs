@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-23T14:56:49.422Z",
+  "generated_at": "2026-04-23T18:36:14.214Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 17650,
@@ -294,12 +294,6 @@
   ],
   "suggestions": {
     "deepen": [
-      {
-        "title": "✨ Multi-Tenancy with Namespace-Scoped RBAC",
-        "url": "https://github.com/kubestellar/console/issues/9650",
-        "repo": "console",
-        "topic_match": "tenant, architecture, card"
-      },
       {
         "title": "✨ Sigstore/Cosign Image Signature Verification",
         "url": "https://github.com/kubestellar/console/issues/9646",

@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-23T14:47:05.008Z",
-  "git_hash": "c8f15d6",
+  "generated_at": "2026-04-23T18:25:21.971Z",
+  "git_hash": "6ccb0df",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3814950,
+      "total_points": 3825700,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 279,
         "feature_issues": 435,
-        "other_issues": 440,
-        "prs_opened": 5511,
-        "prs_merged": 5127
+        "other_issues": 441,
+        "prs_opened": 5527,
+        "prs_merged": 5142
       },
       "bonus_points": 50,
       "rank": 1
@@ -51,11 +51,11 @@
     {
       "login": "mrhapile",
       "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-      "total_points": 149650,
+      "total_points": 149950,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 448,
+        "bug_issues": 449,
         "feature_issues": 11,
         "other_issues": 27,
         "prs_opened": 24,
@@ -81,14 +81,14 @@
     {
       "login": "XxSURYANSHxX",
       "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-      "total_points": 51100,
+      "total_points": 51500,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
         "bug_issues": 149,
         "feature_issues": 0,
         "other_issues": 50,
-        "prs_opened": 7,
+        "prs_opened": 9,
         "prs_merged": 5
       },
       "rank": 6
@@ -187,11 +187,11 @@
     {
       "login": "Pranjal6955",
       "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-      "total_points": 26500,
+      "total_points": 27700,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 43,
+        "bug_issues": 47,
         "feature_issues": 2,
         "other_issues": 0,
         "prs_opened": 22,
@@ -560,6 +560,21 @@
       "rank": 37
     },
     {
+      "login": "Shreya2005-2005",
+      "avatar_url": "https://avatars.githubusercontent.com/u/217235943?v=4",
+      "total_points": 1350,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 3,
+        "feature_issues": 0,
+        "other_issues": 1,
+        "prs_opened": 2,
+        "prs_merged": 0
+      },
+      "rank": 38
+    },
+    {
       "login": "zyzzmohit",
       "avatar_url": "https://avatars.githubusercontent.com/u/237704724?v=4",
       "total_points": 1300,
@@ -572,7 +587,7 @@
         "prs_opened": 4,
         "prs_merged": 1
       },
-      "rank": 38
+      "rank": 39
     },
     {
       "login": "antedotee",
@@ -587,7 +602,7 @@
         "prs_opened": 0,
         "prs_merged": 0
       },
-      "rank": 39
+      "rank": 40
     },
     {
       "login": "zamadye",
@@ -602,7 +617,7 @@
         "prs_opened": 2,
         "prs_merged": 1
       },
-      "rank": 40
+      "rank": 41
     },
     {
       "login": "KumarADITHYA123",
@@ -617,7 +632,7 @@
         "prs_opened": 1,
         "prs_merged": 0
       },
-      "rank": 41
+      "rank": 42
     },
     {
       "login": "xyaz1313",
@@ -632,7 +647,7 @@
         "prs_opened": 4,
         "prs_merged": 0
       },
-      "rank": 42
+      "rank": 43
     },
     {
       "login": "AnvayKharb",
@@ -647,7 +662,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 43
+      "rank": 44
     },
     {
       "login": "Krishiv-Mahajan",
@@ -662,7 +677,7 @@
         "prs_opened": 1,
         "prs_merged": 1
       },
-      "rank": 44
+      "rank": 45
     },
     {
       "login": "ngvanthanggit",
@@ -676,21 +691,6 @@
         "other_issues": 1,
         "prs_opened": 1,
         "prs_merged": 1
-      },
-      "rank": 45
-    },
-    {
-      "login": "Shreya2005-2005",
-      "avatar_url": "https://avatars.githubusercontent.com/u/217235943?v=4",
-      "total_points": 750,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 1,
-        "feature_issues": 0,
-        "other_issues": 1,
-        "prs_opened": 2,
-        "prs_merged": 0
       },
       "rank": 46
     },

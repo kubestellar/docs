@@ -1,20 +1,20 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-23T14:56:07.106Z",
-  "total_issues_opened": 486,
+  "generated_at": "2026-04-23T18:35:28.057Z",
+  "total_issues_opened": 487,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 149650,
+  "total_points": 149950,
   "level": "Captain",
   "level_rank": 6,
   "rank": 4,
   "cadence": {
-    "avg_per_week": 40.5,
-    "avg_per_day": 7.86,
+    "avg_per_week": 40.6,
+    "avg_per_day": 7.7,
     "by_day_of_week": [
       122,
       47,
       77,
-      61,
+      62,
       4,
       119,
       56
@@ -35,7 +35,7 @@
       9,
       20,
       19,
-      17,
+      18,
       40,
       8,
       6,
@@ -45,26 +45,26 @@
       40,
       0
     ],
-    "current_streak_weeks": 3,
-    "longest_streak_weeks": 3,
+    "current_streak_weeks": 4,
+    "longest_streak_weeks": 4,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-22T05:42:56.000Z"
+    "last_issue_at": "2026-04-23T15:35:44.000Z"
   },
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 378,
+      "issue_count": 380,
       "recent_issue": {
-        "title": "Keyboard ArrowRight Locked on First Pass",
-        "url": "https://github.com/kubestellar/console/issues/9501",
-        "created_at": "2026-04-22T05:42:56Z"
+        "title": "Cross-Tab updatedAt Millisecond Erasure",
+        "url": "https://github.com/kubestellar/console/issues/9699",
+        "created_at": "2026-04-23T15:35:44Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 378
+      "open_count": 1,
+      "closed_count": 379
     },
     {
       "name": "documentation, 📌, component",
@@ -893,20 +893,6 @@
       "closed_count": 1
     },
     {
-      "name": "e1b3f7, b191, cda233a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "\"Orphaned Cluster\" Assignments",
-        "url": "https://github.com/kubestellar/console/issues/6433",
-        "created_at": "2026-04-11T14:18:30Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "schema, missionexport, ignorance",
       "issue_count": 1,
       "recent_issue": {
@@ -1395,7 +1381,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 467
+      "issue_count": 468
     }
   ]
 }

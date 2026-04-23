@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-23T14:56:47.585Z",
+  "generated_at": "2026-04-23T18:36:12.231Z",
   "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 44250,
@@ -591,16 +591,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "✨ Enterprise Session Management",
-        "url": "https://github.com/kubestellar/console/issues/9658",
+        "title": "bug: Unauthorized Mission Cancellation (Cross-Session CSRF/Bypass)",
+        "url": "https://github.com/kubestellar/console/issues/9712",
         "repo": "console",
         "topic_match": "session, auth, traffic"
-      },
-      {
-        "title": "✨ Air-Gap Support for Disconnected Environments",
-        "url": "https://github.com/kubestellar/console/issues/9667",
-        "repo": "console",
-        "topic_match": "secure, air, disable"
       }
     ],
     "stretch": [

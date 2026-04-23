@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-23T14:56:49.220Z",
+  "generated_at": "2026-04-23T18:36:13.997Z",
   "total_issues_opened": 76,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 22850,
@@ -81,7 +81,7 @@
       "closed_count": 2
     },
     {
-      "name": "test, httptest, server",
+      "name": "httptest, test, server",
       "issue_count": 2,
       "recent_issue": {
         "title": "feature: Add HTTP-level tests for main API server (pkg/api)",
@@ -207,7 +207,7 @@
       "closed_count": 1
     },
     {
-      "name": "networkutils, ping, latency",
+      "name": "networkutils, latency, ping",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug report : NetworkUtils ping uses fetch with mode: 'no-cors' — latency measurements are unreliable and always show \"success\"",
@@ -269,7 +269,7 @@
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
-        "topic_match": "test, httptest, server"
+        "topic_match": "httptest, test, server"
       }
     ],
     "stretch": [

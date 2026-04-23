@@ -1,20 +1,20 @@
 {
   "login": "Shreya2005-2005",
-  "generated_at": "2026-04-23T14:56:49.469Z",
-  "total_issues_opened": 2,
+  "generated_at": "2026-04-23T18:36:14.265Z",
+  "total_issues_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/217235943?v=4",
-  "total_points": 750,
+  "total_points": 1350,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 46,
+  "rank": 38,
   "cadence": {
-    "avg_per_week": 0.2,
-    "avg_per_day": 0.27,
+    "avg_per_week": 0.3,
+    "avg_per_day": 0.51,
     "by_day_of_week": [
       0,
       0,
       1,
-      1,
+      3,
       0,
       0,
       0
@@ -37,7 +37,7 @@
       0,
       0,
       0,
-      0,
+      2,
       0,
       0,
       0,
@@ -49,12 +49,100 @@
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-15T21:06:28.000Z",
-    "last_issue_at": "2026-04-23T08:50:09.000Z"
+    "last_issue_at": "2026-04-23T17:46:06.000Z"
   },
-  "topics": [],
+  "topics": [
+    {
+      "name": "metric, fcb0d1, b29d",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Bug: Security Compliance metrics misaligned in Stats Overview",
+        "url": "https://github.com/kubestellar/console/issues/9717",
+        "created_at": "2026-04-23T17:46:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "trend, building, stat",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "## Bug: Stats Overview cards show truncated text with \"Building trend...\" overflow",
+        "url": "https://github.com/kubestellar/console/issues/9708",
+        "created_at": "2026-04-23T17:13:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "localstorage, load, json",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "## Bug: missions localStorage JSON parse error causes silent data loss",
+        "url": "https://github.com/kubestellar/console/issues/9622",
+        "created_at": "2026-04-23T08:50:09Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "attribute, form, element",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "a11y: AlertRuleEditor form inputs missing id/name attributes",
+        "url": "https://github.com/kubestellar/console/issues/8236",
+        "created_at": "2026-04-15T21:06:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
   "suggestions": {
     "deepen": [],
-    "stretch": []
+    "stretch": [
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Cluster Management",
+        "path": "web/src/components/clusters/, pkg/k8s/",
+        "description": "Multi-cluster views, cluster health, add/remove clusters, Kubernetes client",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/clusters"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      }
+    ]
   },
   "activity_timeline": [
     {
@@ -103,7 +191,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 2
+      "issue_count": 4
     }
   ]
 }
