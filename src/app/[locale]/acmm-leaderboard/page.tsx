@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import {
   GridLines,
   StarField,
   Navbar,
   Footer,
 } from "../../../components/index";
+import { gtagEvent } from "../../../components/GoogleAnalytics";
 
 // ── Types ─────────────────────────────────────────────────────────────
 
@@ -61,10 +62,37 @@ function LevelBadge({ level }: { level: number }) {
   );
 }
 
+// ── Scannable criteria per level (from acmm.ts source of truth) ────────
+// L2 OR-groups 4 instruction files → 1, so effective counts differ from raw.
+// 65 total criteria, 34 effective scannable.
+
+const SCANNABLE_PER_LEVEL: Record<number, number> = {
+  0: 8,   // prereq-test-suite, prereq-e2e, prereq-cicd, etc.
+  2: 3,   // agent-instructions (OR-group), prompts-catalog, editor-config
+  3: 4,   // pr-acceptance-metric, pr-review-rubric, quality-dashboard, ci-matrix
+  4: 7,   // auto-qa-tuning, nightly-compliance, copilot-review-apply, etc.
+  5: 6,   // github-actions-ai, auto-qa-self-tuning, public-metrics, etc.
+  6: 6,   // auto-issue-gen, multi-agent-orchestration, merge-queue, etc.
+};
+
+/** Cumulative scannable criteria at each level (L0 through given level). */
+const CUMULATIVE_SCANNABLE: Record<number, number> = {};
+{
+  let cumul = 0;
+  for (const lvl of [0, 1, 2, 3, 4, 5, 6]) {
+    cumul += SCANNABLE_PER_LEVEL[lvl] || 0;
+    CUMULATIVE_SCANNABLE[lvl] = cumul;
+  }
+}
+
+const TOTAL_CRITERIA = 65;
+const TOTAL_SCANNABLE = 34;
+
 // ── Score bar ─────────────────────────────────────────────────────────
 
-function ScoreBar({ score, max = 26 }: { score: number; max?: number }) {
-  const pct = Math.round((score / max) * 100);
+function ScoreBar({ score, level }: { score: number; level: number }) {
+  const max = CUMULATIVE_SCANNABLE[level] || TOTAL_SCANNABLE;
+  const pct = max > 0 ? Math.round((score / max) * 100) : 0;
   const barColor =
     pct >= 60 ? "bg-green-500" :
     pct >= 30 ? "bg-blue-500" :
@@ -75,7 +103,7 @@ function ScoreBar({ score, max = 26 }: { score: number; max?: number }) {
       <div className="flex-1 h-2 bg-gray-700/50 rounded-full overflow-hidden">
         <div
           className={`h-full rounded-full ${barColor} transition-all`}
-          style={{ width: `${pct}%` }}
+          style={{ width: `${Math.min(pct, 100)}%` }}
         />
       </div>
       <span className="text-xs tabular-nums text-gray-400 w-10 text-right">
@@ -399,16 +427,59 @@ const ACMM_PROJECTS: AcmmProject[] = [
 // ── Summary stats ─────────────────────────────────────────────────────
 
 const SNAPSHOT_DATE = "2026-04-22";
-const TOTAL_SIGNALS = 26;
 
 // ── Page component ────────────────────────────────────────────────────
 
 export default function AcmmLeaderboardPage() {
   const [search, setSearch] = useState("");
   const [levelFilter, setLevelFilter] = useState<number | null>(null);
+  const [badgeOnly, setBadgeOnly] = useState(false);
   const [sortField, setSortField] = useState<SortField>("level");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
   const [showInfo, setShowInfo] = useState(false);
+
+  // ── GA4 event helpers ──────────────────────────────────────────────
+
+  const trackSearch = useCallback((query: string, resultCount: number) => {
+    if (query.length >= 2) {
+      gtagEvent("acmm_search", { query_length: query.length, result_count: resultCount });
+    }
+  }, []);
+
+  const trackLevelFilter = useCallback((level: number | null) => {
+    gtagEvent("acmm_level_filter", {
+      level: level ?? -1,
+      action: level !== null ? "select" : "clear",
+    });
+  }, []);
+
+  const trackBadgeFilter = useCallback((enabled: boolean) => {
+    gtagEvent("acmm_badge_filter", { action: enabled ? "on" : "off" });
+  }, []);
+
+  const trackSort = useCallback((field: SortField, direction: SortDir) => {
+    gtagEvent("acmm_sort_change", { sort_field: field, sort_direction: direction });
+  }, []);
+
+  const trackScanClick = useCallback((repo: string, level: number, score: number) => {
+    gtagEvent("acmm_scan_click", { repo, level, score });
+  }, []);
+
+  const trackRepoClick = useCallback((repo: string, level: number, rank: number) => {
+    gtagEvent("acmm_repo_click", { repo, level, rank });
+  }, []);
+
+  const trackInfoToggle = useCallback((open: boolean) => {
+    gtagEvent("acmm_info_toggle", { action: open ? "open" : "close" });
+  }, []);
+
+  const trackDashboardCTA = useCallback(() => {
+    gtagEvent("acmm_dashboard_click", { source: "leaderboard_cta" });
+  }, []);
+
+  const trackPaperClick = useCallback(() => {
+    gtagEvent("acmm_paper_click", { source: "info_panel" });
+  }, []);
 
   const levelCounts = useMemo(() => {
     const counts: Record<number, number> = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
@@ -425,26 +496,33 @@ export default function AcmmLeaderboardPage() {
     if (levelFilter !== null) {
       items = items.filter((p) => p.level === levelFilter);
     }
+    if (badgeOnly) {
+      items = items.filter((p) => BADGE_PARTICIPANTS.has(p.repo));
+    }
     const sorted = [...items].sort((a, b) => {
       let cmp = 0;
       switch (sortField) {
         case "rank":  cmp = a.rank - b.rank; break;
         case "score": cmp = a.score - b.score; break;
-        case "level": cmp = a.level - b.level || a.repo.localeCompare(b.repo); break;
+        case "level": cmp = a.level - b.level || a.score - b.score || a.repo.localeCompare(b.repo); break;
         case "name":  cmp = a.repo.localeCompare(b.repo); break;
       }
       return sortDir === "asc" ? cmp : -cmp;
     });
     return sorted;
-  }, [search, levelFilter, sortField, sortDir]);
+  }, [search, levelFilter, badgeOnly, sortField, sortDir]);
 
   function toggleSort(field: SortField) {
+    let newDir: SortDir;
     if (sortField === field) {
-      setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+      newDir = sortDir === "asc" ? "desc" : "asc";
+      setSortDir(newDir);
     } else {
+      newDir = field === "name" ? "asc" : "desc";
       setSortField(field);
-      setSortDir(field === "name" ? "asc" : "desc");
+      setSortDir(newDir);
     }
+    trackSort(field, newDir);
   }
 
   const SortIcon = ({ field }: { field: SortField }) => {
@@ -472,17 +550,21 @@ export default function AcmmLeaderboardPage() {
             AI Codebase Maturity Model scores for {ACMM_PROJECTS.length} CNCF &amp; cloud-native projects
           </p>
           <p className="text-gray-600 text-sm">
-            Snapshot: {SNAPSHOT_DATE} · {TOTAL_SIGNALS} publicly detectable signals out of 33 ACMM feedback loops
+            Snapshot: {SNAPSHOT_DATE} · {TOTAL_SCANNABLE} publicly detectable signals out of {TOTAL_CRITERIA} ACMM criteria
           </p>
 
-          {/* Quick stats */}
+          {/* Quick stats — level filters + badge filter */}
           <div className="flex flex-wrap justify-center gap-3 mt-6">
             {[6, 5, 4, 3, 2, 1, 0].map((lvl) => {
               const meta = LEVELS[lvl];
               return (
                 <button
                   key={lvl}
-                  onClick={() => setLevelFilter(levelFilter === lvl ? null : lvl)}
+                  onClick={() => {
+                    const newVal = levelFilter === lvl ? null : lvl;
+                    setLevelFilter(newVal);
+                    trackLevelFilter(newVal);
+                  }}
                   className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-all ${
                     levelFilter === lvl
                       ? `${meta.bg} ${meta.text} ${meta.border} ring-2 ring-offset-1 ring-offset-[#0a0a0f] ring-current`
@@ -495,6 +577,22 @@ export default function AcmmLeaderboardPage() {
                 </button>
               );
             })}
+            <button
+              onClick={() => {
+                const newVal = !badgeOnly;
+                setBadgeOnly(newVal);
+                trackBadgeFilter(newVal);
+              }}
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium border transition-all ${
+                badgeOnly
+                  ? "bg-amber-500/20 text-amber-300 border-amber-500/30 ring-2 ring-offset-1 ring-offset-[#0a0a0f] ring-amber-400"
+                  : "bg-amber-500/10 text-amber-400 border-amber-500/20 opacity-70 hover:opacity-100"
+              }`}
+            >
+              <span>✨</span>
+              <span>Badge Participants</span>
+              <span className="text-xs opacity-70">({BADGE_PARTICIPANTS.size})</span>
+            </button>
           </div>
         </div>
       </section>
@@ -513,12 +611,23 @@ export default function AcmmLeaderboardPage() {
                 type="text"
                 placeholder="Search projects…"
                 value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setSearch(val);
+                  // Debounced search tracking (fires after typing settles)
+                  const q = val.toLowerCase();
+                  const count = val ? ACMM_PROJECTS.filter((p) => p.repo.toLowerCase().includes(q)).length : ACMM_PROJECTS.length;
+                  trackSearch(val, count);
+                }}
                 className="w-full pl-10 pr-4 py-2.5 bg-gray-800/60 backdrop-blur-md border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50 text-sm"
               />
             </div>
             <button
-              onClick={() => setShowInfo(!showInfo)}
+              onClick={() => {
+                const newState = !showInfo;
+                setShowInfo(newState);
+                trackInfoToggle(newState);
+              }}
               className="px-4 py-2.5 bg-gray-800/60 backdrop-blur-md border border-white/10 rounded-lg text-gray-400 hover:text-white hover:border-white/20 transition-colors text-sm flex items-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -548,8 +657,8 @@ export default function AcmmLeaderboardPage() {
                 })}
               </div>
               <p className="text-xs text-gray-500">
-                The full ACMM model defines <strong className="text-gray-400">33 feedback loops</strong> across 7 maturity levels (L0–L6). This leaderboard evaluates <strong className="text-gray-400">26 publicly detectable signals</strong> from repository metadata, CI/CD configuration, and AI instruction files.{" "}
-                <a href="https://arxiv.org/abs/2604.09388" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+                The full ACMM model defines <strong className="text-gray-400">{TOTAL_CRITERIA} criteria</strong> across 7 maturity levels (L0–L6). This leaderboard evaluates <strong className="text-gray-400">{TOTAL_SCANNABLE} publicly detectable signals</strong> from repository metadata, CI/CD configuration, and AI instruction files.{" "}
+                <a href="https://arxiv.org/abs/2604.09388" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline" onClick={trackPaperClick}>
                   Read the paper →
                 </a>
               </p>
@@ -560,14 +669,17 @@ export default function AcmmLeaderboardPage() {
           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-xs text-gray-500 mb-3">
             <span>
               Showing {filtered.length} of {ACMM_PROJECTS.length} projects
-              {levelFilter !== null && (
-                <button onClick={() => setLevelFilter(null)} className="ml-2 text-blue-400 hover:underline">
-                  Clear filter
+              {(levelFilter !== null || badgeOnly) && (
+                <button
+                  onClick={() => { setLevelFilter(null); setBadgeOnly(false); }}
+                  className="ml-2 text-blue-400 hover:underline"
+                >
+                  Clear filters
                 </button>
               )}
             </span>
             <span className="flex items-center gap-1">
-              ✨ = displays ACMM badge on README ({BADGE_PARTICIPANTS.size} participants)
+              ✨ = displays ACMM badge on README · Score = detected / scannable for that level
             </span>
           </div>
 
@@ -617,6 +729,7 @@ export default function AcmmLeaderboardPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm font-medium text-white hover:text-blue-400 transition-colors truncate"
+                      onClick={() => trackRepoClick(project.repo, project.level, project.rank)}
                     >
                       {project.repo}
                     </a>
@@ -645,7 +758,7 @@ export default function AcmmLeaderboardPage() {
 
                   {/* Score */}
                   <div className="pl-11 sm:pl-0">
-                    <ScoreBar score={project.score} />
+                    <ScoreBar score={project.score} level={project.level} />
                   </div>
 
                   {/* Scan link */}
@@ -655,6 +768,7 @@ export default function AcmmLeaderboardPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium text-blue-400 bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 hover:border-blue-500/30 transition-colors"
+                      onClick={() => trackScanClick(project.repo, project.level, project.score)}
                     >
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -680,6 +794,7 @@ export default function AcmmLeaderboardPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+              onClick={trackDashboardCTA}
             >
               Open ACMM Dashboard
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
