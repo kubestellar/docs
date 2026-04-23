@@ -1,0 +1,44 @@
+name: TypeScript & Lint Check
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "*.ts"
+      - "*.tsx"
+      - "tsconfig.json"
+      - "package.json"
+      - ".eslintrc*"
+      - "next.config.*"
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "*.ts"
+      - "*.tsx"
+      - "tsconfig.json"
+
+permissions:
+  contents: read
+
+jobs:
+  typecheck:
+    name: TypeScript & ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: TypeScript type check
+        run: npm run type-check
+
+      - name: ESLint
+        run: npm run lint
