@@ -1,9 +1,9 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-22T22:25:34.154Z",
+  "generated_at": "2026-04-23T03:12:45.316Z",
   "total_issues_opened": 540,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 152000,
+  "total_points": 153000,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 3,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 5,
-      "closed_count": 406
+      "open_count": 0,
+      "closed_count": 411
     },
     {
       "name": "kubara, chart, control",
@@ -1418,18 +1418,6 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
         "topic_match": "extract, ffb011, f6f"
-      },
-      {
-        "title": "`Login.spec.ts` — Background Color Assertion Hardcodes `rgb(10, 10, 10)` — Brittle",
-        "url": "https://github.com/kubestellar/console/issues/9520",
-        "repo": "console",
-        "topic_match": "adapt, theme, color"
-      },
-      {
-        "title": "Distribution/provider filter does not restrict cluster list display",
-        "url": "https://github.com/kubestellar/console/issues/9541",
-        "repo": "console",
-        "topic_match": "filter, service, count"
       }
     ],
     "stretch": [

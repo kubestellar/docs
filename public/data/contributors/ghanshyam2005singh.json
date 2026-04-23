@@ -1,6 +1,6 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-22T22:27:06.108Z",
+  "generated_at": "2026-04-23T03:14:13.437Z",
   "total_issues_opened": 92,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
   "total_points": 28000,
@@ -211,10 +211,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "The mission execution modal doesn't support enter to run mission",
-        "url": "https://github.com/kubestellar/console/issues/9530",
+        "title": "bug: https://kubestellar.io/en/acmm-leaderboard not showing leaderboard on mobile browser",
+        "url": "https://github.com/kubestellar/console/issues/9568",
         "repo": "console",
-        "topic_match": "mission, @ghanshyam2005singh, ai"
+        "topic_match": "leaderboard, coin, tracking"
       },
       {
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",

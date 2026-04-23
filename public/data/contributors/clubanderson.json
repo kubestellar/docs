@@ -1,28 +1,28 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-22T22:23:31.975Z",
-  "total_issues_opened": 1076,
+  "generated_at": "2026-04-23T03:10:47.214Z",
+  "total_issues_opened": 1079,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3781600,
+  "total_points": 3792600,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 84.8,
-    "avg_per_day": 4.28,
+    "avg_per_week": 85.1,
+    "avg_per_day": 4.29,
     "by_day_of_week": [
       149,
       140,
       215,
-      156,
+      159,
       153,
       151,
       112
     ],
     "by_hour_of_day": [
       53,
-      37,
-      111,
+      38,
+      113,
       35,
       42,
       30,
@@ -45,28 +45,28 @@
       22,
       15
     ],
-    "current_streak_weeks": 16,
-    "longest_streak_weeks": 16,
+    "current_streak_weeks": 17,
+    "longest_streak_weeks": 17,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-22T19:51:57.000Z"
+    "last_issue_at": "2026-04-23T02:03:52.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 749,
+      "issue_count": 751,
       "recent_issue": {
-        "title": "[Auto-QA] 6 debug console.log statements should be removed",
-        "url": "https://github.com/kubestellar/console/issues/9544",
-        "created_at": "2026-04-22T19:51:57Z"
+        "title": "[Auto-QA] Cards missing demo data support",
+        "url": "https://github.com/kubestellar/console/issues/9570",
+        "created_at": "2026-04-23T02:03:52Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 6,
-      "closed_count": 743
+      "open_count": 5,
+      "closed_count": 746
     },
     {
       "name": "monitoring, implement, step",
@@ -80,8 +80,8 @@
         "console",
         "console-marketplace"
       ],
-      "open_count": 36,
-      "closed_count": 23
+      "open_count": 33,
+      "closed_count": 26
     },
     {
       "name": "error, ga4, category",
@@ -209,6 +209,21 @@
       ],
       "open_count": 0,
       "closed_count": 7
+    },
+    {
+      "name": "projects, doc, safari",
+      "issue_count": 6,
+      "recent_issue": {
+        "title": "bug: https://kubestellar.io/en/acmm-leaderboard not showing leaderboard on mobile browser",
+        "url": "https://github.com/kubestellar/console/issues/9568",
+        "created_at": "2026-04-23T01:29:42Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 5
     },
     {
       "name": "testing, greet, close",
@@ -445,34 +460,6 @@
       },
       "repos": [
         "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "projects, products, want",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "doc: need updates to content in https://github.com/kubestellar/docs/pull/640",
-        "url": "https://github.com/kubestellar/docs/issues/645",
-        "created_at": "2026-01-13T22:28:58Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "io, safari, kubestellar",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: When I go to kubestellar.io in safari, i get redirected to kubestellar.io/docs. When i go to kubestellar.io in chrome, i go to kubestellar.io/en. Chrome is behaving correctly, safari is not",
-        "url": "https://github.com/kubestellar/docs/issues/414",
-        "created_at": "2025-12-15T20:00:53Z"
-      },
-      "repos": [
-        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -856,20 +843,6 @@
       "closed_count": 1
     },
     {
-      "name": "mac, notification, macos",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: macOS notifications do not opening console console when clicked.",
-        "url": "https://github.com/kubestellar/console/issues/1509",
-        "created_at": "2026-02-28T00:34:22Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "aca5, d07cc35d7439, bogus",
       "issue_count": 1,
       "recent_issue": {
@@ -1053,14 +1026,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "`Login.spec.ts` — Background Color Assertion Hardcodes `rgb(10, 10, 10)` — Brittle",
-        "url": "https://github.com/kubestellar/console/issues/9520",
-        "repo": "console",
-        "topic_match": "replace, color, hardcoded"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Networking & Services",
@@ -1135,7 +1101,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 431
+      "issue_count": 434
     }
   ]
 }

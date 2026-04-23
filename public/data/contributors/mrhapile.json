@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-22T22:26:21.483Z",
+  "generated_at": "2026-04-23T03:13:30.804Z",
   "total_issues_opened": 486,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 149650,
@@ -1372,10 +1372,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "`Settings.spec.ts` — Theme Persistence Test Only Checks `localStorage`, Not UI Reflection",
-        "url": "https://github.com/kubestellar/console/issues/9521",
+        "title": "bug: https://kubestellar.io/en/acmm-leaderboard not showing leaderboard on mobile browser",
+        "url": "https://github.com/kubestellar/console/issues/9568",
         "repo": "console",
-        "topic_match": "theme, toggle, light"
+        "topic_match": "leaderboard, coin, hour"
       }
     ],
     "stretch": [

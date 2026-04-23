@@ -1,6 +1,6 @@
 {
   "login": "KPRoche",
-  "generated_at": "2026-04-22T22:27:06.671Z",
+  "generated_at": "2026-04-23T03:14:14.002Z",
   "total_issues_opened": 26,
   "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
   "total_points": 18950,
@@ -45,7 +45,7 @@
       1,
       3
     ],
-    "current_streak_weeks": 8,
+    "current_streak_weeks": 0,
     "longest_streak_weeks": 8,
     "trend": "steady",
     "first_issue_at": "2025-11-13T16:40:18.000Z",

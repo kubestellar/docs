@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-22T22:24:39.855Z",
+  "generated_at": "2026-04-23T03:11:52.702Z",
   "total_issues_opened": 581,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 185250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 450,
+      "issue_count": 449,
       "recent_issue": {
         "title": "Show the ctrl/cmd+enter icon on the submit button in the contribute modal",
         "url": "https://github.com/kubestellar/console/issues/9532",
@@ -64,8 +64,8 @@
         "console",
         "docs"
       ],
-      "open_count": 5,
-      "closed_count": 445
+      "open_count": 0,
+      "closed_count": 449
     },
     {
       "name": "invite, reward, storage",
@@ -1329,6 +1329,20 @@
       "closed_count": 1
     },
     {
+      "name": "sessionid, chat, ids",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Chat cancellation key collision when sessionId is omitted",
+        "url": "https://github.com/kubestellar/console/issues/4263",
+        "created_at": "2026-04-02T16:41:25Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "chmod, binary, b645",
       "issue_count": 1,
       "recent_issue": {
@@ -1668,28 +1682,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "Kagenti provider unable to retrieve cluster list — clusters data unavailable when using kagenti as active agent backend",
-        "url": "https://github.com/kubestellar/console/issues/9535",
-        "repo": "console",
-        "topic_match": "kagent, kagenti, agent"
-      },
-      {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",
         "repo": "console",
         "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "`smoke.spec.ts` uses deprecated `>>` Playwright chaining syntax that may break in future versions",
-        "url": "https://github.com/kubestellar/console/issues/9523",
-        "repo": "console",
-        "topic_match": "playwright, script, sh"
-      },
-      {
-        "title": "Login error handler test mocks auth failure but never asserts an error message is displayed",
-        "url": "https://github.com/kubestellar/console/issues/9519",
-        "repo": "console",
-        "topic_match": "mock, f50a145d, f3aa5b3070"
       }
     ],
     "stretch": [

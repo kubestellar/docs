@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-22T22:27:06.402Z",
+  "generated_at": "2026-04-23T03:14:13.731Z",
   "total_issues_opened": 98,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
   "total_points": 27850,
@@ -674,28 +674,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "card: Implement Flux CD monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/27",
-        "repo": "console-marketplace",
-        "topic_match": "kustomizations, crds, fd2ed2"
-      },
-      {
-        "title": "`Tour.spec.ts` does not walk through any tour step — only verifies `localStorage` flag behavior",
-        "url": "https://github.com/kubestellar/console/issues/9518",
+        "title": "bug: https://kubestellar.io/en/acmm-leaderboard not showing leaderboard on mobile browser",
+        "url": "https://github.com/kubestellar/console/issues/9568",
         "repo": "console",
-        "topic_match": "tour, blink, guide"
-      },
-      {
-        "title": "🐛 2 test failure(s) in Coverage Suite run #1264",
-        "url": "https://github.com/kubestellar/console/issues/9509",
-        "repo": "console",
-        "topic_match": "aea4, f825dd2484, skip"
-      },
-      {
-        "title": "Login error handler test mocks auth failure but never asserts an error message is displayed",
-        "url": "https://github.com/kubestellar/console/issues/9519",
-        "repo": "console",
-        "topic_match": "fixture, login, helper"
+        "topic_match": "leaderboard, coin, contributor"
       }
     ],
     "stretch": [

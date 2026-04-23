@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-22T22:27:06.813Z",
+  "generated_at": "2026-04-23T03:14:14.147Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 17650,
@@ -293,14 +293,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "`Tour.spec.ts` does not walk through any tour step — only verifies `localStorage` flag behavior",
-        "url": "https://github.com/kubestellar/console/issues/9518",
-        "repo": "console",
-        "topic_match": "tour, kubestellarconsole, netlify"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Security & RBAC",
