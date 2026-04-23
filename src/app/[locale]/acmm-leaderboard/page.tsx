@@ -446,8 +446,8 @@ export default function AcmmLeaderboardPage() {
 
       {/* Background effects */}
       <div className="fixed inset-0 pointer-events-none">
-        <GridLines columns={20} rows={20} color="rgba(255,255,255,0.03)" />
-        <StarField count={100} />
+        <GridLines horizontalLines={20} verticalLines={20} strokeColor="rgba(255,255,255,0.03)" />
+        <StarField density="medium" />
       </div>
 
       {/* Hero section */}
