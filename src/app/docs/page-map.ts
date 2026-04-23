@@ -217,7 +217,6 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
     title: 'ACMM',
     items: [
       { 'ACMM Dashboard': 'acmm-dashboard.md' },
-      { 'ACMM Leaderboard': 'acmm-leaderboard.md' },
     ]
   },
   {
