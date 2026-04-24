@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-23T22:24:38.955Z",
+  "generated_at": "2026-04-24T03:14:07.235Z",
   "total_issues_opened": 581,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 185250,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 454,
+      "issue_count": 451,
       "recent_issue": {
         "title": "Show the ctrl/cmd+enter icon on the submit button in the contribute modal",
         "url": "https://github.com/kubestellar/console/issues/9532",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 454
+      "closed_count": 451
     },
     {
       "name": "invite, reward, storage",
@@ -433,6 +433,20 @@
       "closed_count": 1
     },
     {
+      "name": "generatedat, prediction, model",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Prediction timestamp types are inconsistent across related models",
+        "url": "https://github.com/kubestellar/console/issues/7557",
+        "created_at": "2026-04-13T13:29:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "disk, pressure, threshold",
       "issue_count": 1,
       "recent_issue": {
@@ -671,7 +685,7 @@
       "closed_count": 1
     },
     {
-      "name": "report, readiness, c37629f",
+      "name": "readiness, report, c37629f",
       "issue_count": 1,
       "recent_issue": {
         "title": "Client readiness can report healthy after stop",
@@ -769,7 +783,7 @@
       "closed_count": 1
     },
     {
-      "name": "direct, mapping, space",
+      "name": "mapping, direct, space",
       "issue_count": 1,
       "recent_issue": {
         "title": "Project Name Whitespace Breaks Direct Mapping",
@@ -1343,6 +1357,20 @@
       "closed_count": 1
     },
     {
+      "name": "solid, offline, style",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Offline clusters styling in Stats Overview is solid",
+        "url": "https://github.com/kubestellar/console/issues/4127",
+        "created_at": "2026-04-01T12:54:37Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "creategithubissue, dead, screenshots",
       "issue_count": 1,
       "recent_issue": {
@@ -1447,6 +1475,20 @@
         "title": "Unsafe float equality comparison",
         "url": "https://github.com/kubestellar/console/issues/3722",
         "created_at": "2026-03-27T11:50:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "weird, arcade, key",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Weird issue when visiting Arcade dashboard",
+        "url": "https://github.com/kubestellar/console/issues/3717",
+        "created_at": "2026-03-27T11:35:27Z"
       },
       "repos": [
         "console"
@@ -1639,6 +1681,12 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "fix: Welcome.tsx lazy cardRegistry import missing error handling and unmount cleanup",
+        "url": "https://github.com/kubestellar/console/issues/9835",
+        "repo": "console",
+        "topic_match": "meta, tag, welcome"
+      },
       {
         "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4189",

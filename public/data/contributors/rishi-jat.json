@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-23T22:27:01.575Z",
+  "generated_at": "2026-04-24T03:16:25.462Z",
   "total_issues_opened": 240,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
   "total_points": 44250,
@@ -82,7 +82,7 @@
       "closed_count": 3
     },
     {
-      "name": "session, auth, traffic",
+      "name": "session, auth, initial",
       "issue_count": 3,
       "recent_issue": {
         "title": "bug: Auth session hint flag causes repeated /auth/refresh 401 loops and breaks session recovery",

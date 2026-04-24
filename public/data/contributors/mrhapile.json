@@ -1,6 +1,6 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-23T22:26:19.159Z",
+  "generated_at": "2026-04-24T03:15:43.932Z",
   "total_issues_opened": 487,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
   "total_points": 149950,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@mrhapile, mission, phase",
-      "issue_count": 380,
+      "issue_count": 378,
       "recent_issue": {
         "title": "Cross-Tab updatedAt Millisecond Erasure",
         "url": "https://github.com/kubestellar/console/issues/9699",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 380
+      "closed_count": 378
     },
     {
       "name": "documentation, 📌, component",
@@ -193,7 +193,7 @@
       "closed_count": 2
     },
     {
-      "name": "vitest, pooloptions, canvas",
+      "name": "vitest, pooloptions, htmlcanvaselement",
       "issue_count": 2,
       "recent_issue": {
         "title": "Canvas-dependent tests run without a canvas mock and pollute suite output with jsdom “Not implemented” errors",
@@ -585,6 +585,20 @@
       "closed_count": 1
     },
     {
+      "name": "poll, cb05803, ad87",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Poll Memory Allocation Leak",
+        "url": "https://github.com/kubestellar/console/issues/7159",
+        "created_at": "2026-04-13T05:03:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "visually, pointer, progress",
       "issue_count": 1,
       "recent_issue": {
@@ -633,6 +647,20 @@
         "title": "strings.Split panic arrays",
         "url": "https://github.com/kubestellar/console/issues/7138",
         "created_at": "2026-04-13T04:59:32Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "slack, buff, efaea97f",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unbounded Slack Payloads buffing buffer",
+        "url": "https://github.com/kubestellar/console/issues/7136",
+        "created_at": "2026-04-13T04:58:51Z"
       },
       "repos": [
         "console"
@@ -1309,12 +1337,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
@@ -1331,6 +1353,12 @@
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },

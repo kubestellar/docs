@@ -1,17 +1,17 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-23T22:26:53.827Z",
-  "total_issues_opened": 452,
+  "generated_at": "2026-04-24T03:16:17.911Z",
+  "total_issues_opened": 453,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
   "total_points": 132550,
   "level": "Captain",
   "level_rank": 6,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 37.7,
-    "avg_per_day": 7.98,
+    "avg_per_week": 37.8,
+    "avg_per_day": 7.99,
     "by_day_of_week": [
-      196,
+      197,
       18,
       16,
       16,
@@ -25,7 +25,7 @@
       0,
       0,
       38,
-      90,
+      91,
       48,
       38,
       27,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aaradhychinche, alt, cluster",
-      "issue_count": 423,
+      "issue_count": 425,
       "recent_issue": {
         "title": "Contribute: Issue submission fails with \"CSRF header required\" on local setup",
         "url": "https://github.com/kubestellar/console/issues/9439",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 423
+      "closed_count": 425
     },
     {
       "name": "card, registry, register",
@@ -96,7 +96,7 @@
       "closed_count": 4
     },
     {
-      "name": "stress, framework, control",
+      "name": "stress, control, framework",
       "issue_count": 1,
       "recent_issue": {
         "title": "## Mission Control: End-to-End Stress Test Framework (Reliability + Regression Prevention)",
@@ -130,20 +130,6 @@
         "title": "## 🐛 bug: deploy api does not validate sourceCluster",
         "url": "https://github.com/kubestellar/console/issues/5957",
         "created_at": "2026-04-10T06:48:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "resolution, blocked, d1fa8f9",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "## 🐛 bug: resolution flow bypasses blocked-state validation",
-        "url": "https://github.com/kubestellar/console/issues/5934",
-        "created_at": "2026-04-10T05:52:04Z"
       },
       "repos": [
         "console"
@@ -264,7 +250,7 @@
       "closed_count": 1
     },
     {
-      "name": "enable, flag, change",
+      "name": "enable, change, fetch",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: useClusterCapabilities does not react to enabled flag changes due to stale closure",
@@ -437,7 +423,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 419
+      "issue_count": 420
     }
   ]
 }

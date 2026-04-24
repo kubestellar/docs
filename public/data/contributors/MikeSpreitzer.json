@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-23T22:27:03.578Z",
+  "generated_at": "2026-04-24T03:16:27.454Z",
   "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 17650,
@@ -250,7 +250,7 @@
       "closed_count": 1
     },
     {
-      "name": "periphery, home, hub",
+      "name": "periphery, hub, home",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: metaphorical strangeness in the home page",

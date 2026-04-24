@@ -1,28 +1,28 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-23T22:23:32.865Z",
-  "total_issues_opened": 1179,
+  "generated_at": "2026-04-24T03:13:03.854Z",
+  "total_issues_opened": 1216,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3848900,
+  "total_points": 3881550,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 93.3,
-    "avg_per_day": 4.67,
+    "avg_per_week": 95.9,
+    "avg_per_day": 4.82,
     "by_day_of_week": [
       149,
       140,
       215,
-      259,
-      153,
+      271,
+      178,
       151,
       112
     ],
     "by_hour_of_day": [
-      53,
+      75,
       38,
-      113,
+      116,
       35,
       42,
       30,
@@ -42,45 +42,45 @@
       166,
       41,
       27,
-      24,
-      15
+      27,
+      24
     ],
     "current_streak_weeks": 17,
     "longest_streak_weeks": 17,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-23T22:00:50.000Z"
+    "last_issue_at": "2026-04-24T02:37:02.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 759,
+      "issue_count": 768,
       "recent_issue": {
-        "title": "🐛 4 test failure(s) in Coverage Suite run #1318",
-        "url": "https://github.com/kubestellar/console/issues/9756",
-        "created_at": "2026-04-23T20:42:03Z"
+        "title": "[Auto-QA] React efficiency improvements available",
+        "url": "https://github.com/kubestellar/console/issues/9847",
+        "created_at": "2026-04-24T02:04:20Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 756
+      "open_count": 9,
+      "closed_count": 759
     },
     {
       "name": "error, ga4, category",
-      "issue_count": 60,
+      "issue_count": 72,
       "recent_issue": {
-        "title": "🐛 GA4 error: auth errors on / (new today, 4 hits)",
-        "url": "https://github.com/kubestellar/console/issues/9770",
-        "created_at": "2026-04-23T22:00:50Z"
+        "title": "[GA4-Error] 5 auth errors on /enterprise (last 2h)",
+        "url": "https://github.com/kubestellar/console/issues/9848",
+        "created_at": "2026-04-24T02:37:02Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 1,
-      "closed_count": 59
+      "closed_count": 71
     },
     {
       "name": "monitoring, implement, card",
@@ -94,8 +94,22 @@
         "console",
         "console-marketplace"
       ],
-      "open_count": 33,
-      "closed_count": 25
+      "open_count": 32,
+      "closed_count": 26
+    },
+    {
+      "name": "compliance, enterprise, nist",
+      "issue_count": 51,
+      "recent_issue": {
+        "title": "fix: DashboardCustomizer onAddCards is a no-op in EnterpriseLayout — silent failure",
+        "url": "https://github.com/kubestellar/console/issues/9832",
+        "created_at": "2026-04-24T00:31:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 3,
+      "closed_count": 48
     },
     {
       "name": "outreach, acmm, file",
@@ -111,20 +125,6 @@
       ],
       "open_count": 0,
       "closed_count": 46
-    },
-    {
-      "name": "compliance, nist, epic",
-      "issue_count": 41,
-      "recent_issue": {
-        "title": "✨ Segregation of Duties Dashboard",
-        "url": "https://github.com/kubestellar/console/issues/9678",
-        "created_at": "2026-04-23T11:29:52Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 7,
-      "closed_count": 34
     },
     {
       "name": "link, break, url",
@@ -151,8 +151,22 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 30
+      "open_count": 0,
+      "closed_count": 31
+    },
+    {
+      "name": "cluster, tooltip, status",
+      "issue_count": 13,
+      "recent_issue": {
+        "title": "bug: Cluster filter 'None' button does not deselect clusters",
+        "url": "https://github.com/kubestellar/console/issues/9782",
+        "created_at": "2026-04-23T23:18:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 13
     },
     {
       "name": "px, spacing, design",
@@ -184,20 +198,6 @@
       "closed_count": 9
     },
     {
-      "name": "cluster, status, health",
-      "issue_count": 8,
-      "recent_issue": {
-        "title": "🐛 Console shows cluster as reachable when API server is externally unreachable",
-        "url": "https://github.com/kubestellar/console/issues/4202",
-        "created_at": "2026-04-01T22:46:20Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 8
-    },
-    {
       "name": "projects, safari, doc",
       "issue_count": 7,
       "recent_issue": {
@@ -209,8 +209,8 @@
         "console",
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 6
+      "open_count": 0,
+      "closed_count": 7
     },
     {
       "name": "release, nightly, april",
@@ -283,6 +283,34 @@
       "closed_count": 5
     },
     {
+      "name": "cleanup, unmount, useeffect",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "fix: Welcome.tsx lazy cardRegistry import missing error handling and unmount cleanup",
+        "url": "https://github.com/kubestellar/console/issues/9835",
+        "created_at": "2026-04-24T00:32:11Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 2
+    },
+    {
+      "name": "handler, refactor, incomplete",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "fix: errNoClusterAccess refactor incomplete — 503 handlers remain in topology/namespaces/rbac/console_persistence",
+        "url": "https://github.com/kubestellar/console/issues/9830",
+        "created_at": "2026-04-24T00:31:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 2
+    },
+    {
       "name": "residency, classification, rule",
       "issue_count": 3,
       "recent_issue": {
@@ -303,6 +331,20 @@
         "title": "✨ Air-Gap Support for Disconnected Environments",
         "url": "https://github.com/kubestellar/console/issues/9667",
         "created_at": "2026-04-23T11:25:10Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "gpu, msw, node",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "feature: GPU memory metrics via DCGM exporter (split from #8989)",
+        "url": "https://github.com/kubestellar/console/issues/9135",
+        "created_at": "2026-04-20T13:04:01Z"
       },
       "repos": [
         "console"
@@ -367,18 +409,18 @@
       "closed_count": 3
     },
     {
-      "name": "tooltip, technical, abbreviation",
-      "issue_count": 3,
+      "name": "handlerefresh, enterpriseportal, copilot",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "Recommended Cards/Actions: clicking items should show dropdown, not expanded view",
-        "url": "https://github.com/kubestellar/console/issues/3345",
-        "created_at": "2026-03-23T20:21:23Z"
+        "title": "fix: EnterprisePortal handleRefresh duplicated in interval — consolidate to single implementation",
+        "url": "https://github.com/kubestellar/console/issues/9836",
+        "created_at": "2026-04-24T00:32:17Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 3
+      "open_count": 1,
+      "closed_count": 1
     },
     {
       "name": "right, fab, circle",
@@ -395,12 +437,12 @@
       "closed_count": 2
     },
     {
-      "name": "gpu, msw, node",
+      "name": "provider, client, ai",
       "issue_count": 2,
       "recent_issue": {
-        "title": "🐛 MSW missing passthrough for /gpu-nodes/stream on console.kubestellar.io",
-        "url": "https://github.com/kubestellar/console/issues/8476",
-        "created_at": "2026-04-16T20:04:54Z"
+        "title": "Add a per-provider Base URL field to APIKeySettings (Advanced)",
+        "url": "https://github.com/kubestellar/console/issues/8254",
+        "created_at": "2026-04-16T00:02:17Z"
       },
       "repos": [
         "console"
@@ -447,34 +489,6 @@
       "repos": [
         "console",
         "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "handler, locations, fetch",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "JSON.parse without try-catch across frontend components",
-        "url": "https://github.com/kubestellar/console/issues/1910",
-        "created_at": "2026-03-07T00:09:34Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "cleanup, useeffect, ensure",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: Fix potential memory leak — missing timer cleanup in PDDisaggregation and NamespaceManager",
-        "url": "https://github.com/kubestellar/console/issues/1329",
-        "created_at": "2026-02-22T19:38:52Z"
-      },
-      "repos": [
-        "console"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -532,22 +546,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "cve, risk, score",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "✨ Threat Intelligence Overlay (CVE/Risk Scoring)",
-        "url": "https://github.com/kubestellar/console/issues/9664",
-        "created_at": "2026-04-23T11:24:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "tenant, scoped, crud",
@@ -578,12 +578,12 @@
       "closed_count": 1
     },
     {
-      "name": "instruction, l2, vendor",
+      "name": "saml, sso, idp",
       "issue_count": 1,
       "recent_issue": {
-        "title": "feat(acmm): L2 Instructed gate should require ANY ONE agent instruction file, not count each separately",
-        "url": "https://github.com/kubestellar/console/issues/9169",
-        "created_at": "2026-04-20T16:53:16Z"
+        "title": "✨ SAML 2.0 SSO",
+        "url": "https://github.com/kubestellar/console/issues/9642",
+        "created_at": "2026-04-23T11:24:24Z"
       },
       "repos": [
         "console"
@@ -592,12 +592,12 @@
       "closed_count": 1
     },
     {
-      "name": "ram, metric, memory",
+      "name": "instruction, l2, vendor",
       "issue_count": 1,
       "recent_issue": {
-        "title": "feature: GPU memory metrics via DCGM exporter (split from #8989)",
-        "url": "https://github.com/kubestellar/console/issues/9135",
-        "created_at": "2026-04-20T13:04:01Z"
+        "title": "feat(acmm): L2 Instructed gate should require ANY ONE agent instruction file, not count each separately",
+        "url": "https://github.com/kubestellar/console/issues/9169",
+        "created_at": "2026-04-20T16:53:16Z"
       },
       "repos": [
         "console"
@@ -696,20 +696,6 @@
         "title": "🐛 Sidebar subtitle shows rotating taglines — not requested",
         "url": "https://github.com/kubestellar/console/issues/8488",
         "created_at": "2026-04-16T20:15:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "provider, var, env",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Add a per-provider Base URL field to APIKeySettings (Advanced)",
-        "url": "https://github.com/kubestellar/console/issues/8254",
-        "created_at": "2026-04-16T00:02:17Z"
       },
       "repos": [
         "console"
@@ -886,7 +872,7 @@
       "closed_count": 1
     },
     {
-      "name": "healthcheck, dockerignore, root",
+      "name": "healthcheck, dockerignore, hardening",
       "issue_count": 1,
       "recent_issue": {
         "title": "Dockerfile hardening: root user, no healthcheck, no .dockerignore, kill -9 in scripts",
@@ -976,20 +962,6 @@
         "title": "Accessibility: Add ARIA labels, keyboard navigation, and screen reader support",
         "url": "https://github.com/kubestellar/console/issues/1151",
         "created_at": "2026-02-18T19:24:32Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "spinner, fetch, befor",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[Test] Add loading spinner when fetching cluster data",
-        "url": "https://github.com/kubestellar/console/issues/124",
-        "created_at": "2026-01-27T22:44:46Z"
       },
       "repos": [
         "console"
@@ -1194,7 +1166,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 534
+      "issue_count": 571
     }
   ]
 }

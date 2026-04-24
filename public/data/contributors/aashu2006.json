@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-23T22:25:32.182Z",
+  "generated_at": "2026-04-24T03:14:59.036Z",
   "total_issues_opened": 540,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 153000,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, happen, error",
-      "issue_count": 405,
+      "issue_count": 406,
       "recent_issue": {
         "title": "Multiple drilldown panels show all text in English regardless of language setting",
         "url": "https://github.com/kubestellar/console/issues/9539",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 405
+      "closed_count": 406
     },
     {
       "name": "kubara, chart, control",
@@ -585,7 +585,7 @@
       "closed_count": 1
     },
     {
-      "name": "catch, raw, internals",
+      "name": "catch, internals, c67b40ff",
       "issue_count": 1,
       "recent_issue": {
         "title": "affiliate-clicks.mts JSON.parse outside local try/catch leaks raw error internals to callers",
@@ -843,20 +843,6 @@
         "title": "Cache stampede on cold analytics proxy script responses hammering upstream CDN",
         "url": "https://github.com/kubestellar/console/issues/7021",
         "created_at": "2026-04-12T22:51:57Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sequentially, goroutines, evaluateclusterquery",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "EvaluateClusterQuery fetches nodes sequentially instead of in parallel causing linear response time growth",
-        "url": "https://github.com/kubestellar/console/issues/7012",
-        "created_at": "2026-04-12T22:30:40Z"
       },
       "repos": [
         "console"
@@ -1257,7 +1243,7 @@
       "closed_count": 1
     },
     {
-      "name": "classlist, ref, settimeout",
+      "name": "classlist, settimeout, ref",
       "issue_count": 1,
       "recent_issue": {
         "title": "Nested setTimeout in GitHubTokenSection has no cleanup ref causing DOM mutation after unmount",
