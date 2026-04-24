@@ -1,5 +1,8 @@
 const DEFAULT_REPOS = [
   "kubestellar/a2a",
+  "kubestellar/console",
+  "kubestellar/console-marketplace",
+  "kubestellar/console-kb",
   // 'kubestellar/community',
   // 'kubestellar/core',
   "kubestellar/docs",
