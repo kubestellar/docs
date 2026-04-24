@@ -697,7 +697,8 @@ export default function LeaderboardPage() {
                 repositories
               </p>
               <p className="mt-3 text-sm text-gray-500 max-w-2xl mx-auto">
-                Tracking {new Date().getFullYear()} contributions across{" "}
+                All-time contributions across{" "}
+                <a href="https://github.com/kubestellar/kubestellar" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">kubestellar</a>,{" "}
                 <a href="https://github.com/kubestellar/console" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">console</a>,{" "}
                 <a href="https://github.com/kubestellar/console-marketplace" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">console-marketplace</a>,{" "}
                 <a href="https://github.com/kubestellar/console-kb" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors">console-kb</a>, and{" "}
