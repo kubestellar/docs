@@ -1,12 +1,12 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-24T06:49:27.070Z",
+  "generated_at": "2026-04-24T10:42:15.773Z",
   "total_issues_opened": 452,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 132550,
-  "level": "Captain",
-  "level_rank": 6,
-  "rank": 5,
+  "total_points": 9200,
+  "level": "Pilot",
+  "level_rank": 4,
+  "rank": 6,
   "cadence": {
     "avg_per_week": 37.7,
     "avg_per_day": 7.98,
@@ -349,14 +349,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "card: Implement Harbor Registry monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/16",
-        "repo": "console-marketplace",
-        "topic_match": "card, registry, register"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Charts & Visualizations",

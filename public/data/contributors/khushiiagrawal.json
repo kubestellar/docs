@@ -1,12 +1,12 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-24T06:49:33.523Z",
+  "generated_at": "2026-04-24T10:42:15.972Z",
   "total_issues_opened": 87,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 31000,
-  "level": "Commander",
-  "level_rank": 5,
-  "rank": 9,
+  "total_points": 7300,
+  "level": "Pilot",
+  "level_rank": 4,
+  "rank": 7,
   "cadence": {
     "avg_per_week": 7.3,
     "avg_per_day": 5.04,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@khushiiagrawal, line, test",
-      "issue_count": 59,
+      "issue_count": 60,
       "recent_issue": {
         "title": "`error-resilience.spec.ts` final assertion only requires 2 of 5 checks to execute — a full CI outage where 3 tests skip is silently accepted as a pass",
         "url": "https://github.com/kubestellar/console/issues/9722",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 59
+      "closed_count": 60
     },
     {
       "name": "vcluster, disconnectvcluster, disconnect",
@@ -173,20 +173,6 @@
         "title": "bug: `pkg/store/sqlite.go` is 107 KB — likely a god file that handles unrelated concerns in a single file, making auditing and testing difficult",
         "url": "https://github.com/kubestellar/console/issues/8130",
         "created_at": "2026-04-15T08:21:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "bootstrap, normal, ce09303",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `safe_npm_install` is defined twice in `startup-oauth.sh` — once in bootstrap mode (lines 92–110) and once in normal mode (lines 130–159) — but with different logic",
-        "url": "https://github.com/kubestellar/console/issues/8128",
-        "created_at": "2026-04-15T08:20:49Z"
       },
       "repos": [
         "console"

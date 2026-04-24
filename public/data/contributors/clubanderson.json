@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-24T06:46:52.600Z",
-  "total_issues_opened": 1222,
+  "generated_at": "2026-04-24T10:40:34.327Z",
+  "total_issues_opened": 1226,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3891300,
+  "total_points": 1178850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 96.3,
-    "avg_per_day": 4.84,
+    "avg_per_week": 96.7,
+    "avg_per_day": 4.85,
     "by_day_of_week": [
       149,
       140,
       215,
       271,
-      184,
+      188,
       151,
       112
     ],
@@ -28,8 +28,8 @@
       31,
       73,
       61,
-      29,
-      8,
+      32,
+      9,
       6,
       58,
       17,
@@ -49,16 +49,16 @@
     "longest_streak_weeks": 17,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-24T05:01:24.000Z"
+    "last_issue_at": "2026-04-24T09:25:06.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 770,
+      "issue_count": 774,
       "recent_issue": {
-        "title": "🐛 1 test failure(s) in Coverage Suite run #1368",
-        "url": "https://github.com/kubestellar/console/issues/9868",
-        "created_at": "2026-04-24T04:25:37Z"
+        "title": "🐛 2 test failure(s) in Coverage Suite run #1377",
+        "url": "https://github.com/kubestellar/console/issues/9897",
+        "created_at": "2026-04-24T09:25:06Z"
       },
       "repos": [
         "console",
@@ -66,7 +66,7 @@
         "docs"
       ],
       "open_count": 3,
-      "closed_count": 767
+      "closed_count": 771
     },
     {
       "name": "error, ga4, category",
@@ -94,22 +94,8 @@
         "console",
         "console-marketplace"
       ],
-      "open_count": 31,
-      "closed_count": 27
-    },
-    {
-      "name": "compliance, enterprise, nist",
-      "issue_count": 51,
-      "recent_issue": {
-        "title": "fix: DashboardCustomizer onAddCards is a no-op in EnterpriseLayout — silent failure",
-        "url": "https://github.com/kubestellar/console/issues/9832",
-        "created_at": "2026-04-24T00:31:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 50
+      "open_count": 28,
+      "closed_count": 30
     },
     {
       "name": "outreach, acmm, file",
@@ -125,6 +111,20 @@
       ],
       "open_count": 0,
       "closed_count": 46
+    },
+    {
+      "name": "compliance, nist, control",
+      "issue_count": 38,
+      "recent_issue": {
+        "title": "💡 Feature idea: Cross-CNCF Deployment Risk Score card",
+        "url": "https://github.com/kubestellar/console/issues/9827",
+        "created_at": "2026-04-24T00:23:51Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 37
     },
     {
       "name": "link, break, url",
@@ -153,6 +153,20 @@
       ],
       "open_count": 0,
       "closed_count": 31
+    },
+    {
+      "name": "enterprise, sidebar, provider",
+      "issue_count": 13,
+      "recent_issue": {
+        "title": "fix: DashboardCustomizer onAddCards is a no-op in EnterpriseLayout — silent failure",
+        "url": "https://github.com/kubestellar/console/issues/9832",
+        "created_at": "2026-04-24T00:31:18Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 13
     },
     {
       "name": "cluster, tooltip, status",
@@ -283,6 +297,20 @@
       "closed_count": 5
     },
     {
+      "name": "session, avg, bounce",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "📊 GA4: engagement rate collapsed yesterday (11% vs 78% 6d avg) — investigate session quality",
+        "url": "https://github.com/kubestellar/console/issues/9870",
+        "created_at": "2026-04-24T05:01:24Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
       "name": "cleanup, unmount, useeffect",
       "issue_count": 3,
       "recent_issue": {
@@ -409,20 +437,6 @@
       "closed_count": 3
     },
     {
-      "name": "session, avg, bounce",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "📊 GA4: engagement rate collapsed yesterday (11% vs 78% 6d avg) — investigate session quality",
-        "url": "https://github.com/kubestellar/console/issues/9870",
-        "created_at": "2026-04-24T05:01:24Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "handlerefresh, enterpriseportal, copilot",
       "issue_count": 2,
       "recent_issue": {
@@ -443,20 +457,6 @@
         "title": "bug: FAB (+ button) still truncated on some viewports",
         "url": "https://github.com/kubestellar/console/issues/8777",
         "created_at": "2026-04-18T01:03:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "provider, client, ai",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Add a per-provider Base URL field to APIKeySettings (Advanced)",
-        "url": "https://github.com/kubestellar/console/issues/8254",
-        "created_at": "2026-04-16T00:02:17Z"
       },
       "repos": [
         "console"
@@ -710,6 +710,20 @@
         "title": "🐛 Sidebar subtitle shows rotating taglines — not requested",
         "url": "https://github.com/kubestellar/console/issues/8488",
         "created_at": "2026-04-16T20:15:59Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "provider, var, env",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Add a per-provider Base URL field to APIKeySettings (Advanced)",
+        "url": "https://github.com/kubestellar/console/issues/8254",
+        "created_at": "2026-04-16T00:02:17Z"
       },
       "repos": [
         "console"
@@ -1180,7 +1194,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 577
+      "issue_count": 581
     }
   ]
 }

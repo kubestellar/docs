@@ -1,12 +1,12 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-24T06:47:42.785Z",
+  "generated_at": "2026-04-24T10:41:42.994Z",
   "total_issues_opened": 581,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 185250,
-  "level": "Admiral",
-  "level_rank": 7,
-  "rank": 2,
+  "total_points": 9400,
+  "level": "Pilot",
+  "level_rank": 4,
+  "rank": 5,
   "cadence": {
     "avg_per_week": 48.4,
     "avg_per_day": 8.14,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 455,
+      "issue_count": 453,
       "recent_issue": {
         "title": "Show the ctrl/cmd+enter icon on the submit button in the contribute modal",
         "url": "https://github.com/kubestellar/console/issues/9532",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 455
+      "closed_count": 453
     },
     {
       "name": "invite, reward, storage",
@@ -1090,6 +1090,20 @@
       "closed_count": 1
     },
     {
+      "name": "coding, level, contributor",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Contributor level color coding is different in docs and in console",
+        "url": "https://github.com/kubestellar/console/issues/5241",
+        "created_at": "2026-04-07T13:53:07Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "indexeddb, clear, completion",
       "issue_count": 1,
       "recent_issue": {
@@ -1320,6 +1334,20 @@
         "title": "Admission webhook parser reports default policy instead of actual policy",
         "url": "https://github.com/kubestellar/console/issues/4153",
         "created_at": "2026-04-01T13:48:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "solid, offline, style",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Offline clusters styling in Stats Overview is solid",
+        "url": "https://github.com/kubestellar/console/issues/4127",
+        "created_at": "2026-04-01T12:54:37Z"
       },
       "repos": [
         "console"
