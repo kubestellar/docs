@@ -1,18 +1,18 @@
 {
   "login": "ghanshyam2005singh",
-  "generated_at": "2026-04-18T14:23:43.473Z",
-  "total_issues_opened": 84,
+  "generated_at": "2026-04-24T06:49:34.017Z",
+  "total_issues_opened": 92,
   "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
-  "total_points": 25600,
+  "total_points": 28000,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 14,
+  "rank": 12,
   "cadence": {
-    "avg_per_week": 6.9,
-    "avg_per_day": 0.82,
+    "avg_per_week": 7.6,
+    "avg_per_day": 0.85,
     "by_day_of_week": [
-      8,
-      1,
+      15,
+      2,
       11,
       27,
       17,
@@ -32,9 +32,9 @@
       1,
       5,
       8,
-      4,
-      8,
-      15,
+      5,
+      12,
+      18,
       4,
       1,
       4,
@@ -45,42 +45,27 @@
       2,
       0
     ],
-    "current_streak_weeks": 6,
-    "longest_streak_weeks": 6,
+    "current_streak_weeks": 7,
+    "longest_streak_weeks": 7,
     "trend": "steady",
     "first_issue_at": "2026-01-03T05:59:20.000Z",
-    "last_issue_at": "2026-04-15T13:29:04.000Z"
+    "last_issue_at": "2026-04-21T12:49:55.000Z"
   },
   "topics": [
     {
-      "name": "mission, ai, @ghanshyam2005singh",
-      "issue_count": 61,
+      "name": "mission, @ghanshyam2005singh, ai",
+      "issue_count": 81,
       "recent_issue": {
-        "title": "Deprecated GitHub Copilot Agents in AI agent selection dropdown",
-        "url": "https://github.com/kubestellar/console/issues/8145",
-        "created_at": "2026-04-15T13:29:04Z"
+        "title": "Orbit mission allows empty cluster selection and defaults to all clusters without warning",
+        "url": "https://github.com/kubestellar/console/issues/9373",
+        "created_at": "2026-04-21T12:49:55Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 61
-    },
-    {
-      "name": "screenshot, report, @ghanshyam2005singh",
-      "issue_count": 10,
-      "recent_issue": {
-        "title": "Screenshots Persist in Repository Without Cleanup — Missing 7-Day Retention Policy",
-        "url": "https://github.com/kubestellar/console/issues/4349",
-        "created_at": "2026-04-02T22:44:04Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 10
+      "closed_count": 81
     },
     {
       "name": "fork, nightly, repository",
@@ -97,26 +82,12 @@
       "closed_count": 2
     },
     {
-      "name": "collapse, sidebar, popup",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Sidebar collapse and pin icons appear above floating popup (z-index issue)",
-        "url": "https://github.com/kubestellar/console/issues/3636",
-        "created_at": "2026-03-26T10:23:09Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "policy, 127.0.0.1:8585, b404ba36",
+      "name": "form, overflow, button",
       "issue_count": 1,
       "recent_issue": {
-        "title": "API requests to local agent (127.0.0.1:8585) blocked by Content Security Policy (CSP)",
-        "url": "https://github.com/kubestellar/console/issues/7611",
-        "created_at": "2026-04-13T14:50:53Z"
+        "title": "\"Create\" button overflows container in Local Clusters form layout",
+        "url": "https://github.com/kubestellar/console/issues/9154",
+        "created_at": "2026-04-20T13:47:40Z"
       },
       "repos": [
         "console"
@@ -243,7 +214,7 @@
         "title": "LFX Mentorship: AI-Driven Operational Knowledge Base & Mission Control Testing for KubeStellar Console",
         "url": "https://github.com/kubestellar/console/issues/4196",
         "repo": "console",
-        "topic_match": "mission, ai, @ghanshyam2005singh"
+        "topic_match": "mission, @ghanshyam2005singh, ai"
       }
     ],
     "stretch": [
@@ -260,6 +231,12 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
@@ -270,12 +247,6 @@
         "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
         "description": "Log streaming, event timeline, alerting, notifications",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },
@@ -326,7 +297,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 37
+      "issue_count": 45
     }
   ]
 }

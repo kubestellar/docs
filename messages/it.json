@@ -653,78 +653,33 @@
       "contributor": {
         "title": "Contributor",
         "nextLevel": "Mentee non retribuito",
-        "description": "Inizia il tuo percorso nella community KubeStellar",
-        "requirements": [
-          "Almeno 3 contributi (bug report, documentazione o PR di codice)",
-          "Mostrare entusiasmo e interesse per una partecipazione a lungo termine",
-          "Essere attivi su GitHub e Slack",
-          "Candidatura informale o nomina per entrare nel programma mentee"
-        ],
-        "goodStanding": "I contributor in buona condotta (che rispettano le metriche per la creazione di issue 'help wanted', review di PR e PR mergeate) possono accedere a opportunità professionali, incluso l'assegnamento a progetti di mentorship."
+        "description": "Inizia il tuo percorso nella community KubeStellar"
       },
       "unpaidMentee": {
         "title": "Mentee non retribuito",
         "nextLevel": "Mentee retribuito",
         "description": "Percorso di 12 settimane per dimostrare impegno e competenze",
-        "timeframe": "12 settimane",
-        "requirements": [
-          "Aprire almeno 6 issue 'help wanted'",
-          "Merge di almeno 20 PR (8 nelle prime 6 settimane)",
-          "Partecipare alle riunioni settimanali del team o inviare riepiloghi",
-          "Collaborare in modo efficace con i mentor",
-          "Ricevere la raccomandazione del mentor"
-        ],
-        "goodStanding": "I mentee non retribuiti in buona condotta ricevono certificati di completamento, lettere di raccomandazione e priorità per programmi di mentorship retribuiti (GSoC, LFX, ecc.)."
+        "timeframe": "12 settimane"
       },
       "paidMentee": {
         "title": "Mentee retribuito",
         "nextLevel": "Mentor",
-        "description": "Contributor riconosciuto con retribuzione e responsabilità",
-        "requirements": [
-          "Completare con successo almeno un ciclo di mentorship retribuita di 12 settimane",
-          "Aiutare ad accogliere e supportare almeno un nuovo mentee o contributor",
-          "Inviare ≥3 review di PR",
-          "Inviare ≥5 commenti utili su PR o issue",
-          "Presentare o co‑presentare in una community call"
-        ],
-        "goodStanding": "I mentee retribuiti in buona condotta ricevono referenze professionali, mentorship di carriera e opportunità di guidare progetti o fare da mentor ad altri."
+        "description": "Contributor riconosciuto con retribuzione e responsabilità"
       },
       "mentor": {
         "title": "Mentor",
         "nextLevel": "Maintainer",
-        "description": "Guida e supporta la prossima generazione di contributor",
-        "requirements": [
-          "Dimostrare leadership tecnica in una o più aree chiave",
-          "Mantenere un flusso costante di contributi",
-          "Partecipare attivamente alla community su GitHub e Slack",
-          "Essere approvati dai maintainer core attraverso un processo di review pubblico"
-        ],
-        "goodStanding": "I mentor in buona condotta possono guidare iniziative, rappresentare KubeStellar a conferenze, ricevere supporto come speaker ed avere voce sulle decisioni di roadmap, oltre ad essere idonei a voucher di formazione / esame CNCF per progetti completati con successo."
+        "description": "Guida e supporta la prossima generazione di contributor"
       },
       "maintainer": {
         "title": "Maintainer",
         "nextLevel": "Ambassador",
-        "description": "Leader di fiducia con responsabilità complete sul progetto",
-        "requirements": [
-          "≥2 issue 'Help Wanted' ogni 2 mesi",
-          "≥3 PR mergeate ogni 2 mesi",
-          "≥8 review di PR o commenti costruttivi ogni 2 mesi",
-          "≥3 partecipazioni alle riunioni di community ogni 2 mesi"
-        ],
-        "goodStanding": "I maintainer in buona condotta hanno pieno accesso in scrittura, diritto di voto sulle decisioni del progetto e possono fungere da rappresentanti ufficiali."
+        "description": "Leader di fiducia con responsabilità complete sul progetto"
       },
       "ambassador": {
         "title": "Ambassador",
         "nextLevel": "Stellar Advocate",
-        "description": "Promuovi e favorisci l'adozione di KubeStellar",
-        "requirements": [
-          "Promuovere attivamente KubeStellar tramite blog post, presentazioni o social media",
-          "Rappresentare KubeStellar in meetup, conferenze o eventi di community",
-          "Creare contenuti educativi (tutorial, video, demo) su KubeStellar",
-          "Interagire con gli utenti per raccogliere feedback e supportare l'adozione",
-          "Mantenere un livello di attività da maintainer (issue, PR, coinvolgimento in community)"
-        ],
-        "goodStanding": "Gli ambassador in buona condotta possono accedere a opportunità di speaking, co‑autoria di blog post, accesso anticipato a nuove funzionalità e supporto promozionale per le loro attività di advocacy."
+        "description": "Promuovi e favorisci l'adozione di KubeStellar"
       }
     },
     "activityRequirements": {

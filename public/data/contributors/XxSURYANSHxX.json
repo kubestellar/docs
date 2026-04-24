@@ -1,9 +1,9 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-18T14:23:37.837Z",
+  "generated_at": "2026-04-24T06:49:29.251Z",
   "total_issues_opened": 199,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-  "total_points": 50100,
+  "total_points": 52500,
   "level": "Captain",
   "level_rank": 6,
   "rank": 6,
@@ -45,7 +45,7 @@
       0,
       0
     ],
-    "current_streak_weeks": 4,
+    "current_streak_weeks": 0,
     "longest_streak_weeks": 4,
     "trend": "ramping_up",
     "first_issue_at": "2026-03-19T18:23:23.000Z",
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xxsuryanshxx, pkg, handler",
-      "issue_count": 179,
+      "issue_count": 176,
       "recent_issue": {
         "title": "### 30. `CheckCanI` delegates to the cluster's apiserver using the console's identity, not the caller's",
         "url": "https://github.com/kubestellar/console/issues/7979",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 179
+      "closed_count": 176
     },
     {
       "name": "tail, log, interact",
@@ -137,7 +137,35 @@
       "closed_count": 1
     },
     {
-      "name": "retain, timestamps, snapshot",
+      "name": "dryrunsessionsmu, activechatctxsmu, server",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Title: Lock-ordering deadlock between activeChatCtxsMu and dryRunSessionsMu in server_ai.go and server.go",
+        "url": "https://github.com/kubestellar/console/issues/7169",
+        "created_at": "2026-04-13T05:18:16Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "map, d7dffd, b6b0",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 16: Unsafe concurrent access to `slowClusters` map (`k8s/client.go`)",
+        "url": "https://github.com/kubestellar/console/issues/5568",
+        "created_at": "2026-04-08T19:26:48Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "retain, snapshot, timestamps",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 1: Metrics history retains snapshots with unparseable timestamps forever (`metrics_history.go`)",
@@ -207,6 +235,20 @@
       "closed_count": 1
     },
     {
+      "name": "key, authorization, aaccf0",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "### Issue 6: Unvalidated empty API key sent in Authorization header (`provider_openai_compat.go`)",
+        "url": "https://github.com/kubestellar/console/issues/4798",
+        "created_at": "2026-04-05T13:38:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "plaintext, smtp, credential",
       "issue_count": 1,
       "recent_issue": {
@@ -221,7 +263,7 @@
       "closed_count": 1
     },
     {
-      "name": "parent, worker, context",
+      "name": "worker, context, parent",
       "issue_count": 1,
       "recent_issue": {
         "title": "### Issue 6: `prediction_worker.go` uses `context.Background()` instead of parent context",
@@ -263,7 +305,7 @@
       "closed_count": 1
     },
     {
-      "name": "omission, a484, ee874a25ff49",
+      "name": "a484, ee874a25ff49, omission",
       "issue_count": 1,
       "recent_issue": {
         "title": "Missing target=\"_blank\" vulnerability (rel=\"noopener noreferrer\" omission)",

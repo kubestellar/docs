@@ -1,21 +1,21 @@
 {
   "login": "Shreya2005-2005",
-  "generated_at": "2026-04-18T14:23:43.858Z",
-  "total_issues_opened": 1,
+  "generated_at": "2026-04-24T06:49:34.579Z",
+  "total_issues_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/217235943?v=4",
-  "total_points": 450,
-  "level": "Observer",
-  "level_rank": 1,
-  "rank": 63,
+  "total_points": 2750,
+  "level": "Navigator",
+  "level_rank": 3,
+  "rank": 26,
   "cadence": {
-    "avg_per_week": 0.1,
-    "avg_per_day": 1,
+    "avg_per_week": 0.6,
+    "avg_per_day": 0.85,
     "by_day_of_week": [
       0,
       0,
       1,
-      0,
-      0,
+      3,
+      3,
       0,
       0
     ],
@@ -23,6 +23,12 @@
       0,
       0,
       0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      1,
       0,
       0,
       0,
@@ -31,13 +37,7 @@
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      2,
       0,
       0,
       0,
@@ -49,12 +49,86 @@
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-15T21:06:28.000Z",
-    "last_issue_at": "2026-04-15T21:06:28.000Z"
+    "last_issue_at": "2026-04-24T03:33:12.000Z"
   },
-  "topics": [],
+  "topics": [
+    {
+      "name": "@shreya2005, truncated, overview",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "## Bug: Stats Overview tile labels are truncated on multiple pages",
+        "url": "https://github.com/kubestellar/console/issues/9862",
+        "created_at": "2026-04-24T03:33:12Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 5
+    },
+    {
+      "name": "localstorage, load, json",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "## Bug: missions localStorage JSON parse error causes silent data loss",
+        "url": "https://github.com/kubestellar/console/issues/9622",
+        "created_at": "2026-04-23T08:50:09Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "attribute, form, element",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "a11y: AlertRuleEditor form inputs missing id/name attributes",
+        "url": "https://github.com/kubestellar/console/issues/8236",
+        "created_at": "2026-04-15T21:06:28Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
   "suggestions": {
     "deepen": [],
-    "stretch": []
+    "stretch": [
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Cluster Management",
+        "path": "web/src/components/clusters/, pkg/k8s/",
+        "description": "Multi-cluster views, cluster health, add/remove clusters, Kubernetes client",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/clusters"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      }
+    ]
   },
   "activity_timeline": [
     {
@@ -103,7 +177,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 1
+      "issue_count": 7
     }
   ]
 }

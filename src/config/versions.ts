@@ -207,6 +207,16 @@ const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
     branch: "main",
     isDefault: true,
   },
+  "0.3.22": {
+    label: "v0.3.22",
+    branch: "docs/console/0.3.22",
+    isDefault: false,
+  },
+  "0.3.21": {
+    label: "v0.3.21",
+    branch: "docs/console/0.3.21",
+    isDefault: false,
+  },
   "0.3.20": {
     label: "v0.3.20",
     branch: "docs/console/0.3.20",

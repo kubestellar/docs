@@ -1,14 +1,14 @@
 {
   "login": "MAVRICK-1",
-  "generated_at": "2026-04-18T14:23:43.840Z",
+  "generated_at": "2026-04-24T06:49:34.578Z",
   "total_issues_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
-  "total_points": 3850,
+  "total_points": 2750,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 28,
+  "rank": 25,
   "cadence": {
-    "avg_per_week": 0.9,
+    "avg_per_week": 0.8,
     "avg_per_day": 0.07,
     "by_day_of_week": [
       0,
@@ -47,13 +47,13 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 2,
-    "trend": "ramping_up",
+    "trend": "slowing_down",
     "first_issue_at": "2025-09-18T09:43:07.000Z",
     "last_issue_at": "2026-03-26T05:26:09.000Z"
   },
   "topics": [
     {
-      "name": "ai, @mavrick, terminate",
+      "name": "ai, @mavrick, missions",
       "issue_count": 3,
       "recent_issue": {
         "title": "Bug: AI Card Creation Fails with “Could not extract valid JSON from AI response”",
@@ -123,7 +123,7 @@
       "closed_count": 1
     },
     {
-      "name": "oauth, env, secret",
+      "name": "oauth, env, jwt",
       "issue_count": 1,
       "recent_issue": {
         "title": "/startup-oauth.sh  script not working",

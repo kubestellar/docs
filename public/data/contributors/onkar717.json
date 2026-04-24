@@ -1,12 +1,12 @@
 {
   "login": "onkar717",
-  "generated_at": "2026-04-18T14:23:43.837Z",
+  "generated_at": "2026-04-24T06:49:34.591Z",
   "total_issues_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/144542684?v=4",
-  "total_points": 4350,
-  "level": "Navigator",
-  "level_rank": 3,
-  "rank": 27,
+  "total_points": 1400,
+  "level": "Explorer",
+  "level_rank": 2,
+  "rank": 36,
   "cadence": {
     "avg_per_week": 0,
     "avg_per_day": 5,
@@ -53,7 +53,7 @@
   },
   "topics": [
     {
-      "name": "slack, ready, bar",
+      "name": "ready, slack, bar",
       "issue_count": 4,
       "recent_issue": {
         "title": "bug: The links in Ready to Get Started? for Explore Documentation are broken or need to update",
@@ -67,7 +67,7 @@
       "closed_count": 4
     },
     {
-      "name": "display, github, stats",
+      "name": "display, github, repository",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Mismatch between GitHub repo stats and UI display",

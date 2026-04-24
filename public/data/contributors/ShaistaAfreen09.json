@@ -1,12 +1,12 @@
 {
   "login": "ShaistaAfreen09",
-  "generated_at": "2026-04-18T14:23:43.847Z",
+  "generated_at": "2026-04-24T06:49:34.591Z",
   "total_issues_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/97823364?v=4",
   "total_points": 1400,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 40,
+  "rank": 37,
   "cadence": {
     "avg_per_week": 0.3,
     "avg_per_day": 1.36,
@@ -53,8 +53,22 @@
   },
   "topics": [
     {
-      "name": "backend, environment, demo",
-      "issue_count": 2,
+      "name": "badge, alert, critical",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "UX: Critical issue badge behavior is inconsistent across pages",
+        "url": "https://github.com/kubestellar/console/issues/8725",
+        "created_at": "2026-04-17T20:23:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "backend, banner, recovery",
+      "issue_count": 1,
       "recent_issue": {
         "title": "ux: \"Connection lost\" banner hides diagnostic context and provides non-actionable recovery guidance",
         "url": "https://github.com/kubestellar/console/issues/8633",
@@ -64,15 +78,15 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 1
     },
     {
-      "name": "badge, alert, critical",
+      "name": "environment, backend, incognito",
       "issue_count": 1,
       "recent_issue": {
-        "title": "UX: Critical issue badge behavior is inconsistent across pages",
-        "url": "https://github.com/kubestellar/console/issues/8725",
-        "created_at": "2026-04-17T20:23:22Z"
+        "title": "bug:  Backend API 503 failures not reflected in dashboard health status",
+        "url": "https://github.com/kubestellar/console/issues/8162",
+        "created_at": "2026-04-15T15:24:36Z"
       },
       "repos": [
         "console"

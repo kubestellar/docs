@@ -1,14 +1,14 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-04-18T14:23:43.832Z",
+  "generated_at": "2026-04-24T06:49:34.561Z",
   "total_issues_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
   "total_points": 6250,
   "level": "Pilot",
   "level_rank": 4,
-  "rank": 24,
+  "rank": 19,
   "cadence": {
-    "avg_per_week": 0.4,
+    "avg_per_week": 0,
     "avg_per_day": 0.94,
     "by_day_of_week": [
       0,
@@ -53,8 +53,8 @@
   },
   "topics": [
     {
-      "name": "linkedin, link, website",
-      "issue_count": 2,
+      "name": "linkedin, link, calendar",
+      "issue_count": 3,
       "recent_issue": {
         "title": "doc: Linkedin link in readme doesn't points to kubestellars linkedin page",
         "url": "https://github.com/kubestellar/docs/issues/927",
@@ -64,7 +64,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 3
     },
     {
       "name": "footer, year, copyright",
@@ -95,7 +95,7 @@
       "closed_count": 1
     },
     {
-      "name": "windows, separator, backslashes",
+      "name": "windows, backslashes, separator",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Page map validation fails on Windows due to path separator mismatch",
@@ -115,20 +115,6 @@
         "title": "doc: Duplicate “Open a Pull Request” section in CONTRIBUTING.md",
         "url": "https://github.com/kubestellar/docs/issues/868",
         "created_at": "2026-01-27T17:44:32Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "calendar, google, community",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Outdated Google Calendar link under “Subscribe to our community calendar” in README",
-        "url": "https://github.com/kubestellar/docs/issues/866",
-        "created_at": "2026-01-27T17:01:53Z"
       },
       "repos": [
         "docs"

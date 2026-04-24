@@ -1,15 +1,15 @@
 {
   "login": "khushal-winner",
-  "generated_at": "2026-04-18T14:23:43.830Z",
-  "total_issues_opened": 12,
+  "generated_at": "2026-04-24T06:49:34.254Z",
+  "total_issues_opened": 29,
   "avatar_url": "https://avatars.githubusercontent.com/u/175409209?v=4",
-  "total_points": 8200,
-  "level": "Pilot",
-  "level_rank": 4,
-  "rank": 23,
+  "total_points": 25200,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 14,
   "cadence": {
-    "avg_per_week": 1,
-    "avg_per_day": 0.35,
+    "avg_per_week": 2.4,
+    "avg_per_day": 0.79,
     "by_day_of_week": [
       0,
       0,
@@ -17,7 +17,7 @@
       0,
       6,
       1,
-      5
+      22
     ],
     "by_hour_of_day": [
       0,
@@ -29,32 +29,46 @@
       0,
       0,
       1,
-      0,
-      3,
-      0,
       2,
+      5,
       0,
-      0,
-      0,
-      0,
-      3,
+      4,
       2,
       1,
       0,
       0,
-      0,
+      3,
+      2,
+      2,
+      4,
+      2,
+      1,
       0
     ],
     "current_streak_weeks": 1,
     "longest_streak_weeks": 1,
-    "trend": "steady",
+    "trend": "ramping_up",
     "first_issue_at": "2026-03-14T08:41:29.000Z",
-    "last_issue_at": "2026-04-17T19:33:51.000Z"
+    "last_issue_at": "2026-04-19T22:20:58.000Z"
   },
   "topics": [
     {
-      "name": "watcher, @khushal, winner",
-      "issue_count": 5,
+      "name": ":/, feature, limit",
+      "issue_count": 20,
+      "recent_issue": {
+        "title": "feature: Add resource limits to db-restore init container",
+        "url": "https://github.com/kubestellar/console/issues/9067",
+        "created_at": "2026-04-19T22:20:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 20
+    },
+    {
+      "name": "watcher, backoff, leak",
+      "issue_count": 2,
       "recent_issue": {
         "title": "# bug: Resource Management Issues in MCP Handler and Console Watcher",
         "url": "https://github.com/kubestellar/console/issues/2664",
@@ -64,15 +78,29 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 5
+      "closed_count": 2
     },
     {
-      "name": "image, default, pull",
+      "name": "database, sqlite, wal",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "**Title**: Database Connection Pool Missing Configuration - Potential Resource Exhaustion",
+        "url": "https://github.com/kubestellar/console/issues/2659",
+        "created_at": "2026-03-15T10:58:49Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "embed, iframe, header",
       "issue_count": 1,
       "recent_issue": {
-        "title": "feature: Change default Helm image pull policy to IfNotPresent",
-        "url": "https://github.com/kubestellar/console/issues/8716",
-        "created_at": "2026-04-17T19:33:51Z"
+        "title": "bug: Embed route blocked by global security headers",
+        "url": "https://github.com/kubestellar/console/issues/9047",
+        "created_at": "2026-04-19T20:06:22Z"
       },
       "repos": [
         "console"
@@ -81,12 +109,12 @@
       "closed_count": 1
     },
     {
-      "name": "runtime, response, zod",
+      "name": "image, pull, default",
       "issue_count": 1,
       "recent_issue": {
-        "title": "feature: Add targeted runtime validation for critical API responses using Zod",
-        "url": "https://github.com/kubestellar/console/issues/8705",
-        "created_at": "2026-04-17T18:49:38Z"
+        "title": "feature: Change default Helm image pull policy to IfNotPresent",
+        "url": "https://github.com/kubestellar/console/issues/8716",
+        "created_at": "2026-04-17T19:33:51Z"
       },
       "repos": [
         "console"
@@ -123,34 +151,6 @@
       "closed_count": 1
     },
     {
-      "name": "ip, limit, rate",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature: Implement per-user rate limiting and progressive security for authentication endpoints",
-        "url": "https://github.com/kubestellar/console/issues/8676",
-        "created_at": "2026-04-17T17:42:17Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "logging, audit, rbac",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature: Add Audit Logging for Sensitive Operations",
-        "url": "https://github.com/kubestellar/console/issues/8670",
-        "created_at": "2026-04-17T17:28:08Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "goroutine, mcp, endpoint",
       "issue_count": 1,
       "recent_issue": {
@@ -175,16 +175,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Dashboard & Cards",
@@ -193,10 +193,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },
@@ -247,7 +247,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 6
+      "issue_count": 23
     }
   ]
 }

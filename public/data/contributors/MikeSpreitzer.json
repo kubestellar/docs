@@ -1,19 +1,19 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-04-18T14:23:43.810Z",
-  "total_issues_opened": 80,
+  "generated_at": "2026-04-24T06:49:34.559Z",
+  "total_issues_opened": 83,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-  "total_points": 17150,
+  "total_points": 17650,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 19,
+  "rank": 18,
   "cadence": {
-    "avg_per_week": 5.8,
+    "avg_per_week": 6,
     "avg_per_day": 0.63,
     "by_day_of_week": [
       8,
       6,
-      15,
+      18,
       12,
       26,
       9,
@@ -25,7 +25,7 @@
       2,
       2,
       6,
-      15,
+      18,
       7,
       7,
       0,
@@ -49,23 +49,23 @@
     "longest_streak_weeks": 6,
     "trend": "steady",
     "first_issue_at": "2025-12-11T19:58:02.000Z",
-    "last_issue_at": "2026-04-17T04:42:56.000Z"
+    "last_issue_at": "2026-04-22T05:47:38.000Z"
   },
   "topics": [
     {
       "name": "describe, following, width",
-      "issue_count": 57,
+      "issue_count": 61,
       "recent_issue": {
-        "title": "bug: GPU Inventory falsely empty",
-        "url": "https://github.com/kubestellar/console/issues/8600",
-        "created_at": "2026-04-17T04:42:56Z"
+        "title": "bug: GPU Inventory is coming from only one of my clusters",
+        "url": "https://github.com/kubestellar/console/issues/9502",
+        "created_at": "2026-04-22T05:47:38Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 57
+      "closed_count": 61
     },
     {
       "name": "privilege, github, person",
@@ -96,16 +96,15 @@
       "closed_count": 2
     },
     {
-      "name": "suspect, update, image",
+      "name": "test6, mspreitz, pid",
       "issue_count": 2,
       "recent_issue": {
-        "title": "feature: Clarity on updating",
-        "url": "https://github.com/kubestellar/console/issues/5345",
-        "created_at": "2026-04-07T21:10:46Z"
+        "title": "feature: Console exposes its version",
+        "url": "https://github.com/kubestellar/console/issues/3223",
+        "created_at": "2026-03-23T04:37:04Z"
       },
       "repos": [
-        "console",
-        "docs"
+        "console"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -167,26 +166,12 @@
       "closed_count": 1
     },
     {
-      "name": "repair, ai, crescent",
+      "name": "repair, crescent, wrench",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Repair on cluster in Cluster Health card is broken",
         "url": "https://github.com/kubestellar/console/issues/8093",
         "created_at": "2026-04-15T05:49:29Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "pid, kc, cat",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: kc-agent alleged to be left running, but isn't",
-        "url": "https://github.com/kubestellar/console/issues/3083",
-        "created_at": "2026-03-21T07:10:35Z"
       },
       "repos": [
         "console"
@@ -265,7 +250,7 @@
       "closed_count": 1
     },
     {
-      "name": "periphery, home, hub",
+      "name": "periphery, hub, home",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: metaphorical strangeness in the home page",
@@ -279,7 +264,7 @@
       "closed_count": 1
     },
     {
-      "name": "coding, standard, checklist",
+      "name": "coding, standard, knowledge",
       "issue_count": 1,
       "recent_issue": {
         "title": "PR template references \"the project's coding standards\"",
@@ -375,7 +360,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 21
+      "issue_count": 24
     }
   ]
 }

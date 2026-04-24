@@ -1,27 +1,27 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-18T14:23:02.587Z",
-  "total_issues_opened": 466,
+  "generated_at": "2026-04-24T06:48:23.969Z",
+  "total_issues_opened": 540,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 137000,
-  "level": "Captain",
-  "level_rank": 6,
-  "rank": 4,
+  "total_points": 154800,
+  "level": "Admiral",
+  "level_rank": 7,
+  "rank": 3,
   "cadence": {
-    "avg_per_week": 38.8,
-    "avg_per_day": 35.42,
+    "avg_per_week": 45,
+    "avg_per_day": 29.76,
     "by_day_of_week": [
-      145,
-      38,
-      18,
+      153,
+      47,
+      28,
       51,
       29,
-      69,
-      116
+      98,
+      134
     ],
     "by_hour_of_day": [
-      0,
-      0,
+      4,
+      15,
       0,
       0,
       0,
@@ -37,34 +37,34 @@
       5,
       0,
       0,
-      17,
-      37,
-      116,
+      22,
+      42,
+      134,
       94,
       43,
       72,
-      77
+      104
     ],
     "current_streak_weeks": 3,
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2026-04-04T14:25:33.000Z",
-    "last_issue_at": "2026-04-17T18:11:40.000Z"
+    "last_issue_at": "2026-04-22T17:58:34.000Z"
   },
   "topics": [
     {
-      "name": "@aashu2006, error, happen",
-      "issue_count": 344,
+      "name": "@aashu2006, happen, error",
+      "issue_count": 406,
       "recent_issue": {
-        "title": "ML Jobs sort dropdown labels are hardcoded in English regardless of language setting",
-        "url": "https://github.com/kubestellar/console/issues/8696",
-        "created_at": "2026-04-17T18:11:40Z"
+        "title": "Multiple drilldown panels show all text in English regardless of language setting",
+        "url": "https://github.com/kubestellar/console/issues/9539",
+        "created_at": "2026-04-22T17:58:34Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 344
+      "closed_count": 406
     },
     {
       "name": "kubara, chart, control",
@@ -81,22 +81,22 @@
       "closed_count": 9
     },
     {
-      "name": "demo, badge, ml",
-      "issue_count": 6,
+      "name": "game, score, pause",
+      "issue_count": 7,
       "recent_issue": {
-        "title": "ML Notebooks card shows Demo badge even when real notebooks are running",
-        "url": "https://github.com/kubestellar/console/issues/8665",
-        "created_at": "2026-04-17T17:22:11Z"
+        "title": "KubeKong has no pause button — especially frustrating in a multi-level game",
+        "url": "https://github.com/kubestellar/console/issues/8944",
+        "created_at": "2026-04-19T01:15:00Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 6
+      "closed_count": 7
     },
     {
-      "name": "clusterrole, openshift, opt",
-      "issue_count": 5,
+      "name": "clusterrole, opt, grant",
+      "issue_count": 4,
       "recent_issue": {
         "title": "ClusterRole exposes full RBAC topology with no opt-out value",
         "url": "https://github.com/kubestellar/console/issues/6988",
@@ -106,7 +106,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 5
+      "closed_count": 4
     },
     {
       "name": "cookie, csrf, samesite",
@@ -137,6 +137,48 @@
       "closed_count": 3
     },
     {
+      "name": "light, zoom, kagentsecurity",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Service Topology map has several UX issues that make it confusing to use",
+        "url": "https://github.com/kubestellar/console/issues/9469",
+        "created_at": "2026-04-22T01:13:58Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "inconsistently, behave, item",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Several UI interactions behave unexpectedly or inconsistently",
+        "url": "https://github.com/kubestellar/console/issues/9284",
+        "created_at": "2026-04-21T00:48:52Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "rename, write, button",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "RenameModal shows \"Rename\" button text during close animation after successful rename",
+        "url": "https://github.com/kubestellar/console/issues/8927",
+        "created_at": "2026-04-18T23:41:05Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "layout, mobile, screen",
       "issue_count": 2,
       "recent_issue": {
@@ -151,7 +193,7 @@
       "closed_count": 2
     },
     {
-      "name": "soft, ci, regression",
+      "name": "soft, regression, ci",
       "issue_count": 2,
       "recent_issue": {
         "title": "21 soft assertions in user-flows/ tests produce zero CI signal - regressions pass silently",
@@ -179,7 +221,7 @@
       "closed_count": 2
     },
     {
-      "name": "tag, supply, cronjob",
+      "name": "tag, cronjob, supply",
       "issue_count": 2,
       "recent_issue": {
         "title": "GitHub Actions workflow uses mutable version tags instead of commit SHAs enabling supply chain attacks",
@@ -235,7 +277,7 @@
       "closed_count": 2
     },
     {
-      "name": "mb, bodyguard, group",
+      "name": "mb, bodyguard, fiber",
       "issue_count": 2,
       "recent_issue": {
         "title": "bodyGuard checks request size after Fiber already buffers up to 20 MB allowing memory exhaustion attacks",
@@ -263,7 +305,7 @@
       "closed_count": 2
     },
     {
-      "name": "selector, workload, networkpolicy",
+      "name": "selector, workload, pod",
       "issue_count": 2,
       "recent_issue": {
         "title": "Label selector injection via unsanitized workload name path parameter leaking pods from other workloads",
@@ -319,18 +361,74 @@
       "closed_count": 2
     },
     {
-      "name": "masking, tab, eyeoff",
-      "issue_count": 2,
+      "name": "gateway, mcs, banner",
+      "issue_count": 1,
       "recent_issue": {
-        "title": "ConfigMapDrillDown: all values rendered in plain text with no masking option - sensitive data immediately visible and copyable",
-        "url": "https://github.com/kubestellar/console/issues/6211",
-        "created_at": "2026-04-10T19:25:50Z"
+        "title": "Gateway and MCS integration banners show permanently even when resources are already installed",
+        "url": "https://github.com/kubestellar/console/issues/9470",
+        "created_at": "2026-04-22T01:16:24Z"
       },
       "repos": [
         "console"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 1
+    },
+    {
+      "name": "ping, network, host",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Several network controls give no feedback when they cannot do anything useful",
+        "url": "https://github.com/kubestellar/console/issues/9468",
+        "created_at": "2026-04-22T01:12:42Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "stats, kubedle, modal",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Kubedle stats modal content gets cut off in default card size with no scroll",
+        "url": "https://github.com/kubestellar/console/issues/8939",
+        "created_at": "2026-04-19T01:13:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "confirmation, group, dialog",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cluster group delete button fires immediately with no confirmation dialog",
+        "url": "https://github.com/kubestellar/console/issues/8916",
+        "created_at": "2026-04-18T23:37:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "cloud, authentication, stick",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Cloud IAM auth type in Add Cluster has no Next button — flow is stuck with no way to proceed",
+        "url": "https://github.com/kubestellar/console/issues/8914",
+        "created_at": "2026-04-18T23:25:43Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "fail, pvcs, pvc",
@@ -347,7 +445,7 @@
       "closed_count": 1
     },
     {
-      "name": "card, persistence, reload",
+      "name": "card, persistence, ca2fa3",
       "issue_count": 1,
       "recent_issue": {
         "title": "Card add and remove persistence has no test - cards may not survive page reload",
@@ -417,12 +515,12 @@
       "closed_count": 1
     },
     {
-      "name": "item, inconsistently, behave",
+      "name": "unrelated, kill, pid",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Some lists behave inconsistently when items are added or updated",
-        "url": "https://github.com/kubestellar/console/issues/8015",
-        "created_at": "2026-04-14T20:36:56Z"
+        "title": "start.sh port cleanup loop has TOCTOU race allowing unrelated processes to be killed",
+        "url": "https://github.com/kubestellar/console/issues/7853",
+        "created_at": "2026-04-13T23:55:12Z"
       },
       "repos": [
         "console"
@@ -459,7 +557,7 @@
       "closed_count": 1
     },
     {
-      "name": "unquoted, word, splitting",
+      "name": "unquoted, splitting, word",
       "issue_count": 1,
       "recent_issue": {
         "title": "nightly-compare.sh uses unquoted $(ls ...) in for loop causing word splitting on filenames with spaces",
@@ -487,7 +585,7 @@
       "closed_count": 1
     },
     {
-      "name": "catch, raw, internals",
+      "name": "catch, internals, c67b40ff",
       "issue_count": 1,
       "recent_issue": {
         "title": "affiliate-clicks.mts JSON.parse outside local try/catch leaks raw error internals to callers",
@@ -521,6 +619,20 @@
         "title": "GetNotificationConfig and SaveNotificationConfig bypass middleware.GetUserID using raw c.Locals",
         "url": "https://github.com/kubestellar/console/issues/7799",
         "created_at": "2026-04-13T21:39:29Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "twice, pollforrestart, cef618",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Multiple polling loops accumulate in useSelfUpgrade with no dedup guard when pollForRestart is called twice",
+        "url": "https://github.com/kubestellar/console/issues/7789",
+        "created_at": "2026-04-13T21:09:28Z"
       },
       "repos": [
         "console"
@@ -571,12 +683,12 @@
       "closed_count": 1
     },
     {
-      "name": "rename, write, fsync",
+      "name": "reuse, e8529cbb, dd19",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Encryption key file written without fsync before rename making all encrypted settings unrecoverable on crash",
-        "url": "https://github.com/kubestellar/console/issues/7752",
-        "created_at": "2026-04-13T19:46:38Z"
+        "title": "Helm stdout/stderr buffers reused across two command instances without reset causing potential output corruption",
+        "url": "https://github.com/kubestellar/console/issues/7747",
+        "created_at": "2026-04-13T19:45:40Z"
       },
       "repos": [
         "console"
@@ -585,12 +697,12 @@
       "closed_count": 1
     },
     {
-      "name": "reuse, e8529cbb, dd19",
+      "name": "column, foreign, card",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Helm stdout/stderr buffers reused across two command instances without reset causing potential output corruption",
-        "url": "https://github.com/kubestellar/console/issues/7747",
-        "created_at": "2026-04-13T19:45:40Z"
+        "title": "card_history.original_card_id and user_events.card_id lack foreign key references to cards table",
+        "url": "https://github.com/kubestellar/console/issues/7725",
+        "created_at": "2026-04-13T19:22:27Z"
       },
       "repos": [
         "console"
@@ -613,7 +725,21 @@
       "closed_count": 1
     },
     {
-      "name": "oauth, credential, configured",
+      "name": "date, sort, order",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "gpu_reservations.start_date is TEXT instead of DATETIME causing silent wrong sort order",
+        "url": "https://github.com/kubestellar/console/issues/7719",
+        "created_at": "2026-04-13T19:21:03Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "oauth, credential, fall",
       "issue_count": 1,
       "recent_issue": {
         "title": "GitHub OAuth silently falls back to dev mode when only one credential is configured",
@@ -627,7 +753,7 @@
       "closed_count": 1
     },
     {
-      "name": "certificate, mitm, attack",
+      "name": "mitm, certificate, attack",
       "issue_count": 1,
       "recent_issue": {
         "title": "ArgoCD TLS certificate verification skip has no production guard enabling MITM attacks",
@@ -767,7 +893,7 @@
       "closed_count": 1
     },
     {
-      "name": "deployments, restriction, patch",
+      "name": "restriction, deployments, patch",
       "issue_count": 1,
       "recent_issue": {
         "title": "Self-upgrade Role grants patch on all Deployments in namespace with no resourceNames restriction",
@@ -907,12 +1033,40 @@
       "closed_count": 1
     },
     {
+      "name": "feedbackmodal, ba43a, adac",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "PreflightFailure, FeatureRequestModal, FeedbackModal, CardFactoryModal: Clipboard API called without browser support check - silently fails with no fallback",
+        "url": "https://github.com/kubestellar/console/issues/6229",
+        "created_at": "2026-04-10T20:12:22Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "debounce, keystroke, list",
       "issue_count": 1,
       "recent_issue": {
         "title": "KubescapeDetailModal, TrivyDetailModal, KyvernoDetailModal, ClusterLocations: search input missing debounce - full list re-filtered on every keystroke",
         "url": "https://github.com/kubestellar/console/issues/6213",
         "created_at": "2026-04-10T19:27:19Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "plain, masking, value",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ConfigMapDrillDown: all values rendered in plain text with no masking option - sensitive data immediately visible and copyable",
+        "url": "https://github.com/kubestellar/console/issues/6211",
+        "created_at": "2026-04-10T19:25:50Z"
       },
       "repos": [
         "console"
@@ -1089,7 +1243,7 @@
       "closed_count": 1
     },
     {
-      "name": "classlist, ref, settimeout",
+      "name": "classlist, settimeout, ref",
       "issue_count": 1,
       "recent_issue": {
         "title": "Nested setTimeout in GitHubTokenSection has no cleanup ref causing DOM mutation after unmount",
@@ -1159,7 +1313,7 @@
       "closed_count": 1
     },
     {
-      "name": "tool, natural, language",
+      "name": "tool, natural, string",
       "issue_count": 1,
       "recent_issue": {
         "title": "CallTool passes tool arguments as natural language string enabling prompt injection",
@@ -1243,12 +1397,12 @@
       "closed_count": 1
     },
     {
-      "name": "strand, onboarding, c97b",
+      "name": "positive, parse, json",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Onboarding silently fails for real users leaving them stranded with no error message",
-        "url": "https://github.com/kubestellar/console/issues/5320",
-        "created_at": "2026-04-07T20:02:46Z"
+        "title": "parseHealthResult defaults to Healthy: true on JSON parse failure causing false positive",
+        "url": "https://github.com/kubestellar/console/issues/5319",
+        "created_at": "2026-04-07T20:02:34Z"
       },
       "repos": [
         "console"
@@ -1269,20 +1423,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "alert, eb96b4e6, c3aaad656b1f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "HardwareHealthCard: clearing an alert silently fails - user gets no feedback",
-        "url": "https://github.com/kubestellar/console/issues/4977",
-        "created_at": "2026-04-06T13:58:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -1292,15 +1432,15 @@
         "url": "https://github.com/kubestellar/console-marketplace/issues/18",
         "repo": "console-marketplace",
         "topic_match": "extract, ffb011, f6f"
-      },
-      {
-        "title": "card: Implement Artifact Hub monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/58",
-        "repo": "console-marketplace",
-        "topic_match": "devmode, hub, setjwtsecret"
       }
     ],
     "stretch": [
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
       {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
@@ -1312,6 +1452,12 @@
         "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
         "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
@@ -1362,7 +1508,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 466
+      "issue_count": 540
     }
   ]
 }

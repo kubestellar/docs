@@ -7,6 +7,7 @@ import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/i18n/settings";
 import { ThemeProvider } from "next-themes";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "../globals.css";
 
 const inter = Inter({
@@ -91,6 +92,7 @@ export default async function RootLayout({ children, params }: Props) {
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <GoogleAnalytics />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <NextIntlClientProvider messages={messages}>
             {children}

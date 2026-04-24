@@ -1,18 +1,18 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-18T14:23:35.091Z",
-  "total_issues_opened": 451,
+  "generated_at": "2026-04-24T06:49:27.070Z",
+  "total_issues_opened": 452,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 132250,
+  "total_points": 132550,
   "level": "Captain",
   "level_rank": 6,
   "rank": 5,
   "cadence": {
-    "avg_per_week": 37.6,
-    "avg_per_day": 8.56,
+    "avg_per_week": 37.7,
+    "avg_per_day": 7.98,
     "by_day_of_week": [
       196,
-      17,
+      18,
       16,
       16,
       131,
@@ -41,7 +41,7 @@
       1,
       1,
       2,
-      4,
+      5,
       0,
       0
     ],
@@ -49,26 +49,26 @@
     "longest_streak_weeks": 6,
     "trend": "ramping_up",
     "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-17T21:39:54.000Z"
+    "last_issue_at": "2026-04-21T21:14:16.000Z"
   },
   "topics": [
     {
       "name": "@aaradhychinche, alt, cluster",
-      "issue_count": 421,
+      "issue_count": 423,
       "recent_issue": {
-        "title": "Notifications: Mixed UX patterns across alerts, toasts, and system errors (e.g., refresh failure)",
-        "url": "https://github.com/kubestellar/console/issues/8752",
-        "created_at": "2026-04-17T21:39:54Z"
+        "title": "Contribute: Issue submission fails with \"CSRF header required\" on local setup",
+        "url": "https://github.com/kubestellar/console/issues/9439",
+        "created_at": "2026-04-21T21:14:16Z"
       },
       "repos": [
         "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 421
+      "closed_count": 423
     },
     {
-      "name": "card, registry, directory",
+      "name": "card, registry, register",
       "issue_count": 7,
       "recent_issue": {
         "title": "bug: placeholder card directories exist without implementation",
@@ -96,7 +96,7 @@
       "closed_count": 4
     },
     {
-      "name": "stress, framework, control",
+      "name": "stress, control, framework",
       "issue_count": 1,
       "recent_issue": {
         "title": "## Mission Control: End-to-End Stress Test Framework (Reliability + Regression Prevention)",
@@ -264,7 +264,7 @@
       "closed_count": 1
     },
     {
-      "name": "enable, change, flag",
+      "name": "enable, change, fetch",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: useClusterCapabilities does not react to enabled flag changes due to stale closure",
@@ -306,20 +306,6 @@
       "closed_count": 1
     },
     {
-      "name": "notification, success, difficult",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: success notification toast is too low contrast and difficult to see",
-        "url": "https://github.com/kubestellar/console/issues/3259",
-        "created_at": "2026-03-23T11:26:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "bundle, eagerly, import",
       "issue_count": 1,
       "recent_issue": {
@@ -348,7 +334,7 @@
       "closed_count": 1
     },
     {
-      "name": "documentation, implementation, repository",
+      "name": "documentation, repository, da4b0349e1",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: documentation references deprecated kubestellar/ui project instead of current console implementation",
@@ -365,16 +351,10 @@
   "suggestions": {
     "deepen": [
       {
-        "title": "card: Implement Artifact Hub monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/58",
-        "repo": "console-marketplace",
-        "topic_match": "artifact, green, appear"
-      },
-      {
         "title": "card: Implement Harbor Registry monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/16",
         "repo": "console-marketplace",
-        "topic_match": "card, registry, directory"
+        "topic_match": "card, registry, register"
       }
     ],
     "stretch": [
@@ -397,16 +377,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
         "name": "Security & RBAC",
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },
@@ -457,7 +437,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 418
+      "issue_count": 419
     }
   ]
 }

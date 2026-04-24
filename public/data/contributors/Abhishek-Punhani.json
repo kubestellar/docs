@@ -1,19 +1,19 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-18T14:23:43.249Z",
-  "total_issues_opened": 83,
+  "generated_at": "2026-04-24T06:49:33.812Z",
+  "total_issues_opened": 93,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-  "total_points": 26150,
+  "total_points": 28950,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 12,
+  "rank": 11,
   "cadence": {
-    "avg_per_week": 6.9,
-    "avg_per_day": 1.8,
+    "avg_per_week": 7.8,
+    "avg_per_day": 1.79,
     "by_day_of_week": [
+      20,
       18,
-      13,
-      9,
+      12,
       15,
       9,
       6,
@@ -27,18 +27,18 @@
       0,
       0,
       0,
-      3,
-      0,
       4,
       1,
+      5,
+      5,
       2,
       1,
       4,
       4,
       4,
       7,
+      10,
       8,
-      7,
       9,
       17,
       11,
@@ -47,27 +47,27 @@
     ],
     "current_streak_weeks": 8,
     "longest_streak_weeks": 8,
-    "trend": "ramping_up",
+    "trend": "steady",
     "first_issue_at": "2026-03-01T20:12:28.000Z",
-    "last_issue_at": "2026-04-16T20:41:05.000Z"
+    "last_issue_at": "2026-04-22T18:59:48.000Z"
   },
   "topics": [
     {
-      "name": "unit, @abhishek, punhani",
-      "issue_count": 75,
+      "name": "@abhishek, punhani, unit",
+      "issue_count": 85,
       "recent_issue": {
-        "title": "feature: Add Kagenti in-cluster backend support and UX stabilization",
-        "url": "https://github.com/kubestellar/console/issues/8492",
-        "created_at": "2026-04-16T20:41:05Z"
+        "title": "Distribution/provider filter does not restrict cluster list display",
+        "url": "https://github.com/kubestellar/console/issues/9541",
+        "created_at": "2026-04-22T18:59:48Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 74
+      "open_count": 0,
+      "closed_count": 85
     },
     {
-      "name": "linux, dev, ubuntu",
+      "name": "linux, ubuntu, dev",
       "issue_count": 3,
       "recent_issue": {
         "title": "bug:  make dev silently fails: backend never starts, all API calls ECONNREFUSED",
@@ -81,12 +81,12 @@
       "closed_count": 3
     },
     {
-      "name": "animation, production, c83cc5f8",
+      "name": "unsaved, form, dialog",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Cluster Animation Not Rendering in Production Deployment",
-        "url": "https://github.com/kubestellar/console/issues/8004",
-        "created_at": "2026-04-14T20:12:10Z"
+        "title": "Close button shows unsaved changes dialog immediately after successful request submission completes",
+        "url": "https://github.com/kubestellar/console/issues/9358",
+        "created_at": "2026-04-21T10:42:31Z"
       },
       "repos": [
         "console"
@@ -109,7 +109,7 @@
       "closed_count": 1
     },
     {
-      "name": "research, follow, pr",
+      "name": "research, follow, f09e28eb",
       "issue_count": 1,
       "recent_issue": {
         "title": "Automated PR-closed MCP-powered verification and researched follow-ups",
@@ -157,7 +157,7 @@
         "title": "card: Implement Flatcar Container Linux monitoring card",
         "url": "https://github.com/kubestellar/console-marketplace/issues/59",
         "repo": "console-marketplace",
-        "topic_match": "linux, dev, ubuntu"
+        "topic_match": "linux, ubuntu, dev"
       }
     ],
     "stretch": [
@@ -240,7 +240,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 28
+      "issue_count": 38
     }
   ]
 }
