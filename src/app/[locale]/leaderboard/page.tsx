@@ -616,14 +616,29 @@ export default function LeaderboardPage() {
   // Fetch affiliate click data (non-blocking, best-effort)
   // Retries once after a short delay so the social section doesn't show
   // empty after a cold-start timeout on the first page load (#8858).
+  //
+  // The API returns keys lowercased (GitHub logins are case-insensitive), but
+  // leaderboard `entry.login` preserves GitHub's mixed-case form (e.g.
+  // `Abhishek-Punhani`, `Arpit529Srivastava`). Normalize keys to lowercase on
+  // ingest so the per-row lookup (`affiliateData[entry.login.toLowerCase()]`)
+  // finds the row (#1515).
   useEffect(() => {
+    const normalizeKeys = (json: Record<string, AffiliateData>): Record<string, AffiliateData> => {
+      const normalized: Record<string, AffiliateData> = {};
+      for (const [key, value] of Object.entries(json || {})) {
+        normalized[key.toLowerCase()] = value;
+      }
+      return normalized;
+    };
+
+
     const fetchAffiliates = () =>
       fetch(AFFILIATE_API_URL, {
         signal: AbortSignal.timeout(AFFILIATE_FETCH_TIMEOUT_MS),
       })
         .then((res) => (res.ok ? res.json() : {}))
         .then((json: Record<string, AffiliateData>) => {
-          setAffiliateData(json);
+          setAffiliateData(normalizeKeys(json));
           setAffiliateLoading(false);
         });
 
@@ -914,8 +929,11 @@ export default function LeaderboardPage() {
                     </div>
 
                     {/* Social */}
+                    {/* Lowercase the login — GitHub logins are case-insensitive
+                        and the affiliate API returns them lowercased, but
+                        `entry.login` preserves GitHub's original casing (#1515). */}
                     <div className="flex justify-start sm:justify-center pl-11 sm:pl-0">
-                      <SocialBadge data={affiliateData[entry.login]} loading={affiliateLoading} />
+                      <SocialBadge data={affiliateData[entry.login.toLowerCase()]} loading={affiliateLoading} />
                     </div>
 
                     {/* Breakdown */}
