@@ -53,8 +53,6 @@ const CONTRIBUTOR_LEVELS = [
 ];
 
 // ── GitHub API constants ──────────────────────────────────────────────
-/** Current-year start in ISO-8601 (matches console rewards scope) */
-const YEAR_START = `${new Date().getFullYear()}-01-01T00:00:00Z`;
 /** Items per page for REST API pagination */
 const REST_PER_PAGE = 100;
 /** Maximum pages to fetch per repo (100 items/page = 10,000 items max) */
@@ -140,7 +138,7 @@ async function fetchAllItems(repo) {
   const allItems = [];
 
   for (let page = 1; page <= REST_MAX_PAGES; page++) {
-    const url = `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&page=${page}&sort=created&direction=desc&since=${YEAR_START}`;
+    const url = `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&page=${page}&sort=created&direction=desc`;
 
     if (page > 1) await delay(REST_PAGE_DELAY_MS);
 
@@ -167,7 +165,6 @@ function scoreAllContributors(allItems) {
     const login = item.user?.login;
     if (!login || item.user?.type !== "User") continue;
     if (EXCLUDED_LOGINS.has(login)) continue;
-    if (item.created_at < YEAR_START) continue;
 
     if (!contributors.has(login)) {
       contributors.set(login, {
