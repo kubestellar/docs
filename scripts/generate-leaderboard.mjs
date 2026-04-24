@@ -33,6 +33,7 @@ const POINTS_PR_MERGED = 500;
 
 // ── Repos to scan ─────────────────────────────────────────────────────
 const REPOS = [
+  "kubestellar/kubestellar",
   "kubestellar/console",
   "kubestellar/console-marketplace",
   "kubestellar/console-kb",
