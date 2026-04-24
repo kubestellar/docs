@@ -1,6 +1,6 @@
 {
   "login": "Darshit42",
-  "generated_at": "2026-04-24T03:16:27.459Z",
+  "generated_at": "2026-04-24T06:49:34.563Z",
   "total_issues_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
   "total_points": 5800,
@@ -138,14 +138,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "[Auto-QA] Swallowed errors and empty catch blocks",
-        "url": "https://github.com/kubestellar/console/issues/9846",
-        "repo": "console",
-        "topic_match": "widget, bar, export"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Security & RBAC",

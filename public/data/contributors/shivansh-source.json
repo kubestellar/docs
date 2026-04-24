@@ -1,6 +1,6 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-24T03:16:27.240Z",
+  "generated_at": "2026-04-24T06:49:34.389Z",
   "total_issues_opened": 76,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
   "total_points": 22850,
@@ -165,7 +165,7 @@
       "closed_count": 1
     },
     {
-      "name": "deployment, clickable, onclick",
+      "name": "clickable, deployment, onclick",
       "issue_count": 1,
       "recent_issue": {
         "title": "title : Deployment issues in ClusterDetailModal are not drill-down clickable",

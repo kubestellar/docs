@@ -1,9 +1,9 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-24T03:14:59.036Z",
+  "generated_at": "2026-04-24T06:48:23.969Z",
   "total_issues_opened": 540,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-  "total_points": 153000,
+  "total_points": 154800,
   "level": "Admiral",
   "level_rank": 7,
   "rank": 3,
@@ -445,7 +445,7 @@
       "closed_count": 1
     },
     {
-      "name": "card, persistence, reload",
+      "name": "card, persistence, ca2fa3",
       "issue_count": 1,
       "recent_issue": {
         "title": "Card add and remove persistence has no test - cards may not survive page reload",
@@ -893,7 +893,7 @@
       "closed_count": 1
     },
     {
-      "name": "deployments, restriction, patch",
+      "name": "restriction, deployments, patch",
       "issue_count": 1,
       "recent_issue": {
         "title": "Self-upgrade Role grants patch on all Deployments in namespace with no resourceNames restriction",
