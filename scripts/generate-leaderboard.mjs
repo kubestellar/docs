@@ -33,7 +33,6 @@ const POINTS_PR_MERGED = 500;
 
 // ── Repos to scan ─────────────────────────────────────────────────────
 const REPOS = [
-  "kubestellar/kubestellar",
   "kubestellar/console",
   "kubestellar/console-marketplace",
   "kubestellar/console-kb",
@@ -53,6 +52,8 @@ const CONTRIBUTOR_LEVELS = [
 ];
 
 // ── GitHub API constants ──────────────────────────────────────────────
+/** Current-year start in ISO-8601 (matches console rewards scope) */
+const YEAR_START = `${new Date().getFullYear()}-01-01T00:00:00Z`;
 /** Items per page for REST API pagination */
 const REST_PER_PAGE = 100;
 /** Maximum pages to fetch per repo (100 items/page = 10,000 items max) */
@@ -147,6 +148,11 @@ async function fetchAllItems(repo) {
 
     // Stop when we get fewer items than a full page (last page)
     if (items.length < REST_PER_PAGE) break;
+
+    // Stop early once oldest item on this page predates the scoring window —
+    // items are sorted created desc, so everything after this is older.
+    const oldest = items[items.length - 1];
+    if (oldest && oldest.created_at < YEAR_START) break;
   }
 
   return allItems;
@@ -165,6 +171,7 @@ function scoreAllContributors(allItems) {
     const login = item.user?.login;
     if (!login || item.user?.type !== "User") continue;
     if (EXCLUDED_LOGINS.has(login)) continue;
+    if (item.created_at < YEAR_START) continue;
 
     if (!contributors.has(login)) {
       contributors.set(login, {
