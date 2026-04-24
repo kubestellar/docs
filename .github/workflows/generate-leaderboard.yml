@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 2,6,10,14,18,22 * * *'  # Every 4 hours (6x daily)
   workflow_dispatch:       # Manual trigger
+    inputs:
+      force:
+        description: 'Skip regression check (use when intentional scope change lowers scores)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -28,6 +33,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.LEADERBOARD_GITHUB_TOKEN }}
         run: node scripts/generate-leaderboard.mjs
+
+      - name: Check for score regressions
+        env:
+          LEADERBOARD_FORCE: ${{ inputs.force == true && '1' || '0' }}
+        run: node scripts/check-leaderboard-regression.mjs
 
       - name: Generate contributor profiles
         env:
