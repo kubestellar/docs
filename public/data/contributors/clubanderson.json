@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-24T10:40:34.327Z",
-  "total_issues_opened": 1226,
+  "generated_at": "2026-04-24T14:43:19.216Z",
+  "total_issues_opened": 1233,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
   "total_points": 1178850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 96.7,
-    "avg_per_day": 4.85,
+    "avg_per_week": 97.3,
+    "avg_per_day": 4.87,
     "by_day_of_week": [
       149,
       140,
       215,
       271,
-      188,
+      195,
       151,
       112
     ],
@@ -32,9 +32,9 @@
       9,
       6,
       58,
-      17,
-      72,
-      60,
+      18,
+      74,
+      64,
       92,
       39,
       45,
@@ -49,38 +49,38 @@
     "longest_streak_weeks": 17,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-24T09:25:06.000Z"
+    "last_issue_at": "2026-04-24T14:34:12.000Z"
   },
   "topics": [
     {
       "name": "test, qa, auto",
-      "issue_count": 774,
+      "issue_count": 776,
       "recent_issue": {
-        "title": "🐛 2 test failure(s) in Coverage Suite run #1377",
-        "url": "https://github.com/kubestellar/console/issues/9897",
-        "created_at": "2026-04-24T09:25:06Z"
+        "title": "[Auto-QA] Missing loading states on async actions",
+        "url": "https://github.com/kubestellar/console/issues/9947",
+        "created_at": "2026-04-24T14:01:43Z"
       },
       "repos": [
         "console",
         "console-marketplace",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 771
+      "open_count": 4,
+      "closed_count": 772
     },
     {
       "name": "error, ga4, category",
-      "issue_count": 74,
+      "issue_count": 78,
       "recent_issue": {
-        "title": "[GA4-Error] 6 auth errors on /clusters (last 2h)",
-        "url": "https://github.com/kubestellar/console/issues/9865",
-        "created_at": "2026-04-24T03:54:49Z"
+        "title": "🐛 GA4 error: ksc_error[auth] spike — 58 today vs ~15/day baseline (4×)",
+        "url": "https://github.com/kubestellar/console/issues/9951",
+        "created_at": "2026-04-24T14:34:12Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 0,
-      "closed_count": 74
+      "open_count": 2,
+      "closed_count": 76
     },
     {
       "name": "monitoring, implement, card",
@@ -94,8 +94,8 @@
         "console",
         "console-marketplace"
       ],
-      "open_count": 28,
-      "closed_count": 30
+      "open_count": 9,
+      "closed_count": 49
     },
     {
       "name": "outreach, acmm, file",
@@ -123,8 +123,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 37
+      "open_count": 0,
+      "closed_count": 38
     },
     {
       "name": "link, break, url",
@@ -295,6 +295,21 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "preview, netlify, markdown",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "🚨 Netlify deploys failing — stale bundle on console.kubestellar.io",
+        "url": "https://github.com/kubestellar/console/issues/9935",
+        "created_at": "2026-04-24T13:37:12Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "session, avg, bounce",
@@ -488,21 +503,6 @@
       },
       "repos": [
         "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "preview, markdown, linked",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Add markdown preview toggle for issue description in Contribute dialog",
-        "url": "https://github.com/kubestellar/console/issues/3455",
-        "created_at": "2026-03-24T17:27:14Z"
-      },
-      "repos": [
-        "console",
-        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -1194,7 +1194,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 581
+      "issue_count": 588
     }
   ]
 }

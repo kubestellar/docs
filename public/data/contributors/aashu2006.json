@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-04-24T10:43:48.160Z",
+  "generated_at": "2026-04-24T14:46:26.439Z",
   "total_issues_opened": 540,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
   "total_points": 4900,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@aashu2006, happen, error",
-      "issue_count": 406,
+      "issue_count": 405,
       "recent_issue": {
         "title": "Multiple drilldown panels show all text in English regardless of language setting",
         "url": "https://github.com/kubestellar/console/issues/9539",
@@ -64,7 +64,7 @@
         "console"
       ],
       "open_count": 0,
-      "closed_count": 406
+      "closed_count": 405
     },
     {
       "name": "kubara, chart, control",
@@ -151,7 +151,7 @@
       "closed_count": 2
     },
     {
-      "name": "inconsistently, behave, item",
+      "name": "inconsistently, behave, part",
       "issue_count": 2,
       "recent_issue": {
         "title": "Several UI interactions behave unexpectedly or inconsistently",
@@ -921,6 +921,20 @@
       "closed_count": 1
     },
     {
+      "name": "unscoped, public, interface",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Unscoped MarkNotificationRead remains in public Store interface enabling ownership bypass",
+        "url": "https://github.com/kubestellar/console/issues/6950",
+        "created_at": "2026-04-12T20:06:21Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "protection, double, panic",
       "issue_count": 1,
       "recent_issue": {
@@ -1426,14 +1440,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "card: Implement SPIFFE monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/18",
-        "repo": "console-marketplace",
-        "topic_match": "extract, ffb011, f6f"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "GPU & AI/ML",

@@ -1,6 +1,6 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-24T10:43:51.327Z",
+  "generated_at": "2026-04-24T14:46:29.533Z",
   "total_issues_opened": 61,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
   "total_points": 1400,
@@ -63,8 +63,8 @@
       "repos": [
         "console"
       ],
-      "open_count": 1,
-      "closed_count": 48
+      "open_count": 0,
+      "closed_count": 49
     },
     {
       "name": "github, shape, record",
