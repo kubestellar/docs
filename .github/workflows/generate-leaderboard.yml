@@ -43,6 +43,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.LEADERBOARD_GITHUB_TOKEN }}
         run: node scripts/generate-contributor-profiles.mjs
+        timeout-minutes: 5
         continue-on-error: true
 
       - name: Commit and push if changed
