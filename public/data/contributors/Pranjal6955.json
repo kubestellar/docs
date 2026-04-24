@@ -1,21 +1,21 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-24T14:46:29.533Z",
-  "total_issues_opened": 61,
+  "generated_at": "2026-04-24T18:28:02.179Z",
+  "total_issues_opened": 62,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-  "total_points": 1400,
+  "total_points": 1700,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 25,
+  "rank": 26,
   "cadence": {
-    "avg_per_week": 4.9,
+    "avg_per_week": 5,
     "avg_per_day": 0.3,
     "by_day_of_week": [
       5,
       18,
       16,
       12,
-      7,
+      8,
       3,
       0
     ],
@@ -34,7 +34,7 @@
       0,
       1,
       6,
-      0,
+      1,
       2,
       1,
       7,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 3,
     "trend": "ramping_up",
     "first_issue_at": "2025-10-01T13:51:13.000Z",
-    "last_issue_at": "2026-04-24T09:28:38.000Z"
+    "last_issue_at": "2026-04-24T14:48:37.000Z"
   },
   "topics": [
     {
@@ -207,6 +207,20 @@
       "closed_count": 1
     },
     {
+      "name": "contribution, point, leaderboard",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: contribution points from console repo not reflected in Contribution Ladder",
+        "url": "https://github.com/kubestellar/docs/issues/1517",
+        "created_at": "2026-04-24T14:48:37Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "nextra, footer, docs",
       "issue_count": 1,
       "recent_issue": {
@@ -317,7 +331,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 59
+      "issue_count": 60
     }
   ]
 }

@@ -1,12 +1,12 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-04-24T14:44:24.747Z",
+  "generated_at": "2026-04-24T18:25:39.669Z",
   "total_issues_opened": 581,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-  "total_points": 9400,
+  "total_points": 12900,
   "level": "Pilot",
   "level_rank": 4,
-  "rank": 5,
+  "rank": 3,
   "cadence": {
     "avg_per_week": 48.4,
     "avg_per_day": 8.14,
@@ -54,7 +54,7 @@
   "topics": [
     {
       "name": "@xonas1101, automatically, create",
-      "issue_count": 453,
+      "issue_count": 454,
       "recent_issue": {
         "title": "Show the ctrl/cmd+enter icon on the submit button in the contribute modal",
         "url": "https://github.com/kubestellar/console/issues/9532",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 453
+      "closed_count": 454
     },
     {
       "name": "invite, reward, storage",
@@ -166,12 +166,12 @@
       "closed_count": 2
     },
     {
-      "name": "diagnosis, analyze, alert",
+      "name": "infinity, valueresolvers, heatmap",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Diagnosis lock can get stuck after unexpected failure",
-        "url": "https://github.com/kubestellar/console/issues/7401",
-        "created_at": "2026-04-13T08:53:12Z"
+        "title": "Min/max stat resolvers can return Infinity/-Infinity for non-numeric data.",
+        "url": "https://github.com/kubestellar/console/issues/6713",
+        "created_at": "2026-04-11T22:23:41Z"
       },
       "repos": [
         "console"
@@ -180,12 +180,12 @@
       "closed_count": 2
     },
     {
-      "name": "infinity, valueresolvers, heatmap",
+      "name": "date, invalid, nan",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Min/max stat resolvers can return Infinity/-Infinity for non-numeric data.",
-        "url": "https://github.com/kubestellar/console/issues/6713",
-        "created_at": "2026-04-11T22:23:41Z"
+        "title": "Date renderers can leak Invalid Date text instead of fallback.",
+        "url": "https://github.com/kubestellar/console/issues/6711",
+        "created_at": "2026-04-11T22:23:12Z"
       },
       "repos": [
         "console"
@@ -220,20 +220,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "falco, alert, ac426ddb",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Card: Falco Alerts (falco_alerts)",
-        "url": "https://github.com/kubestellar/console/issues/8846",
-        "created_at": "2026-04-18T15:15:54Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     },
     {
       "name": "modal, deep, e7ef91",
@@ -992,6 +978,20 @@
       "closed_count": 1
     },
     {
+      "name": "sync, recency, d71a17",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Last sync timestamp is regenerated on render, causing misleading recency",
+        "url": "https://github.com/kubestellar/console/issues/6158",
+        "created_at": "2026-04-10T15:35:50Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "profiler, ea4599a2, b980",
       "issue_count": 1,
       "recent_issue": {
@@ -1418,20 +1418,6 @@
         "title": "Card: Flappy Pod (flappy_pod)",
         "url": "https://github.com/kubestellar/console/issues/3927",
         "created_at": "2026-03-30T14:20:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "protocol, f4c15, c55b",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Mixed-mode chat uses raw string type literals",
-        "url": "https://github.com/kubestellar/console/issues/3832",
-        "created_at": "2026-03-29T04:04:54Z"
       },
       "repos": [
         "console"

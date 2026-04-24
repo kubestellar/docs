@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-24T14:43:19.216Z",
-  "total_issues_opened": 1233,
+  "generated_at": "2026-04-24T18:24:32.226Z",
+  "total_issues_opened": 1240,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 1178850,
+  "total_points": 1207000,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 97.3,
-    "avg_per_day": 4.87,
+    "avg_per_week": 97,
+    "avg_per_day": 4.9,
     "by_day_of_week": [
       149,
       140,
       215,
       271,
-      195,
+      202,
       151,
       112
     ],
@@ -35,9 +35,9 @@
       18,
       74,
       64,
-      92,
-      39,
-      45,
+      95,
+      40,
+      48,
       35,
       166,
       41,
@@ -49,7 +49,7 @@
     "longest_streak_weeks": 17,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-24T14:34:12.000Z"
+    "last_issue_at": "2026-04-24T17:59:38.000Z"
   },
   "topics": [
     {
@@ -65,37 +65,37 @@
         "console-marketplace",
         "docs"
       ],
-      "open_count": 4,
-      "closed_count": 772
+      "open_count": 3,
+      "closed_count": 773
     },
     {
       "name": "error, ga4, category",
-      "issue_count": 78,
+      "issue_count": 84,
       "recent_issue": {
-        "title": "🐛 GA4 error: ksc_error[auth] spike — 58 today vs ~15/day baseline (4×)",
-        "url": "https://github.com/kubestellar/console/issues/9951",
-        "created_at": "2026-04-24T14:34:12Z"
+        "title": "[GA4-Error] 6 auth errors on /ai-ml (last 2h)",
+        "url": "https://github.com/kubestellar/console/issues/9961",
+        "created_at": "2026-04-24T17:59:38Z"
       },
       "repos": [
         "console"
       ],
-      "open_count": 2,
-      "closed_count": 76
+      "open_count": 3,
+      "closed_count": 81
     },
     {
-      "name": "monitoring, implement, card",
-      "issue_count": 58,
+      "name": "monitoring, card, implement",
+      "issue_count": 59,
       "recent_issue": {
-        "title": "tech-debt: Keycloak card #6893 — useKeycloakStatus return shape deviates from project hook contract",
-        "url": "https://github.com/kubestellar/console/issues/8220",
-        "created_at": "2026-04-15T19:34:56Z"
+        "title": "🐛 1 test failure(s) in Coverage Suite run #1406",
+        "url": "https://github.com/kubestellar/console/issues/9958",
+        "created_at": "2026-04-24T17:26:13Z"
       },
       "repos": [
         "console",
         "console-marketplace"
       ],
       "open_count": 9,
-      "closed_count": 49
+      "closed_count": 50
     },
     {
       "name": "outreach, acmm, file",
@@ -1194,7 +1194,7 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 588
+      "issue_count": 595
     }
   ]
 }
