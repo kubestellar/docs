@@ -198,6 +198,10 @@ clusteradm --context its1 get token | grep '^clusteradm join' | \
 clusteradm --context its1 accept --clusters openshift-cluster
 ```
 
+If `clusteradm join` prints a warning about a missing `cluster-info`
+ConfigMap, check whether the CSR was still created before retrying. See
+[OpenShift WEC registration warning about `cluster-info`](troubleshooting.md#openshift-wec-registration-warning-about-cluster-info).
+
 ### Cloud Provider Clusters
 
 For clusters from cloud providers (EKS, GKE, AKS, etc.):
