@@ -371,6 +371,7 @@ const NAV_STRUCTURE_COMMUNITY: Array<{ title: string; items: NavItem[] }> = [
     title: 'Community',
     items: [
       { 'Get Involved': 'community/index.md' },
+      { 'Community Meetings': 'community/meetings.md' },
     ]
   }
 ]
