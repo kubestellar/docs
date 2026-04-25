@@ -295,6 +295,7 @@ const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
           },
           { 'Authorization in WECs': 'kubestellar/authorization.md' },
           { 'Example Scenarios': 'kubestellar/example-scenarios.md' },
+          { 'Deploy Helm Charts Through a WDS': 'kubestellar/helm-through-wds.md' },
           {
             'Third-party Integrations': [
               { 'ArgoCD to WDS': 'kubestellar/argo-to-wds1.md' },
