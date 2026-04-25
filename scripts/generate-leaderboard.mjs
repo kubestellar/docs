@@ -351,6 +351,7 @@ async function main() {
   const output = {
     generated_at: new Date().toISOString(),
     git_hash: gitHash,
+    year_start: YEAR_START,
     entries,
   };
 

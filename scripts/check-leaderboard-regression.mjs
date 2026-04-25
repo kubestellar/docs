@@ -9,8 +9,13 @@
  * sufficient — a scoring bug severe enough to matter will always affect
  * high-volume contributors most.
  *
+ * Year-boundary handling: if the scoring window changed (e.g. the previous
+ * snapshot was generated in 2026 and the new one uses 2027-01-01 as YEAR_START)
+ * the check is automatically skipped so the first run of the new year does not
+ * need a manual LEADERBOARD_FORCE override.
+ *
  * Set LEADERBOARD_FORCE=1 to bypass — use when an intentional scope change
- * (e.g. switching from all-time to current-year) is expected to lower scores.
+ * (e.g. switching scoring repos) is expected to lower scores.
  *
  * Usage (called by generate-leaderboard.yml after generation):
  *   node scripts/check-leaderboard-regression.mjs
@@ -65,6 +70,16 @@ function main() {
     process.exit(0);
   }
 
+  // Auto-skip when the scoring year flipped (e.g. Jan 1 rollover).
+  // YEAR_START comes from the generate script; both snapshots embed it so we
+  // can detect the transition without requiring a manual force override.
+  if (prevData.year_start && newData.year_start && prevData.year_start !== newData.year_start) {
+    console.log(
+      `Scoring year changed (${prevData.year_start} → ${newData.year_start}) — skipping regression check.`
+    );
+    process.exit(0);
+  }
+
   const prevMap = new Map(prevData.entries.map((e) => [e.login, e.total_points]));
 
   // Check the current top N from the newly generated data
@@ -108,8 +123,9 @@ function main() {
         ` (−${r.drop.toLocaleString()}, −${(r.dropPct * 100).toFixed(1)}%)`
     );
   }
-  console.error("\nScoring bug likely (filter change, missing repo, API truncation).");
-  console.error("If intentional, re-run the workflow with force=true.");
+  console.error("\nThis usually means a scoring bug (e.g. a filter change dropping contributions).");
+  console.error("If this drop is intentional (e.g. scope change), trigger the workflow manually");
+  console.error("via Actions → Generate Leaderboard Data → Run workflow, with 'Skip regression check' checked.");
   console.error("\nLeaderboard data has NOT been committed.");
   process.exit(1);
 }
