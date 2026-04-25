@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { Linkedin } from "lucide-react";
 // import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { VERSIONS } from '@/config/versions'
 import { getLocalizedUrl, getBaseUrl } from "@/lib/url";
@@ -478,6 +479,13 @@ export default function DocsNavbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 Contact Us
+              </a>
+              <a
+                href="https://kubestellar.io/linkedin"
+                className={dropdownItemClasses}
+              >
+                <Linkedin className="w-5 h-5 mr-2.5" aria-hidden="true" />
+                LinkedIn
               </a>
               <a
                 href={`${getBaseUrl()}/en/partners`}
@@ -978,6 +986,14 @@ export default function DocsNavbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               Contact Us
+            </a>
+            <a href="https://kubestellar.io/linkedin" className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
+              isDark
+                ? 'text-gray-300 hover:bg-neutral-800'
+                : 'text-gray-700 hover:bg-gray-100'
+            }`}>
+              <Linkedin className="w-4 h-4 mr-3" aria-hidden="true" />
+              LinkedIn
             </a>
             <a href={`${getBaseUrl()}/en/partners`} className={`flex items-center px-3 py-2 text-sm rounded-md transition-colors ${
               isDark
