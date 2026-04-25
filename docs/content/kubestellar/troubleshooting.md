@@ -43,6 +43,48 @@ verbosity (`-v`) of various controllers.
 
 We have [the start of a list](known-issues.md).
 
+## OpenShift WEC registration warning about `cluster-info`
+
+When registering an OpenShift cluster as a WEC, `clusteradm join` can
+print a warning like the following.
+
+```console
+W0131 11:43:03.072250   76891 exec.go:204] Failed looking for cluster endpoint for the registering klusterlet: configmaps "cluster-info" not found
+```
+
+OpenShift clusters do not always have the `kube-public/cluster-info`
+ConfigMap that `clusteradm` tries to inspect during this preflight
+path. This message is a warning, not necessarily a failed join. In
+known cases, `clusteradm join` still created a CSR on the hub. Do not
+retry only because this warning appeared; first check whether the CSR
+was created.
+
+After running `clusteradm join` from the WEC context, check the ITS or
+hub context for a CSR whose name starts with the WEC cluster name.
+
+```shell
+kubectl --context its1 get csr
+```
+
+If the CSR exists, approve it in the usual way.
+
+```shell
+clusteradm --context its1 accept --clusters <wec-cluster-name>
+```
+
+If you retried `clusteradm join` several times while investigating the
+warning, you may see multiple pending CSRs for the same WEC. Keep the
+latest one and delete the stale attempts before approving. Sorting by
+creation timestamp can make this easier to see.
+
+```shell
+kubectl --context its1 get csr --sort-by=.metadata.creationTimestamp
+```
+
+```shell
+kubectl --context its1 delete csr <stale-csr-name>
+```
+
 ## Making a good trouble report
 
 Basic configuration information.
