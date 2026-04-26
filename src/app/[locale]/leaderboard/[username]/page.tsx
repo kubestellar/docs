@@ -77,6 +77,28 @@ interface ContributorProfile {
   activity_timeline: TimelineEntry[];
 }
 
+interface LeaderboardEntry {
+  login: string;
+  avatar_url: string;
+  total_points: number;
+  level: string;
+  level_rank: number;
+  rank: number;
+  breakdown: {
+    bug_issues: number;
+    feature_issues: number;
+    other_issues: number;
+    prs_opened: number;
+    prs_merged: number;
+  };
+  bonus_points: number;
+}
+
+interface LeaderboardData {
+  generated_at: string;
+  entries: LeaderboardEntry[];
+}
+
 // ── Constants ─────────────────────────────────────────────────────────
 
 const DAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -531,16 +553,37 @@ export default function ContributorProfilePage({
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch(`/data/contributors/${username}.json`)
+    const profileFetch = fetch(`/data/contributors/${username}.json`)
       .then((res) => {
         if (!res.ok)
           throw new Error(
             res.status === 404 ? "not_found" : `HTTP ${res.status}`
           );
-        return res.json();
-      })
-      .then((data: ContributorProfile) => {
-        setProfile(data);
+        return res.json() as Promise<ContributorProfile>;
+      });
+
+    const leaderboardFetch = fetch("/data/leaderboard.json")
+      .then((res) => (res.ok ? (res.json() as Promise<LeaderboardData>) : null))
+      .catch(() => null);
+
+    Promise.all([profileFetch, leaderboardFetch])
+      .then(([profileData, leaderboardData]) => {
+        // Merge authoritative scoring fields from leaderboard.json
+        // (single source of truth) into the contributor profile.
+        // Profile generation can lag behind leaderboard generation,
+        // so leaderboard values take precedence for points/rank/level.
+        if (leaderboardData) {
+          const lbEntry = leaderboardData.entries.find(
+            (e) => e.login.toLowerCase() === username.toLowerCase()
+          );
+          if (lbEntry) {
+            profileData.total_points = lbEntry.total_points;
+            profileData.rank = lbEntry.rank;
+            profileData.level = lbEntry.level;
+            profileData.level_rank = lbEntry.level_rank;
+          }
+        }
+        setProfile(profileData);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -914,3 +957,4 @@ export default function ContributorProfilePage({
     </div>
   );
 }
+___BEGIN___COMMAND_DONE_MARKER___0
