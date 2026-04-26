@@ -59,10 +59,20 @@ interface TimelineEntry {
   issue_count: number;
 }
 
+interface RepoContribution {
+  repo: string;
+  bug_issues: number;
+  feature_issues: number;
+  other_issues: number;
+  prs_opened: number;
+  prs_merged: number;
+}
+
 interface ContributorProfile {
   login: string;
   generated_at: string;
   total_issues_opened: number;
+  total_prs_opened?: number;
   avatar_url: string;
   total_points: number;
   level: string;
@@ -75,6 +85,7 @@ interface ContributorProfile {
     stretch: StretchArea[];
   };
   activity_timeline: TimelineEntry[];
+  repo_breakdown?: RepoContribution[];
 }
 
 interface LeaderboardEntry {
@@ -598,7 +609,7 @@ export default function ContributorProfilePage({
     const c = profile.cadence;
     const peakDay =
       DAY_LABELS[
-        c.by_day_of_week.indexOf(Math.max(...c.by_day_of_week))
+      c.by_day_of_week.indexOf(Math.max(...c.by_day_of_week))
       ];
     const peakHour = c.by_hour_of_day.indexOf(
       Math.max(...c.by_hour_of_day)
@@ -851,6 +862,109 @@ export default function ContributorProfilePage({
                   <TimelineSparkline timeline={profile.activity_timeline} />
                 </div>
 
+                {/* ── Repository Contributions ────────────────── */}
+                {profile.repo_breakdown && profile.repo_breakdown.length > 0 && (
+                  <div className="bg-gray-800/40 backdrop-blur-md rounded-xl border border-white/10 p-6 overflow-hidden">
+                    <h2 className="text-lg font-semibold text-white mb-1">
+                      Repository Contributions
+                    </h2>
+                    <p className="text-sm text-gray-400 mb-6">
+                      Breakdown of issues and PRs by repository
+                    </p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {profile.repo_breakdown.map((rb) => (
+                        <div
+                          key={rb.repo}
+                          className="bg-gray-900/40 rounded-lg border border-white/5 p-4 flex flex-col gap-4 hover:border-white/10 transition-colors"
+                        >
+                          <div className="flex items-center justify-between">
+                            <span
+                              className={`px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider ${REPO_COLORS[rb.repo] || "text-gray-400 bg-gray-500/10"}`}
+                            >
+                              {rb.repo.toUpperCase()}
+                            </span>
+                            <div className="flex gap-2">
+                              <span className="text-[10px] text-gray-500 uppercase tracking-wider font-medium">
+                                Total Contribution: {rb.bug_issues + rb.feature_issues + rb.other_issues + rb.prs_opened}
+                              </span>
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-6">
+                            {/* Issues Breakdown */}
+                            <div className="space-y-3">
+                              <p className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold border-b border-white/5 pb-1">
+                                Issues
+                              </p>
+                              <div className="space-y-2">
+                                <div className="flex justify-between items-center text-[13px]">
+                                  <div className="flex items-center gap-1.5">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                                    <span className="text-gray-300">Bugs</span>
+                                  </div>
+                                  <span className="text-white font-semibold tabular-nums">{rb.bug_issues}</span>
+                                </div>
+                                <div className="flex justify-between items-center text-[13px]">
+                                  <div className="flex items-center gap-1.5">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                                    <span className="text-gray-300">Features</span>
+                                  </div>
+                                  <span className="text-white font-semibold tabular-nums">{rb.feature_issues}</span>
+                                </div>
+                                <div className="flex justify-between items-center text-[13px]">
+                                  <div className="flex items-center gap-1.5">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-gray-500" />
+                                    <span className="text-gray-300">Other</span>
+                                  </div>
+                                  <span className="text-white font-semibold tabular-nums">{rb.other_issues}</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* PRs Breakdown */}
+                            <div className="space-y-3">
+                              <p className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold border-b border-white/5 pb-1">
+                                Pull Requests
+                              </p>
+                              <div className="space-y-2">
+                                <div className="flex justify-between items-center text-[13px]">
+                                  <div className="flex items-center gap-1.5">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                                    <span className="text-gray-300">Opened</span>
+                                  </div>
+                                  <span className="text-white font-semibold tabular-nums">{rb.prs_opened}</span>
+                                </div>
+                                <div className="flex justify-between items-center text-[13px]">
+                                  <div className="flex items-center gap-1.5">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                                    <span className="text-gray-300">Merged</span>
+                                  </div>
+                                  <span className="text-white font-semibold tabular-nums">{rb.prs_merged}</span>
+                                </div>
+
+                                <div className="pt-1">
+                                  <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
+                                    <div
+                                      className="h-full bg-gradient-to-r from-purple-500 to-green-500"
+                                      style={{ width: `${rb.prs_opened > 0 ? (rb.prs_merged / rb.prs_opened) * 100 : 0}%` }}
+                                    />
+                                  </div>
+                                  <p className="text-[10px] text-gray-500 mt-1 text-right font-medium">
+                                    {rb.prs_opened > 0
+                                      ? `${Math.round((rb.prs_merged / rb.prs_opened) * 100)}% merged`
+                                      : "No PR activity"}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* ── Expertise Areas (Radar Chart) ──────── */}
                 <ContributionRadarChart topics={profile.topics || []} />
 
@@ -882,58 +996,58 @@ export default function ContributorProfilePage({
                 {/* ── Suggestions ─────────────────────────── */}
                 {((profile.suggestions?.deepen || []).length > 0 ||
                   (profile.suggestions?.stretch || []).length > 0) && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Deepen */}
-                    {(profile.suggestions?.deepen || []).length > 0 && (
-                      <div className="bg-gray-800/40 backdrop-blur-md rounded-xl border border-white/10 p-6">
-                        <h2 className="text-lg font-semibold text-white mb-1">
-                          Deepen Your Expertise
-                        </h2>
-                        <p className="text-sm text-gray-400 mb-4">
-                          Open issues matching your focus areas
-                        </p>
-                        <div className="space-y-3">
-                          {(profile.suggestions?.deepen || []).map((s) => (
-                            <SuggestionCard key={s.url} suggestion={s} />
-                          ))}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {/* Deepen */}
+                      {(profile.suggestions?.deepen || []).length > 0 && (
+                        <div className="bg-gray-800/40 backdrop-blur-md rounded-xl border border-white/10 p-6">
+                          <h2 className="text-lg font-semibold text-white mb-1">
+                            Deepen Your Expertise
+                          </h2>
+                          <p className="text-sm text-gray-400 mb-4">
+                            Open issues matching your focus areas
+                          </p>
+                          <div className="space-y-3">
+                            {(profile.suggestions?.deepen || []).map((s) => (
+                              <SuggestionCard key={s.url} suggestion={s} />
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    {/* Stretch */}
-                    {(profile.suggestions?.stretch || []).length > 0 && (
-                      <div className="bg-gray-800/40 backdrop-blur-md rounded-xl border border-white/10 p-6">
-                        <h2 className="text-lg font-semibold text-white mb-1">
-                          Stretch Into New Areas
-                        </h2>
-                        <p className="text-sm text-gray-400 mb-4">
-                          Console codebase areas outside your usual focus
-                        </p>
-                        <div className="space-y-3">
-                          {(profile.suggestions?.stretch || []).map((area: StretchArea) => (
-                            <a
-                              key={area.name}
-                              href={area.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block p-3 bg-gray-800/40 rounded-lg border border-white/5 hover:border-white/10 hover:bg-gray-800/60 transition-all"
-                            >
-                              <p className="text-sm text-white font-medium mb-1">
-                                {area.name}
-                              </p>
-                              <p className="text-xs text-gray-400 mb-2">
-                                {area.description}
-                              </p>
-                              <span className="text-[10px] text-gray-500 font-mono">
-                                {area.path}
-                              </span>
-                            </a>
-                          ))}
+                      {/* Stretch */}
+                      {(profile.suggestions?.stretch || []).length > 0 && (
+                        <div className="bg-gray-800/40 backdrop-blur-md rounded-xl border border-white/10 p-6">
+                          <h2 className="text-lg font-semibold text-white mb-1">
+                            Stretch Into New Areas
+                          </h2>
+                          <p className="text-sm text-gray-400 mb-4">
+                            Console codebase areas outside your usual focus
+                          </p>
+                          <div className="space-y-3">
+                            {(profile.suggestions?.stretch || []).map((area: StretchArea) => (
+                              <a
+                                key={area.name}
+                                href={area.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block p-3 bg-gray-800/40 rounded-lg border border-white/5 hover:border-white/10 hover:bg-gray-800/60 transition-all"
+                              >
+                                <p className="text-sm text-white font-medium mb-1">
+                                  {area.name}
+                                </p>
+                                <p className="text-xs text-gray-400 mb-2">
+                                  {area.description}
+                                </p>
+                                <span className="text-[10px] text-gray-500 font-mono">
+                                  {area.path}
+                                </span>
+                              </a>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  </div>
-                )}
+                      )}
+                    </div>
+                  )}
 
                 {/* ── Footer meta ─────────────────────────── */}
                 <p className="text-xs text-gray-600 text-center">
