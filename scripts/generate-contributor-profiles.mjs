@@ -101,6 +101,23 @@ async function ghFetch(url) {
   return res.json();
 }
 
+// ── Label classification ──────────────────────────────────────────────
+const BUG_LABELS = new Set(["bug", "kind/bug", "type/bug"]);
+const FEATURE_LABELS = new Set([
+  "enhancement",
+  "feature",
+  "kind/feature",
+  "type/feature",
+]);
+
+function classifyIssueLabels(labels) {
+  for (const label of labels) {
+    if (BUG_LABELS.has(label.name)) return "bug";
+    if (FEATURE_LABELS.has(label.name)) return "feature";
+  }
+  return "other";
+}
+
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -659,9 +676,8 @@ async function main() {
       const items = await fetchAllIssuesWithBodies(repo);
       const repoShort = repo.split("/")[1];
 
-      // Keep only issues (not PRs) and extract relevant fields
-      const issues = items
-        .filter((item) => !item.pull_request)
+      // Extract relevant fields for both issues and PRs
+      const processed = items
         .filter((item) => item.user?.type === "User")
         .filter((item) => !EXCLUDED_LOGINS.has(item.user?.login))
         .map((item) => ({
@@ -676,10 +692,15 @@ async function main() {
           url: item.html_url,
           comments: item.comments || 0,
           reactions: item.reactions?.total_count || 0,
+          is_pr: !!item.pull_request,
+          merged_at: item.pull_request?.merged_at || null,
+          issue_type: item.pull_request ? null : classifyIssueLabels(item.labels || []),
         }));
 
-      allRawItems.push(...issues);
-      console.log(`  ${repo}: ${issues.length} issues`);
+      allRawItems.push(...processed);
+      const issuesCount = processed.filter(p => !p.is_pr).length;
+      const prsCount = processed.filter(p => p.is_pr).length;
+      console.log(`  ${repo}: ${processed.length} items (${issuesCount} issues, ${prsCount} PRs)`);
     } catch (err) {
       console.warn(`  Warning: failed to fetch ${repo}: ${err.message}`);
     }
@@ -800,11 +821,11 @@ async function main() {
       deepen:
         myIssues.length >= MIN_ISSUES_FOR_CLUSTERING
           ? findDeepenSuggestions(
-              clusterCentroids,
-              clusterNames,
-              openIssues,
-              login
-            )
+            clusterCentroids,
+            clusterNames,
+            openIssues,
+            login
+          )
           : [],
       stretch:
         myIssues.length >= MIN_ISSUES_FOR_CLUSTERING
@@ -812,12 +833,41 @@ async function main() {
           : [],
     };
 
+    // Per-repo breakdown
+    const repoBreakdownMap = new Map();
+    for (const item of myIssues) {
+      if (!repoBreakdownMap.has(item.repo)) {
+        repoBreakdownMap.set(item.repo, {
+          repo: item.repo,
+          bug_issues: 0,
+          feature_issues: 0,
+          other_issues: 0,
+          prs_opened: 0,
+          prs_merged: 0,
+        });
+      }
+      const rb = repoBreakdownMap.get(item.repo);
+      if (item.is_pr) {
+        rb.prs_opened++;
+        if (item.merged_at) rb.prs_merged++;
+      } else {
+        if (item.issue_type === "bug") rb.bug_issues++;
+        else if (item.issue_type === "feature") rb.feature_issues++;
+        else rb.other_issues++;
+      }
+    }
+    const repoBreakdown = [...repoBreakdownMap.values()].sort((a, b) =>
+      (b.prs_opened + b.bug_issues + b.feature_issues + b.other_issues) -
+      (a.prs_opened + a.bug_issues + a.feature_issues + a.other_issues)
+    );
+
     // Build profile
     const lbEntry = leaderboardMap.get(login);
     const profile = {
       login,
       generated_at: new Date().toISOString(),
-      total_issues_opened: myIssues.length,
+      total_issues_opened: myIssues.filter(i => !i.is_pr).length,
+      total_prs_opened: myIssues.filter(i => i.is_pr).length,
       avatar_url: lbEntry?.avatar_url || "",
       total_points: lbEntry?.total_points || 0,
       level: lbEntry?.level || "Observer",
@@ -827,6 +877,7 @@ async function main() {
       topics,
       suggestions,
       activity_timeline: activityTimeline,
+      repo_breakdown: repoBreakdown,
     };
 
     // Write file
