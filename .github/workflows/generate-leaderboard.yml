@@ -53,7 +53,12 @@ jobs:
           git add public/data/leaderboard.json public/data/contributors/
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "chore: update leaderboard and contributor profile data"
-          git push
+          MAX_RETRIES=3
+          for i in $(seq 1 $MAX_RETRIES); do
+            git pull --rebase origin main && git push && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 2
+          done
 
       - name: Create issue on failure
         if: failure()
