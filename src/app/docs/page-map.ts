@@ -295,6 +295,7 @@ const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
           },
           { 'Authorization in WECs': 'kubestellar/authorization.md' },
           { 'Example Scenarios': 'kubestellar/example-scenarios.md' },
+          { 'Deploy Helm Charts Through a WDS': 'kubestellar/helm-through-wds.md' },
           {
             'Third-party Integrations': [
               { 'ArgoCD to WDS': 'kubestellar/argo-to-wds1.md' },
@@ -372,6 +373,7 @@ const NAV_STRUCTURE_COMMUNITY: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Get Involved': 'community/index.md' },
       { 'Videos and Demos': 'community/videos.md' },
+      { 'Community Meetings': 'community/meetings.md' },
     ]
   }
 ]

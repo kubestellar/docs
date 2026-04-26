@@ -246,6 +246,9 @@ done
 
 ## Scenario 3: Multi-Cluster Workload Deployment with Helm
 
+For a more focused walkthrough of this workflow, including why Helm should target
+the WDS rather than the WECs, see [Deploy Helm Charts Through a WDS](helm-through-wds.md).
+
 Create a BindingPolicy for the helm chart app:
 
 ```shell
