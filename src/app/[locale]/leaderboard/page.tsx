@@ -528,32 +528,6 @@ function ContributorHoverCard({
 // ── Leaderboard data URL ──────────────────────────────────────────────
 const LEADERBOARD_DATA_PATH = "/data/leaderboard.json";
 
-// ── Refresh schedule ─────────────────────────────────────────────────
-/** Hours (UTC) when the GitHub Actions workflow regenerates leaderboard data. */
-const REFRESH_HOURS_UTC = [2, 6, 10, 14, 18, 22];
-/** Interval (ms) between countdown ticks — once per minute is sufficient. */
-const COUNTDOWN_TICK_MS = 60_000;
-
-/** Returns a human-readable countdown string like "1h 23m" until the next refresh. */
-function getCountdown(): string {
-  const now = new Date();
-  const currentHour = now.getUTCHours();
-
-  // Find the next scheduled hour
-  const nextHour = REFRESH_HOURS_UTC.find((h) => h > currentHour)
-    ?? REFRESH_HOURS_UTC[0]; // wrap to first slot tomorrow
-
-  const next = new Date(now);
-  next.setUTCHours(nextHour, 0, 0, 0);
-  if (next <= now) next.setUTCDate(next.getUTCDate() + 1);
-
-  const diffMs = next.getTime() - now.getTime();
-  const hours = Math.floor(diffMs / (1000 * 60 * 60));
-  const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
-
-  if (hours === 0) return `${minutes}m`;
-  return `${hours}h ${minutes}m`;
-}
 
 // ── Page component ────────────────────────────────────────────────────
 
@@ -562,7 +536,6 @@ export default function LeaderboardPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
-  const [countdown, setCountdown] = useState("");
   const [affiliateData, setAffiliateData] = useState<Record<string, AffiliateData>>({});
   const [affiliateLoading, setAffiliateLoading] = useState(true);
   const [affiliateBannerOpen, setAffiliateBannerOpen] = useState(false);
@@ -584,29 +557,6 @@ export default function LeaderboardPage() {
         setIsLoading(false);
       });
   }, []);
-
-  // Tick countdown every minute and auto-refetch when a refresh window arrives
-  useEffect(() => {
-    setCountdown(getCountdown());
-    let lastRefreshHour = -1;
-    const id = setInterval(() => {
-      setCountdown(getCountdown());
-      // Re-fetch data when we cross a scheduled refresh boundary
-      const currentHour = new Date().getUTCHours();
-      const currentMinute = new Date().getUTCMinutes();
-      /** Grace period (minutes) after a scheduled refresh to trigger a re-fetch. */
-      const REFETCH_GRACE_MINUTES = 5;
-      if (
-        REFRESH_HOURS_UTC.includes(currentHour) &&
-        currentMinute < REFETCH_GRACE_MINUTES &&
-        lastRefreshHour !== currentHour
-      ) {
-        lastRefreshHour = currentHour;
-        fetchLeaderboard();
-      }
-    }, COUNTDOWN_TICK_MS);
-    return () => clearInterval(id);
-  }, [fetchLeaderboard]);
 
   // Initial data fetch
   useEffect(() => {
@@ -667,6 +617,8 @@ export default function LeaderboardPage() {
         year: "numeric",
         month: "long",
         day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
       })
     : null;
 
@@ -705,12 +657,7 @@ export default function LeaderboardPage() {
               </p>
               {lastUpdated && (
                 <p className="mt-2 text-sm text-gray-500">
-                  Last updated: {lastUpdated}
-                  {countdown && (
-                    <span className="ml-2 text-gray-600">
-                      · Next refresh in {countdown}
-                    </span>
-                  )}
+                  Generated: {lastUpdated}
                 </p>
               )}
 
