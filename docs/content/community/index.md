@@ -6,7 +6,7 @@
 ### Learn and Connect
 #### Using or want to use KubeStellar? Find out more here:
 - [User mailing list](https://groups.google.com/g/kubestellar-users): Discussion and help from your fellow users
-- [YouTube Channel](https://www.youtube.com/@kubestellar): Follow us on YouTube to view recordings of past KubeStellar community meetings and demo days
+- [Videos and demos](./videos.md): Find recordings of past KubeStellar community meetings, demos, and tutorial-style walkthroughs
 - [LinkedIn](https://www.linkedin.com/feed/hashtag/?keywords=kubestellar): See what others are saying about the community
 - [Medium Blog Series](https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST): Follow us on Medium to read about community developments
 
