@@ -1196,5 +1196,39 @@
       "month": "2026-04",
       "issue_count": 595
     }
+  ],
+  "repo_breakdown": [
+    {
+      "repo": "kubestellar/console",
+      "bug_issues": 64,
+      "feature_issues": 13,
+      "other_issues": 1168,
+      "prs_opened": 4038,
+      "prs_merged": 3939
+    },
+    {
+      "repo": "kubestellar/console-kb",
+      "bug_issues": 0,
+      "feature_issues": 1,
+      "other_issues": 2,
+      "prs_opened": 1621,
+      "prs_merged": 1335
+    },
+    {
+      "repo": "kubestellar/docs",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 54,
+      "prs_opened": 289,
+      "prs_merged": 264
+    },
+    {
+      "repo": "kubestellar/console-marketplace",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 70,
+      "prs_opened": 16,
+      "prs_merged": 16
+    }
   ]
 }
