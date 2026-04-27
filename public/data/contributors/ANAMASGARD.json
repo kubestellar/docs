@@ -105,5 +105,31 @@
       "month": "2026-04",
       "issue_count": 0
     }
+  ],
+  "repo_breakdown": [
+    {
+      "repo": "kubestellar/console",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 5,
+      "prs_merged": 5
+    },
+    {
+      "repo": "kubestellar/console-marketplace",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 5,
+      "prs_merged": 5
+    },
+    {
+      "repo": "kubestellar/docs",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 1,
+      "prs_opened": 2,
+      "prs_merged": 1
+    }
   ]
 }

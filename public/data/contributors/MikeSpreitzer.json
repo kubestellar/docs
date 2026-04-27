@@ -362,5 +362,23 @@
       "month": "2026-04",
       "issue_count": 24
     }
+  ],
+  "repo_breakdown": [
+    {
+      "repo": "kubestellar/console",
+      "bug_issues": 46,
+      "feature_issues": 5,
+      "other_issues": 10,
+      "prs_opened": 0,
+      "prs_merged": 0
+    },
+    {
+      "repo": "kubestellar/docs",
+      "bug_issues": 5,
+      "feature_issues": 1,
+      "other_issues": 20,
+      "prs_opened": 3,
+      "prs_merged": 2
+    }
   ]
 }
