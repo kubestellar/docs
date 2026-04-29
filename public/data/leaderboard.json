@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-04-29T03:05:42.750Z",
-  "git_hash": "68cbffd",
+  "generated_at": "2026-04-29T06:51:17.216Z",
+  "git_hash": "eb6e2ea",
   "year_start": "2026-01-01T00:00:00Z",
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3873200,
+      "total_points": 3873250,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 300,
-        "feature_issues": 395,
-        "other_issues": 573,
-        "prs_opened": 5590,
+        "feature_issues": 393,
+        "other_issues": 574,
+        "prs_opened": 5591,
         "prs_merged": 5194
       },
       "bonus_points": 50,
@@ -366,6 +366,21 @@
       "rank": 24
     },
     {
+      "login": "anusha19murthy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76055754?v=4",
+      "total_points": 3800,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 1,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 5,
+        "prs_merged": 5
+      },
+      "rank": 25
+    },
+    {
       "login": "AkashKumar7902",
       "avatar_url": "https://avatars.githubusercontent.com/u/91385321?v=4",
       "total_points": 3500,
@@ -378,7 +393,7 @@
         "prs_opened": 5,
         "prs_merged": 5
       },
-      "rank": 25
+      "rank": 26
     },
     {
       "login": "AresPhoenix345",
@@ -390,21 +405,6 @@
         "bug_issues": 1,
         "feature_issues": 0,
         "other_issues": 1,
-        "prs_opened": 4,
-        "prs_merged": 4
-      },
-      "rank": 26
-    },
-    {
-      "login": "anusha19murthy",
-      "avatar_url": "https://avatars.githubusercontent.com/u/76055754?v=4",
-      "total_points": 3100,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 1,
-        "feature_issues": 0,
-        "other_issues": 0,
         "prs_opened": 4,
         "prs_merged": 4
       },
