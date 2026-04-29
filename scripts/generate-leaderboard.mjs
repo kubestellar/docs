@@ -51,6 +51,10 @@ const CONTRIBUTOR_LEVELS = [
   { rank: 8, name: "Legend", minCoins: 500000 },
 ];
 
+// ── Weekly activity trend constants ───────────────────────────────────
+const ACTIVITY_WEEKS = 12; // number of weeks to include in sparkline
+const RECENCY_HALF_LIFE = 3; // weeks — contribution weight halves every N weeks
+
 // ── GitHub API constants ──────────────────────────────────────────────
 /** Current-year start in ISO-8601 (matches console rewards scope) */
 const YEAR_START = `${new Date().getFullYear()}-01-01T00:00:00Z`;
@@ -263,6 +267,72 @@ async function fetchBonusPoints() {
   return bonuses;
 }
 
+// ── Weekly activity trend computation ─────────────────────────────────
+
+/**
+ * Returns the Monday-based ISO week start for a date string.
+ * Weeks are labeled as ISO dates (YYYY-MM-DD of the Monday).
+ */
+function weekKeyForDate(isoDateStr) {
+  const d = new Date(isoDateStr);
+  const day = d.getUTCDay();
+  const diff = (day === 0 ? -6 : 1) - day; // adjust to Monday
+  d.setUTCDate(d.getUTCDate() + diff);
+  return d.toISOString().slice(0, 10);
+}
+
+/**
+ * Generates an array of Monday-based week keys for the last N weeks,
+ * oldest first.
+ */
+function getRecentWeekKeys(numWeeks) {
+  const now = new Date();
+  const keys = [];
+  for (let i = numWeeks - 1; i >= 0; i--) {
+    const d = new Date(now);
+    d.setUTCDate(d.getUTCDate() - i * 7);
+    keys.push(weekKeyForDate(d.toISOString()));
+  }
+  return [...new Set(keys)].sort();
+}
+
+/**
+ * Builds a per-login map of weekly contribution counts from all items.
+ * Returns Map<login, Map<weekKey, count>>.
+ */
+function buildWeeklyActivity(allItems) {
+  const activity = new Map();
+
+  for (const item of allItems) {
+    const login = item.user?.login;
+    if (!login || item.user?.type !== "User") continue;
+    if (EXCLUDED_LOGINS.has(login)) continue;
+    if (item.created_at < YEAR_START) continue;
+
+    if (!activity.has(login)) activity.set(login, new Map());
+    const weekMap = activity.get(login);
+    const wk = weekKeyForDate(item.created_at);
+    weekMap.set(wk, (weekMap.get(wk) || 0) + 1);
+  }
+
+  return activity;
+}
+
+/**
+ * Computes a recency-weighted activity score from weekly counts.
+ * Recent weeks count more — weight decays exponentially with half-life.
+ */
+function computeRecentScore(weeklyCounts) {
+  let score = 0;
+  const len = weeklyCounts.length;
+  for (let i = 0; i < len; i++) {
+    const weeksAgo = len - 1 - i;
+    const weight = Math.pow(0.5, weeksAgo / RECENCY_HALF_LIFE);
+    score += weeklyCounts[i] * weight;
+  }
+  return Math.round(score * 100) / 100;
+}
+
 // ── Main ──────────────────────────────────────────────────────────────
 async function main() {
   console.log("Fetching all issues and PRs from repos (bulk REST API)...\n");
@@ -313,11 +383,19 @@ async function main() {
   if (bonusMap.size === 0) console.log("  No bonus awards found.");
   console.log("");
 
+  // 2c. Build weekly activity sparkline data
+  console.log("Computing weekly activity trends...");
+  const weeklyActivityMap = buildWeeklyActivity(allItems);
+  const recentWeeks = getRecentWeekKeys(ACTIVITY_WEEKS);
+  console.log(`  Tracking ${recentWeeks.length} weeks: ${recentWeeks[0]} → ${recentWeeks[recentWeeks.length - 1]}\n`);
+
   // 3. Build sorted entries
   const entries = [];
   for (const [login, data] of contributorMap) {
     const level = getLevelForPoints(data.totalPoints);
     const bonus = bonusMap.get(login);
+    const loginWeeks = weeklyActivityMap.get(login) || new Map();
+    const weeklyCounts = recentWeeks.map((wk) => loginWeeks.get(wk) || 0);
     entries.push({
       login,
       avatar_url: data.avatarUrl,
@@ -326,6 +404,8 @@ async function main() {
       level_rank: level.rank,
       breakdown: data.breakdown,
       ...(bonus ? { bonus_points: bonus.points } : {}),
+      weekly_activity: weeklyCounts,
+      recent_activity_score: computeRecentScore(weeklyCounts),
     });
   }
 
@@ -352,6 +432,7 @@ async function main() {
     generated_at: new Date().toISOString(),
     git_hash: gitHash,
     year_start: YEAR_START,
+    activity_weeks: recentWeeks,
     entries,
   };
 
