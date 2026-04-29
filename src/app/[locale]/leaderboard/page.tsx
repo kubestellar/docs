@@ -331,9 +331,18 @@ function MiniRadarChart({ topics }: { topics: RadarTopicCluster[] }) {
 function ContributorHoverCard({
   login,
   onClose,
+  rank,
+  totalPoints,
+  level,
 }: {
   login: string;
   onClose: () => void;
+  /** Rank from the leaderboard table — used so the hover card never disagrees with the row. */
+  rank: number;
+  /** Points from the leaderboard table. */
+  totalPoints: number;
+  /** Level from the leaderboard table. */
+  level: string;
 }) {
   const router = useRouter();
   const [data, setData] = useState<ContributorPreview | null>(profileCache.get(login) || null);
@@ -390,7 +399,7 @@ function ContributorHoverCard({
 
   if (!data) return null;
 
-  const style = LEVEL_STYLES[data.level] || LEVEL_STYLES.Observer;
+  const style = LEVEL_STYLES[level] || LEVEL_STYLES.Observer;
   const trend = TREND_DISPLAY[data.cadence.trend] || TREND_DISPLAY.inactive;
   const maxDay = Math.max(...data.cadence.by_day_of_week, 1);
   const maxHour = Math.max(...data.cadence.by_hour_of_day, 1);
@@ -425,12 +434,12 @@ function ContributorHoverCard({
             <div className="flex items-center gap-2">
               <span className="text-sm font-semibold text-white truncate">{data.login}</span>
               <span className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-medium border ${style.bg} ${style.text} ${style.border}`}>
-                {data.level}
+                {level}
               </span>
             </div>
             <div className="flex items-center gap-2 text-xs text-gray-400 mt-0.5">
-              <span>Rank #{data.rank}</span>
-              <span className="text-yellow-400 font-semibold">{data.total_points.toLocaleString()} pts</span>
+              <span>Rank #{rank}</span>
+              <span className="text-yellow-400 font-semibold">{totalPoints.toLocaleString()} pts</span>
             </div>
           </div>
         </div>
@@ -860,6 +869,9 @@ export default function LeaderboardPage() {
                           <ContributorHoverCard
                             login={entry.login}
                             onClose={() => setHoveredLogin(null)}
+                            rank={entry.rank}
+                            totalPoints={entry.total_points}
+                            level={entry.level}
                           />
                         )}
                       </div>
