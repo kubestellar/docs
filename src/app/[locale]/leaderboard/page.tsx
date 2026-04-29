@@ -38,11 +38,16 @@ interface LeaderboardEntry {
   level: string;
   level_rank: number;
   breakdown: LeaderboardBreakdown;
+  weekly_activity?: number[];
+  recent_activity_score?: number;
 }
+
+type SortField = "points" | "activity";
 
 interface LeaderboardData {
   generated_at: string;
   git_hash?: string;
+  activity_weeks?: string[];
   entries: LeaderboardEntry[];
 }
 
@@ -174,6 +179,51 @@ function BreakdownPills({ breakdown }: { breakdown: LeaderboardBreakdown }) {
         </span>
       ))}
     </div>
+  );
+}
+
+// ── Activity sparkline ───────────────────────────────────────────────
+
+const SPARKLINE_WIDTH = 96;
+const SPARKLINE_HEIGHT = 24;
+const SPARKLINE_BAR_GAP = 1;
+
+function ActivitySparkline({ data, weeks }: { data: number[]; weeks?: string[] }) {
+  if (!data || data.length === 0) return <span className="text-xs text-gray-600">—</span>;
+
+  const max = Math.max(...data, 1);
+  const barWidth = (SPARKLINE_WIDTH - (data.length - 1) * SPARKLINE_BAR_GAP) / data.length;
+
+  return (
+    <svg
+      width={SPARKLINE_WIDTH}
+      height={SPARKLINE_HEIGHT}
+      viewBox={`0 0 ${SPARKLINE_WIDTH} ${SPARKLINE_HEIGHT}`}
+      className="flex-shrink-0"
+      role="img"
+      aria-label="Weekly activity trend"
+    >
+      {data.map((count, i) => {
+        const barHeight = Math.max(1, (count / max) * (SPARKLINE_HEIGHT - 2));
+        const x = i * (barWidth + SPARKLINE_BAR_GAP);
+        const y = SPARKLINE_HEIGHT - barHeight;
+        const isRecent = i >= data.length - 2;
+        const weekLabel = weeks?.[i] ?? `Week ${i + 1}`;
+        return (
+          <rect
+            key={i}
+            x={x}
+            y={y}
+            width={barWidth}
+            height={barHeight}
+            rx={1}
+            fill={count === 0 ? "rgba(107,114,128,0.15)" : isRecent ? "rgba(59,130,246,0.7)" : "rgba(59,130,246,0.35)"}
+          >
+            <title>{`${weekLabel}: ${count} contributions`}</title>
+          </rect>
+        );
+      })}
+    </svg>
   );
 }
 
@@ -548,6 +598,7 @@ export default function LeaderboardPage() {
   const [affiliateData, setAffiliateData] = useState<Record<string, AffiliateData>>({});
   const [affiliateLoading, setAffiliateLoading] = useState(true);
   const [affiliateBannerOpen, setAffiliateBannerOpen] = useState(false);
+  const [sortField, setSortField] = useState<SortField>("points");
   const [hoveredLogin, setHoveredLogin] = useState<string | null>(null);
   const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -616,10 +667,18 @@ export default function LeaderboardPage() {
 
   const filteredEntries = useMemo(() => {
     if (!data?.entries) return [];
-    if (!search.trim()) return data.entries;
-    const q = search.toLowerCase();
-    return data.entries.filter((e) => e.login.toLowerCase().includes(q));
-  }, [data, search]);
+    let entries = data.entries;
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      entries = entries.filter((e) => e.login.toLowerCase().includes(q));
+    }
+    if (sortField === "activity") {
+      entries = [...entries].sort((a, b) =>
+        (b.recent_activity_score ?? 0) - (a.recent_activity_score ?? 0)
+      );
+    }
+    return entries;
+  }, [data, search, sortField]);
 
   const lastUpdated = data?.generated_at
     ? new Date(data.generated_at).toLocaleDateString("en-US", {
@@ -799,10 +858,22 @@ export default function LeaderboardPage() {
             {!isLoading && !error && filteredEntries.length > 0 && (
               <div className="bg-gray-800/40 backdrop-blur-md rounded-xl border border-white/10 overflow-visible">
                 {/* Table header */}
-                <div className="hidden sm:grid sm:grid-cols-[60px_1fr_120px_120px_60px_1fr] gap-4 px-6 py-3 border-b border-white/5 text-xs text-gray-500 uppercase tracking-wider">
+                <div className="hidden sm:grid sm:grid-cols-[60px_1fr_120px_110px_120px_60px_1fr] gap-4 px-6 py-3 border-b border-white/5 text-xs text-gray-500 uppercase tracking-wider">
                   <div className="text-center">Rank</div>
                   <div>Contributor</div>
-                  <div className="text-right">Points</div>
+                  <button
+                    className={`text-right cursor-pointer hover:text-white transition-colors ${sortField === "points" ? "text-yellow-400" : ""}`}
+                    onClick={() => setSortField("points")}
+                  >
+                    Points {sortField === "points" ? "▼" : ""}
+                  </button>
+                  <button
+                    className={`text-center cursor-pointer hover:text-white transition-colors ${sortField === "activity" ? "text-blue-400" : ""}`}
+                    onClick={() => setSortField("activity")}
+                    title="Sort by recent activity (last 12 weeks, recency-weighted)"
+                  >
+                    Activity {sortField === "activity" ? "▼" : ""}
+                  </button>
                   <div className="text-center">Level</div>
                   <div className="text-center" title="Affiliate link clicks from social sharing">Social</div>
                   <div>Breakdown</div>
@@ -812,7 +883,7 @@ export default function LeaderboardPage() {
                 {filteredEntries.map((entry) => (
                   <div
                     key={entry.login}
-                    className="grid grid-cols-1 sm:grid-cols-[60px_1fr_120px_120px_60px_1fr] gap-2 sm:gap-4 px-4 sm:px-6 py-4 border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors items-center"
+                    className="grid grid-cols-1 sm:grid-cols-[60px_1fr_120px_110px_120px_60px_1fr] gap-2 sm:gap-4 px-4 sm:px-6 py-4 border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors items-center"
                   >
                     {/* Rank */}
                     <div className="hidden sm:flex justify-center">
@@ -880,6 +951,11 @@ export default function LeaderboardPage() {
                     {/* Points */}
                     <div className="text-right tabular-nums font-semibold text-yellow-400 text-sm pl-11 sm:pl-0">
                       {entry.total_points.toLocaleString()}
+                    </div>
+
+                    {/* Activity sparkline */}
+                    <div className="flex justify-center pl-11 sm:pl-0">
+                      <ActivitySparkline data={entry.weekly_activity || []} weeks={data?.activity_weeks} />
                     </div>
 
                     {/* Level */}
