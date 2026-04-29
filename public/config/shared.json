@@ -2,10 +2,21 @@
   "surveyUrl": "https://forms.gle/Md2381TQ8CcjZv3LA",
   "versions": {
     "console": {
-      "main": {
-        "label": "main (latest)",
+      "latest": {
+        "label": "v0.3.23 (Latest)",
         "branch": "main",
         "isDefault": true
+      },
+      "main": {
+        "label": "main (dev)",
+        "branch": "main",
+        "isDefault": false,
+        "isDev": true
+      },
+      "0.3.20": {
+        "label": "v0.3.20",
+        "branch": "docs/console/0.3.20",
+        "isDefault": false
       },
       "0.3.19": {
         "label": "v0.3.19",
@@ -20,21 +31,6 @@
       "0.1.0": {
         "label": "v0.1.0",
         "branch": "docs/console/0.1.0",
-        "isDefault": false
-      },
-      "0.3.20": {
-        "label": "v0.3.20",
-        "branch": "docs/console/0.3.20",
-        "isDefault": false
-      },
-      "0.3.21": {
-        "label": "v0.3.21",
-        "branch": "docs/console/0.3.21",
-        "isDefault": false
-      },
-      "0.3.22": {
-        "label": "v0.3.22",
-        "branch": "docs/console/0.3.22",
         "isDefault": false
       }
     },
@@ -199,7 +195,7 @@
     "console": {
       "name": "KubeStellar Console",
       "basePath": "console",
-      "currentVersion": "main"
+      "currentVersion": "0.3.23"
     },
     "kubestellar": {
       "name": "KubeStellar",
