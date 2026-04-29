@@ -71,6 +71,19 @@
 [context."docs/kubeflex/0.7.0"]
   command = "NEXT_PUBLIC_BRANCH=docs/kubeflex/0.7.0 npm run build"
 
+# Console version branches
+[context."docs/console/0.3.20"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.20 npm run build"
+
+[context."docs/console/0.3.19"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.19 npm run build"
+
+[context."docs/console/0.3.6"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.6 npm run build"
+
+[context."docs/console/0.1.0"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.1.0 npm run build"
+
 # CORS headers for shared config (allows branch deploys to fetch from production)
 [[headers]]
   for = "/config/*"
