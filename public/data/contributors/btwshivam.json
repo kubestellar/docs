@@ -1,23 +1,24 @@
 {
   "login": "btwshivam",
-  "generated_at": "2026-04-24T18:28:02.088Z",
+  "generated_at": "2026-04-29T10:39:54.279Z",
   "total_issues_opened": 5,
+  "total_prs_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/127589548?v=4",
   "total_points": 2250,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 22,
+  "rank": 32,
   "cadence": {
-    "avg_per_week": 0.3,
-    "avg_per_day": 0.05,
+    "avg_per_week": 0.5,
+    "avg_per_day": 0.12,
     "by_day_of_week": [
       0,
       0,
-      2,
+      5,
+      1,
       0,
       0,
-      0,
-      3
+      6
     ],
     "by_hour_of_day": [
       0,
@@ -40,25 +41,39 @@
       0,
       2,
       1,
-      2,
-      0,
+      6,
+      3,
       0,
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
+    "longest_streak_weeks": 2,
     "trend": "inactive",
     "first_issue_at": "2025-11-12T18:37:28.000Z",
-    "last_issue_at": "2026-02-22T20:06:47.000Z"
+    "last_issue_at": "2026-02-22T20:49:16.000Z"
   },
   "topics": [
     {
       "name": "dark, light, mode",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "🐛 Fix: related projects hover appears dark in light mode",
+        "url": "https://github.com/kubestellar/docs/pull/1195",
+        "created_at": "2026-02-22T20:42:54Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 4
+    },
+    {
+      "name": "icon, duplicate, remove",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Related Project Hover looks dark in light mode",
-        "url": "https://github.com/kubestellar/docs/issues/1193",
-        "created_at": "2026-02-22T20:06:47Z"
+        "title": "🐛 Fix: remove duplicate non-functional icons from feature cards ",
+        "url": "https://github.com/kubestellar/docs/pull/1196",
+        "created_at": "2026-02-22T20:49:16Z"
       },
       "repos": [
         "docs"
@@ -67,21 +82,35 @@
       "closed_count": 2
     },
     {
-      "name": "duplicate, icon, remove",
-      "issue_count": 1,
+      "name": "localstorage, theme, themeprovider",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "Remove duplicate icons in cards",
-        "url": "https://github.com/kubestellar/docs/issues/1191",
-        "created_at": "2026-02-22T19:57:16Z"
+        "title": "Added ThemeProvider to both root layouts",
+        "url": "https://github.com/kubestellar/docs/pull/430",
+        "created_at": "2025-12-18T20:16:41Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 1
+      "closed_count": 2
     },
     {
-      "name": "downside, increse, box",
+      "name": "redesign, path, feat",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Feat: Redesign GetStartedSection installation path sections",
+        "url": "https://github.com/kubestellar/docs/pull/427",
+        "created_at": "2025-12-17T21:41:16Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "downside, increse, input",
       "issue_count": 1,
       "recent_issue": {
         "title": "feature: Remove Stay Updated and place it below downside the sections and Increse the length of input box",
@@ -95,7 +124,7 @@
       "closed_count": 1
     },
     {
-      "name": "hover, cases, background",
+      "name": "background, hover, show",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: After hover Background text is showing",
@@ -125,22 +154,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
-      },
-      {
         "name": "Authentication & Settings",
         "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
         "description": "OAuth flow, user settings, preferences, API middleware, authentication",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       }
     ]
   },
@@ -175,7 +204,7 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 0
+      "issue_count": 4
     },
     {
       "month": "2026-01",
@@ -183,7 +212,7 @@
     },
     {
       "month": "2026-02",
-      "issue_count": 3
+      "issue_count": 6
     },
     {
       "month": "2026-03",
@@ -196,10 +225,10 @@
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 5,
+      "feature_issues": 1,
+      "other_issues": 4,
       "prs_opened": 7,
       "prs_merged": 7
     }

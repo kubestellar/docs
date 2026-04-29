@@ -1,23 +1,24 @@
 {
   "login": "sicaario",
-  "generated_at": "2026-04-24T18:28:03.066Z",
+  "generated_at": "2026-04-29T10:39:54.280Z",
   "total_issues_opened": 0,
+  "total_prs_opened": 2,
   "avatar_url": "https://avatars.githubusercontent.com/u/191823428?v=4",
-  "total_points": 900,
+  "total_points": 1800,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 37,
+  "rank": 34,
   "cadence": {
-    "avg_per_week": 0,
-    "avg_per_day": 0,
+    "avg_per_week": 0.2,
+    "avg_per_day": 0.5,
     "by_day_of_week": [
       0,
       0,
       0,
+      1,
       0,
       0,
-      0,
-      0
+      1
     ],
     "by_hour_of_day": [
       0,
@@ -25,7 +26,7 @@
       0,
       0,
       0,
-      0,
+      2,
       0,
       0,
       0,
@@ -46,10 +47,10 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 0,
+    "longest_streak_weeks": 2,
     "trend": "inactive",
-    "first_issue_at": null,
-    "last_issue_at": null
+    "first_issue_at": "2026-02-15T05:59:39.000Z",
+    "last_issue_at": "2026-02-19T05:40:13.000Z"
   },
   "topics": [],
   "suggestions": {
@@ -95,7 +96,7 @@
     },
     {
       "month": "2026-02",
-      "issue_count": 0
+      "issue_count": 2
     },
     {
       "month": "2026-03",
@@ -108,15 +109,7 @@
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 2,
-      "prs_merged": 1
-    },
-    {
-      "repo": "kubestellar/console-marketplace",
+      "repo": "console-marketplace",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,
@@ -124,7 +117,7 @@
       "prs_merged": 1
     },
     {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,

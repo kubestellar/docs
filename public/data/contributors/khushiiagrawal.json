@@ -1,122 +1,93 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-24T18:26:20.335Z",
-  "total_issues_opened": 87,
+  "generated_at": "2026-04-29T10:39:54.006Z",
+  "total_issues_opened": 8,
+  "total_prs_opened": 13,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 7300,
-  "level": "Pilot",
-  "level_rank": 4,
-  "rank": 8,
+  "total_points": 34900,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 11,
   "cadence": {
-    "avg_per_week": 7.3,
-    "avg_per_day": 5.04,
+    "avg_per_week": 1.3,
+    "avg_per_day": 0.11,
     "by_day_of_week": [
-      15,
-      18,
-      44,
       2,
-      1,
-      1,
-      6
+      4,
+      10,
+      0,
+      2,
+      2,
+      1
     ],
     "by_hour_of_day": [
       0,
       0,
       0,
       0,
-      21,
+      1,
+      3,
+      1,
+      0,
+      6,
+      0,
+      0,
+      0,
       1,
       0,
       0,
-      13,
       0,
+      0,
+      2,
       5,
       1,
-      2,
-      18,
-      0,
-      0,
       1,
-      2,
-      23,
-      0,
-      0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 4,
-    "longest_streak_weeks": 4,
+    "current_streak_weeks": 2,
+    "longest_streak_weeks": 2,
     "trend": "ramping_up",
-    "first_issue_at": "2026-04-06T12:23:43.000Z",
-    "last_issue_at": "2026-04-23T18:25:43.000Z"
+    "first_issue_at": "2025-10-11T18:28:13.000Z",
+    "last_issue_at": "2026-04-17T20:46:25.000Z"
   },
   "topics": [
     {
-      "name": "@khushiiagrawal, line, test",
-      "issue_count": 60,
+      "name": "dropdown, layout, stats",
+      "issue_count": 4,
       "recent_issue": {
-        "title": "`error-resilience.spec.ts` final assertion only requires 2 of 5 checks to execute — a full CI outage where 3 tests skip is silently accepted as a pass",
-        "url": "https://github.com/kubestellar/console/issues/9722",
-        "created_at": "2026-04-23T18:25:43Z"
+        "title": "🐛 Fix GitHub stats dropdown layout issue in navbar",
+        "url": "https://github.com/kubestellar/docs/pull/1471",
+        "created_at": "2026-04-15T08:39:31Z"
       },
       "repos": [
-        "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 60
+      "closed_count": 4
     },
     {
-      "name": "vcluster, disconnectvcluster, disconnect",
-      "issue_count": 2,
+      "name": "event, leak, listener",
+      "issue_count": 3,
       "recent_issue": {
-        "title": "bug: `ConnectVCluster` passes `--update-current=false` but `DisconnectVCluster` removes the context using `kubectl config delete-context`, leaving the `current-context` pointing to a deleted context",
-        "url": "https://github.com/kubestellar/console/issues/8076",
-        "created_at": "2026-04-15T04:52:59Z"
+        "title": "🐛 Add cleanup logic to prevent event listener memory leaks in navbar",
+        "url": "https://github.com/kubestellar/docs/pull/1470",
+        "created_at": "2026-04-15T08:35:58Z"
       },
       "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "event, object, listener",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: `Navbar` `useEffect` Registers Event Listeners and a `MutationObserver` with No Cleanup — Memory Leak",
-        "url": "https://github.com/kubestellar/docs/issues/1467",
-        "created_at": "2026-04-15T08:26:28Z"
-      },
-      "repos": [
-        "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 3
     },
     {
-      "name": "err, nil, dynclient",
+      "name": "highlight, active, heading",
       "issue_count": 2,
       "recent_issue": {
-        "title": "`validateOpenAIKey` returns `(false, error)` for a 401, which prevents caching the result in `ValidateAllKeys` — invalid OpenAI keys are re-validated on every startup",
-        "url": "https://github.com/kubestellar/console/issues/7923",
-        "created_at": "2026-04-14T13:28:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "dropdown, stats, layout",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: GitHub Stats Dropdown Has Conflicting `className=\"hidden lg:flex\"` and `style={{ display: \"none\" }}` — Layout Bug",
-        "url": "https://github.com/kubestellar/docs/issues/1468",
-        "created_at": "2026-04-15T08:27:31Z"
+        "title": "🐛 Fix TOC active heading highlighting on scroll (#1494)",
+        "url": "https://github.com/kubestellar/docs/pull/1495",
+        "created_at": "2026-04-17T20:46:25Z"
       },
       "repos": [
         "docs"
@@ -125,222 +96,54 @@
       "closed_count": 2
     },
     {
-      "name": "el, offsetwidth, collapsedwidth",
-      "issue_count": 1,
+      "name": "form, subscribe, handler",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "Sidebar collapse test measures `offsetWidth` directly — unreliable in headless Playwright",
-        "url": "https://github.com/kubestellar/console/issues/9525",
-        "created_at": "2026-04-22T13:14:23Z"
+        "title": "🐛 Add onSubmit handlers to newsletter subscribe forms",
+        "url": "https://github.com/kubestellar/docs/pull/1469",
+        "created_at": "2026-04-15T08:32:06Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
-      "closed_count": 1
+      "closed_count": 2
     },
     {
-      "name": "scan, vector, report",
-      "issue_count": 1,
+      "name": "policy, terms, cookie",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "The nightly RCE vector scan generates a report but may not fail the test on findings",
-        "url": "https://github.com/kubestellar/console/issues/9235",
-        "created_at": "2026-04-20T18:39:59Z"
+        "title": "🐛 Remove non-functional placeholder policy links from footer",
+        "url": "https://github.com/kubestellar/docs/pull/1462",
+        "created_at": "2026-04-15T05:12:19Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
-      "closed_count": 1
+      "closed_count": 2
     },
     {
-      "name": "ttfi, performance, ms",
-      "issue_count": 1,
+      "name": "deprecate, modern, scroll",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "Performance tests in `web/e2e/perf/` measure metrics but don't assert against defined thresholds",
-        "url": "https://github.com/kubestellar/console/issues/9232",
-        "created_at": "2026-04-20T18:38:08Z"
+        "title": "🐛 Replace deprecated window.pageYOffset with window.scrollY",
+        "url": "https://github.com/kubestellar/docs/pull/1460",
+        "created_at": "2026-04-15T05:04:07Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
-      "closed_count": 1
+      "closed_count": 2
     },
     {
-      "name": "god, file, cb677b",
+      "name": "comment, lingering, silence",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: `pkg/store/sqlite.go` is 107 KB — likely a god file that handles unrelated concerns in a single file, making auditing and testing difficult",
-        "url": "https://github.com/kubestellar/console/issues/8130",
-        "created_at": "2026-04-15T08:21:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "long, ea119ca, a887",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: The SSE client's `pump` function uses recursion without a base case guard, potentially overflowing the stack for very long streams",
-        "url": "https://github.com/kubestellar/console/issues/8122",
-        "created_at": "2026-04-15T08:18:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "a33a99a, c9e, a50",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handleDeploymentsHTTP` has a no-op namespace default: `if namespace == \"\" { namespace = \"\" }` (lines 341–343)",
-        "url": "https://github.com/kubestellar/console/issues/8121",
-        "created_at": "2026-04-15T08:18:16Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "keyword, capable, question",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `promptNeedsToolExecution` uses naive keyword matching — `\"delete\"` in a question triggers tool-capable routing unnecessarily",
-        "url": "https://github.com/kubestellar/console/issues/8074",
-        "created_at": "2026-04-15T04:52:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "bc2b2f5c, d1b9, bf2e3e08f5",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handleWebSocket` does not enforce a maximum message size, allowing oversized JSON to exhaust memory",
-        "url": "https://github.com/kubestellar/console/issues/8070",
-        "created_at": "2026-04-15T04:51:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "configured, unprivileged, a091bf",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handleProvidersHealth` has no token validation — any unprivileged caller can enumerate configured providers",
-        "url": "https://github.com/kubestellar/console/issues/8066",
-        "created_at": "2026-04-15T04:50:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "item, remove, a9ee",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: SSE stream reconnection on error appends duplicate items for clusters already received",
-        "url": "https://github.com/kubestellar/console/issues/8063",
-        "created_at": "2026-04-15T04:49:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "container, db67cd15, a1a8807de7b1",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `startKindCluster` blindly iterates worker node names up to index 10 with no upper bound based on actual cluster size",
-        "url": "https://github.com/kubestellar/console/issues/8057",
-        "created_at": "2026-04-15T04:46:19Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "pause, intentionally, b0f33cd2",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `handleKagentiAgents` hardcodes `a.Replicas = 1` when `spec.replicas == 0`, hiding intentionally-paused agents from the summary",
-        "url": "https://github.com/kubestellar/console/issues/7943",
-        "created_at": "2026-04-14T17:54:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "a6532a00, f78efa28c89, orig",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "`matchOrigin` allows `http://localhost.attacker.com` to bypass CORS if `http://localhost` is in `allowedOrigins`",
-        "url": "https://github.com/kubestellar/console/issues/7924",
-        "created_at": "2026-04-14T13:30:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "testing, ddcedd4e, b54b",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Testing this how this is working",
-        "url": "https://github.com/kubestellar/console/issues/6515",
-        "created_at": "2026-04-11T16:20:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "search, bar, properly",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: the search bar is not visible and working",
-        "url": "https://github.com/kubestellar/console/issues/4955",
-        "created_at": "2026-04-06T12:33:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "highlight, heading, viewport",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: `TableOfContents` Active Heading Highlight Doesn't Work Due to `threshold: 1.0` in `IntersectionObserver`",
-        "url": "https://github.com/kubestellar/docs/issues/1494",
-        "created_at": "2026-04-17T18:04:46Z"
+        "title": "fix: Remove unwanted comment patterns from documentation pages",
+        "url": "https://github.com/kubestellar/docs/pull/331",
+        "created_at": "2025-11-25T06:39:20Z"
       },
       "repos": [
         "docs"
@@ -349,12 +152,12 @@
       "closed_count": 1
     },
     {
-      "name": "form, subscribe, newsletter",
+      "name": "figure, caption, italic",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: Newsletter Subscribe Form Has No `onSubmit` Handler — Form Submission Is Silently Broken",
-        "url": "https://github.com/kubestellar/docs/issues/1466",
-        "created_at": "2026-04-15T08:25:22Z"
+        "title": "feat: Refine docs imagery, consistent figures and italic captions",
+        "url": "https://github.com/kubestellar/docs/pull/321",
+        "created_at": "2025-11-24T17:06:09Z"
       },
       "repos": [
         "docs"
@@ -363,12 +166,12 @@
       "closed_count": 1
     },
     {
-      "name": "policy, footer, terms",
+      "name": "overlap, folder, theme",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: Footer \"Privacy Policy\", \"Terms of Service\", and \"Cookie Policy\" Links Are Non-Functional Placeholders (`href=\"#\"`)",
-        "url": "https://github.com/kubestellar/docs/issues/1461",
-        "created_at": "2026-04-15T05:05:19Z"
+        "title": "fix: fix theme button overlap and keep \"What is Kubestellar?\" dropdown open",
+        "url": "https://github.com/kubestellar/docs/pull/319",
+        "created_at": "2025-11-24T12:40:16Z"
       },
       "repos": [
         "docs"
@@ -377,12 +180,40 @@
       "closed_count": 1
     },
     {
-      "name": "closelangswitcher, global, window",
+      "name": "banner, override, light",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: Global Window Pollution via window.closeLangSwitcher for Cross-Component Communication",
-        "url": "https://github.com/kubestellar/docs/issues/1456",
-        "created_at": "2026-04-14T18:48:29Z"
+        "title": "fix: Add styling for the banner in light mode",
+        "url": "https://github.com/kubestellar/docs/pull/315",
+        "created_at": "2025-11-23T18:00:22Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "traditional, chinese, locale",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feat: Add Traditional Chinese translation",
+        "url": "https://github.com/kubestellar/docs/pull/305",
+        "created_at": "2025-11-22T17:34:04Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "mobile, tablet, responsive",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "feat: implement responsive navigation design for mobile and tablet devices",
+        "url": "https://github.com/kubestellar/docs/pull/130",
+        "created_at": "2025-10-11T18:28:13Z"
       },
       "repos": [
         "docs"
@@ -394,12 +225,6 @@
   "suggestions": {
     "deepen": [],
     "stretch": [
-      {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
       {
         "name": "Deployments & GitOps",
         "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
@@ -413,16 +238,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       }
     ]
   },
@@ -449,11 +280,11 @@
     },
     {
       "month": "2025-10",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2025-11",
-      "issue_count": 0
+      "issue_count": 5
     },
     {
       "month": "2025-12",
@@ -473,20 +304,12 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 87
+      "issue_count": 15
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
-      "bug_issues": 80,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 0,
-      "prs_merged": 0
-    },
-    {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 8,
       "feature_issues": 0,
       "other_issues": 0,

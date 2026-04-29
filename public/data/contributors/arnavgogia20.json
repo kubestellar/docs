@@ -1,23 +1,24 @@
 {
   "login": "arnavgogia20",
-  "generated_at": "2026-04-24T18:26:20.120Z",
-  "total_issues_opened": 109,
+  "generated_at": "2026-04-29T10:39:54.002Z",
+  "total_issues_opened": 32,
+  "total_prs_opened": 2,
   "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-  "total_points": 9900,
-  "level": "Pilot",
-  "level_rank": 4,
-  "rank": 7,
+  "total_points": 41050,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 9,
   "cadence": {
-    "avg_per_week": 9.1,
-    "avg_per_day": 2.74,
+    "avg_per_week": 2.7,
+    "avg_per_day": 0.32,
     "by_day_of_week": [
-      14,
-      18,
+      0,
       2,
-      3,
-      10,
-      25,
-      37
+      1,
+      0,
+      1,
+      0,
+      30
     ],
     "by_hour_of_day": [
       0,
@@ -25,377 +26,82 @@
       0,
       0,
       0,
-      1,
-      1,
-      5,
-      1,
-      18,
-      22,
-      8,
-      5,
-      6,
-      9,
-      10,
-      3,
       0,
       0,
-      8,
+      0,
       1,
-      5,
-      6,
+      12,
+      17,
+      0,
+      2,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
       0
     ],
-    "current_streak_weeks": 6,
-    "longest_streak_weeks": 6,
+    "current_streak_weeks": 1,
+    "longest_streak_weeks": 1,
     "trend": "ramping_up",
-    "first_issue_at": "2026-03-13T14:35:21.000Z",
-    "last_issue_at": "2026-04-22T09:49:38.000Z"
+    "first_issue_at": "2026-01-13T14:51:26.000Z",
+    "last_issue_at": "2026-04-28T12:08:19.000Z"
   },
   "topics": [
     {
-      "name": "@arnavgogia20, page, problem",
-      "issue_count": 83,
+      "name": "request, @arnavgogia20, md",
+      "issue_count": 31,
       "recent_issue": {
-        "title": "KubeStellar Console logo and title are not clickable and do not redirect to home page",
-        "url": "https://github.com/kubestellar/console/issues/9516",
-        "created_at": "2026-04-22T09:49:38Z"
+        "title": "Bug: Leaderboard Hover Card Shows Inconsistent Stats Compared to Main Leaderboard",
+        "url": "https://github.com/kubestellar/docs/issues/1545",
+        "created_at": "2026-04-28T12:08:19Z"
       },
       "repos": [
-        "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 83
+      "closed_count": 31
     },
     {
-      "name": "router, gin, cors",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "CORS Headers Set After Middleware That Returns Early",
-        "url": "https://github.com/kubestellar/console/issues/3901",
-        "created_at": "2026-03-30T07:35:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "slice, character, ids",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "DeviceTracker.ClearAlert : Panics on Malformed Alert IDs via Incorrect String Slicing",
-        "url": "https://github.com/kubestellar/console/issues/3289",
-        "created_at": "2026-03-23T14:36:27Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "csrf, header, require",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unable to submit bug report via Console due to “CSRF header required” error",
-        "url": "https://github.com/kubestellar/console/issues/8830",
-        "created_at": "2026-04-18T11:54:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "mergeprojects, payloadproject, refinement",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "mergeProjects Discards Non-Custom User-Added Projects on AI Refinement",
-        "url": "https://github.com/kubestellar/console/issues/6465",
-        "created_at": "2026-04-11T15:36:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "mount, launchsequence, useeffect",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "LaunchSequence Auto-Starts on Mount : No User Confirmation Before Deploying to Clusters",
-        "url": "https://github.com/kubestellar/console/issues/6462",
-        "created_at": "2026-04-11T15:30:00Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "cache, mission, duplicates",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Mission Cache Accumulates Duplicates on Stale-Cache Refresh",
-        "url": "https://github.com/kubestellar/console/issues/5217",
-        "created_at": "2026-04-07T11:25:00Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "missiondetailview, english, cd871",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "MissionDetailView Tab Labels Are Hardcoded English : Bypass i18n System",
-        "url": "https://github.com/kubestellar/console/issues/5216",
-        "created_at": "2026-04-07T11:20:27Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "deletion, ids, backend",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Dashboard Card Deletion Silently Skips Backend Persistence for Multiple ID Prefixes",
-        "url": "https://github.com/kubestellar/console/issues/5215",
-        "created_at": "2026-04-07T11:17:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "overwrite, condition, d792f118",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "selectCardMission Race Condition : Stale Closure Can Overwrite Fresh Navigation",
-        "url": "https://github.com/kubestellar/console/issues/5213",
-        "created_at": "2026-04-07T11:11:19Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "countdown, import, toast",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "First-Import Toast Timer (setInterval) Leaks on Rapid Re-imports or Unmount",
-        "url": "https://github.com/kubestellar/console/issues/5211",
-        "created_at": "2026-04-07T11:01:56Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "ai, power, model",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ReplaceCardModal \"AI-Powered\" Tab Uses Hardcoded Keyword-Matching Instead of Actual AI",
-        "url": "https://github.com/kubestellar/console/issues/5200",
-        "created_at": "2026-04-07T10:02:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "fullscreen, sidebar, escape",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Escape Key in Fullscreen Mission Sidebar Performs Double-Action (Exits Fullscreen AND Closes Sidebar)",
-        "url": "https://github.com/kubestellar/console/issues/5199",
-        "created_at": "2026-04-07T09:51:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "dismiss, dropdown, recommendation",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "CardRecommendations \"Dismiss\" Button Only Closes the Dropdown, Does Not Actually Dismiss the Recommendation",
-        "url": "https://github.com/kubestellar/console/issues/4227",
-        "created_at": "2026-04-02T12:51:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "clientset, time, tick",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "time.Tick Goroutine Leaks in Cluster Onboarding",
-        "url": "https://github.com/kubestellar/console/issues/3947",
-        "created_at": "2026-03-30T19:33:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "readpump, c., a3c7",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "WebSocket readPump Tight CPU Spin-Loop",
-        "url": "https://github.com/kubestellar/console/issues/3902",
-        "created_at": "2026-03-30T07:40:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "filepath, err, zip",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Zip Slip Path Traversal in Plugin Installation",
-        "url": "https://github.com/kubestellar/console/issues/3898",
-        "created_at": "2026-03-30T07:11:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "websocket, iterate, client",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Agent WebSocket BroadcastToClients Holds wsMux While Iterating : Slow Client Blocks All Broadcasts",
-        "url": "https://github.com/kubestellar/console/issues/3368",
-        "created_at": "2026-03-24T06:03:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "mutates, migratelegacygithubtoken, fffee90",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Settings Manager migrateLegacyGitHubToken Mutates State Under RLock",
-        "url": "https://github.com/kubestellar/console/issues/3367",
-        "created_at": "2026-03-24T05:50:54Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "exec, b1f91661, bb81",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Exec WebSocket Uses context.Background() : Remote Sessions Cannot Be Cancelled",
-        "url": "https://github.com/kubestellar/console/issues/3292",
-        "created_at": "2026-03-23T14:48:22Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "configuration, decrypted, viewers",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Settings API Returns Decrypted Secrets to Viewers",
-        "url": "https://github.com/kubestellar/console/issues/2614",
-        "created_at": "2026-03-14T16:31:41Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "dynamic, operator, cef9d7",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Broken `contains` Operator Nullifies Dynamic Cluster Group Evaluation",
-        "url": "https://github.com/kubestellar/console/issues/2606",
-        "created_at": "2026-03-14T10:20:00Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sustain, c9b33a03, dba6e11deeac",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "In-memory OAuth state store can grow unbounded under sustained login requests",
-        "url": "https://github.com/kubestellar/console/issues/2548",
-        "created_at": "2026-03-13T22:46:15Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "d8f9303, d94b, f71db73bebb7",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Security Advisory: Authorization Bypass in GitHub Issue Management",
-        "url": "https://github.com/kubestellar/console/issues/2544",
-        "created_at": "2026-03-13T22:23:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "🚀, survey, banner",
+      "name": "🚀, survey, attention",
       "issue_count": 1,
       "recent_issue": {
         "title": "Survey Banner Is Overly Prominent and Persistent",
         "url": "https://github.com/kubestellar/docs/issues/1443",
         "created_at": "2026-04-12T10:35:11Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "marketplace, purely, repository",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "📖docs: add galaxy marketplace documentation",
+        "url": "https://github.com/kubestellar/docs/pull/656",
+        "created_at": "2026-01-14T12:15:48Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "spanish, complete, localization",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "fix(docs): complete Spanish localization across documentation site",
+        "url": "https://github.com/kubestellar/docs/pull/614",
+        "created_at": "2026-01-13T14:51:26Z"
       },
       "repos": [
         "docs"
@@ -408,34 +114,34 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
+      },
+      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },
@@ -474,7 +180,7 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 0
+      "issue_count": 2
     },
     {
       "month": "2026-02",
@@ -482,25 +188,17 @@
     },
     {
       "month": "2026-03",
-      "issue_count": 31
+      "issue_count": 0
     },
     {
       "month": "2026-04",
-      "issue_count": 78
+      "issue_count": 32
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
-      "bug_issues": 77,
-      "feature_issues": 0,
-      "other_issues": 4,
-      "prs_opened": 8,
-      "prs_merged": 8
-    },
-    {
-      "repo": "kubestellar/docs",
-      "bug_issues": 31,
+      "repo": "docs",
+      "bug_issues": 32,
       "feature_issues": 0,
       "other_issues": 0,
       "prs_opened": 2,

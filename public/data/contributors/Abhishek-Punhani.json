@@ -1,23 +1,24 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-24T18:28:03.063Z",
-  "total_issues_opened": 94,
+  "generated_at": "2026-04-29T10:39:54.006Z",
+  "total_issues_opened": 1,
+  "total_prs_opened": 2,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-  "total_points": 1000,
-  "level": "Explorer",
-  "level_rank": 2,
-  "rank": 34,
+  "total_points": 31050,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 12,
   "cadence": {
-    "avg_per_week": 7.8,
-    "avg_per_day": 1.76,
+    "avg_per_week": 0.1,
+    "avg_per_day": 0.02,
     "by_day_of_week": [
-      20,
-      18,
-      12,
-      15,
-      10,
-      6,
-      13
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1
     ],
     "by_hour_of_day": [
       0,
@@ -26,132 +27,34 @@
       0,
       0,
       0,
+      1,
       0,
-      4,
-      2,
-      5,
-      5,
-      2,
       1,
-      4,
-      4,
-      4,
-      7,
-      10,
-      8,
-      9,
-      17,
-      11,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       1,
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
-    "current_streak_weeks": 9,
-    "longest_streak_weeks": 9,
-    "trend": "steady",
-    "first_issue_at": "2026-03-01T20:12:28.000Z",
+    "current_streak_weeks": 1,
+    "longest_streak_weeks": 1,
+    "trend": "ramping_up",
+    "first_issue_at": "2025-12-23T06:05:58.000Z",
     "last_issue_at": "2026-04-24T08:01:01.000Z"
   },
   "topics": [
     {
-      "name": "@abhishek, punhani, unit",
-      "issue_count": 85,
-      "recent_issue": {
-        "title": "Distribution/provider filter does not restrict cluster list display",
-        "url": "https://github.com/kubestellar/console/issues/9541",
-        "created_at": "2026-04-22T18:59:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 85
-    },
-    {
-      "name": "linux, ubuntu, dev",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "bug:  make dev silently fails: backend never starts, all API calls ECONNREFUSED",
-        "url": "https://github.com/kubestellar/console/issues/2138",
-        "created_at": "2026-03-10T17:59:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "unsaved, form, dialog",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Close button shows unsaved changes dialog immediately after successful request submission completes",
-        "url": "https://github.com/kubestellar/console/issues/9358",
-        "created_at": "2026-04-21T10:42:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "attention, mission, conversation",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Mission sidebar shows \"needs attention\" when no actionable mission is visible",
-        "url": "https://github.com/kubestellar/console/issues/7918",
-        "created_at": "2026-04-14T13:24:57Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "research, follow, f09e28eb",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Automated PR-closed MCP-powered verification and researched follow-ups",
-        "url": "https://github.com/kubestellar/console/issues/4276",
-        "created_at": "2026-04-02T17:30:19Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "oauth, dev, d53ffe2",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Make `make dev` start OAuth dev mode via `./startup-oauth.sh --dev`",
-        "url": "https://github.com/kubestellar/console/issues/3685",
-        "created_at": "2026-03-26T20:02:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "f46b7175, ec2f, b244",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Bug : Auto Update Not Working",
-        "url": "https://github.com/kubestellar/console/issues/2245",
-        "created_at": "2026-03-12T13:49:36Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "social, interaction, leaderboard",
+      "name": "interaction, punhani, social",
       "issue_count": 1,
       "recent_issue": {
         "title": "Social Link Clicks Not Tracking on Leaderboard",
@@ -163,47 +66,68 @@
       ],
       "open_count": 0,
       "closed_count": 1
+    },
+    {
+      "name": "french, githubcreateissue, erstellen",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🐛 : Add \"Create Issue\" translation and update Navbar component",
+        "url": "https://github.com/kubestellar/docs/pull/574",
+        "created_at": "2026-01-11T17:13:56Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "rotate, globe, animation",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Add rotating content reference and enhance globe animation",
+        "url": "https://github.com/kubestellar/docs/pull/442",
+        "created_at": "2025-12-23T06:05:58Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "card: Implement Flatcar Container Linux monitoring card",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/59",
-        "repo": "console-marketplace",
-        "topic_match": "linux, ubuntu, dev"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       }
     ]
   },
@@ -238,11 +162,11 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2026-01",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2026-02",
@@ -250,24 +174,16 @@
     },
     {
       "month": "2026-03",
-      "issue_count": 55
+      "issue_count": 0
     },
     {
       "month": "2026-04",
-      "issue_count": 39
+      "issue_count": 1
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
-      "bug_issues": 88,
-      "feature_issues": 1,
-      "other_issues": 6,
-      "prs_opened": 6,
-      "prs_merged": 2
-    },
-    {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 1,
       "feature_issues": 0,
       "other_issues": 0,

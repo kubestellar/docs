@@ -1,64 +1,65 @@
 {
   "login": "oksaumya",
-  "generated_at": "2026-04-24T18:27:59.008Z",
+  "generated_at": "2026-04-29T10:39:54.109Z",
   "total_issues_opened": 42,
+  "total_prs_opened": 17,
   "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
   "total_points": 5050,
   "level": "Pilot",
   "level_rank": 4,
-  "rank": 13,
+  "rank": 22,
   "cadence": {
-    "avg_per_week": 0.7,
-    "avg_per_day": 0.17,
+    "avg_per_week": 0.9,
+    "avg_per_day": 0.23,
     "by_day_of_week": [
-      16,
-      4,
-      4,
-      8,
+      20,
+      7,
+      6,
+      10,
       3,
-      5,
-      2
+      8,
+      5
     ],
     "by_hour_of_day": [
       0,
       0,
       0,
       0,
-      0,
+      1,
       2,
-      2,
+      3,
       0,
       4,
-      3,
+      4,
       0,
-      1,
-      1,
+      2,
       1,
       2,
       3,
+      4,
+      4,
       3,
+      4,
+      16,
+      4,
       2,
-      3,
-      12,
-      2,
-      1,
       0,
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 5,
+    "longest_streak_weeks": 7,
     "trend": "slowing_down",
     "first_issue_at": "2025-07-08T18:27:03.000Z",
     "last_issue_at": "2026-03-19T17:19:11.000Z"
   },
   "topics": [
     {
-      "name": "section, hero, lading",
+      "name": "head, hero, section",
       "issue_count": 12,
       "recent_issue": {
-        "title": "🐛 Hero Section UI Regression",
-        "url": "https://github.com/kubestellar/docs/issues/1306",
-        "created_at": "2026-03-18T17:38:35Z"
+        "title": "🐛fix: hero section overflow, animation alignment, and button outline s…",
+        "url": "https://github.com/kubestellar/docs/pull/1307",
+        "created_at": "2026-03-18T17:50:28Z"
       },
       "repos": [
         "docs"
@@ -67,8 +68,8 @@
       "closed_count": 12
     },
     {
-      "name": "translation, audit, fix",
-      "issue_count": 10,
+      "name": "translation, audit, accuracy",
+      "issue_count": 12,
       "recent_issue": {
         "title": "Portuguese Translation Audit + Fix: Accuracy and Completeness",
         "url": "https://github.com/kubestellar/docs/issues/590",
@@ -78,25 +79,25 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 10
+      "closed_count": 12
     },
     {
-      "name": "refactor, figma, footer",
-      "issue_count": 5,
+      "name": "projects, products, a2a",
+      "issue_count": 8,
       "recent_issue": {
-        "title": "Refactor IA of Footer and add Social media icon",
-        "url": "https://github.com/kubestellar/docs/issues/217",
-        "created_at": "2025-11-06T11:23:12Z"
+        "title": "Fix the broken link of a2a and kubeflex in Projects",
+        "url": "https://github.com/kubestellar/docs/pull/510",
+        "created_at": "2026-01-06T04:11:30Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 5
+      "closed_count": 8
     },
     {
-      "name": "okay, docsnavbar, response",
-      "issue_count": 2,
+      "name": "icon, edit, navbar",
+      "issue_count": 7,
       "recent_issue": {
         "title": "🐛 Console Error: \"Network response was not okay\" in DocsNavbar GitHub stats fetch",
         "url": "https://github.com/kubestellar/docs/issues/1197",
@@ -106,15 +107,29 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 7
     },
     {
-      "name": "a2a, kubeflex, broken",
+      "name": "figma, refactor, design",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "Refactor the Footer",
+        "url": "https://github.com/kubestellar/docs/issues/191",
+        "created_at": "2025-11-01T14:31:49Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 4
+    },
+    {
+      "name": "hydration, href, client",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Fix the broken link of a2a and kubeflex in Projects",
-        "url": "https://github.com/kubestellar/docs/issues/503",
-        "created_at": "2026-01-05T20:03:12Z"
+        "title": "🐛 Fix: resolve hydration mismatch in RelatedProjects links",
+        "url": "https://github.com/kubestellar/docs/pull/1190",
+        "created_at": "2026-02-22T19:41:52Z"
       },
       "repos": [
         "docs"
@@ -123,7 +138,63 @@
       "closed_count": 2
     },
     {
-      "name": "learn, clickable, style",
+      "name": "lading, remove, page",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Remove view source and edit pages from lading page",
+        "url": "https://github.com/kubestellar/docs/issues/1091",
+        "created_at": "2026-02-05T06:05:57Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "capital, mvi, decrease",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Decrease Our Partners padding and capital case the mvi partner heading",
+        "url": "https://github.com/kubestellar/docs/pull/216",
+        "created_at": "2025-11-06T09:26:22Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "ladder, activity, maintainer",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Remove Maintainer requirement activity from contribution ladder",
+        "url": "https://github.com/kubestellar/docs/pull/213",
+        "created_at": "2025-11-06T06:46:53Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "readme, update, fix",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "update readme",
+        "url": "https://github.com/kubestellar/docs/pull/2",
+        "created_at": "2025-07-08T18:45:10Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "clickable, learn, style",
       "issue_count": 1,
       "recent_issue": {
         "title": "Fix:\"Learn more\" is Clickable but Not Styled as Button or Hover Link",
@@ -137,77 +208,7 @@
       "closed_count": 1
     },
     {
-      "name": "hydration, html, href",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Hydration mismatch in RelatedProjects component (SSR vs Client HTML)",
-        "url": "https://github.com/kubestellar/docs/issues/1189",
-        "created_at": "2026-02-22T19:36:45Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "edit, hover, icon",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Edit icon hover issue in docs",
-        "url": "https://github.com/kubestellar/docs/issues/1162",
-        "created_at": "2026-02-16T05:09:42Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "landing, duplicate, redundancy",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Remove duplicate “Open Issue”  from landing page",
-        "url": "https://github.com/kubestellar/docs/issues/451",
-        "created_at": "2025-12-25T15:39:08Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "partners, mvi, partner",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Decrease Our Partners padding and capital case the mvi partner",
-        "url": "https://github.com/kubestellar/docs/issues/215",
-        "created_at": "2025-11-06T09:22:50Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "ladder, contribution, maintainer",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Remove Maintainer requirement activity from contribution ladder",
-        "url": "https://github.com/kubestellar/docs/issues/212",
-        "created_at": "2025-11-06T06:40:25Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "responsive, device, fully",
+      "name": "device, fully, bar",
       "issue_count": 1,
       "recent_issue": {
         "title": "Make Navigation Bar Fully Responsive",
@@ -221,7 +222,7 @@
       "closed_count": 1
     },
     {
-      "name": "star, fork, github",
+      "name": "connect, fork, star",
       "issue_count": 1,
       "recent_issue": {
         "title": "Connect GitHub API to NavBar for Fork, Watch, and Star Counts",
@@ -235,7 +236,7 @@
       "closed_count": 1
     },
     {
-      "name": "lfx, cloud, project",
+      "name": "lfx, cloud, host",
       "issue_count": 1,
       "recent_issue": {
         "title": "[LFX TERM - 3 2025] KubeStellar Design System Implementation and Cloud Hosting",
@@ -249,12 +250,12 @@
       "closed_count": 1
     },
     {
-      "name": "scratch, repository, initialize",
+      "name": "old, content, doc",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Set up a clean and production-ready **Next.js** project from scratch in this repository.",
-        "url": "https://github.com/kubestellar/docs/issues/3",
-        "created_at": "2025-07-08T19:00:07Z"
+        "title": "Added old docs contents",
+        "url": "https://github.com/kubestellar/docs/pull/4",
+        "created_at": "2025-07-08T19:14:53Z"
       },
       "repos": [
         "docs"
@@ -263,12 +264,12 @@
       "closed_count": 1
     },
     {
-      "name": "readme, enhanced, involvement",
+      "name": "scratch, initialize, repository",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Enhance README.md for Better Clarity",
-        "url": "https://github.com/kubestellar/docs/issues/1",
-        "created_at": "2025-07-08T18:27:03Z"
+        "title": "Set up a clean and production-ready **Next.js** project from scratch in this repository.",
+        "url": "https://github.com/kubestellar/docs/issues/3",
+        "created_at": "2025-07-08T19:00:07Z"
       },
       "repos": [
         "docs"
@@ -305,10 +306,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Dashboard & Cards",
-        "path": "web/src/components/cards/, web/src/components/dashboard/",
-        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },
@@ -323,7 +324,7 @@
     },
     {
       "month": "2025-07",
-      "issue_count": 3
+      "issue_count": 5
     },
     {
       "month": "2025-08",
@@ -339,23 +340,23 @@
     },
     {
       "month": "2025-11",
-      "issue_count": 7
+      "issue_count": 10
     },
     {
       "month": "2025-12",
-      "issue_count": 5
+      "issue_count": 9
     },
     {
       "month": "2026-01",
-      "issue_count": 11
+      "issue_count": 16
     },
     {
       "month": "2026-02",
-      "issue_count": 5
+      "issue_count": 7
     },
     {
       "month": "2026-03",
-      "issue_count": 3
+      "issue_count": 4
     },
     {
       "month": "2026-04",
@@ -364,10 +365,10 @@
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 42,
+      "feature_issues": 3,
+      "other_issues": 39,
       "prs_opened": 17,
       "prs_merged": 13
     }

@@ -1,21 +1,22 @@
 {
   "login": "ANAMASGARD",
-  "generated_at": "2026-04-24T18:27:59.009Z",
+  "generated_at": "2026-04-29T10:39:54.070Z",
   "total_issues_opened": 1,
+  "total_prs_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
-  "total_points": 4450,
-  "level": "Navigator",
-  "level_rank": 3,
-  "rank": 14,
+  "total_points": 7950,
+  "level": "Pilot",
+  "level_rank": 4,
+  "rank": 20,
   "cadence": {
-    "avg_per_week": 0,
-    "avg_per_day": 1,
+    "avg_per_week": 0.4,
+    "avg_per_day": 0.07,
     "by_day_of_week": [
-      0,
-      0,
-      0,
       1,
       0,
+      1,
+      3,
+      3,
       0,
       0
     ],
@@ -25,11 +26,11 @@
       0,
       0,
       0,
+      3,
+      1,
       1,
       0,
-      0,
-      0,
-      0,
+      3,
       0,
       0,
       0,
@@ -45,16 +46,90 @@
       0,
       0
     ],
-    "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
-    "trend": "inactive",
-    "first_issue_at": "2026-01-01T05:13:15.000Z",
-    "last_issue_at": "2026-01-01T05:13:15.000Z"
+    "current_streak_weeks": 2,
+    "longest_streak_weeks": 2,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-01-01T05:02:57.000Z",
+    "last_issue_at": "2026-04-24T09:13:16.000Z"
   },
-  "topics": [],
+  "topics": [
+    {
+      "name": "preset, card, available",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "feat: make cncf-chaos-mesh preset available",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/129",
+        "created_at": "2026-04-24T09:13:16Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 0,
+      "closed_count": 5
+    },
+    {
+      "name": "vulnerability, severity, high",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "fix: Resolve high severity npm vulnerability in dependencies",
+        "url": "https://github.com/kubestellar/docs/pull/480",
+        "created_at": "2026-01-01T05:27:22Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "logo, homepage, redirect",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🐛 fix: Docs logo redirects to /en instead of /docs",
+        "url": "https://github.com/kubestellar/docs/pull/478",
+        "created_at": "2026-01-01T05:02:57Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
   "suggestions": {
     "deepen": [],
-    "stretch": []
+    "stretch": [
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      }
+    ]
   },
   "activity_timeline": [
     {
@@ -91,7 +166,7 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 1
+      "issue_count": 3
     },
     {
       "month": "2026-02",
@@ -103,12 +178,12 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 0
+      "issue_count": 5
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
+      "repo": "console-marketplace",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,
@@ -116,15 +191,7 @@
       "prs_merged": 5
     },
     {
-      "repo": "kubestellar/console-marketplace",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 5,
-      "prs_merged": 5
-    },
-    {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 1,

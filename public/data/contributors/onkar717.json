@@ -1,20 +1,21 @@
 {
   "login": "onkar717",
-  "generated_at": "2026-04-24T18:28:02.447Z",
+  "generated_at": "2026-04-29T10:39:54.282Z",
   "total_issues_opened": 5,
+  "total_prs_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/144542684?v=4",
   "total_points": 1400,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 28,
+  "rank": 40,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 5,
+    "avg_per_day": 0.15,
     "by_day_of_week": [
       0,
-      5,
-      0,
-      0,
+      10,
+      1,
+      2,
       0,
       0,
       0
@@ -36,25 +37,25 @@
       0,
       0,
       1,
-      4,
+      7,
       0,
-      0,
-      0,
+      2,
+      3,
       0,
       0,
       0,
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
+    "longest_streak_weeks": 2,
     "trend": "inactive",
     "first_issue_at": "2025-10-07T15:42:39.000Z",
-    "last_issue_at": "2025-10-07T16:43:54.000Z"
+    "last_issue_at": "2026-01-01T18:48:11.000Z"
   },
   "topics": [
     {
-      "name": "ready, slack, bar",
-      "issue_count": 4,
+      "name": "slack, intended, workspace",
+      "issue_count": 6,
       "recent_issue": {
         "title": "bug: The links in Ready to Get Started? for Explore Documentation are broken or need to update",
         "url": "https://github.com/kubestellar/docs/issues/117",
@@ -64,10 +65,66 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 4
+      "closed_count": 6
     },
     {
-      "name": "display, github, repository",
+      "name": "getstartedsection, tsx, path",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "fix: resolve broken links in GetStartedSection",
+        "url": "https://github.com/kubestellar/docs/pull/484",
+        "created_at": "2026-01-01T18:48:11Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "conduct, contact, committee",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "fix: correct Code of Conduct contact text",
+        "url": "https://github.com/kubestellar/docs/pull/483",
+        "created_at": "2026-01-01T18:37:21Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "spelling, orchestration, mistake",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "fix: correct spelling of Workload Orchestration",
+        "url": "https://github.com/kubestellar/docs/pull/469",
+        "created_at": "2025-12-30T19:40:47Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "linkdin, correct, point",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "update the linkdin to point correct page",
+        "url": "https://github.com/kubestellar/docs/pull/116",
+        "created_at": "2025-10-07T16:37:17Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "ui, display, stats",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Mismatch between GitHub repo stats and UI display",
@@ -91,18 +148,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       },
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Deployments & GitOps",
         "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
         "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
@@ -113,6 +158,18 @@
         "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
         "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },
@@ -139,7 +196,7 @@
     },
     {
       "month": "2025-10",
-      "issue_count": 5
+      "issue_count": 8
     },
     {
       "month": "2025-11",
@@ -147,11 +204,11 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 0
+      "issue_count": 3
     },
     {
       "month": "2026-01",
-      "issue_count": 0
+      "issue_count": 2
     },
     {
       "month": "2026-02",
@@ -168,7 +225,7 @@
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 5,

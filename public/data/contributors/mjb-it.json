@@ -1,12 +1,13 @@
 {
   "login": "mjb-it",
-  "generated_at": "2026-04-24T06:49:34.590Z",
+  "generated_at": "2026-04-29T10:39:54.281Z",
   "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/79097408?v=4",
   "total_points": 1400,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 35,
+  "rank": 39,
   "cadence": {
     "avg_per_week": 0,
     "avg_per_day": 0,
@@ -106,14 +107,5 @@
       "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "kubestellar/console",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 2,
-      "prs_merged": 2
-    }
-  ]
+  "repo_breakdown": []
 }

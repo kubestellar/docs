@@ -1,23 +1,24 @@
 {
   "login": "rudy128",
-  "generated_at": "2026-04-24T18:27:59.011Z",
+  "generated_at": "2026-04-29T10:39:54.110Z",
   "total_issues_opened": 3,
+  "total_prs_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/77375030?v=4",
   "total_points": 3900,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 16,
+  "rank": 25,
   "cadence": {
-    "avg_per_week": 0.1,
-    "avg_per_day": 0.06,
+    "avg_per_week": 0.3,
+    "avg_per_day": 0.13,
     "by_day_of_week": [
       0,
+      3,
       1,
+      4,
       0,
-      1,
       0,
-      0,
-      1
+      2
     ],
     "by_hour_of_day": [
       0,
@@ -25,9 +26,13 @@
       0,
       0,
       0,
+      2,
+      0,
+      2,
+      1,
+      2,
       1,
       0,
-      1,
       0,
       1,
       0,
@@ -38,27 +43,65 @@
       0,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
+      1,
       0
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 2,
     "trend": "slowing_down",
-    "first_issue_at": "2026-01-13T05:14:13.000Z",
-    "last_issue_at": "2026-03-08T07:53:08.000Z"
+    "first_issue_at": "2025-12-25T05:18:56.000Z",
+    "last_issue_at": "2026-03-10T10:42:16.000Z"
   },
   "topics": [
     {
-      "name": "accordion, light, inconsistent",
+      "name": "light, mode, dark",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🐛fix(ui): add custom dark variant support in globals.css",
+        "url": "https://github.com/kubestellar/docs/pull/1261",
+        "created_at": "2026-03-10T10:42:16Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "embed, iframe, spinner",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "fix(embeds): implement EmbedIframe component to resolve stuck loading spinners on YouTube/LinkedIn embeds",
+        "url": "https://github.com/kubestellar/docs/pull/733",
+        "created_at": "2026-01-15T09:20:15Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "language, english, preserve",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🐛 fix(i18n): preserve locale selection across navigation and prevent CORS errors",
+        "url": "https://github.com/kubestellar/docs/pull/730",
+        "created_at": "2026-01-15T07:52:50Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "href, legacy, pleas",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: SidebarMenu has UI issues in Light mode",
-        "url": "https://github.com/kubestellar/docs/issues/1247",
-        "created_at": "2026-03-08T07:53:08Z"
+        "title": "🐛fix: correct href for KubeStellar in legacy projects",
+        "url": "https://github.com/kubestellar/docs/pull/1248",
+        "created_at": "2026-03-08T08:44:32Z"
       },
       "repos": [
         "docs"
@@ -67,12 +110,12 @@
       "closed_count": 1
     },
     {
-      "name": "iframe, embed, content",
+      "name": "directive, blank, jinja2",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: Embedded iframes are not rendering in documentation pages",
-        "url": "https://github.com/kubestellar/docs/issues/731",
-        "created_at": "2026-01-15T09:04:58Z"
+        "title": "📖 fix: support Jinja2 include-markdown directives for blank documentation pages",
+        "url": "https://github.com/kubestellar/docs/pull/704",
+        "created_at": "2026-01-14T22:43:38Z"
       },
       "repos": [
         "docs"
@@ -81,12 +124,26 @@
       "closed_count": 1
     },
     {
-      "name": "language, ladder, navbar",
+      "name": "toggler, custom, mobile",
       "issue_count": 1,
       "recent_issue": {
-        "title": "bug: Language selection resets to EN on Ladder page",
-        "url": "https://github.com/kubestellar/docs/issues/605",
-        "created_at": "2026-01-13T05:14:13Z"
+        "title": "feat: implement responsive sidebar and toc in mobile and pc #330",
+        "url": "https://github.com/kubestellar/docs/pull/467",
+        "created_at": "2025-12-30T13:37:59Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "route, direct, highlight",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "fix: add sidebar highlighting for direct route URLs",
+        "url": "https://github.com/kubestellar/docs/pull/448",
+        "created_at": "2025-12-25T05:18:56Z"
       },
       "repos": [
         "docs"
@@ -99,34 +156,34 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Dashboard & Cards",
-        "path": "web/src/components/cards/, web/src/components/dashboard/",
-        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
-        "name": "Cluster Management",
-        "path": "web/src/components/clusters/, pkg/k8s/",
-        "description": "Multi-cluster views, cluster health, add/remove clusters, Kubernetes client",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/clusters"
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
         "name": "Security & RBAC",
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       }
     ]
   },
@@ -161,11 +218,11 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 0
+      "issue_count": 2
     },
     {
       "month": "2026-01",
-      "issue_count": 2
+      "issue_count": 5
     },
     {
       "month": "2026-02",
@@ -173,7 +230,7 @@
     },
     {
       "month": "2026-03",
-      "issue_count": 1
+      "issue_count": 3
     },
     {
       "month": "2026-04",
@@ -182,7 +239,7 @@
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 3,
       "feature_issues": 0,
       "other_issues": 0,

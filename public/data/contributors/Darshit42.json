@@ -1,23 +1,24 @@
 {
   "login": "Darshit42",
-  "generated_at": "2026-04-24T18:28:03.065Z",
-  "total_issues_opened": 10,
+  "generated_at": "2026-04-29T10:39:54.070Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
-  "total_points": 900,
-  "level": "Explorer",
-  "level_rank": 2,
-  "rank": 35,
+  "total_points": 10100,
+  "level": "Pilot",
+  "level_rank": 4,
+  "rank": 19,
   "cadence": {
-    "avg_per_week": 0.8,
-    "avg_per_day": 2.55,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
       0,
-      2,
       0,
-      6,
-      1,
-      1
+      0,
+      0,
+      0,
+      0
     ],
     "by_hour_of_day": [
       0,
@@ -30,147 +31,31 @@
       0,
       0,
       0,
-      1,
-      0,
-      1,
-      0,
-      2,
-      1,
-      0,
-      2,
-      1,
       0,
       0,
       0,
-      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
-    "current_streak_weeks": 2,
-    "longest_streak_weeks": 2,
-    "trend": "ramping_up",
-    "first_issue_at": "2026-04-15T14:16:40.000Z",
-    "last_issue_at": "2026-04-19T12:22:55.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "button, expand, panel",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "bug: buttons and texts overflows and overlaps in cards",
-        "url": "https://github.com/kubestellar/console/issues/9013",
-        "created_at": "2026-04-19T12:22:55Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 5
-    },
-    {
-      "name": "flickering, unstoppable, custom",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: creating blank custom dashboard unstoppable flickering and allows empty fields on creating custom dashboard",
-        "url": "https://github.com/kubestellar/console/issues/8757",
-        "created_at": "2026-04-17T22:22:27Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "linkedin, share, matter",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug:",
-        "url": "https://github.com/kubestellar/console/issues/8755",
-        "created_at": "2026-04-17T22:05:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "widget, bar, export",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: stats bar of export demo widget overflows",
-        "url": "https://github.com/kubestellar/console/issues/8686",
-        "created_at": "2026-04-17T17:59:54Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "tree, resource, filter",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: resource tree disappears when filtering by \"Issues\" after navigating from notification",
-        "url": "https://github.com/kubestellar/console/issues/8155",
-        "created_at": "2026-04-15T14:29:53Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "groq, support, feature",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature: Groq support",
-        "url": "https://github.com/kubestellar/console/issues/8153",
-        "created_at": "2026-04-15T14:16:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Backend API & Handlers",
-        "path": "pkg/api/, pkg/models/, pkg/store/",
-        "description": "Go backend REST API, request handlers, data models, persistence layer",
-        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
-      },
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
     {
@@ -219,25 +104,8 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 10
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "kubestellar/console",
-      "bug_issues": 10,
-      "feature_issues": 1,
-      "other_issues": 0,
-      "prs_opened": 4,
-      "prs_merged": 4
-    },
-    {
-      "repo": "kubestellar/console-kb",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 2,
-      "prs_merged": 2
-    }
-  ]
+  "repo_breakdown": []
 }

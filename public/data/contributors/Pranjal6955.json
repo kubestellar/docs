@@ -1,246 +1,107 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-24T18:28:02.179Z",
-  "total_issues_opened": 62,
+  "generated_at": "2026-04-29T10:39:53.958Z",
+  "total_issues_opened": 5,
+  "total_prs_opened": 15,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-  "total_points": 1700,
-  "level": "Explorer",
-  "level_rank": 2,
-  "rank": 26,
+  "total_points": 53900,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 6,
   "cadence": {
-    "avg_per_week": 5,
-    "avg_per_day": 0.3,
+    "avg_per_week": 0.5,
+    "avg_per_day": 0.09,
     "by_day_of_week": [
-      5,
-      18,
-      16,
-      12,
-      8,
-      3,
-      0
+      4,
+      2,
+      6,
+      2,
+      2,
+      2,
+      2
     ],
     "by_hour_of_day": [
-      0,
-      0,
-      0,
-      0,
-      6,
-      9,
-      5,
       1,
-      6,
-      7,
+      0,
       0,
       0,
       1,
-      6,
+      4,
       1,
-      2,
+      0,
+      0,
       1,
-      7,
+      3,
+      0,
+      0,
       2,
       2,
       0,
-      6,
       0,
-      0
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1
     ],
-    "current_streak_weeks": 3,
-    "longest_streak_weeks": 3,
+    "current_streak_weeks": 2,
+    "longest_streak_weeks": 7,
     "trend": "ramping_up",
-    "first_issue_at": "2025-10-01T13:51:13.000Z",
-    "last_issue_at": "2026-04-24T14:48:37.000Z"
+    "first_issue_at": "2025-09-18T10:25:39.000Z",
+    "last_issue_at": "2026-04-27T06:21:22.000Z"
   },
   "topics": [
     {
-      "name": "kc, describe, environment",
-      "issue_count": 49,
+      "name": "nextra, log, screenshots",
+      "issue_count": 13,
       "recent_issue": {
-        "title": "bug : Missing Request Context Propagation in External GitHub API Calls",
-        "url": "https://github.com/kubestellar/console/issues/9901",
-        "created_at": "2026-04-24T09:28:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 49
-    },
-    {
-      "name": "github, shape, record",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Inconsistent API Response Shape on GitHub Fallback in ListAllFeatureRequests",
-        "url": "https://github.com/kubestellar/console/issues/9896",
-        "created_at": "2026-04-24T09:24:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "uncancelable, second, map",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Mission State Concurrency Hazard in activeChatCtxs",
-        "url": "https://github.com/kubestellar/console/issues/9619",
-        "created_at": "2026-04-23T08:26:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "chunk, mission, persistence",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Severe Performance Bottleneck in Data Persistence",
-        "url": "https://github.com/kubestellar/console/issues/9617",
-        "created_at": "2026-04-23T08:23:15Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "benchmark, yamls, crucially",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: High Latency in Benchmark Fetching",
-        "url": "https://github.com/kubestellar/console/issues/9446",
-        "created_at": "2026-04-21T21:24:08Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "command, brittle, mixed",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Brittle Command Parsing in Mixed-Mode Chat",
-        "url": "https://github.com/kubestellar/console/issues/9440",
-        "created_at": "2026-04-21T21:15:27Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "rank, dynamic, contributor",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature: Dynamic Contributor Rank Badges for GitHub",
-        "url": "https://github.com/kubestellar/console/issues/8862",
-        "created_at": "2026-04-18T16:51:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "exec, pod, abl",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Missing RBAC check before pod exec allows unauthorized access",
-        "url": "https://github.com/kubestellar/console/issues/8120",
-        "created_at": "2026-04-15T08:13:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "namespaces, filter, excessive",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug:  NamespaceMonitor: Excessive re-filtering causes frame drops with 30+ namespaces",
-        "url": "https://github.com/kubestellar/console/issues/8096",
-        "created_at": "2026-04-15T06:00:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "enrichment, field, rootcause",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Missing RootCause Field in Rule-Based Insight Enrichments",
-        "url": "https://github.com/kubestellar/console/issues/8090",
-        "created_at": "2026-04-15T05:42:24Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "openrouter, llama, model",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature: OpenRouter Support",
-        "url": "https://github.com/kubestellar/console/issues/7999",
-        "created_at": "2026-04-14T19:46:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "contribution, point, leaderboard",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: contribution points from console repo not reflected in Contribution Ladder",
-        "url": "https://github.com/kubestellar/docs/issues/1517",
-        "created_at": "2026-04-24T14:48:37Z"
+        "title": "feat: refactored new footer for Nextra docs",
+        "url": "https://github.com/kubestellar/docs/pull/182",
+        "created_at": "2025-10-27T05:58:45Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 1
+      "closed_count": 13
     },
     {
-      "name": "nextra, footer, docs",
-      "issue_count": 1,
+      "name": "profile, leaderboard, repository",
+      "issue_count": 4,
       "recent_issue": {
-        "title": "Refactor the Footer Component in Nextra Docs",
-        "url": "https://github.com/kubestellar/docs/issues/181",
-        "created_at": "2025-10-27T05:17:03Z"
+        "title": "bug: Repository Contributions section missing from contributor profile UI",
+        "url": "https://github.com/kubestellar/docs/issues/1543",
+        "created_at": "2026-04-27T06:21:22Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 1
+      "closed_count": 4
     },
     {
-      "name": "program, disrupt, page",
+      "name": "preset, metadata, promote",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "✨: update cilium preset metadata and version in registry",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/121",
+        "created_at": "2026-04-21T17:19:31Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "contact, functionality, section",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Remove Extra spacing between page title and program cards on Program page",
-        "url": "https://github.com/kubestellar/docs/issues/96",
-        "created_at": "2025-10-01T13:51:13Z"
+        "title": "fix: fixes functionality in the contact section",
+        "url": "https://github.com/kubestellar/docs/pull/199",
+        "created_at": "2025-11-04T10:01:42Z"
       },
       "repos": [
         "docs"
@@ -253,16 +114,10 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       },
       {
         "name": "Deployments & GitOps",
@@ -271,16 +126,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },
@@ -303,15 +164,15 @@
     },
     {
       "month": "2025-09",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2025-10",
-      "issue_count": 2
+      "issue_count": 12
     },
     {
       "month": "2025-11",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2025-12",
@@ -331,20 +192,12 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 60
+      "issue_count": 6
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
-      "bug_issues": 79,
-      "feature_issues": 2,
-      "other_issues": 0,
-      "prs_opened": 30,
-      "prs_merged": 29
-    },
-    {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 3,
       "feature_issues": 0,
       "other_issues": 2,
@@ -352,7 +205,7 @@
       "prs_merged": 9
     },
     {
-      "repo": "kubestellar/console-marketplace",
+      "repo": "console-marketplace",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,

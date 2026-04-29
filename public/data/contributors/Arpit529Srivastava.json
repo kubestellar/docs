@@ -1,145 +1,75 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-24T18:28:02.742Z",
-  "total_issues_opened": 98,
+  "generated_at": "2026-04-29T10:39:54.007Z",
+  "total_issues_opened": 7,
+  "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
-  "total_points": 1250,
-  "level": "Explorer",
-  "level_rank": 2,
-  "rank": 32,
+  "total_points": 27850,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 13,
   "cadence": {
-    "avg_per_week": 7.9,
-    "avg_per_day": 0.68,
+    "avg_per_week": 0.3,
+    "avg_per_day": 0.09,
     "by_day_of_week": [
-      15,
-      8,
-      18,
-      15,
-      12,
-      13,
-      17
+      0,
+      1,
+      0,
+      5,
+      5,
+      0,
+      0
     ],
     "by_hour_of_day": [
       0,
       0,
       0,
       0,
-      2,
-      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       1,
-      2,
+      1,
+      1,
       3,
-      18,
-      7,
-      21,
-      1,
-      8,
-      15,
-      4,
-      0,
       2,
       0,
+      1,
+      1,
       1,
       0,
       0
     ],
-    "current_streak_weeks": 7,
-    "longest_streak_weeks": 7,
-    "trend": "steady",
-    "first_issue_at": "2025-11-27T13:42:14.000Z",
-    "last_issue_at": "2026-04-20T05:03:26.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 2,
+    "trend": "slowing_down",
+    "first_issue_at": "2025-11-14T16:54:22.000Z",
+    "last_issue_at": "2026-03-20T16:41:49.000Z"
   },
   "topics": [
     {
-      "name": "@arpit529srivastava, api, vcluster",
-      "issue_count": 36,
-      "recent_issue": {
-        "title": "[E2E Bug] liveMocks.ts uses Math.random() for API response delays — non-deterministic test timing",
-        "url": "https://github.com/kubestellar/console/issues/9086",
-        "created_at": "2026-04-20T05:02:57Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 36
-    },
-    {
-      "name": "ss, testing, @arpit529srivastava",
+      "name": "repository, feedback, workflow",
       "issue_count": 5,
       "recent_issue": {
-        "title": "checking for ss how it is working",
-        "url": "https://github.com/kubestellar/console/issues/4398",
-        "created_at": "2026-04-03T11:43:34Z"
+        "title": "fix: update kubectl-multi repository URL",
+        "url": "https://github.com/kubestellar/docs/pull/337",
+        "created_at": "2025-11-27T15:01:42Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 5
     },
     {
-      "name": "replica, scale, replicas",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "checkDeploymentHealth in resource_health.go does not check updatedReplicas, can report HealthStatusHealthy during an in-progress rolling update",
-        "url": "https://github.com/kubestellar/console/issues/6511",
-        "created_at": "2026-04-11T16:13:27Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 4
-    },
-    {
-      "name": "ms, e2e, flakiness",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "[E2E Bug] networkidle waits with .catch(() => {}) silently swallow failures across 45+ locations",
-        "url": "https://github.com/kubestellar/console/issues/9082",
-        "created_at": "2026-04-20T05:01:56Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "theme, light, browser",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "Frontend LocalStorage Cross-Session Data Leakage",
-        "url": "https://github.com/kubestellar/console/issues/3147",
-        "created_at": "2026-03-22T11:23:52Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "button, cta, modal",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "bug: Primary CTA Button (“Install to Console”) is Partially Overlapped in Security Audit Modal",
-        "url": "https://github.com/kubestellar/docs/issues/1318",
-        "created_at": "2026-03-20T16:07:42Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "products, page, link",
-      "issue_count": 3,
+      "name": "zero, chat, join",
+      "issue_count": 2,
       "recent_issue": {
         "title": "bug: shows zero star and all zero matrix",
         "url": "https://github.com/kubestellar/docs/issues/1300",
@@ -149,501 +79,10 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "fixture, login, helper",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "[E2E Bug] mockAPI fixture routes are never unrouted — handlers stack and earlier mocks win",
-        "url": "https://github.com/kubestellar/console/issues/9085",
-        "created_at": "2026-04-20T05:02:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
       "closed_count": 2
     },
     {
-      "name": "upload, screenshots, contribute",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "The screenshot upload functionality is not working",
-        "url": "https://github.com/kubestellar/console/issues/4118",
-        "created_at": "2026-04-01T12:42:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "drill, node, gpunodedrilldown",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "GPU Type Incorrectly Formatted or Blank in drill-down",
-        "url": "https://github.com/kubestellar/console/issues/3030",
-        "created_at": "2026-03-20T15:13:15Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "leaderboard, coin, contributor",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: contributors who only file issues are missing from leaderboard due to single-page discovery",
-        "url": "https://github.com/kubestellar/docs/issues/1266",
-        "created_at": "2026-03-12T17:39:37Z"
-      },
-      "repos": [
-        "console",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "compliance, minute, ci",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "E2E Bug] Compliance suite runs as a single 40-minute monolithic test — blocks CI and has no granular failure isolation",
-        "url": "https://github.com/kubestellar/console/issues/9088",
-        "created_at": "2026-04-20T05:03:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "mutable, module, cb7f8906",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[E2E Bug] deploy-dashboard.spec.ts uses module-level mutable state — tests interfere with each other",
-        "url": "https://github.com/kubestellar/console/issues/9087",
-        "created_at": "2026-04-20T05:03:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "suppress, broad, a483c08c",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[E2E Bug] Overly broad console error suppression hides real production crashes",
-        "url": "https://github.com/kubestellar/console/issues/9083",
-        "created_at": "2026-04-20T05:02:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "setupdemomode, a46610d5, b2db92387d06",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "E2E Bug] Three duplicate setupDemoMode functions with inconsistent implementations",
-        "url": "https://github.com/kubestellar/console/issues/9081",
-        "created_at": "2026-04-20T05:01:34Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "aea4, f825dd2484, skip",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[E2E Bug] GPUOverview tests silently skip when card is not visible — hides rendering failures",
-        "url": "https://github.com/kubestellar/console/issues/9080",
-        "created_at": "2026-04-20T05:01:19Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "e17b9d78, a2e3, e53800196",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[E2E Bug] auth.setup.ts is dead code — permanently ignored in config but still in the repo",
-        "url": "https://github.com/kubestellar/console/issues/9076",
-        "created_at": "2026-04-20T05:00:07Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "f676db1, a1bd, b428c13c01e",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "`[E2E Bug] Dashboard \"cards have proper structure\" test uses vacuous assertion that can never fail`",
-        "url": "https://github.com/kubestellar/console/issues/9074",
-        "created_at": "2026-04-20T04:59:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "namespaces, getaccessiblenamespaces, scoped",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "getAccessibleNamespaces hardcodes only [\"default\", \"kube-system\", \"kube-public\"] as \"common\" namespaces for namespace-scoped users, making the Permissions panel empty for all user workload namespaces",
-        "url": "https://github.com/kubestellar/console/issues/6512",
-        "created_at": "2026-04-11T16:14:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "mcs, serviceexport, e288939",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ServiceExport / ServiceImport listing silently swallows ALL errors (including auth/network) by treating every error as \"CRD not installed\"",
-        "url": "https://github.com/kubestellar/console/issues/6510",
-        "created_at": "2026-04-11T16:13:01Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "getworkload, listworkloadsforcluster, linear",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "GetWorkload does a full ListWorkloadsForCluster and then does a linear search to find one workload - O(N) full-cluster list for a single resource lookup",
-        "url": "https://github.com/kubestellar/console/issues/6509",
-        "created_at": "2026-04-11T16:12:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "classifyerror, find, branch",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "classifyError returns \"auth\" for messages containing \"not found\" when the actual error is \"executable not found\" (exec-plugin missing), causing a 10-minute authFailureCacheTTL to apply incorrectly",
-        "url": "https://github.com/kubestellar/console/issues/6508",
-        "created_at": "2026-04-11T16:10:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "deployworkload, error, networkerror",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "DeployWorkload does not propagate errors from NetworkError on Get during create-or-update, silently drops the cluster into the failed list without a proper error message",
-        "url": "https://github.com/kubestellar/console/issues/6501",
-        "created_at": "2026-04-11T16:08:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "getallpermissionssummaries, getallclusterpermissions, rbac",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "GetAllPermissionsSummaries and GetAllClusterPermissions query ALL clusters sequentially (no parallelism), blocking the UI for multi-cluster setups",
-        "url": "https://github.com/kubestellar/console/issues/6487",
-        "created_at": "2026-04-11T16:03:22Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "listargoapplications, m., client",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ListArgoApplications uses stale m.clients snapshot, misses newly-added clusters",
-        "url": "https://github.com/kubestellar/console/issues/6476",
-        "created_at": "2026-04-11T15:53:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "tour, blink, guide",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Tour guide causes the background to blink",
-        "url": "https://github.com/kubestellar/console/issues/3437",
-        "created_at": "2026-03-24T15:47:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "positive, duplicate, possible",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "False-Positive \"Possible-Duplicate\" CI Spam `(duplicate-detection.yml)`",
-        "url": "https://github.com/kubestellar/console/issues/3151",
-        "created_at": "2026-03-22T12:10:00Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "infinite, time, connections",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "WebSocket Denial of Service (DoS) via Infinite Idle Connections",
-        "url": "https://github.com/kubestellar/console/issues/3150",
-        "created_at": "2026-03-22T11:25:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "tool, e80bfa33, ece5acd35c1",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "MCP Bridge Silently Swallows LLM Tool Execution Errors",
-        "url": "https://github.com/kubestellar/console/issues/3148",
-        "created_at": "2026-03-22T11:24:24Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "import, database, c346",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Partial Database Import Failure (No Transaction Rollback) - /api/dashboards/import",
-        "url": "https://github.com/kubestellar/console/issues/3145",
-        "created_at": "2026-03-22T11:22:41Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "kustomizations, crds, fd2ed2",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Swallowed Target Cluster Errors on Missing CRDs (/api/gitops/kustomizations)",
-        "url": "https://github.com/kubestellar/console/issues/3142",
-        "created_at": "2026-03-22T11:07:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "helm, host, release",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Swallowed Local Host Errors on Native Executables (/api/gitops/helm-releases)",
-        "url": "https://github.com/kubestellar/console/issues/3141",
-        "created_at": "2026-03-22T11:05:46Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "operator, schema, fe177ec6",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Inconsistent JSON Schema in /api/mcp/nvidia-operators",
-        "url": "https://github.com/kubestellar/console/issues/3138",
-        "created_at": "2026-03-22T11:03:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "c39bdb, b487, dec66b03fa1",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "this is just to test",
-        "url": "https://github.com/kubestellar/console/issues/3136",
-        "created_at": "2026-03-22T10:28:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "clusteradmin, acf9ddfd, e8932701a177",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ClusterAdmin Playwright test no available",
-        "url": "https://github.com/kubestellar/console/issues/3135",
-        "created_at": "2026-03-22T10:27:56Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "spa, e914f5, adf2ffece110",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Backend Dev Server Returns 404 for SPA Routes",
-        "url": "https://github.com/kubestellar/console/issues/3046",
-        "created_at": "2026-03-20T17:31:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "healthy, filter, count",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Mismatch Between Stats Overview Count and Filtered Grid Logic",
-        "url": "https://github.com/kubestellar/console/issues/3045",
-        "created_at": "2026-03-20T17:30:19Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "unauthorized, repository, ec0e629e",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "unauthorized on creating issue in docs from console",
-        "url": "https://github.com/kubestellar/console/issues/3036",
-        "created_at": "2026-03-20T16:06:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sort, inventory, device",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Applicable Sort Fields Missing or Incorrect in Inventory View",
-        "url": "https://github.com/kubestellar/console/issues/3031",
-        "created_at": "2026-03-20T15:13:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "reward, org, repo",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Feedback and rewards default targets are hardcoded to kubestellar repositories",
-        "url": "https://github.com/kubestellar/console/issues/2826",
-        "created_at": "2026-03-17T16:53:55Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "github, githubproxyapibase, b9c70",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Hardcoded githubProxyAPIBase prevents GitHub Enterprise Server compatibility",
-        "url": "https://github.com/kubestellar/console/issues/2821",
-        "created_at": "2026-03-17T15:20:03Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sidebar, expand, item",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Navbar items truncate with `...` but sidebar cannot expand",
-        "url": "https://github.com/kubestellar/console/issues/1746",
-        "created_at": "2026-03-06T08:04:49Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "resolve, d67652c81, cce",
+      "name": "@arpit529srivastava, cce, b06",
       "issue_count": 1,
       "recent_issue": {
         "title": "checking of the issue, if resolved or not?",
@@ -657,7 +96,35 @@
       "closed_count": 1
     },
     {
-      "name": "markdown, mkdocs, syntax",
+      "name": "modal, button, cta",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: Primary CTA Button (“Install to Console”) is Partially Overlapped in Security Audit Modal",
+        "url": "https://github.com/kubestellar/docs/issues/1318",
+        "created_at": "2026-03-20T16:07:42Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "recent, contributor, leaderboard",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "bug: contributors who only file issues are missing from leaderboard due to single-page discovery",
+        "url": "https://github.com/kubestellar/docs/issues/1266",
+        "created_at": "2026-03-12T17:39:37Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "markdown, syntax, mkdocs",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Empty pages due to MkDocs include-markdown syntax not supported by Nextra",
@@ -675,10 +142,22 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       },
       {
         "name": "Storage & Compute",
@@ -687,22 +166,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       }
     ]
   },
@@ -733,7 +200,7 @@
     },
     {
       "month": "2025-11",
-      "issue_count": 2
+      "issue_count": 6
     },
     {
       "month": "2025-12",
@@ -745,28 +212,20 @@
     },
     {
       "month": "2026-02",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-03",
-      "issue_count": 52
+      "issue_count": 4
     },
     {
       "month": "2026-04",
-      "issue_count": 41
+      "issue_count": 0
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
-      "bug_issues": 87,
-      "feature_issues": 0,
-      "other_issues": 4,
-      "prs_opened": 1,
-      "prs_merged": 0
-    },
-    {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 4,
       "feature_issues": 0,
       "other_issues": 3,

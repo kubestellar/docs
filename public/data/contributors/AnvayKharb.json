@@ -1,21 +1,22 @@
 {
   "login": "AnvayKharb",
-  "generated_at": "2026-04-24T18:28:03.067Z",
+  "generated_at": "2026-04-29T10:39:54.284Z",
   "total_issues_opened": 1,
+  "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/185811796?v=4",
   "total_points": 750,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 39,
+  "rank": 49,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 1,
+    "avg_per_day": 0.16,
     "by_day_of_week": [
+      2,
+      0,
+      0,
+      2,
       1,
-      0,
-      0,
-      0,
-      0,
       0,
       0
     ],
@@ -27,7 +28,8 @@
       0,
       0,
       0,
-      0,
+      1,
+      1,
       1,
       0,
       0,
@@ -37,9 +39,8 @@
       0,
       0,
       0,
-      0,
-      0,
-      0,
+      1,
+      1,
       0,
       0,
       0,
@@ -48,13 +49,101 @@
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
     "trend": "inactive",
-    "first_issue_at": "2026-01-12T08:49:58.000Z",
-    "last_issue_at": "2026-01-12T08:49:58.000Z"
+    "first_issue_at": "2025-12-11T18:33:59.000Z",
+    "last_issue_at": "2026-01-12T09:18:26.000Z"
   },
-  "topics": [],
+  "topics": [
+    {
+      "name": "interface, subprogram, ui",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "✨ the ui interface is changed",
+        "url": "https://github.com/kubestellar/docs/pull/579",
+        "created_at": "2026-01-12T09:18:26Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "readme, fix, issue",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ReadMe Fixed",
+        "url": "https://github.com/kubestellar/docs/pull/402",
+        "created_at": "2025-12-12T07:19:07Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "ladder, height, layout",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "improve contribution ladder card layout and responsiveness",
+        "url": "https://github.com/kubestellar/docs/pull/394",
+        "created_at": "2025-12-11T19:00:30Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "config, structure, nextra",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Updated contributing.md #369",
+        "url": "https://github.com/kubestellar/docs/pull/393",
+        "created_at": "2025-12-11T18:33:59Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
   "suggestions": {
     "deepen": [],
-    "stretch": []
+    "stretch": [
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      }
+    ]
   },
   "activity_timeline": [
     {
@@ -87,11 +176,11 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 0
+      "issue_count": 3
     },
     {
       "month": "2026-01",
-      "issue_count": 1
+      "issue_count": 2
     },
     {
       "month": "2026-02",
@@ -108,7 +197,7 @@
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 1,

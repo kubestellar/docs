@@ -1,12 +1,13 @@
 {
   "login": "KlementMultiverse",
-  "generated_at": "2026-04-24T18:28:03.087Z",
+  "generated_at": "2026-04-29T10:39:54.289Z",
   "total_issues_opened": 1,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/199669327?v=4",
   "total_points": 50,
   "level": "Observer",
   "level_rank": 1,
-  "rank": 63,
+  "rank": 73,
   "cadence": {
     "avg_per_week": 0.1,
     "avg_per_day": 1,
@@ -108,7 +109,7 @@
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 1,

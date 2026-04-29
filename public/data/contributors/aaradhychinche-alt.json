@@ -1,331 +1,135 @@
 {
   "login": "aaradhychinche-alt",
-  "generated_at": "2026-04-24T18:26:19.665Z",
-  "total_issues_opened": 452,
+  "generated_at": "2026-04-29T10:39:53.955Z",
+  "total_issues_opened": 5,
+  "total_prs_opened": 12,
   "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-  "total_points": 10600,
-  "level": "Pilot",
-  "level_rank": 4,
-  "rank": 6,
+  "total_points": 133150,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 5,
   "cadence": {
-    "avg_per_week": 37.7,
-    "avg_per_day": 7.98,
+    "avg_per_week": 0.7,
+    "avg_per_day": 0.2,
     "by_day_of_week": [
-      196,
-      18,
-      16,
-      16,
-      131,
-      16,
-      59
+      5,
+      4,
+      1,
+      1,
+      3,
+      0,
+      3
     ],
     "by_hour_of_day": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
       4,
       0,
       0,
       0,
-      38,
-      90,
-      48,
-      38,
-      27,
-      20,
-      18,
-      30,
-      61,
-      58,
-      1,
-      9,
       1,
       0,
-      1,
-      1,
       2,
-      5,
+      4,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
       0,
       0
     ],
-    "current_streak_weeks": 6,
-    "longest_streak_weeks": 6,
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 2,
     "trend": "ramping_up",
-    "first_issue_at": "2026-02-24T05:05:19.000Z",
-    "last_issue_at": "2026-04-21T21:14:16.000Z"
+    "first_issue_at": "2026-01-09T10:03:30.000Z",
+    "last_issue_at": "2026-04-06T06:08:54.000Z"
   },
   "topics": [
     {
-      "name": "@aaradhychinche, alt, cluster",
-      "issue_count": 424,
+      "name": "ci, document, python",
+      "issue_count": 6,
       "recent_issue": {
-        "title": "Contribute: Issue submission fails with \"CSRF header required\" on local setup",
-        "url": "https://github.com/kubestellar/console/issues/9439",
-        "created_at": "2026-04-21T21:14:16Z"
+        "title": "🐛 : add GitHub Actions page to documentation navigation",
+        "url": "https://github.com/kubestellar/docs/pull/786",
+        "created_at": "2026-01-16T20:54:43Z"
       },
       "repos": [
-        "console",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 424
+      "closed_count": 6
     },
     {
-      "name": "card, registry, register",
-      "issue_count": 7,
+      "name": "console, persistence, @aaradhychinche",
+      "issue_count": 5,
       "recent_issue": {
-        "title": "bug: placeholder card directories exist without implementation",
-        "url": "https://github.com/kubestellar/console/issues/3257",
-        "created_at": "2026-03-23T11:15:41Z"
+        "title": "bug: console persistence and state management behavior is not documented",
+        "url": "https://github.com/kubestellar/docs/issues/1344",
+        "created_at": "2026-04-06T06:08:54Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
-      "closed_count": 7
+      "closed_count": 5
     },
     {
-      "name": "kube, game, craft",
-      "issue_count": 4,
+      "name": "preset, marketplace, flatcar",
+      "issue_count": 3,
       "recent_issue": {
-        "title": "Card: Kube Chess (kube_chess)",
-        "url": "https://github.com/kubestellar/console/issues/4083",
-        "created_at": "2026-04-01T06:46:49Z"
+        "title": "✨: add Metal3 card preset to marketplace",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/85",
+        "created_at": "2026-02-24T06:17:44Z"
       },
       "repos": [
-        "console"
+        "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 4
+      "closed_count": 3
     },
     {
-      "name": "stress, control, framework",
+      "name": "release, automated, trigger",
       "issue_count": 1,
       "recent_issue": {
-        "title": "## Mission Control: End-to-End Stress Test Framework (Reliability + Regression Prevention)",
-        "url": "https://github.com/kubestellar/console/issues/8296",
-        "created_at": "2026-04-16T04:43:06Z"
+        "title": "📖 : explain automated docs updates triggered on releases",
+        "url": "https://github.com/kubestellar/docs/pull/805",
+        "created_at": "2026-01-18T13:34:58Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 1
     },
     {
-      "name": "admin, privilege, c09cf9",
+      "name": "homebrew, formula, kubectl",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Privilege Escalation: RoleBinding",
-        "url": "https://github.com/kubestellar/console/issues/6859",
-        "created_at": "2026-04-12T05:44:57Z"
+        "title": "📖 : fix Homebrew install command for kubectl-claude",
+        "url": "https://github.com/kubestellar/docs/pull/804",
+        "created_at": "2026-01-18T13:16:33Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 1
     },
     {
-      "name": "sourcecluster, deploy, validate",
+      "name": "title, emoji, clarify",
       "issue_count": 1,
       "recent_issue": {
-        "title": "## 🐛 bug: deploy api does not validate sourceCluster",
-        "url": "https://github.com/kubestellar/console/issues/5957",
-        "created_at": "2026-04-10T06:48:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "execution, reconnect, prompt",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "## 🐛 bug: reconnect replays last prompt causing duplicate execution",
-        "url": "https://github.com/kubestellar/console/issues/5930",
-        "created_at": "2026-04-10T05:50:54Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "banner, warning, kubeconfig",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "## 🐛 bug: stale kubeconfig warning banner never appears",
-        "url": "https://github.com/kubestellar/console/issues/5921",
-        "created_at": "2026-04-10T05:40:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "unreadable, overlap, panel",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: cluster labels overlap and become unreadable when AI chat panel is opened",
-        "url": "https://github.com/kubestellar/console/issues/5396",
-        "created_at": "2026-04-08T05:02:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "newly, dashboard, search",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: newly created dashboard does not appear in dashboard list or search",
-        "url": "https://github.com/kubestellar/console/issues/5177",
-        "created_at": "2026-04-07T05:41:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "close, merge, complete",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: inconsistent status badges for merged issues (some show \"Fix Complete\" + \"Closed\", others only show \"Closed\")",
-        "url": "https://github.com/kubestellar/console/issues/4953",
-        "created_at": "2026-04-06T11:57:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "listener, abort, callback",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: abort signal listeners are not cleaned up causing event listener leaks and post-unmount callbacks",
-        "url": "https://github.com/kubestellar/console/issues/4772",
-        "created_at": "2026-04-05T10:51:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "watcher, context, persistence",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: persistence watcher stops immediately due to request-scoped context usage",
-        "url": "https://github.com/kubestellar/console/issues/4749",
-        "created_at": "2026-04-05T09:15:55Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "heartbeat, unmount, continue",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: active user heartbeat continues after component unmount due to missing cleanup",
-        "url": "https://github.com/kubestellar/console/issues/4696",
-        "created_at": "2026-04-05T08:07:54Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "enable, change, fetch",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: useClusterCapabilities does not react to enabled flag changes due to stale closure",
-        "url": "https://github.com/kubestellar/console/issues/4695",
-        "created_at": "2026-04-05T08:05:25Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "artifact, green, appear",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: unintended green line appears across top of page due to layout/CSS issue",
-        "url": "https://github.com/kubestellar/console/issues/4080",
-        "created_at": "2026-04-01T06:23:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "menu, dot, resize",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: card menu (three-dot options) disappears after resizing the card",
-        "url": "https://github.com/kubestellar/console/issues/3501",
-        "created_at": "2026-03-25T04:00:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "bundle, eagerly, import",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: cardRegistry eagerly loads bundles instead of lazy loading them",
-        "url": "https://github.com/kubestellar/console/issues/2694",
-        "created_at": "2026-03-16T00:18:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "authorization, header, production",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Status cards call MCP API without Authorization header causing 401 in production",
-        "url": "https://github.com/kubestellar/console/issues/2643",
-        "created_at": "2026-03-15T07:05:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "documentation, repository, da4b0349e1",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: documentation references deprecated kubestellar/ui project instead of current console implementation",
-        "url": "https://github.com/kubestellar/docs/issues/1340",
-        "created_at": "2026-04-06T05:53:56Z"
+        "title": "📖 clarify emoji usage in PR titles",
+        "url": "https://github.com/kubestellar/docs/pull/613",
+        "created_at": "2026-01-13T14:13:57Z"
       },
       "repos": [
         "docs"
@@ -337,6 +141,18 @@
   "suggestions": {
     "deepen": [],
     "stretch": [
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
       {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
@@ -350,22 +166,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },
@@ -404,40 +208,32 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 0
+      "issue_count": 9
     },
     {
       "month": "2026-02",
-      "issue_count": 1
+      "issue_count": 3
     },
     {
       "month": "2026-03",
-      "issue_count": 32
+      "issue_count": 0
     },
     {
       "month": "2026-04",
-      "issue_count": 419
+      "issue_count": 5
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
-      "bug_issues": 390,
-      "feature_issues": 2,
-      "other_issues": 55,
-      "prs_opened": 4,
-      "prs_merged": 2
-    },
-    {
-      "repo": "kubestellar/docs",
-      "bug_issues": 5,
-      "feature_issues": 0,
+      "repo": "docs",
+      "bug_issues": 4,
+      "feature_issues": 1,
       "other_issues": 0,
       "prs_opened": 9,
       "prs_merged": 8
     },
     {
-      "repo": "kubestellar/console-marketplace",
+      "repo": "console-marketplace",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,

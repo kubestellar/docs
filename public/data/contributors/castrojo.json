@@ -1,18 +1,19 @@
 {
   "login": "castrojo",
-  "generated_at": "2026-04-24T18:28:03.087Z",
-  "total_issues_opened": 1,
+  "generated_at": "2026-04-29T10:39:54.288Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/1264109?v=4",
   "total_points": 100,
   "level": "Observer",
   "level_rank": 1,
-  "rank": 62,
+  "rank": 70,
   "cadence": {
-    "avg_per_week": 0.1,
-    "avg_per_day": 1,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
-      1,
+      0,
       0,
       0,
       0,
@@ -34,7 +35,7 @@
       0,
       0,
       0,
-      1,
+      0,
       0,
       0,
       0,
@@ -46,10 +47,10 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
-    "trend": "ramping_up",
-    "first_issue_at": "2026-04-07T14:03:52.000Z",
-    "last_issue_at": "2026-04-07T14:03:52.000Z"
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
   "topics": [],
   "suggestions": {
@@ -103,17 +104,8 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 1
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "kubestellar/console",
-      "bug_issues": 0,
-      "feature_issues": 1,
-      "other_issues": 0,
-      "prs_opened": 0,
-      "prs_merged": 0
-    }
-  ]
+  "repo_breakdown": []
 }

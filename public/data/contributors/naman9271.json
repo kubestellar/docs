@@ -1,74 +1,103 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-04-24T18:28:01.917Z",
+  "generated_at": "2026-04-29T10:39:54.278Z",
   "total_issues_opened": 41,
+  "total_prs_opened": 71,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
   "total_points": 2600,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 19,
+  "rank": 31,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 0.36,
+    "avg_per_day": 0.56,
     "by_day_of_week": [
+      15,
+      15,
+      21,
+      32,
       9,
-      3,
-      7,
-      11,
-      0,
-      7,
-      4
+      15,
+      5
     ],
     "by_hour_of_day": [
-      1,
-      1,
-      0,
-      2,
-      7,
-      2,
       6,
-      1,
+      3,
       0,
-      0,
-      1,
-      0,
-      2,
-      1,
-      0,
-      0,
-      6,
+      3,
+      8,
+      9,
+      8,
       5,
+      5,
+      2,
+      1,
+      3,
+      6,
+      3,
       1,
       5,
-      0,
-      0,
-      0,
-      0
+      14,
+      8,
+      4,
+      9,
+      2,
+      1,
+      4,
+      2
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 4,
+    "longest_streak_weeks": 9,
     "trend": "inactive",
-    "first_issue_at": "2025-09-10T16:14:01.000Z",
-    "last_issue_at": "2026-01-01T01:39:56.000Z"
+    "first_issue_at": "2025-07-08T20:02:41.000Z",
+    "last_issue_at": "2026-01-24T20:21:20.000Z"
   },
   "topics": [
     {
-      "name": "nextra, heading, doc",
-      "issue_count": 7,
+      "name": "detailed, fixes, provide",
+      "issue_count": 22,
       "recent_issue": {
-        "title": "Fix Contributing.md",
-        "url": "https://github.com/kubestellar/docs/issues/369",
-        "created_at": "2025-12-08T04:20:52Z"
+        "title": ".",
+        "url": "https://github.com/kubestellar/docs/pull/852",
+        "created_at": "2026-01-24T20:21:20Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 7
+      "closed_count": 22
     },
     {
-      "name": "page, handbook, margin",
-      "issue_count": 6,
+      "name": "refactor, componenet, accord",
+      "issue_count": 13,
+      "recent_issue": {
+        "title": "HowItWorkSection --> HowToUseSection refactor to 5 steps ",
+        "url": "https://github.com/kubestellar/docs/pull/202",
+        "created_at": "2025-11-04T18:29:57Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 13
+    },
+    {
+      "name": "thing, ladder, contribution",
+      "issue_count": 9,
+      "recent_issue": {
+        "title": "Feat: Revamp Contribution Ladder",
+        "url": "https://github.com/kubestellar/docs/issues/362",
+        "created_at": "2025-12-07T19:25:25Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 9
+    },
+    {
+      "name": "installation, page, handbook",
+      "issue_count": 8,
       "recent_issue": {
         "title": "Refactpr Installation Page redirection",
         "url": "https://github.com/kubestellar/docs/issues/167",
@@ -78,15 +107,15 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 6
+      "closed_count": 8
     },
     {
-      "name": "refactor, componenet, figma",
+      "name": "light, theme, mode",
       "issue_count": 6,
       "recent_issue": {
-        "title": "Refactor `UseCasesSection.tsx`",
-        "url": "https://github.com/kubestellar/docs/issues/36",
-        "created_at": "2025-09-10T16:16:37Z"
+        "title": "Add Light Theme for `DocsFooter.tsx`",
+        "url": "https://github.com/kubestellar/docs/issues/366",
+        "created_at": "2025-12-08T04:16:48Z"
       },
       "repos": [
         "docs"
@@ -95,7 +124,21 @@
       "closed_count": 6
     },
     {
-      "name": "dropdown, blur, navbar",
+      "name": "revert, size, doc",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "Revert \"fix: add sidebar highlighting for direct route URLs\"",
+        "url": "https://github.com/kubestellar/docs/pull/475",
+        "created_at": "2026-01-01T00:31:15Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 5
+    },
+    {
+      "name": "dropdown, language, blur",
       "issue_count": 5,
       "recent_issue": {
         "title": "Inconsistent Animation in the navbar",
@@ -109,12 +152,40 @@
       "closed_count": 5
     },
     {
-      "name": "light, theme, docnavbar",
+      "name": "animation, globe, star",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "Animation Issue",
+        "url": "https://github.com/kubestellar/docs/issues/359",
+        "created_at": "2025-12-07T19:12:11Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 5
+    },
+    {
+      "name": "nextra, implementation, write",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "Fix Contributing.md",
+        "url": "https://github.com/kubestellar/docs/issues/369",
+        "created_at": "2025-12-08T04:20:52Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 4
+    },
+    {
+      "name": "contact, section, netlify",
       "issue_count": 3,
       "recent_issue": {
-        "title": "Add Light Theme for `DocsFooter.tsx`",
-        "url": "https://github.com/kubestellar/docs/issues/366",
-        "created_at": "2025-12-08T04:16:48Z"
+        "title": "Fix Contact sections with netlify",
+        "url": "https://github.com/kubestellar/docs/pull/349",
+        "created_at": "2025-12-05T09:00:58Z"
       },
       "repos": [
         "docs"
@@ -123,12 +194,12 @@
       "closed_count": 3
     },
     {
-      "name": "ladder, contribution, thing",
+      "name": "come, soon, playground",
       "issue_count": 3,
       "recent_issue": {
-        "title": "Feat: Revamp Contribution Ladder",
-        "url": "https://github.com/kubestellar/docs/issues/362",
-        "created_at": "2025-12-07T19:25:25Z"
+        "title": "Theme  layout fixed in Nextra",
+        "url": "https://github.com/kubestellar/docs/issues/308",
+        "created_at": "2025-11-22T17:50:05Z"
       },
       "repos": [
         "docs"
@@ -137,7 +208,21 @@
       "closed_count": 3
     },
     {
-      "name": "readme, irrelevant, kinda",
+      "name": "push, preview, production",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "push to preview",
+        "url": "https://github.com/kubestellar/docs/pull/297",
+        "created_at": "2025-11-18T16:40:21Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "readme, kinda, irrelevant",
       "issue_count": 2,
       "recent_issue": {
         "title": "Fix Readme",
@@ -151,7 +236,77 @@
       "closed_count": 2
     },
     {
-      "name": "io, redirect, doc",
+      "name": "lint, pretty, husky",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Implement Husky",
+        "url": "https://github.com/kubestellar/docs/issues/265",
+        "created_at": "2025-11-11T03:46:48Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "loader, docsloader, remove",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "remove loader",
+        "url": "https://github.com/kubestellar/docs/pull/222",
+        "created_at": "2025-11-06T16:57:03Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "product, apge, products",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Many Fixes",
+        "url": "https://github.com/kubestellar/docs/pull/206",
+        "created_at": "2025-11-05T23:33:05Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "component, codebase, hook",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Section Dividers Added",
+        "url": "https://github.com/kubestellar/docs/pull/144",
+        "created_at": "2025-10-22T05:47:23Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "template, issues, prs",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "added stale.yml",
+        "url": "https://github.com/kubestellar/docs/pull/15",
+        "created_at": "2025-08-15T12:25:57Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "io, redirect, kubestellar",
       "issue_count": 1,
       "recent_issue": {
         "title": "Redirect bug to always to kubestellar.io/docs",
@@ -165,12 +320,12 @@
       "closed_count": 1
     },
     {
-      "name": "speed, star, animation",
+      "name": "heading, kind, unneccesary",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Animation Issue",
-        "url": "https://github.com/kubestellar/docs/issues/359",
-        "created_at": "2025-12-07T19:12:11Z"
+        "title": "[nextra]: some unneccesary headings on the top of docs",
+        "url": "https://github.com/kubestellar/docs/issues/325",
+        "created_at": "2025-11-24T19:27:30Z"
       },
       "repos": [
         "docs"
@@ -179,21 +334,7 @@
       "closed_count": 1
     },
     {
-      "name": "contact, section, docsfooter",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Fix Contact Section",
-        "url": "https://github.com/kubestellar/docs/issues/324",
-        "created_at": "2025-11-24T18:43:23Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "banner, changer, css",
+      "name": "banner, changer, overlapping",
       "issue_count": 1,
       "recent_issue": {
         "title": "Bug: CSS Issue in Docs",
@@ -207,7 +348,7 @@
       "closed_count": 1
     },
     {
-      "name": "shouold, overview, doc",
+      "name": "overview, shouold, wrong",
       "issue_count": 1,
       "recent_issue": {
         "title": "Wrong Doc on overview",
@@ -221,12 +362,12 @@
       "closed_count": 1
     },
     {
-      "name": "husky, pre, contributingh",
+      "name": "galaxy, navbar, marketplace",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Implement Husky",
-        "url": "https://github.com/kubestellar/docs/issues/265",
-        "created_at": "2025-11-11T03:46:48Z"
+        "title": "Added Galaxy Marketplace and fix navbar ",
+        "url": "https://github.com/kubestellar/docs/pull/275",
+        "created_at": "2025-11-13T05:10:54Z"
       },
       "repos": [
         "docs"
@@ -235,12 +376,12 @@
       "closed_count": 1
     },
     {
-      "name": "globe, animation, hero",
+      "name": "messaging, case, advance",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Change the hero section Animation",
-        "url": "https://github.com/kubestellar/docs/issues/164",
-        "created_at": "2025-10-23T06:25:55Z"
+        "title": "Fix Usecases Section and Ready to get Started Section",
+        "url": "https://github.com/kubestellar/docs/pull/224",
+        "created_at": "2025-11-06T18:43:37Z"
       },
       "repos": [
         "docs"
@@ -249,7 +390,35 @@
       "closed_count": 1
     },
     {
-      "name": "cloud, oracle, roadmap",
+      "name": "partner, partners, feature",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "partners page added",
+        "url": "https://github.com/kubestellar/docs/pull/190",
+        "created_at": "2025-10-30T23:05:51Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "terminal, experience, hero",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "fix hero section",
+        "url": "https://github.com/kubestellar/docs/pull/146",
+        "created_at": "2025-10-22T06:30:21Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "oracle, cloud, roadmap",
       "issue_count": 1,
       "recent_issue": {
         "title": "[Roadmap LFX -25t3]: KubeStellar Design System Implementation and Cloud Hosting",
@@ -263,12 +432,68 @@
       "closed_count": 1
     },
     {
-      "name": "progress, @vedansh, md",
+      "name": "owners, add",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Add Owners",
+        "url": "https://github.com/kubestellar/docs/pull/66",
+        "created_at": "2025-09-20T12:51:41Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "progress, @vedansh, idea",
       "issue_count": 1,
       "recent_issue": {
         "title": "Create a Workflow for progress.md",
         "url": "https://github.com/kubestellar/docs/issues/40",
         "created_at": "2025-09-13T07:21:51Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "lanfing, saumya, final",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Landing Page mostly done with some errors",
+        "url": "https://github.com/kubestellar/docs/pull/28",
+        "created_at": "2025-09-09T21:16:02Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "greet, yml, message",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "added greeting.yml",
+        "url": "https://github.com/kubestellar/docs/pull/14",
+        "created_at": "2025-08-15T12:22:27Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "js, initial, enable",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Initial Next.js Project Setup for Kubestellar Docs",
+        "url": "https://github.com/kubestellar/docs/pull/6",
+        "created_at": "2025-07-08T20:02:41Z"
       },
       "repos": [
         "docs"
@@ -281,34 +506,34 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       },
       {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      },
+      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       }
     ]
   },
@@ -323,31 +548,31 @@
     },
     {
       "month": "2025-07",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2025-08",
-      "issue_count": 0
+      "issue_count": 3
     },
     {
       "month": "2025-09",
-      "issue_count": 9
+      "issue_count": 27
     },
     {
       "month": "2025-10",
-      "issue_count": 10
+      "issue_count": 27
     },
     {
       "month": "2025-11",
-      "issue_count": 13
+      "issue_count": 35
     },
     {
       "month": "2025-12",
-      "issue_count": 8
+      "issue_count": 14
     },
     {
       "month": "2026-01",
-      "issue_count": 1
+      "issue_count": 5
     },
     {
       "month": "2026-02",
@@ -364,7 +589,7 @@
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 1,
       "feature_issues": 0,
       "other_issues": 40,

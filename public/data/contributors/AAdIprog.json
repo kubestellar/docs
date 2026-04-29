@@ -1,525 +1,120 @@
 {
   "login": "AAdIprog",
-  "generated_at": "2026-04-24T18:28:01.903Z",
-  "total_issues_opened": 56,
+  "generated_at": "2026-04-29T10:39:54.008Z",
+  "total_issues_opened": 1,
+  "total_prs_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
-  "total_points": 2800,
-  "level": "Navigator",
-  "level_rank": 3,
-  "rank": 18,
+  "total_points": 20200,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 16,
   "cadence": {
-    "avg_per_week": 4.6,
-    "avg_per_day": 0.64,
+    "avg_per_week": 0.1,
+    "avg_per_day": 0.14,
     "by_day_of_week": [
-      16,
-      7,
-      4,
-      6,
-      3,
+      0,
       2,
-      18
+      4,
+      0,
+      0,
+      0,
+      0
     ],
     "by_hour_of_day": [
       0,
-      1,
-      4,
-      1,
-      2,
       0,
-      5,
-      6,
-      5,
-      6,
-      3,
-      2,
-      2,
-      6,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       1,
       2,
-      3,
-      2,
-      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
       1,
       0,
       0,
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 6,
-    "trend": "ramping_up",
-    "first_issue_at": "2026-01-14T12:07:09.000Z",
-    "last_issue_at": "2026-04-12T10:14:55.000Z"
+    "longest_streak_weeks": 1,
+    "trend": "inactive",
+    "first_issue_at": "2026-01-13T11:32:51.000Z",
+    "last_issue_at": "2026-02-25T20:34:01.000Z"
   },
   "topics": [
     {
-      "name": ":/, 0:0, aadishah",
-      "issue_count": 22,
+      "name": ":/, thanos, keyboard",
+      "issue_count": 4,
       "recent_issue": {
-        "title": "ISO 27001: accumulated array mutated concurrently from parallel cluster tasks — race condition",
-        "url": "https://github.com/kubestellar/console/issues/3968",
-        "created_at": "2026-03-31T13:33:19Z"
+        "title": "✨ Remove placeholder fields from Thanos monitoring card preset",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/86",
+        "created_at": "2026-02-25T20:34:01Z"
       },
       "repos": [
-        "console",
+        "console-marketplace",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 22
+      "closed_count": 4
     },
     {
-      "name": "position, tooltip, unmarshal",
+      "name": "translation, externalize, string",
       "issue_count": 2,
       "recent_issue": {
-        "title": "Tooltip Positional Detachment (File: web/src/components/onboarding/Tour.tsx)",
-        "url": "https://github.com/kubestellar/console/issues/5411",
-        "created_at": "2026-04-08T06:48:15Z"
+        "title": "🐛 fix(i18n): add Japanese translations and externalize hardcoded strings",
+        "url": "https://github.com/kubestellar/docs/pull/648",
+        "created_at": "2026-01-14T04:35:15Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "closure, stale, sendmessage",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Stale closure in handleWidthChange",
-        "url": "https://github.com/kubestellar/console/issues/5053",
-        "created_at": "2026-04-06T16:48:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "traversal, attacker, self",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "self_upgrade.go imageTag validation allows path traversal",
-        "url": "https://github.com/kubestellar/console/issues/4941",
-        "created_at": "2026-04-06T09:02:43Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "ensureconnection, reconnection, websocket",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "ensureConnection timeout race creates orphaned WebSocket connections",
-        "url": "https://github.com/kubestellar/console/issues/4929",
-        "created_at": "2026-04-06T08:25:20Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "aeaeef9, d77f, abcb",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Dashboard Deletion Cascade Foreign Key Violations (Ghost Cards)",
-        "url": "https://github.com/kubestellar/console/issues/6905",
-        "created_at": "2026-04-12T10:14:55Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "limit, burnout, f90c72d6",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unbounded GitHub API Rate Limiting Burnout in Proxy Mode",
-        "url": "https://github.com/kubestellar/console/issues/6899",
-        "created_at": "2026-04-12T09:43:34Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "clean, fcdb5b48, caddf779",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "WebSocket Memory Leak (Zombie Goroutines in Exec Handler)",
-        "url": "https://github.com/kubestellar/console/issues/6891",
-        "created_at": "2026-04-12T07:45:22Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "bulk, historical, sqlite",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "SQLite Maximum Variable Limit Crash on Bulk Operations",
-        "url": "https://github.com/kubestellar/console/issues/6888",
-        "created_at": "2026-04-12T07:29:04Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "fdb7, a3ba, bfc8",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Ephemeral Data Loss of Installed Card Presets on Refresh",
-        "url": "https://github.com/kubestellar/console/issues/6620",
-        "created_at": "2026-04-11T20:59:19Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "context, c30b334, d21a99f1a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "GitOps Helm Install Context Cancellation Corruption (Orphaned Releases)",
-        "url": "https://github.com/kubestellar/console/issues/6592",
-        "created_at": "2026-04-11T19:46:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "acb4, e4f7239df54, wheel",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Disconnected \"Ghost\" Tooltips During Marketplace Scrolling",
-        "url": "https://github.com/kubestellar/console/issues/6007",
-        "created_at": "2026-04-10T09:07:53Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "e4667630, f2db, bd1",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "CNCF Banner Desynchronization Across Multi-Tab Sessions",
-        "url": "https://github.com/kubestellar/console/issues/6006",
-        "created_at": "2026-04-10T09:05:41Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "monolithic, filter, c00bdc",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Marketplace Filter Re-render Cascade due to Monolithic State Hook",
-        "url": "https://github.com/kubestellar/console/issues/5823",
-        "created_at": "2026-04-09T19:55:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "a8329, f930, b03710c4",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Critical Privilege Escalation: Pod Exec Bypass of Kubernetes RBAC",
-        "url": "https://github.com/kubestellar/console/issues/5817",
-        "created_at": "2026-04-09T19:45:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "calendar, reservation, midnight",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Calendar Block Midnight Duration Drop (File: web/src/components/gpu/GPUReservations.tsx)",
-        "url": "https://github.com/kubestellar/console/issues/5395",
-        "created_at": "2026-04-08T04:52:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "dfc210b, ef47, ebebcd",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "AI Streaming UI State Desync (File: web/src/components/mission-control/useMissionControl.ts)",
-        "url": "https://github.com/kubestellar/console/issues/5393",
-        "created_at": "2026-04-08T04:24:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "usestableeffect, c92b14c12d69, fingerprint",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "useStableEffect severs cleanup function on every re-render (File: useStableEffect.ts:34-53)",
-        "url": "https://github.com/kubestellar/console/issues/5230",
-        "created_at": "2026-04-07T13:18:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "translation, contourstatus, wasmcloudstatus",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Missing i18n JSON translation mappings severely crash TS compile build (File: ContourStatus.tsx / WasmCloudStatus.tsx)",
-        "url": "https://github.com/kubestellar/console/issues/5228",
-        "created_at": "2026-04-07T13:05:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "download, e2c94e19, f744cb448d18",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "URL.revokeObjectURL called before download completes",
-        "url": "https://github.com/kubestellar/console/issues/5077",
-        "created_at": "2026-04-06T18:16:34Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "wildcard, cors, e9793834",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Agent root handler uses Access-Control-Allow-Origin:",
-        "url": "https://github.com/kubestellar/console/issues/4937",
-        "created_at": "2026-04-06T08:59:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "logout, websocket, disconnect",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "presence WebSocket never disconnects on logout, leaking auth tokens",
-        "url": "https://github.com/kubestellar/console/issues/4936",
-        "created_at": "2026-04-06T08:52:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "unrelated, minute, dcb5",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Multi-cluster cascade detection falsely correlates unrelated events",
-        "url": "https://github.com/kubestellar/console/issues/4925",
-        "created_at": "2026-04-06T08:18:41Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "thread, condition, f841",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "AlertsContext condition evaluation runs O(rules × alerts) per cycle, blocking main thread",
-        "url": "https://github.com/kubestellar/console/issues/4785",
-        "created_at": "2026-04-05T12:21:24Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "preflight, cc81cc, ae9b",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "runSavedMission bypasses preflight checks and duplicates prompt-building logic (File: useMissions.tsx:1402-1508)",
-        "url": "https://github.com/kubestellar/console/issues/4768",
-        "created_at": "2026-04-05T10:26:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "card, dec8, d5d5",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Triple-duplicated dashboard card default functions with divergent card names",
-        "url": "https://github.com/kubestellar/console/issues/3825",
-        "created_at": "2026-03-29T02:41:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "refetch, pollingmanager, subscribepolling",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "pollingManager.ts : Stale callback references accumulate in subscriber Set — causes duplicate refetch calls per tick",
-        "url": "https://github.com/kubestellar/console/issues/3382",
-        "created_at": "2026-03-24T13:04:05Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "handleagentmessage, issidebaropen, activemissionid",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "useMissions.tsx: handleAgentMessage has empty dependency array — captures stale activeMissionId and isSidebarOpen",
-        "url": "https://github.com/kubestellar/console/issues/3359",
-        "created_at": "2026-03-24T03:54:29Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "filteritems, useglobalfilters, filter",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "useGlobalFilters: filterItems omits status and custom text filters",
-        "url": "https://github.com/kubestellar/console/issues/3352",
-        "created_at": "2026-03-24T01:38:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "unit, pipeline, d3c5b",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Missing unit tests for useInsightEnrichment hook",
-        "url": "https://github.com/kubestellar/console/issues/2646",
-        "created_at": "2026-03-15T07:15:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "filter, region, field",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: clusterMatchesFilter silently ignores most filter fields",
-        "url": "https://github.com/kubestellar/console/issues/1674",
-        "created_at": "2026-03-05T08:45:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
     "deepen": [],
     "stretch": [
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
       },
       {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       },
       {
         "name": "Authentication & Settings",
         "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
         "description": "OAuth flow, user settings, preferences, API middleware, authentication",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       }
     ]
   },
@@ -558,32 +153,24 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 1
+      "issue_count": 5
     },
     {
       "month": "2026-02",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2026-03",
-      "issue_count": 29
+      "issue_count": 0
     },
     {
       "month": "2026-04",
-      "issue_count": 26
+      "issue_count": 0
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
-      "bug_issues": 53,
-      "feature_issues": 1,
-      "other_issues": 1,
-      "prs_opened": 4,
-      "prs_merged": 1
-    },
-    {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 1,
       "feature_issues": 0,
       "other_issues": 0,
@@ -591,7 +178,7 @@
       "prs_merged": 2
     },
     {
-      "repo": "kubestellar/console-marketplace",
+      "repo": "console-marketplace",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,

@@ -1,1327 +1,124 @@
 {
   "login": "mrhapile",
-  "generated_at": "2026-04-24T18:27:58.992Z",
-  "total_issues_opened": 487,
+  "generated_at": "2026-04-29T10:39:53.952Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-  "total_points": 5500,
-  "level": "Pilot",
-  "level_rank": 4,
-  "rank": 12,
+  "total_points": 149950,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 4,
   "cadence": {
-    "avg_per_week": 40.6,
-    "avg_per_day": 7.7,
+    "avg_per_week": 0,
+    "avg_per_day": 3.79,
     "by_day_of_week": [
-      122,
-      47,
-      77,
-      62,
+      0,
+      0,
+      0,
+      2,
       4,
-      119,
-      56
+      3,
+      1
     ],
     "by_hour_of_day": [
       0,
-      13,
-      17,
-      24,
-      66,
-      18,
-      44,
-      23,
-      4,
-      25,
-      56,
-      4,
-      9,
-      20,
-      19,
-      18,
-      40,
-      8,
-      6,
-      6,
-      9,
-      18,
-      40,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      3,
+      1,
+      1,
+      0,
+      0,
       0
     ],
-    "current_streak_weeks": 4,
-    "longest_streak_weeks": 4,
-    "trend": "ramping_up",
-    "first_issue_at": "2026-02-19T09:46:00.000Z",
-    "last_issue_at": "2026-04-23T15:35:44.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 1,
+    "trend": "inactive",
+    "first_issue_at": "2026-01-08T13:59:03.000Z",
+    "last_issue_at": "2026-01-11T05:15:08.000Z"
   },
   "topics": [
     {
-      "name": "@mrhapile, mission, phase",
-      "issue_count": 378,
-      "recent_issue": {
-        "title": "Cross-Tab updatedAt Millisecond Erasure",
-        "url": "https://github.com/kubestellar/console/issues/9699",
-        "created_at": "2026-04-23T15:35:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 378
-    },
-    {
-      "name": "documentation, 📌, component",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "Missing documentation for GitOpsDrift dashboard component",
-        "url": "https://github.com/kubestellar/console/issues/4837",
-        "created_at": "2026-04-05T18:16:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 5
-    },
-    {
-      "name": "d., readyreplicas, replica",
+      "name": "translation, german, japanese",
       "issue_count": 4,
       "recent_issue": {
-        "title": "Unsafe Number() Cast on Replica Fields",
-        "url": "https://github.com/kubestellar/console/issues/6729",
-        "created_at": "2026-04-11T22:39:16Z"
+        "title": "i18n(de): add German translations ",
+        "url": "https://github.com/kubestellar/docs/pull/534",
+        "created_at": "2026-01-09T17:55:20Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 4
     },
     {
-      "name": "ok, res, db",
+      "name": "scanning, trivy, openssf",
       "issue_count": 3,
       "recent_issue": {
-        "title": "Unchecked HTTP res.ok json Parsing",
-        "url": "https://github.com/kubestellar/console/issues/7141",
-        "created_at": "2026-04-13T05:00:48Z"
+        "title": "📖document OpenSSF Scorecard and Trivy image scanning workflows ",
+        "url": "https://github.com/kubestellar/docs/pull/572",
+        "created_at": "2026-01-11T05:15:08Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 3
     },
     {
-      "name": "safetotal, nan, payload",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Progress Tokens NaN Overwrite",
-        "url": "https://github.com/kubestellar/console/issues/7314",
-        "created_at": "2026-04-13T06:57:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "regex, hostpath, character",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Malicious Scanner RegEx ReDoS (malicious.ts)",
-        "url": "https://github.com/kubestellar/console/issues/7312",
-        "created_at": "2026-04-13T06:57:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "projectnames, a., length",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Unsafe a.projectNames in Advance Logic",
-        "url": "https://github.com/kubestellar/console/issues/7104",
-        "created_at": "2026-04-13T04:28:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "priority, payloadcard, recommend",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "PayloadCard Priority Dropdown Missing Keyboard Dismiss",
-        "url": "https://github.com/kubestellar/console/issues/6743",
-        "created_at": "2026-04-11T22:47:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "tooltips, navbar, a8153",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Tooltips Blocking UI",
-        "url": "https://github.com/kubestellar/console/issues/6543",
-        "created_at": "2026-04-11T16:39:20Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "snoozed, reappear, cards",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Snoozed Cards List",
-        "url": "https://github.com/kubestellar/console/issues/6532",
-        "created_at": "2026-04-11T16:35:47Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "vitest, pooloptions, htmlcanvaselement",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Canvas-dependent tests run without a canvas mock and pollute suite output with jsdom “Not implemented” errors",
-        "url": "https://github.com/kubestellar/console/issues/5877",
-        "created_at": "2026-04-09T22:40:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "r., revision, parseint",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "HelmReleaseStatus.tsx — Unsafe parseInt() on r.revision",
-        "url": "https://github.com/kubestellar/console/issues/5182",
-        "created_at": "2026-04-07T06:17:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "screenshot, paste, screenshots",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "I am testing this bug report",
-        "url": "https://github.com/kubestellar/console/issues/4875",
-        "created_at": "2026-04-05T19:16:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "contributor, guideline, 📝",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "📝 Proposal: Add AGENT.md to Standardize AI-Assisted Contributions",
-        "url": "https://github.com/kubestellar/console/issues/1346",
-        "created_at": "2026-02-22T20:07:32Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "strictmode, generation, cbd227eb495",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "React 18 StrictMode Reconnect Blocking",
-        "url": "https://github.com/kubestellar/console/issues/7472",
-        "created_at": "2026-04-13T10:48:37Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "flush, emit, e86ac7d",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Token Analytics Discrepancy",
-        "url": "https://github.com/kubestellar/console/issues/7471",
-        "created_at": "2026-04-13T10:48:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "assistant, historywithoutlastuser, c13f885",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "historyWithoutLastUser Redundancy",
-        "url": "https://github.com/kubestellar/console/issues/7470",
-        "created_at": "2026-04-13T10:47:21Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "millisecond, f9def60b, d292",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Millisecond Stream Update Data Drop",
-        "url": "https://github.com/kubestellar/console/issues/7466",
-        "created_at": "2026-04-13T10:45:53Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "core, contamination, ebc7",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Mixed-Mode Agent History Contamination",
-        "url": "https://github.com/kubestellar/console/issues/7465",
-        "created_at": "2026-04-13T10:45:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "savetokenusage, json, dcea27c",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "saveTokenUsage JSON File Corruption",
-        "url": "https://github.com/kubestellar/console/issues/7452",
-        "created_at": "2026-04-13T10:42:29Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sessionid, a695983, ec8f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "SessionID Cancellation Leak",
-        "url": "https://github.com/kubestellar/console/issues/7451",
-        "created_at": "2026-04-13T10:40:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "staging, hijacking, b800717ed68",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Tmpfs Privilege Escalation Hijacking",
-        "url": "https://github.com/kubestellar/console/issues/7447",
-        "created_at": "2026-04-13T10:38:46Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "d9ed1067, a402, f3cfd1eccef",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unbounded Cache Clean Deadlock",
-        "url": "https://github.com/kubestellar/console/issues/7446",
-        "created_at": "2026-04-13T10:38:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "b919, a03a1c653493, copybinarymode",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Atomic Permission Persistence Race",
-        "url": "https://github.com/kubestellar/console/issues/7445",
-        "created_at": "2026-04-13T10:38:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "windows, lock, ce847129",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Windows Executable Locking Crash",
-        "url": "https://github.com/kubestellar/console/issues/7444",
-        "created_at": "2026-04-13T10:37:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "d339ea6e, fd3a, e58",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Race Condition in TriggerNow Initialization",
-        "url": "https://github.com/kubestellar/console/issues/7439",
-        "created_at": "2026-04-13T10:35:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "pinger, safewrite, aa5c3191",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unbounded WebSocket Write Block Freezing Pinger",
-        "url": "https://github.com/kubestellar/console/issues/7429",
-        "created_at": "2026-04-13T09:36:24Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "a273bf19, ba31, b80b6d8e8dce",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "wsSend Dropped Payloads",
-        "url": "https://github.com/kubestellar/console/issues/7327",
-        "created_at": "2026-04-13T07:01:57Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "analytics, untyped, afddbb8",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Untyped Analytics Egress",
-        "url": "https://github.com/kubestellar/console/issues/7326",
-        "created_at": "2026-04-13T07:01:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "concurrency, evasion, eef435",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "DEPLOY_POLL_MAX_CONCURRENCY Evasion",
-        "url": "https://github.com/kubestellar/console/issues/7325",
-        "created_at": "2026-04-13T07:01:11Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "cbd1f371, ab7c6adda1, authmsg",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "RBAC Token Interception",
-        "url": "https://github.com/kubestellar/console/issues/7324",
-        "created_at": "2026-04-13T07:00:53Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "ed355, b84293b0ae55, multiplexed",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Single-Connection Bottleneck",
-        "url": "https://github.com/kubestellar/console/issues/7322",
-        "created_at": "2026-04-13T07:00:22Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "err, undefined, preflightcheck",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Deploy Preflight Network Catch All (preflightCheck.ts)",
-        "url": "https://github.com/kubestellar/console/issues/7321",
-        "created_at": "2026-04-13T07:00:04Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "lastuseridx, slice, streamsinceuser",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "streamSinceUser Substring Extractor Crash",
-        "url": "https://github.com/kubestellar/console/issues/7320",
-        "created_at": "2026-04-13T06:59:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "fiber, b202b17, a05f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Uncaught JSON Parse Error (websockets.go)",
-        "url": "https://github.com/kubestellar/console/issues/7319",
-        "created_at": "2026-04-13T06:59:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "listener, d2ad2, c1f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Dangling Event Listeners",
-        "url": "https://github.com/kubestellar/console/issues/7318",
-        "created_at": "2026-04-13T06:59:01Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "d36f683, c214, cafdbe15acd6",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Preflight Error Re-Propagation",
-        "url": "https://github.com/kubestellar/console/issues/7317",
-        "created_at": "2026-04-13T06:58:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "e2e26a, ee45, b7585a01e6",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "activeMissionId Desync on Load",
-        "url": "https://github.com/kubestellar/console/issues/7313",
-        "created_at": "2026-04-13T06:57:32Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "poll, cb05803, ad87",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Poll Memory Allocation Leak",
-        "url": "https://github.com/kubestellar/console/issues/7159",
-        "created_at": "2026-04-13T05:03:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "visually, pointer, progress",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Progress ID Orphan blocks",
-        "url": "https://github.com/kubestellar/console/issues/7156",
-        "created_at": "2026-04-13T05:03:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "cycle, missionref, a0c38786",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "MissionRef Render Tearing",
-        "url": "https://github.com/kubestellar/console/issues/7146",
-        "created_at": "2026-04-13T05:01:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "heavily, e6661459, be03c0f23b0",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "evictOldestLocked O(N) sweep",
-        "url": "https://github.com/kubestellar/console/issues/7139",
-        "created_at": "2026-04-13T04:59:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "format, panic, fd14bba",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "strings.Split panic arrays",
-        "url": "https://github.com/kubestellar/console/issues/7138",
-        "created_at": "2026-04-13T04:59:32Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "slack, buff, efaea97f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unbounded Slack Payloads buffing buffer",
-        "url": "https://github.com/kubestellar/console/issues/7136",
-        "created_at": "2026-04-13T04:58:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "array, bfa6c99f, b583",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "BrowseConsoleKB Array JSON fallback",
-        "url": "https://github.com/kubestellar/console/issues/7134",
-        "created_at": "2026-04-13T04:57:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "endless, d234524, fe9",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "evictOldestLocked Endless Empty Matrix",
-        "url": "https://github.com/kubestellar/console/issues/7132",
-        "created_at": "2026-04-13T04:57:10Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "pointer, getstale, b38a3cf",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "getStale Maps Race Access",
-        "url": "https://github.com/kubestellar/console/issues/7131",
-        "created_at": "2026-04-13T04:56:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "forkfullname, split, string",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Go: strings.Split(forkFullName, \"/\")[0] Panics on Empty String",
-        "url": "https://github.com/kubestellar/console/issues/6805",
-        "created_at": "2026-04-12T04:33:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "missionsref, missionprovider, current",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "MissionProvider missionsRef.current Assignment Outside useEffect",
-        "url": "https://github.com/kubestellar/console/issues/6789",
-        "created_at": "2026-04-12T03:59:39Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "dialog, trap, modal",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "No Focus Trap in MissionControlDialog",
-        "url": "https://github.com/kubestellar/console/issues/6738",
-        "created_at": "2026-04-11T22:45:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "computelayout, flightplanblueprint, b311dde4",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "FlightPlanBlueprint computeLayout Called Every Render",
-        "url": "https://github.com/kubestellar/console/issues/6731",
-        "created_at": "2026-04-11T22:40:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "extractbalancedblocks, thread, text",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "extractBalancedBlocks O(n²) Main Thread Block",
-        "url": "https://github.com/kubestellar/console/issues/6723",
-        "created_at": "2026-04-11T22:36:49Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "resizer, bdde7, be3b",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Desktop-specific Resizer",
-        "url": "https://github.com/kubestellar/console/issues/6544",
-        "created_at": "2026-04-11T16:39:37Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "pacity, :o, hover",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Hover Actions on Touch",
-        "url": "https://github.com/kubestellar/console/issues/6542",
-        "created_at": "2026-04-11T16:38:57Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "truncate, e0ae642, c5b",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Feature Request Modal",
-        "url": "https://github.com/kubestellar/console/issues/6531",
-        "created_at": "2026-04-11T16:35:29Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "snackbar, ba49b2, b473",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Snackbar Overrides Modal",
-        "url": "https://github.com/kubestellar/console/issues/6498",
-        "created_at": "2026-04-11T16:07:26Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sticky, dropdown, de7e22e",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Agent Selector Dropdown",
-        "url": "https://github.com/kubestellar/console/issues/6494",
-        "created_at": "2026-04-11T16:06:15Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sweeper, a93569e8, f46",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Agent Disconnected Sweeper Flaw",
-        "url": "https://github.com/kubestellar/console/issues/6440",
-        "created_at": "2026-04-11T14:23:08Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "repo, req, a1aa",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ShareToGitHub Repo Traversal",
-        "url": "https://github.com/kubestellar/console/issues/6439",
-        "created_at": "2026-04-11T14:22:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "wipe, ad77b471, fcc1948be",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Race in finalizeCancellation Map Wipe",
-        "url": "https://github.com/kubestellar/console/issues/6438",
-        "created_at": "2026-04-11T14:21:39Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "arbitrary, yaml, e674dd66",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "YAML Import Arbitrary Payload Eval",
-        "url": "https://github.com/kubestellar/console/issues/6435",
-        "created_at": "2026-04-11T14:19:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "dry, f2692457, caa5825a9cc",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Dry-Run Privilege Escalation Warning",
-        "url": "https://github.com/kubestellar/console/issues/6434",
-        "created_at": "2026-04-11T14:18:55Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "schema, missionexport, ignorance",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "MissionExport Schema Drift Ignorance:",
-        "url": "https://github.com/kubestellar/console/issues/6430",
-        "created_at": "2026-04-11T14:17:30Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "history, prompt, saturation",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Agent Prompt History Saturation",
-        "url": "https://github.com/kubestellar/console/issues/6429",
-        "created_at": "2026-04-11T14:16:39Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "tempo, installedprojects, a11e",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "installedProjects Namespace Collision",
-        "url": "https://github.com/kubestellar/console/issues/6428",
-        "created_at": "2026-04-11T14:15:13Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "d6093c66, e396db9, gitlab",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "MissionBrowser Render Desync",
-        "url": "https://github.com/kubestellar/console/issues/6421",
-        "created_at": "2026-04-11T13:42:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "decode, path, f73c78f",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Path Traversal Bypass via Double URL Encoding",
-        "url": "https://github.com/kubestellar/console/issues/6418",
-        "created_at": "2026-04-11T13:40:35Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "bombing, b3e3d646, dd36ebad722",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Cache Bombing (OOM Attack)",
-        "url": "https://github.com/kubestellar/console/issues/6417",
-        "created_at": "2026-04-11T13:39:54Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "a8cb, hasprefix, d2e3",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Slack SSRF Hook Exposure",
-        "url": "https://github.com/kubestellar/console/issues/6416",
-        "created_at": "2026-04-11T13:39:35Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "needsrestart, reconnects, introduce",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "needsRestart is introduced in mission context for stale reconnects",
-        "url": "https://github.com/kubestellar/console/issues/6380",
-        "created_at": "2026-04-11T12:59:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "dataerror, skip, propagation",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Skipped MCP error-propagation test leaves dataError state effectively unguarded",
-        "url": "https://github.com/kubestellar/console/issues/5862",
-        "created_at": "2026-04-09T22:00:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "markdown, f1201, d28e",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Full RCE via Markdown XSS → Local Agent Command Injection",
-        "url": "https://github.com/kubestellar/console/issues/5808",
-        "created_at": "2026-04-09T19:20:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "watchdog, a67069, bd5c",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "\"Compiling Backend...\" Permanent UI Lockout when 0 Clusters are Reachable (Split-Brain Health Check)",
-        "url": "https://github.com/kubestellar/console/issues/5804",
-        "created_at": "2026-04-09T19:15:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "turn, chat, conversational",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Enable Multi-Turn Conversational AI in Mission Chat",
-        "url": "https://github.com/kubestellar/console/issues/5694",
-        "created_at": "2026-04-09T06:24:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "drag, overflow, a603b7b",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "UI Drag Overflow – Component Exceeds Boundaries and Does Not Stop",
-        "url": "https://github.com/kubestellar/console/issues/5693",
-        "created_at": "2026-04-09T06:05:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "deep, link, missionbrowser",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Deep-Link Race Condition in MissionBrowser",
-        "url": "https://github.com/kubestellar/console/issues/5654",
-        "created_at": "2026-04-09T03:18:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "coin, leaderboard, hour",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Leaderboard Coins Not Updating",
-        "url": "https://github.com/kubestellar/console/issues/5517",
-        "created_at": "2026-04-08T15:30:39Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "presence, c9629fcb, ca0a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Demo presence counts are trivially spoofable.",
-        "url": "https://github.com/kubestellar/console/issues/5448",
-        "created_at": "2026-04-08T09:13:47Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "replicaset, event, da2d04",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Clicking a ReplicaSet event opens a Deployment drilldown with the wrong resource name.",
-        "url": "https://github.com/kubestellar/console/issues/5429",
-        "created_at": "2026-04-08T07:34:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "timer, thrashing, d778",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "useCache — Timer Thrashing DoS",
-        "url": "https://github.com/kubestellar/console/issues/5252",
-        "created_at": "2026-04-07T14:21:19Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "svg, controller, clusterlocations",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ClusterLocations — SVG fetch race condition on rapid re-render",
-        "url": "https://github.com/kubestellar/console/issues/5205",
-        "created_at": "2026-04-07T10:16:56Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "fullquota, namespacequotas, cluster",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "NamespaceQuotas.tsx — Unsafe non-null assertion on fullQuota.cluster!",
-        "url": "https://github.com/kubestellar/console/issues/5184",
-        "created_at": "2026-04-07T06:18:41Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "width, division, eventsummary",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "EventSummary.tsx — Division by zero in progress bar width",
-        "url": "https://github.com/kubestellar/console/issues/5144",
-        "created_at": "2026-04-07T01:44:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "space, excessive, padding",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Excessive Top Padding Causing Unused Empty Space in Dashboard",
-        "url": "https://github.com/kubestellar/console/issues/4940",
-        "created_at": "2026-04-06T09:01:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "hierarchy, poor, contrast",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Light mode UI has poor contrast, broken visual hierarchy, and degraded usability",
-        "url": "https://github.com/kubestellar/console/issues/4880",
-        "created_at": "2026-04-05T19:40:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "theme, toggle, light",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "When switching the application theme from dark mode to light mode, the theme toggle control (sun/moon icon in the top navigation bar) disappears after a page refresh.",
-        "url": "https://github.com/kubestellar/console/issues/4874",
-        "created_at": "2026-04-05T19:13:50Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "setisevaluating, true, e8f04fa0",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Loading Indicator Never Shows",
-        "url": "https://github.com/kubestellar/console/issues/4868",
-        "created_at": "2026-04-05T18:59:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "analytics, track, fb5ed2a",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Global Filter Analytics Not Triggering Properly",
-        "url": "https://github.com/kubestellar/console/issues/4865",
-        "created_at": "2026-04-05T18:46:15Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "concurrent, dcfc3853, cb4d28ea145",
+      "name": "1.24, requirement, image",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Unbounded Concurrent API Requests Across Clusters",
-        "url": "https://github.com/kubestellar/console/issues/3521",
-        "created_at": "2026-03-25T09:39:21Z"
+        "title": "📖  document Go 1.24 requirement for image builds",
+        "url": "https://github.com/kubestellar/docs/pull/570",
+        "created_at": "2026-01-10T19:40:57Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 1
     },
     {
-      "name": "log, f98ad36, af50",
+      "name": "bindingpolicy, killercoda, action",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Bug in Bug submission ",
-        "url": "https://github.com/kubestellar/console/issues/3518",
-        "created_at": "2026-03-25T09:33:58Z"
+        "title": "📖 : add BindingPolicy in Action Killercoda tutorial",
+        "url": "https://github.com/kubestellar/docs/pull/536",
+        "created_at": "2026-01-09T18:38:19Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 1
     },
     {
-      "name": "e68135c1, bb0a, f9916f7c08",
+      "name": "e2e, workaround, kubeflex",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Missing documentation for `FEEDBACK_GITHUB_TOKEN` required for issue submission",
-        "url": "https://github.com/kubestellar/console/issues/2192",
-        "created_at": "2026-03-11T10:55:18Z"
+        "title": "📖 docs: document E2E workaround for kubeflex context issue",
+        "url": "https://github.com/kubestellar/docs/pull/525",
+        "created_at": "2026-01-09T04:43:12Z"
       },
       "repos": [
-        "console"
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 1
@@ -1331,10 +128,16 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       },
       {
         "name": "Networking & Services",
@@ -1349,16 +152,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+        "name": "Backend API & Handlers",
+        "path": "pkg/api/, pkg/models/, pkg/store/",
+        "description": "Go backend REST API, request handlers, data models, persistence layer",
+        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
       }
     ]
   },
@@ -1397,32 +194,24 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 0
+      "issue_count": 10
     },
     {
       "month": "2026-02",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-03",
-      "issue_count": 17
+      "issue_count": 0
     },
     {
       "month": "2026-04",
-      "issue_count": 468
+      "issue_count": 0
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
-      "bug_issues": 458,
-      "feature_issues": 0,
-      "other_issues": 29,
-      "prs_opened": 14,
-      "prs_merged": 9
-    },
-    {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,

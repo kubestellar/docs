@@ -1,23 +1,24 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-04-24T18:28:01.848Z",
-  "total_issues_opened": 199,
+  "generated_at": "2026-04-29T10:39:53.959Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
-  "total_points": 3000,
-  "level": "Navigator",
-  "level_rank": 3,
-  "rank": 17,
+  "total_points": 52500,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 7,
   "cadence": {
-    "avg_per_week": 16.6,
-    "avg_per_day": 7.65,
+    "avg_per_week": 0.4,
+    "avg_per_day": 0.31,
     "by_day_of_week": [
-      71,
-      33,
-      20,
-      8,
-      20,
-      17,
-      30
+      1,
+      1,
+      0,
+      1,
+      2,
+      0,
+      0
     ],
     "by_hour_of_day": [
       0,
@@ -25,360 +26,80 @@
       0,
       0,
       0,
-      36,
-      19,
       0,
       0,
-      15,
       0,
       0,
-      4,
-      15,
+      0,
       1,
-      18,
       0,
-      7,
-      44,
-      37,
+      0,
+      1,
+      0,
+      0,
+      0,
       3,
+      0,
+      0,
+      0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 0,
-    "longest_streak_weeks": 4,
+    "current_streak_weeks": 1,
+    "longest_streak_weeks": 2,
     "trend": "ramping_up",
-    "first_issue_at": "2026-03-19T18:23:23.000Z",
-    "last_issue_at": "2026-04-14T18:40:18.000Z"
+    "first_issue_at": "2026-04-07T13:59:59.000Z",
+    "last_issue_at": "2026-04-23T17:22:27.000Z"
   },
   "topics": [
     {
-      "name": "@xxsuryanshxx, pkg, handler",
-      "issue_count": 176,
+      "name": "preset, openyurt, card",
+      "issue_count": 5,
       "recent_issue": {
-        "title": "### 30. `CheckCanI` delegates to the cluster's apiserver using the console's identity, not the caller's",
-        "url": "https://github.com/kubestellar/console/issues/7979",
-        "created_at": "2026-04-14T18:40:18Z"
+        "title": "feat(marketplace): activate KServe preset as available",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/124",
+        "created_at": "2026-04-23T17:22:27Z"
       },
       "repos": [
-        "console"
+        "console-marketplace"
       ],
       "open_count": 0,
-      "closed_count": 176
-    },
-    {
-      "name": "tail, log, interact",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Incomplete Implementation: Logs DrillDown feature is hardcoded placeholder",
-        "url": "https://github.com/kubestellar/console/issues/4605",
-        "created_at": "2026-04-04T18:04:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "hardcodes, persistence, endpoint",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Persistence Sync API endpoint hardcodes 501 Not Implemented",
-        "url": "https://github.com/kubestellar/console/issues/4604",
-        "created_at": "2026-04-04T18:02:27Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "reconciliation, kick, loop",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "WorkloadDeployment backend reconciliation loop is unimplemented",
-        "url": "https://github.com/kubestellar/console/issues/4603",
-        "created_at": "2026-04-04T18:02:07Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "http, listenandserve, addr",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Title: net/http ListenAndServe started with no timeouts (Slowloris)",
-        "url": "https://github.com/kubestellar/console/issues/7262",
-        "created_at": "2026-04-13T06:11:46Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "subcommand, args, validateargs",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Title: validateArgs config-subcommand check is bypassable by placing a flag before the subcommand",
-        "url": "https://github.com/kubestellar/console/issues/7261",
-        "created_at": "2026-04-13T06:11:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "dryrunsessionsmu, activechatctxsmu, server",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Title: Lock-ordering deadlock between activeChatCtxsMu and dryRunSessionsMu in server_ai.go and server.go",
-        "url": "https://github.com/kubestellar/console/issues/7169",
-        "created_at": "2026-04-13T05:18:16Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "map, d7dffd, b6b0",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 16: Unsafe concurrent access to `slowClusters` map (`k8s/client.go`)",
-        "url": "https://github.com/kubestellar/console/issues/5568",
-        "created_at": "2026-04-08T19:26:48Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "retain, snapshot, timestamps",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 1: Metrics history retains snapshots with unparseable timestamps forever (`metrics_history.go`)",
-        "url": "https://github.com/kubestellar/console/issues/5552",
-        "created_at": "2026-04-08T19:22:40Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "traversal, filepath, path",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 5: Path traversal in static file serving handler (`server.go`)",
-        "url": "https://github.com/kubestellar/console/issues/5015",
-        "created_at": "2026-04-06T15:05:39Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "prediction, cardinality, p.",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 4: Unbounded Prometheus label cardinality from AI predictions (`prediction_metrics.go`)",
-        "url": "https://github.com/kubestellar/console/issues/5014",
-        "created_at": "2026-04-06T15:05:23Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "configuration, read, permission",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 14: World-readable config file permissions expose cluster configuration (`persistence_config.go`)",
-        "url": "https://github.com/kubestellar/console/issues/4806",
-        "created_at": "2026-04-05T13:39:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "github, a6ca, fca92bf5ef",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 11: Missing context propagation in GitHub proxy requests (`github_proxy.go`)",
-        "url": "https://github.com/kubestellar/console/issues/4803",
-        "created_at": "2026-04-05T13:39:22Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "key, authorization, aaccf0",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 6: Unvalidated empty API key sent in Authorization header (`provider_openai_compat.go`)",
-        "url": "https://github.com/kubestellar/console/issues/4798",
-        "created_at": "2026-04-05T13:38:22Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "plaintext, smtp, credential",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 15: SMTP credentials sent in plaintext without enforcing TLS in `email.go`",
-        "url": "https://github.com/kubestellar/console/issues/4730",
-        "created_at": "2026-04-05T09:09:02Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "worker, context, parent",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 6: `prediction_worker.go` uses `context.Background()` instead of parent context",
-        "url": "https://github.com/kubestellar/console/issues/4720",
-        "created_at": "2026-04-05T09:06:38Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "urls, github, repository",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "### Issue 4: Hardcoded GitHub API URLs in `update_checker.go` limit deployment flexibility",
-        "url": "https://github.com/kubestellar/console/issues/4718",
-        "created_at": "2026-04-05T09:06:01Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "panic, bypass, websocket",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Unhandled API Panic Recovery bypasses WebSocket connection cleanup",
-        "url": "https://github.com/kubestellar/console/issues/4608",
-        "created_at": "2026-04-04T18:05:19Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "a484, ee874a25ff49, omission",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Missing target=\"_blank\" vulnerability (rel=\"noopener noreferrer\" omission)",
-        "url": "https://github.com/kubestellar/console/issues/4607",
-        "created_at": "2026-04-04T18:04:55Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "xss, vulnerability, a97311",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Potential XSS Security Vulnerability via dangerouslySetInnerHTML",
-        "url": "https://github.com/kubestellar/console/issues/4592",
-        "created_at": "2026-04-04T17:49:28Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "window, endtime, starttime",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: MaintenanceWindows.tsx: No validation that endTime is after startTime — allows impossible windows",
-        "url": "https://github.com/kubestellar/console/issues/4417",
-        "created_at": "2026-04-03T12:21:52Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
+      "closed_count": 5
     }
   ],
   "suggestions": {
     "deepen": [],
     "stretch": [
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       },
       {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       }
     ]
   },
@@ -425,24 +146,16 @@
     },
     {
       "month": "2026-03",
-      "issue_count": 4
+      "issue_count": 0
     },
     {
       "month": "2026-04",
-      "issue_count": 195
+      "issue_count": 5
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/console",
-      "bug_issues": 149,
-      "feature_issues": 0,
-      "other_issues": 50,
-      "prs_opened": 4,
-      "prs_merged": 3
-    },
-    {
-      "repo": "kubestellar/console-marketplace",
+      "repo": "console-marketplace",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,

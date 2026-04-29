@@ -1,19 +1,20 @@
 {
   "login": "1PoPTRoN",
-  "generated_at": "2026-04-24T18:28:03.081Z",
+  "generated_at": "2026-04-29T10:39:54.287Z",
   "total_issues_opened": 0,
+  "total_prs_opened": 1,
   "avatar_url": "https://avatars.githubusercontent.com/u/213124096?v=4",
   "total_points": 200,
   "level": "Observer",
   "level_rank": 1,
-  "rank": 47,
+  "rank": 63,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 0,
+    "avg_per_day": 1,
     "by_day_of_week": [
       0,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -22,7 +23,7 @@
     "by_hour_of_day": [
       0,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -46,10 +47,10 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 0,
+    "longest_streak_weeks": 1,
     "trend": "inactive",
-    "first_issue_at": null,
-    "last_issue_at": null
+    "first_issue_at": "2026-02-04T02:15:16.000Z",
+    "last_issue_at": "2026-02-04T02:15:16.000Z"
   },
   "topics": [],
   "suggestions": {
@@ -95,7 +96,7 @@
     },
     {
       "month": "2026-02",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2026-03",
@@ -108,7 +109,7 @@
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,

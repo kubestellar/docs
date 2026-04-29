@@ -1,12 +1,13 @@
 {
   "login": "lightyagami2109",
-  "generated_at": "2026-04-24T06:49:34.588Z",
+  "generated_at": "2026-04-29T10:39:54.111Z",
   "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/186868051?v=4",
-  "total_points": 2100,
+  "total_points": 3000,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 30,
+  "rank": 28,
   "cadence": {
     "avg_per_week": 0,
     "avg_per_day": 0,
@@ -106,14 +107,5 @@
       "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "kubestellar/console",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 3,
-      "prs_merged": 3
-    }
-  ]
+  "repo_breakdown": []
 }

@@ -1,12 +1,13 @@
 {
   "login": "immortal71",
-  "generated_at": "2026-04-24T06:49:34.595Z",
+  "generated_at": "2026-04-29T10:39:54.285Z",
   "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/222581772?v=4",
   "total_points": 700,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 49,
+  "rank": 54,
   "cadence": {
     "avg_per_week": 0,
     "avg_per_day": 0,
@@ -106,14 +107,5 @@
       "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "kubestellar/console",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 1,
-      "prs_merged": 1
-    }
-  ]
+  "repo_breakdown": []
 }

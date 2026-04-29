@@ -1,23 +1,24 @@
 {
   "login": "shivansh-source",
-  "generated_at": "2026-04-24T18:28:02.087Z",
-  "total_issues_opened": 76,
+  "generated_at": "2026-04-29T10:39:54.008Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/174698756?v=4",
-  "total_points": 2300,
-  "level": "Navigator",
-  "level_rank": 3,
-  "rank": 21,
+  "total_points": 22850,
+  "level": "Commander",
+  "level_rank": 5,
+  "rank": 15,
   "cadence": {
-    "avg_per_week": 6.3,
-    "avg_per_day": 1.2,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
-      1,
       0,
-      10,
-      8,
-      28,
-      16,
-      13
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "by_hour_of_day": [
       0,
@@ -26,284 +27,35 @@
       0,
       0,
       0,
-      2,
       0,
       0,
-      3,
-      3,
-      3,
       0,
       0,
-      20,
-      7,
       0,
-      3,
-      24,
-      11,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 1,
-    "longest_streak_weeks": 5,
-    "trend": "steady",
-    "first_issue_at": "2026-02-13T06:35:49.000Z",
-    "last_issue_at": "2026-04-17T19:03:47.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "@shivansh, source, cluster",
-      "issue_count": 60,
-      "recent_issue": {
-        "title": "Card: Kube Kart (kube_kart)",
-        "url": "https://github.com/kubestellar/console/issues/8710",
-        "created_at": "2026-04-17T19:03:47Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 60
-    },
-    {
-      "name": "contributor, increasingly, solve",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Title-Add automated duplicate issue detection workflow",
-        "url": "https://github.com/kubestellar/console/issues/3020",
-        "created_at": "2026-03-20T14:56:20Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "httptest, test, server",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "feature: Add HTTP-level tests for main API server (pkg/api)",
-        "url": "https://github.com/kubestellar/console/issues/1778",
-        "created_at": "2026-03-06T15:03:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "quota, quotaheatmap, f949",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "QuotaHeatmap: Pod Count Used as Quota Proxy, But Presented as Actual Quota Usage",
-        "url": "https://github.com/kubestellar/console/issues/4851",
-        "created_at": "2026-04-05T18:36:59Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "cordon, uncordon, moment",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Title : NodeConditions: Cordon/Uncordon Fires Immediately With No Confirmation or Feedback",
-        "url": "https://github.com/kubestellar/console/issues/4841",
-        "created_at": "2026-04-05T18:27:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "repair, visible, node",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Node repair button is always visible and shows confusing \"Repair\" label even when node is healthy",
-        "url": "https://github.com/kubestellar/console/issues/4448",
-        "created_at": "2026-04-03T14:30:24Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "totalitems, healthycount, unhealthycount",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "title : CRD stats counter (healthy/unhealthy) is recalculated from pre-pagination filtered set but totalItems uses paginated hook value — counts diverge",
-        "url": "https://github.com/kubestellar/console/issues/4447",
-        "created_at": "2026-04-03T14:29:46Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "group, form, button",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "title : Cluster group form is hidden when groups exist but form toggle is off — new group button is inaccessible",
-        "url": "https://github.com/kubestellar/console/issues/4446",
-        "created_at": "2026-04-03T14:27:44Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "clickable, deployment, onclick",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "title : Deployment issues in ClusterDetailModal are not drill-down clickable",
-        "url": "https://github.com/kubestellar/console/issues/4444",
-        "created_at": "2026-04-03T14:26:16Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "allocatable, gage, capacity",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "title : CPU Detail Modal passes capacity as allocatable — utilization gauge always shows 100%",
-        "url": "https://github.com/kubestellar/console/issues/4443",
-        "created_at": "2026-04-03T14:25:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "logout, module, db219ec",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Permissions cache is module-level and never invalidated on logout",
-        "url": "https://github.com/kubestellar/console/issues/4442",
-        "created_at": "2026-04-03T14:24:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "networkutils, latency, ping",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug report : NetworkUtils ping uses fetch with mode: 'no-cors' — latency measurements are unreliable and always show \"success\"",
-        "url": "https://github.com/kubestellar/console/issues/3799",
-        "created_at": "2026-03-28T14:09:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "issystem, ns, networkpolicycoverage",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug : NetworkPolicyCoverage uses a heuristic to determine policy coverage — never fetches real NetworkPolicy resources",
-        "url": "https://github.com/kubestellar/console/issues/3794",
-        "created_at": "2026-03-28T14:05:18Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "repository, cmd, gitignore",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: .gitignore rule console hides Go source directory cmd/console",
-        "url": "https://github.com/kubestellar/console/issues/1010",
-        "created_at": "2026-02-14T10:47:20Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "regression, visual, disabled",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature : Re-enable and Stabilize Visual Regression Tests (Playwright)",
-        "url": "https://github.com/kubestellar/console/issues/927",
-        "created_at": "2026-02-13T06:35:49Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
-        "url": "https://github.com/kubestellar/console/issues/4189",
-        "repo": "console",
-        "topic_match": "httptest, test, server"
-      }
-    ],
-    "stretch": [
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
-      }
-    ]
+    "deepen": [],
+    "stretch": []
   },
   "activity_timeline": [
     {
@@ -344,25 +96,16 @@
     },
     {
       "month": "2026-02",
-      "issue_count": 3
+      "issue_count": 0
     },
     {
       "month": "2026-03",
-      "issue_count": 48
+      "issue_count": 0
     },
     {
       "month": "2026-04",
-      "issue_count": 25
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "kubestellar/console",
-      "bug_issues": 71,
-      "feature_issues": 2,
-      "other_issues": 3,
-      "prs_opened": 3,
-      "prs_merged": 1
-    }
-  ]
+  "repo_breakdown": []
 }

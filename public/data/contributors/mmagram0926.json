@@ -1,18 +1,19 @@
 {
   "login": "mmagram0926",
-  "generated_at": "2026-04-24T06:49:34.597Z",
-  "total_issues_opened": 2,
+  "generated_at": "2026-04-29T10:39:54.286Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/267122122?v=4",
   "total_points": 600,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 55,
+  "rank": 61,
   "cadence": {
-    "avg_per_week": 0.2,
-    "avg_per_day": 2,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
-      2,
+      0,
       0,
       0,
       0,
@@ -37,8 +38,8 @@
       0,
       0,
       0,
-      1,
-      1,
+      0,
+      0,
       0,
       0,
       0,
@@ -46,10 +47,10 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
-    "trend": "slowing_down",
-    "first_issue_at": "2026-03-10T17:55:02.000Z",
-    "last_issue_at": "2026-03-10T18:04:30.000Z"
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
   "topics": [],
   "suggestions": {
@@ -99,21 +100,12 @@
     },
     {
       "month": "2026-03",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-04",
       "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "kubestellar/console",
-      "bug_issues": 2,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 0,
-      "prs_merged": 0
-    }
-  ]
+  "repo_breakdown": []
 }

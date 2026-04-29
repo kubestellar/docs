@@ -1,18 +1,19 @@
 {
   "login": "waltforme",
-  "generated_at": "2026-04-24T18:28:02.743Z",
+  "generated_at": "2026-04-29T10:39:54.287Z",
   "total_issues_opened": 4,
+  "total_prs_opened": 1,
   "avatar_url": "https://avatars.githubusercontent.com/u/8633434?v=4",
-  "total_points": 1100,
-  "level": "Explorer",
-  "level_rank": 2,
-  "rank": 33,
+  "total_points": 400,
+  "level": "Observer",
+  "level_rank": 1,
+  "rank": 62,
   "cadence": {
     "avg_per_week": 0.1,
-    "avg_per_day": 0.04,
+    "avg_per_day": 0.06,
     "by_day_of_week": [
       0,
-      1,
+      2,
       0,
       3,
       0,
@@ -23,7 +24,7 @@
       0,
       0,
       0,
-      1,
+      2,
       0,
       0,
       1,
@@ -53,8 +54,8 @@
   },
   "topics": [
     {
-      "name": "translate, simplify, chinese",
-      "issue_count": 2,
+      "name": "simplify, chinese, homepage",
+      "issue_count": 3,
       "recent_issue": {
         "title": "bug: 'Meeting Agendas' on homepage is never translated",
         "url": "https://github.com/kubestellar/docs/issues/908",
@@ -64,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 3
     },
     {
       "name": "statement, workload, group",
@@ -81,7 +82,7 @@
       "closed_count": 1
     },
     {
-      "name": "mouse, cursor, home",
+      "name": "cursor, mouse, button",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Unexpected behavior of buttons on the website home page",
@@ -161,7 +162,7 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 1
+      "issue_count": 2
     },
     {
       "month": "2026-01",
@@ -182,7 +183,7 @@
   ],
   "repo_breakdown": [
     {
-      "repo": "kubestellar/docs",
+      "repo": "docs",
       "bug_issues": 1,
       "feature_issues": 0,
       "other_issues": 3,

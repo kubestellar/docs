@@ -1,12 +1,13 @@
 {
   "login": "sakshar2303",
-  "generated_at": "2026-04-24T06:49:34.597Z",
+  "generated_at": "2026-04-29T10:39:54.281Z",
   "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/228567327?v=4",
-  "total_points": 400,
-  "level": "Observer",
-  "level_rank": 1,
-  "rank": 56,
+  "total_points": 1500,
+  "level": "Explorer",
+  "level_rank": 2,
+  "rank": 38,
   "cadence": {
     "avg_per_week": 0,
     "avg_per_day": 0,
@@ -106,14 +107,5 @@
       "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "kubestellar/console",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 5,
-      "prs_merged": 1
-    }
-  ]
+  "repo_breakdown": []
 }
