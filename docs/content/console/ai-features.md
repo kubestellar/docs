@@ -72,6 +72,15 @@ The container is failing because it can't bind to port 80. There's already a pro
 
 **Suggestion:** Change the container port to 8080 or remove the conflicting service."
 
+### Chat Input Features
+
+The AI Missions chat input supports multiple input methods:
+
+- **Text input** — Type your question or command directly
+- **Microphone input** — Click the microphone button to dictate your mission using speech recognition (requires browser support)
+- **File attachment** — Click the attachment button to attach files (logs, YAML manifests, screenshots) for the AI to analyze
+- **History navigation** — Use arrow keys to navigate through previous messages
+
 ### Mission Panel Features
 
 - **Full screen** - Expand for more space
@@ -79,6 +88,7 @@ The container is failing because it can't bind to port 80. There's already a pro
 - **Collapse** - Show just the title
 - **Multiple missions** - Run several at once
 - **Token tracking** - See how many tokens used
+- **Recently deleted** - Restore accidentally deleted mission drafts
 
 ---
 
