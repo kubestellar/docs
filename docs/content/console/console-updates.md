@@ -171,6 +171,50 @@ docker pull quay.io/kubestellar/console:latest
 docker pull quay.io/kubestellar/console:v0.3.6-weekly.20260127
 ```
 
+## Recent Changes (Apr 23–29, 2026)
+
+### New Features
+
+- **One-Click GitHub OAuth Setup** (PR #10931, #10980) — Set up GitHub authentication in a single click using GitHub's App Manifest flow. No manual client ID/secret configuration needed. See [Authentication](authentication.md#one-click-app-manifest-flow).
+- **Microphone & File Attachment in AI Missions** (PR #10732) — The AI Missions chat input now includes microphone (speech-to-text) and file attachment buttons for richer interaction.
+- **Recently Deleted Drafts with Restore** (PR #10701) — Accidentally deleted mission drafts can now be recovered from a "recently deleted" list.
+- **Empty State Handling for Dashboard Cards** (PR #10827) — Dashboard cards display a meaningful empty state instead of blank layouts when no data is available.
+- **Confirmation Dialogs for Destructive Actions** (PR #10707) — Delete actions now prompt for confirmation before proceeding.
+
+### Bug Fixes (User-Facing)
+
+- **SSE Streams No Longer Cut Off at 60s** (PR #10868) — Live log tailing and mission updates via server-sent events now persist beyond the previous 60-second write deadline.
+- **Compliance Page Header Fixed** (PR #10690) — The Compliance page now correctly shows "Compliance" instead of "Security Posture".
+- **Namespace Selector in Logs & Events** (PR #10846) — The namespace dropdown now correctly populates and filters log output.
+- **Kagenti Error Messages** (PR #10847) — Agent connection failures now show actionable guidance instead of raw error strings.
+- **Marketplace Grid Responsiveness** (PR #10730) — The marketplace card grid no longer overflows when the sidebar panel is open.
+- **Settings Token Save Race Condition** (PR #10744, #10834) — Saving API keys or tokens no longer clobbers other settings changed in the same session.
+- **Feature Request Cross-Repo Routing** (PR #10819) — Feature requests now correctly route to the intended target repository.
+- **Navbar Overflow Labels** (PR #10697) — Navigation items in the overflow menu now display text labels, not just icons.
+- **Chat History Navigation** (PR #10789) — Improved keyboard navigation through previous AI Missions messages.
+
+### Security
+
+- **Namespace API Admin Guard** (PR #10839) — Namespace access endpoints are now restricted to admin-role users.
+- **Axios CVE-2026-42035 Patched** (PR #10821) — Upgraded axios to 1.15.1+ to address a known vulnerability.
+- **12 Missing Netlify API Redirects** (PR #10856) — Production API routes that were returning 404 now correctly proxy to backend handlers.
+
+### Configuration
+
+- **42+ Environment Variables Documented** (PR #10881) — The `.env.example` file now documents over 40 previously undocumented environment variables for self-hosted deployments.
+
+### Screenshots
+
+![Dashboard Overview (Apr 29, 2026)](images/dashboard-apr29.png)
+
+![Compliance Dashboard (Apr 29, 2026)](images/compliance-apr29.png)
+
+![Deploy Dashboard (Apr 29, 2026)](images/deploy-apr29.png)
+
+![Clusters View (Apr 29, 2026)](images/clusters-apr29.png)
+
+---
+
 ## Release Notes
 
 Release notes are published:
