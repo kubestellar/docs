@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-01T14:29:27.721Z",
-  "git_hash": "e111c1f",
+  "generated_at": "2026-05-01T18:23:54.083Z",
+  "git_hash": "bc31b86",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-09",
@@ -20,20 +20,20 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3849700,
+      "total_points": 3850550,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 350,
-        "feature_issues": 355,
-        "other_issues": 615,
-        "prs_opened": 5552,
-        "prs_merged": 5136
+        "feature_issues": 353,
+        "other_issues": 616,
+        "prs_opened": 5542,
+        "prs_merged": 5142
       },
       "bonus_points": 50,
       "weekly_activity": [
         69,
-        66,
+        38,
         137,
         376,
         1229,
@@ -43,9 +43,9 @@
         723,
         799,
         982,
-        670
+        687
       ],
-      "recent_activity_score": 3182.68,
+      "recent_activity_score": 3196.9,
       "rank": 1
     },
     {
@@ -171,15 +171,15 @@
     {
       "login": "Pranjal6955",
       "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-      "total_points": 55600,
+      "total_points": 56300,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
         "bug_issues": 92,
         "feature_issues": 5,
         "other_issues": 0,
-        "prs_opened": 40,
-        "prs_merged": 39
+        "prs_opened": 41,
+        "prs_merged": 40
       },
       "weekly_activity": [
         0,
@@ -193,9 +193,9 @@
         0,
         16,
         100,
-        21
+        22
       ],
-      "recent_activity_score": 110.45,
+      "recent_activity_score": 111.45,
       "rank": 6
     },
     {
@@ -262,11 +262,11 @@
     {
       "login": "arnavgogia20",
       "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-      "total_points": 41050,
+      "total_points": 41350,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 110,
+        "bug_issues": 111,
         "feature_issues": 7,
         "other_issues": 3,
         "prs_opened": 11,
@@ -284,9 +284,9 @@
         52,
         8,
         13,
-        9
+        10
       ],
-      "recent_activity_score": 63.04,
+      "recent_activity_score": 64.04,
       "rank": 9
     },
     {
@@ -322,11 +322,11 @@
     {
       "login": "khushiiagrawal",
       "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-      "total_points": 34900,
+      "total_points": 36400,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 100,
+        "bug_issues": 105,
         "feature_issues": 0,
         "other_issues": 0,
         "prs_opened": 7,
@@ -344,9 +344,9 @@
         3,
         67,
         25,
-        12
+        17
       ],
-      "recent_activity_score": 75.55,
+      "recent_activity_score": 80.55,
       "rank": 11
     },
     {
@@ -2180,6 +2180,36 @@
       "rank": 72
     },
     {
+      "login": "07723870876",
+      "avatar_url": "https://avatars.githubusercontent.com/u/119141615?v=4",
+      "total_points": 50,
+      "level": "Observer",
+      "level_rank": 1,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 1,
+        "prs_opened": 0,
+        "prs_merged": 0
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "recent_activity_score": 1,
+      "rank": 73
+    },
+    {
       "login": "khushisaifi8626-sketch",
       "avatar_url": "https://avatars.githubusercontent.com/u/275397700?v=4",
       "total_points": 50,
@@ -2207,7 +2237,7 @@
         0
       ],
       "recent_activity_score": 0.5,
-      "rank": 73
+      "rank": 74
     },
     {
       "login": "KlementMultiverse",
@@ -2237,7 +2267,7 @@
         0
       ],
       "recent_activity_score": 0.16,
-      "rank": 74
+      "rank": 75
     }
   ]
 }
