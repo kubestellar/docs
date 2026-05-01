@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-01T18:23:54.083Z",
-  "git_hash": "bc31b86",
+  "generated_at": "2026-05-01T22:17:59.986Z",
+  "git_hash": "ffbbbdb",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-09",
@@ -20,21 +20,21 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3850550,
+      "total_points": 3858100,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 350,
-        "feature_issues": 353,
-        "other_issues": 616,
-        "prs_opened": 5542,
-        "prs_merged": 5142
+        "bug_issues": 342,
+        "feature_issues": 348,
+        "other_issues": 613,
+        "prs_opened": 5560,
+        "prs_merged": 5156
       },
       "bonus_points": 50,
       "weekly_activity": [
         69,
-        38,
-        137,
+        17,
+        131,
         376,
         1229,
         689,
@@ -43,9 +43,9 @@
         723,
         799,
         982,
-        687
+        716
       ],
-      "recent_activity_score": 3196.9,
+      "recent_activity_score": 3223.07,
       "rank": 1
     },
     {
@@ -111,19 +111,19 @@
     {
       "login": "mrhapile",
       "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-      "total_points": 147800,
+      "total_points": 147050,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
         "bug_issues": 449,
         "feature_issues": 11,
-        "other_issues": 26,
-        "prs_opened": 21,
-        "prs_merged": 13
+        "other_issues": 25,
+        "prs_opened": 20,
+        "prs_merged": 12
       },
       "weekly_activity": [
         0,
-        2,
+        0,
         1,
         2,
         10,
@@ -135,7 +135,7 @@
         4,
         0
       ],
-      "recent_activity_score": 255.96,
+      "recent_activity_score": 255.76,
       "rank": 4
     },
     {
@@ -171,15 +171,15 @@
     {
       "login": "Pranjal6955",
       "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-      "total_points": 56300,
+      "total_points": 59000,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 92,
-        "feature_issues": 5,
+        "bug_issues": 96,
+        "feature_issues": 6,
         "other_issues": 0,
-        "prs_opened": 41,
-        "prs_merged": 40
+        "prs_opened": 43,
+        "prs_merged": 42
       },
       "weekly_activity": [
         0,
@@ -193,9 +193,9 @@
         0,
         16,
         100,
-        22
+        29
       ],
-      "recent_activity_score": 111.45,
+      "recent_activity_score": 118.45,
       "rank": 6
     },
     {
@@ -262,20 +262,20 @@
     {
       "login": "arnavgogia20",
       "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-      "total_points": 41350,
+      "total_points": 41250,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 111,
+        "bug_issues": 113,
         "feature_issues": 7,
         "other_issues": 3,
-        "prs_opened": 11,
-        "prs_merged": 10
+        "prs_opened": 10,
+        "prs_merged": 9
       },
       "weekly_activity": [
         0,
         0,
-        7,
+        6,
         1,
         16,
         0,
@@ -284,19 +284,19 @@
         52,
         8,
         13,
-        10
+        12
       ],
-      "recent_activity_score": 64.04,
+      "recent_activity_score": 65.91,
       "rank": 9
     },
     {
       "login": "ghanshyam2005singh",
       "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
-      "total_points": 37450,
+      "total_points": 37750,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 122,
+        "bug_issues": 123,
         "feature_issues": 0,
         "other_issues": 3,
         "prs_opened": 1,
@@ -314,9 +314,9 @@
         9,
         7,
         8,
-        34
+        35
       ],
-      "recent_activity_score": 69.07,
+      "recent_activity_score": 70.07,
       "rank": 10
     },
     {
@@ -382,11 +382,11 @@
     {
       "login": "Arpit529Srivastava",
       "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
-      "total_points": 30850,
+      "total_points": 30250,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 101,
+        "bug_issues": 99,
         "feature_issues": 2,
         "other_issues": 3,
         "prs_opened": 1,
@@ -394,7 +394,7 @@
       },
       "weekly_activity": [
         0,
-        2,
+        0,
         0,
         2,
         12,
@@ -406,7 +406,7 @@
         15,
         10
       ],
-      "recent_activity_score": 46.28,
+      "recent_activity_score": 46.08,
       "rank": 13
     },
     {
