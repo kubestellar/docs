@@ -16,7 +16,7 @@ export const NETLIFY_SITE_NAME = "kubestellar-docs"
 export const PRODUCTION_URL = "https://kubestellar.io"
 
 // Project identifiers
-export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "kubestellar-mcp" | "console"
+export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "kubestellar-mcp" | "console" | "hive"
 
 // Version info structure
 export interface VersionInfo {
@@ -240,6 +240,15 @@ const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
   },
 }
 
+// hive versions
+const HIVE_VERSIONS: Record<string, VersionInfo> = {
+  latest: {
+    label: "main (Latest)",
+    branch: "main",
+    isDefault: true,
+  },
+}
+
 // All projects configuration
 export const PROJECTS: Record<ProjectId, ProjectConfig> = {
   kubestellar: {
@@ -290,6 +299,14 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     contentPath: "docs/content/console",
     versions: CONSOLE_VERSIONS,
   },
+  "hive": {
+    id: "hive",
+    name: "Hive",
+    basePath: "hive",
+    currentVersion: "main",
+    contentPath: "docs/content/hive",
+    versions: HIVE_VERSIONS,
+  },
 }
 
 // Get project from URL pathname
@@ -308,6 +325,9 @@ export function getProjectFromPath(pathname: string): ProjectConfig {
   }
   if (pathname.startsWith("/docs/console")) {
     return PROJECTS["console"]
+  }
+  if (pathname.startsWith("/docs/hive")) {
+    return PROJECTS["hive"]
   }
   return PROJECTS.kubestellar
 }
