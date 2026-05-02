@@ -50,7 +50,7 @@ Full GitHub authentication with multi-user support.
 
 #### First-Time Setup Wizard
 
-When the console starts without `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` configured, the login page displays an interactive setup wizard instead of silently entering demo mode. The wizard offers two paths:
+When the console starts without `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` configured, the login page displays an interactive setup wizard instead of silently entering demo mode. The wizard offers three paths:
 
 - **"Set up GitHub Sign-In (One Click)"** — Uses GitHub's [App Manifest flow](https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest) to create a GitHub App and configure OAuth credentials automatically. One click creates the app, saves the credentials to the console's database, and redirects back to the login page with a success banner.
 - **"Set up GitHub Sign-In (Manual)"** — Expands an inline guide that walks you through creating a GitHub OAuth App manually, with copy-to-clipboard buttons for the callback URL and `.env` template
@@ -60,7 +60,7 @@ When the console starts without `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` co
 
 The one-click setup uses GitHub's App Manifest API to register a new GitHub App with the correct OAuth settings pre-configured:
 
-1. Click "Set up GitHub Sign-In" on the login page
+1. Click "Set up GitHub Sign-In (One Click)" on the login page
 2. The console generates a manifest with the correct callback URLs and permissions
 3. You're redirected to GitHub to confirm the app creation
 4. GitHub redirects back with a temporary code
