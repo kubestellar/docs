@@ -46,7 +46,7 @@ export default function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!docs|api|_next|_vercel|agenda|blog|code|community|drive|infomercial|join_us|joinus|ladder_stats|linkedin|quickstart|slack|survey|tv|youtube|.*\\..*).*)",
+    "/((?!docs|api|live|_next|_vercel|agenda|blog|code|community|drive|infomercial|join_us|joinus|ladder_stats|linkedin|quickstart|slack|survey|tv|youtube|.*\\..*).*)",
     "/",
   ],
 };

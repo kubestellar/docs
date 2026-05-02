@@ -97,6 +97,19 @@
   # Enable spam filtering
   spam_protection = true
 
+# Serve static hive dashboard snapshot (bypass Next.js middleware)
+[[redirects]]
+  from = "/live/hive"
+  to = "/live/hive/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/live/hive/"
+  to = "/live/hive/index.html"
+  status = 200
+  force = true
+
 # Redirects for short URLs
 
 # Redirect console-docs.kubestellar.io to kubestellar.io/docs/console
