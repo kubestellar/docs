@@ -20,6 +20,8 @@ export function getContentPath(projectId: ProjectId): string {
       return path.join(process.cwd(), 'docs', 'content', 'kubestellar-mcp')
     case 'console':
       return path.join(process.cwd(), 'docs', 'content', 'console')
+    case 'hive':
+      return path.join(process.cwd(), 'docs', 'content', 'hive')
     default:
       return docsContentPath
   }
@@ -38,6 +40,8 @@ export function getBasePath(projectId: ProjectId): string {
       return 'docs/kubestellar-mcp'
     case 'console':
       return 'docs/console'
+    case 'hive':
+      return 'docs/hive'
     default:
       return 'docs'
   }
@@ -228,6 +232,30 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
   }
 ]
 
+// Hive Navigation Structure
+const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
+  {
+    title: 'Overview',
+    items: [
+      { 'Introduction': 'readme.md' },
+      { 'Architecture': 'architecture.md' },
+    ]
+  },
+  {
+    title: 'Getting Started',
+    items: [
+      { 'macOS Setup': 'macos.md' },
+      { 'Troubleshooting': 'troubleshooting.md' },
+    ]
+  },
+  {
+    title: 'Reference',
+    items: [
+      { 'Outreach Anti-Spam': 'outreach-antispam.md' },
+    ]
+  }
+]
+
 // KubeStellar Navigation Structure
 const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
 
@@ -409,6 +437,9 @@ function getNavStructure(projectId: ProjectId): Array<{ title: string; items: Na
       break
     case 'console':
       baseStructure = NAV_STRUCTURE_CONSOLE
+      break
+    case 'hive':
+      baseStructure = NAV_STRUCTURE_HIVE
       break
     default:
       baseStructure = NAV_STRUCTURE_KUBESTELLAR

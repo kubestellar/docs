@@ -11,6 +11,7 @@ const STATIC_EDIT_BASE_URLS: Record<ProjectId, string> = {
   "multi-plugin": 'https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin',
   "kubestellar-mcp": 'https://github.com/kubestellar/kubectl-claude/edit/main/docs',
   console: 'https://github.com/kubestellar/console/edit/main/docs',
+  hive: 'https://github.com/kubestellar/hive/edit/main/docs',
 };
 
 interface EditPageLinkProps {

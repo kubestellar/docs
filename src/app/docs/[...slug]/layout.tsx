@@ -15,6 +15,7 @@ function getProjectFromSlug(slug: string[]): ProjectId {
     if (slug[0] === 'multi-plugin') return 'multi-plugin'
     if (slug[0] === 'kubestellar-mcp') return 'kubestellar-mcp'
     if (slug[0] === 'console') return 'console'
+    if (slug[0] === 'hive') return 'hive'
   }
   return 'kubestellar'
 }
