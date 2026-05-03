@@ -223,7 +223,7 @@ This is not a new scheduling model — it's a **composition** of the existing pa
 
 ### Reference implementation
 
-- [`examples/worker.sh.example`](../examples/worker.sh.example) — the scanner script
-- [`examples/sqlite-state.md`](../examples/sqlite-state.md) — SQLite schema and query patterns
-- [`examples/kubestellar-fixer.md`](../examples/kubestellar-fixer.md) — full case study with results
-- [`launchd/`](../launchd/) — macOS plist templates for the scanner and supervisor
+- `examples/worker.sh.example` — the scanner script
+- `examples/sqlite-state.md` — SQLite schema and query patterns
+- `examples/kubestellar-fixer.md` — full case study with results
+- `launchd/` — macOS plist templates for the scanner and supervisor

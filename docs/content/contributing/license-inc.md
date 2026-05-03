@@ -181,4 +181,4 @@ KubeStellar is licensed under the Apache License, Version 2.0.
    END OF TERMS AND CONDITIONS
 ```
 
-The full license text is also available at [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
+The full license text is also available at [https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0).
