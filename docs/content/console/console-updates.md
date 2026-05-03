@@ -149,6 +149,8 @@ To manually update or install a specific version:
 
 ### Using npm
 
+#### Quick Start (Frontend Only)
+
 ```bash
 # Clone the repository
 git clone https://github.com/kubestellar/console.git
@@ -161,6 +163,48 @@ npm install
 npm run dev -- --port 5174
 ```
 
+> **Note**: This starts only the frontend. For full functionality, you also need to run the backend (see below).
+
+#### Complete Setup (Frontend + Backend + Agent)
+
+**Terminal 1 - Backend API Server:**
+
+```bash
+# From the repository root
+cd console
+go build -o bin/console ./cmd/console
+./bin/console
+```
+
+The backend will start on **http://localhost:8080**.
+
+**Terminal 2 - kc-agent (MCP + WebSocket):**
+
+```bash
+# From the repository root
+cd console
+go build -o bin/kc-agent ./cmd/kc-agent
+./bin/kc-agent
+```
+
+The agent will start on **http://localhost:8585**.
+
+**Terminal 3 - Frontend Dev Server:**
+
+```bash
+# From the repository root
+cd console/web
+npm install
+npm run dev -- --port 5174
+```
+
+Open **http://localhost:5174** in your browser.
+
+> **💡 Tip**: For simplified startup, use the provided startup scripts:
+> - `./start-dev.sh` for development mode (no OAuth)
+> - `./startup-oauth.sh` for GitHub OAuth mode
+>
+> See the [Local Setup Guide](local-setup.md) for details.
 ### Using Docker
 
 ```bash

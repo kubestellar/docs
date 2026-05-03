@@ -14,7 +14,7 @@ This guide walks you through running KubeStellar Console from source on your loc
 
 | Requirement | Version | Check |
 |------------|---------|-------|
-| Go | 1.24+ | `go version` |
+| Go | 1.25+ | `go version` |
 | Node.js | 20+ | `node --version` |
 | npm | 10+ | `npm --version` |
 | kubectl | Latest | `kubectl version --client` |
