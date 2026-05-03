@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-03T06:52:05.997Z",
-  "git_hash": "66d56e2",
+  "generated_at": "2026-05-03T10:22:22.346Z",
+  "git_hash": "1f14f8f",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-09",
@@ -20,22 +20,22 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3782050,
+      "total_points": 3776850,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 346,
-        "feature_issues": 331,
+        "bug_issues": 344,
+        "feature_issues": 329,
         "other_issues": 628,
-        "prs_opened": 5471,
-        "prs_merged": 5039
+        "prs_opened": 5464,
+        "prs_merged": 5033
       },
       "bonus_points": 50,
       "weekly_activity": [
         69,
         17,
         38,
-        251,
+        235,
         1229,
         689,
         445,
@@ -43,29 +43,29 @@
         723,
         799,
         982,
-        847
+        852
       ],
-      "recent_activity_score": 3322.76,
+      "recent_activity_score": 3325.24,
       "rank": 1
     },
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 179250,
+      "total_points": 178150,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
         "bug_issues": 543,
         "feature_issues": 18,
         "other_issues": 15,
-        "prs_opened": 24,
-        "prs_merged": 18
+        "prs_opened": 21,
+        "prs_merged": 17
       },
       "weekly_activity": [
         1,
         2,
         0,
-        3,
+        0,
         9,
         16,
         59,
@@ -75,7 +75,7 @@
         5,
         0
       ],
-      "recent_activity_score": 295.87,
+      "recent_activity_score": 295.4,
       "rank": 2
     },
     {
@@ -111,21 +111,21 @@
     {
       "login": "mrhapile",
       "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-      "total_points": 149350,
+      "total_points": 148450,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
         "bug_issues": 459,
         "feature_issues": 11,
         "other_issues": 25,
-        "prs_opened": 19,
-        "prs_merged": 11
+        "prs_opened": 17,
+        "prs_merged": 10
       },
       "weekly_activity": [
         0,
         0,
         0,
-        2,
+        0,
         10,
         0,
         10,
@@ -135,7 +135,7 @@
         4,
         10
       ],
-      "recent_activity_score": 265.63,
+      "recent_activity_score": 265.32,
       "rank": 4
     },
     {
@@ -352,12 +352,12 @@
     {
       "login": "Abhishek-Punhani",
       "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-      "total_points": 32050,
+      "total_points": 33450,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 93,
-        "feature_issues": 3,
+        "bug_issues": 98,
+        "feature_issues": 2,
         "other_issues": 5,
         "prs_opened": 8,
         "prs_merged": 4
@@ -366,7 +366,7 @@
         0,
         0,
         0,
-        9,
+        8,
         8,
         12,
         27,
@@ -374,9 +374,9 @@
         11,
         6,
         13,
-        7
+        12
       ],
-      "recent_activity_score": 47.06,
+      "recent_activity_score": 51.9,
       "rank": 12
     },
     {
@@ -472,11 +472,11 @@
     {
       "login": "AAdIprog",
       "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
-      "total_points": 19500,
+      "total_points": 19200,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 54,
+        "bug_issues": 53,
         "feature_issues": 2,
         "other_issues": 0,
         "prs_opened": 8,
@@ -486,7 +486,7 @@
         0,
         0,
         1,
-        3,
+        2,
         5,
         0,
         16,
@@ -496,7 +496,7 @@
         0,
         0
       ],
-      "recent_activity_score": 22.49,
+      "recent_activity_score": 22.34,
       "rank": 16
     },
     {
