@@ -192,14 +192,12 @@ For safety reasons, copies of the docs source may remain in a to-be-deleted fold
 |   ├ 📁 docs/ ← raw MD content source moved from repos         |
 |   |   📁content/                                              |
 |   |     📁 a2a/                                               |
-|   |     📁 dommon-subs/                                       |
+|   |     📁 common-subs/                                       |
 |   |     📁 Community/                                         |
 |   |     📁 console/                                           |
 |   |     📁 contribution-guidelines/                           |
 |   |     📁 icons/                                             |
 |   |     📁 images/                                            |
-|   |     📁 klaude/                                            |
-|   |     📁 kubeflex/                                          |
 |   |     📁 kubestellar/                                       |
 |   |     📁 kubestellar-mcp/                                   |
 |   |     📁 multi-plugin/                                      |
@@ -449,14 +447,14 @@ The site when first loaded shows the **latest** tagged version of the KubeStella
    - Check that all pages are accessible
 
 3. **Content Verification:**
-   - Ensure the content file exists in the main KubeStellar repo
+   - Ensure the content file exists in the docs repository
    - Verify the file path in `page-map.ts` matches exactly
    - Check that the category structure makes logical sense
 
 ### Common Issues
 
 1. **Page Not Appearing:**
-   - Verify file exists in main KubeStellar repo
+   - Verify file exists in docs repository
    - Check file path spelling and case sensitivity
    - Ensure file has `.md` or `.mdx` extension
    - Rebuild the page map
@@ -499,15 +497,13 @@ Available components:
 #### Workflow 1: Adding a New Documentation Page
 
 ```sh
-# Step 1: Add content to main KubeStellar repo
-cd /path/to/kubestellar
+# Step 1: Add content to docs repo
+cd /path/to/docs
 echo "# My New Page" > docs/content/my-new-page.md
 git add docs/content/my-new-page.md
 git commit -m "Add new documentation page"
-git push
 
-# Step 2: Update navigation in docs repo
-cd /path/to/docs
+# Step 2: Update navigation in page-map.ts
 # Edit src/app/docs/page-map.ts to add your page
 # Add: { file: 'my-new-page.md' } in appropriate category
 
@@ -518,6 +514,7 @@ npm run dev
 # Step 4: Commit and push
 git add src/app/docs/page-map.ts
 git commit -m "Add my-new-page to navigation"
+git push
 git push
 ```
 
