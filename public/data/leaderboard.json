@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-03T10:22:22.346Z",
-  "git_hash": "1f14f8f",
+  "generated_at": "2026-05-03T14:20:40.574Z",
+  "git_hash": "838886e",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-09",
@@ -20,22 +20,22 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3776850,
+      "total_points": 3774300,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 344,
-        "feature_issues": 329,
-        "other_issues": 628,
-        "prs_opened": 5464,
-        "prs_merged": 5033
+        "feature_issues": 328,
+        "other_issues": 629,
+        "prs_opened": 5459,
+        "prs_merged": 5030
       },
       "bonus_points": 50,
       "weekly_activity": [
         69,
         17,
         38,
-        235,
+        224,
         1229,
         689,
         445,
@@ -43,9 +43,9 @@
         723,
         799,
         982,
-        852
+        858
       ],
-      "recent_activity_score": 3325.24,
+      "recent_activity_score": 3329.5,
       "rank": 1
     },
     {
@@ -352,13 +352,13 @@
     {
       "login": "Abhishek-Punhani",
       "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-      "total_points": 33450,
+      "total_points": 33400,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 98,
         "feature_issues": 2,
-        "other_issues": 5,
+        "other_issues": 4,
         "prs_opened": 8,
         "prs_merged": 4
       },
@@ -366,7 +366,7 @@
         0,
         0,
         0,
-        8,
+        7,
         8,
         12,
         27,
@@ -376,7 +376,7 @@
         13,
         12
       ],
-      "recent_activity_score": 51.9,
+      "recent_activity_score": 51.74,
       "rank": 12
     },
     {
