@@ -185,7 +185,7 @@ git clone https://github.com/kubestellar/console.git
 cd console
 
 # Start everything
-./dev.sh
+./start-dev.sh
 ```
 
 Open http://localhost:5174 and sign in with GitHub.
