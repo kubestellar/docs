@@ -78,15 +78,7 @@ ITS serves as the entry point for cluster lifecycle operations, integrates with 
    
    ![Step 8 — Verify success](../images/its/import-cluster/quick-connect/verify-import-success.png)
 
-### Guide 2: Importing via Kubeconfig
-
-Will be added soon.
-
-### Guide 3: Manual Import with API URL
-
-Will be added soon.
-
-### Guide 4: Adding Labels to Clusters
+### Guide 2: Adding Labels to Clusters
 
 1. **Locate cluster in table**
    - Find the target cluster in the ITS clusters list.
@@ -123,7 +115,7 @@ Will be added soon.
 
    ![Step 7 — Save](../images/its/labelling/save-changes.png)
 
-### Guide 5: Bulk Labeling Clusters
+### Guide 3: Bulk Labeling Clusters
 
 1. **Select checkboxes for multiple clusters**
    - Use the table checkboxes to select two or more clusters.
@@ -155,7 +147,7 @@ Will be added soon.
 
    ![Step 6 — Verify labels](../images/its/bulk-labelling/verify-applied-labels.png)
 
-### Guide 6: Filtering Clusters by Labels
+### Guide 4: Filtering Clusters by Labels
 
 1. **Locate label chip on any cluster**
    - Find a label chip (e.g., `environment=production`) on any cluster row.
