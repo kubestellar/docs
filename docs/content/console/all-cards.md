@@ -29,7 +29,7 @@ Every card has:
 
 ---
 
-## All 110+ Card Types
+## All 120+ Card Types
 
 The console ships with 120+ built-in cards, and you can create more using the Card Factory. Below are the main categories.
 

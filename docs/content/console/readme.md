@@ -3,7 +3,7 @@ title: "KubeStellar Console — AI-Powered Multi-Cluster Kubernetes Dashboard fo
 linkTitle: "Console"
 weight: 5
 description: >
-  KubeStellar Console is the open source multi-cluster Kubernetes dashboard with AI Missions that automate deployment, troubleshooting, and repair across your entire fleet. 110+ monitoring cards, 400+ CNCF project missions, a community marketplace, and a resolution knowledge base — all designed to save you time and tokens.
+  KubeStellar Console is the open source multi-cluster Kubernetes dashboard with AI Missions that automate deployment, troubleshooting, and repair across your entire fleet. 120+ monitoring cards, 400+ CNCF project missions, a community marketplace, and a resolution knowledge base — all designed to save you time and tokens.
 keywords:
   - multi-cluster kubernetes dashboard
   - kubernetes multi-cluster management
@@ -51,7 +51,7 @@ It's a closed-loop system - your feedback directly improves the product!
 | What | Count |
 |------|-------|
 | Dashboard Pages | 20+ |
-| Card Types | 110+ |
+| Card Types | 120+ |
 | Stats Blocks | 93+ |
 
 ## Main Features
@@ -76,7 +76,7 @@ It's a closed-loop system - your feedback directly improves the product!
 
 ### Smart Cards
 
-110+ card types you can add to any dashboard:
+120+ card types you can add to any dashboard:
 
 - Cluster health checks
 - Resource usage gauges
