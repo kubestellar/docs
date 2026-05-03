@@ -247,9 +247,11 @@ reaches **your** clusters through a clear split of responsibilities:
    server-side kubeconfig to answer cluster-data queries.
 4. **kc-agent** runs on **your workstation**, reads *your* local
    kubeconfig, and exposes kubectl execution over WebSocket (to the
-   browser) and MCP (to AI coding agents). This is how a hosted console
-   like `console.kubestellar.io` can execute `kubectl` against clusters
-   that only *you* can reach.
+   browser) and MCP (to AI coding agents). When running the console
+   locally (via `startup-oauth.sh` or `start-dev.sh`), this is how
+   the browser can execute `kubectl` against clusters that only *you*
+   can reach. Note: the hosted demo at `console.kubestellar.io` does
+   **not** connect to kc-agent — it only displays demo/cached data.
 
 **Control plane vs data plane:**
 

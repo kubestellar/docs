@@ -74,7 +74,7 @@ KubeStellar Console has **7 components** that work together. For the full archit
 | 3 | **Backend** | Go server that handles API calls | Yes — included in the console executable |
 | 4 | **MCP Bridge** | Hosts kubestellar-ops and kubestellar-deploy MCP servers; Backend queries them for cluster data | Yes — spawned as a child process by the console executable |
 | 5 | **AI Coding Agent + Plugins** | Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI) with kubestellar-ops/deploy plugins | Yes — [Claude Marketplace](#step-1-install-claude-code-plugins) or Homebrew |
-| 6 | **kc-agent** | Local MCP+WebSocket server on port 8585 for kubectl execution | Yes — spawned by the console executable |
+| 6 | **kc-agent** | Local MCP+WebSocket server on port 8585 for kubectl execution | Yes — auto-spawned in local dev mode (`startup-oauth.sh` / `start-dev.sh`); requires [manual setup](#4-run-kc-agent-locally) for Helm deployments |
 | 7 | **Kubeconfig** | Your cluster credentials | Yes — your existing `~/.kube/config` |
 
 ---

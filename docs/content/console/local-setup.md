@@ -81,17 +81,13 @@ The Vite dev server proxies API requests to the Go backend on port 8080.
 
 For multi-user deployments or to test the complete authentication flow.
 
-> **💡 New: Setup Wizard (Recommended)**
+> **💡 Missing `.env`?**
 >
-> As of v0.3.18, you can skip the manual steps below. Simply start the console without OAuth credentials:
+> `startup-oauth.sh` requires a `.env` file with `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`. If the file is missing or incomplete, the script will **exit with an error** and print instructions for creating the `.env` file.
 >
-> ```bash
-> ./startup-oauth.sh
-> ```
+> If you don't need OAuth, use `./start-dev.sh` instead — it runs without any credentials using a local `dev-user` session.
 >
-> Visit `http://localhost:8080` and the login page will show an interactive **Setup Wizard** that walks you through creating a GitHub OAuth App, with copy-to-clipboard buttons for all values. You can also choose "Continue in Demo Mode" to skip OAuth entirely.
->
-> The manual steps below are still available if you prefer to configure OAuth before first startup.
+> The manual steps below explain how to create the GitHub OAuth App and `.env` file.
 
 ### Step 1: Create a GitHub OAuth App
 
