@@ -22,7 +22,7 @@ This document adapts the main [KubeStellar contributing guidelines](https://gith
 ## 🐞 Issues
 
 * Before opening a new issue, **search the [A2A issue tracker](https://github.com/kubestellar/a2a/issues)** (open + closed).
-* If no existing issue matches your problem, feel free to [create one](https://github.com/kubestellar/a2a/issues/new).
+* If no existing issue matches your problem, feel free to [create one](https://github.com/kubestellar/a2a/issues).
 * We label beginner-friendly items as [good first issue](https://github.com/kubestellar/a2a/labels/good%20first%20issue) and broader items as [help wanted](https://github.com/kubestellar/a2a/labels/help%20wanted).
 * To claim an issue, comment `/assign`. To release it, comment `/unassign`.
 
@@ -120,7 +120,7 @@ Most contributions here are UI and docs. Please:
 ## 📜 Licensing
 
 This project is [Apache 2.0 licensed](https://github.com/kubestellar/a2a/blob/main/LICENSE).
-By contributing, you agree to the [Developer Certificate of Origin (DCO)](https://github.com/kubestellar/a2a/DCO).
+By contributing, you agree to the [Developer Certificate of Origin (DCO)](https://developercertificate.org/).
 
 
 To sign commits:

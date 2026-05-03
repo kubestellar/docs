@@ -6,7 +6,7 @@ This guide will help you get started with KubeFlex quickly. Choose the scenario 
 
 - [kind](https://kind.sigs.k8s.io/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/)
-- [KubeFlex CLI](../README.md#installation)
+- [KubeFlex CLI](https://github.com/kubestellar/kubeflex#installation)
 
 ## Basic Multi-Tenant Setup
 

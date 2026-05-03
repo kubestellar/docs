@@ -308,4 +308,4 @@ journalctl -u claude-scanner # raw service log
 
 ---
 
-Apache 2.0  ·  [Architecture](docs/architecture.md)  ·  [KubeStellar example](examples/kubestellar/)
+Apache 2.0  ·  [Architecture](architecture.md)

@@ -175,4 +175,4 @@ This pattern is simpler when:
 - You want the scanner to run even when the AI session is down
 - You want to decouple scan cadence from agent availability
 
-See [`examples/worker.sh.example`](../examples/worker.sh.example) for a reference implementation and [`examples/kubestellar-fixer.md`](../examples/kubestellar-fixer.md) for a full case study of this pattern in production.
+See `examples/worker.sh.example` for a reference implementation and `examples/kubestellar-fixer.md` for a full case study of this pattern in production.

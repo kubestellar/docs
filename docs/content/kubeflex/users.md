@@ -698,8 +698,8 @@ volumeMounts:
 ```
 
 A complete example for installing OpenShift CRDs on a control plane is available
-[here](../config/samples/postcreate-hooks/openshift-crds.yaml). More examples
-are available [here](../config/samples/postcreate-hooks).
+[here](https://github.com/kubestellar/kubeflex/blob/main/config/samples/postcreate-hooks/openshift-crds.yaml). More examples
+are available [here](https://github.com/kubestellar/kubeflex/tree/main/config/samples/postcreate-hooks).
 
 ### Labels propagation
 

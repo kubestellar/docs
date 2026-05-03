@@ -44,7 +44,7 @@ object selection predicate and also three kinds of information that
 modulate the downsync. Note that each such clause must have at least
 one field specifying part of the workload selection predicate.
 
-For more definitional details about a `BindingPolicy`, see [the API reference](https://pkg.go.dev/github.com/kubestellar/kubestellar@v{{ config.ks_latest_release }}/api/control/v1alpha1#BindingPolicy){# readers of the unrendered sources should see [the Go source](../../../api/control/v1alpha1/types.go) instead #}.
+For more definitional details about a `BindingPolicy`, see [the API reference](https://pkg.go.dev/github.com/kubestellar/kubestellar@v{{ config.ks_latest_release }}/api/control/v1alpha1#BindingPolicy){# readers of the unrendered sources should see [the Go source](https://github.com/kubestellar/kubestellar/blob/main/api/control/v1alpha1/types.go) instead #}.
 
 Following is an example of a `BindingPolicy` object, used in the
 end-to-end test of `createOnly` functionality.
