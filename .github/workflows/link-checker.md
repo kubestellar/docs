@@ -17,6 +17,10 @@ network:
     - github
 
 safe-outputs:
+  create-issue:
+    labels: [broken-links]
+  close-issue:
+    required-labels: [broken-links]
   add-comment:
   add-labels:
     allowed: [broken-links]

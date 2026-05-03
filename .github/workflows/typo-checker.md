@@ -14,6 +14,10 @@ permissions: read-all
 network: defaults
 
 safe-outputs:
+  create-issue:
+    labels: [typos]
+  close-issue:
+    required-labels: [typos]
   add-comment:
   add-labels:
     allowed: [typos]
