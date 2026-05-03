@@ -78,7 +78,59 @@ ITS serves as the entry point for cluster lifecycle operations, integrates with 
    
    ![Step 8 — Verify success](../images/its/import-cluster/quick-connect/verify-import-success.png)
 
-### Guide 2: Adding Labels to Clusters
+### Guide 2: Importing via Kubeconfig
+
+1. **Navigate to ITS page**
+   - Open the KubeStellar dashboard and select **"Managed Clusters"**.
+
+2. **Click "Import Cluster"**
+   - Click the blue "Import Cluster" button in the top-right.
+
+3. **Select "Kubeconfig" tab**
+   - Select the "Kubeconfig" tab (📄 icon) in the import dialog.
+
+4. **Upload or paste kubeconfig**
+   - Click "Choose File" to upload a kubeconfig file, or paste the YAML content directly.
+
+5. **Select context**
+   - Choose the appropriate context from the dropdown if multiple contexts exist.
+
+6. **Click "Import Cluster"**
+   - Press the **Import Cluster** button to begin the import process.
+
+7. **Watch import progress**
+   - Observe progress indicators and wait for the import to complete.
+
+8. **Verify cluster appears**
+   - Return to the ITS table and confirm the cluster is listed with status "Active".
+
+### Guide 3: Manual Import with API URL
+
+1. **Navigate to ITS page**
+   - Open the KubeStellar dashboard and select **"Managed Clusters"**.
+
+2. **Click "Import Cluster"**
+   - Click the blue "Import Cluster" button in the top-right.
+
+3. **Select "Manual API URL" tab**
+   - Select the "Manual API URL" tab (🔗 icon) in the import dialog.
+
+4. **Enter cluster API URL**
+   - Provide the cluster's API server URL (e.g., `https://cluster.example.com:6443`).
+
+5. **Provide authentication credentials**
+   - Enter the bearer token, certificate, or other required authentication method.
+
+6. **Configure cluster name**
+   - Specify a name for the cluster (defaults to hostname if not provided).
+
+7. **Click "Import Cluster"**
+   - Press the **Import Cluster** button to start the import.
+
+8. **Verify connection and import**
+   - Wait for validation and import completion, then verify the cluster appears in the ITS table.
+
+### Guide 4: Adding Labels to Clusters
 
 1. **Locate cluster in table**
    - Find the target cluster in the ITS clusters list.
