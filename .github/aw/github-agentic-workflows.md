@@ -796,7 +796,7 @@ Use GitHub Actions context expressions throughout the workflow content. **Note: 
 - **`${{ steps.* }}`** - Any outputs from previous steps (e.g., `${{ steps.my-step.outputs.result }}`)
 - **`${{ github.event.inputs.* }}`** - Any workflow inputs when triggered by workflow_dispatch (e.g., `${{ github.event.inputs.environment }}`)
 
-All other expressions are dissallowed.
+All other expressions are disallowed.
 
 ### Sanitized Context Text (`needs.activation.outputs.text`)
 
@@ -1228,7 +1228,7 @@ safe-outputs:
 
 # Helper Bot
 
-Respond to /helper-bot mentions with helpful information realted to ${{ github.repository }}. The request is "${{ needs.activation.outputs.text }}".
+Respond to /helper-bot mentions with helpful information related to ${{ github.repository }}. The request is "${{ needs.activation.outputs.text }}".
 ```
 
 ### Workflow Improvement Bot
