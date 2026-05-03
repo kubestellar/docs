@@ -18,8 +18,8 @@ Get KubeStellar Console running locally for development or evaluation.
 
 > **Try it first!** See a live preview at [console.kubestellar.io](https://console.kubestellar.io) - no installation needed.
 
-!!! important "Claude Code is required for AI features"
-    This Quick Start uses **[Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview)**, Anthropic's CLI tool, to install and manage the kubestellar-mcp plugins that connect the console to your clusters. Claude Code requires an Anthropic API subscription.
+!!! info "Claude Code is optional (recommended for AI features)"
+    This Quick Start optionally uses **[Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview)**, Anthropic's CLI tool, to install and manage the kubestellar-mcp plugins that connect the console to your clusters. Claude Code requires an Anthropic API subscription.
 
     **What requires Claude Code:**
 
@@ -81,7 +81,14 @@ brew tap kubestellar/tap
 brew install kubestellar-ops kubestellar-deploy
 ```
 
-Verify installation with `/mcp` in Claude Code - you should see both plugins connected.
+Verify installation:
+
+```bash
+# Option 1: Check binaries are on PATH
+which kubestellar-ops && which kubestellar-deploy
+
+# Option 2: If using Claude Code, type /mcp to see both plugins connected
+```
 
 ## Step 2: Run the Console
 
@@ -181,8 +188,11 @@ helm install ksc ./deploy/helm/kubestellar-console \
 The script downloads a binary to a local directory (typically `~/.kubestellar/`). To remove it:
 
 ```bash
-# Stop the running console (Ctrl+C in the terminal where it's running, or find the process)
-pkill -f kubestellar-console || true
+# Stop the running console:
+# - Press Ctrl+C in the terminal where it's running, OR
+# - Kill processes on the specific ports:
+kill $(lsof -ti:8080) 2>/dev/null || true
+kill $(lsof -ti:5174) 2>/dev/null || true
 
 # Remove downloaded files
 rm -rf ~/.kubestellar/

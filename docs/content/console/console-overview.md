@@ -9,7 +9,7 @@ description: >
 # KubeStellar Console
 
 !!! info "Console Version"
-    **Current Console Release: v0.3.17** — The console has its own release cycle, independent from KubeStellar core releases. The docs site version picker reflects KubeStellar core versions (e.g., v0.29.0), not console versions. These console docs always reflect the latest console release. See [releases](https://github.com/kubestellar/console/releases) for the full changelog.
+    **Current Console Release: v0.3.18** — The console has its own release cycle, independent from KubeStellar core releases. The docs site version picker reflects KubeStellar core versions (e.g., v0.29.0), not console versions. These console docs always reflect the latest console release. See [releases](https://github.com/kubestellar/console/releases) for the full changelog.
 
 The KubeStellar Console is a modern, AI-powered multi-cluster management interface that provides real-time monitoring, intelligent insights, and a customizable dashboard experience for managing Kubernetes clusters at scale.
 
