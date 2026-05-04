@@ -96,7 +96,7 @@ tar xzvf $(basename $LATEST_RELEASE_URL)
 sudo install -o root -g root -m 0755 bin/kflex /usr/local/bin/kflex
 ```
 
-Alternatively use the the single command below that will automatically detect the host OS type and architecture:
+Alternatively use the single command below that will automatically detect the host OS type and architecture:
 
 ```shell
 sudo su <<EOF

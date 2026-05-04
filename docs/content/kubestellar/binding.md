@@ -35,7 +35,7 @@ WECs.
 The WEC-selecting predicate is an array of label selectors in
 `spec.clusterSelectors`. These label selectors test the labels of the
 inventory objects describing the WECs. The bound WECs are the ones
-whose inventory object passes at least one of the the label selectors
+whose inventory object passes at least one of the label selectors
 in `spec.clusterSelectors`.
 
 The workload object selection predicate is in `spec.downsync`, which
