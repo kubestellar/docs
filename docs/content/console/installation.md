@@ -47,7 +47,7 @@ source) you only need the entries marked **Local**.
 
 ## Fastest Path
 
-> **Prerequisites**: You must install the kubestellar-mcp plugins **before** running this command — they are not installed by `start.sh`. See [Step 1: Install Claude Code Plugins](#step-1-install-claude-code-plugins) first.
+> **Prerequisites**: You must install the kubestellar-mcp plugins **before** running this command if you want the MCP Bridge to query your clusters — they are not installed by `start.sh`. See [Step 1: Install Claude Code Plugins](#step-1-install-claude-code-plugins). Without them, the dashboard still works but displays demo data instead of live cluster data.
 
 One command downloads pre-built binaries, starts the backend + agent, and opens your browser:
 
@@ -67,14 +67,16 @@ KubeStellar Console has **7 components** that work together. For the full archit
 
 ### Component Summary
 
+This is the authoritative component table — the [Architecture](architecture.md#the-7-components) page references this list.
+
 | # | Component | What it does | Required? |
 |---|-----------|--------------|-----------|
 | 1 | **GitHub OAuth App** | Lets users sign in with GitHub | Optional — without it, a local `dev-user` session is created |
 | 2 | **Frontend** | React web app you see in browser | Yes — included in the console executable |
 | 3 | **Backend** | Go server that handles API calls | Yes — included in the console executable |
 | 4 | **MCP Bridge** | Hosts kubestellar-ops and kubestellar-deploy MCP servers; Backend queries them for cluster data | Yes — spawned as a child process by the console executable |
-| 5 | **AI Coding Agent + Plugins** | Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI) with kubestellar-ops/deploy plugins | Yes — [Claude Marketplace](#step-1-install-claude-code-plugins) or Homebrew |
-| 6 | **kc-agent** | Local MCP+WebSocket server on port 8585 for kubectl execution | Yes — auto-spawned in local dev mode (`startup-oauth.sh` / `start-dev.sh`); requires [manual setup](#4-run-kc-agent-locally) for Helm deployments |
+| 5 | **AI Coding Agent + Plugins** | Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI) with kubestellar-ops/deploy plugins | **Optional** — only needed if you want AI Missions or AI-assisted operations. The core dashboard, monitoring cards, and cluster visibility work without any AI agent. Install via [Claude Marketplace](#step-1-install-claude-code-plugins) or Homebrew. |
+| 6 | **kc-agent** | Local MCP+WebSocket server on port 8585 that bridges the browser to your kubeconfig for kubectl execution, and serves as an MCP server for AI coding agents | **Optional** — only needed if you want to execute kubectl commands from the browser or use AI-assisted cluster operations. The read-only dashboard (cluster inventory, pod listings, metrics cards) works without kc-agent. Auto-spawned in local dev mode (`startup-oauth.sh` / `start-dev.sh`); requires [manual setup](#4-run-kc-agent-locally) for Helm deployments. |
 | 7 | **Kubeconfig** | Your cluster credentials | Yes — your existing `~/.kube/config` |
 
 ---
