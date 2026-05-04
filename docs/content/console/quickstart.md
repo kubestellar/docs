@@ -23,13 +23,13 @@ Get KubeStellar Console running locally for development or evaluation.
 
     **What requires Claude Code:**
 
-    - Installing kubestellar-mcp plugins via the Claude Code Marketplace (Option A in Step 1)
+    - Registering kubestellar-mcp plugins with Claude Code (Part 1 of Step 1)
     - AI Missions (automated issue detection and remediation)
 
     **What works without Claude Code:**
 
     - The console dashboard, cards, and multi-cluster views all work without Claude Code
-    - You can install kubestellar-mcp plugins via **Homebrew** instead (Option B in Step 1)
+    - You can skip Part 1 of Step 1 and only install via Homebrew (Part 2) if you do not use Claude Code
     - The `curl` quickstart and source builds do not require Claude Code themselves
 
 ## Fastest Path (curl)
@@ -66,7 +66,9 @@ See the [Architecture](architecture.md) page for the full system diagram and com
 
 The console uses kubestellar-mcp plugins to talk to your clusters. **This step is required and must be done before running the console.** See [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for full details.
 
-**Option A: From Claude Code Marketplace (recommended)**
+**You must complete both parts below.** If you do not use Claude Code, you can skip Part 1 and only do Part 2.
+
+**Part 1: Register in Claude Code Marketplace (required if using Claude Code)**
 
 In Claude Code, run:
 ```
@@ -75,7 +77,7 @@ In Claude Code, run:
 
 Then go to `/plugin` → **Discover** tab and install **kubestellar-ops** and **kubestellar-deploy**.
 
-**Option B: Via Homebrew**
+**Part 2: Install via Homebrew (required)**
 ```bash
 brew tap kubestellar/tap
 brew install kubestellar-ops kubestellar-deploy
@@ -84,10 +86,10 @@ brew install kubestellar-ops kubestellar-deploy
 Verify installation:
 
 ```bash
-# Option 1: Check binaries are on PATH
+# Check binaries are on PATH (required — Part 2 above)
 which kubestellar-ops && which kubestellar-deploy
 
-# Option 2: If using Claude Code, type /mcp to see both plugins connected
+# If using Claude Code (Part 1 above), type /mcp to see both plugins connected
 ```
 
 ## Step 2: Run the Console

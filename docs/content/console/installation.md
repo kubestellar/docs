@@ -85,7 +85,9 @@ KubeStellar Console has **7 components** that work together. For the full archit
 
 The console uses kubestellar-mcp plugins to talk to your clusters. See the full [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for details.
 
-**Option A: Install from Claude Code Marketplace (recommended)**
+**You must complete both parts below.** If you do not use Claude Code, you can skip Part 1 and only do Part 2.
+
+**Part 1: Register in Claude Code Marketplace (required if using Claude Code)**
 
 ```bash
 # In Claude Code, run:
@@ -103,7 +105,7 @@ plugin:kubestellar-ops:kubestellar-ops · ✓ connected
 plugin:kubestellar-deploy:kubestellar-deploy · ✓ connected
 ```
 
-**Option B: Install via Homebrew** (source: [homebrew-tap](https://github.com/kubestellar/homebrew-tap))
+**Part 2: Install via Homebrew (required)** (source: [homebrew-tap](https://github.com/kubestellar/homebrew-tap))
 
 ```bash
 brew tap kubestellar/tap
