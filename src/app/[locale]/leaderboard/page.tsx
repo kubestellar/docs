@@ -676,6 +676,8 @@ export default function LeaderboardPage() {
       entries = [...entries].sort((a, b) =>
         (b.recent_activity_score ?? 0) - (a.recent_activity_score ?? 0)
       );
+    } else {
+      entries = [...entries].sort((a, b) => b.total_points - a.total_points);
     }
     return entries;
   }, [data, search, sortField]);

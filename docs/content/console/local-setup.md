@@ -25,20 +25,28 @@ This guide walks you through running KubeStellar Console from source on your loc
 
 The console requires kubestellar-ops and kubestellar-deploy MCP plugins. Install them via the Claude Code Marketplace or Homebrew:
 
-**Option A: Claude Code Marketplace (recommended)**
+**Step 1: Install the plugins** via the Claude Code Marketplace or Homebrew:
+
+=== "Claude Code Marketplace (recommended)"
+
+    ```bash
+    # In Claude Code, run:
+    /plugin marketplace add kubestellar/claude-plugins
+    ```
+
+    Then install `kubestellar-ops` and `kubestellar-deploy` from the Discover tab.
+
+=== "Homebrew"
+
+    ```bash
+    brew tap kubestellar/tap
+    brew install kubestellar-ops kubestellar-deploy
+    ```
+
+**Step 2: Verify** both plugins are installed:
 
 ```bash
-# In Claude Code, run:
-/plugin marketplace add kubestellar/claude-plugins
-```
-
-Then install `kubestellar-ops` and `kubestellar-deploy` from the Discover tab.
-
-**Option B: Homebrew**
-
-```bash
-brew tap kubestellar/tap
-brew install kubestellar-ops kubestellar-deploy
+which kubestellar-ops && which kubestellar-deploy
 ```
 
 See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for details.
