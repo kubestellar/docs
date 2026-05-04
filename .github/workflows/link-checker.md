@@ -17,6 +17,8 @@ network:
     - github
 
 safe-outputs:
+  noop:
+    report-as-issue: false
   create-issue:
     labels: [broken-links]
   close-issue:

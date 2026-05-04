@@ -14,6 +14,8 @@ permissions: read-all
 network: defaults
 
 safe-outputs:
+  noop:
+    report-as-issue: false
   create-issue:
     labels: [typos]
   close-issue:

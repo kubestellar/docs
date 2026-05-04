@@ -23,6 +23,8 @@ sandbox: awf
 tools:
   github:
 safe-outputs:
+  noop:
+    report-as-issue: false
   create-discussion:
     title-prefix: "[team-status] "
     category: "announcements"
