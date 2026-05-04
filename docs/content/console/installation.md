@@ -85,29 +85,35 @@ KubeStellar Console has **7 components** that work together. For the full archit
 
 The console uses kubestellar-mcp plugins to talk to your clusters. See the full [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for details.
 
-**Option A: Install from Claude Code Marketplace (recommended)**
+**Step 1a: Install the plugins** via the Claude Code Marketplace or Homebrew
 
-```bash
-# In Claude Code, run:
-/plugin marketplace add kubestellar/claude-plugins
-```
+=== "Claude Code Marketplace (recommended)"
 
-Then:
-1. Go to `/plugin` → **Marketplaces** tab → click **Update**
-2. Go to `/plugin` → **Discover** tab
-3. Install **kubestellar-ops** and **kubestellar-deploy**
+    ```bash
+    # In Claude Code, run:
+    /plugin marketplace add kubestellar/claude-plugins
+    ```
+
+    Then:
+    1. Go to `/plugin` → **Marketplaces** tab → click **Update**
+    2. Go to `/plugin` → **Discover** tab
+    3. Install **kubestellar-ops** and **kubestellar-deploy**
+
+=== "Homebrew"
+
+    Source: [homebrew-tap](https://github.com/kubestellar/homebrew-tap)
+
+    ```bash
+    brew tap kubestellar/tap
+    brew install kubestellar-ops kubestellar-deploy
+    ```
+
+**Step 1b: Verify installation**
 
 Verify with `/mcp` - you should see:
 ```
 plugin:kubestellar-ops:kubestellar-ops · ✓ connected
 plugin:kubestellar-deploy:kubestellar-deploy · ✓ connected
-```
-
-**Option B: Install via Homebrew** (source: [homebrew-tap](https://github.com/kubestellar/homebrew-tap))
-
-```bash
-brew tap kubestellar/tap
-brew install kubestellar-ops kubestellar-deploy
 ```
 
 ### Step 2: Set Up Kubeconfig
