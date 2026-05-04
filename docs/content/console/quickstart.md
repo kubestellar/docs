@@ -62,6 +62,31 @@ See the [Architecture](architecture.md) page for the full system diagram and com
 - kubestellar-mcp plugins (see below)
 - For source builds: Go 1.24+ and Node.js 20+
 
+### Windows / WSL Setup
+
+KubeStellar Console runs inside [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install) on Windows. All commands below should be executed in a WSL terminal.
+
+```powershell
+# From PowerShell (one-time setup)
+wsl --install
+```
+
+Then inside WSL:
+
+```bash
+# Install Node.js and Go (if building from source)
+sudo apt update && sudo apt install -y nodejs npm golang-go
+
+# Install kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -sL https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+
+# Install Homebrew (for kubestellar-mcp plugins)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+After this, follow the standard Linux instructions below.
+
 ## Step 1: Install kubestellar-mcp Tools
 
 The console uses kubestellar-mcp plugins to talk to your clusters. **This step is required and must be done before running the console.** See [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for full details.

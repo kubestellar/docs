@@ -21,6 +21,27 @@ This guide walks you through running KubeStellar Console from source on your loc
 | kubeconfig | At least one cluster | `kubectl config get-contexts` |
 | kubestellar-mcp plugins | Latest | `which kubestellar-ops kubestellar-deploy` |
 
+### Windows / WSL Setup
+
+If you are on Windows, run all commands inside [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install):
+
+```powershell
+# From PowerShell (one-time)
+wsl --install
+```
+
+Inside your WSL distribution:
+
+```bash
+sudo apt update && sudo apt install -y build-essential curl git
+# Install Go 1.25+ — see https://go.dev/doc/install
+# Install Node.js 20+ — see https://nodejs.org/
+# Install Homebrew for kubestellar-mcp plugins:
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Ensure your kubeconfig is accessible inside WSL (it is shared by default at `~/.kube/config`). Then follow the Linux instructions below.
+
 ### Install kubestellar-mcp Plugins
 
 The console requires kubestellar-ops and kubestellar-deploy MCP plugins. Install them via the Claude Code Marketplace or Homebrew:

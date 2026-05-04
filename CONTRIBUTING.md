@@ -193,14 +193,17 @@ For safety reasons, copies of the docs source may remain in a to-be-deleted fold
 |   |   📁content/                                              |
 |   |     📁 a2a/                                               |
 |   |     📁 common-subs/                                       |
-|   |     📁 Community/                                         |
+|   |     📁 community/                                         |
 |   |     📁 console/                                           |
-|   |     📁 contribution-guidelines/                           |
+|   |     📁 contributing/                                      |
+|   |     📁 hive/                                              |
 |   |     📁 icons/                                             |
 |   |     📁 images/                                            |
+|   |     📁 kubeflex/                                          |
 |   |     📁 kubestellar/                                       |
 |   |     📁 kubestellar-mcp/                                   |
 |   |     📁 multi-plugin/                                      |
+|   |     📁 news/                                              |
 |   |     📁 ui-docs/                                           |
 |   |   📁images/ ← image folder for some of the MD files       |
 |   |  📁overrides/ ← master mkdocs layouts (legacy ref only)   |
@@ -460,7 +463,7 @@ The site when first loaded shows the **latest** tagged version of the KubeStella
    - Rebuild the page map
 
 2. **Navigation Issues:**
-   - Check `CATEGORY_MAPPINGS` structure syntax
+   - Check `NAV_STRUCTURE` constant syntax
    - Ensure proper nesting of arrays and objects
    - Verify route generation logic
 
@@ -522,7 +525,7 @@ git push
 
 ```sh
 # Edit src/app/docs/page-map.ts
-# Modify CATEGORY_MAPPINGS array
+# Modify NAV_STRUCTURE constant
 # Example: Move a page to different category
 npm run dev  # Test changes
 npm run build  # Verify build succeeds
