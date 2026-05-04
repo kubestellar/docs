@@ -27,6 +27,8 @@ tools:
       - search_code
   edit:
 safe-outputs:
+  noop:
+    report-as-issue: false
   create-pull-request:
   add-comment:
   update-issue:
