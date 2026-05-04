@@ -227,6 +227,10 @@ kc-agent
 Then reload the console tab. The "Agent Not Connected" banner should clear
 within a few seconds as the browser's WebSocket finds the local agent.
 
+If you are trying to register clusters through kubeconfig, also review
+[Cluster Registration](cluster-registration.md) for the expected kubeconfig
+shape and multi-context behavior.
+
 Without kc-agent the in-cluster console will fall back to **demo mode** if
 it was deployed without GitHub OAuth, or will simply refuse to execute
 `kubectl` commands if OAuth is configured.
