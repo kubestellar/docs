@@ -684,8 +684,6 @@ export default function LeaderboardPage() {
       entries = [...entries].sort((a, b) =>
         dir * (b.total_points - a.total_points)
       );
-    } else {
-      entries = [...entries].sort((a, b) => b.total_points - a.total_points);
     }
     return entries;
   }, [data, search, sortField, sortDir]);
