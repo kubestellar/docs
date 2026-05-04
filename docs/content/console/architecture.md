@@ -19,7 +19,7 @@ KubeStellar Console uses a modern, modular architecture designed for extensibili
 
 ## The 7 Components
 
-The console consists of 7 components working together. See [Configuration](configuration.md) for how to set up each one.
+The console consists of 7 components working together. The [Installation](installation.md#component-summary) page has the authoritative component table including whether each is required or optional. See [Configuration](configuration.md) for how to set up each one.
 
 | # | Component | Purpose |
 |---|-----------|---------|
@@ -27,8 +27,8 @@ The console consists of 7 components working together. See [Configuration](confi
 | 2 | **Frontend** | React SPA - dashboards, cards, AI UI |
 | 3 | **Backend** | Go server - API, auth, data storage |
 | 4 | **MCP Bridge** | Hosts the kubestellar-ops and kubestellar-deploy **MCP servers** in-process; Backend queries them via HTTP/MCP to get cluster data |
-| 5 | **AI Coding Agent + Plugins** | Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI, etc.) acts as an **MCP client**. The kubestellar-ops and kubestellar-deploy **plugins** launch their respective MCP servers as **stdio child processes** and add skills/hooks ([docs](/docs/kubestellar-mcp/overview/introduction)). |
-| 6 | **kc-agent** | Local MCP+WebSocket server on port 8585; provides kubectl execution for the browser (WebSocket) and for AI coding agents (MCP client). Source: [kubestellar/console](https://github.com/kubestellar/console/tree/main/pkg/agent) |
+| 5 | **AI Coding Agent + Plugins** | **(Optional — AI features only)** Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI, etc.) acts as an **MCP client**. The kubestellar-ops and kubestellar-deploy **plugins** launch their respective MCP servers as **stdio child processes** and add skills/hooks ([docs](/docs/kubestellar-mcp/overview/introduction)). Not required for the core dashboard experience. |
+| 6 | **kc-agent** | **(Optional — kubectl/AI features only)** Local MCP+WebSocket server on port 8585; bridges the browser to your local kubeconfig for kubectl execution (WebSocket) and provides MCP tools for AI coding agents. Not required for read-only dashboard viewing. |
 | 7 | **Kubeconfig** | Your cluster credentials |
 
 > **Note on "GitHub OAuth App":**
@@ -94,7 +94,7 @@ A separate process that is spawned by the console executable at startup. The MCP
 >
 > **How is this different from Claude Code's connection?** The MCP Bridge runs the MCP servers in-process (linked into the console binary). Claude Code, by contrast, launches the MCP servers as separate stdio child processes. Both approaches execute the same underlying tool code.
 
-The MCP Bridge authenticates to Kubernetes clusters using the kubeconfig file on the server. It does not participate in the GitHub OAuth flow.
+The MCP Bridge authenticates to Kubernetes clusters using the kubeconfig file on the machine running the console backend (this could be your laptop for local installs, or a remote server for Helm/Kubernetes deployments). It does not participate in the GitHub OAuth flow.
 
 ### AI Coding Agents + Plugins
 
@@ -175,7 +175,7 @@ See [Configuration](configuration.md#kc-agent-configuration) for all CLI flags a
 
 ### Kubeconfig
 
-Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `KUBECONFIG`). The MCP Bridge reads this file on the server to authenticate to your clusters when the console queries cluster data. The kc-agent reads it on your local machine for local kubectl execution. The kubeconfig credentials are **not** sent to the browser and are **not** involved in the GitHub OAuth flow; GitHub login is only used to establish your identity within the console.
+Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `KUBECONFIG`). The MCP Bridge reads this file on the machine running the console backend (your laptop for local installs, or a remote server for Kubernetes/Helm deployments) to authenticate to your clusters when the console queries cluster data. The kc-agent reads it on your local machine for local kubectl execution. The kubeconfig credentials are **not** sent to the browser and are **not** involved in the GitHub OAuth flow; GitHub login is only used to establish your identity within the console.
 
 > **Why does the Backend not directly read kubeconfig?** The Backend delegates all cluster access to the MCP Bridge. The Backend sends high-level queries ("get all nodes across all clusters") to the MCP Bridge, which handles the kubeconfig loading, API server connections, and parallel cluster queries. This separation keeps cluster credentials out of the Backend's HTTP layer.
 
@@ -206,7 +206,27 @@ Your standard Kubernetes credentials file (`~/.kube/config` or a path set via `K
 
 ## State Storage
 
-The console persists state in two places: a **server-side SQLite database** and **browser localStorage**.
+The console persists state in three places: a **server-side SQLite database**, **browser localStorage**, and (for curl-to-bash installs) a **local data directory**.
+
+### Local Data Directory (curl-to-bash installs)
+
+When you install the console using the `curl | bash` one-liner (`start.sh`), the console creates a data directory in the current working directory where you ran the command. This directory stores:
+
+| Path | Contents |
+|------|----------|
+| `./data/console.db` | SQLite database (same as described below) |
+| `./data/backups/` | Automatic database backup snapshots |
+| `./bin/` | Downloaded console and kc-agent binaries |
+
+The data directory is relative to **wherever you ran the curl command**. If you want a fixed location, `cd` to your preferred directory first:
+
+```bash
+# Store console data in a dedicated directory
+mkdir -p ~/kubestellar-console && cd ~/kubestellar-console
+curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
+```
+
+> **Tip:** If you re-run the curl installer from the same directory, it reuses the existing database and preserves your dashboards and settings.
 
 ### SQLite Database (Server-Side)
 
