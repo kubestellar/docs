@@ -85,30 +85,28 @@ KubeStellar Console has **7 components** that work together. For the full archit
 
 The console uses kubestellar-mcp plugins to talk to your clusters. See the full [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for details.
 
-**Step 1a: Install the plugins** via the Claude Code Marketplace or Homebrew
+**Install the binaries (required):**
 
-=== "Claude Code Marketplace (recommended)"
+```bash
+brew tap kubestellar/tap
+brew install kubestellar-ops kubestellar-deploy
+```
 
-    ```bash
-    # In Claude Code, run:
-    /plugin marketplace add kubestellar/claude-plugins
-    ```
+This puts the tools on your PATH so the console's MCP bridge can find them.
 
-    Then:
-    1. Go to `/plugin` → **Marketplaces** tab → click **Update**
-    2. Go to `/plugin` → **Discover** tab
-    3. Install **kubestellar-ops** and **kubestellar-deploy**
+**Additionally, register with Claude Code (needed for AI Missions):**
 
-=== "Homebrew"
+If you use [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) and want AI Missions, also register the plugins:
 
-    Source: [homebrew-tap](https://github.com/kubestellar/homebrew-tap)
+```bash
+# In Claude Code, run:
+/plugin marketplace add kubestellar/claude-plugins
+```
 
-    ```bash
-    brew tap kubestellar/tap
-    brew install kubestellar-ops kubestellar-deploy
-    ```
-
-**Step 1b: Verify installation**
+Then:
+1. Go to `/plugin` → **Marketplaces** tab → click **Update**
+2. Go to `/plugin` → **Discover** tab
+3. Install **kubestellar-ops** and **kubestellar-deploy**
 
 Verify with `/mcp` - you should see:
 ```

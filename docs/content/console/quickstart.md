@@ -19,17 +19,17 @@ Get KubeStellar Console running locally for development or evaluation.
 > **Try it first!** See a live preview at [console.kubestellar.io](https://console.kubestellar.io) - no installation needed.
 
 !!! info "Claude Code is optional (recommended for AI features)"
-    This Quick Start optionally uses **[Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview)**, Anthropic's CLI tool, to install and manage the kubestellar-mcp plugins that connect the console to your clusters. Claude Code requires an Anthropic API subscription.
+    This Quick Start optionally uses **[Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview)**, Anthropic's CLI tool, for AI Missions. Claude Code requires an Anthropic API subscription.
 
     **What requires Claude Code:**
 
-    - Installing kubestellar-mcp plugins via the Claude Code Marketplace (Step 1a)
     - AI Missions (automated issue detection and remediation)
+    - Registering kubestellar-mcp plugins in Claude Code's plugin system
 
     **What works without Claude Code:**
 
     - The console dashboard, cards, and multi-cluster views all work without Claude Code
-    - You can install kubestellar-mcp plugins via **Homebrew** instead (Step 1b)
+    - The kubestellar-mcp binaries are installed via **Homebrew** (required for all users)
     - The `curl` quickstart and source builds do not require Claude Code themselves
 
 ## Fastest Path (curl)
@@ -66,31 +66,32 @@ See the [Architecture](architecture.md) page for the full system diagram and com
 
 The console uses kubestellar-mcp plugins to talk to your clusters. **This step is required and must be done before running the console.** See [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for full details.
 
-**Step 1a: Add the plugin marketplace** (recommended) or install via Homebrew
-
-=== "Claude Code Marketplace (recommended)"
-
-    In Claude Code, run:
-    ```
-    /plugin marketplace add kubestellar/claude-plugins
-    ```
-
-    Then go to `/plugin` → **Discover** tab and install **kubestellar-ops** and **kubestellar-deploy**.
-
-=== "Homebrew"
-
-    ```bash
-    brew tap kubestellar/tap
-    brew install kubestellar-ops kubestellar-deploy
-    ```
-
-**Step 1b: Verify installation**
+**Install the binaries (required):**
 
 ```bash
-# Check binaries are on PATH
+brew tap kubestellar/tap
+brew install kubestellar-ops kubestellar-deploy
+```
+
+This puts the tools on your PATH so the console's MCP bridge can find them.
+
+**Additionally, register with Claude Code (needed for AI Missions):**
+
+If you use [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) and want AI Missions, also register the plugins in Claude Code:
+
+```
+/plugin marketplace add kubestellar/claude-plugins
+```
+
+Then go to `/plugin` → **Discover** tab and install **kubestellar-ops** and **kubestellar-deploy**.
+
+Verify installation:
+
+```bash
+# Check binaries are on PATH (required)
 which kubestellar-ops && which kubestellar-deploy
 
-# If using Claude Code, type /mcp to see both plugins connected
+# If using Claude Code, type /mcp to see both plugins connected (optional)
 ```
 
 ## Step 2: Run the Console
