@@ -28,7 +28,7 @@ The console consists of 7 components working together. See [Configuration](confi
 | 3 | **Backend** | Go server - API, auth, data storage |
 | 4 | **MCP Bridge** | Hosts the kubestellar-ops and kubestellar-deploy **MCP servers** in-process; Backend queries them via HTTP/MCP to get cluster data |
 | 5 | **AI Coding Agent + Plugins** | Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI, etc.) acts as an **MCP client**. The kubestellar-ops and kubestellar-deploy **plugins** launch their respective MCP servers as **stdio child processes** and add skills/hooks ([docs](/docs/kubestellar-mcp/overview/introduction)). |
-| 6 | **kc-agent** | Local MCP+WebSocket server on port 8585; provides kubectl execution for the browser (WebSocket) and for AI coding agents (MCP client) |
+| 6 | **kc-agent** | Local MCP+WebSocket server on port 8585; provides kubectl execution for the browser (WebSocket) and for AI coding agents (MCP client). Source: [kubestellar/console](https://github.com/kubestellar/console/tree/main/pkg/agent) |
 | 7 | **Kubeconfig** | Your cluster credentials |
 
 > **Note on "GitHub OAuth App":**
@@ -133,11 +133,15 @@ Both paths execute the same Go code and read the same kubeconfig, so they return
 
 **kc-agent is separate:** AI coding agents also connect to kc-agent (port 8585) as an MCP client for kubectl execution. kc-agent is a distinct MCP server — it does not host the kubestellar-ops or kubestellar-deploy tools.
 
-See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for the full tool listing.
+See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for the kubestellar-ops and kubestellar-deploy tool listing. For kc-agent tools and configuration, see the [kc-agent section below](#kc-agent-local-agent).
 
 ### kc-agent (Local Agent)
 
-A lightweight WebSocket + MCP server (port 8585) that runs on the **user's machine**. It has two roles:
+A lightweight WebSocket + MCP server (port 8585) that runs on the **user's machine**.
+
+**Source code:** [`cmd/kc-agent`](https://github.com/kubestellar/console/tree/main/cmd/kc-agent) (entry point) and [`pkg/agent`](https://github.com/kubestellar/console/tree/main/pkg/agent) (core package) in the [kubestellar/console](https://github.com/kubestellar/console) repository.
+
+It has two roles:
 
 1. **Browser bridge**: In **self-hosted, local, or Helm-installed** console deployments, the browser-based console connects to a kc-agent running on the same machine (or network) via WebSocket to execute `kubectl` commands using the local kubeconfig.
 
