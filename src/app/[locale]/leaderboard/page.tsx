@@ -43,6 +43,7 @@ interface LeaderboardEntry {
 }
 
 type SortField = "points" | "activity";
+type SortDirection = "asc" | "desc";
 
 interface LeaderboardData {
   generated_at: string;
@@ -599,6 +600,7 @@ export default function LeaderboardPage() {
   const [affiliateLoading, setAffiliateLoading] = useState(true);
   const [affiliateBannerOpen, setAffiliateBannerOpen] = useState(false);
   const [sortField, setSortField] = useState<SortField>("points");
+  const [sortDir, setSortDir] = useState<SortDirection>("desc");
   const [hoveredLogin, setHoveredLogin] = useState<string | null>(null);
   const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -665,6 +667,15 @@ export default function LeaderboardPage() {
     };
   }, []);
 
+  const toggleSort = useCallback((field: SortField) => {
+    if (sortField === field) {
+      setSortDir((d) => (d === "desc" ? "asc" : "desc"));
+    } else {
+      setSortField(field);
+      setSortDir("desc");
+    }
+  }, [sortField]);
+
   const filteredEntries = useMemo(() => {
     if (!data?.entries) return [];
     let entries = data.entries;
@@ -672,13 +683,18 @@ export default function LeaderboardPage() {
       const q = search.toLowerCase();
       entries = entries.filter((e) => e.login.toLowerCase().includes(q));
     }
+    const dir = sortDir === "desc" ? 1 : -1;
     if (sortField === "activity") {
       entries = [...entries].sort((a, b) =>
-        (b.recent_activity_score ?? 0) - (a.recent_activity_score ?? 0)
+        dir * ((b.recent_activity_score ?? 0) - (a.recent_activity_score ?? 0))
+      );
+    } else {
+      entries = [...entries].sort((a, b) =>
+        dir * (b.total_points - a.total_points)
       );
     }
     return entries;
-  }, [data, search, sortField]);
+  }, [data, search, sortField, sortDir]);
 
   const lastUpdated = data?.generated_at
     ? new Date(data.generated_at).toLocaleDateString("en-US", {
@@ -863,16 +879,16 @@ export default function LeaderboardPage() {
                   <div>Contributor</div>
                   <button
                     className={`text-right cursor-pointer hover:text-white transition-colors ${sortField === "points" ? "text-yellow-400" : ""}`}
-                    onClick={() => setSortField("points")}
+                    onClick={() => toggleSort("points")}
                   >
-                    Points {sortField === "points" ? "▼" : ""}
+                    Points {sortField === "points" ? (sortDir === "desc" ? "▼" : "▲") : ""}
                   </button>
                   <button
                     className={`text-center cursor-pointer hover:text-white transition-colors ${sortField === "activity" ? "text-blue-400" : ""}`}
-                    onClick={() => setSortField("activity")}
+                    onClick={() => toggleSort("activity")}
                     title="Sort by recent activity (last 12 weeks, recency-weighted)"
                   >
-                    Activity {sortField === "activity" ? "▼" : ""}
+                    Activity {sortField === "activity" ? (sortDir === "desc" ? "▼" : "▲") : ""}
                   </button>
                   <div className="text-center">Level</div>
                   <div className="text-center" title="Affiliate link clicks from social sharing">Social</div>
