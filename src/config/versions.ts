@@ -292,7 +292,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "kubestellar-mcp",
     name: "KubeStellar MCP",
     basePath: "kubestellar-mcp",
-    currentVersion: "0.7.1",
+    currentVersion: "0.8.17",
     contentPath: "docs/content/kubestellar-mcp",
     versions: KUBESTELLAR_MCP_VERSIONS,
   },
