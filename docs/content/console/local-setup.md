@@ -231,6 +231,7 @@ You are running `startup-oauth.sh` without a `.env` file. Either:
 1. Verify your kubeconfig has accessible clusters: `kubectl config get-contexts`
 2. Test connectivity: `kubectl --context=your-cluster get nodes`
 3. Check that kubestellar-mcp binaries are in your PATH: `which kubestellar-ops`
+4. Review [Cluster Registration](cluster-registration.md) for kubeconfig format, multi-context behavior, and auth expectations
 
 ### Stale Frontend After Code Changes
 

@@ -148,6 +148,8 @@ Open http://localhost:8080 (curl quickstart or `startup-oauth.sh`) or http://loc
 
 Your clusters from `~/.kube/config` appear automatically. If running with OAuth, sign in with GitHub. Without OAuth, you're logged in as `dev-user`.
 
+If you need the full kubeconfig-driven registration flow, including required kubeconfig fields, single vs. multiple context behavior, and auth expectations, see [Cluster Registration](cluster-registration.md).
+
 ## Kubernetes Deployment
 
 ### Using Helm

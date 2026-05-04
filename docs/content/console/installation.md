@@ -132,6 +132,8 @@ KUBECONFIG=~/.kube/config:~/.kube/cluster2.yaml kubectl config view --flatten > 
 mv ~/.kube/merged ~/.kube/config
 ```
 
+For the complete kubeconfig-driven registration flow, including required format, single vs. multiple context behavior, and authentication expectations, see [Cluster Registration](cluster-registration.md).
+
 ### Step 3: Deploy the Console
 
 Choose your deployment method:
