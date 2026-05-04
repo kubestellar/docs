@@ -62,6 +62,91 @@ See the [Architecture](architecture.md) page for the full system diagram and com
 - kubestellar-mcp plugins (see below)
 - For source builds: Go 1.24+ and Node.js 20+
 
+
+## Windows/WSL Setup
+
+For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for the best experience:
+
+### WSL2 Setup Steps
+
+1. **Install WSL2** (if not already installed):
+   ```powershell
+   wsl --install
+   ```
+
+2. **Install Ubuntu** (or your preferred distribution):
+   ```powershell
+   wsl --install -d Ubuntu
+   ```
+
+3. **Update packages** inside WSL:
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   ```
+
+4. **Install prerequisites** inside WSL:
+   ```bash
+   # Install Node.js
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   sudo apt install -y nodejs
+
+   # Install Go
+   wget https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
+   sudo tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
+   echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+   source ~/.bashrc
+
+   # Install kubectl
+   curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+   ```
+
+5. **Follow the standard setup instructions** from within your WSL environment.
+
+**Note**: Access your kubeconfig from Windows by mounting the Windows file system at `/mnt/c/` in WSL.
+
+
+## Windows/WSL Setup
+
+For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for the best experience:
+
+### WSL2 Setup Steps
+
+1. **Install WSL2** (if not already installed):
+   ```powershell
+   wsl --install
+   ```
+
+2. **Install Ubuntu** (or your preferred distribution):
+   ```powershell
+   wsl --install -d Ubuntu
+   ```
+
+3. **Update packages** inside WSL:
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   ```
+
+4. **Install prerequisites** inside WSL:
+   ```bash
+   # Install Node.js
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   sudo apt install -y nodejs
+
+   # Install Go
+   wget https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
+   sudo tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
+   echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+   source ~/.bashrc
+
+   # Install kubectl
+   curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+   ```
+
+5. **Follow the standard setup instructions** from within your WSL environment.
+
+**Note**: Access your kubeconfig from Windows by mounting the Windows file system at `/mnt/c/` in WSL.
 ## Step 1: Install kubestellar-mcp Tools
 
 The console uses kubestellar-mcp plugins to talk to your clusters. **This step is required and must be done before running the console.** See [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for full details.
