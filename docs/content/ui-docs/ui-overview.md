@@ -8,7 +8,7 @@
 The KubeStellar Console is the successor to the original KubeStellar UI. It includes all previous features plus significant new capabilities:
 
 - **AI-powered Missions** for automated issue detection and remediation
-- **110+ dashboard cards** for monitoring clusters, workloads, GPU/AI, security, and more
+- **120+ dashboard cards** for monitoring clusters, workloads, GPU/AI, security, and more
 - **Real-time SSE streaming** replacing polling-based data updates
 - **Marketplace** for community-shared dashboards, cards, and themes
 - **Multi-cluster deployment** with drag-and-drop workload placement

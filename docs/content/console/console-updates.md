@@ -209,10 +209,10 @@ Open **http://localhost:5174** in your browser.
 
 ```bash
 # Pull the latest image
-docker pull quay.io/kubestellar/console:latest
+docker pull ghcr.io/kubestellar/console:latest
 
 # Or a specific version
-docker pull quay.io/kubestellar/console:v0.3.6-weekly.20260127
+docker pull ghcr.io/kubestellar/console:v0.3.6-weekly.20260127
 ```
 
 ## Recent Changes (Apr 23–29, 2026)

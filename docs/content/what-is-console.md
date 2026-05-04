@@ -24,7 +24,7 @@ If you arrived here looking for those components, you are on a different project
 
 ## What the Console does
 
-- **Multi-cluster dashboards** — 20+ dashboards and 110+ cards showing health, workloads, compute, storage, network, security, GitOps, alerts, and cost across every cluster you have access to.
+- **Multi-cluster dashboards** — 20+ dashboards and 120+ cards showing health, workloads, compute, storage, network, security, GitOps, alerts, and cost across every cluster you have access to.
 - **AI Mission Control** — Chat-driven troubleshooting, diagnose-and-repair flows, and AI-generated cards and dashboards.
 - **Drill-downs** — Click any card to open targeted views for pods, nodes, events, logs, and more.
 - **kc-agent kubeconfig bridge** — A local agent proxies the browser to your kubeconfig, so the Console only ever sees what you already have access to. There is no new control plane to install.

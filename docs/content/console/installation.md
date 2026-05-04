@@ -3,7 +3,7 @@ title: "Installation — Deploy KubeStellar Console for Multi-Cluster Kubernetes
 linkTitle: "Installation"
 weight: 2
 description: >
-  Install KubeStellar Console locally, in Kubernetes, or via Helm. Deploy the multi-cluster Kubernetes dashboard with AI Missions, 110+ monitoring cards, and fleet-wide observability in minutes.
+  Install KubeStellar Console locally, in Kubernetes, or via Helm. Deploy the multi-cluster Kubernetes dashboard with AI Missions, 120+ monitoring cards, and fleet-wide observability in minutes.
 keywords:
   - install kubernetes dashboard
   - kubernetes console installation

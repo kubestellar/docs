@@ -13,6 +13,6 @@
 
 ## What Changed
 
-The original `kubestellar/ui` project (React + Gin, ports 5173/4000, optional Redis) has been superseded by `kubestellar/console` (React + Go, port 8080, in-memory caching). The console includes all original features plus AI Missions, 110+ monitoring cards, a Marketplace, llm-d inference monitoring, and real-time SSE streaming.
+The original `kubestellar/ui` project (React + Gin, ports 5173/4000, optional Redis) has been superseded by `kubestellar/console` (React + Go, port 8080, in-memory caching). The console includes all original features plus AI Missions, 120+ monitoring cards, a Marketplace, llm-d inference monitoring, and real-time SSE streaming.
 
 See the [migration notes](/docs/ui-docs/ui-overview/) for a full comparison.
