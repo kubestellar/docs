@@ -229,6 +229,13 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
       { 'Marketplace': 'marketplace.md' },
       { 'Knowledge Base': 'knowledge-base.md' },
     ]
+  },
+  {
+    title: 'Contributing',
+    items: [
+      { 'Development Methodology': 'development.md' },
+      { 'Local Setup': 'local-setup.md' },
+    ]
   }
 ]
 
