@@ -333,6 +333,9 @@ export default function MaintainerLadderPage() {
                             </li>
                           ))}
                         </ul>
+                        <p className="text-xs text-amber-400/80 italic mt-2">
+                          {t("requirementsNote")}
+                        </p>
                       </div>
 
                       {level.goodStanding && (
@@ -425,6 +428,9 @@ export default function MaintainerLadderPage() {
                               </li>
                             ))}
                           </ul>
+                          <p className="text-xs text-amber-400/80 italic mt-3">
+                            {t("requirementsNote")}
+                          </p>
                         </div>
 
                         {level.goodStanding && (

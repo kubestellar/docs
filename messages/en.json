@@ -640,6 +640,7 @@
     "titleSpan": "Ladder",
     "subtitle": "A transparent, merit-based path from first-time contributor to trusted maintainer in the KubeStellar community",
     "requirementsLabel": "Requirements:",
+    "requirementsNote": "Failure to meet these requirements may result in removal from the program or title revocation.",
     "goodStandingLabel": "Opportunities in Good Standing:",
     "nextLevelLabel": "Next Level:",
     "statsQuestion": "How do we audit our contributor ladder?",
