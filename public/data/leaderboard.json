@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-05T16:46:49.149Z",
-  "git_hash": "f2de13b",
+  "generated_at": "2026-05-05T18:29:31.503Z",
+  "git_hash": "0885640",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-16",
@@ -51,11 +51,11 @@
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 189750,
+      "total_points": 190350,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 558,
+        "bug_issues": 560,
         "feature_issues": 21,
         "other_issues": 17,
         "prs_opened": 32,
@@ -73,9 +73,9 @@
         204,
         5,
         0,
-        15
+        17
       ],
-      "recent_activity_score": 251.75,
+      "recent_activity_score": 253.75,
       "rank": 2
     },
     {
@@ -502,13 +502,13 @@
     {
       "login": "MikeSpreitzer",
       "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-      "total_points": 20700,
+      "total_points": 20750,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 56,
         "feature_issues": 6,
-        "other_issues": 34,
+        "other_issues": 35,
         "prs_opened": 3,
         "prs_merged": 2
       },
@@ -524,9 +524,9 @@
         13,
         7,
         3,
-        10
+        11
       ],
-      "recent_activity_score": 35.36,
+      "recent_activity_score": 36.36,
       "rank": 17
     },
     {
@@ -622,14 +622,14 @@
     {
       "login": "oksaumya",
       "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
-      "total_points": 7050,
+      "total_points": 7300,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
         "bug_issues": 1,
         "feature_issues": 0,
-        "other_issues": 31,
-        "prs_opened": 11,
+        "other_issues": 32,
+        "prs_opened": 12,
         "prs_merged": 6
       },
       "weekly_activity": [
@@ -644,9 +644,9 @@
         0,
         0,
         3,
-        13
+        15
       ],
-      "recent_activity_score": 16.59,
+      "recent_activity_score": 18.59,
       "rank": 21
     },
     {
@@ -1100,6 +1100,36 @@
       "rank": 36
     },
     {
+      "login": "anand-242003",
+      "avatar_url": "https://avatars.githubusercontent.com/u/186507724?v=4",
+      "total_points": 1850,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 6,
+        "feature_issues": 0,
+        "other_issues": 1,
+        "prs_opened": 0,
+        "prs_merged": 0
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        3
+      ],
+      "recent_activity_score": 6.17,
+      "rank": 37
+    },
+    {
       "login": "mandeepsingh2007",
       "avatar_url": "https://avatars.githubusercontent.com/u/177451296?v=4",
       "total_points": 1800,
@@ -1127,7 +1157,7 @@
         6
       ],
       "recent_activity_score": 6,
-      "rank": 37
+      "rank": 38
     },
     {
       "login": "sicaario",
@@ -1157,7 +1187,7 @@
         0
       ],
       "recent_activity_score": 0.28,
-      "rank": 38
+      "rank": 39
     },
     {
       "login": "Va16hav07",
@@ -1187,7 +1217,7 @@
         0
       ],
       "recent_activity_score": 3.65,
-      "rank": 39
+      "rank": 40
     },
     {
       "login": "ParthKshirsagar7",
@@ -1217,7 +1247,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 40
+      "rank": 41
     },
     {
       "login": "shubhamkumar9199",
@@ -1247,7 +1277,7 @@
         0
       ],
       "recent_activity_score": 0.81,
-      "rank": 41
+      "rank": 42
     },
     {
       "login": "Ady0333",
@@ -1277,36 +1307,6 @@
         1
       ],
       "recent_activity_score": 3.38,
-      "rank": 42
-    },
-    {
-      "login": "anand-242003",
-      "avatar_url": "https://avatars.githubusercontent.com/u/186507724?v=4",
-      "total_points": 1550,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 5,
-        "feature_issues": 0,
-        "other_issues": 1,
-        "prs_opened": 0,
-        "prs_merged": 0
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        4,
-        2
-      ],
-      "recent_activity_score": 5.17,
       "rank": 43
     },
     {
