@@ -663,9 +663,9 @@
         "description": "12-week journey to demonstrate commitment and skill",
         "timeframe": "12 weeks",
         "requirements": [
-          "Earn at least 10,000 leaderboard points over the 12-week cycle",
-          "Reach at least 4,000 points within the first 6 weeks",
-          "Attend weekly team meetings or submit summaries",
+          "Earn at least 40,000 leaderboard points over the 12-week cycle",
+          "Reach at least 20,000 points within the first 6 weeks",
+          "Attend 80% or more of weekly meetings",
           "Work collaboratively with mentors",
           "Receive mentor's recommendation"
         ],
@@ -676,10 +676,10 @@
         "nextLevel": "Mentor",
         "description": "Recognized contributor with compensation and responsibility",
         "requirements": [
-          "Successfully complete at least one 12-week paid mentorship cycle",
+          "Earn at least 40,000 leaderboard points over the 12-week cycle",
+          "Reach at least 20,000 points within the first 6 weeks",
+          "Attend 80% or more of weekly meetings",
           "Help onboard and support at least one new mentee or contributor",
-          "Sustain at least 3,000 points/month on the leaderboard",
-          "Submit ≥3 PR reviews and ≥5 helpful comments on PRs or issues each cycle",
           "Present or co-present at a community call"
         ],
         "goodStanding": "Paid mentees in good standing receive professional references, career mentorship, and opportunities to lead projects or mentor others."
@@ -689,8 +689,10 @@
         "nextLevel": "Maintainer",
         "description": "Guide and support the next generation of contributors",
         "requirements": [
+          "Earn at least 40,000 leaderboard points over 12 weeks",
+          "Reach at least 20,000 points within the first 6 weeks",
+          "Attend 80% or more of weekly meetings",
           "Demonstrate technical leadership in one or more key areas",
-          "Maintain consistent leaderboard point growth across review cycles",
           "Engage with the community in GitHub and Slack",
           "Approved by core maintainers following a public review process"
         ],
@@ -701,9 +703,7 @@
         "nextLevel": "Ambassador",
         "description": "Trusted leader with full project responsibilities",
         "requirements": [
-          "Earn at least 2,000 leaderboard points every 2 months",
-          "Submit ≥8 PR reviews or constructive comments every 2 months",
-          "Attend ≥3 community meetings every 2 months",
+          "Earn at least 5,000 leaderboard points per month",
           "Sustain maintainer-level presence across issues, PRs, and reviews"
         ],
         "goodStanding": "Maintainers in good standing have full write access, voting rights on project decisions, and can serve as official project representatives."

@@ -114,6 +114,8 @@ export default function MaintainerLadderPage() {
         t("levels.mentor.requirements.1"),
         t("levels.mentor.requirements.2"),
         t("levels.mentor.requirements.3"),
+        t("levels.mentor.requirements.4"),
+        t("levels.mentor.requirements.5"),
       ],
       goodStanding: t("levels.mentor.goodStanding"),
       icon: (
@@ -141,8 +143,6 @@ export default function MaintainerLadderPage() {
       requirements: [
         t("levels.maintainer.requirements.0"),
         t("levels.maintainer.requirements.1"),
-        t("levels.maintainer.requirements.2"),
-        t("levels.maintainer.requirements.3"),
       ],
       goodStanding: t("levels.maintainer.goodStanding"),
       icon: (
