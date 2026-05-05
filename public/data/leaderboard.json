@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-05T06:46:05.373Z",
-  "git_hash": "8416b21",
+  "generated_at": "2026-05-05T10:35:11.500Z",
+  "git_hash": "2e46d55",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-16",
@@ -20,22 +20,22 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3693800,
+      "total_points": 3684000,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 330,
-        "feature_issues": 317,
-        "other_issues": 631,
-        "prs_opened": 5350,
-        "prs_merged": 4923
+        "bug_issues": 328,
+        "feature_issues": 308,
+        "other_issues": 633,
+        "prs_opened": 5338,
+        "prs_merged": 4911
       },
       "bonus_points": 50,
       "weekly_activity": [
         17,
         38,
-        57,
-        1229,
+        43,
+        1218,
         689,
         445,
         564,
@@ -43,9 +43,9 @@
         799,
         982,
         860,
-        33
+        37
       ],
-      "recent_activity_score": 2652.03,
+      "recent_activity_score": 2652.55,
       "rank": 1
     },
     {
@@ -141,13 +141,13 @@
     {
       "login": "aaradhychinche-alt",
       "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-      "total_points": 139350,
+      "total_points": 145550,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 416,
+        "bug_issues": 436,
         "feature_issues": 34,
-        "other_issues": 23,
+        "other_issues": 27,
         "prs_opened": 15,
         "prs_merged": 14
       },
@@ -163,9 +163,9 @@
         171,
         1,
         6,
-        18
+        42
       ],
-      "recent_activity_score": 211.61,
+      "recent_activity_score": 235.61,
       "rank": 5
     },
     {
@@ -290,36 +290,6 @@
       "rank": 9
     },
     {
-      "login": "Abhishek-Punhani",
-      "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-      "total_points": 38000,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 115,
-        "feature_issues": 2,
-        "other_issues": 2,
-        "prs_opened": 6,
-        "prs_merged": 4
-      },
-      "weekly_activity": [
-        0,
-        0,
-        3,
-        8,
-        12,
-        27,
-        15,
-        11,
-        6,
-        13,
-        19,
-        10
-      ],
-      "recent_activity_score": 56.13,
-      "rank": 10
-    },
-    {
       "login": "Arpit529Srivastava",
       "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
       "total_points": 37750,
@@ -347,6 +317,36 @@
         27
       ],
       "recent_activity_score": 63.32,
+      "rank": 10
+    },
+    {
+      "login": "Abhishek-Punhani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
+      "total_points": 37100,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 112,
+        "feature_issues": 2,
+        "other_issues": 2,
+        "prs_opened": 6,
+        "prs_merged": 4
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        8,
+        12,
+        27,
+        15,
+        11,
+        6,
+        13,
+        19,
+        10
+      ],
+      "recent_activity_score": 55.75,
       "rank": 11
     },
     {
@@ -472,20 +472,20 @@
     {
       "login": "AAdIprog",
       "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
-      "total_points": 19800,
+      "total_points": 19500,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 55,
-        "feature_issues": 2,
+        "feature_issues": 1,
         "other_issues": 0,
-        "prs_opened": 8,
+        "prs_opened": 7,
         "prs_merged": 3
       },
       "weekly_activity": [
         0,
         1,
-        2,
+        0,
         5,
         0,
         16,
@@ -496,7 +496,7 @@
         0,
         2
       ],
-      "recent_activity_score": 19.73,
+      "recent_activity_score": 19.48,
       "rank": 16
     },
     {
