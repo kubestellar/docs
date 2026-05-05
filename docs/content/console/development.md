@@ -29,6 +29,70 @@ This approach enables:
 
 ---
 
+## Project Structure
+
+### Repository Layout
+
+```
+cmd/console/       Server entry point
+cmd/kc-agent/      Local agent (bridges browser to kubeconfig + MCP)
+pkg/agent/         AI providers (Claude, OpenAI, Gemini)
+pkg/api/           HTTP/WS server + handlers
+pkg/mcp/           MCP bridge to Kubernetes
+pkg/store/         SQLite database layer
+web/src/           React + TypeScript frontend
+  components/cards/  Dashboard card components
+  hooks/             Data fetching hooks (useCached*)
+  lib/               Utilities, card registry, demo data
+deploy/helm/       Helm chart
+```
+
+### Technology Stack
+
+**Frontend:**
+- React 18 + TypeScript
+- Vite (build tool)
+- Tailwind CSS (styling)
+- i18next (internationalization)
+- Playwright (E2E testing)
+- SQLite WASM (client-side cache)
+
+**Backend:**
+- Go 1.25+
+- Fiber v2 (web framework)
+- SQLite (persistence)
+- `log/slog` (structured logging)
+
+**Deployment:**
+- Netlify (hosted console at console.kubestellar.io)
+- Helm (self-hosted installation)
+- Docker (container images)
+
+### Dual Backend Architecture
+
+The console has **two backend implementations**:
+
+1. **Go backend** — serves self-hosted console (local, container, Kubernetes)
+2. **Netlify Functions** — serves hosted console at console.kubestellar.io
+
+Both implement the same API contract. When adding Go API handlers, check if a corresponding Netlify Function needs updating in `web/netlify/functions/*.mts`.
+
+**Routes WITH Netlify parity** (public/stateless data):
+- `/api/youtube/*` — YouTube content feed
+- `/api/medium/*` — Blog feed
+- `/api/rewards/*` — GitHub contributor rewards
+- `/api/missions/*` — Mission catalog
+- `/api/github-pipelines` — CI/CD status
+- `/api/analytics-*` — Analytics endpoints
+
+**Routes WITHOUT Netlify parity** (backend-only, require K8s/DB/agent):
+- `/api/settings`, `/api/persistence/*` — SQLite database
+- `/api/dashboards/*`, `/api/cards/*` — Dashboard CRUD
+- `/api/namespaces`, `/api/rbac/*` — Live cluster access
+- `/api/agent/*`, `/api/kagent/*` — Local agent bridge
+
+---
+
 ## Issue Workflow
 
 ### Filing Issues
@@ -93,6 +157,72 @@ The console project employs an automated agentic pipeline that processes eligibl
 - Agents cannot modify security-sensitive files without human review
 - If CI fails, the agent may retry once; after that, the issue is escalated to a human
 - All agent-authored PRs are labeled `authored-by: bot` for visibility
+
+---
+
+## Change Tiers & Review Process
+
+Every PR gets automatically labeled with a `tier/*` label based on which files it touches. This determines review scrutiny.
+
+| Tier | Label | What it covers | Review Level |
+|------|-------|---------------|--------------|
+| 0 | `tier/0-automatic` | Lockfiles, `go.sum`, docs (`*.md`), i18n files, snapshots, generated artifacts | Fast-track eligible |
+| 1 | `tier/1-lightweight` | Test-only changes, editor config (`.prettierrc`, `.editorconfig`) | Lightweight review |
+| 2 | `tier/2-standard` | Everything not in other tiers | Standard review |
+| 3 | `tier/3-restricted` | `CODEOWNERS`, workflows, auth code, security docs, Helm RBAC | Enhanced scrutiny |
+
+**Classification rules:**
+- A PR is tier 3 if *any* file matches a tier-3 path
+- Otherwise tier 0 only if *every* file is tier-0
+- Otherwise tier 1 only if every file is tier-0 or tier-1
+- Otherwise tier 2
+
+This system enables fast iteration on safe changes while ensuring security-sensitive changes get appropriate review.
+
+---
+
+## Contribution Models
+
+### Manual Coding PRs (Discouraged)
+
+Manual coding PRs are **discouraged** because:
+- They take significantly longer to review and iterate
+- They commonly miss required patterns (e.g., `isDemoData` wiring, `useCardLoadingState`, locale strings)
+- Coding agents catch these patterns automatically
+
+**All PRs — human or AI — must pass the same 9 CI gates before merge.** There is no separate path for AI-generated code.
+
+### Test-Driven Contributions (Preferred)
+
+The most valuable contributions are **tests**:
+- Playwright E2E tests
+- Visual regression tests
+- API contract tests
+- Unit tests
+
+Tests define expected behavior — agents then implement the code to make tests pass. A failing test PR is more useful than a code PR.
+
+### Using Coding Agents (Recommended)
+
+If you want to contribute code, use one of the supported agents:
+
+| Agent | Model | Status | Notes |
+|-------|-------|--------|-------|
+| Claude Code | Claude Opus 4.5/4.6 | **Strongly recommended** | Knows full codebase, all patterns, card rules |
+| GitHub Copilot | Multiple | Supported | Used for automated PR fixes |
+| Google Gemini | Gemini models | Supported | Code generation |
+| OpenAI Codex | GPT models | Supported | Code generation |
+
+Install Claude Code:
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+### New CNCF Project Cards
+
+New monitoring cards for CNCF projects (Karmada, Falco, KEDA, etc.) belong in [**kubestellar/console-marketplace**](https://github.com/kubestellar/console-marketplace), **not** in the main console repo. The marketplace loads cards on-demand to avoid bundle bloat.
+
+PRs adding card components to `web/src/components/cards/` will be redirected to console-marketplace.
 
 ---
 
@@ -268,6 +398,74 @@ npm run lint
 
 ---
 
+## Critical Development Patterns
+
+These patterns are **mandatory** for all code contributions. Violations will cause CI failures or runtime bugs.
+
+### Card Development
+
+Every dashboard card component must follow these rules:
+
+1. **Wire `isDemoData` and `isRefreshing`** — destructure from the cached hook and pass to `useCardLoadingState()`:
+   ```tsx
+   const { data, isLoading, isRefreshing, isDemoData, isFailed } = useCachedPods()
+   useCardLoadingState({
+     isLoading,
+     isRefreshing,  // Required for refresh icon animation
+     isDemoData,    // Required for Demo badge + yellow outline
+     hasAnyData: data.length > 0,
+     isFailed,
+   })
+   ```
+
+2. **Never show demo data during loading** — hook's `isDemoFallback` must be false while `isLoading` is true
+3. **Always use `useCache` / `useCached*` hooks** for data fetching — never raw `fetch()` in card components
+4. **Array safety** — guard all array operations with `(data || [])` before `.map()`, `.filter()`, `.join()`, etc.
+
+### Cluster Operations
+
+**Always use `DeduplicatedClusters()`** when iterating clusters. Multiple kubeconfig contexts can point to the same physical cluster — without dedup, resources get listed/counted twice.
+
+```go
+clusters := DeduplicatedClusters(contexts)
+for _, cluster := range clusters {
+    // safe to iterate
+}
+```
+
+### No Magic Numbers
+
+Every numeric literal must be a named constant:
+
+```tsx
+// WRONG
+setTimeout(fn, 5000)
+
+// CORRECT
+const WS_RECONNECT_MS = 5000
+setTimeout(fn, WS_RECONNECT_MS)
+```
+
+This applies to timeouts, intervals, percentages, retries, pixel values — everything.
+
+### Secrets Management
+
+**Never hardcode API keys, tokens, or credentials.** Use environment variables only:
+
+- Go backend: `os.Getenv()`
+- Frontend: `import.meta.env.VITE_*`
+- Secrets come from `.env` (gitignored) or runtime env vars
+
+### AI/LLM Security
+
+Before adding any workflow that calls an LLM, read the [AI Security Guide](https://github.com/kubestellar/console/blob/main/docs/security/SECURITY-AI.md) covering:
+- Prompt injection defenses
+- Supply chain risks
+- Agent drift prevention
+- LLM audit checklist
+
+---
+
 ## How to Contribute
 
 1. **Fork** the `kubestellar/console` repository
@@ -303,6 +501,43 @@ npm run lint
 - File an issue with the `question` label
 - Check existing documentation at [kubestellar.io/console](https://kubestellar.io/docs/console/)
 - Review the [architecture page](./architecture/) for system design context
+
+---
+
+## Improving the Development Process
+
+The development methodology itself is a living document and continuously evolving.
+
+### How to Raise Process Issues
+
+If you encounter issues with the development process, methodology, or tooling:
+
+1. **File an issue** in the `kubestellar/console` repository with label `process` or `meta`
+2. **Use the feedback dialog** in the console at `/feedback` to report workflow friction
+3. **Suggest improvements** to this documentation by filing an issue in `kubestellar/docs` with label `kind/documentation`
+
+Examples of process issues:
+- CI checks are too slow or flaky
+- Documentation is outdated or unclear
+- Agent workflow has bugs or limitations
+- Testing requirements are unclear or burdensome
+- PR review process needs improvement
+
+### Contributing to Methodology Documentation
+
+This page lives in the `kubestellar/docs` repository at `docs/content/console/development.md`. To suggest changes:
+
+```bash
+git clone https://github.com/kubestellar/docs.git
+cd docs
+git checkout -b update-console-dev-docs
+# Edit docs/content/console/development.md
+git commit -s -m "📖 Update console development methodology"
+git push origin update-console-dev-docs
+# Open PR against kubestellar/docs
+```
+
+PRs to improve this documentation are always welcome and do not require prior discussion.
 
 ---
 
