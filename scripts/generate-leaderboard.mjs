@@ -153,21 +153,64 @@ function getLevelForPoints(totalPoints) {
 
 // ── Fetch items from GitHub REST API ──────────────────────────────────
 
-async function fetchItemsSince(repo, sinceDate) {
+const MAX_PAGES_PER_QUERY = 95;
+const CHUNK_DAYS = 30;
+
+async function fetchPagedItems(repo, sinceDate, untilDate) {
   const allItems = [];
 
-  for (let page = 1; ; page++) {
-    const url = `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&page=${page}&sort=created&direction=desc&since=${sinceDate}`;
+  for (let page = 1; page <= MAX_PAGES_PER_QUERY; page++) {
+    const url = `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&page=${page}&sort=created&direction=asc&since=${sinceDate}`;
 
     if (page > 1) await delay(REST_PAGE_DELAY_MS);
 
-    const items = await ghFetch(url);
-    allItems.push(...items);
+    let items;
+    try {
+      items = await ghFetch(url);
+    } catch (err) {
+      if (err.message.includes("422")) {
+        console.warn(`    Page ${page} hit GitHub pagination limit for ${repo}, returning ${allItems.length} items collected so far.`);
+        break;
+      }
+      throw err;
+    }
+
+    for (const item of items) {
+      if (untilDate && item.created_at >= untilDate) continue;
+      allItems.push(item);
+    }
 
     if (items.length < REST_PER_PAGE) break;
+  }
 
-    const oldest = items[items.length - 1];
-    if (oldest && oldest.created_at < sinceDate) break;
+  return allItems;
+}
+
+async function fetchItemsSince(repo, sinceDate) {
+  const since = new Date(sinceDate);
+  const now = new Date();
+  const totalDays = Math.ceil((now - since) / (86400 * 1000));
+
+  if (totalDays <= CHUNK_DAYS) {
+    return fetchPagedItems(repo, sinceDate, null);
+  }
+
+  const allItems = [];
+  let chunkStart = new Date(since);
+
+  while (chunkStart < now) {
+    const chunkEnd = new Date(chunkStart);
+    chunkEnd.setUTCDate(chunkEnd.getUTCDate() + CHUNK_DAYS);
+    const untilISO = chunkEnd < now ? chunkEnd.toISOString() : null;
+
+    const items = await fetchPagedItems(repo, chunkStart.toISOString(), untilISO);
+    allItems.push(...items);
+
+    if (items.length > 0) {
+      console.log(`    ${repo} chunk ${chunkStart.toISOString().slice(0, 10)}..${(untilISO || now.toISOString()).slice(0, 10)}: ${items.length} items`);
+    }
+
+    chunkStart = chunkEnd;
   }
 
   return allItems;
