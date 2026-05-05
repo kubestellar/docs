@@ -39,7 +39,7 @@ Get KubeStellar Console running locally for development or evaluation.
 One command — downloads pre-built binaries, starts the backend + agent, and opens your browser:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
 ```
 
 This downloads and starts the console only. It does **not** install kubestellar-mcp plugins. Typically under 45 seconds. No GitHub OAuth credentials required — a local `dev-user` session is created automatically.
@@ -87,7 +87,7 @@ For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for
 4. **Install prerequisites** inside WSL:
    ```bash
    # Install Node.js
-   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   curl -H "Cache-Control: no-cache" -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
    sudo apt install -y nodejs
 
    # Install Go
@@ -130,7 +130,7 @@ For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for
 4. **Install prerequisites** inside WSL:
    ```bash
    # Install Node.js
-   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   curl -H "Cache-Control: no-cache" -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
    sudo apt install -y nodejs
 
    # Install Go
@@ -184,7 +184,7 @@ which kubestellar-ops && which kubestellar-deploy
 ### Option A: Pre-built binaries (recommended)
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
 ```
 
 This downloads the console binary, starts the backend (port 8080), and opens your browser. It does **not** install kubestellar-mcp plugins — complete Step 1 first.
@@ -257,7 +257,7 @@ helm install ksc oci://ghcr.io/kubestellar/charts/kubestellar-console \
 ### Using deploy script
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/deploy.sh | bash
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/deploy.sh | bash
 ```
 
 Supports `--context`, `--openshift`, `--ingress <host>`, and `--github-oauth` flags.

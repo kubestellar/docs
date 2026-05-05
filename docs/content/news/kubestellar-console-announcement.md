@@ -16,7 +16,7 @@ I'm excited to share that **KubeStellar Console** is ready for you to try! Wheth
 **Or run it locally in under a minute:**
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
 ```
 
 That's it — one command, no dependencies beyond curl. It downloads the console and a lightweight local agent, starts both, and opens your browser. The local agent reads your kubeconfig to connect to your clusters — it runs on your machine, for your personal use only. Nothing leaves your laptop.
@@ -50,7 +50,7 @@ We have a rewards program! Open issues and feature requests directly through the
 
 - **Live site:** [https://console.kubestellar.io](https://console.kubestellar.io)
 - **GitHub:** [https://github.com/kubestellar/console](https://github.com/kubestellar/console)
-- **Local install:** `curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash`
+- **Local install:** `curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash`
 
 ---
 

@@ -52,7 +52,7 @@ source) you only need the entries marked **Local**.
 One command downloads pre-built binaries, starts the backend + agent, and opens your browser:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
 ```
 
 This downloads and starts the console binary only. It does **not** install kubestellar-mcp plugins. Typically takes under 45 seconds. No OAuth or GitHub credentials required — you get a local `dev-user` session automatically.
@@ -154,7 +154,7 @@ Choose your deployment method:
 Downloads pre-built binaries and starts the console:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
 ```
 
 This starts the backend (port 8080) and opens the frontend in your browser. No OAuth credentials needed — a local `dev-user` session is created automatically.
@@ -386,7 +386,7 @@ docker run -d \
 One command that handles helm, secrets, and ingress:
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/deploy.sh | bash
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/deploy.sh | bash
 ```
 
 Supports `--context`, `--openshift`, `--ingress <host>`, and `--github-oauth` flags.

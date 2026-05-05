@@ -76,7 +76,7 @@ This recipe uses a modified version of [the OCM Quick Start script](https://raw.
 You can invoke the modified OCM Quick Start as follows.
 
 ```shell
-curl -L https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v{{ config.ks_latest_release }}/scripts/ocm-local-up-for-ingress.sh | bash
+curl -H "Cache-Control: no-cache" -L https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v{{ config.ks_latest_release }}/scripts/ocm-local-up-for-ingress.sh | bash
 ```
 
 Like the baseline, this script creates a `kind` cluster named "hub" to

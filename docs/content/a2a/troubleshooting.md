@@ -36,7 +36,7 @@ LOG_LEVEL=DEBUG uv run kubestellar execute get_kubeconfig
 python --version
 
 # Install Python 3.11+ using pyenv (recommended)
-curl https://pyenv.run | bash
+curl -H "Cache-Control: no-cache" https://pyenv.run | bash
 pyenv install 3.12
 pyenv global 3.12
 
@@ -77,7 +77,7 @@ sudo apt-get install python3-dev build-essential
 **Solution**:
 ```bash
 # Install uv using the official installer
-curl -LsSf https://astral.sh/uv/install.sh | sh
+curl -H "Cache-Control: no-cache" -LsSf https://astral.sh/uv/install.sh | sh
 
 # Reload shell configuration
 source ~/.bashrc  # or ~/.zshrc
