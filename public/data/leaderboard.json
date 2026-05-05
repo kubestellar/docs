@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-05T03:05:41.806Z",
-  "git_hash": "1920ad4",
+  "generated_at": "2026-05-05T06:46:05.373Z",
+  "git_hash": "8416b21",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-16",
@@ -20,21 +20,21 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 3709850,
+      "total_points": 3693800,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 330,
         "feature_issues": 317,
-        "other_issues": 630,
-        "prs_opened": 5373,
-        "prs_merged": 4946
+        "other_issues": 631,
+        "prs_opened": 5350,
+        "prs_merged": 4923
       },
       "bonus_points": 50,
       "weekly_activity": [
         17,
         38,
-        80,
+        57,
         1229,
         689,
         445,
@@ -43,19 +43,19 @@
         799,
         982,
         860,
-        32
+        33
       ],
-      "recent_activity_score": 2653.9,
+      "recent_activity_score": 2652.03,
       "rank": 1
     },
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 180250,
+      "total_points": 180550,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 550,
+        "bug_issues": 551,
         "feature_issues": 18,
         "other_issues": 15,
         "prs_opened": 21,
@@ -73,9 +73,9 @@
         204,
         5,
         0,
-        7
+        8
       ],
-      "recent_activity_score": 241.4,
+      "recent_activity_score": 242.4,
       "rank": 2
     },
     {
@@ -141,11 +141,11 @@
     {
       "login": "aaradhychinche-alt",
       "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-      "total_points": 136350,
+      "total_points": 139350,
       "level": "Captain",
       "level_rank": 6,
       "breakdown": {
-        "bug_issues": 406,
+        "bug_issues": 416,
         "feature_issues": 34,
         "other_issues": 23,
         "prs_opened": 15,
@@ -163,9 +163,9 @@
         171,
         1,
         6,
-        8
+        18
       ],
-      "recent_activity_score": 201.61,
+      "recent_activity_score": 211.61,
       "rank": 5
     },
     {
@@ -472,11 +472,11 @@
     {
       "login": "AAdIprog",
       "avatar_url": "https://avatars.githubusercontent.com/u/213815089?v=4",
-      "total_points": 19200,
+      "total_points": 19800,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 53,
+        "bug_issues": 55,
         "feature_issues": 2,
         "other_issues": 0,
         "prs_opened": 8,
@@ -494,9 +494,9 @@
         0,
         0,
         0,
-        0
+        2
       ],
-      "recent_activity_score": 17.73,
+      "recent_activity_score": 19.73,
       "rank": 16
     },
     {
@@ -620,6 +620,36 @@
       "rank": 20
     },
     {
+      "login": "oksaumya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
+      "total_points": 7050,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 1,
+        "feature_issues": 0,
+        "other_issues": 31,
+        "prs_opened": 11,
+        "prs_merged": 6
+      },
+      "weekly_activity": [
+        5,
+        1,
+        1,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        13
+      ],
+      "recent_activity_score": 16.59,
+      "rank": 21
+    },
+    {
       "login": "anusha19murthy",
       "avatar_url": "https://avatars.githubusercontent.com/u/76055754?v=4",
       "total_points": 6600,
@@ -647,36 +677,6 @@
         0
       ],
       "recent_activity_score": 7.94,
-      "rank": 21
-    },
-    {
-      "login": "oksaumya",
-      "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
-      "total_points": 6550,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 27,
-        "prs_opened": 11,
-        "prs_merged": 6
-      },
-      "weekly_activity": [
-        5,
-        1,
-        1,
-        0,
-        3,
-        0,
-        0,
-        0,
-        0,
-        0,
-        3,
-        8
-      ],
-      "recent_activity_score": 11.59,
       "rank": 22
     },
     {
@@ -1402,11 +1402,11 @@
     {
       "login": "anand-242003",
       "avatar_url": "https://avatars.githubusercontent.com/u/186507724?v=4",
-      "total_points": 950,
+      "total_points": 1250,
       "level": "Explorer",
       "level_rank": 2,
       "breakdown": {
-        "bug_issues": 3,
+        "bug_issues": 4,
         "feature_issues": 0,
         "other_issues": 1,
         "prs_opened": 0,
@@ -1424,9 +1424,9 @@
         0,
         0,
         4,
-        0
+        1
       ],
-      "recent_activity_score": 3.17,
+      "recent_activity_score": 4.17,
       "rank": 47
     },
     {
