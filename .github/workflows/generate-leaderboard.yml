@@ -9,6 +9,10 @@ on:
         description: 'Skip regression check (use when intentional scope change lowers scores)'
         type: boolean
         default: false
+      full:
+        description: 'Force full rebuild (ignore snapshot, re-fetch from Jan 1)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -32,6 +36,7 @@ jobs:
       - name: Generate leaderboard data
         env:
           GITHUB_TOKEN: ${{ secrets.LEADERBOARD_GITHUB_TOKEN }}
+          LEADERBOARD_FULL: ${{ inputs.full == true && '1' || '0' }}
         run: node scripts/generate-leaderboard.mjs
 
       - name: Check for score regressions
@@ -50,7 +55,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/leaderboard.json public/data/contributors/
+          git add public/data/leaderboard.json public/data/leaderboard-snapshot.json public/data/contributors/
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "chore: update leaderboard and contributor profile data"
           MAX_RETRIES=5
