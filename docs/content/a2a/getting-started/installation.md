@@ -29,7 +29,7 @@ This guide will help you install KubeStellar A2A on your system with all require
 
 ```bash
 # Install uv if you haven't already
-curl -LsSf https://astral.sh/uv/install.sh | sh
+curl -H "Cache-Control: no-cache" -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone the repository
 git clone https://github.com/kubestellar/a2a.git

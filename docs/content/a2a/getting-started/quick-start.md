@@ -20,7 +20,7 @@ Choose your preferred installation method:
 ### Using uv (Recommended)
 ```bash
 # Install uv (if not already installed)
-curl -LsSf https://astral.sh/uv/install.sh | sh
+curl -H "Cache-Control: no-cache" -LsSf https://astral.sh/uv/install.sh | sh
 
 # Clone and install
 git clone https://github.com/kubestellar/a2a.git

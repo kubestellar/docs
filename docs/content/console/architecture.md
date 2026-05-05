@@ -223,7 +223,7 @@ The data directory is relative to **wherever you ran the curl command**. If you 
 ```bash
 # Store console data in a dedicated directory
 mkdir -p ~/kubestellar-console && cd ~/kubestellar-console
-curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
 ```
 
 > **Tip:** If you re-run the curl installer from the same directory, it reuses the existing database and preserves your dashboards and settings.

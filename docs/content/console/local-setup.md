@@ -78,7 +78,7 @@ For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for
 4. **Install prerequisites** inside WSL:
    ```bash
    # Install Node.js
-   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   curl -H "Cache-Control: no-cache" -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
    sudo apt install -y nodejs
 
    # Install Go

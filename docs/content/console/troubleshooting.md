@@ -167,7 +167,7 @@ unbound *after* the pod has been created.
 **Symptom:** running the one-liner deploy script —
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/deploy.sh | bash
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/deploy.sh | bash
 ```
 
 — fails with `Error: context deadline exceeded` or `timed out waiting for
