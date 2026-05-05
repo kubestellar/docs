@@ -60,8 +60,6 @@ const RECENCY_HALF_LIFE = 3; // weeks — contribution weight halves every N wee
 const YEAR_START = `${new Date().getFullYear()}-01-01T00:00:00Z`;
 /** Items per page for REST API pagination */
 const REST_PER_PAGE = 100;
-/** Maximum pages to fetch per repo (100 items/page = 10,000 items max) */
-const REST_MAX_PAGES = 100;
 /** Delay between REST API pages to be a good citizen (ms) */
 const REST_PAGE_DELAY_MS = 100;
 const API_BASE = "https://api.github.com";
@@ -136,14 +134,18 @@ function getLevelForPoints(totalPoints) {
  * The /repos/{owner}/{repo}/issues endpoint returns both issues and PRs
  * (PRs have a `pull_request` field). state=all includes open+closed.
  *
+ * Paginates until exhausted (no fixed page cap) so repos with >10K items
+ * in a year are fully counted. The `since` parameter and created_at check
+ * bound the window to the current scoring year.
+ *
  * This uses the REST API (5,000 req/hr) instead of the Search API
  * (30 req/min), avoiding rate limit failures on large contributor lists.
  */
 async function fetchAllItems(repo) {
   const allItems = [];
 
-  for (let page = 1; page <= REST_MAX_PAGES; page++) {
-    const url = `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&page=${page}&sort=created&direction=desc`;
+  for (let page = 1; ; page++) {
+    const url = `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&page=${page}&sort=created&direction=desc&since=${YEAR_START}`;
 
     if (page > 1) await delay(REST_PAGE_DELAY_MS);
 
