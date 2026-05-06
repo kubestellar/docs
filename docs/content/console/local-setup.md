@@ -170,14 +170,15 @@ GITHUB_CLIENT_SECRET=your_client_secret_here
 This script:
 
 1. Loads environment variables from `.env`
-2. Kills any processes using ports 8080 and 8585
-3. Starts the kc-agent (MCP + WebSocket server on port 8585)
-4. Builds the frontend (`cd web && npm run build`)
-5. Starts the Go backend on port 8080, serving both the API and the built frontend
+2. Kills any processes using ports 8080, 8081, 8585, and 5174
+3. Starts a **watchdog process** on port 8080 that survives restarts
+4. Starts the Go backend on port 8081 (internal, managed by the watchdog)
+5. Starts the kc-agent (MCP + WebSocket server on port 8585)
+6. Builds the frontend (`cd web && npm run build`)
 
 Open **http://localhost:8080** and sign in with GitHub.
 
-> **Note**: With `startup-oauth.sh`, the Go backend serves both the API and the pre-built frontend on port 8080. There is no separate Vite dev server (port 5174 is not used).
+> **Note**: With `startup-oauth.sh`, the watchdog on port 8080 proxies requests to the backend on port 8081, which serves both the API and the pre-built frontend. This architecture allows the console to survive backend restarts without disconnecting users. There is no separate Vite dev server (port 5174 is not used).
 
 ### Developer Mode (Live Reload)
 
@@ -223,9 +224,36 @@ Open **http://localhost:5174** for live development (slower initial load, but in
 
 | Port | Component | Script |
 |------|-----------|--------|
-| 8080 | Go backend (API + frontend in OAuth mode) | Both scripts |
-| 5174 | Vite dev server (dev mode only) | `start-dev.sh` |
-| 8585 | kc-agent (MCP + WebSocket) | `startup-oauth.sh` |
+| 8080 | Watchdog (HTTP proxy, survives restarts) | `startup-oauth.sh` only |
+| 8081 | Go backend (API + frontend) | `startup-oauth.sh` only |
+| 5174 | Vite dev server (dev mode only) | `start-dev.sh` only |
+| 8585 | kc-agent (MCP + WebSocket server) | `startup-oauth.sh` only |
+
+---
+
+## Watchdog Architecture
+
+The `startup-oauth.sh` script includes a **watchdog process** that improves the development experience:
+
+### Problem Solved
+Without the watchdog, restarting the backend causes "connection refused" errors in the browser, forcing manual page refreshes.
+
+### How It Works
+1. **Watchdog (port 8080)**: A lightweight proxy that listens on port 8080 and survives restarts
+2. **Backend (port 8081)**: The actual Go backend process running the API and serving the frontend
+3. **kc-agent (port 8585)**: The MCP + WebSocket server, independent of the backend
+
+### Restart Behavior
+- When you restart the backend (e.g., after code changes), the watchdog stays alive
+- The watchdog detects the backend restart and automatically reconnects
+- Browser connections remain stable — no "connection refused" errors
+- This makes development faster and smoother
+
+### Port Resolution
+The backend resolves its actual port through this priority:
+1. `BACKEND_PORT` environment variable (set by the watchdog)
+2. Port 8081 if the watchdog PID file exists
+3. Port 8080 for legacy deployments without the watchdog
 
 ---
 
@@ -234,10 +262,11 @@ Open **http://localhost:5174** for live development (slower initial load, but in
 | Feature | `start-dev.sh` | `startup-oauth.sh` |
 |---------|----------------|---------------------|
 | GitHub login | No (local `dev-user`) | Yes (OAuth) |
-| Frontend served by | Vite dev server (:5174) | Go backend (:8080) |
+| Frontend served by | Vite dev server (:5174) | Go backend (:8081) via watchdog (:8080) |
 | Hot reload | Yes (Vite HMR) | No (must rebuild) |
 | `.env` required | No | Yes |
-| kc-agent started | No | Yes |
+| kc-agent started | No | Yes (:8585) |
+| Watchdog proxy | No | Yes (survives restarts) |
 | Best for | Development/coding | Testing OAuth, production-like setup |
 
 ---
