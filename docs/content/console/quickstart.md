@@ -143,7 +143,7 @@ For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for
 
 ## Step 1: Install kubestellar-mcp Tools
 
-The console uses kubestellar-mcp plugins to talk to your clusters. **This step is required and must be done before running the console.** See [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for full details.
+The console uses kubestellar-mcp plugins to talk to your clusters. **This step is required and must be done before running the console.** See [kubestellar-mcp documentation](../kubestellar-mcp/overview/intro.md) for full details.
 
 **Install the binaries (required):**
 
@@ -313,4 +313,4 @@ kubectl delete namespace ksc
 - [Architecture](architecture.md) - Understand how the 7 components work together
 - [Dashboards](dashboards.md) - Explore the 20+ dashboard pages
 - [Cards](all-cards.md) - See all 120+ card types
-- [kubestellar-mcp Documentation](/docs/kubestellar-mcp/overview/introduction) - Deep dive into kubestellar-ops and kubestellar-deploy
+- [kubestellar-mcp Documentation](../kubestellar-mcp/overview/intro.md) - Deep dive into kubestellar-ops and kubestellar-deploy

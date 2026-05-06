@@ -9,7 +9,7 @@ AI-powered multi-cluster Kubernetes tools for Claude Code.
 
 **Single-cluster UX for multi-cluster reality** - work with your **apps**, not your **clusters**.
 
-> **Using KubeStellar Console?** These plugins power the Console's cluster connectivity. See the [Console Installation Guide](/docs/console/overview/installation) for how they fit together.
+> **Using KubeStellar Console?** These plugins power the Console's cluster connectivity. See the [Console Installation Guide](../../console/installation.md) for how they fit together.
 
 ## Components
 

@@ -236,7 +236,7 @@
 
 [[redirects]]
   from = "https://kflex.kubestellar.io"
-  to = "https://kubestellar.io/docs/kubeflex/overview/introduction"
+  to = "https://kubestellar.io/docs/kubeflex/readme"
   status = 301
   force = true
 
@@ -250,7 +250,7 @@
 
 [[redirects]]
   from = "https://claude.kubestellar.io/en"
-  to = "https://kubestellar.io/docs/kubestellar-mcp/overview/introduction"
+  to = "https://kubestellar.io/docs/kubestellar-mcp/overview/intro"
   status = 301
   force = true
 
@@ -262,7 +262,7 @@
 
 [[redirects]]
   from = "https://claude.kubestellar.io"
-  to = "https://kubestellar.io/docs/kubestellar-mcp/overview/introduction"
+  to = "https://kubestellar.io/docs/kubestellar-mcp/overview/intro"
   status = 301
   force = true
 
@@ -276,7 +276,7 @@
 
 [[redirects]]
   from = "https://mcp.kubestellar.io/en"
-  to = "https://kubestellar.io/docs/kubestellar-mcp/overview/introduction"
+  to = "https://kubestellar.io/docs/kubestellar-mcp/overview/intro"
   status = 301
   force = true
 
@@ -288,29 +288,65 @@
 
 [[redirects]]
   from = "https://mcp.kubestellar.io"
-  to = "https://kubestellar.io/docs/kubestellar-mcp/overview/introduction"
+  to = "https://kubestellar.io/docs/kubestellar-mcp/overview/intro"
   status = 301
   force = true
+
+# Redirect legacy docs URLs to current pages
+[[redirects]]
+  from = "/docs/console/overview/introduction"
+  to = "/docs/console/readme"
+  status = 302
+
+[[redirects]]
+  from = "/docs/console/overview/installation"
+  to = "/docs/console/installation"
+  status = 302
+
+[[redirects]]
+  from = "/docs/console/overview/quick-start"
+  to = "/docs/console/quickstart"
+  status = 302
+
+[[redirects]]
+  from = "/docs/overview/introduction"
+  to = "/docs/readme"
+  status = 302
+
+[[redirects]]
+  from = "/docs/a2a/overview/introduction"
+  to = "/docs/a2a/intro"
+  status = 302
+
+[[redirects]]
+  from = "/docs/kubeflex/overview/introduction"
+  to = "/docs/kubeflex/readme"
+  status = 302
+
+[[redirects]]
+  from = "/docs/kubestellar-mcp/overview/introduction"
+  to = "/docs/kubestellar-mcp/overview/intro"
+  status = 302
 
 # Redirect project root pages to first content page
 [[redirects]]
   from = "/docs/a2a"
-  to = "/docs/a2a/overview/introduction"
+  to = "/docs/a2a/intro"
   status = 302
 
 [[redirects]]
   from = "/docs/a2a/"
-  to = "/docs/a2a/overview/introduction"
+  to = "/docs/a2a/intro"
   status = 302
 
 [[redirects]]
   from = "/docs/kubeflex"
-  to = "/docs/kubeflex/overview/introduction"
+  to = "/docs/kubeflex/readme"
   status = 302
 
 [[redirects]]
   from = "/docs/kubeflex/"
-  to = "/docs/kubeflex/overview/introduction"
+  to = "/docs/kubeflex/readme"
   status = 302
 
 [[redirects]]
@@ -325,12 +361,12 @@
 
 [[redirects]]
   from = "/docs/kubestellar-mcp"
-  to = "/docs/kubestellar-mcp/overview/introduction"
+  to = "/docs/kubestellar-mcp/overview/intro"
   status = 302
 
 [[redirects]]
   from = "/docs/kubestellar-mcp/"
-  to = "/docs/kubestellar-mcp/overview/introduction"
+  to = "/docs/kubestellar-mcp/overview/intro"
   status = 302
 
 
