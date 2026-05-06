@@ -132,6 +132,13 @@ The Vite dev server proxies API requests to the Go backend on port 8080.
 
 For multi-user deployments or to test the complete authentication flow.
 
+```bash
+./startup-oauth.sh              # Production build (recommended)
+./startup-oauth.sh --dev        # Vite dev server with hot reload
+```
+
+The `--dev` flag uses the Vite dev server (port 5174) with live module replacement instead of the production build. This is useful for frontend development but requires a GitHub OAuth app and `.env` file.
+
 > **💡 Missing `.env`?**
 >
 > `startup-oauth.sh` requires a `.env` file with `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`. If the file is missing or incomplete, the script will **exit with an error** and print instructions for creating the `.env` file.
@@ -164,38 +171,41 @@ GITHUB_CLIENT_SECRET=your_client_secret_here
 ### Step 3: Start the Console
 
 ```bash
-./startup-oauth.sh
+./startup-oauth.sh              # Production build (recommended)
+./startup-oauth.sh --dev        # Dev mode with Vite server
 ```
+
+#### Production Build (default)
 
 This script:
 
 1. Loads environment variables from `.env`
 2. Kills any processes using ports 8080, 8081, 8585, and 5174
-3. Starts a **watchdog process** on port 8080 that survives restarts
-4. Starts the Go backend on port 8081 (internal, managed by the watchdog)
-5. Starts the kc-agent (MCP + WebSocket server on port 8585)
-6. Builds the frontend (`cd web && npm run build`)
+3. Starts the kc-agent (MCP + WebSocket server on port 8585)
+4. Builds the frontend (`cd web && npm run build`)
+5. Starts a **watchdog on port 8080** that manages the Go backend on port 8081
+6. The watchdog survives restarts, so users never see "connection refused" errors
+7. Opens **http://localhost:8080**
 
-Open **http://localhost:8080** and sign in with GitHub.
+The watchdog architecture improves reliability by keeping a stable frontend connection through backend restarts during development. The actual backend API runs on port 8081 but is transparent to the user.
 
 > **Note**: With `startup-oauth.sh`, the watchdog on port 8080 proxies requests to the backend on port 8081, which serves both the API and the pre-built frontend. This architecture allows the console to survive backend restarts without disconnecting users. There is no separate Vite dev server (port 5174 is not used).
 
-### Developer Mode (Live Reload)
-
-For faster frontend development with OAuth enabled, use the `--dev` flag to run the Vite dev server with hot module replacement (HMR):
+#### Dev Mode (`--dev` flag)
 
 ```bash
 ./startup-oauth.sh --dev
 ```
 
-With `--dev` mode:
+Uses the Vite dev server instead of the production build:
 
-1. The Vite dev server starts on port 5174 with HMR enabled
-2. Frontend code changes reload automatically in your browser
-3. Backend starts on port 8080 (serves API only, not frontend)
-4. kc-agent starts on port 8585 as usual
+1. Loads environment variables from `.env`
+2. Starts the kc-agent (MCP + WebSocket server on port 8585)
+3. Starts the Go backend on port 8080 (no watchdog)
+4. Starts Vite dev server on port 5174 with hot module replacement
+5. Opens **http://localhost:5174**
 
-Open **http://localhost:5174** for live development (slower initial load, but instant reload on code changes).
+Use this for frontend development with live reload.
 
 > **Note**: This is useful when iterating on frontend features with OAuth enabled. For pure frontend development without authentication, use `./start-dev.sh` instead.
 
@@ -224,10 +234,10 @@ Open **http://localhost:5174** for live development (slower initial load, but in
 
 | Port | Component | Script |
 |------|-----------|--------|
-| 8080 | Watchdog (HTTP proxy, survives restarts) | `startup-oauth.sh` only |
-| 8081 | Go backend (API + frontend) | `startup-oauth.sh` only |
-| 5174 | Vite dev server (dev mode only) | `start-dev.sh` only |
-| 8585 | kc-agent (MCP + WebSocket server) | `startup-oauth.sh` only |
+| 8080 | Watchdog/Frontend entrance (OAuth mode) or Go backend (dev mode) | `startup-oauth.sh` |
+| 8081 | Go backend (OAuth mode with watchdog) | `startup-oauth.sh` (production build) |
+| 5174 | Vite dev server (dev mode) | `start-dev.sh` or `startup-oauth.sh --dev` |
+| 8585 | kc-agent (MCP + WebSocket) | Both scripts |
 
 ---
 
@@ -259,15 +269,15 @@ The backend resolves its actual port through this priority:
 
 ## Startup Scripts Comparison
 
-| Feature | `start-dev.sh` | `startup-oauth.sh` |
-|---------|----------------|---------------------|
-| GitHub login | No (local `dev-user`) | Yes (OAuth) |
-| Frontend served by | Vite dev server (:5174) | Go backend (:8081) via watchdog (:8080) |
-| Hot reload | Yes (Vite HMR) | No (must rebuild) |
-| `.env` required | No | Yes |
-| kc-agent started | No | Yes (:8585) |
-| Watchdog proxy | No | Yes (survives restarts) |
-| Best for | Development/coding | Testing OAuth, production-like setup |
+| Feature | `start-dev.sh` | `startup-oauth.sh` | `startup-oauth.sh --dev` |
+|---------|----------------|--------------------|------------------------|
+| GitHub login | No (local `dev-user`) | Yes (OAuth) | Yes (OAuth) |
+| Frontend served by | Vite dev server (:5174) | Watchdog → Backend (:8080→8081) | Vite dev server (:5174) |
+| Hot reload | Yes (Vite HMR) | No (must rebuild) | Yes (Vite HMR) |
+| `.env` required | No | Yes | Yes |
+| kc-agent started | Yes (port 8585) | Yes (port 8585) | Yes (port 8585) |
+| Watchdog proxy | No | Yes (survives restarts) | No |
+| Best for | Development/coding | Testing OAuth, production-like setup | Frontend development with OAuth |
 
 ---
 
