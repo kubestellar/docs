@@ -194,7 +194,29 @@ Each environment requires its own GitHub OAuth App registration with matching ca
 
 ## Troubleshooting
 
-### "exchange_failed" After GitHub Login
+### OAuth Error Codes
+
+When OAuth authentication fails, the login page displays an error code and optional detail message. Here are all possible error codes and their causes:
+
+| Error Code | Cause | Solution |
+|-----------|-------|----------|
+| `invalid_client` | Client Secret is incorrect or app is misconfigured | Verify `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` are correct. Regenerate the client secret in GitHub OAuth app settings if needed. |
+| `redirect_mismatch` | Callback URL does not match GitHub OAuth app settings | Verify the **Authorization callback URL** in your GitHub OAuth App settings matches exactly (e.g., `https://console.your-domain.com/auth/github/callback`). |
+| `exchange_failed` | Authorization code expired, was already used, or token exchange failed | Try logging in again. The authorization code is single-use and valid for 10 minutes. |
+| `network_error` | Cannot reach GitHub (DNS, firewall, or network timeout) | Check internet connection and firewall rules. Ensure your network can reach GitHub API. |
+| `access_denied` | User declined authorization on GitHub consent screen | User rejected the OAuth consent. They must click "Authorize" to proceed. |
+| `github_error` | GitHub returned an unexpected error | Check GitHub status at [github.com/status](https://www.githubstatus.com/) and try again. |
+| `missing_code` | OAuth callback was missing the authorization code | This is usually temporary. Try logging in again. |
+| `csrf_validation_failed` | CSRF state token validation failed | Browser cookies may be disabled or stale. Clear cookies for the console domain and try logging in again. |
+| `oauth_state_store_failed` | Backend failed to persist CSRF state (database error) | Restart the console. Check database connectivity and logs. |
+| `user_fetch_failed` | Backend could not fetch user profile from GitHub API | Verify the token was correctly exchanged. Check backend logs for details. |
+| `db_error` | Backend database error (session creation failed) | Restart the console and check database logs. |
+| `create_user_failed` | Backend failed to create user record in database | Restart the console. Check database permissions and available disk space. |
+| `jwt_failed` | Backend failed to create JWT session token | Restart the console. Check `JWT_SECRET` is configured and the backend has not crashed. |
+
+### Troubleshooting by Symptom
+
+#### "exchange_failed" After GitHub Login
 
 The Client Secret is wrong or has been regenerated:
 
@@ -203,15 +225,24 @@ The Client Secret is wrong or has been regenerated:
 3. Update `GITHUB_CLIENT_SECRET` in your `.env` file
 4. Restart the console
 
-### "csrf_validation_failed"
+#### "csrf_validation_failed"
 
 The callback URL in GitHub does not match the console's URL:
 
 1. Verify the **Authorization callback URL** in your GitHub OAuth App settings matches exactly
-2. Clear your browser cookies for `localhost`
+2. Clear your browser cookies for the console domain
 3. Restart the console
 
-### 404 or Blank Page After Login
+#### "network_error"
+
+Cannot reach GitHub:
+
+1. Verify internet connectivity: `ping github.com`
+2. Check firewall rules allow HTTPS (port 443) to GitHub API
+3. If behind a proxy, configure proxy settings for the backend
+4. Check GitHub status at [github.com/status](https://www.githubstatus.com/)
+
+#### 404 or Blank Page After Login
 
 OAuth credentials are not configured correctly:
 
@@ -219,7 +250,7 @@ OAuth credentials are not configured correctly:
 2. Check that both `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` are set
 3. View backend logs for error details
 
-### Session Expires Too Quickly
+#### Session Expires Too Quickly
 
 The JWT expiration is configured on the backend. If sessions expire unexpectedly:
 

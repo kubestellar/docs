@@ -23,11 +23,12 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | `FRONTEND_URL` | Frontend URL for redirects | `http://localhost:5174` |
 | `BACKEND_PORT` | Backend port (set by watchdog when active) | Auto-detected from port resolution |
 | `CLAUDE_API_KEY` | Claude API key for AI features | (optional) |
-| `FEEDBACK_GITHUB_TOKEN` | GitHub token for feedback issue creation (canonical name) | (optional) |
-| `GITHUB_TOKEN` | GitHub token — alias for `FEEDBACK_GITHUB_TOKEN` (legacy) | (optional) |
+| `GITHUB_TOKEN` | GitHub token for nightly E2E status data (alias: see `FEEDBACK_GITHUB_TOKEN`) | (optional) |
 | `GOOGLE_DRIVE_API_KEY` | Google Drive API key for benchmark data | (optional) |
 | `ENABLED_DASHBOARDS` | Comma-separated list of dashboard routes to show in sidebar | (all dashboards) |
 | `VITE_GA_MEASUREMENT_ID` | Google Analytics 4 measurement ID | (optional) |
+| `FEEDBACK_GITHUB_TOKEN` | GitHub token for feedback issue creation | (optional) |
+| `GITHUB_URL` | GitHub Enterprise base URL (e.g., `https://github.example.com`); defaults to `https://github.com` | (optional) |
 | `KAGENT_NAMESPACE` | Namespace where kagent is deployed | `kagent` |
 | `KAGENT_SERVICE_NAME` | kagent Kubernetes service name | `kagent` |
 | `KAGENT_SERVICE_PORT` | kagent service port | `8080` |
@@ -54,6 +55,19 @@ The `BACKEND_PORT` environment variable is used internally when the watchdog pro
   3. Port `8080` as fallback for legacy deployments
 
 For most users, this variable is automatically managed and does not need to be set manually.
+
+### GitHub Token Consolidation
+
+The `FEEDBACK_GITHUB_TOKEN` and `GITHUB_TOKEN` environment variables are consolidated: the system checks `FEEDBACK_GITHUB_TOKEN` first (canonical), then falls back to `GITHUB_TOKEN` (alias). This means you can use either name, but `FEEDBACK_GITHUB_TOKEN` is preferred for clarity. Only set one of them.
+
+### GitHub Enterprise Support
+
+The `GITHUB_URL` variable enables GitHub Enterprise deployments. When set:
+- For GitHub Enterprise: Set to your GHE base URL (e.g., `https://github.example.com`)
+- For public GitHub.com: Leave unset or set to `https://github.com` (defaults to `https://api.github.com`)
+- The API endpoint is automatically resolved:
+  - Public github.com → `https://api.github.com`
+  - GHE instance → `{GITHUB_URL}/api/v3`
 
 ## kc-agent Configuration
 
