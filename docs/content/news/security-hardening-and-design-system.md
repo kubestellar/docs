@@ -46,5 +46,5 @@ The result is a UI that looks more polished and is much easier to maintain and t
 ## Links
 
 - **Try it:** [console.kubestellar.io](https://console.kubestellar.io)
-- **Helm chart:** [github.com/kubestellar/console/tree/main/charts/console](https://github.com/kubestellar/console/tree/main/charts/console)
+- **Helm chart:** [github.com/kubestellar/console/tree/main/charts/console](https://github.com/kubestellar/console/tree/main/deploy/helm/kubestellar-console)
 - **Documentation:** [kubestellar.io/docs/console/readme](https://kubestellar.io/docs/console/readme)

@@ -85,7 +85,7 @@ This is the authoritative component table — the [Architecture](architecture.md
 
 ### Step 1: Install Claude Code Plugins
 
-The console uses kubestellar-mcp plugins to talk to your clusters. See the full [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction) for details.
+The console uses kubestellar-mcp plugins to talk to your clusters. See the full [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/intro) for details.
 
 **Install the binaries (required):**
 
@@ -689,7 +689,7 @@ kubectl delete namespace ksc
 
 **Cause**: `kubestellar-ops` or `kubestellar-deploy` plugins are not installed.
 
-**Solution**: Follow [Step 1: Install Claude Code Plugins](#step-1-install-claude-code-plugins) or see the full [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/introduction).
+**Solution**: Follow [Step 1: Install Claude Code Plugins](#step-1-install-claude-code-plugins) or see the full [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/intro).
 
 ```bash
 # Via Homebrew
@@ -751,13 +751,13 @@ brew install kubestellar-ops kubestellar-deploy
 2. Verify binary works: `kubestellar-ops version`
 3. Restart Claude Code
 
-See [kubestellar-mcp troubleshooting](/docs/kubestellar-mcp/overview/introduction#troubleshooting) for more details.
+See [kubestellar-mcp troubleshooting](/docs/kubestellar-mcp/overview/intro#troubleshooting) for more details.
 
 ---
 
 ## Related Documentation
 
-- **[kubestellar-mcp Documentation](/docs/kubestellar-mcp/overview/introduction)** - Full guide to kubestellar-ops and kubestellar-deploy plugins
+- **[kubestellar-mcp Documentation](/docs/kubestellar-mcp/overview/intro)** - Full guide to kubestellar-ops and kubestellar-deploy plugins
 - **[AI Missions Setup](ai-missions-setup.md)** - Configure AI providers, select a model, and run your first mission
 - **[Architecture](architecture.md)** - How the console components work together
 - **[Configuration](configuration.md)** - AI mode, token limits, and customization

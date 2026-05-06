@@ -323,7 +323,7 @@ The documentation content is stored directly in this repository in the `/docs/co
 
 All documentation content lives in this repository:
 
-- **Repository**: `https://github.com/kubestellar/docs`
+- **Repository**: [https://github.com/kubestellar/docs](https://github.com/kubestellar/docs)
 - **Content Path**: `/docs/content/`
 - **Format**: Markdown (`.md`) files with support for MDX features
 

@@ -33,5 +33,5 @@ If you arrived here looking for those components, you are on a different project
 
 - **Live demo**: [console.kubestellar.io](https://console.kubestellar.io) (starts in demo mode with sample data)
 - **Repository**: [github.com/kubestellar/console](https://github.com/kubestellar/console)
-- **Install**: [Installation guide](/docs/console/overview/installation)
-- **Quick Start**: [Console Quick Start](/docs/console/overview/quick-start)
+- **Install**: [Installation guide](/docs/console/installation)
+- **Quick Start**: [Console Quick Start](/docs/console/quickstart)
