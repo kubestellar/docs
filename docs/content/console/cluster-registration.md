@@ -8,7 +8,7 @@ description: >
 
 # Cluster Registration
 
-In KubeStellar Console, **cluster registration is kubeconfig-driven**. There is no separate upload wizard or custom registration API you must call first. If the console process (or `kc-agent`) can read a working kubeconfig context, that cluster becomes available to the console.
+In KubeStellar Console, **cluster registration is kubeconfig-driven**. If the console process (or `kc-agent`) can read a working kubeconfig context, that cluster becomes available to the console. You can add clusters through the **Add Cluster** UI dialog, which provides multiple methods: import an existing kubeconfig, connect manually, or use cloud provider quick-connect.
 
 This page covers:
 
@@ -163,6 +163,19 @@ For Helm deployments, `kc-agent` runs on **your workstation**, not inside the cl
 ### Hosted demo cannot see my clusters
 
 That is expected. The hosted demo is intentionally read-only and does not connect to your local kubeconfig.
+
+## Removing stale or unreachable clusters
+
+If a cluster in your kubeconfig becomes unreachable (e.g., it was decommissioned, network changed, or credentials expired), you can remove it from the console and clean up your kubeconfig:
+
+1. Open the **Clusters** dashboard
+2. The unreachable cluster will appear with an "Unreachable" status or warning indicator
+3. Click the cluster card and select the **Remove Cluster** button
+4. Confirm the removal in the dialog
+
+This action removes the kubeconfig context from your local kubeconfig file, preventing stale entries from cluttering your cluster list and avoiding repeated connection attempts to unavailable clusters.
+
+> **Note:** This removes the context only from the kubeconfig that the console reads. It does not affect the cluster itself. You can also manually edit your kubeconfig to remove contexts — see [Multi-context kubeconfig](#multi-context-kubeconfig) for more guidance.
 
 ## Related docs
 
