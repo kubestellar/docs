@@ -41,14 +41,15 @@ When something doesn't work right, report it!
 
 ### How to Report a Bug
 
-1. Click the **bug icon** in the top navigation bar, or navigate directly to `/issue` in your browser
+1. Click the **bug icon** in the top navigation bar, or navigate directly to `/issue` or `/feedback` in your browser
 2. Select **"Bug Report"** tab
 3. Fill in:
    - **Title** - Short description
    - **Description** - What happened, what you expected, steps to reproduce
+   - **Target Repository** (optional) - Choose `console` (default) or `docs`
 4. Click **Submit**
 
-> **Tip:** Bookmark `http://localhost:8080/issue` (or your deployed URL + `/issue`) to jump straight to the feedback dialog.
+> **Tip:** Bookmark `http://localhost:8080/issue` or `http://localhost:8080/feedback` (or your deployed URL + `/issue` or `/feedback`) to jump straight to the feedback dialog.
 
 ### What Happens Next
 
@@ -80,11 +81,12 @@ Have an idea? Request it!
 
 ### How to Request a Feature
 
-1. Click **"Report a bug or request a feature"** (top bar)
+1. Click **"Report a bug or request a feature"** (top bar) or navigate to `/issue` or `/feedback`
 2. Select **"Feature Request"** tab
 3. Fill in:
    - **Title** - What feature you want
    - **Description** - How it should work, why you need it
+   - **Target Repository** (optional) - Choose `console` (default) or `docs`
 4. Click **Submit**
 
 ### Good Feature Requests
@@ -219,9 +221,106 @@ Behind the scenes, your requests become GitHub issues:
 
 You don't need to know any of this - it just works!
 
+### Repository Selection
+
+When you submit feedback, you can choose which repository the issue is filed in:
+
+- **Console** (default) - For bugs or features related to the KubeStellar Console itself (UI, functionality, performance)
+- **Docs** - For issues with the KubeStellar documentation (typos, unclear sections, missing explanations)
+
+If you don't select a repository, your feedback defaults to the **Console** repository. Select **Docs** if your report is about the documentation site or content.
+
+### What Data Is Collected
+
+When you submit feedback, the following information is included in the GitHub issue:
+
+**Always Included:**
+- Your title and description
+- Console Request ID (for tracking)
+- Your user identifier
+- Timestamp of submission
+- Target repository selection
+
+**Optionally Included (if captured):**
+- **Screenshots** - Any images you attach or the console captures (base64-encoded)
+- **Console Errors** - Recent browser console errors and warnings (from the last few operations)
+- **Failed API Calls** - Any 4xx or 5xx HTTP responses from recent API requests
+- **Diagnostics** - Environment information to help debug issues:
+  - Agent version and build time
+  - Browser type and operating system
+  - Go version (for agent compatibility)
+  - Installation method (dev/release)
+  - Connected clusters count
+  - Screen resolution and window size
+  - Browser language and URL context
+
+All this data helps maintainers and AI agents quickly understand and fix issues. Console errors and diagnostics are **never** included in feature requests—only in bug reports.
+
 ---
 
-## Tips
+## API Routes Reference
+
+If you're integrating with the feedback system or running your own KubeStellar Console, here are the available API routes:
+
+### Submitting Feedback
+
+- **`POST /api/feedback/requests`** - Submit a new bug report or feature request
+  - Requires authentication
+  - Body: `title`, `description`, `request_type` ("bug" or "feature"), `target_repo` (optional, "console" or "docs"), `screenshots`, `console_errors`, `failed_api_calls`, `diagnostics`
+  - Returns: Feature request object with issue number and GitHub URL
+
+### Viewing Your Submissions
+
+- **`GET /api/feedback/requests`** - List your own feature requests with pagination
+  - Query params: `limit` (default 20, max 1000), `offset` (default 0)
+  - Returns: Array of feature requests
+
+- **`GET /api/feedback/requests/:id`** - Get details of a specific feature request
+  - Returns: Single feature request with full status history
+
+- **`GET /api/feedback/queue`** - List all feature requests (for moderators/admins)
+  - Query params: `limit`, `offset`
+  - Returns: Array of all feature requests across all users
+
+### Feedback on Fixes
+
+- **`POST /api/feedback/requests/:id/feedback`** - Submit feedback on a proposed fix
+  - Body: `feedback_type` ("positive" or "negative"), `comment` (optional)
+  - Returns: Updated feedback record
+
+- **`POST /api/feedback/requests/:id/close`** - Close a request (after fix is released)
+  - Returns: Closed request status
+
+- **`POST /api/feedback/requests/:id/request-update`** - Request a status update on a feature request
+  - Returns: Notification confirmation
+
+### Preview Deployments
+
+- **`GET /api/feedback/preview/:pr_number`** - Check if a preview deployment is ready for a fix
+  - Returns: Preview URL and deployment status
+
+### Notifications
+
+- **`GET /api/notifications`** - Get your notifications
+  - Query params: `limit`, `offset`
+  - Returns: Array of notifications (issue updates, fix ready, etc.)
+
+- **`GET /api/notifications/unread-count`** - Get count of unread notifications
+  - Returns: `{ "unread_count": number }`
+
+- **`POST /api/notifications/:id/read`** - Mark a notification as read
+  - Returns: Updated notification
+
+- **`POST /api/notifications/read-all`** - Mark all notifications as read
+  - Returns: Success confirmation
+
+### Webhooks (Internal)
+
+- **`POST /webhooks/github`** - GitHub webhook endpoint (for status updates from GitHub Actions)
+  - Used internally by GitHub when issues/PRs are updated
+  - Validates webhook signature from GitHub
+
+---
 
 ### For Bug Reports
 
