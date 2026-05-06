@@ -1,7 +1,7 @@
 # ITS (Inventory and Transport Space)
 
 !!! warning "Repository Change"
-    The `kubestellar/ui` repository has been replaced by **[kubestellar/console](https://github.com/kubestellar/console)**. The ITS concepts described below are still valid, but the UI implementation and setup instructions have changed. See the [Console Features Guide](/docs/console/console-features/) for current documentation.
+    The `kubestellar/ui` repository has been replaced by **[kubestellar/console](https://github.com/kubestellar/console)**. The ITS concepts described below are still valid, but the UI implementation and setup instructions have changed. See the [Console Features Guide](/docs/console/console-features) for current documentation.
 
 ## Introduction
 The Inventory and Transport Space (ITS) in KubeStellar provides a centralized, real-time view of all managed Kubernetes clusters. It is the system of record for cluster inventory, their health and availability, and the labels that organize clusters by environment, region, tier, or any custom taxonomy. Use ITS when you manage multiple clusters across environments (production, staging, dev), geographies, or edge sites, and need consistent discovery, onboarding, and policy-driven organization.

@@ -31,15 +31,15 @@ const GENERAL_SECTION_NAMES = GENERAL_SECTION_SLUGS.map(
 
 // Project display order and labels — each with a landing href for navigation links
 const PRIMARY_PROJECTS = [
-  { id: 'console', label: 'KubeStellar Console', href: '/docs/console/overview/introduction' },
+  { id: 'console', label: 'KubeStellar Console', href: '/docs/console/readme' },
   { id: 'hive', label: 'Hive', href: '/docs/hive/overview/introduction' },
-  { id: 'kubestellar-mcp', label: 'KubeStellar MCP', href: '/docs/kubestellar-mcp/overview/introduction' },
+  { id: 'kubestellar-mcp', label: 'KubeStellar MCP', href: '/docs/kubestellar-mcp/overview/intro' },
 ] as const;
 
 const LEGACY_PROJECTS = [
-  { id: 'kubestellar', label: 'KubeStellar', href: '/docs/overview/introduction' },
-  { id: 'a2a', label: 'A2A', href: '/docs/a2a/overview/introduction' },
-  { id: 'kubeflex', label: 'KubeFlex', href: '/docs/kubeflex/overview/introduction' },
+  { id: 'kubestellar', label: 'KubeStellar', href: '/docs/readme' },
+  { id: 'a2a', label: 'A2A', href: '/docs/a2a/intro' },
+  { id: 'kubeflex', label: 'KubeFlex', href: '/docs/kubeflex/readme' },
   { id: 'multi-plugin', label: 'Multi Plugin', href: '/docs/multi-plugin/overview/introduction' },
 ] as const;
 

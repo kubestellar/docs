@@ -1,7 +1,7 @@
 # WECS (Workload Execution Cluster Space) Remote Monitoring
 
 !!! warning "Repository Change"
-    The `kubestellar/ui` repository has been replaced by **[kubestellar/console](https://github.com/kubestellar/console)**. The WECS concepts described below are still valid, but the UI implementation and setup instructions have changed. See the [Console Features Guide](/docs/console/console-features/) for current documentation.
+    The `kubestellar/ui` repository has been replaced by **[kubestellar/console](https://github.com/kubestellar/console)**. The WECS concepts described below are still valid, but the UI implementation and setup instructions have changed. See the [Console Features Guide](/docs/console/console-features) for current documentation.
 
 ## 1. Introduction
 

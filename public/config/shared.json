@@ -236,12 +236,12 @@
     },
     {
       "title": "KubeStellar MCP",
-      "href": "/docs/kubestellar-mcp/overview/introduction",
+      "href": "/docs/kubestellar-mcp/overview/intro",
       "description": "AI-powered Kubernetes MCP tools"
     },
     {
       "title": "A2A",
-      "href": "/docs/a2a/overview/introduction",
+      "href": "/docs/a2a/intro",
       "description": "Agent-to-Agent protocol",
       "secondary": true
     },
@@ -253,7 +253,7 @@
     },
     {
       "title": "KubeFlex",
-      "href": "/docs/kubeflex/overview/introduction",
+      "href": "/docs/kubeflex/readme",
       "description": "Lightweight Kubernetes control planes",
       "secondary": true
     },

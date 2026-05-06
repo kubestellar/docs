@@ -182,7 +182,7 @@ These properties can be used for rule-based transformations when workloads are d
 ### Local Development Clusters (Kind/K3d)
 
 For instructions on creating and registering local development clusters (Kind or K3d), refer to the  
-[Create and Register Two Workload Execution Clusters guide](../get-started/#create-and-register-two-workload-execution-clusters).
+[Create and Register Two Workload Execution Clusters guide](get-started.md#create-and-register-two-workload-execution-clusters).
 
 ### OpenShift Clusters
 
