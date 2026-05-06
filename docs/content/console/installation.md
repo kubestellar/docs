@@ -534,7 +534,7 @@ kc-agent runs **on your workstation**, not in the cluster. After starting
 lsof -nP -iTCP:8585 -sTCP:LISTEN
 
 # Agent responds to a health probe
-curl -sSf http://127.0.0.1:8585/healthz && echo OK
+curl -sSf http://127.0.0.1:8585/health && echo OK
 ```
 
 If kc-agent is not running, the console will show an "Agent Not Connected"
