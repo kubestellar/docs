@@ -39,10 +39,10 @@ Writing for accessibility means ensuring that screen readers can easily read you
 Accessibility is a part of any good web project, and docs are no different. As a bare minimum, we require that all our images and diagrams always have an appropriate 'alt-text' to support visually impared users and screenreaders. In Markdown, you can add alt-text using the following syntax:
 
 ```markdown
-![An example image with descriptive alt text](./include-markdown-example.png)
+![Example image with alt text](include-markdown-example.png)
 ```
 
-In this example, the text inside the square brackets [An example image with descriptive alt text] serves as the alt-text, and it should clearly describe the content or purpose of the image.
+In this example, the text inside the square brackets [Example image with alt text] serves as the alt-text, and it should clearly describe the content or purpose of the image.
 
 For a more detailed guidance on writing alt-texts, we recommend checking out [WebAIM Guide to Alternative Texts.](https://webaim.org/techniques/alttext/)
 
