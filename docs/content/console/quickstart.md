@@ -44,6 +44,39 @@ curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubeste
 
 This downloads and starts the console only. It does **not** install kubestellar-mcp plugins. Typically under 45 seconds. No GitHub OAuth credentials required — a local `dev-user` session is created automatically.
 
+### CLI Options (`start.sh`)
+
+Pass options after `bash -s --` when using the curl quickstart:
+
+```bash
+curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash -s -- --port 9090
+```
+
+| Option | Description |
+|--------|-------------|
+| `--version`, `-v <tag>` | Download and run a specific release tag instead of the latest stable release. |
+| `--channel`, `-c <name>` | Select the update channel: `stable` or `unstable`. Defaults to `~/.kc/settings.json` if present, otherwise `stable`. |
+| `--dir`, `-d <path>` | Install into a custom directory instead of `./kubestellar-console`. |
+| `--port`, `-p <port>` | Run the console on a custom local port instead of `8080`. |
+
+### kc-agent Daemon Lifecycle
+
+When `start.sh` runs, it launches `kc-agent` as a background daemon with `nohup`.
+
+- `kc-agent` keeps running if you press `Ctrl+C` or close the terminal.
+- The PID is written to `<install-dir>/kc-agent.pid`.
+- Logs are written to `<install-dir>/kc-agent.log`.
+- If you run `start.sh` again, it checks the PID file, stops any existing `kc-agent`, and restarts it with the newly downloaded binary.
+- When the console exits, `start.sh` tells you that `kc-agent` continues running in the background.
+
+To stop the daemon manually:
+
+```bash
+kill $(cat ./kubestellar-console/kc-agent.pid)
+```
+
+If you installed to a different directory with `--dir`, use that path instead.
+
 ## What You Need
 
 | Component | What it is | Required? |
@@ -243,6 +276,9 @@ The script downloads a binary to a local directory (typically `./kubestellar-con
 # - Kill processes on the specific ports:
 kill $(lsof -ti:8080) 2>/dev/null || true
 kill $(lsof -ti:5174) 2>/dev/null || true
+
+# Stop the background kc-agent daemon (if still running)
+kill $(cat ./kubestellar-console/kc-agent.pid) 2>/dev/null || true
 
 # Remove downloaded files
 rm -rf ./kubestellar-console/
