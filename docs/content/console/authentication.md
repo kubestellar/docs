@@ -41,35 +41,12 @@ Full GitHub authentication with multi-user support.
 8. JWT is stored as an HTTP-only cookie in the browser
 9. User is redirected to the dashboard
 
-**Security properties:**
+#### Security properties:
 
 - The `client_secret` never leaves the backend server
 - The authorization code is single-use and short-lived
 - The access token is used server-side only to fetch the user profile
 - CSRF protection is enforced on the callback (state parameter validation)
-
-#### First-Time Setup Wizard
-
-When the console starts without `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` configured, the login page displays an interactive setup wizard instead of silently entering demo mode. The wizard offers three paths:
-
-- **"Set up GitHub Sign-In (One Click)"** — Uses GitHub's [App Manifest flow](https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-from-a-manifest) to create a GitHub App and configure OAuth credentials automatically. One click creates the app, saves the credentials to the console's database, and redirects back to the login page with a success banner.
-- **"Set up GitHub Sign-In (Manual)"** — Expands an inline guide that walks you through creating a GitHub OAuth App manually, with copy-to-clipboard buttons for the callback URL and `.env` template
-- **"Continue in Demo Mode"** — Enters demo mode immediately (same as previous behavior)
-
-##### One-Click App Manifest Flow
-
-The one-click setup uses GitHub's App Manifest API to register a new GitHub App with the correct OAuth settings pre-configured:
-
-1. Click "Set up GitHub Sign-In (One Click)" on the login page
-2. The console generates a manifest with the correct callback URLs and permissions
-3. You're redirected to GitHub to confirm the app creation
-4. GitHub redirects back with a temporary code
-5. The console exchanges the code for OAuth credentials and saves them to its database
-6. A success banner confirms the setup, and you can immediately sign in with GitHub
-
-No manual copying of client IDs or secrets is required. The created GitHub App is private to your GitHub account and can be managed from [GitHub Settings > Developer settings > GitHub Apps](https://github.com/settings/apps).
-
-This replaces the previous behavior where unconfigured consoles would silently auto-login as a demo user with no indication that GitHub authentication was available.
 
 ### 2. Development Mode (`start-dev.sh`)
 
@@ -103,16 +80,17 @@ The console uses JSON Web Tokens (JWTs) for session management:
 
 ### Session Duration
 
-- Sessions are valid for the duration configured on the backend (default: 24 hours)
+- Sessions are valid for 7 days (the JWT is issued with a 7-day expiration)
 - The JWT is stored as an HTTP-only, secure cookie
 - Sessions persist across browser restarts (cookie-based)
 - Closing all browser tabs does not end the session
 
 ### Session Refresh
 
-- The frontend checks session validity on page load
-- If the JWT is expired, the user is redirected to the login page
-- There is no silent refresh -- expired sessions require re-authentication
+- Sessions support silent refresh to extend the session lifetime
+- The backend signals the frontend to refresh the token when more than 50% of the session lifetime has elapsed (approximately after 3.5 days)
+- The frontend automatically renews the token via the `/auth/refresh` endpoint without requiring the user to re-authenticate
+- If a token expires without being refreshed, the user is redirected to the login page
 
 ---
 

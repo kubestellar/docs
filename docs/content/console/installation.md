@@ -38,7 +38,7 @@ source) you only need the entries marked **Local**.
 | Service port | **8080** | The service listens on 8080, not 80. Port-forward with `8080:8080`. |
 | Namespace PodSecurity | `baseline` or `restricted` OK | The chart is compliant with `restricted` out of the box. |
 | GitHub OAuth App | Optional | Only required for multi-user logins; omit for demo or single-user local. |
-| **Local**: Go | 1.24+ | Only for "run from source". |
+| **Local**: Go | 1.25+ | Only for "run from source". |
 | **Local**: Node.js | 20+ | Only for "run from source". |
 | **Local**: kubectl | latest | |
 | **Local**: kubeconfig | ≥ 1 context | `kubectl config get-contexts` must list at least one context. |
@@ -167,7 +167,7 @@ For contributors or if you want to build from source. No GitHub OAuth required.
 
 ### Prerequisites
 
-- Go 1.24+
+- Go 1.25+
 - Node.js 20+
 - kubestellar-ops and kubestellar-deploy installed (see [Step 1](#step-1-install-claude-code-plugins))
 
