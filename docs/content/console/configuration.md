@@ -21,6 +21,7 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | `GITHUB_CLIENT_SECRET` | GitHub OAuth client secret | (required) |
 | `JWT_SECRET` | JWT signing secret | (auto-generated) |
 | `FRONTEND_URL` | Frontend URL for redirects | `http://localhost:5174` |
+| `BACKEND_PORT` | Backend port (set by watchdog when active) | Auto-detected from port resolution |
 | `CLAUDE_API_KEY` | Claude API key for AI features | (optional) |
 | `GITHUB_TOKEN` | GitHub token for nightly E2E status data | (optional) |
 | `GOOGLE_DRIVE_API_KEY` | Google Drive API key for benchmark data | (optional) |
@@ -37,6 +38,20 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | `KAGENTI_SERVICE_PROTOCOL` | kagenti service protocol (http or https) | `http` |
 
 The `KAGENT_*` and `KAGENTI_*` variables allow configuring kagent/kagenti auto-detection for non-standard deployments, HTTPS endpoints, or custom namespaces.
+
+### BACKEND_PORT Details
+
+The `BACKEND_PORT` environment variable is used internally when the watchdog proxy is active (in `startup-oauth.sh`):
+
+- **Set by**: `startup-oauth.sh` when it starts the watchdog
+- **Used by**: The backend process to resolve its listening port
+- **Value**: Typically `8081` when watchdog is active, or `8080` for legacy deployments
+- **Resolution priority**:
+  1. Explicit `BACKEND_PORT` environment variable (if set)
+  2. Port `8081` if the watchdog PID file exists
+  3. Port `8080` as fallback for legacy deployments
+
+For most users, this variable is automatically managed and does not need to be set manually.
 
 ## kc-agent Configuration
 
@@ -83,6 +98,19 @@ KC_ALLOWED_ORIGINS="https://env-origin.example.com" kc-agent --allowed-origins "
 ```
 
 Wildcard subdomains are supported (e.g., `https://*.example.com`).
+
+## Port Reference
+
+When running with `startup-oauth.sh` (OAuth mode with watchdog):
+
+| Port | Component | Purpose |
+|------|-----------|---------|
+| 8080 | Watchdog proxy | User-facing HTTP proxy (survives restarts) |
+| 8081 | Go backend | Internal backend serving API + frontend |
+| 8585 | kc-agent | MCP + WebSocket server for Kubernetes operations |
+| 5174 | Vite dev server | Not used (disabled in production-like setup) |
+
+The watchdog on port 8080 proxies requests to the backend on port 8081. This architecture allows the console to survive backend restarts without disconnecting users.
 
 ## Helm Values
 
