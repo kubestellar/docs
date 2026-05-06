@@ -67,6 +67,7 @@ GOOGLE_API_KEY=AIzaSyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
+
 You do not need all three providers. Set only the keys for the providers you intend to use.
 
 > **Important**: The `.env` file must be in the same directory as `startup-oauth.sh`. The startup script loads it from its own directory. Never commit this file to version control -- it is already listed in `.gitignore`.
@@ -125,6 +126,7 @@ You can also enable demo mode by setting the environment variable:
 ```bash
 VITE_DEMO_MODE=true
 ```
+
 
 ### Differences from Live Mode
 
