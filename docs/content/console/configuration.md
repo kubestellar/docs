@@ -15,16 +15,19 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `PORT` | Server port | `8080` |
+| `BACKEND_PORT` | Backend port for watchdog/internal proxy (optional override) | (none) |
 | `DEV_MODE` | Enable dev mode (CORS, hot reload) | `false` |
 | `DATABASE_PATH` | SQLite database path | `./data/console.db` |
 | `GITHUB_CLIENT_ID` | GitHub OAuth client ID | (required) |
 | `GITHUB_CLIENT_SECRET` | GitHub OAuth client secret | (required) |
 | `JWT_SECRET` | JWT signing secret | (auto-generated) |
-| `FRONTEND_URL` | Frontend URL for redirects | `http://localhost:5174` |
+| `FRONTEND_URL` | Frontend URL for OAuth redirects | `http://localhost:5174` (dev), `http://localhost:8080` (prod) |
 | `BACKEND_PORT` | Backend port (set by watchdog when active) | Auto-detected from port resolution |
 | `CLAUDE_API_KEY` | Claude API key for AI features | (optional) |
 | `FEEDBACK_GITHUB_TOKEN` | GitHub token for feedback issue creation (canonical name) | (optional) |
 | `GITHUB_TOKEN` | GitHub token — alias for `FEEDBACK_GITHUB_TOKEN` (legacy) | (optional) |
+| `FEEDBACK_REPO_OWNER` | GitHub repository owner for feedback issues | `kubestellar` |
+| `FEEDBACK_REPO_NAME` | GitHub repository name for feedback issues | `console` |
 | `GOOGLE_DRIVE_API_KEY` | Google Drive API key for benchmark data | (optional) |
 | `ENABLED_DASHBOARDS` | Comma-separated list of dashboard routes to show in sidebar | (all dashboards) |
 | `VITE_GA_MEASUREMENT_ID` | Google Analytics 4 measurement ID | (optional) |
@@ -54,6 +57,21 @@ The `BACKEND_PORT` environment variable is used internally when the watchdog pro
   3. Port `8080` as fallback for legacy deployments
 
 For most users, this variable is automatically managed and does not need to be set manually.
+
+## Feedback Routing Configuration
+
+For forks and enterprise deployments, configure where user feedback is routed:
+
+- `FEEDBACK_REPO_OWNER`: GitHub repository owner (default: `kubestellar`)
+- `FEEDBACK_REPO_NAME`: GitHub repository name (default: `console`)
+
+This ensures feedback issues are created in your repository instead of the upstream KubeStellar repositories. When not set, the console will warn you to configure these variables.
+
+```bash
+# Route feedback to your fork
+FEEDBACK_REPO_OWNER=my-org
+FEEDBACK_REPO_NAME=console-fork
+```
 
 ## kc-agent Configuration
 
