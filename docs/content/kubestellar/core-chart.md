@@ -52,14 +52,14 @@ While not a complete list of supported hosting clusters, here we discuss how to 
     and that can be used to exercises the [examples](./example-scenarios.md) can be created with the following command:
 
     ```shell
-    bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v$KUBESTELLAR_VERSION/scripts/create-kind-cluster-with-SSL-passthrough.sh) --name kubeflex --port 9443
+    bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/main/scripts/create-kind-cluster-with-SSL-passthrough.sh) --name kubeflex --port 9443
     ```
 
     Alternatively, a new local **k3s** cluster that satisfies the requirements for KubeStellar setup
     and that can be used to exercises the [examples](./example-scenarios.md) can be created with the following command:
 
     ```shell
-    bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v$KUBESTELLAR_VERSION/scripts/create-k3s-cluster-with-SSL-passthrough.sh) --port 9443
+    bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/main/scripts/create-k3s-cluster-with-SSL-passthrough.sh) --port 9443
     ```
 
 2. An **OpenShift** cluster
@@ -282,9 +282,9 @@ clusteradm init
 Then, create a second kind cluster suitable for KubeStellar installation and create a bootstrap secret in the new cluster with the kubeconfig information of the `ext1` cluster:
 
 ```shell
-bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v$KUBESTELLAR_VERSION/scripts/create-kind-cluster-with-SSL-passthrough.sh) --name kubeflex --port 9443
+bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/main/scripts/create-kind-cluster-with-SSL-passthrough.sh) --name kubeflex --port 9443
 
-bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v$KUBESTELLAR_VERSION/scripts/create-external-bootstrap-secret.sh) --controlplane its1 --source-context kind-ext1 --address https://ext1-control-plane:6443 --verbose
+bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/main/scripts/create-external-bootstrap-secret.sh) --controlplane its1 --source-context kind-ext1 --address https://ext1-control-plane:6443 --verbose
 ```
 
 Note that the last command above creates a secret named `its1-bootstrap` in the Helm chart installation namespace of the `kind-kubeflex` cluster.
@@ -415,7 +415,7 @@ the `kflex` CLI and one not.
     The following convenience command can also be used to import all the KubeFlex Control Planes in the current hosting cluster as contexts of the current kubeconfig. The script involved requires that you have [`yq`](https://github.com/mikefarah/yq) (also available from [Homebrew](https://formulae.brew.sh/formula/yq)) installed.
 
     ```shell
-    bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v$KUBESTELLAR_VERSION/scripts/import-cp-contexts.sh) --merge
+    bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/main/scripts/import-cp-contexts.sh) --merge
     ```
 
     The script above only requires `kubectl` and `yq`.

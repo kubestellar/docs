@@ -49,7 +49,7 @@ The console requires kubestellar-ops and kubestellar-deploy MCP plugins. Install
 which kubestellar-ops && which kubestellar-deploy
 ```
 
-See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/intro) for details.
+See the [kubestellar-mcp documentation](../kubestellar-mcp/overview/intro.md) for details.
 
 ---
 

@@ -27,7 +27,7 @@ The console consists of 7 components working together. The [Installation](instal
 | 2 | **Frontend** | React SPA - dashboards, cards, AI UI |
 | 3 | **Backend** | Go server - API, auth, data storage |
 | 4 | **MCP Bridge** | Hosts the kubestellar-ops and kubestellar-deploy **MCP servers** in-process; Backend queries them via HTTP/MCP to get cluster data |
-| 5 | **AI Coding Agent + Plugins** | **(Optional — AI features only)** Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI, etc.) acts as an **MCP client**. The kubestellar-ops and kubestellar-deploy **plugins** launch their respective MCP servers as **stdio child processes** and add skills/hooks ([docs](/docs/kubestellar-mcp/overview/intro)). Not required for the core dashboard experience. |
+| 5 | **AI Coding Agent + Plugins** | **(Optional — AI features only)** Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI, etc.) acts as an **MCP client**. The kubestellar-ops and kubestellar-deploy **plugins** launch their respective MCP servers as **stdio child processes** and add skills/hooks ([docs](../kubestellar-mcp/overview/intro.md)). Not required for the core dashboard experience. |
 | 6 | **kc-agent** | **(Optional — kubectl/AI features only)** Local MCP+WebSocket server on port 8585; bridges the browser to your local kubeconfig for kubectl execution (WebSocket) and provides MCP tools for AI coding agents. Not required for read-only dashboard viewing. |
 | 7 | **Kubeconfig** | Your cluster credentials |
 
@@ -133,7 +133,7 @@ Both paths execute the same Go code and read the same kubeconfig, so they return
 
 **kc-agent is separate:** AI coding agents also connect to kc-agent (port 8585) as an MCP client for kubectl execution. kc-agent is a distinct MCP server — it does not host the kubestellar-ops or kubestellar-deploy tools.
 
-See the [kubestellar-mcp documentation](/docs/kubestellar-mcp/overview/intro) for the kubestellar-ops and kubestellar-deploy tool listing. For kc-agent tools and configuration, see the [kc-agent section below](#kc-agent-local-agent).
+See the [kubestellar-mcp documentation](../kubestellar-mcp/overview/intro.md) for the kubestellar-ops and kubestellar-deploy tool listing. For kc-agent tools and configuration, see the [kc-agent section below](#kc-agent-local-agent).
 
 ### kc-agent (Local Agent)
 

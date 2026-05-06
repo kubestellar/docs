@@ -20,7 +20,7 @@ KubeStellar Console is **not** related to the original [`kubestellar/kubestellar
 - BindingPolicy / CombinedStatus
 - The original "Post Office" control model
 
-If you arrived here looking for those components, you are on a different project. See [Legacy Components](/docs/legacy-components) for pointers to the original `kubestellar/kubestellar` work.
+If you arrived here looking for those components, you are on a different project. See [Legacy Components](legacy-components.md) for pointers to the original `kubestellar/kubestellar` work.
 
 ## What the Console does
 
@@ -33,5 +33,5 @@ If you arrived here looking for those components, you are on a different project
 
 - **Live demo**: [console.kubestellar.io](https://console.kubestellar.io) (starts in demo mode with sample data)
 - **Repository**: [github.com/kubestellar/console](https://github.com/kubestellar/console)
-- **Install**: [Installation guide](/docs/console/installation)
-- **Quick Start**: [Console Quick Start](/docs/console/quickstart)
+- **Install**: [Installation guide](console/installation.md)
+- **Quick Start**: [Console Quick Start](console/quickstart.md)

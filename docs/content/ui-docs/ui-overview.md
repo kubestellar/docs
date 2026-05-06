@@ -18,13 +18,13 @@ The KubeStellar Console is the successor to the original KubeStellar UI. It incl
 
 Please refer to the current console documentation:
 
-- **[Console Overview](/docs/console/console-overview)** - Feature overview and getting started
-- **[Quick Start](/docs/console/quickstart)** - Get running in minutes
-- **[Installation](/docs/console/installation)** - All deployment options (curl, source, Helm, Docker, OpenShift)
-- **[Features Guide](/docs/console/console-features)** - Detailed feature documentation
-- **[Architecture](/docs/console/architecture)** - System design and component details
-- **[Local Setup Guide](/docs/console/local-setup)** - Complete local development setup
-- **[Authentication](/docs/console/authentication)** - OAuth flow, sessions, and security
+- **[Console Overview](../console/readme.md)** - Feature overview and getting started
+- **[Quick Start](../console/quickstart.md)** - Get running in minutes
+- **[Installation](../console/installation.md)** - All deployment options (curl, source, Helm, Docker, OpenShift)
+- **[Features Guide](../console/console-features.md)** - Detailed feature documentation
+- **[Architecture](../console/architecture.md)** - System design and component details
+- **[Local Setup Guide](../console/local-setup.md)** - Complete local development setup
+- **[Authentication](../console/authentication.md)** - OAuth flow, sessions, and security
 
 ## Repository Change
 

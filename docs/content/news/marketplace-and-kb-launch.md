@@ -21,7 +21,7 @@ We're launching two new programs that expand KubeStellar Console from a multi-cl
 
 ## The Marketplace: Community-Built Extensions for Multi-Cluster Kubernetes
 
-The [KubeStellar Console Marketplace](/docs/console/marketplace) is where teams discover, install, and share dashboards, monitoring cards, and themes for multi-cluster Kubernetes operations.
+The [KubeStellar Console Marketplace](../console/marketplace.md) is where teams discover, install, and share dashboards, monitoring cards, and themes for multi-cluster Kubernetes operations.
 
 **What you can install:**
 
@@ -35,7 +35,7 @@ Every Marketplace item is designed for multi-cluster operations from day one. In
 
 ## The Knowledge Base: 400+ AI Mission Prompts
 
-The [Knowledge Base](/docs/console/knowledge-base) is the library behind KubeStellar Console's AI Missions system. It contains **400+ ready-to-use mission prompts** across two categories:
+The [Knowledge Base](../console/knowledge-base.md) is the library behind KubeStellar Console's AI Missions system. It contains **400+ ready-to-use mission prompts** across two categories:
 
 ### Installation Missions
 
@@ -82,10 +82,10 @@ KubeStellar Console's Marketplace and Knowledge Base replace all of this:
 
 ## Get Started
 
-- [Browse the Marketplace](/docs/console/marketplace)
-- [Explore the Knowledge Base](/docs/console/knowledge-base)
+- [Browse the Marketplace](../console/marketplace.md)
+- [Explore the Knowledge Base](../console/knowledge-base.md)
 - [Try KubeStellar Console](https://console.kubestellar.io) — starts in demo mode, no installation needed
-- [Install locally](/docs/console/quickstart) — running in minutes
+- [Install locally](../console/quickstart.md) — running in minutes
 
 ## Links
 
