@@ -60,7 +60,7 @@ See the [Architecture](architecture.md) page for the full system diagram and com
 - kubectl configured with at least one cluster
 - [Claude Code](https://claude.com/product/claude-code) CLI installed
 - kubestellar-mcp plugins (see below)
-- For source builds: Go 1.24+ and Node.js 20+
+- For source builds: Go 1.25+ and Node.js 20+
 
 
 ## Windows/WSL Setup
@@ -91,8 +91,8 @@ For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for
    sudo apt install -y nodejs
 
    # Install Go
-   wget https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
-   sudo tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
+   wget https://go.dev/dl/go1.25.0.linux-amd64.tar.gz
+   sudo tar -C /usr/local -xzf go1.25.0.linux-amd64.tar.gz
    echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
    source ~/.bashrc
 
