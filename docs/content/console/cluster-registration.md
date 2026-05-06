@@ -16,6 +16,8 @@ This page covers:
 - what happens with one context vs. many contexts
 - authentication expectations
 - how to verify that registration worked
+- discovering clusters through the UI or API
+- removing stale clusters
 
 ## What "registration" means in Console
 
@@ -115,7 +117,7 @@ If your kubeconfig contains multiple usable contexts, the console treats them as
 Practical guidance:
 
 - Use clear, stable context names so operators can tell clusters apart
-- Remove stale contexts you no longer use
+- Regularly review and remove stale contexts (see [Removing stale clusters](#removing-stale-clusters))
 - Test each context individually with `kubectl --context=...`
 
 ## Authentication expectations
@@ -137,6 +139,139 @@ That means:
 - if a token is expired, renew it before opening the console
 - if access depends on VPN or network reachability, that path must already be up
 - if a context prompts for interactive login every time, fix that first in your normal `kubectl` workflow
+
+## Discovering clusters
+
+### Via the UI
+
+The console provides a dedicated **Clusters** dashboard that displays all discovered clusters with live health information:
+
+1. Open the console
+2. Navigate to **Clusters** in the main menu
+3. View all clusters from your kubeconfig with:
+   - Health status (healthy, unhealthy, or initializing)
+   - Node count
+   - Pod count
+   - Connection status
+
+### Via the API
+
+The console exposes cluster discovery through REST APIs:
+
+**GET `/api/mcp/clusters`**
+
+Returns all discovered clusters with cached health information:
+
+```json
+{
+  "clusters": [
+    {
+      "name": "dev-cluster",
+      "healthy": true,
+      "nodeCount": 3,
+      "podCount": 42,
+      "neverConnected": false
+    },
+    {
+      "name": "prod-cluster",
+      "healthy": true,
+      "nodeCount": 10,
+      "podCount": 200
+    }
+  ],
+  "source": "k8s"
+}
+```
+
+**GET `/api/mcp/clusters/:cluster/health`**
+
+Returns detailed health data for a specific cluster:
+
+```json
+{
+  "cluster": "dev-cluster",
+  "healthy": true,
+  "nodeCount": 3,
+  "podCount": 42,
+  "reachable": true,
+  "lastSeen": "2025-05-06T10:30:00Z"
+}
+```
+
+**GET `/api/mcp/clusters/health`**
+
+Returns health information for all clusters at once.
+
+These APIs are available through the standard REST interface and require authentication (if enabled).
+
+## Removing stale clusters
+
+### When to remove a cluster
+
+Over time, you may need to clean up stale cluster contexts from your kubeconfig:
+
+- Clusters that are no longer in use
+- Temporary dev/test clusters that have been decommissioned
+- Duplicate contexts pointing to the same physical cluster
+- Expired credentials that can no longer be renewed
+
+### How to remove a cluster
+
+#### Via the UI
+
+The console supports cluster removal through the Clusters page:
+
+1. Navigate to **Clusters**
+2. Identify the cluster you want to remove
+3. Click the remove or delete option (if available in your UI)
+4. Confirm the removal
+
+#### Via the API (kc-agent required)
+
+Use the kubeconfig removal API to programmatically deregister clusters:
+
+**POST `/kubeconfig/remove`**
+
+Request body:
+
+```json
+{
+  "context": "cluster-name"
+}
+```
+
+Example response on success:
+
+```json
+{
+  "ok": true,
+  "removed": "cluster-name"
+}
+```
+
+Constraints:
+
+- The context must exist in your kubeconfig
+- You cannot remove the currently active context (set via `current-context`)
+- If the cluster or user credentials are not referenced by any other context, they are also removed from the kubeconfig
+- This operation modifies your local kubeconfig file
+
+### Via kubectl
+
+You can also remove contexts directly using kubectl:
+
+```bash
+# Remove a specific context
+kubectl config delete-context <context-name>
+
+# View the updated list
+kubectl config get-contexts
+
+# Optionally reset current-context if it was the one you deleted
+kubectl config use-context <new-current-context>
+```
+
+After removal, the context will no longer appear in the console's cluster list on the next refresh.
 
 ## Troubleshooting cluster registration
 

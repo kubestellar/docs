@@ -179,6 +179,25 @@ Open **http://localhost:8080** and sign in with GitHub.
 
 > **Note**: With `startup-oauth.sh`, the Go backend serves both the API and the pre-built frontend on port 8080. There is no separate Vite dev server (port 5174 is not used).
 
+### Developer Mode (Live Reload)
+
+For faster frontend development with OAuth enabled, use the `--dev` flag to run the Vite dev server with hot module replacement (HMR):
+
+```bash
+./startup-oauth.sh --dev
+```
+
+With `--dev` mode:
+
+1. The Vite dev server starts on port 5174 with HMR enabled
+2. Frontend code changes reload automatically in your browser
+3. Backend starts on port 8080 (serves API only, not frontend)
+4. kc-agent starts on port 8585 as usual
+
+Open **http://localhost:5174** for live development (slower initial load, but instant reload on code changes).
+
+> **Note**: This is useful when iterating on frontend features with OAuth enabled. For pure frontend development without authentication, use `./start-dev.sh` instead.
+
 ---
 
 ## Environment Variables

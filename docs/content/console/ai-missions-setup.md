@@ -61,10 +61,10 @@ In the root of your console directory (the same directory as `startup-oauth.sh`)
 # AI provider keys (at least one required for AI features)
 ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxx
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-GEMINI_API_KEY=AIzaSyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GOOGLE_API_KEY=AIzaSyxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-# Alternatively, CLAUDE_API_KEY is also accepted for Anthropic
-CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxx
+# Alternative: CLAUDE_API_KEY can also be used for Anthropic
+# CLAUDE_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 You do not need all three providers. Set only the keys for the providers you intend to use.
@@ -87,23 +87,17 @@ After the console loads, navigate to **Settings** (gear icon in the sidebar or `
 
 ## API Key Setup via Settings UI
 
-You can also add or update API keys directly in the browser without editing files.
+> **Note**: The Settings UI for API key configuration is currently limited. For reliable API key setup, use the `.env` file method above. The Settings UI is being improved and will be fully functional in a future release.
+
+You can view the configured providers in the **AI & Intelligence** section of Settings, though configuration via `.env` is more reliable.
 
 ### Steps
 
 1. Open the console and navigate to **Settings** (gear icon in the sidebar or go to `/settings`).
 2. Scroll to the **AI & Intelligence** section.
-3. Click **API Keys**.
-4. For each provider you want to configure:
-   - Click the input field for that provider (Anthropic, OpenAI, or Gemini).
-   - Paste your API key.
-   - Click **Save** or press **Enter**.
-5. The console validates the key immediately. You will see:
-   - **Green checkmark** -- Key is valid and the provider is reachable.
-   - **Red X with error message** -- Key is invalid, expired, or the provider returned an error. Double-check the key and try again.
-   - **Yellow warning** -- Key is valid but the provider is experiencing degraded service.
+3. You will see the configured providers (if set via `.env` or system environment variables).
 
-Keys set via the Settings UI are stored locally and persist across browser sessions. They take effect immediately without restarting the console.
+Keys set via `.env` or environment variables persist across browser sessions and take effect immediately (or after restart if using `.env`).
 
 > **Note**: For Helm or Kubernetes deployments, configure API keys via Kubernetes secrets instead. See [Configuration - AI Configuration](configuration.md#ai-configuration) for Helm values.
 
@@ -129,7 +123,7 @@ Demo mode lets you explore AI Missions without an API key or live cluster connec
 You can also enable demo mode by setting the environment variable:
 
 ```bash
-DEMO_MODE=true
+VITE_DEMO_MODE=true
 ```
 
 ### Differences from Live Mode
@@ -288,7 +282,7 @@ Here are prompts to try for your first missions:
 - **Typo or extra whitespace**: Copy the key again from your provider dashboard. Ensure no leading or trailing spaces.
 - **Expired key**: Some providers rotate keys or expire them after a period of inactivity. Generate a new key from your provider's dashboard and update it.
 - **Wrong key type**: Ensure you are using an API key, not an OAuth token or session token. For Anthropic, the key starts with `sk-ant-`. For OpenAI, it starts with `sk-`.
-- **Environment variable mismatch**: If using `.env`, verify the variable name matches exactly (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, or `GEMINI_API_KEY`). Restart the console after changes.
+- **Environment variable mismatch**: If using `.env`, verify the variable name matches exactly (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, or `GOOGLE_API_KEY`). If using the alternative `CLAUDE_API_KEY` for Anthropic, that also works. Restart the console after changes.
 
 ### Provider unavailable
 
@@ -314,7 +308,7 @@ Here are prompts to try for your first missions:
 **Causes and solutions**:
 
 - **Demo mode still enabled**: Navigate to **Settings** > **AI & Intelligence** and toggle Demo Mode off.
-- **Environment variable override**: Check if `DEMO_MODE=true` is set in your `.env` file or as a system environment variable. Remove it and restart the console.
+- **Environment variable override**: Check if `VITE_DEMO_MODE=true` is set in your `.env` file or as a system environment variable. Remove it and restart the console.
 - **Browser cache**: Hard-refresh the page (**Cmd+Shift+R** on macOS, **Ctrl+Shift+R** on Linux/Windows) or open in an incognito window.
 
 ### Model not responding

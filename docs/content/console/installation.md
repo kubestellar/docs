@@ -219,7 +219,7 @@ GITHUB_CLIENT_SECRET=your_client_secret
 FEEDBACK_GITHUB_TOKEN=ghp_your_personal_access_token
 ```
 
-> **Recommended**: `FEEDBACK_GITHUB_TOKEN` is a GitHub Personal Access Token (PAT) with `public_repo` scope that enables users to submit bug reports, feature requests, and feedback directly from the console. Without it, the in-app feedback and issue submission features are disabled. We strongly encourage setting this token so your users can contribute feedback seamlessly. You can create one at [GitHub Settings → Tokens](https://github.com/settings/tokens).
+> **Recommended**: `FEEDBACK_GITHUB_TOKEN` is a GitHub Personal Access Token (PAT) with `repo` scope that enables users to submit bug reports, feature requests, and feedback directly from the console. Without it, the in-app feedback and issue submission features are disabled. We strongly encourage setting this token so your users can contribute feedback seamlessly. You can create one at [GitHub Settings → Tokens](https://github.com/settings/tokens).
 
 > **Important**: The `.env` file must be in the same directory as `startup-oauth.sh`. The script loads it from its own directory, so creating it elsewhere will not work.
 
@@ -256,7 +256,7 @@ kubectl create secret generic ksc-secrets \
   --from-literal=github-client-secret=YOUR_CLIENT_SECRET
 ```
 
-**Recommended**: Add a `FEEDBACK_GITHUB_TOKEN` to enable in-app feedback and issue submission. This is a GitHub Personal Access Token (PAT) with `public_repo` scope that allows users to submit bug reports, feature requests, and feedback directly from the console UI. Without it, these features are disabled. We strongly encourage including this token. You can create one at [GitHub Settings → Tokens](https://github.com/settings/tokens).
+**Recommended**: Add a `FEEDBACK_GITHUB_TOKEN` to enable in-app feedback and issue submission. This is a GitHub Personal Access Token (PAT) with `repo` scope that allows users to submit bug reports, feature requests, and feedback directly from the console UI. Without it, these features are disabled. We strongly encourage including this token. You can create one at [GitHub Settings → Tokens](https://github.com/settings/tokens).
 
 Optionally add Claude API key for AI features and the feedback token:
 
@@ -606,7 +606,7 @@ accordingly.
 ### `FEEDBACK_GITHUB_TOKEN` — enables in-app feedback
 
 The in-app feedback / `/issue` flow posts to GitHub on the user's behalf.
-It requires a GitHub Personal Access Token with `public_repo` scope. In
+It requires a GitHub Personal Access Token with `repo` scope. In
 the Helm chart it's `feedbackGithubToken.token` (or
 `feedbackGithubToken.existingSecret`). In local dev it's the
 `FEEDBACK_GITHUB_TOKEN` environment variable or `.env` entry. Without it,

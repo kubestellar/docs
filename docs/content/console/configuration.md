@@ -22,11 +22,11 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | `JWT_SECRET` | JWT signing secret | (auto-generated) |
 | `FRONTEND_URL` | Frontend URL for redirects | `http://localhost:5174` |
 | `CLAUDE_API_KEY` | Claude API key for AI features | (optional) |
-| `GITHUB_TOKEN` | GitHub token for nightly E2E status data | (optional) |
+| `FEEDBACK_GITHUB_TOKEN` | GitHub token for feedback issue creation (canonical name) | (optional) |
+| `GITHUB_TOKEN` | GitHub token — alias for `FEEDBACK_GITHUB_TOKEN` (legacy) | (optional) |
 | `GOOGLE_DRIVE_API_KEY` | Google Drive API key for benchmark data | (optional) |
 | `ENABLED_DASHBOARDS` | Comma-separated list of dashboard routes to show in sidebar | (all dashboards) |
 | `VITE_GA_MEASUREMENT_ID` | Google Analytics 4 measurement ID | (optional) |
-| `FEEDBACK_GITHUB_TOKEN` | GitHub token for feedback issue creation | (optional) |
 | `KAGENT_NAMESPACE` | Namespace where kagent is deployed | `kagent` |
 | `KAGENT_SERVICE_NAME` | kagent Kubernetes service name | `kagent` |
 | `KAGENT_SERVICE_PORT` | kagent service port | `8080` |
@@ -35,6 +35,8 @@ KubeStellar Console can be configured via environment variables or Helm values.
 | `KAGENTI_SERVICE_NAME` | kagenti Kubernetes service name | `kagenti` |
 | `KAGENTI_SERVICE_PORT` | kagenti service port | `8080` |
 | `KAGENTI_SERVICE_PROTOCOL` | kagenti service protocol (http or https) | `http` |
+
+> **GitHub Token Precedence**: The console checks `FEEDBACK_GITHUB_TOKEN` first, then falls back to `GITHUB_TOKEN` as a legacy alias if `FEEDBACK_GITHUB_TOKEN` is not set. Use `FEEDBACK_GITHUB_TOKEN` for new configurations.
 
 The `KAGENT_*` and `KAGENTI_*` variables allow configuring kagent/kagenti auto-detection for non-standard deployments, HTTPS endpoints, or custom namespaces.
 
