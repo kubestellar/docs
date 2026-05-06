@@ -58,6 +58,7 @@ See the [Architecture](architecture.md) page for the full system diagram and com
 ## Prerequisites
 
 - kubectl configured with at least one cluster
+
 - kubestellar-mcp plugins (see below)
 - For source builds: Go 1.25+ and Node.js 20+
 - For AI features only: [Claude Code](https://claude.com/product/claude-code) CLI (optional) or an API key from Anthropic, OpenAI, or Google
