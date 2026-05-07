@@ -87,6 +87,16 @@ const CUMULATIVE_SCANNABLE: Record<number, number> = {};
 const TOTAL_CRITERIA = 65;
 const TOTAL_SCANNABLE = 34;
 
+function levelFromScore(score: number): number {
+  const levels = [6, 5, 4, 3, 2, 1, 0] as const;
+  for (const lvl of levels) {
+    if (score >= (CUMULATIVE_SCANNABLE[lvl] || 0) && (CUMULATIVE_SCANNABLE[lvl] || 0) > 0) {
+      return lvl;
+    }
+  }
+  return score > 0 ? 1 : 0;
+}
+
 // ── Score bar ─────────────────────────────────────────────────────────
 
 function ScoreBar({ score, level }: { score: number; level: number }) {
@@ -541,24 +551,35 @@ export default function AcmmLeaderboardPage() {
     gtagEvent("acmm_paper_click", { source: "info_panel" });
   }, []);
 
+  // Merge hardcoded snapshot with live scan data when available
+  const projects = useMemo(() => {
+    if (!history?.scores) return ACMM_PROJECTS;
+    return ACMM_PROJECTS.map((p) => {
+      const scores = history.scores[p.repo];
+      if (!scores?.length) return p;
+      const latestScore = scores[scores.length - 1];
+      return { ...p, score: latestScore, level: levelFromScore(latestScore) };
+    });
+  }, [history]);
+
   const levelCounts = useMemo(() => {
     const counts: Record<number, number> = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
-    for (const p of ACMM_PROJECTS) counts[p.level] = (counts[p.level] || 0) + 1;
+    for (const p of projects) counts[p.level] = (counts[p.level] || 0) + 1;
     return counts;
-  }, []);
+  }, [projects]);
 
   // Canonical ranking: level desc → score desc (no alpha — pure merit order)
   const canonicalRank = useMemo(() => {
-    const ranked = [...ACMM_PROJECTS].sort((a, b) =>
+    const ranked = [...projects].sort((a, b) =>
       b.level - a.level || b.score - a.score
     );
     const map = new Map<string, number>();
     ranked.forEach((p, i) => map.set(p.repo, i + 1));
     return map;
-  }, []);
+  }, [projects]);
 
   const filtered = useMemo(() => {
-    let items = ACMM_PROJECTS;
+    let items = projects;
     if (search) {
       const q = search.toLowerCase();
       items = items.filter((p) => p.repo.toLowerCase().includes(q));
@@ -579,7 +600,7 @@ export default function AcmmLeaderboardPage() {
       return sortDir === "asc" ? cmp : -cmp;
     });
     return sorted;
-  }, [search, levelFilter, badgeOnly, sortField, sortDir]);
+  }, [projects, search, levelFilter, badgeOnly, sortField, sortDir]);
 
   function toggleSort(field: SortField) {
     let newDir: SortDir;
@@ -619,8 +640,9 @@ export default function AcmmLeaderboardPage() {
             AI Codebase Maturity Model scores for {ACMM_PROJECTS.length} CNCF &amp; cloud-native projects
           </p>
           <p className="text-gray-600 text-sm">
-            Snapshot: {SNAPSHOT_DATE}
-            {history?.generated_at && ` · Updated: ${history.generated_at.slice(0, 10)}`}
+            {history?.generated_at
+              ? `Last scanned: ${history.generated_at.slice(0, 10)}`
+              : `Snapshot: ${SNAPSHOT_DATE}`}
             {" "}· {TOTAL_SCANNABLE} publicly detectable signals out of {TOTAL_CRITERIA} ACMM criteria
           </p>
 
