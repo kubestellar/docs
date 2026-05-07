@@ -135,10 +135,10 @@ if (setLatest) {
   }
 
   // Update currentVersion in the project config
-  // Match the project section and update currentVersion
-  const projectKey = project === 'multi-plugin' ? '"multi-plugin"' : project;
+  // Match both quoted and unquoted project keys in PROJECTS.
+  const projectKeyPattern = `"?${escapeRegex(project)}"?`;
   const currentVersionRegex = new RegExp(
-    `(${escapeRegex(projectKey)}:\\s*\\{.*?currentVersion:\\s*")([^"]+)(")`,
+    `(${projectKeyPattern}:\\s*\\{.*?currentVersion:\\s*")([^"]+)(")`,
     's'
   );
 

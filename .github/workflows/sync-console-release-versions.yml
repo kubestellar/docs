@@ -1,0 +1,144 @@
+name: Sync Console Release Versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5 * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-console-releases:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.WORKFLOW_SYNC_TOKEN }}
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.WORKFLOW_SYNC_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: '20'
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Discover stable console releases
+        id: releases
+        run: |
+          RELEASES_JSON=$(gh api repos/kubestellar/console/releases --paginate)
+          RELEASES_JSON="$RELEASES_JSON" node - <<'NODE' >> "$GITHUB_OUTPUT"
+          const releases = JSON.parse(process.env.RELEASES_JSON ?? '[]')
+            .filter((release) => !release.draft && !release.prerelease)
+            .map((release) => release.tag_name)
+            .filter((tag) => /^v\d+\.\d+\.\d+$/.test(tag))
+            .map((tag) => tag.slice(1))
+            .sort((a, b) => {
+              const aParts = a.split('.').map(Number)
+              const bParts = b.split('.').map(Number)
+              for (let i = 0; i < Math.max(aParts.length, bParts.length); i += 1) {
+                const diff = (aParts[i] ?? 0) - (bParts[i] ?? 0)
+                if (diff !== 0) return diff
+              }
+              return 0
+            })
+
+          if (releases.length === 0) {
+            throw new Error('No stable console releases found')
+          }
+
+          const latest = releases[releases.length - 1]
+          const historical = releases.filter((version) => version !== latest)
+
+          console.log(`latest=${latest}`)
+          console.log(`historical=${historical.join(' ')}`)
+          console.log(`all=${releases.join(' ')}`)
+          NODE
+
+      - name: Ensure console version branches exist
+        run: |
+          git fetch origin
+          for version in ${{ steps.releases.outputs.all }}; do
+            branch="docs/console/${version}"
+            if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+              echo "✅ Branch $branch already exists"
+              continue
+            fi
+
+            git branch -f "$branch" origin/main
+            git push origin "$branch"
+            echo "✅ Created $branch"
+          done
+
+      - name: Update main branch version metadata
+        id: update-config
+        run: |
+          SYNC_BRANCH="sync-console-release-versions"
+          git checkout -B "$SYNC_BRANCH" origin/main
+
+          for version in ${{ steps.releases.outputs.historical }}; do
+            node scripts/update-version.js \
+              --project console \
+              --version "$version" \
+              --branch "docs/console/${version}"
+          done
+
+          node scripts/update-version.js \
+            --project console \
+            --version "${{ steps.releases.outputs.latest }}" \
+            --branch "docs/console/${{ steps.releases.outputs.latest }}" \
+            --set-latest
+
+          git add src/config/versions.ts public/config/shared.json
+          if git diff --cached --quiet; then
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git commit -s -m "📖 Sync console release versions" \
+            -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+          git push -f origin "$SYNC_BRANCH"
+          echo "updated=true" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update PR
+        if: steps.releases.outputs.latest != ''
+        run: |
+          PR_TITLE="📖 Sync console docs versions"
+          PR_BODY=$(cat <<'EOF'
+          Fixes #1833
+
+          ## Summary
+          - sync released console versions into the docs version config
+          - create missing `docs/console/*` release branches
+          - keep future console releases from falling behind the picker
+          EOF
+          )
+
+          EXISTING_PR=$(gh pr list \
+            --head sync-console-release-versions \
+            --json number \
+            --jq '.[0].number' 2>/dev/null || true)
+
+          if [ -n "$EXISTING_PR" ]; then
+            gh pr edit "$EXISTING_PR" --title "$PR_TITLE" --body "$PR_BODY"
+            exit 0
+          fi
+
+          if [ "${{ steps.update-config.outputs.updated }}" != 'true' ]; then
+            echo "No main-branch config changes detected; skipping PR creation"
+            exit 0
+          fi
+
+          gh pr create \
+            --title "$PR_TITLE" \
+            --body "$PR_BODY" \
+            --base main \
+            --head sync-console-release-versions

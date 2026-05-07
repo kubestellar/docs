@@ -3,8 +3,8 @@
   "versions": {
     "console": {
       "latest": {
-        "label": "v0.3.23 (Latest)",
-        "branch": "main",
+        "label": "v0.3.25 (Latest)",
+        "branch": "docs/console/0.3.25",
         "isDefault": true
       },
       "main": {
@@ -31,6 +31,16 @@
       "0.1.0": {
         "label": "v0.1.0",
         "branch": "docs/console/0.1.0",
+        "isDefault": false
+      },
+      "0.3.24": {
+        "label": "v0.3.24",
+        "branch": "docs/console/0.3.24",
+        "isDefault": false
+      },
+      "0.3.23": {
+        "label": "v0.3.23",
+        "branch": "docs/console/0.3.23",
         "isDefault": false
       }
     },
@@ -200,7 +210,7 @@
     "console": {
       "name": "KubeStellar Console",
       "basePath": "console",
-      "currentVersion": "0.3.23"
+      "currentVersion": "0.3.25"
     },
     "kubestellar": {
       "name": "KubeStellar",
@@ -272,5 +282,5 @@
     "multi-plugin": "https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin",
     "kubestellar-mcp": "https://github.com/kubestellar/kubestellar-mcp/edit/main/docs"
   },
-  "updatedAt": "2026-05-03T06:07:44.456Z"
+  "updatedAt": "2026-05-07T06:51:17.373Z"
 }
