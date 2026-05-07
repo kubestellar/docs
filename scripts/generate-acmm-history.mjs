@@ -435,10 +435,16 @@ async function main() {
     }
   }
 
-  // Idempotency: skip if today already recorded
-  if (history.dates[history.dates.length - 1] === today) {
-    console.log(`Date ${today} already recorded, nothing to do`)
+  // Idempotency: skip if today already recorded AND detectedIds is populated
+  const detectedIdsPopulated = history.detectedIds && Object.keys(history.detectedIds).length > 0
+  const alreadyRecorded = history.dates[history.dates.length - 1] === today
+  if (alreadyRecorded && detectedIdsPopulated) {
+    console.log(`Date ${today} already recorded with detectedIds, nothing to do`)
     process.exit(0)
+  }
+  const isBackfill = alreadyRecorded && !detectedIdsPopulated
+  if (isBackfill) {
+    console.log(`Date ${today} exists but detectedIds missing — backfilling...`)
   }
 
   console.log(`Scanning ${REPOS.length} repos for ${today}...`)
@@ -470,11 +476,19 @@ async function main() {
 
   console.log(`Done: ${scanned} scanned, ${failed} failed (carried forward)`)
 
-  // Append today's scan
-  history.dates.push(today)
-  for (const repo of REPOS) {
-    if (!history.scores[repo]) history.scores[repo] = []
-    history.scores[repo].push(scores[repo] ?? 0)
+  // Append or update today's scan
+  if (isBackfill) {
+    const idx = history.dates.length - 1
+    for (const repo of REPOS) {
+      if (!history.scores[repo]) history.scores[repo] = []
+      history.scores[repo][idx] = scores[repo] ?? 0
+    }
+  } else {
+    history.dates.push(today)
+    for (const repo of REPOS) {
+      if (!history.scores[repo]) history.scores[repo] = []
+      history.scores[repo].push(scores[repo] ?? 0)
+    }
   }
 
   // Store detectedIds for latest scan only (used for proper level computation)
