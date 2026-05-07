@@ -2,10 +2,21 @@
   "surveyUrl": "https://forms.gle/Md2381TQ8CcjZv3LA",
   "versions": {
     "console": {
-      "main": {
-        "label": "main (latest)",
-        "branch": "main",
+      "latest": {
+        "label": "v0.3.25 (Latest)",
+        "branch": "docs/console/0.3.25",
         "isDefault": true
+      },
+      "main": {
+        "label": "main (dev)",
+        "branch": "main",
+        "isDefault": false,
+        "isDev": true
+      },
+      "0.3.20": {
+        "label": "v0.3.20",
+        "branch": "docs/console/0.3.20",
+        "isDefault": false
       },
       "0.3.19": {
         "label": "v0.3.19",
@@ -20,6 +31,16 @@
       "0.1.0": {
         "label": "v0.1.0",
         "branch": "docs/console/0.1.0",
+        "isDefault": false
+      },
+      "0.3.24": {
+        "label": "v0.3.24",
+        "branch": "docs/console/0.3.24",
+        "isDefault": false
+      },
+      "0.3.23": {
+        "label": "v0.3.23",
+        "branch": "docs/console/0.3.23",
         "isDefault": false
       }
     },
@@ -163,8 +184,8 @@
     },
     "kubestellar-mcp": {
       "latest": {
-        "label": "v0.8.1 (Latest)",
-        "branch": "docs/kubestellar-mcp/0.8.1",
+        "label": "v0.8.17 (Latest)",
+        "branch": "docs/kubestellar-mcp/0.8.17",
         "isDefault": true
       },
       "main": {
@@ -172,6 +193,16 @@
         "branch": "main",
         "isDefault": false,
         "isDev": true
+      },
+      "0.8.1": {
+        "label": "v0.8.1",
+        "branch": "docs/kubestellar-mcp/0.8.1",
+        "isDefault": false
+      },
+      "0.8.16": {
+        "label": "v0.8.16",
+        "branch": "docs/kubestellar-mcp/0.8.16",
+        "isDefault": false
       }
     }
   },
@@ -179,7 +210,7 @@
     "console": {
       "name": "KubeStellar Console",
       "basePath": "console",
-      "currentVersion": "main"
+      "currentVersion": "0.3.25"
     },
     "kubestellar": {
       "name": "KubeStellar",
@@ -204,7 +235,7 @@
     "kubestellar-mcp": {
       "name": "KubeStellar MCP",
       "basePath": "kubestellar-mcp",
-      "currentVersion": "0.8.1"
+      "currentVersion": "0.8.17"
     }
   },
   "relatedProjects": [
@@ -215,24 +246,24 @@
     },
     {
       "title": "KubeStellar MCP",
-      "href": "/docs/kubestellar-mcp/overview/introduction",
+      "href": "/docs/kubestellar-mcp/overview/intro",
       "description": "AI-powered Kubernetes MCP tools"
     },
     {
       "title": "A2A",
-      "href": "/docs/a2a/overview/introduction",
+      "href": "/docs/a2a/intro",
       "description": "Agent-to-Agent protocol",
       "secondary": true
     },
     {
       "title": "KubeStellar",
-      "href": "/docs/what-is-kubestellar/overview",
+      "href": "/docs/kubestellar/architecture",
       "description": "Multi-cluster configuration management",
       "secondary": true
     },
     {
       "title": "KubeFlex",
-      "href": "/docs/kubeflex/overview/introduction",
+      "href": "/docs/kubeflex/readme",
       "description": "Lightweight Kubernetes control planes",
       "secondary": true
     },
@@ -251,5 +282,5 @@
     "multi-plugin": "https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin",
     "kubestellar-mcp": "https://github.com/kubestellar/kubestellar-mcp/edit/main/docs"
   },
-  "updatedAt": "2026-04-09T12:00:00.000Z"
+  "updatedAt": "2026-05-07T06:51:17.373Z"
 }
