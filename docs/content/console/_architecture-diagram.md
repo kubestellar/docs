@@ -13,6 +13,7 @@ graph TB
     AI["AI API"]
 
     User -- invokes --> CLI
+    Browser -. AI Missions / assisted ops .-> CLI
     Browser -- OAuth --> Backend
     Browser -- auth --> GitHub
     GitHub -- token --> Backend
@@ -30,3 +31,5 @@ graph TB
     Backend -- chat --> AI
     CLI -- prompt --> AI
 ```
+
+> **Diagram note:** The **AI Agent** has a dual role. Users can invoke it directly in tools such as Claude Code, GitHub Copilot, Cursor, or Gemini CLI, and the console also uses the same agent/tooling path for [AI Missions](ai-missions-setup.md) and other [AI Features](ai-features.md). Here, **AI-assisted operations** means agent-driven tasks such as natural-language questions about your clusters, automated troubleshooting, and guided repair or deployment workflows.

@@ -27,8 +27,8 @@ The console consists of 7 components working together. The [Installation](instal
 | 2 | **Frontend** | React SPA - dashboards, cards, AI UI |
 | 3 | **Backend** | Go server - API, auth, data storage |
 | 4 | **MCP Bridge** | Hosts the kubestellar-ops and kubestellar-deploy **MCP servers** in-process; Backend queries them via HTTP/MCP to get cluster data |
-| 5 | **AI Coding Agent + Plugins** | **(Optional — AI features only)** Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI, etc.) acts as an **MCP client**. The kubestellar-ops and kubestellar-deploy **plugins** launch their respective MCP servers as **stdio child processes** and add skills/hooks ([docs](../kubestellar-mcp/overview/intro.md)). Not required for the core dashboard experience. |
-| 6 | **kc-agent** | **(Optional — kubectl/AI features only)** Local MCP+WebSocket server on port 8585; bridges the browser to your local kubeconfig for kubectl execution (WebSocket) and provides MCP tools for AI coding agents. Not required for read-only dashboard viewing. |
+| 5 | **AI Coding Agent + Plugins** | **(Optional — AI features only)** Any MCP-compatible AI coding agent (Claude Code, Copilot, Cursor, Gemini CLI, etc.) acts as an **MCP client**. The kubestellar-ops and kubestellar-deploy **plugins** launch their respective MCP servers as **stdio child processes** and add skills/hooks ([docs](../kubestellar-mcp/overview/intro.md)). This agent can be invoked directly by a user or indirectly by the console for [AI Missions](ai-missions-setup.md) and other agent-driven tasks described in [AI Features](ai-features.md). Not required for the core dashboard experience. |
+| 6 | **kc-agent** | **(Optional — kubectl/AI features only)** Local MCP+WebSocket server on port 8585; bridges the browser to your local kubeconfig for kubectl execution (WebSocket) and provides MCP tools for AI coding agents. This is the execution path used when AI-assisted operations need live `kubectl` access. Not required for read-only dashboard viewing. |
 | 7 | **Kubeconfig** | Your cluster credentials |
 
 > **Note on "GitHub OAuth App":**
