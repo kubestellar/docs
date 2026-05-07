@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-07T14:56:43.820Z",
-  "git_hash": "eca8f24",
+  "generated_at": "2026-05-07T18:36:19.798Z",
+  "git_hash": "ab4b644",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-16",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4588850,
+      "total_points": 4594350,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 428,
         "feature_issues": 512,
-        "other_issues": 676,
-        "prs_opened": 6572,
-        "prs_merged": 6122
+        "other_issues": 678,
+        "prs_opened": 6579,
+        "prs_merged": 6130
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         805,
         986,
         863,
-        96
+        105
       ],
-      "recent_activity_score": 2810.72,
+      "recent_activity_score": 2819.72,
       "rank": 1
     },
     {
@@ -81,11 +81,11 @@
     {
       "login": "aashu2006",
       "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-      "total_points": 157300,
+      "total_points": 159100,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 487,
+        "bug_issues": 493,
         "feature_issues": 8,
         "other_issues": 50,
         "prs_opened": 12,
@@ -103,19 +103,19 @@
         231,
         35,
         5,
-        0
+        6
       ],
-      "recent_activity_score": 254.2,
+      "recent_activity_score": 260.2,
       "rank": 3
     },
     {
       "login": "mrhapile",
       "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-      "total_points": 155050,
+      "total_points": 155350,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 466,
+        "bug_issues": 467,
         "feature_issues": 11,
         "other_issues": 27,
         "prs_opened": 24,
@@ -133,9 +133,9 @@
         112,
         4,
         10,
-        7
+        8
       ],
-      "recent_activity_score": 218.67,
+      "recent_activity_score": 219.67,
       "rank": 4
     },
     {
