@@ -96,12 +96,13 @@ const AGENT_INSTRUCTION_IDS = new Set([
   "acmm:agents-md", "acmm:cursor-rules",
 ]);
 
+// Synced from kubestellar/console web/src/lib/acmm/scannableIdsByLevel.ts
 const SCANNABLE_IDS_BY_LEVEL: Record<number, string[]> = {
   2: ["acmm:agent-instructions", "acmm:prompts-catalog", "acmm:editor-config"],
   3: ["acmm:pr-acceptance-metric", "acmm:pr-review-rubric", "acmm:quality-dashboard", "acmm:ci-matrix"],
-  4: ["acmm:auto-qa-tuning", "acmm:nightly-compliance", "acmm:copilot-review-apply", "acmm:layered-safety", "acmm:risk-assessment-config", "acmm:auto-schema-lint", "acmm:copilot-workspace"],
-  5: ["acmm:github-actions-ai", "acmm:auto-qa-self-tuning", "acmm:public-metrics", "acmm:auto-deprecation-enforcer", "acmm:pipeline-as-code", "acmm:self-healing-ci"],
-  6: ["acmm:auto-issue-gen", "acmm:multi-agent-orchestration", "acmm:merge-queue", "acmm:auto-rollback", "acmm:dependency-auto-upgrade", "acmm:auto-changelog"],
+  4: ["acmm:auto-qa-tuning", "acmm:nightly-compliance", "acmm:copilot-review-apply", "acmm:auto-label", "acmm:ai-fix-workflow", "acmm:tier-classifier", "acmm:security-ai-md"],
+  5: ["acmm:github-actions-ai", "acmm:auto-qa-self-tuning", "acmm:public-metrics", "acmm:policy-as-code", "acmm:reflection-log", "acmm:audit-trail"],
+  6: ["acmm:auto-issue-gen", "acmm:multi-agent-orchestration", "acmm:merge-queue", "acmm:strategic-dashboard", "acmm:risk-assessment-config", "acmm:observability-runbook"],
 };
 
 const LEVEL_COMPLETION_THRESHOLD = 0.7;
