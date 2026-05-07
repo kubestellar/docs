@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import {
   GridLines,
   StarField,
@@ -109,6 +109,57 @@ function ScoreBar({ score, level }: { score: number; level: number }) {
         {score}/{max}
       </span>
     </div>
+  );
+}
+
+// ── Sparkline ────────────────────────────────────────────────────────
+
+interface AcmmHistory {
+  dates: string[];
+  scores: Record<string, number[]>;
+  generated_at?: string;
+}
+
+const SPARKLINE_WIDTH = 64;
+const SPARKLINE_HEIGHT = 20;
+const SPARKLINE_STROKE_WIDTH = 1.5;
+const MIN_DATA_POINTS_FOR_SPARKLINE = 2;
+
+function Sparkline({ values }: { values: number[] }) {
+  if (values.length < MIN_DATA_POINTS_FOR_SPARKLINE) return null;
+
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const range = max - min || 1;
+
+  const points = values
+    .map((v, i) => {
+      const x = (i / (values.length - 1)) * SPARKLINE_WIDTH;
+      const y = SPARKLINE_HEIGHT - ((v - min) / range) * (SPARKLINE_HEIGHT - 2) - 1;
+      return `${x},${y}`;
+    })
+    .join(" ");
+
+  const first = values[0];
+  const last = values[values.length - 1];
+  const color = last > first ? "#22c55e" : last < first ? "#ef4444" : "#6b7280";
+
+  return (
+    <svg
+      width={SPARKLINE_WIDTH}
+      height={SPARKLINE_HEIGHT}
+      viewBox={`0 0 ${SPARKLINE_WIDTH} ${SPARKLINE_HEIGHT}`}
+      className="inline-block"
+    >
+      <polyline
+        points={points}
+        fill="none"
+        stroke={color}
+        strokeWidth={SPARKLINE_STROKE_WIDTH}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
   );
 }
 
@@ -436,6 +487,16 @@ export default function AcmmLeaderboardPage() {
   const [sortField, setSortField] = useState<SortField>("level");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
   const [showInfo, setShowInfo] = useState(false);
+  const [history, setHistory] = useState<AcmmHistory | null>(null);
+
+  useEffect(() => {
+    fetch("/data/acmm-history.json")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (data?.dates && data?.scores) setHistory(data);
+      })
+      .catch(() => {});
+  }, []);
 
   // ── GA4 event helpers ──────────────────────────────────────────────
 
@@ -558,7 +619,9 @@ export default function AcmmLeaderboardPage() {
             AI Codebase Maturity Model scores for {ACMM_PROJECTS.length} CNCF &amp; cloud-native projects
           </p>
           <p className="text-gray-600 text-sm">
-            Snapshot: {SNAPSHOT_DATE} · {TOTAL_SCANNABLE} publicly detectable signals out of {TOTAL_CRITERIA} ACMM criteria
+            Snapshot: {SNAPSHOT_DATE}
+            {history?.generated_at && ` · Updated: ${history.generated_at.slice(0, 10)}`}
+            {" "}· {TOTAL_SCANNABLE} publicly detectable signals out of {TOTAL_CRITERIA} ACMM criteria
           </p>
 
           {/* Quick stats — level filters + badge filter */}
@@ -687,7 +750,7 @@ export default function AcmmLeaderboardPage() {
               )}
             </span>
             <span className="flex items-center gap-1">
-              ✨ = displays ACMM badge on README · Score = detected / scannable for that level
+              ✨ = displays ACMM badge on README · Score = detected / scannable for that level · Trend = 26-week score history
             </span>
           </div>
 
@@ -700,7 +763,7 @@ export default function AcmmLeaderboardPage() {
           ) : (
             <div className="bg-gray-800/40 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden">
               {/* Table header */}
-              <div className="hidden sm:grid sm:grid-cols-[60px_1fr_100px_180px_100px] gap-4 px-6 py-3 border-b border-white/5 text-xs text-gray-500 uppercase tracking-wider">
+              <div className="hidden sm:grid sm:grid-cols-[60px_1fr_100px_180px_80px_100px] gap-4 px-6 py-3 border-b border-white/5 text-xs text-gray-500 uppercase tracking-wider">
                 <div className="text-center flex items-center justify-center text-gray-500">
                   Rank
                 </div>
@@ -713,6 +776,7 @@ export default function AcmmLeaderboardPage() {
                 <button onClick={() => toggleSort("score")} className="text-left flex items-center cursor-pointer hover:text-gray-300">
                   Score <SortIcon field="score" />
                 </button>
+                <div className="text-center">Trend</div>
                 <div className="text-center">Scan</div>
               </div>
 
@@ -722,7 +786,7 @@ export default function AcmmLeaderboardPage() {
                 return (
                 <div
                   key={project.repo}
-                  className="grid grid-cols-1 sm:grid-cols-[60px_1fr_100px_180px_100px] gap-2 sm:gap-4 px-4 sm:px-6 py-3 border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors items-center"
+                  className="grid grid-cols-1 sm:grid-cols-[60px_1fr_100px_180px_80px_100px] gap-2 sm:gap-4 px-4 sm:px-6 py-3 border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors items-center"
                 >
                   {/* Rank */}
                   <div className="hidden sm:flex justify-center">
@@ -769,6 +833,15 @@ export default function AcmmLeaderboardPage() {
                   {/* Score */}
                   <div className="pl-11 sm:pl-0">
                     <ScoreBar score={project.score} level={project.level} />
+                  </div>
+
+                  {/* Trend sparkline */}
+                  <div className="hidden sm:flex justify-center">
+                    {history?.scores[project.repo]?.length && history.scores[project.repo].length >= MIN_DATA_POINTS_FOR_SPARKLINE ? (
+                      <Sparkline values={history.scores[project.repo]} />
+                    ) : (
+                      <span className="text-xs text-gray-600">—</span>
+                    )}
                   </div>
 
                   {/* Scan link */}
