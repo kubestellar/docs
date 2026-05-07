@@ -44,6 +44,63 @@ let configCache: SharedConfig | null = null;
 let cacheTimestamp: number = 0;
 let fetchPromise: Promise<SharedConfig | null> | null = null;
 
+function getConfigTimestamp(config: SharedConfig | null): number {
+  if (!config?.updatedAt) {
+    return 0;
+  }
+
+  const timestamp = Date.parse(config.updatedAt);
+  return Number.isNaN(timestamp) ? 0 : timestamp;
+}
+
+function mergeVersionMaps(
+  primary: Record<string, Record<string, VersionInfo>> = {},
+  secondary: Record<string, Record<string, VersionInfo>> = {}
+): Record<string, Record<string, VersionInfo>> {
+  const mergedProjects = new Set([...Object.keys(secondary), ...Object.keys(primary)]);
+  const merged: Record<string, Record<string, VersionInfo>> = {};
+
+  for (const projectId of mergedProjects) {
+    merged[projectId] = {
+      ...(secondary[projectId] ?? {}),
+      ...(primary[projectId] ?? {}),
+    };
+  }
+
+  return merged;
+}
+
+function mergeSharedConfigs(primary: SharedConfig, secondary: SharedConfig): SharedConfig {
+  const primaryTimestamp = getConfigTimestamp(primary);
+  const secondaryTimestamp = getConfigTimestamp(secondary);
+
+  return {
+    versions: mergeVersionMaps(primary.versions, secondary.versions),
+    projects: {
+      ...(secondary.projects ?? {}),
+      ...(primary.projects ?? {}),
+    },
+    relatedProjects:
+      primary.relatedProjects.length > 0 ? primary.relatedProjects : secondary.relatedProjects,
+    editBaseUrls: {
+      ...(secondary.editBaseUrls ?? {}),
+      ...(primary.editBaseUrls ?? {}),
+    },
+    surveyUrl: primary.surveyUrl ?? secondary.surveyUrl,
+    updatedAt:
+      primaryTimestamp >= secondaryTimestamp ? primary.updatedAt : secondary.updatedAt,
+  };
+}
+
+async function fetchConfigJson(url: string, init?: RequestInit): Promise<SharedConfig | null> {
+  const res = await fetch(url, init);
+  if (!res.ok) {
+    return null;
+  }
+
+  return res.json() as Promise<SharedConfig>;
+}
+
 // Check if cache is still valid
 function isCacheValid(): boolean {
   return configCache !== null && (Date.now() - cacheTimestamp) < CACHE_TTL_MS;
@@ -61,36 +118,37 @@ async function fetchConfig(forceRefresh: boolean = false): Promise<SharedConfig 
   }
 
   fetchPromise = (async () => {
-    try {
-      // Try local config first (ensures branch deploys/previews use their own config)
-      const res = await fetch('/config/shared.json');
-      if (res.ok) {
-        configCache = await res.json();
-        cacheTimestamp = Date.now();
-        return configCache;
-      }
-    } catch (e) {
-      console.warn('Failed to fetch local config:', e);
-    }
-
-    try {
-      // Fallback to production URL (if local config unavailable)
-      const res = await fetch(PRODUCTION_CONFIG_URL, {
+    const [localConfig, productionConfig] = await Promise.all([
+      fetchConfigJson('/config/shared.json').catch((e) => {
+        console.warn('Failed to fetch local config:', e);
+        return null;
+      }),
+      fetchConfigJson(PRODUCTION_CONFIG_URL, {
         cache: 'no-store',
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
         },
-      });
-      if (res.ok) {
-        configCache = await res.json();
-        cacheTimestamp = Date.now();
-        return configCache;
-      }
-    } catch (e) {
-      console.warn('Failed to fetch config from production:', e);
+      }).catch((e) => {
+        console.warn('Failed to fetch config from production:', e);
+        return null;
+      }),
+    ]);
+
+    if (localConfig && productionConfig) {
+      const mergedConfig =
+        getConfigTimestamp(localConfig) >= getConfigTimestamp(productionConfig)
+          ? mergeSharedConfigs(localConfig, productionConfig)
+          : mergeSharedConfigs(productionConfig, localConfig);
+      configCache = mergedConfig;
+      cacheTimestamp = Date.now();
+      return mergedConfig;
     }
 
-    return null;
+    configCache = localConfig ?? productionConfig;
+    if (configCache) {
+      cacheTimestamp = Date.now();
+    }
+    return configCache;
   })().finally(() => {
     // Clear the promise so next call can try again
     fetchPromise = null;
