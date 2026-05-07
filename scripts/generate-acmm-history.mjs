@@ -443,6 +443,7 @@ async function main() {
 
   console.log(`Scanning ${REPOS.length} repos for ${today}...`)
   const scores = {}
+  const latestDetectedIds = {}
   let scanned = 0
   let failed = 0
 
@@ -451,9 +452,11 @@ async function main() {
 
     if (data?.detectedIds) {
       scores[repo] = data.detectedIds.length
+      latestDetectedIds[repo] = data.detectedIds
     } else {
       const prev = history.scores[repo]
       scores[repo] = prev?.length ? prev[prev.length - 1] : 0
+      latestDetectedIds[repo] = history.detectedIds?.[repo] ?? []
       failed++
     }
 
@@ -473,6 +476,9 @@ async function main() {
     if (!history.scores[repo]) history.scores[repo] = []
     history.scores[repo].push(scores[repo] ?? 0)
   }
+
+  // Store detectedIds for latest scan only (used for proper level computation)
+  history.detectedIds = latestDetectedIds
 
   // Trim to MAX_DATA_POINTS (26 weeks × 4 scans/week = 104)
   while (history.dates.length > MAX_DATA_POINTS) {

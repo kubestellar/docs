@@ -87,6 +87,50 @@ const CUMULATIVE_SCANNABLE: Record<number, number> = {};
 const TOTAL_CRITERIA = 65;
 const TOTAL_SCANNABLE = 34;
 
+// ── Level computation (mirrors computeLevel.ts from console) ─────────
+// Scannable criterion IDs per level — L2 uses the virtual OR-group.
+// Must stay in sync with scannableIdsByLevel.ts in kubestellar/console.
+
+const AGENT_INSTRUCTION_IDS = new Set([
+  "acmm:claude-md", "acmm:copilot-instructions",
+  "acmm:agents-md", "acmm:cursor-rules",
+]);
+
+const SCANNABLE_IDS_BY_LEVEL: Record<number, string[]> = {
+  2: ["acmm:agent-instructions", "acmm:prompts-catalog", "acmm:editor-config"],
+  3: ["acmm:pr-acceptance-metric", "acmm:pr-review-rubric", "acmm:quality-dashboard", "acmm:ci-matrix"],
+  4: ["acmm:auto-qa-tuning", "acmm:nightly-compliance", "acmm:copilot-review-apply", "acmm:layered-safety", "acmm:risk-assessment-config", "acmm:auto-schema-lint", "acmm:copilot-workspace"],
+  5: ["acmm:github-actions-ai", "acmm:auto-qa-self-tuning", "acmm:public-metrics", "acmm:auto-deprecation-enforcer", "acmm:pipeline-as-code", "acmm:self-healing-ci"],
+  6: ["acmm:auto-issue-gen", "acmm:multi-agent-orchestration", "acmm:merge-queue", "acmm:auto-rollback", "acmm:dependency-auto-upgrade", "acmm:auto-changelog"],
+};
+
+const LEVEL_COMPLETION_THRESHOLD = 0.7;
+const MIN_LEVEL = 1;
+const MAX_LEVEL = 6;
+
+function levelFromDetectedIds(rawIds: string[]): number {
+  const detected = new Set(rawIds);
+  // Synthesise virtual OR-group: any instruction file → virtual ID
+  for (const id of AGENT_INSTRUCTION_IDS) {
+    if (detected.has(id)) { detected.add("acmm:agent-instructions"); break; }
+  }
+  // Threshold walk L2–L6
+  let level = MIN_LEVEL;
+  for (let n = MIN_LEVEL + 1; n <= MAX_LEVEL; n++) {
+    const required = SCANNABLE_IDS_BY_LEVEL[n];
+    if (!required?.length) continue;
+    const met = required.filter((id) => detected.has(id)).length;
+    const threshold = n === 2 ? 1 / required.length : LEVEL_COMPLETION_THRESHOLD;
+    if (met / required.length >= threshold) {
+      level = n;
+    } else {
+      break;
+    }
+  }
+  return level;
+}
+
+/** Fallback: estimate level from score count when detectedIds unavailable. */
 function levelFromScore(score: number): number {
   const levels = [6, 5, 4, 3, 2, 1, 0] as const;
   for (const lvl of levels) {
@@ -127,6 +171,8 @@ function ScoreBar({ score, level }: { score: number; level: number }) {
 interface AcmmHistory {
   dates: string[];
   scores: Record<string, number[]>;
+  /** Detected criterion IDs from the latest scan (used for proper level computation). */
+  detectedIds?: Record<string, string[]>;
   generated_at?: string;
 }
 
@@ -558,7 +604,11 @@ export default function AcmmLeaderboardPage() {
       const scores = history.scores[p.repo];
       if (!scores?.length) return p;
       const latestScore = scores[scores.length - 1];
-      return { ...p, score: latestScore, level: levelFromScore(latestScore) };
+      const ids = history.detectedIds?.[p.repo];
+      const level = ids?.length
+        ? levelFromDetectedIds(ids)
+        : levelFromScore(latestScore);
+      return { ...p, score: latestScore, level };
     });
   }, [history]);
 
