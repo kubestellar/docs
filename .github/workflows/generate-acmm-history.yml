@@ -2,8 +2,8 @@ name: Generate ACMM History
 
 on:
   schedule:
-    # Mon, Wed, Fri, Sun at 03:00 UTC
-    - cron: '0 3 * * 0,1,3,5'
+    # Mon, Wed, Fri, Sun at 10pm EDT (02:00 UTC) — quiet period for token budget
+    - cron: '0 2 * * 0,1,3,5'
   workflow_dispatch: {}
 
 permissions:
