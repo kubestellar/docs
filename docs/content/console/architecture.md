@@ -287,7 +287,7 @@ reaches **your** clusters through a clear split of responsibilities:
 This split is why **in-cluster Helm installs need you to run `kc-agent`
 locally**: the cluster can query itself through the MCP Bridge, but it
 cannot reach *other* clusters on your laptop network without the local
-agent. See [Installation → kc-agent health](installation.md#kc-agent-health-helm--in-cluster-mode-only).
+agent. See [Installation → kc-agent health](installation.md#kc-agent-health-for-helm-in-cluster-mode).
 
 ## Demo data vs real cluster data
 

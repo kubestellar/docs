@@ -182,13 +182,13 @@ Add to Claude Desktop config (`~/Library/Application Support/Claude/claude_deskt
 
 ### Documentation
 
-👉 **[Installation Guide →](./getting-started/installation)**
+👉 **[Installation Guide →](./getting-started/installation.md)**
 
-👉 **[CLI Reference →](./cli-reference)**
+👉 **[CLI Reference →](./cli-reference.md)**
 
-👉 **[Quick Start Guide →](./getting-started/quick-start)**
+👉 **[Quick Start Guide →](./getting-started/quick-start.md)**
 
-👉 **[Troubleshooting →](./troubleshooting)**
+👉 **[Troubleshooting →](./troubleshooting.md)**
 
 ## Community & Support
 

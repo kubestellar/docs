@@ -197,7 +197,7 @@ though the install will eventually succeed.
 See `deploy.sh` vs direct Helm comparison in
 [Installation → deploy.sh vs direct Helm](installation.md#deploysh-vs-direct-helm).
 
-## "Agent Not Connected" / cluster actions fail
+## Agent Not Connected cluster actions fail
 
 The console shows an orange **Agent Not Connected** banner, terminal
 commands hang, and AI Missions that need `kubectl` fail. The remediation

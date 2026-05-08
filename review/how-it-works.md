@@ -124,4 +124,4 @@ KubeStellar supports various deployment scenarios:
 
 Each step is backed by KubeStellar's resilient architecture, ensuring reliable workload distribution and management across your entire Kubernetes estate.
 
-[Get started with KubeStellar](get-started.md)
+[Get started with KubeStellar](../docs/content/kubestellar/get-started.md)

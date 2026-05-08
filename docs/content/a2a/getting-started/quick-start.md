@@ -241,7 +241,7 @@ Now that you have KubeStellar A2A running, explore more advanced features:
 - **[KubeStellar Project →](https://kubestellar.io)** - Learn about the broader ecosystem
 
 ### 🔧 **Advanced Features**
-- **[Troubleshooting Guide →](../troubleshooting)** - Resolve common issues
+- **[Troubleshooting Guide →](../troubleshooting.md)** - Resolve common issues
 - **[Complete Documentation →](https://github.com/kubestellar/a2a/blob/main/README.md)** - Full feature reference
 
 ## Common First Tasks

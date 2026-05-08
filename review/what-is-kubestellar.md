@@ -12,7 +12,7 @@ KubeStellar introduces a revolutionary approach to multi-cluster management thro
 - **Simplified Operations**: Eliminate context switching between clusters
 - **Centralized Management**: Control multiple clusters from a single point
 
-[Learn more about KubeStellar Control Plane](architecture.md)
+[Learn more about KubeStellar Control Plane](../docs/content/kubestellar/architecture.md)
 
 ## Intelligent Workload Placement
 
@@ -27,7 +27,7 @@ KubeStellar's sophisticated workload placement system ensures optimal distributi
   - Out-of-tree workload types
 - **Automatic Synchronization**: Keep workloads and configurations in sync across clusters
 
-[Learn more about Workload Binding](binding.md)
+[Learn more about Workload Binding](../docs/content/kubestellar/binding.md)
 
 ## Policy-Driven Management
 
@@ -43,7 +43,7 @@ Implement comprehensive governance through centralized policy enforcement:
   - State reconciliation across clusters
   - Robust error handling
 
-[Learn more about Policy Control](control.md)
+[Learn more about Policy Control](../docs/content/kubestellar/control.md)
 
 ## Real-World Use Cases
 
@@ -65,4 +65,4 @@ KubeStellar excels in several key scenarios:
 
 Whether you're managing edge deployments, implementing multi-cloud strategies, or scaling your Kubernetes infrastructure, KubeStellar provides the tools and capabilities needed for effective multi-cluster orchestration.
 
-[Get Started with KubeStellar](get-started.md)
+[Get Started with KubeStellar](../docs/content/kubestellar/get-started.md)

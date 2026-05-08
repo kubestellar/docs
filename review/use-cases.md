@@ -97,7 +97,7 @@ Customize workload configurations for different clusters while maintaining a sin
 
 # Implementation Examples
 
-For detailed implementation examples of these use cases, refer to the [Example Scenarios](./example-scenarios.md) documentation. Each scenario provides step-by-step instructions and real-world applications of KubeStellar's capabilities.
+For detailed implementation examples of these use cases, refer to the [Example Scenarios](../docs/content/kubestellar/example-scenarios.md) documentation. Each scenario provides step-by-step instructions and real-world applications of KubeStellar's capabilities.
 
 # Benefits
 
