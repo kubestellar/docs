@@ -1,967 +1,1209 @@
 {
   "dates": [
     "2026-04-22",
-    "2026-05-07"
+    "2026-05-07",
+    "2026-05-08"
   ],
   "scores": {
     "kubestellar/console": [
       20,
+      41,
       41
     ],
     "chaos-mesh/chaos-mesh": [
       6,
       20,
       20,
+      20,
+      20,
       20
     ],
     "cilium/cilium": [
       6,
+      20,
       20
     ],
     "backstage/backstage": [
       5,
+      22,
       22
     ],
     "containerd/containerd": [
       5,
+      17,
       17
     ],
     "cri-o/cri-o": [
       5,
       18,
       18,
+      18,
+      18,
       18
     ],
     "meshery/meshery": [
       5,
+      18,
       18
     ],
     "runatlantis/atlantis": [
       5,
+      19,
       19
     ],
     "alibaba/higress": [
       4,
+      15,
       15
     ],
     "armadaproject/armada": [
       4,
+      13,
       13
     ],
     "bootc-dev/bootc": [
       4,
+      11,
       11
     ],
     "containers/podman": [
       4,
+      17,
       17
     ],
     "distribution/distribution": [
       4,
+      12,
       12
     ],
     "kagent-dev/kagent": [
       4,
+      14,
       14
     ],
     "kubestellar/kubestellar": [
       4,
+      14,
       14
     ],
     "radius-project/radius": [
       4,
+      18,
       18
     ],
     "runmedev/runme": [
       4,
+      14,
       14
     ],
     "shipwright-io/build": [
       4,
+      13,
       13
     ],
     "WasmEdge/WasmEdge": [
       4,
+      15,
       15
     ],
     "cloud-custodian/cloud-custodian": [
       3,
+      10,
       10
     ],
     "clusterpedia-io/clusterpedia": [
       3,
+      13,
       13
     ],
     "cortexproject/cortex": [
       3,
+      19,
       19
     ],
     "cubeFS/cubefs": [
       3,
+      14,
       14
     ],
     "dapr/dapr": [
       3,
+      14,
       14
     ],
     "drasi-project/drasi-platform": [
       3,
+      14,
       14
     ],
     "flomesh-io/fsm": [
       3,
+      14,
       14
     ],
     "grpc/grpc": [
       3,
+      11,
       11
     ],
     "harvester/harvester": [
       3,
+      14,
       14
     ],
     "istio/istio": [
       3,
+      11,
       11
     ],
     "k8gb-io/k8gb": [
       3,
+      10,
       10
     ],
     "karmada-io/karmada": [
       3,
+      14,
       14
     ],
     "kedacore/keda": [
       3,
+      16,
       16
     ],
     "kitops-ml/kitops": [
       3,
+      12,
       12
     ],
     "kserve/kserve": [
       3,
+      13,
       13
     ],
     "kubernetes-sigs/external-dns": [
       3,
+      12,
       12
     ],
     "kubesphere/kubesphere": [
       3,
+      15,
       15
     ],
     "kumahq/kuma": [
       3,
+      15,
       15
     ],
     "oauth2-proxy/oauth2-proxy": [
       3,
+      11,
       11
     ],
     "open-cluster-management-io/ocm": [
       3,
+      17,
       17
     ],
     "ovn-kubernetes/ovn-kubernetes": [
       3,
+      15,
       15
     ],
     "ratify-project/ratify": [
       3,
+      14,
       14
     ],
     "sealerio/sealer": [
       3,
+      13,
       13
     ],
     "slimtoolkit/slim": [
       3,
+      13,
       13
     ],
     "antrea-io/antrea": [
       2,
+      12,
       12
     ],
     "athenz/athenz": [
       2,
+      9,
       9
     ],
     "buildpacks/pack": [
       2,
+      12,
       12
     ],
     "cdk8s-team/cdk8s": [
       2,
+      7,
       7
     ],
     "chaosblade-io/chaosblade": [
       2,
+      9,
       9
     ],
     "devspace-sh/devspace": [
       2,
+      12,
       12
     ],
     "dexidp/dex": [
       2,
+      8,
       8
     ],
     "dragonflyoss/dragonfly": [
       2,
+      14,
       14
     ],
     "emissary-ingress/emissary": [
       2,
+      12,
       12
     ],
     "external-secrets/external-secrets": [
       2,
+      13,
       13
     ],
     "fluxcd/flux2": [
       2,
+      11,
       11
     ],
     "green-coding-solutions/green-metrics-tool": [
       2,
+      9,
       9
     ],
     "HolmesGPT/holmesgpt": [
       2,
+      13,
       13
     ],
     "hwameistor/hwameistor": [
       2,
+      14,
       14
     ],
     "hyperlight-dev/hyperlight": [
       2,
+      9,
       9
     ],
     "in-toto/in-toto": [
       2,
+      7,
       7
     ],
     "jaegertracing/jaeger": [
       2,
+      16,
       16
     ],
     "k8up-io/k8up": [
       2,
+      11,
       11
     ],
     "kai-scheduler/KAI-Scheduler": [
       2,
+      12,
       12
     ],
     "kcl-lang/kcl": [
       2,
+      6,
       6
     ],
     "kedgeproject/kedge": [
       2,
+      8,
       8
     ],
     "keycloak/keycloak": [
       2,
+      12,
       12
     ],
     "knative/eventing": [
       2,
+      13,
       13
     ],
     "kube-logging/logging-operator": [
       2,
+      13,
       13
     ],
     "kubean-io/kubean": [
       2,
+      12,
       12
     ],
     "kubecost/opencost": [
       2,
+      9,
       9
     ],
     "kubeedge/kubeedge": [
       2,
+      13,
       13
     ],
     "kubefirst/kubefirst": [
       2,
+      8,
       8
     ],
     "kubefleet-dev/kubefleet": [
       2,
+      14,
       14
     ],
     "kubernetes-sigs/kubebuilder": [
       2,
+      16,
       16
     ],
     "kubevirt/kubevirt": [
       2,
+      12,
       12
     ],
     "kubewarden/kubewarden-controller": [
       2,
+      12,
       12
     ],
     "lima-vm/lima": [
       2,
+      8,
       8
     ],
     "microcks/microcks": [
       2,
+      8,
       8
     ],
     "nats-io/nats-server": [
       2,
+      10,
       10
     ],
     "notaryproject/notation": [
       2,
+      10,
       10
     ],
     "open-policy-agent/opa": [
       2,
+      15,
       15
     ],
     "open-telemetry/community": [
       2,
+      7,
       7
     ],
     "open-telemetry/opentelemetry-collector": [
       2,
+      16,
       16
     ],
     "openclarity/openclarity": [
       2,
+      11,
       11
     ],
     "opencost/opencost": [
       2,
+      9,
       9
     ],
     "openfga/openfga": [
       2,
+      14,
       14
     ],
     "openGemini/openGemini": [
       2,
+      9,
       9
     ],
     "opentofu/opentofu": [
       2,
+      13,
       13
     ],
     "oxia-db/oxia": [
       2,
+      8,
       8
     ],
     "parallaxsecond/parsec": [
       2,
+      7,
       7
     ],
     "pipe-cd/pipecd": [
       2,
+      13,
       13
     ],
     "podman-desktop/podman-desktop": [
       2,
+      20,
       20
     ],
     "project-copacetic/copacetic": [
       2,
+      14,
       14
     ],
     "project-dalec/dalec": [
       2,
+      10,
       10
     ],
     "prometheus/prometheus": [
       2,
+      13,
       13
     ],
     "sealos-ci-robot/sealos": [
       2,
+      10,
       10
     ],
     "strimzi/strimzi-kafka-operator": [
       2,
+      14,
       14
     ],
     "tektoncd/pipeline": [
       2,
+      12,
       12
     ],
     "telepresenceio/telepresence": [
       2,
+      11,
       11
     ],
     "tikv/tikv": [
       2,
+      16,
       16
     ],
     "trickstercache/trickster": [
       2,
       9,
       9,
+      9,
+      9,
       9
     ],
     "virtual-kubelet/virtual-kubelet": [
       2,
+      8,
       8
     ],
     "vitessio/vitess": [
       2,
+      18,
       18
     ],
     "werf/werf": [
       2,
+      12,
       12
     ],
     "agones-dev/agones": [
       1,
+      13,
       13
     ],
     "argoproj/argo-cd": [
       1,
+      15,
       15
     ],
     "artifacthub/hub": [
       1,
+      7,
       7
     ],
     "bank-vaults/bank-vaults": [
       1,
+      9,
       9
     ],
     "bfenetworks/bfe": [
       1,
+      6,
       6
     ],
     "bpfman/bpfman": [
       1,
+      9,
       9
     ],
     "cadence-workflow/cadence": [
       1,
+      16,
       16
     ],
     "cartography-cncf/cartography": [
       1,
+      10,
       10
     ],
     "cedar-policy/cedar": [
       1,
+      8,
       8
     ],
     "cert-manager/cert-manager": [
       1,
+      8,
       8
     ],
     "clusternet/clusternet": [
       1,
+      11,
       11
     ],
     "cni-genie/CNI-Genie": [
       1,
+      6,
       6
     ],
     "confidential-containers/cloud-api-adaptor": [
       1,
+      6,
       6
     ],
     "containerssh/containerssh": [
       1,
       6,
       6,
+      6,
+      6,
       6
     ],
     "cozystack/cozystack": [
       1,
+      11,
       11
     ],
     "crossplane/crossplane": [
       1,
+      10,
       10
     ],
     "devfile/api": [
       1,
+      11,
       11
     ],
     "easegress-io/easegress": [
       1,
+      6,
       6
     ],
     "envoyproxy/envoy": [
       1,
+      10,
       10
     ],
     "eraser-dev/eraser": [
       1,
+      9,
       9
     ],
     "falcosecurity/falco": [
       1,
+      4,
       4
     ],
     "fluent/fluentd": [
       1,
+      7,
       7
     ],
     "fluid-cloudnative/fluid": [
       1,
+      10,
       10
     ],
     "glasskube/glasskube": [
       1,
+      9,
       9
     ],
     "goharbor/harbor": [
       1,
+      12,
       12
     ],
     "headlamp-k8s/headlamp": [
       1,
+      12,
       12
     ],
     "helm/helm": [
       1,
+      10,
       10
     ],
     "hexa-org/policy-orchestrator": [
       1,
+      5,
       5
     ],
     "inspektor-gadget/inspektor-gadget": [
       1,
+      10,
       10
     ],
     "k0sproject/k0s": [
       1,
+      9,
       9
     ],
     "k8sgpt-ai/k8sgpt": [
       1,
+      8,
       8
     ],
     "kanisterio/kanister": [
       1,
+      10,
       10
     ],
     "kcp-dev/kcp": [
       1,
+      9,
       9
     ],
     "keptn/lifecycle-toolkit": [
       1,
+      13,
       13
     ],
     "keylime/keylime": [
       1,
+      9,
       9
     ],
     "kgateway-dev/kgateway": [
       1,
+      12,
       12
     ],
     "knative/serving": [
       1,
+      11,
       11
     ],
     "konveyor/tackle2-ui": [
       1,
+      12,
       12
     ],
     "kptdev/kpt": [
       1,
+      10,
       10
     ],
     "krator-rs/krator": [
       1,
+      6,
       6
     ],
     "krkn-chaos/krkn": [
       1,
+      8,
       8
     ],
     "krustlet/krustlet": [
       1,
+      6,
       6
     ],
     "kuadrant/kuadrant-operator": [
       1,
+      8,
       8
     ],
     "kuasar-io/kuasar": [
       1,
+      8,
       8
     ],
     "kube-rs/kube": [
       1,
+      10,
       10
     ],
     "kubearchive/kubearchive": [
       1,
+      10,
       10
     ],
     "kubedl-io/kubedl": [
       1,
+      8,
       8
     ],
     "kubeovn/kube-ovn": [
       1,
+      12,
       12
     ],
     "kubernetes-sigs/headlamp": [
       1,
+      12,
       12
     ],
     "kubeshop/testkube": [
       1,
+      12,
       12
     ],
     "kubevela/kubevela": [
       1,
+      12,
       12
     ],
     "kubewarden/policy-server": [
       1,
+      6,
       6
     ],
     "kyverno/kyverno": [
       1,
+      16,
       16
     ],
     "linkerd/linkerd2": [
       1,
+      13,
       13
     ],
     "litmuschaos/litmus": [
       1,
+      9,
       9
     ],
     "metal3-io/baremetal-operator": [
       1,
+      11,
       11
     ],
     "metallb/metallb": [
       1,
+      9,
       9
     ],
     "mittwald/kubernetes-replicator": [
       1,
+      5,
       5
     ],
     "nocalhost/nocalhost": [
       1,
+      7,
       7
     ],
     "opcr-io/policy": [
       1,
+      5,
       5
     ],
     "openebs/openebs": [
       1,
+      7,
       7
     ],
     "openeverest/openeverest": [
       1,
+      11,
       11
     ],
     "openfeature/flagd": [
+      0,
       0,
       0
     ],
     "openkruise/kruise": [
       0,
+      13,
       13
     ],
     "openservicemesh/osm": [
       0,
+      10,
       10
     ],
     "operator-framework/operator-lifecycle-manager": [
       0,
+      16,
       16
     ],
     "oras-project/oras": [
       1,
+      12,
       12
     ],
     "piraeus-datastore/piraeus-operator": [
+      0,
       0,
       0
     ],
     "porter-dev/porter": [
       0,
+      0,
       0
     ],
     "pravega/pravega": [
       1,
+      9,
       9
     ],
     "projectcapsule/capsule": [
       0,
+      10,
       10
     ],
     "projectcontour/contour": [
       1,
+      10,
       10
     ],
     "rook/rook": [
       1,
+      9,
       9
     ],
     "schemahero/schemahero": [
       0,
+      5,
       5
     ],
     "sigstore/cosign": [
       0,
+      9,
       9
     ],
     "spiffe/spire": [
       1,
+      8,
       8
     ],
     "submariner-io/submariner": [
       1,
+      11,
       11
     ],
     "sustainable-computing-io/kepler": [
       1,
+      13,
       13
     ],
     "theupdateframework/python-tuf": [
       1,
+      6,
       6
     ],
     "tinkerbell/tink": [
       0,
+      9,
       9
     ],
     "tremor-rs/tremor-runtime": [
       0,
+      9,
       9
     ],
     "volcano-sh/volcano": [
       0,
+      7,
       7
     ],
     "wasmcloud/wasmcloud": [
       0,
+      9,
       9
     ],
     "getporter/porter": [
       0,
+      9,
       9
     ],
     "longhorn/longhorn": [
       0,
+      6,
       6
     ],
     "pixie-io/pixie": [
       1,
+      10,
       10
     ],
     "project-zot/zot": [
       0,
+      10,
       10
     ],
     "vectordotdev/vector": [
       0,
+      21,
       21
     ],
     "brigadecore/brigade": [
       0,
+      7,
       7
     ],
     "cloud-bulldozer/kube-burner": [
       0,
+      8,
       8
     ],
     "cncf/tag-security": [
       0,
+      8,
       8
     ],
     "confidential-containers/guest-components": [
       0,
+      7,
       7
     ],
     "containernetworking/cni": [
       0,
+      6,
       6
     ],
     "curvefs/curvefs": [
+      0,
       0,
       0
     ],
     "devstream-io/devstream": [
       0,
+      1,
       1
     ],
     "etcd-io/etcd": [
       0,
+      9,
       9
     ],
     "foniod/redbpf": [
       0,
+      2,
       2
     ],
     "grpc-ecosystem/grpc-gateway": [
       0,
+      8,
       8
     ],
     "kube-vip/kube-vip": [
       0,
+      8,
       8
     ],
     "kubearmor/KubeArmor": [
       0,
+      10,
       10
     ],
     "kubereboot/kured": [
       0,
+      5,
       5
     ],
     "kubernetes-sigs/cluster-api": [
       0,
+      9,
       9
     ],
     "kubernetes-sigs/kustomize": [
       0,
+      7,
       7
     ],
     "kubernetes-sigs/network-policy-api": [
       0,
+      7,
       7
     ],
     "kubernetes-sigs/security-profiles-operator": [
       0,
+      17,
       17
     ],
     "kubernetes/kubernetes": [
       0,
+      12,
       12
     ],
     "kubescape/kubescape": [
       0,
+      7,
       7
     ],
     "kubeslice/kubeslice": [
       0,
+      7,
       7
     ],
     "kueue-dev/kueue": [
+      0,
       0,
       0
     ],
     "layer5io/meshplay": [
       0,
+      0,
       0
     ],
     "longhorn/longhorn-manager": [
       0,
+      16,
       16
     ],
     "meshplay/meshplay": [
+      0,
       0,
       0
     ],
     "networkservicemesh/networkservicemesh": [
       0,
+      6,
       6
     ],
     "open-telemetry/opentelemetry-go": [
       0,
+      13,
       13
     ],
     "open-telemetry/opentelemetry-java": [
       0,
+      11,
       11
     ],
     "open-telemetry/opentelemetry-js": [
       0,
+      11,
       11
     ],
     "open-telemetry/opentelemetry-python": [
       0,
+      12,
       12
     ],
     "openyurtio/openyurt": [
       0,
+      10,
       10
     ],
     "paralus/paralus": [
       0,
+      8,
       8
     ],
     "percona/percona-xtradb-cluster-operator": [
       0,
+      13,
       13
     ],
     "project-akri/akri": [
       0,
+      7,
       7
     ],
     "project-codeflare/codeflare-operator": [
       0,
+      5,
       5
     ],
     "service-mesh-performance/service-mesh-performance": [
       1,
+      7,
       7
     ],
     "skooner-k8s/skooner": [
       0,
+      4,
       4
     ],
     "slok/sloth": [
       0,
+      11,
       11
     ],
     "superedge/superedge": [
       0,
+      7,
       7
     ],
     "thanos-io/thanos": [
       0,
+      9,
       9
     ],
     "vmware-tanzu/velero": [
       0,
+      8,
       8
     ],
     "wayfair-incubator/telefonistka": [
       0,
+      7,
       7
     ],
     "xline-kv/xline": [
       0,
+      6,
       6
     ],
     "xregistry/server": [
       0,
+      3,
       3
     ],
     "youki-dev/youki": [
       0,
+      8,
       8
     ],
     "zalando/postgres-operator": [
       0,
+      8,
       8
     ],
     "kmesh-net/kmesh": [
       0,
+      10,
       10
     ]
   },
-  "generated_at": "2026-05-07T18:41:02.859Z",
+  "generated_at": "2026-05-08T03:20:43.075Z",
   "detectedIds": {
     "kubestellar/console": [
       "acmm:prereq-test-suite",
