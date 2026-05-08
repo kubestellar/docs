@@ -16,10 +16,11 @@ Every release should pass all release tests before it can be officially declare 
 - Update the KubeFlex release in `go.mod`
 - `go mod tidy`
 - Update the KubeFlex release in `core-chart/Chart.yaml`
-- Update the KubeFlex release everywhere it occurs in any of the `.github/workflows`:
+- Update the KubeFlex release everywhere it occurs in any of the `.github/workflows` that work with the `main` branch of ks/ks:
     - `.github/workflows/ocp-self-runner.yml`
     - `.github/workflows/pr-test-e2e.yml`
     - `.github/workflows/pr-test-integration.yml`
+- As part of the self-referencing prep for the next ks/ks release, update the KubeFlex release everywhere it occurs in any of the `.github/workflows` that work with the latest release of ks/ks
     - `.github/workflows/test-latest-release.yml`
 
 Or you could search for appearances of the old release string yourself using a command like the following. And maybe also search for the release before that, in case it was overlooked earlier.
@@ -46,17 +47,22 @@ Making a new kubestellar release requires a contributor to do the following thin
 
 - If not already in effect, declare a code freeze. There should be nothing but bug fixes and doc improvements while working towards a regular release.
 
-- Edit `docs/mkdocs.yml` and update the definition of `ks_latest_release` to `$version` (e.g., `'0.23.0-rc42'`). If this is a regular release then also update the definition of `ks_latest_regular_release`.
-
 - Update the version in `scripts/check_pre_req.sh`.
 
 - Update the version in the core chart defaults, `core-chart/values.yaml`.
 
 - Update the version in `scripts/create-kubestellar-demo-env.sh`. **Note:** merging this change will cause the script to be broken until the release is made.
 
-- Until we have our first stable release, edit the old docs README(`oldocs/README.md`, section "latest-stable-release") where it wishes it could cite a stable release but instead cites the latest release, to refer to the coming release.
+- One-shot changes for upgrade to Kubernetes 1.32. Remove this list after these changes are made.
 
-- Edit the release notes in `docs/content/kubestellar/release-notes.md`.
+    - Update `.github/workflows/test-latest-release.yml`: KubeFlex to 0.9.3, clusteradm 1.0.0 (both places)
+    - Update `.github/workflows/test-demo-env-creation-script.yml`: clusteradm to 1.0.0
+    - Update `test/scale-infra/deploy_ks_core.yaml`: KubeFlex to 0.9.3, clusteradm to 1.0.0
+    - Update `test/scale-infra/deploy_ks_wec.yaml`: clusteradm to 1.0.0
+    - Update `config/default/manager_auth_proxy_patch.yaml`: kube-rbac-proxy to v0.20.2
+    - Update `test/performance/short-running-tests/README.md`: github.com/kubernetes/perf-tests to release-1.32
+    - Update `test/performance/long-running-tests/README.md`: github.com/kubernetes/perf-tests to release-1.32
+    - Update `scripts/create-kubestellar-demo-env.sh`: update the prefetched images
 
 - Make a new Git commit with those changes and get it into the right branch in the shared repo (through the regular PR process if not authorized to cheat).
 
@@ -73,6 +79,17 @@ Making a new kubestellar release requires a contributor to do the following thin
 - Follow the procedure in [OCP testing](release-testing.md#e2e-release-tests-on-ocp), to verify that the release is functional on OCP.
 
 - If the test results are good and the release is regular (not an RC) then declare the code freeze over.
+
+#### Corresponding updates in the ks/docs repository
+
+TODO: update these for the new (i.e., separated) docs system.
+
+- Edit `docs/mkdocs.yml` and update the definition of `ks_latest_release` to `$version` (e.g., `'0.23.0-rc42'`). If this is a regular release then also update the definition of `ks_latest_regular_release`.
+
+- Edit the release notes in `docs/content/kubestellar/release-notes.md`.
+
+- Until we have our first stable release, edit the old docs README(`oldocs/README.md`, section "latest-stable-release") where it wishes it could cite a stable release but instead cites the latest release, to refer to the coming release.
+
 
 ## Goals and limitations
 
