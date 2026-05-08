@@ -353,8 +353,8 @@ If you encounter issues:
 
 Once installation is complete:
 
-1. **[Quick Start Guide →](./quick-start)** - Get up and running in 5 minutes
-2. **[Troubleshooting Guide →](../troubleshooting)** - Resolve common issues
+1. **[Quick Start Guide →](./quick-start.md)** - Get up and running in 5 minutes
+2. **[Troubleshooting Guide →](../troubleshooting.md)** - Resolve common issues
 3. **[GitHub Repository →](https://github.com/kubestellar/a2a)** - Source code and issues
 
 ---

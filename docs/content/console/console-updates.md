@@ -219,7 +219,7 @@ docker pull ghcr.io/kubestellar/console:v0.3.6-weekly.20260127
 
 ### New Features
 
-- **One-Click GitHub OAuth Setup** (PR #10931, #10980) — Set up GitHub authentication in a single click using GitHub's App Manifest flow. No manual client ID/secret configuration needed. See [Authentication](authentication.md#one-click-app-manifest-flow).
+- **One-Click GitHub OAuth Setup** (PR #10931, #10980) — Set up GitHub authentication in a single click using GitHub's App Manifest flow. No manual client ID/secret configuration needed. See [Authentication](authentication.md#configuring-oauth-for-different-environments).
 - **Microphone & File Attachment in AI Missions** (PR #10732) — The AI Missions chat input now includes microphone (speech-to-text) and file attachment buttons for richer interaction.
 - **Recently Deleted Drafts with Restore** (PR #10701) — Accidentally deleted mission drafts can now be recovered from a "recently deleted" list.
 - **Empty State Handling for Dashboard Cards** (PR #10827) — Dashboard cards display a meaningful empty state instead of blank layouts when no data is available.

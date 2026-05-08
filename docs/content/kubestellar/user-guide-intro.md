@@ -15,7 +15,7 @@ Another simple example, which starts with (a slightly modified version of) the O
 
 If you want a simple rough grouping, you can divide the concepts here into:
 
-- "setup" (steps 1--7 below), exemplified in [the Setup section of Getting Started](get-started.md#setup), and
+- "setup" (steps 1--7 below), exemplified in [the Set Up A Demo System section of Getting Started](get-started.md#set-up-a-demo-system), and
 - "usage" (the remaining steps), illustrated by [the example scenarios document](example-scenarios.md).
 
 However, you do not need to follow that dichotomy. As noted below, the relevant components can be organized more flexibly.

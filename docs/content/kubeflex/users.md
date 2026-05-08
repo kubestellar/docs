@@ -530,6 +530,7 @@ To list all control planes managed by KubeFlex, use the following command:
 
 ```shell
 kflex list
+```
 
 ## Working with an external control plane
 

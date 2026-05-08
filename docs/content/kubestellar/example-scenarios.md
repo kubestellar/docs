@@ -1,6 +1,6 @@
 # KubeStellar Example Scenarios
 
-This document shows some simple examples of using the release that contains this version of this document. These scenarios can be used to test a KubeStellar installation for proper functionality. These scenarios suppose that you have done "setup". General setup instructions are outlined in [the User Guide Overview](user-guide-intro.md#the-full-story); a simple example setup is in [the Setup section of Getting Started](get-started.md#setup).
+This document shows some simple examples of using the release that contains this version of this document. These scenarios can be used to test a KubeStellar installation for proper functionality. These scenarios suppose that you have done "setup". General setup instructions are outlined in [the User Guide Overview](user-guide-intro.md#the-full-story); a simple example setup is in [the Set Up A Demo System section of Getting Started](get-started.md#set-up-a-demo-system).
 
 ## Assumptions and Variables
 

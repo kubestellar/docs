@@ -92,7 +92,7 @@ mv ~/.kube/merged-config ~/.kube/config
 - **Local / source / curl install**: start the console normally; it reads your kubeconfig automatically
 - **Helm / in-cluster install**: run `kc-agent` on your workstation so browser-driven cluster actions can use your local kubeconfig
 
-See [Installation](installation.md), [Local Setup](local-setup.md), and [Troubleshooting](troubleshooting.md#agent-not-connected--cluster-actions-fail) for the deployment-specific details.
+See [Installation](installation.md), [Local Setup](local-setup.md), and [Troubleshooting](troubleshooting.md#agent-not-connected-cluster-actions-fail) for the deployment-specific details.
 
 ### 4. Verify the clusters appear
 
@@ -293,7 +293,7 @@ Usually one or more contexts are stale, expired, or depend on auth plugins that 
 
 ### Helm install shows "Agent Not Connected"
 
-For Helm deployments, `kc-agent` runs on **your workstation**, not inside the cluster. Without it, browser-driven cluster actions cannot use your local kubeconfig. See [Troubleshooting](troubleshooting.md#agent-not-connected--cluster-actions-fail).
+For Helm deployments, `kc-agent` runs on **your workstation**, not inside the cluster. Without it, browser-driven cluster actions cannot use your local kubeconfig. See [Troubleshooting](troubleshooting.md#agent-not-connected-cluster-actions-fail).
 
 ### Hosted demo cannot see my clusters
 

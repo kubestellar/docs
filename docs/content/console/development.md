@@ -500,7 +500,7 @@ Before adding any workflow that calls an LLM, read the [AI Security Guide](https
 
 - File an issue with the `question` label
 - Check existing documentation at [kubestellar.io/console](https://kubestellar.io/docs/console/)
-- Review the [architecture page](./architecture/) for system design context
+- Review the [architecture page](./architecture.md) for system design context
 
 ---
 

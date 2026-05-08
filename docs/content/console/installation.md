@@ -524,7 +524,7 @@ sleep 2
 curl -sSf http://localhost:8080/api/health && echo OK
 ```
 
-### kc-agent health (Helm / in-cluster mode only)
+### kc-agent health for Helm in-cluster mode
 
 kc-agent runs **on your workstation**, not in the cluster. After starting
 `kc-agent`, verify it:
@@ -538,7 +538,7 @@ curl -sSf http://127.0.0.1:8585/health && echo OK
 ```
 
 If kc-agent is not running, the console will show an "Agent Not Connected"
-banner. See [Troubleshooting → Agent Not Connected](troubleshooting.md#agent-not-connected--cluster-actions-fail).
+banner. See [Troubleshooting → Agent Not Connected](troubleshooting.md#agent-not-connected-cluster-actions-fail).
 
 ## Values and secrets reference
 

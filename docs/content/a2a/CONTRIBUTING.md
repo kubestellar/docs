@@ -73,7 +73,7 @@ A2A (via Prow bots) supports slash commands:
   * 💄 style: UI/style updates
   * ♻️ refactor: refactor
 * Keep commits focused and descriptive.
-* All commits must be **signed** (`git commit -s`) to comply with CNCF’s [Developer Certificate of Origin](#certificate-of-origin).
+* All commits must be **signed** (`git commit -s`) to comply with CNCF’s [Developer Certificate of Origin](https://developercertificate.org/).
 
 When opening a PR:
 

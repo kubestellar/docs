@@ -41,17 +41,17 @@ Choose your path based on your role and needs:
 ### 🚀 **Quick Start** (5 minutes)
 Perfect if you want to see KubeStellar A2A in action immediately.
 
-**[→ Quick Start Guide](./quick-start)**
+**[→ Quick Start Guide](./quick-start.md)**
 
 ### 📚 **Complete Setup** (15 minutes)
 Comprehensive installation and configuration for production use.
 
-**[→ Installation Guide](./installation)**
+**[→ Installation Guide](./installation.md)**
 
 ### ⚙️ **Configuration Deep Dive** (10 minutes)
 Advanced configuration options and customization.
 
-**[→ Troubleshooting Guide](../troubleshooting)**
+**[→ Troubleshooting Guide](../troubleshooting.md)**
 
 ## Architecture At A Glance
 
@@ -128,13 +128,13 @@ Ready to begin? Choose your preferred starting point:
   
     <h3>🚀 I want to try it now</h3>
     Get KubeStellar A2A running in 5 minutes with our quick start guide.
-    [→ Quick Start](./quick-start)
+    [→ Quick Start](./quick-start.md)
   
   
   
     <h3>📦 I want the full setup</h3>
     Complete installation with all features configured for production use.
-    [→ Installation Guide](./installation)
+    [→ Installation Guide](./installation.md)
   
 
 
@@ -142,7 +142,7 @@ Ready to begin? Choose your preferred starting point:
 
 - **Documentation Issues**: [Report on GitHub](https://github.com/kubestellar/a2a/issues)
 - **Feature Requests**: [GitHub Discussions](https://github.com/kubestellar/a2a/discussions)
-- **General Questions**: Check our [Troubleshooting Guide](../troubleshooting)
+- **General Questions**: Check our [Troubleshooting Guide](../troubleshooting.md)
 
 ---
 
