@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-08T22:20:39.193Z",
-  "git_hash": "43ad0ba",
+  "generated_at": "2026-05-09T03:04:42.454Z",
+  "git_hash": "7b6d4b2",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-16",
@@ -38,14 +38,14 @@
         1231,
         690,
         452,
-        619,
+        621,
         723,
         805,
         986,
-        867,
+        871,
         169
       ],
-      "recent_activity_score": 2887.53,
+      "recent_activity_score": 2891.33,
       "rank": 1
     },
     {
@@ -223,10 +223,10 @@
         0,
         16,
         100,
-        49,
+        50,
         9
       ],
-      "recent_activity_score": 118.89,
+      "recent_activity_score": 119.68,
       "rank": 7
     },
     {
@@ -592,15 +592,15 @@
     {
       "login": "oksaumya",
       "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
-      "total_points": 10950,
+      "total_points": 11750,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
-        "bug_issues": 5,
+        "bug_issues": 6,
         "feature_issues": 0,
         "other_issues": 41,
         "prs_opened": 17,
-        "prs_merged": 8
+        "prs_merged": 9
       },
       "weekly_activity": [
         5,
@@ -614,9 +614,9 @@
         0,
         0,
         3,
-        33
+        34
       ],
-      "recent_activity_score": 36.59,
+      "recent_activity_score": 37.59,
       "rank": 20
     },
     {
@@ -650,6 +650,36 @@
       "rank": 21
     },
     {
+      "login": "RajdeepKushwaha5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157990661?v=4",
+      "total_points": 8550,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 19,
+        "feature_issues": 0,
+        "other_issues": 1,
+        "prs_opened": 4,
+        "prs_merged": 4
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        24
+      ],
+      "recent_activity_score": 24,
+      "rank": 22
+    },
+    {
       "login": "ANAMASGARD",
       "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
       "total_points": 7950,
@@ -677,7 +707,7 @@
         0
       ],
       "recent_activity_score": 6.04,
-      "rank": 22
+      "rank": 23
     },
     {
       "login": "anusha19murthy",
@@ -707,7 +737,7 @@
         1
       ],
       "recent_activity_score": 8.94,
-      "rank": 23
+      "rank": 24
     },
     {
       "login": "nancysangani",
@@ -737,7 +767,7 @@
         9
       ],
       "recent_activity_score": 20.11,
-      "rank": 24
+      "rank": 25
     },
     {
       "login": "Janhvibabani",
@@ -767,36 +797,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 25
-    },
-    {
-      "login": "RajdeepKushwaha5",
-      "avatar_url": "https://avatars.githubusercontent.com/u/157990661?v=4",
-      "total_points": 6250,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 17,
-        "feature_issues": 0,
-        "other_issues": 1,
-        "prs_opened": 3,
-        "prs_merged": 1
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        21
-      ],
-      "recent_activity_score": 21,
       "rank": 26
     },
     {
@@ -822,11 +822,11 @@
         0,
         0,
         0,
-        8,
+        9,
         7,
         0
       ],
-      "recent_activity_score": 10.6,
+      "recent_activity_score": 11.23,
       "rank": 27
     },
     {
@@ -1850,6 +1850,36 @@
       "rank": 61
     },
     {
+      "login": "Lakshya-2440",
+      "avatar_url": "https://avatars.githubusercontent.com/u/98229279?v=4",
+      "total_points": 750,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 1,
+        "prs_opened": 1,
+        "prs_merged": 1
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "recent_activity_score": 2,
+      "rank": 62
+    },
+    {
       "login": "ngvanthanggit",
       "avatar_url": "https://avatars.githubusercontent.com/u/169827569?v=4",
       "total_points": 750,
@@ -1877,7 +1907,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 62
+      "rank": 63
     },
     {
       "login": "ayushshukla1807",
@@ -1907,7 +1937,7 @@
         0
       ],
       "recent_activity_score": 0.79,
-      "rank": 63
+      "rank": 64
     },
     {
       "login": "francostellari",
@@ -1937,7 +1967,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 64
+      "rank": 65
     },
     {
       "login": "harshakumar25",
@@ -1967,7 +1997,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 65
+      "rank": 66
     },
     {
       "login": "immortal71",
@@ -1997,7 +2027,7 @@
         0
       ],
       "recent_activity_score": 0.2,
-      "rank": 66
+      "rank": 67
     },
     {
       "login": "kchiranjewee63",
@@ -2027,7 +2057,7 @@
         0
       ],
       "recent_activity_score": 0.16,
-      "rank": 67
+      "rank": 68
     },
     {
       "login": "MichaelSovereign",
@@ -2057,7 +2087,7 @@
         0
       ],
       "recent_activity_score": 0.5,
-      "rank": 68
+      "rank": 69
     },
     {
       "login": "mikeshng",
@@ -2087,7 +2117,7 @@
         0
       ],
       "recent_activity_score": 0.2,
-      "rank": 69
+      "rank": 70
     },
     {
       "login": "severe77",
@@ -2117,7 +2147,7 @@
         1
       ],
       "recent_activity_score": 1,
-      "rank": 70
+      "rank": 71
     },
     {
       "login": "vedparkasharya",
@@ -2147,7 +2177,7 @@
         0
       ],
       "recent_activity_score": 0.63,
-      "rank": 71
+      "rank": 72
     },
     {
       "login": "yizha1",
@@ -2177,7 +2207,7 @@
         0
       ],
       "recent_activity_score": 0.25,
-      "rank": 72
+      "rank": 73
     },
     {
       "login": "gulshank0",
@@ -2207,7 +2237,7 @@
         0
       ],
       "recent_activity_score": 0.3,
-      "rank": 73
+      "rank": 74
     },
     {
       "login": "mmagram0926",
@@ -2237,7 +2267,7 @@
         0
       ],
       "recent_activity_score": 0.31,
-      "rank": 74
+      "rank": 75
     },
     {
       "login": "pm-ju",
@@ -2267,7 +2297,7 @@
         2
       ],
       "recent_activity_score": 2,
-      "rank": 75
+      "rank": 76
     },
     {
       "login": "waltforme",
@@ -2297,36 +2327,6 @@
         0
       ],
       "recent_activity_score": 0.16,
-      "rank": 76
-    },
-    {
-      "login": "Lakshya-2440",
-      "avatar_url": "https://avatars.githubusercontent.com/u/98229279?v=4",
-      "total_points": 250,
-      "level": "Observer",
-      "level_rank": 1,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 1,
-        "prs_opened": 1,
-        "prs_merged": 0
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
-      ],
-      "recent_activity_score": 2,
       "rank": 77
     },
     {
@@ -2683,10 +2683,10 @@
         0,
         0,
         0,
-        1,
+        2,
         0
       ],
-      "recent_activity_score": 0.79,
+      "recent_activity_score": 1.59,
       "rank": 89
     },
     {
