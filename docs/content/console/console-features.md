@@ -1960,7 +1960,7 @@ The console has achieved **OpenSSF Best Practices Silver** badge status and now 
 
 ### Cosign Signing
 
-- All container images are signed with [Sigstore Cosign](https://docs.sigstore.dev/cosign/overview/)
+- All container images are signed with [Sigstore Cosign](https://docs.sigstore.dev/quickstart/quickstart-cosign/)
 - Helm charts include cosign signatures for verification before installation
 - Verification commands are documented in the installation guide:
 

@@ -26,6 +26,6 @@ This session covered the console's approach to multi-cluster monitoring, the fee
 
 KubeStellar community meetings happen **bi-weekly**. Everyone is welcome.
 
-- **Calendar:** [kubestellar.io/agenda](https://kubestellar.io/agenda)
+- **Calendar:** [Community meeting calendar](../community/meetings.md#calendar)
 - **YouTube:** [youtube.com/@kubestellar](https://www.youtube.com/@kubestellar)
 - **Slack:** [#kubestellar-dev](https://cloud-native.slack.com/archives/C097094RZ3M)
