@@ -81,7 +81,7 @@ restores settings from the backend. See
 |---|---|
 | `sidebar-left-pinned` | Whether the sidebar is pinned open |
 | `kubestellar-cluster-layout-mode` | Cluster view layout (grid, list, etc.) |
-| `kubestellar-nav-history` | Navigation history for sidebar customisation |
+| `kubestellar-nav-history` | Navigation history for sidebar customization |
 | `kubestellar-cluster-order` | User-defined cluster sort order |
 | `kubestellar-missions-active` | Active AI Missions |
 | `kubestellar-missions-history` | AI Mission history |
@@ -174,7 +174,7 @@ writes a snapshot of each entry to **sessionStorage** under the prefix
 `kcc:`. On the next page load (same tab), the snapshot is read
 **synchronously** in the `CacheStore` constructor so components render
 with data immediately — before the async SQLite worker finishes
-initialising.
+initializing.
 
 Snapshots include a version number so they are automatically discarded
 after deploys that change the cache schema.
