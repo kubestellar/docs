@@ -99,4 +99,4 @@ Join the KubeStellar community:
 
 - [GitHub Repository](https://github.com/kubestellar/console)
 - [Slack Channel](https://kubestellar.io/community)
-- [Weekly Community Meetings](https://kubestellar.io/meetings)
+- [Weekly Community Meetings](../community/meetings.md)
