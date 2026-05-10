@@ -62,9 +62,9 @@ The important checks include:
 | Coverage gate | Changes that reduce exercised behavior on touched frontend code |
 | DCO / sign-off | Provenance and contribution compliance |
 
-The project also uses automated review and then **human maintainer review**.
-No PR gets a privileged AI-only merge path.
-Maintainers decide whether the change is correct, and merges still require the usual approval path (`lgtm` / `approved` labels in the project workflow).
+The project also uses automated review and then **human maintainer review** as the intended workflow.
+No PR gets a privileged AI-only merge path in that design.
+Maintainers are still expected to decide whether the change is correct, but enforcement of the usual approval path (`lgtm` / `approved` labels in the project workflow) is planned and not yet active.
 
 ## 2. What prevents the same mistake from being made again?
 
