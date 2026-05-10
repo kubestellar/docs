@@ -574,6 +574,10 @@ Every card in the console has AI-powered Diagnose and Repair buttons:
 - **Repair** - Opens an AI mission to fix detected issues
 - Available as compact icon buttons on every card's toolbar
 
+### Provider configuration
+
+To connect `kagenti-backend` to a hosted LLM provider, see [Configure Kagenti LLM Providers and API Keys](kagenti-llm-provider-setup.md). That guide covers supported providers, the `kagenti-llm-secrets` Secret, `LLM_PROVIDER`, key rotation, and troubleshooting.
+
 ---
 
 ## Nightly E2E Test Monitoring
