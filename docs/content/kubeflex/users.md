@@ -187,7 +187,7 @@ No manual namespace creation or selection is required.
 
 ### Installing KubeFlex with Helm on OpenShift
 
-If you are installing on OpenShift with the `kflex` CLI, the CLI auto-detects OpenShift and autoimatically
+If you are installing on OpenShift with the `kflex` CLI, the CLI auto-detects OpenShift and automatically
 configure the installation of the shared DB and the operator, but if you are using directly Helm to install
 you will need to add additional parameters:
 
