@@ -27,6 +27,8 @@ This approach enables:
 - **Scalable maintenance** — the agentic pipeline processes multiple issues in parallel
 - **Human oversight** — all PRs require review and CI approval before merge
 
+For the concrete quality-control system that catches AI mistakes, prevents repeat mistakes, and handles failed or rejected PRs, see [Agentic Quality Controls](agentic-quality.md).
+
 ---
 
 ## Project Structure
