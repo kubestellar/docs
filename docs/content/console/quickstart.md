@@ -96,8 +96,6 @@ See the [Architecture](architecture.md) page for the full system diagram and com
 - For source builds: Go 1.25+ and Node.js 20+
 - For AI features only: [Claude Code](https://claude.com/product/claude-code) CLI (optional) or an API key from Anthropic, OpenAI, or Google
 
-
-
 ## Windows/WSL Setup
 
 For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for the best experience:
@@ -140,8 +138,7 @@ For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for
 
 **Note**: Access your kubeconfig from Windows by mounting the Windows file system at `/mnt/c/` in WSL.
 
-
-## Step 1: Install kubestellar-mcp Tools
+## Install kubestellar-mcp Tools
 
 The console uses kubestellar-mcp plugins to talk to your clusters. **This step is required and must be done before running the console.** See [kubestellar-mcp documentation](../kubestellar-mcp/overview/intro.md) for full details.
 
@@ -173,9 +170,9 @@ which kubestellar-ops && which kubestellar-deploy
 # If using Claude Code, type /mcp to see both plugins connected (optional)
 ```
 
-## Step 2: Run the Console
+## Run the Console
 
-### Option A: Pre-built binaries (recommended)
+### Option A: Pre-Built Binaries (recommended)
 
 ```bash
 curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
@@ -183,7 +180,7 @@ curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubeste
 
 This downloads the console binary, starts the backend (port 8080), and opens your browser. It does **not** install kubestellar-mcp plugins — complete Step 1 first.
 
-### Option B: Run from source (no OAuth)
+### Option B: Run From Source (No OAuth)
 
 ```bash
 git clone https://github.com/kubestellar/console.git
@@ -193,7 +190,7 @@ cd console
 
 Compiles from source and starts a Vite dev server on port 5174. No GitHub credentials needed.
 
-### Option C: Run from source with GitHub OAuth
+### Option C: Run From Source with GitHub OAuth
 
 If you want GitHub login (for multi-user or testing the full auth flow):
 
@@ -221,7 +218,7 @@ Open http://localhost:8080 and sign in with GitHub.
     `startup-oauth.sh` serves both the API and pre-built frontend on **port 8080** (Go backend). There is no separate Vite dev server.
     `start-dev.sh` uses a Vite dev server on **port 5174** for hot-reload during development.
 
-## Step 3: Access the Console
+## Access the Console
 
 Open http://localhost:8080 (curl quickstart or `startup-oauth.sh`) or http://localhost:5174 (`start-dev.sh` source builds).
 
@@ -230,6 +227,21 @@ Your clusters from `~/.kube/config` appear automatically. If running with OAuth,
 If you need the full kubeconfig-driven registration flow, including required kubeconfig fields, single vs. multiple context behavior, and auth expectations, see [Cluster Registration](cluster-registration.md).
 
 ## Kubernetes Deployment
+
+Before proceeding with the installation, you need to configure GitHub OAuth, which the application uses for access control.
+
+1. Create a GitHub OAuth App at [GitHub Developer Settings](https://github.com/settings/developers) → OAuth Apps → New OAuth App:
+   - **Application name**: `KubeStellar Console (dev)`
+   - **Homepage URL**: `http://localhost:8080`
+   - **Authorization callback URL**: `http://localhost:8080/auth/github/callback`
+
+2. Create a `.env` file in the project root:
+   ```bash
+   GITHUB_CLIENT_ID=your_client_id
+   GITHUB_CLIENT_SECRET=your_client_secret
+   ```
+
+After completing the previous GitHub OAuth setup, proceed to the next section.
 
 ### Using Helm
 
@@ -248,7 +260,7 @@ helm install ksc oci://ghcr.io/kubestellar/charts/kubestellar-console \
   --set github.existingSecret=ksc-secrets
 ```
 
-### Using deploy script
+### Using Deploy Script
 
 ```bash
 curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/deploy.sh | bash
@@ -268,7 +280,7 @@ helm install ksc ./deploy/helm/kubestellar-console \
 
 ## Cleanup / Uninstall
 
-### Curl quickstart (`start.sh`)
+### Curl Quickstart (`start.sh`)
 
 The script downloads a binary to a local directory (typically `./kubestellar-console/`). To remove it:
 
@@ -292,14 +304,14 @@ The kubestellar-mcp plugins are managed separately by Claude Code — use `/plug
 brew uninstall kubestellar-ops kubestellar-deploy
 ```
 
-### Source build
+### Source Build
 
 ```bash
 # Stop the running processes (Ctrl+C), then remove the cloned directory
 rm -rf ./console
 ```
 
-### Helm / Kubernetes deployment
+### Helm / Kubernetes Deployment
 
 ```bash
 helm uninstall ksc --namespace ksc
