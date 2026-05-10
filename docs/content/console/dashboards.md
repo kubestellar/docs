@@ -432,6 +432,8 @@ Manage Kagenti AI agents:
 
 **Best for:** Deploying, securing, and monitoring AI agents
 
+Need to wire Kagenti to Gemini, Anthropic, or OpenAI? See [Configure Kagenti LLM Providers and API Keys](kagenti-llm-provider-setup.md).
+
 ---
 
 ### CI/CD Dashboard
