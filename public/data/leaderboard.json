@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-10T03:05:08.910Z",
-  "git_hash": "716ffc3",
+  "generated_at": "2026-05-10T06:54:02.617Z",
+  "git_hash": "000d86a",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-16",
@@ -20,7 +20,7 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4634000,
+      "total_points": 4634500,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
@@ -28,7 +28,7 @@
         "feature_issues": 516,
         "other_issues": 697,
         "prs_opened": 6634,
-        "prs_merged": 6184
+        "prs_merged": 6185
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -51,14 +51,14 @@
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 198150,
+      "total_points": 198350,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
         "bug_issues": 586,
         "feature_issues": 21,
         "other_issues": 17,
-        "prs_opened": 32,
+        "prs_opened": 33,
         "prs_merged": 26
       },
       "weekly_activity": [
@@ -73,9 +73,9 @@
         204,
         5,
         0,
-        43
+        44
       ],
-      "recent_activity_score": 280.25,
+      "recent_activity_score": 281.25,
       "rank": 2
     },
     {
@@ -472,13 +472,13 @@
     {
       "login": "MikeSpreitzer",
       "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-      "total_points": 21650,
+      "total_points": 21700,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 56,
         "feature_issues": 6,
-        "other_issues": 39,
+        "other_issues": 40,
         "prs_opened": 4,
         "prs_merged": 3
       },
@@ -494,9 +494,9 @@
         13,
         9,
         4,
-        16
+        17
       ],
-      "recent_activity_score": 43.42,
+      "recent_activity_score": 44.42,
       "rank": 16
     },
     {
