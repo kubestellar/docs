@@ -138,6 +138,7 @@ nav:
       - Local LLM Strategy: console/local-llm-strategy.md
       - Persistence: console/persistence.md
       - Development Methodology: console/development.md
+      - Agentic Quality Controls: console/agentic-quality.md
   - KubeStellar MCP:
       - Overview: kubestellar-mcp/index.md
       - Getting Started: kubestellar-mcp/overview/intro.md
