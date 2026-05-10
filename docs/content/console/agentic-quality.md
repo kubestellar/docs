@@ -1,252 +1,165 @@
 ---
-title: "Agentic Quality Controls — How Console Catches AI Mistakes"
+title: "Agentic Quality Controls — How Console Keeps AI Development Honest"
 linkTitle: "Agentic Quality Controls"
 weight: 21
 description: >
-  How the KubeStellar Console project catches AI mistakes, prevents repeat mistakes,
-  measures quality, handles unresolved issues, and handles rejected AI pull requests.
+  How KubeStellar Console catches AI mistakes, prevents repeat mistakes,
+  measures issue-resolution quality, handles untouched issues, and treats
+  AI pull requests that are not accepted.
 keywords:
   - kubestellar console ai quality
   - agentic development quality gates
+  - hive quality controls
   - ai pull request review
   - console ci gates
-  - copilot quality controls
 ---
 
 # Agentic Quality Controls
 
-This page explains how the KubeStellar Console project keeps **AI-assisted changes reviewable, measurable, and recoverable**.
+KubeStellar Console uses AI heavily, but it does **not** trust AI output by default.
+The quality model is layered: deterministic routing, repo rules, CI gates, AI review, human approval, and post-merge verification.
 
-Short version: the project does **not** trust AI output by default. It uses layered checks, explicit coding rules, automated review, and human merge decisions.
+## At a glance
 
-> Scope note: this page describes mechanisms visible in the `kubestellar/console` main branch today. Some ideas discussed elsewhere (for example, a richer resolution-memory system or a separate Hive script layer) are not present in the main branch as implemented repo code.
-
-## 1. How does the project catch AI mistakes?
-
-It catches them in **multiple layers**, not with a single gate.
-
-### Repository guardrails before review
-
-The first defense is the repo's written instructions:
-
-- [`CLAUDE.md`](https://github.com/kubestellar/console/blob/main/CLAUDE.md) defines mandatory testing, visual verification, array safety, i18n, cache-hook usage, Netlify parity, no secrets, and named-constant rules.
-- [`AGENTS.md`](https://github.com/kubestellar/console/blob/main/AGENTS.md) points every agent back to `CLAUDE.md` as the source of truth.
-- [`.github/CARD_DEVELOPMENT_GUIDE.md`](https://github.com/kubestellar/console/blob/main/.github/CARD_DEVELOPMENT_GUIDE.md) documents common rejection reasons for card PRs.
-
-These rules encode mistakes the project has already seen before: demo-only cards, missing `isDemoData`, raw English strings, array crashes, nil slices, scope creep, and weak tests.
-
-### PR-time checks
-
-On pull requests, the repo runs targeted workflows such as:
-
-| Workflow | Purpose |
+| Question | Short answer |
 |---|---|
-| `go-test.yml` | Full Go test suite with `-race` |
-| `nil-safety.yml` | New nil-pointer regressions, array-safety regressions, and ratcheted AI antipattern checks |
-| `coverage-gate.yml` | Coverage report for modified frontend files |
-| `visual-regression.yml` | Playwright screenshot regression testing |
-| `perf-ttfi.yml` | Time-to-first-interaction regression checks |
-| `route-smoke.yml` | Route and modal smoke coverage |
-| `fullstack-e2e.yml` | Go-backend + frontend smoke test |
-| `api-contract.yml` | Demo-backend contract verification |
-| `codeql.yml` | Security scanning for Go and TypeScript |
-| `copilot-dco.yml` | DCO / sign-off compliance |
+| How are AI mistakes caught? | By repository rules, tier/complexity routing, CI, automated review, and human maintainer approval. |
+| What prevents repeats? | Agent memory, codified rules in `CLAUDE.md`/`AGENTS.md`, and consistency tests that ratchet against known failure modes. |
+| How is quality measured? | By CI pass rates, review outcomes, merge acceptance, post-merge verification, workflow-failure issues, and tuning metrics. |
+| What happens to untouched issues? | They stay open, remain in the scanner backlog, and are reprioritized by rotation, weight, tier, and maintainer triage. |
+| What happens to rejected AI PRs? | They are revised or closed like any other PR; the issue stays open until a correct fix is accepted. |
 
-A key detail is that `nil-safety.yml` is not just about nil pointers. It also fails PRs when the repo sees more of the patterns AI tools often introduce, including:
+## 1. How AI mistakes are caught
 
-- magic numbers in timers
-- no-op assertions like `expect(true).toBe(true)`
-- hardcoded route strings
-- cards missing unified loading controls
-- non-localized strings
+The project uses **multiple independent checks**, because any one model can be wrong.
 
-Those checks are **ratcheted**: existing debt may stay temporarily, but a new PR is not supposed to make it worse.
+### Before code is written
 
-### Automated review before merge
+The first layer is policy:
 
-The repo also runs [`claude-code-review.yml`](https://github.com/kubestellar/console/blob/main/.github/workflows/claude-code-review.yml), which asks Claude to review each PR under three headings:
+- `CLAUDE.md` and `AGENTS.md` define non-negotiable rules for tests, array safety, i18n, demo data, Netlify parity, named constants, and security.
+- Issue complexity and PR tiers route work to the right level of scrutiny instead of treating every change as equally safe.
+- The Hive workflow separates deterministic decisions from model judgment, so things like classification, gating, and protected operations are not left to prompt interpretation alone.
 
-- **Correctness**
-- **Security**
-- **Style**
+### While the fix is being prepared
 
-That review is advisory, but it gives maintainers another pass focused on runtime bugs, security gaps, magic numbers, localization misses, and similar issues.
+The agentic system uses specialized roles such as scanner, reviewer, architect, and outreach agents.
+That separation matters: the same agent that proposes a fix is not the only one evaluating it.
 
-### Post-merge verification
+### On every pull request
 
-The quality system does not stop at PR checks.
+Every PR still has to pass normal project gates.
+The important checks include:
 
-[`post-merge-verify.yml`](https://github.com/kubestellar/console/blob/main/.github/workflows/post-merge-verify.yml) waits for production deploy, selects Playwright specs based on the merged PR and linked issue, and tests the live site. If the merged fix regresses in production, the workflow comments on the PR, comments on the original issue, and opens a new regression issue.
+| Gate | What it catches |
+|---|---|
+| Build + lint | Syntax errors, broken imports, type and style regressions |
+| CodeQL | Security regressions |
+| Visual regression | UI breakage that screenshots expose |
+| Performance TTFI | Slower user-facing interactions |
+| Nil safety + consistency checks | Common AI mistakes such as unsafe access, magic numbers, and pattern drift |
+| Route smoke + full-stack E2E | Broken flows and integration regressions |
+| Coverage gate | Changes that reduce exercised behavior on touched frontend code |
+| DCO / sign-off | Provenance and contribution compliance |
 
-## 2. How does the project prevent repeat mistakes?
+The project also uses automated review and then **human maintainer review**.
+No PR gets a privileged AI-only merge path.
+Maintainers decide whether the change is correct, and merges still require the usual approval path (`lgtm` / `approved` labels in the project workflow).
 
-The main branch shows three concrete mechanisms.
+## 2. What prevents the same mistake from being made again?
 
-### Codified lessons in agent instructions
+The project tries to convert one-off failures into durable guardrails.
 
-When the same mistake shows up more than once, it gets turned into a written rule in `CLAUDE.md`, `AGENTS.md`, or the card guide.
+### Agent memory and retained conventions
 
-Examples:
+The agentic system keeps memory about conventions, previous failures, and successful patterns so later sessions do not start from zero.
+That memory is reinforced by project documents and by the issue / PR history itself.
 
-- always guard array operations with `(data || [])`
-- always pass `isDemoData` and `isRefreshing`
-- never hardcode user-facing strings
-- update Netlify Functions when adding certain Go API routes
-- write visual regression tests for UI changes
+### Written rules become harder to violate
 
-That means the next agent sees prior lessons **before** it starts coding.
+When a mistake repeats, the response is usually to encode it:
 
-### Ratcheted CI baselines
+- add or tighten a rule in `CLAUDE.md` or `AGENTS.md`
+- update development guides or card guides
+- add a consistency check or expand a baseline
+- route similar work to a more appropriate tier or model
 
-Several workflows use baseline files so new work cannot reintroduce known problem classes.
+This is the main anti-regression pattern: **lessons become infrastructure**.
 
-Examples include:
+### Consistency tests enforce architecture
 
-- `.github/nilaway-baseline.json`
-- `.github/array-safety-baseline.txt`
-- `.github/ai-*-baseline.txt`
+The repo includes `scripts/consistency-test.sh` and related checks to catch rule drift, not just compile errors.
+These checks enforce architectural expectations such as safe array handling, timeout discipline, and cache-pattern consistency.
+That makes repeated AI mistakes easier to detect automatically.
 
-This is an important pattern: even when the repo still contains older debt, the project can stop AI from expanding that debt.
+## 3. How the quality of issue resolutions is measured
 
-### Quality tuning from historical outcomes
+Quality is measured at more than one point in the lifecycle.
 
-[`auto-qa.yml`](https://github.com/kubestellar/console/blob/main/.github/workflows/auto-qa.yml) and [`.github/auto-qa-tuning.json`](https://github.com/kubestellar/console/blob/main/.github/auto-qa-tuning.json) track which quality categories get accepted, merged, or blocked. The workflow uses that history to change its rotation and focus areas.
+### Resolution-quality signals
 
-So the system does not only check code; it also learns which kinds of automated findings are producing useful follow-up work.
+| Signal | Why it matters |
+|---|---|
+| CI pass/fail | Basic correctness and safety before merge |
+| Reviewer + maintainer acceptance | Whether the proposed fix is actually convincing |
+| Tier / complexity fit | Whether the work was handled at the right scrutiny level |
+| Post-merge verification | Whether the fix still works in a deployed environment |
+| Workflow-failure monitoring | Whether the system detects new breakage quickly |
+| Acceptance / closure history | Whether automated work is producing mergeable PRs or noisy PRs |
+| SLA monitoring | Whether issues and responses are moving quickly enough |
 
-### What about a memory system?
+The project also tracks tuning data and historical outcomes so the system can see which categories are getting accepted, merged, blocked, or ignored.
+That gives maintainers a way to measure whether the automation is useful instead of just active.
 
-There is a documented resolution-memory design in [`docs/ai/RETAINEDKNOWLEDGE.md`](https://github.com/kubestellar/console/blob/main/docs/ai/RETAINEDKNOWLEDGE.md), but that document is explicitly marked **Planned**.
+## 4. What happens to issues that are not acted upon?
 
-So, in the main branch today, the project's practical anti-repeat system is:
+They are **not silently treated as solved**.
 
-1. documented rules
-2. ratcheted baselines
-3. issue/PR history
-4. tuning data from automation
+- They stay open in GitHub.
+- They remain part of the scanner backlog.
+- Rotations, issue weighting, and tiering affect **when** they are picked up, not whether they magically become resolved.
+- Maintainers can reprioritize, relabel, escalate, or leave them for human contributors.
+- Automated workflow failures can open or refresh issues so persistent breakage stays visible.
 
-## 3. How does the project measure quality?
+In practice, this means some classes of issue may be scanned less often or deferred when higher-value or higher-risk work is present.
+But an untouched issue remains an open issue, not a hidden success.
 
-It measures quality with both **merge-time signals** and **continuous signals**.
+## 5. What happens when an AI-generated PR is not accepted?
 
-### Merge-time signals
-
-Examples:
-
-- build/test success
-- nil-safety regressions
-- coverage on modified files
-- visual diffs
-- TTFI performance regressions
-- API contract validation
-- CodeQL results
-- DCO compliance
-
-### Continuous signals
-
-Examples:
-
-- scheduled `auto-qa.yml` audits
-- scheduled nil-safety scans that can open issues
-- scheduled TTFI checks that can open perf-regression issues
-- scheduled workflow failure monitoring via `workflow-failure-issue.yml`
-- weekly OpenSSF Scorecard scans via `scorecard.yml`
-- post-merge Playwright checks against the live site
-
-The repo also stores acceptance-rate and category history in `auto-qa-tuning.json`, which gives maintainers a way to measure whether automated issue generation is producing good work or noisy work.
-
-## 4. How are unresolved issues handled?
-
-Unresolved problems are usually converted into **tracked GitHub issues**, not silently ignored.
-
-### Scheduled failures become issues
-
-[`workflow-failure-issue.yml`](https://github.com/kubestellar/console/blob/main/.github/workflows/workflow-failure-issue.yml) watches important scheduled and nightly workflows. If one fails, it either opens a new `workflow-failure` issue or comments on the existing one instead of duplicating noise.
-
-### Regression after merge becomes a new bug
-
-`post-merge-verify.yml` opens a new regression issue with labels such as:
-
-- `kind/bug`
-- `priority/critical`
-- `regression-detected`
-- `ai-fix-requested`
-- `triage/accepted`
-
-That means an issue is not considered resolved just because a PR merged.
-
-### Hold labels block premature closure
-
-[`hold-issue-guard.yml`](https://github.com/kubestellar/console/blob/main/.github/workflows/hold-issue-guard.yml) prevents PRs from auto-closing hold-labeled issues. If a PR body says `Fixes #123` but the issue is on hold, the workflow fails and tells the author to remove the closing keyword or remove the hold label first.
-
-### Tiering changes review expectations
-
-[`tier-classifier.yml`](https://github.com/kubestellar/console/blob/main/.github/workflows/tier-classifier.yml) and [`.github/tier-classifier-rules.yml`](https://github.com/kubestellar/console/blob/main/.github/tier-classifier-rules.yml) automatically label each PR as one of:
-
-- `tier/0-automatic`
-- `tier/1-lightweight`
-- `tier/2-standard`
-- `tier/3-restricted`
-
-High-risk files such as workflows, auth paths, RBAC manifests, and security docs are explicitly pushed into `tier/3-restricted` for stronger scrutiny.
-
-## 5. What happens when an AI PR is rejected?
-
-The important answer is: **it follows the normal PR process**.
-
-AI-authored PRs do not get a privileged merge path.
+Exactly what should happen in a healthy repo: it does **not** merge.
 
 ### If CI fails
 
-The PR stays red until someone fixes it. Depending on the failure, the response might be:
+The PR stays red until fixed or closed.
+A failing AI PR is evidence that the issue is not solved yet.
 
-- update the branch with a correction
-- close the PR and keep working from the issue
-- open a follow-up regression issue if the failure is discovered after merge
+### If review requests changes
 
-### If automated review finds concerns
+The agent or maintainer updates the branch, or the PR is closed and the issue returns to the queue.
+There is no force-merge path just because the author was an AI system.
 
-`claude-code-review.yml` adds advisory review comments. Maintainers decide whether those findings are real blockers, should be fixed now, or should become follow-up work.
+### If the PR is rejected outright
 
-### If human review rejects the change
+The issue stays open, gets reassigned or retriaged, and the rejected PR becomes a learning signal:
 
-The PR is either revised or closed. The issue remains the source of truth. In other words, the project treats a rejected AI PR as **evidence that the issue is still open**, not as a reason to relax standards.
+- feedback can be added to memory
+- instructions can be tightened
+- tests and consistency rules can be expanded
+- similar future work can be routed differently
 
-### If a merged AI PR later proves wrong
+In other words, a rejected AI PR is treated as **quality feedback**, not as wasted process.
 
-The post-merge verifier creates a new regression issue and can assign follow-up work back into the automation loop through labels such as `ai-fix-requested`.
+## Why this works
 
-## 6. Is there a scanner → reviewer → supervisor Hive layer in the main repo?
+The Console project treats agentic development as a system that must be **constrained, measured, and corrected**.
+Quality comes from the combination of:
 
-Not in the main branch as checked for this document.
+- deterministic routing and gating
+- explicit repository rules
+- specialized agents with separated roles
+- CI checks aimed at common AI failure modes
+- human approval before merge
+- issue-based follow-up when fixes fail or are rejected
+- retained memory and rule updates so the same mistake is less likely next time
 
-Searches for these repo artifacts returned no matches in `kubestellar/console` main:
-
-- `bin/`
-- `supervisor.sh`
-- `reviewer.sh`
-- `scanner.sh`
-- `kick-agents.sh`
-- `enumerate-actionable.sh`
-
-So the quality system that is concretely visible in the repository today is **workflow-centric**:
-
-1. issue and PR metadata
-2. CI workflows
-3. automated review comments
-4. human approval and merge decisions
-5. post-merge verification and follow-up issues
-
-## Summary
-
-The Console project controls AI quality by combining:
-
-- explicit coding rules
-- PR checks that target common AI failure modes
-- automated code review
-- production verification after merge
-- issue-based handling of unresolved failures
-- tiering and hold guards for governance
-- tuning data that measures which automated work is actually useful
-
-That combination is the real answer to "how do you trust agentic development?": **you do not trust it blindly; you constrain it, test it, review it, and keep measuring it after merge.**
+That is the core answer to the issue behind this page: the project does not assume AI is reliable. It builds a process that keeps unreliable steps reviewable and recoverable.

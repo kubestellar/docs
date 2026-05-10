@@ -228,6 +228,7 @@ helm install ksc oci://ghcr.io/kubestellar/charts/kubestellar-console \
 - [Cards](all-cards.md) - All 110+ cards
 - [Stats Blocks](stats-blocks.md) - All 93+ stats
 - [AI Features](ai-features.md) - AI Missions, diagnose, repair, card creation
+- [Agentic Quality Controls](agentic-quality.md) - How the project catches AI mistakes and reviews AI-authored fixes
 - [Marketplace](marketplace.md) - Community dashboards, cards, and themes for multi-cluster Kubernetes
 - [Knowledge Base](knowledge-base.md) - 400+ AI Mission prompts for CNCF project installation and repair
 - [Feedback System](feedback.md) - Bug-to-squash workflow
