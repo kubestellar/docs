@@ -34,7 +34,8 @@ Get KubeStellar Console running locally for development or evaluation.
 
 ## Fastest Path (curl)
 
-> **Prerequisites**: You must install the kubestellar-mcp plugins **before** running this command — they are not installed by `start.sh`. See [Step 1](#step-1-install-kubestellar-mcp-tools) below.
+> **Prerequisites**: You must install the kubestellar-mcp plugins **before** running this command — they are
+not installed by `start.sh`. See [Install Kubestellar-mcp Tools](#install-kubestellar-mcp-tools) below.
 
 One command — downloads pre-built binaries, starts the backend + agent, and opens your browser:
 
@@ -178,7 +179,8 @@ which kubestellar-ops && which kubestellar-deploy
 curl -H "Cache-Control: no-cache" -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
 ```
 
-This downloads the console binary, starts the backend (port 8080), and opens your browser. It does **not** install kubestellar-mcp plugins — complete Step 1 first.
+This downloads the console binary, starts the backend (port 8080), and opens your browser. It does **not** install
+kubestellar-mcp plugins — complete the `kubestellar-mcp` installation section first.
 
 ### Option B: Run From Source (No OAuth)
 
@@ -241,6 +243,11 @@ Before proceeding with the installation, you need to configure GitHub OAuth, whi
    GITHUB_CLIENT_SECRET=your_client_secret
    ```
 
+3. Make the environment variables available to Helm:
+	```bash	
+	export $(cat .env | xargs)
+	```
+
 After completing the previous GitHub OAuth setup, proceed to the next section.
 
 ### Using Helm
@@ -258,6 +265,9 @@ kubectl create secret generic ksc-secrets \
 helm install ksc oci://ghcr.io/kubestellar/charts/kubestellar-console \
   --namespace ksc \
   --set github.existingSecret=ksc-secrets
+
+# Expose the Kubestellar service
+kubectl port-forward -n ksc svc/ksc-kubestellar-console 8080:8080
 ```
 
 ### Using Deploy Script
