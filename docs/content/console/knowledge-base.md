@@ -36,7 +36,7 @@ Installation missions walk you through deploying a CNCF or open source project o
 
 **Example: Installing Prometheus across a multi-cluster fleet**
 
-```
+```yaml
 Mission: Install Prometheus
 Type: install
 Difficulty: beginner
@@ -65,7 +65,7 @@ Solution missions are troubleshooting and repair prompts. They start from a symp
 
 **Example: Repairing certificate expiry across clusters**
 
-```
+```yaml
 Mission: Fix Expired TLS Certificates
 Type: repair
 Difficulty: intermediate
@@ -226,7 +226,7 @@ Missions come from three sources:
 
 Every mission has a permanent URL you can share:
 
-```
+```yaml
 https://console.kubestellar.io/missions/install-prometheus
 https://console.kubestellar.io/missions/fix-certificate-expiry
 ```

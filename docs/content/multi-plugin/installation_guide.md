@@ -110,6 +110,7 @@ rules:
 ### Common Issues
 
 #### Plugin Not Found
+
 ```bash
 Error: unknown command "multi" for "kubectl"
 ```
@@ -119,21 +120,25 @@ Error: unknown command "multi" for "kubectl"
 - Run `kubectl plugin list` to verify the plugin is detected
 
 #### Permission Denied
+
 ```bash
 permission denied: kubectl-multi
 ```
 
 **Solution:**
+
 ```bash
 chmod +x /path/to/kubectl-multi
 ```
 
 #### Go Build Issues
+
 ```bash
 go: module not found
 ```
 
 **Solution:**
+
 ```bash
 # Ensure Go modules are initialized
 go mod tidy
@@ -141,6 +146,7 @@ go mod download
 ```
 
 #### Connection Issues
+
 ```bash
 Error: failed to connect to ITS cluster
 ```

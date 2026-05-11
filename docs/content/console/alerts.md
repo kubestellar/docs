@@ -87,7 +87,7 @@ Create your own rules:
 
 ### Example: High Memory Alert
 
-```
+```yaml
 Name: High Memory Usage
 Condition: Memory > 80%
 Duration: 10 minutes
@@ -131,6 +131,7 @@ Choose how you want to be notified:
 - JSON payload with alert details
 
 **Webhook payload:**
+
 ```json
 {
   "alert": {
@@ -159,7 +160,7 @@ When enabled, AI automatically analyzes alerts.
 
 ### Example AI Diagnosis
 
-```
+```text
 Alert: Pod Crash Loop
 
 Summary: The nginx-abc123 pod has restarted 7 times

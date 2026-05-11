@@ -44,17 +44,20 @@ A2A (via Prow bots) supports slash commands:
    git checkout main
    git pull upstream main
    ```
+   
 3. Create a feature/fix branch:
 
    ```bash
    git checkout -b fix/button-hover
    ```
+   
 4. Make your changes, then commit with **sign-off**:
 
    ```bash
    git add .
    git commit -s -m "🐛 fix: improve hover visibility for 'View on GitHub' button"
    ```
+   
 5. Push your branch:
 
    ```bash
@@ -107,6 +110,7 @@ Most contributions here are UI and docs. Please:
   npm install
   npm start
   ```
+  
 * Test on desktop, tablet (\~768px), and mobile (\~375px).
 * Check both light and dark themes.
 * Run build:

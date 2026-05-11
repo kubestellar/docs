@@ -295,7 +295,7 @@ helm --kube-context "$wds_context" list -n postgres-system
 
 and expect to see output like the following.
 
-```
+```text
 NAME            NAMESPACE       REVISION        UPDATED                                 STATUS       CHART                    APP VERSION
 postgres        postgres-system 1               2023-10-31 13:39:52.550071 -0400 EDT    deployed     postgresql-13.2.0        16.0.0
 ```

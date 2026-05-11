@@ -2,7 +2,7 @@
 
 KubeStellar is licensed under the Apache License, Version 2.0.
 
-```
+```text
                                  Apache License
                            Version 2.0, January 2004
                         https://www.apache.org/licenses/LICENSE-2.0

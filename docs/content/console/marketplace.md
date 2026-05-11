@@ -102,7 +102,7 @@ Contributors get a public author profile in the Marketplace showing:
 
 The Marketplace registry is hosted at:
 
-```
+```text
 https://raw.githubusercontent.com/kubestellar/console-marketplace/main/registry.json
 ```
 

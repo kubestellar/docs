@@ -19,11 +19,13 @@ The agent starts, reads its policy, then **waits at the prompt** for the supervi
 > **Gotcha — session restore bakes in old crons.** Claude Code restores its previous conversation context on respawn. If the agent ever registered a `/loop` cron before, that cron comes back in the restored context even if the new `AGENT_LOOP_PROMPT` says not to. The preferred fix is to enforce EXECUTOR MODE via policy files the agent re-reads on every firing — not by having the supervisor send a cron-nuke message. Supervisor should never inspect or delete crontabs; policy is the enforcement mechanism.
 
 > **Gotcha — tmux `-l` makes Enter literal.** When dispatching work orders, always split text and Enter into **two separate** `tmux send-keys` calls:
+>
 > ```sh
 > tmux send-keys -t session -l "do the thing"
 > sleep 1
 > tmux send-keys -t session Enter
 > ```
+>
 > Combining them as `tmux send-keys -t session -l "do the thing" Enter` sends the word "Enter" as part of the literal text, leaving the agent stuck with text in its input box.
 
 ---
@@ -125,7 +127,7 @@ sequenceDiagram
 
 When running several agents on the same machine, the EXECUTOR pattern lets a single supervisor session coordinate all of them without the agents conflicting:
 
-```
+```text
 ┌─────────────────────────────────────┐
 │   supervisor session (Mac)          │
 │   /loop — sweeps every 20-25 min    │
@@ -181,7 +183,7 @@ This is not a new scheduling model — it's a **composition** of the existing pa
 
 ### Architecture
 
-```
+```text
                         ┌──────────────────────┐
                         │  GitHub (source of    │
                         │  truth for issues/PRs)│

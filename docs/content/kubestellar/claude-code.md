@@ -28,7 +28,7 @@ brew install kubectl-claude
 
 In Claude Code, run:
 
-```
+```text
 /plugin marketplace add kubestellar/claude-plugins
 ```
 
@@ -38,7 +38,7 @@ Then go to `/plugin` → **Discover** tab and install **kubestellar-mcp**.
 
 Run `/mcp` in Claude Code to see connected MCP servers:
 
-```
+```text
 plugin:kubestellar-mcp:kubestellar-mcp · ✓ connected
 ```
 
@@ -60,7 +60,7 @@ To avoid permission prompts for each tool call, add to `~/.claude/settings.json`
 
 Or run in Claude Code:
 
-```
+```text
 /allowed-tools add mcp__plugin_kubestellar-mcp_kubestellar-mcp__*
 ```
 
@@ -72,7 +72,7 @@ The kubestellar-mcp plugin provides specialized slash commands for common Kubern
 
 Check the health of all Kubernetes clusters in your kubeconfig.
 
-```
+```text
 /k8s-health
 ```
 
@@ -85,7 +85,7 @@ This will:
 
 Find all issues across your Kubernetes clusters.
 
-```
+```text
 /k8s-issues
 ```
 
@@ -98,7 +98,7 @@ Checks for:
 
 Perform a comprehensive analysis of a Kubernetes namespace.
 
-```
+```text
 /k8s-analyze
 ```
 
@@ -111,7 +111,7 @@ Provides insights on:
 
 Analyze RBAC permissions for any subject (user, group, or service account).
 
-```
+```text
 /k8s-rbac
 ```
 
@@ -125,7 +125,7 @@ Shows:
 
 Perform a security audit across all clusters.
 
-```
+```text
 /k8s-security
 ```
 
@@ -140,7 +140,7 @@ Finds:
 
 Audit your kubeconfig and clean up stale clusters.
 
-```
+```text
 /k8s-audit-kubeconfig
 ```
 

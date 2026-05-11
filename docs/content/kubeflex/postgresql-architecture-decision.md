@@ -105,6 +105,7 @@ vars:
 **Why PostgreSQL is Optional**:
 
 1. **Multiple Backend Support**: KubeFlex supports both shared and dedicated database backends
+   
    ```yaml
    spec:
      backend: shared     # Uses shared PostgreSQL
@@ -113,6 +114,7 @@ vars:
    ```
 
 2. **External Database Integration**: Users may want to use existing database infrastructure
+   
    ```bash
    # Users can skip PostgreSQL and use external databases
    kflex create cp1 --type k8s  # No PostgreSQL hook
@@ -124,6 +126,7 @@ vars:
    - Testing scenarios may not require persistence
 
 4. **Deployment Flexibility**: Different control plane types have different requirements
+   
    ```bash
    kflex create cp1 --type host      # No database needed
    kflex create cp2 --type k8s --postcreate-hook postgres  # Database needed
@@ -134,13 +137,15 @@ vars:
 **Why PostgreSQL Uses Fixed Namespace**:
 
 1. **Control Plane Isolation**: Each control plane gets its own namespace
-   ```
+   
+   ```bash
    kflex-cp1/     # Control plane 1 resources
    kflex-cp2/     # Control plane 2 resources
    postgres/      # Shared PostgreSQL instance
    ```
 
 2. **Resource Sharing**: Multiple control planes can share one PostgreSQL instance
+   
    ```yaml
    # Multiple control planes, one PostgreSQL
    spec:
@@ -153,7 +158,8 @@ vars:
    - Backup and maintenance operations are centralized
 
 4. **Security Boundaries**: Clear separation between compute and data layers
-   ```
+   
+   ```text
    Control Plane Namespace: Application logic, API servers
    PostgreSQL Namespace:    Data persistence, database operations
    ```

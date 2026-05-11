@@ -111,7 +111,8 @@ Then:
 3. Install **kubestellar-ops** and **kubestellar-deploy**
 
 Verify with `/mcp` - you should see:
-```
+
+```yaml
 plugin:kubestellar-ops:kubestellar-ops · ✓ connected
 plugin:kubestellar-deploy:kubestellar-deploy · ✓ connected
 ```
@@ -129,6 +130,7 @@ kubectl --context=your-cluster get nodes
 ```
 
 To add more clusters, merge kubeconfigs:
+
 ```bash
 KUBECONFIG=~/.kube/config:~/.kube/cluster2.yaml kubectl config view --flatten > ~/.kube/merged
 mv ~/.kube/merged ~/.kube/config
@@ -396,6 +398,7 @@ Supports `--context`, `--openshift`, `--ingress <host>`, and `--github-oauth` fl
 The console reads clusters from your kubeconfig. To access multiple clusters:
 
 1. **Merge kubeconfigs:**
+   
    ```bash
    KUBECONFIG=~/.kube/config:~/.kube/cluster2.yaml kubectl config view --flatten > ~/.kube/merged
    mv ~/.kube/merged ~/.kube/config
@@ -404,6 +407,7 @@ The console reads clusters from your kubeconfig. To access multiple clusters:
 2. **Mount merged config in container/pod**
 
 3. **Verify access:**
+   
    ```bash
    kubectl config get-contexts
    ```

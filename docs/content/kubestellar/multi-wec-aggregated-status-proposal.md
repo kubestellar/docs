@@ -27,7 +27,7 @@ The status controller lacks a mechanism to merge status data from multiple WECs 
 
 Extend the `DownsyncModulation` struct with a new field:
 
-```
+```text
 wantMultiWECReportedState: bool
 ```
 

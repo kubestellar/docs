@@ -1,6 +1,7 @@
 # Kubectl-multi binary installation guide for windows
 
 ### Downloading step for windows (commands for powershell)
+
 ```bash
 # Step 1: Download kubectl-multi binary for windows
 
@@ -28,6 +29,7 @@ kubectl-multi version
 ```
 
 ### Downloading steps for windows (git bash)
+
 ```bash
 # Step 1: Download kubectl-multi binary for Windows
 # TAG="v0.0.3"

@@ -73,11 +73,13 @@ clusteradm join --hub-token <token> --hub-apiserver <api-server-url> --cluster-n
 - `--force-internal-endpoint-lookup`: Required for Kind clusters and other clusters with internal-only API server endpoints
 
 **Example for Kind clusters:**
+
 ```shell
 clusteradm join --hub-token <token> --hub-apiserver <api-server-url> --cluster-name cluster1 --context cluster1 --singleton --force-internal-endpoint-lookup
 ```
 
 **Example for cloud provider clusters:**
+
 ```shell
 clusteradm join --hub-token <token> --hub-apiserver <api-server-url> --cluster-name prod-cluster-east --context prod-cluster-east
 ```
@@ -115,6 +117,7 @@ clusteradm --context <its-context> accept --clusters <your-wec-name>
 ```
 
 You can accept multiple WECs at once:
+
 ```shell
 clusteradm --context <its-context> accept --clusters cluster1,cluster2,cluster3
 ```

@@ -1,0 +1,48 @@
+name: Markdown Lint
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "CONTRIBUTING.md"
+      - "docs/**/*.md"
+      - "docs/**/*.mdx"
+      - "src/**/*.md"
+      - "src/**/*.mdx"
+      - ".markdownlint.json"
+      - "package.json"
+      - "package-lock.json"
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "CONTRIBUTING.md"
+      - "docs/**/*.md"
+      - "docs/**/*.mdx"
+      - "src/**/*.md"
+      - "src/**/*.mdx"
+      - ".markdownlint.json"
+      - "package.json"
+      - "package-lock.json"
+
+permissions:
+  contents: read
+
+jobs:
+  markdownlint:
+    name: markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run markdownlint
+        run: npm run lint:md

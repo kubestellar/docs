@@ -61,21 +61,25 @@ For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for
 ### WSL2 Setup Steps
 
 1. **Install WSL2** (if not already installed):
+   
    ```powershell
    wsl --install
    ```
 
 2. **Install Ubuntu** (or your preferred distribution):
+   
    ```powershell
    wsl --install -d Ubuntu
    ```
 
 3. **Update packages** inside WSL:
+   
    ```bash
    sudo apt update && sudo apt upgrade -y
    ```
 
 4. **Install prerequisites** inside WSL:
+   
    ```bash
    # Install Node.js
    curl -H "Cache-Control: no-cache" -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -

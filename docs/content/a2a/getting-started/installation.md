@@ -142,7 +142,7 @@ uv run kubestellar execute namespace_utils -P target_namespaces='["prod","stagin
 
 ### Available Functions
 
-```
+```yaml
 - kubestellar_management
   Description: Advanced KubeStellar multi-cluster resource management with deep search capabilities
   
@@ -175,6 +175,7 @@ uv run kubestellar execute namespace_utils -P target_namespaces='["prod","stagin
 For AI-powered automation and natural language interfaces:
 
 #### OpenAI Integration
+
 ```bash
 # Set your OpenAI API key
 export OPENAI_API_KEY="your-openai-api-key"
@@ -185,7 +186,7 @@ uv run kubestellar agent
 
 ##### Agent Mode Interface
 
-```
+```text
 ╭─────────────────────────────────────────────────────────────────────────────────────────────╮
 │  ██╗  ██╗██╗   ██╗██████╗ ███████╗███████╗████████╗███████╗██╗     ██╗      █████╗ ██████╗  │
 │  ██║ ██╔╝██║   ██║██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔════╝██║     ██║     ██╔══██╗██╔══██╗ │
@@ -301,6 +302,7 @@ clusters:
 ### Common Issues
 
 #### Python Version Issues
+
 ```bash
 # Check Python version
 python --version
@@ -310,6 +312,7 @@ pyenv local 3.12
 ```
 
 #### Permission Issues
+
 ```bash
 # On macOS/Linux, you might need to use sudo for system-wide installation
 sudo uv pip install -e .
@@ -319,6 +322,7 @@ uv pip install --user -e .
 ```
 
 #### Network Issues
+
 ```bash
 # If behind corporate proxy
 export HTTP_PROXY="http://proxy.company.com:8080"
@@ -329,6 +333,7 @@ uv pip install -e . --proxy http://proxy.company.com:8080
 ```
 
 #### Kubernetes Configuration Issues
+
 ```bash
 # Verify kubectl is working
 kubectl cluster-info

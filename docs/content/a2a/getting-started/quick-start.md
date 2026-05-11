@@ -18,6 +18,7 @@ Before we begin, make sure you have:
 Choose your preferred installation method:
 
 ### Using uv (Recommended)
+
 ```bash
 # Install uv (if not already installed)
 curl -H "Cache-Control: no-cache" -LsSf https://astral.sh/uv/install.sh | sh
@@ -29,6 +30,7 @@ uv pip install -e .
 ```
 
 ### Using pip
+
 ```bash
 git clone https://github.com/kubestellar/a2a.git
 cd a2a
@@ -48,7 +50,8 @@ uv run kubestellar list-functions
 ```
 
 You should see all CLI commands:
-```
+
+```text
 Usage: kubestellar [OPTIONS] COMMAND [ARGS]...
 
 Commands:
@@ -59,7 +62,8 @@ Commands:
 ```
 
 And available functions:
-```
+
+```text
 Available functions:
 
 - kubestellar_management
@@ -100,6 +104,7 @@ uv run kubestellar execute get_kubeconfig -P detail_level=full
 ```
 
 Example output:
+
 ```json
 {
   "status": "success",
@@ -182,7 +187,8 @@ uv run kubestellar agent
 ```
 
 You'll see the KubeStellar ASCII art:
-```
+
+```text
 ╭─────────────────────────────────────────────────────────────────────────────────────────────╮
 │  ██╗  ██╗██╗   ██╗██████╗ ███████╗███████╗████████╗███████╗██╗     ██╗      █████╗ ██████╗  │
 │  ██║ ██╔╝██║   ██║██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔════╝██║     ██║     ██╔══██╗██╔══██╗ │
@@ -203,7 +209,8 @@ Type 'exit' or Ctrl+D to quit
 ```
 
 In the agent, try natural language commands:
-```
+
+```bash
 # Resource queries
 [openai] ▶ show me all my clusters
 [openai] ▶ how many pods are running?
@@ -249,6 +256,7 @@ Now that you have KubeStellar A2A running, explore more advanced features:
 Here are some common things you might want to do next:
 
 ### Deploy Your First Application
+
 ```bash
 # Deploy a sample application with Helm
 uv run kubestellar execute helm_deploy \
@@ -264,6 +272,7 @@ uv run kubestellar execute helm_deploy \
 ```
 
 ### Monitor Your Clusters
+
 ```bash
 # Get logs from all pods in a namespace
 uv run kubestellar execute multicluster_logs \
@@ -282,6 +291,7 @@ uv run kubestellar execute multicluster_logs \
 ```
 
 ### Set Up Automation
+
 ```bash
 # Create a script for daily cluster health checks
 cat > daily-check.sh << 'EOF'
@@ -336,6 +346,7 @@ uv run kubestellar describe kubestellar_management
 ## Troubleshooting
 
 ### Installation Issues
+
 ```bash
 # Verify Python version
 python --version  # Should be 3.11+

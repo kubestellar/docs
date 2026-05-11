@@ -35,7 +35,7 @@ For the concrete quality-control system that catches AI mistakes, prevents repea
 
 ### Repository Layout
 
-```
+```text
 cmd/console/       Server entry point
 cmd/kc-agent/      Local agent (bridges browser to kubeconfig + MCP)
 pkg/agent/         AI providers (Claude, OpenAI, Gemini)
@@ -131,7 +131,7 @@ The console project employs an automated agentic pipeline that processes eligibl
 
 ### How It Works
 
-```
+```text
      ┌──────────────┐     ┌─────────────┐     ┌──────────┐
   Issue Filed │────▶│ Scanner Agent │────▶│  Fix Agent   │────▶│  PR Open  │
      └──────────────┘     └─────────────┘     └──────────┘
@@ -216,6 +216,7 @@ If you want to contribute code, use one of the supported agents:
 | OpenAI Codex | GPT models | Supported | Code generation |
 
 Install Claude Code:
+
 ```bash
 npm install -g @anthropic-ai/claude-code
 ```
@@ -242,7 +243,7 @@ git commit -s -m "✨ Add cluster health polling"
 
 ### 2. Commit Message Format
 
-```
+```html
 <emoji> <Short description in imperative mood (under 72 chars)>
 
 <Optional longer description>
@@ -409,6 +410,7 @@ These patterns are **mandatory** for all code contributions. Violations will cau
 Every dashboard card component must follow these rules:
 
 1. **Wire `isDemoData` and `isRefreshing`** — destructure from the cached hook and pass to `useCardLoadingState()`:
+   
    ```tsx
    const { data, isLoading, isRefreshing, isDemoData, isFailed } = useCachedPods()
    useCardLoadingState({
@@ -472,18 +474,24 @@ Before adding any workflow that calls an LLM, read the [AI Security Guide](https
 
 1. **Fork** the `kubestellar/console` repository
 2. **Clone** your fork and create a branch from `main`:
+   
    ```bash
    git checkout -b fix/your-issue-number
    ```
+   
 3. **Make changes** following the code standards above
 4. **Validate** locally:
+   
    ```bash
    cd web && npm run build && npm run lint
    ```
+   
 5. **Commit** with DCO sign-off and emoji prefix:
+   
    ```bash
    git commit -s -m "🐛 Fix cluster count in sidebar"
    ```
+   
 6. **Push** and open a PR:
    - First line of PR body: `Fixes #NNN`
    - Describe what changed and why

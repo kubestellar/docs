@@ -87,7 +87,8 @@ git push origin <your-branch>
 ```
 
 Open a Pull Request against the `main` branch of the component repository with the title:
-```
+
+```text
 doc: demote stale docs folder content
 ```
 

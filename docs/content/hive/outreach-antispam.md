@@ -41,7 +41,7 @@ The only exception: a maintainer explicitly invites a resubmission to a differen
 
 Execute every check in order. Stop at the first SKIP signal.
 
-```
+```text
 PRE-FLIGHT for target T:
 
 [ ] 1. ARCHIVED?        → gh repo view T --json isArchived | check true → SKIP
@@ -106,7 +106,8 @@ After each successful outreach action:
 - **Merged:** Mark DONE. Verify GA4 referral traffic appears within 30 days (confirming it's indexed). No further action.
 
 **Format self-check before opening PR:**
-```
+
+```text
 - Is the repo accepting PRs? (check Issues tab for "not accepting contributions")
 - Does the list sort alphabetically? (place entry in correct position)
 - Are descriptions in sentence case or title case? (match)
@@ -240,7 +241,7 @@ Current GA4 strategic signals (as of 2026-04-24):
 
 ## 7. Decision Tree (Quick Reference)
 
-```
+```text
 Is the target archived or inactive (>18 months)?
   YES → SKIP
 
@@ -281,7 +282,7 @@ Can I match the target's exact format?
 
 Every outreach action must be appended to `docs/outreach-log.md` in this format:
 
-```
+```text
 | DATE       | SURFACE                        | TARGET                          | ACTION        | STATUS  | NOTES                                      |
 |------------|--------------------------------|----------------------------------|---------------|---------|---------------------------------------------|
 | 2026-04-24 | awesome-list                   | dastergon/awesome-sre            | PR #268       | open    | No feedback yet                             |
@@ -316,7 +317,7 @@ own PR search (which is the canonical dedup check, but not as fast to query in b
 
 ### Row format
 
-```
+```text
 | DATE       | CATEGORY     | TARGET REPO / SITE              | SECTION ADDED TO        | PR / SUBMISSION URL                     | STATUS   | GA4 REFERRAL? | NOTES                          |
 |------------|-------------|----------------------------------|-------------------------|-----------------------------------------|----------|---------------|-------------------------------|
 | 2026-04-24 | awesome-list | dastergon/awesome-sre            | Monitoring              | https://github.com/dastergon/awesome-sre/pull/268   | open     | no            | No feedback yet               |
@@ -340,7 +341,7 @@ own PR search (which is the canonical dedup check, but not as fast to query in b
 
 ### State machine
 
-```
+```text
                   ┌─────────────────┐
   PR opened  ──▶  │      open       │
                   └────────┬────────┘
@@ -368,7 +369,7 @@ own PR search (which is the canonical dedup check, but not as fast to query in b
 
 ### Follow-up cadence per PR
 
-```
+```text
 Day  0: PR opened
 Day  7: Check for reviewer comments. Address any. Note in log.
 Day 14: Second check. If reviewer comments unaddressed, address now.

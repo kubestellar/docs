@@ -105,9 +105,11 @@ Show the particulars of something going wrong.
     - Any involved objects in the WEC(s).
     - Implementation objects in the ITS: `ManifestWork`, `WorkStatus`.
     - Here is one way to show the evolution of a relevant set of objects over time. The following command displays the `ManifestWork` objects, after creation and after each update (modulo the gaps allowed by eventual consistency), in an ITS as addressed by the kubeconfig context named `its1` --- after first listing the existing objects. Each line is prefixed with the hour:minute:second at which it appears.
+        
         ```shell
         kubectl --context its1 get manifestworks -A --show-managed-fields -o yaml --watch | while IFS="" read line; do echo "$(date +%T)| $line"; done
         ```
+        
 - When reporting kube API object contents, include the `meta.managedFields`. For example, when using `kubectl get`, include `--show-managed-fields`.
 - Show the logs from relevant controllers. The most active and directly relevant ones are the following.
     - The KubeStellar controller-manager (running in the KubeFlex hosting cluster) for the WDS

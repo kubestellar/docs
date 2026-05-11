@@ -6,7 +6,7 @@ Kubestellar installation may fail for some users during the setup of the second 
 
 ## Error Message Example
 
-```
+```text
 Error: hub oriented command should not running against non-hub cluster
 Creating cluster "cluster2" ...
 ...
@@ -25,7 +25,7 @@ When using Rancher Desktop, the Linux machine that needs to be reconfigured is a
 
 Kind requires the following minimum settings in the Linux machine:
 
-```
+```text
 fs.inotify.max_user_watches = 524288
 fs.inotify.max_user_instances = 512
 ```
@@ -58,10 +58,12 @@ Cluster 2 should create successfully, and the installation should complete witho
 1. Check Current `sysctl` Parameter Values
     * Use the command `rdctl shell` to log in to the Rancher Desktop VM.
       Run:
-        ````
+        
+        ````text
         sysctl fs.inotify.max_user_watches
         sysctl fs.inotify.max_user_instances
         ````
+        
     * Confirm if these values are below the recommended settings (524288 for max_user_watches and 512 for max_user_instances).
 2. Modify the Parameter Settings
     * Setting these parameters temporarily with `sysctl` will revert after restarting Rancher Desktop. To persist the changes, you need to modify the configuration using an overlay file.
@@ -69,13 +71,13 @@ Cluster 2 should create successfully, and the installation should complete witho
     - On a Mac:
         * Open a terminal and create a new file:
 
-            ```
+            ```text
             vi ~/Library/Application\ Support/rancher-desktop/lima/_config/override.yaml
             ```
 
         * Add the following content:
 
-            ```
+            ```bash
             provision:
             - mode: system
               script: |
@@ -91,7 +93,7 @@ Cluster 2 should create successfully, and the installation should complete witho
 5. Delete Existing Kind Clusters
     * Before re-running the Kubestellar Getting Started guide, delete all previously created clusters:
 
-        ```
+        ```bash
         kind delete cluster --name <cluster-name>
         ```
 

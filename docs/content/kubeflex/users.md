@@ -69,9 +69,11 @@ contexts:
 Proceed to change the kubeconfig file to match `v0.9.0`, as follow:
 
 1. Set new hosting cluster context name running:
+
 ```bash
 kflex config set-hosting $ctx_name
 ```
+
 where `$ctx_name` represents the desired hosting context name
 
 2. Delete `preferences:` related to **kubeflex** by editing your kubeconfig file manually.
@@ -252,6 +254,7 @@ At this point you may interact with the new control plane using `kubectl`, for e
 kubectl get ns
 kubectl create ns myns
 ```
+
 to switch the context back to the hosting cluster context, you may use the `ctx` command:
 
 ```shell
@@ -428,6 +431,7 @@ At this point, you can create the bootstrap secret with the command:
 CP_NAME=ext1
 kubectl create secret generic ${CP_NAME}-bootstrap --from-file=kubeconfig-incluster=$BOOTSTRAP_KUBECONFIG --namespace kubeflex-system
 ```
+
 where `${CP_NAME}` is the name of the control plane to create.
 
 *Important*: once the KubeFlex controller generates a long-lived token, it removes the bootstrap secret.
@@ -448,6 +452,7 @@ spec:
     namespace: kubeflex-system
 EOF
 ```
+
 You can verify that the control plane has been created correctly with the command:
 
 ```console
@@ -611,7 +616,7 @@ Return the current context (alias command of `kubectl config current-context`)
 
 Rename a context within your kubeconfig file. By default, when creating a control plane `mycp`, the context, user, and cluster name are named as such:
 
-```
+```yaml
 context: mycp
 cluster: mycp-cluster
 user: mycp-admin
@@ -619,7 +624,7 @@ user: mycp-admin
 
 Therefore, applying the context rename command `kflex ctx rename mycp mycp-renamed` will change these 3 values as follow:
 
-```
+```yaml
 context: mycp-renamed
 cluster: mycp-renamed-cluster
 user: mycp-renamed-admin

@@ -21,19 +21,19 @@ In your new local forked repo, set upstream to kubestellar main
 
 check what your repository's remote settings are
 
-```
+```bash
 git remote -v
 ```
 
 ### Set upstream to use kubestellar:
 
-```
+```bash
 git remote add upstream git@github.com:kubestellar/kubestellar.git
 ```
 
 For example:
 
-```
+```bash
 $ git remote -v
 origin  git@github.com:fileppb/kubestellar.git (fetch)
 origin  git@github.com:fileppb/kubestellar.git (push)
@@ -76,13 +76,13 @@ Create a local branch for your work, preferably including the issue number in th
 
 for example if working on issue #11187, then you might name your local branch "issue-1187"
 
-```
+```bash
 git checkout -b issue-1187
 ```
 
 ### As you work and change files, you should try to commit relatively small pieces of work, using the following commands
 
-```
+```bash
 git add (there are several options you can specify for the git add command)
 
 git commit -m "your message"
@@ -104,7 +104,7 @@ The commits will then be squashed into one commit.
 
 ### When you are done with the squash, push your changes to your remote branch. You can either:
 
-```
+```bash
 git push -u origin <branch-name>
 
 or 

@@ -48,7 +48,8 @@ helm upgrade --install ks-core core-chart \
 ```
 
 **Expected output:**
-```
+
+```yaml
 Release "ks-core" has been upgraded. Happy Helming!
 NAME: ks-core
 LAST DEPLOYED: Thu Jun 12 11:02:16 2025
@@ -88,7 +89,8 @@ kubectl -n default get secret argocd-initial-admin-secret -o jsonpath="{.data.pa
 ```
 
 **Expected output(similar):**
-```
+
+```text
 EpQ2-OMgvfdHiMiD
 ```
 
@@ -101,7 +103,8 @@ kubectl get pods -A | grep -i argo
 ```
 
 **Expected output (similar to):**
-```
+
+```text
 default              ks-core-argocd-application-controller-0                     1/1     Running     0          15m
 default              ks-core-argocd-applicationset-controller-6669c9f789-wd5h7   1/1     Running     0          15m
 default              ks-core-argocd-dex-server-8464bc64b9-dplv5                  1/1     Running     0          15m

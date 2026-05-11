@@ -36,12 +36,14 @@ kubectl multi get pods --show-labels -n kube-system
 ### Sample Input and Output
 
 #### Getting Nodes
+
 ```bash
 kubectl multi get nodes
 ```
 
 **Output:**
-```
+
+```text
 CONTEXT  CLUSTER       NAME                    STATUS  ROLES          AGE    VERSION
 its1     cluster1      cluster1-control-plane  Ready   control-plane  6d23h  v1.33.1
 its1     cluster2      cluster2-control-plane  Ready   control-plane  6d23h  v1.33.1
@@ -49,12 +51,14 @@ its1     its1-cluster  kubeflex-control-plane  Ready   <none>         6d23h  v1.
 ```
 
 #### Getting Pods with Namespace
+
 ```bash
 kubectl multi get pods -n kube-system
 ```
 
 **Output:**
-```
+
+```text
 CONTEXT  CLUSTER       NAME                                            READY  STATUS   RESTARTS  AGE
 its1     cluster1      coredns-674b8bbfcf-6k7vc                        1/1    Running  2         6d23h
 its1     cluster1      etcd-cluster1-control-plane                     1/1    Running  2         6d23h
@@ -65,12 +69,14 @@ its1     its1-cluster  coredns-68559449b6-g8kpn                        1/1    Ru
 ```
 
 #### Getting Services with All Namespaces
+
 ```bash
 kubectl multi get services -A
 ```
 
 **Output:**
-```
+
+```text
 CONTEXT  CLUSTER       NAMESPACE    NAME          TYPE       CLUSTER-IP    EXTERNAL-IP  PORT(S)                 AGE
 its1     cluster1      default      kubernetes    ClusterIP  10.96.0.1     <none>       443/TCP                 6d23h
 its1     cluster1      kube-system  kube-dns      ClusterIP  10.96.0.10    <none>       53/UDP,53/TCP,9153/TCP  6d23h
@@ -79,12 +85,14 @@ its1     cluster2      kube-system  kube-dns      ClusterIP  10.96.0.10    <none
 ```
 
 #### Using Label Selectors
+
 ```bash
 kubectl multi get pods -l k8s-app=kube-dns -A
 ```
 
 **Output:**
-```
+
+```text
 CONTEXT  CLUSTER       NAMESPACE    NAME                      READY  STATUS   RESTARTS  AGE
 its1     cluster1      kube-system  coredns-674b8bbfcf-6k7vc  1/1    Running  2         6d23h
 its1     cluster1      kube-system  coredns-674b8bbfcf-vhh9g  1/1    Running  2         6d23h
@@ -200,16 +208,19 @@ kubectl multi get all -n problematic-namespace
 ### Performance Tips
 
 1. **Use specific namespaces** when possible to reduce output:
+   
    ```bash
    kubectl multi get pods -n kube-system  # Better than -A
    ```
 
 2. **Use label selectors** to filter results:
+   
    ```bash
    kubectl multi get pods -l app=nginx  # More efficient
    ```
 
 3. **Combine flags** effectively:
+   
    ```bash
    kubectl multi get deployments -l tier=frontend -n production
    ```
@@ -242,21 +253,27 @@ kubectl multi get pods -A | grep nginx
 ### Common Issues
 
 #### No Resources Found
+
 ```bash
 No resources found
 ```
+
 This is normal if the resource type doesn't exist in any cluster.
 
 #### Cluster Connection Errors
+
 ```bash
 Warning: failed to list pods in cluster cluster1: connection refused
 ```
+
 This indicates a specific cluster is unreachable, but others will continue to work.
 
 #### Permission Errors
+
 ```bash
 Error: pods is forbidden: User "user" cannot list resource "pods"
 ```
+
 Check your RBAC permissions on the managed clusters.
 
 ### Getting Help

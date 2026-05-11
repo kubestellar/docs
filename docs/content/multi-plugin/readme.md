@@ -19,6 +19,7 @@ kubectl-multi is a kubectl plugin written in Go that automatically discovers Kub
 ## how to install 
 
 ### Downloading step for Linux
+
 ```bash
 # Step 1: Download kubectl-multi binary for Linux
 TAG="v0.0.3"
@@ -37,12 +38,14 @@ sudo mv kubectl-multi /usr/local/bin/kubectl-multi
 kubectl-multi -v
 
 ```
+
 ## Downloading steps for windows 
 
 Refer to this ->  **[Installation Guide](installation_guide_windows.md)**
 
 
 ### Downloading by brew
+
 ```bash 
 # This looks for: github.com/kubestellar/homebrew-kubectl-multi 
 brew tap kubestellar/kubectl-multi
@@ -88,7 +91,7 @@ kubectl multi get pods -A
 
 ## Example Output
 
-```
+```text
 CONTEXT  CLUSTER       NAME                    STATUS  ROLES          AGE    VERSION
 its1     cluster1      cluster1-control-plane  Ready   control-plane  6d23h  v1.33.1
 its1     cluster2      cluster2-control-plane  Ready   control-plane  6d23h  v1.33.1

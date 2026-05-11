@@ -31,6 +31,7 @@ LOG_LEVEL=DEBUG uv run kubestellar execute get_kubeconfig
 **Problem**: `Python version too old` or `SyntaxError` during installation
 
 **Solution**:
+
 ```bash
 # Check current Python version
 python --version
@@ -53,6 +54,7 @@ brew install python@3.12
 **Problem**: `Failed building wheel` or `pip install` errors
 
 **Solution**:
+
 ```bash
 # Update pip and setuptools
 pip install --upgrade pip setuptools wheel
@@ -75,6 +77,7 @@ sudo apt-get install python3-dev build-essential
 **Problem**: `uv: command not found` or installation fails
 
 **Solution**:
+
 ```bash
 # Install uv using the official installer
 curl -H "Cache-Control: no-cache" -LsSf https://astral.sh/uv/install.sh | sh
@@ -96,6 +99,7 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 **Problem**: `Kubeconfig file not found` or `No clusters found`
 
 **Solution**:
+
 ```bash
 # Check if kubectl is configured
 kubectl cluster-info
@@ -116,6 +120,7 @@ uv run kubestellar execute get_kubeconfig \
 **Problem**: `Forbidden` or `Access denied` errors
 
 **Solution**:
+
 ```bash
 # Check current context and permissions
 kubectl config current-context
@@ -134,6 +139,7 @@ kubectl get clusterrolebindings | grep cluster-admin
 **Problem**: Issues with multiple clusters or contexts
 
 **Solution**:
+
 ```bash
 # List all contexts
 kubectl config get-contexts
@@ -156,6 +162,7 @@ export KUBECONFIG="merged-config"
 **Problem**: `Function 'function_name' not found`
 
 **Solution**:
+
 ```bash
 # List all available functions
 uv run kubestellar list-functions
@@ -172,6 +179,7 @@ uv pip install -e . --force-reinstall
 **Problem**: `Invalid parameter` or `Schema validation failed`
 
 **Solution**:
+
 ```bash
 # Get function schema and parameter requirements
 uv run kubestellar describe function_name
@@ -192,6 +200,7 @@ LOG_LEVEL=DEBUG uv run kubestellar execute function_name -P param=value
 **Problem**: Functions timeout or hang indefinitely
 
 **Solution**:
+
 ```bash
 # Check cluster connectivity
 kubectl cluster-info
@@ -214,6 +223,7 @@ uv run kubestellar execute multicluster_create \
 **Problem**: `Chart not found` or `Repository errors`
 
 **Solution**:
+
 ```bash
 # Update Helm repositories
 helm repo update
@@ -236,6 +246,7 @@ uv run kubestellar execute helm_deploy \
 **Problem**: `Insufficient permissions` for Helm operations
 
 **Solution**:
+
 ```bash
 # Create service account for Helm (if using RBAC)
 kubectl create serviceaccount helm-service-account
@@ -255,6 +266,7 @@ helm list --all-namespaces
 **Problem**: `WDS not found` or `ITS not accessible`
 
 **Solution**:
+
 ```bash
 # Verify KubeStellar installation
 kubectl api-resources | grep kubestellar
@@ -272,6 +284,7 @@ kubectl get crd | grep kubestellar
 **Problem**: `BindingPolicy creation failed` or `Policy not applied`
 
 **Solution**:
+
 ```bash
 # Check existing binding policies
 kubectl get bindingpolicies --all-namespaces
@@ -299,6 +312,7 @@ EOF
 **Problem**: `OpenAI API key invalid` or `Rate limit exceeded`
 
 **Solution**:
+
 ```bash
 # Verify API key format
 echo $OPENAI_API_KEY | wc -c  # Should be ~51 characters
@@ -320,6 +334,7 @@ uv run kubestellar agent --model gpt-3.5-turbo
 **Problem**: MCP server not connecting to Claude Desktop
 
 **Solution**:
+
 ```bash
 # Check Claude Desktop configuration file location
 # macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
@@ -343,6 +358,7 @@ tail -f ~/Library/Logs/Claude/claude_desktop.log
 **Problem**: Functions take too long to execute
 
 **Solution**:
+
 ```bash
 # Enable performance profiling
 export A2A_ENABLE_PROFILING=true
@@ -362,6 +378,7 @@ export A2A_ENABLE_CACHE=true
 **Problem**: High memory usage or out-of-memory errors
 
 **Solution**:
+
 ```bash
 # Monitor memory usage
 python -c "
@@ -427,6 +444,7 @@ uv run kubestellar execute multicluster_logs -P follow=true -P tail=10
 When reporting issues, include:
 
 1. **System Information**:
+   
    ```bash
    uv run kubestellar --version
    python --version
@@ -434,17 +452,20 @@ When reporting issues, include:
    ```
 
 2. **Configuration**:
+   
    ```bash
    kubectl config current-context
    kubectl cluster-info
    ```
 
 3. **Debug Logs**:
+   
    ```bash
    LOG_LEVEL=DEBUG uv run kubestellar execute function_name 2>&1 | tee issue-debug.log
    ```
 
 4. **Function Schema**:
+   
    ```bash
    uv run kubestellar describe function_name
    ```
@@ -453,12 +474,14 @@ When reporting issues, include:
 
 #### Issue: Functions fail with "Resource not found"
 **Workaround**: Ensure all required CRDs are installed and accessible
+
 ```bash
 kubectl api-resources | grep -E "(kubestellar|argo|helm)"
 ```
 
 #### Issue: Multi-cluster operations partially fail
 **Workaround**: Use `target_clusters` to specify working clusters explicitly
+
 ```bash
 uv run kubestellar execute multicluster_create \
   -P target_clusters='["working-cluster1", "working-cluster2"]'
@@ -466,6 +489,7 @@ uv run kubestellar execute multicluster_create \
 
 #### Issue: Large cluster environments cause timeouts
 **Workaround**: Process clusters in smaller batches
+
 ```bash
 # Process 2 clusters at a time
 for batch in cluster1,cluster2 cluster3,cluster4; do

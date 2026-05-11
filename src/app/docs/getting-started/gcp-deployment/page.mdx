@@ -812,6 +812,7 @@ kubectl --context its1 delete managedcluster cluster2
 **Symptom**: GKE cluster creation times out or fails
 
 **Solutions**:
+
 ```bash
 # Check quotas
 gcloud compute project-info describe --project=${GCP_PROJECT_ID}
@@ -831,6 +832,7 @@ gcloud compute zones list --filter="name:${GCP_ZONE}"
 **Symptom**: Cluster CSRs don't appear in OCM hub
 
 **Solutions**:
+
 ```bash
 # Check cluster connectivity
 kubectl --context cluster1 get pods -n open-cluster-management-agent
@@ -851,6 +853,7 @@ clusteradm --context its1 get token
 **Symptom**: Applications don't deploy to WEC clusters
 
 **Solutions**:
+
 ```bash
 # Check binding policy
 kubectl --context wds1 get bindingpolicy -A
@@ -870,6 +873,7 @@ kubectl --context kubeflex logs -n wds1-system -l control-plane=controller-manag
 **Symptom**: Ingress controller pods not starting
 
 **Solutions**:
+
 ```bash
 # Check ingress pods
 kubectl --context kubeflex get pods -n ingress-nginx
@@ -887,6 +891,7 @@ kubectl --context kubeflex delete namespace ingress-nginx
 **Symptom**: Unexpected GCP billing charges
 
 **Solutions**:
+
 ```bash
 # Reduce cluster sizes
 gcloud container clusters resize ${KUBEFLEX_CLUSTER} --num-nodes=1 --zone=${GCP_ZONE}

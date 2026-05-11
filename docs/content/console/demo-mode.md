@@ -81,7 +81,7 @@ generators.
 
 The decision path for each dashboard card is:
 
-```
+```text
    ┌─────────────────────────────┐
    │  Card calls useCached*()    │
    │  hook for its data type     │

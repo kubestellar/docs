@@ -16,7 +16,7 @@ containers and so uses a virtual machine with a Linux guest OS).
 Many KubeStellar setup paths check for the needed configuration. When
 the check fails, you get an error message like the following.
 
-```
+```text
 sysctl fs.inotify.max_user_watches is only 155693 but must be at least 524288
 ```
 
@@ -30,11 +30,13 @@ To resolve this error, you need to increase the value of `fs.inotify.max_user_wa
 
 ### For Rancher Desktop
 1. Open the configuration file:
+   
    ```sh
    vi "~/Library/Application Support/rancher-desktop/lima/_config/override.yaml"
    ```
 
 2. Add the following script to the `provision` section:
+   
    ```yaml
    provision:
    - mode: system
@@ -51,17 +53,20 @@ To resolve this error, you need to increase the value of `fs.inotify.max_user_wa
 The resolution in the [kind known issue](https://kind.sigs.k8s.io/docs/user/known-issues#pod-errors-due-to-too-many-open-files) can be used directly.
 
 1. Create a new configuration file:
+   
    ```sh
    sudo vi /etc/sysctl.d/99-sysctl.conf
    ```
 
 2. Add the following lines:
+   
    ```sh
    fs.inotify.max_user_watches=1048576
    fs.inotify.max_user_instances=1024
    ```
 
 3. Apply the changes:
+   
    ```sh
    sudo sysctl -p /etc/sysctl.d/99-sysctl.conf
    ```
