@@ -243,7 +243,7 @@ Before proceeding with the installation, you need to configure GitHub OAuth, whi
    GITHUB_CLIENT_SECRET=your_client_secret
    ```
 
-3. Make the environment variables available to Helm:
+3. Make the environment variables available to Kubernetes Secrets:
 	```bash	
 	export $(cat .env | xargs)
 	```
