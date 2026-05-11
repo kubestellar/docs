@@ -250,11 +250,13 @@ Before proceeding with the installation, you need to configure GitHub OAuth, whi
    GITHUB_CLIENT_SECRET=your_client_secret
    ```
 
-3. Export the environment variables into your current shell. This does **not** directly create a Kubernetes Secret — it makes the values available in your shell session so the `kubectl create secret` command below can reference them via shell variable expansion (`$GITHUB_CLIENT_ID`, `$GITHUB_CLIENT_SECRET`):
+3. Export the environment variables into your current shell so subsequent `kubectl` and `helm` commands can reference them:
 
     ```bash
     export $(cat .env | xargs)
     ```
+
+    > **Note:** This only makes the variables available within the current shell session. It does **not** create Kubernetes Secrets. To create a Kubernetes Secret from these values, use `kubectl create secret` as shown in the next section.
 
 After completing the previous GitHub OAuth setup, proceed to the next section.
 
