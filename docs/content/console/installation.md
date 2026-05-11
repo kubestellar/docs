@@ -161,7 +161,7 @@ This starts the backend (port 8080) and opens the frontend in your browser. No O
 
 ---
 
-## Run from Source
+## Run From Source
 
 For contributors or if you want to build from source. No GitHub OAuth required.
 
@@ -185,7 +185,7 @@ Open http://localhost:5174
 
 ---
 
-## Run from Source with OAuth
+## Run From Source with OAuth
 
 To enable GitHub login (for multi-user deployments or to test the full auth flow):
 
