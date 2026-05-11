@@ -68,5 +68,12 @@
     "mobileContact": "聯繫方式",
     "news": "新聞",
     "reviews": "評論"
+  },
+  "notFound": {
+    "description": "抱歉，您要找的頁面不存在。",
+    "message": "我們找不到您要找的頁面，但您可以瀏覽文件或返回首頁繼續。",
+    "homeButton": "返回首頁",
+    "docsButton": "查看文件",
+    "requestedPath": "請求路徑："
   }
 }

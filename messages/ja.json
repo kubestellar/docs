@@ -926,5 +926,12 @@
       "gitops": "GitOps",
       "costManagement": "コスト管理"
     }
+  },
+  "notFound": {
+    "description": "お探しのページは存在しません。",
+    "message": "お探しのページは見つかりませんでしたが、ドキュメントを確認するかホームページに戻って続行できます。",
+    "homeButton": "ホームに戻る",
+    "docsButton": "ドキュメントを見る",
+    "requestedPath": "要求されたパス:"
   }
 }

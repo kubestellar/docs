@@ -21,7 +21,7 @@ export default function NotFoundUI() {
 
         {pathname && (
           <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
-            <span className="text-sm text-gray-500">Requested:</span>
+            <span className="text-sm text-gray-500">{t("requestedPath")}</span>
             <code className="text-sm text-purple-400 font-mono">{pathname}</code>
           </div>
         )}

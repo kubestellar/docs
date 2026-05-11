@@ -893,5 +893,12 @@
       "gitops": "GitOps",
       "costManagement": "Kostenmanagement"
     }
+  },
+  "notFound": {
+    "description": "Entschuldigung, die gesuchte Seite existiert nicht.",
+    "message": "Wir konnten die gesuchte Seite nicht finden, aber Sie können unsere Dokumentation durchsuchen oder zur Startseite zurückkehren.",
+    "homeButton": "Zur Startseite",
+    "docsButton": "Dokumentation anzeigen",
+    "requestedPath": "Angefordert:"
   }
 }

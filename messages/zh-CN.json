@@ -877,5 +877,12 @@
       "gitops": "GitOps",
       "costManagement": "成本管理"
     }
+  },
+  "notFound": {
+    "description": "抱歉，您查找的页面不存在。",
+    "message": "我们找不到您要查找的页面，但您可以浏览我们的文档或返回首页继续。",
+    "homeButton": "返回首页",
+    "docsButton": "查看文档",
+    "requestedPath": "请求路径："
   }
 }
