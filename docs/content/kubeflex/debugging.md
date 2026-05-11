@@ -45,7 +45,7 @@ NAME= # your secret name
 kubectl get secrets -n ${NAMESPACE} ${NAME} -o jsonpath='{.data.apiserver\.crt}' | base64 -d
 ```
 
-### How to attach a ephemeral container to debug
+### How to attach an ephemeral container to debug
 
 ```shell
 NAMESPACE= # your namespace
