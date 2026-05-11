@@ -111,7 +111,7 @@ After each successful outreach action:
 - Does the list sort alphabetically? (place entry in correct position)
 - Are descriptions in sentence case or title case? (match)
 - Are there trailing periods? (match)
-- Does the list use `[Name](url) — description` or `[Name](url) - description`? (match exactly)
+- Does the list use `[Name](https://example.com) — description` or `[Name](https://example.com) - description`? (match exactly)
 ```
 
 ### 3.2 CNCF Project Outreach Issues (Install Missions)
@@ -319,10 +319,10 @@ own PR search (which is the canonical dedup check, but not as fast to query in b
 ```
 | DATE       | CATEGORY     | TARGET REPO / SITE              | SECTION ADDED TO        | PR / SUBMISSION URL                     | STATUS   | GA4 REFERRAL? | NOTES                          |
 |------------|-------------|----------------------------------|-------------------------|-----------------------------------------|----------|---------------|-------------------------------|
-| 2026-04-24 | awesome-list | dastergon/awesome-sre            | Monitoring              | https://github.com/…/pull/268           | open     | no            | No feedback yet               |
-| 2026-04-24 | awesome-list | veggiemonk/awesome-docker        | Monitoring & Observ.    | https://github.com/…/pull/1417          | open     | no            | No feedback yet               |
-| 2026-04-24 | directory    | stackshare.io                    | Kubernetes Tools        | https://stackshare.io/…                 | done     | yes           | Confirmed referral 2026-05-01 |
-| 2026-04-24 | awesome-list | tmrts/awesome-kubernetes         | Monitoring              | https://github.com/…/pull/6             | merged   | yes           | 3 referral sessions/month     |
+| 2026-04-24 | awesome-list | dastergon/awesome-sre            | Monitoring              | https://github.com/dastergon/awesome-sre/pull/268   | open     | no            | No feedback yet               |
+| 2026-04-24 | awesome-list | veggiemonk/awesome-docker        | Monitoring & Observ.    | https://github.com/veggiemonk/awesome-docker/pull/1417 | open     | no            | No feedback yet               |
+| 2026-04-24 | directory    | stackshare.io                    | Kubernetes Tools        | manual StackShare submission (no public URL)         | done     | yes           | Confirmed referral 2026-05-01 |
+| 2026-04-24 | awesome-list | tmrts/awesome-kubernetes         | Monitoring              | https://github.com/tmrts/awesome-kubernetes/pull/6  | merged   | yes           | 3 referral sessions/month     |
 ```
 
 **Status values:**

@@ -62,7 +62,7 @@ If no markdown files exist, exit immediately.
 
 For each markdown file:
 
-1. Extract all links (both `[text](url)` and bare URLs)
+1. Extract all links (both `[text](https://example.com)` and bare URLs)
 2. Categorize links:
    - **Internal links**: relative paths to files in the repo (e.g., `./docs/foo.md`, `../README.md`)
    - **Anchor links**: `#section-name` references
