@@ -175,15 +175,19 @@ where `name` must specify a name unique among all the control planes in that Kub
 ## KubeStellar Core Chart usage step by step
 
 The local copy of the core chart can be installed in an existing cluster using the commands:
+
 ```shell
 git clone https://github.com/kubestellar/kubestellar.git
 cd kubestellar
 ```
+
 ```shell
 helm dependency update core-chart
 ```
+
 Output(similar):
-```
+
+```yaml
 Saving 2 charts
 Downloading kubeflex-operator from repo oci://ghcr.io/kubestellar/kubeflex/chart
 Pulled: ghcr.io/kubestellar/kubeflex/chart/kubeflex-operator:v0.8.9
@@ -193,11 +197,14 @@ Pulled: ghcr.io/argoproj/argo-helm/argo-cd:7.8.5
 Digest: sha256:662f4687e8e525f86ff9305020632b337a09ffacb7b61b7c42a841922c91da7b
 Deleting outdated charts
 ```
+
 ```shell
 helm upgrade --install ks-core core-chart
 ```
+
 Output:
-```
+
+```yaml
 Release "ks-core" does not exist. Installing it now.
 NAME: ks-core
 LAST DEPLOYED: Thu Jun 12 09:58:44 2025
@@ -241,8 +248,10 @@ helm upgrade --install ks-core oci://ghcr.io/kubestellar/kubestellar/core-chart 
   --set-json ITSes='[{"name":"its1"}]' \
   --set-json WDSes='[{"name":"wds1"}]'
 ```
+
 Output:
-```
+
+```yaml
 Release "ks-core" has been upgraded. Happy Helming!
 NAME: ks-core
 LAST DEPLOYED: Thu Jun 12 10:08:50 2025
@@ -271,6 +280,7 @@ kflex ctx --overwrite-existing-context wds1
 Finally, you can use `kflex ctx` to switch back to the kubeconfig
 context for your KubeFlex hosting cluster.
 ```
+
 The core chart also supports the use of a pre-existing cluster (or any space, really) as an ITS. A specific application is to connect to existing OCM clusters. As an example, create a first local kind cluster with OCM installed in it:
 
 ```shell

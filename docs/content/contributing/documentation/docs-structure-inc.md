@@ -5,7 +5,7 @@
 This documentation website is a **separate repository** from the main KubeStellar codebase. All the active documentation is now located _in this repository_. 
 For safety reasons, copies of the docs source may remain in a to-be-deleted folder in the component repositories during a transition period
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │  Main KubeStellar Repository                                │
 │  github.com/kubestellar/kubestellar                         │

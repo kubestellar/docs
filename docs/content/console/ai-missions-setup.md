@@ -30,6 +30,7 @@ Before setting up AI Missions, ensure you have:
 1. **KubeStellar Console running** -- Follow the [Installation](installation.md) guide to deploy the console locally, in Kubernetes, or via Helm.
 
 2. **Kubernetes cluster access** -- At least one cluster configured in your kubeconfig. Verify with:
+   
    ```bash
    kubectl config get-contexts
    kubectl --context=your-cluster get nodes
@@ -223,37 +224,44 @@ When the AI proposes a change (scaling a deployment, restarting a pod, applying 
 Here are prompts to try for your first missions:
 
 1. **Cluster health check**:
-   ```
+   
+   ```text
    Give me a health summary of all my connected clusters
    ```
 
 2. **Troubleshoot a failing pod**:
-   ```
+   
+   ```text
    Why is the pod coredns-abc123 in namespace kube-system crash-looping on cluster prod-east?
    ```
 
 3. **Analyze resource usage**:
-   ```
+   
+   ```text
    Which namespaces on my staging cluster are using the most memory, and are any close to their limits?
    ```
 
 4. **Deploy an application**:
-   ```
+   
+   ```text
    Deploy nginx with 3 replicas to the default namespace on cluster dev-1
    ```
 
 5. **Security audit**:
-   ```
+   
+   ```text
    Check for pods running as root or with privileged security contexts across all clusters
    ```
 
 6. **Certificate check**:
-   ```
+   
+   ```text
    Are any TLS certificates expiring within the next 30 days on my production clusters?
    ```
 
 7. **Cross-cluster comparison**:
-   ```
+   
+   ```text
    Compare the Helm releases installed on cluster staging vs cluster production and show me the differences
    ```
 
@@ -269,9 +277,11 @@ Here are prompts to try for your first missions:
 
 - **No API key configured**: Add at least one provider key via `.env` or Settings UI (see sections above). Restart the console if using `.env`.
 - **kubestellar-mcp plugins not installed**: The AI agent requires `kubestellar-ops` and `kubestellar-deploy`. Verify installation:
+  
   ```bash
   which kubestellar-ops kubestellar-deploy
   ```
+  
   If missing, follow [Installation - Step 1](installation.md#step-1-install-claude-code-plugins).
 - **AI mode set to Off**: Navigate to **Settings** > **AI & Intelligence** and confirm AI Mode is set to Low, Medium, or High.
 
@@ -297,9 +307,11 @@ Here are prompts to try for your first missions:
   - OpenAI: [status.openai.com](https://status.openai.com)
   - Google: [status.cloud.google.com](https://status.cloud.google.com)
 - **Network issue**: Verify the console host can reach the provider's API endpoint. Test with:
+  
   ```bash
   curl -s https://api.anthropic.com/v1/messages -H "x-api-key: $ANTHROPIC_API_KEY" -H "anthropic-version: 2023-06-01" -d '{}' | head -c 200
   ```
+  
   If this times out, check firewalls, proxies, or DNS resolution.
 - **Rate limiting**: If you are sending many requests, the provider may throttle you. Wait a few minutes and try again, or switch to a different provider temporarily.
 
@@ -331,9 +343,11 @@ Here are prompts to try for your first missions:
 **Causes and solutions**:
 
 - **Slow cluster response**: If kubectl commands against your cluster are slow, the AI mission may time out waiting for results. Test cluster responsiveness:
+  
   ```bash
   time kubectl --context=your-cluster get pods -A
   ```
+  
   If this takes more than a few seconds, the issue is cluster performance, not the AI.
 - **Complex multi-cluster mission**: Missions that span many clusters take longer. Break the request into per-cluster missions or target a specific cluster.
 - **Provider latency**: During peak usage, AI providers may respond slowly. Check the Provider Health card and consider switching providers.
@@ -345,16 +359,21 @@ Here are prompts to try for your first missions:
 **Causes and solutions**:
 
 - **kc-agent not running**: The agent (`kc-agent`) must be running for the AI to interact with clusters. If you used `startup-oauth.sh`, it starts automatically. Check for the process:
+  
   ```bash
   ps aux | grep kc-agent
   ```
+  
   If not running, restart the console with `startup-oauth.sh`.
 - **Port conflict**: The agent listens on port 8585 by default. Check if something else is using that port:
+  
   ```bash
   lsof -i :8585
   ```
+  
   If there is a conflict, stop the other process or configure a different port with `--port`.
 - **Plugins not installed**: Verify `kubestellar-ops` and `kubestellar-deploy` are installed and accessible:
+  
   ```bash
   kubestellar-ops version
   kubestellar-deploy version
@@ -367,14 +386,18 @@ Here are prompts to try for your first missions:
 **Causes and solutions**:
 
 - **kubeconfig not found**: The console reads `~/.kube/config` by default. Verify it exists and contains cluster entries:
+  
   ```bash
   kubectl config get-contexts
   ```
+  
 - **kubeconfig not mounted (Kubernetes deployment)**: If running in a pod, ensure the kubeconfig is mounted as a volume. Check the Helm values for `kubeconfig` settings.
 - **Cluster unreachable**: The kubeconfig may reference clusters that are offline or behind a VPN. Test connectivity:
+  
   ```bash
   kubectl --context=your-cluster cluster-info
   ```
+  
 - **Stale kubeconfig**: If you recently changed clusters, the cached kubeconfig may be outdated. Refresh the console by clicking the refresh icon in the header or restarting the console.
 
 ---

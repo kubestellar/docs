@@ -72,9 +72,11 @@ connections to `localhost:8080` time out, close immediately, or fail with
    list is empty, the pod is not ready.
 2. You port-forwarded to the wrong port. The service listens on
    **port 8080, not 80**. Use `8080:8080`:
+   
    ```bash
    kubectl -n kubestellar-console port-forward svc/kc-kubestellar-console 8080:8080
    ```
+   
 3. The pod was killed and replaced after the port-forward was opened (an
    `OOMKilled`, a node eviction, or a `helm upgrade`). Re-run the command —
    `kubectl port-forward` does not automatically reconnect.
@@ -134,24 +136,28 @@ has **no** default StorageClass at all, the PVC stays `Pending` forever.
 **Remediation — pick one:**
 
 - **Disable persistence for throwaway local evaluation** (simplest):
+  
   ```bash
   helm upgrade --install kc ./deploy/helm/kubestellar-console \
     -n kubestellar-console \
     --set persistence.enabled=false \
     --set backup.enabled=false
   ```
+  
   You lose session/database state across restarts, which is fine for demos.
 
 - **Install a provisioner on Kind** — Kind ships with `rancher.io/local-path`
   by default; if your cluster was built without it, install
   [local-path-provisioner](https://github.com/rancher/local-path-provisioner)
   and mark it the default StorageClass:
+  
   ```bash
   kubectl patch storageclass local-path \
     -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
   ```
 
 - **Point the chart at an existing StorageClass:**
+  
   ```bash
   helm upgrade --install kc ./deploy/helm/kubestellar-console \
     -n kubestellar-console \
@@ -181,13 +187,16 @@ though the install will eventually succeed.
 **Remediation:**
 
 1. **Pre-pull the image** before running the script:
+   
    ```bash
    docker pull ghcr.io/kubestellar/console:latest
    kind load docker-image ghcr.io/kubestellar/console:latest --name <your-kind-cluster>
    ```
+   
    Then re-run `deploy.sh`.
 2. **Or skip `deploy.sh` entirely** and call Helm directly with a longer
    timeout:
+   
    ```bash
    helm install kc oci://ghcr.io/kubestellar/charts/kubestellar-console \
      -n kubestellar-console --create-namespace \

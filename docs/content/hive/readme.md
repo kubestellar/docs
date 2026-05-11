@@ -152,11 +152,13 @@ Hive is designed to be forked and configured, not hardcoded. All project-specifi
 ### Step by step
 
 1. **Copy the example config:**
+   
    ```bash
    sudo cp examples/kubestellar/hive-project.yaml /etc/hive/hive-project.yaml
    ```
 
 2. **Edit the `project` section** — your org, repos, AI author account:
+   
    ```yaml
    project:
      name: "My Project"
@@ -169,6 +171,7 @@ Hive is designed to be forked and configured, not hardcoded. All project-specifi
    ```
 
 3. **Edit `agents.enabled`** — pick which agents you need:
+   
    ```yaml
    agents:
      enabled:
@@ -181,6 +184,7 @@ Hive is designed to be forked and configured, not hardcoded. All project-specifi
    ```
 
 4. **Edit `classification`** — your labels, lane patterns, complexity rules:
+   
    ```yaml
    classification:
      complexity:
@@ -198,6 +202,7 @@ Hive is designed to be forked and configured, not hardcoded. All project-specifi
 6. **Set agent `.env` files** with your workdir and model preferences.
 
 7. **Start:**
+   
    ```bash
    hive supervisor
    ```
@@ -236,7 +241,7 @@ Set `HIVE_BACKENDS` in `hive.conf`. `HIVE_AUTO_INSTALL=true` installs missing ba
 
 Set `HIVE_MODEL_SERVICES="ollama litellm"` to run models on-device with no API costs.
 
-```
+```text
 ollama        → runs local models (llama3, codestral, qwen2.5-coder, ...)
     └── litellm proxy :4000  ← unified OpenAI-compatible endpoint
             └── goose        ← points here when AGENT_BACKEND=goose

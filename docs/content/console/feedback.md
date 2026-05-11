@@ -18,7 +18,7 @@ KubeStellar Console has a unique feedback system. When you report a bug or reque
 
 This is a **closed-loop** system:
 
-```
+```text
 You report → Maintainer reviews → AI creates fix → You test → Release!
 ```
 
@@ -141,7 +141,7 @@ The Contribute dialog now includes a **Drafts** tab between Submit and Updates t
 
 ### Request Statuses
 
-```
+```text
 open → needs_triage → triage_accepted → feasibility_study → fix_ready → fix_complete
                                     ↘ unable_to_fix
 ```

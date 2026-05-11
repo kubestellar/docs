@@ -79,7 +79,8 @@ Open a Pull Request (PR) from your branch to the main repository.
 
 - Provide a summary of what you changed (maximum 2 lines).
 - Reference related issues, e.g.:
-  ```
+  
+  ```text
   Fixes #123
   ```
 

@@ -68,9 +68,10 @@ Your git commits should provide ample context for reviewers and future codebase 
 
 A recommended format for final commit messages is as follows:
 
-```
+```json
 {Short Title}: {Problem this commit is solving and any important contextual information} {issue number if applicable}
 ```
+
 In conformance with CNCF expectations, we will only merge commits that indicate your agreement with the [Developer Certificate of Origin](#certificate-of-origin). The CNCF defines how to do this, and there are two cases: one for developers working for an organization that is a CNCF member, and one for contributors acting as individuals. For the latter, assent is indicated by doing a Git "sign-off" on the commit. 
 
 

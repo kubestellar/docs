@@ -11,7 +11,7 @@ In addition to the `kubestellar` CLI, you can use KubeStellar as a kubectl plugi
 - Primary plugin name: `kubestellar` (binary and Krew). Executable: `kubectl-kubestellar` → usage: `kubectl kubestellar ...`.
 - Python-installed alias: `a2a`. Executable: `kubectl-a2a` → usage: `kubectl a2a ...`.
 
-```
+```text
 ╭─────────────────────────────────────────────────────────────────────────────────────────────╮
 │  ██╗  ██╗██╗   ██╗██████╗ ███████╗███████╗████████╗███████╗██╗     ██╗      █████╗ ██████╗  │
 │  ██║ ██╔╝██║   ██║██╔══██╗██╔════╝██╔════╝╚══██╔══╝██╔════╝██║     ██║     ██╔══██╗██╔══██╗ │
@@ -122,6 +122,7 @@ Install methods are detailed in “Getting Started → Installation”. For Krew
 ## Examples
 
 ### Get Cluster Information
+
 ```bash
 # Get current context
 uv run kubestellar execute get_kubeconfig
@@ -131,6 +132,7 @@ uv run kubestellar execute get_kubeconfig -P detail_level=full
 ```
 
 ### Deploy Applications
+
 ```bash
 # Deploy Helm chart
 uv run kubestellar execute helm_deploy \
@@ -147,6 +149,7 @@ uv run kubestellar execute multicluster_create \
 ```
 
 ### Resource Discovery
+
 ```bash
 # Discover all resources
 uv run kubestellar execute gvrc_discovery
@@ -179,6 +182,7 @@ ui:
 ```
 
 Or use environment variables:
+
 ```bash
 export OPENAI_API_KEY="your-key"
 ```

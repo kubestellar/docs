@@ -19,6 +19,7 @@ kubectl -n argocd edit cm argocd-cm
 ```
 
 Make sure `resource.exclusions` exists in the `data` field of the `argocd-cm` configmap as follows:
+
 ```yaml
 data:
   resource.exclusions: |
@@ -31,6 +32,7 @@ data:
 ```
 
 Restart the Argo CD server.
+
 ```shell
 kubectl -n argocd rollout restart deployment argocd-server
 ```
@@ -38,6 +40,7 @@ kubectl -n argocd rollout restart deployment argocd-server
    Argo CD's documentation mentions this feature as [Resource Exclusion/Inclusion](https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#resource-exclusioninclusion).
 
 4. Make sure the current context uses WMW, then identify the admin.kubeconfig. The command and output should be similar to:
+
 ```console
 $ argocd cluster add --name wmw --kubeconfig ./admin.kubeconfig workspace.kcp.io/current
 WARNING: This will create a service account `argocd-manager` on the cluster referenced by context `workspace.kcp.io/current` with full cluster level privileges. Do you want to continue [y/N]? y
@@ -54,6 +57,7 @@ and the commands to use the examples are listed as follows.
 
 #### Create Argo CD Applications against KubeStellar's IMW
 Create two Locations. The command and output should be similar to
+
 ```console
 $ argocd app create locations \
 --repo https://github.com/edge-experiments/gitops-source.git \
@@ -64,6 +68,7 @@ application 'locations' created
 ```
 
 Create two SyncTargets. The command and output should be similar to
+
 ```console
 $ argocd app create synctargets \
 --repo https://github.com/edge-experiments/gitops-source.git \
@@ -75,6 +80,7 @@ application 'synctargets' created
 
 #### Create Argo CD Application against KubeStellar's WMW
 Create a Namespace. The command and output should be similar to
+
 ```console
 $ argocd app create namespace \
 --repo https://github.com/edge-experiments/gitops-source.git \
@@ -85,6 +91,7 @@ application 'namespace' created
 ```
 
 Create a Deployment for 'cpumemload'. The command and output should be similar to
+
 ```console
 $ argocd app create cpumemload \
 --repo https://github.com/edge-experiments/gitops-source.git \
@@ -95,6 +102,7 @@ application 'cpumemload' created
 ```
 
 Create an EdgePlacement. The command and output should be similar to
+
 ```console
 $ argocd app create edgeplacement \
 --repo https://github.com/edge-experiments/gitops-source.git \

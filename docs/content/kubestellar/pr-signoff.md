@@ -92,6 +92,7 @@ For Windows users, **Git Bash** is also highly recommended.
          uid                          Hubot <hubot@example.com>
          ssb   4096R/4BB6D45482678BE3 2016-03-10
         ```
+        
 6. Copy your GPG key ID and run the command below, replacing `[your_GPG_key_ID]` with the key ID you just copied:
 
     ```shell
@@ -123,6 +124,7 @@ For Windows users, **Git Bash** is also highly recommended.
     ```shell
     clip < ~/.ssh/id_ed25519.pub
     ```
+    
     _Note: in a WSL terminal/command line interface, the above command will probably trigger an error. Try "clip.exe" instead of "clip" to access the Windows clipboard:_
 
     ```shell

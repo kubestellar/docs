@@ -4,7 +4,7 @@ This document explains how kubectl-multi works internally, its architecture, and
 
 ## High-Level Architecture
 
-```
+```text
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────────┐
 │   kubectl CLI   │    │  kubectl-multi   │──▶│  KubeStellar ITS    │
 │                 │──▶│     Plugin       │──▶│    (Discovery)      │
@@ -28,7 +28,7 @@ This document explains how kubectl-multi works internally, its architecture, and
 
 ## Plugin Architecture
 
-```
+```text
 kubectl-multi/
 ├── main.go                 # Entry point - delegates to cmd package
 ├── pkg/
@@ -60,6 +60,7 @@ func DiscoverClusters(kubeconfig, remoteCtx string) ([]ClusterInfo, error) {
 ```
 
 **ManagedCluster Discovery:**
+
 ```go
 // Uses KubeStellar's ManagedCluster CRDs
 gvr := schema.GroupVersionResource{
@@ -70,6 +71,7 @@ gvr := schema.GroupVersionResource{
 ```
 
 **WDS Filtering:**
+
 ```go
 func isWDSCluster(clusterName string) bool {
 	lowerName := strings.ToLower(clusterName)
@@ -81,7 +83,7 @@ func isWDSCluster(clusterName string) bool {
 
 ### 2. Command Processing Flow
 
-```
+```text
 User Input: kubectl multi get pods -n kube-system
      │
      ▼
@@ -131,6 +133,7 @@ User Input: kubectl multi get pods -n kube-system
 The plugin handles different resource types through a sophisticated routing system:
 
 #### Built-in Resource Handlers
+
 ```go
 switch strings.ToLower(resourceType) {
 case "nodes", "node", "no":
@@ -168,6 +171,7 @@ func DiscoverGVR(discoveryClient discovery.DiscoveryInterface, resourceType stri
 The plugin generates unified tabular output with cluster context:
 
 #### Single Header Strategy
+
 ```go
 // Print header only once at the top
 fmt.Fprintf(tw, "CONTEXT\tCLUSTER\tNAME\tSTATUS\tROLES\tAGE\tVERSION\n")
@@ -259,6 +263,7 @@ if isNamespaced && !allNamespaces && targetNS != "" {
 - **KubeStellar APIs**: For managed cluster discovery
 
 ### Key Dependencies
+
 ```go
 require (
 	github.com/spf13/cobra v1.8.0           // CLI framework

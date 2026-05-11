@@ -104,21 +104,25 @@ For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for
 ### WSL2 Setup Steps
 
 1. **Install WSL2** (if not already installed):
+   
    ```powershell
    wsl --install
    ```
 
 2. **Install Ubuntu** (or your preferred distribution):
+   
    ```powershell
    wsl --install -d Ubuntu
    ```
 
 3. **Update packages** inside WSL:
+   
    ```bash
    sudo apt update && sudo apt upgrade -y
    ```
 
 4. **Install prerequisites** inside WSL:
+   
    ```bash
    # Install Node.js
    curl -H "Cache-Control: no-cache" -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
@@ -156,7 +160,7 @@ This puts the tools on your PATH so the console's MCP bridge can find them.
 
 If you use [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) and want AI Missions, also register the plugins in Claude Code:
 
-```
+```text
 /plugin marketplace add kubestellar/claude-plugins
 ```
 
@@ -202,12 +206,14 @@ If you want GitHub login (for multi-user or testing the full auth flow):
    - **Authorization callback URL**: `http://localhost:8080/auth/github/callback`
 
 2. Create a `.env` file in the project root:
+   
    ```bash
    GITHUB_CLIENT_ID=your_client_id
    GITHUB_CLIENT_SECRET=your_client_secret
    ```
 
 3. Start the console:
+   
    ```bash
    git clone https://github.com/kubestellar/console.git
    cd console
@@ -238,12 +244,14 @@ Before proceeding with the installation, you need to configure GitHub OAuth, whi
    - **Authorization callback URL**: `http://localhost:8080/auth/github/callback`
 
 2. Create a `.env` file in the project root:
+   
    ```bash
    GITHUB_CLIENT_ID=your_client_id
    GITHUB_CLIENT_SECRET=your_client_secret
    ```
 
 3. Export the environment variables into your current shell so the upcoming `kubectl create secret` command can use them:
+	
 	```bash
 	export $(cat .env | xargs)
 	```

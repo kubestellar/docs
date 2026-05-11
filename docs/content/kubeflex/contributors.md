@@ -73,7 +73,8 @@ LATEST_TAG=<tag used for image> make ko-build-push-cmupdate
 1. `git checkout main` and make sure it (a) equals `main` in https://github.com/kubestellar/kubeflex and (b) is what you want to release.
 
 1. check existing tags e.g.,
-   ```
+   
+   ```text
    git tag
    v0.1.0
    v0.1.1
@@ -81,14 +82,19 @@ LATEST_TAG=<tag used for image> make ko-build-push-cmupdate
    ...
    v0.3.1
    ```
+   
 1. create a new tag e.g.
-   ```
+   
+   ```bash
    git tag v0.3.2
    ```
+   
 1. Push the tag upstream
-   ```
+   
+   ```bash
    git push upstream --tag v0.3.2
    ```
+   
    Wait until goreleaser completes the release process.
 
 1. Invoke [the E2E test workflow](https://github.com/kubestellar/kubeflex/actions/workflows/test-e2e.yml) on

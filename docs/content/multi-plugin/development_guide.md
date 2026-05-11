@@ -37,11 +37,13 @@ make check
 
 ### Setup Kubestellar Demo Environment
 This can help developers to set up multi-cluster where they can test their **kubectl multi** commands.
-```
+
+```bash
 cd kubectl-multi
 # Script for creating demo environment
 ./scripts/create-kubestellar-demo-env.sh
 ```
+
 Follow [Get Started](../kubestellar/get-started.md) for a detailed guide.
 
 ### Development Workflow
@@ -55,7 +57,7 @@ Follow [Get Started](../kubestellar/get-started.md) for a detailed guide.
 
 ## Project Structure
 
-```
+```text
 kubectl-multi/
 ├── main.go                 # Entry point
 ├── go.mod                  # Go module definition

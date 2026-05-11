@@ -61,16 +61,19 @@ kflex delete cp1
 For a realistic development team scenario with complete isolation:
 
 1. **Initialize the hosting cluster**:
+   
    ```shell
    kflex init --create-kind
    ```
 
 2. **Create Team Alpha's control plane**:
+   
    ```shell
    kflex create team-alpha --type k8s
    ```
 
 3. **Switch to Team Alpha's isolated environment**:
+   
    ```shell
    kflex ctx team-alpha
    kubectl create namespace frontend
@@ -79,11 +82,13 @@ For a realistic development team scenario with complete isolation:
    ```
 
 4. **Create Team Beta's control plane**:
+   
    ```shell
    kflex create team-beta --type k8s
    ```
 
 5. **Switch to Team Beta's environment**:
+   
    ```shell
    kflex ctx team-beta
    kubectl get namespaces  # Notice: team-alpha's namespaces are not visible
@@ -92,6 +97,7 @@ For a realistic development team scenario with complete isolation:
    ```
 
 6. **Verify complete isolation**:
+   
    ```shell
    # Team Beta cannot see Team Alpha's resources
    kubectl get deployments --all-namespaces
@@ -104,6 +110,7 @@ For a realistic development team scenario with complete isolation:
    ```
 
 7. **Return to host cluster management**:
+   
    ```shell
    kflex ctx
    kubectl get controlplanes
@@ -111,6 +118,7 @@ For a realistic development team scenario with complete isolation:
    ```
 
 8. **Cleanup**:
+   
    ```shell
    kflex delete team-alpha
    kflex delete team-beta

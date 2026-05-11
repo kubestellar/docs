@@ -82,7 +82,7 @@ The `/model` slash command inside Claude Code has a picker with only three choic
 
 To select a model not shown in the picker, pass the **full model slug** to `/model`:
 
-```
+```text
 /model claude-opus-4-6
 ```
 

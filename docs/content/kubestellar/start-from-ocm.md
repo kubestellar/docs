@@ -153,6 +153,7 @@ wec2_context=kind-$wec2_name
 label_query_both=location-group=edge
 label_query_one=name=cluster1
 ```
+
 ## Troubleshooting
 
 In the event something goes wrong, check out the [troubleshooting page](troubleshooting.md) to see if someone else has experienced the same thing

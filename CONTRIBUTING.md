@@ -59,6 +59,12 @@ Start the development environment to verify rendering:
 npm run dev
 ```
 
+Check Markdown formatting before opening a PR:
+
+```sh
+npm run lint:md
+```
+
 > **Tip:** During active documentation contributions, regularly run `npm run dev` to preview updates in real time.
 
 ### 7. Commit and Push
@@ -79,7 +85,8 @@ Open a Pull Request (PR) from your branch to the main repository.
 
 - Provide a summary of what you changed (maximum 2 lines).
 - Reference related issues, e.g.:
-  ```
+  
+  ```text
   Fixes #123
   ```
 
@@ -135,11 +142,14 @@ This guide helps contributors manage issue assignments and request helpful label
 ### Issue Assignment
 
 - **To assign yourself to an issue**, comment:
-  ```
+  
+  ```text
   /assign
   ```
+  
 - **To remove yourself from an issue**, comment:
-  ```
+  
+  ```text
   /unassign
   ```
 
@@ -148,11 +158,14 @@ This guide helps contributors manage issue assignments and request helpful label
 You can also request labels to be automatically added to issues using the following commands:
 
 - **To request the `help wanted` label**, comment:
-  ```
+  
+  ```text
   /help-wanted
   ```
+  
 - **To request the `good first issue` label**, comment:
-  ```
+  
+  ```text
   /good-first-issue
   ```
 
@@ -167,7 +180,7 @@ These commands help maintainers manage community contributions effectively and a
 This documentation website is a **separate repository** from the main KubeStellar codebase. All the active documentation is now located _in this repository_. 
 For safety reasons, copies of the docs source may remain in a to-be-deleted folder in the component repositories during a transition period
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │  Main KubeStellar Repository                                │
 │  github.com/kubestellar/kubestellar                         │
@@ -345,15 +358,19 @@ To add new documentation pages:
    - Edit `src/app/docs/page-map.ts`
    - Find the appropriate section in `NAV_STRUCTURE`
    - Add an entry for your new file:
+     
      ```typescript
      { 'Page Title': 'path/to/your-file.md' }
      ```
+     
    - The file path is relative to `/docs/content/`
 
 3. **Preview Your Changes:**
+   
    ```bash
    npm run dev
    ```
+   
    Navigate to `http://localhost:3000/docs/your-route` to see your page
 
 #### Example: Adding a New Getting Started Guide
@@ -387,14 +404,7 @@ For hierarchical navigation:
   ]
 }
 ```
-    {
-      'Nested Section': [
-        { 'Deep File': 'path/to/nested/file.md' }
-      ]
-    }
-  ]
-}
-```
+
 
 #### External Links
 

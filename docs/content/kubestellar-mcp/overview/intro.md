@@ -34,7 +34,7 @@ brew install kubestellar-deploy   # Deployment only
 
 ### 2. Install the Claude Code Plugins
 
-```
+```text
 /plugin marketplace add kubestellar/claude-plugins
 ```
 
@@ -47,7 +47,8 @@ Go to `/plugin` → **Discover** tab and install:
 ### 3. Verify Installation
 
 Run `/mcp` in Claude Code - you should see:
-```
+
+```yaml
 plugin:kubestellar-ops:kubestellar-ops · ✓ connected
 plugin:kubestellar-deploy:kubestellar-deploy · ✓ connected
 ```
@@ -103,7 +104,8 @@ sudo mv bin/kubestellar-* /usr/local/bin/
 ### Adding the Marketplace
 
 1. In Claude Code, run:
-   ```
+   
+   ```text
    /plugin marketplace add kubestellar/claude-plugins
    ```
 
@@ -127,12 +129,13 @@ sudo mv bin/kubestellar-* /usr/local/bin/
 
 Run `/mcp` in Claude Code to see connected MCP servers:
 
-```
+```yaml
 plugin:kubestellar-ops:kubestellar-ops · ✓ connected
 plugin:kubestellar-deploy:kubestellar-deploy · ✓ connected
 ```
 
 If a plugin shows disconnected, ensure the binary is installed and in your PATH:
+
 ```bash
 which kubestellar-ops
 which kubestellar-deploy
@@ -154,7 +157,8 @@ To avoid permission prompts for each tool call, add to `~/.claude/settings.json`
 ```
 
 Or run in Claude Code:
-```
+
+```text
 /allowed-tools add mcp__plugin_kubestellar-ops_kubestellar-ops__*
 /allowed-tools add mcp__plugin_kubestellar-deploy_kubestellar-deploy__*
 ```
@@ -172,7 +176,8 @@ Or run in Claude Code:
 3. Restart Claude Code
 
 **Marketplace not found:**
-```
+
+```text
 /plugin marketplace remove kubestellar
 /plugin marketplace add kubestellar/claude-plugins
 ```
@@ -271,7 +276,7 @@ Multi-cluster Kubernetes diagnostics, RBAC analysis, and security checks.
 
 ### Slash Command Examples
 
-```
+```bash
 # Check health of all clusters
 /k8s-health
 
@@ -378,7 +383,8 @@ App-centric multi-cluster deployment and operations.
 ### Example Workflows
 
 **"Where is my app running?"**
-```
+
+```text
 nginx is running on 3 clusters:
   - prod-east: 3 replicas, healthy
   - prod-west: 3 replicas, healthy
@@ -386,21 +392,24 @@ nginx is running on 3 clusters:
 ```
 
 **"Deploy to GPU clusters"**
-```
+
+```text
 Found 2 clusters with nvidia.com/gpu
 Deployed to gpu-cluster-1, gpu-cluster-2
 All healthy
 ```
 
 **"Check for drift"**
-```
+
+```text
 Drift detected:
   - prod-west: ConfigMap/app-config differs
   - staging: Deployment/api has extra replicas
 ```
 
 **"Install nginx chart to all clusters"**
-```
+
+```text
 Installing nginx to 3 clusters...
   - prod-east: installed (v1.25.0)
   - prod-west: installed (v1.25.0)
@@ -409,7 +418,8 @@ All releases healthy
 ```
 
 **"Delete the old configmap"**
-```
+
+```text
 Deleting ConfigMap/old-config from 3 clusters...
   - prod-east: deleted
   - prod-west: deleted
@@ -417,14 +427,16 @@ Deleting ConfigMap/old-config from 3 clusters...
 ```
 
 **"Rollback redis to previous version"**
-```
+
+```text
 Rolling back redis in 2 clusters...
   - prod-east: rolled back to revision 3
   - prod-west: rolled back to revision 3
 ```
 
 **"Apply kustomize from overlays/production"**
-```
+
+```text
 Building kustomize from ./overlays/production...
 Applying 5 resources to 3 clusters...
   - prod-east: applied (5 resources)
@@ -433,7 +445,8 @@ Applying 5 resources to 3 clusters...
 ```
 
 **"Add label team=platform to deployment api"**
-```
+
+```text
 Adding labels to Deployment/api...
   - prod-east: labeled
   - prod-west: labeled
@@ -466,12 +479,13 @@ kubestellar-ops watch-upgrade --context=prod-cluster --interval=5s
 
 The `watch-upgrade` command displays a self-updating progress bar that overwrites itself:
 
-```
+```text
 ⏳ 4.18.30 [###########---------------------------------------]  22% (200/906) cloud-controller-manager
 ```
 
 When complete:
-```
+
+```text
 ✅ 4.18.30 [##################################################] 100%
 ```
 
