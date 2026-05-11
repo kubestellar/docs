@@ -56,7 +56,9 @@ See the [kubestellar-mcp documentation](../kubestellar-mcp/overview/intro.md) fo
 
 ## Windows/WSL Setup
 
-For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for the best experience:
+For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for the best experience.
+
+For source-build-specific fixes, see [Windows 11 Local Source Build Troubleshooting](windows-11-local-source-build-troubleshooting.md).
 
 ### WSL2 Setup Steps
 

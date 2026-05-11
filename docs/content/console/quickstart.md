@@ -99,7 +99,9 @@ See the [Architecture](architecture.md) page for the full system diagram and com
 
 ## Windows/WSL Setup
 
-For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for the best experience:
+For Windows users, we recommend using **Windows Subsystem for Linux (WSL2)** for the best experience.
+
+If you are running from source on Windows 11, also see [Windows 11 Local Source Build Troubleshooting](windows-11-local-source-build-troubleshooting.md) for Vite proxy, OAuth redirect, and kubeconfig-specific fixes.
 
 ### WSL2 Setup Steps
 
