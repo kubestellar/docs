@@ -697,6 +697,19 @@ export default function AcmmLeaderboardPage() {
             {" "}· {TOTAL_SCANNABLE} publicly detectable signals out of {TOTAL_CRITERIA} ACMM criteria
           </p>
 
+          {/* Hive live dashboard link */}
+          <div className="mt-4 mb-2 flex justify-center">
+            <a
+              href="https://kubestellar.io/live/hive"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm hover:bg-purple-500/20 transition-colors"
+            >
+              <span>&#x1F41D;</span>
+              <span><strong>Level 6 in practice</strong> &mdash; KubeStellar/console is the only L5+ project. See the autonomous agents running live.</span>
+            </a>
+          </div>
+
           {/* Quick stats — level filters + badge filter */}
           <div className="flex flex-wrap justify-center gap-3 mt-6">
             {[6, 5, 4, 3, 2, 1, 0].map((lvl) => {

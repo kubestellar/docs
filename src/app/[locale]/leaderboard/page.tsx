@@ -749,6 +749,19 @@ export default function LeaderboardPage() {
                   View Contributor Ladder
                 </Link>
               </div>
+
+              {/* Hive live dashboard link */}
+              <div className="mt-4 flex justify-center">
+                <a
+                  href="https://kubestellar.io/live/hive"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-300 text-sm hover:bg-amber-500/20 transition-colors"
+                >
+                  <span>&#x1F41D;</span>
+                  <span><strong>See AI agents in action</strong> &mdash; Watch 9 autonomous agents maintain these repos live</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
