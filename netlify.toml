@@ -97,6 +97,19 @@
   # Enable spam filtering
   spam_protection = true
 
+# Redirect /hive and /:locale/hive to the live hive dashboard
+[[redirects]]
+  from = "/hive"
+  to = "/live/hive"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/en/hive"
+  to = "/live/hive"
+  status = 301
+  force = true
+
 # Serve static hive dashboard snapshot (bypass Next.js middleware)
 [[redirects]]
   from = "/live/hive"

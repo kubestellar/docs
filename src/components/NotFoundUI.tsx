@@ -1,10 +1,12 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function NotFoundUI() {
   const t = useTranslations("notFound");
+  const pathname = usePathname();
 
   return (
     <section className="px-4 py-32 sm:px-6 lg:px-8">
@@ -16,6 +18,13 @@ export default function NotFoundUI() {
         <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
           {t("description")}
         </p>
+
+        {pathname && (
+          <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+            <span className="text-sm text-gray-500">Requested:</span>
+            <code className="text-sm text-purple-400 font-mono">{pathname}</code>
+          </div>
+        )}
 
         <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-16">
           {t("message")}
