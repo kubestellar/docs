@@ -243,8 +243,8 @@ Before proceeding with the installation, you need to configure GitHub OAuth, whi
    GITHUB_CLIENT_SECRET=your_client_secret
    ```
 
-3. Make the environment variables available to Helm:
-	```bash	
+3. Export the environment variables into your current shell so the upcoming `kubectl create secret` command can use them:
+	```bash
 	export $(cat .env | xargs)
 	```
 
