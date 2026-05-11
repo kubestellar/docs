@@ -141,8 +141,8 @@ For the complete kubeconfig-driven registration flow, including required format,
 Choose your deployment method:
 
 - [Curl one-liner](#curl-quickstart) - Fastest, downloads pre-built binaries
-- [Run from source (no OAuth)](#run-from-source) - For development, no GitHub credentials needed
-- [Run from source (with OAuth)](#run-from-source-with-oauth) - Full GitHub login experience
+- [Run From Source (no OAuth)](#run-from-source) - For development, no GitHub credentials needed
+- [Run From Source (with OAuth)](#run-from-source-with-oauth) - Full GitHub login experience
 - [Helm (Kubernetes)](#helm-installation) - Production deployment
 - [OpenShift](#openshift-installation) - OpenShift with Routes
 - [Docker](#docker-installation) - Single-node or development
@@ -703,7 +703,7 @@ brew install kubestellar-ops kubestellar-deploy
 
 **Solutions**:
 1. Verify the secret contains correct credentials
-2. Check callback URL matches exactly (see [Run from Source with OAuth](#run-from-source-with-oauth))
+2. Check callback URL matches exactly (see [Run From Source with OAuth](#run-from-source-with-oauth))
 3. View pod logs: `kubectl logs -n ksc deployment/ksc-kubestellar-console`
 
 ### "GITHUB_CLIENT_SECRET is not set"
@@ -711,7 +711,7 @@ brew install kubestellar-ops kubestellar-deploy
 **Cause**: You're running `startup-oauth.sh` without a `.env` file.
 
 **Solutions**:
-1. Create a `.env` file with `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` (see [Run from Source with OAuth](#run-from-source-with-oauth))
+1. Create a `.env` file with `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` (see [Run From Source with OAuth](#run-from-source-with-oauth))
 2. Or use `./start-dev.sh` instead — it doesn't require OAuth credentials
 
 ### "exchange_failed" After GitHub Login
