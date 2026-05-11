@@ -244,7 +244,7 @@ Before proceeding with the installation, you need to configure GitHub OAuth, whi
    ```
 
 3. Export the environment variables into your current shell so the upcoming `kubectl create secret` command can use them:
-	```bash	
+	```bash
 	export $(cat .env | xargs)
 	```
 
