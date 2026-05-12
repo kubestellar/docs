@@ -125,6 +125,7 @@ nav:
       - Overview: console/readme.md
       - Quick Start: console/quickstart.md
       - Installation: console/installation.md
+      - vCluster Setup: console/vcluster-setup.md
       - Troubleshooting: console/troubleshooting.md
       - Windows 11 Source Build Troubleshooting: console/windows-11-local-source-build-troubleshooting.md
       - Dashboards: console/dashboards.md
