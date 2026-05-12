@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-12T03:05:15.024Z",
-  "git_hash": "47aaaed",
+  "generated_at": "2026-05-12T06:57:05.581Z",
+  "git_hash": "b8b87da",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-23",
@@ -502,12 +502,12 @@
     {
       "login": "MikeSpreitzer",
       "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
-      "total_points": 21700,
+      "total_points": 22100,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 56,
-        "feature_issues": 6,
+        "bug_issues": 57,
+        "feature_issues": 7,
         "other_issues": 40,
         "prs_opened": 4,
         "prs_merged": 3
@@ -524,9 +524,9 @@
         9,
         4,
         18,
-        0
+        2
       ],
-      "recent_activity_score": 35.61,
+      "recent_activity_score": 37.61,
       "rank": 17
     },
     {
@@ -920,6 +920,36 @@
       "rank": 30
     },
     {
+      "login": "Ram04102007",
+      "avatar_url": "https://avatars.githubusercontent.com/u/229876746?v=4",
+      "total_points": 4000,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 2,
+        "feature_issues": 4,
+        "other_issues": 0,
+        "prs_opened": 5,
+        "prs_merged": 4
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        4
+      ],
+      "recent_activity_score": 9.56,
+      "rank": 31
+    },
+    {
       "login": "rudy128",
       "avatar_url": "https://avatars.githubusercontent.com/u/77375030?v=4",
       "total_points": 3900,
@@ -947,7 +977,7 @@
         0
       ],
       "recent_activity_score": 0.32,
-      "rank": 31
+      "rank": 32
     },
     {
       "login": "AkashKumar7902",
@@ -977,36 +1007,6 @@
         0
       ],
       "recent_activity_score": 2.5,
-      "rank": 32
-    },
-    {
-      "login": "Ram04102007",
-      "avatar_url": "https://avatars.githubusercontent.com/u/229876746?v=4",
-      "total_points": 3200,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 2,
-        "feature_issues": 3,
-        "other_issues": 0,
-        "prs_opened": 4,
-        "prs_merged": 3
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        7,
-        2
-      ],
-      "recent_activity_score": 7.56,
       "rank": 33
     },
     {
@@ -2512,13 +2512,13 @@
     {
       "login": "waltforme",
       "avatar_url": "https://avatars.githubusercontent.com/u/8633434?v=4",
-      "total_points": 400,
+      "total_points": 450,
       "level": "Observer",
       "level_rank": 1,
       "breakdown": {
         "bug_issues": 1,
         "feature_issues": 0,
-        "other_issues": 2,
+        "other_issues": 3,
         "prs_opened": 0,
         "prs_merged": 0
       },
@@ -2534,9 +2534,9 @@
         0,
         0,
         0,
-        0
+        1
       ],
-      "recent_activity_score": 0.13,
+      "recent_activity_score": 1.13,
       "rank": 84
     },
     {
