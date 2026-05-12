@@ -314,7 +314,7 @@ export default function ContactSection() {
               href="https://www.youtube.com/@kubestellar"
               target="_blank"
               rel="noopener noreferrer"
-              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer"
+              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-red-500/50 cursor-pointer"
             >
               <div className="flex items-center">
                 <div className="flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-black-600 flex items-center justify-center shadow-lg">
@@ -336,7 +336,7 @@ export default function ContactSection() {
                   <p className="text-gray-300 mt-1 text-sm sm:text-base">
                     {t("card5Description")}
                   </p>
-                  <p className="text-blue-400 mt-1 text-xs sm:text-sm inline-flex items-center">
+                  <p className="text-red-400 mt-1 text-xs sm:text-sm inline-flex items-center">
                     {t("card5Link")}
                     <svg
                       className="ml-1 w-3 h-3 sm:w-4 sm:h-4"
