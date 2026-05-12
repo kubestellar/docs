@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-12T06:57:05.581Z",
-  "git_hash": "b8b87da",
+  "generated_at": "2026-05-12T10:48:28.492Z",
+  "git_hash": "d395988",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-23",
@@ -20,13 +20,13 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4640950,
+      "total_points": 4641400,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 431,
-        "feature_issues": 530,
-        "other_issues": 716,
+        "bug_issues": 432,
+        "feature_issues": 531,
+        "other_issues": 717,
         "prs_opened": 6639,
         "prs_merged": 6190
       },
@@ -43,9 +43,9 @@
         986,
         881,
         195,
-        29
+        32
       ],
-      "recent_activity_score": 2336.35,
+      "recent_activity_score": 2339.35,
       "rank": 1
     },
     {
@@ -352,11 +352,11 @@
     {
       "login": "Abhishek-Punhani",
       "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-      "total_points": 43050,
+      "total_points": 43950,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 129,
+        "bug_issues": 132,
         "feature_issues": 3,
         "other_issues": 5,
         "prs_opened": 9,
@@ -374,21 +374,21 @@
         13,
         21,
         22,
-        2
+        5
       ],
-      "recent_activity_score": 58.08,
+      "recent_activity_score": 61.08,
       "rank": 12
     },
     {
       "login": "khushiiagrawal",
       "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-      "total_points": 40450,
+      "total_points": 42000,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 118,
+        "bug_issues": 123,
         "feature_issues": 0,
-        "other_issues": 3,
+        "other_issues": 4,
         "prs_opened": 7,
         "prs_merged": 7
       },
@@ -404,9 +404,9 @@
         25,
         18,
         6,
-        9
+        15
       ],
-      "recent_activity_score": 65.14,
+      "recent_activity_score": 71.14,
       "rank": 13
     },
     {
@@ -860,6 +860,36 @@
       "rank": 28
     },
     {
+      "login": "Ram04102007",
+      "avatar_url": "https://avatars.githubusercontent.com/u/229876746?v=4",
+      "total_points": 4800,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 2,
+        "feature_issues": 5,
+        "other_issues": 0,
+        "prs_opened": 6,
+        "prs_merged": 5
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        6
+      ],
+      "recent_activity_score": 11.56,
+      "rank": 29
+    },
+    {
       "login": "Shreya2005-2005",
       "avatar_url": "https://avatars.githubusercontent.com/u/217235943?v=4",
       "total_points": 4550,
@@ -887,16 +917,16 @@
         0
       ],
       "recent_activity_score": 7.81,
-      "rank": 29
+      "rank": 30
     },
     {
       "login": "Anvesha-Khandelwal",
       "avatar_url": "https://avatars.githubusercontent.com/u/189449740?v=4",
-      "total_points": 4000,
+      "total_points": 4300,
       "level": "Navigator",
       "level_rank": 3,
       "breakdown": {
-        "bug_issues": 13,
+        "bug_issues": 14,
         "feature_issues": 0,
         "other_issues": 2,
         "prs_opened": 0,
@@ -914,39 +944,9 @@
         0,
         0,
         15,
-        0
+        1
       ],
-      "recent_activity_score": 11.91,
-      "rank": 30
-    },
-    {
-      "login": "Ram04102007",
-      "avatar_url": "https://avatars.githubusercontent.com/u/229876746?v=4",
-      "total_points": 4000,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 2,
-        "feature_issues": 4,
-        "other_issues": 0,
-        "prs_opened": 5,
-        "prs_merged": 4
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        7,
-        4
-      ],
-      "recent_activity_score": 9.56,
+      "recent_activity_score": 12.91,
       "rank": 31
     },
     {
