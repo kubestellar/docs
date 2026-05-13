@@ -1,0 +1,8 @@
+config:
+  default: false
+  # MD031
+  blanks-around-fences:
+    list_items: true
+  # MD040
+  fenced-code-language:
+    allowed_languages: []
