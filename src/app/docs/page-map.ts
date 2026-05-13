@@ -210,7 +210,6 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
     title: 'Features',
     items: [
       { 'Dashboards': 'dashboards.md' },
-      { 'Deploy & Orchestrate': 'deploy.md' },
       { 'Cards': 'all-cards.md' },
       { 'Stats Blocks': 'stats-blocks.md' },
       { 'AI Features': 'ai-features.md' },
