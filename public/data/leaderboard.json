@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-12T22:26:52.344Z",
-  "git_hash": "4e2cd85",
+  "generated_at": "2026-05-13T03:05:34.996Z",
+  "git_hash": "51f97de",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-23",
@@ -36,16 +36,16 @@
         376,
         1231,
         690,
-        453,
-        627,
+        454,
+        629,
         723,
         805,
         986,
         881,
-        195,
+        196,
         37
       ],
-      "recent_activity_score": 2344.55,
+      "recent_activity_score": 2346.04,
       "rank": 1
     },
     {
@@ -193,10 +193,10 @@
         15,
         0,
         96,
-        42,
+        54,
         0
       ],
-      "recent_activity_score": 138.91,
+      "recent_activity_score": 148.43,
       "rank": 6
     },
     {
@@ -442,7 +442,7 @@
     {
       "login": "KPRoche",
       "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
-      "total_points": 24050,
+      "total_points": 24550,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
@@ -450,7 +450,7 @@
         "feature_issues": 8,
         "other_issues": 5,
         "prs_opened": 36,
-        "prs_merged": 25
+        "prs_merged": 26
       },
       "weekly_activity": [
         11,
@@ -793,10 +793,10 @@
         0,
         0,
         10,
-        1,
+        2,
         0
       ],
-      "recent_activity_score": 7.09,
+      "recent_activity_score": 7.89,
       "rank": 26
     },
     {
@@ -980,6 +980,36 @@
       "rank": 32
     },
     {
+      "login": "ashnaaseth2325-oss",
+      "avatar_url": "https://avatars.githubusercontent.com/u/226311472?v=4",
+      "total_points": 3600,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 2,
+        "prs_opened": 5,
+        "prs_merged": 5
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        3
+      ],
+      "recent_activity_score": 6.17,
+      "rank": 33
+    },
+    {
       "login": "AkashKumar7902",
       "avatar_url": "https://avatars.githubusercontent.com/u/91385321?v=4",
       "total_points": 3500,
@@ -1007,7 +1037,7 @@
         0
       ],
       "recent_activity_score": 2.5,
-      "rank": 33
+      "rank": 34
     },
     {
       "login": "AresPhoenix345",
@@ -1037,36 +1067,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 34
-    },
-    {
-      "login": "ashnaaseth2325-oss",
-      "avatar_url": "https://avatars.githubusercontent.com/u/226311472?v=4",
-      "total_points": 2900,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 2,
-        "prs_opened": 4,
-        "prs_merged": 4
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        4,
-        2
-      ],
-      "recent_activity_score": 5.17,
       "rank": 35
     },
     {
@@ -1213,10 +1213,10 @@
         0,
         0,
         4,
-        6,
+        7,
         0
       ],
-      "recent_activity_score": 7.28,
+      "recent_activity_score": 8.08,
       "rank": 40
     },
     {
@@ -2542,13 +2542,13 @@
     {
       "login": "waltforme",
       "avatar_url": "https://avatars.githubusercontent.com/u/8633434?v=4",
-      "total_points": 450,
-      "level": "Observer",
-      "level_rank": 1,
+      "total_points": 500,
+      "level": "Explorer",
+      "level_rank": 2,
       "breakdown": {
         "bug_issues": 1,
         "feature_issues": 0,
-        "other_issues": 3,
+        "other_issues": 4,
         "prs_opened": 0,
         "prs_merged": 0
       },
@@ -2564,9 +2564,9 @@
         0,
         0,
         0,
-        1
+        2
       ],
-      "recent_activity_score": 1.13,
+      "recent_activity_score": 2.13,
       "rank": 85
     },
     {
