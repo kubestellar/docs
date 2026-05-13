@@ -199,8 +199,9 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Introduction': 'readme.md' },
       { 'Quick Start': 'quickstart.md' },
-      { 'Installation': 'installation.md' },
       { 'Architecture': 'architecture.md' },
+      { 'Installation': 'installation.md' },
+      { 'Cluster Registration': 'cluster-registration.md' },
       { 'Agentic Quality Controls': 'agentic-quality.md' },
       { 'Demo Mode': 'demo-mode.md' },
       { 'Configuration': 'configuration.md' },
