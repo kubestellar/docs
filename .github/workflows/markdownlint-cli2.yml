@@ -1,0 +1,26 @@
+name: Markdown Lint
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "README.md"
+      - "CONTRIBUTING.md"
+      - "docs/**/*.md"
+      - "docs/**/*.mdx"
+
+jobs:
+  markdownlint:
+    name: markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Validate markdown rules
+        uses: DavidAnson/markdownlint-cli2-action@v23
+        with:
+          globs: |
+            README.md
+            CONTRIBUTING.md
+            docs/**/*.md
+            docs/**/*.mdx
