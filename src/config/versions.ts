@@ -41,7 +41,7 @@ export interface ProjectConfig {
 const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.30.0-rc.1 (Latest)",
-    branch: "docs/0.30.0-rc.1",
+    branch: "docs/0.30.0",
     isDefault: true,
   },
   main: {
@@ -136,7 +136,7 @@ const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
 // a2a versions
 const A2A_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.1.0 (Latest)",
+    label: "v0.30.0 (Latest)",
     branch: "docs/a2a/0.1.0",
     isDefault: true,
   },
@@ -275,7 +275,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "kubestellar",
     name: "KubeStellar",
     basePath: "",
-    currentVersion: "0.30.0-rc.1",
+    currentVersion: "0.30.0",
     contentPath: "docs/content",
     versions: KUBESTELLAR_VERSIONS,
   },
