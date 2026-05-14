@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "node --experimental-strip-types scripts/generate-shared-config.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

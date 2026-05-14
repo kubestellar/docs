@@ -40,7 +40,7 @@ export interface ProjectConfig {
 // KubeStellar versions (existing)
 const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.30.0-rc.1 (Latest)",
+    label: "v0.30.0 (Latest)",
     branch: "docs/0.30.0",
     isDefault: true,
   },
@@ -136,7 +136,7 @@ const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
 // a2a versions
 const A2A_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.30.0 (Latest)",
+    label: "v0.1.0 (Latest)",
     branch: "docs/a2a/0.1.0",
     isDefault: true,
   },

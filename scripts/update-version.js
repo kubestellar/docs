@@ -10,6 +10,12 @@
  *   --version      Version number (e.g., 0.30.0)
  *   --branch       Branch name for this version (e.g., docs/0.30.0)
  *   --set-latest   If provided, updates the "latest" label, branch, and currentVersion
+ *
+ * NOTE: versions.ts is the single source of truth for version metadata.
+ * public/config/shared.json is generated from it by scripts/generate-shared-config.ts
+ * (run automatically as the prebuild step).  This script still updates shared.json
+ * directly so that CI release workflows remain self-contained, but the generate
+ * script is the canonical mechanism for keeping the two files in sync.
  */
 
 const fs = require('fs');
