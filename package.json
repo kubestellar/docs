@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prebuild": "node --experimental-strip-types scripts/generate-shared-config.ts",
+    "prebuild": "tsx scripts/generate-shared-config.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -51,6 +51,7 @@
     "markdownlint-cli2": "^0.18.1",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5",
     "wink-eng-lite-web-model": "^1.8.1",
     "wink-nlp": "^2.4.0"
