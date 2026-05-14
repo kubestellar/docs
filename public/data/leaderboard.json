@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-14T06:59:28.846Z",
-  "git_hash": "05adea9",
+  "generated_at": "2026-05-14T10:48:09.699Z",
+  "git_hash": "faf8fec",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-23",
@@ -20,12 +20,12 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4646300,
+      "total_points": 4646500,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 434,
-        "feature_issues": 538,
+        "feature_issues": 540,
         "other_issues": 719,
         "prs_opened": 6644,
         "prs_merged": 6195
@@ -37,25 +37,25 @@
         1231,
         690,
         455,
-        631,
+        632,
         723,
         805,
         986,
         881,
         198,
-        48
+        50
       ],
-      "recent_activity_score": 2359.33,
+      "recent_activity_score": 2361.58,
       "rank": 1
     },
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 198350,
+      "total_points": 199550,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 586,
+        "bug_issues": 590,
         "feature_issues": 21,
         "other_issues": 17,
         "prs_opened": 33,
@@ -73,9 +73,9 @@
         5,
         0,
         44,
-        0
+        4
       ],
-      "recent_activity_score": 222.98,
+      "recent_activity_score": 226.98,
       "rank": 2
     },
     {
@@ -622,14 +622,14 @@
     {
       "login": "AdeshDeshmukh",
       "avatar_url": "https://avatars.githubusercontent.com/u/233792877?v=4",
-      "total_points": 14500,
+      "total_points": 14700,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
         "bug_issues": 0,
         "feature_issues": 0,
         "other_issues": 2,
-        "prs_opened": 22,
+        "prs_opened": 23,
         "prs_merged": 20
       },
       "weekly_activity": [
@@ -644,9 +644,9 @@
         0,
         0,
         1,
-        23
+        24
       ],
-      "recent_activity_score": 23.79,
+      "recent_activity_score": 24.79,
       "rank": 21
     },
     {
