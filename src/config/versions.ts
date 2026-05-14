@@ -1,6 +1,11 @@
 // Multi-project versions config
 // Supports KubeStellar, a2a, and kubeflex with independent versioning
 //
+// IMPORTANT: This file is the source of truth for version metadata.
+// When updating versions here, you MUST also update public/config/shared.json
+// to keep runtime configuration in sync. Use scripts/update-version.js to
+// update both files atomically, or manually sync changes.
+//
 // Versioning Strategy:
 // - Each project has its own version scheme
 // - Branch naming convention:
