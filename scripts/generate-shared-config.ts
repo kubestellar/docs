@@ -7,8 +7,8 @@
  * truth for version/project metadata).
  *
  * Run automatically as a prebuild step so CI always produces a consistent
- * shared.json.  Can also be run manually: node --experimental-strip-types
- * scripts/generate-shared-config.ts
+ * shared.json.  Can also be run manually with tsx:
+ *   npx tsx scripts/generate-shared-config.ts
  *
  * Non-version fields that live only in shared.json (surveyUrl, relatedProjects,
  * editBaseUrls) are preserved from the existing file so this script never
@@ -18,20 +18,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { PROJECTS } from '../src/config/versions';
 
 // ---------------------------------------------------------------------------
 // Resolve paths relative to repo root
 // ---------------------------------------------------------------------------
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '..');
-const versionsPath = path.join(repoRoot, 'src', 'config', 'versions.ts');
 const sharedJsonPath = path.join(repoRoot, 'public', 'config', 'shared.json');
 
 // ---------------------------------------------------------------------------
-// Import version data from versions.ts
-// (Node ≥ 22.6 with --experimental-strip-types handles TypeScript natively)
+// Import version data from versions.ts via tsx so the script works in the
+// Node 20 runtime configured for Netlify.
 // ---------------------------------------------------------------------------
-const { PROJECTS } = await import(versionsPath) as typeof import('../src/config/versions.ts');
 
 // ---------------------------------------------------------------------------
 // Build versions and projects maps from PROJECTS
