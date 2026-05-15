@@ -6,15 +6,15 @@ description: >
   Set up AI Missions in KubeStellar Console: configure API keys for Claude, OpenAI, or Gemini, choose a model, understand demo mode, and run your first multi-cluster Kubernetes AI mission with step-by-step instructions.
 keywords:
   - AI missions setup
-  - kubernetes AI configuration
-  - Claude API key kubernetes
-  - OpenAI API key kubernetes
-  - Gemini API key kubernetes
+  - Kubernetes AI configuration
+  - Claude API key Kubernetes
+  - OpenAI API key Kubernetes
+  - Gemini API key Kubernetes
   - AI missions getting started
-  - kubernetes AI troubleshooting
+  - Kubernetes AI troubleshooting
   - multi-cluster AI setup
   - AI provider configuration
-  - kubernetes AI demo mode
+  - Kubernetes AI demo mode
 ---
 
 # AI Missions Setup & Getting Started
@@ -193,7 +193,7 @@ Click the **AI Missions** button in the bottom-right corner of the console. The 
 
 ### Step 2: Create a New Mission
 
-Click **Start Custom Mission** or select a mission type from the panel:
+Click **Start Custom Mission** or **Browse Community Missions** and select a mission type from the panel:
 
 | Mission Type | Use for |
 |--------------|---------|
