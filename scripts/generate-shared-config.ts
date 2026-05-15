@@ -28,13 +28,9 @@ const versionsPath = path.join(repoRoot, 'src', 'config', 'versions.ts');
 const sharedJsonPath = path.join(repoRoot, 'public', 'config', 'shared.json');
 
 // ---------------------------------------------------------------------------
-// Import version data from versions.ts
-// (Node ≥ 22.6 with --experimental-strip-types handles TypeScript natively)
-// ---------------------------------------------------------------------------
-const { PROJECTS } = await import(versionsPath) as typeof import('../src/config/versions.ts');
-
-// ---------------------------------------------------------------------------
-// Build versions and projects maps from PROJECTS
+// Import version data from versions.ts and generate shared.json
+// Wrapped in an async IIFE to avoid top-level await, which is not supported
+// when tsx runs in CJS mode (e.g. Netlify's Node 20).
 // ---------------------------------------------------------------------------
 type VersionEntry = {
   label: string;
@@ -44,35 +40,6 @@ type VersionEntry = {
   isDev?: boolean;
 };
 
-const versions: Record<string, Record<string, VersionEntry>> = {};
-const projects: Record<string, { name: string; basePath: string; currentVersion: string }> = {};
-
-for (const [id, project] of Object.entries(PROJECTS)) {
-  // versions map: strip internal-only fields if any
-  versions[id] = Object.fromEntries(
-    Object.entries(project.versions).map(([key, v]) => {
-      const entry: VersionEntry = {
-        label: v.label,
-        branch: v.branch,
-        isDefault: v.isDefault,
-      };
-      if (v.externalUrl) entry.externalUrl = v.externalUrl;
-      if (v.isDev) entry.isDev = v.isDev;
-      return [key, entry];
-    }),
-  );
-
-  // projects map: only the fields the browser needs
-  projects[id] = {
-    name: project.name,
-    basePath: project.basePath,
-    currentVersion: project.currentVersion,
-  };
-}
-
-// ---------------------------------------------------------------------------
-// Preserve hand-maintained fields from the existing shared.json
-// ---------------------------------------------------------------------------
 interface ExistingSharedConfig {
   surveyUrl?: string;
   relatedProjects?: unknown[];
@@ -80,31 +47,58 @@ interface ExistingSharedConfig {
   [key: string]: unknown;
 }
 
-let existing: ExistingSharedConfig = {};
-if (fs.existsSync(sharedJsonPath)) {
-  existing = JSON.parse(fs.readFileSync(sharedJsonPath, 'utf8')) as ExistingSharedConfig;
-}
+(async () => {
+  const { PROJECTS } = await import(versionsPath) as typeof import('../src/config/versions.ts');
 
-// Derive editBaseUrls from project data; fall back to existing values so
-// hand-maintained URLs (e.g. external repos) are not lost.
-const editBaseUrls: Record<string, string> = { ...(existing.editBaseUrls ?? {}) };
-// Always regenerate the kubestellar editBaseUrl from the current branch
-const ksLatest = PROJECTS.kubestellar.versions.latest;
-if (ksLatest?.branch) {
-  editBaseUrls.kubestellar = `https://github.com/kubestellar/docs/edit/${ksLatest.branch}/docs/content`;
-}
+  // Build versions and projects maps from PROJECTS
+  const versions: Record<string, Record<string, VersionEntry>> = {};
+  const projects: Record<string, { name: string; basePath: string; currentVersion: string }> = {};
 
-// ---------------------------------------------------------------------------
-// Assemble and write the new shared.json
-// ---------------------------------------------------------------------------
-const sharedConfig = {
-  surveyUrl: existing.surveyUrl,
-  versions,
-  projects,
-  relatedProjects: existing.relatedProjects ?? [],
-  editBaseUrls,
-  updatedAt: new Date().toISOString(),
-};
+  for (const [id, project] of Object.entries(PROJECTS)) {
+    versions[id] = Object.fromEntries(
+      Object.entries(project.versions).map(([key, v]) => {
+        const entry: VersionEntry = {
+          label: v.label,
+          branch: v.branch,
+          isDefault: v.isDefault,
+        };
+        if (v.externalUrl) entry.externalUrl = v.externalUrl;
+        if (v.isDev) entry.isDev = v.isDev;
+        return [key, entry];
+      }),
+    );
 
-fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedConfig, null, 2) + '\n');
-console.log(`✅ Generated ${path.relative(repoRoot, sharedJsonPath)} from versions.ts`);
+    projects[id] = {
+      name: project.name,
+      basePath: project.basePath,
+      currentVersion: project.currentVersion,
+    };
+  }
+
+  // Preserve hand-maintained fields from the existing shared.json
+  let existing: ExistingSharedConfig = {};
+  if (fs.existsSync(sharedJsonPath)) {
+    existing = JSON.parse(fs.readFileSync(sharedJsonPath, 'utf8')) as ExistingSharedConfig;
+  }
+
+  // Derive editBaseUrls from project data; fall back to existing values so
+  // hand-maintained URLs (e.g. external repos) are not lost.
+  const editBaseUrls: Record<string, string> = { ...(existing.editBaseUrls ?? {}) };
+  const ksLatest = PROJECTS.kubestellar.versions.latest;
+  if (ksLatest?.branch) {
+    editBaseUrls.kubestellar = `https://github.com/kubestellar/docs/edit/${ksLatest.branch}/docs/content`;
+  }
+
+  // Assemble and write the new shared.json
+  const sharedConfig = {
+    surveyUrl: existing.surveyUrl,
+    versions,
+    projects,
+    relatedProjects: existing.relatedProjects ?? [],
+    editBaseUrls,
+    updatedAt: new Date().toISOString(),
+  };
+
+  fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedConfig, null, 2) + '\n');
+  console.log(`✅ Generated ${path.relative(repoRoot, sharedJsonPath)} from versions.ts`);
+})();
