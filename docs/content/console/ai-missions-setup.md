@@ -193,15 +193,18 @@ Click the **AI Missions** button in the bottom-right corner of the console. The 
 
 ### Step 2: Create a New Mission
 
-Click **Start Custom Mission** or **Browse Community Missions** and select a mission type from the panel:
+2 steps on how to create a new misson
 
-| Mission Type | Use for |
-|--------------|---------|
-| **Troubleshoot** | Diagnosing pod crashes, failed deployments, network issues |
-| **Analyze** | Understanding resource usage patterns, security posture, cluster drift |
-| **Repair** | Fixing identified problems with AI-generated patches |
-| **Upgrade** | Planning and executing Kubernetes or application upgrades |
-| **Deploy** | Deploying applications across one or more clusters |
+- Click **Start Custom Mission** to manually create a new mission.
+- Click **Browse Community Missions** to use an existing mission created by the community and select a mission type from the panel. The following table describes the supported mission types.
+
+    | Mission Type | Use for |
+    |--------------|---------|
+    | **Troubleshoot** | Diagnosing pod crashes, failed deployments, network issues |
+    | **Analyze** | Understanding resource usage patterns, security posture, cluster drift |
+    | **Repair** | Fixing identified problems with AI-generated patches |
+    | **Upgrade** | Planning and executing Kubernetes or application upgrades |
+    | **Deploy** | Deploying applications across one or more clusters |
 
 ### Step 3: Describe Your Task
 
