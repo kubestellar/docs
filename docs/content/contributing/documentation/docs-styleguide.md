@@ -56,7 +56,13 @@ If you want to deepen your understanding of accessibility, we recommend checking
 - [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
 - [Google's Style Guide for Writing Inclusive Documentation](https://developers.google.com/style/inclusive-documentation)
 
->**Note:** KubeStellar docs are authored primarily in **Markdown**. The examples in this guide therefore use Markdown syntax (for example, `![Alt text](path/to/image.png)`).
+>**Note:** KubeStellar docs are authored primarily in **Markdown**. The examples in this guide therefore use Markdown syntax, for example:
+>
+>```md
+>![Alt text](path/to/image.png)
+>```
+>
+>The example above is illustrative only and does not point to a real file.
 >While some resources above reference **HTML**, they remain useful for understanding core accessibility principles (like alt text and headings) and for cases where we embed raw HTML in Markdown. If you’re new to Markdown, start with Markdown-focused references first.
 
 ### Use Care If Using Generative AI
