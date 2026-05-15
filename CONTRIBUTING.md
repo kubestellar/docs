@@ -36,7 +36,6 @@ Navigate into the project directory and install dependencies:
 ```sh
 cd docs
 npm install
-npm install markdownlint-cli2 --global
 ```
 
 ### 4. Create a Branch
@@ -63,7 +62,7 @@ npm run dev
 Check Markdown formatting before opening a PR:
 
 ```sh
-markdownlint-cli2 README.md CONTRIBUTING.md "docs/**/*.md" "docs/**/*.mdx"
+npm run lint:md
 ```
 
 > **Tip:** During active documentation contributions, regularly run `npm run dev` to preview updates in real time.
