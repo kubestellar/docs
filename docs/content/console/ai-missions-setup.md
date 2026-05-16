@@ -6,15 +6,15 @@ description: >
   Set up AI Missions in KubeStellar Console: configure API keys for Claude, OpenAI, or Gemini, choose a model, understand demo mode, and run your first multi-cluster Kubernetes AI mission with step-by-step instructions.
 keywords:
   - AI missions setup
-  - kubernetes AI configuration
-  - Claude API key kubernetes
-  - OpenAI API key kubernetes
-  - Gemini API key kubernetes
+  - Kubernetes AI configuration
+  - Claude API key Kubernetes
+  - OpenAI API key Kubernetes
+  - Gemini API key Kubernetes
   - AI missions getting started
-  - kubernetes AI troubleshooting
+  - Kubernetes AI troubleshooting
   - multi-cluster AI setup
   - AI provider configuration
-  - kubernetes AI demo mode
+  - Kubernetes AI demo mode
 ---
 
 # AI Missions Setup & Getting Started
@@ -193,15 +193,18 @@ Click the **AI Missions** button in the bottom-right corner of the console. The 
 
 ### Step 2: Create a New Mission
 
-Click **Start Custom Mission** or select a mission type from the panel:
+2 steps on how to create a new misson
 
-| Mission Type | Use for |
-|--------------|---------|
-| **Troubleshoot** | Diagnosing pod crashes, failed deployments, network issues |
-| **Analyze** | Understanding resource usage patterns, security posture, cluster drift |
-| **Repair** | Fixing identified problems with AI-generated patches |
-| **Upgrade** | Planning and executing Kubernetes or application upgrades |
-| **Deploy** | Deploying applications across one or more clusters |
+- Click **Start Custom Mission** to manually create a new mission.
+- Click **Browse Community Missions** to use an existing mission created by the community and select a mission type from the panel. The following table describes the supported mission types.
+
+    | Mission Type | Use for |
+    |--------------|---------|
+    | **Troubleshoot** | Diagnosing pod crashes, failed deployments, network issues |
+    | **Analyze** | Understanding resource usage patterns, security posture, cluster drift |
+    | **Repair** | Fixing identified problems with AI-generated patches |
+    | **Upgrade** | Planning and executing Kubernetes or application upgrades |
+    | **Deploy** | Deploying applications across one or more clusters |
 
 ### Step 3: Describe Your Task
 
