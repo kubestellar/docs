@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-15T22:20:27.283Z",
-  "git_hash": "3b80c73",
+  "generated_at": "2026-05-16T03:04:57.186Z",
+  "git_hash": "2559a99",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-02-23",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4652150,
+      "total_points": 4653100,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 436,
-        "feature_issues": 543,
-        "other_issues": 730,
-        "prs_opened": 6650,
-        "prs_merged": 6201
+        "feature_issues": 544,
+        "other_issues": 733,
+        "prs_opened": 6651,
+        "prs_merged": 6202
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -36,16 +36,16 @@
         376,
         1231,
         690,
-        456,
-        635,
+        457,
+        638,
         723,
         805,
         986,
         881,
         198,
-        72
+        77
       ],
-      "recent_activity_score": 2384.53,
+      "recent_activity_score": 2390.47,
       "rank": 1
     },
     {
@@ -412,14 +412,14 @@
     {
       "login": "KPRoche",
       "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
-      "total_points": 28200,
+      "total_points": 28700,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 13,
+        "bug_issues": 14,
         "feature_issues": 8,
         "other_issues": 6,
-        "prs_opened": 41,
+        "prs_opened": 42,
         "prs_merged": 30
       },
       "weekly_activity": [
@@ -433,10 +433,10 @@
         0,
         0,
         0,
-        9,
-        13
+        11,
+        15
       ],
-      "recent_activity_score": 25.73,
+      "recent_activity_score": 29.32,
       "rank": 14
     },
     {
@@ -583,10 +583,10 @@
         0,
         0,
         5,
-        41,
+        42,
         14
       ],
-      "recent_activity_score": 50.34,
+      "recent_activity_score": 51.14,
       "rank": 19
     },
     {
@@ -643,10 +643,10 @@
         14,
         4,
         5,
-        15,
+        16,
         0
       ],
-      "recent_activity_score": 22.61,
+      "recent_activity_score": 23.4,
       "rank": 21
     },
     {
@@ -682,14 +682,14 @@
     {
       "login": "ANAMASGARD",
       "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
-      "total_points": 12200,
+      "total_points": 12600,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
         "bug_issues": 1,
         "feature_issues": 2,
         "other_issues": 2,
-        "prs_opened": 18,
+        "prs_opened": 20,
         "prs_merged": 16
       },
       "weekly_activity": [
@@ -704,9 +704,9 @@
         8,
         0,
         0,
-        10
+        12
       ],
-      "recent_activity_score": 14.79,
+      "recent_activity_score": 16.79,
       "rank": 23
     },
     {
@@ -763,10 +763,10 @@
         0,
         0,
         0,
-        36,
+        55,
         5
       ],
-      "recent_activity_score": 33.57,
+      "recent_activity_score": 48.65,
       "rank": 25
     },
     {
@@ -922,14 +922,14 @@
     {
       "login": "Creativeklvn",
       "avatar_url": "https://avatars.githubusercontent.com/u/216730209?v=4",
-      "total_points": 4550,
+      "total_points": 4750,
       "level": "Navigator",
       "level_rank": 3,
       "breakdown": {
         "bug_issues": 0,
         "feature_issues": 0,
         "other_issues": 3,
-        "prs_opened": 7,
+        "prs_opened": 8,
         "prs_merged": 6
       },
       "weekly_activity": [
@@ -944,9 +944,9 @@
         0,
         0,
         1,
-        9
+        10
       ],
-      "recent_activity_score": 9.79,
+      "recent_activity_score": 10.79,
       "rank": 31
     },
     {
@@ -1063,10 +1063,10 @@
         0,
         0,
         0,
-        6,
+        7,
         4
       ],
-      "recent_activity_score": 8.76,
+      "recent_activity_score": 9.56,
       "rank": 35
     },
     {
