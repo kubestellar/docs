@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-18T11:19:31.249Z",
-  "git_hash": "69604ed",
+  "generated_at": "2026-05-18T15:04:51.708Z",
+  "git_hash": "2040629",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-02",
@@ -20,12 +20,12 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4660750,
+      "total_points": 4661150,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 437,
-        "feature_issues": 554,
+        "bug_issues": 438,
+        "feature_issues": 555,
         "other_issues": 758,
         "prs_opened": 6659,
         "prs_merged": 6209
@@ -43,9 +43,9 @@
         881,
         198,
         111,
-        10
+        12
       ],
-      "recent_activity_score": 1929.38,
+      "recent_activity_score": 1931.38,
       "rank": 1
     },
     {
@@ -141,11 +141,11 @@
     {
       "login": "aaradhychinche-alt",
       "avatar_url": "https://avatars.githubusercontent.com/u/235337173?v=4",
-      "total_points": 150050,
+      "total_points": 152450,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 447,
+        "bug_issues": 455,
         "feature_issues": 35,
         "other_issues": 27,
         "prs_opened": 18,
@@ -163,9 +163,9 @@
         6,
         53,
         0,
-        0
+        8
       ],
-      "recent_activity_score": 155.19,
+      "recent_activity_score": 163.19,
       "rank": 5
     },
     {
@@ -652,14 +652,14 @@
     {
       "login": "ayuxsh009",
       "avatar_url": "https://avatars.githubusercontent.com/u/149216976?v=4",
-      "total_points": 16400,
+      "total_points": 16600,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 0,
         "feature_issues": 0,
         "other_issues": 2,
-        "prs_opened": 24,
+        "prs_opened": 25,
         "prs_merged": 23
       },
       "weekly_activity": [
@@ -674,9 +674,9 @@
         0,
         0,
         25,
-        1
+        2
       ],
-      "recent_activity_score": 20.84,
+      "recent_activity_score": 21.84,
       "rank": 22
     },
     {
