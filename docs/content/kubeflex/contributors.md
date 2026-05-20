@@ -64,7 +64,7 @@ LATEST_TAG=<tag used for image> make ko-build-push-cmupdate
 
 ## Steps to make release
 
-1. Delete branch "brew" from https://github.com/kubestellar/kubeflex, if there is such a branch.
+1. Delete branch "brew" from https://github.com/kubestellar/kubeflex if there is such a branch.
 
 1. Make sure that the `go-version` parameter of `actions/setup-go` in
    `.github/workflows/goreleaser.yml` is high enough. It is enough
