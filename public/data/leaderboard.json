@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-20T11:01:36.547Z",
-  "git_hash": "b6ab276",
+  "generated_at": "2026-05-20T15:04:41.749Z",
+  "git_hash": "619f88a",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-02",
@@ -20,14 +20,14 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4670550,
+      "total_points": 4670950,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 441,
-        "feature_issues": 563,
+        "feature_issues": 565,
         "other_issues": 772,
-        "prs_opened": 6669,
+        "prs_opened": 6670,
         "prs_merged": 6219
       },
       "bonus_points": 50,
@@ -43,19 +43,19 @@
         881,
         198,
         111,
-        47
+        50
       ],
-      "recent_activity_score": 1969.32,
+      "recent_activity_score": 1972.32,
       "rank": 1
     },
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 220650,
+      "total_points": 220950,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 659,
+        "bug_issues": 660,
         "feature_issues": 25,
         "other_issues": 17,
         "prs_opened": 33,
@@ -73,9 +73,9 @@
         0,
         47,
         65,
-        12
+        13
       ],
-      "recent_activity_score": 242.46,
+      "recent_activity_score": 243.46,
       "rank": 2
     },
     {
@@ -562,11 +562,11 @@
     {
       "login": "oksaumya",
       "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
-      "total_points": 18950,
+      "total_points": 19250,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 25,
+        "bug_issues": 26,
         "feature_issues": 0,
         "other_issues": 43,
         "prs_opened": 19,
@@ -584,9 +584,9 @@
         5,
         44,
         21,
-        1
+        2
       ],
-      "recent_activity_score": 48.34,
+      "recent_activity_score": 49.34,
       "rank": 19
     },
     {
