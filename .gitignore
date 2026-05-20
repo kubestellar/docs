@@ -43,3 +43,7 @@ next-env.d.ts
 # Local Netlify folder
 .netlify
 deno.lock
+
+# git worktrees — prevent accidental commits that create broken gitlinks
+*-worktree
+*-worktree/
