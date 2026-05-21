@@ -151,7 +151,7 @@ This checker recognizes KubeStellar domain terminology. If a valid term was inco
 
 If no typos are found and an existing `typos` issue is open, close it with a comment saying no typos remain.
 
-If no typos are found and no issue exists, exit silently.
+If no typos are found and no issue exists, call the `noop` safe-output tool with a brief message explaining that the scan found no actionable typos.
 
 ### Important Rules
 
@@ -162,8 +162,9 @@ If no typos are found and no issue exists, exit silently.
 5. Do not fail the workflow — typos are suggestions, not blockers
 6. For markdown files, ignore content inside code blocks (``` ... ```)
 7. Close the issue if no typos remain
+8. Always finish by invoking a safe-output tool: create/update/close the typos issue when action is needed, or `noop` when the scan finds nothing actionable
 
 ### Exit Conditions
 
 - Exit if no relevant files found
-- Exit if no typos found (close existing issue if present)
+- If no typos are found, close any existing `typos` issue; otherwise call `noop` so the workflow records an explicit no-action result
