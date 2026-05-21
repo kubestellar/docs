@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-21T03:06:34.756Z",
-  "git_hash": "8a7deda",
+  "generated_at": "2026-05-21T07:15:43.665Z",
+  "git_hash": "c21975e",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-02",
@@ -111,11 +111,11 @@
     {
       "login": "mrhapile",
       "avatar_url": "https://avatars.githubusercontent.com/u/196413886?v=4",
-      "total_points": 162250,
+      "total_points": 165550,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 490,
+        "bug_issues": 501,
         "feature_issues": 11,
         "other_issues": 27,
         "prs_opened": 24,
@@ -133,9 +133,9 @@
         10,
         31,
         0,
-        0
+        11
       ],
-      "recent_activity_score": 152.5,
+      "recent_activity_score": 163.5,
       "rank": 4
     },
     {
@@ -290,6 +290,36 @@
       "rank": 9
     },
     {
+      "login": "khushiiagrawal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
+      "total_points": 48000,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 143,
+        "feature_issues": 0,
+        "other_issues": 4,
+        "prs_opened": 7,
+        "prs_merged": 7
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        67,
+        25,
+        18,
+        6,
+        25,
+        10
+      ],
+      "recent_activity_score": 74.4,
+      "rank": 10
+    },
+    {
       "login": "Abhishek-Punhani",
       "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
       "total_points": 46450,
@@ -317,7 +347,7 @@
         2
       ],
       "recent_activity_score": 60.18,
-      "rank": 10
+      "rank": 11
     },
     {
       "login": "Arpit529Srivastava",
@@ -347,36 +377,6 @@
         0
       ],
       "recent_activity_score": 53.28,
-      "rank": 11
-    },
-    {
-      "login": "khushiiagrawal",
-      "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-      "total_points": 45000,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 133,
-        "feature_issues": 0,
-        "other_issues": 4,
-        "prs_opened": 7,
-        "prs_merged": 7
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        3,
-        67,
-        25,
-        18,
-        6,
-        25,
-        0
-      ],
-      "recent_activity_score": 64.4,
       "rank": 12
     },
     {
