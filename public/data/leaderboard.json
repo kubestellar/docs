@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-21T07:15:43.665Z",
-  "git_hash": "c21975e",
+  "generated_at": "2026-05-21T11:04:40.912Z",
+  "git_hash": "b56baa0",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-02",
@@ -20,13 +20,13 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4675900,
+      "total_points": 4676200,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 443,
-        "feature_issues": 568,
-        "other_issues": 773,
+        "feature_issues": 570,
+        "other_issues": 775,
         "prs_opened": 6675,
         "prs_merged": 6225
       },
@@ -43,19 +43,19 @@
         881,
         198,
         111,
-        61
+        65
       ],
-      "recent_activity_score": 1984.7,
+      "recent_activity_score": 1988.7,
       "rank": 1
     },
     {
       "login": "xonas1101",
       "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
-      "total_points": 221250,
+      "total_points": 224250,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 661,
+        "bug_issues": 671,
         "feature_issues": 25,
         "other_issues": 17,
         "prs_opened": 33,
@@ -73,9 +73,9 @@
         0,
         48,
         65,
-        14
+        24
       ],
-      "recent_activity_score": 245.09,
+      "recent_activity_score": 255.09,
       "rank": 2
     },
     {
@@ -230,6 +230,36 @@
       "rank": 7
     },
     {
+      "login": "arnavgogia20",
+      "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
+      "total_points": 53400,
+      "level": "Captain",
+      "level_rank": 6,
+      "breakdown": {
+        "bug_issues": 151,
+        "feature_issues": 7,
+        "other_issues": 4,
+        "prs_opened": 11,
+        "prs_merged": 10
+      },
+      "weekly_activity": [
+        1,
+        16,
+        0,
+        8,
+        15,
+        52,
+        8,
+        13,
+        13,
+        25,
+        7,
+        8
+      ],
+      "recent_activity_score": 62.39,
+      "rank": 8
+    },
+    {
       "login": "XxSURYANSHxX",
       "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
       "total_points": 52500,
@@ -257,36 +287,6 @@
         0
       ],
       "recent_activity_score": 53.85,
-      "rank": 8
-    },
-    {
-      "login": "arnavgogia20",
-      "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
-      "total_points": 51000,
-      "level": "Captain",
-      "level_rank": 6,
-      "breakdown": {
-        "bug_issues": 143,
-        "feature_issues": 7,
-        "other_issues": 4,
-        "prs_opened": 11,
-        "prs_merged": 10
-      },
-      "weekly_activity": [
-        1,
-        16,
-        0,
-        8,
-        15,
-        52,
-        8,
-        13,
-        13,
-        25,
-        7,
-        0
-      ],
-      "recent_activity_score": 54.39,
       "rank": 9
     },
     {
