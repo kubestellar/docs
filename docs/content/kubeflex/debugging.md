@@ -65,7 +65,7 @@ cat /proc//cmdline | sed -e "s/\x00/ /g"; echo
 ### How to communicate between kind clusters on the same node
 
 One approach that is independent of local machine IP is to use the internal DNS address of
-docker containers. The address is the name of the docker container. For kubflex that
+docker containers. The address is the name of the docker container. For kubeflex that
 address is `kubeflex-control-plane`. For example, if I have a nodeport service on 
 `kubeflex-control-plane` with port 30080 and I want to access it from another kind cluster
 the internal address to use is `https://kubeflex-control-plane:30080`
