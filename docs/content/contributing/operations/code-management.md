@@ -12,10 +12,10 @@ Fork kubestellar into your own repo, create a local branch, set upstream to kube
 
 ## Initial setup
 
-### Fork the Github kubestellar repo into your own Github repo:
-You can do this either 1: from the kubestellar Github website using the "Fork" button or 2: by using the git fork command from your local git command line interface, such as git bash.
+### Fork the GitHub kubestellar repo into your own GitHub repo:
+You can do this either 1: from the kubestellar GitHub website using the "Fork" button or 2: by using the git fork command from your local git command line interface, such as git bash.
 
-copy the forked repo from Github to your local system by using the "git clone" command or by downloading the repository's zip file.
+copy the forked repo from GitHub to your local system by using the "git clone" command or by downloading the repository's zip file.
 
 In your new local forked repo, set upstream to kubestellar main
 
@@ -114,7 +114,7 @@ git push --force-with-lease
 
 Note: if using the git push -u origin <branch-name> command, the -u only needs to specified the first time you push. It will set tracking for subsequent pushes to the branch. On the other hand, keeping the -u in the command does no particular harm.
 
-## Run Actions (automated workflow tests) manually in your personal Github repository
+## Run Actions (automated workflow tests) manually in your personal GitHub repository
 
 1. Select the "Actions" tab toward the upper left of your github personal web page. This will cause a list of Actions to show.
 2. Select the action you wish to execute from the list of Actions. For example you might chose "docs-ecutable - example1".
@@ -125,13 +125,13 @@ Note: docs-ecutable should be described in a separate section. But in a nutshell
   3. within the dialog box, select the green "Run Workflow" button 
 Your selected Action workflow will execute and the results will be available when it completes.  
 
-## Create a Pull Request (PR) from your Github repo branch in order to request review and approval from the Kubestellar team
+## Create a Pull Request (PR) from your GitHub repo branch in order to request review and approval from the Kubestellar team
 
 Take a look at [the contribution guidelines](../documentation/contributing-inc.md).
 
-You can create a Pull Request from your Github web repository by selecting the "Compare & pull request" button.
+You can create a Pull Request from your GitHub web repository by selecting the "Compare & pull request" button.
 
-You will be presented with a Github web page titled Comparing Changes, which allows you to enter metadata regarding your pull request
+You will be presented with a GitHub web page titled Comparing Changes, which allows you to enter metadata regarding your pull request
 
 Reference the issue you are addressing ( add #issue-number)
 The title of the PR must start with a special character (emoji) that
