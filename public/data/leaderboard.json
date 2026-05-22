@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-22T11:01:28.726Z",
-  "git_hash": "7a0c79f",
+  "generated_at": "2026-05-22T15:02:13.393Z",
+  "git_hash": "7a5b83c",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-02",
@@ -81,11 +81,11 @@
     {
       "login": "aashu2006",
       "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-      "total_points": 167800,
+      "total_points": 169300,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 522,
+        "bug_issues": 527,
         "feature_issues": 8,
         "other_issues": 50,
         "prs_opened": 12,
@@ -103,9 +103,9 @@
         5,
         28,
         7,
-        0
+        5
       ],
-      "recent_activity_score": 183.33,
+      "recent_activity_score": 188.33,
       "rank": 3
     },
     {
@@ -442,15 +442,15 @@
     {
       "login": "ANAMASGARD",
       "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
-      "total_points": 29350,
+      "total_points": 30600,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 10,
         "feature_issues": 2,
-        "other_issues": 11,
-        "prs_opened": 38,
-        "prs_merged": 36
+        "other_issues": 12,
+        "prs_opened": 39,
+        "prs_merged": 38
       },
       "weekly_activity": [
         0,
@@ -464,9 +464,9 @@
         0,
         0,
         18,
-        30
+        32
       ],
-      "recent_activity_score": 48.09,
+      "recent_activity_score": 50.09,
       "rank": 15
     },
     {
