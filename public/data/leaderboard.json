@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-23T06:54:09.312Z",
-  "git_hash": "1d403c4",
+  "generated_at": "2026-05-23T10:31:20.927Z",
+  "git_hash": "a7ef8de",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-02",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4683700,
+      "total_points": 4685100,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 444,
         "feature_issues": 579,
         "other_issues": 789,
-        "prs_opened": 6683,
-        "prs_merged": 6233
+        "prs_opened": 6685,
+        "prs_merged": 6235
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         881,
         198,
         111,
-        97
+        99
       ],
-      "recent_activity_score": 2023.48,
+      "recent_activity_score": 2025.48,
       "rank": 1
     },
     {
@@ -442,15 +442,15 @@
     {
       "login": "ANAMASGARD",
       "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
-      "total_points": 30600,
+      "total_points": 31300,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 10,
         "feature_issues": 2,
         "other_issues": 12,
-        "prs_opened": 39,
-        "prs_merged": 38
+        "prs_opened": 40,
+        "prs_merged": 39
       },
       "weekly_activity": [
         0,
@@ -464,9 +464,9 @@
         0,
         0,
         20,
-        32
+        33
       ],
-      "recent_activity_score": 51.68,
+      "recent_activity_score": 52.68,
       "rank": 15
     },
     {
@@ -622,7 +622,7 @@
     {
       "login": "ayuxsh009",
       "avatar_url": "https://avatars.githubusercontent.com/u/149216976?v=4",
-      "total_points": 18200,
+      "total_points": 18700,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
@@ -630,7 +630,7 @@
         "feature_issues": 0,
         "other_issues": 2,
         "prs_opened": 26,
-        "prs_merged": 24
+        "prs_merged": 25
       },
       "weekly_activity": [
         0,
