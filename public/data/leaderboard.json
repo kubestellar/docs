@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-23T03:04:41.417Z",
-  "git_hash": "6d14c01",
+  "generated_at": "2026-05-23T06:54:09.312Z",
+  "git_hash": "1d403c4",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-02",
@@ -620,6 +620,36 @@
       "rank": 20
     },
     {
+      "login": "ayuxsh009",
+      "avatar_url": "https://avatars.githubusercontent.com/u/149216976?v=4",
+      "total_points": 18200,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 3,
+        "feature_issues": 0,
+        "other_issues": 2,
+        "prs_opened": 26,
+        "prs_merged": 24
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        26,
+        6
+      ],
+      "recent_activity_score": 26.64,
+      "rank": 21
+    },
+    {
       "login": "rabbitc0der",
       "avatar_url": "https://avatars.githubusercontent.com/u/183977752?v=4",
       "total_points": 17800,
@@ -647,36 +677,6 @@
         7
       ],
       "recent_activity_score": 80.02,
-      "rank": 21
-    },
-    {
-      "login": "ayuxsh009",
-      "avatar_url": "https://avatars.githubusercontent.com/u/149216976?v=4",
-      "total_points": 17400,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 1,
-        "feature_issues": 0,
-        "other_issues": 2,
-        "prs_opened": 25,
-        "prs_merged": 24
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        26,
-        3
-      ],
-      "recent_activity_score": 23.64,
       "rank": 22
     },
     {
