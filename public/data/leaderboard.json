@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T18:21:18.915Z",
-  "git_hash": "ac61e01",
+  "generated_at": "2026-05-24T22:19:41.308Z",
+  "git_hash": "3e59df5",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-02",
@@ -20,12 +20,12 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4686850,
+      "total_points": 4687050,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 444,
-        "feature_issues": 579,
+        "feature_issues": 581,
         "other_issues": 792,
         "prs_opened": 6688,
         "prs_merged": 6237
@@ -43,9 +43,9 @@
         881,
         198,
         113,
-        105
+        107
       ],
-      "recent_activity_score": 2033.47,
+      "recent_activity_score": 2035.47,
       "rank": 1
     },
     {
@@ -1790,6 +1790,36 @@
       "rank": 59
     },
     {
+      "login": "ayushshukla1807",
+      "avatar_url": "https://avatars.githubusercontent.com/u/182410571?v=4",
+      "total_points": 1650,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 1,
+        "prs_opened": 3,
+        "prs_merged": 2
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        6,
+        0,
+        1
+      ],
+      "recent_activity_score": 5.78,
+      "rank": 60
+    },
+    {
       "login": "tushar743-ui",
       "avatar_url": "https://avatars.githubusercontent.com/u/199554954?v=4",
       "total_points": 1650,
@@ -1817,7 +1847,7 @@
         1
       ],
       "recent_activity_score": 3.38,
-      "rank": 60
+      "rank": 61
     },
     {
       "login": "sakshar2303",
@@ -1847,36 +1877,6 @@
         0
       ],
       "recent_activity_score": 2,
-      "rank": 61
-    },
-    {
-      "login": "ayushshukla1807",
-      "avatar_url": "https://avatars.githubusercontent.com/u/182410571?v=4",
-      "total_points": 1450,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 1,
-        "prs_opened": 2,
-        "prs_merged": 2
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        6,
-        0,
-        0
-      ],
-      "recent_activity_score": 4.78,
       "rank": 62
     },
     {
