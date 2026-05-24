@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T10:32:47.796Z",
-  "git_hash": "cbf08ae",
+  "generated_at": "2026-05-24T14:30:59.085Z",
+  "git_hash": "4e4279c",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-02",
@@ -20,13 +20,13 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4686750,
+      "total_points": 4686800,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 444,
         "feature_issues": 579,
-        "other_issues": 790,
+        "other_issues": 791,
         "prs_opened": 6688,
         "prs_merged": 6237
       },
@@ -43,9 +43,9 @@
         881,
         198,
         113,
-        103
+        104
       ],
-      "recent_activity_score": 2031.47,
+      "recent_activity_score": 2032.47,
       "rank": 1
     },
     {
@@ -412,15 +412,15 @@
     {
       "login": "ANAMASGARD",
       "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
-      "total_points": 35550,
+      "total_points": 37350,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
-        "bug_issues": 11,
+        "bug_issues": 12,
         "feature_issues": 2,
-        "other_issues": 17,
-        "prs_opened": 46,
-        "prs_merged": 44
+        "other_issues": 19,
+        "prs_opened": 48,
+        "prs_merged": 46
       },
       "weekly_activity": [
         0,
@@ -434,9 +434,9 @@
         0,
         0,
         20,
-        45
+        50
       ],
-      "recent_activity_score": 64.68,
+      "recent_activity_score": 69.68,
       "rank": 14
     },
     {
@@ -802,11 +802,11 @@
     {
       "login": "bmvinay7",
       "avatar_url": "https://avatars.githubusercontent.com/u/171116665?v=4",
-      "total_points": 11000,
+      "total_points": 11300,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
-        "bug_issues": 4,
+        "bug_issues": 5,
         "feature_issues": 0,
         "other_issues": 2,
         "prs_opened": 16,
@@ -824,9 +824,9 @@
         0,
         0,
         21,
-        8
+        9
       ],
-      "recent_activity_score": 24.67,
+      "recent_activity_score": 25.67,
       "rank": 27
     },
     {
