@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-24T07:05:10.029Z",
-  "git_hash": "8a148a0",
+  "generated_at": "2026-05-24T10:32:47.796Z",
+  "git_hash": "cbf08ae",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-02",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4686050,
+      "total_points": 4686750,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 444,
         "feature_issues": 579,
         "other_issues": 790,
-        "prs_opened": 6687,
-        "prs_merged": 6236
+        "prs_opened": 6688,
+        "prs_merged": 6237
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         881,
         198,
         113,
-        102
+        103
       ],
-      "recent_activity_score": 2030.47,
+      "recent_activity_score": 2031.47,
       "rank": 1
     },
     {
@@ -410,6 +410,36 @@
       "rank": 13
     },
     {
+      "login": "ANAMASGARD",
+      "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
+      "total_points": 35550,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 11,
+        "feature_issues": 2,
+        "other_issues": 17,
+        "prs_opened": 46,
+        "prs_merged": 44
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        8,
+        0,
+        0,
+        20,
+        45
+      ],
+      "recent_activity_score": 64.68,
+      "rank": 14
+    },
+    {
       "login": "KPRoche",
       "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
       "total_points": 32900,
@@ -437,36 +467,6 @@
         6
       ],
       "recent_activity_score": 35.54,
-      "rank": 14
-    },
-    {
-      "login": "ANAMASGARD",
-      "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
-      "total_points": 31300,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 10,
-        "feature_issues": 2,
-        "other_issues": 12,
-        "prs_opened": 40,
-        "prs_merged": 39
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        8,
-        0,
-        0,
-        20,
-        33
-      ],
-      "recent_activity_score": 52.68,
       "rank": 15
     },
     {
