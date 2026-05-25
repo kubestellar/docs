@@ -459,9 +459,10 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
   // For all projects, include files from both project-specific and main KubeStellar directories
   let allDocFiles = getAllDocFiles(contentPath)
   if (projectId !== 'kubestellar') {
-    // Add general sections files from main KubeStellar directory
+    // Add general sections files and root-level pages from main KubeStellar directory
     const generalFiles = getAllDocFiles(docsContentPath).filter(f =>
-      f.startsWith('contributing/') || f.startsWith('community/') || f.startsWith('news/')
+      f.startsWith('contributing/') || f.startsWith('community/') || f.startsWith('news/') ||
+      f === 'intro.md' || f === 'legacy-components.md' || f === 'what-is-console.md'
     )
     allDocFiles = [...allDocFiles, ...generalFiles]
   }
