@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-25T11:22:25.434Z",
-  "git_hash": "835ea37",
+  "generated_at": "2026-05-25T15:02:15.025Z",
+  "git_hash": "e0568f0",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-09",
@@ -20,13 +20,13 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4688150,
+      "total_points": 4688300,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 445,
-        "feature_issues": 586,
-        "other_issues": 798,
+        "feature_issues": 587,
+        "other_issues": 799,
         "prs_opened": 6688,
         "prs_merged": 6237
       },
@@ -43,9 +43,9 @@
         198,
         114,
         108,
-        11
+        13
       ],
-      "recent_activity_score": 1604.79,
+      "recent_activity_score": 1606.79,
       "rank": 1
     },
     {
@@ -350,6 +350,36 @@
       "rank": 11
     },
     {
+      "login": "ANAMASGARD",
+      "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
+      "total_points": 46300,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 16,
+        "feature_issues": 2,
+        "other_issues": 24,
+        "prs_opened": 58,
+        "prs_merged": 57
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        8,
+        0,
+        0,
+        20,
+        51,
+        18
+      ],
+      "recent_activity_score": 74.1,
+      "rank": 12
+    },
+    {
       "login": "Arpit529Srivastava",
       "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
       "total_points": 45250,
@@ -377,36 +407,6 @@
         0
       ],
       "recent_activity_score": 42.16,
-      "rank": 12
-    },
-    {
-      "login": "ANAMASGARD",
-      "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
-      "total_points": 44800,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 16,
-        "feature_issues": 2,
-        "other_issues": 24,
-        "prs_opened": 58,
-        "prs_merged": 54
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        8,
-        0,
-        0,
-        20,
-        51,
-        18
-      ],
-      "recent_activity_score": 74.1,
       "rank": 13
     },
     {
