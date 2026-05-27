@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-27T15:04:42.539Z",
-  "git_hash": "08dae3d",
+  "generated_at": "2026-05-27T18:45:28.813Z",
+  "git_hash": "2ef3fc7",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-09",
@@ -81,11 +81,11 @@
     {
       "login": "aashu2006",
       "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
-      "total_points": 170800,
+      "total_points": 172000,
       "level": "Admiral",
       "level_rank": 7,
       "breakdown": {
-        "bug_issues": 532,
+        "bug_issues": 536,
         "feature_issues": 8,
         "other_issues": 50,
         "prs_opened": 12,
@@ -103,9 +103,9 @@
         28,
         7,
         5,
-        5
+        9
       ],
-      "recent_activity_score": 154.48,
+      "recent_activity_score": 158.48,
       "rank": 3
     },
     {
@@ -322,11 +322,11 @@
     {
       "login": "khushiiagrawal",
       "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-      "total_points": 49500,
-      "level": "Commander",
-      "level_rank": 5,
+      "total_points": 51000,
+      "level": "Captain",
+      "level_rank": 6,
       "breakdown": {
-        "bug_issues": 148,
+        "bug_issues": 153,
         "feature_issues": 0,
         "other_issues": 4,
         "prs_opened": 7,
@@ -344,9 +344,9 @@
         6,
         25,
         15,
-        0
+        5
       ],
-      "recent_activity_score": 63.02,
+      "recent_activity_score": 68.02,
       "rank": 11
     },
     {
