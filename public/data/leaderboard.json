@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-27T07:24:38.394Z",
-  "git_hash": "48485c7",
+  "generated_at": "2026-05-27T11:11:27.864Z",
+  "git_hash": "93057ee",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-09",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4691800,
+      "total_points": 4692950,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 448,
-        "feature_issues": 598,
-        "other_issues": 815,
-        "prs_opened": 6689,
-        "prs_merged": 6238
+        "bug_issues": 449,
+        "feature_issues": 599,
+        "other_issues": 816,
+        "prs_opened": 6690,
+        "prs_merged": 6239
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         198,
         114,
         108,
-        44
+        48
       ],
-      "recent_activity_score": 1638.73,
+      "recent_activity_score": 1642.73,
       "rank": 1
     },
     {
@@ -230,6 +230,36 @@
       "rank": 7
     },
     {
+      "login": "ANAMASGARD",
+      "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
+      "total_points": 54100,
+      "level": "Captain",
+      "level_rank": 6,
+      "breakdown": {
+        "bug_issues": 20,
+        "feature_issues": 2,
+        "other_issues": 30,
+        "prs_opened": 67,
+        "prs_merged": 66
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        8,
+        0,
+        0,
+        20,
+        51,
+        37
+      ],
+      "recent_activity_score": 93.1,
+      "rank": 8
+    },
+    {
       "login": "arnavgogia20",
       "avatar_url": "https://avatars.githubusercontent.com/u/242623817?v=4",
       "total_points": 53400,
@@ -257,7 +287,7 @@
         0
       ],
       "recent_activity_score": 49.45,
-      "rank": 8
+      "rank": 9
     },
     {
       "login": "XxSURYANSHxX",
@@ -287,36 +317,6 @@
         0
       ],
       "recent_activity_score": 42.74,
-      "rank": 9
-    },
-    {
-      "login": "ANAMASGARD",
-      "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
-      "total_points": 51850,
-      "level": "Captain",
-      "level_rank": 6,
-      "breakdown": {
-        "bug_issues": 20,
-        "feature_issues": 2,
-        "other_issues": 27,
-        "prs_opened": 64,
-        "prs_merged": 63
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        2,
-        8,
-        0,
-        0,
-        20,
-        51,
-        31
-      ],
-      "recent_activity_score": 87.1,
       "rank": 10
     },
     {
