@@ -23,7 +23,7 @@ Click the **Fork** button at the top-right corner of this page to create your ow
 
 ### 2. Clone Your Fork
 
-Clone the repository to your local machine, replacing `https://github.com/your-username/docs.git` with your fork URL:
+Clone the repository to your local machine using your fork URL:
 
 ```sh
 git clone <your-fork-url>
@@ -602,7 +602,8 @@ GITHUB_PAT=ghp_your_token_here    # Alternative name
 ```sh
 # Set the docs file path you want to inspect
 DOCS_FILE_PATH="docs/content/your-file.md"
-curl "https://api.github.com/repos/kubestellar/kubestellar/contents/${DOCS_FILE_PATH}"
+GITHUB_CONTENTS_API="https://api.github.com/repos/kubestellar/kubestellar/contents"
+curl "${GITHUB_CONTENTS_API}/${DOCS_FILE_PATH}"
 
 # Verify page-map.ts entry
 grep -r "your-file.md" src/app/docs/page-map.ts
