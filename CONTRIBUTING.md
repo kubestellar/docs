@@ -23,11 +23,13 @@ Click the **Fork** button at the top-right corner of this page to create your ow
 
 ### 2. Clone Your Fork
 
-Clone the repository to your local machine, replacing `https://github.com/your-username/docs.git` with your fork URL:
+Clone the repository to your local machine. For example, to clone the main repository:
 
 ```sh
-git clone <your-fork-url>
+git clone https://github.com/kubestellar/docs.git
 ```
+
+If you're working from a fork, replace the repository URL above with your fork URL.
 
 ### 3. Install Dependencies
 

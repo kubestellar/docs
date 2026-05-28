@@ -36,7 +36,7 @@ In textual documentation, however, emojis may interfere with rendering and navig
 
 Writing for accessibility means ensuring that screen readers can easily read your text, your content is easy to navigate, visually clear and logically structured. This includes the appropriate usage of Heading tags, styling your text consistently and using a 'gender-neutral' language where applicable.
 
-Accessibility is a part of any good web project, and docs are no different. As a bare minimum, we require that all our images and diagrams always have an appropriate 'alt-text' to support visually impared users and screenreaders. In Markdown, you can add alt-text using the following syntax:
+Accessibility is a part of any good web project, and docs are no different. As a bare minimum, we require that all our images and diagrams always have an appropriate 'alt-text' to support visually impaired users and screen readers. In Markdown, you can add alt-text using the following syntax:
 
 ```markdown
 ![Example image with alt text](include-markdown-example.png)
@@ -56,13 +56,13 @@ If you want to deepen your understanding of accessibility, we recommend checking
 - [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
 - [Google's Style Guide for Writing Inclusive Documentation](https://developers.google.com/style/inclusive-documentation)
 
->**Note:** KubeStellar docs are authored primarily in **Markdown**. The examples in this guide therefore use Markdown syntax, for example:
->
->```md
->![Alt text](path/to/image.png)
->```
->
->The example above is illustrative only and does not point to a real file.
+**Note:** KubeStellar docs are authored primarily in **Markdown**. The examples in this guide therefore use Markdown syntax, for example:
+
+```md
+![Alt text](IMAGE_FILE_PATH)
+```
+
+The example above is illustrative only and does not point to a real file.
 >While some resources above reference **HTML**, they remain useful for understanding core accessibility principles (like alt text and headings) and for cases where we embed raw HTML in Markdown. If you’re new to Markdown, start with Markdown-focused references first.
 
 ### Use Care If Using Generative AI
