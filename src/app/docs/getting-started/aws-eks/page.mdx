@@ -139,11 +139,12 @@ chmod +x kubectl && sudo mv kubectl /usr/local/bin/
 
 ```bash
 # eksctl
-curl -sSL "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+EKSCTL_RELEASES_URL="https://github.com/weaveworks/eksctl/releases/latest"
+curl -sSL "${EKSCTL_RELEASES_URL}/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz
 ```
 
 ```bash
-sudo mv /tmp/eksctl /usr/local/bin
+sudo mv eksctl /usr/local/bin
 ```
 
 ```bash

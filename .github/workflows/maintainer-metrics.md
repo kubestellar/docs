@@ -417,8 +417,8 @@ Generate 3 suggestions using this framework:
 
 **IMPORTANT - All recommendations MUST include clickable URLs:**
 
-- Format: `Title (repo #number) - https://github.com/org/repo/issues/number`
-- Example: "Fix UI bug (kubestellar/ui #2275) - https://github.com/kubestellar/ui/issues/2275"
+- Format: `Title (repo #number) - ISSUE_URL`
+- Example output: `Fix UI bug (kubestellar/ui #2275) - https://github.com/kubestellar/ui/issues/2275`
 - The URL field is in the JSON as `url` - use it directly
 
 **Generate email:**

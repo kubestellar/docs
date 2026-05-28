@@ -23,7 +23,7 @@ Click the **Fork** button at the top-right corner of this page to create your ow
 
 ### 2. Clone Your Fork
 
-Clone the repository to your local machine, replacing `https://github.com/your-username/docs.git` with your fork URL:
+Clone the repository to your local machine using your fork URL:
 
 ```sh
 git clone <your-fork-url>

@@ -217,7 +217,8 @@ helm version
 ```bash
 # Download and install kflex
 KFLEX_VERSION=0.7.2
-curl -L https://github.com/kubestellar/kubeflex/releases/download/v${KFLEX_VERSION}/kflex_${KFLEX_VERSION}_linux_amd64.tar.gz | tar -xz
+KUBEFLEX_RELEASES_URL="https://github.com/kubestellar/kubeflex/releases"
+curl -L "${KUBEFLEX_RELEASES_URL}/download/v${KFLEX_VERSION}/kflex_${KFLEX_VERSION}_linux_amd64.tar.gz" | tar -xz
 chmod +x kflex
 sudo mv kflex /usr/local/bin/
 
