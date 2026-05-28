@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-27T22:32:19.915Z",
-  "git_hash": "1ee75ac",
+  "generated_at": "2026-05-28T03:06:48.879Z",
+  "git_hash": "335a342",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-09",
@@ -35,7 +35,7 @@
         1231,
         690,
         460,
-        669,
+        672,
         723,
         805,
         1002,
@@ -45,7 +45,7 @@
         108,
         48
       ],
-      "recent_activity_score": 1642.73,
+      "recent_activity_score": 1643.21,
       "rank": 1
     },
     {
@@ -373,10 +373,10 @@
         21,
         25,
         15,
-        3,
+        4,
         0
       ],
-      "recent_activity_score": 48,
+      "recent_activity_score": 48.79,
       "rank": 12
     },
     {
@@ -442,7 +442,7 @@
     {
       "login": "KPRoche",
       "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
-      "total_points": 34800,
+      "total_points": 35300,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
@@ -450,7 +450,7 @@
         "feature_issues": 8,
         "other_issues": 6,
         "prs_opened": 51,
-        "prs_merged": 38
+        "prs_merged": 39
       },
       "weekly_activity": [
         10,
@@ -823,10 +823,10 @@
         0,
         0,
         29,
-        10,
+        11,
         0
       ],
-      "recent_activity_score": 26.21,
+      "recent_activity_score": 27,
       "rank": 27
     },
     {
@@ -1872,11 +1872,11 @@
         0,
         0,
         0,
-        9,
+        11,
         1,
         0
       ],
-      "recent_activity_score": 6.46,
+      "recent_activity_score": 7.72,
       "rank": 62
     },
     {
@@ -3522,11 +3522,11 @@
         0,
         0,
         0,
-        5,
+        6,
         0,
         0
       ],
-      "recent_activity_score": 3.15,
+      "recent_activity_score": 3.78,
       "rank": 117
     }
   ]
