@@ -16,7 +16,7 @@ To provide contributors with a clear understanding of how to grow within the Kub
 
 Each level reflects a growing commitment to the project, increased responsibilities, and expanded leadership opportunities.
 
-```
+```text
 Contributor → Unpaid Intern → Paid Intern → Mentor → Maintainer
                                                           ↓
                                                       Emeritus
