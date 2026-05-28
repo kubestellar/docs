@@ -36,7 +36,7 @@ In textual documentation, however, emojis may interfere with rendering and navig
 
 Writing for accessibility means ensuring that screen readers can easily read your text, your content is easy to navigate, visually clear and logically structured. This includes the appropriate usage of Heading tags, styling your text consistently and using a 'gender-neutral' language where applicable.
 
-Accessibility is a part of any good web project, and docs are no different. As a bare minimum, we require that all our images and diagrams always have an appropriate 'alt-text' to support visually impared users and screenreaders. In Markdown, you can add alt-text using the following syntax:
+Accessibility is a part of any good web project, and docs are no different. As a bare minimum, we require that all our images and diagrams always have an appropriate 'alt-text' to support visually impaired users and screenreaders. In Markdown, you can add alt-text using the following syntax:
 
 ```markdown
 ![Example image with alt text](include-markdown-example.png)
