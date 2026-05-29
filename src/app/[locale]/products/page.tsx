@@ -58,7 +58,7 @@ export default function ProductsPage() {
     {
       id: "kubeflex",
       logo: "/products/kubeflex.png",
-      website: "https://kubestellar.io/docs/what-is-kubestellar/related/kubeflex",
+      website: "https://kubestellar.io/docs/kubeflex/readme",
       repository: "https://github.com/kubestellar/kubeflex",
       name: t("products.kubeflex.name"),
       fullName: t("products.kubeflex.fullName"),

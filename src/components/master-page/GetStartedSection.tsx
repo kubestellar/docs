@@ -377,7 +377,7 @@ export default function GetStartedSection() {
                   {t("card3Link1")}
                 </Link>
                 <Link
-                  href="/docs/what-is-kubestellar/architecture"
+                  href="/docs/kubestellar/architecture"
                   className="block p-2 rounded bg-white/20 hover:bg-white/30 text-white text-sm pl-5"
                 >
                   {t("card3Link2")}
