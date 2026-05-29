@@ -332,7 +332,7 @@ export default function GetStartedSection() {
                     {t("card2Button5")}
                   </Link>
                   <Link 
-                    href="/agenda"
+                    href="/docs/community/meetings#agendas-and-notes"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center px-3 py-2.5 rounded-lg bg-gradient-to-r from-cyan-600/80 to-cyan-700/80 hover:from-cyan-600 hover:to-cyan-700 text-white text-sm font-medium transition-all duration-200 border border-cyan-500/30"
