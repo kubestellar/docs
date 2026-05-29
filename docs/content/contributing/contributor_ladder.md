@@ -2,7 +2,7 @@
 
 This document outlines the process by which contributors to the [KubeStellar](https://github.com/kubestellar/kubestellar) open source project can progress toward becoming maintainers, and defines a transparent, merit-based path that rewards consistent engagement and community contribution.
 
-For the org-wide inactive member and emeritus policy, see [Community Membership](https://github.com/kubestellar/.github/blob/main/community-membership.md).
+For the org-wide inactive member and emeritus policy, see the Emeritus section in this document.
 
 ---
 
@@ -82,7 +82,7 @@ Promotion to paid intern requires completion of the above plus:
 
 **How members move to Emeritus:**
 - **Voluntarily**: A member may request Emeritus status at any time by notifying a maintainer
-- **Inactivity**: Members with **no contributions across any KubeStellar repository within 9 months** are moved to Emeritus after a 30-day notification and grace period (see [Community Membership](https://github.com/kubestellar/.github/blob/main/community-membership.md) for the full process)
+- **Inactivity**: Members with **no contributions across any KubeStellar repository within 9 months** are moved to Emeritus after a 30-day notification and grace period, following the process described in this document
 
 **What Emeritus members retain:**
 - Listed in the Emeritus roll below
@@ -130,7 +130,7 @@ Maintainers are expected to remain active by meeting the following **bi-monthly 
 
 All maintainers will be listed in a shared Google Sheet where these metrics are tracked publicly.
 
-Maintainers who fail to meet activity thresholds for **2 consecutive cycles** (4 months) will be contacted and offered the choice to re-engage or move to Emeritus. If no response is received within 30 days, they are moved to Emeritus per the [Community Membership](https://github.com/kubestellar/.github/blob/main/community-membership.md) policy.
+Maintainers who fail to meet activity thresholds for **2 consecutive cycles** (4 months) will be contacted and offered the choice to re-engage or move to Emeritus. If no response is received within 30 days, they are moved to Emeritus per the policy described in the Emeritus section above.
 
 ---
 
