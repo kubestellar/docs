@@ -385,7 +385,7 @@
 
 [[redirects]]
   from = "/agenda"
-  to = "https://docs.google.com/document/d/1XppfxSOD7AOX1lVVVIPWjpFkrxakfBfVzcybRg17-PM/edit?usp=share_link"
+  to = "/docs/community/meetings#agendas-and-notes"
   status = 301
   force = true
 

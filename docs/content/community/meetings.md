@@ -12,7 +12,7 @@ KubeStellar community meetings are the place to follow current work, bring quest
 
 - [Upcoming agendas](https://github.com/kubestellar/kubestellar/issues?q=is%3Aissue+is%3Aopen+label%3Acommunity-meeting)
 - [Past agendas and notes](https://github.com/kubestellar/kubestellar/issues?q=is%3Aissue+is%3Aclosed+label%3Acommunity-meeting)
-- [Community meeting agenda document](https://docs.google.com/document/d/1XppfxSOD7AOX1lVVVIPWjpFkrxakfBfVzcybRg17-PM/edit?usp=share_link)
+- Meeting topics are tracked publicly in the GitHub agenda issues linked above.
 
 ## Recordings
 
