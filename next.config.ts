@@ -31,8 +31,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/agenda",
-        destination:
-          "https://docs.google.com/document/d/1XppfxSOD7AOX1lVVVIPWjpFkrxakfBfVzcybRg17-PM/edit?usp=share_link",
+        destination: "/docs/community/meetings",
         permanent: true,
       },
       {
