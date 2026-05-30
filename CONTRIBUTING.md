@@ -73,9 +73,11 @@ Commit your changes with a clear and meaningful message:
 
 ```sh
 git add .
-git commit -m "Describe your changes"
+git commit -s -m "Describe your changes"
 git push origin my-feature-branch
 ```
+
+The `-s` flag is required for DCO compliance because it adds a `Signed-off-by:` trailer certifying you have the right to submit the contribution.
 
 ### 8. Open a Pull Request
 
