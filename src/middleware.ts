@@ -12,7 +12,9 @@ const intlMiddleware = createMiddleware({
 export default function middleware(request: NextRequest) {
   // Redirect docs.kubestellar.io before any other processing
   if (request.nextUrl.hostname === "docs.kubestellar.io") {
-    return NextResponse.redirect("https://kubestellar.io/docs", 301);
+    const path = request.nextUrl.pathname;
+    const target = path === "/" ? "/docs" : `/docs${path}`;
+    return NextResponse.redirect(`https://kubestellar.io${target}`, 301);
   }
 
   // Redirect console-docs.kubestellar.io to console docs section
