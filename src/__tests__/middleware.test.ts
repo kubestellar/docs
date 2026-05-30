@@ -29,14 +29,22 @@ vi.mock('../i18n/settings', () => ({
 }))
 
 // Helper to create a mock NextRequest
-function createMockRequest(hostname: string, pathname: string) {
+interface MockNextRequest {
+  nextUrl: {
+    hostname: string
+    pathname: string
+    clone: () => { hostname: string; pathname: string }
+  }
+}
+
+function createMockRequest(hostname: string, pathname: string): MockNextRequest {
   return {
     nextUrl: {
       hostname,
       pathname,
       clone: () => ({ hostname, pathname }),
     },
-  } as any
+  }
 }
 
 describe('middleware redirects', () => {
@@ -104,9 +112,9 @@ describe('middleware redirects', () => {
       const config = typeof nextConfigFactory === 'function'
         ? nextConfigFactory('', {})
         : nextConfigFactory
-      const redirects = await (config as any).redirects()
+      const redirects = await (config as Record<string, () => Promise<Array<{ source: string; destination: string }>>>).redirects()
       const communityRedirect = redirects.find(
-        (r: any) => r.source === '/community'
+        (r: { source: string; destination: string }) => r.source === '/community'
       )
       expect(communityRedirect).toBeDefined()
       expect(communityRedirect.destination).toBe(
