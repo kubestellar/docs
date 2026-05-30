@@ -16,8 +16,8 @@
     "analyze": "ANALYZE=true npm run build",
     "export": "next export",
     "clean": "rm -rf .next out",
-    "test": "echo \"No tests specified\" && exit 0",
-    "test:watch": "echo \"No tests specified\" && exit 0",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "audit": "npm audit --audit-level=moderate",
     "update-deps": "npm update && npm audit fix"
   },
@@ -41,7 +41,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^20.19.41",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@types/three": "^0.180.0",
@@ -53,6 +53,7 @@
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5",
+    "vitest": "^4.1.7",
     "wink-eng-lite-web-model": "^1.8.1",
     "wink-nlp": "^2.4.0"
   }

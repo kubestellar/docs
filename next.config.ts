@@ -46,7 +46,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/community",
-        destination: "https://docs.kubestellar.io/stable/Community/_index/",
+        destination: "https://cloud-native.slack.com/archives/C097094RZ3M",
         permanent: true,
       },
       {

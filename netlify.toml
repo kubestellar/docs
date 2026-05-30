@@ -403,7 +403,7 @@
 
 [[redirects]]
   from = "/community"
-  to = "https://docs.kubestellar.io/stable/Community/_index/"
+  to = "https://cloud-native.slack.com/archives/C097094RZ3M"
   status = 301
   force = true
 
