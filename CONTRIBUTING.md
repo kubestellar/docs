@@ -604,7 +604,7 @@ GITHUB_PAT=ghp_your_token_here    # Alternative name
 ```sh
 # Set the docs file path you want to inspect
 DOCS_FILE_PATH="docs/content/your-file.md"
-GITHUB_CONTENTS_API="https://api.github.com/repos/kubestellar/kubestellar/contents"
+GITHUB_CONTENTS_API="https://api.github.com/repos/kubestellar/docs/contents"
 curl "${GITHUB_CONTENTS_API}/${DOCS_FILE_PATH}"
 
 # Verify page-map.ts entry
