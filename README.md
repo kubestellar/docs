@@ -142,7 +142,7 @@ We welcome contributions and engagement from the community. Here's how to get in
 
 ## Contributing
 
-We welcome contributions of all kinds — from documentation improvements to code contributions. Please review our [Contributing Guide](https://github.com/kubestellar/kubestellar/blob/main/CONTRIBUTING.md) to get started.
+We welcome contributions of all kinds — from documentation improvements to site updates. Please review this repository's [Contributing Guide](./CONTRIBUTING.md) for the docs-specific workflow, and use the main `kubestellar/kubestellar` guide only when your change also touches product code outside this repository.
 
 ### Areas for Contribution
 
