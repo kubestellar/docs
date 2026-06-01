@@ -1,105 +1,207 @@
-# Contributing to Kubestellar Docs
+# Contributing to KubeStellar Docs
 
-Thank you for your interest in contributing to our documentation repository! We welcome contributions from everyone. Please follow these guidelines to help maintain a high-quality, consistent, and collaborative project.
+Thank you for helping improve the KubeStellar documentation site.
+This repository powers [kubestellar.io](https://kubestellar.io) and has its own
+contribution workflow, separate from the main
+[`kubestellar/kubestellar`](https://github.com/kubestellar/kubestellar)
+repository.
+
+Use this guide for documentation, navigation, theme, and site changes in
+`kubestellar/docs`. Only use the main repo's contributing guide when your work
+also changes product code outside this repository.
 
 ---
 
-## Prerequisites
+## What lives in this repository
+
+- `docs/content/` — documentation source files (`.md` and `.mdx`)
+- `src/app/docs/page-map.ts` — sidebar and navigation structure
+- `src/` — site code, theme customizations, and shared components
+- `public/` — static assets used by the docs site
+
+If you are fixing a typo, adding a guide, moving pages in the navigation, or
+adjusting the docs site itself, you are in the right place.
+
+---
+
+## Choose the right contribution path
+
+### Small page edits in the browser
+
+For simple fixes on a single page, you can often use the **Edit this page** link
+on kubestellar.io and submit a pull request directly from GitHub.
+
+### Local workflow for multi-file or site changes
+
+Use a local clone when you need to:
+
+- update multiple pages at once
+- add images or other assets
+- change navigation in `src/app/docs/page-map.ts`
+- edit components, styling, or site behavior under `src/`
+- validate a more complex docs change before opening a PR
+
+---
+
+## Local development setup
+
+### Prerequisites
 
 Before contributing, ensure you have:
 
-- [Node.js](https://nodejs.org/) (version 18 or higher) installed
-- [npm](https://www.npmjs.com/) installed
+- [Node.js](https://nodejs.org/) 20.x (recommended to match CI)
+- [npm](https://www.npmjs.com/)
 - A GitHub account
-- Basic knowledge of Markdown and Git
+- Basic familiarity with Markdown, Git, and pull requests
 
----
+### Clone and install
 
-## How to Contribute
-
-### 1. Fork the Repository
-
-Click the **Fork** button at the top-right corner of this page to create your own copy of the repository.
-
-### 2. Clone Your Fork
-
-Clone the repository to your local machine using your fork URL:
+1. Fork this repository.
+2. Clone your fork and install dependencies:
 
 ```sh
-git clone <your-fork-url>
-```
-
-### 3. Install Dependencies
-
-Navigate into the project directory and install dependencies:
-
-```sh
+git clone https://github.com/<your-user>/docs.git
 cd docs
 npm install
 ```
 
-### 4. Create a Branch
+### Start a local preview
 
-Create a new branch for your work:
-
-```sh
-git checkout -b my-feature-branch
-```
-
-### 5. Make Your Changes
-
-Edit or create documentation files as needed.  
-Please follow the existing structure, tone, and formatting style.
-
-### 6. Preview / Test Your Changes
-
-Start the development environment to verify rendering:
+Run the docs site locally with hot reload:
 
 ```sh
 npm run dev
 ```
 
-Check Markdown formatting before opening a PR:
+Then open <http://localhost:3000> in your browser.
+
+---
+
+## Making changes
+
+### Content changes
+
+Most documentation edits happen in `docs/content/`.
+
+- Keep the existing tone, heading structure, and terminology consistent.
+- Use repository-relative paths for assets that belong in this repo.
+- When adding a new page, place it in the correct `docs/content/` directory.
+
+### Navigation changes
+
+The docs navigation is not generated automatically from the filesystem.
+When you add, remove, rename, or move a page in the site navigation, also update
+`src/app/docs/page-map.ts`.
+
+### Version-aware changes
+
+- Use `main` for the in-development docs shown as the **dev** version on the
+  site.
+- Use the appropriate release docs branch only when you are updating already
+  released documentation.
+- If your change should land in both dev and a release branch, open or request
+  separate PRs.
+
+---
+
+## Recommended local verification
+
+Before opening a PR, preview the affected pages and run the checks that match
+what you changed.
+
+### For page/content-only changes
 
 ```sh
 npm run lint:md
 ```
 
-> **Tip:** During active documentation contributions, regularly run `npm run dev` to preview updates in real time.
+Also confirm that:
 
-### 7. Commit and Push
+- the page renders correctly in `npm run dev`
+- links, code fences, and images work
+- any new page appears in the expected place in the site
 
-Commit your changes with a clear and meaningful message:
+### For navigation, theme, or site-code changes
+
+Run the content check above and also run:
+
+```sh
+npm run type-check
+npm run lint
+npm run build
+```
+
+These checks match the CI workflows used for site code and configuration
+changes.
+
+---
+
+## Commit and pull request conventions
+
+### Branching
+
+Create a focused branch for your change:
+
+```sh
+git checkout -b my-docs-change
+```
+
+### Commits
+
+All commits must be signed off for DCO compliance:
 
 ```sh
 git add .
-git commit -s -m "Describe your changes"
-git push origin my-feature-branch
+git commit -s -m "📖 Describe your docs change"
 ```
 
-The `-s` flag is required for DCO compliance because it adds a `Signed-off-by:` trailer certifying you have the right to submit the contribution.
+The `-s` flag adds the required `Signed-off-by:` trailer.
 
-### 8. Open a Pull Request
+### Opening the PR
 
-Open a Pull Request (PR) from your branch to the main repository.
+Open a pull request against the correct branch (`main` unless you are updating a
+release docs branch).
 
-#### PR Description
+In the PR body:
 
-- Provide a summary of what you changed (maximum 2 lines).
-- Reference related issues, e.g.:
-  
-  ```text
-  Fixes #123
-  ```
+- put `Fixes #123` on the first line when the PR closes an issue
+- briefly explain what changed and why
+- mention any follow-up work or known limitations
+- include screenshots for layout, navigation, or theme changes when helpful
 
+Keep docs PRs focused. Avoid mixing unrelated documentation and site changes in
+one pull request.
 
+---
 
-## Contribution Guidelines
+## Review and merge process
 
-- **Write Clearly:** Use concise language and proper formatting.
-- **Stay Consistent:** Maintain the existing structure and style.
-- **Respect Internationalization Standards:** Avoid pushing raw UI strings directly; always use i18n references.
-- **Be Respectful:** Review our Code of Conduct before contributing.
+Maintainers review docs PRs for clarity, technical accuracy, structure, and
+correct placement in the site.
+
+What reviewers typically look for:
+
+- whether the change belongs in this repository
+- whether navigation updates were included when needed
+- whether links, examples, and screenshots are still accurate
+- whether the target branch matches the intended docs version
+
+PRs that change files under `docs/content/` receive an automated preview comment
+with links to the rendered pages, plus a full preview deployment for the branch.
+Use that preview to verify the final rendering and to help reviewers.
+
+Address review feedback by pushing follow-up commits to the same branch unless a
+maintainer asks for a different workflow.
+
+---
+
+## Contribution guidelines
+
+- **Write clearly:** Use concise, task-oriented language.
+- **Stay consistent:** Follow the existing structure, terminology, and style.
+- **Keep examples current:** Update commands, paths, and screenshots when they
+  change.
+- **Be respectful:** Review and follow the project's Code of Conduct.
 
 ## Note on E2E Test Context Workaround
 
