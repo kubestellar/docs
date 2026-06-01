@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-05-31T22:21:24.128Z",
-  "git_hash": "bc47705",
+  "generated_at": "2026-06-01T03:07:52.047Z",
+  "git_hash": "883b860",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
-    "2026-03-09",
     "2026-03-16",
     "2026-03-23",
     "2026-03-30",
@@ -14,38 +13,39 @@
     "2026-05-04",
     "2026-05-11",
     "2026-05-18",
-    "2026-05-25"
+    "2026-05-25",
+    "2026-06-01"
   ],
   "entries": [
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4702650,
+      "total_points": 4702850,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 454,
-        "feature_issues": 615,
+        "feature_issues": 617,
         "other_issues": 836,
         "prs_opened": 6698,
         "prs_merged": 6247
       },
       "bonus_points": 50,
       "weekly_activity": [
-        1231,
         690,
         460,
-        687,
+        692,
         723,
         805,
         1002,
         881,
         198,
         114,
-        108,
-        97
+        109,
+        97,
+        2
       ],
-      "recent_activity_score": 1694.57,
+      "recent_activity_score": 1271.3,
       "rank": 1
     },
     {
@@ -62,7 +62,6 @@
         "prs_merged": 26
       },
       "weekly_activity": [
-        9,
         17,
         64,
         104,
@@ -73,9 +72,10 @@
         50,
         77,
         29,
-        5
+        5,
+        0
       ],
-      "recent_activity_score": 219.37,
+      "recent_activity_score": 173.55,
       "rank": 2
     },
     {
@@ -94,7 +94,6 @@
       "weekly_activity": [
         0,
         0,
-        0,
         10,
         276,
         231,
@@ -103,9 +102,10 @@
         28,
         7,
         5,
-        9
+        9,
+        0
       ],
-      "recent_activity_score": 158.48,
+      "recent_activity_score": 125.78,
       "rank": 3
     },
     {
@@ -122,7 +122,6 @@
         "prs_merged": 16
       },
       "weekly_activity": [
-        10,
         0,
         11,
         15,
@@ -133,9 +132,10 @@
         31,
         0,
         13,
-        15
+        15,
+        0
       ],
-      "recent_activity_score": 146.23,
+      "recent_activity_score": 115.44,
       "rank": 4
     },
     {
@@ -152,7 +152,6 @@
         "prs_merged": 15
       },
       "weekly_activity": [
-        16,
         4,
         13,
         26,
@@ -163,9 +162,10 @@
         53,
         0,
         16,
+        0,
         0
       ],
-      "recent_activity_score": 135.87,
+      "recent_activity_score": 106.84,
       "rank": 5
     },
     {
@@ -183,7 +183,6 @@
       },
       "bonus_points": 1000,
       "weekly_activity": [
-        12,
         18,
         15,
         8,
@@ -194,9 +193,10 @@
         54,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 86.82,
+      "recent_activity_score": 68.16,
       "rank": 6
     },
     {
@@ -217,16 +217,16 @@
         0,
         0,
         0,
-        0,
         16,
         100,
         51,
         9,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 60.24,
+      "recent_activity_score": 47.81,
       "rank": 7
     },
     {
@@ -247,16 +247,16 @@
         0,
         0,
         0,
-        0,
         2,
         8,
         0,
         0,
         20,
         55,
-        53
+        53,
+        0
       ],
-      "recent_activity_score": 112.27,
+      "recent_activity_score": 89.11,
       "rank": 8
     },
     {
@@ -273,7 +273,6 @@
         "prs_merged": 10
       },
       "weekly_activity": [
-        16,
         0,
         8,
         15,
@@ -284,9 +283,10 @@
         25,
         7,
         8,
+        0,
         0
       ],
-      "recent_activity_score": 49.45,
+      "recent_activity_score": 38.25,
       "rank": 9
     },
     {
@@ -303,7 +303,6 @@
         "prs_merged": 7
       },
       "weekly_activity": [
-        0,
         1,
         0,
         77,
@@ -314,9 +313,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 42.74,
+      "recent_activity_score": 33.92,
       "rank": 10
     },
     {
@@ -336,7 +336,6 @@
         0,
         0,
         0,
-        0,
         3,
         67,
         25,
@@ -344,9 +343,10 @@
         6,
         25,
         15,
-        5
+        5,
+        0
       ],
-      "recent_activity_score": 68.02,
+      "recent_activity_score": 53.99,
       "rank": 11
     },
     {
@@ -363,7 +363,6 @@
         "prs_merged": 4
       },
       "weekly_activity": [
-        8,
         12,
         27,
         15,
@@ -374,9 +373,10 @@
         25,
         15,
         4,
+        0,
         0
       ],
-      "recent_activity_score": 48.79,
+      "recent_activity_score": 38.23,
       "rank": 12
     },
     {
@@ -393,7 +393,6 @@
         "prs_merged": 0
       },
       "weekly_activity": [
-        12,
         36,
         2,
         16,
@@ -404,9 +403,10 @@
         48,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 42.16,
+      "recent_activity_score": 32.71,
       "rank": 13
     },
     {
@@ -423,7 +423,6 @@
         "prs_merged": 2
       },
       "weekly_activity": [
-        12,
         28,
         4,
         25,
@@ -434,9 +433,10 @@
         9,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 38.56,
+      "recent_activity_score": 29.85,
       "rank": 14
     },
     {
@@ -453,7 +453,6 @@
         "prs_merged": 43
       },
       "weekly_activity": [
-        10,
         3,
         1,
         2,
@@ -464,9 +463,10 @@
         17,
         19,
         7,
-        10
+        10,
+        0
       ],
-      "recent_activity_score": 38.94,
+      "recent_activity_score": 30.28,
       "rank": 15
     },
     {
@@ -483,7 +483,6 @@
         "prs_merged": 23
       },
       "weekly_activity": [
-        17,
         0,
         0,
         0,
@@ -494,9 +493,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 15.09,
+      "recent_activity_score": 10.91,
       "rank": 16
     },
     {
@@ -513,7 +513,6 @@
         "prs_merged": 1
       },
       "weekly_activity": [
-        3,
         20,
         24,
         18,
@@ -524,9 +523,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 10.2,
+      "recent_activity_score": 7.91,
       "rank": 17
     },
     {
@@ -543,7 +543,6 @@
         "prs_merged": 3
       },
       "weekly_activity": [
-        11,
         20,
         3,
         12,
@@ -554,9 +553,10 @@
         19,
         2,
         0,
-        4
+        4,
+        0
       ],
-      "recent_activity_score": 27.94,
+      "recent_activity_score": 21.49,
       "rank": 18
     },
     {
@@ -573,7 +573,6 @@
         "prs_merged": 4
       },
       "weekly_activity": [
-        5,
         0,
         16,
         11,
@@ -584,9 +583,10 @@
         2,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 9.69,
+      "recent_activity_score": 7.38,
       "rank": 19
     },
     {
@@ -603,7 +603,6 @@
         "prs_merged": 11
       },
       "weekly_activity": [
-        0,
         3,
         0,
         0,
@@ -614,9 +613,10 @@
         44,
         23,
         3,
-        1
+        1,
+        0
       ],
-      "recent_activity_score": 42.15,
+      "recent_activity_score": 33.46,
       "rank": 20
     },
     {
@@ -641,12 +641,12 @@
         0,
         0,
         0,
-        0,
         29,
         6,
+        0,
         0
       ],
-      "recent_activity_score": 23.03,
+      "recent_activity_score": 18.28,
       "rank": 21
     },
     {
@@ -671,12 +671,12 @@
         0,
         0,
         0,
-        0,
         100,
         7,
+        0,
         0
       ],
-      "recent_activity_score": 68.55,
+      "recent_activity_score": 54.41,
       "rank": 22
     },
     {
@@ -700,13 +700,13 @@
         0,
         0,
         0,
-        0,
         1,
         30,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 19.4,
+      "recent_activity_score": 15.4,
       "rank": 23
     },
     {
@@ -727,16 +727,16 @@
         0,
         0,
         0,
-        0,
         14,
         4,
         5,
         19,
         0,
         1,
+        0,
         0
       ],
-      "recent_activity_score": 17.04,
+      "recent_activity_score": 13.52,
       "rank": 24
     },
     {
@@ -760,13 +760,13 @@
         0,
         0,
         0,
-        0,
         40,
         15,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 29.45,
+      "recent_activity_score": 23.37,
       "rank": 25
     },
     {
@@ -790,13 +790,13 @@
         0,
         0,
         0,
-        0,
         95,
         5,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 50.65,
+      "recent_activity_score": 40.2,
       "rank": 26
     },
     {
@@ -821,12 +821,12 @@
         0,
         0,
         0,
-        0,
         29,
         13,
-        1
+        1,
+        0
       ],
-      "recent_activity_score": 29.59,
+      "recent_activity_score": 23.48,
       "rank": 27
     },
     {
@@ -850,13 +850,13 @@
         0,
         0,
         0,
-        0,
         12,
         23,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 20.49,
+      "recent_activity_score": 16.26,
       "rank": 28
     },
     {
@@ -883,10 +883,10 @@
         0,
         0,
         0,
-        0,
-        28
+        28,
+        0
       ],
-      "recent_activity_score": 28,
+      "recent_activity_score": 22.22,
       "rank": 29
     },
     {
@@ -909,14 +909,14 @@
         0,
         0,
         0,
-        0,
         14,
         13,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 12.06,
+      "recent_activity_score": 9.57,
       "rank": 30
     },
     {
@@ -939,14 +939,14 @@
         0,
         0,
         0,
-        0,
         10,
         2,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 4.97,
+      "recent_activity_score": 3.94,
       "rank": 31
     },
     {
@@ -1000,13 +1000,13 @@
         0,
         0,
         0,
-        0,
         6,
         22,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 16.86,
+      "recent_activity_score": 13.38,
       "rank": 33
     },
     {
@@ -1028,15 +1028,15 @@
         0,
         0,
         0,
-        0,
         12,
         10,
         0,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 7.75,
+      "recent_activity_score": 6.15,
       "rank": 34
     },
     {
@@ -1060,13 +1060,13 @@
         0,
         0,
         0,
-        0,
         9,
         11,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 11.43,
+      "recent_activity_score": 9.07,
       "rank": 35
     },
     {
@@ -1086,7 +1086,6 @@
         0,
         0,
         0,
-        0,
         2,
         1,
         6,
@@ -1094,9 +1093,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 4.92,
+      "recent_activity_score": 3.9,
       "rank": 36
     },
     {
@@ -1120,13 +1120,13 @@
         0,
         0,
         0,
-        0,
         15,
         1,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 8.13,
+      "recent_activity_score": 6.45,
       "rank": 37
     },
     {
@@ -1151,12 +1151,12 @@
         0,
         0,
         0,
-        0,
         6,
         2,
+        0,
         0
       ],
-      "recent_activity_score": 5.37,
+      "recent_activity_score": 4.26,
       "rank": 38
     },
     {
@@ -1173,7 +1173,7 @@
         "prs_merged": 4
       },
       "weekly_activity": [
-        1,
+        0,
         0,
         0,
         0,
@@ -1186,7 +1186,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.08,
+      "recent_activity_score": 0,
       "rank": 39
     },
     {
@@ -1211,12 +1211,12 @@
         0,
         0,
         0,
-        0,
         10,
+        0,
         0,
         0
       ],
-      "recent_activity_score": 6.3,
+      "recent_activity_score": 5,
       "rank": 40
     },
     {
@@ -1238,15 +1238,15 @@
         0,
         0,
         0,
-        0,
         5,
+        0,
         0,
         0,
         0,
         0,
         0
       ],
-      "recent_activity_score": 1.57,
+      "recent_activity_score": 1.25,
       "rank": 41
     },
     {
@@ -1301,12 +1301,12 @@
         0,
         0,
         0,
-        0,
         4,
+        0,
         0,
         0
       ],
-      "recent_activity_score": 2.52,
+      "recent_activity_score": 2,
       "rank": 43
     },
     {
@@ -1323,9 +1323,9 @@
         "prs_merged": 0
       },
       "weekly_activity": [
+        4,
+        4,
         0,
-        4,
-        4,
         0,
         0,
         0,
@@ -1336,7 +1336,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.9,
+      "recent_activity_score": 0.71,
       "rank": 44
     },
     {
@@ -1357,8 +1357,8 @@
         0,
         0,
         0,
-        0,
         7,
+        0,
         0,
         0,
         0,
@@ -1366,7 +1366,7 @@
         0,
         0
       ],
-      "recent_activity_score": 1.75,
+      "recent_activity_score": 1.39,
       "rank": 45
     },
     {
@@ -1419,14 +1419,14 @@
         0,
         0,
         0,
-        0,
         3,
         3,
         5,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 5.84,
+      "recent_activity_score": 4.64,
       "rank": 47
     },
     {
@@ -1449,14 +1449,14 @@
         0,
         0,
         0,
-        0,
         4,
         7,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 5.09,
+      "recent_activity_score": 4.04,
       "rank": 48
     },
     {
@@ -1480,13 +1480,13 @@
         0,
         0,
         0,
-        0,
         8,
+        0,
         0,
         0,
         0
       ],
-      "recent_activity_score": 4,
+      "recent_activity_score": 3.17,
       "rank": 49
     },
     {
@@ -1540,13 +1540,13 @@
         0,
         0,
         0,
-        0,
         14,
         1,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 7.63,
+      "recent_activity_score": 6.06,
       "rank": 51
     },
     {
@@ -1569,14 +1569,14 @@
         0,
         0,
         0,
-        0,
         2,
         6,
         0,
         1,
+        0,
         0
       ],
-      "recent_activity_score": 4.59,
+      "recent_activity_score": 3.64,
       "rank": 52
     },
     {
@@ -1630,13 +1630,13 @@
         0,
         0,
         0,
-        0,
         4,
+        0,
         0,
         0,
         0
       ],
-      "recent_activity_score": 2,
+      "recent_activity_score": 1.59,
       "rank": 54
     },
     {
@@ -1659,14 +1659,14 @@
         0,
         0,
         0,
-        0,
         6,
+        0,
         0,
         0,
         0,
         0
       ],
-      "recent_activity_score": 2.38,
+      "recent_activity_score": 1.89,
       "rank": 55
     },
     {
@@ -1691,12 +1691,12 @@
         0,
         0,
         0,
-        0,
         5,
+        0,
         0,
         0
       ],
-      "recent_activity_score": 3.15,
+      "recent_activity_score": 2.5,
       "rank": 56
     },
     {
@@ -1720,13 +1720,13 @@
         0,
         0,
         0,
-        0,
         6,
+        0,
         0,
         0,
         0
       ],
-      "recent_activity_score": 3,
+      "recent_activity_score": 2.38,
       "rank": 57
     },
     {
@@ -1777,16 +1777,16 @@
         0,
         0,
         0,
-        0,
         1,
         5,
         0,
         0,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 1.82,
+      "recent_activity_score": 1.45,
       "rank": 59
     },
     {
@@ -1834,7 +1834,6 @@
       },
       "weekly_activity": [
         0,
-        0,
         2,
         1,
         0,
@@ -1844,9 +1843,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 0.41,
+      "recent_activity_score": 0.32,
       "rank": 61
     },
     {
@@ -1871,12 +1871,12 @@
         0,
         0,
         0,
-        0,
         12,
         1,
+        0,
         0
       ],
-      "recent_activity_score": 8.35,
+      "recent_activity_score": 6.63,
       "rank": 62
     },
     {
@@ -1897,16 +1897,16 @@
         0,
         0,
         0,
-        0,
         4,
         0,
         0,
         0,
         0,
         0,
-        1
+        1,
+        0
       ],
-      "recent_activity_score": 2,
+      "recent_activity_score": 1.59,
       "rank": 63
     },
     {
@@ -1926,7 +1926,6 @@
         0,
         0,
         0,
-        0,
         2,
         0,
         0,
@@ -1934,9 +1933,10 @@
         0,
         0,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 1.59,
+      "recent_activity_score": 1.26,
       "rank": 64
     },
     {
@@ -1959,14 +1959,14 @@
         0,
         0,
         0,
-        0,
         3,
+        0,
         0,
         0,
         0,
         0
       ],
-      "recent_activity_score": 1.19,
+      "recent_activity_score": 0.94,
       "rank": 65
     },
     {
@@ -1983,8 +1983,8 @@
         "prs_merged": 2
       },
       "weekly_activity": [
-        0,
         1,
+        0,
         0,
         0,
         0,
@@ -1996,7 +1996,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.1,
+      "recent_activity_score": 0.08,
       "rank": 66
     },
     {
@@ -2046,8 +2046,8 @@
         0,
         0,
         0,
-        0,
         2,
+        0,
         0,
         0,
         0,
@@ -2056,7 +2056,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.4,
+      "recent_activity_score": 0.31,
       "rank": 68
     },
     {
@@ -2111,12 +2111,12 @@
         0,
         0,
         0,
+        2,
+        2,
         0,
-        2,
-        2,
         0
       ],
-      "recent_activity_score": 2.85,
+      "recent_activity_score": 2.26,
       "rank": 70
     },
     {
@@ -2173,10 +2173,10 @@
         0,
         0,
         0,
-        0,
-        2
+        2,
+        0
       ],
-      "recent_activity_score": 2,
+      "recent_activity_score": 1.59,
       "rank": 72
     },
     {
@@ -2201,12 +2201,12 @@
         0,
         0,
         0,
-        0,
         5,
+        0,
         0,
         0
       ],
-      "recent_activity_score": 3.15,
+      "recent_activity_score": 2.5,
       "rank": 73
     },
     {
@@ -2223,7 +2223,7 @@
         "prs_merged": 1
       },
       "weekly_activity": [
-        2,
+        0,
         0,
         0,
         0,
@@ -2236,7 +2236,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.16,
+      "recent_activity_score": 0,
       "rank": 74
     },
     {
@@ -2256,8 +2256,8 @@
         0,
         0,
         0,
-        0,
         3,
+        0,
         0,
         0,
         0,
@@ -2266,7 +2266,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.6,
+      "recent_activity_score": 0.47,
       "rank": 75
     },
     {
@@ -2290,13 +2290,13 @@
         0,
         0,
         0,
-        0,
         2,
         1,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 1.63,
+      "recent_activity_score": 1.29,
       "rank": 76
     },
     {
@@ -2317,8 +2317,8 @@
         0,
         0,
         0,
-        0,
         4,
+        0,
         0,
         0,
         0,
@@ -2326,7 +2326,7 @@
         0,
         0
       ],
-      "recent_activity_score": 1,
+      "recent_activity_score": 0.79,
       "rank": 77
     },
     {
@@ -2411,12 +2411,12 @@
         0,
         0,
         0,
-        0,
         2,
+        0,
         0,
         0
       ],
-      "recent_activity_score": 1.26,
+      "recent_activity_score": 1,
       "rank": 80
     },
     {
@@ -2472,11 +2472,11 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0
       ],
-      "recent_activity_score": 0.79,
+      "recent_activity_score": 0.63,
       "rank": 82
     },
     {
@@ -2531,12 +2531,12 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0,
         0
       ],
-      "recent_activity_score": 0.63,
+      "recent_activity_score": 0.5,
       "rank": 84
     },
     {
@@ -2583,8 +2583,8 @@
         "prs_merged": 1
       },
       "weekly_activity": [
-        0,
         1,
+        0,
         0,
         0,
         0,
@@ -2596,7 +2596,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.1,
+      "recent_activity_score": 0.08,
       "rank": 86
     },
     {
@@ -2613,7 +2613,7 @@
         "prs_merged": 1
       },
       "weekly_activity": [
-        1,
+        0,
         0,
         0,
         0,
@@ -2626,132 +2626,12 @@
         0,
         0
       ],
-      "recent_activity_score": 0.08,
+      "recent_activity_score": 0,
       "rank": 87
     },
     {
       "login": "Manvi2402",
       "avatar_url": "https://avatars.githubusercontent.com/u/155549774?v=4",
-      "total_points": 700,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 1,
-        "prs_merged": 1
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0
-      ],
-      "recent_activity_score": 0.63,
-      "rank": 88
-    },
-    {
-      "login": "MichaelSovereign",
-      "avatar_url": "https://avatars.githubusercontent.com/u/268520574?v=4",
-      "total_points": 700,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 1,
-        "prs_merged": 1
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "recent_activity_score": 0.25,
-      "rank": 89
-    },
-    {
-      "login": "mikeshng",
-      "avatar_url": "https://avatars.githubusercontent.com/u/58747157?v=4",
-      "total_points": 700,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 1,
-        "prs_merged": 1
-      },
-      "weekly_activity": [
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "recent_activity_score": 0.1,
-      "rank": 90
-    },
-    {
-      "login": "SeeyaVhora",
-      "avatar_url": "https://avatars.githubusercontent.com/u/234618404?v=4",
-      "total_points": 700,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 1,
-        "prs_merged": 1
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0
-      ],
-      "recent_activity_score": 0.63,
-      "rank": 91
-    },
-    {
-      "login": "severe77",
-      "avatar_url": "https://avatars.githubusercontent.com/u/180373920?v=4",
       "total_points": 700,
       "level": "Explorer",
       "level_rank": 2,
@@ -2777,6 +2657,126 @@
         0
       ],
       "recent_activity_score": 0.5,
+      "rank": 88
+    },
+    {
+      "login": "MichaelSovereign",
+      "avatar_url": "https://avatars.githubusercontent.com/u/268520574?v=4",
+      "total_points": 700,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 1,
+        "prs_merged": 1
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recent_activity_score": 0.2,
+      "rank": 89
+    },
+    {
+      "login": "mikeshng",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58747157?v=4",
+      "total_points": 700,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 1,
+        "prs_merged": 1
+      },
+      "weekly_activity": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recent_activity_score": 0.08,
+      "rank": 90
+    },
+    {
+      "login": "SeeyaVhora",
+      "avatar_url": "https://avatars.githubusercontent.com/u/234618404?v=4",
+      "total_points": 700,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 1,
+        "prs_merged": 1
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "recent_activity_score": 0.5,
+      "rank": 91
+    },
+    {
+      "login": "severe77",
+      "avatar_url": "https://avatars.githubusercontent.com/u/180373920?v=4",
+      "total_points": 700,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 1,
+        "prs_merged": 1
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recent_activity_score": 0.4,
       "rank": 92
     },
     {
@@ -2803,10 +2803,10 @@
         0,
         0,
         0,
-        0,
-        1
+        1,
+        0
       ],
-      "recent_activity_score": 1,
+      "recent_activity_score": 0.79,
       "rank": 93
     },
     {
@@ -2828,15 +2828,15 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0,
         0,
         0,
         0,
         0
       ],
-      "recent_activity_score": 0.31,
+      "recent_activity_score": 0.25,
       "rank": 94
     },
     {
@@ -2854,8 +2854,8 @@
       },
       "weekly_activity": [
         0,
-        0,
         1,
+        0,
         0,
         0,
         0,
@@ -2866,7 +2866,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.13,
+      "recent_activity_score": 0.1,
       "rank": 95
     },
     {
@@ -2913,7 +2913,7 @@
         "prs_merged": 0
       },
       "weekly_activity": [
-        2,
+        0,
         0,
         0,
         0,
@@ -2926,7 +2926,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.16,
+      "recent_activity_score": 0,
       "rank": 97
     },
     {
@@ -2950,13 +2950,13 @@
         0,
         0,
         0,
-        0,
         2,
+        0,
         0,
         0,
         0
       ],
-      "recent_activity_score": 1,
+      "recent_activity_score": 0.79,
       "rank": 98
     },
     {
@@ -2973,7 +2973,6 @@
         "prs_merged": 0
       },
       "weekly_activity": [
-        1,
         0,
         0,
         0,
@@ -2984,9 +2983,10 @@
         0,
         2,
         0,
+        0,
         0
       ],
-      "recent_activity_score": 1.34,
+      "recent_activity_score": 1,
       "rank": 99
     },
     {
@@ -3012,11 +3012,11 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0
       ],
-      "recent_activity_score": 0.79,
+      "recent_activity_score": 0.63,
       "rank": 100
     },
     {
@@ -3036,17 +3036,17 @@
         0,
         0,
         0,
-        0,
         1,
         0,
         0,
         0,
         0,
         0,
-        4,
+        6,
+        0,
         0
       ],
-      "recent_activity_score": 3.37,
+      "recent_activity_score": 3.94,
       "rank": 101
     },
     {
@@ -3103,10 +3103,10 @@
         0,
         0,
         0,
-        0,
-        1
+        1,
+        0
       ],
-      "recent_activity_score": 1,
+      "recent_activity_score": 0.79,
       "rank": 103
     },
     {
@@ -3133,10 +3133,10 @@
         0,
         0,
         0,
-        0,
-        1
+        1,
+        0
       ],
-      "recent_activity_score": 1,
+      "recent_activity_score": 0.79,
       "rank": 104
     },
     {
@@ -3161,12 +3161,12 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0,
         0
       ],
-      "recent_activity_score": 0.63,
+      "recent_activity_score": 0.5,
       "rank": 105
     },
     {
@@ -3183,7 +3183,7 @@
         "prs_merged": 0
       },
       "weekly_activity": [
-        1,
+        0,
         0,
         0,
         0,
@@ -3196,7 +3196,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.08,
+      "recent_activity_score": 0,
       "rank": 106
     },
     {
@@ -3219,14 +3219,14 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0,
         0,
         0,
         0
       ],
-      "recent_activity_score": 0.4,
+      "recent_activity_score": 0.31,
       "rank": 107
     },
     {
@@ -3253,10 +3253,10 @@
         0,
         0,
         0,
-        0,
-        1
+        1,
+        0
       ],
-      "recent_activity_score": 1,
+      "recent_activity_score": 0.79,
       "rank": 108
     },
     {
@@ -3281,12 +3281,12 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0,
         0
       ],
-      "recent_activity_score": 0.63,
+      "recent_activity_score": 0.5,
       "rank": 109
     },
     {
@@ -3307,8 +3307,8 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0,
         0,
         0,
@@ -3316,7 +3316,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.25,
+      "recent_activity_score": 0.2,
       "rank": 110
     },
     {
@@ -3366,8 +3366,8 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0,
         0,
         0,
@@ -3376,7 +3376,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.2,
+      "recent_activity_score": 0.16,
       "rank": 112
     },
     {
@@ -3427,8 +3427,8 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0,
         0,
         0,
@@ -3436,7 +3436,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.25,
+      "recent_activity_score": 0.2,
       "rank": 114
     },
     {
@@ -3521,12 +3521,12 @@
         0,
         0,
         0,
-        0,
         2,
+        0,
         0,
         0
       ],
-      "recent_activity_score": 1.26,
+      "recent_activity_score": 1,
       "rank": 117
     },
     {
@@ -3549,14 +3549,14 @@
         0,
         0,
         0,
-        0,
         2,
+        0,
         0,
         0,
         0,
         0
       ],
-      "recent_activity_score": 0.79,
+      "recent_activity_score": 0.63,
       "rank": 118
     },
     {
@@ -3576,8 +3576,8 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0,
         0,
         0,
@@ -3586,7 +3586,7 @@
         0,
         0
       ],
-      "recent_activity_score": 0.2,
+      "recent_activity_score": 0.16,
       "rank": 119
     },
     {
@@ -3641,12 +3641,12 @@
         0,
         0,
         0,
+        10,
         0,
-        9,
         0,
         0
       ],
-      "recent_activity_score": 5.67,
+      "recent_activity_score": 5,
       "rank": 121
     }
   ]
