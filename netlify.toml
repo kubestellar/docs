@@ -5,6 +5,7 @@
 [build]
   command = "NEXT_PUBLIC_BRANCH=${BRANCH:-main} npm run build"
   publish = ".next"
+  ignore = "if echo \"$BRANCH\" | grep -q '^chore/hive-snapshot'; then exit 0; fi; exit 1"
 
 [build.environment]
   NODE_VERSION = "20.11.1"
