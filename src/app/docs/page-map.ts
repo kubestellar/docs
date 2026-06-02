@@ -191,6 +191,22 @@ const NAV_STRUCTURE_KUBESTELLAR_MCP: Array<{ title: string; items: NavItem[] }> 
     ]
   },
   {
+    title: 'Setup',
+    items: [
+      { 'Homebrew Installation': 'setup/homebrew.md' },
+    ]
+  },
+  {
+    title: 'Architecture',
+    items: [
+      { 'Architecture Overview': 'architecture/overview.md' },
+      { 'Local Development': 'architecture/local-development.md' },
+      { 'Request and Response Lifecycle': 'architecture/request-response-lifecycle.md' },
+      { 'Adding a New Tool': 'architecture/adding-a-tool.md' },
+      { 'Testing': 'architecture/testing.md' },
+    ]
+  },
+  {
     title: 'Commands',
     items: [
       { 'App Logs': 'commands/app-logs.md' },
