@@ -189,6 +189,22 @@ const NAV_STRUCTURE_KUBESTELLAR_MCP: Array<{ title: string; items: NavItem[] }> 
     items: [
       { 'Introduction': 'overview/intro.md' },
     ]
+  },
+  {
+    title: 'Commands',
+    items: [
+      { 'App Logs': 'commands/app-logs.md' },
+      { 'App Status': 'commands/app-status.md' },
+      { 'Delete': 'commands/delete.md' },
+      { 'Deploy': 'commands/deploy.md' },
+      { 'GitOps Drift': 'commands/gitops-drift.md' },
+      { 'GitOps Sync': 'commands/gitops-sync.md' },
+      { 'Helm Install': 'commands/helm-install.md' },
+      { 'Helm Rollback': 'commands/helm-rollback.md' },
+      { 'Helm Uninstall': 'commands/helm-uninstall.md' },
+      { 'Kustomize': 'commands/kustomize.md' },
+      { 'Label': 'commands/label.md' },
+    ]
   }
 ]
 
@@ -199,24 +215,70 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Introduction': 'readme.md' },
       { 'Quick Start': 'quickstart.md' },
+      { 'Console Overview': 'console-overview.md' },
       { 'Architecture': 'architecture.md' },
+      { 'Architecture Diagram': '_architecture-diagram.md' },
       { 'Installation': 'installation.md' },
       { 'Cluster Registration': 'cluster-registration.md' },
-      { 'Agentic Quality Controls': 'agentic-quality.md' },
       { 'Demo Mode': 'demo-mode.md' },
       { 'Configuration': 'configuration.md' },
+      { 'Updates and Releases': 'console-updates.md' },
+    ]
+  },
+  {
+    title: 'Setup',
+    items: [
+      { 'Local Setup Guide': 'local-setup.md' },
+      { 'Local Deployment': 'local-deployment.md' },
+      { 'Deploy & Orchestrate': 'deploy.md' },
+      { 'vCluster Setup': 'vcluster-setup.md' },
     ]
   },
   {
     title: 'Features',
     items: [
+      { 'Console Features': 'console-features.md' },
       { 'Dashboards': 'dashboards.md' },
       { 'Cards': 'all-cards.md' },
+      { 'Card Types': 'cards.md' },
+      { 'Card Reference': 'console-cards.md' },
       { 'Stats Blocks': 'stats-blocks.md' },
+      { 'Alerts': 'alerts.md' },
+      { 'Cost Optimization Cards': 'cost-optimization.md' },
+      { 'Drasi Reactive Pipeline Dashboard': 'drasi-dashboard.md' },
+      { 'KServe Monitoring Card': 'kserve-monitoring.md' },
+      { 'Feedback System': 'feedback.md' },
+    ]
+  },
+  {
+    title: 'AI Integration',
+    items: [
       { 'AI Features': 'ai-features.md' },
       { 'AI Missions Setup': 'ai-missions-setup.md' },
-      { 'Alerts': 'alerts.md' },
-      { 'Feedback System': 'feedback.md' },
+      { 'Kagenti LLM Provider Setup': 'kagenti-llm-provider-setup.md' },
+      { 'Local LLM Strategy': 'local-llm-strategy.md' },
+      { 'Agentic Quality Controls': 'agentic-quality.md' },
+    ]
+  },
+  {
+    title: 'Security',
+    items: [
+      { 'Authentication & Sessions': 'authentication.md' },
+      { 'Security Model': 'security-model.md' },
+      { 'Persistence & State Management': 'persistence.md' },
+    ]
+  },
+  {
+    title: 'Enterprise',
+    items: [
+      { 'Enterprise Compliance Portal': 'enterprise-compliance.md' },
+      { 'Federation & Multi-Hub': 'federation.md' },
+    ]
+  },
+  {
+    title: 'Development',
+    items: [
+      { 'Development Methodology': 'development.md' },
     ]
   },
   {
@@ -230,6 +292,14 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Marketplace': 'marketplace.md' },
       { 'Knowledge Base': 'knowledge-base.md' },
+      { 'Rewards System': 'console-rewards.md' },
+    ]
+  },
+  {
+    title: 'Troubleshooting',
+    items: [
+      { 'Troubleshooting': 'troubleshooting.md' },
+      { 'Windows 11 Local Source Build Troubleshooting': 'windows-11-local-source-build-troubleshooting.md' },
     ]
   }
 ]
