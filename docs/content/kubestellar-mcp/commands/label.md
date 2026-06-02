@@ -59,6 +59,7 @@ Manage labels on resources across multiple clusters.
 ## Examples of Tool Calls
 
 **Add labels:**
+
 ```json
 {
   "kind": "Deployment",
@@ -72,6 +73,7 @@ Manage labels on resources across multiple clusters.
 ```
 
 **Remove labels:**
+
 ```json
 {
   "kind": "Deployment",

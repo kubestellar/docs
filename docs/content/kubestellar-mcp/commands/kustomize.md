@@ -41,6 +41,7 @@ Use the `kustomize_apply` tool with:
 ## Examples of Tool Calls
 
 **Build only:**
+
 ```json
 {
   "path": "./overlays/production"
@@ -48,6 +49,7 @@ Use the `kustomize_apply` tool with:
 ```
 
 **Apply to all clusters:**
+
 ```json
 {
   "path": "./overlays/production",
@@ -56,6 +58,7 @@ Use the `kustomize_apply` tool with:
 ```
 
 **Delete from specific clusters:**
+
 ```json
 {
   "path": "./overlays/staging",
