@@ -1,6 +1,6 @@
 #!/bin/bash
 # Netlify ignore script — exit 0 to skip build, exit 1 to build.
-# Skips deploy preview builds for hive snapshot branches.
+# Skips builds for hive snapshot branches (any Netlify context).
 
 echo "[netlify-ignore] BRANCH=$BRANCH HEAD=$HEAD PULL_REQUEST=$PULL_REQUEST REVIEW_ID=$REVIEW_ID COMMIT_REF=$COMMIT_REF"
 
