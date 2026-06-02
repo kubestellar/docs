@@ -68,14 +68,19 @@ Splitting into `kubestellar-ops` and `kubestellar-deploy` provides:
 If you previously used `kubectl-claude`, you should:
 
 1. **Uninstall the old binary** (if installed from source or releases):
+
    ```bash
    rm -f /usr/local/bin/kubectl-claude
    ```
+
 2. **Install the new tools**:
+
    ```bash
    brew tap kubestellar/tap
    brew install kubestellar-ops kubestellar-deploy
    ```
+
+
 3. **Update your scripts or aliases**:
    - Replace `kubectl-claude diagnose` → `kubestellar-ops diagnose`
    - Replace `kubectl-claude deploy` → `kubestellar-deploy apply`
