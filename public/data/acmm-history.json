@@ -16,7 +16,8 @@
     "2026-05-27",
     "2026-05-29",
     "2026-05-31",
-    "2026-06-01"
+    "2026-06-01",
+    "2026-06-03"
   ],
   "scores": {
     "kubestellar/console": [
@@ -36,10 +37,13 @@
       41,
       41,
       41,
+      41,
       41
     ],
     "chaos-mesh/chaos-mesh": [
       6,
+      20,
+      20,
       20,
       20,
       20,
@@ -91,6 +95,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "backstage/backstage": [
@@ -104,6 +109,7 @@
       22,
       22,
       22,
+      32,
       32,
       32,
       32,
@@ -127,6 +133,7 @@
       17,
       17,
       17,
+      18,
       18,
       18,
       18
@@ -165,6 +172,8 @@
       32,
       32,
       32,
+      32,
+      32,
       32
     ],
     "meshery/meshery": [
@@ -178,6 +187,7 @@
       18,
       18,
       18,
+      32,
       32,
       32,
       32,
@@ -203,6 +213,7 @@
       19,
       19,
       19,
+      19,
       19
     ],
     "alibaba/higress": [
@@ -217,6 +228,7 @@
       15,
       15,
       32,
+      15,
       15,
       15,
       15,
@@ -241,6 +253,7 @@
       13,
       13,
       13,
+      13,
       13
     ],
     "bootc-dev/bootc": [
@@ -250,6 +263,7 @@
       11,
       11,
       11,
+      12,
       12,
       12,
       12,
@@ -279,7 +293,8 @@
       17,
       17,
       17,
-      17
+      17,
+      32
     ],
     "distribution/distribution": [
       4,
@@ -293,6 +308,7 @@
       12,
       12,
       32,
+      12,
       12,
       12,
       12,
@@ -317,6 +333,7 @@
       15,
       15,
       15,
+      15,
       15
     ],
     "kubestellar/kubestellar": [
@@ -331,6 +348,7 @@
       14,
       14,
       32,
+      14,
       14,
       14,
       14,
@@ -355,10 +373,12 @@
       18,
       18,
       18,
+      18,
       18
     ],
     "runmedev/runme": [
       4,
+      14,
       14,
       14,
       14,
@@ -393,10 +413,12 @@
       13,
       13,
       13,
+      13,
       13
     ],
     "WasmEdge/WasmEdge": [
       4,
+      15,
       15,
       15,
       15,
@@ -431,6 +453,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "clusterpedia-io/clusterpedia": [
@@ -450,6 +473,7 @@
       13,
       13,
       13,
+      13,
       13
     ],
     "cortexproject/cortex": [
@@ -463,6 +487,7 @@
       19,
       19,
       19,
+      32,
       32,
       32,
       32,
@@ -488,6 +513,7 @@
       14,
       14,
       14,
+      14,
       14
     ],
     "dapr/dapr": [
@@ -507,10 +533,12 @@
       14,
       14,
       14,
+      14,
       14
     ],
     "drasi-project/drasi-platform": [
       3,
+      14,
       14,
       14,
       14,
@@ -545,6 +573,7 @@
       14,
       14,
       14,
+      14,
       14
     ],
     "grpc/grpc": [
@@ -558,6 +587,7 @@
       11,
       11,
       11,
+      32,
       32,
       32,
       32,
@@ -583,6 +613,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "istio/istio": [
@@ -597,6 +628,7 @@
       11,
       11,
       32,
+      11,
       11,
       11,
       11,
@@ -621,6 +653,7 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "karmada-io/karmada": [
@@ -634,6 +667,7 @@
       14,
       14,
       14,
+      32,
       32,
       32,
       32,
@@ -659,6 +693,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "kitops-ml/kitops": [
@@ -673,6 +708,7 @@
       12,
       12,
       32,
+      12,
       12,
       12,
       12,
@@ -697,6 +733,7 @@
       13,
       13,
       13,
+      13,
       13
     ],
     "kubernetes-sigs/external-dns": [
@@ -716,6 +753,7 @@
       12,
       12,
       12,
+      12,
       12
     ],
     "kubesphere/kubesphere": [
@@ -729,6 +767,7 @@
       15,
       15,
       15,
+      32,
       32,
       32,
       32,
@@ -754,10 +793,12 @@
       15,
       15,
       15,
+      15,
       15
     ],
     "oauth2-proxy/oauth2-proxy": [
       3,
+      11,
       11,
       11,
       11,
@@ -792,6 +833,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "ovn-kubernetes/ovn-kubernetes": [
@@ -811,10 +853,12 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "ratify-project/ratify": [
       3,
+      14,
       14,
       14,
       14,
@@ -849,6 +893,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "slimtoolkit/slim": [
@@ -863,6 +908,7 @@
       13,
       13,
       32,
+      13,
       13,
       13,
       13,
@@ -887,6 +933,7 @@
       12,
       12,
       12,
+      12,
       12
     ],
     "athenz/athenz": [
@@ -906,10 +953,12 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "buildpacks/pack": [
       2,
+      12,
       12,
       12,
       12,
@@ -944,10 +993,12 @@
       7,
       7,
       7,
+      7,
       7
     ],
     "chaosblade-io/chaosblade": [
       2,
+      9,
       9,
       9,
       9,
@@ -982,6 +1033,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "dexidp/dex": [
@@ -996,6 +1048,7 @@
       8,
       8,
       32,
+      8,
       8,
       8,
       8,
@@ -1020,10 +1073,12 @@
       14,
       14,
       14,
+      14,
       14
     ],
     "emissary-ingress/emissary": [
       2,
+      12,
       12,
       12,
       12,
@@ -1058,7 +1113,8 @@
       13,
       13,
       13,
-      13
+      13,
+      17
     ],
     "fluxcd/flux2": [
       2,
@@ -1072,6 +1128,7 @@
       11,
       11,
       32,
+      11,
       11,
       11,
       11,
@@ -1096,6 +1153,7 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "HolmesGPT/holmesgpt": [
@@ -1110,6 +1168,7 @@
       13,
       13,
       32,
+      13,
       13,
       13,
       13,
@@ -1134,6 +1193,7 @@
       14,
       14,
       14,
+      14,
       14
     ],
     "hyperlight-dev/hyperlight": [
@@ -1153,10 +1213,12 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "in-toto/in-toto": [
       2,
+      7,
       7,
       7,
       7,
@@ -1191,6 +1253,7 @@
       16,
       16,
       16,
+      16,
       16
     ],
     "k8up-io/k8up": [
@@ -1205,6 +1268,7 @@
       11,
       11,
       32,
+      11,
       11,
       11,
       11,
@@ -1229,6 +1293,7 @@
       12,
       12,
       12,
+      12,
       12
     ],
     "kcl-lang/kcl": [
@@ -1248,6 +1313,7 @@
       6,
       6,
       6,
+      6,
       6
     ],
     "kedgeproject/kedge": [
@@ -1261,6 +1327,7 @@
       8,
       8,
       8,
+      32,
       32,
       32,
       32,
@@ -1286,6 +1353,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "knative/eventing": [
@@ -1305,10 +1373,12 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "kube-logging/logging-operator": [
       2,
+      13,
       13,
       13,
       13,
@@ -1343,10 +1413,12 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "kubecost/opencost": [
       2,
+      9,
       9,
       9,
       9,
@@ -1381,10 +1453,12 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "kubefirst/kubefirst": [
       2,
+      8,
       8,
       8,
       8,
@@ -1419,7 +1493,8 @@
       14,
       14,
       14,
-      14
+      14,
+      17
     ],
     "kubernetes-sigs/kubebuilder": [
       2,
@@ -1433,6 +1508,7 @@
       16,
       16,
       32,
+      16,
       16,
       16,
       16,
@@ -1457,10 +1533,12 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "kubewarden/kubewarden-controller": [
       2,
+      12,
       12,
       12,
       12,
@@ -1495,6 +1573,7 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "microcks/microcks": [
@@ -1514,10 +1593,12 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "nats-io/nats-server": [
       2,
+      10,
       10,
       10,
       10,
@@ -1552,6 +1633,7 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "open-policy-agent/opa": [
@@ -1571,10 +1653,12 @@
       16,
       16,
       16,
+      16,
       16
     ],
     "open-telemetry/community": [
       2,
+      7,
       7,
       7,
       7,
@@ -1609,6 +1693,7 @@
       16,
       16,
       16,
+      16,
       16
     ],
     "openclarity/openclarity": [
@@ -1628,10 +1713,12 @@
       11,
       11,
       11,
+      11,
       11
     ],
     "opencost/opencost": [
       2,
+      9,
       9,
       9,
       9,
@@ -1666,10 +1753,12 @@
       14,
       14,
       14,
+      14,
       14
     ],
     "openGemini/openGemini": [
       2,
+      9,
       9,
       9,
       9,
@@ -1704,10 +1793,12 @@
       13,
       13,
       13,
+      13,
       13
     ],
     "oxia-db/oxia": [
       2,
+      8,
       8,
       8,
       8,
@@ -1742,6 +1833,7 @@
       7,
       7,
       7,
+      7,
       7
     ],
     "pipe-cd/pipecd": [
@@ -1755,6 +1847,7 @@
       13,
       13,
       13,
+      32,
       32,
       32,
       32,
@@ -1780,6 +1873,7 @@
       20,
       20,
       20,
+      20,
       20
     ],
     "project-copacetic/copacetic": [
@@ -1794,6 +1888,7 @@
       14,
       14,
       32,
+      17,
       17,
       17,
       17,
@@ -1818,6 +1913,7 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "prometheus/prometheus": [
@@ -1832,6 +1928,7 @@
       13,
       13,
       32,
+      13,
       13,
       13,
       13,
@@ -1856,6 +1953,7 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "strimzi/strimzi-kafka-operator": [
@@ -1875,6 +1973,7 @@
       13,
       13,
       13,
+      13,
       13
     ],
     "tektoncd/pipeline": [
@@ -1888,6 +1987,7 @@
       12,
       12,
       12,
+      32,
       32,
       32,
       32,
@@ -1913,6 +2013,7 @@
       13,
       13,
       13,
+      18,
       18
     ],
     "tikv/tikv": [
@@ -1932,10 +2033,13 @@
       16,
       16,
       16,
+      16,
       16
     ],
     "trickstercache/trickster": [
       2,
+      9,
+      9,
       9,
       9,
       9,
@@ -1987,6 +2091,7 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "vitessio/vitess": [
@@ -2001,6 +2106,7 @@
       18,
       18,
       32,
+      18,
       18,
       18,
       18,
@@ -2025,6 +2131,7 @@
       12,
       12,
       12,
+      12,
       12
     ],
     "agones-dev/agones": [
@@ -2039,6 +2146,7 @@
       13,
       13,
       32,
+      13,
       13,
       13,
       13,
@@ -2063,6 +2171,7 @@
       15,
       15,
       15,
+      15,
       15
     ],
     "artifacthub/hub": [
@@ -2077,6 +2186,7 @@
       7,
       7,
       32,
+      7,
       7,
       7,
       7,
@@ -2101,6 +2211,7 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "bfenetworks/bfe": [
@@ -2115,6 +2226,7 @@
       6,
       6,
       32,
+      6,
       6,
       6,
       6,
@@ -2139,6 +2251,7 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "cadence-workflow/cadence": [
@@ -2153,6 +2266,7 @@
       16,
       16,
       32,
+      16,
       16,
       16,
       16,
@@ -2177,6 +2291,7 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "cedar-policy/cedar": [
@@ -2196,10 +2311,12 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "cert-manager/cert-manager": [
       1,
+      8,
       8,
       8,
       8,
@@ -2234,6 +2351,7 @@
       11,
       11,
       11,
+      11,
       11
     ],
     "cni-genie/CNI-Genie": [
@@ -2253,10 +2371,12 @@
       6,
       6,
       6,
+      6,
       6
     ],
     "confidential-containers/cloud-api-adaptor": [
       1,
+      6,
       6,
       6,
       6,
@@ -2308,6 +2428,8 @@
       6,
       6,
       6,
+      6,
+      6,
       6
     ],
     "cozystack/cozystack": [
@@ -2327,10 +2449,12 @@
       12,
       12,
       12,
+      12,
       12
     ],
     "crossplane/crossplane": [
       1,
+      10,
       10,
       10,
       10,
@@ -2365,10 +2489,12 @@
       11,
       11,
       11,
+      11,
       11
     ],
     "easegress-io/easegress": [
       1,
+      6,
       6,
       6,
       6,
@@ -2403,10 +2529,12 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "eraser-dev/eraser": [
       1,
+      9,
       9,
       9,
       9,
@@ -2441,10 +2569,12 @@
       5,
       5,
       5,
+      5,
       5
     ],
     "fluent/fluentd": [
       1,
+      7,
       7,
       7,
       7,
@@ -2479,10 +2609,12 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "glasskube/glasskube": [
       1,
+      9,
       9,
       9,
       9,
@@ -2517,6 +2649,7 @@
       12,
       12,
       12,
+      12,
       12
     ],
     "headlamp-k8s/headlamp": [
@@ -2531,6 +2664,7 @@
       12,
       12,
       32,
+      12,
       12,
       12,
       12,
@@ -2555,10 +2689,12 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "hexa-org/policy-orchestrator": [
       1,
+      5,
       5,
       5,
       5,
@@ -2593,10 +2729,12 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "k0sproject/k0s": [
       1,
+      9,
       9,
       9,
       9,
@@ -2631,10 +2769,12 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "kanisterio/kanister": [
       1,
+      10,
       10,
       10,
       10,
@@ -2669,6 +2809,7 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "keptn/lifecycle-toolkit": [
@@ -2688,10 +2829,12 @@
       13,
       13,
       13,
+      13,
       13
     ],
     "keylime/keylime": [
       1,
+      9,
       9,
       9,
       9,
@@ -2726,7 +2869,8 @@
       12,
       12,
       12,
-      12
+      12,
+      13
     ],
     "knative/serving": [
       1,
@@ -2745,10 +2889,12 @@
       11,
       11,
       11,
+      11,
       11
     ],
     "konveyor/tackle2-ui": [
       1,
+      12,
       12,
       12,
       12,
@@ -2783,10 +2929,12 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "krator-rs/krator": [
       1,
+      6,
       6,
       6,
       6,
@@ -2821,10 +2969,12 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "krustlet/krustlet": [
       1,
+      6,
       6,
       6,
       6,
@@ -2859,10 +3009,12 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "kuasar-io/kuasar": [
       1,
+      8,
       8,
       8,
       8,
@@ -2897,10 +3049,12 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "kubearchive/kubearchive": [
       1,
+      10,
       10,
       10,
       10,
@@ -2935,10 +3089,12 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "kubeovn/kube-ovn": [
       1,
+      12,
       12,
       12,
       12,
@@ -2973,6 +3129,7 @@
       12,
       12,
       12,
+      12,
       12
     ],
     "kubeshop/testkube": [
@@ -2987,6 +3144,7 @@
       12,
       12,
       32,
+      12,
       12,
       12,
       12,
@@ -3011,10 +3169,12 @@
       12,
       12,
       12,
+      12,
       12
     ],
     "kubewarden/policy-server": [
       1,
+      6,
       6,
       6,
       6,
@@ -3049,6 +3209,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "linkerd/linkerd2": [
@@ -3063,6 +3224,7 @@
       13,
       13,
       32,
+      13,
       13,
       13,
       13,
@@ -3087,6 +3249,7 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "metal3-io/baremetal-operator": [
@@ -3101,6 +3264,7 @@
       11,
       11,
       32,
+      11,
       11,
       11,
       11,
@@ -3125,10 +3289,12 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "mittwald/kubernetes-replicator": [
       1,
+      5,
       5,
       5,
       5,
@@ -3163,10 +3329,12 @@
       7,
       7,
       7,
+      7,
       7
     ],
     "opcr-io/policy": [
       1,
+      5,
       5,
       5,
       5,
@@ -3201,6 +3369,7 @@
       7,
       7,
       7,
+      7,
       7
     ],
     "openeverest/openeverest": [
@@ -3220,9 +3389,11 @@
       11,
       11,
       11,
+      11,
       11
     ],
     "openfeature/flagd": [
+      0,
       0,
       0,
       0,
@@ -3258,10 +3429,12 @@
       13,
       13,
       13,
+      13,
       13
     ],
     "openservicemesh/osm": [
       0,
+      10,
       10,
       10,
       10,
@@ -3296,6 +3469,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "oras-project/oras": [
@@ -3315,9 +3489,11 @@
       12,
       12,
       12,
+      12,
       12
     ],
     "piraeus-datastore/piraeus-operator": [
+      0,
       0,
       0,
       0,
@@ -3353,6 +3529,7 @@
       0,
       0,
       0,
+      0,
       0
     ],
     "pravega/pravega": [
@@ -3372,10 +3549,12 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "projectcapsule/capsule": [
       0,
+      10,
       10,
       10,
       10,
@@ -3410,10 +3589,12 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "rook/rook": [
       1,
+      9,
       9,
       9,
       9,
@@ -3448,10 +3629,12 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "sigstore/cosign": [
       0,
+      9,
       9,
       9,
       9,
@@ -3486,10 +3669,12 @@
       8,
       8,
       8,
-      8
+      8,
+      10
     ],
     "submariner-io/submariner": [
       1,
+      11,
       11,
       11,
       11,
@@ -3524,10 +3709,12 @@
       13,
       13,
       13,
+      13,
       13
     ],
     "theupdateframework/python-tuf": [
       1,
+      6,
       6,
       6,
       6,
@@ -3562,6 +3749,7 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "tremor-rs/tremor-runtime": [
@@ -3576,6 +3764,7 @@
       9,
       9,
       32,
+      9,
       9,
       9,
       9,
@@ -3600,10 +3789,12 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "wasmcloud/wasmcloud": [
       0,
+      9,
       9,
       9,
       9,
@@ -3638,10 +3829,12 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "longhorn/longhorn": [
       0,
+      6,
       6,
       6,
       6,
@@ -3676,10 +3869,12 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "project-zot/zot": [
       0,
+      10,
       10,
       10,
       10,
@@ -3714,10 +3909,12 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "brigadecore/brigade": [
       0,
+      7,
       7,
       7,
       7,
@@ -3752,10 +3949,12 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "cncf/tag-security": [
       0,
+      8,
       8,
       8,
       8,
@@ -3790,6 +3989,7 @@
       7,
       7,
       7,
+      7,
       7
     ],
     "containernetworking/cni": [
@@ -3809,9 +4009,11 @@
       6,
       6,
       6,
+      6,
       6
     ],
     "curvefs/curvefs": [
+      0,
       0,
       0,
       0,
@@ -3847,10 +4049,12 @@
       1,
       1,
       1,
+      1,
       1
     ],
     "etcd-io/etcd": [
       0,
+      9,
       9,
       9,
       9,
@@ -3885,10 +4089,12 @@
       2,
       2,
       2,
+      2,
       2
     ],
     "grpc-ecosystem/grpc-gateway": [
       0,
+      8,
       8,
       8,
       8,
@@ -3923,6 +4129,7 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "kubearmor/KubeArmor": [
@@ -3942,10 +4149,12 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "kubereboot/kured": [
       0,
+      5,
       5,
       5,
       5,
@@ -3980,6 +4189,7 @@
       9,
       9,
       9,
+      9,
       9
     ],
     "kubernetes-sigs/kustomize": [
@@ -3999,10 +4209,12 @@
       7,
       7,
       7,
+      7,
       7
     ],
     "kubernetes-sigs/network-policy-api": [
       0,
+      7,
       7,
       7,
       7,
@@ -4037,6 +4249,7 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "kubernetes/kubernetes": [
@@ -4056,10 +4269,12 @@
       32,
       32,
       32,
+      32,
       32
     ],
     "kubescape/kubescape": [
       0,
+      7,
       7,
       7,
       7,
@@ -4094,9 +4309,11 @@
       7,
       7,
       7,
+      7,
       7
     ],
     "kueue-dev/kueue": [
+      0,
       0,
       0,
       0,
@@ -4132,6 +4349,7 @@
       0,
       0,
       0,
+      0,
       0
     ],
     "longhorn/longhorn-manager": [
@@ -4151,9 +4369,11 @@
       16,
       16,
       16,
+      16,
       16
     ],
     "meshplay/meshplay": [
+      0,
       0,
       0,
       0,
@@ -4189,10 +4409,12 @@
       6,
       6,
       6,
+      6,
       6
     ],
     "open-telemetry/opentelemetry-go": [
       0,
+      13,
       13,
       13,
       13,
@@ -4227,6 +4449,7 @@
       11,
       11,
       11,
+      11,
       11
     ],
     "open-telemetry/opentelemetry-js": [
@@ -4246,10 +4469,12 @@
       11,
       11,
       11,
+      11,
       11
     ],
     "open-telemetry/opentelemetry-python": [
       0,
+      12,
       12,
       12,
       12,
@@ -4284,10 +4509,12 @@
       10,
       10,
       10,
+      10,
       10
     ],
     "paralus/paralus": [
       0,
+      8,
       8,
       8,
       8,
@@ -4322,10 +4549,12 @@
       13,
       13,
       13,
+      13,
       13
     ],
     "project-akri/akri": [
       0,
+      7,
       7,
       7,
       7,
@@ -4360,10 +4589,12 @@
       5,
       5,
       5,
+      5,
       5
     ],
     "service-mesh-performance/service-mesh-performance": [
       1,
+      7,
       7,
       7,
       7,
@@ -4398,10 +4629,12 @@
       4,
       4,
       4,
+      4,
       4
     ],
     "slok/sloth": [
       0,
+      11,
       11,
       11,
       11,
@@ -4436,10 +4669,12 @@
       7,
       7,
       7,
+      7,
       7
     ],
     "thanos-io/thanos": [
       0,
+      9,
       9,
       9,
       9,
@@ -4474,10 +4709,12 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "wayfair-incubator/telefonistka": [
       0,
+      7,
       7,
       7,
       7,
@@ -4512,10 +4749,12 @@
       6,
       6,
       6,
+      6,
       6
     ],
     "xregistry/server": [
       0,
+      3,
       3,
       3,
       3,
@@ -4550,10 +4789,12 @@
       8,
       8,
       8,
+      8,
       8
     ],
     "zalando/postgres-operator": [
       0,
+      8,
       8,
       8,
       8,
@@ -4588,10 +4829,11 @@
       10,
       10,
       10,
+      10,
       10
     ]
   },
-  "generated_at": "2026-06-01T03:29:36.600Z",
+  "generated_at": "2026-06-03T03:25:16.827Z",
   "detectedIds": {
     "kubestellar/console": [
       "acmm:prereq-test-suite",
@@ -4890,13 +5132,28 @@
       "acmm:prereq-contrib-guide",
       "acmm:prereq-code-style",
       "acmm:prereq-coverage-gate",
+      "acmm:claude-md",
+      "acmm:copilot-instructions",
       "acmm:agents-md",
+      "acmm:prompts-catalog",
       "acmm:editor-config",
+      "acmm:pr-acceptance-metric",
+      "acmm:pr-review-rubric",
+      "acmm:quality-dashboard",
+      "acmm:ci-matrix",
+      "acmm:auto-qa-tuning",
+      "acmm:nightly-compliance",
       "acmm:auto-label",
-      "acmm:reflection-log",
+      "acmm:ai-fix-workflow",
+      "acmm:tier-classifier",
+      "acmm:security-ai-md",
+      "acmm:github-actions-ai",
+      "acmm:auto-qa-self-tuning",
+      "acmm:public-metrics",
+      "acmm:policy-as-code",
+      "acmm:strategic-dashboard",
       "fullsend:test-coverage",
       "fullsend:ci-cd-maturity",
-      "aef:structural-gates",
       "aef:session-continuity",
       "aef:cross-tool-config"
     ],
@@ -5704,12 +5961,16 @@
       "acmm:prereq-issue-template",
       "acmm:prereq-contrib-guide",
       "acmm:prereq-coverage-gate",
+      "acmm:claude-md",
+      "acmm:agents-md",
       "acmm:editor-config",
       "acmm:ci-matrix",
       "fullsend:test-coverage",
       "fullsend:ci-cd-maturity",
       "fullsend:production-feedback",
-      "aef:audit-trail"
+      "aef:session-continuity",
+      "aef:audit-trail",
+      "aef:cross-tool-config"
     ],
     "fluxcd/flux2": [
       "acmm:prereq-test-suite",
@@ -6056,7 +6317,10 @@
       "acmm:prereq-coverage-gate",
       "acmm:claude-md",
       "acmm:copilot-instructions",
+      "acmm:prompts-catalog",
+      "acmm:simple-skills",
       "acmm:ci-matrix",
+      "acmm:reflection-log",
       "fullsend:test-coverage",
       "fullsend:ci-cd-maturity",
       "aef:session-continuity"
@@ -6984,6 +7248,7 @@
       "acmm:claude-md",
       "acmm:copilot-instructions",
       "acmm:agents-md",
+      "acmm:simple-skills",
       "fullsend:ci-cd-maturity",
       "aef:structural-gates",
       "aef:session-continuity",
@@ -7453,9 +7718,11 @@
       "acmm:prereq-pr-template",
       "acmm:prereq-contrib-guide",
       "acmm:prereq-code-style",
+      "acmm:copilot-instructions",
       "acmm:reflection-log",
       "fullsend:ci-cd-maturity",
-      "aef:structural-gates"
+      "aef:structural-gates",
+      "aef:session-continuity"
     ],
     "submariner-io/submariner": [
       "acmm:prereq-test-suite",
