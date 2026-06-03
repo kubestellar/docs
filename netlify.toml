@@ -111,7 +111,32 @@
   status = 301
   force = true
 
-# Serve static hive dashboard snapshot (bypass Next.js middleware)
+# Serve static hive dashboard snapshots (bypass Next.js middleware)
+# Wildcard rule resolves directory paths to index.html for all instances
+[[redirects]]
+  from = "/live/hive/*/api-docs"
+  to = "/live/hive/:splat/api-docs/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/live/hive/*/api-docs/"
+  to = "/live/hive/:splat/api-docs/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/live/hive/api-docs"
+  to = "/live/hive/api-docs/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/live/hive/api-docs/"
+  to = "/live/hive/api-docs/index.html"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/live/hive"
   to = "/live/hive/index.html"
