@@ -56,5 +56,10 @@
     "vitest": "^4.1.7",
     "wink-eng-lite-web-model": "^1.8.1",
     "wink-nlp": "^2.4.0"
+  },
+  "overrides": {
+    "@xmldom/xmldom": ">=0.9.10",
+    "axios": ">=1.16.0",
+    "postcss": ">=8.5.10"
   }
 }
