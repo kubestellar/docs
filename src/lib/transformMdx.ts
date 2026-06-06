@@ -4,7 +4,7 @@ function stripUnsafeAttributesFromTagOnce(tag: string): string {
     i++;
   }
 
-  let sanitized = tag.slice(0, i);
+  let result = tag.slice(0, i);
 
   while (i < tag.length) {
     const segmentStart = i;
@@ -14,7 +14,7 @@ function stripUnsafeAttributesFromTagOnce(tag: string): string {
     }
 
     if (i >= tag.length || tag[i] === ">" || (tag[i] === "/" && tag[i + 1] === ">")) {
-      sanitized += tag.slice(segmentStart);
+      result += tag.slice(segmentStart);
       break;
     }
 
@@ -62,7 +62,11 @@ function stripUnsafeAttributesFromTagOnce(tag: string): string {
           scan++;
         }
       } else {
-        while (scan < tag.length && !/[\s>]/.test(tag[scan])) {
+        while (
+          scan < tag.length &&
+          !/[\s>]/.test(tag[scan]) &&
+          !(tag[scan] === "/" && tag[scan + 1] === ">")
+        ) {
           scan++;
         }
       }
@@ -72,13 +76,13 @@ function stripUnsafeAttributesFromTagOnce(tag: string): string {
     const attribute = tag.slice(segmentStart, attributeEnd);
     const lowerName = name.toLowerCase();
     if (!lowerName.startsWith("on") && lowerName !== "style") {
-      sanitized += attribute;
+      result += attribute;
     }
 
     i = attributeEnd;
   }
 
-  return sanitized;
+  return result;
 }
 
 function stripUnsafeAttributesFromTag(tag: string): string {
