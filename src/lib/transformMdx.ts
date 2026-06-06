@@ -1,5 +1,6 @@
 export function convertHtmlScriptsToJsxComments(input: string): string {
   let s = input;
+  let previous: string;
 
   const placeholders: string[] = [];
   const put = (block: string) => {
@@ -41,13 +42,16 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
   // Strip HTML event-handler attributes (onclick, onload, etc.).
   // Require `=` after the attribute name so normal prose words like
   // "onto", "once", "one", "only" are NOT removed.
-  s = s.replace(
-    /\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|\{[^}]*\}|[^\s>]+)/gi,
-    ""
-  );
-  s = s.replace(/\sstyle\s*=\s*(?:"[\s\S]*?"|'[\s\S]*?')/gi, "");
-  s = s.replace(/\sstyle\s*=\s*\{\{[\s\S]*?\}\}/gi, "");
-  s = s.replace(/\sstyle\s*=\s*\{[\s\S]*?\}/gi, "");
+  do {
+    previous = s;
+    s = s.replace(
+      /\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|\{[^}]*\}|[^\s>]+)/gi,
+      ""
+    );
+    s = s.replace(/\sstyle\s*=\s*(?:"[\s\S]*?"|'[\s\S]*?')/gi, "");
+    s = s.replace(/\sstyle\s*=\s*\{\{[\s\S]*?\}\}/gi, "");
+    s = s.replace(/\sstyle\s*=\s*\{[\s\S]*?\}/gi, "");
+  } while (s !== previous);
 
   s = s.replace(
     /\b(href|src)=(?!["'{])([^\s>]+)/gi,
