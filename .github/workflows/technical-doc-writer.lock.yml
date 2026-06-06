@@ -67,7 +67,7 @@ name: "technical-doc-writer"
         description: Issue number to process
         required: true
 
-permissions: {}
+permissions: read-all
 
 concurrency:
   group: "gh-aw-${{ github.workflow }}-${{ github.event.issue.number || github.run_id }}"
@@ -1425,4 +1425,3 @@ jobs:
             /tmp/gh-aw/safe-output-items.jsonl
             /tmp/gh-aw/temporary-id-map.json
           if-no-files-found: ignore
-
