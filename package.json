@@ -30,7 +30,7 @@
     "lucide-react": "^0.545.0",
     "mermaid": "^11.15.0",
     "next": "^15.5.18",
-    "next-intl": "^4.3.12",
+    "next-intl": "^4.9.2",
     "next-themes": "^0.4.6",
     "nextra": "^4.6.1",
     "postmark": "^4.0.5",
@@ -65,7 +65,6 @@
     "follow-redirects": ">=1.16.0",
     "js-yaml": ">=4.1.1",
     "markdown-it": ">=14.1.1",
-    "next-intl": ">=4.9.2",
     "postcss": ">=8.5.10",
     "uuid": ">=11.1.1"
   }
