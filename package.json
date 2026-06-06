@@ -61,6 +61,10 @@
     "@xmldom/xmldom": ">=0.9.10",
     "axios": ">=1.16.0",
     "dompurify": ">=3.4.0",
+    "follow-redirects": ">=1.16.0",
+    "js-yaml": ">=4.1.1",
+    "markdown-it": ">=14.1.1",
+    "next-intl": ">=4.9.2",
     "postcss": ">=8.5.10",
     "uuid": ">=11.1.1"
   }
