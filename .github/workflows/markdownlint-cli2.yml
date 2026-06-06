@@ -9,6 +9,9 @@ on:
       - "docs/**/*.md"
       - "docs/**/*.mdx"
 
+permissions:
+  contents: read
+
 jobs:
   markdownlint:
     name: markdownlint
