@@ -111,5 +111,5 @@ Both tools read from the same config location (`~/.kubestellar/`), so existing c
 ## Need help?
 
 - See the [README](https://github.com/kubestellar/kubestellar-mcp/blob/main/README.md) for installation and usage instructions.
-- Read the [Introduction](/docs/kubestellar-mcp/overview/introduction) for expanded setup and operational guidance.
+- Read the [Introduction](/docs/kubestellar-mcp/overview/intro) for expanded setup and operational guidance.
 - Open an issue at <https://github.com/kubestellar/kubestellar-mcp/issues>.
