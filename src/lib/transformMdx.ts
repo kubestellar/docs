@@ -1,6 +1,100 @@
+function stripUnsafeAttributesFromTagOnce(tag: string): string {
+  let i = 1;
+  while (i < tag.length && !/[\s/>]/.test(tag[i])) {
+    i++;
+  }
+
+  let sanitized = tag.slice(0, i);
+
+  while (i < tag.length) {
+    const segmentStart = i;
+
+    while (i < tag.length && /\s/.test(tag[i])) {
+      i++;
+    }
+
+    if (i >= tag.length || tag[i] === ">" || (tag[i] === "/" && tag[i + 1] === ">")) {
+      sanitized += tag.slice(segmentStart);
+      break;
+    }
+
+    const nameStart = i;
+    while (i < tag.length && !/[\s=/>]/.test(tag[i])) {
+      i++;
+    }
+    const nameEnd = i;
+    const name = tag.slice(nameStart, nameEnd);
+    let attributeEnd = nameEnd;
+    let scan = nameEnd;
+
+    while (scan < tag.length && /\s/.test(tag[scan])) {
+      scan++;
+    }
+
+    if (tag[scan] === "=") {
+      scan++;
+      while (scan < tag.length && /\s/.test(tag[scan])) {
+        scan++;
+      }
+
+      const delimiter = tag[scan];
+      if (delimiter === '"' || delimiter === "'") {
+        scan++;
+        while (scan < tag.length) {
+          if (tag[scan] === delimiter) {
+            scan++;
+            break;
+          }
+          scan++;
+        }
+      } else if (delimiter === "{") {
+        let depth = 0;
+        while (scan < tag.length) {
+          if (tag[scan] === "{") {
+            depth++;
+          } else if (tag[scan] === "}") {
+            depth--;
+            if (depth === 0) {
+              scan++;
+              break;
+            }
+          }
+          scan++;
+        }
+      } else {
+        while (scan < tag.length && !/[\s>]/.test(tag[scan])) {
+          scan++;
+        }
+      }
+      attributeEnd = scan;
+    }
+
+    const attribute = tag.slice(segmentStart, attributeEnd);
+    const lowerName = name.toLowerCase();
+    if (!lowerName.startsWith("on") && lowerName !== "style") {
+      sanitized += attribute;
+    }
+
+    i = attributeEnd;
+  }
+
+  return sanitized;
+}
+
+function stripUnsafeAttributesFromTag(tag: string): string {
+  let sanitized = tag;
+  let previous: string;
+
+  do {
+    previous = sanitized;
+    sanitized = stripUnsafeAttributesFromTagOnce(sanitized);
+  } while (sanitized !== previous);
+
+  return sanitized;
+}
+
 export function convertHtmlScriptsToJsxComments(input: string): string {
   let s = input;
-  let previous: string;
 
   const placeholders: string[] = [];
   const put = (block: string) => {
@@ -39,19 +133,10 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
   s = s.replace(/<script\b[^>]*\/>/gi, "");
   s = s.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "");
 
-  // Strip HTML event-handler attributes (onclick, onload, etc.).
-  // Require `=` after the attribute name so normal prose words like
-  // "onto", "once", "one", "only" are NOT removed.
-  do {
-    previous = s;
-    s = s.replace(
-      /\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|\{[^}]*\}|[^\s>]+)/gi,
-      ""
-    );
-    s = s.replace(/\sstyle\s*=\s*(?:"[\s\S]*?"|'[\s\S]*?')/gi, "");
-    s = s.replace(/\sstyle\s*=\s*\{\{[\s\S]*?\}\}/gi, "");
-    s = s.replace(/\sstyle\s*=\s*\{[\s\S]*?\}/gi, "");
-  } while (s !== previous);
+  // Strip HTML event-handler attributes (onclick, onload, etc.) and
+  // inline style attributes. Re-run on each tag until stable so
+  // malformed/stacked attributes cannot re-form `on*=` after one removal.
+  s = s.replace(/<[A-Za-z][^>]*>/g, tag => stripUnsafeAttributesFromTag(tag));
 
   s = s.replace(
     /\b(href|src)=(?!["'{])([^\s>]+)/gi,
