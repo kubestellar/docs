@@ -60,6 +60,7 @@
   "overrides": {
     "@xmldom/xmldom": ">=0.9.10",
     "axios": ">=1.16.0",
+    "brace-expansion": ">=5.0.6",
     "dompurify": ">=3.4.0",
     "follow-redirects": ">=1.16.0",
     "js-yaml": ">=4.1.1",
