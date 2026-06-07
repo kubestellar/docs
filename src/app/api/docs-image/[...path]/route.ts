@@ -28,8 +28,8 @@ export async function GET(
   
   const fullPath = path.join(DOCS_CONTENT_PATH, imagePath)
   
-  // Check if file exists and is within docs/content
-  if (!fullPath.startsWith(DOCS_CONTENT_PATH)) {
+  // Check if file exists and is within docs/content (trailing sep prevents sibling-dir prefix confusion)
+  if (!fullPath.startsWith(DOCS_CONTENT_PATH + path.sep)) {
     return new NextResponse('Forbidden', { status: 403 })
   }
   
