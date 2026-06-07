@@ -21,6 +21,10 @@
     "audit": "npm audit --audit-level=moderate",
     "update-deps": "npm update && npm audit fix"
   },
+  "overrides": {
+    "markdown-it": ">=14.1.1",
+    "@xmldom/xmldom": ">=0.9.10"
+  },
   "dependencies": {
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",
