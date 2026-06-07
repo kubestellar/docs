@@ -19,7 +19,10 @@ permissions:
 
 jobs:
   ai-fix:
-    uses: kubestellar/infra/.github/workflows/reusable-ai-fix.yml@main
+    if: >-
+      github.event_name != 'pull_request_target' ||
+      github.event.pull_request.head.repo.full_name == github.repository
+    uses: kubestellar/infra/.github/workflows/reusable-ai-fix.yml@af322d48cc67ade7345cabc6a0ed55c6c7040ee4
     with:
       issue_number: ${{ github.event.inputs.issue_number || '' }}
     secrets:

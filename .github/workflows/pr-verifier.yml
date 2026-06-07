@@ -10,5 +10,6 @@ permissions:
 
 jobs:
   verify:
-    uses: kubestellar/infra/.github/workflows/reusable-pr-verifier.yml@main
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    uses: kubestellar/infra/.github/workflows/reusable-pr-verifier.yml@af322d48cc67ade7345cabc6a0ed55c6c7040ee4
     secrets: inherit

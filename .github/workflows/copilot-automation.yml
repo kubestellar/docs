@@ -22,7 +22,10 @@ concurrency:
 
 jobs:
   copilot-automation:
-    uses: kubestellar/infra/.github/workflows/reusable-copilot-automation.yml@main
+    if: >-
+      github.event_name != 'pull_request_target' ||
+      github.event.pull_request.head.repo.full_name == github.repository
+    uses: kubestellar/infra/.github/workflows/reusable-copilot-automation.yml@af322d48cc67ade7345cabc6a0ed55c6c7040ee4
     with:
       pr_number: ${{ github.event.inputs.pr_number || '' }}
     secrets:
