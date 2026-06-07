@@ -30,7 +30,7 @@
     "lucide-react": "^0.545.0",
     "mermaid": "^11.15.0",
     "next": "^15.5.18",
-    "next-intl": "^4.3.12",
+    "next-intl": "^4.9.2",
     "next-themes": "^0.4.6",
     "nextra": "^4.6.1",
     "postmark": "^4.0.5",
@@ -56,5 +56,17 @@
     "vitest": "^4.1.7",
     "wink-eng-lite-web-model": "^1.8.1",
     "wink-nlp": "^2.4.0"
+  },
+  "overrides": {
+    "@xmldom/xmldom": ">=0.9.10",
+    "axios": ">=1.16.0",
+    "brace-expansion": ">=5.0.6",
+    "dompurify": ">=3.4.5",
+    "follow-redirects": ">=1.16.0",
+    "js-yaml": ">=4.1.1",
+    "markdown-it": ">=14.1.1",
+    "next-intl": "^4.9.2",
+    "postcss": ">=8.5.10",
+    "uuid": ">=11.1.1"
   }
 }
