@@ -56,5 +56,8 @@
     "vitest": "^4.1.7",
     "wink-eng-lite-web-model": "^1.8.1",
     "wink-nlp": "^2.4.0"
+  },
+  "overrides": {
+    "axios": ">=1.16.0"
   }
 }
