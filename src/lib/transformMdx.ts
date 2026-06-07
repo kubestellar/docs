@@ -34,16 +34,21 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
     /<!--([\s\S]*?)-->/g,
     (_m, comment) => `{/*${comment.trim()}*/}`
   );
-  s = s.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
-  s = s.replace(/<script\b[^>]*\/>/gi, "");
-  s = s.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "");
+  const stripUntilStable = (s: string, re: RegExp): string => {
+    let prev: string;
+    do { prev = s; s = s.replace(re, ""); } while (s !== prev);
+    return s;
+  };
+  s = stripUntilStable(s, /<script\b[^>]*>[\s\S]*?<\/script>/gi);
+  s = stripUntilStable(s, /<script\b[^>]*\/>/gi);
+  s = stripUntilStable(s, /<style\b[^>]*>[\s\S]*?<\/style>/gi);
 
   // Strip HTML event-handler attributes (onclick, onload, etc.).
   // Require `=` after the attribute name so normal prose words like
   // "onto", "once", "one", "only" are NOT removed.
-  s = s.replace(
-    /\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|\{[^}]*\}|[^\s>]+)/gi,
-    ""
+  s = stripUntilStable(
+    s,
+    /\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|\{[^}]*\}|[^\s>]+)/gi
   );
   s = s.replace(/\sstyle\s*=\s*(?:"[\s\S]*?"|'[\s\S]*?')/gi, "");
   s = s.replace(/\sstyle\s*=\s*\{\{[\s\S]*?\}\}/gi, "");
