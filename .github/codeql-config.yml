@@ -1,0 +1,8 @@
+# CodeQL configuration
+# Exclude generated/bundled third-party assets from analysis.
+# public/live/ contains minified HTML/JS bundles from upstream tools
+# (Hive UI, Bluefin) that are not maintained in this repo.
+paths-ignore:
+  - 'public/live/**'
+  - 'public/**/*.min.js'
+  - 'public/**/*.min.css'
