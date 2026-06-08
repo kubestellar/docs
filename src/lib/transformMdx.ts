@@ -40,6 +40,8 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
   // input so that one removal reconstitutes the dangerous pattern, e.g.:
   //   <scr<script>ipt>...</scr</script>ipt>
   // Repeating until the string no longer changes closes this gap.
+  // Use \s* on closing tags to also catch </script > / </style > with trailing
+  // whitespace before >, which the bare </script> pattern would miss (CodeQL).
   const stripLoop = (str: string, re: RegExp): string => {
     let prev: string;
     do {
@@ -49,9 +51,9 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
     return str;
   };
 
-  s = stripLoop(s, /<script\b[^>]*>[\s\S]*?<\/script>/gi);
+  s = stripLoop(s, /<script\b[^>]*>[\s\S]*?<\/script\s*>/gi);
   s = stripLoop(s, /<script\b[^>]*\/>/gi);
-  s = stripLoop(s, /<style\b[^>]*>[\s\S]*?<\/style>/gi);
+  s = stripLoop(s, /<style\b[^>]*>[\s\S]*?<\/style\s*>/gi);
 
   // Strip HTML event-handler attributes (onclick, onload, etc.).
   // Require `=` after the attribute name so normal prose words like
