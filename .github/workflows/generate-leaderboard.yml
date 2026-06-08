@@ -20,7 +20,7 @@ jobs:
   generate:
     permissions:
       contents: write
-      issues: write   
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
@@ -122,4 +122,3 @@ jobs:
               ].join('\n'),
               labels: ['ci-failure'],
             });
-             
