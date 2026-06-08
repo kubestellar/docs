@@ -66,6 +66,14 @@ function readLocalFile(filePath: string): string | null {
   return null
 }
 
+/** HTML-encode special characters so they render as text in innerHTML */
+function htmlEncode(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+}
+
 export async function GET(request: NextRequest) {
   try {
     const sp = request.nextUrl.searchParams
@@ -109,14 +117,19 @@ export async function GET(request: NextRequest) {
           (start > 0 ? "..." : "") +
           text.slice(start, end) +
           (end < text.length ? "..." : "")
+
+        // HTML-encode the snippet so HTML entities in docs content (&lt;img&gt;
+        // etc.) cannot become live HTML when rendered via dangerouslySetInnerHTML.
+        // Only the <mark>/<\/mark> tags we insert below are trusted raw HTML.
+        const encodedSnippet = htmlEncode(snippet)
         const rx = new RegExp(
           `(${query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
           "gi"
         )
-        highlightedSnippet = snippet.replace(rx, "<mark>$1</mark>")
+        highlightedSnippet = encodedSnippet.replace(rx, "<mark>$1</mark>")
       } else {
         snippet = text.slice(0, 140) + (text.length > 140 ? "..." : "")
-        highlightedSnippet = snippet
+        highlightedSnippet = htmlEncode(snippet)
       }
 
       const category =
