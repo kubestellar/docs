@@ -7,7 +7,7 @@ Stay up to date with the latest announcements, press releases, and community new
 ## June 2026
 
 - **[Adopter Spotlight: Cornell University's Software-Defined Farm](./cornell-sdf-spotlight.md)** — How Cornell CIDA uses KubeStellar for workload orchestration across distributed farm-edge compute, plus an invitation to add your organization to ADOPTERS.md.
-- **[KubeStellar MCP: AI-Native Multi-Cluster Management for Claude Code](./kubestellar-mcp-launch.md)** — `kubestellar-mcp` brings native multi-cluster Kubernetes capabilities to Claude Code via MCP. Install in one brew command; work with your apps, not your clusters. *(Pending: PR #5800)*
+- **[KubeStellar MCP: AI-Native Multi-Cluster Management for Claude Code](./kubestellar-mcp-launch.md)** — `kubestellar-mcp` brings native multi-cluster Kubernetes capabilities to Claude Code via MCP. Install in one brew command; work with your apps, not your clusters.
 
 ---
 
