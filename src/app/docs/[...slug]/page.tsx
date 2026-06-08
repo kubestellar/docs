@@ -160,6 +160,24 @@ function removeCommentPatterns(content: string): string {
   return cleaned
 }
 
+// Apply a regex removal repeatedly until the output is stable.
+// Prevents bypass of multi-character patterns via nested/interleaved input
+// (e.g. <scr<script>ipt> → after one pass → <script>; loop catches the remainder).
+function stripUntilStable(content: string, pattern: RegExp): string {
+  let prev = ''
+  while (content !== prev) {
+    prev = content
+    content = content.replace(pattern, '')
+  }
+  return content
+}
+
+// Escape '<' so that extracted attribute values cannot re-introduce HTML tags
+// when interpolated into template literals.
+function escapeAngle(s: string): string {
+  return s.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+}
+
 // Sanitize HTML for MDX compatibility
 function sanitizeHtmlForMdx(content: string): string {
   let sanitized = content
@@ -185,11 +203,12 @@ function sanitizeHtmlForMdx(content: string): string {
     
     if (contributors.length === 0) return ''
     
-    // Generate a CSS grid of contributor cards
-    const cards = contributors.map(c => 
-      `<a href="${c.profileUrl}" className="contributor-card" target="_blank" rel="noopener noreferrer">
-        <img src="${c.avatar}" alt="${c.name}" />
-        <span>${c.name}</span>
+    // Generate a CSS grid of contributor cards.
+    // Escape '<'/'>' in extracted values before interpolation to prevent tag injection.
+    const cards = contributors.map(c =>
+      `<a href="${escapeAngle(c.profileUrl)}" className="contributor-card" target="_blank" rel="noopener noreferrer">
+        <img src="${escapeAngle(c.avatar)}" alt="${escapeAngle(c.name)}" />
+        <span>${escapeAngle(c.name)}</span>
       </a>`
     ).join('\n')
     
@@ -242,11 +261,13 @@ function sanitizeHtmlForMdx(content: string): string {
   // Remove style attributes that might cause issues
   sanitized = sanitized.replace(/\s+style=["'][^"']*["']/gi, '')
   
-  // Remove style tags
-  sanitized = sanitized.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+  // Remove style tags — loop until stable to prevent nested-tag bypass
+  // (e.g. <sty<style>le>...</style> reassembles after one pass)
+  sanitized = stripUntilStable(sanitized, /<style[^>]*>[\s\S]*?<\/style>/gi)
   
-  // Remove script tags
-  sanitized = sanitized.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+  // Remove script tags — loop until stable to prevent nested-tag bypass
+  // (e.g. <scr<script>ipt>alert(1)</script> reassembles after one pass)
+  sanitized = stripUntilStable(sanitized, /<script[^>]*>[\s\S]*?<\/script>/gi)
   
   // Remove <sub> and other problematic inline tags that may have issues
   sanitized = sanitized.replace(/<sub>/gi, '')
