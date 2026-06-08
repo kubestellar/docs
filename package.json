@@ -47,7 +47,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.6",
     "markdownlint": "^0.39.0",
-    "markdownlint-cli2": "^0.18.1",
+    "markdownlint-cli2": "^0.22.1",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
