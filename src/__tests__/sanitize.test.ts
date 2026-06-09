@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { sanitizeHtmlForMdx } from '../lib/sanitizeHtmlForMdx'
+import { sanitizeHtmlForMdx, removeCommentPatterns } from '../lib/sanitizeHtmlForMdx'
 
 /**
  * Unit tests for the exported sanitizeHtmlForMdx() function.
@@ -74,35 +74,35 @@ describe('sanitizeHtmlForMdx — script removal', () => {
 // Comment removal (CodeQL #188: incomplete multi-character sanitization)
 // ═══════════════════════════════════════════════════════════════════════
 
-describe('sanitizeHtmlForMdx — comment removal', () => {
+describe('removeCommentPatterns — comment removal', () => {
   it('removes a normal closed comment', () => {
-    const result = sanitizeHtmlForMdx('before<!-- comment -->after')
+    const result = removeCommentPatterns('before<!-- comment -->after')
     expect(result).toBe('beforeafter')
   })
 
   it('removes an unclosed comment (residual opener) via loop', () => {
-    const result = sanitizeHtmlForMdx('safe<!-- this never closes')
+    const result = removeCommentPatterns('safe<!-- this never closes')
     expect(result).toBe('safe')
   })
 
   it('removes nested comment reconstruction', () => {
     // After removing <!--x-->, "<!-" remains; loop should catch residual opener
-    const result = sanitizeHtmlForMdx('start<!-<!--x-->end')
+    const result = removeCommentPatterns('start<!-<!--x-->end')
     expect(result).not.toContain('<!--')
   })
 
   it('removes multiple comments', () => {
-    const result = sanitizeHtmlForMdx('a<!-- one -->b<!-- two -->c')
+    const result = removeCommentPatterns('a<!-- one -->b<!-- two -->c')
     expect(result).toBe('abc')
   })
 
   it('removes multiline comments', () => {
-    const result = sanitizeHtmlForMdx('before<!--\nmultiline\ncomment\n-->after')
+    const result = removeCommentPatterns('before<!--\nmultiline\ncomment\n-->after')
     expect(result).toBe('beforeafter')
   })
 
   it('removes Jinja-style comments', () => {
-    const result = sanitizeHtmlForMdx('text{# jinja comment #}more')
+    const result = removeCommentPatterns('text{# jinja comment #}more')
     expect(result).toBe('textmore')
   })
 })
@@ -212,8 +212,9 @@ describe('sanitizeHtmlForMdx — edge cases', () => {
   })
 
   it('handles mixed attack vectors in one payload', () => {
+    // Mirrors the buildContent pipeline: removeCommentPatterns → sanitizeHtmlForMdx
     const payload = '<script>a()</script><!-- hidden --><style>.x{}</style><meta charset="utf-8">safe'
-    const result = sanitizeHtmlForMdx(payload)
+    const result = sanitizeHtmlForMdx(removeCommentPatterns(payload))
     expect(result).not.toContain('script')
     expect(result).not.toContain('<!--')
     expect(result).not.toContain('style')

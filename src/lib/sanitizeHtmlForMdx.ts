@@ -150,6 +150,19 @@ export function sanitizeHtmlForMdx(content: string): string {
   // Remove script tags — loop until stable (CodeQL #190: js/bad-tag-filter)
   sanitized = stripUntilStable(sanitized, /<script[^>]*>[\s\S]*?<\/script[^>]*>/gi)
 
+  // Remove dangerous metadata/navigation tags
+  sanitized = sanitized.replace(/<meta\b[^>]*\/?>/gi, '')
+  sanitized = sanitized.replace(/<link\b[^>]*\/?>/gi, '')
+  sanitized = sanitized.replace(/<base\b[^>]*\/?>/gi, '')
+
+  // Remove CDATA sections, processing instructions, and DOCTYPE declarations
+  sanitized = sanitized.replace(/<!\[CDATA\[[\s\S]*?\]\]>/gi, '')
+  sanitized = sanitized.replace(/<\?[\s\S]*?\?>/g, '')
+  sanitized = sanitized.replace(/<!DOCTYPE\b[^>]*>/gi, '')
+
+  // Strip null bytes and non-printable control characters (preserve tab, LF, CR)
+  sanitized = sanitized.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '')
+
   // Remove <sub> inline tags
   sanitized = sanitized.replace(/<sub>/gi, '')
   sanitized = sanitized.replace(/<\/sub>/gi, '')
