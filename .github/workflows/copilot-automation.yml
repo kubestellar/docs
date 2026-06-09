@@ -18,6 +18,11 @@ concurrency:
 
 jobs:
   copilot-automation:
+    # Fork guard: workflow_dispatch events have no PR context (null check passes them
+    # through); pull_request_target events from untrusted forks are blocked.
+    if: >-
+      github.event.pull_request == null ||
+      github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       contents: write
       pull-requests: write
