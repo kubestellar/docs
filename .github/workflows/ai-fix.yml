@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   ai-fix:
-    uses: kubestellar/infra/.github/workflows/reusable-ai-fix.yml@main
+    uses: kubestellar/infra/.github/workflows/reusable-ai-fix.yml@a160acca0bdce1ac6c649e006d680d5f6d53024e  # pin: main
     with:
       issue_number: ${{ github.event.inputs.issue_number || '' }}
     secrets:
