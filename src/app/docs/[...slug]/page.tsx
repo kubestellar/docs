@@ -8,97 +8,134 @@ import { buildPageMap, docsContentPath } from '../page-map'
 import { CURRENT_VERSION, type ProjectId } from '@/config/versions'
 import fs from 'fs'
 import path from 'path'
-import { notFound } from 'next/navigation'
 
-// Type for slug params
-type SlugParams = {
-  params: Promise<{
-    slug: string[]
-  }>
+// Detect project from URL slug
+function getProjectFromSlug(slug: string[]): ProjectId {
+  if (slug.length > 0) {
+    if (slug[0] === 'a2a') return 'a2a'
+    if (slug[0] === 'kubeflex') return 'kubeflex'
+    if (slug[0] === 'multi-plugin') return 'multi-plugin'
+    if (slug[0] === 'kubestellar-mcp') return 'kubestellar-mcp'
+    if (slug[0] === 'console') return 'console'
+    if (slug[0] === 'hive') return 'hive'
+    if (slug[0] === 'kubestellar') return 'kubestellar'
+  }
+  return 'kubestellar'
 }
 
-// Allowed HTML tags for sanitization whitelist
-const ALLOWED_TAGS = new Set([
-  'a', 'abbr', 'address', 'article', 'aside', 'audio',
-  'b', 'blockquote', 'br', 'canvas', 'caption', 'cite', 'code', 'col', 'colgroup',
-  'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'div', 'dl', 'dt',
-  'em', 'fieldset', 'figcaption', 'figure', 'footer', 'form',
-  'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'hgroup', 'hr',
-  'i', 'iframe', 'img', 'input', 'ins',
-  'kbd', 'label', 'legend', 'li', 'link',
-  'main', 'map', 'mark', 'menu', 'meter',
-  'nav', 'noscript',
-  'object', 'ol', 'optgroup', 'option', 'output',
-  'p', 'picture', 'pre', 'progress',
-  'q', 'rp', 'rt', 'ruby',
-  's', 'samp', 'section', 'select', 'small', 'source', 'span', 'strong', 'summary',
-  'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'time', 'tr', 'track',
-  'u', 'ul',
-  'var', 'video',
-  'wbr',
-])
-
-// Tags that should never be allowed regardless of context
-const BLOCKED_TAGS = new Set(['script', 'style', 'iframe', 'object', 'embed', 'form', 'input', 'button'])
-
-// Sanitize HTML attributes — remove event handlers and javascript: hrefs
-function sanitizeAttributes(tag: string): string {
-  // Remove all event handler attributes (on*)
-  let sanitized = tag.replace(/\s+on\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]*)/gi, '')
-  // Remove javascript: protocol from href/src/action
-  sanitized = sanitized.replace(/(?:href|src|action)\s*=\s*["']?\s*javascript:[^"'\s>]*/gi, '')
-  // Remove data: URIs from src attributes (can contain executable content)
-  sanitized = sanitized.replace(/src\s*=\s*["']?\s*data:[^"'\s>]*/gi, '')
-  return sanitized
+// Get route without project prefix
+function getRouteFromSlug(slug: string[], projectId: ProjectId): string {
+  if (projectId === 'kubestellar') {
+    return slug.join('/')
+  }
+  // Remove the project prefix from the slug
+  return slug.slice(1).join('/')
 }
 
-// Wrap consecutive badge <p> elements in a grid container for proper display
-function wrapBadgeGroups(content: string): string {
-  // Match sequences of badge <p> tags (shield.io images)
-  const badgePattern = /<p>\s*(?:<a[^>]*>)?\s*<img[^>]*shields\.io[^>]*>\s*(?:<\/a>)?\s*<\/p>/gi
-  const matches = [...content.matchAll(badgePattern)]
+export const dynamic = 'force-static'
+export const revalidate = false
 
-  if (matches.length < 2) return content
+const { wrapper: Wrapper, ...components } = getMDXComponents({ $Tabs: Tabs, Callout })
+const component = { ...components, Mermaid: MermaidComponent }
 
-  let result = content
-  let offset = 0
+type PageProps = Readonly<{
+  params: Promise<{ slug?: string[] }>
+}>
 
-  // Group consecutive badges
-  const groups: RegExpMatchArray[][] = []
-  let currentGroup: RegExpMatchArray[] = []
-
-  for (let i = 0; i < matches.length; i++) {
-    const match = matches[i]
-    const nextMatch = matches[i + 1]
-
-    currentGroup.push(match)
-
-    // Check if next badge immediately follows this one
-    const currentEnd = (match.index ?? 0) + match[0].length
-    const nextStart = nextMatch?.index ?? -1
-
-    if (nextStart === -1 || nextStart - currentEnd > 5) {
-      if (currentGroup.length >= 2) {
-        groups.push([...currentGroup])
-      }
-      currentGroup = []
+function resolvePath(baseFile: string, relativePath: string) {
+  if (relativePath.startsWith('/')) return relativePath.slice(1)
+  const stack = baseFile.split('/')
+  stack.pop() // Remove current filename
+  const parts = relativePath.split('/')
+  for (const part of parts) {
+    if (part === '.') continue
+    if (part === '..') {
+      if (stack.length > 0) stack.pop()
+    } else {
+      stack.push(part)
     }
   }
+  const resolved = stack.join('/')
+  
+  // If path goes above content root (empty or has ../), try just the filename
+  if (resolved === '' || resolved.startsWith('..')) {
+    // Return just the filename
+    return parts[parts.length - 1]
+  }
+  
+  return resolved
+}
+
+function wrapMarkdownImagesWithFigures(markdown: string) {
+  // Only wrap standalone images that are NOT inside list items
+  // This regex matches: start of line, NO leading whitespace, image, end of line
+  // We explicitly require NO leading whitespace to avoid wrapping images inside lists
+  const imageRegex = /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)\s*$/gm
+
+  return markdown.replace(imageRegex, (match, alt, src, title) => {
+    // Safety checks for undefined/null values
+    const safeAlt = alt || ''
+    const safeSrc = src || ''
+    const safeTitle = title || ''
+    
+    const captionText = safeTitle || safeAlt
+    const titleAttr = safeTitle ? ` title="${safeTitle}"` : ''
+    const figcaptionElement = captionText ? `\n  <figcaption>${captionText}</figcaption>` : ''
+
+    return `<figure className="ks-doc-figure">\n  <img src="${safeSrc}" alt="${safeAlt}"${titleAttr} />${figcaptionElement}\n</figure>`
+  })
+}
+
+function wrapBadgeLinksInGrid(markdown: string) {
+  const badgePattern = /\[![\[([^\]]*)\]\(([^)]*(?:shields\.io|badge|deepwiki)[^)]*)\)\]\(([^)]*)\)/gi
+
+  const allBadges: Array<{ fullMatch: string; startIndex: number; endIndex: number }> = []
+  let match
+
+  while ((match = badgePattern.exec(markdown)) !== null) {
+    allBadges.push({
+      fullMatch: match[0],
+      startIndex: match.index,
+      endIndex: match.index + match[0].length
+    })
+  }
+
+  if (allBadges.length === 0) return markdown
+
+  const groups: string[][] = []
+  let currentGroup: string[] = []
+  let lastEndIndex = -1
+
+  for (const badge of allBadges) {
+    if (currentGroup.length === 0 || badge.startIndex - lastEndIndex < 200) {
+      currentGroup.push(badge.fullMatch)
+    } else {
+      if (currentGroup.length > 0) groups.push(currentGroup)
+      currentGroup = [badge.fullMatch]
+    }
+    lastEndIndex = badge.endIndex
+  }
+  if (currentGroup.length > 0) groups.push(currentGroup)
+
+  let result = markdown
+  let offset = 0
 
   for (const group of groups) {
-    const badgesToWrap = group.map(m => m[0])
-    const firstBadge = badgesToWrap[0]
-    const lastBadge = badgesToWrap[badgesToWrap.length - 1]
-    const firstIndex = result.indexOf(firstBadge, offset)
+    if (group.length > 0) {
+      const badgesToWrap = group.slice(0, 9)
+      const firstBadge = badgesToWrap[0]
+      const lastBadge = badgesToWrap[badgesToWrap.length - 1]
+      const firstIndex = result.indexOf(firstBadge, offset)
 
-    if (firstIndex !== -1) {
-      const lastIndex = result.indexOf(lastBadge, firstIndex) + lastBadge.length
-      const beforeSection = result.substring(0, firstIndex)
-      const afterSection = result.substring(lastIndex)
-      const wrapped = `<div className="badge-grid-container">\n${badgesToWrap.map(b => `  <p>${b}</p>`).join('\n')}\n</div>`
+      if (firstIndex !== -1) {
+        const lastIndex = result.indexOf(lastBadge, firstIndex) + lastBadge.length
+        const beforeSection = result.substring(0, firstIndex)
+        const afterSection = result.substring(lastIndex)
+        const wrapped = `<div className="badge-grid-container">\n${badgesToWrap.map(b => `  <p>${b}</p>`).join('\n')}\n</div>`
 
-      result = beforeSection + wrapped + afterSection
-      offset = beforeSection.length + wrapped.length
+        result = beforeSection + wrapped + afterSection
+        offset = beforeSection.length + wrapped.length
+      }
     }
   }
 
@@ -156,7 +193,7 @@ export function sanitizeHtmlForMdx(html: string): string {
   sanitized = removeCommentPatterns(sanitized)
 
   // Remove CDATA sections
-  sanitized = sanitized.replace(/<!\[CDATA\[[\s\S]*?\]\]>/gi, '')
+  sanitized = sanitized.replace(/<\!\[CDATA\[[\s\S]*?\]\]>/gi, '')
 
   // Remove processing instructions
   sanitized = sanitized.replace(/<\?[\s\S]*?\?>/g, '')
@@ -193,140 +230,301 @@ function replaceTemplateVariables(content: string): string {
   // Use CURRENT_VERSION from config to support versioned documentation
   // When a version branch is created, CURRENT_VERSION is updated to that version
   const version = CURRENT_VERSION as string
-  return content
-    .replace(/\{\{VERSION\}\}/g, version)
-    .replace(/\{\{CURRENT_VERSION\}\}/g, version)
+  const versionBranch = version === '0.29.0' ? 'main' : `release-${version}`
+  const versionTag = version === '0.29.0' ? 'latest' : `v${version}`
+
+  const vars: Record<string, string> = {
+    'config.ks_branch': versionBranch,
+    'config.ks_tag': versionTag,
+    'config.ks_latest_release': CURRENT_VERSION,
+    'config.ks_latest_regular_release': CURRENT_VERSION,
+    'config.docs_url': 'https://docs.kubestellar.io',
+    'config.repo_url': 'https://github.com/kubestellar/kubestellar',
+    'config.site_url': 'https://docs.kubestellar.io'
+  }
+  
+  let result = content
+  for (const [key, value] of Object.entries(vars)) {
+    result = result.replace(new RegExp(`\\{\\{\\s*${key.replace('.', '\\.')}\\s*\\}\\}`, 'g'), value)
+  }
+  
+  // Remove any remaining template variables
+  result = result.replace(/\{\{[^}]+\}\}/g, '')
+  
+  return result
 }
 
-// Consolidate multiple consecutive blank lines into at most two
-function consolidateBlankLines(content: string): string {
-  return content.replace(/\n{3,}/g, '\n\n')
-}
-
-// Trim trailing whitespace from each line
-function trimTrailingWhitespace(content: string): string {
-  return content.split('\n').map(line => line.trimEnd()).join('\n')
-}
-
-// Build a JSON-serializable page map for use in client components
-export async function buildSerializablePageMap(projectId: ProjectId) {
-  const pageMap = await buildPageMap(projectId)
-  return JSON.parse(JSON.stringify(pageMap))
-}
-
-// Build the content path for a given project and slug
-export function buildContentPath(projectId: ProjectId, slug: string[]): string {
-  return path.join(docsContentPath(projectId), ...slug) + '.mdx'
-}
-
-// Check if a file exists at the given path
-export function fileExists(filePath: string): boolean {
+function readLocalFile(filePath: string, contentPath: string = docsContentPath): string | null {
+  // Try the project-specific content path first
+  const fullPath = path.join(contentPath, filePath)
   try {
-    return fs.existsSync(filePath)
+    if (fs.existsSync(fullPath)) {
+      return fs.readFileSync(fullPath, 'utf-8')
+    }
   } catch {
-    return false
-  }
-}
-
-// Read raw MDX file content
-export function readMdxFile(filePath: string): string {
-  return fs.readFileSync(filePath, 'utf-8')
-}
-
-// Pre-process raw MDX content before compilation
-export function preprocessMdxContent(rawContent: string): string {
-  let content = rawContent
-
-  // Replace template variables
-  content = replaceTemplateVariables(content)
-
-  // Sanitize any inline HTML
-  content = sanitizeHtmlForMdx(content)
-
-  // Wrap badge groups in grid containers
-  content = wrapBadgeGroups(content)
-
-  // Consolidate blank lines
-  content = consolidateBlankLines(content)
-
-  // Trim trailing whitespace
-  content = trimTrailingWhitespace(content)
-
-  return content
-}
-
-// Load and preprocess MDX content for a given project and slug
-export async function loadMdxContent(
-  projectId: ProjectId,
-  slug: string[]
-): Promise<{ content: string; filePath: string } | null> {
-  const filePath = buildContentPath(projectId, slug)
-
-  if (!fileExists(filePath)) {
-    return null
+    // File doesn't exist in content directory
   }
 
-  const rawContent = readMdxFile(filePath)
-  const content = preprocessMdxContent(rawContent)
+  // If not found in project directory, try main KubeStellar content path
+  // This is needed for general sections (Contributing, Community, News) on non-KubeStellar projects
+  if (contentPath !== docsContentPath) {
+    const kubestellarPath = path.join(docsContentPath, filePath)
+    try {
+      if (fs.existsSync(kubestellarPath)) {
+        return fs.readFileSync(kubestellarPath, 'utf-8')
+      }
+    } catch {
+      // File doesn't exist in KubeStellar directory either
+    }
+  }
 
-  return { content, filePath }
+  // If not found in content directories, try repository root
+  const repoRootPath = path.join(process.cwd(), filePath)
+  try {
+    if (fs.existsSync(repoRootPath)) {
+      return fs.readFileSync(repoRootPath, 'utf-8')
+    }
+  } catch {
+    // File doesn't exist in repository root either
+  }
+
+  return null
 }
 
-// Compile MDX content with nextra
-export async function compileMdxContent(content: string) {
-  return compileMdx(content, {
-    defaultShowCopyCode: true,
+// Process include directives with common logic
+function processInclude(
+  fullMatch: string,
+  relativePath: string,
+  filePath: string,
+  contentPath: string,
+  extractContent?: (content: string) => string
+): string {
+  const resolvedPath = resolvePath(filePath, relativePath)
+  const includeContent = readLocalFile(resolvedPath, contentPath)
+  
+  if (includeContent) {
+    const content = extractContent ? extractContent(includeContent) : includeContent
+    return removeCommentPatterns(content)
+  }
+  
+  if (relativePath.includes('coming-soon.md')) {
+    return ''
+  }
+  
+  return `> **Note**: Include file \`${relativePath}\` not found`
+}
+
+export default async function Page(props: PageProps) {
+  const params = await props.params
+  const slug = params.slug ?? []
+
+  // Detect project from URL slug
+  const projectId = getProjectFromSlug(slug)
+  const route = getRouteFromSlug(slug, projectId)
+
+  const { routeMap, filePaths, contentPath } = buildPageMap(projectId)
+
+  const filePath =
+    routeMap[route] ??
+    [`${route}.mdx`, `${route}.md`, `${route}/README.md`, `${route}/readme.md`, `${route}/index.mdx`, `${route}/index.md`]
+      .find(p => filePaths.includes(p))
+
+  if (!filePath) notFound()
+
+  const rawText = readLocalFile(filePath, contentPath)
+
+  if (!rawText) notFound()
+
+  // --- START PROCESSING INCLUDES ---
+  let processedContent = removeCommentPatterns(rawText)
+
+  // 1. Process Jekyll-style includes: {% include "path" %}
+  processedContent = processedContent.replace(
+    /{%\s*include\s+["']([^"']+)["']\s*%}/g,
+    (match, relativePath) => processInclude(match, relativePath, filePath, contentPath)
+  )
+
+  // 2. Process partial includes with markers: {% include-markdown "path" start="..." end="..." %}
+  processedContent = processedContent.replace(
+    /{%[\s\S]*?include-markdown[\s\S]+?["']([^"']+)["'][\s\S]*?start\s*=\s*["']([^"']*)["'][\s\S]*?end\s*=\s*["']([^"']*)["'][\s\S]*?%}/g,
+    (match, relativePath, startMarker, endMarker) => {
+      return processInclude(match, relativePath, filePath, contentPath, (content) => {
+        // If markers are empty, return whole content
+        if (!startMarker && !endMarker) return content
+        
+        const startIndex = content.indexOf(startMarker)
+        const endIndex = content.indexOf(endMarker)
+        
+        if (startIndex !== -1 && endIndex !== -1) {
+          return content.substring(startIndex + startMarker.length, endIndex).trim()
+        }
+        
+        return `> **Note**: Markers not found in \`${relativePath}\``
+      })
+    }
+  )
+
+  // 3. Process full includes (without markers): {% include-markdown "path" %}
+  processedContent = processedContent.replace(
+    /{%[\s\S]*?include-markdown[\s\S]+?["']([^"']+)["'][\s\S]*?%}/g,
+    (match, relativePath) => processInclude(match, relativePath, filePath, contentPath)
+  )
+  // --- END PROCESSING INCLUDES ---
+
+  const filePathToRoute = new Map<string, string>()
+  // Only set if not already set - prefer nav structure routes over fallback routes
+  Object.entries(routeMap).forEach(([r, fp]) => {
+    if (!filePathToRoute.has(fp)) {
+      filePathToRoute.set(fp, r)
+    }
   })
-}
 
-// Evaluate compiled MDX with components
-export async function evaluateMdxContent(compiledSource: Awaited<ReturnType<typeof compileMdx>>) {
-  return evaluate(compiledSource, {
-    ...getMDXComponents(),
-    Callout,
-    Tabs,
-    MermaidComponent,
+  // Get the base path for links based on project
+  const linkBasePath = projectId === 'kubestellar' ? '/docs' : `/docs/${projectId}`
+
+  // Rewrite Markdown links/images using the fully processed content
+  let rewrittenText = processedContent.replace(/(!?\[.*?\])\((.*?)\)/g, (match, label, link) => {
+    if (/^(http|https|mailto:|#)/.test(link)) return match
+
+    const isImage = label.startsWith('!')
+    const [linkUrl, linkHash] = link.split('#')
+
+    const resolvedPath = resolvePath(filePath, linkUrl)
+
+    if (isImage) {
+      // Check if the resolved path is an image file
+      const isImageFile = /\.(png|jpg|jpeg|gif|svg|webp|ico)$/i.test(resolvedPath)
+      if (isImageFile) {
+        // Serve images from the /docs-images path which maps to docs/content
+        // For a2a and kubeflex projects, prepend the project name
+        const imagePrefix = projectId === 'kubestellar' ? '' : `${projectId}/`
+        const imgPath = `/docs-images/${imagePrefix}${resolvedPath}`
+        return `${label}(${imgPath})`
+      }
+      return match
+    } else {
+      let targetRoute = filePathToRoute.get(resolvedPath)
+      if (!targetRoute) targetRoute = filePathToRoute.get(resolvedPath + '.md')
+      if (!targetRoute) targetRoute = filePathToRoute.get(resolvedPath + '.mdx')
+
+      if (targetRoute) {
+        return `${label}(${linkBasePath}/${targetRoute}${linkHash ? '#' + linkHash : ''})`
+      }
+
+      // Keep the original link if we can't resolve it
+      return match
+    }
   })
-}
 
-// Main page component
-export default async function DocPage({ params }: SlugParams) {
-  const { slug } = await params
+  rewrittenText = rewrittenText.replace(/<img\s+([^>]*?)src=["']([^"']+)["']([^>]*?)\/?>/ .constructor('/<img\\s+([^>]*?)src=["\']([^"\']+)["\']([^>]*?)\\/?>/gi'), (match, pre, src, post) => {
+    if (/^(http|https|mailto:|#|data:)/.test(src)) return match
 
-  // Detect project from slug prefix
-  let projectId: ProjectId = 'kubestellar'
-  let docSlug = slug
+    const resolvedPath = resolvePath(filePath, src)
+    const isImageFile = /\.(png|jpg|jpeg|gif|svg|webp|ico)$/i.test(resolvedPath)
+    if (isImageFile) {
+      // For a2a and kubeflex projects, prepend the project name
+      const imagePrefix = projectId === 'kubestellar' ? '' : `${projectId}/`
+      const imgPath = `/docs-images/${imagePrefix}${resolvedPath}`
+      // Only keep alt attribute, remove other problematic attributes
+      const altMatch = (pre + post).match(/alt=["']([^"']*)["']/i)
+      const alt = altMatch ? altMatch[1] : ''
+      return `<img src="${imgPath}" alt="${alt}" />`
+    }
+    return match
+  })
 
-  // Check if first segment is a known project identifier
-  const knownProjects: ProjectId[] = ['kubestellar', 'clusteradm', 'ocm', 'kubeflex']
-  if (slug.length > 0 && knownProjects.includes(slug[0] as ProjectId)) {
-    projectId = slug[0] as ProjectId
-    docSlug = slug.slice(1)
-  }
+  rewrittenText = wrapMarkdownImagesWithFigures(rewrittenText)
+  rewrittenText = wrapBadgeLinksInGrid(rewrittenText)
 
-  const result = await loadMdxContent(projectId, docSlug)
+  // Pre-process Jinja and Pymdown syntax before MDX compilation
+  let preProcessedText = replaceTemplateVariables(rewrittenText)
+  
+  // Handle code block attributes
+  preProcessedText = preProcessedText.replace(/```\s*\{([^}]+)\}\s*\n/g, (_match, attrs) => {
+    const normalizedAttrs = attrs.replace(/^\./, '').replace(/\s+\./g, ' ')
+    return `\`\`\`${normalizedAttrs}\n`
+  })
 
-  if (!result) {
-    notFound()
-  }
+  // Sanitize HTML for MDX
+  let processedData = sanitizeHtmlForMdx(preProcessedText)
+  processedData = convertHtmlScriptsToJsxComments(processedData)
+  // Convert ```mermaid code fences to <Mermaid> JSX so the component renders
+  processedData = processedData.replace(
+    /```mermaid\n([\s\S]*?)```/g,
+    (_match, chart: string) => `<Mermaid>{\`${chart.trimEnd()}\`}</Mermaid>`
+  )
 
-  const { content } = result
+  const rawJs = await compileMdx(processedData, { filePath })
+  const { default: MDXContent, toc, metadata } = evaluate(rawJs, component)
 
-  const compiledSource = await compileMdxContent(content)
-  const { default: MDXContent } = await evaluateMdxContent(compiledSource)
-
-  const pageMap = await buildSerializablePageMap(projectId)
+  // Get project-specific pageMap for the sidebar
+  const { pageMap } = buildPageMap(projectId)
 
   return (
-    <div className="docs-content">
-      <MDXContent
-        components={{
-          ...getMDXComponents(),
-          Callout,
-          Tabs,
-          MermaidComponent,
-        }}
-      />
-    </div>
+    <Wrapper toc={toc} metadata={metadata} sourceCode={rawJs} pageMap={pageMap} filePath={filePath} projectId={projectId}>
+      <MDXContent />
+    </Wrapper>
   )
+}
+
+export async function generateStaticParams() {
+  const allParams: { slug: string[] }[] = []
+
+  // KubeStellar routes
+  const kubestellarMap = buildPageMap('kubestellar')
+  for (const route of Object.keys(kubestellarMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: route.split('/') })
+    }
+  }
+
+  // A2A routes (prefixed with 'a2a')
+  const a2aMap = buildPageMap('a2a')
+  for (const route of Object.keys(a2aMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['a2a', ...route.split('/')] })
+    }
+  }
+
+  // KubeFlex routes (prefixed with 'kubeflex')
+  const kubeflexMap = buildPageMap('kubeflex')
+  for (const route of Object.keys(kubeflexMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['kubeflex', ...route.split('/')] })
+    }
+  }
+
+  // Multi-Plugin routes (prefixed with 'multi-plugin')
+  const multiPluginMap = buildPageMap('multi-plugin')
+  for (const route of Object.keys(multiPluginMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['multi-plugin', ...route.split('/')] })
+    }
+  }
+
+  // kubestellar-mcp routes (prefixed with 'kubestellar-mcp')
+  const kubestellarMcpMap = buildPageMap('kubestellar-mcp')
+  for (const route of Object.keys(kubestellarMcpMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['kubestellar-mcp', ...route.split('/')] })
+    }
+  }
+
+  // Console routes (prefixed with 'console')
+  const consoleMap = buildPageMap('console')
+  for (const route of Object.keys(consoleMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['console', ...route.split('/')] })
+    }
+  }
+
+  // Hive routes (prefixed with 'hive')
+  const hiveMap = buildPageMap('hive')
+  for (const route of Object.keys(hiveMap.routeMap)) {
+    if (route !== '') {
+      allParams.push({ slug: ['hive', ...route.split('/')] })
+    }
+  }
+
+  return allParams
 }
