@@ -193,7 +193,7 @@ Click the **AI Missions** button in the bottom-right corner of the console. The 
 
 ### Step 2: Create a New Mission
 
-2 steps on how to create a new misson
+2 steps on how to create a new mission
 
 - Click **Start Custom Mission** to manually create a new mission.
 - Click **Browse Community Missions** to use an existing mission created by the community and select a mission type from the panel. The following table describes the supported mission types.

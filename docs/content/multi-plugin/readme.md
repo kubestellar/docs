@@ -40,7 +40,7 @@ kubectl-multi -v
 
 ```
 
-## Downloading steps for windows 
+## Downloading steps for Windows 
 
 Refer to this ->  **[Installation Guide](installation_guide_windows.md)**
 
