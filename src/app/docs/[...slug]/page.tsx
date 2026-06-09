@@ -106,9 +106,11 @@ function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/<tr>[\s\S]*?<\/tr>/gi, '')
   sanitized = sanitized.replace(/<td[^>]*>[\s\S]*?<\/td>/gi, '')
   
-  // Remove all iframe tags — also handles unclosed <iframe ...> without </iframe>
+  // Remove all iframe tags (both closed and unclosed forms), loop-stabilized to
+  // prevent nested-tag reconstruction bypass (e.g. <if<iframe>rame src="evil">
+  // reassembles to <iframe src="evil"> after a single-pass removal of the inner tag).
   sanitized = stripUntilStable(sanitized, /<iframe[\s\S]*?<\/iframe>/gi)
-  sanitized = sanitized.replace(/<iframe\b[^>]*\/?>/gi, '')
+  sanitized = stripUntilStable(sanitized, /<iframe\b[^>]*\/?>/gi)
   
   // Normalize all img tags - handle both <img ...> and <img ... />
   sanitized = sanitized.replace(/<img\s+([^>]*?)\/?>/gi, (match, attrs) => {
