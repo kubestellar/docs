@@ -3,6 +3,8 @@ name: Netlify Deploy Failure Reporter
 on:
   status:
 
+permissions: read-all  # default read; writes scoped to job below
+
 jobs:
   report-netlify-failure:
     if: >-

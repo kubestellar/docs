@@ -30,12 +30,13 @@ on:
         type: boolean
         default: true
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: read-all  # default read; writes scoped to job below
 
 jobs:
   create-branch:
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout docs repo

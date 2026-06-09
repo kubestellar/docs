@@ -5,12 +5,13 @@ on:
   schedule:
     - cron: '17 5 * * *'
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: read-all  # default read; writes scoped to job below
 
 jobs:
   sync-console-releases:
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.WORKFLOW_SYNC_TOKEN }}
