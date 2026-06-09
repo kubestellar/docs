@@ -22,6 +22,12 @@ concurrency:
 
 jobs:
   copilot-automation:
+    # Fork guard: block pull_request_target from untrusted forks (pwn-request / CWE-829).
+    # workflow_dispatch has no pull_request context, so the null check allows it through.
+    # Only same-repo PRs reach the reusable workflow with write permissions.
+    if: >-
+      github.event.pull_request == null ||
+      github.event.pull_request.head.repo.full_name == github.repository
     uses: kubestellar/infra/.github/workflows/reusable-copilot-automation.yml@a160acca0bdce1ac6c649e006d680d5f6d53024e  # pin: main
     with:
       pr_number: ${{ github.event.inputs.pr_number || '' }}
