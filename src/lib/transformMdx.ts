@@ -34,16 +34,33 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
     /<!--([\s\S]*?)-->/g,
     (_m, comment) => `{/*${comment.trim()}*/}`
   );
-  s = s.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
-  s = s.replace(/<script\b[^>]*\/>/gi, "");
-  s = s.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "");
+
+  // Loop until stable to prevent nested-tag bypass (CWE-116 / CodeQL #106-#108).
+  // A single-pass replace on a multi-character pattern can be bypassed by crafting
+  // input so that one removal reconstitutes the dangerous pattern, e.g.:
+  //   <scr<script>ipt>...</scr</script>ipt>
+  // Repeating until the string no longer changes closes this gap.
+  // Use [^>]* on closing tags to match any closing-tag variant (</script >,
+  // </script\t\n bar>, etc.) that \s*> would not handle (CodeQL alert).
+  const stripLoop = (str: string, re: RegExp): string => {
+    let prev: string;
+    do {
+      prev = str;
+      str = str.replace(re, "");
+    } while (str !== prev);
+    return str;
+  };
+
+  s = stripLoop(s, /<script\b[^>]*>[\s\S]*?<\/script[^>]*>/gi);
+  s = stripLoop(s, /<script\b[^>]*\/>/gi);
+  s = stripLoop(s, /<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi);
 
   // Strip HTML event-handler attributes (onclick, onload, etc.).
   // Require `=` after the attribute name so normal prose words like
   // "onto", "once", "one", "only" are NOT removed.
-  s = s.replace(
-    /\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|\{[^}]*\}|[^\s>]+)/gi,
-    ""
+  s = stripLoop(
+    s,
+    /\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|\{[^}]*\}|[^\s>]+)/gi
   );
   s = s.replace(/\sstyle\s*=\s*(?:"[\s\S]*?"|'[\s\S]*?')/gi, "");
   s = s.replace(/\sstyle\s*=\s*\{\{[\s\S]*?\}\}/gi, "");
