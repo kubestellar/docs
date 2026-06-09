@@ -36,5 +36,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Vitest suite
-        run: npx vitest run
+      - name: Install coverage provider
+        run: npm install --save-dev @vitest/coverage-v8
+
+      - name: Run Vitest suite with coverage
+        run: npx vitest run --coverage
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 7
