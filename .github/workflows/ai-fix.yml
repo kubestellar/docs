@@ -16,6 +16,11 @@ permissions: read-all  # default read; writes scoped to job below
 
 jobs:
   ai-fix:
+    # Fork guard: workflow_dispatch and issues events have no PR context (null check
+    # passes them through); pull_request_target events from untrusted forks are blocked.
+    if: >-
+      github.event.pull_request == null ||
+      github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       contents: write
       issues: write

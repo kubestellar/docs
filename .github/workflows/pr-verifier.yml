@@ -8,6 +8,9 @@ permissions: read-all  # default read; writes scoped to job below
 
 jobs:
   verify:
+    # Fork guard: only pull_request_target trigger — block fork PRs.
+    # secrets: inherit passes all secrets to the reusable workflow.
+    if: github.event.pull_request.head.repo.full_name == github.repository
     permissions:
       checks: write
       pull-requests: read
