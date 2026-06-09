@@ -4,6 +4,13 @@ Stay up to date with the latest announcements, press releases, and community new
 
 ---
 
+## June 2026
+
+- **[Adopter Spotlight: Cornell University's Software-Defined Farm](./cornell-sdf-spotlight.md)** — How Cornell CIDA uses KubeStellar for workload orchestration across distributed farm-edge compute, plus an invitation to add your organization to ADOPTERS.md.
+- **[KubeStellar MCP: AI-Native Multi-Cluster Management for Claude Code](./kubestellar-mcp-launch.md)** — `kubestellar-mcp` brings native multi-cluster Kubernetes capabilities to Claude Code via MCP. Install in one brew command; work with your apps, not your clusters. *(Pending: PR #5800)*
+
+---
+
 ## April 2026
 
 - **[Mission Control: Install, Fix, Orbit, and Mission Control](./mission-control-overview.md)** — A guided tour of every mission type in KubeStellar Console: **Install Missions** for one-click CNCF project deployment, **Fix Missions** for diagnose-and-repair workflows, **Orbit Missions** for recurring maintenance on a cadence, and **Mission Control** for orchestrating them all across your fleet — all surfaced through the AI Missions sidebar.
