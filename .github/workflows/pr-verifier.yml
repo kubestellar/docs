@@ -10,5 +10,9 @@ permissions:
 
 jobs:
   verify:
+    # Fork guard: block pull_request_target from untrusted forks.
+    # secrets: inherit passes all secrets to the reusable workflow, so
+    # unguarded fork PRs could exfiltrate secrets if the @main ref drifts.
+    if: github.event.pull_request.head.repo.full_name == github.repository
     uses: kubestellar/infra/.github/workflows/reusable-pr-verifier.yml@main
     secrets: inherit

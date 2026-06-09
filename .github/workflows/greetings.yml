@@ -13,5 +13,11 @@ permissions:
 
 jobs:
   greet:
+    # Fork guard: block pull_request_target from untrusted forks.
+    # issues events have no pull_request context so the null check allows them.
+    # secrets: inherit passes all secrets to the reusable workflow.
+    if: >-
+      github.event.pull_request == null ||
+      github.event.pull_request.head.repo.full_name == github.repository
     uses: kubestellar/infra/.github/workflows/reusable-greetings.yml@main
     secrets: inherit
