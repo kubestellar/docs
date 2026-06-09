@@ -45,12 +45,16 @@ export function getBaseUrl(): string {
   const host = window.location.host;
   const protocol = window.location.protocol;
 
-  // Check if we're on a Netlify preview or other non-production domain
+  // Check if we're on a Netlify preview or other non-production domain.
+  // Use exact-match or proper suffix checks rather than substring includes() to
+  // prevent hostname bypass (CWE-20 / CodeQL js/incomplete-url-substring-sanitization).
+  const hostname = host.split(":")[0]; // strip port for comparison
   if (
-    host.includes("netlify.app") ||
-    host.includes("previews.kubestellar.io") ||
-    host.includes("localhost") ||
-    host.includes("127.0.0.1")
+    hostname === "localhost" ||
+    hostname === "127.0.0.1" ||
+    hostname.endsWith(".netlify.app") ||
+    hostname === "previews.kubestellar.io" ||
+    hostname.endsWith(".previews.kubestellar.io")
   ) {
     // Use the current host for preview/local environments
     return `${protocol}//${host}`;
