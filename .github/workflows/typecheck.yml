@@ -10,6 +10,7 @@ on:
       - "tsconfig.json"
       - "package.json"
       - ".eslintrc*"
+      - "eslint.config.*"
       - "next.config.*"
   push:
     branches: [main]
@@ -18,6 +19,7 @@ on:
       - "*.ts"
       - "*.tsx"
       - "tsconfig.json"
+      - "eslint.config.*"
 
 permissions:
   contents: read
