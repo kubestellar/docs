@@ -36,7 +36,7 @@ Once installed, Claude Code picks them up automatically on next launch.
 
 With `kubestellar-ops` active in your Claude Code session:
 
-```
+```text
 "Check RBAC permissions for the payments service across all my clusters"
 "Which clusters have pods in CrashLoopBackOff right now?"
 "Show me the security posture diff between staging and production"
@@ -44,7 +44,7 @@ With `kubestellar-ops` active in your Claude Code session:
 
 With `kubestellar-deploy`:
 
-```
+```text
 "Deploy the payments service to all clusters in us-east with label env=prod"
 "Set up GitOps sync for this repo across my fleet"
 "Place the ML inference workload on clusters with GPU nodes"
