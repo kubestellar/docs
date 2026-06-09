@@ -1,18 +1,10 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { createRequire } from "module";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const require = createRequire(import.meta.url);
 
-// Use FlatCompat with only next/core-web-vitals (which already includes
-// next/typescript). Extending both "next/core-web-vitals" AND "next/typescript"
-// causes eslint-plugin-react to be registered twice, crashing with
-// "ConfigError: Cannot redefine plugin 'react'".
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+// eslint-config-next 16.x exports flat config arrays natively.
+// FlatCompat is NOT needed and causes "Converting circular structure to JSON"
+// errors due to eslint-plugin-react self-references in its configs object.
+const coreWebVitals = require("eslint-config-next/core-web-vitals");
 
-export default [
-  ...compat.extends("next/core-web-vitals"),
-];
+export default [...coreWebVitals];
