@@ -87,7 +87,7 @@ function wrapMarkdownImagesWithFigures(markdown: string) {
 }
 
 function wrapBadgeLinksInGrid(markdown: string) {
-  const badgePattern = /\[![\[([^\]]*)\]\(([^)]*(?:shields\.io|badge|deepwiki)[^)]*)\)\]\(([^)]*)\)/gi
+  const badgePattern = /\[!\[([^\]]*)\]\(([^)]*(?:shields\.io|badge|deepwiki)[^)]*)\)\]\(([^)]*)\)/gi
 
   const allBadges: Array<{ fullMatch: string; startIndex: number; endIndex: number }> = []
   let match
@@ -193,7 +193,7 @@ export function sanitizeHtmlForMdx(html: string): string {
   sanitized = removeCommentPatterns(sanitized)
 
   // Remove CDATA sections
-  sanitized = sanitized.replace(/<\!\[CDATA\[[\s\S]*?\]\]>/gi, '')
+  sanitized = sanitized.replace(/<!\[CDATA\[[\s\S]*?\]\]>/gi, '')
 
   // Remove processing instructions
   sanitized = sanitized.replace(/<\?[\s\S]*?\?>/g, '')
@@ -416,7 +416,7 @@ export default async function Page(props: PageProps) {
     }
   })
 
-  rewrittenText = rewrittenText.replace(/<img\s+([^>]*?)src=["']([^"']+)["']([^>]*?)\/?>/ .constructor('/<img\\s+([^>]*?)src=["\']([^"\']+)["\']([^>]*?)\\/?>/gi'), (match, pre, src, post) => {
+  rewrittenText = rewrittenText.replace(/<img\s+([^>]*?)src=["']([^"']+)["']([^>]*?)\/?>/gi, (match, pre, src, post) => {
     if (/^(http|https|mailto:|#|data:)/.test(src)) return match
 
     const resolvedPath = resolvePath(filePath, src)
