@@ -262,7 +262,7 @@ async function buildContent(slug: string[], projectId?: ProjectId): Promise<stri
 }
 
 function getProjectFromSlug(slug: string[]): { projectId: ProjectId | undefined; docSlug: string[] } {
-  const knownProjects: ProjectId[] = ['kubestellar', 'clusteradm-ocm', 'ks-core']
+  const knownProjects = ['kubestellar', 'clusteradm-ocm', 'ks-core']
   
   if (slug.length > 0 && knownProjects.includes(slug[0] as ProjectId)) {
     return {
@@ -287,7 +287,6 @@ export default async function DocPage({ params }: Props) {
   let mdxContent
   try {
     const compiled = await compileMdx(content, {
-      jsx: true,
       outputFormat: 'function-body',
       remarkPlugins: [],
       rehypePlugins: []
