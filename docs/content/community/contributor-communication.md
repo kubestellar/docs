@@ -26,7 +26,7 @@ This guide helps maintainers respond promptly and consistently to contributor PR
 
 ### New PR — Acknowledgment (within 48h)
 
-```
+```text
 Thanks for this contribution! We appreciate you taking the time to work on this.
 
 I've added it to our review queue. You should hear back with a full review within the week. In the meantime, please make sure:
@@ -39,7 +39,7 @@ We'll ping you here as soon as we have feedback.
 
 ### PR Waiting on Author (needs-rebase / failing CI)
 
-```
+```text
 Thanks for your patience while we've been heads-down on other priorities!
 
 Before we can move forward, this PR needs a few updates:
@@ -52,7 +52,7 @@ Once those are addressed, we'll prioritize the review. Let us know if you have a
 
 ### Long-Stale PR — Status Check (30+ days)
 
-```
+```text
 Thanks for your patience — this PR has been in our queue for a while and we want to make sure it doesn't fall through the cracks.
 
 Quick status check:
@@ -65,7 +65,7 @@ If we don't hear back in 2 weeks, we'll assume life got busy and close this PR �
 
 ### PR Declined — With Explanation
 
-```
+```text
 Thank you for this contribution — we've reviewed it carefully.
 
 After discussion, we've decided not to merge this PR because:
@@ -80,7 +80,7 @@ Feel free to ask in CNCF Slack #kubestellar if you'd like guidance on where to s
 
 ### PR Merged — Celebration
 
-```
+```text
 🎉 Merged! Thank you for this contribution — it's now part of KubeStellar.
 
 Here's how to stay involved:
