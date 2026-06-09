@@ -231,9 +231,11 @@ function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/<tr>[\s\S]*?<\/tr>/gi, '')
   sanitized = sanitized.replace(/<td[^>]*>[\s\S]*?<\/td>/gi, '')
   
-  // Remove all iframe tags — also handles unclosed <iframe ...> without </iframe>
+  // Remove all iframe tags — loop until stable to prevent nested-tag bypass
+  // (CodeQL #188/#189: js/incomplete-multi-character-sanitization — single-pass
+  // is bypassable via <ifr<iframe>ame src="evil"> reconstruction)
   sanitized = stripUntilStable(sanitized, /<iframe[\s\S]*?<\/iframe>/gi)
-  sanitized = sanitized.replace(/<iframe\b[^>]*\/?>/gi, '')
+  sanitized = stripUntilStable(sanitized, /<iframe\b[^>]*\/?>/gi)
   
   // Normalize all img tags - handle both <img ...> and <img ... />
   sanitized = sanitized.replace(/<img\s+([^>]*?)\/?>/gi, (match, attrs) => {
@@ -279,8 +281,10 @@ function sanitizeHtmlForMdx(content: string): string {
   sanitized = stripUntilStable(sanitized, /<style[^>]*>[\s\S]*?<\/style>/gi)
   
   // Remove script tags — loop until stable to prevent nested-tag bypass
-  // (e.g. <scr<script>ipt>alert(1)</script> reassembles after one pass)
-  sanitized = stripUntilStable(sanitized, /<script[^>]*>[\s\S]*?<\/script>/gi)
+  // (e.g. <scr<script>ipt>alert(1)</script> reassembles after one pass).
+  // Use \s* before closing > to also match </script > / </script\n> which
+  // browsers accept as valid end tags (CodeQL #183: js/bad-tag-filter).
+  sanitized = stripUntilStable(sanitized, /<script[^>]*>[\s\S]*?<\/script\s*>/gi)
   
   // Remove <sub> and other problematic inline tags that may have issues
   sanitized = sanitized.replace(/<sub>/gi, '')

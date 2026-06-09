@@ -14,13 +14,27 @@ interface SearchResult {
   matchType: "title" | "content" | "category"
 }
 
+// Apply a regex removal repeatedly until the output is stable.
+// Prevents bypass via nested/interleaved input (CWE-20, CodeQL js/incomplete-multi-character-sanitization).
+function stripUntilStableSR(text: string, pattern: RegExp): string {
+  let prev = ''
+  while (text !== prev) {
+    prev = text
+    text = text.replace(pattern, '')
+  }
+  return text
+}
+
 function toPlainText(content: string): string {
   let text = content
 
   // Remove code blocks, inline code, comments
   text = text.replace(/```[\s\S]*?```/g, "")
   text = text.replace(/`[^`]+`/g, "")
-  text = text.replace(/<!--[\s\S]*?-->/g, "")
+  // Loop until stable — single-pass removal of `<!--...-->` is bypassable via
+  // nested input e.g. `<!-<!--` → removes inner `<!--` → reassembles to `<!--`
+  // (CodeQL #11: js/incomplete-multi-character-sanitization)
+  text = stripUntilStableSR(text, /<!--[\s\S]*?-->/g)
 
   // Links/images
   text = text.replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
@@ -37,8 +51,9 @@ function toPlainText(content: string): string {
   // HR
   text = text.replace(/^---+$/gm, "")
 
-  // Strip residual HTML tags
-  text = text.replace(/<\/?[^>]+>/g, "")
+  // Strip residual HTML tags — loop until stable to prevent nested-tag bypass
+  // (CodeQL #12: js/incomplete-multi-character-sanitization)
+  text = stripUntilStableSR(text, /<\/?[^>]+>/g)
 
   // Collapse whitespace
   text = text.replace(/\n\s*\n/g, "\n").trim()
