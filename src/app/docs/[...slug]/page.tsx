@@ -148,8 +148,15 @@ function wrapBadgeLinksInGrid(markdown: string) {
 function removeCommentPatterns(content: string): string {
   let cleaned = content
   
-  // Remove all HTML comments
-  cleaned = cleaned.replace(/<!--[\s\S]*?-->/g, '')
+  // Remove all HTML comments — loop until stable to prevent partial-comment bypass
+  // (e.g. <!-<!----> could reassemble to <!-- after one pass)
+  let prev = ''
+  while (cleaned !== prev) {
+    prev = cleaned
+    cleaned = cleaned.replace(/<!--[\s\S]*?-->/g, '')
+  }
+  // Remove any residual comment openers that were not closed
+  cleaned = cleaned.replace(/<!--[\s\S]*/g, '')
   
   // Remove Jinja-style comments
   cleaned = cleaned.replace(/\{#[\s\S]*?#\}/g, '')
@@ -219,8 +226,9 @@ function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/<tr>[\s\S]*?<\/tr>/gi, '')
   sanitized = sanitized.replace(/<td[^>]*>[\s\S]*?<\/td>/gi, '')
   
-  // Remove all iframe tags - they cause issues with MDX and event handlers
-  sanitized = sanitized.replace(/<iframe[\s\S]*?<\/iframe>/gi, '')
+  // Remove all iframe tags — also handles unclosed <iframe ...> without </iframe>
+  sanitized = stripUntilStable(sanitized, /<iframe[\s\S]*?<\/iframe>/gi)
+  sanitized = sanitized.replace(/<iframe\b[^>]*\/?>/gi, '')
   
   // Normalize all img tags - handle both <img ...> and <img ... />
   sanitized = sanitized.replace(/<img\s+([^>]*?)\/?>/gi, (match, attrs) => {
@@ -241,13 +249,13 @@ function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/<br\s*\/?>/gi, '<br />')
   sanitized = sanitized.replace(/<hr\s*\/?>/gi, '<hr />')
   
-  // Remove inline event handlers - must be done before other attribute fixes
-  // Handle complex event handlers with nested quotes
-  sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][^"']*["']/gi, '')
-  sanitized = sanitized.replace(/\s+on\w+\s*=\s*"[^"]*"/gi, '')
-  sanitized = sanitized.replace(/\s+on\w+\s*=\s*'[^']*'/gi, '')
-  // Fallback for complex nested quotes - remove the entire event handler
-  sanitized = sanitized.replace(/\s+on\w+\s*=\s*["'][\s\S]*?["'](?=\s|>)/gi, '')
+  // Remove inline event handlers — single comprehensive pattern applied until stable.
+  // Handles: quoted values (any quote style), unquoted values, no-value attributes,
+  // and mixed-quote bypasses (e.g. onclick='value"', onclick=alert(1)).
+  sanitized = stripUntilStable(
+    sanitized,
+    /\s+on\w+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>'"]+))?/gi,
+  )
   
   // Remove other problematic attributes from remaining tags
   sanitized = sanitized.replace(/\s+align=["']?[^"'\s>]+["']?/gi, '')
