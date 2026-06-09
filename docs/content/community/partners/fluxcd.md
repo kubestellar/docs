@@ -17,7 +17,7 @@ This gives you a single GitOps source of truth that scales across any number of 
 
 ## Prerequisites
 
-- A running KubeStellar control plane (see [KubeStellar quickstart](../kubestellar/readme.md))
+- A running KubeStellar control plane (see [KubeStellar quickstart](../kubestellar/get-started.md))
 - Flux CLI installed: `curl -s https://fluxcd.io/install.sh | sudo bash`
 - `kubectl` access to your WDS (Workload Description Space) and target clusters
 
@@ -158,7 +158,7 @@ flux get kustomizations --context <target-cluster-context>
 ## Resources
 
 - [Flux CD documentation](https://fluxcd.io/flux/)
-- [KubeStellar BindingPolicy reference](../kubestellar/binding-policy.md)
+- [KubeStellar BindingPolicy reference](../kubestellar/binding.md)
 - [Flux multi-tenancy guide](https://fluxcd.io/flux/guides/repository-structure/)
 
 <style type="text/css">
