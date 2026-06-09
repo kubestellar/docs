@@ -287,19 +287,12 @@ export default async function DocPage({ params }: Props) {
   let mdxContent
   try {
     const compiled = await compileMdx(content, {
-      outputFormat: 'function-body',
-      remarkPlugins: [],
-      rehypePlugins: []
+      mdxOptions: {
+        remarkPlugins: [],
+        rehypePlugins: []
+      }
     })
     
-    const evaluated = await evaluate(compiled, {
-      useMDXComponents: getMDXComponents,
-      jsx: { createElement: (await import('react')).createElement },
-      jsxs: { jsx: (await import('react')).createElement },
-      Fragment: (await import('react')).Fragment,
-    })
-    
-    const MDXContent = evaluated.default
     const components = getMDXComponents({
       Callout,
       Tabs,
@@ -307,7 +300,11 @@ export default async function DocPage({ params }: Props) {
       convertHtmlScriptsToJsxComments
     })
     
-    mdxContent = <MDXContent components={components} />
+    const evaluated = evaluate(compiled, components)
+    
+    const MDXContent = evaluated.default
+    
+    mdxContent = <MDXContent />
   } catch {
     // If MDX compilation fails, render as plain text
     mdxContent = <pre>{content}</pre>
