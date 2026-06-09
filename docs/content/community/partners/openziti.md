@@ -14,7 +14,7 @@ Key integration points:
 
 ## Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────┐
 │  KubeStellar Control Plane                           │
 │  ┌─────────────────────────────────────────────────┐│
