@@ -87,7 +87,7 @@ Here's how to stay involved:
 - **Star** the repo if you haven't already ⭐
 - **Join CNCF Slack** [#kubestellar](https://cloud-native.slack.com/archives/C058SUSL5AA) for community discussions
 - **Check [good first issues](https://github.com/kubestellar/kubestellar/labels/good%20first%20issue)** for your next contribution
-- **Add your org to [ADOPTERS.md](../ADOPTERS.md)** if you're using KubeStellar
+- **Add your org to [ADOPTERS.md](https://github.com/kubestellar/kubestellar/blob/main/ADOPTERS.md)** if you're using KubeStellar
 
 Your commit will appear in the next release. We'll mention your contribution in the release notes. Welcome to the KubeStellar contributor community!
 ```
