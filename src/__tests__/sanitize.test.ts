@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { sanitizeHtmlForMdx } from '../../lib/sanitizeHtmlForMdx'
+import { sanitizeHtmlForMdx } from '../lib/sanitizeHtmlForMdx'
 
 /**
  * Unit tests for the exported sanitizeHtmlForMdx() function.
