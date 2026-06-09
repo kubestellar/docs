@@ -284,7 +284,8 @@ export default async function DocPage({ params }: Props) {
     notFound()
   }
   
-  let mdxContent
+  let MDXContent: ReturnType<typeof evaluate>['default'] | null = null
+  let compilationFailed = false
   try {
     const compiled = await compileMdx(content, {
       mdxOptions: {
@@ -301,18 +302,15 @@ export default async function DocPage({ params }: Props) {
     })
     
     const evaluated = evaluate(compiled, components)
-    
-    const MDXContent = evaluated.default
-    
-    mdxContent = <MDXContent />
+    MDXContent = evaluated.default
   } catch {
-    // If MDX compilation fails, render as plain text
-    mdxContent = <pre>{content}</pre>
+    // If MDX compilation fails, fall back to plain text rendering
+    compilationFailed = true
   }
   
   return (
     <div className="docs-content">
-      {mdxContent}
+      {compilationFailed || !MDXContent ? <pre>{content}</pre> : <MDXContent />}
     </div>
   )
 }
