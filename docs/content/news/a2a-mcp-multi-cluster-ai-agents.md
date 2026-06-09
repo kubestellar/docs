@@ -41,7 +41,7 @@ The [`kubestellar/a2a`](https://github.com/kubestellar/a2a) repo provides:
 
 With the KubeStellar MCP server configured:
 
-```
+```text
 "What workloads are deployed to my edge clusters, and are any of them failing?"
 ```
 
