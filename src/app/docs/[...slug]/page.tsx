@@ -179,10 +179,15 @@ function stripUntilStable(content: string, pattern: RegExp): string {
   return content
 }
 
-// Escape '<' so that extracted attribute values cannot re-introduce HTML tags
-// when interpolated into template literals.
+// Escape HTML special characters so that extracted attribute values cannot
+// re-introduce HTML tags or break out of attribute context when interpolated
+// into template literals (CWE-79 / CodeQL js/incomplete-html-attribute-sanitization).
 function escapeAngle(s: string): string {
-  return s.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
 }
 
 // Sanitize HTML for MDX compatibility
