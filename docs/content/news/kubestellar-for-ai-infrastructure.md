@@ -85,7 +85,7 @@ Kagenti supports Gemini, Anthropic, and OpenAI as LLM backends. See the [Kagenti
 
 The real power comes from combining both integrations. A common architecture:
 
-```
+```text
                     ┌─────────────────────┐
                     │   KubeStellar WDS   │
                     │  (workload policy)  │
@@ -147,6 +147,7 @@ spec:
 KubeStellar is open source and free to use.
 
 **Try it:**
+
 ```bash
 helm repo add kubestellar https://kubestellar.github.io/kubestellar
 helm install kubestellar kubestellar/kubestellar-operator
