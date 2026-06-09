@@ -1,55 +1,34 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+// Native flat ESLint config — avoids FlatCompat + @eslint/eslintrc's
+// JSON.stringify-based config validator, which crashes on the circular
+// reference in eslint-plugin-react@7.x (configs.flat.recommended.plugins.react).
+//
+// All plugins used here ship native flat-config exports; FlatCompat is
+// intentionally not used.
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import nextPlugin from "@next/eslint-plugin-next";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-// eslint-plugin-react@7.x has a circular reference:
-//   configs.flat.recommended.plugins.react.configs → itself
-// @eslint/eslintrc's config validator crashes on JSON.stringify of this.
-// Fix: extend each shareable config separately, build a shared plugin registry
-// (so all configs reference the same plugin object), and strip the circular
-// `configs` key before registering.
-
-/** Shared plugin instances, keyed by plugin name. Built from first occurrence. */
-const pluginRegistry = new Map();
-
-function registerPlugins(configs) {
-  for (const config of configs) {
-    for (const [name, plugin] of Object.entries(config.plugins ?? {})) {
-      if (!pluginRegistry.has(name)) {
-        pluginRegistry.set(name, { ...plugin, configs: undefined });
-      }
-    }
-  }
-}
-
-/** Replace each config's plugins with the shared, non-circular instances. */
-function dedupePlugins(configs) {
-  return configs.map((config) => {
-    if (!config.plugins) return config;
-    return {
-      ...config,
-      plugins: Object.fromEntries(
-        Object.keys(config.plugins).map((name) => [
-          name,
-          pluginRegistry.get(name),
-        ])
-      ),
-    };
-  });
-}
-
-const webVitalsConfig = compat.extends("next/core-web-vitals");
-const tsConfig = compat.extends("next/typescript");
-
-registerPlugins(webVitalsConfig);
-registerPlugins(tsConfig);
-
-export default [...dedupePlugins(webVitalsConfig), ...dedupePlugins(tsConfig)];
-
+export default [
+  // React rules (flat config — does not go through @eslint/eslintrc validator)
+  {
+    ...react.configs.flat.recommended,
+    settings: { react: { version: "detect" } },
+  },
+  // Disable react/react-in-jsx-scope for React 17+ JSX transform
+  react.configs.flat["jsx-runtime"],
+  // React hooks
+  reactHooks.configs["recommended-latest"],
+  // Next.js recommended + Core Web Vitals
+  nextPlugin.flatConfig.recommended,
+  nextPlugin.flatConfig.coreWebVitals,
+  // TypeScript (flat/recommended already sets @typescript-eslint/parser)
+  ...tsPlugin.configs["flat/recommended"],
+  // TypeScript parser override for tsx/ts files not covered above
+  {
+    files: ["**/*.{ts,tsx}"],
+    languageOptions: { parser: tsParser },
+  },
+];
