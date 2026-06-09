@@ -45,7 +45,7 @@
     "@types/react-dom": "^19.2.2",
     "@types/three": "^0.180.0",
     "eslint": "^9",
-    "eslint-config-next": "15.3.6",
+    "eslint-config-next": "16.2.7",
     "markdownlint": "^0.40.0",
     "markdownlint-cli2": "^0.22.1",
     "prettier": "^3.8.3",
