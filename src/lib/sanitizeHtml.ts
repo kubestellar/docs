@@ -94,9 +94,11 @@ export function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/<tr>[\s\S]*?<\/tr>/gi, '')
   sanitized = sanitized.replace(/<td[^>]*>[\s\S]*?<\/td>/gi, '')
 
-  // Remove all iframe tags — also handles unclosed <iframe ...> without </iframe>
+  // Remove all iframe tags — handles closed, self-closing, and unclosed <iframe> forms.
+  // Use stripUntilStable for both patterns to prevent multi-character bypass via
+  // nested/interleaved input (e.g. <i<iframe>frame ...) — CodeQL CWE-116.
   sanitized = stripUntilStable(sanitized, /<iframe[\s\S]*?<\/iframe>/gi)
-  sanitized = sanitized.replace(/<iframe\b[^>]*\/?>/gi, '')
+  sanitized = stripUntilStable(sanitized, /<iframe\b[^>]*\/?>/gi)
 
   // Normalize all img tags - handle both <img ...> and <img ... />
   sanitized = sanitized.replace(/<img\s+([^>]*?)\/?>/gi, (match, attrs) => {
