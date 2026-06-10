@@ -43,6 +43,7 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@types/three": "^0.180.0",
+    "@vitest/coverage-v8": "4.1.7",
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
     "markdownlint": "^0.40.0",
