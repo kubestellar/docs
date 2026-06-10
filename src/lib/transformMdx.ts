@@ -13,6 +13,13 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
   s = s.replace(/<pre\b[\s\S]*?<\/pre>/gi, m => put(m));
   s = s.replace(/`[^`]*`/g, m => put(m));
 
+  // Strip style attributes BEFORE template-expression removal so that
+  // JSX object syntax (style={{...}}) is handled here and not consumed
+  // by the {{...}} Jinja2 stripper below (which would leave a bare style=).
+  s = s.replace(/\sstyle\s*=\s*\{\{[\s\S]*?\}\}/gi, "");
+  s = s.replace(/\sstyle\s*=\s*\{[\s\S]*?\}/gi, "");
+  s = s.replace(/\sstyle\s*=\s*(?:"[\s\S]*?"|'[\s\S]*?')/gi, "");
+
   s = s
     .replace(/\\\{\{/g, "&#123;&#123;")
     .replace(/\\\}\}/g, "&#125;&#125;")
@@ -30,9 +37,11 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
     ""
   );
 
+  // Convert HTML comments to JSX comments and protect them from the
+  // curly-brace entity-encoding step at the bottom of this function.
   s = s.replace(
     /<!--([\s\S]*?)-->/g,
-    (_m, comment) => `{/*${comment.trim()}*/}`
+    (_m, comment) => put(`{/*${comment.trim()}*/}`)
   );
 
   // Loop until stable to prevent nested-tag bypass (CWE-116 / CodeQL #106-#108).
@@ -55,6 +64,15 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
   s = stripLoop(s, /<script\b[^>]*\/>/gi);
   s = stripLoop(s, /<style\b[^>]*>[\s\S]*?<\/style[^>]*>/gi);
 
+  // Strip any residual bare opening/closing <script> or <style> tags that
+  // the nested-tag bypass (CWE-116) may reconstitute after the loop above
+  // removes the inner tag pair. e.g. <scr<script>ipt>...</scr</script>ipt>
+  // becomes <script> after one pass; strip that leftover tag here.
+  s = stripLoop(s, /<script\b[^>]*>/gi);
+  s = stripLoop(s, /<\/script[^>]*>/gi);
+  s = stripLoop(s, /<style\b[^>]*>/gi);
+  s = stripLoop(s, /<\/style[^>]*>/gi);
+
   // Strip HTML event-handler attributes (onclick, onload, etc.).
   // Require `=` after the attribute name so normal prose words like
   // "onto", "once", "one", "only" are NOT removed.
@@ -62,9 +80,6 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
     s,
     /\s+on[a-z]+\s*=\s*(?:"[^"]*"|'[^']*'|\{[^}]*\}|[^\s>]+)/gi
   );
-  s = s.replace(/\sstyle\s*=\s*(?:"[\s\S]*?"|'[\s\S]*?')/gi, "");
-  s = s.replace(/\sstyle\s*=\s*\{\{[\s\S]*?\}\}/gi, "");
-  s = s.replace(/\sstyle\s*=\s*\{[\s\S]*?\}/gi, "");
 
   s = s.replace(
     /\b(href|src)=(?!["'{])([^\s>]+)/gi,
