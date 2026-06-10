@@ -148,8 +148,8 @@ kubectl get nodes --context <edge-cluster-context>
 - [OpenZiti documentation](https://openziti.io/docs/)
 - [OpenZiti Helm charts](https://docs.openziti.io/helm-charts/)
 - [OpenZiti GitHub](https://github.com/openziti/ziti)
-- [KubeStellar quickstart](../kubestellar/get-started.md)
-- [KubeStellar BindingPolicy reference](../kubestellar/binding.md)
+- [KubeStellar quickstart](../../kubestellar/get-started.md)
+- [KubeStellar BindingPolicy reference](../../kubestellar/binding.md)
 
 <style type="text/css">
 .centerImage
