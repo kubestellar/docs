@@ -136,20 +136,20 @@ describe('convertHtmlScriptsToJsxComments', () => {
   })
 
   describe('HTML comment conversion', () => {
-    it('converts HTML comments to entity-encoded JSX comments', () => {
-      // Comment braces are entity-encoded by the final brace-escaping pass.
+    it('converts HTML comments to JSX comments', () => {
+      // HTML comments are converted to JSX block comments {/* ... */}.
       // The HTML comment is still neutralized (no longer <!-- -->).
       const input = '<!-- This is a comment -->'
       const result = convertHtmlScriptsToJsxComments(input)
       expect(result).not.toContain('<!--')
-      expect(result).toContain('&#123;/*This is a comment*/&#125;')
+      expect(result).toContain('{/*This is a comment*/}')
     })
 
-    it('handles multi-line comments with entity-encoded braces', () => {
+    it('handles multi-line comments', () => {
       const input = '<!--\n  Multi-line\n  comment\n-->'
       const result = convertHtmlScriptsToJsxComments(input)
-      expect(result).toContain('&#123;/*')
-      expect(result).toContain('*/&#125;')
+      expect(result).toContain('{/*')
+      expect(result).toContain('*/}')
       expect(result).not.toContain('<!--')
     })
   })
