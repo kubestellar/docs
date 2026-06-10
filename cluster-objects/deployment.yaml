@@ -28,8 +28,8 @@ spec:
         - name: ocir-secret
       containers:
         - name: kubestellar-docs
-          image: iad.ocir.io/id4wyucbsggm/kubestellar-docs:latest
-          imagePullPolicy: Always
+          image: iad.ocir.io/id4wyucbsggm/kubestellar-docs:stable
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
           env:
