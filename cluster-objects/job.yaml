@@ -12,6 +12,8 @@ data:
     # --- Configuration ---
     NAMESPACE="docs"
     DEPLOYMENT="kubestellar-docs"
+    CONTAINER_NAME="kubestellar-docs"
+    IMAGE_BASE="iad.ocir.io/id4wyucbsggm/kubestellar-docs"
 
     # Ensure required environment variables are set
     : "${COMPARTMENT_OCID:?COMPARTMENT_OCID not set}"
@@ -35,9 +37,16 @@ data:
     echo "[DEBUG] Raw OCI output:"
     echo "$OCI_OUTPUT"
 
-    # ✅ Corrected jq path
+    # Extract image metadata
     LATEST_IMAGE_TIME=$(echo "$OCI_OUTPUT" | jq -r '.data.items[0]."time-created"')
+    LATEST_IMAGE_DIGEST=$(echo "$OCI_OUTPUT" | jq -r '.data.items[0].digest')
     echo "[DEBUG] Latest image timestamp: $LATEST_IMAGE_TIME"
+    echo "[DEBUG] Latest image digest: $LATEST_IMAGE_DIGEST"
+
+    if [ -z "$LATEST_IMAGE_DIGEST" ] || [ "$LATEST_IMAGE_DIGEST" = "null" ]; then
+      echo "[ERROR] Could not retrieve image digest from OCI. Aborting."
+      exit 1
+    fi
 
     echo "[DEBUG] Checking last rollout annotation..."
     LAST_ROLLOUT=$(kubectl get deploy "$DEPLOYMENT" -n "$NAMESPACE" -o yaml \
@@ -57,13 +66,16 @@ data:
 
     # --- Compare timestamps ---
     if [ -z "$LAST_ROLLOUT" ] || [[ "$LATEST_IMAGE_TIME" > "$LAST_ROLLOUT" ]]; then
-      echo "🟢 New image detected — triggering rollout restart..."
-      kubectl rollout restart deploy "$DEPLOYMENT" -n "$NAMESPACE"
+      echo "\U0001f7e2 New image detected \u2014 updating deployment with pinned digest..."
+      # Pin the image by digest instead of using :latest
+      PINNED_IMAGE="${IMAGE_BASE}@${LATEST_IMAGE_DIGEST}"
+      echo "[INFO] Setting image to: $PINNED_IMAGE"
+      kubectl set image deploy/"$DEPLOYMENT" "$CONTAINER_NAME=$PINNED_IMAGE" -n "$NAMESPACE"
       kubectl annotate deploy "$DEPLOYMENT" -n "$NAMESPACE" \
         "kubestellar.io/last-rollout-time=$LATEST_IMAGE_TIME" --overwrite
-      echo "✅ Rollout completed successfully."
+      echo "\u2705 Rollout completed successfully with digest-pinned image."
     else
-      echo "🟡 No newer image found. Skipping rollout."
+      echo "\U0001f7e1 No newer image found. Skipping rollout."
     fi
 
     echo "===== Rollout check completed at $(date -u) ====="
@@ -74,21 +86,21 @@ metadata:
   name: nextra-rollout-checker
   namespace: docs
 spec:
-  schedule: "*/2 * * * *" # run every 5 minutes instead of every 1
-  concurrencyPolicy: Forbid # never overlap jobs
-  successfulJobsHistoryLimit: 1 # keep only last success
-  failedJobsHistoryLimit: 1 # keep only last failure
+  schedule: "*/2 * * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
   jobTemplate:
     spec:
-      backoffLimit: 0 # don't retry failed jobs
+      backoffLimit: 0
       template:
         spec:
           serviceAccountName: nextra-rollout-sa
-          restartPolicy: Never # don't restart failed pods
+          restartPolicy: Never
           containers:
             - name: rollout-checker
-              image: iad.ocir.io/id4wyucbsggm/docs-rollout-checker:latest
-              imagePullPolicy: Always
+              image: iad.ocir.io/id4wyucbsggm/docs-rollout-checker:stable
+              imagePullPolicy: IfNotPresent
               command:
                 - /bin/sh
                 - -c

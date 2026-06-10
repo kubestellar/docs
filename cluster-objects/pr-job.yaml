@@ -27,12 +27,12 @@ data:
       --query 'data.items[?contains("display-name", `pr-`)] | sort_by(@,&"display-name")' \
       --raw-output)
 
-    [ -z "$PR_IMAGES" ] && echo "[INFO] No PR images found." || echo "$PR_IMAGES" | jq -r '.[]."display-name"'
+    [ -z "$PR_IMAGES" ] && echo "[INFO] No PR images found." || echo "$PR_IMAGES" | jq -r '.[].".display-name"'
 
     echo "[DEBUG] PR_IMAGES: $PR_IMAGES"
 
     echo "[INFO] Extracting PR numbers..."
-    ACTIVE_PRS=$(echo "$PR_IMAGES" | jq -r '.[]."display-name"' | grep -oE 'pr-[0-9]+' | sort -u || true)
+    ACTIVE_PRS=$(echo "$PR_IMAGES" | jq -r '.[].".display-name"' | grep -oE 'pr-[0-9]+' | sort -u || true)
     echo "[DEBUG] Active PRs: $ACTIVE_PRS"
 
     echo "[INFO] Listing current preview deployments..."
@@ -73,10 +73,10 @@ data:
           kubectl rollout restart deploy/"$DEPLOY_NAME" -n "$NAMESPACE"
           kubectl rollout status deploy/"$DEPLOY_NAME" -n "$NAMESPACE" --timeout=120s || echo "[WARN] Rollout did not complete within timeout."
         else
-          echo "[DEBUG] ${DEPLOY_NAME} is already up to date — no rollout performed."
+          echo "[DEBUG] ${DEPLOY_NAME} is already up to date \u2014 no rollout performed."
         fi
       else
-        echo "[INFO] Deployment ${DEPLOY_NAME} not found — creating new preview deployment for PR #${PR_NUM}..."
+        echo "[INFO] Deployment ${DEPLOY_NAME} not found \u2014 creating new preview deployment for PR #${PR_NUM}..."
         export DEPLOY_NAME
         export IMAGE_NAME
         export PR_NUM
@@ -126,7 +126,7 @@ data:
           containers:
             - name: nextra
               image: ${IMAGE_NAME}
-              imagePullPolicy: Always
+              imagePullPolicy: IfNotPresent
               ports:
                 - containerPort: 3000
     ---
@@ -191,8 +191,8 @@ spec:
           restartPolicy: Never
           containers:
             - name: pr-rollout-checker
-              image: iad.ocir.io/id4wyucbsggm/docs-rollout-checker:latest
-              imagePullPolicy: Always
+              image: iad.ocir.io/id4wyucbsggm/docs-rollout-checker:stable
+              imagePullPolicy: IfNotPresent
               command:
                 - /bin/bash
                 - -c
