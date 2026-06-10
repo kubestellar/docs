@@ -6,11 +6,14 @@ RUN apk add --no-cache python3 py3-pip bash jq curl gettext \
     && pip install --break-system-packages --no-cache-dir \
        "oci-cli==3.86.0" \
        --hash=sha256:ccd76b4824eb89a46d219af3d6da9358336bb603a11741e8cd4c288aa54684ba \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* \
+    && addgroup -S appgroup && adduser -S appuser -G appgroup
 
 # (Optional) Print versions only during runtime, not build
 # ENTRYPOINT ["bash", "-c", "kubectl version --client && oci --version && bash"]
 
 WORKDIR /scripts
+RUN chown appuser:appgroup /scripts
+USER appuser
 ENTRYPOINT ["/bin/bash"]
 
