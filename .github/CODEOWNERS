@@ -6,3 +6,13 @@
 /cluster-objects/ @clubanderson @KPRoche
 /Dockerfile* @clubanderson @KPRoche
 /.github/workflows/ @clubanderson @KPRoche
+
+# Dependency and configuration security
+/package.json @clubanderson @KPRoche
+/package-lock.json @clubanderson @KPRoche
+/.npmrc @clubanderson @KPRoche
+
+# GitHub security and automation configuration
+/.github/dependabot.yml @clubanderson @KPRoche
+/.github/codeql-config.yml @clubanderson @KPRoche
+/.github/labeler.yml @clubanderson @KPRoche
