@@ -21,6 +21,38 @@ KubeStellar manages its dependencies with the following policy:
 - **Security Best Practices:** We avoid using unmaintained or deprecated dependencies. Monitoring for security advisories affecting our dependencies is primarily done through GitHub's security advisory database and Dependabot notifications. Vulnerabilities in dependencies are prioritized for prompt remediation.
 - **Documentation:** The dependency update process is documented in the repository's README and CONTRIBUTING guidelines.
 
+## Repository Protection Rules
+
+KubeStellar maintains branch protection rules to enforce security and code quality standards.
+
+### Required Pull Request Reviews
+
+All pull requests to the `main` branch require at least one approving review before merge. This requirement ensures:
+
+- All changes receive peer review before deployment
+- Reviewers can catch security issues, bugs, and regressions
+- Knowledge is distributed across the team through the review process
+- Breaking changes are identified and discussed before merge
+
+### Required Status Checks
+
+All pull requests to the `main` branch must pass required status checks before merge, including:
+
+- **Continuous Integration:** Automated build and test workflows verify the code functions correctly
+- **Security Scanning:** Automated tools scan for known vulnerabilities in dependencies
+- **Link Validation:** Automated checks ensure all documentation links are valid
+- **Code Quality:** Linting and formatting checks maintain consistent code standards
+
+These checks provide automated validation and prevent broken or malicious changes from being merged even if approved.
+
+### Up-to-Date Branch Requirement
+
+Pull request branches must be up to date with the base branch before merge, ensuring:
+
+- Tests run against the latest `main` branch code
+- No integration issues are missed due to stale branch state
+- Reviewers see the current state of the codebase
+
 ## Report a Vulnerability
 
 We're extremely grateful for security researchers and users that report vulnerabilities to the KubeStellar Open Source Community. All reports are thoroughly investigated by a set of community volunteers.
