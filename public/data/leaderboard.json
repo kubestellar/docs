@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-11T11:31:00.433Z",
-  "git_hash": "da884a9",
+  "generated_at": "2026-06-11T15:10:20.157Z",
+  "git_hash": "6623fb7",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-23",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4815250,
+      "total_points": 4816950,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 471,
+        "bug_issues": 472,
         "feature_issues": 667,
         "other_issues": 1068,
-        "prs_opened": 6859,
-        "prs_merged": 6364
+        "prs_opened": 6861,
+        "prs_merged": 6366
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         110,
         98,
         244,
-        243
+        246
       ],
-      "recent_activity_score": 1403.6,
+      "recent_activity_score": 1406.6,
       "rank": 1
     },
     {
@@ -442,15 +442,15 @@
     {
       "login": "KPRoche",
       "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
-      "total_points": 42350,
+      "total_points": 43150,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 16,
         "feature_issues": 9,
-        "other_issues": 9,
-        "prs_opened": 61,
-        "prs_merged": 48
+        "other_issues": 11,
+        "prs_opened": 62,
+        "prs_merged": 49
       },
       "weekly_activity": [
         1,
@@ -464,9 +464,9 @@
         7,
         12,
         2,
-        8
+        11
       ],
-      "recent_activity_score": 34.69,
+      "recent_activity_score": 37.69,
       "rank": 15
     },
     {
