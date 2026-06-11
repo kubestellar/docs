@@ -1,0 +1,3 @@
+# Mirror the repository approvers from OWNERS so branch protection can require
+# reviews from code owners.
+* @clubanderson @KPRoche
