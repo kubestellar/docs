@@ -193,6 +193,70 @@ Use that preview to verify the final rendering and to help reviewers.
 Address review feedback by pushing follow-up commits to the same branch unless a
 maintainer asks for a different workflow.
 
+### Code Review Requirements
+
+**All pull requests to the `main` branch require at least one approving review before merge.**
+
+This mandatory review policy ensures:
+- Code quality and documentation accuracy
+- Adherence to project standards and conventions
+- Detection of potential issues before they reach production
+- Knowledge sharing across the team
+- Compliance with [OpenSSF Scorecard](https://github.com/ossf/scorecard) best practices
+
+#### What Reviewers Should Check
+
+When reviewing a PR, pay attention to:
+
+1. **Content Quality**
+   - Clarity and accuracy of documentation changes
+   - Correct Markdown/MDX syntax and formatting
+   - Proper navigation structure updates in `src/app/docs/page-map.ts`
+   - Working links and valid examples
+
+2. **Security-Sensitive Changes**
+   
+   **Extra scrutiny required** for changes to:
+   - **Dockerfiles** (`/Dockerfile*`) — verify base images, avoid running as root
+   - **Kubernetes manifests** (`/cluster-objects/`) — check RBAC, secrets handling
+   - **CI/CD workflows** (`.github/workflows/`) — inspect for command injection risks
+   - **Dependency files** (`package.json`, `package-lock.json`, `.npmrc`) — validate new dependencies
+   - **Security configs** (`.github/dependabot.yml`, `.github/codeql-config.yml`)
+
+   These paths are protected by `CODEOWNERS` and require explicit approval from maintainers.
+
+3. **Technical Correctness**
+   - Commands that actually work
+   - Screenshots that match current UI
+   - Version-specific information in the right docs branch
+
+4. **Site Integration**
+   - Use Netlify preview to verify rendering
+   - Check responsive layout on different screen sizes
+   - Verify internal navigation links work correctly
+
+#### Getting Your PR Approved
+
+1. **Self-review first** — use the PR template checklist
+2. **Request reviews** from relevant maintainers (auto-assigned via CODEOWNERS for sensitive paths)
+3. **Address feedback** by pushing follow-up commits
+4. **Wait for CI checks** — all automated checks must pass before merge
+5. **Obtain approval** — at least one approving review required
+
+#### Branch Protection and Status Checks
+
+This repository enforces:
+
+- **Required approving reviews**: Minimum 1 approval required
+- **Required status checks**: CI validations must pass, including:
+  - Link checker (broken link detection)
+  - Markdown linting
+  - Build and deployment validation  
+  - Security scanning (if configured)
+- **Up-to-date branches**: PRs should be current with base branch before merge
+
+See [OpenSSF Scorecard](https://github.com/ossf/scorecard) for the security rationale behind these requirements.
+
 ---
 
 ## Contribution guidelines
