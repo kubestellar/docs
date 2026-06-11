@@ -1,3 +1,8 @@
 # Mirror the repository approvers from OWNERS so branch protection can require
 # reviews from code owners.
 * @clubanderson @KPRoche
+
+# Sensitive paths — require explicit review for supply-chain safety
+/cluster-objects/ @clubanderson @KPRoche
+/Dockerfile* @clubanderson @KPRoche
+/.github/workflows/ @clubanderson @KPRoche
