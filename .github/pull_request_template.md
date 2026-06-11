@@ -27,9 +27,23 @@ Fixes #<issue-number> (Use "Fixes", "Closes", or "Resolves" for automatic closin
 Please ensure the following before submitting your PR:
 
 - [ ] I have reviewed the project's contribution guidelines.
+- [ ] I have performed a self-review of my changes.
 - [ ] I have written unit tests for the changes (if applicable).
 - [ ] I have updated the documentation (if applicable).
 - [ ] I have tested the changes locally and ensured they work as expected.
+- [ ] All CI checks are passing.
+
+### Security Considerations
+
+**If this PR modifies any security-sensitive files, confirm:**
+
+- [ ] **Dockerfiles** — verified base images, avoided running as root
+- [ ] **Kubernetes manifests** — checked RBAC permissions and secrets handling
+- [ ] **CI/CD workflows** — inspected for command injection or credential exposure
+- [ ] **Dependencies** — validated new packages, checked for known vulnerabilities
+- [ ] **Security configs** — changes align with project security policies
+
+_Leave unchecked if not applicable. See [CONTRIBUTING.md](../CONTRIBUTING.md#code-review-requirements) for details._
 
 ---
 
