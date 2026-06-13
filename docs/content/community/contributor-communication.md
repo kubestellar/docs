@@ -140,7 +140,7 @@ GitHub Discussions is enabled on kubestellar/kubestellar but has been dormant si
 ### How to post
 
 Any GitHub user with repo access can post a Discussion. Go to
-`https://github.com/kubestellar/kubestellar/discussions/new` and select the appropriate category.
+https://github.com/kubestellar/kubestellar/discussions/new and select the appropriate category.
 
 ---
 
