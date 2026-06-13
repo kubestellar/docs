@@ -2,11 +2,11 @@
 
 **One command starts everything. Your phone, Slack, or Discord buzzes if anything needs you.**
 
-![hive dashboard](https://raw.githubusercontent.com/kubestellar/hive/main/docs/dashboard-screenshot.png)
+**hive dashboard** — See [hive repository](https://github.com/kubestellar/hive) for the latest documentation and screenshots.
 
 ---
 
-![hive architecture](https://raw.githubusercontent.com/kubestellar/hive/main/docs/hive-arch.svg)
+**hive architecture** — See [hive repository](https://github.com/kubestellar/hive) for architecture diagrams and technical details.
 
 ---
 
@@ -17,7 +17,7 @@
 sudo apt install tmux
 
 # 2. install hive
-curl -H "Cache-Control: no-cache" -fsSL https://raw.githubusercontent.com/kubestellar/hive/main/install.sh | sudo bash
+curl -H "Cache-Control: no-cache" -fsSL https://github.com/kubestellar/hive/raw/main/install.sh | sudo bash
 
 # 3. configure
 sudo nano /etc/hive/hive.conf

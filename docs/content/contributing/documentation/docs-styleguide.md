@@ -59,7 +59,7 @@ If you want to deepen your understanding of accessibility, we recommend checking
 >**Note:** KubeStellar docs are authored primarily in **Markdown**. The examples in this guide therefore use Markdown syntax, for example:
 >
 >```md
->![Alt text](<PATH_TO_IMAGE_FILE>)
+>![Alt text](path/to/image-file.png)
 >```
 >
 >The example above is illustrative only and does not point to a real file.
