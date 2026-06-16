@@ -86,20 +86,10 @@ Group results into categories:
 
 #### Step 4: Report
 
-Search for an existing open issue with the label `broken-links` in the repository:
+First, write the issue body to a temp file (this avoids JSON escaping issues):
 
 ```bash
-gh issue list --label broken-links --state open --limit 1
-```
-
-If broken or possibly transient links are found:
-
-- If an issue already exists, update its body
-- If no issue exists, create a new one with the `broken-links` label
-
-Use this format for the issue body:
-
-```markdown
+cat > /tmp/link-report.md << 'LINK_REPORT_EOF'
 ## Link Check Results — ${{ github.run_id }}
 
 Last run: [Workflow Run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
@@ -118,11 +108,38 @@ Last run: [Workflow Run](https://github.com/${{ github.repository }}/actions/run
 - X broken links found (action required)
 - Y possibly transient links found (may resolve on retry)
 - Z links checked successfully
+LINK_REPORT_EOF
 ```
 
-If all links are OK and an existing `broken-links` issue is open, close it with a comment saying all links are now valid.
+Search for an existing open issue with the label `broken-links` in the repository:
 
-If all links are OK and no issue exists, exit silently.
+```bash
+ISSUE_NUMBER=$(gh issue list --label broken-links --state open --limit 1 --json number --jq '.[0].number')
+# ISSUE_NUMBER will be empty if no open broken-links issue exists
+```
+
+If broken or possibly transient links are found:
+
+- If an issue already exists (`ISSUE_NUMBER` is non-empty), update its body using `--body-file`:
+  ```bash
+  gh issue edit "$ISSUE_NUMBER" --body-file /tmp/link-report.md
+  ```
+- If no issue exists (`ISSUE_NUMBER` is empty), create a new one using `--body-file` (never construct JSON manually):
+  ```bash
+  gh issue create \
+    --title "🔗 Broken Links Detected — Run ${{ github.run_id }}" \
+    --label broken-links \
+    --body-file /tmp/link-report.md
+  ```
+
+If all links are OK and an existing `broken-links` issue is open, close it:
+
+```bash
+gh issue comment "$ISSUE_NUMBER" --body "✅ All links are now valid as of run [${{ github.run_id }}](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}). Closing this issue."
+gh issue close "$ISSUE_NUMBER"
+```
+
+If all links are OK and no issue exists, call the `noop` safe-output tool with a brief message explaining that the scan found no broken links.
 
 ### Domain-Specific Knowledge
 
@@ -143,8 +160,11 @@ These domains are known to have intermittent availability or require authenticat
 3. Do not fail the workflow — use issues for feedback
 4. Be concise — developers should be able to fix issues quickly from the report
 5. Close the issue if all links are valid
+6. **Always write the report body to `/tmp/link-report.md` first**, then use `--body-file /tmp/link-report.md` with `gh issue create` or `gh issue edit` — never construct JSON manually or use `printf`/`python3` to build API payloads (this avoids JSON-escaping failures caused by special characters in URLs, markdown tables, and emoji)
+7. Always finish by invoking a safe-output tool: `create_issue` or close/update the existing issue when broken links are found, `close_issue` when all links are fixed, or `noop` when the scan finds nothing actionable
 
 ### Exit Conditions
 
 - Exit if no markdown files found
-- Exit if all links are valid (close existing issue if present)
+- If broken or possibly transient links are found: create or update the `broken-links` issue, then exit
+- If all links are valid: close any existing `broken-links` issue; otherwise call `noop` so the workflow records an explicit no-action result
