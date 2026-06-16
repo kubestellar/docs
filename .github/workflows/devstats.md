@@ -1,6 +1,6 @@
 ---
 description: |
-  This workflow created daily team status reporter creating upbeat activity summaries.
+  This workflow creates a daily team status reporter creating upbeat activity summaries.
   Gathers recent repository activity (issues, PRs, discussions, releases, code changes)
   and generates engaging GitHub discussions with productivity insights, community
   highlights, and project recommendations. Uses a positive, encouraging tone with
