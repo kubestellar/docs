@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-16T15:39:56.108Z",
-  "git_hash": "47d1d1d",
+  "generated_at": "2026-06-16T19:12:27.444Z",
+  "git_hash": "0b9fc31",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-30",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4828500,
+      "total_points": 4832750,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 480,
         "feature_issues": 695,
-        "other_issues": 1081,
-        "prs_opened": 6872,
-        "prs_merged": 6373
+        "other_issues": 1092,
+        "prs_opened": 6878,
+        "prs_merged": 6378
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         98,
         483,
         309,
-        14
+        31
       ],
-      "recent_activity_score": 1302.23,
+      "recent_activity_score": 1319.23,
       "rank": 1
     },
     {
@@ -650,6 +650,36 @@
       "rank": 21
     },
     {
+      "login": "AdeshDeshmukh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/233792877?v=4",
+      "total_points": 18100,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 2,
+        "prs_opened": 30,
+        "prs_merged": 24
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        30,
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      "recent_activity_score": 12.49,
+      "rank": 22
+    },
+    {
       "login": "rabbitc0der",
       "avatar_url": "https://avatars.githubusercontent.com/u/183977752?v=4",
       "total_points": 17800,
@@ -677,36 +707,6 @@
         0
       ],
       "recent_activity_score": 34.28,
-      "rank": 22
-    },
-    {
-      "login": "AdeshDeshmukh",
-      "avatar_url": "https://avatars.githubusercontent.com/u/233792877?v=4",
-      "total_points": 17400,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 2,
-        "prs_opened": 29,
-        "prs_merged": 23
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        30,
-        0,
-        0,
-        0,
-        1,
-        1
-      ],
-      "recent_activity_score": 11.49,
       "rank": 23
     },
     {
