@@ -10,7 +10,11 @@ on:
   pull_request_target:
     types: [opened, synchronize, ready_for_review]
 
-permissions: read-all  # default read; writes scoped to job below
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  statuses: write
 
 concurrency:
   group: copilot-automation-${{ github.event.pull_request.number || github.event.inputs.pr_number || github.sha }}
@@ -18,17 +22,7 @@ concurrency:
 
 jobs:
   copilot-automation:
-    # Fork guard: workflow_dispatch events have no PR context (null check passes them
-    # through); pull_request_target events from untrusted forks are blocked.
-    if: >-
-      github.event.pull_request == null ||
-      github.event.pull_request.head.repo.full_name == github.repository
-    permissions:
-      contents: write
-      pull-requests: write
-      issues: write
-      statuses: write
-    uses: kubestellar/infra/.github/workflows/reusable-copilot-automation.yml@a160acca0bdce1ac6c649e006d680d5f6d53024e  # pin: main
+    uses: kubestellar/infra/.github/workflows/reusable-copilot-automation.yml@main
     with:
       pr_number: ${{ github.event.inputs.pr_number || '' }}
     secrets:

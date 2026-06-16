@@ -4,15 +4,11 @@ on:
   pull_request_target:
     types: [opened, edited, synchronize, reopened]
 
-permissions: read-all  # default read; writes scoped to job below
+permissions:
+  checks: write
+  pull-requests: read
 
 jobs:
   verify:
-    # Fork guard: only pull_request_target trigger — block fork PRs.
-    # secrets: inherit passes all secrets to the reusable workflow.
-    if: github.event.pull_request.head.repo.full_name == github.repository
-    permissions:
-      checks: write
-      pull-requests: read
-    uses: kubestellar/infra/.github/workflows/reusable-pr-verifier.yml@a160acca0bdce1ac6c649e006d680d5f6d53024e  # main
+    uses: kubestellar/infra/.github/workflows/reusable-pr-verifier.yml@main
     secrets: inherit

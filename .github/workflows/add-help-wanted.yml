@@ -9,5 +9,5 @@ permissions:
 
 jobs:
   label:
-    uses: kubestellar/infra/.github/workflows/reusable-add-help-wanted.yml@a160acca0bdce1ac6c649e006d680d5f6d53024e  # main
+    uses: kubestellar/infra/.github/workflows/reusable-add-help-wanted.yml@main
     secrets: inherit

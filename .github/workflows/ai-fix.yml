@@ -12,20 +12,14 @@ on:
   pull_request_target:
     types: [opened]
 
-permissions: read-all  # default read; writes scoped to job below
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
 
 jobs:
   ai-fix:
-    # Fork guard: workflow_dispatch and issues events have no PR context (null check
-    # passes them through); pull_request_target events from untrusted forks are blocked.
-    if: >-
-      github.event.pull_request == null ||
-      github.event.pull_request.head.repo.full_name == github.repository
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-    uses: kubestellar/infra/.github/workflows/reusable-ai-fix.yml@a160acca0bdce1ac6c649e006d680d5f6d53024e  # pin: main
+    uses: kubestellar/infra/.github/workflows/reusable-ai-fix.yml@main
     with:
       issue_number: ${{ github.event.inputs.issue_number || '' }}
     secrets:
