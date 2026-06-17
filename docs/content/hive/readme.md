@@ -18,7 +18,7 @@ sudo apt install tmux
 
 # 2. install hive
 # Installation script — see hive repository for current install method
-# curl -H "Cache-Control: no-cache" -fsSL https://github.com/kubestellar/hive/raw/main/install.sh | sudo bash
+# curl -H "Cache-Control: no-cache" -fsSL https://github.com/kubestellar/hive/raw/v2/install.sh | sudo bash
 
 # 3. configure
 sudo nano /etc/hive/hive.conf
@@ -92,7 +92,7 @@ curl -sf http://192.168.4.56:3001/api/widget | tar xzf - -C "$HOME/Library/Appli
 The **kick-governor** measures issue and PR backlog across your repos every 5 minutes and picks a mode:
 
 | Mode | Trigger | Scanner | Reviewer | Architect | Outreach | Supervisor |
-|------|---------|---------|----------|-----------|----------|-----------|
+|------|---------|---------|----------|-----------|----------|------------|
 | SURGE | queue > 20 | 10 min | 10 min | **paused** | **paused** | 5 min |
 | BUSY  | queue > 10 | 15 min | 15 min | **paused** | **paused** | 5 min |
 | QUIET | queue > 2  | 15 min | 30 min | 1 h        | 2 h        | 5 min |
@@ -124,7 +124,7 @@ LLMs treat "NEVER" rules as suggestions. No amount of prompt engineering reliabl
 Each stage runs as a shell script, declared in `hive-project.yaml`, with explicit dependencies:
 
 | Category | What it does | Example |
-|----------|-------------|---------|
+|----------|-------------|----------|
 | **Enumerator** | Fetches and filters the canonical work list | `enumerate-actionable.sh` — queries GitHub, excludes hold/exempt labels, filters by author |
 | **Classifier** | Enriches items with deterministic metadata | `issue-classifier.sh` — complexity, model tier, lane assignment based on label/title patterns |
 | **Gate** | Pre-checks eligibility before action | `merge-gate.sh` — CI green? Author authorized? Required reviews in? |
