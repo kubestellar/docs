@@ -45,7 +45,7 @@
     "@types/three": "^0.184.1",
     "@vitest/coverage-v8": "4.1.9",
     "eslint": "^9",
-    "eslint-config-next": "16.2.7",
+    "eslint-config-next": "16.2.9",
     "markdownlint": "^0.41.0",
     "markdownlint-cli2": "^0.22.1",
     "prettier": "^3.8.4",
