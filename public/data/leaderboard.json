@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-17T07:47:45.708Z",
-  "git_hash": "f181457",
+  "generated_at": "2026-06-17T11:33:51.582Z",
+  "git_hash": "3931966",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-30",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4855550,
+      "total_points": 4869050,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 481,
-        "feature_issues": 697,
-        "other_issues": 1120,
-        "prs_opened": 6910,
-        "prs_merged": 6407
+        "feature_issues": 720,
+        "other_issues": 1128,
+        "prs_opened": 6929,
+        "prs_merged": 6421
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         98,
         496,
         337,
-        94
+        144
       ],
-      "recent_activity_score": 1412.64,
+      "recent_activity_score": 1462.64,
       "rank": 1
     },
     {
@@ -620,6 +620,36 @@
       "rank": 20
     },
     {
+      "login": "AdeshDeshmukh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/233792877?v=4",
+      "total_points": 19100,
+      "level": "Commander",
+      "level_rank": 5,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 2,
+        "prs_opened": 30,
+        "prs_merged": 26
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        30,
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      "recent_activity_score": 12.49,
+      "rank": 21
+    },
+    {
       "login": "ayuxsh009",
       "avatar_url": "https://avatars.githubusercontent.com/u/149216976?v=4",
       "total_points": 18700,
@@ -647,36 +677,6 @@
         0
       ],
       "recent_activity_score": 11.52,
-      "rank": 21
-    },
-    {
-      "login": "AdeshDeshmukh",
-      "avatar_url": "https://avatars.githubusercontent.com/u/233792877?v=4",
-      "total_points": 18600,
-      "level": "Commander",
-      "level_rank": 5,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 2,
-        "prs_opened": 30,
-        "prs_merged": 25
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        30,
-        0,
-        0,
-        0,
-        1,
-        2
-      ],
-      "recent_activity_score": 12.49,
       "rank": 22
     },
     {
