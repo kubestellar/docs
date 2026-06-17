@@ -20,7 +20,7 @@ There's also [a piece of code](https://github.com/edge-experiments/turbonomic-in
 
 For the second step (GitHub repository-> KubeStellar), we can use Argo CD. The detailed procedure to integrate Argo CD with KubeStellar is documented [here](./argocd.md).
 
-As we can see from the blog and the demo, Turbonomic collects data from edge clusters. This is made possible by installing [kubeturbo](https://github.com/turbonomic/kubeturbo) into each of the edge clusters.
+As we can see from the blog and the demo, Turbonomic collects data from edge clusters. This is made possible by installing [kubeturbo](https://github.com/IBM/turbonomic-container-platform/tree/main/kubeturbo) into each of the edge clusters.
 
 
 ### Turbonomic and KubeStellar in the news

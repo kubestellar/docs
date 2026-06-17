@@ -18,7 +18,7 @@ sudo apt install tmux
 
 # 2. install hive
 # Installation script — see hive repository for current install method
-# curl -H "Cache-Control: no-cache" -fsSL https://github.com/kubestellar/hive/raw/main/install.sh | sudo bash
+# curl -H "Cache-Control: no-cache" -fsSL https://github.com/kubestellar/hive/raw/v2/install.sh | sudo bash
 
 # 3. configure
 sudo nano /etc/hive/hive.conf
