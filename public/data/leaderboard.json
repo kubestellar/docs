@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-17T18:48:22.626Z",
-  "git_hash": "71a6fe1",
+  "generated_at": "2026-06-17T22:34:15.135Z",
+  "git_hash": "e12fe28",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-30",
@@ -20,14 +20,14 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4896900,
+      "total_points": 4906600,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 481,
-        "feature_issues": 723,
-        "other_issues": 1193,
-        "prs_opened": 6963,
+        "bug_issues": 483,
+        "feature_issues": 729,
+        "other_issues": 1215,
+        "prs_opened": 7000,
         "prs_merged": 6456
       },
       "bonus_points": 50,
@@ -43,9 +43,9 @@
         98,
         496,
         337,
-        246
+        313
       ],
-      "recent_activity_score": 1564.64,
+      "recent_activity_score": 1631.64,
       "rank": 1
     },
     {
@@ -980,6 +980,36 @@
       "rank": 32
     },
     {
+      "login": "ashnaaseth2325-oss",
+      "avatar_url": "https://avatars.githubusercontent.com/u/226311472?v=4",
+      "total_points": 5900,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 2,
+        "prs_opened": 9,
+        "prs_merged": 8
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        9,
+        11,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "recent_activity_score": 7.51,
+      "rank": 33
+    },
+    {
       "login": "Creativeklvn",
       "avatar_url": "https://avatars.githubusercontent.com/u/216730209?v=4",
       "total_points": 5750,
@@ -1007,36 +1037,6 @@
         0
       ],
       "recent_activity_score": 8.43,
-      "rank": 33
-    },
-    {
-      "login": "ashnaaseth2325-oss",
-      "avatar_url": "https://avatars.githubusercontent.com/u/226311472?v=4",
-      "total_points": 5700,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 2,
-        "prs_opened": 8,
-        "prs_merged": 8
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        9,
-        11,
-        0,
-        0,
-        0,
-        1,
-        0
-      ],
-      "recent_activity_score": 6.51,
       "rank": 34
     },
     {
