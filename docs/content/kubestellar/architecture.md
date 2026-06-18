@@ -143,7 +143,7 @@ KubeFlex provides the ability to start controllers connected to a
 Control Plane API Server or to deploy Helm Charts into a Control Plane
 API server with [<u>post-create
 hooks</u>](https://github.com/kubestellar/kubeflex/blob/main/docs/users.md#post-create-hooks).
-This feature is currently adopted for KubeStellar modules startup, as it allows to
+This feature is currently adopted for KubeStellar modules startup, as it allows you to
 create a Workload Description Space (WDS) and start the KubeStellar Controller Manager, and create an Inventory and Transport Space (ITS) in a
 `vcluster` and install the [<u>Open Cluster Management
 Hub</u>](https://open-cluster-management.io/) there.
@@ -159,7 +159,7 @@ receive and apply the workload objects from the manifests. In Open Cluster Manag
 are called *managed clusters*, and the component running on the hub cluster is the *cluster manager*.
 Manifests provide a summary for the status of each object, however in some use 
 cases this might not be sufficient as the full status for objects may be required. 
-OCM provides an add-on framework that allows to automatically install additional 
+OCM provides an add-on framework that allows you to automatically install additional 
 agents on the managed clusters to provide specific features. This framework is used to
 install the status add-on on all managed clusters.
 KubeStellar currently exposes users directly to OCM inventory management and WEC registration.
