@@ -126,7 +126,7 @@ export default function AboutSection() {
 
         <div className="mt-20 grid gap-10 gap-y-20 lg:grid-cols-3 feature-cards">
           {/* Feature 1 - Advanced card with 3D hover effect */}
-          <div className="feature-card relative group perspective cursor-pointer" onClick={() => router.push("/docs/console/features/ai-features")}>
+          <div className="feature-card relative group perspective cursor-pointer" onClick={() => router.push("/docs/console/ai-integration/ai-features")}>
             <div className="card-3d-container relative transition-all duration-500 group-hover:rotate-y-10 w-full h-full transform-style-3d">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-90 transition duration-500"></div>
               <div className="relative bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg p-8 transition-all duration-300 transform group-hover:translate-y-[-8px] group-hover:shadow-xl border border-gray-700/50 h-full flex flex-col justify-between h-full">
@@ -156,7 +156,7 @@ export default function AboutSection() {
 
                 {/* Animated arrow on hover */}
                 <Link
-                  href="/docs/console/features/ai-features"
+                  href="/docs/console/ai-integration/ai-features"
                   className="block h-8 overflow-hidden"
                 >
                   <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 text-primary-600 dark:text-primary-400 flex items-center">
