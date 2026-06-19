@@ -1,9 +1,8 @@
 import { compileMdx } from 'nextra/compile'
-import { Callout, Tabs } from 'nextra/components'
+import { Callout, Mermaid, Tabs } from 'nextra/components'
 import { evaluate } from 'nextra/evaluate'
 import { useMDXComponents as getMDXComponents } from '../../../../mdx-components'
 import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
-import { MermaidComponent } from '@/lib/Mermaid'
 import { sanitizeHtmlForMdx, removeCommentPatterns } from '@/lib/sanitizeHtml'
 import { buildPageMap, docsContentPath } from '../page-map'
 import { CURRENT_VERSION, type ProjectId } from '@/config/versions'
@@ -148,7 +147,7 @@ export default async function DocPage({ params }: Props) {
     const components = getMDXComponents({
       Callout,
       Tabs,
-      MermaidComponent,
+      Mermaid,
       convertHtmlScriptsToJsxComments
     })
     
