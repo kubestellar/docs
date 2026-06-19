@@ -7,7 +7,7 @@ import Image from "next/image";
 import { GridLines, StarField, LanguageSwitcher } from "./index";
 import { useTranslations } from "next-intl";
 import { getLocalizedUrl } from "@/lib/url";
-import { useGithubStats, useNavDropdowns } from "./navbar";
+import { useGithubStats, useNavDropdowns } from "./navbar/index";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);

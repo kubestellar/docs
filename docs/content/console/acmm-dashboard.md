@@ -42,7 +42,7 @@ Shows the repository's current maturity level (L1 through L5) as a ring gauge, t
 
 ### ACMM Balance (trend chart)
 
-Weekly bar chart showing the ratio of AI-generated vs human-authored contributions. A level-anchored target slider lets you set a goal (e.g., "aim for L3 = 55% AI"). Click a "Use L{n}" snap button to jump to that level's target. The target persists per-repo in localStorage.
+Weekly bar chart showing the ratio of AI-generated vs human-authored contributions. A level-anchored target slider lets you set a goal (e.g., "aim for L3 = 55% AI"). Click a `Use L{n}` snap button to jump to that level's target. The target persists per-repo in localStorage.
 
 ### Feedback Loop Inventory
 
