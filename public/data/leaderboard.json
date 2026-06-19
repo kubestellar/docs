@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-19T15:02:30.220Z",
-  "git_hash": "a16dc5f",
+  "generated_at": "2026-06-19T18:35:36.185Z",
+  "git_hash": "1ee8d9b",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-03-30",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 4939550,
+      "total_points": 4946050,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 491,
         "feature_issues": 761,
         "other_issues": 1296,
-        "prs_opened": 7079,
-        "prs_merged": 6471
+        "prs_opened": 7089,
+        "prs_merged": 6480
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         98,
         509,
         348,
-        513
+        523
       ],
-      "recent_activity_score": 1848.57,
+      "recent_activity_score": 1858.57,
       "rank": 1
     },
     {
@@ -950,6 +950,36 @@
       "rank": 31
     },
     {
+      "login": "ashnaaseth2325-oss",
+      "avatar_url": "https://avatars.githubusercontent.com/u/226311472?v=4",
+      "total_points": 6600,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 2,
+        "prs_opened": 10,
+        "prs_merged": 9
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        9,
+        11,
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      "recent_activity_score": 8.51,
+      "rank": 32
+    },
+    {
       "login": "Janhvibabani",
       "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
       "total_points": 6250,
@@ -977,36 +1007,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 32
-    },
-    {
-      "login": "ashnaaseth2325-oss",
-      "avatar_url": "https://avatars.githubusercontent.com/u/226311472?v=4",
-      "total_points": 5900,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 2,
-        "prs_opened": 9,
-        "prs_merged": 8
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        9,
-        11,
-        0,
-        0,
-        0,
-        1,
-        1
-      ],
-      "recent_activity_score": 7.51,
       "rank": 33
     },
     {
