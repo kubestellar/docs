@@ -28,19 +28,19 @@ const mockFiles: Record<string, string> = {
 vi.mock('fs', () => ({
   default: {
     existsSync: (filePath: string) => {
-      const rel = filePath.replace(/.*\/docs\//, '')
+      const rel = filePath.replace(/.*\/docs\/content\//, '')
       return rel in mockFiles
     },
     readFileSync: (filePath: string) => {
-      const rel = filePath.replace(/.*\/docs\//, '')
+      const rel = filePath.replace(/.*\/docs\/content\//, '')
       return mockFiles[rel] || ''
     },
   },
 }))
 
-vi.mock('../../docs/page-map', () => ({
+vi.mock('../../app/docs/page-map', () => ({
   buildPageMap: () => ({ routeMap: mockRouteMap }),
-  docsContentPath: '/fake/docs/',
+  docsContentPath: '/fake/docs/content',
   basePath: 'docs',
 }))
 
