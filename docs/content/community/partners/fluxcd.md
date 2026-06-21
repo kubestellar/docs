@@ -49,7 +49,7 @@ metadata:
   namespace: default
 spec:
   interval: 1m
-  url: https://github.com/<your-org>/<your-gitops-repo>
+  url: `https://github.com/<your-org>/<your-gitops-repo>`
   ref:
     branch: main
 ```
