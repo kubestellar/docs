@@ -8,22 +8,28 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
  * by mocking fs access and the pageMap module.
  */
 
+// ─── Hoisted mock data (available inside vi.mock factories) ──────────
+
+const { mockRouteMap, mockFiles } = vi.hoisted(() => {
+  const mockRouteMap: Record<string, string> = {
+    'getting-started/install': 'getting-started/install.mdx',
+    'guides/upgrade': 'guides/upgrade.mdx',
+    'reference/api': 'reference/api.mdx',
+  }
+
+  const mockFiles: Record<string, string> = {
+    'getting-started/install.mdx':
+      '# Installation Guide\n\nInstall KubeStellar using helm:\n\n```bash\nhelm install ks kubestellar/kubestellar\n```\n\nAfter installation, verify the deployment.',
+    'guides/upgrade.mdx':
+      '# Upgrade Guide\n\nTo upgrade your cluster, run the upgrade command.\n\n## Prerequisites\n\nEnsure you have backed up your data.',
+    'reference/api.mdx':
+      '# API Reference\n\nThe KubeStellar API provides endpoints for cluster management.\n\n## Authentication\n\nAll requests require a valid bearer token.',
+  }
+
+  return { mockRouteMap, mockFiles }
+})
+
 // ─── Mocks ───────────────────────────────────────────────────────────
-
-const mockRouteMap: Record<string, string> = {
-  'getting-started/install': 'getting-started/install.mdx',
-  'guides/upgrade': 'guides/upgrade.mdx',
-  'reference/api': 'reference/api.mdx',
-}
-
-const mockFiles: Record<string, string> = {
-  'getting-started/install.mdx':
-    '# Installation Guide\n\nInstall KubeStellar using helm:\n\n```bash\nhelm install ks kubestellar/kubestellar\n```\n\nAfter installation, verify the deployment.',
-  'guides/upgrade.mdx':
-    '# Upgrade Guide\n\nTo upgrade your cluster, run the upgrade command.\n\n## Prerequisites\n\nEnsure you have backed up your data.',
-  'reference/api.mdx':
-    '# API Reference\n\nThe KubeStellar API provides endpoints for cluster management.\n\n## Authentication\n\nAll requests require a valid bearer token.',
-}
 
 vi.mock('fs', () => ({
   default: {
@@ -38,7 +44,8 @@ vi.mock('fs', () => ({
   },
 }))
 
-vi.mock('../../app/docs/page-map', () => ({
+// Path from src/__tests__/ to src/app/docs/page-map is ../app/docs/page-map
+vi.mock('../app/docs/page-map', () => ({
   buildPageMap: () => ({ routeMap: mockRouteMap }),
   docsContentPath: '/fake/docs/content',
   basePath: 'docs',
