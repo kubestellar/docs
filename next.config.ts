@@ -56,6 +56,16 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        source: "/architecture_guide",
+        destination: "/docs/multi-plugin/overview/architecture",
+        permanent: true,
+      },
+      {
+        source: "/installation_guide",
+        destination: "/docs/multi-plugin/getting-started/installation",
+        permanent: true,
+      },
+      {
         source: "/code",
         destination: "https://github.com/kubestellar/kubestellar",
         permanent: true,
