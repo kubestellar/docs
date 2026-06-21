@@ -44,7 +44,8 @@ vi.mock('fs', () => ({
   },
 }))
 
-vi.mock('../../app/docs/page-map', () => ({
+// Path from src/__tests__/ to src/app/docs/page-map is ../app/docs/page-map
+vi.mock('../app/docs/page-map', () => ({
   buildPageMap: () => ({ routeMap: mockRouteMap }),
   docsContentPath: '/fake/docs/content',
   basePath: 'docs',
