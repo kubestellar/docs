@@ -4,7 +4,7 @@ import { evaluate } from 'nextra/evaluate'
 import { useMDXComponents as getMDXComponents } from '../../../../mdx-components'
 import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
 import { sanitizeHtmlForMdx, removeCommentPatterns } from '@/lib/sanitizeHtml'
-import { buildPageMap, docsContentPath } from '../page-map'
+import { buildPageMap, docsContentPath, getContentPath } from '../page-map'
 import { CURRENT_VERSION, type ProjectId } from '@/config/versions'
 import fs from 'fs'
 import path from 'path'
@@ -86,7 +86,7 @@ async function getPageContent(slug: string[], projectId?: ProjectId): Promise<st
   const filePath = slug.join('/') + '.md'
   
   const contentPath = projectId 
-    ? path.join(docsContentPath, '..', projectId, 'content')
+    ? getContentPath(projectId)
     : docsContentPath
 
   // Try .md first, then .mdx
@@ -94,6 +94,21 @@ async function getPageContent(slug: string[], projectId?: ProjectId): Promise<st
   if (!content) {
     const mdxPath = slug.join('/') + '.mdx'
     content = readLocalFile(mdxPath, contentPath)
+  }
+
+  // If direct lookup failed, consult the routeMap for nav-generated routes
+  if (!content) {
+    const mapProjectId = projectId || 'kubestellar'
+    const { routeMap } = buildPageMap(mapProjectId)
+    const routeKey = slug.join('/')
+    const mappedFile = routeMap[routeKey]
+    if (mappedFile) {
+      content = readLocalFile(mappedFile, contentPath)
+      if (!content) {
+        // Also try in the default docs content path (for general sections)
+        content = readLocalFile(mappedFile, docsContentPath)
+      }
+    }
   }
   
   return content
@@ -112,9 +127,9 @@ async function buildContent(slug: string[], projectId?: ProjectId): Promise<stri
 }
 
 function getProjectFromSlug(slug: string[]): { projectId: ProjectId | undefined; docSlug: string[] } {
-  const knownProjects = ['kubestellar', 'clusteradm-ocm', 'ks-core']
+  const knownProjects: string[] = ['kubestellar', 'clusteradm-ocm', 'ks-core', 'multi-plugin', 'hive', 'kubestellar-mcp', 'console', 'a2a', 'kubeflex']
   
-  if (slug.length > 0 && knownProjects.includes(slug[0] as ProjectId)) {
+  if (slug.length > 0 && knownProjects.includes(slug[0])) {
     return {
       projectId: slug[0] as ProjectId,
       docSlug: slug.slice(1)
