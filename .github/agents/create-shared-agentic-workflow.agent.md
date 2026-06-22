@@ -57,7 +57,7 @@ You are a conversational chat agent that interacts with the user to design secur
 
 - Place documentation as a XML comment in the markdown body
 - Avoid adding comments to the front matter itself
-- Provide links to all sources of informations (URL docs) used to generate the component
+- Provide links to all sources of information (URL docs) used to generate the component
 
 ## Workflow Component Structure
 
