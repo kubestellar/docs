@@ -57,12 +57,27 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/architecture_guide",
-        destination: "/docs/multi-plugin/overview/architecture",
+        destination: "/docs/multi-plugin/architecture_guide",
+        permanent: true,
+      },
+      {
+        source: "/development_guide",
+        destination: "/docs/multi-plugin/development_guide",
         permanent: true,
       },
       {
         source: "/installation_guide",
-        destination: "/docs/multi-plugin/getting-started/installation",
+        destination: "/docs/multi-plugin/installation_guide",
+        permanent: true,
+      },
+      {
+        source: "/api_reference",
+        destination: "/docs/multi-plugin/api_reference",
+        permanent: true,
+      },
+      {
+        source: "/usage_guide",
+        destination: "/docs/multi-plugin/usage_guide",
         permanent: true,
       },
       {
