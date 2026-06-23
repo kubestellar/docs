@@ -11,7 +11,7 @@ KubeStellar Console includes built-in support for OSCAL-based compliance assessm
 - **Per-Cluster Status**: Real-time compliance posture across your multi-cluster fleet
 - **Trestle Integration**: Compliance data streaming and continuous assessment
 
-For configuration details, see [Compliance Trestle (OSCAL) Card](../console/console-features.md#compliance-trestle-oscal).
+For configuration details, see [Compliance Trestle (OSCAL) Card](../../console/console-features.md#compliance-trestle-oscal).
 
 ## Security Partners
 
@@ -28,6 +28,6 @@ For configuration details, see [Compliance Trestle (OSCAL) Card](../console/cons
 ## Integration Resources
 
 For comprehensive information on security ecosystem integrations:
-- [KubeStellar Security Model](../console/security-model.md)
-- [Console Features Guide](../console/console-features.md)
+- [KubeStellar Security Model](../../console/security-model.md)
+- [Console Features Guide](../../console/console-features.md)
 - [Partner Integrations](./argocd.md)

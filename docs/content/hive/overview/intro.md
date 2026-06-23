@@ -124,7 +124,7 @@ LLMs treat "NEVER" rules as suggestions. No amount of prompt engineering reliabl
 Each stage runs as a shell script, declared in `hive-project.yaml`, with explicit dependencies:
 
 | Category | What it does | Example |
-|----------|-------------|----------|
+|----------|-------------|---------|
 | **Enumerator** | Fetches and filters the canonical work list | `enumerate-actionable.sh` — queries GitHub, excludes hold/exempt labels, filters by author |
 | **Classifier** | Enriches items with deterministic metadata | `issue-classifier.sh` — complexity, model tier, lane assignment based on label/title patterns |
 | **Gate** | Pre-checks eligibility before action | `merge-gate.sh` — CI green? Author authorized? Required reviews in? |
@@ -314,4 +314,4 @@ journalctl -u claude-scanner # raw service log
 
 ---
 
-Apache 2.0  ·  [Architecture](architecture.md)
+Apache 2.0  ·  [Architecture](../architecture.md)
