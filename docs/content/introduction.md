@@ -18,11 +18,11 @@ KubeStellar provides a unified control plane for managing workloads across multi
 
 Choose the component that best fits your needs:
 
-- **[KubeStellar Core](./kubestellar-core/overview/introduction.md)** - The main KubeStellar platform
-- **[kubectl-multi Plugin](./multi-plugin/overview/introduction.md)** - Multi-cluster kubectl plugin
+- **[KubeStellar Core](./kubestellar/user-guide-intro.md)** - The main KubeStellar platform
+- **[kubectl-multi Plugin](./multi-plugin/overview.md)** - Multi-cluster kubectl plugin
 - **[A2A (Application to Application)](./a2a/intro.md)** - Application-level multi-cluster management
-- **[KubeFlex](./kubeflex/intro.md)** - Flexible Kubernetes control planes
-- **[Console](./console/overview.md)** - Web-based management interface
+- **[KubeFlex](./kubeflex/readme.md)** - Flexible Kubernetes control planes
+- **[Console](./console/readme.md)** - Web-based management interface
 
 ## Documentation Sections
 
@@ -32,9 +32,9 @@ Choose the component that best fits your needs:
 
 ## Quick Links
 
-- [Installation Guide](./kubestellar-core/installation/installation.md)
-- [Quick Start](./kubestellar-core/getting-started/quick-start.md)
-- [Architecture](./kubestellar-core/architecture/architecture.md)
+- [Installation Guide](./console/installation.md)
+- [Quick Start](./kubestellar/get-started.md)
+- [Architecture](./kubestellar/architecture.md)
 - [GitHub Repository](https://github.com/kubestellar/kubestellar)
 
 ## Support
