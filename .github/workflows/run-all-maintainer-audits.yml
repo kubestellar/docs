@@ -6,13 +6,12 @@ on:
     # Run every Monday at 12:00 PM Eastern (17:00 UTC)
     - cron: "0 17 * * 1"
 
-permissions: read-all  # default read; writes scoped to job below
+permissions: read-all
 
 jobs:
   audit-all:
     permissions:
       actions: write
-      contents: read
     runs-on: ubuntu-latest
 
     steps:
@@ -44,7 +43,7 @@ jobs:
               --field maintainer="$maintainer"
             
             if [ $? -eq 0 ]; then
-              echo "✅ Successfully triggered audit for $maintainer"
+              echo Successfully triggered audit for $maintainer" 
             else
               echo "❌ Failed to trigger audit for $maintainer"
               exit 1
