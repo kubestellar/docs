@@ -1,1 +1,2 @@
+cryptography>=48.0.1
 oci-cli==3.86.0
