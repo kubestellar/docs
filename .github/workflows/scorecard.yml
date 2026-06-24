@@ -7,11 +7,7 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-permissions:
-  security-events: write
-  contents: read
-  actions: read
-  id-token: write
+permissions: read-all
 
 jobs:
   analysis:
