@@ -402,7 +402,7 @@ kubectl --context <hosting-cluster-context-name> get managedclusters -A
 
 ### Initialization and Setup
 
-```
+```bash
 kflex init [KUBECONTEXT]
   Initialize a control plane and add it to your kubeconfig.
   If KUBECONTEXT is not specified, it defaults to the hosting cluster context.
@@ -412,7 +412,7 @@ kflex init [KUBECONTEXT]
 
 The following commands work with hosting clusters.
 
-```
+```bash
 kflex init-hosting-cluster <hosting-cluster>
   Initialize a hosting cluster.
 ```
@@ -421,7 +421,7 @@ kflex init-hosting-cluster <hosting-cluster>
 
 The following commands work with control planes.
 
-```
+```bash
 kflex create <control-plane>
   Create a control plane with the default name.
 
@@ -434,7 +434,7 @@ kflex get control-planes
 
 ## Adoption Commands
 
-```
+```bash
 kflex adopt [KUBECONFIG] --adopted-context <context> --url-override <url> <control-plane>
   Adopt an external cluster as a control plane.
 
