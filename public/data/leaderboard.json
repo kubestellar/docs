@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-24T03:05:41.956Z",
-  "git_hash": "0941c71",
+  "generated_at": "2026-06-24T07:09:28.060Z",
+  "git_hash": "61ce5ec",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-04-06",
@@ -1520,6 +1520,36 @@
       "rank": 50
     },
     {
+      "login": "Jayant-kernel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/212013719?v=4",
+      "total_points": 2300,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 4,
+        "prs_merged": 3
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        1
+      ],
+      "recent_activity_score": 3.38,
+      "rank": 51
+    },
+    {
       "login": "btwshivam",
       "avatar_url": "https://avatars.githubusercontent.com/u/127589548?v=4",
       "total_points": 2250,
@@ -1547,7 +1577,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 51
+      "rank": 52
     },
     {
       "login": "rakshityadav1868",
@@ -1577,7 +1607,7 @@
         0
       ],
       "recent_activity_score": 3.03,
-      "rank": 52
+      "rank": 53
     },
     {
       "login": "ayushshukla1807",
@@ -1607,36 +1637,6 @@
         0
       ],
       "recent_activity_score": 1.82,
-      "rank": 53
-    },
-    {
-      "login": "Jayant-kernel",
-      "avatar_url": "https://avatars.githubusercontent.com/u/212013719?v=4",
-      "total_points": 2100,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 3,
-        "prs_merged": 3
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        3,
-        0
-      ],
-      "recent_activity_score": 2.38,
       "rank": 54
     },
     {
