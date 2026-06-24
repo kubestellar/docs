@@ -282,7 +282,7 @@ kflex ctx cp1
 If there is not currently a kubeconfig context named for that control plane then that command requires your kubeconfig file to hold an extension that `kflex init` created to hold the name of the hosting cluster context. See [below](#hosting-context) for more information.
 
 
-The same result can be accomplished with kubectl by using the `ControlPlane`` CR, for example:
+The same result can be accomplished with kubectl by using the `ControlPlane` CR, for example:
 
 
 ```shell
@@ -319,7 +319,7 @@ from the current Kubeconfig and switch the context back to the context for the h
 To delete a control plane with the kubeflex CLI use the command:
 
 ```shell
-kubectl delete <control-plane-name>
+kflex delete <control-plane-name>
 ```
 
 If you are not using the kflex CLI to create the control plane and require access to the control plane,
@@ -568,7 +568,7 @@ the port `6443` is a default value used by kind.
 If you're not utilizing the default `kind` network, you'll need to make sure that the external cluster `ext1`
 and the KubeFlex hosting cluster are on the same docker network.
 
-```shelll
+```shell
 docker inspect ext1-control-plane | jq '.[].NetworkSettings.Networks | keys[]'
 docker inspect kubeflex-control-plane | jq '.[].NetworkSettings.Networks | keys[]'
 ```
@@ -584,7 +584,7 @@ kflex adopt --adopted-context kind-ext1 --url-override https://ext1-control-plan
 Explanation of command parameters:
 
 - `--adopted-context kind-ext1`:
-    This specifies the context name, kind-ext1, for the ext1 cluster. Ensure that this context is correctly set in your current kubeconfig file.``
+    This specifies the context name, kind-ext1, for the ext1 cluster. Ensure that this context is correctly set in your current kubeconfig file.
 
 - `--url-override https://ext1-control-plane:6443`:
     This parameter sets the endpoint URL for the external control plane. It's crucial to use this option when the server URL in the existing kubeconfig uses a local loopback address, which is common for kind or k3d servers running on your local machine. Here, replace https://ext1-control-plane:6443 with the actual endpoint you have determined for your external control plane in the previous step.
