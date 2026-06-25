@@ -46,8 +46,12 @@ function replaceTemplateVariables(content: string): string {
 }
 
 function readLocalFile(filePath: string, contentPath: string = docsContentPath): string | null {
+  // Reject path traversal attempts (mirrors protection in docs-image/route.ts)
+  if (filePath.includes('..')) return null
+
   // Try the project-specific content path first
   const fullPath = path.join(contentPath, filePath)
+  if (!fullPath.startsWith(contentPath + path.sep) && fullPath !== contentPath) return null
   try {
     if (fs.existsSync(fullPath)) {
       return fs.readFileSync(fullPath, 'utf-8')
@@ -60,23 +64,28 @@ function readLocalFile(filePath: string, contentPath: string = docsContentPath):
   // This is needed for general sections (Contributing, Community, News) on non-KubeStellar projects
   if (contentPath !== docsContentPath) {
     const kubestellarPath = path.join(docsContentPath, filePath)
-    try {
-      if (fs.existsSync(kubestellarPath)) {
-        return fs.readFileSync(kubestellarPath, 'utf-8')
+    if (kubestellarPath.startsWith(docsContentPath + path.sep)) {
+      try {
+        if (fs.existsSync(kubestellarPath)) {
+          return fs.readFileSync(kubestellarPath, 'utf-8')
+        }
+      } catch {
+        // File doesn't exist in KubeStellar directory either
       }
-    } catch {
-      // File doesn't exist in KubeStellar directory either
     }
   }
 
   // If not found in content directories, try repository root
-  const repoRootPath = path.join(process.cwd(), filePath)
-  try {
-    if (fs.existsSync(repoRootPath)) {
-      return fs.readFileSync(repoRootPath, 'utf-8')
+  const cwd = process.cwd()
+  const repoRootPath = path.join(cwd, filePath)
+  if (repoRootPath.startsWith(cwd + path.sep)) {
+    try {
+      if (fs.existsSync(repoRootPath)) {
+        return fs.readFileSync(repoRootPath, 'utf-8')
+      }
+    } catch {
+      // File doesn't exist in repository root
     }
-  } catch {
-    // File doesn't exist in repository root
   }
 
   return null
