@@ -4,7 +4,10 @@ FROM docker.io/alpine/kubectl:1.34.1@sha256:8413f8890d19aa03f63851654f642957e65b
 # Install runtime dependencies and OCI CLI (all dependencies hash-pinned)
 RUN apk add --no-cache python3 py3-pip bash jq curl gettext \
     && rm -rf /var/cache/apk/* \
-    && addgroup -S appgroup && adduser -S appuser -G appgroup
+    && addgroup -S appgroup \
+    && adduser -S -h /home/appuser -G appgroup appuser \
+    && mkdir -p /home/appuser/.oci \
+    && chown -R appuser:appgroup /home/appuser
 
 COPY requirements.txt /requirements.txt
 RUN pip install --break-system-packages --require-hashes --no-cache-dir -r /requirements.txt \

@@ -196,10 +196,17 @@ spec:
         spec:
           serviceAccountName: nextra-rollout-sa
           restartPolicy: Never
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1001
           containers:
             - name: pr-rollout-checker
               image: iad.ocir.io/id4wyucbsggm/docs-rollout-checker:stable
               imagePullPolicy: IfNotPresent
+              securityContext:
+                allowPrivilegeEscalation: false
+                capabilities:
+                  drop: ["ALL"]
               command:
                 - /bin/bash
                 - -c
@@ -208,7 +215,7 @@ spec:
                 - name: script
                   mountPath: /scripts
                 - name: oci-config
-                  mountPath: /root/.oci
+                  mountPath: /home/appuser/.oci
               envFrom:
                 - secretRef:
                     name: oci-config-secret
