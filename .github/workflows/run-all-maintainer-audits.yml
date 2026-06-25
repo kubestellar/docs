@@ -6,11 +6,15 @@ on:
     # Run every Monday at 12:00 PM Eastern (17:00 UTC)
     - cron: "0 17 * * 1"
 
-permissions: read-all
+permissions:
+  contents: read
 
 jobs:
   audit-all:
+    # actions:write needed to trigger maintainer-metrics.lock.yml workflow via gh workflow run
+    # This is the minimum permission required for workflow_dispatch operations
     permissions:
+      contents: read
       actions: write
     runs-on: ubuntu-latest
 
