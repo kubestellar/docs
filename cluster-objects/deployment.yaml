@@ -26,12 +26,19 @@ spec:
     spec:
       imagePullSecrets:
         - name: ocir-secret
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
       containers:
         - name: kubestellar-docs
           image: iad.ocir.io/id4wyucbsggm/kubestellar-docs:stable
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
           env:
             - name: NODE_ENV
               value: production
