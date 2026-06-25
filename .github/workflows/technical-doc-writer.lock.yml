@@ -982,9 +982,13 @@ jobs:
       needs.activation.outputs.stale_lock_file_failed == 'true')
     runs-on: ubuntu-slim
     permissions:
+      # contents:write required to commit changes to repository
       contents: write
+      # discussions:write required to update discussion threads
       discussions: write
+      # issues:write required to comment on and update issues
       issues: write
+      # pull-requests:write required to comment on and update pull requests
       pull-requests: write
     concurrency:
       group: "gh-aw-conclusion-technical-doc-writer"
@@ -1314,9 +1318,13 @@ jobs:
     if: (!cancelled()) && needs.agent.result != 'skipped' && needs.detection.result == 'success'
     runs-on: ubuntu-slim
     permissions:
+      # contents:write required to commit changes to repository
       contents: write
+      # discussions:write required to update discussion threads
       discussions: write
+      # issues:write required to comment on and update issues
       issues: write
+      # pull-requests:write required to comment on and update pull requests
       pull-requests: write
     timeout-minutes: 15
     env:

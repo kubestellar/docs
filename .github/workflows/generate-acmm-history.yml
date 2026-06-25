@@ -11,8 +11,9 @@ permissions: read-all
 jobs:
   generate:
     permissions:
-      # Required: commits ACMM history data and creates failure tracking issues
+      # contents:write required to commit ACMM history data
       contents: write
+      # issues:write required to create failure tracking issues
       issues: write
     runs-on: ubuntu-latest
     timeout-minutes: 30
