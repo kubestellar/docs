@@ -20,6 +20,7 @@ jobs:
   copilot-automation:
     if: github.event.pull_request.head.repo.full_name == github.repository
     permissions:
+      # Required: reusable workflow creates commits, PR comments, and status checks
       contents: write
       pull-requests: write
       issues: write

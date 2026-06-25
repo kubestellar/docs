@@ -11,6 +11,7 @@ permissions: read-all
 jobs:
   generate:
     permissions:
+      # Required: commits ACMM history data and creates failure tracking issues
       contents: write
       issues: write
     runs-on: ubuntu-latest

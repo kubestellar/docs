@@ -17,6 +17,7 @@ permissions: read-all
 jobs:
   ai-fix:
     permissions:
+      # Required: reusable workflow creates PRs and issue comments for AI-powered fixes
       contents: write
       issues: write
       pull-requests: write

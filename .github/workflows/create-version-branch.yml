@@ -35,6 +35,7 @@ permissions: read-all
 jobs:
   create-branch:
     permissions:
+      # Required: creates version branches and PRs to update version metadata
       contents: write
       pull-requests: write
     runs-on: ubuntu-latest

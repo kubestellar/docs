@@ -10,6 +10,7 @@ permissions: read-all
 jobs:
   sync-console-releases:
     permissions:
+      # Required: creates version branches and PRs to sync console release metadata
       contents: write
       pull-requests: write
     runs-on: ubuntu-latest
