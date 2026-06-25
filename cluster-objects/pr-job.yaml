@@ -123,12 +123,19 @@ data:
         spec:
           imagePullSecrets:
             - name: ocir-secret
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1001
           containers:
             - name: nextra
               image: ${IMAGE_NAME}
               imagePullPolicy: IfNotPresent
               ports:
                 - containerPort: 3000
+              securityContext:
+                allowPrivilegeEscalation: false
+                capabilities:
+                  drop: ["ALL"]
     ---
     apiVersion: v1
     kind: Service
