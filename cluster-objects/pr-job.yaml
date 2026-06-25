@@ -208,7 +208,7 @@ spec:
                 - name: script
                   mountPath: /scripts
                 - name: oci-config
-                  mountPath: /root/.oci
+                  mountPath: /home/appuser/.oci
               envFrom:
                 - secretRef:
                     name: oci-config-secret
