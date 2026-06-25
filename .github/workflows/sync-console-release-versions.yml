@@ -5,8 +5,8 @@ on:
   schedule:
     - cron: '17 5 * * *'
 
-permissions: read-all
 
+permissions: {}
 jobs:
   sync-console-releases:
     permissions:
