@@ -6,13 +6,12 @@ on:
     types:
       - completed
 
-permissions:
-  contents: read
-  pull-requests: write
-  actions: read
+permissions: read-all
 
 jobs:
   post-preview-links:
+    permissions:
+      pull-requests: write
     runs-on: ubuntu-latest
     if: github.event.workflow_run.conclusion == 'success'
     steps:

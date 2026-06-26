@@ -8,11 +8,12 @@ on:
   issues:
     types: [opened]
 
-permissions:
-  issues: write
+permissions: read-all
 
 jobs:
   label:
+    permissions:
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - name: Auto-label bug reports
