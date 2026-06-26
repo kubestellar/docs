@@ -6,7 +6,7 @@ When a project maintainer runs your guided install workflow, finds bugs, reports
 
 That's exactly what happened with [Drasi](https://drasi.io), a CNCF Sandbox project for change data capture in cloud-native applications. A Drasi maintainer ran the KubeStellar Console install mission at [console.kubestellar.io/missions/install-drasi](https://console.kubestellar.io/missions/install-drasi) end-to-end — found issues, reported them, tracked engagement in [drasi-project/drasi-platform#400](https://github.com/drasi-project/drasi-platform/issues/400), and confirmed the experience was solid enough to recommend.
 
-Drasi is now listed in [KubeStellar Console's ADOPTERS file](https://github.com/kubestellar/console/blob/main/ADOPTERS.MD) — and is the first CNCF Sandbox project to have a maintainer-verified install mission in the console.
+Drasi is now listed in [KubeStellar Console's ADOPTERS file](https://github.com/kubestellar/console/blob/main/ADOPTERS.md) — and is the first CNCF Sandbox project to have a maintainer-verified install mission in the console.
 
 ---
 
