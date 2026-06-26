@@ -154,7 +154,7 @@ helm install kubestellar kubestellar/kubestellar-operator
 ```
 
 **Explore the integrations:**
-- [LLM-d Dashboards](../console/dashboards.md#llm-d-overview-dashboard)
+- [LLM-d Dashboards](../console/dashboards.md#aiml-dashboard)
 - [Kagenti Setup](../console/kagenti-llm-provider-setup.md)
 - [AI Missions](../console/ai-missions-setup.md)
 
