@@ -98,6 +98,37 @@
   # Enable spam filtering
   spam_protection = true
 
+# Redirect legacy multi-plugin shortcuts before Next.js locale middleware.
+[[redirects]]
+  from = "/architecture_guide"
+  to = "/docs/multi-plugin/architecture_guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/development_guide"
+  to = "/docs/multi-plugin/development_guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/installation_guide"
+  to = "/docs/multi-plugin/installation_guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/api_reference"
+  to = "/docs/multi-plugin/api_reference"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/usage_guide"
+  to = "/docs/multi-plugin/usage_guide"
+  status = 301
+  force = true
+
 # Redirect /hive and /:locale/hive to the live hive dashboard
 [[redirects]]
   from = "/hive"
