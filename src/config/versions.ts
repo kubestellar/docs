@@ -191,8 +191,8 @@ const MULTI_PLUGIN_VERSIONS: Record<string, VersionInfo> = {
 // kubestellar-mcp versions
 const KUBESTELLAR_MCP_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.9.2 (Latest)",
-    branch: "docs/kubestellar-mcp/0.9.2",
+    label: "v0.9.3 (Latest)",
+    branch: "docs/kubestellar-mcp/0.9.3",
     isDefault: true,
   },
   main: {
@@ -200,6 +200,11 @@ const KUBESTELLAR_MCP_VERSIONS: Record<string, VersionInfo> = {
     branch: "main",
     isDefault: false,
     isDev: true,
+  },
+  "0.9.2": {
+    label: "v0.9.2",
+    branch: "docs/kubestellar-mcp/0.9.2",
+    isDefault: false,
   },
   "0.8.21": {
     label: "v0.8.21",
@@ -322,7 +327,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "kubestellar-mcp",
     name: "KubeStellar MCP",
     basePath: "kubestellar-mcp",
-    currentVersion: "0.9.2",
+    currentVersion: "0.9.3",
     contentPath: "docs/content/kubestellar-mcp",
     versions: KUBESTELLAR_MCP_VERSIONS,
   },
