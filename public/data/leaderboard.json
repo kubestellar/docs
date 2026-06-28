@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-28T14:33:57.875Z",
-  "git_hash": "4c57fae",
+  "generated_at": "2026-06-28T18:24:05.804Z",
+  "git_hash": "a51ab6f",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-04-06",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 5233650,
+      "total_points": 5236600,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 589,
         "feature_issues": 855,
-        "other_issues": 1498,
-        "prs_opened": 7465,
-        "prs_merged": 6807
+        "other_issues": 1501,
+        "prs_opened": 7469,
+        "prs_merged": 6811
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         516,
         381,
         1023,
-        576
+        583
       ],
-      "recent_activity_score": 2428.1,
+      "recent_activity_score": 2435.1,
       "rank": 1
     },
     {
@@ -1100,6 +1100,36 @@
       "rank": 36
     },
     {
+      "login": "Jayant-kernel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/212013719?v=4",
+      "total_points": 4900,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 7,
+        "prs_merged": 7
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        4
+      ],
+      "recent_activity_score": 6.38,
+      "rank": 37
+    },
+    {
       "login": "Shreya2005-2005",
       "avatar_url": "https://avatars.githubusercontent.com/u/217235943?v=4",
       "total_points": 4550,
@@ -1127,36 +1157,6 @@
         0
       ],
       "recent_activity_score": 1.95,
-      "rank": 37
-    },
-    {
-      "login": "Jayant-kernel",
-      "avatar_url": "https://avatars.githubusercontent.com/u/212013719?v=4",
-      "total_points": 4400,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 7,
-        "prs_merged": 6
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        3,
-        4
-      ],
-      "recent_activity_score": 6.38,
       "rank": 38
     },
     {
