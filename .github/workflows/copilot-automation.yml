@@ -10,22 +10,19 @@ on:
   pull_request_target:
     types: [opened, synchronize, ready_for_review]
 
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  statuses: write
 
 concurrency:
   group: copilot-automation-${{ github.event.pull_request.number || github.event.inputs.pr_number || github.sha }}
   cancel-in-progress: true
 
-permissions: {}
 jobs:
   copilot-automation:
-    if: github.event.pull_request.head.repo.full_name == github.repository
-    permissions:
-      # Required: reusable workflow creates commits, PR comments, and status checks
-      contents: write
-      pull-requests: write
-      issues: write
-      statuses: write
-    uses: kubestellar/infra/.github/workflows/reusable-copilot-automation.yml@1a04a3fd17771e78e5cf6d42a3fda84e3ba478f3  # main@2026-06-19
+    uses: kubestellar/infra/.github/workflows/reusable-copilot-automation.yml@main
     with:
       pr_number: ${{ github.event.inputs.pr_number || '' }}
     secrets:
