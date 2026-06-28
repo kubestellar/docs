@@ -67,8 +67,8 @@ nothing to commit, working tree clean
 
 ### Prior to working on an issue
 
-Ensure that you personal repository if up to date with the kubestellar repository.
-You can do this by opening your github repository page, check that the selected branch is "main", and press the "sync fork" button.
+Ensure that your personal repository is up to date with the KubeStellar repository.
+You can do this by opening your GitHub repository page, check that the selected branch is "main", and press the "sync fork" button.
 
 ### Select an issue to work on and create a local branch, 
 
@@ -87,7 +87,7 @@ git add (there are several options you can specify for the git add command)
 
 git commit -m "your message"
 
-git push -u origin branch-name (-u sets upstream to origin which is your remote github repository)
+git push -u origin branch-name (-u sets upstream to origin which is your remote GitHub repository)
 ```
 
 ### When you have completed your work and tested it locally, then you should perform a squash of the git commits to make the upcoming push request more manageable.
@@ -116,16 +116,16 @@ Note: if using the git push -u origin <branch-name> command, the -u only needs t
 
 ## Run Actions (automated workflow tests) manually in your personal GitHub repository
 
-1. Select the "Actions" tab toward the upper left of your github personal web page. This will cause a list of Actions to show.
+1. Select the "Actions" tab toward the upper left of your GitHub personal web page. This will cause a list of Actions to show.
 2. Select the action you wish to execute from the list of Actions. For example you might chose "docs-ecutable - example1".
-Note: docs-ecutable should be described in a separate section. But in a nutshell it's a Continuous Integration automation technique of embedding scripts and data within the body of documentation, and then parsing and executing those scripts which in turn interpret and execute source code from a branch that you designate. It's somewhat similar to Travis. So the Action "docs-ecutable - example1" executes scripts and data embedded within the documentation for the Example 1 scenario, described in the Kubestellar documents. Those scripts will run using the source code pointed to by the next step, step 3.
+Note: docs-ecutable should be described in a separate section. But in a nutshell it's a Continuous Integration automation technique of embedding scripts and data within the body of documentation, and then parsing and executing those scripts which in turn interpret and execute source code from a branch that you designate. It's somewhat similar to Travis. So the Action "docs-ecutable - example1" executes scripts and data embedded within the documentation for the Example 1 scenario, described in the KubeStellar documents. Those scripts will run using the source code pointed to by the next step, step 3.
 3. Select the source code branch you wish to exercise by following the next 3 steps:
-  1. select the black and white "Run Workflow" on the right side of your github web page. This will open a dialog box.
+  1. select the black and white "Run Workflow" on the right side of your GitHub web page. This will open a dialog box.
   2. within the dialog box, select the branch you wish to exercise by opening the dropdown labeled "use workflow from"
   3. within the dialog box, select the green "Run Workflow" button 
 Your selected Action workflow will execute and the results will be available when it completes.  
 
-## Create a Pull Request (PR) from your GitHub repo branch in order to request review and approval from the Kubestellar team
+## Create a Pull Request (PR) from your GitHub repo branch in order to request review and approval from the KubeStellar team
 
 Take a look at [the contribution guidelines](../documentation/contributing-inc.md).
 
@@ -148,11 +148,11 @@ Complete the Related issue field by inserting the issue number preceded by the #
 Decide whether this is a draft PR or if it's ready for review, and select the option you want by expanding on the Create Pull Request button.
 Assign a label to the PR from the available list of labels (a drop down list on the right side of the web page)
 
-## Kubestellar CI pipeline
+## KubeStellar CI pipeline
 
 ### Prow CI jobs
 
-Kubestellar Prow CI jobs run inside containerized environments.
+KubeStellar Prow CI jobs run inside containerized environments.
 Required tooling such as Python is provided by the container image
 itself, rather than being downloaded dynamically during job execution
 (e.g., Python 3.14). This improves CI reliability and consistency.
@@ -179,13 +179,13 @@ successfully for all components.
 
 #### Argo CD integration tests
 
-Kubestellar includes gated integration tests that validate the installation
+KubeStellar includes gated integration tests that validate the installation
 and readiness of Argo CD in a real Kubernetes cluster.
 
 These tests run as part of the Prow CI pipeline and verify that:
 - Argo CD can be installed successfully using Helm
 - Core Argo CD components become healthy and ready
-- Kubestellar continues to operate correctly alongside Argo CD
+- KubeStellar continues to operate correctly alongside Argo CD
 
 Because these are real cluster integration tests, they may take longer
 to complete than unit tests and are enforced as required checks for
