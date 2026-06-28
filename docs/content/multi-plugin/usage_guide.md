@@ -289,5 +289,5 @@ kubectl multi get --help
 ## Next Steps
 
 - Learn about the internal [Architecture](architecture_guide.md)
-- Contribute to development with the [Development Guide](development_guide.md)
+- Contribute to development with the [Development Guide](/docs/multi-plugin/development_guide)
 - Check the [API Reference](api_reference.md) for technical details
