@@ -204,4 +204,4 @@ make uninstall
 After successful installation:
 1. Read the [Usage Guide](usage_guide.md) for detailed examples
 2. Check the [Architecture Guide](architecture_guide.md) to understand how it works
-3. See [Development Guide](development_guide.md) if you want to contribute
+3. See [Development Guide](/docs/multi-plugin/development_guide) if you want to contribute
