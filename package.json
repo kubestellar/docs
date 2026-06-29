@@ -35,14 +35,14 @@
     "nextra": "^4.6.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "three": "^0.184.0"
+    "three": "^0.185.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^26.0.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
-    "@types/three": "^0.184.1",
+    "@types/three": "^0.185.0",
     "@vitest/coverage-v8": "4.1.9",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
