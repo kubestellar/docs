@@ -26,8 +26,17 @@ jobs:
       - name: Get PR number
         id: pr
         run: |
-          PR_NUMBER=$(cat pr-info/pr_number)
-          echo "number=$PR_NUMBER" >> $GITHUB_OUTPUT
+          # sec-check: Strictly validate the artifact PR number before use.
+          # A fork contributor can modify preview-links.yml to write arbitrary
+          # content to the pr-info artifact; strip everything except digits and
+          # reject non-positive values to prevent GITHUB_OUTPUT injection.
+          RAW=$(cat pr-info/pr_number 2>/dev/null || echo "")
+          PR_NUMBER=$(printf '%s' "$RAW" | tr -cd '0-9' | cut -c1-10)
+          if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" -lt 1 ] 2>/dev/null; then
+            echo "::error::Invalid or missing PR number in artifact (raw: '$RAW')"
+            exit 1
+          fi
+          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
           echo "PR number: $PR_NUMBER"
 
       - name: Wait for Netlify deploy
