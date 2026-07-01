@@ -54,7 +54,11 @@ jobs:
             })
 
           if (releases.length === 0) {
-            throw new Error('No stable console releases found')
+            console.log('No stable console releases found; skipping sync')
+            console.log('latest=')
+            console.log('historical=')
+            console.log('all=')
+            process.exit(0)
           }
 
           const latest = releases[releases.length - 1]
