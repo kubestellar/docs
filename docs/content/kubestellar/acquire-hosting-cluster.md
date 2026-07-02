@@ -35,7 +35,7 @@ kflex init --create-kind
 
 ### Create and init a kind cluster as hosting cluster with curl-to-bash script
 
-There is a bash script at [`https://raw.githubusercontent.com/kubestellar/kubestellar/v{{ config.ks_latest_regular_release }}/scripts/create-kind-cluster-with-SSL-passthrough.sh`](https://raw.githubusercontent.com/kubestellar/kubestellar/v{{ config.ks_latest_regular_release }}/scripts/create-kind-cluster-with-SSL-passthrough.sh) that can be fed directly into `bash` and will create a `kind` cluster _AND ALSO_ initialize it as the KubeFlex hosting cluster. This script accepts the following command line flags.
+There is a bash script at [`https://raw.githubusercontent.com/kubestellar/kubestellar/v0.30.0/scripts/create-kind-cluster-with-SSL-passthrough.sh`](https://raw.githubusercontent.com/kubestellar/kubestellar/v0.30.0/scripts/create-kind-cluster-with-SSL-passthrough.sh) that can be fed directly into `bash` and will create a `kind` cluster _AND ALSO_ initialize it as the KubeFlex hosting cluster. This script accepts the following command line flags.
 
 - `--name name`: set a specific name of the kind cluster (default: kubestellar).
 - `--port port`: map the specified host port to the kind cluster port 443 (default: 9443).

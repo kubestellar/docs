@@ -23,7 +23,7 @@ wsl --install FedoraLinux-43
 Afterwards, the pre-requisites needed by KubeStellar and the demo script can be installed using the command:
 
 ```shell
-bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v{{ config.ks_latest_release }}/scripts/setup-wsl-fedora.sh)
+bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v0.30.0/scripts/setup-wsl-fedora.sh)
 ```
 
 ### Note for MacOS users
@@ -59,13 +59,13 @@ The script can install KubeStellar's demonstration environment on top of kind or
 For use with kind
 
 ```shell
-bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v{{ config.ks_latest_release }}/scripts/create-kubestellar-demo-env.sh) --platform kind
+bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v0.30.0/scripts/create-kubestellar-demo-env.sh) --platform kind
 ```
 
 For use with k3d
 
 ```shell
-bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v{{ config.ks_latest_release }}/scripts/create-kubestellar-demo-env.sh) --platform k3d
+bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v0.30.0/scripts/create-kubestellar-demo-env.sh) --platform k3d
 ```
 
 If successful, the script will output the variable definitions that you would use when proceeding to the example scenarios. After successfully running the script, proceed to the [Exercise KubeStellar](#exercise-kubestellar) section below.
@@ -83,7 +83,7 @@ This walks you through the steps to produce the same configuration as does the s
 The following command will check for the prerequisites that you will need for the later steps. See [the prerequisites doc](pre-reqs.md) for more details.
 
 ```shell
-bash <(curl https://raw.githubusercontent.com/kubestellar/kubestellar/v{{ config.ks_latest_release }}/scripts/check_pre_req.sh) kflex ocm helm kubectl docker kind
+bash <(curl https://raw.githubusercontent.com/kubestellar/kubestellar/v0.30.0/scripts/check_pre_req.sh) kflex ocm helm kubectl docker kind
 ```
 
 If that script complains then take it seriously! For example, the following indicates that you have a version of clusteradm that KubeStellar cannot use.
@@ -130,7 +130,7 @@ kubestellar_version={{ config.ks_latest_release }}
 For convenience, a new local **Kind** cluster that satisfies the requirements for playing the role of KubeFlex hosting cluster can be created with the following command:
 
 ```shell
-bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v{{ config.ks_latest_release }}/scripts/create-kind-cluster-with-SSL-passthrough.sh) --name kubeflex --port 9443
+bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/v0.30.0/scripts/create-kind-cluster-with-SSL-passthrough.sh) --name kubeflex --port 9443
 ```
 
 ### Use Core Helm chart to initialize KubeFlex and create ITS and WDS
