@@ -1,8 +1,6 @@
 name: PR Verifier
 
-permissions:
-  checks: write
-  pull-requests: read
+permissions: read-all  # default read; writes scoped to job below
 
 # DISABLED: kubestellar/infra/.github/workflows/reusable-pr-verifier.yml does not exist.
 # This workflow silently fails on every PR. Disabled until the reusable workflow is created.
@@ -12,5 +10,8 @@ on:
 
 jobs:
   verify:
+    permissions:
+      checks: write
+      pull-requests: read
     uses: kubestellar/infra/.github/workflows/reusable-pr-verifier.yml@1a04a3fd17771e78e5cf6d42a3fda84e3ba478f3 # pinned from main
     secrets: inherit
