@@ -20,6 +20,10 @@
   <a href="https://deepwiki.com/kubestellar/ui" target="_blank">
     <img alt="Ask DeepWiki" src="https://deepwiki.com/badge.svg"/>
   </a>
+  &nbsp;
+  <a href="https://securityscorecards.dev/viewer/?uri=github.com/kubestellar/docs" target="_blank">
+    <img alt="OpenSSF Scorecard" src="https://api.securityscorecards.dev/projects/github.com/kubestellar/docs/badge"/>
+  </a>
 </p>
 
 ## KubeStellar Docs Website
