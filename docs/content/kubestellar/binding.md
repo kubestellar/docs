@@ -44,7 +44,7 @@ object selection predicate and also three kinds of information that
 modulate the downsync. Note that each such clause must have at least
 one field specifying part of the workload selection predicate.
 
-For more definitional details about a `BindingPolicy`, see [the API reference](https://pkg.go.dev/github.com/kubestellar/kubestellar@v{{ config.ks_latest_release }}/api/control/v1alpha1#BindingPolicy){# readers of the unrendered sources should see [the Go source](https://github.com/kubestellar/kubestellar/blob/main/api/control/v1alpha1/types.go) instead #}.
+For more definitional details about a `BindingPolicy`, see [the API reference](https://pkg.go.dev/github.com/kubestellar/kubestellar@v0.30.0/api/control/v1alpha1#BindingPolicy){# readers of the unrendered sources should see [the Go source](https://github.com/kubestellar/kubestellar/blob/main/api/control/v1alpha1/types.go) instead #}.
 
 Following is an example of a `BindingPolicy` object, used in the
 end-to-end test of `createOnly` functionality.
@@ -76,4 +76,4 @@ spec:
 
 A `Binding` object is the lower-level representation that results from resolving a `BindingPolicy`. It records the concrete set of workload objects and the concrete set of WECs that matched the policy's predicates. The `Binding` is maintained by the KubeStellar controller and serves as both the input to the transport layer and as feedback to the user about what matched.
 
-For the full `Binding` type definition, see [the API reference](https://pkg.go.dev/github.com/kubestellar/kubestellar@v{{ config.ks_latest_release }}/api/control/v1alpha1#Binding).
+For the full `Binding` type definition, see [the API reference](https://pkg.go.dev/github.com/kubestellar/kubestellar@v0.30.0/api/control/v1alpha1#Binding).

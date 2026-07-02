@@ -39,7 +39,7 @@ story](user-guide-intro.md#the-full-story).
 The following command will check for the prerequisites that KubeStellar will need for the later steps. See [the prerequisites doc](pre-reqs.md) for more details.
 
 ```shell
-bash <(curl https://raw.githubusercontent.com/kubestellar/kubestellar/v{{ config.ks_latest_release }}/scripts/check_pre_req.sh) kflex ocm helm kubectl docker kind
+bash <(curl https://raw.githubusercontent.com/kubestellar/kubestellar/v0.30.0/scripts/check_pre_req.sh) kflex ocm helm kubectl docker kind
 ```
 
 ### Cleanup from previous runs
@@ -76,7 +76,7 @@ This recipe uses a modified version of [the OCM Quick Start script](https://raw.
 You can invoke the modified OCM Quick Start as follows.
 
 ```shell
-curl -H "Cache-Control: no-cache" -L https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v{{ config.ks_latest_release }}/scripts/ocm-local-up-for-ingress.sh | bash
+curl -H "Cache-Control: no-cache" -L https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v0.30.0/scripts/ocm-local-up-for-ingress.sh | bash
 ```
 
 Like the baseline, this script creates a `kind` cluster named "hub" to
