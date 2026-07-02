@@ -18,8 +18,7 @@ on:
       - "vitest.config.ts"
       - "next.config.*"
 
-permissions:
-  contents: read
+permissions: read-all  # default read; writes scoped to job below
 
 jobs:
   test:

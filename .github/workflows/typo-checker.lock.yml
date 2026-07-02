@@ -61,7 +61,7 @@ on:
         required: false
         type: string
 
-permissions: {}
+permissions: read-all  # default read; writes scoped to job below
 
 concurrency:
   group: "gh-aw-${{ github.workflow }}"

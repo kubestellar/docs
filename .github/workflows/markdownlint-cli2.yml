@@ -9,8 +9,7 @@ on:
       - "docs/**/*.md"
       - "docs/**/*.mdx"
 
-permissions:
-  contents: read
+permissions: read-all  # default read; writes scoped to job below
 
 jobs:
   markdownlint:

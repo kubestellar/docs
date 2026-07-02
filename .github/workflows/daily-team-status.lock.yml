@@ -30,6 +30,9 @@
 # Effective stop-time: 2026-01-03 19:22:35
 
 name: "Daily Team Status"
+
+permissions: read-all  # default read; writes scoped to job below
+
 "on":
   schedule:
   - cron: "0 9 * * 1-5"

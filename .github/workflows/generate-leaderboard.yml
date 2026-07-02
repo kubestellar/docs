@@ -1,5 +1,7 @@
 name: Generate Leaderboard Data
 
+permissions: read-all  # default read; writes scoped to job below
+
 on:
   schedule:
     - cron: '0 2,6,10,14,18,22 * * *'  # Every 4 hours (6x daily)
