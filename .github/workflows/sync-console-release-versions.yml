@@ -36,9 +36,11 @@ jobs:
       - name: Discover stable console releases
         id: releases
         run: |
-          RELEASES_JSON=$(gh api repos/kubestellar/console/releases --paginate)
-          RELEASES_JSON="$RELEASES_JSON" node - <<'NODE' >> "$GITHUB_OUTPUT"
-          const releases = JSON.parse(process.env.RELEASES_JSON ?? '[]')
+          RELEASES_JSON_FILE=$(mktemp)
+          gh api repos/kubestellar/console/releases --paginate > "$RELEASES_JSON_FILE"
+          RELEASES_JSON_FILE="$RELEASES_JSON_FILE" node - <<'NODE' >> "$GITHUB_OUTPUT"
+          const fs = require('fs')
+          const releases = JSON.parse(fs.readFileSync(process.env.RELEASES_JSON_FILE, 'utf8') || '[]')
             .filter((release) => !release.draft && !release.prerelease)
             .map((release) => release.tag_name)
             .filter((tag) => /^v\d+\.\d+\.\d+$/.test(tag))
