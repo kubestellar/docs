@@ -1,6 +1,5 @@
 name: Add Help Wanted Label
 
-permissions: read-all  # default read; writes scoped to job below
 
 on:
   issues:

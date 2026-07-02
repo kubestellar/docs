@@ -1,6 +1,5 @@
 name: Feedback Wanted
 
-permissions: read-all  # default read; writes scoped to job below
 
 on:
   pull_request:

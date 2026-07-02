@@ -58,7 +58,6 @@
 
 name: "Maintainer Metrics Tracker"
 
-permissions: read-all  # default read; writes scoped to job below
 
 "on":
   workflow_dispatch:
