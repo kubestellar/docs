@@ -21,8 +21,7 @@ on:
       - "tsconfig.json"
       - "eslint.config.*"
 
-permissions:
-  contents: read
+permissions: read-all  # default read; writes scoped to job below
 
 jobs:
   typecheck:

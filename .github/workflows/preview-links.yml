@@ -6,8 +6,7 @@ on:
     paths:
       - 'docs/content/**/*.md'
 
-permissions:
-  contents: read
+permissions: read-all  # default read; writes scoped to job below
 
 jobs:
   collect-pr-info:
