@@ -51,7 +51,6 @@
 
 name: "Link Checker"
 
-permissions: read-all  # default read; writes scoped to job below
 
 "on":
   schedule:

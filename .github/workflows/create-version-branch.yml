@@ -1,6 +1,5 @@
 name: Create Version Branch
 
-permissions: read-all  # default read; writes scoped to job below
 
 on:
   repository_dispatch:

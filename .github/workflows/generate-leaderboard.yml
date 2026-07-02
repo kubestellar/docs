@@ -1,6 +1,5 @@
 name: Generate Leaderboard Data
 
-permissions: read-all  # default read; writes scoped to job below
 
 on:
   schedule:
