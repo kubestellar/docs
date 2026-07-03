@@ -112,19 +112,19 @@ For example, list of prerequisites required by KubeStellar can be checked with t
 
 ```shell
 $ scripts/check_pre_req.sh
-Checking pre-requisites for using KubeStellar:
+Checking prerequisites for using KubeStellar:
 ✔ Docker (Docker version 27.2.1-rd, build cc0ee3e)
 ✔ kubectl (v1.29.2)
 ✔ KubeFlex (Kubeflex version: v0.6.3.672cc8a 2024-09-23T16:15:47Z)
 ✔ OCM CLI (:v0.9.0-0-g56e1fc8)
 ✔ Helm (v3.16.1)
 ✔ helm can fetch public charts
-Checking additional pre-requisites for running the examples:
+Checking additional prerequisites for running the examples:
 ✔ Kind (kind v0.22.0 go1.22.0 darwin/arm64)
 ✔ fs.inotify.max_user_watches is 524288
 ✔ fs.inotify.max_user_instances is 512
 ✔ ArgoCD CLI (v2.10.1+a79e0ea)
-Checking pre-requisites for building KubeStellar:
+Checking prerequisites for building KubeStellar:
 ✔ GNU Make (GNU Make 3.81)
 ✔ Go (go version go1.23.2 darwin/arm64)
 ✔ KO (0.16.0)
@@ -136,7 +136,7 @@ In another example, a specific list of prerequisites could be asserted by a high
 
 ```shell
 $ check_pre_req.sh --assert --verbose helm argo docker kind
-Checking KubeStellar pre-requisites:
+Checking KubeStellar prerequisites:
 ✔ Helm
   version (unstructured): version.BuildInfo{Version:"v3.14.0", GitCommit:"3fc9f4b2638e76f26739cd77c7017139be81d0ea", GitTreeState:"clean", GoVersion:"go1.21.5"}
      path: /usr/sbin/helm

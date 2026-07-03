@@ -2,7 +2,7 @@
 
 ## Table of Contents
 - [Overview](#overview)
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [Installing Argo CD using KubeStellar Core chart](#installing-argo-cd-using-kubestellar-core-chart)
 - [Deploying Argo CD applications](#deploying-argo-cd-applications)
 
@@ -16,11 +16,11 @@ This document explains how to use the KubeStellar core Helm chart to:
 
 For a detailed step-by-step installation guide with expected outputs, see [Step-by-Step Installation Guide](core-chart.md).
 
-## Pre-requisites
+## Prerequisites
 
 Before installing Argo CD with KubeStellar Core chart, ensure you have:
 
-- All prerequisites from [installing KubeStellar using the Core chart](core-chart.md#pre-requisites)
+- All prerequisites from [installing KubeStellar using the Core chart](core-chart.md#prerequisites)
 - A properly configured KubeFlex hosting cluster
 - Helm installed and configured
 - kubectl access to your cluster

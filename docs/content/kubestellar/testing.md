@@ -1,6 +1,6 @@
 # Testing
 
-Make sure all pre-requisites are installed as described in [pre-reqs](pre-reqs.md).
+Make sure all prerequisites are installed as described in [pre-reqs](pre-reqs.md).
 
 ## Unit testing
 
