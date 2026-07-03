@@ -20,7 +20,7 @@ After [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install), i
 wsl --install FedoraLinux-43
 ```
 
-Afterwards, the pre-requisites needed by KubeStellar and the demo script can be installed using the command:
+Afterwards, the prerequisites needed by KubeStellar and the demo script can be installed using the command:
 
 ```shell
 bash <(curl -s https://raw.githubusercontent.com/kubestellar/kubestellar/refs/tags/v0.30.0/scripts/setup-wsl-fedora.sh)
