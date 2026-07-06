@@ -46,7 +46,7 @@ jobs:
               --field maintainer="$maintainer"
             
             if [ $? -eq 0 ]; then
-              echo Successfully triggered audit for $maintainer" 
+              echo "Successfully triggered audit for $maintainer" 
             else
               echo "❌ Failed to trigger audit for $maintainer"
               exit 1
