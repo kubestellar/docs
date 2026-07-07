@@ -19,6 +19,37 @@ const nextConfig: NextConfig = {
   },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   async headers() {
+    // Content-Security-Policy for the docs site.
+    // - default-src 'self': blocks all unlisted resource types by default.
+    // - script-src includes 'unsafe-inline' because Next.js/Nextra inject
+    //   inline <script> tags for hydration and i18n. A nonce-based CSP is
+    //   preferable long-term; 'unsafe-inline' is the pragmatic starting point
+    //   that does not break existing functionality. 'unsafe-eval' is excluded
+    //   (not needed by any current dependency). 'wasm-unsafe-eval' allows
+    //   the Mermaid WASM renderer.
+    // - style-src 'unsafe-inline': required by Tailwind CSS and inline styles
+    //   injected by framer-motion and Three.js.
+    // - img-src includes data: for base64-encoded diagrams and blob: for
+    //   canvas snapshots; https: covers external avatars/badges in docs content.
+    // - connect-src covers the docs search API, GitHub API (for version data),
+    //   and Netlify analytics endpoints.
+    // - worker-src blob: is required by the Mermaid diagram renderer.
+    // - frame-ancestors 'none' replaces X-Frame-Options: DENY (equivalent
+    //   but CSP-native; X-Frame-Options kept for older browser compat).
+    const csp = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob: https:",
+      "font-src 'self' data:",
+      "connect-src 'self' https://api.github.com https://www.google-analytics.com",
+      "worker-src blob:",
+      "frame-src 'none'",
+      "frame-ancestors 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+    ].join("; ");
+
     return [
       {
         source: "/(.*)",
@@ -29,6 +60,11 @@ const nextConfig: NextConfig = {
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
+          },
+          { key: "Content-Security-Policy", value: csp },
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
           },
         ],
       },
