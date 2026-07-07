@@ -214,4 +214,4 @@ Add to Claude Desktop config (`~/Library/Application Support/Claude/claude_deskt
 
 ---
 
-*Built with ❤️ by the KubeStellar community*
+*Built with by the KubeStellar community*

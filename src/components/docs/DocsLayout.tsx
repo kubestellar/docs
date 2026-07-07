@@ -35,7 +35,7 @@ export function DocsLayout({ children, toc, metadata, filePath, projectId }: Doc
     <>
       {/* Main content area */}
       <main className="flex-1 min-w-0 lg:ml-0">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mx-auto max-w-4xl px-6 py-10">
           {/* Page header with edit button */}
           <div className="flex items-center justify-between mb-4">
             {/* Mobile Header with Sidebar Toggle - Only visible on mobile/tablet */}
@@ -59,7 +59,19 @@ export function DocsLayout({ children, toc, metadata, filePath, projectId }: Doc
           <MobileTOC toc={toc} />
 
           {/* Article content */}
-          <article className="prose prose-slate dark:prose-invert max-w-none">
+          <article
+            className="
+              prose
+              prose-lg
+              prose-slate
+              dark:prose-invert
+              mx-auto
+              max-w-none
+              prose-headings:scroll-mt-24
+              prose-p:leading-8
+              prose-li:leading-8
+            "
+          >
             {children}
           </article>
         </div>
