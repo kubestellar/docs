@@ -107,11 +107,10 @@ export function sanitizeHtmlForMdx(content: string): string {
     const titleMatch = attrs.match(/title=["']([^"']*)["']/i)
 
     const src = srcMatch ? srcMatch[1] : ''
-    const alt = altMatch ? altMatch[1] : ''
-    const title = titleMatch ? ` title="${titleMatch[1]}"` : ''
-
     if (!src) return ''
-    return `<img src="${src}" alt="${alt}"${title} />`
+    const alt = altMatch ? altMatch[1] : ''
+
+    return `<img src="${escapeAngle(src)}" alt="${escapeAngle(alt)}"${titleMatch ? ` title="${escapeAngle(titleMatch[1])}"` : ''} />`
   })
 
   // Fix self-closing tags
@@ -138,11 +137,15 @@ export function sanitizeHtmlForMdx(content: string): string {
 
   // Remove style tags — loop until stable to prevent nested-tag bypass
   sanitized = stripUntilStable(sanitized, /<style[^>]*>[\s\S]*?<\/style>/gi)
+  // Remove any remaining unclosed <style> opening tags (no matching </style>)
+  sanitized = sanitized.replace(/<style\b[^>]*>/gi, '')
 
   // Remove script tags — loop until stable to prevent nested-tag bypass.
   // Use [^>]* before closing > to also match </script foo="bar"> and other
   // attribute-bearing end tags browsers accept as valid (CodeQL #190).
   sanitized = stripUntilStable(sanitized, /<script[^>]*>[\s\S]*?<\/script[^>]*>/gi)
+  // Remove any remaining unclosed <script> opening tags (no matching </script>)
+  sanitized = sanitized.replace(/<script\b[^>]*>/gi, '')
 
   // Remove <meta>, <link>, <base> tags
   sanitized = sanitized.replace(/<meta\b[^>]*\/?>/gi, '')
