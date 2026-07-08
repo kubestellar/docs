@@ -137,15 +137,17 @@ export function sanitizeHtmlForMdx(content: string): string {
 
   // Remove style tags — loop until stable to prevent nested-tag bypass
   sanitized = stripUntilStable(sanitized, /<style[^>]*>[\s\S]*?<\/style>/gi)
-  // Remove any remaining unclosed <style> opening tags (no matching </style>)
-  sanitized = sanitized.replace(/<style\b[^>]*>/gi, '')
+  // Remove any remaining unclosed <style> opening tags (no matching </style>).
+  // Use stripUntilStable to prevent multi-character bypass (CodeQL CWE-116).
+  sanitized = stripUntilStable(sanitized, /<style\b[^>]*>/gi)
 
   // Remove script tags — loop until stable to prevent nested-tag bypass.
   // Use [^>]* before closing > to also match </script foo="bar"> and other
   // attribute-bearing end tags browsers accept as valid (CodeQL #190).
   sanitized = stripUntilStable(sanitized, /<script[^>]*>[\s\S]*?<\/script[^>]*>/gi)
-  // Remove any remaining unclosed <script> opening tags (no matching </script>)
-  sanitized = sanitized.replace(/<script\b[^>]*>/gi, '')
+  // Remove any remaining unclosed <script> opening tags (no matching </script>).
+  // Use stripUntilStable to prevent multi-character bypass (CodeQL CWE-116).
+  sanitized = stripUntilStable(sanitized, /<script\b[^>]*>/gi)
 
   // Remove <meta>, <link>, <base> tags
   sanitized = sanitized.replace(/<meta\b[^>]*\/?>/gi, '')
