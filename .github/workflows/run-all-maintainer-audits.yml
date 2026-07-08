@@ -10,10 +10,13 @@ permissions: read-all
 
 jobs:
   audit-all:
-    # actions:write needed to trigger maintainer-metrics.lock.yml workflow via gh workflow run
-    # This is the minimum permission required for workflow_dispatch operations
+    # Justification: job-level write token required to trigger downstream workflow via gh workflow run.
+    # actions:write is the minimum permission for workflow_dispatch; contents:read satisfies checkout.
+    # Workflow-level permissions: read-all (above) provide the safe default.
     permissions:
       contents: read
+      # actions:write needed to trigger maintainer-metrics.lock.yml workflow via gh workflow run
+      # This is the minimum permission required for workflow_dispatch operations
       actions: write
     runs-on: ubuntu-latest
 

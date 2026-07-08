@@ -10,6 +10,10 @@ permissions: read-all
 
 jobs:
   generate:
+    # Justification: job-level write tokens required for two distinct operations.
+    # contents:write: needed to commit and push updated ACMM history data to the repo.
+    # issues:write: needed to open a GitHub Issue when the workflow fails for visibility.
+    # Workflow-level permissions: read-all (above) provide the safe default.
     permissions:
       # contents:write required to commit ACMM history data
       contents: write
