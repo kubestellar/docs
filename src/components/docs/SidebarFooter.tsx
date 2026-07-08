@@ -33,7 +33,7 @@ export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }
 
     return (
       <div
-        className="shrink-0 sticky flex flex-col items-center gap-2 py-4 min-w-16 border-t border-gray-200 dark:border-gray-700"
+        className="shrink-0 sticky flex flex-col items-center gap-2 py-16 min-w-16 border-t border-gray-200 dark:border-gray-700"
         suppressHydrationWarning
       >
         {/* Theme Toggle Icon */}
