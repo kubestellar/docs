@@ -17,6 +17,25 @@ jobs:
       statuses: write
     steps:
       - name: Validate PR title (Conventional Commits)
-        uses: amannn/action-semantic-pull-request@v5
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          # Allow optional [scanner], [agent], [ci-maintainer], [quality], [sec-check] prefix
+          # before the conventional commit type for automated PRs.
+          PATTERN='^(\[(scanner|agent|ci-maintainer|quality|sec-check)\] )?(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?!?: .+'
+          if echo "$PR_TITLE" | grep -qE "$PATTERN"; then
+            echo "PR title is valid: $PR_TITLE"
+          else
+            echo "::error::PR title does not follow Conventional Commits format."
+            echo ""
+            echo "The PR title must follow Conventional Commits format."
+            echo "Automated PRs may use an optional prefix like [scanner] or [agent]."
+            echo ""
+            echo "Examples:"
+            echo "  fix: correct typo"
+            echo "  [scanner] fix: pin SHA"
+            echo "  feat(scope): add feature"
+            echo ""
+            echo "Allowed types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert"
+            exit 1
+          fi
