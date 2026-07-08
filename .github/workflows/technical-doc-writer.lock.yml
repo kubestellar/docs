@@ -349,7 +349,12 @@ jobs:
   agent:
     needs: activation
     runs-on: ubuntu-latest
-    permissions: read-all
+    permissions:
+      # Minimum permissions for the agent execution job.
+      # Writes (PR creation, file commits) are delegated to safe_outputs / conclusion jobs.
+      actions: read
+      contents: read
+      pull-requests: read
     env:
       DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
       GH_AW_ASSETS_ALLOWED_EXTS: ""
@@ -1286,6 +1291,10 @@ jobs:
       (github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'doc update') && contains(github.event.comment.body, '/technical-doc-writer')) ||
       (github.event_name == 'workflow_dispatch' && github.event.inputs.issue_number != '')
     runs-on: ubuntu-slim
+    permissions:
+      # Minimum permissions: read repo content and check org/repo membership
+      contents: read
+      members: read
     outputs:
       activated: ${{ steps.check_membership.outputs.is_team_member == 'true' }}
       matched_command: ''

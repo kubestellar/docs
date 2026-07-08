@@ -32,11 +32,13 @@ on:
         default: true
 
 
-permissions: {}
+permissions: {}  # no default; all permissions are declared explicitly per-job below
 jobs:
   create-branch:
     permissions:
       # Required: creates version branches and PRs to update version metadata
+      # contents:write needed for branch creation + file commits
+      # pull-requests:write needed for PR creation and auto-approve comments
       contents: write
       pull-requests: write
     runs-on: ubuntu-latest
