@@ -15,5 +15,6 @@ permissions:
 
 jobs:
   analysis:
-    uses: kubestellar/infra/.github/workflows/reusable-scorecard.yml@1a04a3fd17771e78e5cf6d42a3fda84e3ba478f3 # main pinned 2026-07-07
-    secrets: inherit
+    # Pinned to avoid supply-chain risk from mutable @main reference.
+    # secrets:inherit removed — Scorecard uses GITHUB_TOKEN (automatic) + OIDC (id-token:write above).
+    uses: kubestellar/infra/.github/workflows/reusable-scorecard.yml@1a04a3fd17771e78e5cf6d42a3fda84e3ba478f3 # main 2026-07-07
