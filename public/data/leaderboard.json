@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-08T14:50:53.037Z",
-  "git_hash": "7cdc7a7",
+  "generated_at": "2026-07-08T18:33:24.199Z",
+  "git_hash": "9b69a02",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-04-20",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 5522350,
+      "total_points": 5526650,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 605,
         "feature_issues": 909,
-        "other_issues": 1802,
-        "prs_opened": 7869,
-        "prs_merged": 7172
+        "other_issues": 1826,
+        "prs_opened": 7877,
+        "prs_merged": 7175
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         1047,
         704,
         586,
-        192
+        224
       ],
-      "recent_activity_score": 2193.17,
+      "recent_activity_score": 2225.17,
       "rank": 1
     },
     {
@@ -1310,6 +1310,36 @@
       "rank": 43
     },
     {
+      "login": "DavidDiaz0317",
+      "avatar_url": "https://avatars.githubusercontent.com/u/183157248?v=4",
+      "total_points": 3000,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 5,
+        "prs_merged": 4
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        2
+      ],
+      "recent_activity_score": 5.17,
+      "rank": 44
+    },
+    {
       "login": "AdityaM-IITH",
       "avatar_url": "https://avatars.githubusercontent.com/u/257356677?v=4",
       "total_points": 2800,
@@ -1337,36 +1367,6 @@
         0
       ],
       "recent_activity_score": 0.63,
-      "rank": 44
-    },
-    {
-      "login": "DavidDiaz0317",
-      "avatar_url": "https://avatars.githubusercontent.com/u/183157248?v=4",
-      "total_points": 2800,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 4,
-        "prs_merged": 4
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        4,
-        1
-      ],
-      "recent_activity_score": 4.17,
       "rank": 45
     },
     {
