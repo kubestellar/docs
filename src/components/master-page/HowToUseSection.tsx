@@ -1,635 +1,269 @@
 "use client";
 
-import { GridLines, StarField } from "../index";
+import { useEffect, useState } from "react";
+import { Link as IntlLink } from "@/i18n/navigation";
+import { GridLines, StarField, GlobeAnimation } from "../index";
 import { useTranslations } from "next-intl";
-import { useState, useEffect, useRef } from "react";
 
-export default function HowToUseSection() {
-  const t = useTranslations("howToUseSection");
-  const [showAllSteps, setShowAllSteps] = useState(false);
-  const stepsRef = useRef<HTMLDivElement>(null);
+export default function HeroSection() {
+  const t = useTranslations("heroSection");
 
+  const installScript = "curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash";
+
+  const [displayedText, setDisplayedText] = useState("");
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(installScript);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy text:", err);
+    }
+  };
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("step-visible");
+    let typingInterval: NodeJS.Timeout;
+    let restartTimeout: NodeJS.Timeout;
+  
+    const startTyping = () => {
+      let index = 0;
+      setDisplayedText("");
+  
+      typingInterval = setInterval(() => {
+        index++;
+        setDisplayedText(installScript.slice(0, index));
+  
+        if (index >= installScript.length) {
+          clearInterval(typingInterval);
+  
+          // Wait 30 seconds before restarting
+          restartTimeout = setTimeout(() => {
+            startTyping();
+          }, 30000);
+        }
+      }, 35);
+    };
+  
+    startTyping();
+  
+    // Animated Counters
+    const animateCounters = () => {
+      const counters = document.querySelectorAll(".counter");
+  
+      counters.forEach((counter) => {
+        const target = parseInt(counter.getAttribute("data-target") || "0", 10);
+  
+        const duration = 2000;
+        const step = target / (duration / 16);
+  
+        let current = 0;
+  
+        const timer = setInterval(() => {
+          current += step;
+  
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
           }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      }
-    );
-
-    const steps = document.querySelectorAll(".step-animate");
-    steps.forEach(step => observer.observe(step));
-
-    return () => observer.disconnect();
-  }, [showAllSteps]);
+  
+          counter.textContent = Math.floor(current).toString();
+        }, 16);
+      });
+    };
+  
+    animateCounters();
+  
+    return () => {
+      clearInterval(typingInterval);
+      clearTimeout(restartTimeout);
+    };
+  }, [installScript]);
 
   return (
-    <section
-      id="how-to-use"
-      className="relative py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden will-change-transform"
-    >
-      {/* Dark base background */}
-      <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-
-      {/* Starfield background */}
-      <StarField density="medium" showComets={true} cometCount={3} />
-
-      {/* Grid lines background */}
-      <GridLines horizontalLines={21} verticalLines={18} />
-
-      <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-blue-500/10 to-transparent"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl font-extrabold text-white sm:text-[2.4rem]">
-            {t("title")}{" "}
-            <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
-              {t("titleSpan")}
-            </span>
-          </h2>
-          <p className="mt-3 sm:mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-gray-300 px-4">
-            {t("subtitle")}
-          </p>
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white min-h-screen flex items-center">
+      {/* Animated Background Universe */}
+      <div className="absolute inset-0 z-0">
+        {/*!-- Floating Nebula Clouds */}
+        {/* Dynamic Star Field */}
+        <div className="absolute inset-0 bg-[#0a0a0a]">
+          <StarField density="medium" showComets={true} cometCount={8} />
         </div>
 
-        {/* Mobile Steps Layout */}
-        <div className="lg:hidden relative z-10" ref={stepsRef}>
-          {/* Mobile Step 1 */}
-          <div className="mb-8 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out">
-            <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
-              {/* Step Number at Top */}
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">1</span>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <h3 className="text-lg font-bold text-white mb-2 text-center">
-                  {t("step1Title")}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed mb-3 text-center">
-                  {t("step1Description")}
-                </p>
-                <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
-                  <pre className="text-xs font-mono text-white">
-                    <code>
-                      <span className="text-gray-400">
-                        {t("step1CodeComment")}
-                      </span>
-                      {"\n"}
-                      <span className="text-blue-400">
-                        {t("step1Tool1")}
-                      </span>,{" "}
-                      <span className="text-blue-400">{t("step1Tool2")}</span>,{" "}
-                      <span className="text-blue-400">{t("step1Tool3")}</span>,{" "}
-                      <span className="text-blue-400">{t("step1Tool4")}</span>
-                      {"\n"}
-                      <span className="text-blue-400">{t("step1Tool5")}</span>
-                      {"\n"}
-                      <span className="text-blue-400">{t("step1Tool6")}</span>
-                    </code>
-                  </pre>
-                </div>
-              </div>
-            </div>
-            {/* Mobile Connector */}
-            <div className="flex justify-center mt-4">
-              <div className="w-0.5 h-6 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-            </div>
-          </div>
-
-          {/* Mobile Step 2 */}
-          <div className="mb-8 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-100">
-            <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
-              {/* Step Number at Top */}
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">2</span>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <h3 className="text-lg font-bold text-white mb-2 text-center">
-                  {t("step2Title")}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed mb-3 text-center">
-                  {t("step2Description")}
-                </p>
-                <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
-                  <pre className="text-xs font-mono text-white">
-                    <code>
-                      <span className="text-gray-400">
-                        {t("step2CodeComment")}
-                      </span>
-                      {"\n"}
-                      <span className="text-blue-400">
-                        {t("step2Command")}
-                      </span>{" "}
-                      <span className="text-white">{t("step2Cluster")}</span> \
-                      {"\n"}
-                      <span className="text-emerald-400">
-                        {t("step2Label1")}
-                      </span>{" "}
-                      \{"\n"}
-                      <span className="text-emerald-400">
-                        {t("step2Label2")}
-                      </span>
-                    </code>
-                  </pre>
-                </div>
-              </div>
-            </div>
-            {/* Mobile Connector */}
-            <div className="flex justify-center mt-4">
-              <div className="w-0.5 h-6 bg-gradient-to-b from-purple-500 to-green-500"></div>
-            </div>
-          </div>
-
-          {/* Mobile Step 3 */}
-          <div className="mb-8 relative step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200">
-            <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
-              {/* Step Number at Top */}
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-sm">3</span>
-                </div>
-              </div>
-
-              <div className="pt-2">
-                <h3 className="text-lg font-bold text-white mb-2 text-center">
-                  {t("step3Title")}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed mb-3 text-center">
-                  {t("step3Description")}
-                </p>
-                <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
-                  <pre className="text-xs font-mono text-white">
-                    <code>
-                      <span className="text-yellow-300">apiVersion</span>:{" "}
-                      <span className="text-white">{t("step3ApiVersion")}</span>
-                      {"\n"}
-                      <span className="text-yellow-300">kind</span>:{" "}
-                      <span className="text-white">{t("step3Kind")}</span>
-                      {"\n"}
-                      <span className="text-yellow-300">spec</span>:{"\n"}
-                      {"  "}
-                      <span className="text-yellow-300">
-                        {t("step3SpecClusterSelectors")}
-                      </span>
-                      :{"\n"}
-                      {"  - "}
-                      <span className="text-yellow-300">
-                        {t("step3MatchLabels")}
-                      </span>
-                      :{"\n"}
-                      {"      "}
-                      <span className="text-emerald-400">
-                        {t("step3LocationGroup")}
-                      </span>
-                    </code>
-                  </pre>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile Connector - only show if steps are expanded */}
-            {showAllSteps && (
-              <div className="flex justify-center mt-4">
-                <div className="w-0.5 h-6 bg-gradient-to-b from-green-500 to-orange-500"></div>
-              </div>
-            )}
-
-            {/* Blur Overlay - Full Width */}
-            {!showAllSteps && (
-              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent pointer-events-none z-30 flex items-end justify-center pb-4">
-                <button
-                  onClick={() => setShowAllSteps(true)}
-                  className="pointer-events-auto px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 animate-bounce-slow"
-                >
-                  <span>{t("showMoreSteps")}</span>
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* Mobile Step 4 */}
-          {showAllSteps && (
-            <div className="mb-8 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-300">
-              <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
-                {/* Step Number at Top */}
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-sm">4</span>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <h3 className="text-lg font-bold text-white mb-2 text-center">
-                    {t("step4Title")}
-                  </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-3 text-center">
-                    {t("step4Description")}
-                  </p>
-                  <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
-                    <pre className="text-xs font-mono text-white">
-                      <code>
-                        <span className="text-yellow-300">apiVersion</span>:{" "}
-                        <span className="text-white">
-                          {t("step4ApiVersion")}
-                        </span>
-                        {"\n"}
-                        <span className="text-yellow-300">kind</span>:{" "}
-                        <span className="text-white">{t("step4Kind")}</span>
-                        {"\n"}
-                        <span className="text-yellow-300">metadata</span>:{"\n"}
-                        {"  "}
-                        <span className="text-yellow-300">name</span>:{" "}
-                        <span className="text-white">
-                          {t("step4MetadataName")}
-                        </span>
-                        {"\n"}
-                        {"  "}
-                        <span className="text-yellow-300">
-                          {t("step4Labels")}
-                        </span>
-                        :{"\n"}
-                        {"    "}
-                        <span className="text-emerald-400">
-                          {t("step4AppName")}
-                        </span>
-                      </code>
-                    </pre>
-                  </div>
-                </div>
-              </div>
-              {/* Mobile Connector */}
-              <div className="flex justify-center mt-4">
-                <div className="w-0.5 h-6 bg-gradient-to-b from-orange-500 to-purple-500"></div>
-              </div>
-            </div>
-          )}
-
-          {/* Mobile Step 5 */}
-          {showAllSteps && (
-            <div className="mb-8 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-400">
-              <div className="bg-gray-800/40 backdrop-blur-md rounded-lg p-4 border border-white/10 relative">
-                {/* Step Number at Top */}
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-sm">5</span>
-                  </div>
-                </div>
-
-                <div className="pt-2">
-                  <h3 className="text-lg font-bold text-white mb-2 text-center">
-                    {t("step5Title")}
-                  </h3>
-                  <p className="text-gray-300 text-sm leading-relaxed mb-3 text-center">
-                    {t("step5Description")}
-                  </p>
-                  <div className="bg-slate-900/90 rounded-lg p-3 overflow-x-auto">
-                    <pre className="text-xs font-mono text-white">
-                      <code>
-                        <span className="text-gray-400">
-                          {t("step5Command1Comment")}
-                        </span>
-                        {"\n"}
-                        <span className="text-emerald-400">
-                          kubectl get pods -A
-                        </span>
-                        {"\n"}
-                        {"\n"}
-                        <span className="text-gray-400">
-                          {t("step5Command2Comment")}
-                        </span>
-                        {"\n"}
-                        <span className="text-emerald-400">
-                          kubectl get deployments -A
-                        </span>
-                        {"\n"}
-                        {"\n"}
-                        <span className="text-gray-400">
-                          {t("step5Command3Comment")}
-                        </span>
-                        {"\n"}
-                        <span className="text-emerald-400">
-                          kubectl describe deployment example-app
-                        </span>
-                      </code>
-                    </pre>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+        {/* Interactive Grid Network */}
+        <div className="absolute inset-0">
+          <GridLines verticalLines={15} horizontalLines={18} />
         </div>
 
-        {/* Desktop Layout */}
-        <div className="hidden lg:block relative z-10">
-          {/* Connection Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 via-green-500 via-orange-500 to-purple-500 z-5 transform -translate-x-1/2 will-change-transform"></div>
+        {/* Floating Data Particles */}
+        <div className="absolute inset-0">
+          <div
+            className="data-particle"
+            style={{ "--delay": "0s" } as React.CSSProperties}
+          ></div>
+          <div
+            className="data-particle"
+            style={{ "--delay": "1s" } as React.CSSProperties}
+          ></div>
+          <div
+            className="data-particle"
+            style={{ "--delay": "2s" } as React.CSSProperties}
+          ></div>
+          <div
+            className="data-particle"
+            style={{ "--delay": "3s" } as React.CSSProperties}
+          ></div>
+          <div
+            className="data-particle"
+            style={{ "--delay": "4s" } as React.CSSProperties}
+          ></div>
+          <div
+            className="data-particle"
+            style={{ "--delay": "5s" } as React.CSSProperties}
+          ></div>
+        </div>
+      </div>
 
-          {/* Desktop Step 1 */}
-          <div className="relative mb-4 lg:mb-6 z-20 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out">
-            <div className="flex flex-row items-center">
-              <div className="w-1/2 pr-12">
-                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
-                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 mr-3 text-white font-bold text-sm">
-                      1
-                    </span>
-                    {t("step1Title")}
-                  </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {t("step1DescriptionDesktop")}
-                  </p>
-                  <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
-                    <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
-                      <code>
-                        <span className="text-gray-400">
-                          {t("step1CodeComment")}
-                        </span>
-                        {"\n"}
-                        <span className="text-blue-400">{t("step1Tool1")}</span>
-                        ,{" "}
-                        <span className="text-blue-400">{t("step1Tool2")}</span>
-                        ,{" "}
-                        <span className="text-blue-400">{t("step1Tool3")}</span>
-                        ,{" "}
-                        <span className="text-blue-400">{t("step1Tool4")}</span>
-                        {"\n"}
-                        <span className="text-blue-400">{t("step1Tool5")}</span>
-                        {"\n"}
-                        <span className="text-blue-400">{t("step1Tool6")}</span>
-                      </code>
-                    </pre>
-                  </div>
-                </div>
-              </div>
-              <div className="w-1/2 pl-12"></div>
-            </div>
-          </div>
-
-          {/* Desktop Step 2 */}
-          <div className="relative mb-4 lg:mb-6 z-20 -mt-20 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-100">
-            <div className="flex flex-row-reverse items-center">
-              <div className="w-1/2 pl-12">
-                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
-                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-600 mr-3 text-white font-bold text-sm">
-                      2
-                    </span>
-                    {t("step2Title")}
-                  </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {t("step2DescriptionDesktop")}
-                  </p>
-                  <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
-                    <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
-                      <code>
-                        <span className="text-gray-400">
-                          {t("step2CodeComment")}
-                        </span>
-                        {"\n"}
-                        <span className="text-blue-400">
-                          {t("step2Command")}
-                        </span>{" "}
-                        <span className="text-white">{t("step2Cluster")}</span>{" "}
-                        \{"\n"}
-                        <span className="text-emerald-400">
-                          {t("step2Label1")}
-                        </span>{" "}
-                        \{"\n"}
-                        <span className="text-emerald-400">
-                          {t("step2Label2")}
-                        </span>
-                      </code>
-                    </pre>
-                  </div>
-                </div>
-              </div>
-              <div className="w-1/2 pr-12"></div>
-            </div>
-          </div>
-
-          {/* Desktop Step 3 */}
-          <div className="relative mb-4 lg:mb-6 z-20 -mt-20 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200">
-            <div className="flex flex-row items-center">
-              <div className="w-1/2 pr-12">
-                <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
-                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-600 mr-3 text-white font-bold text-sm">
-                      3
-                    </span>
-                    {t("step3Title")}
-                  </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {t("step3DescriptionDesktop")}
-                  </p>
-                  <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
-                    <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
-                      <code>
-                        <span className="text-yellow-300">apiVersion</span>:{" "}
-                        <span className="text-white">
-                          {t("step3ApiVersion")}
-                        </span>
-                        {"\n"}
-                        <span className="text-yellow-300">kind</span>:{" "}
-                        <span className="text-white">{t("step3Kind")}</span>
-                        {"\n"}
-                        <span className="text-yellow-300">metadata</span>:{"\n"}
-                        {"  "}
-                        <span className="text-yellow-300">name</span>:{" "}
-                        <span className="text-white">
-                          {t("step3MetadataName")}
-                        </span>
-                        {"\n"}
-                        <span className="text-yellow-300">spec</span>:{"\n"}
-                        {"  "}
-                        <span className="text-yellow-300">
-                          {t("step3SpecClusterSelectors")}
-                        </span>
-                        :{"\n"}
-                        {"  - "}
-                        <span className="text-yellow-300">
-                          {t("step3MatchLabels")}
-                        </span>
-                        :{"\n"}
-                        {"      "}
-                        <span className="text-emerald-400">
-                          {t("step3LocationGroup")}
-                        </span>
-                      </code>
-                    </pre>
-                  </div>
-                </div>
-              </div>
-              <div className="w-1/2 pl-12"></div>
+      {/* Main Content Container */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+          {/* Left Column: Interactive Content */}
+          <div className="hero-content space-y-5 sm:space-y-6 lg:space-y-7 flex flex-col">
+            {/* Heading now sits in the left column so globe and heading share the same top alignment on desktop */}
+            <div className="heading-container pt-0">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.03]">
+                <span className="block text-white mb-2 animate-text-reveal pt-1">
+                  <span className="text-gradient lg:whitespace-nowrap">{t("line1")}</span>
+                </span>
+                <span className="block animate-text-reveal">
+                  <span className="text-gradient-animated lg:whitespace-nowrap">{t("line2")}</span>
+                </span>
+                <span className="block animate-text-reveal [animation-delay:0.4s]">
+                  <span className="text-gradient-animated lg:whitespace-nowrap">{t("line3")}</span>
+                </span>
+              </h1>
             </div>
 
-            {/* Blur Overlay - Full Width Desktop */}
-            {!showAllSteps && (
-              <div className="absolute inset-x-0 bottom-0 h-60 bg-gradient-to-t from-slate-900 via-slate-900/95 to-transparent pointer-events-none z-40 flex items-end justify-center pb-12">
-                <button
-                  onClick={() => setShowAllSteps(true)}
-                  className="pointer-events-auto px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-3 border border-purple-400/30 animate-bounce-slow"
-                >
-                  <span className="text-lg">{t("showMoreSteps")}</span>
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+            {/* Paragraph with fade-in-up effect and delay */}
+            <p className="sm:text-xl text-gray-300 max-w-2xl leading-snug animate-fade-in-up opacity-0 [animation-delay:0.6s] [animation-fill-mode:forwards]">
+              {t("subtitle")}
+            </p>
+
+            {/* Get Started Heading */}
+            <h3 className="text-xl font-bold text-white">
+              Get Started with{" "}
+              <span className="text-gradient animated-gradient bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+                KubeStellar Console
+              </span>
+            </h3>
+
+            {/* Install Command */}
+            <div className="command-center-container">
+              <div className="bg-black/50 backdrop-blur-xl border border-green-500/20 rounded-2xl p-5 shadow-2xl">
+
+                <div className="flex items-center justify-between">
+
+                  <div className="flex items-center flex-1 overflow-hidden">
+
+                    <span className="text-green-400 font-mono mr-3 select-none">
+                      $
+                    </span>
+
+                    <code className="font-mono text-green-300 text-sm whitespace-nowrap overflow-x-auto scrollbar-hide">
+                      {displayedText}
+
+                      <span className="ml-0.5 inline-block w-[2px] h-5 bg-green-400 animate-pulse align-middle"></span>
+                    </code>
+
+                  </div>
+
+                  <button
+                    onClick={handleCopy}
+                    className="ml-4 p-2 rounded-lg hover:bg-white/10 transition-all duration-300 flex-shrink-0"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-              </div>
-            )}
-          </div>
-          {/* Desktop Step 4 */}
-          {showAllSteps && (
-            <div className="relative mb-4 lg:mb-6 z-20 -mt-24 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-300">
-              <div className="flex flex-row-reverse items-center">
-                <div className="w-1/2 pl-12">
-                  <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
-                    <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-600 mr-3 text-white font-bold text-sm">
-                        4
-                      </span>
-                      {t("step4Title")}
-                    </h3>
-                    <p className="text-gray-300 mb-6 leading-relaxed">
-                      {t("step4DescriptionDesktop")}
-                    </p>
-                    <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
-                      <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
-                        <code>
-                          <span className="text-yellow-300">apiVersion</span>:{" "}
-                          <span className="text-white">
-                            {t("step4ApiVersion")}
-                          </span>
-                          {"\n"}
-                          <span className="text-yellow-300">kind</span>:{" "}
-                          <span className="text-white">{t("step4Kind")}</span>
-                          {"\n"}
-                          <span className="text-yellow-300">metadata</span>:
-                          {"\n"}
-                          {"  "}
-                          <span className="text-yellow-300">name</span>:{" "}
-                          <span className="text-white">
-                            {t("step4MetadataName")}
-                          </span>
-                          {"\n"}
-                          {"  "}
-                          <span className="text-yellow-300">
-                            {t("step4Labels")}
-                          </span>
-                          :{"\n"}
-                          {"    "}
-                          <span className="text-emerald-400">
-                            {t("step4AppName")}
-                          </span>
-                          {"\n"}
-                          <span className="text-yellow-300">
-                            {t("step4Spec")}
-                          </span>
-                          :{"\n"}
-                          {"  "}
-                          <span className="text-yellow-300">
-                            {t("step4Replicas")}
-                          </span>
-                          :{" "}
-                          <span className="text-white">
-                            {t("step4ReplicasValue")}
-                          </span>
-                        </code>
-                      </pre>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-1/2 pr-12"></div>
-              </div>
-            </div>
-          )}
+                    {copied ? (
+                      <svg
+                        className="w-5 h-5 text-green-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        className="w-5 h-5 text-sky-400 hover:text-sky-300 transition-colors"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                        />
+                      </svg>
+                    )}
+                  </button>
 
-          {/* Desktop Step 5 */}
-          {showAllSteps && (
-            <div className="relative z-20 -mt-24 step-animate opacity-0 translate-y-8 transition-all duration-700 ease-out delay-400">
-              <div className="flex flex-row items-center">
-                <div className="w-1/2 pr-12">
-                  <div className="relative bg-gray-800/40 backdrop-blur-md rounded-lg p-6 border border-white/10 z-30 transition-all duration-300 hover:bg-gray-800/50 hover:border-white/20">
-                    <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-purple-600 mr-3 text-white font-bold text-sm">
-                        5
-                      </span>
-                      {t("step5Title")}
-                    </h3>
-                    <p className="text-gray-300 mb-6 leading-relaxed">
-                      {t("step5DescriptionDesktop")}
-                    </p>
-                    <div className="bg-slate-900/90 rounded-lg overflow-hidden shadow-lg w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
-                      <pre className="text-sm font-mono text-white p-4 leading-6 whitespace-pre-wrap">
-                        <code>
-                          <span className="text-gray-400">
-                            {t("step5Command1Comment")}
-                          </span>
-                          {"\n"}
-                          <span className="text-emerald-400">
-                            kubectl get pods -A
-                          </span>
-                          {"\n"}
-                          {"\n"}
-                          <span className="text-gray-400">
-                            {t("step5Command2Comment")}
-                          </span>
-                          {"\n"}
-                          <span className="text-emerald-400">
-                            kubectl get deployments -A
-                          </span>
-                          {"\n"}
-                          {"\n"}
-                          <span className="text-gray-400">
-                            {t("step5Command3Comment")}
-                          </span>
-                          {"\n"}
-                          <span className="text-emerald-400">
-                            kubectl describe deployment example-app
-                          </span>
-                        </code>
-                      </pre>
-                    </div>
-                  </div>
                 </div>
-                <div className="w-1/2 pl-12"></div>
+
               </div>
             </div>
-          )}
+
+            {/* Console Links */}
+            <div className="mt-4 flex flex-wrap items-center gap-3 animate-btn-float" style={{ animationDelay: "0.8s" }}>
+              <a
+                href="https://console.kubestellar.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-purple-400/80 bg-transparent px-4 py-2.5 text-sm sm:text-base font-semibold text-purple-200 transition-all duration-200 hover:border-purple-300 hover:bg-purple-400/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+              >
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                {t("buttonInstall")}
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              <IntlLink
+                href="/docs/console/readme"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-sky-400/80 bg-transparent px-4 py-2.5 text-sm sm:text-base font-semibold text-sky-200 transition-all duration-200 hover:border-sky-300 hover:bg-sky-400/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+              >
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                {t("buttonDocs")}
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </IntlLink>
+            </div>
+          </div>
+
+          {/* Right Column: Globe Animation */}
+          <div className="globe-animation-container relative h-[360px] sm:h-[430px] lg:h-[560px] xl:h-[620px] flex items-center justify-center lg:justify-end self-center lg:translate-x-4 xl:translate-x-6">
+            <GlobeAnimation
+              width="100%"
+              height="100%"
+              className="h-full w-full max-w-[680px] rounded-xl overflow-hidden"
+              showLoader={true}
+              enableControls={true}
+              enablePan={false}
+              autoRotate={true}
+              style={{
+                filter: "drop-shadow(0 25px 50px rgba(59, 130, 246, 0.3))",
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>

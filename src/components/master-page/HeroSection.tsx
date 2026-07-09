@@ -7,9 +7,12 @@ import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
   const t = useTranslations("heroSection");
-  const [copied, setCopied] = useState(false);
 
-  const installScript = `curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash`; 
+    const installScript =
+      "curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash";
+
+    const [displayedText, setDisplayedText] = useState("");
+    const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
     try {
@@ -17,59 +20,57 @@ export default function HeroSection() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error("Failed to copy text: ", err);
+      console.error("Failed to copy text:", err);
     }
   };
   useEffect(() => {
-    // Enhanced typing animation for terminal
-    const initTypingAnimation = () => {
-      const typingText = document.querySelector(".typing-text") as HTMLElement;
-      const commandResponse = document.querySelector(
-        ".command-response"
-      ) as HTMLElement;
-
-      if (typingText && commandResponse) {
-        const text = typingText.textContent || "";
-        typingText.textContent = "";
-
-        let i = 0;
-        const typeInterval = setInterval(() => {
-          if (i < text.length) {
-            typingText.textContent += text.charAt(i);
-            i++;
-          } else {
-            clearInterval(typeInterval);
-            setTimeout(() => {
-              commandResponse.style.opacity = "1";
-            }, 500);
-          }
-        }, 50);
+    // -----------------------------
+    // Typewriter Animation
+    // -----------------------------
+    let index = 0;
+  
+    const typingInterval = setInterval(() => {
+      setDisplayedText(installScript.slice(0, index + 1));
+      index++;
+  
+      if (index >= installScript.length) {
+        clearInterval(typingInterval);
       }
-    };
-
-    // Animated counters
+    }, 30);
+  
+    // -----------------------------
+    // Animated Counters
+    // -----------------------------
     const animateCounters = () => {
       const counters = document.querySelectorAll(".counter");
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute("data-target") || "0");
+  
+      counters.forEach((counter) => {
+        const target = parseInt(
+          counter.getAttribute("data-target") || "0",
+          10
+        );
+  
         const duration = 2000;
         const step = target / (duration / 16);
+  
         let current = 0;
-
+  
         const timer = setInterval(() => {
           current += step;
+  
           if (current >= target) {
             current = target;
             clearInterval(timer);
           }
+  
           counter.textContent = Math.floor(current).toString();
         }, 16);
       });
     };
-
-    // Initialize components
-    initTypingAnimation();
+  
     animateCounters();
+  
+    return () => clearInterval(typingInterval);
   }, []);
 
   return (
@@ -151,27 +152,61 @@ export default function HeroSection() {
 
             {/* Install Command */}
             <div className="command-center-container">
-              <div className="bg-black/40 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-5 shadow-2xl animate-command-glow">
+              <div className="bg-black/50 backdrop-blur-xl border border-green-500/20 rounded-2xl p-5 shadow-2xl">
+
                 <div className="flex items-center justify-between">
-                  <div className="font-mono text-sm text-blue-300 leading-relaxed overflow-x-auto">
-                    <span className="text-green-400 mr-2">$</span>
-                    curl -sSL https://raw.githubusercontent.com/kubestellar/console/main/start.sh | bash
+
+                  <div className="flex items-center flex-1 overflow-hidden">
+
+                    <span className="text-green-400 font-mono mr-3 select-none">
+                      $
+                    </span>
+
+                    <code className="font-mono text-green-300 text-sm whitespace-nowrap overflow-x-auto scrollbar-hide">
+                      {displayedText}
+
+                      <span className="ml-0.5 inline-block w-[2px] h-5 bg-green-400 animate-pulse align-middle"></span>
+                    </code>
+
                   </div>
+
                   <button
                     onClick={handleCopy}
-                    className="copy-button ml-4 rounded-md p-2 flex-shrink-0 transition-all duration-200"
+                    className="ml-4 p-2 rounded-lg hover:bg-white/10 transition-all duration-300 flex-shrink-0"
                   >
                     {copied ? (
-                      <svg className="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <svg
+                        className="w-5 h-5 text-green-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                     ) : (
-                      <svg className="w-4 h-4 text-sky-400 hover:text-sky-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      <svg
+                        className="w-5 h-5 text-sky-400 hover:text-sky-300 transition-colors"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                        />
                       </svg>
                     )}
                   </button>
+
                 </div>
+
               </div>
             </div>
 
