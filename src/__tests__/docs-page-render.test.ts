@@ -16,6 +16,16 @@ import { describe, expect, it, vi } from 'vitest'
 import { createElement, type ReactNode } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 
+// nextra's evaluate() injects react/jsx-dev-runtime whenever NODE_ENV is not
+// "production", while the MDX compiled by compileMdx emits production _jsx()
+// calls. Under vitest NODE_ENV is "test", so the two disagree and rendering
+// fails with "_jsx is not a function". Next.js never hits this because its
+// NODE_ENV is always "production" or "development". Pin NODE_ENV before the
+// nextra modules are imported so compile and evaluate agree.
+vi.hoisted(() => {
+  process.env.NODE_ENV = 'production'
+})
+
 // The DocsLayout tree contains client components that use next/navigation's
 // usePathname (breadcrumb in MobileHeader). Outside a running Next.js app the
 // hook returns null and the breadcrumb code would crash, so pin a pathname.
