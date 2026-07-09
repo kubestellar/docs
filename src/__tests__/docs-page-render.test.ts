@@ -20,10 +20,20 @@ import { renderToStaticMarkup } from 'react-dom/server'
 // "production", while the MDX compiled by compileMdx emits production _jsx()
 // calls. Under vitest NODE_ENV is "test", so the two disagree and rendering
 // fails with "_jsx is not a function". Next.js never hits this because its
-// NODE_ENV is always "production" or "development". Pin NODE_ENV before the
-// nextra modules are imported so compile and evaluate agree.
-vi.hoisted(() => {
-  process.env.NODE_ENV = 'production'
+// NODE_ENV is always "production" or "development". Re-implement evaluate's
+// tiny runtime-injection shim with the production JSX runtime that matches
+// compileMdx's output; the compile step and the DocsLayout wrapper under test
+// stay fully real.
+vi.mock('nextra/evaluate', async () => {
+  const runtime = await import('react/jsx-runtime')
+  return {
+    evaluate(rawJs: string, components = {}, scope: Record<string, unknown> = {}) {
+      const keys = Object.keys(scope)
+      const values = Object.values(scope)
+      const hydrateFn = Reflect.construct(Function, ['$', ...keys, rawJs])
+      return hydrateFn({ ...runtime, useMDXComponents: () => components }, ...values)
+    },
+  }
 })
 
 // The DocsLayout tree contains client components that use next/navigation's
