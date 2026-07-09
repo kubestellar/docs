@@ -1,7 +1,21 @@
 import { defineConfig } from 'vitest/config'
+import { transformWithEsbuild } from 'vite'
 import path from 'path'
 
 export default defineConfig({
+  plugins: [
+    {
+      // mdx-components.js contains JSX in a .js file. Next.js compiles it via
+      // SWC, but vitest's esbuild pipeline only parses JSX in .jsx/.tsx files,
+      // so tests that import the docs page (which imports mdx-components.js)
+      // need this file transformed with the JSX loader.
+      name: 'treat-mdx-components-js-as-jsx',
+      async transform(code, id) {
+        if (!id.endsWith('mdx-components.js')) return null
+        return transformWithEsbuild(code, id, { loader: 'jsx', jsx: 'automatic' })
+      },
+    },
+  ],
   test: {
     globals: true,
     environment: 'node',
