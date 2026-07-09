@@ -12,7 +12,7 @@
  * compile -> evaluate -> DocsLayout wrapper) and fails if the prose article
  * wrapper, the heading markup, or the table of contents ever disappear again.
  */
-import { describe, expect, it, vi } from 'vitest'
+import { beforeAll, describe, expect, it, vi } from 'vitest'
 import { createElement, type ReactNode } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 
@@ -68,28 +68,33 @@ async function renderDocsRoute(slug: string[]): Promise<string> {
   return renderToStaticMarkup(createElement(DocsProvider, null, page))
 }
 
-describe('docs page rendering (smoke test)', () => {
-  it('wraps rendered markdown in the prose layout article', async () => {
-    const html = await renderDocsRoute(['introduction'])
+// The first MDX compile is slow (~10s cold start in CI), well past vitest's
+// 5s default timeout, so render once up front with a generous budget and
+// assert against the shared result.
+const RENDER_TIMEOUT_MS = 60_000
 
+describe('docs page rendering (smoke test)', () => {
+  let html = ''
+
+  beforeAll(async () => {
+    html = await renderDocsRoute(['introduction'])
+  }, RENDER_TIMEOUT_MS)
+
+  it('wraps rendered markdown in the prose layout article', () => {
     // The DocsLayout wrapper must produce the <article class="prose ...">
     // element that all documentation typography in globals.css targets.
     // Without it, headings, lists, tables, and code render as flat text.
     expect(html).toMatch(/<article[^>]+class="[^"]*\bprose\b[^"]*"/)
   })
 
-  it('renders markdown headings as heading elements, not the plain-text fallback', async () => {
-    const html = await renderDocsRoute(['introduction'])
-
+  it('renders markdown headings as heading elements, not the plain-text fallback', () => {
     // introduction.md starts with an h1; if MDX compilation silently fails,
     // the page falls back to a <pre> dump with no heading elements at all.
     expect(html).toMatch(/<h1[^>]*>/)
     expect(html).toMatch(/<h2[^>]*>/)
   })
 
-  it('renders the table of contents for the page', async () => {
-    const html = await renderDocsRoute(['introduction'])
-
+  it('renders the table of contents for the page', () => {
     // The toc extracted by nextra's evaluate() must reach the layout: the
     // TOC renders anchor links pointing at in-page heading ids.
     expect(html).toMatch(/href="#[a-z0-9-]+"/)
