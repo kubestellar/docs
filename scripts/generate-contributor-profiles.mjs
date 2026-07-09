@@ -88,8 +88,9 @@ if (!TOKEN) {
 }
 
 const defaultHeaders = {
-  Accept: "application/vnd.github.v3+json",
+  Accept: "application/vnd.github+json",
   Authorization: `Bearer ${TOKEN}`,
+  "X-GitHub-Api-Version": "2022-11-28",
 };
 
 async function ghFetch(url) {
