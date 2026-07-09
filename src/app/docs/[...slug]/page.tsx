@@ -91,48 +91,56 @@ function readLocalFile(filePath: string, contentPath: string = docsContentPath):
   return null
 }
 
-async function getPageContent(slug: string[], projectId?: ProjectId): Promise<string | null> {
-  const filePath = slug.join('/') + '.md'
-  
-  const contentPath = projectId 
+type PageContent = {
+  content: string
+  // Path of the resolved source file, relative to the content directory.
+  // Used by the DocsLayout wrapper to build "edit this page" links.
+  filePath: string
+}
+
+async function getPageContent(slug: string[], projectId?: ProjectId): Promise<PageContent | null> {
+  const mdPath = slug.join('/') + '.md'
+
+  const contentPath = projectId
     ? getContentPath(projectId)
     : docsContentPath
 
   // Try .md first, then .mdx
-  let content = readLocalFile(filePath, contentPath)
-  if (!content) {
-    const mdxPath = slug.join('/') + '.mdx'
-    content = readLocalFile(mdxPath, contentPath)
-  }
+  let content = readLocalFile(mdPath, contentPath)
+  if (content) return { content, filePath: mdPath }
+
+  const mdxPath = slug.join('/') + '.mdx'
+  content = readLocalFile(mdxPath, contentPath)
+  if (content) return { content, filePath: mdxPath }
 
   // If direct lookup failed, consult the routeMap for nav-generated routes
-  if (!content) {
-    const mapProjectId = projectId || 'kubestellar'
-    const { routeMap } = buildPageMap(mapProjectId)
-    const routeKey = slug.join('/')
-    const mappedFile = routeMap[routeKey]
-    if (mappedFile) {
-      content = readLocalFile(mappedFile, contentPath)
-      if (!content) {
-        // Also try in the default docs content path (for general sections)
-        content = readLocalFile(mappedFile, docsContentPath)
-      }
+  const mapProjectId = projectId || 'kubestellar'
+  const { routeMap } = buildPageMap(mapProjectId)
+  const routeKey = slug.join('/')
+  const mappedFile = routeMap[routeKey]
+  if (mappedFile) {
+    content = readLocalFile(mappedFile, contentPath)
+    if (!content) {
+      // Also try in the default docs content path (for general sections)
+      content = readLocalFile(mappedFile, docsContentPath)
     }
+    if (content) return { content, filePath: mappedFile }
   }
-  
-  return content
+
+  return null
 }
 
-async function buildContent(slug: string[], projectId?: ProjectId): Promise<string | null> {
-  let content = await getPageContent(slug, projectId)
-  
-  if (!content) return null
-  
+async function buildContent(slug: string[], projectId?: ProjectId): Promise<PageContent | null> {
+  const page = await getPageContent(slug, projectId)
+
+  if (!page) return null
+
+  let content = page.content
   content = replaceTemplateVariables(content)
   content = removeCommentPatterns(content)
   content = sanitizeHtmlForMdx(content)
-  
-  return content
+
+  return { content, filePath: page.filePath }
 }
 
 function getProjectFromSlug(slug: string[]): { projectId: ProjectId | undefined; docSlug: string[] } {
@@ -151,14 +159,27 @@ function getProjectFromSlug(slug: string[]): { projectId: ProjectId | undefined;
 export default async function DocPage({ params }: Props) {
   const { slug } = await params
   const { projectId, docSlug } = getProjectFromSlug(slug)
-  
-  const content = await buildContent(docSlug, projectId)
-  
-  if (!content) {
+
+  const page = await buildContent(docSlug, projectId)
+
+  if (!page) {
     notFound()
   }
-  
-  let MDXContent: ReturnType<typeof evaluate>['default'] | null = null
+
+  const { content, filePath } = page
+
+  // Extract the layout wrapper (DocsLayout: prose typography, table of
+  // contents, edit-page actions) so it can be rendered explicitly around the
+  // MDX output. nextra's evaluate() does not apply the wrapper component
+  // itself — without this the page renders as unstyled markup.
+  const { wrapper: Wrapper, ...components } = getMDXComponents({
+    Callout,
+    Tabs,
+    Mermaid,
+    convertHtmlScriptsToJsxComments
+  })
+
+  let evaluated: ReturnType<typeof evaluate> | null = null
   let compilationFailed = false
   try {
     const compiled = await compileMdx(content, {
@@ -167,25 +188,24 @@ export default async function DocPage({ params }: Props) {
         rehypePlugins: []
       }
     })
-    
-    const components = getMDXComponents({
-      Callout,
-      Tabs,
-      Mermaid,
-      convertHtmlScriptsToJsxComments
-    })
-    
-    const evaluated = evaluate(compiled, components)
-    MDXContent = evaluated.default
+
+    evaluated = evaluate(compiled, components)
   } catch {
     // If MDX compilation fails, fall back to plain text rendering
     compilationFailed = true
   }
-  
+
+  const MDXContent = evaluated?.default
+
   return (
-    <div className="docs-content">
+    <Wrapper
+      toc={evaluated?.toc ?? []}
+      metadata={evaluated?.metadata}
+      filePath={filePath}
+      projectId={projectId ?? 'kubestellar'}
+    >
       {compilationFailed || !MDXContent ? <pre>{content}</pre> : <MDXContent />}
-    </div>
+    </Wrapper>
   )
 }
 
