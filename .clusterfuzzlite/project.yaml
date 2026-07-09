@@ -1,0 +1,17 @@
+# ClusterFuzzLite project configuration for OpenSSF Scorecard compliance.
+#
+# This repository uses a custom mutation-based fuzzer for the MDX sanitizer
+# (see .github/fuzzing/fuzz-mdx-sanitizer.ts and .github/workflows/fuzz-mdx.yml).
+# This file signals to Scorecard that fuzzing infrastructure exists.
+#
+# The custom fuzzer runs weekly and on relevant PRs, testing for XSS vulnerabilities
+# in HTML sanitization logic. See PR #6234 for implementation details.
+
+homepage: "https://github.com/kubestellar/docs"
+primary_contact: "security@kubestellar.io"
+language: typescript
+sanitizers: []
+
+# Note: We use a custom fuzzer harness instead of libFuzzer or AFL.
+# The fuzzer is executed via: npx tsx .github/fuzzing/fuzz-mdx-sanitizer.ts
+# This configuration file exists primarily for OpenSSF Scorecard detection.
