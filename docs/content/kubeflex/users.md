@@ -25,7 +25,7 @@ Kubeflex configuration is now stored as part of the kubeconfig extension data, h
 
 ## Installation
 
-Installation instructions are [here](quick-start.md).
+Installation instructions are [here](quickstart.md).
 
 ## Usage
 
