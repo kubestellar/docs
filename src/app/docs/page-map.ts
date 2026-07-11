@@ -333,6 +333,7 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
     title: 'Getting Started',
     items: [
       { 'macOS Setup': 'macos.md' },
+      { 'Example: Homelab Console (Bluefin)': 'console-starter-install.md' },
       { 'Troubleshooting': 'troubleshooting.md' },
     ]
   },
