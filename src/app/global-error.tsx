@@ -108,9 +108,14 @@ export default function GlobalError({
             <button type="button" onClick={reset} style={styles.buttonPrimary}>
               Try again
             </button>
+            {/* Plain <a> is deliberate here: when the global error boundary
+                renders, the app (router included) has already crashed, so a
+                full-page navigation is the most reliable way out. */}
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a href="/" style={styles.buttonSecondary}>
               KubeStellar home
             </a>
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a href="/docs" style={styles.buttonSecondary}>
               Browse the docs
             </a>
