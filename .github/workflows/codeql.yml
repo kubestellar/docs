@@ -1,12 +1,14 @@
+# NOTE: Automatic triggers intentionally removed — the repository uses
+# GitHub's default Code Scanning setup (enabled in Security settings),
+# which already runs CodeQL analysis on push, pull_request, and schedule.
+# Running BOTH default setup AND an advanced workflow causes a conflict:
+#   "CodeQL analyses from advanced configurations cannot be processed
+#    when the default setup is enabled"
+# This file is retained with workflow_dispatch only for manual debugging.
+# See: https://github.com/kubestellar/docs/issues/6282
 name: CodeQL Analysis
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-  schedule:
-    - cron: '0 4 * * 1' # Weekly Monday 04:00 UTC
   workflow_dispatch:
 
 permissions:
