@@ -17,7 +17,7 @@ const GRADIENT_FALLBACK = "#764ba2"; // if background-clip: text is unsupported
 const TEXT_PRIMARY = "#f3f4f6";
 const TEXT_MUTED = "#9ca3af";
 const SUBTLE_BG = "rgba(255, 255, 255, 0.05)";
-const SUBTLE_BORDER = "1px solid rgba(255, 255, 255, 0.12)";
+const SUBTLE_BORDER = "1px solid rgba(59, 130, 246, 0.35)"; // accent-tinted, not a stark white edge
 
 const styles: Record<string, CSSProperties> = {
   body: {
