@@ -343,6 +343,12 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
     ]
   },
   {
+    title: 'Security',
+    items: [
+      { 'Security Model': 'security-model.md' },
+    ]
+  },
+  {
     title: 'Reference',
     items: [
       { 'Outreach Anti-Spam': 'outreach-antispam.md' },
