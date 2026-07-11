@@ -337,6 +337,12 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
     ]
   },
   {
+    title: 'Configuration',
+    items: [
+      { 'Agent Configuration': 'agent-configuration.md' },
+    ]
+  },
+  {
     title: 'Reference',
     items: [
       { 'Outreach Anti-Spam': 'outreach-antispam.md' },
