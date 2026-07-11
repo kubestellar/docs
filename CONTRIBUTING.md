@@ -601,7 +601,7 @@ The site when first loaded shows the **latest** tagged version of the KubeStella
    - KubeStellar: main (latest), docs/\{version\} (e.g., docs/0.28.0)
    - a2a: main (latest), docs/a2a/\{version\} (e.g., docs/a2a/0.1.0)
    - kubeflex: main (latest), docs/kubeflex/\{version\} (e.g., docs/kubeflex/0.8.0)
- - The main branch always displays the version tagged **latest**"** of the content files for all projects when rendered
+ - The main branch always displays the version tagged **latest** of the content files for all projects when rendered
 
 ### Testing Your Changes
 
@@ -693,7 +693,6 @@ npm run dev
 # Step 4: Commit and push
 git add src/app/docs/page-map.ts
 git commit -m "Add my-new-page to navigation"
-git push
 git push
 ```
 

@@ -29,7 +29,7 @@ kubectl -n kubestellar-console create secret generic kubestellar-console-jwt \
   --from-literal=jwt-secret="$(openssl rand -base64 48)"
 
 # 3. The starter experience
-kubectl apply -k 'https://github.com/kubestellar/console/deploy/kustomize/overlays/starter?ref=main'
+kubectl apply -k 'https://github.com/kubestellar/console/tree/main/deploy/kustomize/overlays/starter'
 ```
 
 Then open it:
@@ -117,7 +117,7 @@ Dashboard IDs live in `web/src/hooks/useSidebarConfig.ts` in the console repo
 (restricted-v2 rejects the chart-default fixed UID) on top of the starter:
 
 ```bash
-kubectl apply -k 'https://github.com/kubestellar/console/deploy/kustomize/overlays/openshift?ref=main'
+kubectl apply -k 'https://github.com/kubestellar/console/tree/main/deploy/kustomize/overlays/openshift'
 ```
 
 When exposing on a real hostname (Route or Ingress), set `FRONTEND_URL` so

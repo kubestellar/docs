@@ -3,7 +3,7 @@
 ## Onboarding and Offboarding Policy
 
 Effective date: June 1, 2023  
-Last reviewed: May 30, 2026
+Last reviewed: May 30, 2025
 
 KubeStellar welcomes contributors across documentation, core platform code, the Console, MCP tools, and related community projects. This policy explains how to get oriented, how to request organization access when needed, and how to hand work off cleanly when leaving.
 
@@ -106,5 +106,5 @@ All members of the KubeStellar GitHub organization are expected to follow the [C
 All members are responsible for following this policy. Maintainers are responsible for keeping it current and reviewing it periodically as the project evolves.
 
 Maintained by the KubeStellar maintainers.  
-Last reviewed: May 30, 2026
+Last reviewed: May 30, 2025
 <!--onboarding-end-->

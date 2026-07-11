@@ -33,7 +33,7 @@ Help us improve KubeStellar by contribution to upstream projects:
 
 - **[FEATURE]** - [HELM: Introduce an annotation that would make Helm wait for user-specified resources](https://github.com/helm/helm/issues/30669)
 - **[FEATURE]** - [HELM: Introduce priority/coordination of Helm resource creation](https://github.com/helm/helm/issues/30670)
-- **[FEATURE]** - [HELM: Introduce an alternative path for dependence chart override values](https://github.com/helm/helm/issues/30671))
+- **[FEATURE]** - [HELM: Introduce an alternative path for dependent chart override values](https://github.com/helm/helm/issues/30671))
 - **[FEATURE]** - [HELM: Introduce a mechanism for a chart to require a specified Helm min version or range](https://github.com/helm/helm/issues/30672))
 
 ### Join us!
