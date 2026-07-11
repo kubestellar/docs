@@ -16,7 +16,7 @@ kubectl-multi is a kubectl plugin written in Go that automatically discovers Kub
 - **Familiar syntax**: Uses the same command structure as kubectl
 
 
-## how to install 
+## How to Install 
 
 ### Downloading step for Linux
 
@@ -35,7 +35,7 @@ sudo mv kubectl-multi /usr/local/bin/kubectl-multi
 
 
 
-#to test 
+# To test 
 kubectl-multi -v
 
 ```

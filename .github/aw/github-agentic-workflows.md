@@ -153,12 +153,12 @@ The YAML frontmatter supports these fields:
     ```yaml
     runtimes:
       node:
-        version: "22"
-      python:
-        version: "3.12"
-        action-repo: "actions/setup-python"
-        action-version: "v5"
-    ```
+       version: "22"
+     python:
+       version: "3.12"
+       action-repo: "actions/setup-python"
+       action-version: "v5"
+ ```
 
 - **`jobs:`** - Groups together all the jobs that run in the workflow (object)
   - Standard GitHub Actions jobs configuration
