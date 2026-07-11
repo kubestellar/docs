@@ -27,7 +27,7 @@ You almost never write a full roster by hand: applying an ACMM level (below) gen
 
 Hive's config is layered, and the layering is the point: **a file's location says who owns the setting.**
 
-```
+```text
 /etc/hive/hive.yaml            ← ConfigMap seed (Kubernetes) or bind mount (Docker/LXC).
 │                                 The operator/platform layer. Re-seeded on every pod
 │                                 boot; authoritative for acmm_level and hub.is_public.
