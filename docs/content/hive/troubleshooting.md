@@ -1,5 +1,7 @@
 # Troubleshooting
 
+> **Note:** most of this page covers the legacy **v1 runtime** (systemd/launchd host installs with `/etc/hive/agent.env`). On **v2**, start with the dashboard instead: the Getting Started dialog auto-checks setup steps, **Test Connection** live-probes inference gateways and reports the gateway's actual error, agent cards show live state, and the built-in web terminal (ttyd) gives direct access to agent tmux sessions. Check container logs with `docker compose logs -f` or `kubectl -n hive logs deploy/hive`.
+
 ## The `/loop` prompt never fires — the agent just sits at the prompt
 
 Cause: the supervisor's `AGENT_READY_MARKER` doesn't appear in the agent's TUI, so the supervisor gives up before sending `AGENT_LOOP_PROMPT`.
