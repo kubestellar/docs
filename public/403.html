@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Access denied (403) &middot; KubeStellar</title>
+<!--
+  Fully self-contained error page: all CSS is inlined and the logo is an
+  inline SVG, so this page renders correctly even when hashed asset bundles
+  are unavailable (e.g. mid-deploy propagation windows). Do not add external
+  stylesheets, fonts, scripts, or images to this file.
+-->
+<style>
+  :root {
+    /* KubeStellar palette (see src/app/globals.css / tailwind.config.ts) */
+    --bg: #0a0a0a;            /* space-dark */
+    --fg: #f3f4f6;
+    --muted: #9ca3af;
+    --card: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.12);
+    --accent: #3b82f6;
+    --accent-fg: #ffffff;
+    --grad-a: #667eea;
+    --grad-b: #764ba2;
+    --grad-c: #f093fb;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f8fafc;
+      --fg: #0f172a;
+      --muted: #475569;
+      --card: rgba(15, 23, 42, 0.04);
+      --border: rgba(15, 23, 42, 0.14);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* subtle starfield rendered purely in CSS -- no image requests */
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.35) 50%, transparent 51%),
+      radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,0.28) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 85% 65%, rgba(255,255,255,0.25) 50%, transparent 51%),
+      radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.3) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 10% 70%, rgba(255,255,255,0.22) 50%, transparent 51%),
+      radial-gradient(1px 1px at 55% 45%, rgba(255,255,255,0.25) 50%, transparent 51%);
+  }
+  @media (prefers-color-scheme: light) {
+    body { background-image: none; }
+  }
+  header {
+    padding: 1.25rem 1.5rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--fg);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+  }
+  .brand svg { display: block; width: 28px; height: 28px; }
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+  .wrap { max-width: 44rem; }
+  .code {
+    font-size: clamp(4.5rem, 16vw, 8rem);
+    font-weight: 800;
+    line-height: 1;
+    background-image: linear-gradient(135deg, var(--grad-a) 0%, var(--grad-b) 50%, var(--grad-c) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--grad-b); /* fallback if background-clip:text unsupported */
+    margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 0.9rem;
+  }
+  p.lede {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2.25rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.6rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    color: var(--fg);
+    background: var(--card);
+  }
+  .btn:hover { border-color: var(--accent); }
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-fg);
+  }
+  .btn.primary:hover { filter: brightness(1.1); }
+  footer {
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="ksg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#667eea"/>
+            <stop offset="0.5" stop-color="#764ba2"/>
+            <stop offset="1" stop-color="#f093fb"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#ksg)" d="M16 1l3.2 9.3a2.5 2.5 0 0 0 1.5 1.5L30 15l-9.3 3.2a2.5 2.5 0 0 0-1.5 1.5L16 29l-3.2-9.3a2.5 2.5 0 0 0-1.5-1.5L2 15l9.3-3.2a2.5 2.5 0 0 0 1.5-1.5L16 1z"/>
+        <circle fill="#3b82f6" cx="25.5" cy="6.5" r="2.5"/>
+      </svg>
+      <span>KubeStellar</span>
+    </a>
+  </header>
+  <main>
+    <div class="wrap">
+      <div class="code">403</div>
+      <h1>You don&rsquo;t have access to this page</h1>
+      <p class="lede">
+        Access to this page is restricted (HTTP 403). If you believe you
+        should have access, please reach out to the KubeStellar maintainers.
+        In the meantime, the documentation and main site are open to everyone.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="/docs">Browse the docs</a>
+        <a class="btn" href="/">KubeStellar home</a>
+        <a class="btn" href="https://github.com/kubestellar" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    KubeStellar &mdash; multi-cluster configuration management for Kubernetes
+  </footer>
+</body>
+</html>

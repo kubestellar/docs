@@ -13,6 +13,28 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# ---------------------------------------------------------------------------
+# Custom error pages
+#
+# public/404.html and public/403.html are fully self-contained branded error
+# pages (inline CSS, inline SVG logo, no external requests) so they render
+# correctly even mid-deploy when hashed asset bundles may be unavailable.
+#
+# - 404: Next.js serves src/app/not-found.tsx for app-routed misses.
+#   /404.html is additionally picked up automatically by Netlify as the
+#   custom 404 page for requests that never reach the Next.js handler
+#   (e.g. deploy propagation windows or origin failures).
+# - 403: Netlify returns 403 for blocked/restricted requests (firewall
+#   rules, protected paths). /403.html is the branded page for that case;
+#   reference it from any Netlify access-control/WAF custom-response
+#   configuration, and from any redirect rule that returns status = 403.
+#
+# NOTE: do NOT add a catch-all `from = "/*" to = "/404.html" status = 404`
+# rule here. With @netlify/plugin-nextjs, netlify.toml redirects take
+# precedence over Next.js routing, and a non-forced /* rule would shadow
+# every server-rendered route and 404 the whole site.
+# ---------------------------------------------------------------------------
+
 # Enable branch deploys for documentation versioning
 # Version branches follow the pattern: docs/{version}
 # Netlify will create deploy previews at: https://docs-X-Y-Z--kubestellar-docs.netlify.app
