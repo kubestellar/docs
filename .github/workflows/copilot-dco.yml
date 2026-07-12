@@ -6,4 +6,8 @@ on:
 
 jobs:
   copilot-dco:
+    permissions:
+      contents: read
+      pull-requests: write
+      statuses: write
     uses: kubestellar/infra/.github/workflows/reusable-copilot-dco.yml@main
