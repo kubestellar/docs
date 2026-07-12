@@ -98,4 +98,4 @@ Security documentation that only lists strengths is marketing. The current, deli
 - **Cloud CLI credentials are shared with the CLI.** Claude/Copilot/Gemini/Goose agents necessarily run with the provider credential you connected. The placeholder-key isolation applies to inference-gateway keys.
 - **DCO is policy-driven** inside hive; enforce it repo-side (DCO check) for a hard guarantee.
 
-Found something? Security reports are welcome on the [hive repository](https://github.com/kubestellar/hive/issues) — or see the KubeStellar [security policy](/docs/contributing/security/policy) for private disclosure contacts.
+Found something? Security reports are welcome on the [hive repository](https://github.com/kubestellar/hive/issues) — or see the KubeStellar [security policy](/docs/contributing/security) for private disclosure contacts.
