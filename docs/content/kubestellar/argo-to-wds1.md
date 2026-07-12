@@ -30,7 +30,7 @@ sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
 rm argocd-linux-amd64
 ```
 
-Check the [ArgoCD releases](https://github.com/argoproj/argo-cd/releases) page for the obtaining the latest 
+Check the [ArgoCD releases](https://github.com/argoproj/argo-cd/releases) page for obtaining the latest 
 stable release for other architectures and operating systems.
 
 Configure Argo to work with the ingress installed in the hosting cluster:
