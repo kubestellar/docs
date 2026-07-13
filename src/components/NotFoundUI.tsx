@@ -159,6 +159,12 @@ export default function NotFoundUI() {
 
   return (
     <div style={styles.page}>
+      {/* Inline styles can't reach <html>/<body>. When the hashed CSS bundle
+          is unavailable (the exact scenario this page is built for), there is
+          no Tailwind preflight, so the UA default body margin (8px) shows as
+          a white border around the dark page. This inline <style> ships with
+          the markup and cannot fail to load. */}
+      <style>{`html,body{margin:0;padding:0;background:${SPACE_DARK}}`}</style>
       <header style={styles.header}>
         <Link href="/" style={styles.brand}>
           <BrandMark />
