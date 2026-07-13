@@ -4,6 +4,7 @@ import { evaluate } from 'nextra/evaluate'
 import { useMDXComponents as getMDXComponents } from '../../../../mdx-components'
 import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
 import { sanitizeHtmlForMdx, removeCommentPatterns } from '@/lib/sanitizeHtml'
+import { rewriteRelativeImagePaths } from '@/lib/rewriteImagePaths'
 import { buildPageMap, docsContentPath, getContentPath } from '../page-map'
 import { CURRENT_VERSION, type ProjectId } from '@/config/versions'
 import fs from 'fs'
@@ -130,6 +131,28 @@ async function getPageContent(slug: string[], projectId?: ProjectId): Promise<Pa
   return null
 }
 
+// Rewrite relative image paths in Markdown content to absolute /docs-images/ API paths.
+// Relative paths like `images/foo.png` or `./images/foo.png` fail to load when served
+// from a docs route because the browser resolves them against the page URL instead of
+// the filesystem location of the source file.  The /docs-images/* rewrite rule
+// (next.config.ts) proxies `/docs-images/<path>` → `/api/docs-image/<path>` which
+// serves files from docs/content/.  We compute the directory of the source file
+// relative to docs/content/ and use it as the base for the rewritten URL.
+function rewriteImagePaths(content: string, filePath: string, projectId: ProjectId | undefined): string {
+  // The content root for this project (e.g. docs/content/console for projectId='console').
+  const contentRoot = projectId ? getContentPath(projectId) : docsContentPath
+
+  // Prefix from docs/content/ to the content root (e.g. 'console', 'a2a', or '').
+  const contentPrefix = path.relative(docsContentPath, contentRoot).replace(/\\/g, '/')
+
+  // Directory of the source file, relative to docs/content/.
+  const fullRelPath = contentPrefix ? `${contentPrefix}/${filePath}` : filePath
+  const fileDir = path.posix.dirname(fullRelPath)
+  const baseDir = fileDir === '.' ? '' : fileDir
+
+  return rewriteRelativeImagePaths(content, baseDir)
+}
+
 async function buildContent(slug: string[], projectId?: ProjectId): Promise<PageContent | null> {
   const page = await getPageContent(slug, projectId)
 
@@ -137,6 +160,7 @@ async function buildContent(slug: string[], projectId?: ProjectId): Promise<Page
 
   let content = page.content
   content = replaceTemplateVariables(content)
+  content = rewriteImagePaths(content, page.filePath, projectId)
   content = removeCommentPatterns(content)
   content = sanitizeHtmlForMdx(content)
 
