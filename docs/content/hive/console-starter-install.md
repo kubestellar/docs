@@ -75,7 +75,7 @@ overlay instead:
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - https://github.com/kubestellar/console/deploy/kustomize/overlays/starter?ref=main
+  - https://github.com/kubestellar/console/tree/main/deploy/kustomize/overlays/starter
 images:
   - name: ghcr.io/kubestellar/console
     newTag: v0.3.34-nightly.20260709   # or: weekly

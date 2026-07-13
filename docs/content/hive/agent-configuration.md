@@ -252,8 +252,8 @@ Portable agents bundle everything — config plus a `promptTemplate` — in a si
 
 ## What to read next
 
-- **[Introduction](/docs/hive/overview/intro)** — what hive is, setup, and the command surface.
-- **[Architecture](/docs/hive/architecture)** — the two scheduling models and how the supervisor drives agents.
-- **[macOS Setup](/docs/hive/macos)** — run a hive locally.
-- **[Troubleshooting](/docs/hive/troubleshooting)** — stuck sessions, login expiry, restart loops.
+- **[Introduction](overview/intro.md)** — what hive is, setup, and the command surface.
+- **[Architecture](architecture.md)** — the two scheduling models and how the supervisor drives agents.
+- **[macOS Setup](macos.md)** — run a hive locally.
+- **[Troubleshooting](troubleshooting.md)** — stuck sessions, login expiry, restart loops.
 - **[ACMM policy matrix](https://github.com/kubestellar/hive/blob/v2/v2/docs/acmm-policy-matrix.md)** — the full per-level, per-agent policy table in the hive repo.
