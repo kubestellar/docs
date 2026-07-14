@@ -67,7 +67,8 @@ name: "technical-doc-writer"
         description: Issue number to process
         required: true
 
-permissions: read-all
+permissions:
+  contents: read
 
 concurrency:
   group: "gh-aw-${{ github.workflow }}-${{ github.event.issue.number || github.run_id }}"
