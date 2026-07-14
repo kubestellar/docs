@@ -6,7 +6,8 @@ on:
     # Run every Monday at 12:00 PM Eastern (17:00 UTC)
     - cron: "0 17 * * 1"
 
-permissions: read-all
+permissions:
+  contents: read
 
 jobs:
   audit-all:
