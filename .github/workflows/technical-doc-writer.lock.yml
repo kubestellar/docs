@@ -67,8 +67,7 @@ name: "technical-doc-writer"
         description: Issue number to process
         required: true
 
-permissions:
-  contents: read
+permissions: read-all
 
 concurrency:
   group: "gh-aw-${{ github.workflow }}-${{ github.event.issue.number || github.run_id }}"
@@ -983,14 +982,11 @@ jobs:
       needs.activation.outputs.stale_lock_file_failed == 'true')
     runs-on: ubuntu-slim
     permissions:
-      # contents:write required to commit changes to repository
-      contents: write
-      # discussions:write required to update discussion threads
-      discussions: write
-      # issues:write required to comment on and update issues
-      issues: write
-      # pull-requests:write required to comment on and update pull requests
-      pull-requests: write
+      # COPILOT_GITHUB_TOKEN used for write operations; GITHUB_TOKEN only needs read
+      contents: read
+      discussions: read
+      issues: read
+      pull-requests: read
     concurrency:
       group: "gh-aw-conclusion-technical-doc-writer"
       cancel-in-progress: false
@@ -1319,14 +1315,11 @@ jobs:
     if: (!cancelled()) && needs.agent.result != 'skipped' && needs.detection.result == 'success'
     runs-on: ubuntu-slim
     permissions:
-      # contents:write required to commit changes to repository
-      contents: write
-      # discussions:write required to update discussion threads
-      discussions: write
-      # issues:write required to comment on and update issues
-      issues: write
-      # pull-requests:write required to comment on and update pull requests
-      pull-requests: write
+      # COPILOT_GITHUB_TOKEN used for write operations; GITHUB_TOKEN only needs read
+      contents: read
+      discussions: read
+      issues: read
+      pull-requests: read
     timeout-minutes: 15
     env:
       GH_AW_CALLER_WORKFLOW_ID: "${{ github.repository }}/technical-doc-writer"
