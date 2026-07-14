@@ -596,7 +596,7 @@ export default function Navbar() {
                     </span>
                   </a>
                   <a
-                    href="https://github.com/kubestellar/console/watchers"
+                    href="https://github.com/kubestellar/console/stargazers"
                     className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-emerald-900/30 rounded transition-all duration-200 hover:text-emerald-300 hover:shadow-md"
                   >
                     <svg
@@ -1082,7 +1082,7 @@ export default function Navbar() {
 
                   {/* Watchers */}
                   <a
-                    href="https://github.com/kubestellar/console/watchers"
+                    href="https://github.com/kubestellar/console/stargazers"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-between px-3 py-2 rounded-lg  max-w-xs"
