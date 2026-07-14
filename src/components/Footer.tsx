@@ -187,14 +187,14 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href={getLocalizedUrl(
-                      "https://kubestellar.io/docs/kubestellar/release-notes"
-                    )}
+                  <a
+                    href="https://github.com/kubestellar/kubestellar/releases"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors duration-200 text-xs sm:text-sm inline-block"
                   >
                     {t("releasesNotes")}
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
