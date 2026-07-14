@@ -11,9 +11,9 @@ permissions: read-all  # default read; writes scoped to job below
 jobs:
   sync-console-releases:
     permissions:
-      # Required: creates version branches and PRs to sync console release metadata
-      contents: write
-      pull-requests: write
+      # WORKFLOW_SYNC_TOKEN used for all write operations; GITHUB_TOKEN only needs read
+      contents: read
+      pull-requests: read
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.WORKFLOW_SYNC_TOKEN }}

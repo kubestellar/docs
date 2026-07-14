@@ -12,10 +12,9 @@ permissions:
 jobs:
   generate:
     permissions:
-      # contents:write required to commit ACMM history data
-      contents: write
-      # issues:write required to create failure tracking issues
-      issues: write
+      # App token used for all write operations; GITHUB_TOKEN only needs read
+      contents: read
+      issues: read
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
