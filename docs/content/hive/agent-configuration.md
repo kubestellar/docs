@@ -172,7 +172,7 @@ Pin a model when reproducibility matters more than the governor's budget optimiz
 
 ## Cadences and the governor
 
-Agents don't schedule themselves. The **governor** evaluates the work queue every `eval_interval_s` (default 300s), computes a mode from queue depth — **idle → quiet → busy → surge** (default thresholds: quiet > 2, busy > 10, surge > 20; override with `threshold:`) — and kicks each agent on the cadence that mode assigns it:
+Agents don't schedule themselves. The **governor** evaluates the work queue every `eval_interval_s` (default 300s), computes a mode from queue depth — **idle → quiet → busy → surge** (default thresholds: quiet > 2, busy > 10, surge > 20; override with `threshold:`) — and kicks each agent on the cadence that mode assigns it. For the full reference — the evaluation cycle, the budget system, and tuning — see [Governor](governor.md).
 
 ```yaml
 governor:
@@ -226,7 +226,7 @@ At L5, every agent PR gets a `hold` label automatically. The system proposes; it
 
 ## Kick templates: what an agent is told to do
 
-`kick_template` names a Markdown file resolved from the hive's policies checkout (`/data/policies/examples/kubestellar/agents/`, or the directory your `policies:` config points at), falling back to the defaults embedded in the binary (`v2/pkg/policies/defaults/`). It is the agent's **periodic work prompt**: on every kick, the template is loaded, variables like `${ISSUE_LIST}`, `${PR_LIST}`, `${AGENT_NAME}`, `${PROJECT_ORG}`, and `${KNOWLEDGE}` are substituted, and the result is dispatched to the agent's session.
+`kick_template` names a Markdown file resolved from the hive's policies checkout (`/data/policies/examples/kubestellar/agents/`, or the directory your `policies:` config points at), falling back to the defaults embedded in the binary (`v2/pkg/policies/defaults/`). It is the agent's **periodic work prompt**: on every kick, the template is loaded, variables like `${ISSUE_LIST}`, `${PR_LIST}`, `${AGENT_NAME}`, `${PROJECT_ORG}`, and `${KNOWLEDGE}` are substituted, and the result is dispatched to the agent's session. For the full list of template variables and how to define your own, see [Variable Substitution](variable-substitution.md).
 
 Resolution order: the agent's explicit `kick_template` wins; otherwise the ACMM pack's template for that agent at the current level; otherwise convention — `/data/agents/<name>/CLAUDE.md`, then `<name>.md` in the policies checkout, then the embedded default. Pack templates carry the level's policy in their names — `scanner-holdgated.md` is scanner-at-L5; the same scanner at L6 gets `scanner-automerge.md`.
 

@@ -341,6 +341,8 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
     title: 'Configuration',
     items: [
       { 'Agent Configuration': 'agent-configuration.md' },
+      { 'Governor': 'governor.md' },
+      { 'Variable Substitution': 'variable-substitution.md' },
     ]
   },
   {
@@ -352,6 +354,7 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Reference',
     items: [
+      { 'ACMM Policy Matrix': 'acmm-policy-matrix.md' },
       { 'Outreach Anti-Spam': 'outreach-antispam.md' },
     ]
   }
