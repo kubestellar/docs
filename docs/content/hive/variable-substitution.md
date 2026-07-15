@@ -95,7 +95,13 @@ Each definition has:
 - **`scope`** — where the variable applies: `template` (default, per-kick prompts), `config` (`hive.yaml` load), or `both`.
 - **`default`** — a fallback used when the resolver would otherwise leave the variable unresolved (for `env`, when the variable is unset).
 
-Built-in kick-template variables (the table above) always take precedence over a custom variable of the same name, so you cannot accidentally shadow `${ISSUE_LIST}`. The defined variables — their name, type, scope, and a non-secret source tag — are listed read-only at `GET /api/config/variables`, so you can confirm what a hive has configured without exposing any secret value.
+Built-in kick-template variables (the table above) always take precedence over a custom variable of the same name, so you cannot accidentally shadow `${ISSUE_LIST}`.
+
+### Managing variables from the dashboard
+
+The **Governor Configuration → Variables** tab lists every defined variable (name, type, scope, and a non-secret source tag), along with whether script execution and http fetch are enabled. From that tab you can add, edit, and delete `static` and `env` variables directly.
+
+`script` and `http` variables are shown read-only there and are marked *seed-managed*: because they run commands or reach the network, they can only be defined in the seed config (GitOps), never from the dashboard. The same variables are also available programmatically, read-only, at `GET /api/config/variables` — no secret value is ever returned.
 
 ### `static` — a fixed value
 
