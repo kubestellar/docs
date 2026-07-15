@@ -72,7 +72,7 @@ Which template file a kick uses is resolved in order: the agent's explicit `kick
 
 ## Adding your own variables
 
-> **Note:** the `variables:` block is new. The `env` and `static` variable types described below are available now. The `script` and `http` types are being rolled out; treat their syntax here as the shape under implementation.
+The `env`, `static`, `script`, and `http` variable types described below are all available. New resolver types can also be added in code through a small registration seam, so the set is open-ended.
 
 You can define your own `${VAR}`s in a top-level `variables:` block in `hive.yaml`, without editing hive's code. A defined variable can be used in kick templates and — with the right scope — in the config itself.
 
@@ -95,7 +95,7 @@ Each definition has:
 - **`scope`** — where the variable applies: `template` (default, per-kick prompts), `config` (`hive.yaml` load), or `both`.
 - **`default`** — a fallback used when the resolver would otherwise leave the variable unresolved (for `env`, when the variable is unset).
 
-Built-in kick-template variables (the table above) always take precedence over a custom variable of the same name, so you cannot accidentally shadow `${ISSUE_LIST}`.
+Built-in kick-template variables (the table above) always take precedence over a custom variable of the same name, so you cannot accidentally shadow `${ISSUE_LIST}`. The defined variables — their name, type, scope, and a non-secret source tag — are listed read-only at `GET /api/config/variables`, so you can confirm what a hive has configured without exposing any secret value.
 
 ### `static` — a fixed value
 
@@ -115,7 +115,7 @@ variables:
 
 This also gives config interpolation the default-value behavior plain `${VAR}` never had.
 
-### `script` — the output of a command (preview)
+### `script` — the output of a command
 
 ```yaml
 variables:
@@ -129,7 +129,7 @@ variables:
       scope: template
 ```
 
-### `http` — a value fetched from a web service (preview)
+### `http` — a value fetched from a web service
 
 ```yaml
 variables:
