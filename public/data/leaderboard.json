@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-16T03:06:54.974Z",
-  "git_hash": "4dbec7f",
+  "generated_at": "2026-07-16T06:53:43.753Z",
+  "git_hash": "5767948",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-04-27",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 5768600,
+      "total_points": 5772900,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 639,
         "feature_issues": 942,
-        "other_issues": 2037,
-        "prs_opened": 8204,
-        "prs_merged": 7480
+        "other_issues": 2039,
+        "prs_opened": 8210,
+        "prs_merged": 7486
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         704,
         614,
         636,
-        248
+        256
       ],
-      "recent_activity_score": 2296.14,
+      "recent_activity_score": 2304.14,
       "rank": 1
     },
     {
@@ -950,6 +950,36 @@
       "rank": 31
     },
     {
+      "login": "Jayant-kernel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/212013719?v=4",
+      "total_points": 7000,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 10,
+        "prs_merged": 10
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        10,
+        1,
+        0,
+        1
+      ],
+      "recent_activity_score": 7.82,
+      "rank": 32
+    },
+    {
       "login": "anusha19murthy",
       "avatar_url": "https://avatars.githubusercontent.com/u/76055754?v=4",
       "total_points": 6900,
@@ -977,36 +1007,6 @@
         0
       ],
       "recent_activity_score": 0.99,
-      "rank": 32
-    },
-    {
-      "login": "Jayant-kernel",
-      "avatar_url": "https://avatars.githubusercontent.com/u/212013719?v=4",
-      "total_points": 6300,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 9,
-        "prs_merged": 9
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        3,
-        10,
-        1,
-        0,
-        0
-      ],
-      "recent_activity_score": 6.82,
       "rank": 33
     },
     {
