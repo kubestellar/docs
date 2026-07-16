@@ -1,21 +1,21 @@
 {
   "login": "AresPhoenix345",
-  "generated_at": "2026-04-29T10:39:54.111Z",
-  "total_issues_opened": 2,
-  "total_prs_opened": 3,
+  "generated_at": "2026-07-16T22:23:09.422Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/229183175?v=4",
   "total_points": 3150,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 27,
+  "rank": 44,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 0.34,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
       0,
-      4,
-      1,
+      0,
+      0,
       0,
       0,
       0
@@ -28,7 +28,6 @@
       0,
       0,
       0,
-      1,
       0,
       0,
       0,
@@ -36,8 +35,9 @@
       0,
       0,
       0,
-      2,
-      2,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -47,89 +47,17 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
+    "longest_streak_weeks": 0,
     "trend": "inactive",
-    "first_issue_at": "2026-01-14T15:18:10.000Z",
-    "last_issue_at": "2026-01-29T07:54:37.000Z"
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "agenda, meeting, agendas",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "✨fix: add missing translations for \"Meeting Agendas\" across all languages",
-        "url": "https://github.com/kubestellar/docs/pull/909",
-        "created_at": "2026-01-29T07:54:37Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "wantmultiwecreportedstate, senario, example",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "📖 docs: Add reference to wantMultiWECReportedState example scenario",
-        "url": "https://github.com/kubestellar/docs/pull/673",
-        "created_at": "2026-01-14T16:53:33Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
-      },
-      {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
-    {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
     {
       "month": "2025-08",
       "issue_count": 0
@@ -152,7 +80,7 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 5
+      "issue_count": 0
     },
     {
       "month": "2026-02",
@@ -165,16 +93,19 @@
     {
       "month": "2026-04",
       "issue_count": 0
+    },
+    {
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 1,
-      "feature_issues": 0,
-      "other_issues": 1,
-      "prs_opened": 3,
-      "prs_merged": 3
-    }
-  ]
+  "repo_breakdown": []
 }

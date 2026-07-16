@@ -1,12 +1,13 @@
 {
   "login": "Provokke",
-  "generated_at": "2026-04-24T06:49:34.599Z",
+  "generated_at": "2026-07-16T22:23:09.433Z",
   "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/70989453?v=4",
   "total_points": 200,
   "level": "Observer",
   "level_rank": 1,
-  "rank": 64,
+  "rank": 132,
   "cadence": {
     "avg_per_week": 0,
     "avg_per_day": 0,
@@ -58,18 +59,6 @@
   },
   "activity_timeline": [
     {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
-    {
       "month": "2025-08",
       "issue_count": 0
     },
@@ -104,16 +93,19 @@
     {
       "month": "2026-04",
       "issue_count": 0
+    },
+    {
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "kubestellar/console",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 1,
-      "prs_merged": 0
-    }
-  ]
+  "repo_breakdown": []
 }

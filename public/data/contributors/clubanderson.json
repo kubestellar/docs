@@ -1,532 +1,66 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-04-29T10:39:53.944Z",
-  "total_issues_opened": 124,
-  "total_prs_opened": 308,
+  "generated_at": "2026-07-16T22:23:09.414Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 3873200,
+  "total_points": 5546900,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 22.6,
-    "avg_per_day": 1.68,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
-      25,
-      54,
-      122,
-      91,
-      89,
-      19,
-      32
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "by_hour_of_day": [
-      17,
-      20,
-      20,
-      11,
-      13,
-      15,
-      43,
-      5,
-      3,
-      1,
-      7,
       0,
-      5,
-      3,
-      6,
-      81,
-      29,
-      26,
-      30,
-      38,
-      30,
-      8,
-      11,
-      10
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
-    "current_streak_weeks": 17,
-    "longest_streak_weeks": 17,
-    "trend": "ramping_up",
-    "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-04-29T03:04:26.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "workflow, break, link",
-      "issue_count": 317,
-      "recent_issue": {
-        "title": "🐛 Fix console version menu: add v0.3.23, remove broken links",
-        "url": "https://github.com/kubestellar/docs/pull/1548",
-        "created_at": "2026-04-29T03:04:26Z"
-      },
-      "repos": [
-        "console-marketplace",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 317
-    },
-    {
-      "name": "card, monitoring, step",
-      "issue_count": 63,
-      "recent_issue": {
-        "title": "feat: activate Jaeger Tracing monitoring card in marketplace",
-        "url": "https://github.com/kubestellar/console-marketplace/pull/128",
-        "created_at": "2026-04-24T08:47:29Z"
-      },
-      "repos": [
-        "console-marketplace",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 63
-    },
-    {
-      "name": "mermaid, diagram, label",
-      "issue_count": 10,
-      "recent_issue": {
-        "title": "📖 docs(console): pre-render security-model mermaid diagrams as SVG",
-        "url": "https://github.com/kubestellar/docs/pull/1478",
-        "created_at": "2026-04-15T20:06:03Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 10
-    },
-    {
-      "name": "port, kc, agent",
-      "issue_count": 6,
-      "recent_issue": {
-        "title": "📖 fix: Quick Start port reference (#1486)",
-        "url": "https://github.com/kubestellar/docs/pull/1489",
-        "created_at": "2026-04-16T17:24:51Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 6
-    },
-    {
-      "name": "model, evolution, legacy",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "📖 docs: add architecture evolution section — legacy model → Console (#1472)",
-        "url": "https://github.com/kubestellar/docs/pull/1475",
-        "created_at": "2026-04-15T18:51:44Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "projects, @mikespreitzer, want",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "🐛 Fix Console navigation highlighting in Related Projects",
-        "url": "https://github.com/kubestellar/docs/pull/759",
-        "created_at": "2026-01-16T10:11:04Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "radar, expertise, chart",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "✨ Add expertise radar chart to leaderboard hover card",
-        "url": "https://github.com/kubestellar/docs/pull/1504",
-        "created_at": "2026-04-22T22:13:50Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "bonus, count, open",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "fix: count both open and closed bonus issues",
-        "url": "https://github.com/kubestellar/docs/pull/1377",
-        "created_at": "2026-04-09T16:51:50Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "sqlite, default, localstorage",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "fix: default console docs to main and add persistence docs",
-        "url": "https://github.com/kubestellar/docs/pull/1351",
-        "created_at": "2026-04-07T19:15:04Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "announcement, press, news",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "📖 Fix install instructions in console announcement",
-        "url": "https://github.com/kubestellar/docs/pull/1222",
-        "created_at": "2026-02-27T20:48:14Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "team, agentic, daily",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🌱 Update OWNERS file with kubestellar-docs team",
-        "url": "https://github.com/kubestellar/docs/pull/594",
-        "created_at": "2026-01-12T20:58:52Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "opportunity, ambassador, ladder",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Issue with page: ladder",
-        "url": "https://github.com/kubestellar/docs/issues/395",
-        "created_at": "2025-12-11T19:29:21Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "retry, loop, attempt",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix: leaderboard push retry defeated by bash set -e",
-        "url": "https://github.com/kubestellar/docs/pull/1542",
-        "created_at": "2026-04-26T18:49:24Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "v0, regulatory, pci",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "📖 Console docs sync: Apr 16–23, 2026",
-        "url": "https://github.com/kubestellar/docs/pull/1513",
-        "created_at": "2026-04-23T23:36:16Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "global, escape, handler",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 fix: replace window.closeLangSwitcher with React-free event pattern (#1456)",
-        "url": "https://github.com/kubestellar/docs/pull/1491",
-        "created_at": "2026-04-17T01:10:00Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "reviews, stroke, news",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 fix: align News and Reviews icons with Community dropdown style (#1483)",
-        "url": "https://github.com/kubestellar/docs/pull/1484",
-        "created_at": "2026-04-16T06:14:24Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "llm, topology, decision",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "📝 docs(console): add Local LLM Strategy page with decision matrix and 3 topology diagrams",
-        "url": "https://github.com/kubestellar/docs/pull/1479",
-        "created_at": "2026-04-15T23:58:03Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "nav, s., entry",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 fix: point top-nav KubeStellar entry to working architecture page (#1453)",
-        "url": "https://github.com/kubestellar/docs/pull/1454",
-        "created_at": "2026-04-14T07:01:57Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "roadmap, k8s, name",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "docs: fix roadmap versions, nav naming, include-markdown rendering (#1423-#1425)",
-        "url": "https://github.com/kubestellar/docs/pull/1431",
-        "created_at": "2026-04-12T10:03:17Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "clustering, cadence, topic",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feat: contributor profile pages with topic clustering and cadence analytics",
-        "url": "https://github.com/kubestellar/docs/pull/1353",
-        "created_at": "2026-04-08T01:17:21Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "sitemap, metadata, robot",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix: add robots.txt, sitemap.xml, and SEO metadata",
-        "url": "https://github.com/kubestellar/docs/pull/1349",
-        "created_at": "2026-04-07T16:59:49Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "contacts, security, contact",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 Remove ezrasilvera from SECURITY_CONTACTS.md",
-        "url": "https://github.com/kubestellar/docs/pull/1332",
-        "created_at": "2026-04-01T03:15:40Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "button, clip, transform",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 fix: docs issues #1313 #1314 #1318 — architecture clarity, start.sh confusion, CTA button overlap",
-        "url": "https://github.com/kubestellar/docs/pull/1320",
-        "created_at": "2026-03-20T23:52:39Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "strip, word, regex",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 Fix MDX sanitizer stripping prose words starting with \"on\"",
-        "url": "https://github.com/kubestellar/docs/pull/1271",
-        "created_at": "2026-03-13T01:26:28Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "kb, rsc, payload",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 Optimize docs page load: reduce RSC payload by 89%, fix ToC sidebar",
-        "url": "https://github.com/kubestellar/docs/pull/1242",
-        "created_at": "2026-03-08T03:15:46Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "book, restore, icon",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 Restore book icon next to Console Documentation link",
-        "url": "https://github.com/kubestellar/docs/pull/1218",
-        "created_at": "2026-02-27T19:12:45Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "survey, cache, share",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "✨ Add cache TTL to shared config and centralize survey URL",
-        "url": "https://github.com/kubestellar/docs/pull/745",
-        "created_at": "2026-01-15T19:56:45Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "discipline, reference, action",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "📖 Add GitHub Actions reference discipline documentation",
-        "url": "https://github.com/kubestellar/docs/pull/640",
-        "created_at": "2026-01-13T20:59:00Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "invalid, area, kind",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Test: Comprehensive workflow verification",
-        "url": "https://github.com/kubestellar/docs/issues/618",
-        "created_at": "2026-01-13T16:13:26Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "lock, package, @4",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 fix: Regenerate package-lock.json to sync with package.json",
-        "url": "https://github.com/kubestellar/docs/pull/582",
-        "created_at": "2026-01-12T19:38:31Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
     {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
-    {
       "month": "2025-08",
-      "issue_count": 4
+      "issue_count": 0
     },
     {
       "month": "2025-09",
@@ -534,49 +68,44 @@
     },
     {
       "month": "2025-10",
-      "issue_count": 11
+      "issue_count": 0
     },
     {
       "month": "2025-11",
-      "issue_count": 12
+      "issue_count": 0
     },
     {
       "month": "2025-12",
-      "issue_count": 13
+      "issue_count": 0
     },
     {
       "month": "2026-01",
-      "issue_count": 120
+      "issue_count": 0
     },
     {
       "month": "2026-02",
-      "issue_count": 108
+      "issue_count": 0
     },
     {
       "month": "2026-03",
-      "issue_count": 56
+      "issue_count": 0
     },
     {
       "month": "2026-04",
-      "issue_count": 108
-    }
-  ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 30,
-      "feature_issues": 0,
-      "other_issues": 24,
-      "prs_opened": 292,
-      "prs_merged": 267
+      "issue_count": 0
     },
     {
-      "repo": "console-marketplace",
-      "bug_issues": 5,
-      "feature_issues": 6,
-      "other_issues": 59,
-      "prs_opened": 16,
-      "prs_merged": 16
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
-  ]
+  ],
+  "repo_breakdown": []
 }

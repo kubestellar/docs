@@ -1,24 +1,24 @@
 {
   "login": "Abhishek-Punhani",
-  "generated_at": "2026-04-29T10:39:54.006Z",
-  "total_issues_opened": 1,
-  "total_prs_opened": 2,
+  "generated_at": "2026-07-16T22:23:09.417Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-  "total_points": 31050,
+  "total_points": 46450,
   "level": "Commander",
   "level_rank": 5,
   "rank": 12,
   "cadence": {
-    "avg_per_week": 0.1,
-    "avg_per_day": 0.02,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
-      1,
       0,
       0,
-      1,
       0,
-      1
+      0,
+      0,
+      0
     ],
     "by_hour_of_day": [
       0,
@@ -27,9 +27,6 @@
       0,
       0,
       0,
-      1,
-      0,
-      1,
       0,
       0,
       0,
@@ -38,7 +35,10 @@
       0,
       0,
       0,
-      1,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -46,104 +46,18 @@
       0,
       0
     ],
-    "current_streak_weeks": 1,
-    "longest_streak_weeks": 1,
-    "trend": "ramping_up",
-    "first_issue_at": "2025-12-23T06:05:58.000Z",
-    "last_issue_at": "2026-04-24T08:01:01.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "interaction, punhani, social",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Social Link Clicks Not Tracking on Leaderboard",
-        "url": "https://github.com/kubestellar/docs/issues/1515",
-        "created_at": "2026-04-24T08:01:01Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "french, githubcreateissue, erstellen",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 : Add \"Create Issue\" translation and update Navbar component",
-        "url": "https://github.com/kubestellar/docs/pull/574",
-        "created_at": "2026-01-11T17:13:56Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "rotate, globe, animation",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Add rotating content reference and enhance globe animation",
-        "url": "https://github.com/kubestellar/docs/pull/442",
-        "created_at": "2025-12-23T06:05:58Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Dashboard & Cards",
-        "path": "web/src/components/cards/, web/src/components/dashboard/",
-        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
-    {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
     {
       "month": "2025-08",
       "issue_count": 0
@@ -162,11 +76,11 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-01",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-02",
@@ -178,17 +92,20 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 1
+      "issue_count": 0
+    },
+    {
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 1,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 2,
-      "prs_merged": 2
-    }
-  ]
+  "repo_breakdown": []
 }

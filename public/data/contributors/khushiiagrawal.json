@@ -1,275 +1,63 @@
 {
   "login": "khushiiagrawal",
-  "generated_at": "2026-04-29T10:39:54.006Z",
-  "total_issues_opened": 8,
-  "total_prs_opened": 13,
+  "generated_at": "2026-07-16T22:23:09.417Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/149886195?v=4",
-  "total_points": 34900,
-  "level": "Commander",
-  "level_rank": 5,
+  "total_points": 51000,
+  "level": "Captain",
+  "level_rank": 6,
   "rank": 11,
   "cadence": {
-    "avg_per_week": 1.3,
-    "avg_per_day": 0.11,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
-      2,
-      4,
-      10,
       0,
-      2,
-      2,
-      1
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "by_hour_of_day": [
       0,
       0,
       0,
       0,
-      1,
-      3,
-      1,
-      0,
-      6,
-      0,
-      0,
-      0,
-      1,
       0,
       0,
       0,
       0,
-      2,
-      5,
-      1,
-      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 2,
-    "longest_streak_weeks": 2,
-    "trend": "ramping_up",
-    "first_issue_at": "2025-10-11T18:28:13.000Z",
-    "last_issue_at": "2026-04-17T20:46:25.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "dropdown, layout, stats",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "🐛 Fix GitHub stats dropdown layout issue in navbar",
-        "url": "https://github.com/kubestellar/docs/pull/1471",
-        "created_at": "2026-04-15T08:39:31Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 4
-    },
-    {
-      "name": "event, leak, listener",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "🐛 Add cleanup logic to prevent event listener memory leaks in navbar",
-        "url": "https://github.com/kubestellar/docs/pull/1470",
-        "created_at": "2026-04-15T08:35:58Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "highlight, active, heading",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🐛 Fix TOC active heading highlighting on scroll (#1494)",
-        "url": "https://github.com/kubestellar/docs/pull/1495",
-        "created_at": "2026-04-17T20:46:25Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "form, subscribe, handler",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🐛 Add onSubmit handlers to newsletter subscribe forms",
-        "url": "https://github.com/kubestellar/docs/pull/1469",
-        "created_at": "2026-04-15T08:32:06Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "policy, terms, cookie",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🐛 Remove non-functional placeholder policy links from footer",
-        "url": "https://github.com/kubestellar/docs/pull/1462",
-        "created_at": "2026-04-15T05:12:19Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "deprecate, modern, scroll",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🐛 Replace deprecated window.pageYOffset with window.scrollY",
-        "url": "https://github.com/kubestellar/docs/pull/1460",
-        "created_at": "2026-04-15T05:04:07Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "comment, lingering, silence",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix: Remove unwanted comment patterns from documentation pages",
-        "url": "https://github.com/kubestellar/docs/pull/331",
-        "created_at": "2025-11-25T06:39:20Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "figure, caption, italic",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feat: Refine docs imagery, consistent figures and italic captions",
-        "url": "https://github.com/kubestellar/docs/pull/321",
-        "created_at": "2025-11-24T17:06:09Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "overlap, folder, theme",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix: fix theme button overlap and keep \"What is Kubestellar?\" dropdown open",
-        "url": "https://github.com/kubestellar/docs/pull/319",
-        "created_at": "2025-11-24T12:40:16Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "banner, override, light",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix: Add styling for the banner in light mode",
-        "url": "https://github.com/kubestellar/docs/pull/315",
-        "created_at": "2025-11-23T18:00:22Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "traditional, chinese, locale",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feat: Add Traditional Chinese translation",
-        "url": "https://github.com/kubestellar/docs/pull/305",
-        "created_at": "2025-11-22T17:34:04Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "mobile, tablet, responsive",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feat: implement responsive navigation design for mobile and tablet devices",
-        "url": "https://github.com/kubestellar/docs/pull/130",
-        "created_at": "2025-10-11T18:28:13Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
-    {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
     {
       "month": "2025-08",
       "issue_count": 0
@@ -280,11 +68,11 @@
     },
     {
       "month": "2025-10",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2025-11",
-      "issue_count": 5
+      "issue_count": 0
     },
     {
       "month": "2025-12",
@@ -304,17 +92,20 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 15
+      "issue_count": 0
+    },
+    {
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 8,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 13,
-      "prs_merged": 12
-    }
-  ]
+  "repo_breakdown": []
 }

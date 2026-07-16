@@ -1,19 +1,19 @@
 {
   "login": "p172913",
-  "generated_at": "2026-04-29T10:39:54.279Z",
+  "generated_at": "2026-07-16T22:23:09.422Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 2,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/72274012?v=4",
-  "total_points": 2100,
+  "total_points": 2800,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 33,
+  "rank": 46,
   "cadence": {
-    "avg_per_week": 0.2,
-    "avg_per_day": 0.33,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
-      1,
-      1,
+      0,
+      0,
       0,
       0,
       0,
@@ -37,8 +37,8 @@
       0,
       0,
       0,
-      1,
-      1,
+      0,
+      0,
       0,
       0,
       0,
@@ -47,10 +47,10 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 2,
+    "longest_streak_weeks": 0,
     "trend": "inactive",
-    "first_issue_at": "2026-02-17T16:45:02.000Z",
-    "last_issue_at": "2026-02-23T17:15:21.000Z"
+    "first_issue_at": null,
+    "last_issue_at": null
   },
   "topics": [],
   "suggestions": {
@@ -58,18 +58,6 @@
     "stretch": []
   },
   "activity_timeline": [
-    {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
     {
       "month": "2025-08",
       "issue_count": 0
@@ -96,7 +84,7 @@
     },
     {
       "month": "2026-02",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-03",
@@ -105,24 +93,19 @@
     {
       "month": "2026-04",
       "issue_count": 0
-    }
-  ],
-  "repo_breakdown": [
-    {
-      "repo": "console-marketplace",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 1,
-      "prs_merged": 1
     },
     {
-      "repo": "docs",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 1,
-      "prs_merged": 1
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
-  ]
+  ],
+  "repo_breakdown": []
 }

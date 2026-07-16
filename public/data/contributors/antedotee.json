@@ -1,23 +1,23 @@
 {
   "login": "antedotee",
-  "generated_at": "2026-04-29T10:39:54.283Z",
-  "total_issues_opened": 1,
-  "total_prs_opened": 1,
+  "generated_at": "2026-07-16T22:23:09.425Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/151192805?v=4",
   "total_points": 900,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 45,
+  "rank": 76,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 0.05,
+    "avg_per_day": 0,
     "by_day_of_week": [
-      1,
       0,
       0,
       0,
       0,
-      1,
+      0,
+      0,
       0
     ],
     "by_hour_of_day": [
@@ -27,7 +27,6 @@
       0,
       0,
       0,
-      1,
       0,
       0,
       0,
@@ -39,7 +38,8 @@
       0,
       0,
       0,
-      1,
+      0,
+      0,
       0,
       0,
       0,
@@ -47,10 +47,10 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
+    "longest_streak_weeks": 0,
     "trend": "inactive",
-    "first_issue_at": "2025-11-15T06:15:35.000Z",
-    "last_issue_at": "2025-12-22T18:01:38.000Z"
+    "first_issue_at": null,
+    "last_issue_at": null
   },
   "topics": [],
   "suggestions": {
@@ -58,18 +58,6 @@
     "stretch": []
   },
   "activity_timeline": [
-    {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
     {
       "month": "2025-08",
       "issue_count": 0
@@ -84,11 +72,11 @@
     },
     {
       "month": "2025-11",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2025-12",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-01",
@@ -105,16 +93,19 @@
     {
       "month": "2026-04",
       "issue_count": 0
+    },
+    {
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 1,
-      "prs_opened": 1,
-      "prs_merged": 0
-    }
-  ]
+  "repo_breakdown": []
 }

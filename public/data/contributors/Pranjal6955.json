@@ -1,178 +1,78 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-04-29T10:39:53.958Z",
-  "total_issues_opened": 5,
-  "total_prs_opened": 15,
+  "generated_at": "2026-07-16T22:23:09.416Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
-  "total_points": 53900,
+  "total_points": 70100,
   "level": "Captain",
   "level_rank": 6,
-  "rank": 6,
+  "rank": 7,
   "cadence": {
-    "avg_per_week": 0.5,
-    "avg_per_day": 0.09,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
-      4,
-      2,
-      6,
-      2,
-      2,
-      2,
-      2
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "by_hour_of_day": [
-      1,
       0,
       0,
       0,
-      1,
-      4,
-      1,
       0,
       0,
-      1,
-      3,
       0,
       0,
-      2,
-      2,
       0,
       0,
-      1,
-      1,
-      1,
-      1,
       0,
       0,
-      1
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
-    "current_streak_weeks": 2,
-    "longest_streak_weeks": 7,
-    "trend": "ramping_up",
-    "first_issue_at": "2025-09-18T10:25:39.000Z",
-    "last_issue_at": "2026-04-27T06:21:22.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "nextra, log, screenshots",
-      "issue_count": 13,
-      "recent_issue": {
-        "title": "feat: refactored new footer for Nextra docs",
-        "url": "https://github.com/kubestellar/docs/pull/182",
-        "created_at": "2025-10-27T05:58:45Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 13
-    },
-    {
-      "name": "profile, leaderboard, repository",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "bug: Repository Contributions section missing from contributor profile UI",
-        "url": "https://github.com/kubestellar/docs/issues/1543",
-        "created_at": "2026-04-27T06:21:22Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 4
-    },
-    {
-      "name": "preset, metadata, promote",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "✨: update cilium preset metadata and version in registry",
-        "url": "https://github.com/kubestellar/console-marketplace/pull/121",
-        "created_at": "2026-04-21T17:19:31Z"
-      },
-      "repos": [
-        "console-marketplace"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "contact, functionality, section",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix: fixes functionality in the contact section",
-        "url": "https://github.com/kubestellar/docs/pull/199",
-        "created_at": "2025-11-04T10:01:42Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
-    {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
     {
       "month": "2025-08",
       "issue_count": 0
     },
     {
       "month": "2025-09",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2025-10",
-      "issue_count": 12
+      "issue_count": 0
     },
     {
       "month": "2025-11",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2025-12",
@@ -192,25 +92,20 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 6
-    }
-  ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 3,
-      "feature_issues": 0,
-      "other_issues": 2,
-      "prs_opened": 13,
-      "prs_merged": 9
+      "issue_count": 0
     },
     {
-      "repo": "console-marketplace",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 2,
-      "prs_merged": 2
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
-  ]
+  ],
+  "repo_breakdown": []
 }

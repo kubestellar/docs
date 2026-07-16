@@ -1,22 +1,22 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-04-29T10:39:54.007Z",
-  "total_issues_opened": 7,
-  "total_prs_opened": 4,
+  "generated_at": "2026-07-16T22:23:09.417Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
-  "total_points": 27850,
+  "total_points": 45250,
   "level": "Commander",
   "level_rank": 5,
   "rank": 13,
   "cadence": {
-    "avg_per_week": 0.3,
-    "avg_per_day": 0.09,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
-      1,
       0,
-      5,
-      5,
+      0,
+      0,
+      0,
       0,
       0
     ],
@@ -34,158 +34,30 @@
       0,
       0,
       0,
-      1,
-      1,
-      1,
-      3,
-      2,
       0,
-      1,
-      1,
-      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 2,
-    "trend": "slowing_down",
-    "first_issue_at": "2025-11-14T16:54:22.000Z",
-    "last_issue_at": "2026-03-20T16:41:49.000Z"
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "repository, feedback, workflow",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "fix: update kubectl-multi repository URL",
-        "url": "https://github.com/kubestellar/docs/pull/337",
-        "created_at": "2025-11-27T15:01:42Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 5
-    },
-    {
-      "name": "zero, chat, join",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: shows zero star and all zero matrix",
-        "url": "https://github.com/kubestellar/docs/issues/1300",
-        "created_at": "2026-03-17T17:01:07Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "@arpit529srivastava, cce, b06",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "checking of the issue, if resolved or not?",
-        "url": "https://github.com/kubestellar/docs/issues/1319",
-        "created_at": "2026-03-20T16:41:49Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "modal, button, cta",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Primary CTA Button (“Install to Console”) is Partially Overlapped in Security Audit Modal",
-        "url": "https://github.com/kubestellar/docs/issues/1318",
-        "created_at": "2026-03-20T16:07:42Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "recent, contributor, leaderboard",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: contributors who only file issues are missing from leaderboard due to single-page discovery",
-        "url": "https://github.com/kubestellar/docs/issues/1266",
-        "created_at": "2026-03-12T17:39:37Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "markdown, syntax, mkdocs",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Empty pages due to MkDocs include-markdown syntax not supported by Nextra",
-        "url": "https://github.com/kubestellar/docs/issues/485",
-        "created_at": "2026-01-01T21:17:56Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Deployments & GitOps",
-        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
-        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
-      },
-      {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
-    {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
     {
       "month": "2025-08",
       "issue_count": 0
@@ -200,7 +72,7 @@
     },
     {
       "month": "2025-11",
-      "issue_count": 6
+      "issue_count": 0
     },
     {
       "month": "2025-12",
@@ -208,7 +80,7 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-02",
@@ -216,21 +88,24 @@
     },
     {
       "month": "2026-03",
-      "issue_count": 4
+      "issue_count": 0
     },
     {
       "month": "2026-04",
       "issue_count": 0
+    },
+    {
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 4,
-      "feature_issues": 0,
-      "other_issues": 3,
-      "prs_opened": 4,
-      "prs_merged": 4
-    }
-  ]
+  "repo_breakdown": []
 }

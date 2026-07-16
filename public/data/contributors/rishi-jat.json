@@ -1,24 +1,24 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-04-29T10:39:53.986Z",
-  "total_issues_opened": 37,
-  "total_prs_opened": 4,
+  "generated_at": "2026-07-16T22:23:09.416Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
-  "total_points": 44250,
-  "level": "Commander",
-  "level_rank": 5,
-  "rank": 8,
+  "total_points": 76150,
+  "level": "Captain",
+  "level_rank": 6,
+  "rank": 6,
   "cadence": {
-    "avg_per_week": 2.8,
-    "avg_per_day": 0.2,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
-      1,
-      1,
-      2,
       0,
-      32,
-      5
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "by_hour_of_day": [
       0,
@@ -29,170 +29,42 @@
       0,
       0,
       0,
-      28,
-      0,
-      0,
-      2,
-      0,
-      1,
       0,
       0,
       0,
-      2,
-      1,
-      5,
-      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 2,
-    "longest_streak_weeks": 2,
-    "trend": "ramping_up",
-    "first_issue_at": "2025-09-27T20:12:21.000Z",
-    "last_issue_at": "2026-04-16T17:03:39.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "request, console, @rishi",
-      "issue_count": 33,
-      "recent_issue": {
-        "title": "docs: outdated Netlify URL redirects to console.kubestellar.io",
-        "url": "https://github.com/kubestellar/docs/issues/1487",
-        "created_at": "2026-04-16T17:03:39Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 33
-    },
-    {
-      "name": "noopener, rel, index",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "fix: add rel=\"noopener\" to external links in index.html (#85)",
-        "url": "https://github.com/kubestellar/docs/pull/88",
-        "created_at": "2025-09-28T19:39:21Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "attach, style, screenshot",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Review and fix mkdocs.yml configuration",
-        "url": "https://github.com/kubestellar/docs/issues/87",
-        "created_at": "2025-09-28T19:29:23Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "iskubestellar, space, blank",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Add space in iskubestellar",
-        "url": "https://github.com/kubestellar/docs/pull/84",
-        "created_at": "2025-09-27T20:47:58Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "temporary, intend, automation",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "This PR adds a temporary test file to verify that the preview build and deploy workflows run as expected.",
-        "url": "https://github.com/kubestellar/docs/pull/200",
-        "created_at": "2025-11-04T13:29:51Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "accessible, mobile, menu",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Add Accessible Text to Mobile Menu and Back-to-Top Buttons",
-        "url": "https://github.com/kubestellar/docs/pull/89",
-        "created_at": "2025-09-28T19:53:19Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Dashboard & Cards",
-        "path": "web/src/components/cards/, web/src/components/dashboard/",
-        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
-    {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
     {
       "month": "2025-08",
       "issue_count": 0
     },
     {
       "month": "2025-09",
-      "issue_count": 7
+      "issue_count": 0
     },
     {
       "month": "2025-10",
@@ -200,7 +72,7 @@
     },
     {
       "month": "2025-11",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2025-12",
@@ -220,17 +92,20 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 33
+      "issue_count": 0
+    },
+    {
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 33,
-      "feature_issues": 0,
-      "other_issues": 4,
-      "prs_opened": 4,
-      "prs_merged": 1
-    }
-  ]
+  "repo_breakdown": []
 }

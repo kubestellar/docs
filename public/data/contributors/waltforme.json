@@ -1,21 +1,21 @@
 {
   "login": "waltforme",
-  "generated_at": "2026-04-29T10:39:54.287Z",
-  "total_issues_opened": 4,
-  "total_prs_opened": 1,
+  "generated_at": "2026-07-16T22:23:09.430Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/8633434?v=4",
-  "total_points": 400,
-  "level": "Observer",
-  "level_rank": 1,
-  "rank": 62,
+  "total_points": 500,
+  "level": "Explorer",
+  "level_rank": 2,
+  "rank": 111,
   "cadence": {
-    "avg_per_week": 0.1,
-    "avg_per_day": 0.06,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
-      2,
       0,
-      3,
+      0,
+      0,
       0,
       0,
       0
@@ -24,10 +24,6 @@
       0,
       0,
       0,
-      2,
-      0,
-      0,
-      1,
       0,
       0,
       0,
@@ -36,7 +32,11 @@
       0,
       0,
       0,
-      2,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -47,103 +47,17 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
-    "trend": "slowing_down",
-    "first_issue_at": "2025-12-11T15:03:28.000Z",
-    "last_issue_at": "2026-03-10T15:30:18.000Z"
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "simplify, chinese, homepage",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "bug: 'Meeting Agendas' on homepage is never translated",
-        "url": "https://github.com/kubestellar/docs/issues/908",
-        "created_at": "2026-01-29T06:08:56Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "statement, workload, group",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "doc: Unclear statements on https://kubestellar.io/docs/console/deploy",
-        "url": "https://github.com/kubestellar/docs/issues/1262",
-        "created_at": "2026-03-10T15:30:18Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "cursor, mouse, button",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Unexpected behavior of buttons on the website home page",
-        "url": "https://github.com/kubestellar/docs/issues/384",
-        "created_at": "2025-12-11T15:03:28Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
-      },
-      {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
-    {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
     {
       "month": "2025-08",
       "issue_count": 0
@@ -162,11 +76,11 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-01",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-02",
@@ -174,21 +88,24 @@
     },
     {
       "month": "2026-03",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-04",
       "issue_count": 0
+    },
+    {
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 1,
-      "feature_issues": 0,
-      "other_issues": 3,
-      "prs_opened": 1,
-      "prs_merged": 1
-    }
-  ]
+  "repo_breakdown": []
 }

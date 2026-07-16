@@ -1,23 +1,23 @@
 {
   "login": "ParthKshirsagar7",
-  "generated_at": "2026-04-29T10:39:54.280Z",
-  "total_issues_opened": 1,
-  "total_prs_opened": 3,
+  "generated_at": "2026-07-16T22:23:09.424Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/149901357?v=4",
   "total_points": 1700,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 36,
+  "rank": 62,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 1.27,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
       0,
-      2,
       0,
-      1,
-      1,
+      0,
+      0,
+      0,
       0
     ],
     "by_hour_of_day": [
@@ -27,15 +27,15 @@
       0,
       0,
       0,
-      1,
       0,
       0,
       0,
-      1,
-      1,
       0,
       0,
-      1,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -47,89 +47,17 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 2,
+    "longest_streak_weeks": 0,
     "trend": "inactive",
-    "first_issue_at": "2026-01-14T06:33:23.000Z",
-    "last_issue_at": "2026-01-17T10:12:45.000Z"
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "custom, localized, page",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "✨ Feature/not found page",
-        "url": "https://github.com/kubestellar/docs/pull/797",
-        "created_at": "2026-01-17T10:12:45Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "cluster, end, management",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "📖 Add ITS cluster management docs",
-        "url": "https://github.com/kubestellar/docs/pull/762",
-        "created_at": "2026-01-16T14:47:25Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
-      },
-      {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
-        "name": "Backend API & Handlers",
-        "path": "pkg/api/, pkg/models/, pkg/store/",
-        "description": "Go backend REST API, request handlers, data models, persistence layer",
-        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
-      },
-      {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
-    {
-      "month": "2025-05",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-06",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-07",
-      "issue_count": 0
-    },
     {
       "month": "2025-08",
       "issue_count": 0
@@ -152,7 +80,7 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 4
+      "issue_count": 0
     },
     {
       "month": "2026-02",
@@ -165,16 +93,19 @@
     {
       "month": "2026-04",
       "issue_count": 0
+    },
+    {
+      "month": "2026-05",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-06",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-07",
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 0,
-      "feature_issues": 1,
-      "other_issues": 0,
-      "prs_opened": 3,
-      "prs_merged": 2
-    }
-  ]
+  "repo_breakdown": []
 }
