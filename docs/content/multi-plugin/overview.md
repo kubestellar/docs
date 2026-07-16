@@ -79,11 +79,11 @@ kubectl multi get pods -A
 
 Complete documentation for kubectl-multi:
 
-- **[Installation Guide](installation_guide.md)** - How to install and set up kubectl-multi
-- **[Usage Guide](usage_guide.md)** - Detailed usage examples and commands
-- **[Architecture Guide](architecture_guide.md)** - Technical architecture and how it works
-- **[Development Guide](development_guide.md)** - Contributing and development workflow
-- **[API Reference](api_reference.md)** - Code organization and technical implementation
+- **[Installation Guide](installation_guide)** - How to install and set up kubectl-multi
+- **[Usage Guide](usage_guide)** - Detailed usage examples and commands
+- **[Architecture Guide](architecture_guide)** - Technical architecture and how it works
+- **[Development Guide](development_guide)** - Contributing and development workflow
+- **[API Reference](api_reference)** - Code organization and technical implementation
 
 ## Tech Stack
 
