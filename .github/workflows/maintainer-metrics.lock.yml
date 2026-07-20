@@ -6750,6 +6750,7 @@ jobs:
           find "/tmp/gh-aw/safe-jobs/" -type f -print
           echo "GH_AW_AGENT_OUTPUT=/tmp/gh-aw/safe-jobs/agent_output.json" >> "$GITHUB_ENV"
       - name: Send via Postmark
+        continue-on-error: true
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
           POSTMARK_API_TOKEN: ${{ secrets.POSTMARK_API_TOKEN }}
