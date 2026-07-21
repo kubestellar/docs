@@ -8,7 +8,7 @@ The relay turns a hive from a fixed set of resident agents into an elastic swarm
 
 ## How it fits together
 
-```
+```text
 ┌────────────────────┐          wss://<hive>/api/contribute/ws          ┌──────────────────────┐
 │  Hive (admin side)  │ ◄──────────────────────────────────────────────► │ Contributor machine  │
 │                    │   task assign → progress → result                │                      │
@@ -118,7 +118,7 @@ just contribute-hive
 
 (`GOOSE_MODEL` is honored for goose.) The model is declared to the hive when the relay connects. If the hive's Model Filter rejects it, the relay prints the hive's accepted patterns and exits — switch models and reconnect:
 
-```
+```text
 This hive accepts the following models:
   - claude-opus*
   - claude-sonnet*
