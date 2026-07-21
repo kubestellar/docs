@@ -8,14 +8,18 @@ The relay turns a hive from a fixed set of resident agents into an elastic swarm
 
 ## How it fits together
 
-```text
-┌────────────────────┐          wss://<hive>/api/contribute/ws          ┌──────────────────────┐
-│  Hive (admin side)  │ ◄──────────────────────────────────────────────► │ Contributor machine  │
-│                    │   task assign → progress → result                │                      │
-│  Governor Config → │                                                  │  contributor-relay   │
-│  Hub tab curates   │                                                  │  + your CLI/model    │
-│  the work queue    │                                                  │  (tmux session)      │
-└────────────────────┘                                                  └──────────────────────┘
+```mermaid
+sequenceDiagram
+    participant H as Hive<br/>(Governor Config → Hub tab<br/>curates the work queue)
+    participant R as Contributor machine<br/>(contributor-relay + your CLI/model,<br/>tmux session)
+
+    R->>H: connect wss://<hive>/api/contribute/ws<br/>(registration token, CLI backend, model)
+    H-->>R: accept — or reject if the model<br/>fails the Model Filter
+    H->>R: task assign (queued issue + short-lived GitHub token)
+    loop while task runs
+        R->>H: progress (every 2 min) + heartbeat (30 s)
+    end
+    R->>H: result (PR opened / success / failure)
 ```
 
 - The **work queue** is built from the hive's monitored repos: open, actionable issues that pass the admin's filters. The current depth is visible on the Hub tab (`N items in queue`) and at `GET /api/contribute/status`.
