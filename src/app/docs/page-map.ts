@@ -342,6 +342,7 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Agent Configuration': 'agent-configuration.md' },
       { 'Governor': 'governor.md' },
+      { 'Contributor Relay': 'contributor-relay.md' },
       { 'Variable Substitution': 'variable-substitution.md' },
     ]
   },
