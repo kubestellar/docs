@@ -355,6 +355,7 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
   {
     title: 'Reference',
     items: [
+      { 'hivectl CLI': 'hivectl.md' },
       { 'ACMM Policy Matrix': 'acmm-policy-matrix.md' },
       { 'Outreach Anti-Spam': 'outreach-antispam.md' },
     ]

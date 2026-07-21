@@ -93,9 +93,11 @@ just contribute-hive             # start contributing (Docker, recommended)
 `contribute-hive` starts the relay. Two modes:
 
 ```bash
-just contribute-hive               # containerized (recommended) — runs the relay + CLI in Docker
+just contribute-hive               # containerized (recommended) — relay + CLI in docker or podman
 just contribute-hive claude local  # host mode — relay + CLI directly on your machine, in a tmux session
 ```
+
+Containerized mode auto-detects the runtime — docker first, then podman — and can be forced with `export HIVE_CONTAINER_RUNTIME=podman`. Rootless podman is handled automatically (`--userns=keep-id` so the container can read your mounted CLI credentials, plus SELinux volume labels on Fedora/RHEL). One podman-on-macOS caveat: the podman machine has no host networking, which only matters if your LiteLLM proxy listens on localhost — point `HIVE_LITELLM_ENDPOINT` at `host.containers.internal` instead.
 
 ### Choosing a CLI backend
 
