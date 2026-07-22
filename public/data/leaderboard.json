@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-22T14:43:14.400Z",
-  "git_hash": "4a74304",
+  "generated_at": "2026-07-22T18:29:04.532Z",
+  "git_hash": "ee4789f",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-05-04",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 5867650,
+      "total_points": 5875700,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 650,
-        "feature_issues": 976,
-        "other_issues": 2072,
-        "prs_opened": 8337,
-        "prs_merged": 7608
+        "feature_issues": 980,
+        "other_issues": 2075,
+        "prs_opened": 8347,
+        "prs_merged": 7619
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         614,
         681,
         407,
-        71
+        88
       ],
-      "recent_activity_score": 1992.93,
+      "recent_activity_score": 2009.93,
       "rank": 1
     },
     {
@@ -1250,6 +1250,36 @@
       "rank": 41
     },
     {
+      "login": "DavidDiaz0317",
+      "avatar_url": "https://avatars.githubusercontent.com/u/183157248?v=4",
+      "total_points": 3700,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 6,
+        "prs_merged": 5
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        8,
+        0,
+        1
+      ],
+      "recent_activity_score": 10.04,
+      "rank": 42
+    },
+    {
       "login": "AkashKumar7902",
       "avatar_url": "https://avatars.githubusercontent.com/u/91385321?v=4",
       "total_points": 3500,
@@ -1277,36 +1307,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 42
-    },
-    {
-      "login": "DavidDiaz0317",
-      "avatar_url": "https://avatars.githubusercontent.com/u/183157248?v=4",
-      "total_points": 3500,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 5,
-        "prs_merged": 5
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        8,
-        8,
-        0,
-        0
-      ],
-      "recent_activity_score": 9.04,
       "rank": 43
     },
     {
