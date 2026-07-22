@@ -59,11 +59,13 @@
   "overrides": {
     "@xmldom/xmldom": ">=0.9.10",
     "axios": ">=1.16.0",
-    "dompurify": ">=3.4.5",
+    "dompurify": ">=3.4.12",
+    "linkify-it": ">=5.0.2",
     "follow-redirects": ">=1.16.0",
     "js-yaml": ">=4.1.1",
     "markdown-it": ">=14.1.1",
     "postcss": ">=8.5.10",
+    "sharp": ">=0.35.3",
     "uuid": ">=11.1.1"
   }
 }
