@@ -347,6 +347,12 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
     ]
   },
   {
+    title: 'Operations',
+    items: [
+      { 'Manual Provisioning': 'manual-provisioning.md' },
+    ]
+  },
+  {
     title: 'Security',
     items: [
       { 'Security Model': 'security-model.md' },
