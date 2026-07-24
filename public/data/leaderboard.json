@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-24T06:55:47.044Z",
-  "git_hash": "8666947",
+  "generated_at": "2026-07-24T10:43:20.328Z",
+  "git_hash": "5ee9ad9",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-05-04",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 5898950,
+      "total_points": 5904350,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 650,
-        "feature_issues": 987,
-        "other_issues": 2092,
-        "prs_opened": 8383,
-        "prs_merged": 7648
+        "feature_issues": 989,
+        "other_issues": 2094,
+        "prs_opened": 8391,
+        "prs_merged": 7655
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         614,
         681,
         418,
-        148
+        160
       ],
-      "recent_activity_score": 2078.66,
+      "recent_activity_score": 2090.66,
       "rank": 1
     },
     {
@@ -1160,6 +1160,36 @@
       "rank": 38
     },
     {
+      "login": "DavidDiaz0317",
+      "avatar_url": "https://avatars.githubusercontent.com/u/183157248?v=4",
+      "total_points": 4500,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 1,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 6,
+        "prs_merged": 6
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        8,
+        0,
+        2
+      ],
+      "recent_activity_score": 11.04,
+      "rank": 39
+    },
+    {
       "login": "Anvesha-Khandelwal",
       "avatar_url": "https://avatars.githubusercontent.com/u/189449740?v=4",
       "total_points": 4300,
@@ -1187,36 +1217,6 @@
         0
       ],
       "recent_activity_score": 1.28,
-      "rank": 39
-    },
-    {
-      "login": "DavidDiaz0317",
-      "avatar_url": "https://avatars.githubusercontent.com/u/183157248?v=4",
-      "total_points": 4000,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 1,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 6,
-        "prs_merged": 5
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        8,
-        8,
-        0,
-        2
-      ],
-      "recent_activity_score": 11.04,
       "rank": 40
     },
     {
