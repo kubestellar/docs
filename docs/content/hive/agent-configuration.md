@@ -4,6 +4,8 @@ A hive **agent** is a long-running AI worker — a CLI session the hive keeps al
 
 Start with only a name, a method, and a model. Add the rest when the agent needs it.
 
+> **Looking for the `+ agent` import file?** If you got here from the dashboard's **+ agent → Import from URL** overlay (the [`customized-agent.yaml`](https://github.com/kubestellar/hive/blob/v2/v2/examples/agents/customized-agent.yaml) example), that file is the *portable* `kind: AgentDefinition` format — `apiVersion`/`kind`/`metadata`/`spec` with camelCase keys. This page documents the inline `hive.yaml` `agents:` form (snake_case). For a field-by-field reference of the import file itself, see the **[AgentDefinition YAML Reference](agent-definition-yaml.md)**.
+
 ## The smallest agent that works
 
 ```yaml
@@ -230,7 +232,7 @@ At L5, every agent PR gets a `hold` label automatically. The system proposes; it
 
 Resolution order: the agent's explicit `kick_template` wins; otherwise the ACMM pack's template for that agent at the current level; otherwise convention — `/data/agents/<name>/CLAUDE.md`, then `<name>.md` in the policies checkout, then the embedded default. Pack templates carry the level's policy in their names — `scanner-holdgated.md` is scanner-at-L5; the same scanner at L6 gets `scanner-automerge.md`.
 
-Portable agents bundle everything — config plus a `promptTemplate` — in a single `AgentDefinition` YAML you can import from a URL in the dashboard (see [`v2/examples/agents/customized-agent.yaml`](https://github.com/kubestellar/hive/blob/v2/v2/examples/agents/customized-agent.yaml)).
+Portable agents bundle everything — config plus a `promptTemplate` — in a single `AgentDefinition` YAML you can import from a URL in the dashboard (see [`v2/examples/agents/customized-agent.yaml`](https://github.com/kubestellar/hive/blob/v2/v2/examples/agents/customized-agent.yaml)). This is the format the dashboard's **+ agent → Import from URL** overlay reads. For a field-by-field reference of that file — every `metadata` and `spec` key, its type, default, and options — see the **[AgentDefinition YAML Reference](agent-definition-yaml.md)**.
 
 ## When to add what
 
