@@ -14,6 +14,7 @@ permissions: read-all
 network: defaults
 
 safe-outputs:
+  report-failure-as-issue: false
   noop:
     report-as-issue: false
   create-issue:
