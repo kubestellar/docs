@@ -44,7 +44,7 @@
     "@types/react-dom": "^19.2.2",
     "@types/three": "^0.185.1",
     "@vitest/coverage-v8": "4.1.10",
-    "eslint": "^9",
+    "eslint": "^10",
     "eslint-config-next": "16.2.11",
     "markdownlint": "^0.41.1",
     "markdownlint-cli2": "^0.23.1",
