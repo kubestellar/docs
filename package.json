@@ -54,7 +54,8 @@
     "typescript": "^6",
     "vitest": "^4.1.10",
     "wink-eng-lite-web-model": "^1.8.1",
-    "wink-nlp": "^2.4.0"
+    "wink-nlp": "^2.4.0",
+    "brace-expansion": "^1.1.7"
   },
   "overrides": {
     "@xmldom/xmldom": ">=0.9.10",
