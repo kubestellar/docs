@@ -99,6 +99,8 @@ export default function AboutSection() {
       id="about"
       className="relative py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden"
     >
+      {/* Anchor for key-features navigation link */}
+      <div id="key-features" className="absolute top-0 left-0" aria-hidden="true"></div>
       {/* Dark base background */}
       <div className="absolute inset-0 bg-[#0a0a0a]"></div>
 
