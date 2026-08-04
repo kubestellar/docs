@@ -15,6 +15,8 @@ interface AcmmProject {
   repo: string;
   level: number;
   score: number;
+  /** True when the raw scan level is below L1 (baseline prerequisites not yet met). */
+  unmetPrereqs?: boolean;
 }
 
 // ── Level metadata ────────────────────────────────────────────────────
@@ -29,13 +31,15 @@ interface LevelMeta {
 }
 
 const LEVELS: Record<number, LevelMeta> = {
-  0: { emoji: "🔴", name: "Prerequisites",    description: "No AI-related signals detected (baseline)",                  bg: "bg-red-500/20",    text: "text-red-400",    border: "border-red-500/30" },
-  1: { emoji: "⚫", name: "Assisted",         description: "Basic AI tooling signals (Copilot, formatters)",             bg: "bg-gray-500/20",   text: "text-gray-400",   border: "border-gray-500/30" },
-  2: { emoji: "⚪", name: "Instructed",       description: "Has AI instruction files (CLAUDE.md, .cursorrules, etc.)",   bg: "bg-white/10",      text: "text-gray-300",   border: "border-white/20" },
-  3: { emoji: "🟡", name: "Measured",         description: "PR review rubric, quality dashboard, CI matrix",             bg: "bg-yellow-500/20", text: "text-yellow-400", border: "border-yellow-500/30" },
-  4: { emoji: "🔵", name: "Adaptive",         description: "Auto-QA tuning, nightly compliance, AI-fix workflows",      bg: "bg-blue-500/20",   text: "text-blue-400",   border: "border-blue-500/30" },
-  5: { emoji: "🟢", name: "Semi-Automated",   description: "GitHub Actions AI, auto-QA self-tuning, public metrics",    bg: "bg-green-500/20",  text: "text-green-400",  border: "border-green-500/30" },
-  6: { emoji: "🟣", name: "Autonomous",       description: "Fully autonomous AI-driven development and operations",     bg: "bg-purple-500/20", text: "text-purple-400", border: "border-purple-500/30" },
+  // 0 is an internal fallback only — never rendered as its own maturity tier.
+  // Projects scoring below L1 display as L1 with an unmet-prerequisites marker.
+  0: { emoji: "🔴", name: "Prerequisites",    description: "Baseline prerequisites not yet met (internal fallback; displays as L1)", bg: "bg-red-500/20",    text: "text-red-400",    border: "border-red-500/30" },
+  1: { emoji: "⚫", name: "Inception",        description: "Basic AI tooling signals (Copilot, formatters)",             bg: "bg-gray-500/20",   text: "text-gray-400",   border: "border-gray-500/30" },
+  2: { emoji: "⚪", name: "Advisory",         description: "Has AI instruction files (CLAUDE.md, .cursorrules, etc.)",   bg: "bg-white/10",      text: "text-gray-300",   border: "border-white/20" },
+  3: { emoji: "🟡", name: "Quality-Gated",    description: "PR review rubric, quality dashboard, CI matrix",             bg: "bg-yellow-500/20", text: "text-yellow-400", border: "border-yellow-500/30" },
+  4: { emoji: "🔵", name: "Security-Aware",   description: "Auto-QA tuning, nightly compliance, AI-fix workflows",      bg: "bg-blue-500/20",   text: "text-blue-400",   border: "border-blue-500/30" },
+  5: { emoji: "🟢", name: "Semi-Autonomous",  description: "GitHub Actions AI, auto-QA self-tuning, public metrics",    bg: "bg-green-500/20",  text: "text-green-400",  border: "border-green-500/30" },
+  6: { emoji: "🟣", name: "Fully Autonomous", description: "Fully autonomous AI-driven development and operations",     bg: "bg-purple-500/20", text: "text-purple-400", border: "border-purple-500/30" },
 };
 
 // ── Medal icons ───────────────────────────────────────────────────────
@@ -49,14 +53,18 @@ function RankDisplay({ rank }: { rank: number }) {
 
 // ── Level badge ───────────────────────────────────────────────────────
 
-function LevelBadge({ level }: { level: number }) {
-  const meta = LEVELS[level] || LEVELS[1];
+function LevelBadge({ level, unmetPrereqs }: { level: number; unmetPrereqs?: boolean }) {
+  // Displayed level is clamped to L1+ — L0 is never shown as its own tier.
+  const displayLevel = Math.max(level, MIN_LEVEL);
+  const meta = LEVELS[displayLevel] || LEVELS[MIN_LEVEL];
   return (
     <span
       className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border ${meta.bg} ${meta.text} ${meta.border}`}
+      title={unmetPrereqs ? "Baseline prerequisites not yet met" : undefined}
     >
       <span>{meta.emoji}</span>
-      <span>L{level}</span>
+      <span>L{displayLevel}</span>
+      {unmetPrereqs && <span className="text-amber-400" aria-label="Baseline prerequisites not yet met">*</span>}
     </span>
   );
 }
@@ -606,15 +614,19 @@ export default function AcmmLeaderboardPage() {
       if (!scores?.length) return p;
       const latestScore = scores[scores.length - 1];
       const ids = history.detectedIds?.[p.repo];
-      const level = ids?.length
+      const rawLevel = ids?.length
         ? levelFromDetectedIds(ids)
         : levelFromScore(latestScore);
-      return { ...p, score: latestScore, level };
+      // Fold L0 into L1 for display: the ladder starts at L1, and a project
+      // below baseline renders as L1 with an unmet-prerequisites marker.
+      // Underlying scan data (acmm-history.json) keeps its raw numbers.
+      const level = Math.max(rawLevel, MIN_LEVEL);
+      return { ...p, score: latestScore, level, unmetPrereqs: rawLevel < MIN_LEVEL };
     });
   }, [history]);
 
   const levelCounts = useMemo(() => {
-    const counts: Record<number, number> = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+    const counts: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
     for (const p of projects) counts[p.level] = (counts[p.level] || 0) + 1;
     return counts;
   }, [projects]);
@@ -712,7 +724,7 @@ export default function AcmmLeaderboardPage() {
 
           {/* Quick stats — level filters + badge filter */}
           <div className="flex flex-wrap justify-center gap-3 mt-6">
-            {[6, 5, 4, 3, 2, 1, 0].map((lvl) => {
+            {[6, 5, 4, 3, 2, 1].map((lvl) => {
               const meta = LEVELS[lvl];
               return (
                 <button
@@ -800,8 +812,8 @@ export default function AcmmLeaderboardPage() {
               <h3 className="text-sm font-semibold text-gray-300 mb-4 uppercase tracking-wider">
                 ACMM Maturity Levels
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-7 gap-3 mb-4">
-                {[0, 1, 2, 3, 4, 5, 6].map((lvl) => {
+              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-4">
+                {[1, 2, 3, 4, 5, 6].map((lvl) => {
                   const meta = LEVELS[lvl];
                   return (
                     <div key={lvl} className={`p-3 rounded-lg border ${meta.bg} ${meta.border}`}>
@@ -814,7 +826,7 @@ export default function AcmmLeaderboardPage() {
                 })}
               </div>
               <p className="text-xs text-gray-500">
-                The full ACMM model defines <strong className="text-gray-400">{TOTAL_CRITERIA} criteria</strong> across 7 maturity levels (L0–L6). This leaderboard evaluates <strong className="text-gray-400">{TOTAL_SCANNABLE} publicly detectable signals</strong> from repository metadata, CI/CD configuration, and AI instruction files.{" "}
+                The full ACMM model defines <strong className="text-gray-400">{TOTAL_CRITERIA} criteria</strong> across six maturity levels (L1–L6). This leaderboard evaluates <strong className="text-gray-400">{TOTAL_SCANNABLE} publicly detectable signals</strong> from repository metadata, CI/CD configuration, and AI instruction files.{" "}
                 <a href="https://arxiv.org/abs/2604.09388" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline" onClick={trackPaperClick}>
                   Read the paper →
                 </a>
@@ -913,7 +925,7 @@ export default function AcmmLeaderboardPage() {
 
                   {/* Level */}
                   <div className="flex justify-start sm:justify-center pl-11 sm:pl-0">
-                    <LevelBadge level={project.level} />
+                    <LevelBadge level={project.level} unmetPrereqs={project.unmetPrereqs} />
                   </div>
 
                   {/* Score */}
