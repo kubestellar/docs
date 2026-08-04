@@ -59,7 +59,7 @@
   "overrides": {
     "@xmldom/xmldom": ">=0.9.10",
     "axios": ">=1.16.0",
-    "brace-expansion": ">=1.1.11",
+    "brace-expansion": "^2.0.1",
     "dompurify": ">=3.4.12",
     "linkify-it": ">=5.0.2",
     "follow-redirects": ">=1.16.0",
