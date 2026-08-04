@@ -59,7 +59,7 @@
   "overrides": {
     "@xmldom/xmldom": ">=0.9.10",
     "axios": ">=1.16.0",
-    "brace-expansion": ">=5.0.8",
+    "brace-expansion": "^2.0.1",
     "dompurify": ">=3.4.12",
     "linkify-it": ">=5.0.2",
     "follow-redirects": ">=1.16.0",
@@ -67,7 +67,6 @@
     "markdown-it": ">=14.1.1",
     "postcss": ">=8.5.18",
     "sharp": ">=0.35.3",
-    "uuid": ">=11.1.1",
-    "minimatch": "3.1.2"
+    "uuid": ">=11.1.1"
   }
 }
