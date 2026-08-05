@@ -95,17 +95,116 @@
   command = "NEXT_PUBLIC_BRANCH=docs/kubeflex/0.7.0 npm run build"
 
 # Console version branches
-[context."docs/console/0.3.20"]
-  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.20 npm run build"
+[context."docs/console/0.1.0"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.1.0 npm run build"
 
-[context."docs/console/0.3.19"]
-  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.19 npm run build"
+[context."docs/console/0.3.0"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.0 npm run build"
+
+[context."docs/console/0.3.1"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.1 npm run build"
+
+[context."docs/console/0.3.2"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.2 npm run build"
+
+[context."docs/console/0.3.3"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.3 npm run build"
+
+[context."docs/console/0.3.4"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.4 npm run build"
+
+[context."docs/console/0.3.5"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.5 npm run build"
 
 [context."docs/console/0.3.6"]
   command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.6 npm run build"
 
-[context."docs/console/0.1.0"]
-  command = "NEXT_PUBLIC_BRANCH=docs/console/0.1.0 npm run build"
+[context."docs/console/0.3.7"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.7 npm run build"
+
+[context."docs/console/0.3.8"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.8 npm run build"
+
+[context."docs/console/0.3.9"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.9 npm run build"
+
+[context."docs/console/0.3.10"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.10 npm run build"
+
+[context."docs/console/0.3.11"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.11 npm run build"
+
+[context."docs/console/0.3.12"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.12 npm run build"
+
+[context."docs/console/0.3.13"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.13 npm run build"
+
+[context."docs/console/0.3.14"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.14 npm run build"
+
+[context."docs/console/0.3.15"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.15 npm run build"
+
+[context."docs/console/0.3.16"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.16 npm run build"
+
+[context."docs/console/0.3.17"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.17 npm run build"
+
+[context."docs/console/0.3.18"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.18 npm run build"
+
+[context."docs/console/0.3.19"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.19 npm run build"
+
+[context."docs/console/0.3.20"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.20 npm run build"
+
+[context."docs/console/0.3.21"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.21 npm run build"
+
+[context."docs/console/0.3.22"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.22 npm run build"
+
+[context."docs/console/0.3.23"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.23 npm run build"
+
+[context."docs/console/0.3.24"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.24 npm run build"
+
+[context."docs/console/0.3.25"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.25 npm run build"
+
+[context."docs/console/0.3.26"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.26 npm run build"
+
+[context."docs/console/0.3.27"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.27 npm run build"
+
+[context."docs/console/0.3.28"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.28 npm run build"
+
+[context."docs/console/0.3.29"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.29 npm run build"
+
+[context."docs/console/0.3.30"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.30 npm run build"
+
+[context."docs/console/0.3.31"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.31 npm run build"
+
+[context."docs/console/0.3.32"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.32 npm run build"
+
+[context."docs/console/0.3.33"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.33 npm run build"
+
+[context."docs/console/0.3.34"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.34 npm run build"
+
+[context."docs/console/0.3.35"]
+  command = "NEXT_PUBLIC_BRANCH=docs/console/0.3.35 npm run build"
 
 # CORS headers for shared config (allows branch deploys to fetch from production)
 [[headers]]
