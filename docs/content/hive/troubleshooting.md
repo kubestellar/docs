@@ -2,6 +2,24 @@
 
 > **Note:** most of this page covers the legacy **v1 runtime** (systemd/launchd host installs with `/etc/hive/agent.env`). On **v2**, start with the dashboard instead: the Getting Started dialog auto-checks setup steps, **Test Connection** live-probes inference gateways and reports the gateway's actual error, agent cards show live state, and the built-in web terminal (ttyd) gives direct access to agent tmux sessions. Check container logs with `docker compose logs -f` or `kubectl -n hive logs deploy/hive`.
 
+## An agent card shows "needs login"
+
+Cause: the agent's CLI session lost its authentication (token expired, credentials revoked, or the underlying account was logged out), so the agent's TUI is now blocked on a login prompt instead of accepting `/loop` input.
+
+Symptom you'll typically see first is the dashboard card itself flagging the state, followed by advice to open a terminal and run `/login`. Running `/login` interactively drops you into the CLI's own login-method picker (e.g. Claude Code asks which login method to use), and there usually isn't a "right" answer to give it from an unattended terminal — the CLI expects an interactive OAuth/browser flow that a headless agent session can't complete on its own.
+
+Fix: **restart the agent** rather than trying to answer the `/login` picker by hand:
+
+```sh
+sudo systemctl stop hive
+sudo -u "$AGENT_USER" tmux kill-session -t "$AGENT_SESSION_NAME"
+sudo systemctl start hive
+```
+
+This forces a fresh session (see "`systemctl restart hive` didn't pick up my new `AGENT_LOOP_PROMPT`" below for why a plain `systemctl restart` isn't enough). On v2, you can instead recreate the agent's container/pod (`docker compose restart <service>` or `kubectl -n hive rollout restart deploy/hive`) to get the same effect.
+
+If the agent goes straight back to "needs login" after a restart, the credentials themselves are the problem (expired token, revoked API key, or an account-level sign-out) — re-authenticate the CLI for `$AGENT_USER` outside of the tmux session first (e.g. `sudo -u "$AGENT_USER" claude /login` from a real interactive terminal you control), then restart the agent as above so it picks up the refreshed session.
+
 ## The `/loop` prompt never fires — the agent just sits at the prompt
 
 Cause: the supervisor's `AGENT_READY_MARKER` doesn't appear in the agent's TUI, so the supervisor gives up before sending `AGENT_LOOP_PROMPT`.
