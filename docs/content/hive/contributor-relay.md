@@ -148,6 +148,26 @@ Set your model: export AGENT_MODEL=<model>
 3. Progress is reported back every 2 minutes; the result (PR opened, success/failure) is reported when the CLI finishes.
 4. Completed tasks count toward your automatic tier promotion — and the hive's `/leaderboard`.
 
+### Custom stylesheets
+
+The contributor leaderboard, spoke dashboard, and read-only snapshot preview accept a shareable custom stylesheet parameter:
+
+```text
+/contribute/leaderboard?style=owner/repo/path/to/theme.css@ref
+/?style=owner/repo/path/to/theme.css@ref
+/snapshot?style=owner/repo/path/to/theme.css@ref
+```
+
+For example:
+
+```text
+/contribute/leaderboard?style=castrojo/themes/lb/bluefin.css@main
+```
+
+The `@ref` suffix is optional and defaults to the repository's `HEAD`. Hive only accepts the `owner/repo/path.css` triplet form, fetches public GitHub raw content server-side without credentials, sanitizes the CSS, strips external imports/URLs, and serves it from same-origin endpoints with a 128 KiB size cap.
+
+Leaderboard CSS is scoped to `#tab-leaderboard`. Dashboard and snapshot CSS are scoped to `#hive-dashboard-root`, leaving login and setup overlays outside the custom-theme surface. `/api/style` is public so unauthenticated snapshots can load sanitized CSS, and the existing `style-src 'self'` CSP remains sufficient.
+
 Relay environment reference:
 
 | Variable | Meaning |
