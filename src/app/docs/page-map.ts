@@ -327,44 +327,42 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
     items: [
       { 'Introduction': 'readme.md' },
       { 'Architecture': 'architecture.md' },
-    ]
-  },
-  {
-    title: 'Getting Started',
-    items: [
-      { 'macOS Setup': 'macos.md' },
-      { 'Example: Homelab Console (Bluefin)': 'console-starter-install.md' },
-      { 'Troubleshooting': 'troubleshooting.md' },
-    ]
-  },
-  {
-    title: 'Configuration',
-    items: [
-      { 'Agent Configuration': 'agent-configuration.md' },
-      { 'AgentDefinition YAML Reference': 'agent-definition-yaml.md' },
-      { 'Governor': 'governor.md' },
-      { 'Contributor Relay': 'contributor-relay.md' },
-      { 'Variable Substitution': 'variable-substitution.md' },
-    ]
-  },
-  {
-    title: 'Operations',
-    items: [
-      { 'Manual Provisioning': 'manual-provisioning.md' },
+      { 'Roadmap': 'roadmap.md' },
+      { 'Landscape and Positioning': 'landscape.md' },
     ]
   },
   {
     title: 'Security',
     items: [
-      { 'Security Model': 'security-model.md' },
+      { 'Threat Model': 'security-threat-model.md' },
+      {
+        'Architecture Decision Records': [
+          { 'ADR Index': 'adr/readme.md' },
+          { '0001: Record architecture decisions': 'adr/0001-record-architecture-decisions.md' },
+          { '0002: MITM proxy network enforcement': 'adr/0002-mitm-proxy-network-enforcement.md' },
+          { '0003: ACMM autonomy levels': 'adr/0003-acmm-autonomy-levels.md' },
+          { '0004: Beads work ledger': 'adr/0004-beads-work-ledger.md' },
+          { '0005: Forge abstraction': 'adr/0005-forge-abstraction.md' },
+          { '0006: Planning intelligence': 'adr/0006-planning-intelligence.md' },
+          { '0007: Token mint': 'adr/0007-token-mint.md' },
+          { '0008: IOScan untrusted input': 'adr/0008-ioscan-untrusted-input.md' },
+          { '0009: Trajectory review': 'adr/0009-trajectory-review.md' },
+          { '0010: Escalation circuit breaker': 'adr/0010-escalation-circuit-breaker.md' },
+          { '0011: Knowledge graph': 'adr/0011-knowledge-graph.md' },
+          { '0012: Skill registry': 'adr/0012-skill-registry.md' },
+          { '0013: CEL triggers': 'adr/0013-cel-triggers.md' },
+          { '0014: Hub/spoke': 'adr/0014-hub-spoke.md' },
+        ]
+      },
     ]
   },
   {
-    title: 'Reference',
+    title: 'Operations',
     items: [
+      { 'Agent Configuration': 'agent-configuration.md' },
+      { 'Manual Provisioning': 'manual-provisioning.md' },
       { 'hivectl CLI': 'hivectl.md' },
       { 'ACMM Policy Matrix': 'acmm-policy-matrix.md' },
-      { 'Outreach Anti-Spam': 'outreach-antispam.md' },
     ]
   }
 ]

@@ -557,3 +557,14 @@
   to = "https://youtube.com/@kubestellar"
   status = 301
   force = true
+
+# Redirect Hive docs root to the first Hive docs page.
+[[redirects]]
+  from = "/docs/hive"
+  to = "/docs/hive/overview/introduction"
+  status = 302
+
+[[redirects]]
+  from = "/docs/hive/"
+  to = "/docs/hive/overview/introduction"
+  status = 302
