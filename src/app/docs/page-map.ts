@@ -360,6 +360,7 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
     title: 'Operations',
     items: [
       { 'Agent Configuration': 'agent-configuration.md' },
+      { 'Contributor Relay': 'contributor-relay.md' },
       { 'Manual Provisioning': 'manual-provisioning.md' },
       { 'hivectl CLI': 'hivectl.md' },
       { 'ACMM Policy Matrix': 'acmm-policy-matrix.md' },
