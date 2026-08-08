@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prebuild": "tsx scripts/generate-shared-config.ts",
+    "prebuild": "tsx scripts/sync-hive-docs.ts && tsx scripts/generate-shared-config.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint src/",
