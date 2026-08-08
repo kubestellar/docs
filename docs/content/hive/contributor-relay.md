@@ -90,6 +90,16 @@ just contribute-hive             # start contributing (Docker, recommended)
 
 `contribute-setup` is one-time per hive: it registers you (your GitHub identity plus a registration token stored in `~/.config/hive/contributor.env`), authenticates `gh`, and authenticates the CLI you chose. If `HIVE_HUB` is unset, it looks up available hives from the public registry at `hive.kubestellar.io` and lets you pick one.
 
+To contribute to multiple hives from one relay session (added by [@hanthor](https://github.com/hanthor) in [kubestellar/hive#2846](https://github.com/kubestellar/hive/pull/2846)), register with each hive, then set comma-separated `HIVE_HUB` URLs and comma-separated `HIVE_REGISTRATION_TOKEN` values in the same order:
+
+```bash
+export HIVE_HUB=wss://hive-one.example.com/contribute,wss://hive-two.example.com/contribute
+export HIVE_REGISTRATION_TOKEN=hive-one-token,hive-two-token
+just contribute-hive
+```
+
+The relay keeps one CLI/tmux session and works on one task at a time. Each hub has its own WebSocket connection and heartbeat; only one hub is active, and round-robin advances only when the active hub explicitly reports that no task is available. Completing a task asks the same hub for more work first.
+
 `contribute-hive` starts the relay. Two modes:
 
 ```bash
@@ -142,8 +152,8 @@ Relay environment reference:
 
 | Variable | Meaning |
 |---|---|
-| `HIVE_HUB` | WebSocket URL of the hive (`wss://<host>/contribute`) |
-| `HIVE_REGISTRATION_TOKEN` | Issued at setup; stored in `~/.config/hive/contributor.env` |
+| `HIVE_HUB` | WebSocket URL of the hive (`wss://<host>/contribute`); comma-separated URLs subscribe one relay to multiple hives |
+| `HIVE_REGISTRATION_TOKEN` | Issued at setup; stored in `~/.config/hive/contributor.env`; for multiple hives, use one comma-separated token per hub in the same order as `HIVE_HUB` |
 | `AGENT_BACKEND` | CLI backend (`claude`, `copilot`, `goose`, …) |
 | `AGENT_MODEL` | Model to declare and run with (optional; empty = backend default) |
 | `HIVE_AGENT_SESSION` | tmux session name (default `contributor`) |
