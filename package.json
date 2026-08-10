@@ -22,7 +22,7 @@
     "update-deps": "npm update && npm audit fix"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.6",
+    "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.7.0",
     "@theguild/remark-mermaid": "^0.3.0",
     "dotenv": "^17.2.3",
