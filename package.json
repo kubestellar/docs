@@ -38,6 +38,8 @@
     "three": "^0.185.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.6",
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
@@ -45,7 +47,8 @@
     "@types/three": "^0.185.4",
     "@vitest/coverage-v8": "4.1.10",
     "eslint": "^10",
-    "eslint-config-next": "16.3.0",
+    "eslint-config-next": "^16.3.0",
+    "eslint-plugin-react": "^7.37.5",
     "markdownlint": "^0.41.1",
     "markdownlint-cli2": "^0.23.2",
     "prettier": "^3.9.6",

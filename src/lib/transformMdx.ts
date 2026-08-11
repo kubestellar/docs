@@ -23,10 +23,10 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
   s = s
     .replace(/\\\{\{/g, "&#123;&#123;")
     .replace(/\\\}\}/g, "&#125;&#125;")
-    .replace(/\\\{\#/g, "&#123;#")
-    .replace(/\\\#\}/g, "#&#125;")
-    .replace(/\\\{\%/g, "&#123;%")
-    .replace(/\\\%\}/g, "%&#125;");
+    .replace(/\\\{#/g, "&#123;#")
+    .replace(/#}/g, "#&#125;")
+    .replace(/\\\{%/g, "&#123;%")
+    .replace(/%}/g, "%&#125;");
 
   s = s.replace(/{%[\s\S]*?%}/g, "");
   s = s.replace(/\{\{[\s\S]*?\}\}/g, "");
