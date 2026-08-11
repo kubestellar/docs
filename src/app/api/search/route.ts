@@ -37,15 +37,15 @@ function toPlainText(content: string): string {
   text = stripUntilStableSR(text, /<!--[\s\S]*?-->/g)
 
   // Links/images
-  text = text.replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
-  text = text.replace(/!\[([^\]]*)\]\([^\)]+\)/g, "")
+  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
+  text = text.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, "")
 
   // Headings -> keep text
   text = text.replace(/^#{1,6}\s+(.+)$/gm, "$1")
 
   // Bold/italic
-  text = text.replace(/\*\*([^\*]+)\*\*/g, "$1")
-  text = text.replace(/\*([^\*]+)\*/g, "$1")
+  text = text.replace(/\*\*([^*]+)\*\*/g, "$1")
+  text = text.replace(/\*([^*]+)\*/g, "$1")
   text = text.replace(/_([^_]+)_/g, "$1")
 
   // HR

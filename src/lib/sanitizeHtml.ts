@@ -144,7 +144,7 @@ export function sanitizeHtmlForMdx(content: string): string {
   let sanitized = content
 
   // Strip null bytes and control characters (except \t, \n, \r)
-  sanitized = sanitized.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '')
+  sanitized = sanitized.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/gu, '')
 
   // Convert contributors table to a grid of contributor cards
   sanitized = sanitized.replace(/<table>[\s\S]*?<\/table>/gi, (tableMatch) => {
@@ -156,7 +156,7 @@ export function sanitizeHtmlForMdx(content: string): string {
       const profileUrl = tdMatch[1]
       const avatar = tdMatch[2]
       const name = tdMatch[3]
-      const githubMatch = profileUrl.match(/github\.com\/([^\/]+)/)
+      const githubMatch = profileUrl.match(/github\.com\/([^/]+)/)
       const github = githubMatch ? githubMatch[1] : ''
 
       if (name && avatar) {
