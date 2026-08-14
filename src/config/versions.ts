@@ -451,9 +451,15 @@ const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
 }
 
 // hive versions
+// Hive is continuously deployed rather than semver-released, so the docs are a
+// single "latest" line: content is fetched at build time from the
+// kubestellar/hive branch named by HIVE_DOCS_REF (see scripts/sync-hive-docs.ts),
+// which tracks hive's current major release line (v4 today). When hive moves to
+// a new major line, update this label, currentVersion below, and the
+// HIVE_DOCS_REF default together.
 const HIVE_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "main (Latest)",
+    label: "v4 (Latest)",
     branch: "main",
     isDefault: true,
   },
@@ -513,7 +519,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "hive",
     name: "Hive",
     basePath: "hive",
-    currentVersion: "main",
+    currentVersion: "v4",
     contentPath: "docs/content/hive",
     versions: HIVE_VERSIONS,
   },
