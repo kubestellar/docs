@@ -1,6 +1,6 @@
 # macOS Support (launchd)
 
-> **Note:** on **hive v2** the easiest way to run on macOS is Docker Compose — `cd hive/v2 && docker compose up -d` (see the [Introduction](readme.md)). This page documents the legacy **v1** host runtime mapped to launchd, which remains useful if you want to supervise agents natively on a Mac without a container.
+> **Note:** on the current containerized hive the easiest way to run on macOS is Docker Compose — `cd hive/v2 && docker compose up -d` (see the [Introduction](readme.md)). This page documents the legacy **v1** host runtime mapped to launchd, which remains useful if you want to supervise agents natively on a Mac without a container.
 
 The hive v1 runtime was built on Linux/systemd, but the same concepts map cleanly to macOS using **launchd** — Apple's equivalent of systemd.
 

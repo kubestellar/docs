@@ -2,9 +2,9 @@
 
 **The `AgentDefinition` YAML is hive's *portable* agent format — a single, self-contained document (`kind: AgentDefinition`) that describes one whole agent: its identity, its engine, its behavior, and even its work prompt. This is the file the dashboard's `+ agent → Import from URL` overlay points you at, and it is exactly the schema that overlay reads. This page documents every field, grouped to match the file's structure.**
 
-If you clicked **+ agent** in the dashboard and were sent to [`v2/examples/agents/customized-agent.yaml`](https://github.com/kubestellar/hive/blob/v2/v2/examples/agents/customized-agent.yaml) for an example, this is the reference for that file. For the *other* way agents are configured — inline entries under `agents:` in `hive.yaml`, using snake_case keys — see [Agent Configuration](agent-configuration.md). The two describe the same underlying agent; they differ only in shape and casing (see [How this maps to `hive.yaml`](#how-this-maps-to-hiveyaml) below).
+If you clicked **+ agent** in the dashboard and were sent to [`v2/examples/agents/customized-agent.yaml`](https://github.com/kubestellar/hive/blob/v4/v2/examples/agents/customized-agent.yaml) for an example, this is the reference for that file. For the *other* way agents are configured — inline entries under `agents:` in `hive.yaml`, using snake_case keys — see [Agent Configuration](agent-configuration.md). The two describe the same underlying agent; they differ only in shape and casing (see [How this maps to `hive.yaml`](#how-this-maps-to-hiveyaml) below).
 
-> **Which Hive does this document?** This page tracks the **Hive `v2` line** — the same line the dashboard, the `+ agent` overlay, and the example YAML come from. Hive's docs site currently publishes a single **main (Latest)** channel; there is no separate `v2` entry in the version selector even though the example file lives on the repo's `v2` branch. If a dashboard link sends you to `.../blob/v2/v2/examples/...`, that doubled `v2` is *branch* `v2` plus the in-repo *path* `v2/examples/...`, not a typo — it is the current, supported example.
+> **Which Hive does this document?** This page tracks the current **Hive `v4` branch** — the only maintained line (the `v2` branch was retired in August 2026). If a dashboard link sends you to `.../blob/v4/v2/examples/...`, that is *branch* `v4` plus the in-repo *path* `v2/examples/...` (the directory kept its historical name), not a typo — it is the current, supported example.
 
 ## The document envelope
 
@@ -187,7 +187,7 @@ spec:
 | `match` | map | required for `bead` | Match criteria that fire a `bead` channel. |
 | `repos` | list of string | optional | Restrict the channel to specific repositories. |
 
-> **Note:** Channels are a **current, supported v2 feature.** (Older copies of the example labeled this `(v3 feature)`; that label is being removed — treat channels as available today.)
+> **Note:** Channels are a **current, supported feature.** (Older copies of the example labeled this `(v3 feature)`; that label is being removed — treat channels as available today.)
 
 ### `tools` — declarative tool permissions
 
@@ -211,7 +211,7 @@ spec:
 | `rules[].action` | string | **required** | `allow` or `deny`. An explicit `allow` overrides a preset `deny` for the same pattern. |
 | `rules[].reason` | string | optional | Human-readable justification, shown for auditing. |
 
-> **Note:** Tools are a **current, supported v2 feature.**
+> **Note:** Tools are a **current, supported feature.**
 
 ### `connections` — external service integrations
 
@@ -234,11 +234,11 @@ spec:
 | `env_name` | string | optional | Environment variable name to expose to the connection. |
 | `options` | map | optional | Free-form string options passed to the connection. |
 
-> **Note:** Connections are a **current, supported v2 feature.**
+> **Note:** Connections are a **current, supported feature.**
 
 ## Complete annotated example
 
-This mirrors the shipped [`v2/examples/agents/customized-agent.yaml`](https://github.com/kubestellar/hive/blob/v2/v2/examples/agents/customized-agent.yaml). Import it from the dashboard via **+ agent → Import from URL**, or copy it as a starting point and edit the fields above.
+This mirrors the shipped [`v2/examples/agents/customized-agent.yaml`](https://github.com/kubestellar/hive/blob/v4/v2/examples/agents/customized-agent.yaml). Import it from the dashboard via **+ agent → Import from URL**, or copy it as a starting point and edit the fields above.
 
 ```yaml
 apiVersion: hive.kubestellar.io/v1
@@ -268,7 +268,7 @@ spec:
   aliases:                               # short dispatch names
     - cu
 
-  # Channels — how this agent gets triggered (supported v2 feature).
+  # Channels — how this agent gets triggered (supported feature).
   # Omit to use governor timer kicks only.
   # channels:
   #   - type: kick
@@ -277,7 +277,7 @@ spec:
   #   - type: schedule
   #     schedule: "0 */4 * * *"
 
-  # Tools — declarative tool permissions (supported v2 feature).
+  # Tools — declarative tool permissions (supported feature).
   # Present = governs instead of `mode`.
   # tools:
   #   preset: advisory
@@ -286,7 +286,7 @@ spec:
   #       action: allow
   #       reason: "allow creating advisory issues"
 
-  # Connections — external service integrations (supported v2 feature).
+  # Connections — external service integrations (supported feature).
   # connections:
   #   - name: github-mcp
   #     type: mcp

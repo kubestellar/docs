@@ -56,7 +56,7 @@ Inside each mode block, every entry other than `threshold` is a **cadence** for 
 - An agent with no entry for the current mode is not kicked in that mode.
 - Cadences are independent per mode, so an agent can be busy in `surge` and slow in `idle`.
 
-An agent is **due** for a kick when the time since its last kick is at least its cadence interval. At startup every eligible agent is kicked once so the hive doesn't idle waiting out a full cadence.
+An agent is **due** for a kick when the time since its last kick is at least its cadence interval. Last-kick times are persisted (in `/data/hive-state.json`) and honored across container/pod restarts, so a Deployment roll does **not** re-kick every agent at boot ([#3817](https://github.com/kubestellar/hive/pull/3817)) — only agents whose cadence has actually elapsed are kicked on the first eval. A fresh install with no persisted state still kicks every eligible agent once so the hive doesn't idle waiting out a full cadence.
 
 ### Pausing an agent in a mode
 

@@ -82,7 +82,7 @@ Visit **`https://<hive-dashboard>/contribute`** — every hive serves a landing 
 
 ```bash
 brew install just gh
-git clone -b v2 https://github.com/kubestellar/hive && cd hive
+git clone -b v4 https://github.com/kubestellar/hive && cd hive
 export HIVE_HUB=wss://<hive-host>/contribute
 just contribute-setup claude     # one-time: register + authenticate GitHub + your CLI
 just contribute-hive             # start contributing (Docker, recommended)

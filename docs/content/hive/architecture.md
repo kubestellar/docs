@@ -1,8 +1,8 @@
 # Architecture
 
-## Hive v2 (current)
+## Hive v4 (current)
 
-Hive v2 runs as a **single container with three processes**:
+Hive (branch `v4` — the only maintained line since the `v2` branch was retired in August 2026; the code still lives under the repo's `v2/` directory) runs as a **single container with three processes**:
 
 - **Go binary** (`hive`) — orchestrates agent tmux sessions, runs the governor eval loop, serves the dashboard API, manages health checks and token tracking
 - **Node.js proxy** — reverse proxy for the dashboard frontend with SSE streaming
@@ -12,7 +12,7 @@ Agents run inside tmux sessions managed by the Go binary, each under its own Uni
 
 All configuration lives in a single `hive.yaml`; persistent state (metrics, beads, logs, dashboard config overlay) lives on a PVC at `/data`. Agents talk to their backend via per-agent CLI processes — Claude, Copilot, Gemini, Goose — or, for self-hosted inference backends (litellm / vllm / llm-d), via an in-process Anthropic-to-OpenAI translator.
 
-Hives can register with the **Hive Hub** (`hive.kubestellar.io`): the hub authenticates dashboard users with GitHub OAuth, proxies spoke dashboards, receives authenticated heartbeats (health, version, token counts), and can provision fully hosted hives — one namespace, pod, and PVC per hive, with zero-downtime rolling upgrades.
+Hives can register with the **Hive Hub** (`hive.kubestellar.io`): the hub authenticates dashboard users with multi-provider human login — GitHub and Google are live, with IBMid, Red Hat, Microsoft Entra ID, and generic OIDC available via configuration — proxies spoke dashboards, receives authenticated heartbeats (health, version, token counts), and can provision fully hosted hives — one namespace, pod, and PVC per hive, with zero-downtime rolling upgrades.
 
 See the [Introduction](readme.md) for deployment options and configuration reference.
 
@@ -20,7 +20,7 @@ See the [Introduction](readme.md) for deployment options and configuration refer
 
 ## Legacy v1 runtime: supervision patterns
 
-> **Note:** the rest of this page documents the original **v1 runtime** — shell scripts driven by systemd/launchd on a host, with agents supervised in tmux (`hive supervisor`, `/etc/hive/*.env`). The v1 tooling still exists in the repository root, but v2 (above) is the current, recommended way to run hive. The supervision patterns below remain useful reading if you run agents outside the v2 container.
+> **Note:** the rest of this page documents the original **v1 runtime** — shell scripts driven by systemd/launchd on a host, with agents supervised in tmux (`hive supervisor`, `/etc/hive/*.env`). The v1 tooling still exists in the repository root, but the containerized runtime above is the current, recommended way to run hive. The supervision patterns below remain useful reading if you run agents outside the container.
 
 ## Two scheduling models
 

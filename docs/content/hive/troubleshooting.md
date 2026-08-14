@@ -1,6 +1,6 @@
 # Troubleshooting
 
-> **Note:** most of this page covers the legacy **v1 runtime** (systemd/launchd host installs with `/etc/hive/agent.env`). On **v2**, start with the dashboard instead: the Getting Started dialog auto-checks setup steps, **Test Connection** live-probes inference gateways and reports the gateway's actual error, agent cards show live state, and the built-in web terminal (ttyd) gives direct access to agent tmux sessions. Check container logs with `docker compose logs -f` or `kubectl -n hive logs deploy/hive`.
+> **Note:** most of this page covers the legacy **v1 runtime** (systemd/launchd host installs with `/etc/hive/agent.env`). On the **current containerized runtime (v4)**, start with the dashboard instead: the Getting Started dialog auto-checks setup steps, **Test Connection** live-probes inference gateways and reports the gateway's actual error, agent cards show live state, and the built-in web terminal (ttyd) gives direct access to agent tmux sessions. Check container logs with `docker compose logs -f` or `kubectl -n hive logs deploy/hive`.
 
 ## An agent card shows "needs login"
 
@@ -16,7 +16,7 @@ sudo -u "$AGENT_USER" tmux kill-session -t "$AGENT_SESSION_NAME"
 sudo systemctl start hive
 ```
 
-This forces a fresh session (see "`systemctl restart hive` didn't pick up my new `AGENT_LOOP_PROMPT`" below for why a plain `systemctl restart` isn't enough). On v2, you can instead recreate the agent's container/pod (`docker compose restart <service>` or `kubectl -n hive rollout restart deploy/hive`) to get the same effect.
+This forces a fresh session (see "`systemctl restart hive` didn't pick up my new `AGENT_LOOP_PROMPT`" below for why a plain `systemctl restart` isn't enough). On the containerized runtime, you can instead recreate the agent's container/pod (`docker compose restart <service>` or `kubectl -n hive rollout restart deploy/hive`) to get the same effect.
 
 If the agent goes straight back to "needs login" after a restart, the credentials themselves are the problem (expired token, revoked API key, or an account-level sign-out) — re-authenticate the CLI for `$AGENT_USER` outside of the tmux session first (e.g. `sudo -u "$AGENT_USER" claude /login` from a real interactive terminal you control), then restart the agent as above so it picks up the refreshed session.
 

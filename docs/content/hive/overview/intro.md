@@ -13,7 +13,7 @@ Hive separates decisions into two layers: a **deterministic pipeline** of shell 
 ## Quick Start (Docker Compose)
 
 ```bash
-git clone -b v2 https://github.com/kubestellar/hive.git
+git clone -b v4 https://github.com/kubestellar/hive.git
 cd hive/v2
 
 cp hive.yaml.example hive.yaml
@@ -21,7 +21,7 @@ export HIVE_GITHUB_TOKEN=ghp_...
 docker compose up -d
 ```
 
-Dashboard at `http://localhost:3001`. The default `docker-compose.yaml` uses the pre-built image `ghcr.io/kubestellar/hive:v2-latest`; run `docker compose build` first to build from source instead.
+Dashboard at `http://localhost:3001`. The default `docker-compose.yaml` uses a pre-built image; run `docker compose build` first to build from source instead, or point it at the `stable` release channel image `ghcr.io/kubestellar/hive:stable` (see [Release Channels](../release-channels.md)).
 
 ---
 
@@ -225,7 +225,7 @@ Community members can contribute compute to any registered hive:
 
 ```bash
 brew install just gh
-git clone -b v2 https://github.com/kubestellar/hive && cd hive
+git clone -b v4 https://github.com/kubestellar/hive && cd hive
 just contribute-setup claude
 just contribute-hive
 ```

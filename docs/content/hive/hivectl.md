@@ -9,7 +9,7 @@ Everything `hivectl` does is a thin wrapper over the dashboard's existing HTTP A
 ## Quick start
 
 ```bash
-git clone -b v2 https://github.com/kubestellar/hive && cd hive/v2
+git clone -b v4 https://github.com/kubestellar/hive && cd hive/v2
 go build -o bin/hivectl ./cmd/hivectl
 
 # Point at a server (default: http://127.0.0.1:3001) and provide the token
