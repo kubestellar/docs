@@ -2,7 +2,7 @@
 
 This page is for the evaluator asking: *is it safe to run hive — to host a hive on the hub, point agents at my repositories, and hand the system my AI subscription or API keys?*
 
-Hive's answer is architectural, not aspirational. The project's core design rule — *if a human would give the same answer every time, it belongs in infrastructure, not in a prompt* — applies doubly to security: the controls below are enforced by code (authentication middleware, a policy proxy, scoped tokens, file permissions), not by asking an LLM to behave. Every mechanism described here is verifiable in the [hive v2 source](https://github.com/kubestellar/hive/tree/v2).
+Hive's answer is architectural, not aspirational. The project's core design rule — *if a human would give the same answer every time, it belongs in infrastructure, not in a prompt* — applies doubly to security: the controls below are enforced by code (authentication middleware, a policy proxy, scoped tokens, file permissions), not by asking an LLM to behave. Every mechanism described here is verifiable in the [hive source](https://github.com/kubestellar/hive/tree/v4) (branch `v4`, the only maintained line).
 
 ## What hive touches
 
@@ -22,7 +22,7 @@ The threats that matter: an unauthorized person reaching your dashboard, an agen
 
 Hives hosted on or registered with the [Hive Hub](https://hive.kubestellar.io) are reached through `*.hive.kubestellar.io`, and every request passes the hub's authentication check before it reaches a spoke dashboard:
 
-- **GitHub OAuth.** Users sign in to the hub with GitHub (`read:user` scope). The session cookie is `HttpOnly`, `Secure`, `SameSite=Lax`.
+- **Multi-provider sign-in.** Users sign in to the hub with GitHub OAuth (`read:user` scope) or Google — with IBMid, Red Hat, Microsoft Entra ID, and a generic OIDC provider available via configuration ([hive#3664](https://github.com/kubestellar/hive/pull/3664)). With more than one provider configured, `/login` shows a provider picker. The session cookie is `HttpOnly`, `Secure`, `SameSite=Lax`, and session cookies are **Ed25519-signed** — the legacy symmetric (HMAC) session lane was deleted on v4 ([hive#3725](https://github.com/kubestellar/hive/pull/3725)).
 - **Per-user, per-hive authorization on every request.** The hub's auth-check endpoint (wired as an nginx `auth_request`) resolves the requesting user, looks up whether that specific hive is in the user's access map, and returns **403 if it isn't**. Only then does the request proceed to the spoke.
 - **Identity injection.** On success, the hub injects the verified identity into the proxied request as `X-Hive-User` and `X-Hive-Role` headers. The spoke's role-enforcement middleware then blocks all write operations for `read`-role users.
 - **Roles.** The hive owner has full read-write control. Owners can grant other GitHub users access to their hive; grants default to **read-only**. A grant can never confer a role equal to or higher than the granter's own.
@@ -72,7 +72,7 @@ What can agents actually do to your repositories? As little as you've dialed in:
 
 Registered hives send periodic heartbeats to the hub:
 
-- Heartbeats are authenticated with a bearer secret (`HIVE_HUB_SECRET`, provisioned by the hub) and validated with a constant-time comparison.
+- Heartbeats are authenticated with a **per-hive** bearer key derived from the hub master secret (`HIVE_HEARTBEAT_KEY`, reconciled onto hosted spokes; self-hosted spokes derive it from `HIVE_HUB_SECRET` + `HIVE_ID`), validated with a constant-time comparison. The old fleet-wide shared bearer lane was removed ([hive#3744](https://github.com/kubestellar/hive/pull/3744)).
 - The outbound payload carries operational telemetry only: health and cluster metrics, version/git info, agent and governor summaries, and 24-hour **token counts**. No API keys, GitHub tokens, or other credentials leave the spoke in heartbeats.
 - The response channel is how the hub delivers configuration to hives it manages (including GitHub App credentials for hub-provisioned hives) — hub-to-spoke, never spoke-to-hub.
 
@@ -87,13 +87,26 @@ On the hosted platform, each hive is single-tenant by construction:
 
 ---
 
+## Layer 8 — Key material, rotation, and the egress gate (v4)
+
+The v4 line hardened the key and network layer; the full operator guide is [`v2/docs/security-model.md`](https://github.com/kubestellar/hive/blob/v4/v2/docs/security-model.md) in the hive repo. The evaluator-relevant facts:
+
+- **Ed25519-only sessions and SSO.** Hub-issued session cookies and the hub-to-spoke SSO handoff verify against Ed25519 public keys only; there is no symmetric fallback. A spoke missing its verification key fails closed (an explanatory 503 page, with direct login still available).
+- **Per-hive derived keys.** Heartbeat, session, SSO, terminal, and invite keys are derived per hive from the hub master; the hub reconciles them onto hosted spokes automatically. A self-hosted spoke needs only `HIVE_HUB_SECRET` + `HIVE_ID` (or the individual keys, for least privilege).
+- **Master key rotation with dual-generation acceptance.** The hub keeps at most two live key generations (current + previous, 7-day verify window); session cookies, heartbeat bearers, and SSO public keys verify against both during rotation ([hive#3763](https://github.com/kubestellar/hive/pull/3763), [hive#3767](https://github.com/kubestellar/hive/pull/3767), [hive#3778](https://github.com/kubestellar/hive/pull/3778)). Rotation is admin-triggered and converges the fleet over hours, with loud alerts for spokes stranded past the window.
+- **Forced-proxy egress (`CAP_NET_ADMIN`).** The container entrypoint installs an iptables redirect of all outbound `:443` through the policy proxy, so the ACMM capability model is enforced at the network layer, not advisorily. Spokes therefore need `NET_ADMIN` (`--cap-add NET_ADMIN` on docker/podman, `securityContext.capabilities.add: ["NET_ADMIN"]` on Kubernetes); without it the entrypoint refuses to start unless you explicitly opt into advisory-only mode (`HIVE_PROXY_ADVISORY_OK=true`). The binary itself carries no file capabilities — earlier images crash-looped with a bare `Operation not permitted` on capability-less runtimes; since [hive#3794](https://github.com/kubestellar/hive/pull/3794) the capability is raised ambiently at startup instead ([hive#3760](https://github.com/kubestellar/hive/issues/3760)).
+- **Supply chain.** Base images are digest-pinned, bundled tools are checksum-pinned, global AI-CLI npm installs run with `--ignore-scripts`, and `su-exec` is restricted (mode `4750`, launcher group only) so no agent UID can escalate to root in the pod.
+- **Metrics fail closed.** The optional Prometheus `/metrics` endpoint (`HIVE_METRICS_ENABLED`) exposes estimated-cost series and **requires** a bearer token (`HIVE_METRICS_TOKEN`); enabled-but-tokenless serves 403, never the data ([hive#3804](https://github.com/kubestellar/hive/pull/3804)).
+
+---
+
 ## Scope and limitations, stated plainly
 
 Security documentation that only lists strengths is marketing. The current, deliberate scoping:
 
 - **Direct-route write grants are deferred.** Non-owner grants on direct-route spokes are always provisioned read-only, even if granted read-write on the hub. This fails safe (under-granting, never over-granting) until per-user write credentials land.
-- **The heartbeat secret is hub-wide.** `HIVE_HUB_SECRET` authenticates spokes to the hub as a class, not per-hive. Heartbeat data is operational telemetry, not secrets, which bounds the impact.
-- **The policy proxy covers GitHub API traffic.** It is a GitHub-policy enforcement point, not a general egress firewall. If you need full egress control, apply Kubernetes NetworkPolicies around the hive pod.
+- **Rootless containers cannot enforce the egress gate.** The forced-proxy egress redirect needs `CAP_NET_ADMIN` + iptables; a rootless podman spoke only starts with `HIVE_PROXY_ADVISORY_OK=true`, i.e. with network-layer enforcement advisory-only.
+- **The policy proxy inspects GitHub API traffic.** All outbound `:443` is force-redirected through it (see the egress gate below), but non-GitHub destinations are tunneled without inspection — it is a GitHub-policy enforcement point, not a content firewall for arbitrary hosts. If you need full egress control, apply Kubernetes NetworkPolicies around the hive pod.
 - **The L5 `hold` label is applied by agent policy;** the hard guarantee at L5 is the withheld merge permission (token tier + proxy rules), not the label itself.
 - **Cloud CLI credentials are shared with the CLI.** Claude/Copilot/Gemini/Goose agents necessarily run with the provider credential you connected. The placeholder-key isolation applies to inference-gateway keys.
 - **DCO is policy-driven** inside hive; enforce it repo-side (DCO check) for a hard guarantee.
