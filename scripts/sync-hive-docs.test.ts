@@ -50,9 +50,19 @@ describe("rewriteLinkTarget — Case 2: escapes / unsynced -> absolute GitHub UR
   });
 
   it("sends an in-tree-but-UNSYNCED doc to GitHub (not synced by the script)", () => {
-    // manual-provisioning.md is not in the sync allow-list -> GitHub blob URL.
+    // env-vars.md exists in hive src/docs but is not on the sync allow-list,
+    // so links to it resolve to a GitHub blob URL rather than a site route.
+    expect(rewriteLinkTarget("env-vars.md", README)).toBe(
+      "https://github.com/kubestellar/hive/blob/v4/v2/docs/env-vars.md"
+    );
+  });
+
+  it("routes manual-provisioning.md internally now that it is synced", () => {
+    // manual-provisioning.md was migrated onto the sync manifest, so its
+    // basename resolves to the internal site route (Case 1b recovery) instead
+    // of a GitHub blob URL.
     expect(rewriteLinkTarget("manual-provisioning.md", README)).toBe(
-      "https://github.com/kubestellar/hive/blob/v4/v2/docs/manual-provisioning.md"
+      "/docs/hive/manual-provisioning"
     );
   });
 
