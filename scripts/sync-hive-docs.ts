@@ -14,6 +14,13 @@ const files: Array<{ source: string; target?: string }> = [
   { source: "security-threat-model.md" },
   { source: "roadmap.md" },
   { source: "landscape.md" },
+  // Operations pages — single-sourced from hive src/docs (previously hand-copied
+  // into docs/content/hive and prone to drift; migrated to auto-sync).
+  { source: "acmm-policy-matrix.md" },
+  { source: "agent-configuration.md" },
+  { source: "hivectl.md" },
+  { source: "manual-provisioning.md" },
+  { source: "release-channels.md" },
   { source: "adr/README.md", target: "adr/readme.md" },
   { source: "adr/0001-record-architecture-decisions.md" },
   { source: "adr/0002-mitm-proxy-network-enforcement.md" },
