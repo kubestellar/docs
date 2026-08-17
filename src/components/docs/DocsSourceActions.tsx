@@ -13,7 +13,13 @@ const STATIC_EDIT_BASE_URLS: Record<ProjectId, string> = {
   "multi-plugin": "https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin",
   "kubestellar-mcp": "https://github.com/kubestellar/kubectl-claude/edit/main/docs",
   console: 'https://github.com/kubestellar/console/edit/main/docs',
-  hive: 'https://github.com/kubestellar/hive/edit/main/docs',
+  // Hive has no `main` branch (default is `v4`) and its docs live under
+  // `v2/docs`, so `/edit/main/docs/...` 404s. Point at the real branch and
+  // directory. Kept in sync with scripts/sync-hive-docs.ts (branch `v4`,
+  // source dir `v2/docs`). NOTE: page filePaths use `readme.md` (lowercased),
+  // but the canonical source is `README.md`; that single page's edit/source
+  // link will 404 until the filePath casing is reconciled.
+  hive: 'https://github.com/kubestellar/hive/edit/v4/v2/docs',
 };
 
 // Prevent path traversal

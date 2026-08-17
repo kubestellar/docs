@@ -1,0 +1,54 @@
+name: Internal Links
+
+# Fails the build when a markdown link under docs/content/** points at an
+# internal route that does not exist (a 404). This catches renames, bad Hive
+# syncs, and version bumps (v5, v6, ...) at PR time instead of shipping a 404.
+# Only INTERNAL links are checked (relative + root-absolute /docs/... paths);
+# external links are intentionally out of scope to keep the gate deterministic
+# and free of network flakiness.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "docs/content/**"
+      - "scripts/sync-hive-docs.ts"
+      - "scripts/check-internal-links.ts"
+      - "src/app/docs/page-map.ts"
+      - "src/app/docs/[...slug]/page.tsx"
+      - "src/config/versions.ts"
+  push:
+    branches: [main]
+    paths:
+      - "docs/content/**"
+      - "scripts/sync-hive-docs.ts"
+      - "scripts/check-internal-links.ts"
+      - "src/app/docs/page-map.ts"
+      - "src/app/docs/[...slug]/page.tsx"
+      - "src/config/versions.ts"
+
+permissions: read-all
+
+jobs:
+  check-links:
+    name: Check internal doc links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Regenerate the synced Hive docs so a link regression introduced by the
+      # sync (e.g. a hive layout change on a new branch) is caught here too.
+      # Non-fatal if offline in a fork: fall back to the committed content.
+      - name: Sync Hive docs
+        run: npm run sync-hive-docs || echo "sync skipped (network unavailable); checking committed content"
+
+      - name: Check internal links
+        run: npm run check-links
