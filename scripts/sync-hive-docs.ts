@@ -5,8 +5,8 @@ const owner = "kubestellar";
 const repo = "hive";
 const branch = process.env.HIVE_DOCS_REF || "v4";
 const docsRoot = path.join(process.cwd(), "docs", "content", "hive");
-const rawBase = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/v2/docs`;
-const canonicalBase = `https://github.com/${owner}/${repo}/blob/${branch}/v2/docs`;
+const rawBase = `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/src/docs`;
+const canonicalBase = `https://github.com/${owner}/${repo}/blob/${branch}/src/docs`;
 
 const files: Array<{ source: string; target?: string }> = [
   { source: "README.md", target: "readme.md" },
@@ -67,22 +67,22 @@ function canonicalHeader(source: string): string {
 //     NOT synced (bin/README.md, deploy/README.md, AGENT-DEFINITION.md, etc.):
 //     rewrite it to an absolute GitHub URL on the same branch the sync uses, by
 //     resolving the `../` segments against the source file's real repo path
-//     (`v2/docs/<source>`) to recover the true repo path, then emitting
+//     (`src/docs/<source>`) to recover the true repo path, then emitting
 //     `https://github.com/<owner>/<repo>/blob/<branch>/<repo-path>`.
 //
 //   Absolute (`http(s)://`, `//`) links and pure in-page `#anchor` links are
 //   left untouched.
 
 // Repo path (relative to the hive repo root) of every source file the sync
-// pulls, e.g. `v2/docs/architecture.md`, `v2/docs/adr/README.md`.
-const syncedRepoPaths = new Set(files.map(f => `v2/docs/${f.source}`));
+// pulls, e.g. `src/docs/architecture.md`, `src/docs/adr/README.md`.
+const syncedRepoPaths = new Set(files.map(f => `src/docs/${f.source}`));
 
 // Map from a synced source's repo path -> its published site route (no `.md`).
-// e.g. `v2/docs/README.md` -> `/docs/hive/readme`,
-//      `v2/docs/adr/0001-...md` -> `/docs/hive/adr/0001-...`.
+// e.g. `src/docs/README.md` -> `/docs/hive/readme`,
+//      `src/docs/adr/0001-...md` -> `/docs/hive/adr/0001-...`.
 const repoPathToSiteRoute = new Map<string, string>();
 for (const f of files) {
-  const repoPath = `v2/docs/${f.source}`;
+  const repoPath = `src/docs/${f.source}`;
   const target = f.target || f.source;
   const targetNoExt = target.replace(/\.mdx?$/i, "");
   repoPathToSiteRoute.set(repoPath, `/docs/hive/${targetNoExt}`);
@@ -107,7 +107,7 @@ function splitSuffix(target: string): { pathPart: string; suffix: string } {
 }
 
 // Rewrite a single markdown link target that appears in `sourceRepoPath`'s
-// content (sourceRepoPath is e.g. `v2/docs/README.md`). Returns the original
+// content (sourceRepoPath is e.g. `src/docs/README.md`). Returns the original
 // target unchanged when no rewrite applies.
 function rewriteLinkTarget(target: string, sourceRepoPath: string): string {
   const trimmed = target.trim();
@@ -203,7 +203,7 @@ async function main() {
     }
     const content = await fetchText(sourceURL);
     // Rewrite GitHub-relative links so they resolve on the docs site.
-    const rewritten = rewriteLinks(content, `v2/docs/${file.source}`);
+    const rewritten = rewriteLinks(content, `src/docs/${file.source}`);
     fs.mkdirSync(path.dirname(targetPath), { recursive: true });
     fs.writeFileSync(targetPath, canonicalHeader(file.source) + rewritten);
     console.log(`synced ${file.source} -> docs/content/hive/${target}`);
