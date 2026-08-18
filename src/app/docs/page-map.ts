@@ -346,6 +346,7 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
       { 'Backup and Disaster Recovery': 'backup-dr.md' },
       { 'Contributor Relay': 'contributor-relay.md' },
       { 'Manual Provisioning': 'manual-provisioning.md' },
+      { 'NET_ADMIN Requirement': 'net-admin-requirement.md' },
       { 'hivectl CLI': 'hivectl.md' },
       { 'ACMM Policy Matrix': 'acmm-policy-matrix.md' },
       { 'Troubleshooting': 'troubleshooting.md' },
