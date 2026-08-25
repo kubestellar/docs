@@ -24,6 +24,12 @@
 import fs from "fs";
 import path from "path";
 import { pathToFileURL } from "url";
+import {
+  slugify,
+  normRoute,
+  isExternalOrAnchor,
+  ASSET_EXT,
+} from "./check-internal-links-helpers.ts";
 
 const contentRoot = path.join(process.cwd(), "docs", "content");
 
@@ -61,11 +67,8 @@ const pageMapSrc = fs.readFileSync(
   path.join(process.cwd(), "src", "app", "docs", "page-map.ts"),
   "utf8"
 );
-const slugify = (s: string) =>
-  s
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
+// slugify, normRoute, isExternalOrAnchor and ASSET_EXT are imported from
+// ./check-internal-links-helpers.ts (side-effect free, unit-tested).
 
 // Map a NAV_STRUCTURE_<X> variable name to its docs base path.
 const projectForNav: Record<string, string> = {
@@ -125,11 +128,7 @@ while ((nav = navBlockRe.exec(pageMapSrc))) {
   collectNavAliases(block, base, "");
 }
 
-// Normalize a route for comparison: drop trailing slash (except root).
-function normRoute(r: string): string {
-  const noSlash = r.replace(/\/+$/, "");
-  return noSlash === "" ? "/" : noSlash;
-}
+// Normalize a route for comparison: use the shared helper.
 const validNormalized = new Set([...validRoutes].map(normRoute));
 
 // --- Extract and resolve links ---------------------------------------------
@@ -150,19 +149,7 @@ function fileRoute(fileAbs: string): string {
 const INLINE_LINK = /\]\(\s*([^)\s]+)(?:\s+[^)]*)?\)/g;
 const REF_LINK = /^\s*\[[^\]]+\]:\s*(\S+)/gm;
 
-// Asset extensions are served by the `/docs-images/*` rewrite (see
-// rewriteImagePaths in the docs page), not by the docs route table, so relative
-// image/asset links must NOT be validated against routes here.
-const ASSET_EXT =
-  /\.(png|jpe?g|gif|svg|webp|avif|ico|pdf|mp4|webm|mov|zip|gz|tgz|css|js|woff2?|ttf|eot)$/i;
-
-function isExternalOrAnchor(target: string): boolean {
-  if (target === "") return true;
-  if (/^[a-z][a-z0-9+.-]*:/i.test(target)) return true; // http:, mailto:, etc.
-  if (target.startsWith("//")) return true; // protocol-relative
-  if (target.startsWith("#")) return true; // in-page anchor
-  return false;
-}
+// INLINE_LINK / REF_LINK regexes remain local (script-only).
 
 function checkFile(fileAbs: string) {
   const content = fs.readFileSync(fileAbs, "utf8");
