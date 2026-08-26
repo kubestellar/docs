@@ -29,6 +29,9 @@ import {
   normRoute,
   isExternalOrAnchor,
   ASSET_EXT,
+  PROJECT_FOR_NAV,
+  parseNavStructures,
+  navEntryRoute,
 } from "./check-internal-links-helpers.ts";
 
 const contentRoot = path.join(process.cwd(), "docs", "content");
@@ -70,62 +73,22 @@ const pageMapSrc = fs.readFileSync(
 // slugify, normRoute, isExternalOrAnchor and ASSET_EXT are imported from
 // ./check-internal-links-helpers.ts (side-effect free, unit-tested).
 
-// Map a NAV_STRUCTURE_<X> variable name to its docs base path.
-const projectForNav: Record<string, string> = {
-  A2A: "docs/a2a",
-  MULTI_PLUGIN: "docs/multi-plugin",
-  KUBEFLEX: "docs/kubeflex",
-  KUBESTELLAR_MCP: "docs/kubestellar-mcp",
-  CONSOLE: "docs/console",
-  HIVE: "docs/hive",
-  KUBESTELLAR: "docs",
-};
-
-// Walk each `{ title: value }` object literal in a NAV_STRUCTURE block and, when
-// value is a `'file.md'` string that exists on disk, register the nav-slug route
-// under the current section path. Nested arrays extend the section path.
-function collectNavAliases(block: string, base: string, sectionSlug: string) {
-  // Top-level category titles form the first path segment.
-  // We handle both category `{ title: 'X', items: [...] }` and inner
-  // `{ 'Title': 'file.md' }` / `{ 'Title': [ ... ] }` entries.
-  const titleFileRe = /['"]([^'"]+)['"]\s*:\s*['"]([^'"]+\.mdx?)['"]/g;
-  let m: RegExpExecArray | null;
-  while ((m = titleFileRe.exec(block))) {
-    const title = m[1];
-    const file = m[2];
-    if (file.startsWith("http") || file.startsWith("/")) continue;
-    const fileAbs = path.join(contentRoot, base.replace(/^docs\/?/, ""), file);
-    if (!fs.existsSync(fileAbs) && base !== "docs") {
-      // Kubestellar nav references live under docs/content directly.
-      const alt = path.join(contentRoot, file);
-      if (!fs.existsSync(alt)) continue;
-    }
-    const slug = slugify(title);
-    if (sectionSlug) validRoutes.add(`/${base}/${sectionSlug}/${slug}`);
-    validRoutes.add(`/${base}/${slug}`);
+// Extract every nav-alias entry, then filter to those whose target file
+// actually exists on disk, and register both the sectioned and the bare
+// form as valid routes. Splitting the pure parse (parseNavStructures)
+// from this fs-touching registration keeps the parser unit-testable.
+for (const entry of parseNavStructures(pageMapSrc, PROJECT_FOR_NAV)) {
+  const fileAbs = path.join(
+    contentRoot,
+    entry.base.replace(/^docs\/?/, ""),
+    entry.file,
+  );
+  if (!fs.existsSync(fileAbs) && entry.base !== "docs") {
+    // Kubestellar nav references live under docs/content directly.
+    const alt = path.join(contentRoot, entry.file);
+    if (!fs.existsSync(alt)) continue;
   }
-}
-
-// Extract each `const NAV_STRUCTURE_<X> ... = [ ... ]` block and its category
-// section slugs, then register aliases. This mirrors buildPageMap closely enough
-// to avoid false positives on nav-style links; if a link's flat route already
-// exists (case 1) we never even consult these.
-const navBlockRe = /const NAV_STRUCTURE_([A-Z_]+)[^=]*=\s*(\[[\s\S]*?\n\])/g;
-let nav: RegExpExecArray | null;
-while ((nav = navBlockRe.exec(pageMapSrc))) {
-  const name = nav[1];
-  const base = projectForNav[name];
-  if (!base) continue;
-  const block = nav[2];
-  // Category titles: `{ title: 'Overview', items: [ ... ] }`.
-  const catRe = /title:\s*['"]([^'"]+)['"]/g;
-  let c: RegExpExecArray | null;
-  const sections: string[] = [];
-  while ((c = catRe.exec(block))) sections.push(slugify(c[1]));
-  // Register aliases under every section slug (over-approximation is safe: it
-  // only ever ADDS valid routes, never rejects a real one).
-  for (const s of sections) collectNavAliases(block, base, s);
-  collectNavAliases(block, base, "");
+  validRoutes.add(navEntryRoute(entry));
 }
 
 // Normalize a route for comparison: use the shared helper.
