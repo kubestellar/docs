@@ -48,7 +48,7 @@ interface ExistingSharedConfig {
 }
 
 (async () => {
-  const { PROJECTS } = await import(versionsPath) as typeof import('../src/config/versions.ts');
+  const { PROJECTS } = await import(versionsPath) as typeof import('../src/config/versions');
 
   // Build versions and projects maps from PROJECTS
   const versions: Record<string, Record<string, VersionEntry>> = {};

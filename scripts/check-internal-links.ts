@@ -32,7 +32,7 @@ import {
   PROJECT_FOR_NAV,
   parseNavStructures,
   navEntryRoute,
-} from "./check-internal-links-helpers.ts";
+} from "./check-internal-links-helpers";
 
 const contentRoot = path.join(process.cwd(), "docs", "content");
 
