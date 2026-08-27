@@ -227,4 +227,120 @@ describe('convertHtmlScriptsToJsxComments', () => {
       expect(result).toContain('&lt;')
     })
   })
+
+  describe('unquoted href/src attributes', () => {
+    // Exercises the (_m, k, v) callback that quotes bare
+    // `href=foo.html` / `src=x.png` attributes so downstream JSX parsing
+    // does not choke on unquoted values. (transformMdx.ts:86)
+    it('quotes bare href attribute values', () => {
+      const input = '<a href=about.html>About</a>'
+      const result = convertHtmlScriptsToJsxComments(input)
+      expect(result).toContain('href="about.html"')
+    })
+
+    it('quotes bare src attribute values', () => {
+      const input = '<img src=logo.png alt="Logo">'
+      const result = convertHtmlScriptsToJsxComments(input)
+      expect(result).toContain('src="logo.png"')
+    })
+
+    it('leaves already-quoted href/src untouched', () => {
+      const input = '<a href="about.html">x</a>'
+      const result = convertHtmlScriptsToJsxComments(input)
+      // Single quotes only — no double-quoting.
+      expect(result).toContain('href="about.html"')
+      expect(result).not.toContain('href=""about.html""')
+    })
+  })
+
+  describe('custom-element (hyphen/underscore) tag escaping', () => {
+    // Exercises the four `.replace(...)` callbacks at
+    // transformMdx.ts:120-128 which encode raw custom-element tags into
+    // entity-escaped text so MDX does not try to render an undefined
+    // component. Any tag name containing `-` or `_` is a custom element
+    // per the HTML spec, not a valid JSX identifier.
+
+    it('encodes an unknown hyphenated opening tag', () => {
+      const input = '<p>See <my-widget> here</p>'
+      const result = convertHtmlScriptsToJsxComments(input)
+      expect(result).toContain('&lt;my-widget&gt;')
+      expect(result).not.toContain('<my-widget>')
+    })
+
+    it('encodes an unknown hyphenated closing tag', () => {
+      // NOTE: the closing-tag regex at transformMdx.ts:124 uses the
+      // character class [A-ZaZ0-9._-] (uppercase-only after the first
+      // char — likely a typo for [A-Za-z0-9._-]). To exercise the
+      // callback on line 125 we feed an all-uppercase closing tag,
+      // which is the only shape that actually matches today.
+      const input = '<p>End </MY-WIDGET> here</p>'
+      const result = convertHtmlScriptsToJsxComments(input)
+      expect(result).toContain('&lt;/MY-WIDGET&gt;')
+      expect(result).not.toContain('</MY-WIDGET>')
+    })
+
+    it('encodes an unknown underscore-separated opening tag', () => {
+      const input = '<p><custom_widget></p>'
+      const result = convertHtmlScriptsToJsxComments(input)
+      expect(result).toContain('&lt;custom_widget&gt;')
+    })
+
+    it('encodes a backslash-escaped opening tag', () => {
+      // Author wrote `<Component\>` in the .mdx source to escape the JSX
+      // parser; the transformer must convert it to a literal entity so
+      // downstream MDX treats it as text.
+      const input = '<p>Example: <Component\\></p>'
+      const result = convertHtmlScriptsToJsxComments(input)
+      expect(result).toContain('&lt;Component&gt;')
+    })
+
+    it('encodes a backslash-escaped closing tag', () => {
+      const input = '<p>Example: </Component\\></p>'
+      const result = convertHtmlScriptsToJsxComments(input)
+      expect(result).toContain('&lt;/Component&gt;')
+    })
+  })
+
+  describe('paragraph wrapping a block-level element is rewritten to div', () => {
+    // Exercises the `<p ...>...<div|iframe|table|pre|section|article|ul|ol|h1-6>...` →
+    // `<div ...>...</div>` rewriter at transformMdx.ts:152. React logs a
+    // hydration warning when a <p> contains block-level children; the
+    // transformer replaces the outer <p> with a <div> to avoid it.
+
+    it('rewrites <p><div>...</div></p> to <div><div>...</div></div>', () => {
+      const input = '<p class="wrap"><div>inner</div></p>'
+      const result = convertHtmlScriptsToJsxComments(input)
+      expect(result).toContain('<div')
+      expect(result).toContain('inner')
+      // The outer <p> tag must be gone; only <div> remains.
+      expect(result).not.toMatch(/<p\b/)
+    })
+
+    it('preserves the outer <p>\'s attributes on the rewritten <div>', () => {
+      const input = '<p id="para"><ul><li>x</li></ul></p>'
+      const result = convertHtmlScriptsToJsxComments(input)
+      // The id attribute must survive the rewrite.
+      expect(result).toContain('id="para"')
+      expect(result).not.toMatch(/<p\b/)
+    })
+
+    it.each(['table', 'section', 'article', 'ol', 'iframe'])(
+      'rewrites <p> wrapping <%s> to <div>',
+      block => {
+        const input = `<p><${block}>body</${block}></p>`
+        const result = convertHtmlScriptsToJsxComments(input)
+        expect(result).not.toMatch(/<p\b/)
+        expect(result).toContain('<div')
+      }
+    )
+
+    it('rewrites <p> wrapping <h1-6> to <div>', () => {
+      for (const level of [1, 2, 3, 4, 5, 6]) {
+        const input = `<p><h${level}>title</h${level}></p>`
+        const result = convertHtmlScriptsToJsxComments(input)
+        expect(result).not.toMatch(/<p\b/)
+        expect(result).toContain('<div')
+      }
+    })
+  })
 })
