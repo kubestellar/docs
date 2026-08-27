@@ -18,7 +18,7 @@ import {
   parseNavStructures,
   navEntryRoute,
   type NavAliasEntry,
-} from "../../scripts/check-internal-links-helpers.ts";
+} from "../../scripts/check-internal-links-helpers";
 
 // ─────────────────────────────────────────────────────────────────────────
 // slugify — must match the rule buildPageMap() uses on NAV_STRUCTURE_* titles
