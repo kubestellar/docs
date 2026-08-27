@@ -121,7 +121,7 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
       (_m, name) => `&lt;${name}&gt;`
     )
     .replace(
-      /<\/([A-Za-z][A-ZaZ0-9._-]*[-_][A-Za-z0-9._-]*)\s*\\?>/g,
+      /<\/([A-Za-z][A-Za-z0-9._-]*[-_][A-Za-z0-9._-]*)\s*\\?>/g,
       (_m, name) => `&lt;/${name}&gt;`
     )
     .replace(/<([^>\s]+)\\>/g, (_m, name) => `&lt;${name}&gt;`)

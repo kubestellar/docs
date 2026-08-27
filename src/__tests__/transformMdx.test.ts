@@ -268,11 +268,18 @@ describe('convertHtmlScriptsToJsxComments', () => {
     })
 
     it('encodes an unknown hyphenated closing tag', () => {
-      // NOTE: the closing-tag regex at transformMdx.ts:124 uses the
-      // character class [A-ZaZ0-9._-] (uppercase-only after the first
-      // char — likely a typo for [A-Za-z0-9._-]). To exercise the
-      // callback on line 125 we feed an all-uppercase closing tag,
-      // which is the only shape that actually matches today.
+      // Regression test for the [A-ZaZ0-9._-] typo previously at
+      // transformMdx.ts:124. Lowercase hyphenated custom-element
+      // closing tags must be entity-escaped just like their opening
+      // counterparts, otherwise MDX sees `</my-widget>` and tries to
+      // resolve it as a React component.
+      const input = '<p>End </my-widget> here</p>'
+      const result = convertHtmlScriptsToJsxComments(input)
+      expect(result).toContain('&lt;/my-widget&gt;')
+      expect(result).not.toContain('</my-widget>')
+    })
+
+    it('encodes an unknown uppercase hyphenated closing tag', () => {
       const input = '<p>End </MY-WIDGET> here</p>'
       const result = convertHtmlScriptsToJsxComments(input)
       expect(result).toContain('&lt;/MY-WIDGET&gt;')
