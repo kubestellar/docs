@@ -15,7 +15,7 @@ on:
       - "scripts/sync-hive-docs.ts"
       - "scripts/check-internal-links.ts"
       - "src/app/docs/page-map.ts"
-      - "src/app/docs/[...slug]/page.tsx"
+      - "src/app/docs/**"
       - "src/config/versions.ts"
   push:
     branches: [main]
@@ -24,7 +24,7 @@ on:
       - "scripts/sync-hive-docs.ts"
       - "scripts/check-internal-links.ts"
       - "src/app/docs/page-map.ts"
-      - "src/app/docs/[...slug]/page.tsx"
+      - "src/app/docs/**"
       - "src/config/versions.ts"
 
 permissions: read-all
