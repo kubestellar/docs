@@ -330,26 +330,11 @@ const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
     ]
   },
   {
-    title: 'Security',
-    items: [
-      { 'Security Model': 'security-model.md' },
-    ]
-  },
-  {
     title: 'Operations',
     items: [
-      { 'Agent Configuration': 'agent-configuration.md' },
       { 'Agent Definition YAML': 'agent-definition-yaml.md' },
       { 'Variable Substitution': 'variable-substitution.md' },
       { 'Governor': 'governor.md' },
-      { 'Release Channels': 'release-channels.md' },
-      { 'Backup and Disaster Recovery': 'backup-dr.md' },
-      { 'Contributor Relay': 'contributor-relay.md' },
-      { 'Manual Provisioning': 'manual-provisioning.md' },
-      { 'NET_ADMIN Requirement': 'net-admin-requirement.md' },
-      { 'hivectl CLI': 'hivectl.md' },
-      { 'ACMM Policy Matrix': 'acmm-policy-matrix.md' },
-      { 'Troubleshooting': 'troubleshooting.md' },
       { 'Running on macOS': 'macos.md' },
       { 'Console Starter Install': 'console-starter-install.md' },
     ]
