@@ -47,6 +47,21 @@ function createMockRequest(hostname: string, pathname: string): MockNextRequest 
   }
 }
 
+// Helper that returns a request whose cloned URL captures pathname
+// assignments made inside middleware() so tests can inspect the rewrite.
+function createLocaleMockRequest(hostname: string, pathname: string) {
+  const cloned: { hostname: string; pathname: string } = { hostname, pathname }
+  return {
+    nextUrl: {
+      hostname,
+      pathname,
+      clone: () => cloned,
+    },
+    _cloned: cloned,
+  }
+}
+
+
 describe('middleware redirects', () => {
   beforeEach(() => {
     mockRedirect.mockClear()
@@ -122,6 +137,68 @@ describe('middleware redirects', () => {
       )
       // Must NOT point to docs.kubestellar.io (that caused the loop)
       expect(communityRedirect.destination).not.toContain('docs.kubestellar.io')
+    })
+  })
+
+  describe('localized docs path stripping', () => {
+    it('strips 2-letter locale prefix from /es/docs/... to /docs/...', async () => {
+      const { default: middleware } = await import('../middleware')
+      const req = createLocaleMockRequest('kubestellar.io', '/es/docs/getting-started/quickstart')
+      middleware(req as unknown as MockNextRequest)
+      // Redirect target is the cloned URL object, whose pathname was rewritten.
+      expect(mockRedirect).toHaveBeenCalled()
+      const [urlArg, statusArg] = mockRedirect.mock.calls[0]
+      expect((urlArg as { pathname: string }).pathname).toBe('/docs/getting-started/quickstart')
+      expect(statusArg).toBe(307)
+    })
+
+    it('strips locale+country prefix from /pt-BR/docs/... to /docs/...', async () => {
+      const { default: middleware } = await import('../middleware')
+      const req = createLocaleMockRequest('kubestellar.io', '/pt-BR/docs/intro')
+      middleware(req as unknown as MockNextRequest)
+      expect(mockRedirect).toHaveBeenCalled()
+      const [urlArg] = mockRedirect.mock.calls[0]
+      expect((urlArg as { pathname: string }).pathname).toBe('/docs/intro')
+    })
+
+    it('strips SC prefix from /SC/docs/... to /docs/...', async () => {
+      const { default: middleware } = await import('../middleware')
+      const req = createLocaleMockRequest('kubestellar.io', '/SC/docs/intro')
+      middleware(req as unknown as MockNextRequest)
+      expect(mockRedirect).toHaveBeenCalled()
+      const [urlArg] = mockRedirect.mock.calls[0]
+      expect((urlArg as { pathname: string }).pathname).toBe('/docs/intro')
+    })
+
+    it('does not strip locale from a non-/docs path (regex requires /docs/)', async () => {
+      const { default: middleware } = await import('../middleware')
+      const req = createLocaleMockRequest('kubestellar.io', '/es/about')
+      const result = middleware(req as unknown as MockNextRequest)
+      // Neither the docs-path branch nor the root branch fires; the request
+      // falls through to intlMiddleware (mocked to return {type:'intl'}).
+      expect(result).toEqual({ type: 'intl' })
+    })
+  })
+
+  describe('root path fallback', () => {
+    it('redirects "/" to the default locale prefix with 307', async () => {
+      const { default: middleware } = await import('../middleware')
+      const req = createLocaleMockRequest('kubestellar.io', '/')
+      middleware(req as unknown as MockNextRequest)
+      expect(mockRedirect).toHaveBeenCalled()
+      const [urlArg, statusArg] = mockRedirect.mock.calls[0]
+      expect((urlArg as { pathname: string }).pathname).toBe('/en')
+      expect(statusArg).toBe(307)
+    })
+  })
+
+  describe('intlMiddleware fallthrough', () => {
+    it('delegates unmatched paths to next-intl middleware', async () => {
+      const { default: middleware } = await import('../middleware')
+      const req = createMockRequest('kubestellar.io', '/en/some/other/page')
+      const result = middleware(req)
+      expect(result).toEqual({ type: 'intl' })
+      expect(mockRedirect).not.toHaveBeenCalled()
     })
   })
 })
