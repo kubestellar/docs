@@ -125,14 +125,12 @@ jobs:
           ERROR_MSG=$(cat /tmp/netlify_error.txt)
           TAG="[netlify-deploy-failure]"
 
-          EXISTING=$(gh api "repos/${{ github.repository }}/issues" \
-            --jq "[.[] | select(.state == \"open\" and (.title | contains(\"${TAG}\")))] | length" \
-            -f state=open -f per_page=20 2>/dev/null || echo "0")
+          EXISTING=$(gh api "repos/${{ github.repository }}/issues?state=open&per_page=20" \
+            --jq "[.[] | select(.state == \"open\" and (.title | contains(\"${TAG}\")))] | length" 2>/dev/null || echo "0") || echo "0"
 
           if [ "$EXISTING" != "0" ]; then
-            ISSUE_NUMBER=$(gh api "repos/${{ github.repository }}/issues" \
-              --jq "[.[] | select(.state == \"open\" and (.title | contains(\"${TAG}\")))] | first | .number" \
-              -f state=open -f per_page=20)
+            ISSUE_NUMBER=$(gh api "repos/${{ github.repository }}/issues?state=open&per_page=20" \
+              --jq "[.[] | select(.state == \"open\" and (.title | contains(\"${TAG}\")))] | first | .number") || ISSUE_NUMBER=""
             gh api "repos/${{ github.repository }}/issues/${ISSUE_NUMBER}/comments" \
               -f body="Still failing as of $(date -u +%Y-%m-%dT%H:%M:%SZ).
 
