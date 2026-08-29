@@ -1,241 +1,137 @@
-# hive
-
-**AI agent orchestration for open source projects. One container runs a team of AI agents that triage issues, write fixes, review PRs, and keep CI green — governed by queue depth and gated by maturity levels.**
-
-Hive is a single Go binary that enumerates GitHub issues and PRs, classifies them by complexity, and dispatches work to AI agents (Claude, Copilot, Gemini, Goose, or self-hosted inference backends) on adaptive cadences.
-
-Hive separates decisions into two layers: a **deterministic pipeline** of shell scripts handles filtering, classification, merge-gating, and enforcement before any LLM sees the work. Agents only handle judgment calls — reading code, reasoning about fixes, writing PRs.
-
-> Evaluating whether hive is safe to run against your repos and API keys? See the [Security Model](security-model.md).
-
----
-
-## Quick Start (Docker Compose)
-
-```bash
-git clone -b v4 https://github.com/kubestellar/hive.git
-cd hive/v2
-
-cp hive.yaml.example hive.yaml
-export HIVE_GITHUB_TOKEN=ghp_...
-docker compose up -d
-```
-
-Dashboard at `http://localhost:3001`. The default `docker-compose.yaml` uses a pre-built image; run `docker compose build` first to build from source instead, or point it at the `stable` release channel image `ghcr.io/kubestellar/hive:stable` (see [Release Channels](release-channels.md)).
-
----
-
-## Deployment options
-
-| Option | How |
-|--------|-----|
-| **Docker Compose** | `docker compose up -d` in `v2/` — quickest way to evaluate |
-| **Kubernetes (self-hosted)** | Manifests in `v2/deploy/k8s/` — namespace, secrets, ConfigMap from `hive.yaml`, PVC, Deployment, Service, Ingress. The default PVC is `ReadWriteOnce` with a `Recreate` strategy; use an NFS-backed `ReadWriteMany` StorageClass for zero-downtime rolling upgrades. |
-| **Hosted (Hive Hub)** | [hive.kubestellar.io](https://hive.kubestellar.io) provisions and hosts a hive for you — OAuth-protected dashboard, public registry, cross-hive leaderboards. No cluster required. |
-
-### Ports
-
-| Port | Purpose |
-|------|---------|
-| 3001 | Dashboard (supports auth token) |
-| 3002 | Internal API |
-| 7681 | ttyd web terminal |
-
-### Volumes
-
-| Mount Path | Purpose |
-|------------|---------|
-| `/etc/hive/hive.yaml` | Configuration (read-only, from ConfigMap) |
-| `/data` | Persistent state: metrics, beads, logs, dashboard config overlay |
-| `/secrets` | GitHub App key and other secrets (read-only) |
-
----
-
-## Web Dashboard
-
-The embedded dashboard (port 3001) is the primary control surface:
-
-- **Live updates via SSE** — agent states, governor mode, repo counts, and beads refresh continuously
-- **Getting Started dialog** — a welcome checklist that auto-checks steps as setup completes and deep-links into the relevant configuration; minimizes into the `?` button when dismissed
-- **Per-agent method + model dropdowns** — each agent card shows its current backend and model as the button label; models are **live-discovered** per backend (see below)
-- **Model pinning** — pin an agent's model so automatic reconciliation never changes it out from under you; an explicit switch on a pinned agent retargets the pin instead of failing
-- **Test Connection** — live probe of inference gateways that reports the gateway's actual response (including auth errors) instead of masking failures behind fallback aliases
-- **Real token tracking** — inference usage is captured from actual API responses per agent; totals surface on the dashboard and, for hub-registered hives, on the hub's My Hives page
-- **Kick buttons** — one-click kick for any agent
-- **ACMM level control** — apply a maturity level and the full agent roster that level defines is reconciled automatically
-- **Web terminal** — ttyd access to agent tmux sessions
-
-### Model discovery
-
-Model lists are discovered live per backend rather than hardcoded:
-
-| Backend | Discovery source |
-|---------|-----------------|
-| litellm / vllm / llm-d | The gateway's live `/v1/models` endpoint |
-| copilot | Live per-plan model list (including enterprise API host discovery) using the stored OAuth token |
-| gemini | Live models API when an API key is configured |
-| claude / goose | Maintained model lists (no machine-readable source) |
-
-Discovery is best-effort with caching and fallbacks, so dropdowns never come up empty. An agent's model is switched automatically in exactly one case: live discovery shows the currently selected model is no longer available (and the model is not pinned) — the agent moves to an available model and the dashboard shows a notice.
-
----
-
-## How it works
-
-The **governor** evaluates issue/PR queue depth across your repos on a configurable interval (default 300s) and switches between four modes — **SURGE**, **BUSY**, **QUIET**, **IDLE** — each with per-agent cadences (or `pause`). Thresholds and cadences are all set in `hive.yaml`:
-
-```yaml
-governor:
-  eval_interval_s: 300
-  modes:
-    surge:
-      threshold: 20
-      scanner: 15m
-      reviewer: pause
-    busy:
-      threshold: 10
-      scanner: 15m
-      reviewer: 1h
-    quiet:
-      threshold: 2
-      scanner: 15m
-      reviewer: 45m
-    idle:
-      threshold: 0
-      scanner: 15m
-      reviewer: 15m
-```
-
-Agents run inside tmux sessions managed by the Go binary. The container runs three processes: the `hive` binary (agent orchestration, governor loop, dashboard API, health and token tracking), a Node.js proxy (dashboard frontend with SSE), and ttyd (web terminal).
-
----
-
-## ACMM levels
-
-Hive uses an **AI-native Capability Maturity Model** (ACMM) with six levels that control what agents are allowed to do:
-
-| Level | Name | Agents | What agents can do |
-|-------|------|--------|-------------------|
-| L1 | Inception (Assisted) | 2 | Interactive advisor and project inception. Advisory beads only. |
-| L2 | Advisory (Instructed) | 5 | Observe and report findings as dashboard beads. No GitHub interaction. |
-| L3 | Quality-Gated (Measured) | 6 | Quality agent opens issues and hold-gated PRs. Others remain advisory. |
-| L4 | Security-Aware (Adaptive) | 7 | All agents file issues. Quality, sec-check, and CI open hold-gated PRs. |
-| L5 | Semi-Autonomous (Semi-Automated) | 9 | All agents open hold-gated PRs. Humans batch-review and approve. |
-| L6 | Fully Autonomous | 10 | Agents open PRs and auto-merge on green CI. No hold label required. |
-
-Each level defines per-agent **policy modes**: advisory (observe only), measured (file issues), holdgated (PRs with hold label), or full (auto-merge). Applying a level reconciles the entire agent roster that level defines — at L5 that is 9 agents, including architect and strategist.
-
----
-
-## Deterministic pipeline
-
-Hive separates work into two layers:
-
-- **Deterministic layer** (shell scripts + JSON + config) — handles every decision where a human would give the same answer every time. Runs before agents wake up.
-- **Non-deterministic layer** (LLM agents) — receives pre-computed data and focuses on judgment calls: reading code, reasoning about fixes, writing PRs.
-
-The rule: **if a human would give the same answer every time, it belongs in infrastructure, not in a prompt.**
-
-LLMs treat "NEVER" rules as suggestions. No amount of prompt engineering reliably prevents an agent from closing a hold-labeled issue or merging an untested PR. The deterministic pipeline removes those decisions from the agent entirely — enumerators fetch and filter the canonical work list, classifiers enrich items with metadata, gates pre-check eligibility, and enforcers block forbidden operations before any agent acts.
-
----
-
-## Backends
-
-Each agent picks its backend in `hive.yaml` (`agents.<name>.backend`):
-
-| Backend | Type | Description |
-|---------|------|-------------|
-| `claude` | CLI | Anthropic's CLI — runs Claude models directly |
-| `copilot` | Aggregate | GitHub Copilot — routes to Claude, GPT, Gemini, and other vendor models |
-| `gemini` | CLI | Google's CLI — runs Gemini models directly |
-| `goose` | Aggregate | Block's Goose — routes to any model via config (cloud or local) |
-| `litellm` / `vllm` / `llm-d` | Inference | Self-hosted OpenAI-compatible gateways — the agent CLI runs in bare mode and an in-process Anthropic-to-OpenAI translator forwards requests to your gateway |
-
-For inference backends, the gateway API key is entered once in the dashboard (obfuscated after entry) and stored to a Kubernetes Secret and an owner-only file on the PVC — never written into `hive.yaml`. See the [Security Model](security-model.md) for how agents are kept away from real keys.
-
----
-
-## Configuration
-
-All config lives in a single `hive.yaml` with `${ENV_VAR}` interpolation for secrets. See `v2/hive.yaml.example` for the full reference.
-
-```yaml
-project:
-  org: your-org
-  repos:
-    - repo-one
-    - repo-two
-  primary_repo: repo-one
-  ai_author: your-bot-user
-
-agents:
-  scanner:
-    enabled: true
-    backend: claude
-    model: claude-sonnet-4-6
-    beads_dir: /data/beads/scanner
-    clear_on_kick: true
-
-github:
-  token: ${HIVE_GITHUB_TOKEN}
-
-hub:
-  enabled: true
-  url: https://hive.kubestellar.io
-```
-
-On Kubernetes the file is mounted read-only from a ConfigMap; changes made in the dashboard are persisted as an overlay on the `/data` PVC so they survive pod restarts.
-
-### GitHub auth
-
-Use a personal access token, or a GitHub App (recommended for production — permissions are scoped to the repos you install it on):
-
-```yaml
-github:
-  app_id: 12345
-  installation_id: 67890
-  key_file: /secrets/gh-app-key.pem
-```
-
----
-
-## Notifications
-
-Configure any combination of channels in `hive.yaml`:
-
-```yaml
-notifications:
-  ntfy:
-    server: https://ntfy.sh
-    topic: my-hive-alerts
-  # slack:
-  #   webhook: ${SLACK_WEBHOOK_URL}
-  # discord:
-  #   webhook: ${DISCORD_WEBHOOK_URL}
-```
-
-An optional Discord bot (`discord.bot_token`) responds to `!hive` commands.
-
----
-
-## Contribute to a Hive
-
-Community members can contribute compute to any registered hive:
-
-```bash
-brew install just gh
-git clone -b v4 https://github.com/kubestellar/hive && cd hive
-just contribute-setup claude
-just contribute-hive
-```
-
-Supported CLIs: Claude Code, GitHub Copilot, Pi, Goose, Bob. Contributors start as newcomer (rate-limited) and auto-promote based on completed tasks. Your credentials never leave your machine.
-
-One relay session can also subscribe to multiple hives (added by [@hanthor](https://github.com/hanthor) in [kubestellar/hive#2846](https://github.com/kubestellar/hive/pull/2846)): register with each hive, then use comma-separated `HIVE_HUB` URLs and matching comma-separated `HIVE_REGISTRATION_TOKEN` values in the same order. The relay shares one CLI/tmux session, works on one task at a time, keeps each hub connected, and rotates only when the active hub reports no task is available.
-
-See the [Hive Hub](https://hive.kubestellar.io) to browse registered hives, view leaderboards, and find hives accepting contributions.
-
----
-
-Apache 2.0  ·  [Architecture](architecture.md)  ·  [Security Model](security-model.md)
+> **Synced from Hive.** This page is pulled from [kubestellar/hive@v4](https://github.com/kubestellar/hive/blob/v4/src/docs/README.md) during the docs build. Edit the canonical source in the Hive repository.
+
+# Hive documentation
+
+Documentation for the current Hive line (branch `v4`; the code and docs live under the `src/` directory). The `v2` branch was retired in August 2026 — operators upgrading a v2 deployment should start with the [v2 → v4 migration guide](https://github.com/kubestellar/hive/blob/v4/src/docs/migration-v2-v4.md).
+
+Start with [Architecture](/docs/hive/architecture) for the system overview, then use the topic guides below. New users should start with the [getting-started guide](/docs/hive/getting-started) — it covers setting up the Forge App (the app for your source control system, e.g., GitHub, GitHub Enterprise, GitLab, or Gitea) and what to do if an inactive hosted hive is reaped.
+
+## Operations
+
+- [Manual provisioning](/docs/hive/manual-provisioning) — heartbeat-only cluster provisioning, hub access roles, and common gotchas.
+- [Self-hosted hub deployment](https://github.com/kubestellar/hive/blob/v4/src/docs/hub-deployment.md) — `HIVE_MODE=hub`, hub storage, heartbeat secrets, and SaaS spoke registration.
+- [`CAP_NET_ADMIN` and self-hosted spokes](https://github.com/kubestellar/hive/blob/v4/src/docs/net-admin-requirement.md) — the container runs with or without `NET_ADMIN`; granting it (`--cap-add NET_ADMIN` / `securityContext.capabilities.add`) enables the full forced-proxy-egress gate, and what the degraded best-effort mode means without it.
+- [Config layering](https://github.com/kubestellar/hive/blob/v4/src/docs/config-layering.md) — how ConfigMap seed, PVC dashboard overlay, and runtime config interact.
+- [Operator reference](https://github.com/kubestellar/hive/blob/v4/src/docs/operator-reference.md) — top-level config blocks, hive flags/env, GitHub token scopes, and image provenance.
+- [Token mint](https://github.com/kubestellar/hive/blob/v4/src/docs/token-mint.md) — the opt-in `mint:` block (`pkg/mint`): what a minted token grants, key lifecycle, and the trust boundary an operator must get right before enabling it. Companion to [ADR-0007](https://github.com/kubestellar/hive/blob/v4/src/docs/adr/0007-token-mint.md).
+- [Changelog](https://github.com/kubestellar/hive/blob/v4/CHANGELOG.md) — recent user-visible changes and release notes.
+- [Release channels](/docs/hive/release-channels) — `stable`/`candidate`/`edge` moving image tags, switching a hive to a channel, and the `stable (v4)` version pill.
+- [Tagged releases](https://github.com/kubestellar/hive/blob/v4/src/docs/releases.md) — the automated `v1.2.3` release path: what triggers a release, how the version is inferred from `CHANGELOG.md`, the commit convention that drives it, the human escape hatch, how it relates to the moving release channels above, and the per-release SPDX SBOM attached to each GitHub Release (and why it is a release artifact, not an in-image attestation — see #3760).
+- [The `auto-update` Compose profile](https://github.com/kubestellar/hive/blob/v4/src/docs/auto-update-profile.md) — what unattended Watchtower updates cost you, what the Docker socket proxy does and does **not** fix, and why Kubernetes should not use this profile at all.
+- [Environment variable reference](https://github.com/kubestellar/hive/blob/v4/src/docs/env-vars.md) — centralized list of runtime, deployment, hub, backup, and contributor environment variables.
+- [Kubernetes deployment](https://github.com/kubestellar/hive/blob/v4/README.md#kubernetes-deployment) — the operator path for Kubernetes: prerequisites, namespace, secret, ConfigMap, PVC, Deployment, Service, Ingress, and published ports. Lives in the root README alongside the Compose and Podman quick starts; the manifests it applies are [`src/deploy/k8s/`](https://github.com/kubestellar/hive/tree/v4/src/deploy/k8s). See also [dashboard route and health checks](https://github.com/kubestellar/hive/blob/v4/src/docs/health-checks.md) and the Kubernetes CronJob in [backup and restore](https://github.com/kubestellar/hive/blob/v4/src/docs/backup-restore.md).
+- [Troubleshooting](/docs/hive/troubleshooting) — container logs, config validation, agent tmux sessions, dashboard auth, and GitHub credential checks.
+- [Cross-cluster migration](https://github.com/kubestellar/hive/blob/v4/src/docs/cross-cluster-migration.md) — the manual procedure for moving a hive between clusters.
+- [v2 → v4 migration](https://github.com/kubestellar/hive/blob/v4/src/docs/migration-v2-v4.md) — upgrading a v2 deployment: the config is compatible unmodified, and what actually changes is the image tag, the published `7681` port, and the Compose/Kubernetes security settings.
+- [Dashboard route and health checks](https://github.com/kubestellar/hive/blob/v4/src/docs/health-checks.md) — `dashboard-route-rbac.yaml`, `route_exists`, listener probes, and alert behavior.
+- [Agent self-healing watchdog](https://github.com/kubestellar/hive/blob/v4/src/docs/agent-watchdog.md) — liveness and readiness reconciliation for launched agents: liveness classification, restart backoff, crash-loop escalation, the auth probe that refuses to restart into dead credentials, and the `conditions` array on `/api/agents`. Ships in `mode: observe`, which audits the restarts it would have made without making them.
+- [Audit log format](https://github.com/kubestellar/hive/blob/v4/src/docs/audit-log.md) — the JSONL schema of `/data/audit.jsonl`: the five fields, how to parse the flat `detail` string (and why `repo` is not first-class), the pseudo-users, and why size-triggered rotation means the effective lookback varies per hive rather than being 90 days.
+- [Delegation chains](https://github.com/kubestellar/hive/blob/v4/src/docs/delegation-chain.md) — the cryptographically verifiable record of which authorizations composed to produce an action: the RFC 8693-shaped `act` nesting, the five identity situations and their chain shapes, why a root is never fabricated, how a tenant verifies independently against the anonymously-published Ed25519 keys with no hive credentials, and the rotation story. **Observe-only** — chains are minted and published but gate nothing, and enforcement is a separate future decision.
+- [`hive-open-pr`](https://github.com/kubestellar/hive/blob/v4/src/docs/hive-open-pr.md) — how agents open pull requests as the App bot instead of via `gh pr create`: the flags, the UID-ownership anchor that makes the request forge-resistant, and the asynchronous contract (exit `0` means requested, not opened).
+- [Network and port requirements](https://github.com/kubestellar/hive/blob/v4/src/docs/network-requirements.md) — inbound ports, proxy paths, egress, and firewall guidance.
+- [TLS, HTTPS, and certificates](https://github.com/kubestellar/hive/blob/v4/src/docs/tls-setup.md) — termination patterns and certificate ownership.
+- [Security notes](https://github.com/kubestellar/hive/blob/v4/src/docs/security.md) — log scrubbing and secret redaction guarantees/limits.
+- [Token collection and usage tracking](https://github.com/kubestellar/hive/blob/v4/src/docs/token-tracking.md) — session JSONL, `/api/cost`, and hub usage rollups.
+- [Notifications](https://github.com/kubestellar/hive/blob/v4/src/docs/notifications.md) — ntfy, Slack, and Discord alert channels, plus the two-way [Discord bot](https://github.com/kubestellar/hive/blob/v4/discord/README.md).
+- [State-triggered hooks](https://github.com/kubestellar/hive/blob/v4/src/docs/hooks.md) — declarative `transition → action` rules, the transition catalog, the vetted action set, and the security model (RFC #4001).
+- [Public snapshots](https://github.com/kubestellar/hive/blob/v4/src/docs/snapshots.md) — read-only `/snapshot`, custom CSS, and frame-ancestor sharing.
+- [hivectl](/docs/hive/hivectl) — command-line client for the dashboard API.
+- [`bd` beads CLI](https://github.com/kubestellar/hive/blob/v4/src/docs/beads-cli.md) — work-ledger and knowledge command reference for operators and contributors.
+- [Backup and restore](https://github.com/kubestellar/hive/blob/v4/src/docs/backup-restore.md) — `hive-backup`, Kubernetes CronJob, spoke backup scope, and setting the backup encryption key from Governor Config (hosted flow). Host-level backup, restore, and `docker compose down -v` are given per runtime: Docker Compose, and Podman/Quadlet with the executed backup → wipe → restore cycle in both root modes, the rootless mapped-UID trap that makes a host-shell `tar` skip the GitHub App key, and the Docker→Podman migration (the two volume stores are never shared).
+- [Hub disaster recovery](https://github.com/kubestellar/hive/blob/v4/docs/HUB_DISASTER_RECOVERY.md) — the hub-level runbook that goes beyond per-hive backup: hub backup and key escrow, spoke fleet recovery, Slack blast, and the full rebuild-from-zero procedure after a catastrophic loss.
+- [Deployment helper scripts](https://github.com/kubestellar/hive/blob/v4/src/docs/deployment-scripts.md) — the all-in-one LXC setup, Proxmox LXC, and blue-green Compose helpers. All are Docker-only; the page states each script's runtime scope and where a Podman operator should go instead.
+- [`bin/` pipeline script index](https://github.com/kubestellar/hive/blob/v4/bin/README.md) — map of the 45 deterministic pipeline and operational shell/Python scripts, grouped by function.
+- [Dashboard API reference](https://github.com/kubestellar/hive/blob/v4/src/docs/api-reference.md) — pragmatic route index for dashboard and hub endpoints.
+- [Dashboard OpenAPI spec](https://github.com/kubestellar/hive/blob/v4/dashboard/openapi.json) — machine-readable REST API reference for integrations.
+- [ioscan status](https://github.com/kubestellar/hive/blob/v4/src/docs/ioscan.md) — the untrusted-input scanner/canary feature (live and default-on in v4).
+- [Deployment scripts](https://github.com/kubestellar/hive/blob/v4/src/deploy/README.md) — inventory of deployment helpers, including dashboard TTY panes and `hive-panes`.
+
+## Contributors and access
+
+- [Getting started as a first-time contributor](https://github.com/kubestellar/hive/blob/v4/docs/getting-started-contributing.md) — the end-to-end path for a first code or documentation contribution, tying the reference docs together and answering the Hive-specific questions they don't.
+- [Local development](https://github.com/kubestellar/hive/blob/v4/docs/development.md) — the local workflow for contributing to the Go codebase on `v4`: prerequisites, build, and test loop.
+- [ClankeR contributor relay](/docs/hive/contributor-relay) — local contributor setup, multi-hub subscriptions, moving a relay to another machine, and role requests.
+- [Contributor trust tiers and delegated agent roles](https://github.com/kubestellar/hive/blob/v4/src/docs/contributor-trust-and-roles.md) — newcomer/contributor/trusted/merger/advisor semantics, **Acting as**, grants, and delegatable roles.
+- [Credly badges](https://github.com/kubestellar/hive/blob/v4/src/docs/credly-badges.md) — planned integration design; currently a placeholder mapping only.
+
+## Configuration and agents
+
+- [Agent configuration](/docs/hive/agent-configuration) — agent fields, methods, models, pins, cadences, caveman mode, ACMM packs, and live-linked `definition_source` (with its seed-only trust model).
+- [Advisory digest](https://github.com/kubestellar/hive/blob/v4/src/docs/advisory.md) — what the digest shows (`max_findings`, `show_all`) and how findings are retired (staleness auto-close, PR-linked auto-close).
+- [Advisory digest staleness](https://github.com/kubestellar/hive/blob/v4/src/docs/advisory-staleness.md) — when the hub raises the stale-advisory pill and alert, the gates that deliberately suppress it (undelivered App, App cannot write, all agents quiet), and the admin diagnostics that measure hidden staleness.
+- [Governor mode thresholds](https://github.com/kubestellar/hive/blob/v4/src/docs/governor-thresholds.md) — how idle/quiet/busy/surge thresholds scale with repo count, the `threshold_scaling` curves, and when explicit thresholds win.
+- [Supervisor agent](https://github.com/kubestellar/hive/blob/v4/src/docs/supervisor.md) — supervisor policy modes, bead roles, and when to enable the orchestration lane.
+- [Custom dashboard stylesheets](https://github.com/kubestellar/hive/blob/v4/src/docs/custom-stylesheets.md) — operator-supplied CSS for the dashboard and public snapshot.
+- [Portable AgentDefinition format](https://github.com/kubestellar/hive/blob/v4/src/AGENT-DEFINITION.md) — standalone YAML schema for importing/exporting agent definitions.
+- [Knowledge curator](https://github.com/kubestellar/hive/blob/v4/src/docs/knowledge-curator.md) — automatic fact extraction and promotion knobs, plus `knowledge.git_sources`: indexing a remote repo, layer semantics, private-repo auth (unsupported), and diagnosing a failed source.
+- [Skill registry](https://github.com/kubestellar/hive/blob/v4/src/docs/skills.md) — the `/data/skills/` file format and front-matter fields. **Loaded and counted on the dashboard, but not yet delivered to agents**: populating it changes no agent's behaviour today. Use the knowledge curator for knowledge that actually reaches agents.
+- [AGENTS.md repo instructions](https://github.com/kubestellar/hive/blob/v4/src/docs/agents-md.md) — the per-repo `AGENTS.md` file format Hive's parser (`pkg/agentsmd`) understands, including front-matter `skills:` and inline `## Skill:` sections. **Parsed and tested, but not wired into kicks**: the one call site's repo-root lookup unconditionally returns empty, so an `AGENTS.md` you add today has no effect on any agent's prompt.
+- [Agent peer-awareness logging (pluk)](https://github.com/kubestellar/hive/blob/v4/src/docs/agent-logging.md) — pluk log format, `hive-panes`, availability, and retention.
+- [Strategy Lab (Nous)](https://github.com/kubestellar/hive/blob/v4/src/docs/strategy-lab.md) — experiment lifecycle, dashboard/API configuration, fast-fail bounds, and the gate-decision flow. No `nous:` block in `hive.yaml`.
+- [GitHub App setup](https://github.com/kubestellar/hive/blob/v4/src/docs/github-app-setup.md) — the Forge App on GitHub and GitHub Enterprise: app creation, permissions, Setup URL, and `/gh-setup`.
+- [ACMM policy matrix](/docs/hive/acmm-policy-matrix) — capability levels and policy modes.
+- [ACMM level-up advisor](https://github.com/kubestellar/hive/blob/v4/src/docs/acmm-advisor.md) — the advisory-only `pkg/acmmadvisor` computation behind `GET /api/acmm-recommendation`: the signals it measures, per-level thresholds, and why it never changes the applied level.
+- [Inception](https://github.com/kubestellar/hive/blob/v4/src/docs/inception.md) — operator guide to the L1 brainstorm/inception workflow: phases, API, and template variables.
+- [Planning intelligence](https://github.com/kubestellar/hive/blob/v4/src/docs/planning-intelligence.md) — how a large GitHub issue becomes an epic the architect lane decomposes into child beads, the human plan-review gate that withholds those children until approved, and stall-replan.
+- [Review swarm](https://github.com/kubestellar/hive/blob/v4/src/docs/review-swarm.md) — the five review perspectives, the verdict collector and its report contract, and the opt-in merge-gate integration and bounded auto-fix cycle for review findings.
+- [Retro lane](https://github.com/kubestellar/hive/blob/v4/src/docs/retro-lane.md) — the opt-in (`retro.enabled`) post-completion pass that reconstructs a record for each closed bead and flags patterns such as excessive fix attempts or kicks; deterministic by default, with LLM analysis separately opt-in.
+- [Work sources](https://github.com/kubestellar/hive/blob/v4/src/docs/work-sources.md) — `governor.work_source`: the four `type` options (`github` default, `github_projects`, `linear`, `jira`), config fields, required credentials, and priority/hold-label mapping per source.
+- [Linear agent integration](https://github.com/kubestellar/hive/blob/v4/src/docs/linear-agent.md) — joining a Linear workspace as a first-class agent member: webhook verification, the 10-second session acknowledgement, which hive agent takes sessions, and narrating completion back as agent activities.
+- [Lite enrollment](https://github.com/kubestellar/hive/blob/v4/src/docs/lite-enrollment.md) — the zero-repo-secret on-ramp: `hivectl enroll OWNER/REPO` adds a repo to a spoke's `project.repos`, with prerequisites and the hosted lite-spoke path.
+- [ACMM policy fragments](https://github.com/kubestellar/hive/blob/v4/examples/acmm/README.md) — per-level ACMM policy references.
+- [Sandbox isolation and agent guardrails](https://github.com/kubestellar/hive/blob/v4/src/docs/sandbox-isolation.md) — isolation layers and operator guardrail notes.
+- [Per-agent gh restrictions](https://github.com/kubestellar/hive/blob/v4/config/restrictions/README.md) — file-based wrapper denials in `/etc/hive/restrictions/`.
+- [Podman rootless CI](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-rootless-ci.md) — rootless Podman contract for `contribute-hive`.
+- [Podman Quadlet `.kube` compatibility spike](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-quadlet-kube-spike.md) — why the standalone Kubernetes overlay is not a safe direct source for Podman units.
+- [Podman ownership and cleanup contract](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-ownership-cleanup.md) — the labels that mark a resource Hive-owned and the guard that keeps Podman/Buildah cleanup from reaching the operator's other containers, Distroboxes, and images.
+- [Podman preflight: SELinux, mounts, secrets, and ports](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-preflight-host.md) — read-only diagnostics for SELinux state and mount labeling, configuration/secrets readability, and published host-port availability, with remediation that never disables SELinux or widens a secret.
+- [Podman preflight: subordinate IDs, graphroot, and networking](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-preflight-ids.md) — read-only diagnostics for rootless subordinate UID/GID delegation, unsupported (NFS and other distributed) container storage, and the rootless network backend/helper, with remediation that never edits `/etc/subuid` or `/etc/subgid`.
+- [CLI backend setup](https://github.com/kubestellar/hive/blob/v4/docs/backend-setup.md) — setup notes for Claude, Copilot, Goose, Bob, Pi, Codex, and Aider.
+- [Inference backends](https://github.com/kubestellar/hive/blob/v4/docs/inference-backends.md) — vLLM, llm-d, LiteLLM, and Model Gateway troubleshooting.
+- [apiproxy](https://github.com/kubestellar/hive/blob/v4/src/docs/apiproxy.md) — Anthropic-compatible proxy logging and deployment notes.
+- [Outreach anti-spam ruleset](https://github.com/kubestellar/hive/blob/v4/docs/outreach-antispam.md) — the deduplication and anti-spam rules the outreach agent operates under across awesome lists, project issues, directories, and community threads.
+- [v1 to v2 migration](https://github.com/kubestellar/hive/blob/v4/docs/migration-v1-v2.md) — **historical.** Both ends of this migration are retired; v2 was retired in August 2026. Kept for operators still on v1, who should read it alongside [v2 → v4 migration](https://github.com/kubestellar/hive/blob/v4/src/docs/migration-v2-v4.md) above. New deployments do not need it.
+
+## Architecture and design
+
+- [Architecture](/docs/hive/architecture) — process model, governor loop, guardrails, hub/spoke, and walkthrough.
+- [Hive federation design](https://github.com/kubestellar/hive/blob/v4/docs/federation-design.md) — the multi-hive registry: live `/api/hives` endpoints, project onboarding, contributor flow across hubs, and what remains future design work.
+- [Public roadmap](/docs/hive/roadmap) — the v4 direction as Now / Next / Later, with the tracking issue behind each item. Directional rather than a promise, maintained by pull request; check the date in its header before relying on the ordering.
+- [Landscape and positioning](/docs/hive/landscape) — how Hive's operations-plane design compares to nearby agentic orchestration tools, with public references per project. Explicitly time-sensitive; check the conducted date in its header before quoting product details.
+- [CNCF reference architecture](https://github.com/kubestellar/hive/blob/v4/src/docs/cncf-reference-architecture.md) — CNCF submission/reference template.
+- [Podman CI runner map](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-ci-runner-map.md) — measured hosted-runner capabilities and which Podman lane goes where; SELinux is the only lane needing non-hosted infrastructure.
+- [Design documents](https://github.com/kubestellar/hive/blob/v4/src/docs/design/README.md) — longer-form design records with the full reasoning behind a decision, indexed with a status each (shipped / partly shipped / design only / historical) so a proposal is not mistaken for current behaviour: master secret rotation, wrapped master delivery to pull-only spokes, PR reach telemetry, and the knowledge system.
+- [Podman Compose-provider selection spike](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-compose-provider-spike.md) — why `podman compose` must name its provider explicitly, and which provider needs no Docker tooling.
+- [Trajectory review](https://github.com/kubestellar/hive/blob/v4/src/docs/trajectory-review.md) — trajectory safety lane and review signals.
+- [Podman Quadlet `.container`/`.pod` spike](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-quadlet-container-pod-spike.md) — feasibility result for explicit Quadlet units: readiness via `Notify=healthy`, the startup-timeout trap, and what the generator does not validate.
+
+## Historical/design notes
+
+Some documents describe planned or design-only work rather than live features. Those pages are marked at the top, for example [Credly badges](https://github.com/kubestellar/hive/blob/v4/src/docs/credly-badges.md). The longer-form design records under [`design/`](https://github.com/kubestellar/hive/blob/v4/src/docs/design/README.md) are a whole directory of these: each entry in that index carries a status, because those pages are the reference record of a decision and are deliberately not rewritten as later stages ship.
+
+## Security (v4)
+
+- [Security model — operator guide](/docs/hive/security-model) — Ed25519-only sessions/SSO, per-hive keys, master key rotation, forced proxy egress and `CAP_NET_ADMIN`, privilege model, and supply-chain posture.
+- [Security threat model](https://github.com/kubestellar/hive/blob/v4/src/docs/security-threat-model.md) — actors, boundaries, layered defenses, known gaps, and reporting.
+- [Security response process](https://github.com/kubestellar/hive/blob/v4/src/docs/security-response.md) — who responds to a vulnerability report (the Maintainer Committee, rostered in `OWNERS`), the end-to-end handling flow and the 60-day fix commitment, how membership is added and rotated, the escalation path if a reporter gets no response, and the project's known limits stated plainly.
+- [CNCF TAG-Security self-assessment](https://github.com/kubestellar/hive/blob/v4/src/docs/security-self-assessment.md) — the CNCF Incubation self-assessment artifact: metadata, actors/actions/goals, critical security components with file/line citations, project compliance, secure development practices, vulnerability response process, and the three most significant known weaknesses stated plainly.
+- [CNCF General Technical Review](https://github.com/kubestellar/hive/blob/v4/src/docs/general-technical-review.md) — the full Day 0/1/2 GTR questionnaire answered against this repository, cited file-by-file, with every currently-unanswerable question marked `[NEEDS OPERATOR INPUT]` rather than guessed at.
+- [Heartbeat bearer cutover](https://github.com/kubestellar/hive/blob/v4/src/docs/heartbeat-bearer-cutover.md) — retiring the fleet-wide heartbeat bearer, whose possession proves only "some provisioned spoke" and lets any spoke heartbeat as any hive, in favour of the per-hive key — without re-provisioning the fleet, and the precondition that gates the removal.
+- [Rootless Podman startup and exit-77 behavior](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-rootless-startup-spike.md) — measured rootless matrix: fail-closed exit 77, gate installation under `--cap-add NET_ADMIN`, proven interception, and what is still unproven.
+- [IPv6 egress-gate bypass](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-ipv6-egress-bypass.md) — measured: the forced-proxy redirect is IPv4-only, so agent traffic to `:443` over IPv6 never meets it (5 IPv6 connections, 0 redirects; 5 IPv4 connections, 5 redirects, same run). Names the fix slice.
+- [Rootful Podman egress-gate baseline](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-rootful-egress-baseline.md) — the rootful baseline the rootless result is measured against: fail-closed exit 77, redirect and ambient-capability evidence, and `SO_MARK` isolated from the owner-UID exemption.
+- [Podman support matrix: rootful/rootless × enforcing/advisory](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-support-matrix.md) — the support statement for standalone Hive under Podman: which of the four combinations is supported, experimental, or a deliberate unenforced choice, what evidence settles each, and the gaps carried forward.
+- [Release qualification: SELinux-enforcing Podman](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-selinux-release-qualification.md) — the one Podman lane hosted CI cannot run, and why: a per-release, reproducible procedure on an enforcing Fedora/CentOS Stream-class host covering `:z`/`:Z` mounts, MCS label behaviour, and secret access, with a results ledger and a stop condition that records UNEXECUTED rather than passing from a permissive host.
+- [`hive-data` under SELinux enforcing](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-volume-persistence.md) — what the named volume actually guarantees: podman labels it `container_file_t:s0` with **no** MCS category at create time, which is what lets a recreated container (a fresh category every start, `--rm` deleting the old one) still read the data. Ownership after the copy-up, what survives unit deletion and reinstall, what does destroy it, why `:Z` on the volume line is a silent footgun where `:Z` on the config and secret bind mounts is correct, and why `EnvironmentFile=` needs no flag at all.
+- [SELinux AVC evidence, and the hive-launch group secret](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-selinux-avc-evidence.md) — the audit-log evidence behind the qualification above: the actual AVC records per case rather than pass/fail inferred from an exit status, plus the `0440` hive-launch (GID 1002) secret read through a supplementary group. Records three defects in shipped advice, including a label check that reads garbage where uutils coreutils shadows GNU, and an MCS denial that produces no audit record at all.
+- [Standalone Hive under Podman: the Quadlet units](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-standalone-quadlet.md) — the `.container`, `.volume`, and `.network` units that start Hive and its authenticating gateway on Podman in both root modes, the published-port boundary they encode (3001 published, the raw ttyd terminal on 7681 never) and how it was measured, the install and boot-persistence steps, and why `systemctl start` returning means the healthcheck passed rather than merely that a process was spawned. Also records the **Docker-free run** (#4448): the quick start executed verbatim with `docker` removed from `PATH` and `DOCKER_HOST` pointed at a nonexistent socket, reaching `{"status":"ok"}` on 3001 with no Docker socket mounted anywhere — and states plainly which #4188 criterion that closes and which stays open.
+- [Quadlet lifecycle: stop, start, restart, recreate, and boot persistence](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-quadlet-lifecycle.md) — what those units actually report as an operator drives them, in both root modes, including the first live rootful start. Records that a clean `systemctl stop` left the unit `failed`, that `systemctl enable` fails outright on a generated unit, and that `is-enabled` cannot tell you whether Hive will come back after a reboot; ships `bin/hive-podman-lifecycle-probe.sh` as the repeatable check and records the reboot row as NOT EXECUTED rather than inferring it.
+
+- [Host-execution capability matrix](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-host-execution-gap.md) — what one real execution environment can actually do, measured rather than asserted, before any new execution runtime is proposed on the strength of what it supposedly cannot. Command, exit status and verbatim output per capability for `/dev/kvm`, systemd, reboot, lingering, SELinux, rootful Podman, `modprobe` and `NET_ADMIN`. The result was not the expected one: most are present, and the reason the reboot rows in the lifecycle page stay unexecuted is topology — the session runs on the host that would restart — not permission. Scoped hard to one path on one host, and says so.
+- [Quadlet update and rollback: moving the image, and getting back](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-quadlet-update-rollback.md) — the deliberate manual path from one Hive image to another and back, pinned by digest in a Quadlet drop-in because the shipped unit names a floating tag that cannot be rolled back to. Executed in both root modes between two real `v4` builds: an 11-second healthy update, a failed update that held the unit in `activating` for the full 301-second `TimeoutStartSec` and then looped without ever reading `failed`, and an 11-second rollback out of it with `hive-data` intact throughout. Ships `bin/hive-podman-update.sh`.
+
+- [Health-aware auto-update: whether it works on this unit, and what it costs](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-auto-update.md) — the #4411 decision, measured rather than assumed. `podman auto-update --rollback` DOES fire on this unit despite it never reading `failed`, because podman reads the D-Bus start-job result (`timeout`) and not `ActiveState`; `Restart=always` is kept untouched and never even fires. Driven against a bad-but-startable image. Also what it costs: one full `TimeoutStartSec` of downtime per bad update, repeated on every timer firing because podman does not remember a rollback, and a digest pin that silently wins. Opt-in only, via `bin/hive-podman-update.sh autoupdate on`. Executed in **both root modes** — rootless (#4411) and rootful under the system manager (#4447), which is the enforcing mode.
+- [Architecture Decision Records](https://github.com/kubestellar/hive/blob/v4/src/docs/adr/README.md) — lightweight ADR process and records 0001-0017.
+- [Intent verification](https://github.com/kubestellar/hive/blob/v4/src/docs/intent-verification.md) — tier-based change authorization for merge eligibility.
+- [Rootless Podman CI seam](https://github.com/kubestellar/hive/blob/v4/src/docs/podman-rootless-ci.md) — documented test intent and static contract for contributor-container runtime handling.
+- [Release-line carry-forward guard](https://github.com/kubestellar/hive/blob/v4/src/docs/release-line-guard.md) — the nine workflows pinned to hardcoded version-branch names, the single source of truth they are asserted against, and what to edit when a new release line is cut.

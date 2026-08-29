@@ -38,10 +38,13 @@ const files: Array<{ source: string; target?: string }> = [
   { source: "adr/0008-ioscan-untrusted-input.md" },
   { source: "adr/0009-trajectory-review.md" },
   { source: "adr/0010-escalation-circuit-breaker.md" },
-  { source: "adr/0011-knowledge-graph.md" },
+  { source: "adr/0011-knowledge-system.md" },
   { source: "adr/0012-skill-registry.md" },
   { source: "adr/0013-cel-triggers.md" },
   { source: "adr/0014-hub-spoke.md" },
+  { source: "adr/0015-csp-style-src-scope.md" },
+  { source: "adr/0016-csp-script-src-scope.md" },
+  { source: "adr/0017-podman-quadlet-lifecycle.md" },
 ];
 
 function canonicalHeader(source: string): string {
