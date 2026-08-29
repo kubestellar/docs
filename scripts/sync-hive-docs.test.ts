@@ -3,8 +3,8 @@ import { rewriteLinkTarget, rewriteLinks } from "./sync-hive-docs";
 
 // The source file being synced, expressed as its real repo path. Links inside
 // the content are resolved relative to this file's directory.
-const README = "v2/docs/README.md";
-const ADR_README = "v2/docs/adr/README.md";
+const README = "src/docs/README.md";
+const ADR_README = "src/docs/adr/README.md";
 
 describe("rewriteLinkTarget — Case 1: in-tree synced docs -> site route", () => {
   it("rewrites a bare sibling link to the synced flat route", () => {
