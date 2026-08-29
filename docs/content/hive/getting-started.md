@@ -44,11 +44,15 @@ The biggest mistake new users make: seeing agent output and either (a) panicking
 
 None of the level guidance below works until your hive is connected to your git host. Do this in your **first session**:
 
-1. **Install the Forge App** (the app you install on your git host — GitHub, GitLab, Gitea, etc.). This is how Hive talks to your repo. Click **Install Forge App** from your dashboard and grant it access to your repo.
-2. **⏰ Don't put this off.** Unconfigured hive instances are reclaimed on a timer. Finish the Forge App install in your first session or your hive may be reaped.
+1. **Install the Forge App.** The Forge App is the app Hive installs on your forge (your source control system, e.g., GitHub, GitHub Enterprise, GitLab, or Gitea) — on **GitHub.com and GitHub Enterprise (GHE) it's a GitHub App**; on GitLab or Gitea it's the equivalent host app. This is how Hive talks to your repo.
+   - **From the dashboard (easiest):** click **Install Forge App** in the welcome checklist, or open **Governor Config → Forge App** and use the install link there. Grant the app access to your repo.
+   - **On GitHub.com:** the install button sends you to `github.com/apps/<app-slug>` — pick your org/repo and approve.
+   - **On GitHub Enterprise (IBM, corporate):** the same flow lives on your **GHE host**, not github.com — the install page is `https://<your-ghe-host>/github-apps/<app-slug>`. Make sure your hive is pointed at your GHE host URL (Governor Config → Forge App shows which host is configured).
+   - **Self-hosting or creating the app yourself?** See the [GitHub App setup guide](https://github.com/kubestellar/hive/blob/v4/src/docs/github-app-setup.md) for app creation, permissions, and the `/gh-setup` flow.
+2. **⏰ Don't put this off.** Unconfigured hive instances are reclaimed on a timer. Finish the Forge App install in your first session or your hive may be reaped — see [What if my hive disappeared?](#what-if-my-hive-disappeared-inactive-hive-reaping) below.
 3. **Wait for the first heartbeat.** After installing, a heartbeat cycle has to run (a few minutes) before everything lights up green.
 
-> **On GitHub Enterprise (IBM, corporate)?** Setup is slightly different: point Hive at your **GHE host URL**, not github.com. The Forge App install flow lives on your enterprise host.
+> **On GitHub Enterprise (IBM, corporate)?** Setup is slightly different: point Hive at your **GHE host URL**, not github.com. The Forge App install flow lives on your enterprise host — a 404 from the install button almost always means the wrong host.
 
 > 💡 **Tip: name your hive like a team member.** The `ai_author` field is the login your agents use when opening PRs. Pick a name that signals what it does — `hive-bot`, `your-repo-ai`, `proj-assistant`. A clear name means your team immediately knows which PRs are agent-authored vs human-authored.
 
@@ -57,8 +61,26 @@ None of the level guidance below works until your hive is connected to your git 
 ## Common gotchas (so you don't panic)
 
 - **Dashboard full of warnings?** Normal. Most warnings clear automatically after the Forge App is installed and the first heartbeat runs. Don't panic.
-- **"Install Forge App" gives a 404?** Usually a GHE-vs-github.com mixup, or the app isn't available on your host yet. Double-check which git host you're on.
+- **"Install Forge App" gives a 404?** Usually a GHE-vs-github.com mixup, or the app isn't available on your host yet. Double-check which source control host (GitHub.com, GitHub Enterprise, GitLab, Gitea) your hive is pointed at.
 - **Changed a setting and nothing happened?** Agents pick up config changes on the next **heartbeat cycle**. Wait 2–3 minutes before assuming something is broken.
+- **Hive vanished from Usage / old URL times out?** Your hive was probably reaped for inactivity. See the next section — recovery is quick.
+
+---
+
+## What if my hive disappeared? (inactive-hive reaping)
+
+Hosted hives that stay **unconfigured or inactive are reclaimed ("reaped") on a timer** to free fleet capacity. When that happens:
+
+- Your hive stops appearing under **Usage** on the hub.
+- The old hive URL (`https://<id>.hive.kubestellar.io`) **times out** — it is gone, not just sleeping.
+
+**This is normal and recoverable.** Nothing is wrong with your account. To get going again:
+
+1. **Request a new hive.** Go to the hub and click **Request a hive** (the `/get-started` wizard — on the hosted hub that's [hive.kubestellar.io/get-started](https://hive.kubestellar.io/get-started)). You'll get a fresh hive with a new URL — don't wait for the old URL to come back.
+2. **Complete Step 0 right away.** Install the [Forge App](#step-0--before-you-start-do-this-first) — the app for your source control system (GitHub, GitHub Enterprise, GitLab, or Gitea) — in your **first session** on the new hive. An installed Forge App plus regular heartbeats is what keeps a hive from being reaped again.
+3. **Update your bookmarks** to the new hive URL.
+
+> 💡 **Avoid a repeat:** the reap timer targets hives that never finished setup or went quiet. Finish the Forge App install on day one and your hive will stick around.
 
 ---
 
@@ -198,6 +220,26 @@ New users often expect PRs at L2 (they don't happen) or are surprised when they 
 **When to move up:** **3–4 weeks.** Let quality build your test suite. Get comfortable approving or declining hold-labeled PRs before adding more agents. Move up when your CI runs real tests and reviewing held PRs feels routine.
 
 > 💡 **Tip: customize before you escalate.** Before moving from L3 to L4, take 30 minutes to edit each agent's policy template. Add your coding conventions, your preferred test framework, your off-limits directories. Agents follow instructions literally — the more specific you are, the better the output.
+
+### 🔒 Where agents actually run (read this before L3)
+
+By L3, agents are writing code and running commands on your behalf — so it's worth knowing exactly where that happens. On the contributor path (`just contribute-hive <backend>`), agents run in a **tmux session on the host** by default: the backend CLI runs as your own user, with permission prompts bypassed, and nothing containing it to the assigned workspace unless the backend provides its own confinement.
+
+**Confinement is not the same for every backend.** As of this writing:
+
+| Backend | Confined? |
+|---|---|
+| `claude` / `litellm` | Yes — Claude Code's native OS sandbox |
+| `codex` | Yes — its own `workspace-write` sandbox |
+| `copilot` | Yes — Copilot CLI's own `--sandbox`, checked at launch |
+| `opencode` | Partial — a command deny-list only, **not** a filesystem sandbox |
+| `goose`, `agy`, `bob`, `pi`, `aider` | No — these backends have no confinement mechanism at all. Local mode **refuses to launch** for them unless you explicitly set that backend's own `HIVE_<BACKEND>_DANGEROUSLY_RUN_UNCONFINED=1` |
+
+If you see one of those `_DANGEROUSLY_RUN_UNCONFINED` variables mentioned in setup instructions, it means exactly what it says: that backend has no sandbox, and setting the variable is you accepting that the agent runs with full access to your machine. Prefer container mode (drop `local` from the command) or a confined/denylisted backend if you're running hive on a machine you care about.
+
+This matters beyond backend choice, too: the hub-side Podman sandbox (`agent_sandbox`) is a separate, opt-in mechanism, and enabling it requires setting **both** the global `agent_sandbox.enabled` flag **and** a per-agent `sandbox.enabled` flag — the dashboard's Security tab only writes the global one, so turning that toggle on by itself does not sandbox any agent.
+
+See [sandbox-isolation.md](https://github.com/kubestellar/hive/blob/v4/src/docs/sandbox-isolation.md) for the full threat model, the complete per-backend matrix, and the hub-side sandbox setup.
 
 ## L4 — Issues and Security
 
