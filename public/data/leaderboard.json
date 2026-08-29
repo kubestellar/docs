@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-29T10:09:49.834Z",
-  "git_hash": "16d5288",
+  "generated_at": "2026-08-29T14:10:03.529Z",
+  "git_hash": "4a14b8f",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-06-08",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 6140450,
+      "total_points": 6141150,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 694,
         "feature_issues": 1295,
         "other_issues": 2168,
-        "prs_opened": 8689,
-        "prs_merged": 7913
+        "prs_opened": 8690,
+        "prs_merged": 7914
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         85,
         83,
         62,
-        47
+        48
       ],
-      "recent_activity_score": 1072.07,
+      "recent_activity_score": 1073.07,
       "rank": 1
     },
     {
@@ -1340,6 +1340,36 @@
       "rank": 44
     },
     {
+      "login": "vjymisal0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97379957?v=4",
+      "total_points": 3000,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 5,
+        "prs_merged": 4
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        4
+      ],
+      "recent_activity_score": 4.5,
+      "rank": 45
+    },
+    {
       "login": "AdityaM-IITH",
       "avatar_url": "https://avatars.githubusercontent.com/u/257356677?v=4",
       "total_points": 2800,
@@ -1367,7 +1397,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 45
+      "rank": 46
     },
     {
       "login": "p172913",
@@ -1397,7 +1427,7 @@
         0
       ],
       "recent_activity_score": 0.2,
-      "rank": 46
+      "rank": 47
     },
     {
       "login": "MAVRICK-1",
@@ -1427,7 +1457,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 47
+      "rank": 48
     },
     {
       "login": "thisisvaishnav",
@@ -1457,7 +1487,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 48
+      "rank": 49
     },
     {
       "login": "naman9271",
@@ -1487,7 +1517,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 49
+      "rank": 50
     },
     {
       "login": "Ady0333",
@@ -1517,7 +1547,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 50
+      "rank": 51
     },
     {
       "login": "anand-242003",
@@ -1547,7 +1577,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 51
+      "rank": 52
     },
     {
       "login": "lakshyajn",
@@ -1577,7 +1607,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 52
+      "rank": 53
     },
     {
       "login": "Ap-0007",
@@ -1607,7 +1637,7 @@
         0
       ],
       "recent_activity_score": 1.5,
-      "rank": 53
+      "rank": 54
     },
     {
       "login": "btwshivam",
@@ -1637,7 +1667,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 54
+      "rank": 55
     },
     {
       "login": "rakshityadav1868",
@@ -1667,7 +1697,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 55
+      "rank": 56
     },
     {
       "login": "ayushshukla1807",
@@ -1697,7 +1727,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 56
+      "rank": 57
     },
     {
       "login": "Shantanu675",
@@ -1727,7 +1757,7 @@
         0
       ],
       "recent_activity_score": 0.79,
-      "rank": 57
+      "rank": 58
     },
     {
       "login": "vibhor-5",
@@ -1757,7 +1787,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 58
+      "rank": 59
     },
     {
       "login": "Rawdyrathaur",
@@ -1787,36 +1817,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 59
-    },
-    {
-      "login": "vjymisal0",
-      "avatar_url": "https://avatars.githubusercontent.com/u/97379957?v=4",
-      "total_points": 2000,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 5,
-        "prs_merged": 2
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        4
-      ],
-      "recent_activity_score": 4.5,
       "rank": 60
     },
     {
