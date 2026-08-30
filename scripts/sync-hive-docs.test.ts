@@ -36,16 +36,16 @@ describe("rewriteLinkTarget — Case 1: in-tree synced docs -> site route", () =
 
 describe("rewriteLinkTarget — Case 2: escapes / unsynced -> absolute GitHub URL", () => {
   it("resolves `../../` escape to the repo-root path on the sync branch", () => {
-    // v2/docs/ + ../../bin/README.md = bin/README.md at the repo root.
+    // src/docs/ + ../../bin/README.md = bin/README.md at the repo root.
     expect(rewriteLinkTarget("../../bin/README.md", README)).toBe(
       "https://github.com/kubestellar/hive/blob/v4/bin/README.md"
     );
   });
 
   it("resolves a single `../` escape into the sibling repo directory", () => {
-    // v2/docs/ + ../deploy/README.md = v2/deploy/README.md.
+    // src/docs/ + ../deploy/README.md = src/deploy/README.md.
     expect(rewriteLinkTarget("../deploy/README.md", README)).toBe(
-      "https://github.com/kubestellar/hive/blob/v4/v2/deploy/README.md"
+      "https://github.com/kubestellar/hive/blob/v4/src/deploy/README.md"
     );
   });
 
@@ -53,7 +53,7 @@ describe("rewriteLinkTarget — Case 2: escapes / unsynced -> absolute GitHub UR
     // env-vars.md exists in hive src/docs but is not on the sync allow-list,
     // so links to it resolve to a GitHub blob URL rather than a site route.
     expect(rewriteLinkTarget("env-vars.md", README)).toBe(
-      "https://github.com/kubestellar/hive/blob/v4/v2/docs/env-vars.md"
+      "https://github.com/kubestellar/hive/blob/v4/src/docs/env-vars.md"
     );
   });
 
@@ -121,5 +121,46 @@ describe("rewriteLinks — over full markdown content", () => {
     const md = "Text [arch].\n\n[arch]: architecture.md\n";
     const out = rewriteLinks(md, README);
     expect(out).toContain("[arch]: /docs/hive/architecture");
+  });
+});
+
+// ─── Sync-root drift guard ───────────────────────────────────────────
+//
+// The `rewriteLinkTarget` fixtures in Case 2 (and every source-path fixture
+// in this file) assume the hive-side sync root is `src/docs/`. That root is
+// currently spelled out in two module-scope constants in
+// `scripts/sync-hive-docs.ts` (`rawBase`, `canonicalBase`). If either is
+// migrated to a different root without also updating this test file's
+// fixtures, half the Case-2 URLs go wrong at once — exactly the drift
+// tracked in kubestellar/docs#6626 (`v2/docs/` residue that outlived the
+// migration to `src/docs/`).
+//
+// The guard below reads the production source and asserts that (a) the
+// current `src/docs` root still appears in it and (b) no stale `v2/docs`
+// prefix is left behind. A future migration will fail this test loudly and
+// force the same PR to update the Case-2 fixtures.
+
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+describe("sync-hive-docs.ts — sync-root prefix drift guard", () => {
+  const HERE = dirname(fileURLToPath(import.meta.url));
+  const SOURCE = readFileSync(join(HERE, "sync-hive-docs.ts"), "utf8");
+
+  it("still spells the hive-side sync root as `src/docs`", () => {
+    // If this fails, the sync root moved. Fix the Case-2 fixtures above
+    // (all four `src/docs/…` / `src/deploy/…` strings) to match, then
+    // update the expectation here.
+    expect(SOURCE).toMatch(/branch\}\/src\/docs/);
+    expect(SOURCE).toMatch(/`src\/docs\/\$\{f\.source\}`/);
+  });
+
+  it("does not leak the old `v2/docs` prefix", () => {
+    // Historical value; catches the specific regression pattern from
+    // kubestellar/docs#6626 (test-side stragglers after the sync-root
+    // migration). Widen if a legitimate reason to reference `v2/docs`
+    // ever returns.
+    expect(SOURCE).not.toContain("v2/docs");
   });
 });
