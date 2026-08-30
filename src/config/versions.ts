@@ -201,6 +201,11 @@ const KUBESTELLAR_MCP_VERSIONS: Record<string, VersionInfo> = {
     isDefault: false,
     isDev: true,
   },
+  "0.9.11": {
+    label: "v0.9.11",
+    branch: "docs/kubestellar-mcp/0.9.11",
+    isDefault: false,
+  },
   "0.9.10": {
     label: "v0.9.10",
     branch: "docs/kubestellar-mcp/0.9.10",
