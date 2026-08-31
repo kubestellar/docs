@@ -79,4 +79,47 @@ describe("i18n request config", () => {
 
     warn.mockRestore();
   });
+
+  it("deep-merges a locale-only nested key into an empty branch (target[key] || {} fallback)", async () => {
+    // deepMerge on request.ts:19 has `(target[key] as Record<string, unknown>) || {}`.
+    // The `|| {}` fallback fires when a locale bundle introduces a NESTED key
+    // that has no counterpart in the default bundle — target[key] is
+    // undefined, and recursion still needs a valid target object. If that
+    // fallback were dropped, the recursion would call
+    // `Object.keys(undefined)` and throw at request time, silently
+    // breaking any locale that later adds a new nested translation
+    // group ahead of its addition to `en.json`.
+    vi.resetModules();
+
+    vi.doMock("../../messages/es.json", () => ({
+      default: {
+        // A brand-new nested key that does NOT exist in en.json.
+        __quality_only_in_es__: {
+          nested: "es-only-value",
+          deeper: { leaf: "deep-leaf" },
+        },
+      },
+    }));
+
+    const { default: requestConfig } = await import("../i18n/request");
+
+    const result = await requestConfig({
+      requestLocale: Promise.resolve("es"),
+    });
+
+    expect(result.locale).toBe("es");
+    // The es-only nested tree survived the merge — proving the
+    // `|| {}` fallback was hit and the recursion into an empty target
+    // object completed.
+    expect(result.messages.__quality_only_in_es__).toEqual({
+      nested: "es-only-value",
+      deeper: { leaf: "deep-leaf" },
+    });
+    // And the default-locale keys are still present (merge didn't
+    // clobber the target).
+    const en = (await import("../../messages/en.json")).default;
+    for (const key of Object.keys(en)) {
+      expect(result.messages[key]).toBeDefined();
+    }
+  });
 });
