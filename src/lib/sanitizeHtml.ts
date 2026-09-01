@@ -159,9 +159,11 @@ export function sanitizeHtmlForMdx(content: string): string {
       const githubMatch = profileUrl.match(/github\.com\/([^/]+)/)
       const github = githubMatch ? githubMatch[1] : ''
 
-      if (name && avatar) {
-        contributors.push({ name, github, avatar, profileUrl })
-      }
+      // No `name && avatar` guard here: every capture group in tdRegex is
+      // `+`-quantified (`[^"]+` for href and src, `[^<]+` for the name), so a cell
+      // with an empty href, src or name fails to match and never reaches this line.
+      // A guard would be unreachable, and coverage would flag it as such.
+      contributors.push({ name, github, avatar, profileUrl })
     }
 
     if (contributors.length === 0) return ''

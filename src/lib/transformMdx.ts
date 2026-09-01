@@ -124,9 +124,10 @@ export function convertHtmlScriptsToJsxComments(input: string): string {
       /<\/([A-Za-z][A-Za-z0-9._-]*[-_][A-Za-z0-9._-]*)\s*\\?>/g,
       (_m, name) => `&lt;/${name}&gt;`
     )
-    // Covers BOTH `<name\>` and `</name\>`: the greedy `[^>\s]+` accepts a leading
-    // slash, so a closing tag is captured as `/name` and re-emitted intact. A separate
-    // closing-tag branch after this one would be unreachable -- see the escaped-close test.
+    // Covers BOTH `<name\>` and `</name\>`: the greedy `[^>\s]+` character class
+    // accepts a leading slash, so a closing tag is captured as `/name` and re-emitted
+    // intact as `&lt;/name&gt;`. A separate closing-tag branch after this one would be
+    // unreachable -- confirmed by fuzz + differential test in transformMdx.escaped-close.test.ts.
     .replace(/<([^>\s]+)\\>/g, (_m, name) => `&lt;${name}&gt;`)
     .replace(/<\(/g, "&lt;(");
 

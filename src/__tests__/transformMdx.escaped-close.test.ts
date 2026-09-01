@@ -25,14 +25,14 @@ describe('convertHtmlScriptsToJsxComments — escaped closing tag', () => {
 
   // Differential guard. The two tests above pass under EITHER of these shapes:
   //
-  //   one branch : /<([^>\s]+)\\>/          <- what the code does
+  //   one branch  : /<([^>\s]+)\\>/          <- what the code does
   //   two branches: /<([^/>\s][^>\s]*)\\>/ + /<\/([^>\s]+)\\>/
   //
   // so neither of them would notice the chain being "symmetrised" into two branches.
-  // This input does notice: the empty-named closing tag `</\>` has nothing between
-  // `</` and `\>`, so a closing-only `[^>\s]+` cannot match it and an opening-only
-  // branch rejects the leading slash — it would escape the pipeline unescaped.
-  // The single greedy branch captures it as `/` and escapes it.
+  // This input does notice: `</\>` has nothing between `</` and `\>`, so a
+  // closing-only `[^>\s]+` cannot match it and an opening-only branch rejects the
+  // leading slash — it would escape the pipeline unescaped. The single greedy branch
+  // captures it as `/` and escapes it.
   it('escapes an empty-named escaped closing tag', () => {
     const result = convertHtmlScriptsToJsxComments('</\\>')
     expect(result).toBe('&lt;/&gt;')
