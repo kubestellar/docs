@@ -12,9 +12,10 @@ redirect/route to. See `runbooks/deploy-rollback.md` for deploy paths.
 **Indicator:** the fraction of `GET /api/healthz` checks against the
 production site that return `200 {"status":"ok"}`, sampled every 15 minutes
 by a proposed `healthz-monitor` scheduled workflow (see "Alerting" below —
-not yet added to this repo; this PR proposes it for a maintainer with
-`workflows` permission to add, since agent tokens cannot write files under
-`.github/workflows/`).
+not yet added to this repo; tracked in
+[#6701](https://github.com/kubestellar/docs/issues/6701) for a maintainer
+with `workflows` permission to add, since agent tokens cannot write files
+under `.github/workflows/`).
 
 `/api/healthz` (`src/app/api/healthz/route.ts`) checks the one dependency
 required to serve real traffic: the `docs/content` tree is present, is a
@@ -37,10 +38,10 @@ deploy-time gaps and content-sync failures, not runtime request failures.
   state was lost and did not recover within the following 15-minute check),
   or any single check that cannot reach the site at all (network/DNS/TLS
   failure), opens or updates a `[production-outage]`-tagged issue via the
-  proposed `healthz-monitor` workflow (see PR that introduced this doc for
-  the suggested workflow definition — it could not be committed directly
-  because agent tokens lack the `workflows` permission needed to write
-  `.github/workflows/*`).
+  proposed `healthz-monitor` workflow (tracked in
+  [#6701](https://github.com/kubestellar/docs/issues/6701) — it could not
+  be committed directly because agent tokens lack the `workflows`
+  permission needed to write `.github/workflows/*`).
 - **Runbook:** every alert issue links to `runbooks/deploy-rollback.md` for
   detection/rollback steps, and to the "Incident Postmortem" issue template
   (`.github/ISSUE_TEMPLATE/incident_postmortem.yaml`) once the incident is

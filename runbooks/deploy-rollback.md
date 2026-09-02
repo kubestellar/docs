@@ -18,16 +18,17 @@ Applies to the `kubestellar/docs` Next.js site, which ships through two paths:
 - The container image's `HEALTHCHECK` calls this same endpoint, so
   `docker ps` / your orchestrator's readiness status reflects real content
   availability, not just process liveness.
-- A proposed `healthz-monitor` scheduled workflow (see `runbooks/slo.md`
-  and the PR that introduced it) would poll the production readiness
-  endpoint every 15 minutes and open a `[production-outage]` issue (label
-  `site-outage`) if it stays unhealthy across two consecutive checks, or
-  close that issue automatically on recovery. It could not be committed
-  directly in that PR because agent tokens lack the `workflows` permission
-  required to write `.github/workflows/*` — a maintainer needs to add it.
-  This would be distinct from `.github/workflows/netlify-error-reporter.yml`,
-  which only fires on build-time Netlify deploy failures, not a runtime
-  regression in an otherwise-successful deploy.
+- A proposed `healthz-monitor` scheduled workflow (see `runbooks/slo.md`)
+  would poll the production readiness endpoint every 15 minutes and open a
+  `[production-outage]` issue (label `site-outage`) if it stays unhealthy
+  across two consecutive checks, or close that issue automatically on
+  recovery. It has not been implemented yet — tracked in
+  [#6701](https://github.com/kubestellar/docs/issues/6701) since agent
+  tokens lack the `workflows` permission required to write
+  `.github/workflows/*` and a maintainer needs to add it. This would be
+  distinct from `.github/workflows/netlify-error-reporter.yml`, which only
+  fires on build-time Netlify deploy failures, not a runtime regression in
+  an otherwise-successful deploy.
 - User-visible signals: docs pages rendering empty/404 for known-good paths,
   or `/api/search` returning no results across the board.
 
