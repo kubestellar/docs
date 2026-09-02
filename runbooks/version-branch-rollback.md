@@ -35,6 +35,20 @@ the bad input and the config change going live.
 
 ## Detecting a bad automated version-branch/config push
 
+**Known gap (tracked in issue #6694):** `sync-console-release-versions.yml`
+has no failure alert — if the daily cron job itself fails (auth error,
+API rate limit, script bug, etc.), the only signal is a red run in the
+Actions tab; nothing pages, comments, or opens an issue. A silent failure
+here means the docs version picker can go stale for an arbitrary number of
+days after a new stable console release ships, with no automated
+indication. Until fixed, treat "no recent `📖 Sync console docs versions`
+PR after a new console release" as a symptom requiring a manual check of
+the workflow's run history. The recommended fix (see `generate-acmm-history.yml`
+for the existing convention in this repo) is a `if: failure()` step using
+`actions/github-script` that opens a deduplicated, `bug`-labeled issue
+tagged e.g. `[sync-console-release-versions-failure]` linking back to the
+failed run and this runbook.
+
 Symptoms that point to this pipeline rather than a normal content/deploy
 issue:
 
