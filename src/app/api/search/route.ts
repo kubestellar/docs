@@ -3,6 +3,8 @@ import { convertHtmlScriptsToJsxComments } from "@/lib/transformMdx"
 import { buildPageMap, docsContentPath, basePath } from "../../docs/page-map"
 import fs from 'fs'
 import path from 'path'
+import { logger } from "@/lib/logger"
+import { recordApiRequest } from "@/lib/metrics"
 
 interface SearchResult {
   title: string
@@ -90,6 +92,8 @@ function htmlEncode(str: string): string {
 }
 
 export async function GET(request: NextRequest) {
+  const startedAt = performance.now()
+  let status = 200
   try {
     const sp = request.nextUrl.searchParams
     const queryRaw = sp.get("q") || ""
@@ -176,10 +180,19 @@ export async function GET(request: NextRequest) {
       count: results.length,
     })
   } catch (error) {
-    console.error("Search error:", error)
+    status = 500
+    logger.error("search request failed", {
+      route: "search",
+      method: "GET",
+      status,
+      error: error instanceof Error ? error.message : String(error),
+    })
     return NextResponse.json(
       { error: "Search failed", results: [], count: 0 },
       { status: 500 }
     )
+  } finally {
+    const durationMs = performance.now() - startedAt
+    recordApiRequest("search", "GET", status, durationMs)
   }
 }
