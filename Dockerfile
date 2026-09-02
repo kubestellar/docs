@@ -30,5 +30,11 @@ USER nextjs
 # Expose the Next.js port
 EXPOSE 3000
 
+# Verify the docs content dependency is mounted and the server is serving
+# traffic before the orchestrator considers this container healthy. Uses
+# Node's built-in http client so no extra package (e.g. curl) is required.
+HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000/api/healthz', r => process.exit(r.statusCode === 200 ? 0 : 1)).on('error', () => process.exit(1))"
+
 # Start the production server
 CMD ["npm", "start"]
