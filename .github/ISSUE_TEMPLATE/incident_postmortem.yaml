@@ -1,0 +1,68 @@
+name: Incident Postmortem
+description: Record a production incident and its postmortem for the docs site
+title: "incident: "
+labels:
+  - kind/incident
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to record a production incident affecting the
+        docs site (Netlify or container deploy) and its postmortem. Fill in
+        what you know now; sections can be updated as the investigation
+        progresses.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One or two sentences describing user impact.
+    validations:
+      required: true
+
+  - type: input
+    id: detected
+    attributes:
+      label: Detected at
+      description: Timestamp and how it was detected (alert, readiness probe, user report, etc.)
+    validations:
+      required: true
+
+  - type: input
+    id: resolved
+    attributes:
+      label: Resolved at
+      description: Timestamp resolution was confirmed (e.g. /api/healthz returning 200 again).
+    validations:
+      required: false
+
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Timeline
+      description: Key events in chronological order.
+    validations:
+      required: false
+
+  - type: textarea
+    id: root-cause
+    attributes:
+      label: Root cause
+    validations:
+      required: false
+
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: Mitigation / rollback performed
+      description: Reference the runbook step(s) followed, e.g. runbooks/deploy-rollback.md.
+    validations:
+      required: false
+
+  - type: textarea
+    id: followups
+    attributes:
+      label: Follow-up actions
+      description: Concrete, owned action items to prevent recurrence.
+    validations:
+      required: false
