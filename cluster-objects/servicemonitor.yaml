@@ -1,0 +1,27 @@
+# Prometheus Operator scrape config for the docs site's existing
+# `/api/metrics` endpoint (src/app/api/metrics/route.ts). This resource
+# only takes effect if a Prometheus Operator is already watching this
+# namespace/selector — it does not install one, does not configure any
+# exporter, and does not send data off-box. It is a pull-only scrape
+# target definition for an in-cluster Prometheus, if present.
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: kubestellar-docs
+  namespace: docs
+  labels:
+    app: kubestellar-docs
+    pr: prod
+spec:
+  selector:
+    matchLabels:
+      app: kubestellar-docs
+      pr: prod
+  namespaceSelector:
+    matchNames:
+      - docs
+  endpoints:
+    - port: http
+      path: /api/metrics
+      interval: 30s
+      scrapeTimeout: 10s
