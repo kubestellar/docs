@@ -56,6 +56,17 @@ Applies to the `kubestellar/docs` Next.js site, which ships through two paths:
    image/volume for that tag — `/api/healthz` will report `503` with a
    `reason` field describing exactly what is missing or unreadable.
 
+## Related: bad automated version-branch/config push
+
+If the symptom is a wrong entry in the version picker, a version pointing
+at the wrong content, or an unexpected change to which branch is served as
+"latest" — rather than a bad deploy of otherwise-correct content — see
+`runbooks/version-branch-rollback.md`. That failure mode comes from the
+`create-version-branch.yml` automation, which pushes a version branch and
+self-approves its own `versions.ts`/`shared.json` update PR, and needs a
+different rollback path (revert the config commit / delete the bad
+branch) than the deploy rollback steps above.
+
 ## Escalation
 
 If rollback does not resolve the issue within one on-call cycle, open an
