@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import fs from 'fs'
 import { docsContentPath } from '@/app/docs/page-map'
 import { GET } from '@/app/api/healthz/route'
+import { logger } from '@/lib/logger'
 
 /**
  * Coverage for src/app/api/healthz/route.ts — the readiness probe that
@@ -11,10 +12,12 @@ import { GET } from '@/app/api/healthz/route'
 describe('/api/healthz route', () => {
   let statSyncSpy: ReturnType<typeof vi.spyOn>
   let readdirSyncSpy: ReturnType<typeof vi.spyOn>
+  let loggerErrorSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     statSyncSpy = vi.spyOn(fs, 'statSync')
     readdirSyncSpy = vi.spyOn(fs, 'readdirSync')
+    loggerErrorSpy = vi.spyOn(logger, 'error').mockImplementation(() => {})
   })
 
   afterEach(() => {
@@ -32,6 +35,7 @@ describe('/api/healthz route', () => {
     expect(readdirSyncSpy).toHaveBeenCalledWith(docsContentPath)
     const body = await res.json()
     expect(body).toEqual({ status: 'ok' })
+    expect(loggerErrorSpy).not.toHaveBeenCalled()
   })
 
   it('returns 503 with a "not a directory" reason when the content path is a file, not a directory', async () => {
@@ -46,6 +50,12 @@ describe('/api/healthz route', () => {
       status: 'unhealthy',
       reason: 'docs content path is not a directory',
     })
+    expect(loggerErrorSpy).toHaveBeenCalledWith('healthz check failed', {
+      route: 'healthz',
+      method: 'GET',
+      status: 503,
+      error: 'docs content path is not a directory',
+    })
   })
 
   it('returns 503 with an "empty" reason when the content directory has no entries', async () => {
@@ -59,6 +69,12 @@ describe('/api/healthz route', () => {
     expect(body).toEqual({
       status: 'unhealthy',
       reason: 'docs content path is empty',
+    })
+    expect(loggerErrorSpy).toHaveBeenCalledWith('healthz check failed', {
+      route: 'healthz',
+      method: 'GET',
+      status: 503,
+      error: 'docs content path is empty',
     })
   })
 
@@ -75,6 +91,12 @@ describe('/api/healthz route', () => {
     expect(body).toEqual({
       status: 'unhealthy',
       reason: 'ENOENT: no such file or directory',
+    })
+    expect(loggerErrorSpy).toHaveBeenCalledWith('healthz check failed', {
+      route: 'healthz',
+      method: 'GET',
+      status: 503,
+      error: 'ENOENT: no such file or directory',
     })
   })
 
@@ -93,6 +115,12 @@ describe('/api/healthz route', () => {
       status: 'unhealthy',
       reason: 'docs content path is unreadable',
     })
+    expect(loggerErrorSpy).toHaveBeenCalledWith('healthz check failed', {
+      route: 'healthz',
+      method: 'GET',
+      status: 503,
+      error: 'docs content path is unreadable',
+    })
   })
 
   it('returns 503 when readdirSync throws after statSync succeeds (permission error)', async () => {
@@ -108,6 +136,12 @@ describe('/api/healthz route', () => {
     expect(body).toEqual({
       status: 'unhealthy',
       reason: 'EACCES: permission denied',
+    })
+    expect(loggerErrorSpy).toHaveBeenCalledWith('healthz check failed', {
+      route: 'healthz',
+      method: 'GET',
+      status: 503,
+      error: 'EACCES: permission denied',
     })
   })
 })
