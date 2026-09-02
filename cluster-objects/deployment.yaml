@@ -42,6 +42,28 @@ spec:
           env:
             - name: NODE_ENV
               value: production
+          # /api/healthz checks the one dependency required to serve real
+          # traffic (the docs/content tree — see src/app/api/healthz/route.ts
+          # and runbooks/deploy-rollback.md). Wiring it here lets the
+          # orchestrator stop routing to / restart instances that are up but
+          # serving broken or empty documentation, matching the same check
+          # already used by the container image's Docker HEALTHCHECK.
+          readinessProbe:
+            httpGet:
+              path: /api/healthz
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            timeoutSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /api/healthz
+              port: 3000
+            initialDelaySeconds: 20
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
 ---
 apiVersion: v1
 kind: Service
@@ -51,6 +73,14 @@ metadata:
   labels:
     app: kubestellar-docs
     pr: prod
+  annotations:
+    # Pull-only scrape hints for a cluster Prometheus, if one is present.
+    # This does not configure any exporter or send data off-box; it only
+    # advertises the existing in-process registry already served at
+    # /api/metrics (see src/lib/metrics.ts, src/app/api/metrics/route.ts).
+    prometheus.io/scrape: "true"
+    prometheus.io/path: /api/metrics
+    prometheus.io/port: "3000"
 spec:
   type: ClusterIP
   selector:
