@@ -14,7 +14,11 @@ Applies to the `kubestellar/docs` Next.js site, which ships through two paths:
 - `GET /api/healthz` reports readiness. It returns `200 {"status":"ok"}`
   only when the docs content tree (`docs/content`, the directory every page
   render and `/api/search` read from at request time) is present, is a
-  directory, and is non-empty. It returns `503` otherwise.
+  directory, and is non-empty. It returns `503` otherwise. `GET /api/livez`
+  is a separate, dependency-free liveness check used by the Deployment's
+  `livenessProbe` (see `cluster-objects/deployment.yaml`) — it always
+  returns `200` so a content-tree problem marks a pod not-ready instead of
+  triggering a restart loop that cannot fix a bad volume mount.
 - The container image's `HEALTHCHECK` calls this same endpoint, so
   `docker ps` / your orchestrator's readiness status reflects real content
   availability, not just process liveness.
