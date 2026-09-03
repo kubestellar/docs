@@ -58,10 +58,28 @@ deploy-time gaps and content-sync failures, not runtime request failures.
 
 ## Notes on monitoring backend
 
-No metrics/alerting backend (Prometheus, Datadog, or similar) is configured
-for this repository. The check above is intentionally self-contained
-(scheduled GitHub Actions workflow + `curl` + `gh issue`) so it does not
-depend on, or require provisioning, any external monitoring stack. If a
-metrics backend is added to this project in the future, this SLI should be
-re-implemented as a proper time-series query (e.g. success-rate over the
-same 30-day window) and this doc updated to reference it instead.
+No *external* metrics/alerting backend (Prometheus server, Datadog, or
+similar) is confirmed for this project, and nothing here pushes data off-box.
+However, an in-process, pull-only Prometheus-format endpoint does already
+exist: `/api/metrics` (`src/app/api/metrics/route.ts`, `src/lib/metrics.ts`)
+is wired into the production `Service` via `prometheus.io/scrape`
+annotations (`cluster-objects/deployment.yaml`) for an in-cluster Prometheus
+to optionally discover, if one is present — see "telemetry: add bounded API
+metrics, /metrics endpoint, and structured logging" and "Wire existing
+/api/healthz and /api/metrics into k8s Deployment/Service".
+
+That endpoint does **not** cover the SLI in this doc: `ApiRoutes` in
+`src/lib/metrics.ts` is currently limited to `"search"` and `"docs-image"` —
+no counter or histogram records `/api/healthz` outcomes. So even where a
+cluster Prometheus scrapes `/api/metrics`, it would not observe
+readiness-check success/failure today. The proposed `healthz-monitor`
+scheduled workflow (see "Alerting" above, tracked in
+[#6701](https://github.com/kubestellar/docs/issues/6701)) remains the only
+path to measuring this SLI, unless/until `/api/healthz` outcomes are also
+instrumented in `src/lib/metrics.ts`.
+
+If an external metrics backend is confirmed for this project in the future,
+this SLI should be re-implemented as a proper time-series query (e.g.
+success-rate over the same 30-day window, backed by a `healthz`-labeled
+metric) and this doc updated to reference it instead of, or in addition to,
+the scheduled-workflow approach.
