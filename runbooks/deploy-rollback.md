@@ -72,5 +72,7 @@ branch) than the deploy rollback steps above.
 
 If rollback does not resolve the issue within one on-call cycle, open an
 incident using the "Docs site incident" issue template
-(`.github/ISSUE_TEMPLATE/incident_postmortem.yaml`) and link it from this
+(`.github/ISSUE_TEMPLATE/incident_postmortem.yaml` — labeled `kind/incident,
+lifecycle/frozen`, the latter so the stale-bot in `.github/workflows/stale.yml`
+never auto-closes an open incident tracking issue) and link it from this
 runbook's future revisions if a new failure mode is discovered.
