@@ -3,6 +3,7 @@ description: Record a production incident and its postmortem for the docs site
 title: "incident: "
 labels:
   - kind/incident
+  - lifecycle/frozen
 body:
   - type: markdown
     attributes:
