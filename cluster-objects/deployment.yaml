@@ -45,9 +45,9 @@ spec:
           # /api/healthz checks the one dependency required to serve real
           # traffic (the docs/content tree — see src/app/api/healthz/route.ts
           # and runbooks/deploy-rollback.md). Wiring it here lets the
-          # orchestrator stop routing to / restart instances that are up but
-          # serving broken or empty documentation, matching the same check
-          # already used by the container image's Docker HEALTHCHECK.
+          # orchestrator stop routing to instances that are up but serving
+          # broken or empty documentation, matching the same check already
+          # used by the container image's Docker HEALTHCHECK.
           readinessProbe:
             httpGet:
               path: /api/healthz
@@ -56,9 +56,18 @@ spec:
             periodSeconds: 15
             timeoutSeconds: 5
             failureThreshold: 3
+          # Liveness intentionally targets /api/livez, NOT /api/healthz.
+          # /api/healthz depends on the docs content tree; a failed
+          # liveness check makes the orchestrator kill and restart the
+          # container, which cannot fix a missing/misconfigured content
+          # volume. Because all replicas share the same image/volume, that
+          # shared-cause failure would fail liveness on every replica at
+          # once and turn a readiness-level outage into a simultaneous
+          # restart loop across the whole Deployment. /api/livez only
+          # confirms the process is up and able to handle a request.
           livenessProbe:
             httpGet:
-              path: /api/healthz
+              path: /api/livez
               port: 3000
             initialDelaySeconds: 20
             periodSeconds: 30

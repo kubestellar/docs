@@ -21,7 +21,12 @@ under `.github/workflows/`).
 required to serve real traffic: the `docs/content` tree is present, is a
 directory, and is non-empty. A `200` from this endpoint is a direct proxy
 for "this instance can render real documentation pages," not just process
-liveness.
+liveness — process liveness alone is checked separately by `/api/livez`
+(`src/app/api/livez/route.ts`), which the Deployment's `livenessProbe` uses
+instead of `/api/healthz` so a shared-cause content problem (e.g. a bad
+volume mount, identical across every replica) marks instances not-ready
+rather than triggering a simultaneous restart loop across the whole
+Deployment.
 
 ## SLO
 
