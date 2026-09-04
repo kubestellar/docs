@@ -16,6 +16,7 @@ function LinkedinIcon({ className, ...props }: React.SVGProps<SVGSVGElement> & {
 import { VERSIONS } from '@/config/versions'
 import { getLocalizedUrl, getBaseUrl } from "@/lib/url";
 import { VersionSelector } from './VersionSelector';
+import { gtagEvent } from "@/components/GoogleAnalytics";
 
 type DropdownType = "contribute" | "community" | "language" | "github" | null;
 
@@ -117,7 +118,9 @@ export default function DocsNavbar() {
           setSelectedIndex((prev) => (prev > 0 ? prev - 1 : 0));
         } else if (e.key === "Enter" && searchResults[selectedIndex]) {
           e.preventDefault();
-          window.location.href = searchResults[selectedIndex].url;
+          const result = searchResults[selectedIndex];
+          trackSearchResultClick(result, selectedIndex);
+          window.location.href = result.url;
         }
       }
     };
@@ -161,12 +164,32 @@ export default function DocsNavbar() {
       
       const data = await response.json();
       setSearchResults(data.results || []);
+      // Bounded usage signal: only numeric lengths/counts, never the raw
+      // query text, to avoid leaking search content or unbounded label values.
+      gtagEvent("docs_search", {
+        query_length: query.length,
+        result_count: data.results?.length ?? 0,
+      });
     } catch (error) {
       console.error('Search error:', error);
       setSearchResults([]);
     } finally {
       setIsSearching(false);
     }
+  };
+
+  // Bounded click signal: category/matchType are fixed small sets from the
+  // search API response, and position is a numeric index — never the raw
+  // query or result title/content, to avoid unbounded label values.
+  const trackSearchResultClick = (
+    result: { category: string; matchType: string },
+    index: number
+  ) => {
+    gtagEvent("docs_search_result_click", {
+      category: result.category,
+      match_type: result.matchType,
+      position: index,
+    });
   };
 
   const performSearch = (query: string) => {
@@ -802,6 +825,7 @@ export default function DocsNavbar() {
                               : 'hover:bg-gray-50 border-transparent'
                         }`}
                         onMouseEnter={() => setSelectedIndex(index)}
+                        onClick={() => trackSearchResultClick(result, index)}
                       >
                         <div className="flex items-start gap-3">
                           <div className={`mt-0.5 p-1.5 rounded flex-shrink-0 ${
