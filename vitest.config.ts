@@ -25,10 +25,15 @@ export default defineConfig({
       include: ['src/**/*.{ts,tsx}'],
       exclude: ['src/**/*.test.ts', 'src/**/*.test.tsx', 'src/**/*.d.ts'],
       thresholds: {
-        lines: 12,
-        functions: 7,
-        branches: 7,
-        statements: 12,
+        // Ratcheted to ~2pp below measured baseline on main (2026-09-03,
+        // 726 passing tests): stmts 27.38 | br 19.76 | fn 18.65 | ln 28.32.
+        // Prior gate (12/7/7/12) allowed ~15pp of silent regression — see #6716.
+        // Ratchet upward as page-map.ts gains buildNavNodes tests (#6663) and
+        // the app-router pages gain runnable tests.
+        lines: 26,
+        functions: 16,
+        branches: 17,
+        statements: 25,
       },
     },
   },
