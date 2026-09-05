@@ -1,0 +1,52 @@
+# Bounded Prometheus alerting rules for the docs site's existing
+# `/api/metrics` endpoint (src/lib/metrics.ts, scraped via
+# cluster-objects/servicemonitor.yaml). This is a plain PrometheusRule CR
+# for an operator's own Prometheus Operator install, if one exists in the
+# cluster — it configures no exporter, no external notification channel,
+# and no off-box data flow. It only takes effect where a Prometheus
+# Operator is already watching this namespace/selector.
+#
+# Expressions reference only docs_api_requests_total and
+# docs_api_request_duration_seconds, whose `route`/`status_class` labels
+# come from the fixed ApiRoute union and status-class set in
+# src/lib/metrics.ts (bounded cardinality, no user input in labels).
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: kubestellar-docs-alerts
+  namespace: docs
+  labels:
+    app: kubestellar-docs
+    pr: prod
+spec:
+  groups:
+    - name: kubestellar-docs.rules
+      rules:
+        - alert: DocsApiHighErrorRate
+          expr: >-
+            sum(rate(docs_api_requests_total{status_class="5xx"}[5m])) by (route)
+            /
+            sum(rate(docs_api_requests_total[5m])) by (route)
+            > 0.05
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Docs API route {{ $labels.route }} has an elevated 5xx rate"
+            description: >-
+              More than 5% of requests to docs API route {{ $labels.route }}
+              returned a 5xx status over the last 5 minutes, sustained for 10
+              minutes.
+        - alert: DocsApiHighLatency
+          expr: >-
+            histogram_quantile(0.95,
+              sum(rate(docs_api_request_duration_seconds_bucket[5m])) by (le, route)
+            ) > 2
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Docs API route {{ $labels.route }} has high p95 latency"
+            description: >-
+              The 95th percentile request duration for docs API route
+              {{ $labels.route }} has exceeded 2s for 10 minutes.
