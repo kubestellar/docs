@@ -3,6 +3,7 @@
 import { useSharedConfig } from '@/hooks/useSharedConfig';
 import type { ProjectId } from '@/config/versions';
 import { getKubestellarEditBaseUrl } from '@/lib/url';
+import { gtagEvent } from '@/components/GoogleAnalytics';
 
 const STATIC_EDIT_BASE_URLS: Record<ProjectId, string> = {
   kubestellar: getKubestellarEditBaseUrl(),
@@ -77,6 +78,16 @@ export function EditPageLink({ filePath, projectId, variant = 'full' }: EditPage
   // CodeQL: URL is validated above to only allow https://github.com with /edit/ path
   const safeUrl = new URL(editUrl);
 
+  // Bounded usage signal: projectId and variant are both fixed small enums
+  // (ProjectId union, 'full' | 'icon'), never the raw filePath/URL, to avoid
+  // unbounded label values in the GA4 event stream.
+  const trackEditClick = () => {
+    gtagEvent('docs_edit_page_click', {
+      project_id: projectId,
+      variant,
+    });
+  };
+
   // Pencil icon SVG
   const PencilIcon = () => (
     <svg
@@ -103,6 +114,7 @@ export function EditPageLink({ filePath, projectId, variant = 'full' }: EditPage
         target="_blank"
         rel="noopener noreferrer"
         title="Edit this page on GitHub"
+        onClick={trackEditClick}
         className="p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
       >
         <PencilIcon />
@@ -117,6 +129,7 @@ export function EditPageLink({ filePath, projectId, variant = 'full' }: EditPage
         href={safeUrl.href}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={trackEditClick}
         className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 transition-colors"
       >
         <PencilIcon />
