@@ -144,6 +144,25 @@ We welcome contributions and engagement from the community. Here's how to get in
 - **Blog**: Read our latest updates on [Medium](https://medium.com/@kubestellar/list/predefined:e785a0675051:READING_LIST)
 - **LinkedIn**: Follow [KubeStellar on LinkedIn](https://www.linkedin.com/company/kubestellar/) for news and updates
 
+## Operational Readiness
+
+This repo's production readiness, alerting gaps, and incident-response
+docs live under [`runbooks/`](./runbooks/):
+
+- [`runbooks/slo.md`](./runbooks/slo.md) — the docs-site readiness
+  SLI/SLO and current alerting coverage.
+- [`runbooks/deploy-rollback.md`](./runbooks/deploy-rollback.md) —
+  detecting and rolling back a bad Netlify or container deploy.
+- [`runbooks/version-branch-rollback.md`](./runbooks/version-branch-rollback.md) —
+  recovering from a bad automated version-branch/config push.
+- [`runbooks/scorecard-monitoring.md`](./runbooks/scorecard-monitoring.md) and
+  [`runbooks/stale-workflow-monitoring.md`](./runbooks/stale-workflow-monitoring.md) —
+  detecting silently-failed scheduled workflow runs.
+
+To record a production incident affecting the docs site, open an issue
+using the "Incident Postmortem" template
+(`.github/ISSUE_TEMPLATE/incident_postmortem.yaml`).
+
 ## Contributing
 
 We welcome contributions of all kinds — from documentation improvements to site updates. Please review this repository's [Contributing Guide](./CONTRIBUTING.md) for the docs-specific workflow, and use the main `kubestellar/kubestellar` guide only when your change also touches product code outside this repository.
