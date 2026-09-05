@@ -12,6 +12,7 @@
     "lint:md": "markdownlint-cli2 \"README.md\" \"CONTRIBUTING.md\" \"docs/**/*.{md,mdx}\" \"src/**/*.{md,mdx}\"",
     "sync-hive-docs": "tsx scripts/sync-hive-docs.ts",
     "check-links": "tsx scripts/check-internal-links.ts",
+    "lint:dashboard": "node scripts/lint-dashboard.mjs",
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
