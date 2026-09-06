@@ -37,7 +37,27 @@ This target reflects that the docs site has no user-facing write path and a
 single content dependency — the acceptable-loss budget is dominated by
 deploy-time gaps and content-sync failures, not runtime request failures.
 
-## Alerting
+## SLI: API error rate and latency
+
+**Indicator:** the 5xx rate and p95 request latency of the docs site's two
+instrumented API routes — `search` (`src/app/api/search/route.ts`) and
+`docs-image` (`src/app/api/docs-image/[...path]/route.ts`) — measured from
+the `docs_api_requests_total` and `docs_api_request_duration_seconds`
+metrics (`src/lib/metrics.ts`), scraped via
+`cluster-objects/servicemonitor.yaml`.
+
+**SLO target:** 5xx rate stays under 5% and p95 latency stays under 1s,
+each evaluated over a rolling 5-minute window and sustained for 10 minutes
+before alerting — see `cluster-objects/prometheusrule.yaml` for the exact
+`DocsApiHighErrorRate` and `DocsApiHighRequestLatency` rule expressions,
+and `runbooks/api-error-rate-latency.md` for detection/diagnosis/recovery.
+
+Unlike the readiness SLI above, this alerting is already implemented and
+live — it only requires an in-cluster Prometheus Operator to already be
+scraping the `docs` namespace (see "Notes on monitoring backend" below);
+no `workflows`-permission gap applies here.
+
+## Alerting (readiness check)
 
 - **Alert condition:** two consecutive failed scheduled checks (i.e. ready
   state was lost and did not recover within the following 15-minute check),
@@ -58,10 +78,17 @@ deploy-time gaps and content-sync failures, not runtime request failures.
 
 ## Notes on monitoring backend
 
-No metrics/alerting backend (Prometheus, Datadog, or similar) is configured
-for this repository. The check above is intentionally self-contained
-(scheduled GitHub Actions workflow + `curl` + `gh issue`) so it does not
-depend on, or require provisioning, any external monitoring stack. If a
-metrics backend is added to this project in the future, this SLI should be
-re-implemented as a proper time-series query (e.g. success-rate over the
-same 30-day window) and this doc updated to reference it instead.
+No metrics/alerting backend is provisioned *by this repository* — the
+readiness SLI above is intentionally self-contained (scheduled GitHub
+Actions workflow + `curl` + `gh issue`) so it does not depend on any
+external monitoring stack. `cluster-objects/prometheusrule.yaml` and
+`cluster-objects/servicemonitor.yaml` define a Prometheus Operator
+scrape target and alerting rules for the API error-rate/latency SLI
+above, but these only take effect if an in-cluster Prometheus Operator is
+already watching the `docs` namespace; this repo does not install one or
+send data off-box. If no such operator is present in a given deployment,
+the API error-rate/latency SLI has no active alerting and only the
+readiness SLI (once its workflow is added) applies. If the readiness SLI
+is later backed by the same metrics backend, it should be re-implemented
+as a proper time-series query and this doc updated to reference it
+instead of the scheduled-workflow approach.
