@@ -206,6 +206,21 @@ for (let i = 0; i < ITERATIONS; i++) {
   }
 }
 
+// Structured, single-line JSON summary — always emitted (pass or fail) so
+// CI tooling can grep a machine-readable record instead of parsing the
+// free-text lines above. Mirrors the VALIDATE_FORMULAE_SUMMARY /
+// FUZZ_SUMMARY pattern already used in sibling repos.
+const status = failures > 0 ? 'failed' : 'passed'
+console.log(
+  `FUZZ_MDX_SUMMARY: ${JSON.stringify({
+    seed: SEED,
+    iterations: ITERATIONS,
+    corpus: corpus.length,
+    failures,
+    status,
+  })}`,
+)
+
 if (failures > 0) {
   console.error(`\nFAILED: ${failures} violation(s) found`)
   process.exit(1)
