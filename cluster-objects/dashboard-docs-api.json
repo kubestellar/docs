@@ -1,0 +1,81 @@
+{
+  "__comment": "Grafana dashboard for the docs site's existing /api/metrics endpoint (src/lib/metrics.ts). Pull-only: this only visualizes metrics already scraped in-cluster per cluster-objects/servicemonitor.yaml. It does not add an exporter or send data off-box, and no observability backend is confirmed for this repo, so this JSON is provided for import into an operator-managed Grafana if one already exists.",
+  "title": "KubeStellar Docs - API Requests",
+  "uid": "kubestellar-docs-api",
+  "tags": ["kubestellar", "docs"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": false,
+  "time": { "from": "now-6h", "to": "now" },
+  "refresh": "1m",
+  "panels": [
+    {
+      "id": 1,
+      "title": "Request rate by route (req/s)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (route, status_class) (rate(docs_api_requests_total[5m]))",
+          "legendFormat": "{{route}} - {{status_class}}"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "reqps" },
+        "overrides": []
+      }
+    },
+    {
+      "id": 2,
+      "title": "Error ratio (4xx+5xx / total)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(docs_api_requests_total{status_class=~\"4xx|5xx\"}[5m])) / sum(rate(docs_api_requests_total[5m]))",
+          "legendFormat": "error ratio"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "percentunit", "max": 1, "min": 0 },
+        "overrides": []
+      }
+    },
+    {
+      "id": 3,
+      "title": "P95 request duration by route",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.95, sum by (le, route) (rate(docs_api_request_duration_seconds_bucket[5m])))",
+          "legendFormat": "{{route}} p95"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "s" },
+        "overrides": []
+      }
+    },
+    {
+      "id": 4,
+      "title": "Total requests (5m)",
+      "type": "stat",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(increase(docs_api_requests_total[5m]))"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "short" },
+        "overrides": []
+      }
+    }
+  ]
+}
