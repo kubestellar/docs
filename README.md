@@ -161,6 +161,9 @@ docs live under [`runbooks/`](./runbooks/):
 - [`runbooks/api-error-rate-latency.md`](./runbooks/api-error-rate-latency.md) —
   diagnosing the `DocsApiHighErrorRate` / `DocsApiHighRequestLatency`
   alerts (`cluster-objects/prometheusrule.yaml`).
+- [`runbooks/ci-failure-label-stale-exemption.md`](./runbooks/ci-failure-label-stale-exemption.md) —
+  manually protecting `ci-failure`-labeled failure-tracking issues from
+  silent stale-bot auto-close.
 
 To record a production incident affecting the docs site, open an issue
 using the "Incident Postmortem" template
