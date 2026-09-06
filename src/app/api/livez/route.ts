@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { recordHealthCheck } from '@/lib/metrics'
 
 // Liveness check for the docs app.
 //
@@ -13,5 +14,6 @@ import { NextResponse } from 'next/server'
 // cannot fix the underlying problem and can take the whole deployment fully
 // offline instead of just out of rotation. See runbooks/deploy-rollback.md.
 export async function GET() {
+  recordHealthCheck('livez', 'ok')
   return NextResponse.json({ status: 'ok' }, { status: 200 })
 }

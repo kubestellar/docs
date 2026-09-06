@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import { docsContentPath } from '../../docs/page-map'
 import { logger } from '@/lib/logger'
+import { recordHealthCheck } from '@/lib/metrics'
 
 // Readiness check for the docs app.
 //
@@ -20,6 +21,7 @@ export async function GET() {
     if (!stat.isDirectory()) {
       const reason = 'docs content path is not a directory'
       logger.error('healthz check failed', { route: 'healthz', method: 'GET', status: 503, error: reason })
+      recordHealthCheck('healthz', 'unhealthy')
       return NextResponse.json({ status: 'unhealthy', reason }, { status: 503 })
     }
 
@@ -27,13 +29,16 @@ export async function GET() {
     if (entries.length === 0) {
       const reason = 'docs content path is empty'
       logger.error('healthz check failed', { route: 'healthz', method: 'GET', status: 503, error: reason })
+      recordHealthCheck('healthz', 'unhealthy')
       return NextResponse.json({ status: 'unhealthy', reason }, { status: 503 })
     }
 
+    recordHealthCheck('healthz', 'ok')
     return NextResponse.json({ status: 'ok' }, { status: 200 })
   } catch (err) {
     const reason = err instanceof Error ? err.message : 'docs content path is unreadable'
     logger.error('healthz check failed', { route: 'healthz', method: 'GET', status: 503, error: reason })
+    recordHealthCheck('healthz', 'unhealthy')
     return NextResponse.json({ status: 'unhealthy', reason }, { status: 503 })
   }
 }

@@ -35,6 +35,32 @@ export const httpRequestDurationSeconds = new Histogram({
   registers: [metricsRegistry],
 })
 
+export const HealthChecks = ["healthz", "livez"] as const
+export type HealthCheck = (typeof HealthChecks)[number]
+
+export const HealthCheckResults = ["ok", "unhealthy"] as const
+export type HealthCheckResult = (typeof HealthCheckResults)[number]
+
+/**
+ * Outcome counter for the Kubernetes readiness (/api/healthz) and liveness
+ * (/api/livez) probes. `check` and `result` are both fixed, small unions
+ * (2 checks x 2 results = 4 series max), so cardinality stays bounded the
+ * same way `route`/`status_class` do above. This closes the gap where
+ * probe failures were only visible via structured logs, not via the
+ * Prometheus registry already scraped from /api/metrics.
+ */
+export const healthCheckTotal = new Counter({
+  name: "docs_health_check_total",
+  help: "Total number of readiness/liveness probe checks, by check and result.",
+  labelNames: ["check", "result"] as const,
+  registers: [metricsRegistry],
+})
+
+/** Records one completed readiness/liveness probe invocation. */
+export function recordHealthCheck(check: HealthCheck, result: HealthCheckResult) {
+  healthCheckTotal.inc({ check, result })
+}
+
 function statusClass(status: number): "2xx" | "3xx" | "4xx" | "5xx" | "other" {
   if (status >= 200 && status < 300) return "2xx"
   if (status >= 300 && status < 400) return "3xx"
