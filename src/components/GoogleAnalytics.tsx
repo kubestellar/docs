@@ -2,7 +2,14 @@
 
 import Script from "next/script";
 
-const GA_MEASUREMENT_ID = "G-PXWNVQ8D1T";
+import { CURRENT_BRANCH } from "@/lib/url";
+
+// Falls back to the production kubestellar.io property if the env var
+// isn't set, matching the NEXT_PUBLIC_BASE_URL / NEXT_PUBLIC_BRANCH
+// pattern in src/lib/url.ts. Not a secret — GA4 measurement IDs are
+// public identifiers visible in every page's rendered HTML.
+const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-PXWNVQ8D1T";
 
 declare global {
   interface Window {
@@ -12,10 +19,28 @@ declare global {
 }
 
 /**
+ * Only initialize GA4 for content that is actually published: the `main`
+ * branch and pinned `docs/{version}` release branches (see netlify.toml
+ * contexts). Netlify's `branch-deploy` context (every PR preview) builds
+ * with NEXT_PUBLIC_BRANCH set to the source branch name, which matches
+ * neither pattern, so preview/feature-branch traffic is excluded. Without
+ * this guard, every PR preview would report page views and custom events
+ * (docs_search, acmm_search, docs_edit_page_click, ...) into the single
+ * production GA4 property, polluting real user metrics.
+ */
+export function isProductionDeploy(): boolean {
+  return CURRENT_BRANCH === "main" || CURRENT_BRANCH.startsWith("docs/");
+}
+
+/**
  * Lightweight GA4 integration via gtag.js.
  * Drop into the root layout so every page gets automatic page_view tracking.
  */
 export default function GoogleAnalytics() {
+  if (!isProductionDeploy()) {
+    return null;
+  }
+
   return (
     <>
       <Script
