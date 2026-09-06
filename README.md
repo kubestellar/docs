@@ -158,6 +158,9 @@ docs live under [`runbooks/`](./runbooks/):
 - [`runbooks/scorecard-monitoring.md`](./runbooks/scorecard-monitoring.md) and
   [`runbooks/stale-workflow-monitoring.md`](./runbooks/stale-workflow-monitoring.md) —
   detecting silently-failed scheduled workflow runs.
+- [`runbooks/api-error-rate-latency.md`](./runbooks/api-error-rate-latency.md) —
+  diagnosing the `DocsApiHighErrorRate` / `DocsApiHighRequestLatency`
+  alerts (`cluster-objects/prometheusrule.yaml`).
 
 To record a production incident affecting the docs site, open an issue
 using the "Incident Postmortem" template
