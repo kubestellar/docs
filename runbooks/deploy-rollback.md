@@ -35,6 +35,12 @@ Applies to the `kubestellar/docs` Next.js site, which ships through two paths:
   an otherwise-successful deploy.
 - User-visible signals: docs pages rendering empty/404 for known-good paths,
   or `/api/search` returning no results across the board.
+- Until the automated `healthz-monitor` workflow above exists, run
+  `scripts/verify-site-health.sh` (optionally passing a site URL, e.g. a
+  Netlify deploy-preview URL, as the first argument) to run the same
+  readiness check by hand — useful right after a deploy or when a runtime
+  regression is suspected. It exits non-zero and prints the endpoint's
+  `reason` field on failure.
 
 ## Rollback: Netlify path
 
@@ -47,7 +53,8 @@ Applies to the `kubestellar/docs` Next.js site, which ships through two paths:
 4. In parallel, open a revert PR against the offending commit(s) on `main`
    (or the affected `docs/*` version branch) so the next normal deploy does
    not reintroduce the regression.
-5. Confirm `GET /<site>/api/healthz` returns `200` on the restored deploy.
+5. Confirm `GET /<site>/api/healthz` returns `200` on the restored deploy —
+   run `scripts/verify-site-health.sh` to check this without a manual curl.
 
 ## Rollback: Container image path
 
