@@ -32,7 +32,10 @@ Applies to the `kubestellar/docs` Next.js site, which ships through two paths:
   `.github/workflows/*` and a maintainer needs to add it. This would be
   distinct from `.github/workflows/netlify-error-reporter.yml`, which only
   fires on build-time Netlify deploy failures, not a runtime regression in
-  an otherwise-successful deploy.
+  an otherwise-successful deploy. For a build-time failure (the site
+  serving stale content because the latest commit never finished a
+  successful build), see `runbooks/netlify-build-failure.md` instead of
+  the rollback steps below.
 - User-visible signals: docs pages rendering empty/404 for known-good paths,
   or `/api/search` returning no results across the board.
 - Until the automated `healthz-monitor` workflow above exists, run
