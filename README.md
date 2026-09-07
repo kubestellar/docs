@@ -155,9 +155,10 @@ docs live under [`runbooks/`](./runbooks/):
   detecting and rolling back a bad Netlify or container deploy.
 - [`runbooks/version-branch-rollback.md`](./runbooks/version-branch-rollback.md) —
   recovering from a bad automated version-branch/config push.
-- [`runbooks/scorecard-monitoring.md`](./runbooks/scorecard-monitoring.md) and
-  [`runbooks/stale-workflow-monitoring.md`](./runbooks/stale-workflow-monitoring.md) —
-  detecting silently-failed scheduled workflow runs.
+- [`runbooks/scorecard-monitoring.md`](./runbooks/scorecard-monitoring.md),
+  [`runbooks/stale-workflow-monitoring.md`](./runbooks/stale-workflow-monitoring.md),
+  and [`runbooks/scheduled-workflow-monitoring.md`](./runbooks/scheduled-workflow-monitoring.md) —
+  detecting silently-failed or silently-skipped scheduled workflow runs.
 - [`runbooks/api-error-rate-latency.md`](./runbooks/api-error-rate-latency.md) —
   diagnosing the `DocsApiHighErrorRate` / `DocsApiHighRequestLatency`
   alerts (`cluster-objects/prometheusrule.yaml`).
