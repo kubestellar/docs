@@ -52,7 +52,7 @@
     "@types/three": "^0.185.4",
     "@vitest/coverage-v8": "4.1.11",
     "eslint": "^10",
-    "eslint-config-next": "^16.3.3",
+    "eslint-config-next": "^16.3.4",
     "eslint-plugin-react": "^7.37.5",
     "jsdom": "^30.0.1",
     "markdownlint": "^0.41.1",
