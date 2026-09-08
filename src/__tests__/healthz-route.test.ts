@@ -3,6 +3,7 @@ import fs from 'fs'
 import { docsContentPath } from '@/app/docs/page-map'
 import { GET } from '@/app/api/healthz/route'
 import { logger } from '@/lib/logger'
+import { metricsRegistry } from '@/lib/metrics'
 
 /**
  * Coverage for src/app/api/healthz/route.ts — the readiness probe that
@@ -18,6 +19,7 @@ describe('/api/healthz route', () => {
     statSyncSpy = vi.spyOn(fs, 'statSync')
     readdirSyncSpy = vi.spyOn(fs, 'readdirSync')
     loggerErrorSpy = vi.spyOn(logger, 'error').mockImplementation(() => {})
+    metricsRegistry.resetMetrics()
   })
 
   afterEach(() => {
@@ -36,6 +38,9 @@ describe('/api/healthz route', () => {
     const body = await res.json()
     expect(body).toEqual({ status: 'ok' })
     expect(loggerErrorSpy).not.toHaveBeenCalled()
+    const metricsText = await metricsRegistry.metrics()
+    expect(metricsText).toContain('route="healthz"')
+    expect(metricsText).toContain('status_class="2xx"')
   })
 
   it('returns 503 with a "not a directory" reason when the content path is a file, not a directory', async () => {
@@ -56,6 +61,9 @@ describe('/api/healthz route', () => {
       status: 503,
       error: 'docs content path is not a directory',
     })
+    const metricsText = await metricsRegistry.metrics()
+    expect(metricsText).toContain('route="healthz"')
+    expect(metricsText).toContain('status_class="5xx"')
   })
 
   it('returns 503 with an "empty" reason when the content directory has no entries', async () => {

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { recordApiRequest } from '@/lib/metrics'
 
 // Liveness check for the docs app.
 //
@@ -12,6 +13,17 @@ import { NextResponse } from 'next/server'
 // replica fail liveness at once, triggering a simultaneous restart loop that
 // cannot fix the underlying problem and can take the whole deployment fully
 // offline instead of just out of rotation. See runbooks/deploy-rollback.md.
+//
+// Recorded via the existing bounded `docs_api_*` metrics (route="livez") so
+// liveness volume/latency is visible to Prometheus, alongside the other
+// instrumented routes.
 export async function GET() {
-  return NextResponse.json({ status: 'ok' }, { status: 200 })
+  const startedAt = performance.now()
+  const status = 200
+  try {
+    return NextResponse.json({ status: 'ok' }, { status })
+  } finally {
+    const durationMs = performance.now() - startedAt
+    recordApiRequest('livez', 'GET', status, durationMs)
+  }
 }
