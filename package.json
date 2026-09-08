@@ -61,7 +61,7 @@
     "tailwindcss": "^4",
     "tsx": "^4.23.13",
     "typescript": "^6",
-    "vitest": "^4.1.11",
+    "vitest": "^5.0.0",
     "wink-eng-lite-web-model": "^1.8.1",
     "wink-nlp": "^2.4.0"
   },
