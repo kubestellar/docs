@@ -2,7 +2,7 @@
 
 ## Scope
 
-Applies to the two alerts defined in `cluster-objects/prometheusrule.yaml`
+Applies to the three alerts defined in `cluster-objects/prometheusrule.yaml`
 over the docs site's existing `/api/metrics` output
 (`src/lib/metrics.ts`), which only instruments the `search`
 (`src/app/api/search/route.ts`) and `docs-image`
@@ -14,10 +14,16 @@ over the docs site's existing `/api/metrics` output
 - **`DocsApiHighRequestLatency`** — fires when the p95 request duration
   across these routes exceeds 1s over a 5-minute window, sustained for 10
   minutes.
+- **`DocsApiMetricsTargetDown`** — fires when Prometheus has been unable
+  to scrape the `kubestellar-docs` job for 10 minutes. This covers the
+  blackout case the other two alerts cannot: while the scrape target is
+  down, both rate/ratio expressions evaluate over no data and stay
+  silent, so a crash-looping pod, an `/api/metrics` regression, or a
+  `ServiceMonitor`/selector mismatch would otherwise go undetected.
 
-Both alerts only fire if a Prometheus Operator is already scraping this
-namespace via `cluster-objects/servicemonitor.yaml` — this runbook does
-not assume any specific monitoring backend is provisioned.
+All three alerts only fire if a Prometheus Operator is already scraping
+this namespace via `cluster-objects/servicemonitor.yaml` — this runbook
+does not assume any specific monitoring backend is provisioned.
 
 ## Detecting and diagnosing `DocsApiHighErrorRate`
 
@@ -60,6 +66,27 @@ not assume any specific monitoring backend is provisioned.
    does not necessarily indicate a broken deploy — check recent traffic
    volume first, since a legitimate spike in requests can raise p95
    latency without any content or code defect.
+
+## Detecting and diagnosing `DocsApiMetricsTargetDown`
+
+1. Check pod status first (`kubectl get pods -n docs -l app=kubestellar-docs`)
+   — a crash-looping or pending pod is the most common cause and is a
+   deploy/infra problem, not an application code defect.
+2. If pods are `Running`, check whether `/api/metrics` itself is
+   responding (`kubectl exec` into a pod, or port-forward and `curl
+   localhost:3000/api/metrics`) — a regression in the metrics route
+   handler itself would leave the pod healthy but the scrape failing.
+3. If the endpoint responds locally but Prometheus still reports the
+   target down, check that `cluster-objects/servicemonitor.yaml`'s
+   `spec.selector`/`spec.namespaceSelector` still match the current
+   `Service` object's labels (`cluster-objects/deployment.yaml`) — a
+   label drift between the two is a silent scrape-config break with no
+   other symptom.
+4. This alert firing does not by itself mean traffic is failing —
+   `/api/healthz`/`/api/livez` and real user traffic may be unaffected.
+   Treat it as "observability is blind right now", and prioritize
+   restoring the scrape target so `DocsApiHighErrorRate` /
+   `DocsApiHighRequestLatency` can do their job again.
 
 ## Recovery
 
