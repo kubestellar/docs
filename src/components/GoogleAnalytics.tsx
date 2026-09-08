@@ -1,6 +1,8 @@
 "use client";
 
 import Script from "next/script";
+import { Suspense, useEffect, useRef } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import { CURRENT_BRANCH } from "@/lib/url";
 
@@ -33,6 +35,45 @@ export function isProductionDeploy(): boolean {
 }
 
 /**
+ * Next.js App Router client-side navigations (next/link, router.push) never
+ * trigger a full page load, so the inline `gtag('config', ...)` call in
+ * GoogleAnalytics only ever fires once for the landing page. This watches
+ * the route via usePathname()/useSearchParams() — Google's documented
+ * pattern for SPA page-view tracking — and fires an explicit
+ * `gtag('event', 'page_view', ...)` on every subsequent route change,
+ * skipping the first render since the inline config script already covers
+ * the initial page load. See:
+ * https://developers.google.com/analytics/devguides/collection/ga4/views
+ */
+export function GA4PageViewTracker() {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    if (typeof window === "undefined" || !window.gtag) {
+      return;
+    }
+
+    const query = searchParams.toString();
+    const pagePath = query ? `${pathname}?${query}` : pathname;
+
+    window.gtag("event", "page_view", {
+      page_path: pagePath,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [pathname, searchParams]);
+
+  return null;
+}
+
+/**
  * Lightweight GA4 integration via gtag.js.
  * Drop into the root layout so every page gets automatic page_view tracking.
  */
@@ -58,6 +99,10 @@ export default function GoogleAnalytics() {
           });
         `}
       </Script>
+      {/* useSearchParams() requires a Suspense boundary in the App Router */}
+      <Suspense fallback={null}>
+        <GA4PageViewTracker />
+      </Suspense>
     </>
   );
 }
