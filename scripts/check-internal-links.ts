@@ -162,6 +162,30 @@ function walk(dir: string) {
   }
 }
 
+// Emits one grep-friendly, bounded-cardinality line for CI observability
+// (counts only — never file paths or link targets, which are unbounded) plus
+// a short markdown table to $GITHUB_STEP_SUMMARY when running in CI. Mirrors
+// the CI_OBSERVABILITY convention used by vitest.yml/fuzz-mdx.yml so a run's
+// health can be grepped from the job log without opening raw output.
+function reportObservability(status: "pass" | "fail") {
+  console.log(
+    `CI_OBSERVABILITY check=internal-links links_checked=${linksChecked} routes=${validNormalized.size} broken=${broken.length} status=${status}`
+  );
+
+  const summaryPath = process.env.GITHUB_STEP_SUMMARY;
+  if (!summaryPath) return;
+  const icon = status === "pass" ? "✅" : "❌";
+  const table = [
+    "## Internal Links Check",
+    "",
+    "| Links checked | Routes | Broken | Status |",
+    "| --- | --- | --- | --- |",
+    `| ${linksChecked} | ${validNormalized.size} | ${broken.length} | ${icon} ${status} |`,
+    "",
+  ].join("\n");
+  fs.appendFileSync(summaryPath, table);
+}
+
 function main() {
   walk(contentRoot);
 
@@ -180,10 +204,12 @@ function main() {
       "\nInternal links must resolve to a real docs route. For links to files " +
         "outside the synced docs tree, use an absolute GitHub URL instead."
     );
+    reportObservability("fail");
     process.exit(1);
   }
 
   console.log("✅ No broken internal links.");
+  reportObservability("pass");
 }
 
 // Run only when executed directly (allows importing for tests).
