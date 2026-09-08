@@ -14,6 +14,8 @@
  * Exit 0 = all invariants held; Exit 1 = violation found.
  */
 
+import { appendFileSync } from 'node:fs'
+
 import { sanitizeHtmlForMdx } from '../../src/lib/sanitizeHtml'
 
 // ---------------------------------------------------------------------------
@@ -206,10 +208,52 @@ for (let i = 0; i < ITERATIONS; i++) {
   }
 }
 
+// Bounded, machine-readable summary (fixed numeric/string fields only — no
+// test inputs, error text, or unbounded content) so CI observability holds
+// regardless of pass/fail or corpus size. Runs in-process at the end of this
+// same step, so it needs no separate workflow step or `if: always()` — the
+// write happens before process.exit() on both the pass and fail paths.
+function reportSummary(status: 'pass' | 'fail'): void {
+  const summary = {
+    status,
+    seed: SEED,
+    iterations: ITERATIONS,
+    corpus_size: corpus.length,
+    failures,
+  }
+  console.log(`FUZZ_MDX_SUMMARY: ${JSON.stringify(summary)}`)
+
+  const summaryPath = process.env.GITHUB_STEP_SUMMARY
+  if (!summaryPath) return
+  const icon = status === 'pass' ? '✅' : '❌'
+  const rows: [string, string | number][] = [
+    ['Status', `${icon} ${status}`],
+    ['Seed', summary.seed],
+    ['Iterations', summary.iterations],
+    ['Corpus size', summary.corpus_size],
+    ['Failures', summary.failures],
+  ]
+  const markdown = [
+    '### Fuzz MDX Sanitizer Summary',
+    '',
+    '| Field | Value |',
+    '|---|---|',
+    ...rows.map(([key, value]) => `| ${key} | ${value} |`),
+    '',
+  ].join('\n')
+  try {
+    appendFileSync(summaryPath, markdown)
+  } catch {
+    // Best-effort only — never let summary rendering fail the fuzz run.
+  }
+}
+
 if (failures > 0) {
   console.error(`\nFAILED: ${failures} violation(s) found`)
+  reportSummary('fail')
   process.exit(1)
 }
 
 console.log(`PASSED: all ${ITERATIONS} iterations clean  corpus=${corpus.length}`)
+reportSummary('pass')
 process.exit(0)
