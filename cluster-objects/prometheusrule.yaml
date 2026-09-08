@@ -43,6 +43,22 @@ spec:
               routes (search, docs-image) have returned a 5xx status over
               the last 5 minutes (current value: {{ $value | humanizePercentage }}).
             runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
+        - alert: DocsApiMetricsTargetDown
+          expr: up{job="kubestellar-docs"} == 0
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Docs site scrape target is down"
+            description: >-
+              Prometheus has been unable to scrape the docs site's
+              `/api/metrics` endpoint (job "kubestellar-docs") for 10
+              minutes. While this target is down, DocsApiHighErrorRate and
+              DocsApiHighRequestLatency evaluate over no data and cannot
+              fire, so a total metrics blackout (crash-looping pod,
+              `/api/metrics` regression, or a ServiceMonitor/selector
+              mismatch) would otherwise go undetected.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
         - alert: DocsApiHighRequestLatency
           expr: >-
             histogram_quantile(0.95,
