@@ -29,7 +29,7 @@
     "@theguild/remark-mermaid": "^0.3.0",
     "dotenv": "^17.2.3",
     "framer-motion": "^13.2.0",
-    "lucide-react": "^1.35.0",
+    "lucide-react": "^1.41.0",
     "mermaid": "^11.17.2",
     "next": "^16.3.3",
     "next-intl": "^4.14.2",
