@@ -59,7 +59,7 @@
     "markdownlint-cli2": "^0.23.2",
     "prettier": "^3.9.6",
     "tailwindcss": "^4",
-    "tsx": "^4.23.12",
+    "tsx": "^4.23.13",
     "typescript": "^6",
     "vitest": "^4.1.11",
     "wink-eng-lite-web-model": "^1.8.1",
