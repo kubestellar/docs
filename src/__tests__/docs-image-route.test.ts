@@ -132,6 +132,24 @@ describe('/api/docs-image/[...path] — successful lookups', () => {
     expect(res.headers.get('Content-Type')).toBe(mime)
   })
 
+  it('sends a sandbox CSP on SVG responses to block same-origin script execution', async () => {
+    const res = await call(['icon.svg'])
+    expect(res.status).toBe(200)
+    expect(res.headers.get('Content-Type')).toBe('image/svg+xml')
+    const csp = res.headers.get('Content-Security-Policy')
+    expect(csp).toBeDefined()
+    // sandbox strips origin privileges — SVG cannot execute scripts as docs origin
+    expect(csp).toMatch(/sandbox/)
+    // default-src 'none' prevents subresource loads from the SVG document
+    expect(csp).toMatch(/default-src 'none'/)
+  })
+
+  it('does NOT send a per-response CSP on non-SVG images', async () => {
+    const res = await call(['diagram.png'])
+    expect(res.status).toBe(200)
+    expect(res.headers.get('Content-Security-Policy')).toBeUndefined()
+  })
+
   it('falls back to application/octet-stream for unknown extensions', async () => {
     const res = await call(['file.TXT'])
     // Extension is lowercased then looked up — '.txt' is not in the whitelist
