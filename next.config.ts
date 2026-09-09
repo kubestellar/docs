@@ -10,6 +10,9 @@ const withNextra = nextra({
   },
 });
 
+// New home of the Hive documentation after Hive moved to the hivecommons org.
+const HIVE_DOCS = "https://docs.hivecommons.dev";
+
 const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
@@ -82,11 +85,30 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Hive moved out of the KubeStellar org to its own home at
-      // hive.hivecommons.dev. Old deep links land on the "Looking for Hive?"
-      // pointer page at /docs/hive rather than a 404.
+      // hivecommons. Deep links are preserved 1:1 against the new docs site so
+      // existing bookmarks and search results land on the page they wanted.
+      // The bare /docs/hive route is a "Looking for Hive?" pointer page.
+      // These three pages have no 1:1 counterpart on the new site, so they are
+      // sent to the Hive docs entry point instead of an external 404. They must
+      // precede the catch-all rule below.
+      {
+        source: "/docs/hive/adr",
+        destination: `${HIVE_DOCS}/docs/hive/adr/readme`,
+        permanent: true,
+      },
+      {
+        source: "/docs/hive/console-starter-install",
+        destination: `${HIVE_DOCS}/docs/hive/getting-started`,
+        permanent: true,
+      },
+      {
+        source: "/docs/hive/outreach-antispam",
+        destination: `${HIVE_DOCS}/docs/hive/overview/introduction`,
+        permanent: true,
+      },
       {
         source: "/docs/hive/:path+",
-        destination: "/docs/hive",
+        destination: `${HIVE_DOCS}/docs/hive/:path+`,
         permanent: true,
       },
       {
