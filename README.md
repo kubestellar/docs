@@ -162,6 +162,10 @@ docs live under [`runbooks/`](./runbooks/):
 - [`runbooks/api-error-rate-latency.md`](./runbooks/api-error-rate-latency.md) —
   diagnosing the `DocsApiHighErrorRate` / `DocsApiHighRequestLatency`
   alerts (`cluster-objects/prometheusrule.yaml`).
+- [`cluster-objects/grafana-dashboard.json`](./cluster-objects/grafana-dashboard.json) —
+  importable Grafana dashboard (request rate, 5xx rate, p50/p95/p99
+  latency) for the same `docs_api_requests_total` /
+  `docs_api_request_duration_seconds` metrics.
 
 To record a production incident affecting the docs site, open an issue
 using the "Incident Postmortem" template
