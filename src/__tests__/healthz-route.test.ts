@@ -103,7 +103,7 @@ describe('/api/healthz route', () => {
   it('returns 503 with the generic fallback reason when the thrown value is not an Error', async () => {
     // Exercises the `err instanceof Error ? err.message : 'docs content path is unreadable'` false arm.
     statSyncSpy.mockImplementationOnce(() => {
-      // eslint-disable-next-line @typescript-eslint/no-throw-literal
+      // eslint-disable-next-line @typescript-eslint/only-throw-error
       throw 'string thrown from native fs'
     })
 

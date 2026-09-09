@@ -26,7 +26,7 @@ vi.mock('../app/docs/page-map', () => ({
   buildPageMap: () => {
     // Deliberately throw a non-Error value to hit the else arm of
     // `error instanceof Error ? error.message : String(error)`.
-    // eslint-disable-next-line @typescript-eslint/no-throw-literal
+    // eslint-disable-next-line @typescript-eslint/only-throw-error
     throw 'plain-string-blowup'
   },
   docsContentPath: '/fake/docs/content',
