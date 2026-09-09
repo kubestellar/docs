@@ -712,7 +712,7 @@ export default function AcmmLeaderboardPage() {
           {/* Hive live dashboard link */}
           <div className="mt-4 mb-2 flex justify-center">
             <a
-              href="https://kubestellar.io/live/hive"
+              href="https://hive.hivecommons.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm hover:bg-purple-500/20 transition-colors"

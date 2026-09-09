@@ -151,55 +151,46 @@
   status = 301
   force = true
 
-# Redirect /hive and /:locale/hive to the live hive dashboard
+# Hive moved to the hivecommons org. The pages that used to live under
+# /live/hive were only meta-refresh stubs: the KubeStellar-hosted snapshot they
+# pointed at (hosted-kubestellar-console-4vkt.hive.kubestellar.io) no longer
+# resolves, so those paths were dead. They are retired here in favour of 301s
+# to the Hive project home. The Project Bluefin instance is a third-party
+# deployment and keeps its own destination.
+[[redirects]]
+  from = "/live/hive/bluefin"
+  to = "https://hive.projectbluefin.io/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/live/hive/bluefin/*"
+  to = "https://hive.projectbluefin.io/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/hive"
-  to = "/live/hive"
+  to = "https://hive.hivecommons.dev"
   status = 301
   force = true
 
 [[redirects]]
   from = "/en/hive"
-  to = "/live/hive"
+  to = "https://hive.hivecommons.dev"
   status = 301
-  force = true
-
-# Serve static hive dashboard snapshots (bypass Next.js middleware)
-# Wildcard rule resolves directory paths to index.html for all instances
-[[redirects]]
-  from = "/live/hive/*/api-docs"
-  to = "/live/hive/:splat/api-docs/index.html"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/live/hive/*/api-docs/"
-  to = "/live/hive/:splat/api-docs/index.html"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/live/hive/api-docs"
-  to = "/live/hive/api-docs/index.html"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/live/hive/api-docs/"
-  to = "/live/hive/api-docs/index.html"
-  status = 200
   force = true
 
 [[redirects]]
   from = "/live/hive"
-  to = "/live/hive/index.html"
-  status = 200
+  to = "https://hive.hivecommons.dev"
+  status = 301
   force = true
 
 [[redirects]]
-  from = "/live/hive/"
-  to = "/live/hive/index.html"
-  status = 200
+  from = "/live/hive/*"
+  to = "https://hive.hivecommons.dev"
+  status = 301
   force = true
 
 # Redirects for short URLs
