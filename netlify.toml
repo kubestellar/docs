@@ -558,13 +558,7 @@
   status = 301
   force = true
 
-# Redirect Hive docs root to the first Hive docs page.
-[[redirects]]
-  from = "/docs/hive"
-  to = "/docs/hive/overview/introduction"
-  status = 302
-
-[[redirects]]
-  from = "/docs/hive/"
-  to = "/docs/hive/overview/introduction"
-  status = 302
+# Hive moved to hive.hivecommons.dev. /docs/hive is now a static "Looking for
+# Hive?" pointer page served by Next.js, and /docs/hive/* redirects to it, so
+# there must be no Netlify rule sending /docs/hive deeper into the removed
+# docs tree -- that produced a redirect loop.
