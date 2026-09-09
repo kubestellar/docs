@@ -9,7 +9,7 @@ import type { ProjectId } from '../config/versions'
  * NAV_STRUCTURE_CONTRIBUTING / NAV_STRUCTURE_COMMUNITY / NAV_STRUCTURE_NEWS
  * are appended by getNavStructure() to every project's baseStructure, so
  * their pages MUST route under /docs/<section>/... rather than under the
- * per-project base (/docs/a2a/contributing/..., /docs/hive/community/...,
+ * per-project base (/docs/a2a/contributing/..., /docs/console/community/...,
  * etc). Three separate `isGeneralSection` guards in buildNavNodes enforce
  * that invariant — one for each of the three item shapes:
  *
@@ -75,7 +75,6 @@ const projects: ProjectId[] = [
   'multi-plugin',
   'kubestellar-mcp',
   'console',
-  'hive',
 ]
 
 describe('buildNavNodes — object-with-string-value general-section arm', () => {
@@ -174,7 +173,6 @@ describe('buildNavNodes — non-general folder retains project base path', () =>
     'multi-plugin',
     'kubestellar-mcp',
     'console',
-    'hive',
   ]
 
   it.each(nonDefault)(

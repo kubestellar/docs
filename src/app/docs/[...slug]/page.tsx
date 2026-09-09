@@ -11,8 +11,6 @@ import fs from 'fs'
 import path from 'path'
 import { notFound } from 'next/navigation'
 
-const HIVE_DOCS_PATH = process.env.HIVE_DOCS_PATH
-
 type Props = {
   params: Promise<{ slug: string[] }>
 }
@@ -168,7 +166,7 @@ async function buildContent(slug: string[], projectId?: ProjectId): Promise<Page
 }
 
 function getProjectFromSlug(slug: string[]): { projectId: ProjectId | undefined; docSlug: string[] } {
-  const knownProjects: string[] = ['kubestellar', 'clusteradm-ocm', 'ks-core', 'multi-plugin', 'hive', 'kubestellar-mcp', 'console', 'a2a', 'kubeflex']
+  const knownProjects: string[] = ['kubestellar', 'clusteradm-ocm', 'ks-core', 'multi-plugin', 'kubestellar-mcp', 'console', 'a2a', 'kubeflex']
   
   if (slug.length > 0 && knownProjects.includes(slug[0])) {
     return {
@@ -251,16 +249,6 @@ export async function generateStaticParams(): Promise<Array<{ slug: string[] }>>
   }
   
   collectParams(docsContentPath)
-  
-  // Also add Hive docs if available
-  if (HIVE_DOCS_PATH && fs.existsSync(HIVE_DOCS_PATH)) {
-    const hiveEntries = fs.readdirSync(HIVE_DOCS_PATH, { withFileTypes: true })
-    for (const entry of hiveEntries) {
-      if (!entry.isDirectory()) continue
-      const route = entry.name
-      allParams.push({ slug: ['hive', ...route.split('/')] })
-    }
-  }
 
   return allParams
 }

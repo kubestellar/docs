@@ -16,7 +16,7 @@ export const NETLIFY_SITE_NAME = "kubestellar-docs"
 export const PRODUCTION_URL = "https://kubestellar.io"
 
 // Project identifiers
-export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "kubestellar-mcp" | "console" | "hive"
+export type ProjectId = "kubestellar" | "a2a" | "kubeflex" | "multi-plugin" | "kubestellar-mcp" | "console"
 
 // Version info structure
 export interface VersionInfo {
@@ -480,21 +480,6 @@ const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
   },
 }
 
-// hive versions
-// Hive is continuously deployed rather than semver-released, so the docs are a
-// single "latest" line: content is fetched at build time from the
-// kubestellar/hive branch named by HIVE_DOCS_REF (see scripts/sync-hive-docs.ts),
-// which tracks hive's current major release line (v4 today). When hive moves to
-// a new major line, update this label, currentVersion below, and the
-// HIVE_DOCS_REF default together.
-const HIVE_VERSIONS: Record<string, VersionInfo> = {
-  latest: {
-    label: "v4 (Latest)",
-    branch: "main",
-    isDefault: true,
-  },
-}
-
 // All projects configuration
 export const PROJECTS: Record<ProjectId, ProjectConfig> = {
   kubestellar: {
@@ -545,14 +530,6 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     contentPath: "docs/content/console",
     versions: CONSOLE_VERSIONS,
   },
-  "hive": {
-    id: "hive",
-    name: "Hive",
-    basePath: "hive",
-    currentVersion: "v4",
-    contentPath: "docs/content/hive",
-    versions: HIVE_VERSIONS,
-  },
 }
 
 // Get project from URL pathname
@@ -571,9 +548,6 @@ export function getProjectFromPath(pathname: string): ProjectConfig {
   }
   if (pathname.startsWith("/docs/console")) {
     return PROJECTS["console"]
-  }
-  if (pathname.startsWith("/docs/hive")) {
-    return PROJECTS["hive"]
   }
   return PROJECTS.kubestellar
 }

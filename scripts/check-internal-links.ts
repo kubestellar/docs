@@ -1,9 +1,9 @@
 /**
  * Broken internal-link checker for the docs content.
  *
- * WHY: Hive (and other) docs are synced/authored as markdown. A rename, a bad
+ * WHY: Project docs are authored as markdown. A rename, a bad
  * sync, or a version bump can leave a relative link pointing at a route that no
- * longer exists — shipping a 404. `scripts/sync-hive-docs.ts` rewrites Hive
+ * longer exists — shipping a 404. The sync/authoring pipeline rewrites
  * links at sync time, but nothing catches a regression at PR time. This script
  * resolves every INTERNAL markdown link under `docs/content/**` against the set
  * of routes the site actually serves and fails if any does not resolve.
