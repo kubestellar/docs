@@ -558,7 +558,9 @@
   status = 301
   force = true
 
-# Hive moved to hive.hivecommons.dev. /docs/hive is now a static "Looking for
-# Hive?" pointer page served by Next.js, and /docs/hive/* redirects to it, so
-# there must be no Netlify rule sending /docs/hive deeper into the removed
-# docs tree -- that produced a redirect loop.
+# Hive moved to the hivecommons org. /docs/hive is a static "Looking for Hive?"
+# pointer page served by Next.js, and /docs/hive/* is redirected 1:1 to
+# docs.hivecommons.dev by the redirects() rules in next.config.ts. Netlify
+# redirects run *before* Next.js redirects, so there must be no Netlify rule
+# sending /docs/hive deeper into the removed docs tree -- that produced a
+# redirect loop.
