@@ -15,7 +15,7 @@ import { buildPageMap } from '../app/docs/page-map'
  *                       what-is-console.md) in from the main docs tree.
  *
  * Prior tests exercise only 'kubestellar', 'console', 'kubestellar-mcp',
- * 'hive'.  Regressions to the a2a/kubeflex/multi-plugin arms — e.g.
+ * arms.  Regressions to the a2a/kubeflex/multi-plugin arms — e.g.
  * accidentally routing them to NAV_STRUCTURE_KUBESTELLAR (the default arm)
  * — would go completely unnoticed today.
  */

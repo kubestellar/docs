@@ -429,13 +429,6 @@
         "branch": "docs/console/0.3.39",
         "isDefault": false
       }
-    },
-    "hive": {
-      "latest": {
-        "label": "v4 (Latest)",
-        "branch": "main",
-        "isDefault": true
-      }
     }
   },
   "projects": {
@@ -468,11 +461,6 @@
       "name": "Console",
       "basePath": "console",
       "currentVersion": "0.3.40"
-    },
-    "hive": {
-      "name": "Hive",
-      "basePath": "hive",
-      "currentVersion": "v4"
     }
   },
   "relatedProjects": [

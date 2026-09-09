@@ -81,6 +81,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Hive moved out of the KubeStellar org to its own home at
+      // hive.hivecommons.dev. Old deep links land on the "Looking for Hive?"
+      // pointer page at /docs/hive rather than a 404.
+      {
+        source: "/docs/hive/:path+",
+        destination: "/docs/hive",
+        permanent: true,
+      },
       {
         source: "/agenda",
         destination: "/docs/community/meetings",

@@ -81,7 +81,7 @@ describe('PROJECTS shape invariants', () => {
   // "v0.30.0 (Latest)" dropdown while the badge and canonical URL
   // still say 0.29.0.
   // Loose substring match tolerates the optional "v" prefix used by
-  // some projects (hive: currentVersion="v4", label="v4 (Latest)").
+  // some projects (e.g. currentVersion="v4" against label="v4 (Latest)").
   // -----------------------------------------------------------------
   it.each(projectEntries)(
     '%s: currentVersion appears in latest.label',
