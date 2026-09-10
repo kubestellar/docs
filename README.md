@@ -162,6 +162,9 @@ docs live under [`runbooks/`](./runbooks/):
 - [`runbooks/api-error-rate-latency.md`](./runbooks/api-error-rate-latency.md) —
   diagnosing the `DocsApiHighErrorRate` / `DocsApiHighRequestLatency`
   alerts (`cluster-objects/prometheusrule.yaml`).
+- [`runbooks/acmm-history-failure-monitoring.md`](./runbooks/acmm-history-failure-monitoring.md) —
+  detecting and resolving a stale/unresolved `[acmm-history-failure]`
+  alert from `generate-acmm-history.yml`.
 
 To record a production incident affecting the docs site, open an issue
 using the "Incident Postmortem" template
