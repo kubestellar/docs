@@ -55,6 +55,10 @@ does not assume any specific monitoring backend is provisioned.
    `route="docs-image"` in Prometheus/Grafana — the alert's
    `histogram_quantile` aggregates both routes together, so the raw
    per-route buckets are needed to isolate which one regressed.
+   `cluster-objects/grafana-dashboard.json` has a ready-made "P95 request
+   latency by route" panel for this exact comparison (import it into a
+   Grafana instance already pointed at the Prometheus scraping this
+   deployment — it does not configure a data source itself).
 2. For `search`: elevated latency usually indicates a larger-than-normal
    search index, a slow/uncached parse of the query, or resource
    contention on the instance (check pod CPU/memory alongside this
