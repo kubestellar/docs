@@ -165,6 +165,9 @@ docs live under [`runbooks/`](./runbooks/):
 - [`runbooks/acmm-history-failure-monitoring.md`](./runbooks/acmm-history-failure-monitoring.md) —
   detecting and resolving a stale/unresolved `[acmm-history-failure]`
   alert from `generate-acmm-history.yml`.
+- [`runbooks/netlify-build-failure.md`](./runbooks/netlify-build-failure.md) —
+  diagnosing and recovering from a build-time Netlify deploy failure
+  alerted by `netlify-error-reporter.yml`.
 
 To record a production incident affecting the docs site, open an issue
 using the "Incident Postmortem" template
