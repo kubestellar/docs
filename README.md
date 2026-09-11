@@ -153,6 +153,9 @@ docs live under [`runbooks/`](./runbooks/):
   SLI/SLO and current alerting coverage.
 - [`runbooks/deploy-rollback.md`](./runbooks/deploy-rollback.md) —
   detecting and rolling back a bad Netlify or container deploy.
+- [`runbooks/netlify-build-failure.md`](./runbooks/netlify-build-failure.md) —
+  diagnosing and recovering from a build-time Netlify deploy failure
+  (alerted by `netlify-error-reporter.yml`).
 - [`runbooks/version-branch-rollback.md`](./runbooks/version-branch-rollback.md) —
   recovering from a bad automated version-branch/config push.
 - [`runbooks/scorecard-monitoring.md`](./runbooks/scorecard-monitoring.md),
