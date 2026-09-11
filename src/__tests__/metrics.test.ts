@@ -28,7 +28,7 @@ describe("metrics", () => {
     // Only the two known route labels should ever appear.
     const routeMatches = [...text.matchAll(/route="([^"]+)"/g)].map(m => m[1])
     for (const route of routeMatches) {
-      expect(["search", "docs-image"]).toContain(route)
+      expect(["search", "docs-image", "healthz", "livez"]).toContain(route)
     }
   })
 })

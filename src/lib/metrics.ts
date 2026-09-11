@@ -15,7 +15,7 @@
  */
 import { Counter, Histogram, Registry } from "prom-client"
 
-export const ApiRoutes = ["search", "docs-image"] as const
+export const ApiRoutes = ["search", "docs-image", "healthz", "livez"] as const
 export type ApiRoute = (typeof ApiRoutes)[number]
 
 export const metricsRegistry = new Registry()
