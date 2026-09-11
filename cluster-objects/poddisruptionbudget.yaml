@@ -1,0 +1,28 @@
+# PodDisruptionBudget for the kubestellar-docs Deployment
+# (cluster-objects/deployment.yaml).
+#
+# The Deployment's RollingUpdate strategy already caps *self-inflicted*
+# unavailability during a new rollout at maxUnavailable: 1 of 3 replicas.
+# Without a PodDisruptionBudget, that guarantee does not extend to
+# *voluntary* disruptions initiated by the cluster itself — e.g. a node
+# drain during maintenance, or a cluster-autoscaler scale-down — which can
+# evict multiple replicas of this Deployment at the same time with no
+# guardrail, unlike a bad rollout.
+#
+# minAvailable: 2 (of 3 replicas) mirrors the Deployment's own
+# maxUnavailable: 1 budget, so voluntary disruptions are held to the same
+# single-replica-at-a-time ceiling the rollout strategy already assumes.
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: kubestellar-docs
+  namespace: docs
+  labels:
+    app: kubestellar-docs
+    pr: prod
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: kubestellar-docs
+      pr: prod
