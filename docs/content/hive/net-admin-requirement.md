@@ -75,7 +75,7 @@ capability model is advisory-only (an agent holding a raw token could bypass
 the proxy entirely), so the entrypoint refuses to start rather than run with
 unenforced egress. You'll see:
 
-```
+```text
 [entrypoint] FATAL: could not establish forced proxy egress (iptables redirect). …
 [entrypoint] FATAL: refusing to start. Grant NET_ADMIN + install iptables, or set HIVE_PROXY_ADVISORY_OK=true to deliberately run in advisory mode.
 ```

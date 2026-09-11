@@ -245,7 +245,7 @@ merge conflicts, no accidental exposure.
 Create a **private** repo (on your GHE instance, a private GitHub.com repo,
 GitLab, Gitea — whatever you control). The structure is minimal:
 
-```
+```text
 my-hive-config/                     ← your private repo
 ├── overlays/
 │   └── spyre/                      ← one subdirectory per cluster/environment
@@ -259,7 +259,7 @@ my-hive-config/                     ← your private repo
 If you have more than one cluster (staging, production, a second team's Spyre),
 add another subdirectory per cluster — each references the same upstream base:
 
-```
+```text
 overlays/
 ├── spyre-staging/
 │   ├── kustomization.yaml
@@ -724,7 +724,7 @@ an admission webhook stripped the capability, or a hand-edited manifest dropped
 the request), the entrypoint refuses to start and exits with a **distinct code,
 77** (sysexits.h `EX_NOPERM`), after logging:
 
-```
+```text
 [entrypoint] FATAL: refusing to start. Grant NET_ADMIN + install iptables, or set HIVE_PROXY_ADVISORY_OK=true to deliberately run in advisory mode.
 [entrypoint] FATAL: CAP_NET_ADMIN is not in the container's capability bounding set — exiting 77 (EX_NOPERM) rather than 1.
 ```
@@ -1705,7 +1705,7 @@ creates an **additional** OpenShift Route whose host is derived from the
 hive's own display name, rather than the org/repo-derived host used
 previously:
 
-```
+```text
 <sanitized-hive-name>-<4-char-suffix>.<cluster-domain>
 ```
 

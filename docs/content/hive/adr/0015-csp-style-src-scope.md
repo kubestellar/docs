@@ -48,7 +48,7 @@ protection.
 Split the single `style-src` into the two directives CSP Level 3 provides, and
 state a different verdict for each.
 
-```
+```text
 style-src      'self' 'unsafe-inline'   ← CSP2 fallback, unchanged
 style-src-elem 'self' 'unsafe-inline'   ← the 7 <style> elements: CLOSABLE, staged
 style-src-attr 'unsafe-inline'          ← the 2061 attributes: ACCEPTED

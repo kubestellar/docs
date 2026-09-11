@@ -139,7 +139,7 @@ Check whether the same line carries **`API Error: 403`**. If it does, the agent 
 Claude Code prefixes *every* API error with its login hint, so an upstream refusal
 renders like this:
 
-```
+```text
 ● Please run /login · API Error: 403 {"type":"error","error":{"type":"api_error",
   "message":"inference backend returned 403: {"error":{"message":"team not allowed
   to access model. This team can only access models=['gemini-2.5-pro',
@@ -158,7 +158,7 @@ agent's **model id does not match what the gateway entitles**, exactly. Read the
 allowed list out of the error and compare it character by character with the
 agent's configured model — separators and prefixes both matter:
 
-```
+```text
 configured:  claude-sonnet-4.6
 entitled:    aws/claude-sonnet-4-6
                  ^^^^         ^
@@ -198,7 +198,7 @@ The browser terminal is a live `tmux` attach, and the mouse wheel scrolls by ent
 
 Look at the right-hand end of the status bar:
 
-```
+```text
 [SCROLLBACK 812/4837 lines back - not following live output - press q to resume]   now 14:22:07
 [live]                                                                             now 14:22:07
 ```

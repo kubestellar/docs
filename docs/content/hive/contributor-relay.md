@@ -399,7 +399,7 @@ Three things have to line up for that to work.
 
 **The lease has to still be alive.** The window is `leaseTTL` (30 minutes, the same as the wedged-task timeout) measured from the last accepted `task_progress` — not from assignment. This is the part [#4260](https://github.com/kubestellar/hive/issues/4260) fixed: the expiry used to be stamped once at assignment and never moved, so a task that had been reporting progress for more than 30 minutes was correctly never reclaimed as wedged, yet its lease had quietly expired. The next drop, however brief, produced this:
 
-```
+```text
 Reconnected while working on kubestellar/hive#4203 — resuming
 Task revoked: ct-kubestellar/hive-4203-… — no active lease for this task
 Task assigned: issue kubestellar/hive#4203 — …

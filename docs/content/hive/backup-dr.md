@@ -224,7 +224,7 @@ Two things follow, and the second one is the dangerous one:
 1. A host-shell tar records the **mapped** IDs. Restoring that archive on another host — with a different subuid base — puts every file under an identity that host's container does not have.
 2. A host-shell tar **cannot read the GitHub App private key at all.** It is mode `0600` owned by host UID 525288, and the operator is UID 1000. Observed:
 
-   ```
+   ```text
    $ tar czf hive-data.tar.gz -C "$VOLUME_PATH" .
    tar: ./gh-app-key-restore-probe.pem: Cannot open: Permission denied
    tar: Exiting with failure status due to previous errors
@@ -339,14 +339,14 @@ podman exec hive sh -c 'ls -ln /data/gh-app-key*.pem'
 
 **The two volumes are never shared, and there is no supported way to point Podman at Docker's storage.** This is not a caution, it is what the engines do. Observed, with a live Docker deployment on the same host:
 
-```
+```text
 $ podman volume inspect src_hive-data
 Error: no such volume src_hive-data          # and identically under sudo
 ```
 
 Podman keeps its own volume registry; a Docker volume is not in it under any name. The fast wrong thing — bind-mounting Docker's volume directory straight into a Podman container — does not work either, and fails before it can do damage:
 
-```
+```text
 $ podman run --rm -v /var/lib/docker/volumes/src_hive-data/_data:/data:ro alpine ls /data
 Error: statfs /var/lib/docker/volumes/src_hive-data/_data: permission denied
 ```
@@ -387,7 +387,7 @@ podman exec hive cat /data/hive-id       # must match what Docker reported
 
 **Step 2a is not housekeeping, and its failure is an SELinux denial rather than an ownership one.** The archive Docker writes is mode `0644` — world-readable, so ownership alone would not stop the extract. What differs is the label. Docker's rootful daemon writes into the operator's directory and the file inherits that directory's type, typically `user_tmp_t`; a file the operator wrote through Podman in the same directory carries `container_file_t`. The `:z` in step 3 exists to relabel the mount to `container_file_t`, but relabelling is `chcon`, and `chcon` needs ownership or `CAP_FOWNER` — neither of which a rootless user has over a root-owned file. Podman skips the file, says nothing about it, and the container domain is denied:
 
-```
+```text
 $ podman run --rm -v hive-data:/data -v "$PWD":/backup:z docker.io/library/alpine:3.22 \
     tar xzf /backup/docker-hive-data.tar.gz -C /data
 tar: can't open '/backup/docker-hive-data.tar.gz': Permission denied
