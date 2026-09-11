@@ -1,6 +1,8 @@
 "use client";
 
 import Script from "next/script";
+import { Suspense, useEffect, useRef } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import { CURRENT_BRANCH } from "@/lib/url";
 
@@ -58,8 +60,55 @@ export default function GoogleAnalytics() {
           });
         `}
       </Script>
+      {/* useSearchParams requires a Suspense boundary in the app router. */}
+      <Suspense fallback={null}>
+        <RouteChangeTracker />
+      </Suspense>
     </>
   );
+}
+
+/**
+ * The gtag('config', ...) call above only fires once, on the very first
+ * full page load. Every subsequent in-app navigation (next/link, router.push)
+ * is a client-side transition that never re-runs that script, so without
+ * this tracker only the entry page of a visit was ever counted — multi-page
+ * sessions were massively under-reported in GA4.
+ *
+ * This watches the route (pathname + query string) and sends an explicit
+ * page_view event on every change, matching Google's documented pattern for
+ * single-page apps: https://developers.google.com/analytics/devguides/collection/ga4/views
+ */
+/** Exported solely so tests can render it without the production-deploy gate. */
+export function RouteChangeTracker() {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  // Skips the mount-time run: the inline ga4-init script above already
+  // sends a page_view for the page the user landed on, so firing here too
+  // would double-count the entry page of every session.
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
+    if (typeof window === "undefined" || !window.gtag) {
+      return;
+    }
+
+    const query = searchParams.toString();
+    const pagePath = query ? `${pathname}?${query}` : pathname;
+
+    window.gtag("event", "page_view", {
+      page_path: pagePath,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [pathname, searchParams]);
+
+  return null;
 }
 
 /**
