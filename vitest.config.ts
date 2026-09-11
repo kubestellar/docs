@@ -2,6 +2,7 @@ import { defineConfig } from 'vitest/config'
 import { transformWithEsbuild } from 'vite'
 import type { SourceMapInput } from 'rollup'
 import path from 'path'
+import { CiObservabilityReporter } from './scripts/vitest-ci-observability-reporter'
 
 export default defineConfig({
   plugins: [
@@ -26,6 +27,10 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
+    // 'default' keeps existing console output unchanged; CiObservabilityReporter
+    // adds a bounded CI_OBSERVABILITY line + $GITHUB_STEP_SUMMARY table on top,
+    // with no change to pass/fail semantics (see scripts/vitest-ci-observability-reporter.ts).
+    reporters: ['default', new CiObservabilityReporter()],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
