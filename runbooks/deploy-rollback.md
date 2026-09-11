@@ -70,6 +70,14 @@ Applies to the `kubestellar/docs` Next.js site, which ships through two paths:
    check whether the `docs/content` directory is actually present in the
    image/volume for that tag — `/api/healthz` will report `503` with a
    `reason` field describing exactly what is missing or unreadable.
+4. `cluster-objects/poddisruptionbudget.yaml` bounds *voluntary*
+   disruptions (node drains, cluster-autoscaler scale-downs) to the same
+   one-replica-at-a-time ceiling the Deployment's own
+   `RollingUpdate.maxUnavailable: 1` already assumes for self-inflicted
+   rollout unavailability. If more than one of the 3 replicas is
+   unexpectedly unready at once outside of an active rollout, confirm this
+   object is applied and its selector still matches the Deployment's pod
+   labels before assuming a code-level regression.
 
 ## Related: bad automated version-branch/config push
 
