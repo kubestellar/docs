@@ -155,9 +155,16 @@ docs live under [`runbooks/`](./runbooks/):
   detecting and rolling back a bad Netlify or container deploy.
 - [`runbooks/version-branch-rollback.md`](./runbooks/version-branch-rollback.md) —
   recovering from a bad automated version-branch/config push.
-- [`runbooks/scorecard-monitoring.md`](./runbooks/scorecard-monitoring.md) and
-  [`runbooks/stale-workflow-monitoring.md`](./runbooks/stale-workflow-monitoring.md) —
+- [`runbooks/scorecard-monitoring.md`](./runbooks/scorecard-monitoring.md),
+  [`runbooks/stale-workflow-monitoring.md`](./runbooks/stale-workflow-monitoring.md),
+  and [`runbooks/fuzz-mdx-failure-detection.md`](./runbooks/fuzz-mdx-failure-detection.md) —
   detecting silently-failed scheduled workflow runs.
+- [`runbooks/api-error-rate-latency.md`](./runbooks/api-error-rate-latency.md) —
+  diagnosing the `DocsApiHighErrorRate` / `DocsApiHighRequestLatency`
+  alerts (`cluster-objects/prometheusrule.yaml`).
+- [`runbooks/acmm-history-failure-monitoring.md`](./runbooks/acmm-history-failure-monitoring.md) —
+  detecting and resolving a stale/unresolved `[acmm-history-failure]`
+  alert from `generate-acmm-history.yml`.
 
 To record a production incident affecting the docs site, open an issue
 using the "Incident Postmortem" template

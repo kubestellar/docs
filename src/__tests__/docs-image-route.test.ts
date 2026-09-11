@@ -32,7 +32,13 @@ const { mockFiles } = vi.hoisted(() => {
 // ─── Mocks ───────────────────────────────────────────────────────────
 
 vi.mock('fs', () => {
-  const stripPrefix = (p: string) => p.replace(/.*\/docs\/content\//, '')
+  // The route builds fullPath with path.join(), which normalizes to the
+  // host OS's native separator — backslashes on Windows. Match either
+  // separator when stripping the prefix, then normalize whatever's left
+  // (e.g. a nested `nested\deep\image.png`) to forward slashes so it lines
+  // up with the forward-slash keys in mockFiles above.
+  const stripPrefix = (p: string) =>
+    p.replace(/^.*[\\/]docs[\\/]content[\\/]/, '').replace(/\\/g, '/')
   return {
     default: {
       existsSync: (p: string) => stripPrefix(p) in mockFiles,

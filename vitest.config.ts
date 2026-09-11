@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitest/config'
 import { transformWithEsbuild } from 'vite'
+import type { SourceMapInput } from 'rollup'
 import path from 'path'
 
 export default defineConfig({
@@ -12,7 +13,13 @@ export default defineConfig({
       name: 'treat-mdx-components-js-as-jsx',
       async transform(code, id) {
         if (!id.endsWith('mdx-components.js')) return null
-        return transformWithEsbuild(code, id, { loader: 'jsx', jsx: 'automatic' })
+        const result = await transformWithEsbuild(code, id, { loader: 'jsx', jsx: 'automatic' })
+        return {
+          code: result.code,
+          // esbuild types sourcesContent as (string | null)[] while rollup
+          // expects string[]; the payload is equivalent at runtime.
+          map: result.map as unknown as SourceMapInput,
+        }
       },
     },
   ],
@@ -25,10 +32,10 @@ export default defineConfig({
       include: ['src/**/*.{ts,tsx}'],
       exclude: ['src/**/*.test.ts', 'src/**/*.test.tsx', 'src/**/*.d.ts'],
       thresholds: {
-        lines: 12,
-        functions: 7,
-        branches: 7,
-        statements: 12,
+        lines: 33,
+        functions: 22,
+        branches: 22,
+        statements: 32,
       },
     },
   },

@@ -1,71 +1,348 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-07-16T22:23:09.414Z",
-  "total_issues_opened": 0,
-  "total_prs_opened": 0,
+  "generated_at": "2026-09-09T14:12:37.991Z",
+  "total_issues_opened": 221,
+  "total_prs_opened": 65,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 5546900,
+  "total_points": 6177750,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 0,
-    "avg_per_day": 0,
+    "avg_per_week": 21.3,
+    "avg_per_day": 3.06,
     "by_day_of_week": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      29,
+      57,
+      55,
+      42,
+      19,
+      60,
+      24
     ],
     "by_hour_of_day": [
+      7,
+      14,
+      13,
       0,
+      3,
+      18,
+      15,
+      69,
+      5,
       0,
+      4,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      1,
+      11,
+      4,
+      22,
+      4,
+      13,
+      21,
+      21,
+      10,
+      15,
+      14,
+      2
     ],
-    "current_streak_weeks": 0,
-    "longest_streak_weeks": 0,
-    "trend": "inactive",
-    "first_issue_at": null,
-    "last_issue_at": null
+    "current_streak_weeks": 4,
+    "longest_streak_weeks": 4,
+    "trend": "steady",
+    "first_issue_at": "2026-06-07T14:47:30.000Z",
+    "last_issue_at": "2026-09-09T05:28:01.000Z"
   },
-  "topics": [],
+  "topics": [
+    {
+      "name": "workflow, scorecard, alert",
+      "issue_count": 124,
+      "recent_issue": {
+        "title": "[sec-check] fix: bump brace-expansion, js-yaml, postcss overrides for 3 fresh high-severity CVEs",
+        "url": "https://github.com/kubestellar/docs/pull/6426",
+        "created_at": "2026-07-25T02:45:44Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 124
+    },
+    {
+      "name": "link, break, url",
+      "issue_count": 64,
+      "recent_issue": {
+        "title": "🐛 fix: repair broken kubestellar.io guide links",
+        "url": "https://github.com/kubestellar/docs/pull/6367",
+        "created_at": "2026-07-16T07:43:42Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 64
+    },
+    {
+      "name": "qa, tsx, test",
+      "issue_count": 38,
+      "recent_issue": {
+        "title": "[Auto-QA] Oversized source files detected",
+        "url": "https://github.com/kubestellar/console/issues/23247",
+        "created_at": "2026-09-07T13:33:55Z"
+      },
+      "repos": [
+        "console",
+        "docs"
+      ],
+      "open_count": 31,
+      "closed_count": 7
+    },
+    {
+      "name": "release, console, version",
+      "issue_count": 31,
+      "recent_issue": {
+        "title": "📖 Sync console docs versions",
+        "url": "https://github.com/kubestellar/docs/pull/6825",
+        "created_at": "2026-09-09T05:28:01Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 2,
+      "closed_count": 29
+    },
+    {
+      "name": "hive, variable, doc",
+      "issue_count": 13,
+      "recent_issue": {
+        "title": "docs(hive): add getting-started guide to hive docs sync",
+        "url": "https://github.com/kubestellar/docs/pull/6548",
+        "created_at": "2026-08-18T22:59:40Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 13
+    },
+    {
+      "name": "leaderboard, generation, failure",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "[leaderboard-gen-failure] Leaderboard generation workflow failing",
+        "url": "https://github.com/kubestellar/docs/issues/6264",
+        "created_at": "2026-07-09T15:13:32Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "rbac, role, permission",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "[sec-check] Over-permissive RBAC for nextra-rollout-sa in cluster-objects/rbac.yaml",
+        "url": "https://github.com/kubestellar/docs/issues/6251",
+        "created_at": "2026-07-08T19:12:50Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "label, workflow, verify",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🌱 Sync workflows from kubestellar/infra",
+        "url": "https://github.com/kubestellar/docs/pull/6559",
+        "created_at": "2026-08-23T00:23:21Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "chunk, js, kb",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[Auto-QA] Bundle has JS chunks over 300KB",
+        "url": "https://github.com/kubestellar/console/issues/23246",
+        "created_at": "2026-09-07T13:33:54Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "nil, pointer, potential",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[Auto-QA] Go nil-safety: 1 potential nil pointer issues",
+        "url": "https://github.com/kubestellar/console/issues/23219",
+        "created_at": "2026-09-06T04:39:15Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "px, inconsistent, spacing",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[Auto-QA] Inconsistent spacing values in styles",
+        "url": "https://github.com/kubestellar/console/issues/23180",
+        "created_at": "2026-09-05T07:30:31Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "pod, show, deployments",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🐛 /deployments shows 'Total Deployments: 0' while Pod Issues shows 76 — the deployment listing is never fetched",
+        "url": "https://github.com/kubestellar/console/issues/23107",
+        "created_at": "2026-09-03T17:33:26Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "container, directive, dockerfile",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[sec-check] MEDIUM: cluster-objects containers run as root — no USER directive in Dockerfile.rollout-checker, no securityContext in Kubernetes manifests",
+        "url": "https://github.com/kubestellar/docs/issues/5877",
+        "created_at": "2026-06-10T01:09:13Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "typescript, ts2882, 5.9.3",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[scanner] TypeScript 6 TS2882 error blocks typescript upgrade (docs#5820)",
+        "url": "https://github.com/kubestellar/docs/issues/5832",
+        "created_at": "2026-06-09T12:05:13Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "kb, navbar, component",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[architect] Navbar.tsx is a 68KB/1524-line god component — decompose into hooks and subcomponents",
+        "url": "https://github.com/kubestellar/docs/issues/5798",
+        "created_at": "2026-06-08T10:29:21Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "field, portable, overlay",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "docs(hive): document the AgentDefinition YAML fields (fixes #1930)",
+        "url": "https://github.com/kubestellar/docs/pull/6424",
+        "created_at": "2026-07-25T02:05:17Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "phrase, reformatted, line",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "📖 fix: restore missing words in Combined Status from WECs docs",
+        "url": "https://github.com/kubestellar/docs/pull/6414",
+        "created_at": "2026-07-23T07:11:26Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "diagram, clip, ascii",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 fix(hive docs): replace clipped ASCII relay diagram with mermaid",
+        "url": "https://github.com/kubestellar/docs/pull/6403",
+        "created_at": "2026-07-21T15:57:15Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
   "suggestions": {
     "deepen": [],
-    "stretch": []
+    "stretch": [
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Observability & Logs",
+        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
+        "description": "Log streaming, event timeline, alerting, notifications",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      }
+    ]
   },
   "activity_timeline": [
-    {
-      "month": "2025-08",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-09",
-      "issue_count": 0
-    },
     {
       "month": "2025-10",
       "issue_count": 0
@@ -100,12 +377,37 @@
     },
     {
       "month": "2026-06",
-      "issue_count": 0
+      "issue_count": 70
     },
     {
       "month": "2026-07",
-      "issue_count": 0
+      "issue_count": 155
+    },
+    {
+      "month": "2026-08",
+      "issue_count": 23
+    },
+    {
+      "month": "2026-09",
+      "issue_count": 38
     }
   ],
-  "repo_breakdown": []
+  "repo_breakdown": [
+    {
+      "repo": "docs",
+      "bug_issues": 61,
+      "feature_issues": 0,
+      "other_issues": 125,
+      "prs_opened": 65,
+      "prs_merged": 62
+    },
+    {
+      "repo": "console",
+      "bug_issues": 8,
+      "feature_issues": 27,
+      "other_issues": 0,
+      "prs_opened": 0,
+      "prs_merged": 0
+    }
+  ]
 }

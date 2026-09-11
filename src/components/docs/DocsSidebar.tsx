@@ -32,7 +32,6 @@ const GENERAL_SECTION_NAMES = GENERAL_SECTION_SLUGS.map(
 // Project display order and labels — each with a landing href for navigation links
 const PRIMARY_PROJECTS = [
   { id: 'console', label: 'KubeStellar Console', href: '/docs/console/readme' },
-  { id: 'hive', label: 'Hive', href: '/docs/hive/overview/introduction' },
   { id: 'kubestellar-mcp', label: 'KubeStellar MCP', href: '/docs/kubestellar-mcp/overview/intro' },
 ] as const;
 

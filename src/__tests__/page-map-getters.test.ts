@@ -10,7 +10,7 @@ import type { ProjectId } from '../config/versions'
  *
  * Existing page-map.test.ts exercises buildPageMap end-to-end for a subset
  * of projects but never asserts the exact return value of these two
- * helpers, which left several project-id branches (notably 'hive') and the
+ * helpers, which left several project-id branches and the
  * default fallthrough uncovered. Regressions here would silently point the
  * page map at the wrong folder, causing 404s across an entire project's
  * docs section.
@@ -27,7 +27,6 @@ const projectCases: Array<{ id: ProjectId; content: string; base: string }> = [
   { id: 'multi-plugin',     content: path.join(cwd, 'docs', 'content', 'multi-plugin'),     base: 'docs/multi-plugin' },
   { id: 'kubestellar-mcp',  content: path.join(cwd, 'docs', 'content', 'kubestellar-mcp'),  base: 'docs/kubestellar-mcp' },
   { id: 'console',          content: path.join(cwd, 'docs', 'content', 'console'),          base: 'docs/console' },
-  { id: 'hive',             content: path.join(cwd, 'docs', 'content', 'hive'),             base: 'docs/hive' },
   { id: 'kubestellar',      content: docsContentPath,                                       base: basePath }, // default arm
 ]
 
