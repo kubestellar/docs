@@ -50,12 +50,22 @@ export async function GET(
 
     const fileBuffer = fs.readFileSync(fullPath)
 
-    return new NextResponse(fileBuffer, {
-      headers: {
-        'Content-Type': mimeType,
-        'Cache-Control': 'public, max-age=31536000, immutable',
-      },
-    })
+    const headers: Record<string, string> = {
+      'Content-Type': mimeType,
+      'Cache-Control': 'public, max-age=31536000, immutable',
+    }
+
+    // SVGs served with image/svg+xml can execute JavaScript when opened
+    // top-level (contributor-committed SVG under docs/content/** would run as
+    // same-origin script on the docs origin). The global next.config.ts CSP
+    // permits script-src 'self' 'unsafe-inline', so we harden per-response for
+    // svg with a sandbox CSP that strips the SVG document of origin privileges.
+    if (ext === '.svg') {
+      headers['Content-Security-Policy'] =
+        "default-src 'none'; style-src 'unsafe-inline'; sandbox"
+    }
+
+    return new NextResponse(fileBuffer, { headers })
   } catch (error) {
     status = 500
     logger.error('docs-image request failed', {
