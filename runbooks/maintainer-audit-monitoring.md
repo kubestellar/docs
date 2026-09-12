@@ -15,11 +15,13 @@ which both open/update a dedup-tagged tracking issue on failure. Worse,
 the loop body does `exit 1` the instant a single `gh workflow run`
 dispatch fails — every maintainer later in the fixed `MAINTAINERS` array
 gets **no** audit dispatched for that week, and nothing surfaces this
-beyond a red X in the Actions tab. See
-[#6759](https://github.com/kubestellar/docs/issues/6759) for the tracked
-finding; the workflow-side `if: failure()` fix needs a maintainer with
-`workflows` permission to add, since agent tokens cannot write files under
-`.github/workflows/*`.
+beyond a red X in the Actions tab. [#6759](https://github.com/kubestellar/docs/issues/6759)
+tracked this originally but was auto-closed when its docs-only mitigation
+PR merged, before the workflow-side fix landed. See
+[#6896](https://github.com/kubestellar/docs/issues/6896) for the current
+open tracking issue and exact replacement YAML; the workflow-side
+`if: failure()` fix needs a maintainer with `workflows` permission to
+add, since agent tokens cannot write files under `.github/workflows/*`.
 
 ## Detecting a silent or partial failure manually
 
