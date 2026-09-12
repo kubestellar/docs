@@ -160,17 +160,16 @@ docs live under [`runbooks/`](./runbooks/):
   recovering from a bad automated version-branch/config push.
 - [`runbooks/scorecard-monitoring.md`](./runbooks/scorecard-monitoring.md),
   [`runbooks/stale-workflow-monitoring.md`](./runbooks/stale-workflow-monitoring.md),
-  and [`runbooks/fuzz-mdx-failure-detection.md`](./runbooks/fuzz-mdx-failure-detection.md) —
-  detecting silently-failed scheduled workflow runs.
+  [`runbooks/fuzz-mdx-failure-detection.md`](./runbooks/fuzz-mdx-failure-detection.md),
+  [`runbooks/maintainer-audit-monitoring.md`](./runbooks/maintainer-audit-monitoring.md),
+  and [`runbooks/gh-aw-stop-time-monitoring.md`](./runbooks/gh-aw-stop-time-monitoring.md) —
+  detecting silently-failed or silently-skipped scheduled workflow runs.
 - [`runbooks/api-error-rate-latency.md`](./runbooks/api-error-rate-latency.md) —
   diagnosing the `DocsApiHighErrorRate` / `DocsApiHighRequestLatency`
   alerts (`cluster-objects/prometheusrule.yaml`).
 - [`runbooks/acmm-history-failure-monitoring.md`](./runbooks/acmm-history-failure-monitoring.md) —
   detecting and resolving a stale/unresolved `[acmm-history-failure]`
   alert from `generate-acmm-history.yml`.
-- [`runbooks/netlify-build-failure.md`](./runbooks/netlify-build-failure.md) —
-  diagnosing and recovering from a build-time Netlify deploy failure
-  alerted by `netlify-error-reporter.yml`.
 
 To record a production incident affecting the docs site, open an issue
 using the "Incident Postmortem" template
