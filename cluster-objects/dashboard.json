@@ -64,6 +64,20 @@
           "refId": "A"
         }
       ]
+    },
+    {
+      "id": 5,
+      "title": "Scrape target up",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 12, "x": 0, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "targets": [
+        {
+          "expr": "up{job=\"kubestellar-docs\"}",
+          "legendFormat": "up",
+          "refId": "A"
+        }
+      ]
     }
   ],
   "templating": {

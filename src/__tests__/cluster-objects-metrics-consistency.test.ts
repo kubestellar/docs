@@ -12,7 +12,7 @@ import {
 // previously uncaught: (1) plain YAML syntax errors, since nothing parses
 // these manifests in CI before they reach a cluster, and (2) silent drift
 // between the metric/label names actually emitted by src/lib/metrics.ts and
-// the ones cluster-objects/prometheusrule.yaml assumes exist — a rename in
+// the ones cluster-objects/alerts.yaml assumes exist — a rename in
 // one place without the other would leave the alert rules permanently
 // non-firing (referencing a metric that no longer exists) with no signal.
 const clusterObjectsDir = path.join(process.cwd(), "cluster-objects")
@@ -37,7 +37,7 @@ type AnyRecord = Record<string, any>
 describe("cluster-objects manifests stay consistent with src/lib/metrics.ts", () => {
   it("parses as valid YAML", () => {
     expect(() => loadYaml("servicemonitor.yaml")).not.toThrow()
-    expect(() => loadYaml("prometheusrule.yaml")).not.toThrow()
+    expect(() => loadYaml("alerts.yaml")).not.toThrow()
     // deployment.yaml is multi-document (Deployment, Service, Ingress);
     // loadAll validates every document, not just the first.
     const docs = loadYamlAll("deployment.yaml")
@@ -83,13 +83,18 @@ describe("cluster-objects manifests stay consistent with src/lib/metrics.ts", ()
     )
   })
 
-  it("prometheusrule.yaml only references metric and label names that exist in src/lib/metrics.ts", () => {
-    const doc = loadYaml("prometheusrule.yaml") as AnyRecord
+  it("alerts.yaml only references metric and label names that exist in src/lib/metrics.ts", () => {
+    const doc = loadYaml("alerts.yaml") as AnyRecord
     const knownMetricNames = [httpRequestsTotal.name, httpRequestDurationSeconds.name]
     const knownLabelNames = new Set([
       ...httpRequestsTotal.labelNames,
       ...httpRequestDurationSeconds.labelNames,
     ])
+    // "up" is Prometheus's own built-in scrape-target-health metric (not
+    // declared in metrics.ts), used by the DocsApiMetricsTargetDown alert.
+    // Its only label ("job") is likewise built-in, not app-defined.
+    const builtinMetricNames = ["up"]
+    const builtinLabelNames = new Set(["job"])
 
     const groups = doc.spec?.groups ?? []
     expect(groups.length).toBeGreaterThan(0)
@@ -101,19 +106,21 @@ describe("cluster-objects manifests stay consistent with src/lib/metrics.ts", ()
       const expr: string = rule.expr
       // Every metric token referenced by the expression must be one of the
       // two known metrics (the histogram is referenced via its `_bucket`
-      // suffix in `histogram_quantile` calls).
-      const referencesKnownMetric = knownMetricNames.some(name =>
+      // suffix in `histogram_quantile` calls) or a built-in Prometheus
+      // metric such as `up`.
+      const referencesKnownMetric = [...knownMetricNames, ...builtinMetricNames].some(name =>
         expr.includes(name)
       )
       expect(referencesKnownMetric).toBe(true)
 
       // Any label matcher used in the expression (e.g. status_class="5xx")
-      // must be a label this metric family actually has.
+      // must be a label this metric family actually has, or a built-in
+      // Prometheus label.
       const labelMatches = [...expr.matchAll(/(\w+)\s*=\s*"[^"]*"/g)].map(
         m => m[1]
       )
       for (const label of labelMatches) {
-        expect(knownLabelNames.has(label)).toBe(true)
+        expect(knownLabelNames.has(label) || builtinLabelNames.has(label)).toBe(true)
       }
     }
   })

@@ -50,3 +50,18 @@ spec:
             description: >-
               The 95th percentile request duration for docs API route
               {{ $labels.route }} has exceeded 2s for 10 minutes.
+        - alert: DocsApiMetricsTargetDown
+          expr: up{job="kubestellar-docs"} == 0
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Docs site scrape target is down"
+            description: >-
+              Prometheus has been unable to scrape the docs site's
+              /api/metrics endpoint (job "kubestellar-docs") for 10 minutes.
+              While this target is down, DocsApiHighErrorRate and
+              DocsApiHighLatency evaluate over no data and cannot fire, so a
+              total metrics blackout (crash-looping pod, /api/metrics
+              regression, or a ServiceMonitor/selector mismatch) would
+              otherwise go undetected.

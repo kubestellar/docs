@@ -2,7 +2,7 @@
 
 ## Scope
 
-Applies to the three alerts defined in `cluster-objects/prometheusrule.yaml`
+Applies to the three alerts defined in `cluster-objects/alerts.yaml`
 over the docs site's existing `/api/metrics` output
 (`src/lib/metrics.ts`), which only instruments the `search`
 (`src/app/api/search/route.ts`) and `docs-image`
@@ -55,7 +55,7 @@ does not assume any specific monitoring backend is provisioned.
    `route="docs-image"` in Prometheus/Grafana — the alert's
    `histogram_quantile` aggregates both routes together, so the raw
    per-route buckets are needed to isolate which one regressed.
-   `cluster-objects/grafana-dashboard.json` has a ready-made "P95 request
+   `cluster-objects/dashboard.json` has a ready-made "P95 request
    latency by route" panel for this exact comparison (import it into a
    Grafana instance already pointed at the Prometheus scraping this
    deployment — it does not configure a data source itself).
@@ -72,6 +72,10 @@ does not assume any specific monitoring backend is provisioned.
    latency without any content or code defect.
 
 ## Detecting and diagnosing `DocsApiMetricsTargetDown`
+
+`cluster-objects/dashboard.json` has a "Scrape target up" stat panel
+(`up{job="kubestellar-docs"}`) for confirming this at a glance before
+digging into pod/exec-level checks below.
 
 1. Check pod status first (`kubectl get pods -n docs -l app=kubestellar-docs`)
    — a crash-looping or pending pod is the most common cause and is a

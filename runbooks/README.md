@@ -8,7 +8,7 @@ looking at.
 | --- | --- | --- |
 | [`slo.md`](slo.md) | Establishing the readiness SLO/SLI for the production docs site and how the (proposed) `healthz-monitor` alerting would work. | Start here for any production readiness question. |
 | [`deploy-rollback.md`](deploy-rollback.md) | The live site is serving broken/stale content or a bad deploy went out (Netlify or container path) and needs to be rolled back. | `slo.md` |
-| [`api-error-rate-latency.md`](api-error-rate-latency.md) | The `DocsApiHighErrorRate` or `DocsApiHighRequestLatency` alert fires. | `cluster-objects/prometheusrule.yaml` `runbook_url` annotations |
+| [`api-error-rate-latency.md`](api-error-rate-latency.md) | The `DocsApiHighErrorRate` or `DocsApiHighRequestLatency` alert fires. | `cluster-objects/alerts.yaml` `runbook_url` annotations |
 | [`netlify-build-failure.md`](netlify-build-failure.md) | A Netlify build fails: a `[netlify-deploy-failure]` issue opens for a direct-to-main commit, or `netlify-error-reporter.yml` comments on a PR (no direct link from the alert yet — see [#6783](https://github.com/kubestellar/docs/issues/6783)). | — |
 | [`version-branch-rollback.md`](version-branch-rollback.md) | The version picker shows a wrong/missing version, `versions.ts`/`shared.json` changed unexpectedly, or `create-version-branch.yml`/`sync-console-release-versions.yml` needs investigating. | — |
 | [`scorecard-monitoring.md`](scorecard-monitoring.md) | The weekly OpenSSF Scorecard scan (`scorecard.yml`) may have silently failed (no automated alert exists yet — see [#6724](https://github.com/kubestellar/docs/issues/6724)). | — |

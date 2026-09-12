@@ -42,10 +42,16 @@ if (declaredMetrics.length === 0) {
   fail(`No metric names found in ${path.relative(repoRoot, metricsSourcePath)}`)
 }
 
+// "up" is Prometheus's own built-in scrape-target-health metric (not
+// declared in metrics.ts), used for a target-down alert. It's allow-listed
+// here rather than treated as an unknown/typo'd metric name.
+const BUILTIN_PROMETHEUS_METRICS = ["up"]
+
 const knownMetricPattern = new RegExp(
   "\\b(" +
     declaredMetrics
       .map((name) => `${name}(_bucket|_sum|_count)?`)
+      .concat(BUILTIN_PROMETHEUS_METRICS)
       .join("|") +
     ")\\b"
 )
