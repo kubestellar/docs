@@ -36,6 +36,22 @@ Applies to the `kubestellar/docs` Next.js site, which ships through two paths:
   serving stale content because the latest commit never finished a
   successful build), see `runbooks/netlify-build-failure.md` instead of
   the rollback steps below.
+- **Neither of the above catches a "stuck on stale content" deploy.**
+  `.github/workflows/netlify-error-reporter.yml` only runs when GitHub
+  receives a `status` event from Netlify's GitHub integration — if that
+  integration itself stops sending status events (revoked/misconfigured
+  App installation, broken webhook, Netlify-side outage in the
+  status-posting path), the workflow never runs and produces zero signal.
+  Meanwhile `GET /api/healthz` keeps reporting `200` the whole time,
+  because the content tree it checks is still present and non-empty, just
+  from an old commit — it has no way to know `main` stopped deploying. If
+  the docs site looks stuck on old content with no matching commit/PR
+  reporting a Netlify failure, treat this as a possible silent-integration
+  failure and check the Netlify dashboard directly rather than trusting
+  the absence of a `netlify-error-reporter` alert. Tracked in
+  [#6778](https://github.com/kubestellar/docs/issues/6778) for a
+  maintainer to add a scheduled check comparing the latest Netlify
+  deploy's `commit_ref` against `main`'s HEAD SHA.
 - User-visible signals: docs pages rendering empty/404 for known-good paths,
   or `/api/search` returning no results across the board.
 - Until the automated `healthz-monitor` workflow above exists, run
