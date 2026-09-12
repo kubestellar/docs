@@ -13,9 +13,11 @@ import { renderHook, waitFor } from '@testing-library/react'
 //   - all 3 shields.io endpoints return 200 with JSON `{ value: '<n>' }`
 //     -> stars/forks/watchers are all updated from the fallback defaults.
 //   - a non-2xx response is skipped (nulled) so the fallback survives
-//     for that individual metric.
+//     for that individual metric, and records one bounded console.warn
+//     (metric + status code, no response body).
 //   - a rejected fetch is skipped via Promise.allSettled without
-//     touching state at all.
+//     touching state at all, and records one bounded console.warn
+//     (metric + error message, no stack trace).
 //   - a response where `data.value` is falsy is skipped (mirrors the
 //     `if (r.value.value)` filter).
 
@@ -70,13 +72,14 @@ describe('useGithubStats — effect body under jsdom', () => {
     )
   })
 
-  it('keeps the fallback for a metric whose response is not ok', async () => {
+  it('keeps the fallback for a metric whose response is not ok, and records a bounded warning', async () => {
     const fetchMock = vi.fn(async (url: string) => {
       if (url === shieldsUrl('stars')) return jsonRes({}, { ok: false, status: 503 })
       if (url === shieldsUrl('forks')) return jsonRes({ value: '99' })
       return jsonRes({ value: '7' })
     })
     globalThis.fetch = fetchMock as unknown as typeof fetch
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
 
     const { useGithubStats } = await import('../components/navbar/useGithubStats')
     const { result } = renderHook(() => useGithubStats())
@@ -86,15 +89,22 @@ describe('useGithubStats — effect body under jsdom', () => {
       expect(result.current.forks).toBe('99')
     })
     expect(result.current).toEqual({ stars: '30', forks: '99', watchers: '7' })
+    // A non-ok response is no longer silent: exactly one bounded warning,
+    // naming the metric and status code (no response body/headers).
+    expect(warnSpy).toHaveBeenCalledTimes(1)
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('[useGithubStats] shields.io stars badge fetch failed: HTTP 503')
+    )
   })
 
-  it('leaves state untouched for a rejected fetch (Promise.allSettled skips it)', async () => {
+  it('leaves state untouched for a rejected fetch, and records a bounded warning (Promise.allSettled skips state update)', async () => {
     const fetchMock = vi.fn(async (url: string) => {
       if (url === shieldsUrl('stars')) throw new Error('shields down')
       if (url === shieldsUrl('forks')) return jsonRes({ value: '10' })
       return jsonRes({ value: '2' })
     })
     globalThis.fetch = fetchMock as unknown as typeof fetch
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
 
     const { useGithubStats } = await import('../components/navbar/useGithubStats')
     const { result } = renderHook(() => useGithubStats())
@@ -105,6 +115,12 @@ describe('useGithubStats — effect body under jsdom', () => {
     // stars still on fallback because the fulfilled-but-null branch never fires
     // (the throw makes it a rejected result, filtered out by the `fulfilled` guard).
     expect(result.current).toEqual({ stars: '30', forks: '10', watchers: '2' })
+    // The rejection is no longer silently dropped: exactly one bounded
+    // warning naming the metric (no stack trace, no raw error object).
+    expect(warnSpy).toHaveBeenCalledTimes(1)
+    expect(warnSpy).toHaveBeenCalledWith(
+      expect.stringContaining('[useGithubStats] shields.io stars badge fetch rejected: Error: shields down')
+    )
   })
 
   it('keeps the fallback when data.value is falsy (empty string filtered by `if (r.value.value)`)', async () => {

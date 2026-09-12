@@ -33,7 +33,12 @@ export function useGithubStats(): GithubStats {
       const results = await Promise.allSettled(
         endpoints.map(async ({ key, metric }) => {
           const res = await fetch(`${SHIELDS_BASE}/${metric}/${REPO}.json`);
-          if (!res.ok) return { key, value: null };
+          if (!res.ok) {
+            console.warn(
+              `[useGithubStats] shields.io ${metric} badge fetch failed: HTTP ${res.status}`
+            );
+            return { key, value: null };
+          }
           const data = await res.json();
           return { key, value: data.value as string };
         })
@@ -41,11 +46,17 @@ export function useGithubStats(): GithubStats {
 
       setGithubStats(prev => {
         const next = { ...prev };
-        for (const r of results) {
-          if (r.status === "fulfilled" && r.value.value) {
+        results.forEach((r, i) => {
+          if (r.status === "rejected") {
+            console.warn(
+              `[useGithubStats] shields.io ${endpoints[i].metric} badge fetch rejected: ${String(r.reason)}`
+            );
+            return;
+          }
+          if (r.value.value) {
             next[r.value.key] = r.value.value;
           }
-        }
+        });
         return next;
       });
     };
