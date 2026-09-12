@@ -37,6 +37,7 @@ spec:
               More than 5% of requests to docs API route {{ $labels.route }}
               returned a 5xx status over the last 5 minutes, sustained for 10
               minutes.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
         - alert: DocsApiHighLatency
           expr: >-
             histogram_quantile(0.95,
@@ -50,3 +51,4 @@ spec:
             description: >-
               The 95th percentile request duration for docs API route
               {{ $labels.route }} has exceeded 2s for 10 minutes.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"

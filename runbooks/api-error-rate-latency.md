@@ -25,6 +25,19 @@ All three alerts only fire if a Prometheus Operator is already scraping
 this namespace via `cluster-objects/servicemonitor.yaml` — this runbook
 does not assume any specific monitoring backend is provisioned.
 
+Two other `PrometheusRule` manifests in `cluster-objects/` —
+`prometheusrule-docs-api.yaml` (`DocsApiHighErrorRatio`,
+`DocsApiHighLatencyP95`) and `alerts.yaml` (`DocsApiHighErrorRate`,
+`DocsApiHighLatency`) — evaluate the same underlying
+`docs_api_requests_total` / `docs_api_request_duration_seconds` metrics
+with different thresholds (10%/2s and 5%/2s, respectively, vs. this
+runbook's 5%/1s) and now also link here via `runbook_url` since they were
+previously undocumented. If you land on this runbook from one of those
+alerts, use the same diagnosis steps below, but note the firing
+condition may differ from what's described above — see
+[#6884](https://github.com/kubestellar/docs/issues/6884) for the
+consolidation this drift needs.
+
 ## Detecting and diagnosing `DocsApiHighErrorRate`
 
 1. Both instrumented routes wrap their handler body in a `catch` that
