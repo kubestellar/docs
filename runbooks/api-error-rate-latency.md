@@ -21,6 +21,31 @@ over the docs site's existing `/api/metrics` output
   silent, so a crash-looping pod, an `/api/metrics` regression, or a
   `ServiceMonitor`/selector mismatch would otherwise go undetected.
 
+### Other PrometheusRule resources over the same metrics
+
+Two other files independently define alerts over the same
+`docs_api_requests_total` / `docs_api_request_duration_seconds` metrics,
+added by separate PRs (#6741, #6745) without being reconciled against
+`prometheusrule.yaml` above:
+
+- `cluster-objects/alerts.yaml` (`kubestellar-docs-alerts`): per-route
+  `DocsApiHighErrorRate` (>5%) and `DocsApiHighLatency` (p95 > 2s).
+- `cluster-objects/prometheusrule-docs-api.yaml`
+  (`kubestellar-docs-api-alerts`): `DocsApiHighErrorRatio` (4xx+5xx >
+  10%) and `DocsApiHighLatencyP95` (p95 > 2s).
+
+All three files are valid, independently-applicable resources with
+different `metadata.name` values, so a cluster operator could apply more
+than one at once. If that happens, expect duplicate and inconsistent
+paging for the same underlying condition (different alert names and
+thresholds — 5% vs. 10% error-rate, 1s vs. 2s p95 latency — for what is
+effectively the same symptom). **Recommendation:** an operator/maintainer
+should pick one PrometheusRule as canonical for this repo and remove or
+merge the others; until that happens, treat any of the six alert names
+above as covered by this runbook, and confirm which file(s) are actually
+applied in your cluster before assuming a given threshold governs
+production.
+
 All three alerts only fire if a Prometheus Operator is already scraping
 this namespace via `cluster-objects/servicemonitor.yaml` — this runbook
 does not assume any specific monitoring backend is provisioned.

@@ -6,6 +6,14 @@
 # not install an exporter, does not configure a backend, and does not
 # send data off-box. No observability backend is confirmed for this repo;
 # this resource is provided for an operator-managed Prometheus, if present.
+#
+# NOTE: cluster-objects/alerts.yaml and cluster-objects/prometheusrule.yaml
+# also define alerts over these same two metrics, with different names
+# and thresholds. If an operator applies more than one of these
+# PrometheusRule resources at once, expect duplicate/conflicting pages for
+# the same underlying condition — see
+# runbooks/api-error-rate-latency.md for the full list and a
+# consolidation recommendation.
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -37,6 +45,7 @@ spec:
               returned a 4xx or 5xx status over the last 5 minutes,
               sustained for 10 minutes. See src/lib/metrics.ts and
               src/lib/logger.ts for the emitting instrumentation.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
         - alert: DocsApiHighLatencyP95
           expr: >-
             histogram_quantile(0.95, sum by (le) (rate(docs_api_request_duration_seconds_bucket[5m])))
@@ -50,3 +59,4 @@ spec:
               The 95th percentile request duration across instrumented
               docs site /api routes has exceeded 2 seconds, sustained for
               10 minutes.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"

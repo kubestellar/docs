@@ -15,6 +15,14 @@
 # `route` and `status_class` are fixed, bounded label sets (see the
 # cardinality note in that file), so these rules cannot grow unbounded
 # label cardinality.
+#
+# NOTE: cluster-objects/alerts.yaml and
+# cluster-objects/prometheusrule-docs-api.yaml also define alerts over
+# these same two metrics, with different names and thresholds. If an
+# operator applies more than one of these PrometheusRule resources at
+# once, expect duplicate/conflicting pages for the same underlying
+# condition — see runbooks/api-error-rate-latency.md for the full list
+# and a consolidation recommendation.
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:

@@ -10,6 +10,14 @@
 # docs_api_request_duration_seconds, whose `route`/`status_class` labels
 # come from the fixed ApiRoute union and status-class set in
 # src/lib/metrics.ts (bounded cardinality, no user input in labels).
+#
+# NOTE: cluster-objects/prometheusrule.yaml and
+# cluster-objects/prometheusrule-docs-api.yaml also define alerts over
+# these same two metrics, with different names and thresholds. If an
+# operator applies more than one of these PrometheusRule resources at
+# once, expect duplicate/conflicting pages for the same underlying
+# condition — see runbooks/api-error-rate-latency.md for the full list
+# and a consolidation recommendation.
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -37,6 +45,7 @@ spec:
               More than 5% of requests to docs API route {{ $labels.route }}
               returned a 5xx status over the last 5 minutes, sustained for 10
               minutes.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
         - alert: DocsApiHighLatency
           expr: >-
             histogram_quantile(0.95,
@@ -50,3 +59,4 @@ spec:
             description: >-
               The 95th percentile request duration for docs API route
               {{ $labels.route }} has exceeded 2s for 10 minutes.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
