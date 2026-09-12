@@ -16,6 +16,7 @@ looking at.
 | [`fuzz-mdx-failure-detection.md`](fuzz-mdx-failure-detection.md) | The weekly `sanitizeHtmlForMdx` fuzz harness (`fuzz-mdx.yml`) may have silently failed or found a sanitizer crash/bypass with no notification (no automated alert exists yet — see [#6715](https://github.com/kubestellar/docs/issues/6715)). | — |
 | [`maintainer-audit-monitoring.md`](maintainer-audit-monitoring.md) | The weekly maintainer audit dispatcher (`run-all-maintainer-audits.yml`) may have silently failed or partially skipped maintainers (see [#6759](https://github.com/kubestellar/docs/issues/6759)). | — |
 | [`acmm-history-failure-monitoring.md`](acmm-history-failure-monitoring.md) | The scheduled ACMM history generator (`generate-acmm-history.yml`) fired its `[acmm-history-failure]` issue, or you need to confirm the alert's known gaps. | — |
+| [`gh-aw-stop-time-monitoring.md`](gh-aw-stop-time-monitoring.md) | A `gh-aw`-generated scheduled workflow (e.g. `devstats.lock.yml`, `daily-team-status.lock.yml`) shows a "skipped" run with no alert — its hard-coded stop-time may have expired (no automated alert exists yet — see [#6769](https://github.com/kubestellar/docs/issues/6769)). | — |
 
 For a confirmed production incident, use the "Incident Postmortem" issue
 template (`.github/ISSUE_TEMPLATE/incident_postmortem.yaml`) once
