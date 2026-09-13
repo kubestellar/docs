@@ -63,7 +63,11 @@ async function renderDocsRoute(slug: string[]): Promise<string> {
   return renderToStaticMarkup(createElement(DocsProvider, null, page))
 }
 
-const RENDER_TIMEOUT_MS = 60_000
+// Isolated runtime for the slow known-project rendering path is ~40s
+// (real filesystem read + Next.js SSR + Nextra MDX pipeline). Under
+// full-suite load with 100+ concurrent worker spawns the 60s default
+// is not reliable; bump to 120s for the slow paths.
+const RENDER_TIMEOUT_MS = 120_000
 
 describe('docs page branch coverage', () => {
   it(

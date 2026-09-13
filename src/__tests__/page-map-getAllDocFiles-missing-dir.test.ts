@@ -24,7 +24,9 @@ describe('getAllDocFiles — nonexistent-dir defensive early return', () => {
     vi.resetModules()
   })
 
-  it('buildPageMap returns without throwing when contentPath does not exist', async () => {
+  it(
+    'buildPageMap returns without throwing when contentPath does not exist',
+    async () => {
     // Force existsSync to return false for every path so getAllDocFiles
     // takes the early-return arm on the very first call. readdirSync is
     // stubbed to a throwing implementation to guarantee that if the guard
@@ -66,5 +68,12 @@ describe('getAllDocFiles — nonexistent-dir defensive early return', () => {
     // readdirSync (the "throwing" stub above). Assert we do NOT.
     expect(msg).not.toContain('ENOENT')
     expect(msg).not.toContain('no such file or directory')
-  })
+    },
+    // Isolated: ~3s. Under full-suite load with 100+ concurrent worker
+    // spawns and a cold dynamic import of app/docs/page-map (which pulls
+    // in Next.js server + Nextra + MDX), the 5s default is not reliable.
+    // The test does no real work — the timeout guards against fs mocking
+    // regressions, not against slow execution.
+    30_000,
+  )
 })
