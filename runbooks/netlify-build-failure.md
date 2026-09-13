@@ -21,6 +21,19 @@ regression in an otherwise-successful deploy (see
   a maintainer with `workflows` permission to add to the workflow file,
   since agent tokens cannot write under `.github/workflows/*`. Until then,
   treat any `[netlify-deploy-failure]` issue as pointing here.
+- **Check for more than one open `[netlify-deploy-failure]` issue before
+  assuming this is a new incident.** The workflow's dedup check only lists
+  the 20 most recently *created* open issues+PRs repo-wide and greps them
+  client-side for the tag — it is not a title search, so an
+  already-tracked `[netlify-deploy-failure]` issue silently drops off that
+  page (and stops receiving "still failing" comments) once ~20 other
+  issues/PRs have been opened after it, which routinely happens within a
+  few days in this repo. A second open issue with this tag usually means
+  the first one's failure was never actually resolved — treat both as one
+  incident, close the older one as a duplicate once triaged, and diagnose
+  using whichever has the most recent deploy ID. Tracked in
+  [#6914](https://github.com/kubestellar/docs/issues/6914) for a
+  maintainer to fix (requires editing the workflow file).
 - **Impact while open:** the live site is serving whatever content was
   published by the *last successful* deploy — not the latest commit on
   `main`. This is a content-staleness risk, not a site-down incident; the
