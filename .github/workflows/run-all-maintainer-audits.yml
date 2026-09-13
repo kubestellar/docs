@@ -12,9 +12,11 @@ jobs:
   audit-all:
     # actions:write needed to trigger maintainer-metrics.lock.yml workflow via gh workflow run
     # This is the minimum permission required for workflow_dispatch operations
+    # issues:write needed by the failure alert step to open or comment on a tracking issue
     permissions:
       contents: read
       actions: write
+      issues: write
     runs-on: ubuntu-latest
 
     steps:
@@ -62,3 +64,55 @@ jobs:
 
           echo ""
           echo "🎉 All maintainer audits have been triggered!"
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const tag = '[maintainer-audit-failure]';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'ci-failure',
+              per_page: 20,
+            });
+            const existing = issues.find(i => i.title.includes(tag));
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body: `Still failing as of ${new Date().toISOString().slice(0, 10)}. [Run](${runUrl})`,
+              });
+              return;
+            }
+            try {
+              await github.rest.issues.getLabel({ owner: context.repo.owner, repo: context.repo.repo, name: 'ci-failure' });
+            } catch {
+              await github.rest.issues.createLabel({ owner: context.repo.owner, repo: context.repo.repo, name: 'ci-failure', color: 'b60205' });
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `${tag} Weekly maintainer audits workflow failing`,
+              body: [
+                '## Weekly maintainer audits are failing',
+                '',
+                `**Run:** [${context.runId}](${runUrl})`,
+                `**Date:** ${new Date().toISOString().slice(0, 10)}`,
+                '',
+                'Run All Maintainer Audits failed while triggering `maintainer-metrics.lock.yml`. Some or all of this week\'s maintainer audits were not started; check the run log for the maintainer it stopped at.',
+                '',
+                '### Re-run',
+                '```bash',
+                'gh workflow run run-all-maintainer-audits.yml --repo kubestellar/docs',
+                '```',
+                '',
+                '> Auto-generated. This issue will receive comments on subsequent failures.',
+              ].join('\n'),
+              labels: ['ci-failure'],
+            });
