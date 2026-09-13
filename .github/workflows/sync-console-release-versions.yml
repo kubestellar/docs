@@ -14,6 +14,8 @@ jobs:
       # WORKFLOW_SYNC_TOKEN used for all write operations; GITHUB_TOKEN only needs read
       contents: read
       pull-requests: read
+      # issues:write for the failure alert step (GITHUB_TOKEN)
+      issues: write
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.WORKFLOW_SYNC_TOKEN }}
@@ -151,3 +153,55 @@ jobs:
             --body "$PR_BODY" \
             --base main \
             --head sync-console-release-versions
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const tag = '[sync-console-versions-failure]';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'ci-failure',
+              per_page: 20,
+            });
+            const existing = issues.find(i => i.title.includes(tag));
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body: `Still failing as of ${new Date().toISOString().slice(0, 10)}. [Run](${runUrl})`,
+              });
+              return;
+            }
+            try {
+              await github.rest.issues.getLabel({ owner: context.repo.owner, repo: context.repo.repo, name: 'ci-failure' });
+            } catch {
+              await github.rest.issues.createLabel({ owner: context.repo.owner, repo: context.repo.repo, name: 'ci-failure', color: 'b60205' });
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `${tag} Sync Console Release Versions workflow failing`,
+              body: [
+                '## Console release version sync is failing',
+                '',
+                `**Run:** [${context.runId}](${runUrl})`,
+                `**Date:** ${new Date().toISOString().slice(0, 10)}`,
+                '',
+                'The daily Sync Console Release Versions run failed. New console releases may be missing from the docs version picker until it succeeds.',
+                '',
+                '### Re-run',
+                '```bash',
+                'gh workflow run sync-console-release-versions.yml --repo kubestellar/docs',
+                '```',
+                '',
+                '> Auto-generated. This issue will receive comments on subsequent failures.',
+              ].join('\n'),
+              labels: ['ci-failure'],
+            });
