@@ -85,10 +85,25 @@ describe("cluster-objects manifests stay consistent with src/lib/metrics.ts", ()
 
   it("prometheusrule.yaml only references metric and label names that exist in src/lib/metrics.ts", () => {
     const doc = loadYaml("prometheusrule.yaml") as AnyRecord
-    const knownMetricNames = [httpRequestsTotal.name, httpRequestDurationSeconds.name]
+    // Prometheus built-in metrics that any scrape target automatically
+    // exposes (see prometheus.io/docs/concepts/jobs_instances). These are
+    // legitimate to reference from alert rules without a corresponding
+    // definition in src/lib/metrics.ts.
+    const prometheusBuiltinMetrics = ["up"]
+    const knownMetricNames = [
+      httpRequestsTotal.name,
+      httpRequestDurationSeconds.name,
+      ...prometheusBuiltinMetrics,
+    ]
+    // `job` and `instance` are labels Prometheus attaches to every scraped
+    // series (from scrape_configs.job_name / the target endpoint), so they
+    // are always available even though src/lib/metrics.ts does not declare
+    // them.
+    const prometheusBuiltinLabels = ["job", "instance"]
     const knownLabelNames = new Set([
       ...httpRequestsTotal.labelNames,
       ...httpRequestDurationSeconds.labelNames,
+      ...prometheusBuiltinLabels,
     ])
 
     const groups = doc.spec?.groups ?? []
@@ -101,14 +116,15 @@ describe("cluster-objects manifests stay consistent with src/lib/metrics.ts", ()
       const expr: string = rule.expr
       // Every metric token referenced by the expression must be one of the
       // two known metrics (the histogram is referenced via its `_bucket`
-      // suffix in `histogram_quantile` calls).
+      // suffix in `histogram_quantile` calls) or a Prometheus built-in.
       const referencesKnownMetric = knownMetricNames.some(name =>
         expr.includes(name)
       )
       expect(referencesKnownMetric).toBe(true)
 
       // Any label matcher used in the expression (e.g. status_class="5xx")
-      // must be a label this metric family actually has.
+      // must be a label this metric family actually has, or a
+      // Prometheus-attached target label.
       const labelMatches = [...expr.matchAll(/(\w+)\s*=\s*"[^"]*"/g)].map(
         m => m[1]
       )
