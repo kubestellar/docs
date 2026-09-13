@@ -33,6 +33,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      # issues:write for the scheduled-run failure alert step
+      issues: write
     timeout-minutes: 30
     steps:
       - name: Checkout repository
@@ -65,3 +67,55 @@ jobs:
           path: /tmp/fuzz-*.log
           if-no-files-found: ignore
           retention-days: 14
+
+      - name: Create issue on failure
+        if: failure() && github.event_name == 'schedule'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const tag = '[fuzz-mdx-failure]';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'ci-failure',
+              per_page: 20,
+            });
+            const existing = issues.find(i => i.title.includes(tag));
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body: `Still failing as of ${new Date().toISOString().slice(0, 10)}. [Run](${runUrl})`,
+              });
+              return;
+            }
+            try {
+              await github.rest.issues.getLabel({ owner: context.repo.owner, repo: context.repo.repo, name: 'ci-failure' });
+            } catch {
+              await github.rest.issues.createLabel({ owner: context.repo.owner, repo: context.repo.repo, name: 'ci-failure', color: 'b60205' });
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `${tag} Weekly MDX sanitizer fuzz run failing`,
+              body: [
+                '## Weekly MDX sanitizer fuzz run is failing',
+                '',
+                `**Run:** [${context.runId}](${runUrl})`,
+                `**Date:** ${new Date().toISOString().slice(0, 10)}`,
+                '',
+                'The scheduled fuzz run for sanitizeHtmlForMdx failed, which may indicate a sanitizer regression. The fuzz-failure-log artifact on the run has the details.',
+                '',
+                '### Re-run',
+                '```bash',
+                'gh workflow run fuzz-mdx.yml --repo kubestellar/docs',
+                '```',
+                '',
+                '> Auto-generated. This issue will receive comments on subsequent failures.',
+              ].join('\n'),
+              labels: ['ci-failure'],
+            });
