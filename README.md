@@ -170,6 +170,9 @@ docs live under [`runbooks/`](./runbooks/):
 - [`runbooks/acmm-history-failure-monitoring.md`](./runbooks/acmm-history-failure-monitoring.md) —
   detecting and resolving a stale/unresolved `[acmm-history-failure]`
   alert from `generate-acmm-history.yml`.
+- [`runbooks/ci-failure-label-stale-exemption.md`](./runbooks/ci-failure-label-stale-exemption.md) —
+  manually protecting `ci-failure`-labeled failure-tracking issues from
+  silent stale-bot auto-close.
 
 To record a production incident affecting the docs site, open an issue
 using the "Incident Postmortem" template
