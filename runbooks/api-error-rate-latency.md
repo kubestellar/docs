@@ -72,6 +72,19 @@ consolidation this drift needs.
    latency by route" panel for this exact comparison (import it into a
    Grafana instance already pointed at the Prometheus scraping this
    deployment — it does not configure a data source itself).
+
+   Note: `cluster-objects/dashboard.json` and
+   `cluster-objects/dashboard-docs-api.json` also visualize these same
+   metrics but with drifted titles, panel layouts, and (for the error
+   panel) a different definition of "error" — 5xx-only in
+   `dashboard.json`/`grafana-dashboard.json` vs. 4xx+5xx in
+   `dashboard-docs-api.json`. Only `grafana-dashboard.json` has a
+   scrape-target-up panel matching `DocsApiMetricsTargetDown`. If you're
+   looking at one of the other two during an incident, confirm which
+   dashboard is actually imported into the live Grafana instance before
+   trusting its error-rate reading against this alert — see
+   [#6891](https://github.com/kubestellar/docs/issues/6891) for the
+   tracked drift.
 2. For `search`: elevated latency usually indicates a larger-than-normal
    search index, a slow/uncached parse of the query, or resource
    contention on the instance (check pod CPU/memory alongside this
