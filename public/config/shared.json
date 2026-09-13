@@ -146,8 +146,8 @@
     },
     "kubestellar-mcp": {
       "latest": {
-        "label": "v0.9.13 (Latest)",
-        "branch": "docs/kubestellar-mcp/0.9.13",
+        "label": "v0.9.14 (Latest)",
+        "branch": "docs/kubestellar-mcp/0.9.14",
         "isDefault": true
       },
       "main": {
@@ -219,6 +219,11 @@
       "0.9.12": {
         "label": "v0.9.12",
         "branch": "docs/kubestellar-mcp/0.9.12",
+        "isDefault": false
+      },
+      "0.9.13": {
+        "label": "v0.9.13",
+        "branch": "docs/kubestellar-mcp/0.9.13",
         "isDefault": false
       }
     },
@@ -460,7 +465,7 @@
     "kubestellar-mcp": {
       "name": "KubeStellar MCP",
       "basePath": "kubestellar-mcp",
-      "currentVersion": "0.9.13"
+      "currentVersion": "0.9.14"
     },
     "console": {
       "name": "Console",

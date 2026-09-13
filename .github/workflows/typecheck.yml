@@ -39,7 +39,35 @@ jobs:
         run: npm ci
 
       - name: TypeScript type check
+        id: typecheck
         run: npm run type-check
 
       - name: ESLint
+        id: eslint
         run: npm run lint
+
+      - name: CI Observability Summary
+        if: always()
+        run: |
+          TC_OUTCOME="${{ steps.typecheck.outcome }}"
+          ES_OUTCOME="${{ steps.eslint.outcome }}"
+          if [ "$TC_OUTCOME" = "success" ] && [ "$ES_OUTCOME" = "success" ]; then
+            STATUS="pass"
+          else
+            STATUS="fail"
+          fi
+          echo "CI_OBSERVABILITY check=typecheck typecheck=${TC_OUTCOME} eslint=${ES_OUTCOME} status=${STATUS}"
+          if [ -n "$GITHUB_STEP_SUMMARY" ]; then
+            TC_ICON=$([ "$TC_OUTCOME" = "success" ] && echo "✅" || echo "❌")
+            ES_ICON=$([ "$ES_OUTCOME" = "success" ] && echo "✅" || echo "❌")
+            STATUS_ICON=$([ "$STATUS" = "pass" ] && echo "✅" || echo "❌")
+            cat <<EOF >> "$GITHUB_STEP_SUMMARY"
+          ## TypeScript & ESLint Summary
+
+          | Check | Outcome | Status |
+          | --- | --- | --- |
+          | TypeScript | \`$TC_OUTCOME\` | $TC_ICON |
+          | ESLint | \`$ES_OUTCOME\` | $ES_ICON |
+          | Overall | \`$STATUS\` | $STATUS_ICON $STATUS |
+          EOF
+          fi

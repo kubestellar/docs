@@ -9,6 +9,7 @@ on:
       - "package-lock.json"
       - "vitest.config.ts"
       - "next.config.*"
+      - ".github/workflows/vitest.yml"
   push:
     branches: [main]
     paths:
@@ -17,6 +18,11 @@ on:
       - "package-lock.json"
       - "vitest.config.ts"
       - "next.config.*"
+      - ".github/workflows/vitest.yml"
+
+concurrency:
+  group: vitest-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions: read-all  # default read; writes scoped to job below
 
@@ -24,6 +30,9 @@ jobs:
   test:
     name: Run unit tests
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
