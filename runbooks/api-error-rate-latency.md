@@ -38,6 +38,22 @@ condition may differ from what's described above — see
 [#6884](https://github.com/kubestellar/docs/issues/6884) for the
 consolidation this drift needs.
 
+The same drift exists on the dashboard side: `cluster-objects/dashboard.json`,
+`dashboard-docs-api.json`, and `grafana-dashboard.json` all visualize the
+same `docs_api_requests_total` / `docs_api_request_duration_seconds`
+metrics, but disagree on what counts as an "error" and at what
+granularity — `dashboard.json` has a per-route `5xx error rate by route`
+panel, `dashboard-docs-api.json` has an aggregate `Error ratio (4xx+5xx /
+total)` panel (4xx counted as an error here, unlike everywhere else in
+this runbook), and only `grafana-dashboard.json` has a scrape-target-up
+panel for `DocsApiMetricsTargetDown`. If you cross-check an alert against
+whichever of these three dashboards you have bookmarked, confirm which
+error definition and aggregation it's actually showing before treating
+its state as consistent with the alert that paged you — see
+[#6891](https://github.com/kubestellar/docs/issues/6891) for the full
+drift and [#6928](https://github.com/kubestellar/docs/issues/6928) for a
+related `uid` collision between the first two files.
+
 ## Detecting and diagnosing `DocsApiHighErrorRate`
 
 1. Both instrumented routes wrap their handler body in a `catch` that
