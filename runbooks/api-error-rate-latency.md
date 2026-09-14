@@ -72,6 +72,15 @@ consolidation this drift needs.
    latency by route" panel for this exact comparison (import it into a
    Grafana instance already pointed at the Prometheus scraping this
    deployment — it does not configure a data source itself).
+   `cluster-objects/dashboard.json` and `cluster-objects/dashboard-docs-api.json`
+   are two other, drifted dashboard definitions in the same directory —
+   they are not referenced by this runbook and, notably, share an
+   identical `"uid": "kubestellar-docs-api"`, so provisioning both into
+   the same Grafana instance causes one to silently overwrite the other.
+   See [#6928](https://github.com/kubestellar/docs/issues/6928) (the
+   dashboard-side follow-up to the `PrometheusRule` drift in
+   [#6884](https://github.com/kubestellar/docs/issues/6884)) before
+   relying on either of those two files.
 2. For `search`: elevated latency usually indicates a larger-than-normal
    search index, a slow/uncached parse of the query, or resource
    contention on the instance (check pod CPU/memory alongside this
