@@ -13,6 +13,21 @@ updates:
     open-pull-requests-limit: 10
     commit-message:
       prefix: "chore(deps)"
+    groups:
+      # Keep react + react-dom (and their @types packages) bumped as a single
+      # unit. React 19 asserts that react and react-dom share an EXACT version
+      # via ensureCorrectIsomorphicReactVersion, and every rendered vitest test
+      # calls that assertion. When Dependabot split the 19.3 bump into two
+      # separate PRs (#6943 for react, #6946 for react-dom), merging just the
+      # first turned main red with 32 failed vitest suites — see #6952 for the
+      # full write-up. Grouping forces one combined PR so this class of drift
+      # cannot recur.
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
