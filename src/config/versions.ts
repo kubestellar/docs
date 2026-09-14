@@ -278,8 +278,8 @@ const KUBESTELLAR_MCP_VERSIONS: Record<string, VersionInfo> = {
 // The console release sync workflow auto-updates this when a new release is detected.
 const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.3.40 (Latest)",
-    branch: "docs/console/0.3.40",
+    label: "v0.3.41 (Latest)",
+    branch: "docs/console/0.3.41",
     isDefault: true,
   },
   main: {
@@ -287,6 +287,11 @@ const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
     branch: "main",
     isDefault: false,
     isDev: true,
+  },
+  "0.3.40": {
+    label: "v0.3.40",
+    branch: "docs/console/0.3.40",
+    isDefault: false,
   },
   "0.3.39": {
     label: "v0.3.39",
@@ -536,7 +541,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "console",
     name: "Console",
     basePath: "console",
-    currentVersion: "0.3.40",
+    currentVersion: "0.3.41",
     contentPath: "docs/content/console",
     versions: CONSOLE_VERSIONS,
   },

@@ -229,8 +229,8 @@
     },
     "console": {
       "latest": {
-        "label": "v0.3.40 (Latest)",
-        "branch": "docs/console/0.3.40",
+        "label": "v0.3.41 (Latest)",
+        "branch": "docs/console/0.3.41",
         "isDefault": true
       },
       "main": {
@@ -438,6 +438,11 @@
         "label": "v0.3.39",
         "branch": "docs/console/0.3.39",
         "isDefault": false
+      },
+      "0.3.40": {
+        "label": "v0.3.40",
+        "branch": "docs/console/0.3.40",
+        "isDefault": false
       }
     }
   },
@@ -470,7 +475,7 @@
     "console": {
       "name": "Console",
       "basePath": "console",
-      "currentVersion": "0.3.40"
+      "currentVersion": "0.3.41"
     }
   },
   "relatedProjects": [
@@ -517,5 +522,5 @@
     "multi-plugin": "https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin",
     "kubestellar-mcp": "https://github.com/kubestellar/kubestellar-mcp/edit/main/docs"
   },
-  "updatedAt": "2026-09-13T05:25:46.522Z"
+  "updatedAt": "2026-09-14T05:29:11.350Z"
 }
