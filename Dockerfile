@@ -2,7 +2,7 @@
 # 🧱 Runtime Image (uses prebuilt Next.js output)
 # ============================================================
 
-FROM node:22-alpine@sha256:9385cd9f3001dfc3431e8ead12c43e9e1f87cc1b9b5c6cfd0f73865d405b27c4 AS runtime
+FROM node:26-alpine@sha256:ef24c5053d50fdc3e4e56eb4e7ddb7861874ab0fdc797046ba897581deb8e868 AS runtime
 
 # Set working directory
 WORKDIR /app
