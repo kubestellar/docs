@@ -1,8 +1,8 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-09-09T14:12:37.992Z",
+  "generated_at": "2026-09-15T14:15:12.506Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 0,
+  "total_prs_opened": 1,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 227250,
   "level": "Admiral",
@@ -10,12 +10,12 @@
   "rank": 2,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 0,
+    "avg_per_day": 1,
     "by_day_of_week": [
       0,
       0,
       0,
-      0,
+      1,
       0,
       0,
       0
@@ -25,7 +25,7 @@
       0,
       0,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -47,10 +47,10 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 0,
+    "longest_streak_weeks": 1,
     "trend": "inactive",
-    "first_issue_at": null,
-    "last_issue_at": null
+    "first_issue_at": "2026-03-19T04:42:05.000Z",
+    "last_issue_at": "2026-03-19T04:42:05.000Z"
   },
   "topics": [],
   "suggestions": {
@@ -80,7 +80,7 @@
     },
     {
       "month": "2026-03",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2026-04",
@@ -107,5 +107,14 @@
       "issue_count": 0
     }
   ],
-  "repo_breakdown": []
+  "repo_breakdown": [
+    {
+      "repo": "console-marketplace",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 1,
+      "prs_merged": 0
+    }
+  ]
 }

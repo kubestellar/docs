@@ -1,7 +1,7 @@
 {
   "login": "Shantanu675",
-  "generated_at": "2026-09-09T14:12:38.002Z",
-  "total_issues_opened": 1,
+  "generated_at": "2026-09-15T14:15:12.518Z",
+  "total_issues_opened": 0,
   "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/156588003?v=4",
   "total_points": 2150,
@@ -9,11 +9,11 @@
   "level_rank": 3,
   "rank": 58,
   "cadence": {
-    "avg_per_week": 0.1,
-    "avg_per_day": 1,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
-      1,
+      0,
       0,
       0,
       0,
@@ -36,7 +36,7 @@
       0,
       0,
       0,
-      1,
+      0,
       0,
       0,
       0,
@@ -47,10 +47,10 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
+    "longest_streak_weeks": 0,
     "trend": "inactive",
-    "first_issue_at": "2026-07-07T15:05:14.000Z",
-    "last_issue_at": "2026-07-07T15:05:14.000Z"
+    "first_issue_at": null,
+    "last_issue_at": null
   },
   "topics": [],
   "suggestions": {
@@ -96,7 +96,7 @@
     },
     {
       "month": "2026-07",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-08",
@@ -107,14 +107,5 @@
       "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 1,
-      "prs_opened": 0,
-      "prs_merged": 0
-    }
-  ]
+  "repo_breakdown": []
 }
