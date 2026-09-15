@@ -11,8 +11,8 @@ on:
     # Every day at 9am UTC, all days except Saturday and Sunday
     - cron: "0 9 * * 1-5"
   workflow_dispatch:
-  # workflow will no longer trigger after 30 days. Remove this and recompile to run indefinitely
-  stop-after: +1mo
+  # workflow will no longer trigger after 1 year. Remove this and recompile to run indefinitely
+  stop-after: +1y
 permissions:
   contents: read
   issues: read
