@@ -90,12 +90,15 @@ related `uid` collision between the first two files.
    deployment — it does not configure a data source itself).
    `cluster-objects/dashboard.json` and `cluster-objects/dashboard-docs-api.json`
    are two other, drifted dashboard definitions in the same directory —
-   they are not referenced by this runbook and, notably, share an
-   identical `"uid": "kubestellar-docs-api"`, so provisioning both into
-   the same Grafana instance causes one to silently overwrite the other.
-   See [#6928](https://github.com/kubestellar/docs/issues/6928) (the
+   they are not referenced by this runbook. They previously shared an
+   identical `"uid": "kubestellar-docs-api"` (fixed in
+   [#6928](https://github.com/kubestellar/docs/issues/6928), the
    dashboard-side follow-up to the `PrometheusRule` drift in
-   [#6884](https://github.com/kubestellar/docs/issues/6884)) before
+   [#6884](https://github.com/kubestellar/docs/issues/6884)), so
+   provisioning both no longer silently overwrites one at that uid —
+   but their titles, panels, and error-rate definitions (5xx-only vs.
+   4xx+5xx, per-route vs. aggregate) still disagree; see
+   [#6891](https://github.com/kubestellar/docs/issues/6891) before
    relying on either of those two files.
 2. For `search`: elevated latency usually indicates a larger-than-normal
    search index, a slow/uncached parse of the query, or resource
