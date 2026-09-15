@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitest/config'
 import { transformWithEsbuild } from 'vite'
-import type { SourceMapInput } from 'rollup'
+import type { Rollup } from 'vite'
 import path from 'path'
 import { CiObservabilityReporter } from './scripts/vitest-ci-observability-reporter'
 
@@ -19,7 +19,7 @@ export default defineConfig({
           code: result.code,
           // esbuild types sourcesContent as (string | null)[] while rollup
           // expects string[]; the payload is equivalent at runtime.
-          map: result.map as unknown as SourceMapInput,
+          map: result.map as unknown as Rollup.SourceMapInput,
         }
       },
     },
