@@ -1,7 +1,7 @@
 {
   "__comment": "Grafana dashboard for the docs site's existing /api/metrics endpoint (src/lib/metrics.ts). Pull-only: this only visualizes metrics already scraped in-cluster per cluster-objects/servicemonitor.yaml. It does not add an exporter or send data off-box, and no observability backend is confirmed for this repo, so this JSON is provided for import into an operator-managed Grafana if one already exists.",
   "title": "KubeStellar Docs - API Requests",
-  "uid": "kubestellar-docs-api",
+  "uid": "kubestellar-docs-api-v2",
   "tags": ["kubestellar", "docs"],
   "timezone": "browser",
   "schemaVersion": 39,
