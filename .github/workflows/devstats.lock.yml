@@ -27,7 +27,7 @@
 #
 # Source: githubnext/agentics/workflows/daily-team-status.md@3d982b164c8c2a65fc8da744c2c997044375c44d
 #
-# Effective stop-time: 2026-01-16 19:38:33
+# Effective stop-time: 2027-09-15 22:21:55
 
 name: "Daily Team Status"
 
@@ -6337,7 +6337,7 @@ jobs:
         id: check_stop_time
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         env:
-          GH_AW_STOP_TIME: 2026-01-16 19:38:33
+          GH_AW_STOP_TIME: 2027-09-15 22:21:55
           GH_AW_WORKFLOW_NAME: "Daily Team Status"
         with:
           script: |
