@@ -11,7 +11,14 @@ import {
   radarPoint,
 } from "../../../lib/radar";
 import type { RadarTopicCluster } from "../../../lib/radar";
-import { LEVEL_STYLES } from "./types";
+import {
+  DAY_LABELS,
+  LEVEL_STYLES,
+  TREND_DISPLAY,
+} from "../../../lib/leaderboardShared";
+import type { TimelineEntry } from "../../../lib/leaderboardShared";
+
+export type { TimelineEntry };
 
 // ── Contributor hover card ────────────────────────────────────────────
 
@@ -22,11 +29,6 @@ export interface CadenceData {
   current_streak_weeks: number;
   longest_streak_weeks: number;
   trend: "ramping_up" | "steady" | "slowing_down" | "inactive";
-}
-
-export interface TimelineEntry {
-  month: string;
-  issue_count: number;
 }
 
 export interface ContributorPreview {
@@ -40,15 +42,6 @@ export interface ContributorPreview {
   activity_timeline: TimelineEntry[];
   topics?: RadarTopicCluster[];
 }
-
-const TREND_DISPLAY: Record<string, { label: string; color: string; arrow: string }> = {
-  ramping_up: { label: "Ramping Up", color: "text-green-400", arrow: "\u2191" },
-  steady: { label: "Steady", color: "text-blue-400", arrow: "\u2192" },
-  slowing_down: { label: "Slowing Down", color: "text-yellow-400", arrow: "\u2193" },
-  inactive: { label: "Inactive", color: "text-gray-500", arrow: "\u2014" },
-};
-
-const DAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 /** Delay (ms) before fetching contributor data on hover — avoids fetch spam on quick mouse passes. */
 export const HOVER_FETCH_DELAY_MS = 300;

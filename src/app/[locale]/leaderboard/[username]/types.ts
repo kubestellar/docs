@@ -1,5 +1,9 @@
 // ── Types ─────────────────────────────────────────────────────────────
 
+import type { TimelineEntry } from "../../../../lib/leaderboardShared";
+
+export type { TimelineEntry };
+
 export interface TopicCluster {
   name: string;
   issue_count: number;
@@ -33,11 +37,6 @@ export interface CadenceData {
   trend: "ramping_up" | "steady" | "slowing_down" | "inactive";
   first_issue_at: string | null;
   last_issue_at: string | null;
-}
-
-export interface TimelineEntry {
-  month: string;
-  issue_count: number;
 }
 
 export interface RepoContribution {
