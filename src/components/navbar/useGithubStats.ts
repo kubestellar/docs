@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-interface GithubStats {
+export interface GithubStats {
   stars: string;
   forks: string;
   watchers: string;
