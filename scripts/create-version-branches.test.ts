@@ -117,7 +117,7 @@ describe("scripts/create-version-branches.sh --dry-run", () => {
     expect(status).toBe(0);
     expect(stdout).toContain("Next steps:");
     expect(stdout).toContain(
-      "1. Update src/config/versions.ts on main branch with all migrated versions",
+      "1. Update src/config/versions/ (data/*.ts) on main branch with all migrated versions",
     );
     expect(stdout).toContain("2. Test version dropdown navigation");
     expect(stdout).toContain("3. Verify each branch builds correctly on Netlify");

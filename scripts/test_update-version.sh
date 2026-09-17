@@ -2,12 +2,13 @@
 # test_update-version.sh — regression guard for scripts/update-version.js.
 #
 # scripts/update-version.js is the release-time script that mutates
-# src/config/versions.ts and public/config/shared.json to record a new
-# frozen docs version (and optionally promote it to "latest"). The
-# script drives its own file I/O from __dirname, matches large regions
-# of versions.ts with 's'-flag regexes, and has a dozen independent
-# code branches — every one of them a landmine at release time if it
-# breaks silently. Failure modes worth guarding against:
+# src/config/versions/data/{project}.ts, src/config/versions/lookup.ts, and
+# public/config/shared.json to record a new frozen docs version (and
+# optionally promote it to "latest"). The script drives its own file I/O
+# from __dirname, matches large regions of those files with 's'-flag
+# regexes, and has a dozen independent code branches — every one of them
+# a landmine at release time if it breaks silently. Failure modes worth
+# guarding against:
 #
 #   * missing --project / --version / --branch flags that used to
 #     exit 1 are now allowed through, and the script crashes mid-write
@@ -23,9 +24,10 @@
 #
 # All five paths are structurally reachable via a scratch fixture: we
 # copy the real update-version.js into a temp tree with its expected
-# neighbours (src/config/versions.ts + public/config/shared.json), run
+# neighbours (src/config/versions/data/kubestellar.ts,
+# src/config/versions/lookup.ts + public/config/shared.json), run
 # `node scripts/update-version.js …` inside that tree, then assert on
-# the exit code, on the mutated versions.ts, and on the rewritten
+# the exit code, on the mutated data/lookup files, and on the rewritten
 # shared.json. No external services, no network — the script never
 # reaches out; every side effect stays in $work_root.
 #
@@ -57,27 +59,25 @@ trap 'rm -rf "$work_root"' EXIT
 # ---------------------------------------------------------------
 # make_fixture <dir>
 #   Builds a minimal scratch tree at $dir:
-#     $dir/scripts/update-version.js  (real script, verbatim copy)
-#     $dir/src/config/versions.ts     (a shrunken but structurally
+#     $dir/scripts/update-version.js            (real script, verbatim copy)
+#     $dir/src/config/versions/data/kubestellar.ts (a shrunken but structurally
 #                                      identical constant block that
 #                                      exercises every regex the
 #                                      script uses)
+#     $dir/src/config/versions/lookup.ts (the PROJECTS registry holding
+#                                      currentVersion)
 #     $dir/public/config/shared.json  (minimal but complete shape)
 # ---------------------------------------------------------------
 make_fixture() {
   local dir="$1"
-  mkdir -p "$dir/scripts" "$dir/src/config" "$dir/public/config"
+  mkdir -p "$dir/scripts" "$dir/src/config/versions/data" "$dir/public/config"
   cp "$SCRIPT_SOURCE" "$dir/scripts/update-version.js"
 
-  cat >"$dir/src/config/versions.ts" <<'TS'
+  cat >"$dir/src/config/versions/data/kubestellar.ts" <<'TS'
 // Test fixture — do not use in production.
-export interface VersionInfo {
-  label: string
-  branch: string
-  isDefault: boolean
-}
+import type { VersionInfo } from "../types"
 
-const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
+export const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.29.0 (Latest)",
     branch: "docs/0.29.0",
@@ -94,6 +94,11 @@ const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
     isDefault: false,
   },
 }
+TS
+
+  cat >"$dir/src/config/versions/lookup.ts" <<'TS'
+// Test fixture — do not use in production.
+import { KUBESTELLAR_VERSIONS } from "./data/kubestellar"
 
 export const PROJECTS = {
   kubestellar: {
@@ -194,7 +199,7 @@ case3() {
     --version 0.29.5 \
     --branch docs/0.29.5 2>&1)"
   local ec=$?
-  local ts="$dir/src/config/versions.ts"
+  local ts="$dir/src/config/versions/data/kubestellar.ts"
   local sj="$dir/public/config/shared.json"
   if [ "$ec" -ne 0 ]; then
     fail "add-non-latest-entry" "non-zero exit: ec=$ec, out=$out"; return
@@ -243,7 +248,8 @@ case4() {
     --branch docs/0.30.0 \
     --set-latest 2>&1)"
   local ec=$?
-  local ts="$dir/src/config/versions.ts"
+  local ts="$dir/src/config/versions/data/kubestellar.ts"
+  local lookup="$dir/src/config/versions/lookup.ts"
   local sj="$dir/public/config/shared.json"
   if [ "$ec" -ne 0 ]; then
     fail "set-latest-promotes-version" "non-zero exit: ec=$ec, out=$out"; return
@@ -254,8 +260,8 @@ case4() {
   if ! grep -q 'branch: "docs/0.30.0"' "$ts"; then
     fail "set-latest-promotes-version" "versions.ts latest branch not updated"; return
   fi
-  if ! grep -q 'currentVersion: "0.30.0"' "$ts"; then
-    fail "set-latest-promotes-version" "versions.ts currentVersion not updated"; return
+  if ! grep -q 'currentVersion: "0.30.0"' "$lookup"; then
+    fail "set-latest-promotes-version" "lookup.ts currentVersion not updated"; return
   fi
   # Previous latest v0.29.0 must be preserved as a historical entry.
   if ! grep -q '"0.29.0"' "$ts"; then
@@ -296,7 +302,7 @@ case5() {
     --branch docs/0.29.0 \
     --set-latest >/dev/null 2>&1
   local ec=$?
-  local ts="$dir/src/config/versions.ts"
+  local ts="$dir/src/config/versions/data/kubestellar.ts"
   if [ "$ec" -ne 0 ]; then
     fail "set-latest-same-version-no-duplicate" "non-zero exit: ec=$ec"; return
   fi

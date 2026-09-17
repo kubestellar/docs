@@ -4,7 +4,7 @@
 # The production script is used during a KubeStellar release to spin off
 # a docs/<version> branch from a release-<version> branch on the upstream
 # kubestellar repo. It clones with a real `git`, mutates `docs/content`,
-# rewrites CURRENT_VERSION in src/config/versions.ts, then commits and
+# rewrites CURRENT_VERSION in src/config/versions/lookup.ts, then commits and
 # pushes. The failure modes that a bad refactor could introduce here
 # would corrupt or fail a release:
 #
@@ -44,7 +44,7 @@ work_root="$(mktemp -d)"
 trap 'rm -rf "$work_root"' EXIT
 
 # Build a fixture: a copy of the script under $dir/scripts/, the two
-# preconditions the script checks (package.json + src/config/versions.ts
+# preconditions the script checks (package.json + src/config/versions/lookup.ts
 # with a placeholder CURRENT_VERSION), an empty docs/content/, and a
 # stubbed `git` on PATH. The stub logs every invocation and, on
 # `git clone --branch <B> --depth 1 <URL> <TARGET>`, materialises
@@ -53,14 +53,14 @@ trap 'rm -rf "$work_root"' EXIT
 # silently to keep the happy path exercisable end-to-end.
 _make_fixture() {
   local dir="$1"; local include_docs_content="${2:-1}"
-  mkdir -p "$dir/repo/scripts" "$dir/repo/src/config" \
+  mkdir -p "$dir/repo/scripts" "$dir/repo/src/config/versions" \
            "$dir/repo/docs/content" "$dir/bin"
   cp "$SCRIPT_SOURCE" "$dir/repo/scripts/migrate-version.sh"
   chmod +x "$dir/repo/scripts/migrate-version.sh"
   printf '{}\n' > "$dir/repo/package.json"
   # Placeholder line the script's sed edits.
   printf 'export const CURRENT_VERSION = "0.0.0";\n' \
-      > "$dir/repo/src/config/versions.ts"
+      > "$dir/repo/src/config/versions/lookup.ts"
 
   cat > "$dir/bin/git" <<EOF
 #!/usr/bin/env bash
@@ -117,8 +117,8 @@ exit_code=$?
 if [ "$exit_code" -ne 0 ]; then
   echo "FAIL (happy-path): expected exit=0, got exit=$exit_code. Output: $output"
   fail_count=$((fail_count + 1))
-elif ! grep -q '"0.28.0"' "$case_dir/repo/src/config/versions.ts"; then
-  echo "FAIL (happy-path): CURRENT_VERSION was not rewritten. Content: $(cat "$case_dir/repo/src/config/versions.ts")"
+elif ! grep -q '"0.28.0"' "$case_dir/repo/src/config/versions/lookup.ts"; then
+  echo "FAIL (happy-path): CURRENT_VERSION was not rewritten. Content: $(cat "$case_dir/repo/src/config/versions/lookup.ts")"
   fail_count=$((fail_count + 1))
 elif [ ! -f "$case_dir/repo/docs/content/index.md" ]; then
   echo "FAIL (happy-path): docs/content was not populated from the source clone."
@@ -229,8 +229,8 @@ elif ! printf '%s' "$output" | grep -q "docs/content directory not found"; then
 elif [ ! -f "$case_dir/repo/docs/content/keep.md" ]; then
   echo "FAIL (missing-source-content): target docs/content was clobbered on the error path."
   fail_count=$((fail_count + 1))
-elif ! grep -q '"0.0.0"' "$case_dir/repo/src/config/versions.ts"; then
-  echo "FAIL (missing-source-content): CURRENT_VERSION was rewritten on the error path. Content: $(cat "$case_dir/repo/src/config/versions.ts")"
+elif ! grep -q '"0.0.0"' "$case_dir/repo/src/config/versions/lookup.ts"; then
+  echo "FAIL (missing-source-content): CURRENT_VERSION was rewritten on the error path. Content: $(cat "$case_dir/repo/src/config/versions/lookup.ts")"
   fail_count=$((fail_count + 1))
 else
   echo "OK (missing-source-content)"

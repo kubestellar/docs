@@ -4,10 +4,11 @@
  * Node program (no exported functions), so each test:
  *
  *   1. Builds a temp directory shaped like the docs repo — scripts/,
- *      src/config/versions.ts, public/config/shared.json — with fixture content.
+ *      src/config/versions/data/{project}.ts, src/config/versions/lookup.ts,
+ *      public/config/shared.json — with fixture content.
  *   2. Copies scripts/update-version.js into that temp scripts/ dir so the
- *      script's `path.join(__dirname, '../src/config/versions.ts')` resolves
- *      against the fixture, not the real docs checkout.
+ *      script's `path.join(__dirname, '../src/config/versions/...')` paths
+ *      resolve against the fixture, not the real docs checkout.
  *   3. Spawns `node scripts/update-version.js …` inside that dir.
  *   4. Asserts on the transformed files.
  *
@@ -31,13 +32,12 @@ import { join } from "node:path";
 const REPO_ROOT = join(__dirname, "..");
 const SCRIPT_SRC = join(REPO_ROOT, "scripts", "update-version.js");
 
-// Minimal versions.ts fixture: two project constants (KUBESTELLAR_VERSIONS and
-// A2A_VERSIONS) plus a PROJECTS map. Only the fields update-version.js reads or
-// writes need to be realistic — everything else is placeholder.
-function fixtureVersionsTs(): string {
-  return `import type { ProjectConfig, VersionInfo } from './types'
+// Minimal per-project data-file fixtures: the {PROJECT}_VERSIONS table that
+// update-version.js reads/writes for a given project.
+function fixtureKubestellarDataTs(): string {
+  return `import type { VersionInfo } from "../types"
 
-const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
+export const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.30.0 (Latest)",
     branch: "docs/0.30.0",
@@ -54,8 +54,13 @@ const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
     isDefault: false,
   },
 }
+`;
+}
 
-const A2A_VERSIONS: Record<string, VersionInfo> = {
+function fixtureA2aDataTs(): string {
+  return `import type { VersionInfo } from "../types"
+
+export const A2A_VERSIONS: Record<string, VersionInfo> = {
   latest: {
     label: "v0.1.0 (Latest)",
     branch: "docs/a2a/0.1.0",
@@ -67,6 +72,15 @@ const A2A_VERSIONS: Record<string, VersionInfo> = {
     isDefault: false,
   },
 }
+`;
+}
+
+// Minimal lookup.ts fixture: the PROJECTS registry only update-version.js
+// reads/writes the currentVersion field of.
+function fixtureLookupTs(): string {
+  return `import type { ProjectConfig } from "./types"
+import { KUBESTELLAR_VERSIONS } from "./data/kubestellar"
+import { A2A_VERSIONS } from "./data/a2a"
 
 export const PROJECTS: Record<string, ProjectConfig> = {
   kubestellar: {
@@ -120,29 +134,37 @@ function fixtureSharedJson(): string {
 function makeFixtureDir(): string {
   const dir = mkdtempSync(join(tmpdir(), "update-version-"));
   mkdirSync(join(dir, "scripts"), { recursive: true });
-  mkdirSync(join(dir, "src", "config"), { recursive: true });
+  mkdirSync(join(dir, "src", "config", "versions", "data"), { recursive: true });
   mkdirSync(join(dir, "public", "config"), { recursive: true });
   copyFileSync(SCRIPT_SRC, join(dir, "scripts", "update-version.js"));
-  writeFileSync(join(dir, "src", "config", "versions.ts"), fixtureVersionsTs());
+  writeFileSync(join(dir, "src", "config", "versions", "data", "kubestellar.ts"), fixtureKubestellarDataTs());
+  writeFileSync(join(dir, "src", "config", "versions", "data", "a2a.ts"), fixtureA2aDataTs());
+  writeFileSync(join(dir, "src", "config", "versions", "lookup.ts"), fixtureLookupTs());
   writeFileSync(join(dir, "public", "config", "shared.json"), fixtureSharedJson());
   return dir;
 }
+
+const dataTsPath = (dir: string, project: string) =>
+  join(dir, "src", "config", "versions", "data", `${project}.ts`);
+const lookupTsPath = (dir: string) => join(dir, "src", "config", "versions", "lookup.ts");
 
 type RunResult = {
   status: number | null;
   stdout: string;
   stderr: string;
-  versionsTs: string;
+  dataTs: string;
+  lookupTs: string;
   sharedJson: any;
 };
 
-function runScript(dir: string, args: string[]): RunResult {
+function runScript(dir: string, args: string[], project = "kubestellar"): RunResult {
   const res = spawnSync(
     process.execPath,
     [join(dir, "scripts", "update-version.js"), ...args],
     { cwd: dir, encoding: "utf8" }
   );
-  const versionsTs = readFileSync(join(dir, "src", "config", "versions.ts"), "utf8");
+  const dataTs = readFileSync(dataTsPath(dir, project), "utf8");
+  const lookupTs = readFileSync(lookupTsPath(dir), "utf8");
   const sharedJson = JSON.parse(
     readFileSync(join(dir, "public", "config", "shared.json"), "utf8")
   );
@@ -150,7 +172,8 @@ function runScript(dir: string, args: string[]): RunResult {
     status: res.status,
     stdout: res.stdout,
     stderr: res.stderr,
-    versionsTs,
+    dataTs,
+    lookupTs,
     sharedJson,
   };
 }
@@ -185,7 +208,7 @@ describe("update-version.js — argument validation", () => {
   });
 });
 
-describe("update-version.js — non-latest release (versions.ts)", () => {
+describe("update-version.js — non-latest release (per-project data file)", () => {
   test("inserts a new version entry after the main entry in KUBESTELLAR_VERSIONS", () => {
     const dir = makeFixtureDir();
     try {
@@ -196,16 +219,16 @@ describe("update-version.js — non-latest release (versions.ts)", () => {
       ]);
       expect(res.status).toBe(0);
       // New entry exists, right after main.
-      expect(res.versionsTs).toContain(`"0.31.0": {`);
-      expect(res.versionsTs).toContain(`label: "v0.31.0"`);
-      expect(res.versionsTs).toContain(`branch: "docs/0.31.0"`);
+      expect(res.dataTs).toContain(`"0.31.0": {`);
+      expect(res.dataTs).toContain(`label: "v0.31.0"`);
+      expect(res.dataTs).toContain(`branch: "docs/0.31.0"`);
       // main entry still present and precedes the new one.
-      const mainIdx = res.versionsTs.indexOf(`main: {`);
-      const newIdx = res.versionsTs.indexOf(`"0.31.0": {`);
+      const mainIdx = res.dataTs.indexOf(`main: {`);
+      const newIdx = res.dataTs.indexOf(`"0.31.0": {`);
       expect(mainIdx).toBeGreaterThan(-1);
       expect(newIdx).toBeGreaterThan(mainIdx);
       // Latest label untouched (no --set-latest).
-      expect(res.versionsTs).toContain(`label: "v0.30.0 (Latest)"`);
+      expect(res.dataTs).toContain(`label: "v0.30.0 (Latest)"`);
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
@@ -227,7 +250,7 @@ describe("update-version.js — non-latest release (versions.ts)", () => {
       expect(res.status).toBe(0);
       expect(res.stdout).toContain("already exists");
       // Only one occurrence of the new key.
-      const matches = res.versionsTs.match(/"0\.31\.0":\s*\{/g) || [];
+      const matches = res.dataTs.match(/"0\.31\.0":\s*\{/g) || [];
       expect(matches.length).toBe(1);
     } finally {
       rmSync(dir, { recursive: true, force: true });
@@ -247,16 +270,16 @@ describe("update-version.js — --set-latest promotes and preserves previous lat
       ]);
       expect(res.status).toBe(0);
       // Latest bumped.
-      expect(res.versionsTs).toContain(`label: "v0.31.0 (Latest)"`);
-      expect(res.versionsTs).toContain(`branch: "docs/0.31.0"`);
-      // PROJECTS.currentVersion updated for kubestellar.
-      expect(res.versionsTs).toMatch(/kubestellar:\s*\{[^}]*currentVersion:\s*"0\.31\.0"/s);
+      expect(res.dataTs).toContain(`label: "v0.31.0 (Latest)"`);
+      expect(res.dataTs).toContain(`branch: "docs/0.31.0"`);
+      // PROJECTS.currentVersion updated for kubestellar (in lookup.ts).
+      expect(res.lookupTs).toMatch(/kubestellar:\s*\{[^}]*currentVersion:\s*"0\.31\.0"/s);
       // Previous latest preserved as a historical entry (label without "(Latest)").
-      expect(res.versionsTs).toContain(`"0.30.0": {`);
-      expect(res.versionsTs).toContain(`label: "v0.30.0"`);
-      expect(res.versionsTs).toContain(`branch: "docs/0.30.0"`);
+      expect(res.dataTs).toContain(`"0.30.0": {`);
+      expect(res.dataTs).toContain(`label: "v0.30.0"`);
+      expect(res.dataTs).toContain(`branch: "docs/0.30.0"`);
       // The old "(Latest)" label must no longer be present anywhere for v0.30.0.
-      expect(res.versionsTs).not.toContain(`"v0.30.0 (Latest)"`);
+      expect(res.dataTs).not.toContain(`"v0.30.0 (Latest)"`);
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
@@ -273,9 +296,9 @@ describe("update-version.js — --set-latest promotes and preserves previous lat
         "--version", "0.2.0",
         "--branch", "docs/a2a/0.2.0",
         "--set-latest",
-      ]);
+      ], "a2a");
       // Sanity: previous a2a latest (v0.1.0) got preserved.
-      const first = readFileSync(join(dir, "src", "config", "versions.ts"), "utf8");
+      const first = readFileSync(dataTsPath(dir, "a2a"), "utf8");
       expect(first).toContain(`"0.1.0": {`);
 
       // Now overwrite the a2a latest branch back to "main" so the "was pointing
@@ -284,18 +307,18 @@ describe("update-version.js — --set-latest promotes and preserves previous lat
         /latest:\s*\{[^}]*label:\s*"v0\.2\.0 \(Latest\)"[^}]*branch:\s*"docs\/a2a\/0\.2\.0"/s,
         `latest: {\n    label: "v0.2.0 (Latest)",\n    isDefault: true,\n    branch: "main"`
       );
-      writeFileSync(join(dir, "src", "config", "versions.ts"), overwrite);
+      writeFileSync(dataTsPath(dir, "a2a"), overwrite);
 
       const res = runScript(dir, [
         "--project", "a2a",
         "--version", "0.3.0",
         "--branch", "docs/a2a/0.3.0",
         "--set-latest",
-      ]);
+      ], "a2a");
       expect(res.status).toBe(0);
       expect(res.stdout).toContain("No previous latest to preserve (was pointing to main)");
       // No historical entry synthesized for "main".
-      expect(res.versionsTs).not.toContain(`"main":`);
+      expect(res.dataTs).not.toContain(`"main":`);
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
@@ -367,7 +390,7 @@ describe("update-version.js — shared.json is kept in sync", () => {
         "--version", "0.2.0",
         "--branch", "docs/a2a/0.2.0",
         "--set-latest",
-      ]);
+      ], "a2a");
       expect(res.status).toBe(0);
       expect(res.sharedJson.editBaseUrls.kubestellar).toBe(before);
     } finally {
@@ -392,11 +415,12 @@ describe("update-version.js — regex-metacharacter safety", () => {
       ]);
       expect(res.status).toBe(0);
       // The literal key, safely quoted, appears.
-      expect(res.versionsTs).toContain(`"0.30.0.*": {`);
+      expect(res.dataTs).toContain(`"0.30.0.*": {`);
       // No wholesale corruption of the existing 0.29.0 entry.
-      expect(res.versionsTs).toContain(`"0.29.0": {`);
+      expect(res.dataTs).toContain(`"0.29.0": {`);
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
   });
 });
+
