@@ -21,8 +21,15 @@ vi.mock('next-intl', () => ({
   useTranslations: () => (key: string) => `t.${key}`,
 }))
 
-vi.mock('next/link', () => ({
-  default: ({
+// HowToUseSection imports Link from `@/i18n/navigation` (next-intl's
+// navigation wrapper), not `next/link` or `next/navigation` directly.
+// Mocking those instead leaves `@/i18n/navigation` unmocked, which pulls in
+// next-intl/navigation's createNavigation() and its extensionless
+// `import 'next/navigation'` — unresolvable under Next.js 16's ESM-only
+// `exports` map. Mock the actual import to match the other master-page
+// render-smoke tests (see HeroSection.render.test.tsx). See #6997.
+vi.mock('@/i18n/navigation', () => ({
+  Link: ({
     children,
     href,
     ...rest
@@ -30,17 +37,6 @@ vi.mock('next/link', () => ({
     children: React.ReactNode
     href: string
   }) => React.createElement('a', { href, ...rest }, children),
-}))
-
-vi.mock('next/navigation', () => ({
-  useRouter: () => ({
-    push: vi.fn(),
-    replace: vi.fn(),
-    back: vi.fn(),
-    forward: vi.fn(),
-    refresh: vi.fn(),
-    prefetch: vi.fn(),
-  }),
 }))
 
 vi.mock('@/components/index', () => ({
