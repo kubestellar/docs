@@ -54,8 +54,8 @@ missed or you want to confirm independently:
    and confirm a run exists for the most recent Monday. A missing run, or
    one that ended with a red X, means the weekly scan did not complete.
 2. Check the repository's
-   [Security > Code scanning alerts](https://github.com/kubestellar/docs/security/code-scanning)
-   tab for a recent Scorecard entry. If the most recent Scorecard alert
+   [Security tab](https://github.com/kubestellar/docs/security)
+   for a recent Scorecard entry. If the most recent Scorecard alert
    batch is more than ~8 days old, the weekly upload likely did not
    succeed.
 3. If either check indicates a stalled/failed run, check the failed job's
