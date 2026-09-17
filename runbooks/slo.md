@@ -11,11 +11,8 @@ redirect/route to. See `runbooks/deploy-rollback.md` for deploy paths.
 
 **Indicator:** the fraction of `GET /api/healthz` checks against the
 production site that return `200 {"status":"ok"}`, sampled every 15 minutes
-by a proposed `healthz-monitor` scheduled workflow (see "Alerting" below —
-not yet added to this repo; tracked in
-[#6701](https://github.com/kubestellar/docs/issues/6701) for a maintainer
-with `workflows` permission to add, since agent tokens cannot write files
-under `.github/workflows/`).
+by `.github/workflows/healthz-monitor.yml` (see "Alerting" below;
+added in [#6701](https://github.com/kubestellar/docs/issues/6701)).
 
 `/api/healthz` (`src/app/api/healthz/route.ts`) checks the one dependency
 required to serve real traffic: the `docs/content` tree is present, is a
@@ -42,19 +39,16 @@ deploy-time gaps and content-sync failures, not runtime request failures.
 - **Alert condition:** two consecutive failed scheduled checks (i.e. ready
   state was lost and did not recover within the following 15-minute check),
   or any single check that cannot reach the site at all (network/DNS/TLS
-  failure), opens or updates a `[production-outage]`-tagged issue via the
-  proposed `healthz-monitor` workflow (tracked in
-  [#6701](https://github.com/kubestellar/docs/issues/6701) — it could not
-  be committed directly because agent tokens lack the `workflows`
-  permission needed to write `.github/workflows/*`).
+  failure), opens or updates a `[production-outage]`-tagged issue via
+  `.github/workflows/healthz-monitor.yml`.
 - **Runbook:** every alert issue links to `runbooks/deploy-rollback.md` for
   detection/rollback steps, and to the "Incident Postmortem" issue template
   (`.github/ISSUE_TEMPLATE/incident_postmortem.yaml`) once the incident is
   resolved.
-- **Recovery:** once added, the same workflow closes the alert issue
-  automatically with a resolution comment when a subsequent scheduled check
-  reports healthy again — this does not change the SLO target or suppress
-  the underlying signal, it only reflects that the SLI has recovered.
+- **Recovery:** the same workflow closes the alert issue automatically with
+  a resolution comment when a subsequent scheduled check reports healthy
+  again — this does not change the SLO target or suppress the underlying
+  signal, it only reflects that the SLI has recovered.
 
 ## Notes on monitoring backend
 
