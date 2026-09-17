@@ -57,6 +57,14 @@ const AREA_COVERED_THRESHOLD = 0.1;
 const SUGGESTION_COUNT = 5;
 /** Minimum issues required for topic clustering */
 const MIN_ISSUES_FOR_CLUSTERING = 3;
+/**
+ * Maximum issues fed into agglomerative clustering. The algorithm is O(n^3),
+ * so high-volume contributors (thousands of issues/PRs) can make the step
+ * run for many minutes and blow the workflow's 5-minute timeout. Cap the
+ * input to the most recent N issues, which is enough to surface current
+ * topics of interest.
+ */
+const MAX_ISSUES_FOR_CLUSTERING = 300;
 /** Number of weeks for rolling average calculation */
 const ROLLING_WEEKS = 12;
 /** Number of weeks for trend comparison (recent vs prior) */
@@ -570,13 +578,23 @@ async function main() {
     let clusterNames = [];
 
     if (myIssues.length >= MIN_ISSUES_FOR_CLUSTERING) {
-      const clusters = agglomerativeClustering(myVectors);
+      // Cap clustering input to the most recent issues: the algorithm is
+      // O(n^3), so high-volume contributors would otherwise blow the
+      // workflow's timeout (see MAX_ISSUES_FOR_CLUSTERING).
+      const recentOrder = myIssues
+        .map((issue, idx) => idx)
+        .sort((a, b) => new Date(myIssues[b].created_at) - new Date(myIssues[a].created_at))
+        .slice(0, MAX_ISSUES_FOR_CLUSTERING);
+      const clusterIssuePool = recentOrder.map((idx) => myIssues[idx]);
+      const clusterVectorPool = recentOrder.map((idx) => myVectors[idx]);
+
+      const clusters = agglomerativeClustering(clusterVectorPool);
 
       for (const cluster of clusters) {
-        const clusterVecs = cluster.map((idx) => myVectors[idx]);
+        const clusterVecs = cluster.map((idx) => clusterVectorPool[idx]);
         const clusterCenter = centroid(clusterVecs);
         const name = nameCluster(clusterCenter);
-        const clusterIssues = cluster.map((idx) => myIssues[idx]);
+        const clusterIssues = cluster.map((idx) => clusterIssuePool[idx]);
         const openCount = clusterIssues.filter(
           (i) => i.state === "open"
         ).length;
