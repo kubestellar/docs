@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-09-15T14:15:12.507Z",
+  "generated_at": "2026-09-17T18:18:31.137Z",
   "total_issues_opened": 0,
   "total_prs_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
@@ -54,7 +54,7 @@
   },
   "topics": [
     {
-      "name": "activate, card, feat",
+      "name": "card, activate, marketplace",
       "issue_count": 7,
       "recent_issue": {
         "title": "feat: activate Harbor Registry monitoring card in marketplace",
@@ -96,10 +96,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },

@@ -1,24 +1,24 @@
 {
-  "login": "MAVRICK-1",
-  "generated_at": "2026-09-17T18:18:31.617Z",
-  "total_issues_opened": 3,
-  "total_prs_opened": 2,
-  "avatar_url": "https://avatars.githubusercontent.com/u/146999057?v=4",
-  "total_points": 2750,
+  "login": "burakeyler",
+  "generated_at": "2026-09-17T18:18:31.615Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 5,
+  "avatar_url": "https://avatars.githubusercontent.com/u/121062562?v=4",
+  "total_points": 3500,
   "level": "Navigator",
   "level_rank": 3,
-  "rank": 49,
+  "rank": 45,
   "cadence": {
-    "avg_per_week": 0,
-    "avg_per_day": 0.06,
+    "avg_per_week": 0.4,
+    "avg_per_day": 5,
     "by_day_of_week": [
       0,
       0,
       0,
-      3,
-      2,
       0,
-      0
+      0,
+      0,
+      5
     ],
     "by_hour_of_day": [
       0,
@@ -30,70 +30,42 @@
       0,
       0,
       0,
-      1,
-      0,
-      0,
-      0,
       0,
       0,
       0,
       1,
-      1,
       0,
-      1,
-      1,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 0,
-    "longest_streak_weeks": 2,
-    "trend": "inactive",
-    "first_issue_at": "2025-09-18T09:43:07.000Z",
-    "last_issue_at": "2025-12-11T20:14:12.000Z"
+    "current_streak_weeks": 1,
+    "longest_streak_weeks": 1,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-09-13T12:29:27.000Z",
+    "last_issue_at": "2026-09-13T14:57:50.000Z"
   },
   "topics": [
     {
-      "name": "eks, aws, host",
-      "issue_count": 3,
+      "name": "failure, alert, date",
+      "issue_count": 5,
       "recent_issue": {
-        "title": "Add AWS EKS Cloud Installation Path to Homepage",
-        "url": "https://github.com/kubestellar/docs/issues/398",
-        "created_at": "2025-12-11T20:14:12Z"
+        "title": "🌱 ci: alert on failure of the Stale Issues workflow",
+        "url": "https://github.com/kubestellar/docs/pull/6919",
+        "created_at": "2026-09-13T14:57:50Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "playground, test",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "for playground test",
-        "url": "https://github.com/kubestellar/docs/pull/245",
-        "created_at": "2025-11-07T19:36:30Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "prow, config, add",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Add Prow config",
-        "url": "https://github.com/kubestellar/docs/issues/50",
-        "created_at": "2025-09-18T09:43:07Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
+      "closed_count": 5
     }
   ],
   "suggestions": {
@@ -124,10 +96,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       },
       {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       }
     ]
   },
@@ -138,11 +110,11 @@
     },
     {
       "month": "2025-11",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2025-12",
-      "issue_count": 3
+      "issue_count": 0
     },
     {
       "month": "2026-01",
@@ -178,17 +150,17 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 0
+      "issue_count": 5
     }
   ],
   "repo_breakdown": [
     {
       "repo": "docs",
       "bug_issues": 0,
-      "feature_issues": 1,
-      "other_issues": 2,
-      "prs_opened": 2,
-      "prs_merged": 1
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 5,
+      "prs_merged": 5
     }
   ]
 }

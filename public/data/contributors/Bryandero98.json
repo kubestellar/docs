@@ -1,79 +1,65 @@
 {
-  "login": "Abhishek-Punhani",
-  "generated_at": "2026-09-17T18:18:31.476Z",
-  "total_issues_opened": 4,
-  "total_prs_opened": 2,
-  "avatar_url": "https://avatars.githubusercontent.com/u/137152932?v=4",
-  "total_points": 46450,
-  "level": "Commander",
-  "level_rank": 5,
-  "rank": 12,
+  "login": "Bryandero98",
+  "generated_at": "2026-09-17T18:18:31.809Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 3,
+  "avatar_url": "https://avatars.githubusercontent.com/u/124054031?v=4",
+  "total_points": 2100,
+  "level": "Navigator",
+  "level_rank": 3,
+  "rank": 60,
   "cadence": {
-    "avg_per_week": 0,
-    "avg_per_day": 0.04,
+    "avg_per_week": 0.3,
+    "avg_per_day": 0.57,
     "by_day_of_week": [
       0,
-      3,
-      0,
-      0,
+      2,
       1,
       0,
-      2
+      0,
+      0,
+      0
     ],
     "by_hour_of_day": [
       0,
       0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
       0,
       1,
-      0,
-      2,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      1,
-      0,
-      0,
-      1,
-      0,
       0
     ],
-    "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
-    "trend": "inactive",
-    "first_issue_at": "2025-12-23T06:05:58.000Z",
-    "last_issue_at": "2026-05-12T18:43:35.000Z"
+    "current_streak_weeks": 2,
+    "longest_streak_weeks": 2,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-09-09T22:32:31.000Z",
+    "last_issue_at": "2026-09-15T04:34:16.000Z"
   },
   "topics": [
     {
-      "name": "punhani, vcluster, console",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "Add vCluster Setup Documentation for KubeStellar Console",
-        "url": "https://github.com/kubestellar/docs/issues/2425",
-        "created_at": "2026-05-12T18:43:35Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 4
-    },
-    {
-      "name": "french, translation, githubcreateissue",
+      "name": "esm, build, windows",
       "issue_count": 1,
       "recent_issue": {
-        "title": "🐛 : Add \"Create Issue\" translation and update Navbar component",
-        "url": "https://github.com/kubestellar/docs/pull/574",
-        "created_at": "2026-01-11T17:13:56Z"
+        "title": "fix: resolve type-check failures breaking every production build",
+        "url": "https://github.com/kubestellar/docs/pull/6958",
+        "created_at": "2026-09-15T04:34:16Z"
       },
       "repos": [
         "docs"
@@ -82,12 +68,26 @@
       "closed_count": 1
     },
     {
-      "name": "globe, rotate, animation",
+      "name": "compile, aw, gh",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Add rotating content reference and enhance globe animation",
-        "url": "https://github.com/kubestellar/docs/pull/442",
-        "created_at": "2025-12-23T06:05:58Z"
+        "title": "fix: compile link-checker and typo-checker gh-aw workflows",
+        "url": "https://github.com/kubestellar/docs/pull/6956",
+        "created_at": "2026-09-15T02:22:15Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "isolation, module, 's",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 fix(test): stop clearMocks:true from erasing Mermaid's module-load call",
+        "url": "https://github.com/kubestellar/docs/pull/6843",
+        "created_at": "2026-09-09T22:32:31Z"
       },
       "repos": [
         "docs"
@@ -112,22 +112,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
       },
       {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
@@ -142,11 +142,11 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-01",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-02",
@@ -158,11 +158,11 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-05",
-      "issue_count": 3
+      "issue_count": 0
     },
     {
       "month": "2026-06",
@@ -178,17 +178,17 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 0
+      "issue_count": 3
     }
   ],
   "repo_breakdown": [
     {
       "repo": "docs",
-      "bug_issues": 4,
+      "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,
-      "prs_opened": 2,
-      "prs_merged": 2
+      "prs_opened": 3,
+      "prs_merged": 3
     }
   ]
 }

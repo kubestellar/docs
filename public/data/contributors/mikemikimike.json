@@ -1,24 +1,24 @@
 {
-  "login": "ngvanthanggit",
-  "generated_at": "2026-09-17T18:18:31.826Z",
-  "total_issues_opened": 1,
+  "login": "mikemikimike",
+  "generated_at": "2026-09-17T18:18:31.832Z",
+  "total_issues_opened": 0,
   "total_prs_opened": 1,
-  "avatar_url": "https://avatars.githubusercontent.com/u/169827569?v=4",
-  "total_points": 750,
+  "avatar_url": "https://avatars.githubusercontent.com/u/186855910?v=4",
+  "total_points": 700,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 95,
+  "rank": 108,
   "cadence": {
-    "avg_per_week": 0,
-    "avg_per_day": 2,
+    "avg_per_week": 0.1,
+    "avg_per_day": 1,
     "by_day_of_week": [
       0,
       0,
       0,
-      2,
       0,
       0,
-      0
+      0,
+      1
     ],
     "by_hour_of_day": [
       0,
@@ -37,20 +37,20 @@
       0,
       0,
       0,
+      1,
       0,
       0,
-      2,
       0,
       0,
       0,
       0,
       0
     ],
-    "current_streak_weeks": 0,
+    "current_streak_weeks": 1,
     "longest_streak_weeks": 1,
-    "trend": "inactive",
-    "first_issue_at": "2026-01-29T18:52:53.000Z",
-    "last_issue_at": "2026-01-29T18:57:48.000Z"
+    "trend": "ramping_up",
+    "first_issue_at": "2026-09-13T16:00:21.000Z",
+    "last_issue_at": "2026-09-13T16:00:21.000Z"
   },
   "topics": [],
   "suggestions": {
@@ -72,7 +72,7 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-02",
@@ -104,15 +104,15 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 0
+      "issue_count": 1
     }
   ],
   "repo_breakdown": [
     {
-      "repo": "docs",
+      "repo": "console-marketplace",
       "bug_issues": 0,
       "feature_issues": 0,
-      "other_issues": 1,
+      "other_issues": 0,
       "prs_opened": 1,
       "prs_merged": 1
     }
