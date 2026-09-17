@@ -7,6 +7,7 @@ import { sanitizeHtmlForMdx, removeCommentPatterns } from '@/lib/sanitizeHtml'
 import { rewriteRelativeImagePaths } from '@/lib/rewriteImagePaths'
 import { buildPageMap, docsContentPath, getContentPath } from '../page-map'
 import { CURRENT_VERSION, type ProjectId } from '@/config/versions'
+import { logger } from '@/lib/logger'
 import fs from 'fs'
 import path from 'path'
 import { notFound } from 'next/navigation'
@@ -212,9 +213,17 @@ export default async function DocPage({ params }: Props) {
     })
 
     evaluated = evaluate(compiled, components)
-  } catch {
-    // If MDX compilation fails, fall back to plain text rendering
+  } catch (error) {
+    // If MDX compilation fails, fall back to plain text rendering. Without
+    // this log line the fallback was silent: a broken doc page renders as
+    // unstyled plain text (see the `compilationFailed` branch below) with no
+    // signal anywhere that content compilation regressed.
     compilationFailed = true
+    logger.error('mdx compilation failed, falling back to plain text', {
+      route: 'docs-page',
+      filePath,
+      error: error instanceof Error ? error.message : String(error),
+    })
   }
 
   const MDXContent = evaluated?.default

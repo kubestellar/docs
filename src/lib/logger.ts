@@ -15,6 +15,8 @@ export type LogFields = {
   status?: number
   durationMs?: number
   error?: string
+  /** Repo-relative source file path (never raw request input), for content-rendering diagnostics. */
+  filePath?: string
 }
 
 function write(level: "info" | "error", message: string, fields: LogFields) {
