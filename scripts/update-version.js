@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Updates versions.ts with a new version entry
+ * Updates src/config/versions/ with a new version entry.
  *
  * Usage:
  *   node scripts/update-version.js --project kubestellar --version 0.30.0 --branch docs/0.30.0 [--set-latest]
@@ -11,11 +11,14 @@
  *   --branch       Branch name for this version (e.g., docs/0.30.0)
  *   --set-latest   If provided, updates the "latest" label, branch, and currentVersion
  *
- * NOTE: versions.ts is the single source of truth for version metadata.
- * public/config/shared.json is generated from it by scripts/generate-shared-config.ts
- * (run automatically as the prebuild step).  This script still updates shared.json
- * directly so that CI release workflows remain self-contained, but the generate
- * script is the canonical mechanism for keeping the two files in sync.
+ * NOTE: src/config/versions/ is the single source of truth for version metadata.
+ * Per-project version tables live in src/config/versions/data/{project}.ts; the
+ * PROJECTS registry (and its currentVersion field) lives in
+ * src/config/versions/lookup.ts. public/config/shared.json is generated from
+ * these by scripts/generate-shared-config.ts (run automatically as the prebuild
+ * step). This script still updates shared.json directly so that CI release
+ * workflows remain self-contained, but the generate script is the canonical
+ * mechanism for keeping the files in sync.
  */
 
 const fs = require('fs');
@@ -58,6 +61,16 @@ const versionConstants = {
   'klaude': 'KLAUDE_VERSIONS'
 };
 
+// Project-specific data file names (src/config/versions/data/{file}).
+const versionDataFiles = {
+  'kubestellar': 'kubestellar.ts',
+  'a2a': 'a2a.ts',
+  'kubeflex': 'kubeflex.ts',
+  'multi-plugin': 'multi-plugin.ts',
+  'kubestellar-mcp': 'kubestellar-mcp.ts',
+  'console': 'console.ts',
+};
+
 const constName = versionConstants[project];
 if (!constName) {
   console.error(`Unknown project: ${project}`);
@@ -70,15 +83,27 @@ function escapeRegex(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-// Read versions.ts
-const versionsPath = path.join(__dirname, '../src/config/versions.ts');
+// Read the project's version data file (holds the {PROJECT}_VERSIONS table).
+const dataFile = versionDataFiles[project];
+const versionsPath = dataFile
+  ? path.join(__dirname, '../src/config/versions/data', dataFile)
+  : path.join(__dirname, '../src/config/versions/data', `${project}.ts`);
 if (!fs.existsSync(versionsPath)) {
   console.error(`File not found: ${versionsPath}`);
   process.exit(1);
 }
 
+// Read the PROJECTS registry (holds currentVersion for each project).
+const lookupPath = path.join(__dirname, '../src/config/versions/lookup.ts');
+if (!fs.existsSync(lookupPath)) {
+  console.error(`File not found: ${lookupPath}`);
+  process.exit(1);
+}
+
 let content = fs.readFileSync(versionsPath, 'utf8');
 const originalContent = content;
+let lookupContent = fs.readFileSync(lookupPath, 'utf8');
+const originalLookupContent = lookupContent;
 
 console.log(`Updating ${project} to v${version}...`);
 console.log(`  Branch: ${branch}`);
@@ -91,11 +116,11 @@ let previousLatestBranch = null;
 if (setLatest) {
   // Extract current latest version before updating (to preserve as historical entry)
   const extractLabelRegex = new RegExp(
-    `const ${constName}.*?latest:\\s*\\{.*?label:\\s*"v([\\d.]+) \\(Latest\\)"`,
+    `(?:export\\s+)?const ${constName}.*?latest:\\s*\\{.*?label:\\s*"v([\\d.]+) \\(Latest\\)"`,
     's'
   );
   const extractBranchRegex = new RegExp(
-    `const ${constName}.*?latest:\\s*\\{.*?branch:\\s*"([^"]+)"`,
+    `(?:export\\s+)?const ${constName}.*?latest:\\s*\\{.*?branch:\\s*"([^"]+)"`,
     's'
   );
 
@@ -116,7 +141,7 @@ if (setLatest) {
 
   // Update the "latest" entry's label to show the new version
   const latestRegex = new RegExp(
-    `(const ${constName}.*?latest:\\s*\\{.*?label:\\s*")v[\\d.]+( \\(Latest\\)")`,
+    `((?:export\\s+)?const ${constName}.*?latest:\\s*\\{.*?label:\\s*")v[\\d.]+( \\(Latest\\)")`,
     's'
   );
 
@@ -129,7 +154,7 @@ if (setLatest) {
 
   // Update the "latest" entry's branch to point to the frozen version branch
   const latestBranchRegex = new RegExp(
-    `(const ${constName}.*?latest:\\s*\\{.*?branch:\\s*")[^"]+(")`,
+    `((?:export\\s+)?const ${constName}.*?latest:\\s*\\{.*?branch:\\s*")[^"]+(")`,
     's'
   );
 
@@ -140,7 +165,7 @@ if (setLatest) {
     console.warn(`  Warning: Could not find latest branch pattern in ${constName}`);
   }
 
-  // Update currentVersion in the project config
+  // Update currentVersion in the project config (lives in lookup.ts's PROJECTS registry)
   // Match both quoted and unquoted project keys in PROJECTS.
   const projectKeyPattern = `"?${escapeRegex(project)}"?`;
   const currentVersionRegex = new RegExp(
@@ -148,8 +173,8 @@ if (setLatest) {
     's'
   );
 
-  if (currentVersionRegex.test(content)) {
-    content = content.replace(currentVersionRegex, `$1${version}$3`);
+  if (currentVersionRegex.test(lookupContent)) {
+    lookupContent = lookupContent.replace(currentVersionRegex, `$1${version}$3`);
     console.log(`  Updated currentVersion to ${version}`);
   } else {
     console.warn(`  Warning: Could not find currentVersion for ${project}`);
@@ -169,7 +194,7 @@ if (setLatest && previousLatestVersion) {
   },`;
 
     const mainEntryRegex = new RegExp(
-      `(const ${constName}.*?main:\\s*\\{[^}]+\\},)`,
+      `((?:export\\s+)?const ${constName}.*?main:\\s*\\{[^}]+\\},)`,
       's'
     );
 
@@ -194,7 +219,7 @@ if (setLatest && previousLatestVersion) {
 
   // Find the main entry in the specific version constant and add after it
   const mainEntryRegex = new RegExp(
-    `(const ${constName}.*?main:\\s*\\{[^}]+\\},)`,
+    `((?:export\\s+)?const ${constName}.*?main:\\s*\\{[^}]+\\},)`,
     's'
   );
 
@@ -204,7 +229,7 @@ if (setLatest && previousLatestVersion) {
   } else {
     // Fallback: try to add after latest entry
     const latestEntryRegex = new RegExp(
-      `(const ${constName}.*?latest:\\s*\\{[^}]+\\},)`,
+      `((?:export\\s+)?const ${constName}.*?latest:\\s*\\{[^}]+\\},)`,
       's'
     );
 
@@ -224,6 +249,13 @@ if (content !== originalContent) {
   console.log(`\n✅ Updated ${versionsPath}`);
 } else {
   console.log(`\nNo changes needed for ${versionsPath}`);
+}
+
+if (lookupContent !== originalLookupContent) {
+  fs.writeFileSync(lookupPath, lookupContent);
+  console.log(`✅ Updated ${lookupPath}`);
+} else {
+  console.log(`No changes needed for ${lookupPath}`);
 }
 
 // Also update shared.json for dynamic version loading

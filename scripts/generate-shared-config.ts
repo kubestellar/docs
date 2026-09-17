@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * Generates public/config/shared.json from src/config/versions.ts.
+ * Generates public/config/shared.json from src/config/versions/ (index.ts).
  *
  * This script is the bridge that keeps shared.json (runtime-fetched by the
- * browser via useSharedConfig) in sync with versions.ts (the single source of
+ * browser via useSharedConfig) in sync with versions/ (the single source of
  * truth for version/project metadata).
  *
  * Run automatically as a prebuild step so CI always produces a consistent
@@ -24,7 +24,7 @@ import { fileURLToPath } from 'node:url';
 // ---------------------------------------------------------------------------
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '..');
-const versionsPath = path.join(repoRoot, 'src', 'config', 'versions.ts');
+const versionsPath = path.join(repoRoot, 'src', 'config', 'versions', 'index.ts');
 const sharedJsonPath = path.join(repoRoot, 'public', 'config', 'shared.json');
 
 // ---------------------------------------------------------------------------
@@ -48,7 +48,7 @@ interface ExistingSharedConfig {
 }
 
 (async () => {
-  const { PROJECTS } = await import(versionsPath) as typeof import('../src/config/versions');
+  const { PROJECTS } = await import(versionsPath) as typeof import('../src/config/versions/index.ts');
 
   // Build versions and projects maps from PROJECTS
   const versions: Record<string, Record<string, VersionEntry>> = {};

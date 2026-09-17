@@ -8,7 +8,7 @@
 # 1. Clones kubestellar repo at the specified release branch
 # 2. Creates a new docs/{version} branch in the docs repo
 # 3. Copies the documentation content
-# 4. Updates CURRENT_VERSION in versions.ts
+# 4. Updates CURRENT_VERSION in src/config/versions/lookup.ts
 # 5. Commits and pushes the new branch
 
 set -e
@@ -69,13 +69,13 @@ if [ -f "$TEMP_DIR/kubestellar/docs/mkdocs.yml" ]; then
 fi
 
 echo "4. Updating version configuration..."
-# Update CURRENT_VERSION in versions.ts
+# Update CURRENT_VERSION in src/config/versions/lookup.ts
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
-    sed -i '' "s/export const CURRENT_VERSION = .*/export const CURRENT_VERSION = \"$VERSION\"/" src/config/versions.ts
+    sed -i '' "s/export const CURRENT_VERSION = .*/export const CURRENT_VERSION = \"$VERSION\"/" src/config/versions/lookup.ts
 else
     # Linux
-    sed -i "s/export const CURRENT_VERSION = .*/export const CURRENT_VERSION = \"$VERSION\"/" src/config/versions.ts
+    sed -i "s/export const CURRENT_VERSION = .*/export const CURRENT_VERSION = \"$VERSION\"/" src/config/versions/lookup.ts
 fi
 
 echo "5. Committing changes..."
@@ -98,5 +98,5 @@ echo "Branch docs/$VERSION has been created and pushed."
 echo ""
 echo "Next steps:"
 echo "1. Verify the branch builds correctly on Netlify"
-echo "2. Add this version to src/config/versions.ts on main branch"
+echo "2. Add this version to src/config/versions/ (data/kubestellar.ts) on main branch"
 echo "3. Test the version dropdown navigation"
