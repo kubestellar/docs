@@ -44,6 +44,7 @@ function runScript(env: Env): Promise<{ status: number | null; stdout: string; s
     // a case arm. PATH is preserved so bash itself is findable.
     const spawnEnv: NodeJS.ProcessEnv = {
       PATH: process.env.PATH,
+      NODE_ENV: process.env.NODE_ENV,
       BRANCH: env.BRANCH ?? "",
       HEAD: env.HEAD ?? "",
       PULL_REQUEST: env.PULL_REQUEST ?? "",
