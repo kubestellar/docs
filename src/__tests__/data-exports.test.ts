@@ -13,6 +13,11 @@ import {
   type HandbookCard,
 } from '../app/[locale]/contribute-handbook/handbook'
 import { COLORS } from '../components/animations/globe/colors'
+import {
+  LEVEL_STYLES,
+  TREND_DISPLAY,
+  DAY_LABELS,
+} from '../lib/leaderboardShared'
 
 describe('app/robots.ts', () => {
   const config = robots()
@@ -108,5 +113,55 @@ describe('animations/globe/colors.ts', () => {
       // #rgb or #rrggbb — no rgba/hsl, matching the current palette shape.
       expect(v).toMatch(/^#[0-9a-fA-F]{3,8}$/)
     }
+  })
+})
+
+describe('lib/leaderboardShared.ts', () => {
+  test('LEVEL_STYLES exposes every contributor level with the required shape', () => {
+    // These names mirror console's CONTRIBUTOR_LEVELS. Adding or removing a
+    // level here without updating the leaderboard page rendering would
+    // silently drop badges — the shape check catches the accidental case.
+    const expectedLevels = [
+      'Observer',
+      'Explorer',
+      'Navigator',
+      'Pilot',
+      'Commander',
+      'Captain',
+      'Admiral',
+      'Legend',
+    ] as const
+    for (const level of expectedLevels) {
+      const style = LEVEL_STYLES[level]
+      expect(style, `missing level ${level}`).toBeTruthy()
+      expect(style.bg).toMatch(/^bg-/)
+      expect(style.text).toMatch(/^text-/)
+      expect(style.border).toMatch(/^border-/)
+    }
+  })
+
+  test('LEVEL_STYLES.Legend keeps the glow shadow that previously drifted', () => {
+    // The [username] page had a hand-copied LEVEL_STYLES.Legend that was
+    // missing the glow shadow present in the main leaderboard page (see the
+    // file header comment). Assert the glow stays here so the drift can't
+    // reappear silently.
+    expect(LEVEL_STYLES.Legend.bg).toContain('shadow-[0_0_10px_rgba(255,215,0,0.3)]')
+  })
+
+  test('TREND_DISPLAY covers every cadence trend the sparkline renders', () => {
+    const expectedTrends = ['ramping_up', 'steady', 'slowing_down', 'inactive'] as const
+    for (const trend of expectedTrends) {
+      const display = TREND_DISPLAY[trend]
+      expect(display, `missing trend ${trend}`).toBeTruthy()
+      expect(display.label).toBeTruthy()
+      expect(display.color).toMatch(/^text-/)
+      expect(display.arrow.length).toBeGreaterThan(0)
+    }
+  })
+
+  test('DAY_LABELS has seven weekday labels in Mon..Sun order', () => {
+    // The activity sparkline indexes into DAY_LABELS by weekday; a wrong
+    // length or reordering would mislabel every point on the chart.
+    expect(DAY_LABELS).toEqual(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'])
   })
 })
