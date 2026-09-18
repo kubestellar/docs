@@ -1,8 +1,8 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-09-18T10:15:13.809Z",
-  "total_issues_opened": 14,
-  "total_prs_opened": 10,
+  "generated_at": "2026-09-18T14:12:29.975Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
   "total_points": 227250,
   "level": "Admiral",
@@ -10,36 +10,36 @@
   "rank": 2,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 0.2,
+    "avg_per_day": 0,
     "by_day_of_week": [
-      2,
-      3,
-      6,
-      5,
-      4,
-      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
     "by_hour_of_day": [
       0,
       0,
-      1,
-      0,
-      4,
-      1,
       0,
       0,
-      1,
-      1,
-      2,
-      2,
-      1,
-      1,
-      1,
-      2,
-      3,
-      3,
-      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -47,118 +47,15 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 3,
+    "longest_streak_weeks": 0,
     "trend": "inactive",
-    "first_issue_at": "2026-01-15T04:55:25.000Z",
-    "last_issue_at": "2026-05-16T12:20:09.000Z"
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "changes, captain, arrow",
-      "issue_count": 11,
-      "recent_issue": {
-        "title": "✨ Modified contributor level pill badges",
-        "url": "https://github.com/kubestellar/docs/pull/1326",
-        "created_at": "2026-03-25T04:30:01Z"
-      },
-      "repos": [
-        "docs",
-        "console-marketplace"
-      ],
-      "open_count": 0,
-      "closed_count": 11
-    },
-    {
-      "name": "console, @xonas1101, request",
-      "issue_count": 9,
-      "recent_issue": {
-        "title": "Missing social link clicks on leaderboard",
-        "url": "https://github.com/kubestellar/docs/issues/2803",
-        "created_at": "2026-05-16T12:20:09Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 9
-    },
-    {
-      "name": "mode, light, bug",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "bug: Broken link https://claude.ai/claude-code",
-        "url": "https://github.com/kubestellar/docs/issues/1315",
-        "created_at": "2026-03-20T14:58:44Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "easily, manage, v0",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "doc: Documentation content mismatch in release v0.29.0 (latest)",
-        "url": "https://github.com/kubestellar/docs/issues/1154",
-        "created_at": "2026-02-11T16:48:32Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "banner, overflow, height",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 Fix sidebar banner overflow",
-        "url": "https://github.com/kubestellar/docs/pull/734",
-        "created_at": "2026-01-15T11:55:37Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
     {
@@ -175,23 +72,23 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 3
+      "issue_count": 0
     },
     {
       "month": "2026-02",
-      "issue_count": 3
+      "issue_count": 0
     },
     {
       "month": "2026-03",
-      "issue_count": 9
+      "issue_count": 0
     },
     {
       "month": "2026-04",
-      "issue_count": 7
+      "issue_count": 0
     },
     {
       "month": "2026-05",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-06",
@@ -210,22 +107,5 @@
       "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 11,
-      "feature_issues": 1,
-      "other_issues": 2,
-      "prs_opened": 9,
-      "prs_merged": 9
-    },
-    {
-      "repo": "console-marketplace",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 1,
-      "prs_merged": 0
-    }
-  ]
+  "repo_breakdown": []
 }

@@ -1,18 +1,18 @@
 {
   "login": "Solarthis",
-  "generated_at": "2026-09-18T10:15:14.349Z",
+  "generated_at": "2026-09-18T14:12:29.991Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 2,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/215013468?v=4",
   "total_points": 1400,
   "level": "Explorer",
   "level_rank": 2,
   "rank": 79,
   "cadence": {
-    "avg_per_week": 0.2,
-    "avg_per_day": 2,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
-      2,
+      0,
       0,
       0,
       0,
@@ -44,13 +44,13 @@
       0,
       0,
       0,
-      2
+      0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
-    "trend": "ramping_up",
-    "first_issue_at": "2026-08-31T23:03:55.000Z",
-    "last_issue_at": "2026-08-31T23:29:13.000Z"
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
   "topics": [],
   "suggestions": {
@@ -100,21 +100,12 @@
     },
     {
       "month": "2026-08",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-09",
       "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 2,
-      "prs_merged": 2
-    }
-  ]
+  "repo_breakdown": []
 }

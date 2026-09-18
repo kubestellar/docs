@@ -1,20 +1,20 @@
 {
   "login": "Bryandero98",
-  "generated_at": "2026-09-18T10:15:14.342Z",
+  "generated_at": "2026-09-18T14:12:29.987Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 3,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/124054031?v=4",
   "total_points": 2100,
   "level": "Navigator",
   "level_rank": 3,
   "rank": 60,
   "cadence": {
-    "avg_per_week": 0.3,
-    "avg_per_day": 0.57,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
-      2,
-      1,
+      0,
+      0,
       0,
       0,
       0,
@@ -23,9 +23,6 @@
     "by_hour_of_day": [
       0,
       0,
-      1,
-      0,
-      1,
       0,
       0,
       0,
@@ -43,93 +40,22 @@
       0,
       0,
       0,
-      1,
+      0,
+      0,
+      0,
+      0,
       0
     ],
-    "current_streak_weeks": 2,
-    "longest_streak_weeks": 2,
-    "trend": "ramping_up",
-    "first_issue_at": "2026-09-09T22:32:31.000Z",
-    "last_issue_at": "2026-09-15T04:34:16.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "esm, build, windows",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix: resolve type-check failures breaking every production build",
-        "url": "https://github.com/kubestellar/docs/pull/6958",
-        "created_at": "2026-09-15T04:34:16Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "compile, aw, gh",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix: compile link-checker and typo-checker gh-aw workflows",
-        "url": "https://github.com/kubestellar/docs/pull/6956",
-        "created_at": "2026-09-15T02:22:15Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "isolation, module, 's",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 fix(test): stop clearMocks:true from erasing Mermaid's module-load call",
-        "url": "https://github.com/kubestellar/docs/pull/6843",
-        "created_at": "2026-09-09T22:32:31Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
     {
@@ -178,17 +104,8 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 3
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 3,
-      "prs_merged": 3
-    }
-  ]
+  "repo_breakdown": []
 }
