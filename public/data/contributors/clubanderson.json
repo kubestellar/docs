@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-19T14:13:23.266Z",
+  "generated_at": "2026-09-19T18:15:33.714Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2711,
+  "total_prs_opened": 2712,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6241450,
+  "total_points": 6241650,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 59.3,
+    "avg_per_week": 59.4,
     "avg_per_day": 8.36,
     "by_day_of_week": [
       303,
@@ -17,7 +17,7 @@
       744,
       548,
       529,
-      344,
+      345,
       300
     ],
     "by_hour_of_day": [
@@ -39,7 +39,7 @@
       177,
       93,
       80,
-      135,
+      136,
       104,
       120,
       52,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 38,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-19T12:02:27.000Z"
+    "last_issue_at": "2026-09-19T18:01:48.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 89,
+      "issue_count": 90,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-19",
-        "url": "https://github.com/kubestellar/console-kb/pull/3467",
-        "created_at": "2026-09-19T12:02:27Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3468",
+        "created_at": "2026-09-19T18:01:48Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 88
     },
     {
@@ -126,6 +126,20 @@
       "closed_count": 19
     },
     {
+      "name": "link, lock, checker",
+      "issue_count": 11,
+      "recent_issue": {
+        "title": "Broken link: https://kubestellar.io/#key-features...",
+        "url": "https://github.com/kubestellar/docs/issues/6473",
+        "created_at": "2026-08-03T07:28:07Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 11
+    },
+    {
       "name": "workflow, label, sync",
       "issue_count": 8,
       "recent_issue": {
@@ -156,20 +170,6 @@
       "closed_count": 7
     },
     {
-      "name": "link, break, page",
-      "issue_count": 7,
-      "recent_issue": {
-        "title": "Broken link: https://kubestellar.io/#key-features...",
-        "url": "https://github.com/kubestellar/docs/issues/6473",
-        "created_at": "2026-08-03T07:28:07Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 7
-    },
-    {
       "name": "test, quality, coverage",
       "issue_count": 6,
       "recent_issue": {
@@ -184,20 +184,6 @@
       ],
       "open_count": 0,
       "closed_count": 6
-    },
-    {
-      "name": "lock, checker, stale",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "[scanner] fix: refresh stale link-checker lock file",
-        "url": "https://github.com/kubestellar/docs/pull/6461",
-        "created_at": "2026-07-29T10:19:36Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 5
     },
     {
       "name": "finding, chain, hardening",
@@ -759,7 +745,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 120
+      "issue_count": 121
     }
   ],
   "repo_breakdown": [
@@ -768,7 +754,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2017,
+      "prs_opened": 2018,
       "prs_merged": 1708
     },
     {
