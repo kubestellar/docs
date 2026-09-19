@@ -129,6 +129,10 @@ describe('navbar index exports', () => {
         'CommunityDropdown',
         'GithubDropdown',
         'MobileMenu',
+        'MobileTopLinks',
+        'MobileContributeSection',
+        'MobileCommunitySection',
+        'MobileGithubSection',
       ].sort()
     )
   })
