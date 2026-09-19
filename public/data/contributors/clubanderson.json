@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-19T02:19:13.408Z",
+  "generated_at": "2026-09-19T06:21:38.787Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2707,
+  "total_prs_opened": 2710,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6238650,
+  "total_points": 6239750,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 59.3,
+    "avg_per_week": 59.6,
     "avg_per_day": 8.36,
     "by_day_of_week": [
       303,
@@ -17,7 +17,7 @@
       744,
       548,
       529,
-      340,
+      343,
       300
     ],
     "by_hour_of_day": [
@@ -26,8 +26,8 @@
       92,
       55,
       38,
-      109,
-      1500,
+      110,
+      1502,
       279,
       54,
       8,
@@ -50,41 +50,41 @@
     "longest_streak_weeks": 38,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-19T00:03:38.000Z"
+    "last_issue_at": "2026-09-19T06:16:56.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 87,
+      "issue_count": 88,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-19",
-        "url": "https://github.com/kubestellar/console-kb/pull/3463",
-        "created_at": "2026-09-19T00:03:38Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3464",
+        "created_at": "2026-09-19T06:02:45Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 86
     },
     {
       "name": "release, version, sync",
-      "issue_count": 65,
+      "issue_count": 66,
       "recent_issue": {
         "title": "📖 Sync console docs versions",
-        "url": "https://github.com/kubestellar/docs/pull/7007",
-        "created_at": "2026-09-18T05:27:22Z"
+        "url": "https://github.com/kubestellar/docs/pull/7014",
+        "created_at": "2026-09-19T05:26:11Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 65
+      "closed_count": 66
     },
     {
       "name": "hive, doc, relay",
-      "issue_count": 25,
+      "issue_count": 24,
       "recent_issue": {
         "title": "🌱 Retire /live/hive and point the Hive dashboard links at hivecommons",
         "url": "https://github.com/kubestellar/docs/pull/6838",
@@ -94,7 +94,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 25
+      "closed_count": 24
     },
     {
       "name": "dragonflydb, support, exact",
@@ -124,20 +124,6 @@
       ],
       "open_count": 0,
       "closed_count": 19
-    },
-    {
-      "name": "link, checker, break",
-      "issue_count": 13,
-      "recent_issue": {
-        "title": "Broken link: https://kubestellar.io/#key-features...",
-        "url": "https://github.com/kubestellar/docs/issues/6473",
-        "created_at": "2026-08-03T07:28:07Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 13
     },
     {
       "name": "workflow, label, sync",
@@ -170,6 +156,20 @@
       "closed_count": 7
     },
     {
+      "name": "link, break, page",
+      "issue_count": 7,
+      "recent_issue": {
+        "title": "Broken link: https://kubestellar.io/#key-features...",
+        "url": "https://github.com/kubestellar/docs/issues/6473",
+        "created_at": "2026-08-03T07:28:07Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 7
+    },
+    {
       "name": "test, quality, coverage",
       "issue_count": 6,
       "recent_issue": {
@@ -184,6 +184,20 @@
       ],
       "open_count": 0,
       "closed_count": 6
+    },
+    {
+      "name": "lock, checker, stale",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "[scanner] fix: refresh stale link-checker lock file",
+        "url": "https://github.com/kubestellar/docs/pull/6461",
+        "created_at": "2026-07-29T10:19:36Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 5
     },
     {
       "name": "finding, chain, hardening",
@@ -311,6 +325,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "envoy, lua, header",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 envoy: Accessing request headers in envoy_on_response (lua HTTP filter).",
+        "url": "https://github.com/kubestellar/console-kb/pull/3465",
+        "created_at": "2026-09-19T06:16:56Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "optimize, export, strimzi",
@@ -647,20 +675,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "inferenceservice, kserve, serverless",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 kserve: Can't create Serverless InferenceService when knative is installed in",
-        "url": "https://github.com/kubestellar/console-kb/pull/2930",
-        "created_at": "2026-07-16T06:54:59Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -745,7 +759,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 116
+      "issue_count": 119
     }
   ],
   "repo_breakdown": [
@@ -754,7 +768,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2014,
+      "prs_opened": 2016,
       "prs_merged": 1705
     },
     {
@@ -762,8 +776,8 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 186,
-      "prs_opened": 605,
-      "prs_merged": 564
+      "prs_opened": 606,
+      "prs_merged": 565
     },
     {
       "repo": "console-marketplace",
