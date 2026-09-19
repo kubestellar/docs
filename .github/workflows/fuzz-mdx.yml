@@ -50,14 +50,27 @@ jobs:
         run: npm ci
 
       - name: Run fuzz harness
+        env:
+          FUZZ_SEED: ${{ github.event.inputs.seed || '' }}
+          FUZZ_ITERATIONS: ${{ github.event.inputs.iterations || '20000' }}
         run: |
-          SEED_ARG=""
-          if [ -n "${{ github.event.inputs.seed }}" ]; then
-            SEED_ARG="--seed=${{ github.event.inputs.seed }}"
+          set -euo pipefail
+          # Validate iterations is a plain positive integer (max 10 digits) —
+          # rejects shell metacharacters and command-substitution payloads.
+          if ! printf '%s' "$FUZZ_ITERATIONS" | grep -Eq '^[1-9][0-9]{0,9}$'; then
+            echo "Invalid iterations input (must be a positive integer): $FUZZ_ITERATIONS" >&2
+            exit 1
           fi
-          npx tsx .github/fuzzing/fuzz-mdx-sanitizer.ts \
-            --iterations=${{ github.event.inputs.iterations || '20000' }} \
-            $SEED_ARG
+          ARGS=( "--iterations=${FUZZ_ITERATIONS}" )
+          if [ -n "$FUZZ_SEED" ]; then
+            # Validate seed is a plain integer (allow leading -, up to 20 digits).
+            if ! printf '%s' "$FUZZ_SEED" | grep -Eq '^-?[0-9]{1,20}$'; then
+              echo "Invalid seed input (must be an integer): $FUZZ_SEED" >&2
+              exit 1
+            fi
+            ARGS+=( "--seed=${FUZZ_SEED}" )
+          fi
+          npx tsx .github/fuzzing/fuzz-mdx-sanitizer.ts "${ARGS[@]}"
 
       - name: Upload fuzz log on failure
         if: failure()
