@@ -1,8 +1,8 @@
 {
   "login": "Krishiv-Mahajan",
-  "generated_at": "2026-09-19T10:10:37.629Z",
-  "total_issues_opened": 0,
-  "total_prs_opened": 0,
+  "generated_at": "2026-09-19T14:13:23.898Z",
+  "total_issues_opened": 1,
+  "total_prs_opened": 1,
   "avatar_url": "https://avatars.githubusercontent.com/u/217094107?v=4",
   "total_points": 750,
   "level": "Explorer",
@@ -10,13 +10,13 @@
   "rank": 93,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 0,
+    "avg_per_day": 2,
     "by_day_of_week": [
       0,
       0,
       0,
       0,
-      0,
+      2,
       0,
       0
     ],
@@ -27,8 +27,8 @@
       0,
       0,
       0,
-      0,
-      0,
+      1,
+      1,
       0,
       0,
       0,
@@ -47,10 +47,10 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 0,
+    "longest_streak_weeks": 1,
     "trend": "inactive",
-    "first_issue_at": null,
-    "last_issue_at": null
+    "first_issue_at": "2026-01-23T06:43:03.000Z",
+    "last_issue_at": "2026-01-23T07:16:22.000Z"
   },
   "topics": [],
   "suggestions": {
@@ -72,7 +72,7 @@
     },
     {
       "month": "2026-01",
-      "issue_count": 0
+      "issue_count": 2
     },
     {
       "month": "2026-02",
@@ -107,5 +107,14 @@
       "issue_count": 0
     }
   ],
-  "repo_breakdown": []
+  "repo_breakdown": [
+    {
+      "repo": "docs",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 1,
+      "prs_opened": 1,
+      "prs_merged": 1
+    }
+  ]
 }
