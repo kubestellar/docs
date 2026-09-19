@@ -173,6 +173,12 @@ docs live under [`runbooks/`](./runbooks/):
 - [`runbooks/ci-failure-label-stale-exemption.md`](./runbooks/ci-failure-label-stale-exemption.md) —
   manually protecting `ci-failure`-labeled failure-tracking issues from
   silent stale-bot auto-close.
+- [`runbooks/gh-aw-uncompiled-source-monitoring.md`](./runbooks/gh-aw-uncompiled-source-monitoring.md) —
+  detecting a `gh-aw` workflow source (`.github/workflows/*.md`) with no
+  compiled sibling `.lock.yml`, so GitHub Actions never registered it.
+- [`runbooks/contributor-profiles-failure-monitoring.md`](./runbooks/contributor-profiles-failure-monitoring.md) —
+  detecting a silently-failed `Generate contributor profiles` step in
+  `generate-leaderboard.yml` (masked by `continue-on-error: true`).
 
 To record a production incident affecting the docs site, open an issue
 using the "Incident Postmortem" template
