@@ -19,6 +19,7 @@ looking at.
 | [`gh-aw-stop-time-monitoring.md`](gh-aw-stop-time-monitoring.md) | A `gh-aw`-generated scheduled workflow (e.g. `devstats.lock.yml`, `daily-team-status.lock.yml`) shows a "skipped" run with no alert — its hard-coded stop-time may have expired (no automated alert exists yet — see [#6769](https://github.com/kubestellar/docs/issues/6769)). | — |
 | [`gh-aw-uncompiled-source-monitoring.md`](gh-aw-uncompiled-source-monitoring.md) | A `.github/workflows/*.md` `gh-aw` source has no sibling `.lock.yml`, so GitHub Actions never registered it at all — confirmed once for `link-checker.md`/`typo-checker.md` (see [#6955](https://github.com/kubestellar/docs/issues/6955)). | — |
 | [`contributor-profiles-failure-monitoring.md`](contributor-profiles-failure-monitoring.md) | `generate-leaderboard.yml`'s `Generate contributor profiles` step can crash/timeout with the overall run still reporting green, since that step is `continue-on-error: true` (no automated alert exists yet — see [#6899](https://github.com/kubestellar/docs/issues/6899)). | — |
+| [`ci-failure-label-stale-exemption.md`](ci-failure-label-stale-exemption.md) | A `ci-failure`-labeled issue auto-filed by `generate-leaderboard.yml`/`netlify-error-reporter.yml` needs manual stale-bot protection, since `stale.yml`'s `exempt_labels` doesn't include `ci-failure` (no automated fix yet — see [#6773](https://github.com/kubestellar/docs/issues/6773)). | — |
 
 For a confirmed production incident, use the "Incident Postmortem" issue
 template (`.github/ISSUE_TEMPLATE/incident_postmortem.yaml`) once
