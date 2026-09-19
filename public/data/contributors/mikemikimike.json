@@ -1,16 +1,16 @@
 {
   "login": "mikemikimike",
-  "generated_at": "2026-09-19T06:21:39.456Z",
+  "generated_at": "2026-09-19T10:10:37.709Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 1,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/186855910?v=4",
   "total_points": 700,
   "level": "Explorer",
   "level_rank": 2,
   "rank": 108,
   "cadence": {
-    "avg_per_week": 0.1,
-    "avg_per_day": 1,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
       0,
@@ -18,7 +18,7 @@
       0,
       0,
       0,
-      1
+      0
     ],
     "by_hour_of_day": [
       0,
@@ -37,7 +37,7 @@
       0,
       0,
       0,
-      1,
+      0,
       0,
       0,
       0,
@@ -46,11 +46,11 @@
       0,
       0
     ],
-    "current_streak_weeks": 1,
-    "longest_streak_weeks": 1,
-    "trend": "ramping_up",
-    "first_issue_at": "2026-09-13T16:00:21.000Z",
-    "last_issue_at": "2026-09-13T16:00:21.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
   "topics": [],
   "suggestions": {
@@ -104,17 +104,8 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 1
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "console-marketplace",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 1,
-      "prs_merged": 1
-    }
-  ]
+  "repo_breakdown": []
 }

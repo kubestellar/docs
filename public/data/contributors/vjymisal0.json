@@ -1,24 +1,24 @@
 {
   "login": "vjymisal0",
-  "generated_at": "2026-09-19T06:21:39.243Z",
+  "generated_at": "2026-09-19T10:10:37.538Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 4,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/97379957?v=4",
   "total_points": 6500,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 34,
   "cadence": {
-    "avg_per_week": 0.3,
-    "avg_per_day": 0.27,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
       0,
       0,
       0,
       0,
-      2,
-      2
+      0,
+      0
     ],
     "by_hour_of_day": [
       0,
@@ -26,11 +26,11 @@
       0,
       0,
       0,
-      2,
       0,
       0,
-      1,
-      1,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -46,104 +46,16 @@
       0,
       0
     ],
-    "current_streak_weeks": 1,
-    "longest_streak_weeks": 1,
-    "trend": "ramping_up",
-    "first_issue_at": "2026-08-29T08:48:49.000Z",
-    "last_issue_at": "2026-09-13T05:19:51.000Z"
+    "current_streak_weeks": 0,
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "typecheck, eslint, yml",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ci(telemetry): add structured CI-observability summary to typecheck.yml",
-        "url": "https://github.com/kubestellar/docs/pull/6907",
-        "created_at": "2026-09-13T05:19:51Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "vitest, concurrency, cancel",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "ci(vitest): add timeout-minutes, concurrency group, and self-trigger path",
-        "url": "https://github.com/kubestellar/docs/pull/6904",
-        "created_at": "2026-09-13T05:16:02Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "kubestellar, a11y, reviewer",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 owners: add vjymisal0 to reviewers",
-        "url": "https://github.com/kubestellar/docs/pull/6619",
-        "created_at": "2026-08-29T09:21:34Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "adr, knowledge, hive",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 fix(hive): sync correct ADR knowledge-system path and restore internal links",
-        "url": "https://github.com/kubestellar/docs/pull/6618",
-        "created_at": "2026-08-29T08:48:49Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Missions & AI Agent",
-        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
-        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
-      },
-      {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
     {
@@ -188,21 +100,12 @@
     },
     {
       "month": "2026-08",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-09",
-      "issue_count": 2
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 4,
-      "prs_merged": 3
-    }
-  ]
+  "repo_breakdown": []
 }

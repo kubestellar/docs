@@ -1,317 +1,61 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-09-19T06:21:39.194Z",
-  "total_issues_opened": 43,
-  "total_prs_opened": 4,
+  "generated_at": "2026-09-19T10:10:37.450Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
   "total_points": 23350,
   "level": "Commander",
   "level_rank": 5,
   "rank": 17,
   "cadence": {
-    "avg_per_week": 0.3,
-    "avg_per_day": 0.2,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
-      9,
-      5,
-      4,
-      11,
-      14,
-      3,
-      1
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "by_hour_of_day": [
-      2,
-      0,
-      3,
-      0,
-      3,
-      10,
-      6,
-      1,
       0,
       0,
       0,
       0,
       0,
       0,
-      2,
-      3,
-      3,
-      3,
-      4,
-      2,
-      2,
-      2,
       0,
-      1
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 3,
-    "trend": "slowing_down",
-    "first_issue_at": "2025-12-11T19:58:02.000Z",
-    "last_issue_at": "2026-08-06T18:07:50.000Z"
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "describe, doc, contribute",
-      "issue_count": 32,
-      "recent_issue": {
-        "title": "doc: ks/ks release process doc needs updates wrt doc separation",
-        "url": "https://github.com/kubestellar/docs/issues/1945",
-        "created_at": "2026-05-08T04:26:46Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 32
-    },
-    {
-      "name": "login, need, agent",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "doc: Need documentation for what to do when a hive agent \"needs login\"",
-        "url": "https://github.com/kubestellar/docs/issues/6491",
-        "created_at": "2026-08-06T18:07:50Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "word, bindingpolicy, instance",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Docs: words missing from Combined Status from WECs",
-        "url": "https://github.com/kubestellar/docs/issues/6410",
-        "created_at": "2026-07-23T05:04:53Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "curiously, confusingly, badly",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Docs: User's Guide has broken link to installation",
-        "url": "https://github.com/kubestellar/docs/issues/6263",
-        "created_at": "2026-07-09T14:30:05Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "merge, enforce, currently",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "doc: agentic-quality-controls page describes merge requirements that are not currently enforced",
-        "url": "https://github.com/kubestellar/docs/issues/2155",
-        "created_at": "2026-05-10T05:06:07Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "mistake, act, measure",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "doc: Lack of clarity on quality of agentic development",
-        "url": "https://github.com/kubestellar/docs/issues/2131",
-        "created_at": "2026-05-09T23:50:52Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "vertex, leaf, overview",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "doc: Some missing overview pages",
-        "url": "https://github.com/kubestellar/docs/issues/1273",
-        "created_at": "2026-03-13T05:45:14Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "kubeflex, remark, namespace",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "doc: outdated remark about kubeflex-system namespace",
-        "url": "https://github.com/kubestellar/docs/issues/1163",
-        "created_at": "2026-02-16T15:18:13Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "periphery, home, hub",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: metaphorical strangeness in the home page",
-        "url": "https://github.com/kubestellar/docs/issues/788",
-        "created_at": "2026-01-16T21:42:02Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "button, shared, create",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feature: proper generic buttons on each documentation page",
-        "url": "https://github.com/kubestellar/docs/issues/780",
-        "created_at": "2026-01-16T18:32:33Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "issues, chore, picture",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: scan-merged-prs omits source repo name from chore title",
-        "url": "https://github.com/kubestellar/docs/issues/715",
-        "created_at": "2026-01-15T02:11:44Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "gh, aw, @mymac",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 gh aw compile scan-merged-prs",
-        "url": "https://github.com/kubestellar/docs/pull/714",
-        "created_at": "2026-01-15T02:05:26Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "discipline, make, actions",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "📖 Update doc on GitHub Actions reference discipline",
-        "url": "https://github.com/kubestellar/docs/pull/706",
-        "created_at": "2026-01-15T00:42:49Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "coding, standard, documented",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "PR template references \"the project's coding standards\"",
-        "url": "https://github.com/kubestellar/docs/issues/671",
-        "created_at": "2026-01-14T16:47:26Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "uncommon, 146.0, 15.7.3",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Application error: a client-side exception has occurred while loading kubestellar.io",
-        "url": "https://github.com/kubestellar/docs/issues/431",
-        "created_at": "2025-12-19T00:28:50Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "complaint, hamburger, menu",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: browser console errors when clicking on hamburger menu",
-        "url": "https://github.com/kubestellar/docs/issues/397",
-        "created_at": "2025-12-11T19:58:02Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Dashboard & Cards",
-        "path": "web/src/components/cards/, web/src/components/dashboard/",
-        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
-      },
-      {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
     {
@@ -324,27 +68,27 @@
     },
     {
       "month": "2025-12",
-      "issue_count": 3
+      "issue_count": 0
     },
     {
       "month": "2026-01",
-      "issue_count": 10
+      "issue_count": 0
     },
     {
       "month": "2026-02",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-03",
-      "issue_count": 12
+      "issue_count": 0
     },
     {
       "month": "2026-04",
-      "issue_count": 3
+      "issue_count": 0
     },
     {
       "month": "2026-05",
-      "issue_count": 14
+      "issue_count": 0
     },
     {
       "month": "2026-06",
@@ -352,25 +96,16 @@
     },
     {
       "month": "2026-07",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-08",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-09",
       "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "docs",
-      "bug_issues": 6,
-      "feature_issues": 1,
-      "other_issues": 36,
-      "prs_opened": 4,
-      "prs_merged": 3
-    }
-  ]
+  "repo_breakdown": []
 }

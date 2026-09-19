@@ -1,20 +1,20 @@
 {
   "login": "JHON12091986",
-  "generated_at": "2026-09-19T06:21:39.443Z",
+  "generated_at": "2026-09-19T10:10:37.628Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 1,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/278171760?v=4",
   "total_points": 1400,
   "level": "Explorer",
   "level_rank": 2,
   "rank": 76,
   "cadence": {
-    "avg_per_week": 0.1,
-    "avg_per_day": 1,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
       0,
       0,
-      1,
+      0,
       0,
       0,
       0,
@@ -26,7 +26,7 @@
       0,
       0,
       0,
-      1,
+      0,
       0,
       0,
       0,
@@ -47,10 +47,10 @@
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 1,
+    "longest_streak_weeks": 0,
     "trend": "inactive",
-    "first_issue_at": "2026-07-15T05:52:51.000Z",
-    "last_issue_at": "2026-07-15T05:52:51.000Z"
+    "first_issue_at": null,
+    "last_issue_at": null
   },
   "topics": [],
   "suggestions": {
@@ -96,7 +96,7 @@
     },
     {
       "month": "2026-07",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-08",
@@ -107,14 +107,5 @@
       "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "console-kb",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 1,
-      "prs_merged": 1
-    }
-  ]
+  "repo_breakdown": []
 }
