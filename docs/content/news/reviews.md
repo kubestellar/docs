@@ -8,7 +8,7 @@ _Comments and reviews from actual KubeStellar Console (and KubeStellar galaxy) U
 
 Just spent some time exploring the KubeStellar Console-honestly, great work on this!
 
-The Al Missions and Arcade part is super cool; I've never seen K8s management made so fun and gamified before. The UI feels really snappy, and I liked how you've integrated Al/ML workload tracking (like LLM inference) right next to Cl/CD and Security. It makes things very accessible.
+The AI Missions and Arcade part is super cool; I've never seen K8s management made so fun and gamified before. The UI feels really snappy, and I liked how you've integrated AI/ML workload tracking (like LLM inference) right next to CI/CD and Security. It makes things very accessible.
 
 A couple of small things I noticed while testing:
 
