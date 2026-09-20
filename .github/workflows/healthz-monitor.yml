@@ -126,6 +126,10 @@ jobs:
             --description "Production readiness check (/api/healthz) is failing" \
             --repo "${{ github.repository }}" 2>/dev/null || true
 
+          gh label create "kind/incident" --color "e11d21" \
+            --description "Confirmed production incident" \
+            --repo "${{ github.repository }}" 2>/dev/null || true
+
           gh issue create \
             --repo "${{ github.repository }}" \
             --title "${ALERT_TAG} Production readiness check failing" \
