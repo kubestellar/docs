@@ -1,6 +1,6 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import { useEffect, type CSSProperties } from "react";
 
 // Root-level error boundary (catches errors thrown by root layouts too).
 // Like the 404 pages, this uses inline styles ONLY and English-only strings:
@@ -89,11 +89,26 @@ const styles: Record<string, CSSProperties> = {
 };
 
 export default function GlobalError({
+  error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  // This is the app's only error boundary (no per-route error.tsx exists),
+  // so this is the single place a root-render crash becomes observable at
+  // all. Log it (message + Next.js's server-log-correlating `digest`, if
+  // present) so it isn't silently discarded — matching the console.error
+  // pattern already used by other client components in this codebase
+  // (e.g. src/components/master-page/HeroSection.tsx). Kept dependency-free
+  // per the note above: no external reporting call, just console.error.
+  useEffect(() => {
+    console.error("Unhandled root render error", {
+      message: error.message,
+      digest: error.digest,
+    });
+  }, [error]);
+
   return (
     <html lang="en">
       <body style={styles.body}>
