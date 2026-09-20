@@ -1,6 +1,6 @@
 {
   "login": "utkarshr3144",
-  "generated_at": "2026-09-19T22:13:05.823Z",
+  "generated_at": "2026-09-20T02:19:50.233Z",
   "total_issues_opened": 0,
   "total_prs_opened": 1,
   "avatar_url": "https://avatars.githubusercontent.com/u/205345514?v=4",
@@ -48,7 +48,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "ramping_up",
+    "trend": "slowing_down",
     "first_issue_at": "2026-08-23T00:08:54.000Z",
     "last_issue_at": "2026-08-23T00:08:54.000Z"
   },
