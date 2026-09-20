@@ -1,16 +1,16 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-20T10:13:47.195Z",
+  "generated_at": "2026-09-20T14:13:08.582Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2716,
+  "total_prs_opened": 2717,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6245350,
+  "total_points": 6246150,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 58.8,
-    "avg_per_day": 8.36,
+    "avg_per_week": 58.9,
+    "avg_per_day": 8.35,
     "by_day_of_week": [
       303,
       583,
@@ -18,7 +18,7 @@
       548,
       529,
       345,
-      304
+      305
     ],
     "by_hour_of_day": [
       92,
@@ -33,7 +33,7 @@
       8,
       21,
       18,
-      40,
+      41,
       33,
       41,
       177,
@@ -50,23 +50,23 @@
     "longest_streak_weeks": 38,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-20T06:02:24.000Z"
+    "last_issue_at": "2026-09-20T12:03:00.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 92,
+      "issue_count": 93,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-20",
-        "url": "https://github.com/kubestellar/console-kb/pull/3474",
-        "created_at": "2026-09-20T06:02:24Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3475",
+        "created_at": "2026-09-20T12:03:00Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
       "open_count": 1,
-      "closed_count": 91
+      "closed_count": 92
     },
     {
       "name": "release, version, sync",
@@ -266,20 +266,6 @@
       },
       "repos": [
         "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "link, break, plug",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Broken link: https://kubestellar.io/#key-features...",
-        "url": "https://github.com/kubestellar/docs/issues/6473",
-        "created_at": "2026-08-03T07:28:07Z"
-      },
-      "repos": [
-        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -537,6 +523,20 @@
       "closed_count": 1
     },
     {
+      "name": "link, ccf7896d, break",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "Broken link: https://kubestellar.io/#key-features...",
+        "url": "https://github.com/kubestellar/docs/issues/6473",
+        "created_at": "2026-08-03T07:28:07Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "gpu, instinct, computing",
       "issue_count": 1,
       "recent_issue": {
@@ -759,7 +759,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 125
+      "issue_count": 126
     }
   ],
   "repo_breakdown": [
@@ -768,8 +768,8 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2020,
-      "prs_merged": 1711
+      "prs_opened": 2021,
+      "prs_merged": 1712
     },
     {
       "repo": "docs",
