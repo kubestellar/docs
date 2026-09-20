@@ -1,16 +1,16 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-20T02:19:49.676Z",
+  "generated_at": "2026-09-20T06:21:26.671Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2713,
+  "total_prs_opened": 2716,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6242450,
+  "total_points": 6243550,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 59.2,
-    "avg_per_day": 8.35,
+    "avg_per_week": 59.4,
+    "avg_per_day": 8.36,
     "by_day_of_week": [
       303,
       583,
@@ -18,7 +18,7 @@
       548,
       529,
       345,
-      301
+      304
     ],
     "by_hour_of_day": [
       92,
@@ -26,8 +26,8 @@
       92,
       55,
       38,
-      110,
-      1502,
+      112,
+      1503,
       279,
       54,
       8,
@@ -50,37 +50,37 @@
     "longest_streak_weeks": 38,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-20T00:03:53.000Z"
+    "last_issue_at": "2026-09-20T06:02:24.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 91,
+      "issue_count": 92,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-20",
-        "url": "https://github.com/kubestellar/console-kb/pull/3469",
-        "created_at": "2026-09-20T00:03:53Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3474",
+        "created_at": "2026-09-20T06:02:24Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
       "open_count": 2,
-      "closed_count": 89
+      "closed_count": 90
     },
     {
       "name": "release, version, sync",
-      "issue_count": 66,
+      "issue_count": 68,
       "recent_issue": {
         "title": "📖 Sync console docs versions",
-        "url": "https://github.com/kubestellar/docs/pull/7014",
-        "created_at": "2026-09-19T05:26:11Z"
+        "url": "https://github.com/kubestellar/docs/pull/7022",
+        "created_at": "2026-09-20T05:26:29Z"
       },
       "repos": [
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 66
+      "open_count": 1,
+      "closed_count": 67
     },
     {
       "name": "hive, doc, relay",
@@ -124,20 +124,6 @@
       ],
       "open_count": 0,
       "closed_count": 19
-    },
-    {
-      "name": "link, lock, checker",
-      "issue_count": 10,
-      "recent_issue": {
-        "title": "Broken link: https://kubestellar.io/#key-features...",
-        "url": "https://github.com/kubestellar/docs/issues/6473",
-        "created_at": "2026-08-03T07:28:07Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 10
     },
     {
       "name": "workflow, label, sync",
@@ -184,6 +170,20 @@
       ],
       "open_count": 0,
       "closed_count": 6
+    },
+    {
+      "name": "lock, checker, stale",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "[scanner] fix: refresh stale link-checker lock file",
+        "url": "https://github.com/kubestellar/docs/pull/6461",
+        "created_at": "2026-07-29T10:19:36Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 5
     },
     {
       "name": "finding, chain, hardening",
@@ -266,6 +266,20 @@
       },
       "repos": [
         "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "link, break, plug",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "Broken link: https://kubestellar.io/#key-features...",
+        "url": "https://github.com/kubestellar/docs/issues/6473",
+        "created_at": "2026-08-03T07:28:07Z"
+      },
+      "repos": [
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -745,7 +759,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 122
+      "issue_count": 125
     }
   ],
   "repo_breakdown": [
@@ -754,16 +768,16 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2019,
-      "prs_merged": 1709
+      "prs_opened": 2020,
+      "prs_merged": 1710
     },
     {
       "repo": "docs",
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 186,
-      "prs_opened": 606,
-      "prs_merged": 565
+      "prs_opened": 608,
+      "prs_merged": 566
     },
     {
       "repo": "console-marketplace",
