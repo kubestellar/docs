@@ -465,29 +465,26 @@ const NAV_STRUCTURE_NEWS: Array<{ title: string; items: NavItem[] }> = [
   }
 ]
 
-// Get navigation structure for a project
-function getNavStructure(projectId: ProjectId): Array<{ title: string; items: NavItem[] }> {
-  let baseStructure: Array<{ title: string; items: NavItem[] }>;
+// Get navigation structure for a project.
+//
+// Data-driven from NAV_STRUCTURE_BY_PROJECT: Record<ProjectId, ...> so a new
+// value added to the ProjectId union fails to compile until the maintainer
+// supplies a nav structure, instead of silently falling through to
+// NAV_STRUCTURE_KUBESTELLAR via a `default:` arm. See kubestellar/docs#7037.
+const NAV_STRUCTURE_BY_PROJECT: Record<
+  ProjectId,
+  Array<{ title: string; items: NavItem[] }>
+> = {
+  kubestellar: NAV_STRUCTURE_KUBESTELLAR,
+  a2a: NAV_STRUCTURE_A2A,
+  kubeflex: NAV_STRUCTURE_KUBEFLEX,
+  'multi-plugin': NAV_STRUCTURE_MULTI_PLUGIN,
+  'kubestellar-mcp': NAV_STRUCTURE_KUBESTELLAR_MCP,
+  console: NAV_STRUCTURE_CONSOLE,
+}
 
-  switch (projectId) {
-    case 'a2a':
-      baseStructure = NAV_STRUCTURE_A2A
-      break
-    case 'kubeflex':
-      baseStructure = NAV_STRUCTURE_KUBEFLEX
-      break
-    case 'multi-plugin':
-      baseStructure = NAV_STRUCTURE_MULTI_PLUGIN
-      break
-    case 'kubestellar-mcp':
-      baseStructure = NAV_STRUCTURE_KUBESTELLAR_MCP
-      break
-    case 'console':
-      baseStructure = NAV_STRUCTURE_CONSOLE
-      break
-    default:
-      baseStructure = NAV_STRUCTURE_KUBESTELLAR
-  }
+function getNavStructure(projectId: ProjectId): Array<{ title: string; items: NavItem[] }> {
+  const baseStructure = NAV_STRUCTURE_BY_PROJECT[projectId]
 
   // Add general sections to all projects
   return [...baseStructure, ...NAV_STRUCTURE_CONTRIBUTING, ...NAV_STRUCTURE_COMMUNITY, ...NAV_STRUCTURE_NEWS]
