@@ -21,7 +21,7 @@ For configuration details, see [Compliance Trestle (OSCAL) Card](../../console/c
 - Software supply chain security
 
 ### Policy Management  
-- OPA (Open Policy Agent) Gatenode policy enforcement
+- OPA (Open Policy Agent) Gatekeeper policy enforcement
 - Kyverno for Kubernetes-native policy implementation
 - Audit and compliance reporting
 
