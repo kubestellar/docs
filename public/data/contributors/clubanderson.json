@@ -1,18 +1,18 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-21T14:16:59.196Z",
+  "generated_at": "2026-09-21T18:17:27.776Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2724,
+  "total_prs_opened": 2725,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6251050,
+  "total_points": 6251250,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 58.9,
+    "avg_per_week": 58.1,
     "avg_per_day": 8.35,
     "by_day_of_week": [
-      309,
+      310,
       583,
       744,
       548,
@@ -39,7 +39,7 @@
       177,
       93,
       80,
-      137,
+      138,
       104,
       120,
       52,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 38,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-21T12:02:33.000Z"
+    "last_issue_at": "2026-09-21T18:02:16.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 97,
+      "issue_count": 98,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-21",
-        "url": "https://github.com/kubestellar/console-kb/pull/3496",
-        "created_at": "2026-09-21T12:02:33Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3498",
+        "created_at": "2026-09-21T18:02:16Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 96
     },
     {
@@ -660,20 +660,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "dependabot, cve, action",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[sec-check] Stale Dependabot alert #2: tj-actions/changed-files (CVE-2025-30066) — workflow already removed",
-        "url": "https://github.com/kubestellar/docs/issues/6371",
-        "created_at": "2026-07-17T21:28:43Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -758,7 +744,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 133
+      "issue_count": 134
     }
   ],
   "repo_breakdown": [
@@ -767,7 +753,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2027,
+      "prs_opened": 2028,
       "prs_merged": 1718
     },
     {
