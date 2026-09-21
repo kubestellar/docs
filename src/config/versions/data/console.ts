@@ -3,8 +3,8 @@ import type { VersionInfo } from "../types"
 // The console release sync workflow auto-updates this when a new release is detected.
 export const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.3.41 (Latest)",
-    branch: "docs/console/0.3.41",
+    label: "v0.3.42 (Latest)",
+    branch: "docs/console/0.3.42",
     isDefault: true,
   },
   main: {
@@ -12,6 +12,11 @@ export const CONSOLE_VERSIONS: Record<string, VersionInfo> = {
     branch: "main",
     isDefault: false,
     isDev: true,
+  },
+  "0.3.41": {
+    label: "v0.3.41",
+    branch: "docs/console/0.3.41",
+    isDefault: false,
   },
   "0.3.40": {
     label: "v0.3.40",
