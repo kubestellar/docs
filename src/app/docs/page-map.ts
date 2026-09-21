@@ -1,46 +1,33 @@
 import { normalizePageMap } from 'nextra/page-map'
 import fs from 'fs'
 import path from 'path'
-import { type ProjectId } from '@/config/versions'
+import { PROJECTS, type ProjectId } from '@/config/versions'
 
 // Local docs path - docs are now in this repository
 export const docsContentPath = path.join(process.cwd(), 'docs', 'content')
 export const basePath = 'docs'
 
-// Get content path for a project
+// Get content path for a project.
+//
+// Data-driven from PROJECTS[projectId].contentPath (see
+// src/config/versions/lookup.ts) so a new value added to the ProjectId union
+// fails to compile until the maintainer supplies a contentPath, instead of
+// silently falling through to the KubeStellar path via a `default:` arm.
+// See kubestellar/docs#7037.
 export function getContentPath(projectId: ProjectId): string {
-  switch (projectId) {
-    case 'a2a':
-      return path.join(process.cwd(), 'docs', 'content', 'a2a')
-    case 'kubeflex':
-      return path.join(process.cwd(), 'docs', 'content', 'kubeflex')
-    case 'multi-plugin':
-      return path.join(process.cwd(), 'docs', 'content', 'multi-plugin')
-    case 'kubestellar-mcp':
-      return path.join(process.cwd(), 'docs', 'content', 'kubestellar-mcp')
-    case 'console':
-      return path.join(process.cwd(), 'docs', 'content', 'console')
-    default:
-      return docsContentPath
-  }
+  return path.join(process.cwd(), PROJECTS[projectId].contentPath)
 }
 
-// Get base path for a project
+// Get base path for a project.
+//
+// Data-driven from PROJECTS[projectId].basePath (see
+// src/config/versions/lookup.ts). Only the KubeStellar project has an empty
+// basePath ("" → "docs"); every other project's basePath is joined under
+// "docs/". Same rationale as getContentPath — no silent default arm.
+// See kubestellar/docs#7037.
 export function getBasePath(projectId: ProjectId): string {
-  switch (projectId) {
-    case 'a2a':
-      return 'docs/a2a'
-    case 'kubeflex':
-      return 'docs/kubeflex'
-    case 'multi-plugin':
-      return 'docs/multi-plugin'
-    case 'kubestellar-mcp':
-      return 'docs/kubestellar-mcp'
-    case 'console':
-      return 'docs/console'
-    default:
-      return 'docs'
-  }
+  const projectBasePath = PROJECTS[projectId].basePath
+  return projectBasePath ? `docs/${projectBasePath}` : 'docs'
 }
 
 // Strong types for page-map nodes
