@@ -27,7 +27,7 @@
     "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.7.0",
     "@theguild/remark-mermaid": "^0.3.0",
-    "dotenv": "^17.2.3",
+    "dotenv": "^18.0.0",
     "framer-motion": "^13.2.0",
     "lucide-react": "^1.47.0",
     "mermaid": "^11.17.2",
