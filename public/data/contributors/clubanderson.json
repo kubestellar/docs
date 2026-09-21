@@ -1,18 +1,18 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-20T22:13:34.902Z",
+  "generated_at": "2026-09-21T02:23:17.911Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2718,
+  "total_prs_opened": 2719,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6246850,
+  "total_points": 6247550,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 59,
+    "avg_per_week": 59.1,
     "avg_per_day": 8.35,
     "by_day_of_week": [
-      303,
+      304,
       583,
       744,
       548,
@@ -21,7 +21,7 @@
       306
     ],
     "by_hour_of_day": [
-      92,
+      93,
       114,
       92,
       55,
@@ -50,23 +50,23 @@
     "longest_streak_weeks": 38,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-20T18:02:02.000Z"
+    "last_issue_at": "2026-09-21T00:03:41.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 94,
+      "issue_count": 95,
       "recent_issue": {
-        "title": "✨ Platform install mission generation 2026-09-20",
-        "url": "https://github.com/kubestellar/console-kb/pull/3477",
-        "created_at": "2026-09-20T18:02:02Z"
+        "title": "✨ Platform install mission generation 2026-09-21",
+        "url": "https://github.com/kubestellar/console-kb/pull/3483",
+        "created_at": "2026-09-21T00:03:41Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
       "open_count": 1,
-      "closed_count": 93
+      "closed_count": 94
     },
     {
       "name": "release, version, sync",
@@ -200,20 +200,6 @@
       "closed_count": 3
     },
     {
-      "name": "finding, scorecard, chain",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "[scanner] fix: address Scorecard supply-chain hardening findings",
-        "url": "https://github.com/kubestellar/console-kb/pull/2948",
-        "created_at": "2026-07-23T18:37:06Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
       "name": "oidc, headlamp, pop",
       "issue_count": 2,
       "recent_issue": {
@@ -276,6 +262,20 @@
         "title": "🌱 grpc: Regression against 2.68.1 - Grpc.Tools 2.69.0 stops working on ARM64 - Fixed in",
         "url": "https://github.com/kubestellar/console-kb/pull/2972",
         "created_at": "2026-08-03T07:13:10Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "finding, hardening, chain",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "[scanner] fix: address Scorecard supply-chain hardening findings",
+        "url": "https://github.com/kubestellar/console-kb/pull/2948",
+        "created_at": "2026-07-23T18:37:06Z"
       },
       "repos": [
         "console-kb"
@@ -772,7 +772,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 127
+      "issue_count": 128
     }
   ],
   "repo_breakdown": [
@@ -781,8 +781,8 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2022,
-      "prs_merged": 1713
+      "prs_opened": 2023,
+      "prs_merged": 1714
     },
     {
       "repo": "docs",
