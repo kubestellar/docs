@@ -18,4 +18,12 @@ export interface ProjectConfig {
   currentVersion: string
   contentPath: string
   versions: Record<string, VersionInfo>
+  /**
+   * URL path prefixes that route to this project via `getProjectFromPath`.
+   * Include the canonical `/docs/<basePath>` mount plus any aliases (e.g.
+   * kubestellar-mcp is also mounted at `/docs/related-projects/kubestellar-mcp`).
+   * Empty for the `kubestellar` fallback: it is returned whenever no other
+   * project's prefixes match.
+   */
+  pathPrefixes: readonly string[]
 }

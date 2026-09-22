@@ -16,6 +16,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     currentVersion: "0.30.0",
     contentPath: "docs/content",
     versions: KUBESTELLAR_VERSIONS,
+    pathPrefixes: [],
   },
   a2a: {
     id: "a2a",
@@ -24,6 +25,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     currentVersion: "0.1.0",
     contentPath: "docs/content/a2a",
     versions: A2A_VERSIONS,
+    pathPrefixes: ["/docs/a2a"],
   },
   kubeflex: {
     id: "kubeflex",
@@ -32,6 +34,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     currentVersion: "0.9.3",
     contentPath: "docs/content/kubeflex",
     versions: KUBEFLEX_VERSIONS,
+    pathPrefixes: ["/docs/kubeflex"],
   },
   "multi-plugin": {
     id: "multi-plugin",
@@ -40,6 +43,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     currentVersion: "0.1.0",
     contentPath: "docs/content/multi-plugin",
     versions: MULTI_PLUGIN_VERSIONS,
+    pathPrefixes: ["/docs/multi-plugin"],
   },
   "kubestellar-mcp": {
     id: "kubestellar-mcp",
@@ -48,6 +52,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     currentVersion: "0.9.15",
     contentPath: "docs/content/kubestellar-mcp",
     versions: KUBESTELLAR_MCP_VERSIONS,
+    pathPrefixes: ["/docs/kubestellar-mcp", "/docs/related-projects/kubestellar-mcp"],
   },
   "console": {
     id: "console",
@@ -56,25 +61,22 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     currentVersion: "0.3.42",
     contentPath: "docs/content/console",
     versions: CONSOLE_VERSIONS,
+    pathPrefixes: ["/docs/console"],
   },
 }
 
 // Get project from URL pathname
 export function getProjectFromPath(pathname: string): ProjectConfig {
-  if (pathname.startsWith("/docs/a2a")) {
-    return PROJECTS.a2a
-  }
-  if (pathname.startsWith("/docs/kubeflex")) {
-    return PROJECTS.kubeflex
-  }
-  if (pathname.startsWith("/docs/multi-plugin")) {
-    return PROJECTS["multi-plugin"]
-  }
-  if (pathname.startsWith("/docs/kubestellar-mcp") || pathname.startsWith("/docs/related-projects/kubestellar-mcp")) {
-    return PROJECTS["kubestellar-mcp"]
-  }
-  if (pathname.startsWith("/docs/console")) {
-    return PROJECTS["console"]
+  // Data-driven from PROJECTS[id].pathPrefixes. Adding a new project only
+  // requires declaring its prefixes on its ProjectConfig entry — the TypeScript
+  // `Record<ProjectId, ProjectConfig>` on PROJECTS then makes the field
+  // mandatory, closing the silent-fallback drift addressed by #7037.
+  for (const project of Object.values(PROJECTS)) {
+    for (const prefix of project.pathPrefixes) {
+      if (pathname.startsWith(prefix)) {
+        return project
+      }
+    }
   }
   return PROJECTS.kubestellar
 }
