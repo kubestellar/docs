@@ -1,19 +1,19 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-22T02:20:29.400Z",
+  "generated_at": "2026-09-22T06:23:49.707Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2726,
+  "total_prs_opened": 2728,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6214350,
+  "total_points": 6249250,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 56.7,
+    "avg_per_week": 56,
     "avg_per_day": 8.34,
     "by_day_of_week": [
       310,
-      584,
+      586,
       744,
       548,
       529,
@@ -26,8 +26,8 @@
       92,
       55,
       38,
-      113,
-      1506,
+      114,
+      1507,
       279,
       54,
       8,
@@ -50,37 +50,37 @@
     "longest_streak_weeks": 38,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-22T00:04:00.000Z"
+    "last_issue_at": "2026-09-22T06:02:46.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 99,
+      "issue_count": 100,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-22",
-        "url": "https://github.com/kubestellar/console-kb/pull/3502",
-        "created_at": "2026-09-22T00:04:00Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3507",
+        "created_at": "2026-09-22T06:02:46Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 98
     },
     {
       "name": "release, version, sync",
-      "issue_count": 67,
+      "issue_count": 68,
       "recent_issue": {
         "title": "📖 Sync console docs versions",
-        "url": "https://github.com/kubestellar/docs/pull/7029",
-        "created_at": "2026-09-21T05:31:07Z"
+        "url": "https://github.com/kubestellar/docs/pull/7058",
+        "created_at": "2026-09-22T05:28:39Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 67
+      "closed_count": 68
     },
     {
       "name": "hive, doc, relay",
@@ -126,22 +126,6 @@
       "closed_count": 19
     },
     {
-      "name": "workflow, label, sync",
-      "issue_count": 8,
-      "recent_issue": {
-        "title": "🌱 Sync workflows from kubestellar/infra",
-        "url": "https://github.com/kubestellar/docs/pull/6559",
-        "created_at": "2026-08-23T00:23:21Z"
-      },
-      "repos": [
-        "docs",
-        "console-marketplace",
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 8
-    },
-    {
       "name": "warning, registry, staleness",
       "issue_count": 7,
       "recent_issue": {
@@ -154,6 +138,22 @@
       ],
       "open_count": 0,
       "closed_count": 7
+    },
+    {
+      "name": "workflow, label, sync",
+      "issue_count": 6,
+      "recent_issue": {
+        "title": "🌱 Sync workflows from kubestellar/infra",
+        "url": "https://github.com/kubestellar/docs/pull/6559",
+        "created_at": "2026-08-23T00:23:21Z"
+      },
+      "repos": [
+        "docs",
+        "console-marketplace",
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 6
     },
     {
       "name": "test, quality, coverage",
@@ -634,7 +634,7 @@
       "closed_count": 1
     },
     {
-      "name": "config, controller, argo",
+      "name": "config, argo, controller",
       "issue_count": 1,
       "recent_issue": {
         "title": "🌱 argo-workflows: Controller: `invalid config map object received in config watcher. Ignored",
@@ -744,7 +744,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 135
+      "issue_count": 137
     }
   ],
   "repo_breakdown": [
@@ -753,7 +753,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2029,
+      "prs_opened": 2030,
       "prs_merged": 1720
     },
     {
@@ -761,8 +761,8 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 186,
-      "prs_opened": 609,
-      "prs_merged": 568
+      "prs_opened": 610,
+      "prs_merged": 569
     },
     {
       "repo": "console-marketplace",
