@@ -1,16 +1,45 @@
 name: PR Verifier
 
+# NOTE: this workflow previously called
+# `kubestellar/infra/.github/workflows/reusable-pr-verifier.yml`, which was
+# deleted from kubestellar/infra on 2026-06-19 in kubestellar/infra#144
+# ("chore: remove unused PR verifier workflows", commit 1a04a3fd1777) and
+# does not exist on any commit since — including the pinned SHA
+# 220beeeb8dae67e2fd8e89338ada8144609fc6ef that this file previously used.
+# GitHub Actions rejects a `workflow_call` to a non-existent target at
+# parse time with `startup_failure` (zero jobs created, no step logs),
+# which is why repinning the SHA (kubestellar/docs#6998) never fixed this
+# — the callee simply isn't there to repin to. Until kubestellar/infra
+# ships a real `reusable-pr-verifier.yml`, run a minimal self-contained
+# check here so PRs get real feedback instead of a silent 100%
+# startup_failure. Mirrors the fix already in kubestellar/console-kb.
+
 on:
   pull_request_target:
     types: [opened, edited, synchronize, reopened]
 
-permissions:
-  checks: write
-  pull-requests: read
+permissions: {}
 
 jobs:
   verify:
     if: github.event.pull_request.head.repo.full_name == github.repository
-    uses: kubestellar/infra/.github/workflows/reusable-pr-verifier.yml@220beeeb8dae67e2fd8e89338ada8144609fc6ef  # main
-    secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      pull-requests: read
+    steps:
+      - name: Check PR has a non-empty title and body
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          if [ -z "${PR_TITLE// /}" ]; then
+            echo "::error::PR title must not be empty."
+            exit 1
+          fi
+          if [ -z "${PR_BODY// /}" ]; then
+            echo "::error::PR description must not be empty. Please describe the change and, if applicable, link the issue it fixes."
+            exit 1
+          fi
+          echo "PR title and body are present." >> "$GITHUB_STEP_SUMMARY"
