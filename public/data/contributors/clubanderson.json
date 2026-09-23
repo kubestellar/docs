@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-23T14:16:25.614Z",
+  "generated_at": "2026-09-23T18:20:20.426Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2734,
+  "total_prs_opened": 2735,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6256750,
+  "total_points": 6257450,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 54.4,
+    "avg_per_week": 54.1,
     "avg_per_day": 8.33,
     "by_day_of_week": [
       310,
       588,
-      748,
+      749,
       548,
       529,
       345,
@@ -39,7 +39,7 @@
       177,
       93,
       80,
-      139,
+      140,
       104,
       120,
       52,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 38,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-23T12:03:14.000Z"
+    "last_issue_at": "2026-09-23T18:02:15.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 105,
+      "issue_count": 106,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-23",
-        "url": "https://github.com/kubestellar/console-kb/pull/3523",
-        "created_at": "2026-09-23T12:03:14Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3526",
+        "created_at": "2026-09-23T18:02:15Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 104
     },
     {
@@ -293,20 +293,6 @@
       },
       "repos": [
         "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "postmark, maintainer, tracker",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🌱 Workflow hardening: Add continue-on-error to Postmark email step",
-        "url": "https://github.com/kubestellar/docs/pull/6385",
-        "created_at": "2026-07-20T19:21:29Z"
-      },
-      "repos": [
-        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -674,6 +660,20 @@
       ],
       "open_count": 0,
       "closed_count": 1
+    },
+    {
+      "name": "postmark, email, workflow",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 Workflow hardening: Add continue-on-error to Postmark email step",
+        "url": "https://github.com/kubestellar/docs/pull/6385",
+        "created_at": "2026-07-20T19:21:29Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -758,7 +758,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 143
+      "issue_count": 144
     }
   ],
   "repo_breakdown": [
@@ -767,7 +767,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2035,
+      "prs_opened": 2036,
       "prs_merged": 1726
     },
     {
