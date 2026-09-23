@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-23T02:20:46.199Z",
+  "generated_at": "2026-09-23T06:24:54.712Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2731,
+  "total_prs_opened": 2733,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6252950,
+  "total_points": 6253850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 54.3,
+    "avg_per_week": 54.5,
     "avg_per_day": 8.34,
     "by_day_of_week": [
       310,
       588,
-      745,
+      747,
       548,
       529,
       345,
@@ -26,8 +26,8 @@
       92,
       55,
       38,
-      114,
-      1507,
+      115,
+      1508,
       279,
       54,
       8,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 38,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-23T00:03:36.000Z"
+    "last_issue_at": "2026-09-23T06:02:28.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 103,
+      "issue_count": 104,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-23",
-        "url": "https://github.com/kubestellar/console-kb/pull/3514",
-        "created_at": "2026-09-23T00:03:36Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3519",
+        "created_at": "2026-09-23T06:02:28Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 102
     },
     {
@@ -73,8 +73,8 @@
       "issue_count": 66,
       "recent_issue": {
         "title": "📖 Sync console docs versions",
-        "url": "https://github.com/kubestellar/docs/pull/7058",
-        "created_at": "2026-09-22T05:28:39Z"
+        "url": "https://github.com/kubestellar/docs/pull/7065",
+        "created_at": "2026-09-23T05:28:38Z"
       },
       "repos": [
         "docs"
@@ -172,8 +172,8 @@
       "closed_count": 5
     },
     {
-      "name": "lock, checker, stale",
-      "issue_count": 5,
+      "name": "lock, stale, checker",
+      "issue_count": 4,
       "recent_issue": {
         "title": "[scanner] fix: refresh stale link-checker lock file",
         "url": "https://github.com/kubestellar/docs/pull/6461",
@@ -183,7 +183,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 5
+      "closed_count": 4
     },
     {
       "name": "keycloak, takeover, cimd",
@@ -744,7 +744,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 140
+      "issue_count": 142
     }
   ],
   "repo_breakdown": [
@@ -753,7 +753,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2033,
+      "prs_opened": 2034,
       "prs_merged": 1724
     },
     {
@@ -761,8 +761,8 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 186,
-      "prs_opened": 610,
-      "prs_merged": 569
+      "prs_opened": 611,
+      "prs_merged": 570
     },
     {
       "repo": "console-marketplace",
