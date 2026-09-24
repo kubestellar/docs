@@ -55,7 +55,6 @@ export const AFFILIATE_FETCH_TIMEOUT_MS = 15_000;
 export const AFFILIATE_RETRY_DELAY_MS = 2_000;
 
 // ── Medal icons for top 3 ─────────────────────────────────────────────
-
-export const GOLD_MEDAL = "🥇";
-export const SILVER_MEDAL = "🥈";
-export const BRONZE_MEDAL = "🥉";
+// Re-exported from src/lib/RankDisplay.tsx so both leaderboards use the
+// same values (see docs #7076).
+export { GOLD_MEDAL, SILVER_MEDAL, BRONZE_MEDAL } from "../../../lib/RankDisplay";

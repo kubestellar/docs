@@ -1,17 +1,10 @@
 import type { AffiliateData, LeaderboardBreakdown } from "./types";
-import { BRONZE_MEDAL, GOLD_MEDAL, LEVEL_STYLES, SILVER_MEDAL } from "./types";
+import { LEVEL_STYLES } from "./types";
 
 // ── Rank display ──────────────────────────────────────────────────────
-
-export function RankDisplay({ rank }: { rank: number }) {
-  if (rank === 1)
-    return <span className="text-xl" title="1st place">{GOLD_MEDAL}</span>;
-  if (rank === 2)
-    return <span className="text-xl" title="2nd place">{SILVER_MEDAL}</span>;
-  if (rank === 3)
-    return <span className="text-xl" title="3rd place">{BRONZE_MEDAL}</span>;
-  return <span className="text-sm text-gray-400 tabular-nums">#{rank}</span>;
-}
+// RankDisplay lives in src/lib/RankDisplay.tsx now — see docs #7076.
+// Re-exported so existing import paths (this file + tests) keep working.
+export { RankDisplay } from "../../../lib/RankDisplay";
 
 // ── Level badge ───────────────────────────────────────────────────────
 
