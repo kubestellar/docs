@@ -11,6 +11,8 @@ permissions:
 jobs:
   stale:
     uses: kubestellar/infra/.github/workflows/reusable-stale.yml@220beeeb8dae67e2fd8e89338ada8144609fc6ef  # main
+    with:
+      exempt_labels: security,bug,enhancement,good first issue,help wanted,hacktober-fest,lifecycle/frozen,stale-exempt,ci-failure,site-outage,kind/incident
     secrets: inherit
 
   alert-on-failure:
