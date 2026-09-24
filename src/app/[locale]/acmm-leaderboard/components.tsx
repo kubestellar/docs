@@ -1,13 +1,9 @@
 import { CUMULATIVE_SCANNABLE, LEVELS, MIN_LEVEL, TOTAL_SCANNABLE } from "./scoring";
 
 // ── Medal icons ───────────────────────────────────────────────────────
-
-export function RankDisplay({ rank }: { rank: number }) {
-  if (rank === 1) return <span className="text-xl" title="1st place">🥇</span>;
-  if (rank === 2) return <span className="text-xl" title="2nd place">🥈</span>;
-  if (rank === 3) return <span className="text-xl" title="3rd place">🥉</span>;
-  return <span className="text-sm text-gray-400 tabular-nums">#{rank}</span>;
-}
+// RankDisplay lives in src/lib/RankDisplay.tsx now — see docs #7076.
+// Re-exported so ./page.tsx's existing import path keeps working.
+export { RankDisplay } from "../../../lib/RankDisplay";
 
 // ── Level badge ───────────────────────────────────────────────────────
 
