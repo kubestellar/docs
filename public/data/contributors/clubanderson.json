@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-24T14:16:47.603Z",
+  "generated_at": "2026-09-24T18:18:44.610Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2739,
+  "total_prs_opened": 2740,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6259950,
+  "total_points": 6260150,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 52.3,
-    "avg_per_day": 8.33,
+    "avg_per_week": 51.8,
+    "avg_per_day": 8.32,
     "by_day_of_week": [
       310,
       588,
       749,
-      552,
+      553,
       529,
       345,
       306
@@ -39,7 +39,7 @@
       177,
       93,
       80,
-      140,
+      141,
       104,
       120,
       52,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-24T12:02:59.000Z"
+    "last_issue_at": "2026-09-24T18:02:19.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 109,
+      "issue_count": 110,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-24",
-        "url": "https://github.com/kubestellar/console-kb/pull/3532",
-        "created_at": "2026-09-24T12:02:59Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3535",
+        "created_at": "2026-09-24T18:02:19Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 5,
+      "open_count": 6,
       "closed_count": 104
     },
     {
@@ -646,20 +646,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "profile, arn, mfa",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 vault: Unable to login using local AWS profile with role_arn / source_profile and MFA",
-        "url": "https://github.com/kubestellar/console-kb/pull/2942",
-        "created_at": "2026-07-21T07:18:09Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -744,7 +730,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 148
+      "issue_count": 149
     }
   ],
   "repo_breakdown": [
@@ -753,7 +739,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2039,
+      "prs_opened": 2040,
       "prs_merged": 1726
     },
     {
