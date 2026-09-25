@@ -1,22 +1,22 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-25T14:16:46.270Z",
+  "generated_at": "2026-09-25T18:18:07.759Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2744,
+  "total_prs_opened": 2745,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6261850,
+  "total_points": 6262050,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
     "avg_per_week": 50.3,
-    "avg_per_day": 8.32,
+    "avg_per_day": 8.31,
     "by_day_of_week": [
       310,
       588,
       749,
       553,
-      533,
+      534,
       345,
       306
     ],
@@ -39,7 +39,7 @@
       177,
       93,
       80,
-      141,
+      142,
       104,
       120,
       52,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-25T12:02:43.000Z"
+    "last_issue_at": "2026-09-25T18:02:11.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 113,
+      "issue_count": 114,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-25",
-        "url": "https://github.com/kubestellar/console-kb/pull/3547",
-        "created_at": "2026-09-25T12:02:43Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3550",
+        "created_at": "2026-09-25T18:02:11Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 9,
+      "open_count": 10,
       "closed_count": 104
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "name": "ghsa, postcss, r28c",
-      "issue_count": 16,
+      "issue_count": 15,
       "recent_issue": {
         "title": "[scanner] fix: remediate brace-expansion vulnerability",
         "url": "https://github.com/kubestellar/docs/pull/6456",
@@ -123,7 +123,7 @@
         "console-kb"
       ],
       "open_count": 0,
-      "closed_count": 16
+      "closed_count": 15
     },
     {
       "name": "warning, registry, staleness",
@@ -730,7 +730,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 153
+      "issue_count": 154
     }
   ],
   "repo_breakdown": [
@@ -739,7 +739,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2043,
+      "prs_opened": 2044,
       "prs_merged": 1726
     },
     {
