@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-09-24T22:14:30.551Z",
+  "generated_at": "2026-09-25T02:19:12.878Z",
   "total_issues_opened": 89,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
@@ -82,7 +82,7 @@
       "closed_count": 2
     },
     {
-      "name": "attach, screenshot, style",
+      "name": "attach, screenshot, button",
       "issue_count": 2,
       "recent_issue": {
         "title": "Review and fix mkdocs.yml configuration",
