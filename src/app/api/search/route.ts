@@ -152,15 +152,29 @@ export async function GET(request: NextRequest) {
           text.slice(start, end) +
           (end < text.length ? "..." : "")
 
-        // HTML-encode the snippet so HTML entities in docs content (&lt;img&gt;
-        // etc.) cannot become live HTML when rendered via dangerouslySetInnerHTML.
-        // Only the <mark>/<\/mark> tags we insert below are trusted raw HTML.
-        const encodedSnippet = htmlEncode(snippet)
+        // Find match ranges against the PLAIN snippet first, then HTML-encode
+        // each segment individually before inserting <mark> tags. Encoding the
+        // whole snippet up front (as done previously) breaks matching for
+        // queries containing &, <, > (they were already encoded away) and lets
+        // queries like "amp"/"lt"/"gt" match inside entities produced by
+        // htmlEncode (e.g. "&" -> "&amp;" -> "&<mark>amp</mark>;"), corrupting
+        // the rendered snippet. Only the <mark>/<\/mark> tags inserted below
+        // are trusted raw HTML.
         const rx = new RegExp(
           `(${query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
           "gi"
         )
-        highlightedSnippet = encodedSnippet.replace(rx, "<mark>$1</mark>")
+        let lastIndex = 0
+        let encoded = ""
+        for (const m of snippet.matchAll(rx)) {
+          const matchStart = m.index ?? 0
+          const matchEnd = matchStart + m[0].length
+          encoded += htmlEncode(snippet.slice(lastIndex, matchStart))
+          encoded += "<mark>" + htmlEncode(m[0]) + "</mark>"
+          lastIndex = matchEnd
+        }
+        encoded += htmlEncode(snippet.slice(lastIndex))
+        highlightedSnippet = encoded
       } else {
         snippet = text.slice(0, 140) + (text.length > 140 ? "..." : "")
         highlightedSnippet = htmlEncode(snippet)
