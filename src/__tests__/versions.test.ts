@@ -52,8 +52,10 @@ describe('getProjectFromPath', () => {
     expect(getProjectFromPath('/docs/console')).toHaveProperty('id', 'console')
   })
 
-  it('returns hive for /docs/hive paths', () => {
-    expect(getProjectFromPath('/docs/hive')).toHaveProperty('id', 'hive')
+  // Hive moved to hive.hivecommons.dev; /docs/hive is now a static pointer
+  // page with no project arm, so it falls through to the kubestellar default.
+  it('falls back to kubestellar for the retired /docs/hive path', () => {
+    expect(getProjectFromPath('/docs/hive')).toHaveProperty('id', 'kubestellar')
   })
 
   it('defaults to kubestellar for unknown paths', () => {

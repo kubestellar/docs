@@ -49,20 +49,62 @@ jobs:
 
       - name: Set variables
         id: vars
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          CP_PROJECT: ${{ github.event.client_payload.project || '' }}
+          CP_VERSION: ${{ github.event.client_payload.version || '' }}
+          CP_SOURCE_REPO: ${{ github.event.client_payload.source_repo || '' }}
+          CP_SOURCE_BRANCH: ${{ github.event.client_payload.source_branch || '' }}
+          IN_PROJECT: ${{ inputs.project || '' }}
+          IN_VERSION: ${{ inputs.version || '' }}
+          IN_SOURCE_REPO: ${{ inputs.source_repo || '' }}
+          IN_SOURCE_BRANCH: ${{ inputs.source_branch || '' }}
+          IN_SET_LATEST: ${{ inputs.set_as_latest || 'false' }}
         run: |
-          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
-            echo "project=${{ github.event.client_payload.project }}" >> $GITHUB_OUTPUT
-            echo "version=${{ github.event.client_payload.version }}" >> $GITHUB_OUTPUT
-            echo "source_repo=${{ github.event.client_payload.source_repo }}" >> $GITHUB_OUTPUT
-            echo "source_branch=${{ github.event.client_payload.source_branch }}" >> $GITHUB_OUTPUT
-            echo "set_latest=true" >> $GITHUB_OUTPUT
+          set -euo pipefail
+
+          if [ "$EVENT_NAME" = "repository_dispatch" ]; then
+            PROJECT="$CP_PROJECT"
+            VERSION="$CP_VERSION"
+            SOURCE_REPO="$CP_SOURCE_REPO"
+            SOURCE_BRANCH="$CP_SOURCE_BRANCH"
+            SET_LATEST="true"
           else
-            echo "project=${{ inputs.project }}" >> $GITHUB_OUTPUT
-            echo "version=${{ inputs.version }}" >> $GITHUB_OUTPUT
-            echo "source_repo=${{ inputs.source_repo }}" >> $GITHUB_OUTPUT
-            echo "source_branch=${{ inputs.source_branch }}" >> $GITHUB_OUTPUT
-            echo "set_latest=${{ inputs.set_as_latest }}" >> $GITHUB_OUTPUT
+            PROJECT="$IN_PROJECT"
+            VERSION="$IN_VERSION"
+            SOURCE_REPO="$IN_SOURCE_REPO"
+            SOURCE_BRANCH="$IN_SOURCE_BRANCH"
+            SET_LATEST="$IN_SET_LATEST"
           fi
+
+          # Strict allowlists — reject anything that could break out of a shell
+          # word or the case statement further down the workflow.
+          case "$PROJECT" in
+            kubestellar|a2a|kubeflex|multi-plugin|kubestellar-mcp|console) ;;
+            *) echo "Invalid project: $PROJECT" >&2; exit 1 ;;
+          esac
+          if ! printf '%s' "$VERSION" | grep -Eq '^v?[0-9]+\.[0-9]+\.[0-9]+([._-][0-9A-Za-z.+-]+)?$'; then
+            echo "Invalid version: $VERSION" >&2; exit 1
+          fi
+          # owner/repo — GitHub name rules: [A-Za-z0-9._-], no leading dot/hyphen.
+          if ! printf '%s' "$SOURCE_REPO" | grep -Eq '^[A-Za-z0-9][A-Za-z0-9._-]{0,38}/[A-Za-z0-9._-]{1,100}$'; then
+            echo "Invalid source_repo: $SOURCE_REPO" >&2; exit 1
+          fi
+          # git ref — no spaces, no shell metacharacters, no ".." / leading dash.
+          if ! printf '%s' "$SOURCE_BRANCH" | grep -Eq '^[A-Za-z0-9._/-]{1,200}$' \
+              || printf '%s' "$SOURCE_BRANCH" | grep -qE '(^-|\.\.|//)'; then
+            echo "Invalid source_branch: $SOURCE_BRANCH" >&2; exit 1
+          fi
+          case "$SET_LATEST" in true|false) ;; *) SET_LATEST="false" ;; esac
+
+          # printf '%s\n' avoids shell re-expansion of any embedded metacharacters.
+          {
+            printf 'project=%s\n' "$PROJECT"
+            printf 'version=%s\n' "$VERSION"
+            printf 'source_repo=%s\n' "$SOURCE_REPO"
+            printf 'source_branch=%s\n' "$SOURCE_BRANCH"
+            printf 'set_latest=%s\n' "$SET_LATEST"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Determine branch name
         id: branch
@@ -108,7 +150,7 @@ jobs:
         if: steps.vars.outputs.set_latest == 'true'
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Create PR to update versions.ts
         if: steps.vars.outputs.set_latest == 'true'
@@ -147,7 +189,7 @@ jobs:
             --branch "${{ steps.branch.outputs.name }}" \
             --set-latest
 
-          git add src/config/versions.ts public/config/shared.json
+          git add src/config/versions/ public/config/shared.json
           git commit -s -m "chore: update ${{ steps.vars.outputs.project }} to v${{ steps.branch.outputs.version }}
 
           Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"

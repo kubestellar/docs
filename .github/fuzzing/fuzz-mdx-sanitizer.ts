@@ -14,6 +14,8 @@
  * Exit 0 = all invariants held; Exit 1 = violation found.
  */
 
+import { appendFileSync } from 'node:fs'
+
 import { sanitizeHtmlForMdx } from '../../src/lib/sanitizeHtml'
 
 // ---------------------------------------------------------------------------
@@ -158,6 +160,39 @@ function checkInvariants(input: string, output: string): string | null {
 }
 
 // ---------------------------------------------------------------------------
+// CI observability
+// ---------------------------------------------------------------------------
+// Emits one grep-friendly, bounded-cardinality line (seed/iterations/corpus
+// size/failure count/status only — never fuzz input samples, which are
+// unbounded and stay in the existing free-text [FAIL]/[CRASH] logs) plus a
+// short markdown table to $GITHUB_STEP_SUMMARY when running in CI. Mirrors
+// the CI_OBSERVABILITY convention used by check-internal-links.yml/vitest.yml
+// so a run's health can be grepped from the job log without downloading the
+// failure-log artifact.
+function reportObservability(
+  status: 'pass' | 'fail',
+  corpusSize: number,
+  failureCount: number,
+) {
+  console.log(
+    `CI_OBSERVABILITY check=fuzz-mdx-sanitizer seed=${SEED} iterations=${ITERATIONS} corpus=${corpusSize} failures=${failureCount} status=${status}`,
+  )
+
+  const summaryPath = process.env.GITHUB_STEP_SUMMARY
+  if (!summaryPath) return
+  const icon = status === 'pass' ? '✅' : '❌'
+  const table = [
+    '## Fuzz MDX Sanitizer',
+    '',
+    '| Seed | Iterations | Corpus | Failures | Status |',
+    '| --- | --- | --- | --- | --- |',
+    `| ${SEED} | ${ITERATIONS} | ${corpusSize} | ${failureCount} | ${icon} ${status} |`,
+    '',
+  ].join('\n')
+  appendFileSync(summaryPath, table)
+}
+
+// ---------------------------------------------------------------------------
 // Main loop
 // ---------------------------------------------------------------------------
 console.log(`fuzz-mdx-sanitizer  seed=${SEED}  iterations=${ITERATIONS}`)
@@ -206,10 +241,27 @@ for (let i = 0; i < ITERATIONS; i++) {
   }
 }
 
+// Structured, single-line JSON summary — always emitted (pass or fail) so
+// CI tooling can grep a machine-readable record instead of parsing the
+// free-text lines above. Mirrors the VALIDATE_FORMULAE_SUMMARY /
+// FUZZ_SUMMARY pattern already used in sibling repos.
+const status = failures > 0 ? 'failed' : 'passed'
+console.log(
+  `FUZZ_MDX_SUMMARY: ${JSON.stringify({
+    seed: SEED,
+    iterations: ITERATIONS,
+    corpus: corpus.length,
+    failures,
+    status,
+  })}`,
+)
+
 if (failures > 0) {
   console.error(`\nFAILED: ${failures} violation(s) found`)
+  reportObservability('fail', corpus.length, failures)
   process.exit(1)
 }
 
 console.log(`PASSED: all ${ITERATIONS} iterations clean  corpus=${corpus.length}`)
+reportObservability('pass', corpus.length, failures)
 process.exit(0)

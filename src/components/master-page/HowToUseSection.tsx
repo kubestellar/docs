@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link as IntlLink } from "@/i18n/navigation";
 import { GridLines, StarField, GlobeAnimation } from "../index";
 import { useTranslations } from "next-intl";
+import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
 export default function HeroSection() {
   const t = useTranslations("heroSection");
@@ -22,6 +23,11 @@ export default function HeroSection() {
       console.error("Failed to copy text:", err);
     }
   };
+  // Counter animations (.counter elements with data-target). Extracted to
+  // useCounterAnimation so the per-element setIntervals are actually cleaned
+  // up on unmount — see #7086.
+  useCounterAnimation();
+
   useEffect(() => {
     let typingInterval: NodeJS.Timeout;
     let restartTimeout: NodeJS.Timeout;
@@ -46,33 +52,6 @@ export default function HeroSection() {
     };
   
     startTyping();
-  
-    // Animated Counters
-    const animateCounters = () => {
-      const counters = document.querySelectorAll(".counter");
-  
-      counters.forEach((counter) => {
-        const target = parseInt(counter.getAttribute("data-target") || "0", 10);
-  
-        const duration = 2000;
-        const step = target / (duration / 16);
-  
-        let current = 0;
-  
-        const timer = setInterval(() => {
-          current += step;
-  
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-  
-          counter.textContent = Math.floor(current).toString();
-        }, 16);
-      });
-    };
-  
-    animateCounters();
   
     return () => {
       clearInterval(typingInterval);

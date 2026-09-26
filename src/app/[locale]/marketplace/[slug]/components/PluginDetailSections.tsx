@@ -1,0 +1,278 @@
+"use client";
+
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+import { GridLines, StarField } from "@/components";
+
+import type { Plugin } from "../../plugins";
+
+export function PluginDetailSections({
+  plugin,
+  onInstall,
+  t,
+}: {
+  plugin: Plugin;
+  onInstall: () => void;
+  t: ReturnType<typeof useTranslations>;
+}) {
+  return (
+    <section className="relative pt-32 pb-12 overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <StarField density="low" showComets={true} cometCount={2} />
+        <GridLines />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="mb-8">
+          <Link
+            href="/marketplace"
+            className="text-gray-400 hover:text-purple-400 transition-colors inline-flex items-center gap-2"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            {t("plugin.backToMarketplace")}
+          </Link>
+        </div>
+
+        <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 mb-8">
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="flex-shrink-0">
+              <div className="w-32 h-32 flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl text-7xl border border-purple-500/30">
+                {plugin.icon}
+              </div>
+            </div>
+
+            <div className="flex-1">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <h1 className="text-4xl font-bold text-white mb-2">{plugin.name}</h1>
+                  <p className="text-xl text-gray-300 mb-3">{plugin.tagline}</p>
+                  <div className="flex items-center gap-4 text-sm">
+                    <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full">{plugin.category}</span>
+                    <span className="text-gray-400">{t("plugin.version")}{plugin.version}</span>
+                    <span className="text-gray-400">{t("plugin.by")} {plugin.author}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6 mb-6">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span className="text-white font-semibold">{plugin.rating}</span>
+                  <span className="text-gray-400">{t("plugin.rating")}</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-300">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  <span>
+                    {plugin.downloads.toLocaleString()}{" "}
+                    {t("plugin.downloads")}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="flex-1">
+                  {plugin.pricing.type === "free" ? (
+                    <div className="text-2xl font-bold text-green-400">{t("plugin.free")}</div>
+                  ) : (
+                    <div>
+                      <span className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        ${plugin.pricing.amount}
+                      </span>
+                      <span className="text-gray-400 text-lg ml-2">
+                        {plugin.pricing.type === "monthly" ? t("plugin.monthly") : t("plugin.oneTime")}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <button
+                  onClick={onInstall}
+                  className="group relative px-8 py-4 bg-gradient-to-r from-purple-600/80 to-pink-600/80 backdrop-blur-xl text-white font-semibold rounded-xl border border-purple-500/30 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 hover:border-purple-400/50 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                  <span className="relative flex items-center gap-2">
+                    {plugin.pricing.type === "free" ? (
+                      <>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        {t("plugin.installPlugin")}
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                        {t("plugin.payAndInstall")}
+                      </>
+                    )}
+                  </span>
+                </button>
+                {plugin.github && (
+                  <a
+                    href={plugin.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-4 bg-gray-700/50 backdrop-blur-sm text-white rounded-xl hover:bg-gray-700 transition-all duration-300 flex items-center gap-2 border border-gray-600/50"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    GitHub
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2 space-y-8">
+            <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-white mb-4">{t("plugin.about")}</h2>
+              <div className="prose prose-invert max-w-none">
+                <p className="text-gray-300 whitespace-pre-line leading-relaxed">{plugin.longDescription}</p>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-white mb-4">{t("plugin.keyFeatures")}</h2>
+              <ul className="space-y-3">
+                {plugin.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-white mb-4">{t("plugin.requirements")}</h3>
+              <ul className="space-y-2">
+                {plugin.requirements.map((req, index) => (
+                  <li key={index} className="text-gray-300 text-sm flex items-start gap-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>{req}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-white mb-4">{t("plugin.compatibility")}</h3>
+              <div className="flex flex-wrap gap-2">
+                {plugin.compatibility.map((platform, index) => (
+                  <span key={index} className="px-3 py-1 bg-blue-500/20 text-blue-300 text-sm rounded-full">
+                    {platform}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-white mb-4">{t("plugin.maintainers")}</h3>
+              <ul className="space-y-2">
+                <li className="text-gray-300 text-sm flex items-start gap-2">
+                  <span className="text-purple-400 mt-1">•</span>
+                  <span>
+                    {t("maintainers.andy")} -{" "}
+                    <a
+                      href="https://github.com/pdettori"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purple-400 hover:text-purple-300 transition-colors underline"
+                    >
+                      {t("plugin.github")}
+                    </a>
+                  </span>
+                </li>
+                <li className="text-gray-300 text-sm flex items-start gap-2">
+                  <span className="text-purple-400 mt-1">•</span>
+                  <span>
+                    {t("maintainers.mike")} -{" "}
+                    <a
+                      href="https://github.com/MikeSpreitzer"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purple-400 hover:text-purple-300 transition-colors underline"
+                    >
+                      {t("plugin.github")}
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-white mb-4">{t("plugin.tags")}</h3>
+              <div className="flex flex-wrap gap-2">
+                {plugin.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-gray-700/50 text-gray-300 text-sm rounded-full hover:bg-gray-600/50 transition-colors cursor-pointer"
+                  >
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
+              <h3 className="text-xl font-bold text-white mb-4">{t("plugin.links")}</h3>
+              <div className="space-y-3">
+                <a
+                  href={plugin.documentation}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  {t("plugin.documentation")}
+                </a>
+                {plugin.github && (
+                  <a
+                    href={plugin.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    {t("plugin.githubRepository")}
+                  </a>
+                )}
+                {plugin.website && (
+                  <a
+                    href={plugin.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                    {t("plugin.officialWebsite")}
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

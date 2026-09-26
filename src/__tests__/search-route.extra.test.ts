@@ -213,6 +213,30 @@ describe('GET /api/search (extra branches)', () => {
     expect(res.body.results.find((r: any) => r.title === 'Rich Doc')).toBeDefined()
   })
 
+  it('rejects queries longer than MAX_QUERY_LENGTH (128) with 400', async () => {
+    // Query length is measured AFTER toLowerCase().trim() — build a 129-char
+    // ascii-lowercase string with no leading/trailing whitespace so trim()
+    // is a no-op and length stays above the cap.
+    const longQuery = 'a'.repeat(129)
+    const req = new MockNextRequest(longQuery)
+    const res = await GET(req)
+    expect(res.status).toBe(400)
+    expect(res.body.error).toBe('Query too long')
+    expect(res.body.results).toEqual([])
+    expect(res.body.count).toBe(0)
+  })
+
+  it('accepts queries at exactly MAX_QUERY_LENGTH (128) — boundary is inclusive', async () => {
+    // Guards the `>` vs `>=` boundary: a 128-char query must NOT be rejected.
+    // 128 'z' characters won't match any mock content so results is empty, but
+    // the important assertion is status === 200 (no 400 / no 500).
+    const boundaryQuery = 'z'.repeat(128)
+    const req = new MockNextRequest(boundaryQuery)
+    const res = await GET(req)
+    expect(res.status).toBe(200)
+    expect(res.body.error).toBeUndefined()
+  })
+
   it('GET catch block: buildPageMap throws → 500 JSON with empty results', async () => {
     vi.resetModules()
     vi.doMock('../app/docs/page-map', () => ({

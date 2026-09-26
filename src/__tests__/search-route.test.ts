@@ -15,6 +15,7 @@ const { mockRouteMap, mockFiles } = vi.hoisted(() => {
     'getting-started/install': 'getting-started/install.mdx',
     'guides/upgrade': 'guides/upgrade.mdx',
     'reference/api': 'reference/api.mdx',
+    'guides/entities': 'guides/entities.mdx',
   }
 
   const mockFiles: Record<string, string> = {
@@ -24,6 +25,13 @@ const { mockRouteMap, mockFiles } = vi.hoisted(() => {
       '# Upgrade Guide\n\nTo upgrade your cluster, run the upgrade command.\n\n## Prerequisites\n\nEnsure you have backed up your data.',
     'reference/api.mdx':
       '# API Reference\n\nThe KubeStellar API provides endpoints for cluster management.\n\n## Authentication\n\nAll requests require a valid bearer token.',
+    // Plain-text content containing a literal "&" and "<" (no HTML tags, so
+    // toPlainText's tag-stripping regex leaves them untouched). Used to
+    // verify highlighting of queries containing special HTML characters and
+    // to verify that a query of "amp" does not split the "&amp;" entity that
+    // htmlEncode produces from the literal "&".
+    'guides/entities.mdx':
+      '# Entities Doc\n\nThis section covers stamp validation. Config values a & b combine correctly across many test scenarios for validation purposes here, and x < y holds true here too.',
   }
 
   return { mockRouteMap, mockFiles }
@@ -166,5 +174,38 @@ describe('GET /api/search', () => {
     const req = new MockNextRequest('KUBESTELLAR')
     const res = await GET(req)
     expect(res.body.count).toBeGreaterThan(0)
+  })
+
+  it('highlights queries containing "&" that appear in the doc content', async () => {
+    // "&" is a query-string separator, so it must be percent-encoded here —
+    // MockNextRequest builds `q=${query}` directly into URLSearchParams.
+    const req = new MockNextRequest(encodeURIComponent('a & b'))
+    const res = await GET(req)
+    const hit = res.body.results.find((r: any) => r.title === 'Entities Doc')
+    expect(hit).toBeDefined()
+    // The literal "&" query must be highlighted, not encoded away before matching
+    expect(hit.highlightedSnippet).toContain('<mark>a &amp; b</mark>')
+  })
+
+  it('highlights queries containing "<" that appear in the doc content', async () => {
+    const req = new MockNextRequest('x < y')
+    const res = await GET(req)
+    const hit = res.body.results.find((r: any) => r.title === 'Entities Doc')
+    expect(hit).toBeDefined()
+    expect(hit.highlightedSnippet).toContain('<mark>x &lt; y</mark>')
+  })
+
+  it('query "amp" does not split the &amp; entity produced by htmlEncode', async () => {
+    const req = new MockNextRequest('amp')
+    const res = await GET(req)
+    const hit = res.body.results.find((r: any) => r.title === 'Entities Doc')
+    expect(hit).toBeDefined()
+    // The literal "&" must remain encoded as a whole "&amp;" entity — the
+    // "amp" match must not land inside it and split it apart.
+    expect(hit.highlightedSnippet).not.toContain('&<mark>amp</mark>;')
+    // Stripping <mark> tags should yield a properly encoded snippet with an
+    // intact "&amp;" entity.
+    const withoutMark = hit.highlightedSnippet.replace(/<\/?mark>/g, '')
+    expect(withoutMark).toContain('&amp;')
   })
 })

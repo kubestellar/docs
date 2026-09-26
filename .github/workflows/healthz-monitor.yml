@@ -1,0 +1,204 @@
+name: Docs Site Health Monitor
+
+# Addresses: kubestellar/docs#6701
+# User-impact alert: periodically checks the production readiness endpoint
+# (see runbooks/slo.md for the SLI/SLO this implements) and opens/updates a
+# GitHub issue on failure, or closes it on recovery. This is separate from
+# .github/workflows/netlify-error-reporter.yml, which only fires on
+# build-time Netlify deploy failures and cannot detect a runtime regression
+# in an otherwise-successful deploy (e.g. an empty/missing content volume).
+#
+# Per runbooks/slo.md, the alert condition is two consecutive failed checks
+# (state was lost and did not recover within the next 15-minute check), or
+# any single check that cannot reach the site at all (network/DNS/TLS
+# failure). Since a schedule-triggered workflow has no memory of the
+# previous run, the last check's outcome is persisted to
+# .github/state/healthz-monitor-status.json and committed back to main
+# (same commit-the-result pattern used by generate-leaderboard.yml /
+# generate-acmm-history.yml), so this job can tell a first failure from a
+# second consecutive one.
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}
+
+permissions: read-all
+
+env:
+  HEALTHZ_URL: https://kubestellar-docs.netlify.app/api/healthz
+  ALERT_TAG: "[production-outage]"
+  STATE_FILE: .github/state/healthz-monitor-status.json
+
+jobs:
+  check-healthz:
+    name: Check production readiness
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+
+      - name: Query /api/healthz
+        id: probe
+        run: |
+          set +e
+          HTTP_CODE=$(curl -sS -o /tmp/healthz_body.json -w '%{http_code}' \
+            --max-time 15 --retry 2 --retry-delay 3 "${HEALTHZ_URL}")
+          CURL_EXIT=$?
+          set -e
+
+          if [ "$CURL_EXIT" -ne 0 ]; then
+            echo "healthy=false" >> "$GITHUB_OUTPUT"
+            echo "unreachable=true" >> "$GITHUB_OUTPUT"
+            echo "detail=curl failed with exit code ${CURL_EXIT} (network/DNS/TLS failure reaching ${HEALTHZ_URL})" >> "$GITHUB_OUTPUT"
+          elif [ "$HTTP_CODE" != "200" ]; then
+            BODY=$(cat /tmp/healthz_body.json 2>/dev/null | head -c 500)
+            echo "healthy=false" >> "$GITHUB_OUTPUT"
+            echo "unreachable=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "detail<<EOF"
+              echo "HTTP ${HTTP_CODE} from ${HEALTHZ_URL}"
+              echo "${BODY}"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "healthy=true" >> "$GITHUB_OUTPUT"
+            echo "unreachable=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Determine consecutive-failure count
+        id: consecutive
+        run: |
+          PREV_STATUS="unknown"
+          if [ -f "${STATE_FILE}" ]; then
+            PREV_STATUS=$(jq -r '.status // "unknown"' "${STATE_FILE}")
+          fi
+          echo "prev_status=${PREV_STATUS}" >> "$GITHUB_OUTPUT"
+
+          if [ "${{ steps.probe.outputs.healthy }}" = "true" ]; then
+            echo "should_alert=false" >> "$GITHUB_OUTPUT"
+          elif [ "${{ steps.probe.outputs.unreachable }}" = "true" ]; then
+            # Any single unreachable check alerts immediately.
+            echo "should_alert=true" >> "$GITHUB_OUTPUT"
+          elif [ "${PREV_STATUS}" = "unhealthy" ]; then
+            # Second consecutive failed check.
+            echo "should_alert=true" >> "$GITHUB_OUTPUT"
+          else
+            # First failed check: record it, but do not alert yet.
+            echo "should_alert=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Find existing outage issue
+        id: find
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NUMBER=$(gh api "repos/${{ github.repository }}/issues?state=open&labels=site-outage&per_page=20" \
+            --jq "[.[] | select(.title | contains(\"${ALERT_TAG}\"))] | first | .number // empty") || NUMBER=""
+          echo "number=${NUMBER}" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update outage issue
+        if: steps.consecutive.outputs.should_alert == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DETAIL: ${{ steps.probe.outputs.detail }}
+        run: |
+          TIMESTAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          EXISTING="${{ steps.find.outputs.number }}"
+
+          if [ -n "$EXISTING" ]; then
+            gh api "repos/${{ github.repository }}/issues/${EXISTING}/comments" \
+              -f body="Still failing as of ${TIMESTAMP}.
+
+          \`\`\`
+          ${DETAIL}
+          \`\`\`"
+            echo "Commented on existing issue #${EXISTING}"
+            exit 0
+          fi
+
+          gh label create "site-outage" --color "b60205" \
+            --description "Production readiness check (/api/healthz) is failing" \
+            --repo "${{ github.repository }}" 2>/dev/null || true
+
+          gh label create "kind/incident" --color "e11d21" \
+            --description "Confirmed production incident" \
+            --repo "${{ github.repository }}" 2>/dev/null || true
+
+          gh issue create \
+            --repo "${{ github.repository }}" \
+            --title "${ALERT_TAG} Production readiness check failing" \
+            --label "site-outage,kind/incident" \
+            --body "## Production readiness check is failing
+
+          The scheduled check against \`${HEALTHZ_URL}\` did not return a
+          healthy \`200\` response for two consecutive checks (or could not
+          reach the site at all). See \`runbooks/slo.md\` for the SLI/SLO
+          this alert implements.
+
+          **Detected at:** ${TIMESTAMP}
+
+          \`\`\`
+          ${DETAIL}
+          \`\`\`
+
+          ### Next steps
+          1. Follow \`runbooks/deploy-rollback.md\` to detect and roll back
+             the bad deploy.
+          2. Once \`GET ${HEALTHZ_URL}\` returns 200 again, this issue will
+             be closed automatically by the next scheduled run.
+          3. Fill out the \"Incident Postmortem\" issue template
+             (\`.github/ISSUE_TEMPLATE/incident_postmortem.yaml\`) once
+             resolved.
+
+          > Auto-generated by healthz-monitor. Subsequent failures will be
+          > appended as comments until resolved."
+
+      - name: Close outage issue on recovery
+        if: steps.probe.outputs.healthy == 'true' && steps.find.outputs.number != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NUMBER="${{ steps.find.outputs.number }}"
+          TIMESTAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          gh api "repos/${{ github.repository }}/issues/${NUMBER}/comments" \
+            -f body="Recovered as of ${TIMESTAMP} — \`${HEALTHZ_URL}\` returned 200. Closing. Please still complete the incident postmortem if user impact occurred."
+          gh api "repos/${{ github.repository }}/issues/${NUMBER}" -f state="closed"
+
+      - name: Persist check result
+        if: always()
+        run: |
+          mkdir -p "$(dirname "${STATE_FILE}")"
+          STATUS="healthy"
+          if [ "${{ steps.probe.outputs.healthy }}" != "true" ]; then
+            STATUS="unhealthy"
+          fi
+          TIMESTAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          jq -n --arg status "$STATUS" --arg checked_at "$TIMESTAMP" \
+            '{status: $status, checked_at: $checked_at}' > "${STATE_FILE}"
+
+      - name: Commit and push status if changed
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${STATE_FILE}"
+          git diff --cached --quiet && echo "No status change" && exit 0
+          git commit -m "chore: update healthz-monitor status"
+          MAX_RETRIES=5
+          RETRY_DELAY_SECONDS=3
+          for i in $(seq 1 $MAX_RETRIES); do
+            if git pull --rebase origin main && git push; then
+              echo "Push succeeded on attempt $i"
+              exit 0
+            fi
+            echo "Push attempt $i/$MAX_RETRIES failed, retrying in ${RETRY_DELAY_SECONDS}s..."
+            sleep "$RETRY_DELAY_SECONDS"
+          done
+          echo "All $MAX_RETRIES push attempts failed"
+          exit 1

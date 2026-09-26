@@ -53,6 +53,29 @@ function escapeAngle(s: string): string {
     .replace(/"/g, '&quot;')
 }
 
+// Neutralize dangerous URL schemes in extracted attribute values.
+//
+// escapeAngle() only escapes markup metacharacters (& < > ") — it does NOT
+// touch the URL scheme. Contributor tables are user-supplied MDX; a merged
+// `<table>` cell containing e.g. `<a href="javascript:alert(1)">` would pass
+// through sanitizeHtmlForMdx unchanged, and — because the site CSP allows
+// `script-src 'self' 'unsafe-inline'` — clicking the emitted contributor card
+// would execute attacker JavaScript same-origin on docs.kubestellar.io
+// (stored XSS). Reject `javascript:`, `data:`, `vbscript:`, `file:`, `blob:`,
+// and any URL containing embedded control characters (CVE-style leading-tab
+// / newline / NUL scheme-hiding bypass). Returns '' on rejection so the
+// caller can drop the entry.
+function safeUrl(u: string): string {
+  const trimmed = u.trim()
+  if (!trimmed) return ''
+  // Reject any embedded ASCII control character (incl. \t \n \r NUL) —
+  // browsers strip these before scheme parsing, so "ja\tvascript:..." would
+  // execute as `javascript:` if we did not neutralize it here.
+  if (/[\x00-\x1F\x7F]/.test(trimmed)) return ''
+  if (/^(javascript|data|vbscript|file|blob):/i.test(trimmed)) return ''
+  return trimmed
+}
+
 /**
  * Strip all security-critical patterns in a single pass, looping until the
  * output is stable.
@@ -153,15 +176,25 @@ export function sanitizeHtmlForMdx(content: string): string {
 
     let tdMatch
     while ((tdMatch = tdRegex.exec(tableMatch)) !== null) {
-      const profileUrl = tdMatch[1]
-      const avatar = tdMatch[2]
+      const profileUrl = safeUrl(tdMatch[1])
+      const avatar = safeUrl(tdMatch[2])
       const name = tdMatch[3]
+      // Drop contributor entries whose profile URL uses a rejected scheme
+      // (javascript:, data:, vbscript:, file:, blob:, or contains embedded
+      // control chars): rendering them as an anchor would give attacker
+      // JavaScript same-origin execution on docs.kubestellar.io. An empty
+      // avatar URL also drops the row — a broken <img> in the grid is a
+      // less useful attacker gadget but still not something we want to
+      // pass through unchecked.
+      if (!profileUrl || !avatar) continue
       const githubMatch = profileUrl.match(/github\.com\/([^/]+)/)
       const github = githubMatch ? githubMatch[1] : ''
 
-      if (name && avatar) {
-        contributors.push({ name, github, avatar, profileUrl })
-      }
+      // No `name && avatar` guard here: every capture group in tdRegex is
+      // `+`-quantified (`[^"]+` for href and src, `[^<]+` for the name), so a cell
+      // with an empty href, src or name fails to match and never reaches this line.
+      // A guard would be unreachable, and coverage would flag it as such.
+      contributors.push({ name, github, avatar, profileUrl })
     }
 
     if (contributors.length === 0) return ''

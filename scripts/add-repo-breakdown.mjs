@@ -12,6 +12,7 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { categorizeIssuesByRepo, sortRepoBreakdown } from "./add-repo-breakdown-helpers.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -112,36 +113,10 @@ async function main() {
         allIssues.push(...issues);
       }
 
-      // Group by repo and categorize
-      const repoBreakdownMap = new Map();
-      for (const item of allIssues) {
-        if (!repoBreakdownMap.has(item.repo)) {
-          repoBreakdownMap.set(item.repo, {
-            repo: item.repo,
-            bug_issues: 0,
-            feature_issues: 0,
-            other_issues: 0,
-            prs_opened: 0,
-            prs_merged: 0,
-          });
-        }
+      // Group by repo and categorize (see scripts/add-repo-breakdown-helpers.mjs).
+      const repoBreakdownMap = categorizeIssuesByRepo(allIssues);
 
-        const rb = repoBreakdownMap.get(item.repo);
-        if (item.is_pr) {
-          rb.prs_opened++;
-          if (item.merged_at) rb.prs_merged++;
-        } else {
-          if (item.labels.includes("kind/bug")) rb.bug_issues++;
-          else if (item.labels.includes("kind/feature")) rb.feature_issues++;
-          else rb.other_issues++;
-        }
-      }
-
-      const repoBreakdown = [...repoBreakdownMap.values()].sort(
-        (a, b) =>
-          (b.prs_opened + b.bug_issues + b.feature_issues + b.other_issues) -
-          (a.prs_opened + a.bug_issues + a.feature_issues + a.other_issues)
-      );
+      const repoBreakdown = sortRepoBreakdown(repoBreakdownMap);
 
       // Add repo_breakdown to profile
       profile.repo_breakdown = repoBreakdown;

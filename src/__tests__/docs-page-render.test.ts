@@ -71,7 +71,12 @@ async function renderDocsRoute(slug: string[]): Promise<string> {
 // The first MDX compile is slow (~10s cold start in CI), well past vitest's
 // 5s default timeout, so render once up front with a generous budget and
 // assert against the shared result.
-const RENDER_TIMEOUT_MS = 60_000
+// Under the vitest full-suite run this file spawns in worker slot ~103/103
+// with ~3.3s per-worker startup on top of the SSR render cost; the previous
+// 60_000 ms hookTimeout tripped on main (~85.8s observed). The sibling
+// docs-page-render.branches.test.ts was bumped to the same 120_000 ms
+// ceiling in PR #6923 for the identical reason.
+const RENDER_TIMEOUT_MS = 120_000
 
 describe('docs page rendering (smoke test)', () => {
   let html = ''

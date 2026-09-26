@@ -96,7 +96,7 @@ Promotion to paid intern requires completion of the above plus:
 - CI trigger permissions
 - Access to private maintainer channels or security advisories
 
-**Returning from Emeritus:**
+#### Returning from Emeritus
 
 Emeritus members have a streamlined path back — they do not start from scratch:
 

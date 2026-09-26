@@ -1,50 +1,33 @@
 import { normalizePageMap } from 'nextra/page-map'
 import fs from 'fs'
 import path from 'path'
-import { type ProjectId } from '@/config/versions'
+import { PROJECTS, type ProjectId } from '@/config/versions'
 
 // Local docs path - docs are now in this repository
 export const docsContentPath = path.join(process.cwd(), 'docs', 'content')
 export const basePath = 'docs'
 
-// Get content path for a project
+// Get content path for a project.
+//
+// Data-driven from PROJECTS[projectId].contentPath (see
+// src/config/versions/lookup.ts) so a new value added to the ProjectId union
+// fails to compile until the maintainer supplies a contentPath, instead of
+// silently falling through to the KubeStellar path via a `default:` arm.
+// See kubestellar/docs#7037.
 export function getContentPath(projectId: ProjectId): string {
-  switch (projectId) {
-    case 'a2a':
-      return path.join(process.cwd(), 'docs', 'content', 'a2a')
-    case 'kubeflex':
-      return path.join(process.cwd(), 'docs', 'content', 'kubeflex')
-    case 'multi-plugin':
-      return path.join(process.cwd(), 'docs', 'content', 'multi-plugin')
-    case 'kubestellar-mcp':
-      return path.join(process.cwd(), 'docs', 'content', 'kubestellar-mcp')
-    case 'console':
-      return path.join(process.cwd(), 'docs', 'content', 'console')
-    case 'hive':
-      return path.join(process.cwd(), 'docs', 'content', 'hive')
-    default:
-      return docsContentPath
-  }
+  return path.join(process.cwd(), PROJECTS[projectId].contentPath)
 }
 
-// Get base path for a project
+// Get base path for a project.
+//
+// Data-driven from PROJECTS[projectId].basePath (see
+// src/config/versions/lookup.ts). Only the KubeStellar project has an empty
+// basePath ("" → "docs"); every other project's basePath is joined under
+// "docs/". Same rationale as getContentPath — no silent default arm.
+// See kubestellar/docs#7037.
 export function getBasePath(projectId: ProjectId): string {
-  switch (projectId) {
-    case 'a2a':
-      return 'docs/a2a'
-    case 'kubeflex':
-      return 'docs/kubeflex'
-    case 'multi-plugin':
-      return 'docs/multi-plugin'
-    case 'kubestellar-mcp':
-      return 'docs/kubestellar-mcp'
-    case 'console':
-      return 'docs/console'
-    case 'hive':
-      return 'docs/hive'
-    default:
-      return 'docs'
-  }
+  const projectBasePath = PROJECTS[projectId].basePath
+  return projectBasePath ? `docs/${projectBasePath}` : 'docs'
 }
 
 // Strong types for page-map nodes
@@ -320,27 +303,6 @@ const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
   }
 ]
 
-// Hive Navigation Structure
-const NAV_STRUCTURE_HIVE: Array<{ title: string; items: NavItem[] }> = [
-  {
-    title: 'Overview',
-    items: [
-      { 'Introduction': 'readme.md' },
-      { 'Architecture': 'architecture.md' },
-    ]
-  },
-  {
-    title: 'Operations',
-    items: [
-      { 'Agent Definition YAML': 'agent-definition-yaml.md' },
-      { 'Variable Substitution': 'variable-substitution.md' },
-      { 'Governor': 'governor.md' },
-      { 'Running on macOS': 'macos.md' },
-      { 'Console Starter Install': 'console-starter-install.md' },
-    ]
-  }
-]
-
 // KubeStellar Navigation Structure
 const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
 
@@ -503,32 +465,26 @@ const NAV_STRUCTURE_NEWS: Array<{ title: string; items: NavItem[] }> = [
   }
 ]
 
-// Get navigation structure for a project
-function getNavStructure(projectId: ProjectId): Array<{ title: string; items: NavItem[] }> {
-  let baseStructure: Array<{ title: string; items: NavItem[] }>;
+// Get navigation structure for a project.
+//
+// Data-driven from NAV_STRUCTURE_BY_PROJECT: Record<ProjectId, ...> so a new
+// value added to the ProjectId union fails to compile until the maintainer
+// supplies a nav structure, instead of silently falling through to
+// NAV_STRUCTURE_KUBESTELLAR via a `default:` arm. See kubestellar/docs#7037.
+const NAV_STRUCTURE_BY_PROJECT: Record<
+  ProjectId,
+  Array<{ title: string; items: NavItem[] }>
+> = {
+  kubestellar: NAV_STRUCTURE_KUBESTELLAR,
+  a2a: NAV_STRUCTURE_A2A,
+  kubeflex: NAV_STRUCTURE_KUBEFLEX,
+  'multi-plugin': NAV_STRUCTURE_MULTI_PLUGIN,
+  'kubestellar-mcp': NAV_STRUCTURE_KUBESTELLAR_MCP,
+  console: NAV_STRUCTURE_CONSOLE,
+}
 
-  switch (projectId) {
-    case 'a2a':
-      baseStructure = NAV_STRUCTURE_A2A
-      break
-    case 'kubeflex':
-      baseStructure = NAV_STRUCTURE_KUBEFLEX
-      break
-    case 'multi-plugin':
-      baseStructure = NAV_STRUCTURE_MULTI_PLUGIN
-      break
-    case 'kubestellar-mcp':
-      baseStructure = NAV_STRUCTURE_KUBESTELLAR_MCP
-      break
-    case 'console':
-      baseStructure = NAV_STRUCTURE_CONSOLE
-      break
-    case 'hive':
-      baseStructure = NAV_STRUCTURE_HIVE
-      break
-    default:
-      baseStructure = NAV_STRUCTURE_KUBESTELLAR
-  }
+function getNavStructure(projectId: ProjectId): Array<{ title: string; items: NavItem[] }> {
+  const baseStructure = NAV_STRUCTURE_BY_PROJECT[projectId]
 
   // Add general sections to all projects
   return [...baseStructure, ...NAV_STRUCTURE_CONTRIBUTING, ...NAV_STRUCTURE_COMMUNITY, ...NAV_STRUCTURE_NEWS]

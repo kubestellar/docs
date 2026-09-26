@@ -180,6 +180,45 @@ describe('sitemap()', () => {
     expect(urls.some((u) => u.startsWith(`${SITE_URL}/en/leaderboard/`))).toBe(false)
   })
 
+  it('falls back to current time for lastModified when generated_at is missing from leaderboard.json', () => {
+    // Exercises the `leaderboardData.generated_at || new Date()` fallback
+    // branch in src/app/sitemap.ts (line 136). Without generated_at,
+    // contributor profile URLs must still be emitted with a valid Date
+    // (roughly "now"), not silently dropped or set to Invalid Date.
+    write(
+      root,
+      'public/data/leaderboard.json',
+      JSON.stringify({ entries: [{ login: 'carol' }] })
+    )
+    const before = Date.now()
+    const carol = sitemap().find(
+      (e) => e.url === `${SITE_URL}/en/leaderboard/carol`
+    )
+    const after = Date.now()
+    expect(carol).toBeDefined()
+    const ts = (carol?.lastModified as Date).getTime()
+    expect(Number.isNaN(ts)).toBe(false)
+    // Fallback uses `new Date()` at build time, so it must land inside
+    // the wall-clock window of this test.
+    expect(ts).toBeGreaterThanOrEqual(before)
+    expect(ts).toBeLessThanOrEqual(after)
+  })
+
+  it('falls back to an empty entries list when leaderboard.json omits the entries key', () => {
+    // Exercises the `leaderboardData.entries || []` fallback branch in
+    // src/app/sitemap.ts (line 133). With the key absent, the code must
+    // treat it as an empty iterable rather than throwing on `for..of` of
+    // undefined.
+    write(
+      root,
+      'public/data/leaderboard.json',
+      JSON.stringify({ generated_at: '2025-02-01T00:00:00Z' })
+    )
+    expect(() => sitemap()).not.toThrow()
+    const urls = sitemap().map((e) => e.url)
+    expect(urls.some((u) => u.startsWith(`${SITE_URL}/en/leaderboard/`))).toBe(false)
+  })
+
   it('returns a valid sitemap even when docs/content does not exist', () => {
     // no docs/content at all
     const entries = sitemap()

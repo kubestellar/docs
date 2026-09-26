@@ -146,8 +146,8 @@
     },
     "kubestellar-mcp": {
       "latest": {
-        "label": "v0.9.11 (Latest)",
-        "branch": "docs/kubestellar-mcp/0.9.11",
+        "label": "v0.9.15 (Latest)",
+        "branch": "docs/kubestellar-mcp/0.9.15",
         "isDefault": true
       },
       "main": {
@@ -210,12 +210,32 @@
         "label": "v0.9.10",
         "branch": "docs/kubestellar-mcp/0.9.10",
         "isDefault": false
+      },
+      "0.9.11": {
+        "label": "v0.9.11",
+        "branch": "docs/kubestellar-mcp/0.9.11",
+        "isDefault": false
+      },
+      "0.9.12": {
+        "label": "v0.9.12",
+        "branch": "docs/kubestellar-mcp/0.9.12",
+        "isDefault": false
+      },
+      "0.9.13": {
+        "label": "v0.9.13",
+        "branch": "docs/kubestellar-mcp/0.9.13",
+        "isDefault": false
+      },
+      "0.9.14": {
+        "label": "v0.9.14",
+        "branch": "docs/kubestellar-mcp/0.9.14",
+        "isDefault": false
       }
     },
     "console": {
       "latest": {
-        "label": "v0.3.38 (Latest)",
-        "branch": "docs/console/0.3.38",
+        "label": "v0.3.42 (Latest)",
+        "branch": "docs/console/0.3.42",
         "isDefault": true
       },
       "main": {
@@ -413,13 +433,26 @@
         "label": "v0.3.36",
         "branch": "docs/console/0.3.36",
         "isDefault": false
-      }
-    },
-    "hive": {
-      "latest": {
-        "label": "v4 (Latest)",
-        "branch": "main",
-        "isDefault": true
+      },
+      "0.3.38": {
+        "label": "v0.3.38",
+        "branch": "docs/console/0.3.38",
+        "isDefault": false
+      },
+      "0.3.39": {
+        "label": "v0.3.39",
+        "branch": "docs/console/0.3.39",
+        "isDefault": false
+      },
+      "0.3.40": {
+        "label": "v0.3.40",
+        "branch": "docs/console/0.3.40",
+        "isDefault": false
+      },
+      "0.3.41": {
+        "label": "v0.3.41",
+        "branch": "docs/console/0.3.41",
+        "isDefault": false
       }
     }
   },
@@ -447,17 +480,12 @@
     "kubestellar-mcp": {
       "name": "KubeStellar MCP",
       "basePath": "kubestellar-mcp",
-      "currentVersion": "0.9.11"
+      "currentVersion": "0.9.15"
     },
     "console": {
       "name": "Console",
       "basePath": "console",
-      "currentVersion": "0.3.38"
-    },
-    "hive": {
-      "name": "Hive",
-      "basePath": "hive",
-      "currentVersion": "v4"
+      "currentVersion": "0.3.42"
     }
   },
   "relatedProjects": [
@@ -504,5 +532,5 @@
     "multi-plugin": "https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin",
     "kubestellar-mcp": "https://github.com/kubestellar/kubestellar-mcp/edit/main/docs"
   },
-  "updatedAt": "2026-08-29T05:24:42.487Z"
+  "updatedAt": "2026-09-25T05:28:59.120Z"
 }

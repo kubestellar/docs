@@ -1,0 +1,78 @@
+{
+  "title": "KubeStellar Docs — API Self Metrics",
+  "description": "Recommendation-only dashboard for the docs site's bounded self-metrics (docs_api_requests_total, docs_api_request_duration_seconds) exposed at /api/metrics (see src/lib/metrics.ts). Import this JSON into a Grafana instance already pointed at a Prometheus that scrapes this deployment via cluster-objects/servicemonitor.yaml; nothing here configures a data source or exporter automatically. No observability backend is confirmed for this repo, so this file is not wired into any deployment or CI step. Panels mirror the three alerts in cluster-objects/prometheusrule.yaml and support the per-route diagnosis steps in runbooks/api-error-rate-latency.md.",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": true,
+  "timezone": "browser",
+  "tags": ["kubestellar", "docs", "self-metrics"],
+  "time": { "from": "now-6h", "to": "now" },
+  "templating": {
+    "list": [
+      {
+        "name": "datasource",
+        "type": "datasource",
+        "query": "prometheus",
+        "label": "Prometheus"
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Request rate by route & status class",
+      "type": "timeseries",
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "expr": "sum(rate(docs_api_requests_total[5m])) by (route, status_class)",
+          "legendFormat": "{{route}} - {{status_class}}"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "5xx error rate (ratio) — DocsApiHighErrorRate",
+      "type": "timeseries",
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "targets": [
+        {
+          "expr": "sum(rate(docs_api_requests_total{status_class=\"5xx\"}[5m])) / sum(rate(docs_api_requests_total[5m]))",
+          "legendFormat": "5xx ratio"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "P95 request latency by route — DocsApiHighRequestLatency",
+      "type": "timeseries",
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(docs_api_request_duration_seconds_bucket{route=\"search\"}[5m])) by (le))",
+          "legendFormat": "search p95"
+        },
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(docs_api_request_duration_seconds_bucket{route=\"docs-image\"}[5m])) by (le))",
+          "legendFormat": "docs-image p95"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Scrape target up — DocsApiMetricsTargetDown",
+      "type": "timeseries",
+      "datasource": { "type": "prometheus", "uid": "${datasource}" },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "targets": [
+        {
+          "expr": "up{job=\"kubestellar-docs\"}",
+          "legendFormat": "up"
+        }
+      ]
+    }
+  ]
+}

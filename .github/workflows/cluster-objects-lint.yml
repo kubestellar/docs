@@ -1,0 +1,39 @@
+name: Cluster Objects Lint
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "cluster-objects/*.yaml"
+      - ".github/workflows/cluster-objects-lint.yml"
+
+permissions: read-all
+
+jobs:
+  kubeconform:
+    name: kubeconform
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install kubeconform
+        # SHA256 pinned to kubeconform v0.6.7 linux/amd64 tarball
+        run: |
+          KUBECONFORM_VERSION="v0.6.7"
+          KUBECONFORM_SHA256="95f14e87aa28c09d5941f11bd024c1d02fdc0303ccaa23f61cef67bc92619d73"
+          curl -sSL "https://github.com/yannh/kubeconform/releases/download/${KUBECONFORM_VERSION}/kubeconform-linux-amd64.tar.gz" \
+            -o /tmp/kubeconform.tar.gz
+          echo "${KUBECONFORM_SHA256}  /tmp/kubeconform.tar.gz" | sha256sum --check
+          tar xz -C /usr/local/bin kubeconform < /tmp/kubeconform.tar.gz
+
+      - name: Kubeconform — validate cluster-objects manifests
+        run: |
+          # ServiceMonitor is a Prometheus Operator CRD with no schema in the
+          # default kubeconform schema set, so its kind is skipped rather than
+          # ignored wholesale (deployment.yaml/job.yaml/etc. are still checked
+          # strictly).
+          kubeconform -strict -summary \
+            -kubernetes-version 1.30.0 \
+            -skip ServiceMonitor \
+            cluster-objects/*.yaml

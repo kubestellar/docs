@@ -1,8 +1,8 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-07-16T22:23:09.416Z",
-  "total_issues_opened": 0,
-  "total_prs_opened": 0,
+  "generated_at": "2026-09-26T10:13:51.295Z",
+  "total_issues_opened": 6,
+  "total_prs_opened": 15,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
   "total_points": 70100,
   "level": "Captain",
@@ -10,69 +10,135 @@
   "rank": 7,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 0,
+    "avg_per_day": 0.09,
     "by_day_of_week": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      4,
+      2,
+      6,
+      2,
+      3,
+      2,
+      2
     ],
     "by_hour_of_day": [
+      1,
       0,
       0,
       0,
+      1,
+      4,
+      1,
       0,
       0,
+      1,
+      3,
+      1,
+      0,
+      2,
+      2,
       0,
       0,
+      1,
+      1,
+      1,
+      1,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
+      1
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 0,
+    "longest_streak_weeks": 7,
     "trend": "inactive",
-    "first_issue_at": null,
-    "last_issue_at": null
+    "first_issue_at": "2025-09-18T10:25:39.000Z",
+    "last_issue_at": "2026-05-01T11:45:16.000Z"
   },
-  "topics": [],
+  "topics": [
+    {
+      "name": "nextra, section, screenshots",
+      "issue_count": 14,
+      "recent_issue": {
+        "title": "fix: fixes functionality in the contact section",
+        "url": "https://github.com/kubestellar/docs/pull/199",
+        "created_at": "2025-11-04T10:01:42Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 14
+    },
+    {
+      "name": "profile, leaderboard, contribution",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "bug: Console Repo Contribution Visual Data Not Displaying",
+        "url": "https://github.com/kubestellar/docs/issues/1552",
+        "created_at": "2026-05-01T11:45:16Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 5
+    },
+    {
+      "name": "preset, promote, metadata",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "✨: update cilium preset metadata and version in registry",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/121",
+        "created_at": "2026-04-21T17:19:31Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    }
+  ],
   "suggestions": {
     "deepen": [],
-    "stretch": []
+    "stretch": [
+      {
+        "name": "GPU & AI/ML",
+        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
+        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
+      },
+      {
+        "name": "Deployments & GitOps",
+        "path": "web/src/components/deploy/, web/src/components/gitops/, web/src/components/cicd/",
+        "description": "Deployment management, GitOps sync, CI/CD pipelines, Helm charts",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/deploy"
+      },
+      {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      }
+    ]
   },
   "activity_timeline": [
     {
-      "month": "2025-08",
-      "issue_count": 0
-    },
-    {
-      "month": "2025-09",
-      "issue_count": 0
-    },
-    {
       "month": "2025-10",
-      "issue_count": 0
+      "issue_count": 12
     },
     {
       "month": "2025-11",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2025-12",
@@ -92,11 +158,11 @@
     },
     {
       "month": "2026-04",
-      "issue_count": 0
+      "issue_count": 6
     },
     {
       "month": "2026-05",
-      "issue_count": 0
+      "issue_count": 1
     },
     {
       "month": "2026-06",
@@ -105,7 +171,32 @@
     {
       "month": "2026-07",
       "issue_count": 0
+    },
+    {
+      "month": "2026-08",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-09",
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": []
+  "repo_breakdown": [
+    {
+      "repo": "docs",
+      "bug_issues": 4,
+      "feature_issues": 0,
+      "other_issues": 2,
+      "prs_opened": 13,
+      "prs_merged": 9
+    },
+    {
+      "repo": "console-marketplace",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 2,
+      "prs_merged": 2
+    }
+  ]
 }

@@ -18,6 +18,13 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import {
+  todayUTC,
+  migrateLegacyHistory,
+  seedColdStart,
+  checkIdempotency,
+  applyScanResults,
+} from './lib/acmm-history.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -375,10 +382,6 @@ const SEED_SCORES = {
 // Helpers
 // ---------------------------------------------------------------------------
 
-function todayUTC(date = new Date()) {
-  return date.toISOString().slice(0, 10)
-}
-
 function sleep(ms) {
   return new Promise(r => setTimeout(r, ms))
 }
@@ -410,14 +413,7 @@ async function main() {
   if (existsSync(HISTORY_PATH)) {
     try {
       const raw = JSON.parse(await readFile(HISTORY_PATH, 'utf8'))
-      // Migrate legacy "weeks" key to "dates"
-      if (raw.weeks && !raw.dates) {
-        raw.dates = raw.weeks
-        delete raw.weeks
-      }
-      history = raw
-      if (!history.dates) history.dates = []
-      if (!history.scores) history.scores = {}
+      history = migrateLegacyHistory(raw)
     } catch {
       console.warn('Could not parse existing history, starting fresh')
     }
@@ -428,21 +424,15 @@ async function main() {
   // Cold start: seed with the April 22 snapshot as data point 0
   if (history.dates.length === 0) {
     console.log(`Cold start — seeding with ${SEED_DATE} snapshot`)
-    history.dates.push(SEED_DATE)
-    for (const repo of REPOS) {
-      if (!history.scores[repo]) history.scores[repo] = []
-      history.scores[repo].push(SEED_SCORES[repo] ?? 0)
-    }
+    seedColdStart(history, REPOS, SEED_DATE, SEED_SCORES)
   }
 
   // Idempotency: skip if today already recorded AND detectedIds is populated
-  const detectedIdsPopulated = history.detectedIds && Object.keys(history.detectedIds).length > 0
-  const alreadyRecorded = history.dates[history.dates.length - 1] === today
-  if (alreadyRecorded && detectedIdsPopulated) {
+  const { isNoOp, isBackfill } = checkIdempotency(history, today)
+  if (isNoOp) {
     console.log(`Date ${today} already recorded with detectedIds, nothing to do`)
     process.exit(0)
   }
-  const isBackfill = alreadyRecorded && !detectedIdsPopulated
   if (isBackfill) {
     console.log(`Date ${today} exists but detectedIds missing — backfilling...`)
   }
@@ -476,37 +466,16 @@ async function main() {
 
   console.log(`Done: ${scanned} scanned, ${failed} failed (carried forward)`)
 
-  // Append or update today's scan
-  if (isBackfill) {
-    const idx = history.dates.length - 1
-    for (const repo of REPOS) {
-      if (!history.scores[repo]) history.scores[repo] = []
-      history.scores[repo][idx] = scores[repo] ?? 0
-    }
-  } else {
-    history.dates.push(today)
-    for (const repo of REPOS) {
-      if (!history.scores[repo]) history.scores[repo] = []
-      history.scores[repo].push(scores[repo] ?? 0)
-    }
-  }
-
-  // Store detectedIds for latest scan only (used for proper level computation)
-  history.detectedIds = latestDetectedIds
-
-  // Trim to MAX_DATA_POINTS (26 weeks × 4 scans/week = 104)
-  while (history.dates.length > MAX_DATA_POINTS) {
-    history.dates.shift()
-    for (const repo of Object.keys(history.scores)) {
-      history.scores[repo]?.shift()
-    }
-  }
-
-  // Remove repos no longer in the list
-  const repoSet = new Set(REPOS)
-  for (const repo of Object.keys(history.scores)) {
-    if (!repoSet.has(repo)) delete history.scores[repo]
-  }
+  // Append/backfill today's scan, store detectedIds, trim to MAX_DATA_POINTS
+  // (26 weeks × 4 scans/week = 104), and drop repos no longer tracked.
+  applyScanResults(history, {
+    repos: REPOS,
+    today,
+    scores,
+    latestDetectedIds,
+    isBackfill,
+    maxDataPoints: MAX_DATA_POINTS,
+  })
 
   history.generated_at = new Date().toISOString()
 

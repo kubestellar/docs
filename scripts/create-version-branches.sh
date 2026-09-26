@@ -92,6 +92,6 @@ if [ ${#FAILED_VERSIONS[@]} -gt 0 ]; then
 fi
 echo ""
 echo "Next steps:"
-echo "1. Update src/config/versions.ts on main branch with all migrated versions"
+echo "1. Update src/config/versions/ (data/*.ts) on main branch with all migrated versions"
 echo "2. Test version dropdown navigation"
 echo "3. Verify each branch builds correctly on Netlify"
