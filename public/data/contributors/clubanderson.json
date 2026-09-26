@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-26T02:18:49.950Z",
+  "generated_at": "2026-09-26T06:22:18.848Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2746,
+  "total_prs_opened": 2749,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6262650,
+  "total_points": 6263550,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 50.4,
+    "avg_per_week": 50.7,
     "avg_per_day": 8.31,
     "by_day_of_week": [
       310,
@@ -17,7 +17,7 @@
       749,
       553,
       534,
-      346,
+      349,
       306
     ],
     "by_hour_of_day": [
@@ -26,8 +26,8 @@
       92,
       55,
       38,
-      117,
-      1510,
+      118,
+      1512,
       279,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-26T00:03:34.000Z"
+    "last_issue_at": "2026-09-26T06:20:40.000Z"
   },
   "topics": [
     {
@@ -58,28 +58,28 @@
       "issue_count": 115,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-26",
-        "url": "https://github.com/kubestellar/console-kb/pull/3553",
-        "created_at": "2026-09-26T00:03:34Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3554",
+        "created_at": "2026-09-26T06:02:52Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 11,
-      "closed_count": 104
+      "open_count": 12,
+      "closed_count": 103
     },
     {
       "name": "release, version, sync",
-      "issue_count": 66,
+      "issue_count": 67,
       "recent_issue": {
         "title": "📖 Sync console docs versions",
-        "url": "https://github.com/kubestellar/docs/pull/7083",
-        "created_at": "2026-09-25T05:29:02Z"
+        "url": "https://github.com/kubestellar/docs/pull/7090",
+        "created_at": "2026-09-26T05:27:24Z"
       },
       "repos": [
         "docs"
       ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 66
     },
     {
@@ -296,6 +296,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "openshift, article, typo",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "📖 Fix article typo in core-chart.md (a → an OpenShift)",
+        "url": "https://github.com/kubestellar/docs/pull/7092",
+        "created_at": "2026-09-26T06:20:40Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "atlantis, bitbucket, incompatibility",
@@ -618,34 +632,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "ports, recomputing, stag",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 [scanner] fix: guard CNCF install-gen Create PR step",
-        "url": "https://github.com/kubestellar/console-kb/pull/2945",
-        "created_at": "2026-07-22T14:54:34Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "config, argo, controller",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 argo-workflows: Controller: `invalid config map object received in config watcher. Ignored",
-        "url": "https://github.com/kubestellar/console-kb/pull/2943",
-        "created_at": "2026-07-22T06:53:23Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -664,12 +650,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "Marketplace & Operators",
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
@@ -680,6 +660,12 @@
         "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
         "description": "Log streaming, event timeline, alerting, notifications",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },
@@ -730,7 +716,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 155
+      "issue_count": 158
     }
   ],
   "repo_breakdown": [
@@ -739,7 +725,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2045,
+      "prs_opened": 2046,
       "prs_merged": 1726
     },
     {
@@ -747,7 +733,7 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 186,
-      "prs_opened": 613,
+      "prs_opened": 615,
       "prs_merged": 572
     },
     {
