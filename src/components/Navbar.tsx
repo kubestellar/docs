@@ -16,7 +16,7 @@ import {
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const githubStats = useGithubStats();
-  const { isDropdownOpen, isContributeOpen, isCommunityOpen, isGithubOpen } =
+  const { openDropdown, isDropdownOpen, openMenu, closeMenu, scheduleClose } =
     useNavDropdowns();
 
   const t = useTranslations("navigation");
@@ -49,20 +49,42 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-0.5 sm:px-2 lg:px-1 relative">
           <div className="flex justify-between h-16 items-center">
             <NavbarLogo t={t}>
-              <ContributeDropdown t={t} isContributeOpen={isContributeOpen} />
-              <CommunityDropdown t={t} isCommunityOpen={isCommunityOpen} />
+              <ContributeDropdown
+                t={t}
+                isOpen={openDropdown === "contribute"}
+                onOpen={() => openMenu("contribute")}
+                onClose={() => scheduleClose("contribute")}
+              />
+              <CommunityDropdown
+                t={t}
+                isOpen={openDropdown === "community"}
+                onOpen={() => openMenu("community")}
+                onClose={() => scheduleClose("community")}
+              />
             </NavbarLogo>
 
             {/* Right side: Controls */}
             <div className="flex items-center sm:space-x-4">
               {/* Language Switcher */}
-              <div className="language-switcher-container">
-                <LanguageSwitcher className="relative group" />
+              <div
+                className="language-switcher-container"
+                onMouseEnter={() => openMenu("lang")}
+                onMouseLeave={() => scheduleClose("lang")}
+              >
+                <LanguageSwitcher
+                  className="relative group"
+                  open={openDropdown === "lang"}
+                  onOpenChange={open =>
+                    open ? openMenu("lang") : closeMenu("lang")
+                  }
+                />
               </div>
 
               <GithubDropdown
                 t={t}
-                isGithubOpen={isGithubOpen}
+                isOpen={openDropdown === "github"}
+                onOpen={() => openMenu("github")}
+                onClose={() => scheduleClose("github")}
                 githubStats={githubStats}
               />
 
