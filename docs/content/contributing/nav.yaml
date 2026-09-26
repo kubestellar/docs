@@ -1,0 +1,36 @@
+# Cross-project 'Contributing' sidebar section, appended to every project's nav
+# (see GENERAL_SECTIONS in src/app/docs/page-map.ts). Paths are relative to docs/content/.
+# Each top-level entry is a sidebar section: { title, items }. Items are
+#   - Title: relative/path.md            (page)
+#   - Title:                             (folder)
+#       - Child Title: relative/path.md
+#   - https://example.com or /abs/path   (external / absolute link, as a value)
+# A page that is not listed here does not appear in the sidebar.
+# Schema is validated at build time by loadNavFile() in src/app/docs/page-map.ts.
+# See kubestellar/docs#7080.
+- title: Contributing
+  items:
+    - Overview: contributing/contribute.md
+    - Code of Conduct: contributing/coc-inc.md
+    - Contributing to Code: contributing/CONTRIBUTINGKS.md
+    - Contributing to Docs/Website:
+        - Docs Structure: contributing/documentation/docs-structure-inc.md
+        - Simple Changes: contributing/documentation/simple-docs-inc.md
+        - Version Management: contributing/documentation/docs-version-inc.md
+        - Detailed Contribution Guide: contributing/documentation/contributing-inc.md
+        - Style Guide: contributing/documentation/docs-styleguide.md
+    - Contributor Ladder: contributing/contributor_ladder.md
+    - License: contributing/license-inc.md
+    - Governance: contributing/governance-inc.md
+    - Onboarding: contributing/onboarding-inc.md
+    - CI/CD:
+        - GitHub Actions: contributing/operations/github-actions.md
+        - Demoting Component Repo Docs: contributing/operations/demote-component-docs.md
+    - Security:
+        - Policy: contributing/security/security-inc.md
+        - Contacts: contributing/security/security_contacts-inc.md
+    - Testing: kubestellar/testing.md
+    - Packaging: kubestellar/packaging.md
+    - Release Process: kubestellar/release.md
+    - Release Testing: kubestellar/release-testing.md
+    - Sign-off: kubestellar/pr-signoff.md

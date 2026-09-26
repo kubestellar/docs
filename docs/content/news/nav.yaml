@@ -1,0 +1,16 @@
+# Cross-project 'News' sidebar section, appended to every project's nav
+# (see GENERAL_SECTIONS in src/app/docs/page-map.ts). Paths are relative to docs/content/.
+# Each top-level entry is a sidebar section: { title, items }. Items are
+#   - Title: relative/path.md            (page)
+#   - Title:                             (folder)
+#       - Child Title: relative/path.md
+#   - https://example.com or /abs/path   (external / absolute link, as a value)
+# A page that is not listed here does not appear in the sidebar.
+# Schema is validated at build time by loadNavFile() in src/app/docs/page-map.ts.
+# See kubestellar/docs#7080.
+- title: News
+  items:
+    - Latest News: news/index.md
+    - Marketplace & KB Launch: news/marketplace-and-kb-launch.md
+    - KubeStellar Console Announcement: news/kubestellar-console-announcement.md
+    - Reviews and Testimonials: news/reviews.md

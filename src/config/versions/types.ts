@@ -17,6 +17,13 @@ export interface ProjectConfig {
   basePath: string // '' for kubestellar, 'a2a' for a2a, etc.
   currentVersion: string
   contentPath: string
+  /**
+   * Repo-relative path of the YAML file that defines this project's sidebar
+   * navigation (loaded by src/app/docs/page-map.ts). Entries in that file are
+   * paths relative to `contentPath`. Mandatory, like contentPath/basePath, so
+   * adding a ProjectId without a nav fails to compile. See kubestellar/docs#7080.
+   */
+  navPath: string
   versions: Record<string, VersionInfo>
   /**
    * URL path prefixes that route to this project via `getProjectFromPath`.

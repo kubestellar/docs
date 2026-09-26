@@ -6,9 +6,9 @@ import { buildPageMap } from '../app/docs/page-map'
  * getNavStructure() and the sibling general-files filter in buildPageMap()
  * inside src/app/docs/page-map.ts:
  *
- *   * lines 527-528  -> case 'a2a'          -> NAV_STRUCTURE_A2A
- *   * lines 533-534  -> case 'kubeflex'     -> NAV_STRUCTURE_KUBEFLEX
- *   * lines 542-543  -> case 'multi-plugin' -> NAV_STRUCTURE_MULTI_PLUGIN
+ *   * 'a2a'          -> docs/content/a2a/nav.yaml
+ *   * 'kubeflex'     -> docs/content/kubeflex/nav.yaml
+ *   * 'multi-plugin' -> docs/content/multi-plugin/nav.yaml
  *   * lines 578-587  -> the `if (projectId !== 'kubestellar')` block that
  *                       pulls the shared contributing/community/news
  *                       markdown files (plus intro.md, legacy-components.md,
@@ -16,7 +16,7 @@ import { buildPageMap } from '../app/docs/page-map'
  *
  * Prior tests exercise only 'kubestellar', 'console', 'kubestellar-mcp',
  * arms.  Regressions to the a2a/kubeflex/multi-plugin arms — e.g.
- * accidentally routing them to NAV_STRUCTURE_KUBESTELLAR (the default arm)
+ * accidentally routing them to the KubeStellar nav (docs/content/nav.yaml)
  * — would go completely unnoticed today.
  */
 
@@ -104,7 +104,7 @@ describe("buildPageMap('multi-plugin') — getNavStructure switch arm", () => {
   it('exposes a "Development" or similar multi-plugin section not present on the default arm', () => {
     const { pageMap } = buildPageMap('multi-plugin') as unknown as BuildResult
     const titles = pageMap.map((n) => n.name)
-    // NAV_STRUCTURE_MULTI_PLUGIN ends with a top-level "Development" folder.
+    // docs/content/multi-plugin/nav.yaml ends with a top-level "Development" folder.
     expect(titles).toContain('Development')
   })
 })

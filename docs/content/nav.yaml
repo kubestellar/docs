@@ -1,0 +1,69 @@
+# Sidebar navigation for the KubeStellar project (PROJECTS.kubestellar.navPath).
+# Paths are relative to docs/content/.
+# Each top-level entry is a sidebar section: { title, items }. Items are
+#   - Title: relative/path.md            (page)
+#   - Title:                             (folder)
+#       - Child Title: relative/path.md
+#   - https://example.com or /abs/path   (external / absolute link, as a value)
+# A page that is not listed here does not appear in the sidebar.
+# Schema is validated at build time by loadNavFile() in src/app/docs/page-map.ts.
+# See kubestellar/docs#7080.
+- title: Overview
+  items:
+    - Introduction: readme.md
+    - Architecture: kubestellar/architecture.md
+    - OCM Status Addon: kubestellar/ocm-status-addon-intro.md
+    - Release Notes: kubestellar/release-notes.md
+    - Roadmap: kubestellar/roadmap.md
+- title: Getting Started
+  items:
+    - Quick Start: kubestellar/get-started.md
+    - Console Quick Start: console/quickstart.md
+- title: User Guide
+  items:
+    - Guide Overview: kubestellar/user-guide-intro.md
+    - Observability: kubestellar/observability.md
+    - Getting Started from OCM: kubestellar/start-from-ocm.md
+    - General Setup:
+        - Overview: kubestellar/setup-overview.md
+        - Setup Limitations: kubestellar/setup-limitations.md
+        - Prerequisites: kubestellar/pre-reqs.md
+        - KubeFlex Hosting Cluster:
+            - Acquire Cluster for KubeFlex Hosting: kubestellar/acquire-hosting-cluster.md
+            - Initialize KubeFlex Hosting Cluster: kubestellar/init-hosting-cluster.md
+        - Core Spaces:
+            - Inventory and Transport Spaces: kubestellar/its.md
+            - Workload Description Spaces: kubestellar/wds.md
+        - Core Helm Chart: kubestellar/core-chart.md
+        - Argo CD Integration: kubestellar/core-chart-argocd.md
+        - Workload Execution Clusters:
+            - About Workload Execution Clusters: kubestellar/wec.md
+            - Register a Workload Execution Cluster: kubestellar/wec-registration.md
+    - Usage:
+        - Usage Limitations: kubestellar/usage-limitations.md
+        - KubeStellar API:
+            - Overview: kubestellar/control.md
+            - Binding: kubestellar/binding.md
+            - Transforming Desired State: kubestellar/transforming.md
+            - Combining Reported State: kubestellar/combined-status.md
+            - Multi-WEC Aggregated Status: kubestellar/multi-wec-aggregated-status.md
+        - Authorization in WECs: kubestellar/authorization.md
+        - Example Scenarios: kubestellar/example-scenarios.md
+        - Deploy Helm Charts Through a WDS: kubestellar/helm-through-wds.md
+        - Third-party Integrations:
+            - ArgoCD to WDS: kubestellar/argo-to-wds1.md
+            - Claude Code: kubestellar/claude-code.md
+        - Troubleshooting: kubestellar/troubleshooting.md
+        - Known Issues:
+            - Overview: kubestellar/known-issues.md
+            - Hidden State in Kubeconfig: kubestellar/knownissue-kflex-extension.md
+            - Kind Needs OS Reconfig: kubestellar/knownissue-kind-config.md
+            - Helm Chart Auth Failure: kubestellar/knownissue-helm-ghcr.md
+            - Missing CombinedStatus Results: kubestellar/knownissue-collector-miss.md
+            - Kind Host Configuration: kubestellar/installation-errors.md
+            - Insufficient CPU: kubestellar/knownissue-cpu-insufficient-for-its1.md
+    - UI (Deprecated → Console):
+        - Overview: ui-docs/ui-overview.md
+        - WECS Remote Monitoring: ui-docs/wecs-remote-monitoring.md
+        - ITS cluster management: ui-docs/its-cluster-management.md
+    - Teardown: kubestellar/teardown.md

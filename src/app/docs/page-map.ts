@@ -2,6 +2,15 @@ import { normalizePageMap } from 'nextra/page-map'
 import fs from 'fs'
 import path from 'path'
 import { PROJECTS, type ProjectId } from '@/config/versions'
+import {
+  GENERAL_SECTIONS,
+  NAV_FILE_NAME,
+  isGeneralSectionFile,
+  loadNavFile,
+  navItemTouchesGeneralSection,
+  type NavItem,
+  type NavSection,
+} from '@/lib/nav'
 
 // Local docs path - docs are now in this repository
 export const docsContentPath = path.join(process.cwd(), 'docs', 'content')
@@ -67,427 +76,25 @@ function getAllDocFiles(dir: string, baseDir: string = dir): string[] {
   return files
 }
 
-// Navigation structure based on mkdocs.yml
-type NavItem = { [key: string]: string | NavItem[] | NavItem } | string
+// Sidebar navigation is data: see src/lib/nav.ts for the nav.yaml schema and
+// loader. Re-exported so existing importers of page-map keep working.
+export { GENERAL_SECTIONS, NAV_FILE_NAME, isGeneralSectionFile, loadNavFile } from '@/lib/nav'
+export type { NavItem, NavSection } from '@/lib/nav'
 
-// A2A Navigation Structure
-const NAV_STRUCTURE_A2A: Array<{ title: string; items: NavItem[] }> = [
-  {
-    title: 'Overview',
-    items: [
-      { 'Introduction': 'intro.md' },
-    ]
-  },
-  {
-    title: 'Getting Started',
-    items: [
-      { 'Quick Start': 'getting-started/quick-start.md' },
-      { 'Installation': 'getting-started/installation.md' },
-      { 'Guide Overview': 'getting-started/index.md' },
-    ]
-  },
-  {
-    title: 'Reference',
-    items: [
-      { 'CLI Reference': 'cli-reference.md' },
-      { 'Troubleshooting': 'troubleshooting.md' },
-    ]
-  },
-  {
-    title: 'Contribute to A2A',
-    items: [
-      { 'Contribute to A2A': 'CONTRIBUTING.md' },
-    ]
-  }
-]
+// Root-level pages of docs/content/ that every project can resolve.
+const ROOT_SHARED_PAGES = ['intro.md', 'legacy-components.md', 'what-is-console.md'] as const
 
-// Multi Plugin Navigation Structure
-const NAV_STRUCTURE_MULTI_PLUGIN: Array<{ title: string; items: NavItem[] }> = [
-  {
-    title: 'Overview',
-    items: [
-      { 'Introduction': 'readme.md' },
-      { 'Architecture': 'architecture_guide.md' },
-    ]
-  },
-  {
-    title: 'Getting Started',
-    items: [
-      { 'Installation': 'installation_guide.md' },
-      { 'Installation (Windows)': 'installation_guide_windows.md' },
-      { 'Usage Guide': 'usage_guide.md' },
-    ]
-  },
-  {
-    title: 'Reference',
-    items: [
-      { 'API Reference': 'api_reference.md' },
-    ]
-  },
-  {
-    title: 'Development',
-    items: [
-      { 'Development Guide': 'development_guide.md' },
-    ]
-  }
-]
+type ResolvedNavSection = NavSection & { general: boolean }
 
-// KubeFlex Navigation Structure
-const NAV_STRUCTURE_KUBEFLEX: Array<{ title: string; items: NavItem[] }> = [
-  {
-    title: 'Overview',
-    items: [
-      { 'Introduction': 'readme.md' },
-      { 'Architecture': 'architecture.md' },
-      { 'Multi-Tenancy': 'multi-tenancy.md' },
-    ]
-  },
-  {
-    title: 'Getting Started',
-    items: [
-      { 'Quick Start': 'quickstart.md' },
-      { 'User Guide': 'users.md' },
-    ]
-  },
-  {
-    title: 'Development',
-    items: [
-      { 'Debugging': 'debugging.md' },
-      { 'Code Generation': 'code-generation.md' },
-      { 'PostgreSQL Architecture': 'postgresql-architecture-decision.md' },
-    ]
-  },
-  {
-    title: 'Community',
-    items: [
-      { 'Contributors': 'contributors.md' },
-    ]
-  }
-]
-
-// kubestellar-mcp Navigation Structure
-const NAV_STRUCTURE_KUBESTELLAR_MCP: Array<{ title: string; items: NavItem[] }> = [
-  {
-    title: 'Overview',
-    items: [
-      { 'Introduction': 'overview/intro.md' },
-    ]
-  },
-  {
-    title: 'Setup',
-    items: [
-      { 'Homebrew Installation': 'setup/homebrew.md' },
-    ]
-  },
-  {
-    title: 'Architecture',
-    items: [
-      { 'Architecture Overview': 'architecture/overview.md' },
-      { 'Local Development': 'architecture/local-development.md' },
-      { 'Request and Response Lifecycle': 'architecture/request-response-lifecycle.md' },
-      { 'Adding a New Tool': 'architecture/adding-a-tool.md' },
-      { 'Testing': 'architecture/testing.md' },
-    ]
-  },
-  {
-    title: 'Commands',
-    items: [
-      { 'App Logs': 'commands/app-logs.md' },
-      { 'App Status': 'commands/app-status.md' },
-      { 'Delete': 'commands/delete.md' },
-      { 'Deploy': 'commands/deploy.md' },
-      { 'GitOps Drift': 'commands/gitops-drift.md' },
-      { 'GitOps Sync': 'commands/gitops-sync.md' },
-      { 'Helm Install': 'commands/helm-install.md' },
-      { 'Helm Rollback': 'commands/helm-rollback.md' },
-      { 'Helm Uninstall': 'commands/helm-uninstall.md' },
-      { 'Kustomize': 'commands/kustomize.md' },
-      { 'Label': 'commands/label.md' },
-    ]
-  }
-]
-
-// Console Navigation Structure
-const NAV_STRUCTURE_CONSOLE: Array<{ title: string; items: NavItem[] }> = [
-  {
-    title: 'Overview',
-    items: [
-      { 'Introduction': 'readme.md' },
-      { 'Quick Start': 'quickstart.md' },
-      { 'Console Overview': 'console-overview.md' },
-      { 'Architecture': 'architecture.md' },
-      { 'Architecture Diagram': '_architecture-diagram.md' },
-      { 'Installation': 'installation.md' },
-      { 'Cluster Registration': 'cluster-registration.md' },
-      { 'Demo Mode': 'demo-mode.md' },
-      { 'Configuration': 'configuration.md' },
-      { 'Updates and Releases': 'console-updates.md' },
-    ]
-  },
-  {
-    title: 'Setup',
-    items: [
-      { 'Local Setup Guide': 'local-setup.md' },
-      { 'Local Deployment': 'local-deployment.md' },
-      { 'Deploy & Orchestrate': 'deploy.md' },
-      { 'vCluster Setup': 'vcluster-setup.md' },
-    ]
-  },
-  {
-    title: 'Features',
-    items: [
-      { 'Console Features': 'console-features.md' },
-      { 'Dashboards': 'dashboards.md' },
-      { 'Cards': 'all-cards.md' },
-      { 'Card Types': 'cards.md' },
-      { 'Card Reference': 'console-cards.md' },
-      { 'Stats Blocks': 'stats-blocks.md' },
-      { 'Alerts': 'alerts.md' },
-      { 'Cost Optimization Cards': 'cost-optimization.md' },
-      { 'Drasi Reactive Pipeline Dashboard': 'drasi-dashboard.md' },
-      { 'KServe Monitoring Card': 'kserve-monitoring.md' },
-      { 'Feedback System': 'feedback.md' },
-    ]
-  },
-  {
-    title: 'AI Integration',
-    items: [
-      { 'AI Features': 'ai-features.md' },
-      { 'AI Missions Setup': 'ai-missions-setup.md' },
-      { 'Kagenti LLM Provider Setup': 'kagenti-llm-provider-setup.md' },
-      { 'Local LLM Strategy': 'local-llm-strategy.md' },
-      { 'Agentic Quality Controls': 'agentic-quality.md' },
-    ]
-  },
-  {
-    title: 'Security',
-    items: [
-      { 'Authentication & Sessions': 'authentication.md' },
-      { 'Security Model': 'security-model.md' },
-      { 'Persistence & State Management': 'persistence.md' },
-    ]
-  },
-  {
-    title: 'Enterprise',
-    items: [
-      { 'Enterprise Compliance Portal': 'enterprise-compliance.md' },
-      { 'Federation & Multi-Hub': 'federation.md' },
-    ]
-  },
-  {
-    title: 'Development',
-    items: [
-      { 'Development Methodology': 'development.md' },
-    ]
-  },
-  {
-    title: 'ACMM',
-    items: [
-      { 'ACMM Dashboard': 'acmm-dashboard.md' },
-    ]
-  },
-  {
-    title: 'Programs',
-    items: [
-      { 'Marketplace': 'marketplace.md' },
-      { 'Knowledge Base': 'knowledge-base.md' },
-      { 'Rewards System': 'console-rewards.md' },
-    ]
-  },
-  {
-    title: 'Troubleshooting',
-    items: [
-      { 'Troubleshooting': 'troubleshooting.md' },
-      { 'Windows 11 Local Source Build Troubleshooting': 'windows-11-local-source-build-troubleshooting.md' },
-    ]
-  }
-]
-
-// KubeStellar Navigation Structure
-const NAV_STRUCTURE_KUBESTELLAR: Array<{ title: string; items: NavItem[] }> = [
-
-  {
-    title: 'Overview',
-    items: [
-      { 'Introduction': 'readme.md' },
-      { 'Architecture': 'kubestellar/architecture.md' },
-      { 'OCM Status Addon': 'kubestellar/ocm-status-addon-intro.md' },
-      { 'Release Notes': 'kubestellar/release-notes.md' },
-      { 'Roadmap': 'kubestellar/roadmap.md' }
-    ]
-  },
-  {
-    title: 'Getting Started',
-    items: [
-      { 'Quick Start': 'kubestellar/get-started.md' },
-      { 'Console Quick Start': 'console/quickstart.md' },
-    ]
-  },
-  {
-    title: 'User Guide',
-    items: [
-      { 'Guide Overview': 'kubestellar/user-guide-intro.md' },
-      { 'Observability': 'kubestellar/observability.md' },
-      { 'Getting Started from OCM': 'kubestellar/start-from-ocm.md' },
-      {
-        'General Setup': [
-          { 'Overview': 'kubestellar/setup-overview.md' },
-          { 'Setup Limitations': 'kubestellar/setup-limitations.md' },
-          { 'Prerequisites': 'kubestellar/pre-reqs.md' },
-          {
-            'KubeFlex Hosting Cluster': [
-              { 'Acquire Cluster for KubeFlex Hosting': 'kubestellar/acquire-hosting-cluster.md' },
-              { 'Initialize KubeFlex Hosting Cluster': 'kubestellar/init-hosting-cluster.md' }
-            ]
-          },
-          {
-            'Core Spaces': [
-              { 'Inventory and Transport Spaces': 'kubestellar/its.md' },
-              { 'Workload Description Spaces': 'kubestellar/wds.md' }
-            ]
-          },
-          { 'Core Helm Chart': 'kubestellar/core-chart.md' },
-          { 'Argo CD Integration': 'kubestellar/core-chart-argocd.md' },
-          {
-            'Workload Execution Clusters': [
-              { 'About Workload Execution Clusters': 'kubestellar/wec.md' },
-              { 'Register a Workload Execution Cluster': 'kubestellar/wec-registration.md' }
-            ]
-          }
-        ]
-      },
-      {
-        'Usage': [
-          { 'Usage Limitations': 'kubestellar/usage-limitations.md' },
-          {
-            'KubeStellar API': [
-              { 'Overview': 'kubestellar/control.md' },
-              { 'Binding': 'kubestellar/binding.md' },
-              { 'Transforming Desired State': 'kubestellar/transforming.md' },
-              { 'Combining Reported State': 'kubestellar/combined-status.md' },
-              { 'Multi-WEC Aggregated Status': 'kubestellar/multi-wec-aggregated-status.md' }
-            ]
-          },
-          { 'Authorization in WECs': 'kubestellar/authorization.md' },
-          { 'Example Scenarios': 'kubestellar/example-scenarios.md' },
-          { 'Deploy Helm Charts Through a WDS': 'kubestellar/helm-through-wds.md' },
-          {
-            'Third-party Integrations': [
-              { 'ArgoCD to WDS': 'kubestellar/argo-to-wds1.md' },
-              { 'Claude Code': 'kubestellar/claude-code.md' }
-            ]
-          },
-          { 'Troubleshooting': 'kubestellar/troubleshooting.md' },
-          {
-            'Known Issues': [
-              { 'Overview': 'kubestellar/known-issues.md' },
-              { 'Hidden State in Kubeconfig': 'kubestellar/knownissue-kflex-extension.md' },
-              { 'Kind Needs OS Reconfig': 'kubestellar/knownissue-kind-config.md' },
-              { 'Helm Chart Auth Failure': 'kubestellar/knownissue-helm-ghcr.md' },
-              { 'Missing CombinedStatus Results': 'kubestellar/knownissue-collector-miss.md' },
-              { 'Kind Host Configuration': 'kubestellar/installation-errors.md' },
-              { 'Insufficient CPU': 'kubestellar/knownissue-cpu-insufficient-for-its1.md' }
-            ]
-          }
-        ]
-      },
-      {
-        'UI (Deprecated → Console)': [
-          { 'Overview': 'ui-docs/ui-overview.md' },
-          { 'WECS Remote Monitoring': 'ui-docs/wecs-remote-monitoring.md' },
-          { 'ITS cluster management': 'ui-docs/its-cluster-management.md' }
-        ]
-      },
-      { 'Teardown': 'kubestellar/teardown.md' }
-    ]
-  }
-]
-
-const NAV_STRUCTURE_CONTRIBUTING: Array<{ title: string; items: NavItem[] }> = [
-  {
-    title: 'Contributing',
-    items: [
-      { 'Overview': 'contributing/contribute.md' },
-      { 'Code of Conduct': 'contributing/coc-inc.md' },
-      { 'Contributing to Code': 'contributing/CONTRIBUTINGKS.md' },
-      { 'Contributing to Docs/Website': [
-          {'Docs Structure': 'contributing/documentation/docs-structure-inc.md'} ,
-          {'Simple Changes' : 'contributing/documentation/simple-docs-inc.md'},
-          {'Version Management' : 'contributing/documentation/docs-version-inc.md'},
-          {'Detailed Contribution Guide': 'contributing/documentation/contributing-inc.md' },
-          {'Style Guide': 'contributing/documentation/docs-styleguide.md' }
-          ]},
-      { 'Contributor Ladder': 'contributing/contributor_ladder.md' },
-      { 'License': 'contributing/license-inc.md' },
-      { 'Governance': 'contributing/governance-inc.md' },
-      { 'Onboarding': 'contributing/onboarding-inc.md' },
-      {
-        'CI/CD': [
-          { 'GitHub Actions': 'contributing/operations/github-actions.md' },
-          { 'Demoting Component Repo Docs': 'contributing/operations/demote-component-docs.md' }
-        ]
-      },
-      {
-        'Security': [
-          { 'Policy': 'contributing/security/security-inc.md' },
-          { 'Contacts': 'contributing/security/security_contacts-inc.md' }
-        ]
-      },
-      { 'Testing': 'kubestellar/testing.md' },
-      { 'Packaging': 'kubestellar/packaging.md' },
-      { 'Release Process': 'kubestellar/release.md' },
-      { 'Release Testing': 'kubestellar/release-testing.md' },
-      { 'Sign-off': 'kubestellar/pr-signoff.md' }
-    ]
-  }
-]
-
-const NAV_STRUCTURE_COMMUNITY: Array<{ title: string; items: NavItem[] }> = [
-  {
-    title: 'Community',
-    items: [
-      { 'Get Involved': 'community/index.md' },
-      { 'Videos and Demos': 'community/videos.md' },
-      { 'Community Meetings': 'community/meetings.md' },
-    ]
-  }
-]
-
-const NAV_STRUCTURE_NEWS: Array<{ title: string; items: NavItem[] }> = [
-  {
-    title: 'News',
-    items: [
-      { 'Latest News': 'news/index.md' },
-      { 'Marketplace & KB Launch': 'news/marketplace-and-kb-launch.md' },
-      { 'KubeStellar Console Announcement': 'news/kubestellar-console-announcement.md' },
-      { 'Reviews and Testimonials': 'news/reviews.md'}
-    ]
-  }
-]
-
-// Get navigation structure for a project.
-//
-// Data-driven from NAV_STRUCTURE_BY_PROJECT: Record<ProjectId, ...> so a new
-// value added to the ProjectId union fails to compile until the maintainer
-// supplies a nav structure, instead of silently falling through to
-// NAV_STRUCTURE_KUBESTELLAR via a `default:` arm. See kubestellar/docs#7037.
-const NAV_STRUCTURE_BY_PROJECT: Record<
-  ProjectId,
-  Array<{ title: string; items: NavItem[] }>
-> = {
-  kubestellar: NAV_STRUCTURE_KUBESTELLAR,
-  a2a: NAV_STRUCTURE_A2A,
-  kubeflex: NAV_STRUCTURE_KUBEFLEX,
-  'multi-plugin': NAV_STRUCTURE_MULTI_PLUGIN,
-  'kubestellar-mcp': NAV_STRUCTURE_KUBESTELLAR_MCP,
-  console: NAV_STRUCTURE_CONSOLE,
-}
-
-function getNavStructure(projectId: ProjectId): Array<{ title: string; items: NavItem[] }> {
-  const baseStructure = NAV_STRUCTURE_BY_PROJECT[projectId]
-
-  // Add general sections to all projects
-  return [...baseStructure, ...NAV_STRUCTURE_CONTRIBUTING, ...NAV_STRUCTURE_COMMUNITY, ...NAV_STRUCTURE_NEWS]
+// Get navigation structure for a project: its own nav.yaml (from
+// PROJECTS[projectId].navPath) followed by every GENERAL_SECTIONS nav.
+export function getNavStructure(projectId: ProjectId): ResolvedNavSection[] {
+  const projectSections = loadNavFile(path.join(process.cwd(), PROJECTS[projectId].navPath))
+    .map(section => ({ ...section, general: false }))
+  const generalSections = GENERAL_SECTIONS.flatMap(section =>
+    loadNavFile(path.join(docsContentPath, section, NAV_FILE_NAME)).map(s => ({ ...s, general: true }))
+  )
+  return [...projectSections, ...generalSections]
 }
 
 export function buildPageMap(projectId: ProjectId = 'kubestellar') {
@@ -500,8 +107,7 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
   if (projectId !== 'kubestellar') {
     // Add general sections files and root-level pages from main KubeStellar directory
     const generalFiles = getAllDocFiles(docsContentPath).filter(f =>
-      f.startsWith('contributing/') || f.startsWith('community/') || f.startsWith('news/') ||
-      f === 'intro.md' || f === 'legacy-components.md' || f === 'what-is-console.md'
+      isGeneralSectionFile(f) || (ROOT_SHARED_PAGES as readonly string[]).includes(f)
     )
     allDocFiles = [...allDocFiles, ...generalFiles]
   }
@@ -520,8 +126,7 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
           processedFiles.add(item)
           const baseName = item.replace(/\.(md|mdx)$/i, '').split('/').pop()!
           // Use /docs path for general sections, project path for everything else
-          const isGeneralSection = item.startsWith('contributing/') || item.startsWith('community/') || item.startsWith('news/')
-          const basePathForRoute = isGeneralSection ? 'docs' : projectBasePath
+          const basePathForRoute = isGeneralSectionFile(item) ? 'docs' : projectBasePath
           const route = `/${basePathForRoute}/${parentSlug}/${baseName}`
           routeMap[`${parentSlug}/${baseName}`] = item
           nodes.push({ kind: 'MdxPage', name: pretty(baseName), route })
@@ -543,8 +148,7 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
             // const baseName = value.replace(/\.(md|mdx)$/i, '').split('/').pop()!
             const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
             // Use /docs path for general sections, project path for everything else
-            const isGeneralSection = value.startsWith('contributing/') || value.startsWith('community/') || value.startsWith('news/')
-            const basePathForRoute = isGeneralSection ? 'docs' : projectBasePath
+            const basePathForRoute = isGeneralSectionFile(value) ? 'docs' : projectBasePath
             const route = `/${basePathForRoute}/${parentSlug ? parentSlug + '/' : ''}${slug}`
             routeMap[`${parentSlug ? parentSlug + '/' : ''}${slug}`] = value
             nodes.push({ kind: 'MdxPage', name: title, route })
@@ -556,24 +160,9 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
           const newParentSlug = parentSlug ? `${parentSlug}/${slug}` : slug
           const children = buildNavNodes(value, newParentSlug)
           if (children.length > 0) {
-            // Use /docs path for general sections, project path for everything else
-            // Check both direct string entries and nested values in objects
-            const isGeneralSection = Array.isArray(value) &&
-              value.some(v => {
-                if (typeof v === 'string') {
-                  return v.startsWith('contributing/') || v.startsWith('community/') || v.startsWith('news/')
-                }
-                // For object entries, check if any value starts with general section path
-                if (typeof v === 'object' && v !== null) {
-                  const objValues = Object.values(v);
-                  return objValues.some(val =>
-                    typeof val === 'string' &&
-                    (val.startsWith('contributing/') || val.startsWith('community/') || val.startsWith('news/'))
-                  );
-                }
-                return false;
-              })
-            const basePathForRoute = isGeneralSection ? 'docs' : projectBasePath
+            // Use /docs path for general sections, project path for everything else.
+            // A folder is general when any direct child points into a general section.
+            const basePathForRoute = value.some(navItemTouchesGeneralSection) ? 'docs' : projectBasePath
             nodes.push({
               kind: 'Folder',
               name: title,
@@ -593,6 +182,14 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
     return nodes
   }
 
+  // Top-level section titles that anchor under /docs/<slug> instead of the
+  // project base. Derived from the general-section navs (Contributing,
+  // Community, News) rather than hard-coded. Matching by TITLE — not by which
+  // nav a section came from — is deliberate: a project section that reuses a
+  // shared title (kubeflex's own "Community") is anchored under /docs/ too,
+  // which page-map-routes.test.ts pins as the sidebar's existing behaviour.
+  const generalSectionTitles = new Set(navStructure.filter(c => c.general).map(c => c.title))
+
   // Build navigation from navStructure (project-specific)
   for (const category of navStructure) {
     const categorySlug = category.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
@@ -600,8 +197,7 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
 
     if (children.length > 0) {
       // Use /docs path for general sections, project path for project-specific sections
-      const isGeneralSection = ['Contributing', 'Community', 'News'].includes(category.title)
-      const basePath = isGeneralSection ? 'docs' : projectBasePath
+      const basePath = generalSectionTitles.has(category.title) ? 'docs' : projectBasePath
 
       const folderNode: FolderNode = {
         kind: 'Folder',

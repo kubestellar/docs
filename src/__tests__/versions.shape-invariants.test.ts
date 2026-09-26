@@ -14,6 +14,8 @@
  * that must hold for EVERY project in PROJECTS.
  */
 import { describe, it, expect } from 'vitest'
+import { existsSync } from 'node:fs'
+import { join } from 'node:path'
 import { PROJECTS, type ProjectId } from '../config/versions'
 
 const projectEntries = Object.entries(PROJECTS) as [ProjectId, typeof PROJECTS[ProjectId]][]
@@ -106,6 +108,21 @@ describe('PROJECTS shape invariants', () => {
       } else {
         expect(project.contentPath).toBe(`docs/content/${project.basePath}`)
       }
+    },
+  )
+
+  // -----------------------------------------------------------------
+  // navPath ↔ contentPath consistency (kubestellar/docs#7080). The
+  // sidebar for a project is read from `navPath`, and its entries are
+  // paths relative to `contentPath`, so the nav.yaml must sit at the
+  // root of the content tree it describes — and must exist, because
+  // buildPageMap() throws (a build error) when it is missing.
+  // -----------------------------------------------------------------
+  it.each(projectEntries)(
+    '%s: navPath is <contentPath>/nav.yaml and the file exists',
+    (_key, project) => {
+      expect(project.navPath).toBe(`${project.contentPath}/nav.yaml`)
+      expect(existsSync(join(process.cwd(), project.navPath))).toBe(true)
     },
   )
 
