@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from 'vitest'
-import { existsSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import {
@@ -191,6 +191,14 @@ describe('loadNavFile', () => {
     const missing = join(tmp(), 'does-not-exist.yaml')
     expect(() => loadNavFile(missing)).toThrow(NavFileError)
     expect(() => loadNavFile(missing)).toThrow(/does-not-exist\.yaml: file not found/)
+  })
+
+  it('wraps filesystem read errors in NavFileError naming the file', () => {
+    // A directory at the nav path exists but cannot be read as a file (EISDIR).
+    const file = join(tmp(), NAV_FILE_NAME)
+    mkdirSync(file)
+    expect(() => loadNavFile(file)).toThrow(NavFileError)
+    expect(() => loadNavFile(file)).toThrow(/nav\.yaml: read error: /)
   })
 
   it('surfaces schema violations from a real file', () => {

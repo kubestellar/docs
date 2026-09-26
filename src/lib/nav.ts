@@ -111,12 +111,18 @@ export function parseNavYaml(file: string, source: string): NavSection[] {
 }
 
 // Read and validate a nav.yaml from disk. Throws NavFileError (naming the
-// offending file and location) on a missing file, YAML syntax error, or
-// schema violation.
+// offending file and location) on a missing or unreadable file, YAML syntax
+// error, or schema violation.
 export function loadNavFile(absPath: string): NavSection[] {
   const rel = path.relative(process.cwd(), absPath).replace(/\\/g, '/')
   if (!fs.existsSync(absPath)) {
     throw new NavFileError(rel, 'file not found')
   }
-  return parseNavYaml(rel, fs.readFileSync(absPath, 'utf8'))
+  let source: string
+  try {
+    source = fs.readFileSync(absPath, 'utf8')
+  } catch (err) {
+    throw new NavFileError(rel, `read error: ${err instanceof Error ? err.message : String(err)}`)
+  }
+  return parseNavYaml(rel, source)
 }
