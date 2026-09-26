@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-26T18:16:41.899Z",
+  "generated_at": "2026-09-26T22:12:21.067Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2760,
+  "total_prs_opened": 2762,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6269050,
+  "total_points": 6271150,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 51.4,
+    "avg_per_week": 51.6,
     "avg_per_day": 8.33,
     "by_day_of_week": [
       310,
@@ -17,7 +17,7 @@
       749,
       553,
       534,
-      360,
+      362,
       306
     ],
     "by_hour_of_day": [
@@ -42,7 +42,7 @@
       143,
       104,
       120,
-      52,
+      54,
       58,
       36
     ],
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-26T18:02:06.000Z"
+    "last_issue_at": "2026-09-26T21:33:07.000Z"
   },
   "topics": [
     {
@@ -128,7 +128,7 @@
     },
     {
       "name": "test, module, dedicated",
-      "issue_count": 8,
+      "issue_count": 7,
       "recent_issue": {
         "title": "test: add dedicated unit tests for openyurt_status/fetch.ts",
         "url": "https://github.com/kubestellar/console-marketplace/pull/811",
@@ -140,7 +140,7 @@
         "docs"
       ],
       "open_count": 1,
-      "closed_count": 7
+      "closed_count": 6
     },
     {
       "name": "warning, registry, staleness",
@@ -285,6 +285,34 @@
       "closed_count": 2
     },
     {
+      "name": "rebind, answer, ip",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "fix(url_safety): pin HEAD connections to the vetted IP to close DNS-rebinding SSRF",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/816",
+        "created_at": "2026-09-26T21:33:07Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "openyurt, fetchpods, authfetch",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "fix(openyurt_status): route fetchPods through authFetch",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/815",
+        "created_at": "2026-09-26T21:15:48Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "phase, hook, own",
       "issue_count": 1,
       "recent_issue": {
@@ -295,8 +323,8 @@
       "repos": [
         "console-marketplace"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "opendropdown, state, drive",
@@ -309,8 +337,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "nav, loc, sidebar",
@@ -323,8 +351,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "openshift, article, typo",
@@ -605,20 +633,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "🚀, postgres, rotate",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 backstage: 🚀 Feature: Support for rotating Postgres password / managed identities",
-        "url": "https://github.com/kubestellar/console-kb/pull/2949",
-        "created_at": "2026-07-24T06:53:25Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -703,7 +717,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 169
+      "issue_count": 171
     }
   ],
   "repo_breakdown": [
@@ -721,15 +735,15 @@
       "feature_issues": 0,
       "other_issues": 186,
       "prs_opened": 617,
-      "prs_merged": 573
+      "prs_merged": 575
     },
     {
       "repo": "console-marketplace",
       "bug_issues": 11,
       "feature_issues": 13,
       "other_issues": 145,
-      "prs_opened": 90,
-      "prs_merged": 80
+      "prs_opened": 92,
+      "prs_merged": 81
     }
   ]
 }
