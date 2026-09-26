@@ -3,16 +3,22 @@
  *
  * Keeping these in a side-effect-free module lets the vitest suite import them
  * without triggering the CLI script's top-level filesystem reads (contentRoot
- * walk, page-map.ts parse). The main script re-imports and reuses them.
+ * walk, nav.yaml reads). The main script re-imports and reuses them.
  *
  * All helpers here are deterministic and only use path/string primitives.
  */
 import path from "node:path";
+import {
+  NAV_FILE_NAME,
+  parseNavYaml,
+  type NavItem,
+  type NavSection,
+} from "../src/lib/nav";
 
 /**
  * Convert a human-readable nav title into a URL slug.
  *
- * Mirrors the slug rule that buildPageMap() applies to NAV_STRUCTURE_* entries
+ * Mirrors the slug rule that buildPageMap() applies to nav.yaml entries
  * in src/app/docs/page-map.ts, so nav-aliased routes come out the same on both
  * sides of the check.
  *
@@ -70,35 +76,60 @@ export const ASSET_EXT =
   /\.(png|jpe?g|gif|svg|webp|avif|ico|pdf|mp4|webm|mov|zip|gz|tgz|css|js|woff2?|ttf|eot)$/i;
 
 /**
- * Map from a NAV_STRUCTURE_<X> variable name to the docs base path its
- * entries live under. Exported so the main script and its tests share
- * one source of truth (drift here would silently break nav-alias
- * resolution).
+ * One nav.yaml to derive nav-alias routes from: the docs base path its
+ * entries route under (`docs` for the root KubeStellar project, `docs/<slug>`
+ * for every other project and for the cross-project sections, which route
+ * under plain `docs`) plus the repo-relative path of the YAML file.
  */
-export const PROJECT_FOR_NAV: Record<string, string> = {
-  A2A: "docs/a2a",
-  MULTI_PLUGIN: "docs/multi-plugin",
-  KUBEFLEX: "docs/kubeflex",
-  KUBESTELLAR_MCP: "docs/kubestellar-mcp",
-  CONSOLE: "docs/console",
-  HIVE: "docs/hive",
-  KUBESTELLAR: "docs",
-};
+export interface NavSource {
+  /** Diagnostic label, e.g. 'console' or 'contributing'. */
+  name: string;
+  /** Base path the entries route under, e.g. 'docs/console' or 'docs'. */
+  base: string;
+  /** Repo-relative path of the nav.yaml, e.g. 'docs/content/console/nav.yaml'. */
+  navPath: string;
+}
 
 /**
- * One nav-alias entry extracted from a page-map.ts NAV_STRUCTURE_* block.
- * Represents the `{ 'Title': 'file.md' }` pairs that buildPageMap() maps
- * to a nav-slug route on the site.
+ * Build the list of nav.yaml sources the checker reads, from the same
+ * PROJECTS table and GENERAL_SECTIONS list the site uses. Data-driven so a
+ * new project (or cross-project section) is covered the moment it exists,
+ * with no parallel table to keep in sync (kubestellar/docs#7080).
+ */
+export function navSourcesFor(
+  projects: Record<string, { id: string; basePath: string; navPath: string }>,
+  generalSections: readonly string[],
+  contentRoot = "docs/content",
+): NavSource[] {
+  const sources: NavSource[] = Object.values(projects).map((p) => ({
+    name: p.id,
+    base: p.basePath ? `docs/${p.basePath}` : "docs",
+    navPath: p.navPath,
+  }));
+  for (const section of generalSections) {
+    sources.push({
+      name: section,
+      base: "docs",
+      navPath: `${contentRoot}/${section}/${NAV_FILE_NAME}`,
+    });
+  }
+  return sources;
+}
+
+/**
+ * One nav-alias entry extracted from a nav.yaml. Represents the
+ * `Title: file.md` pairs that buildPageMap() maps to a nav-slug route on
+ * the site.
  */
 export interface NavAliasEntry {
-  /** The uppercase NAV_STRUCTURE_<name> suffix, e.g. 'HIVE'. */
+  /** The NavSource name this entry came from, e.g. 'console'. */
   navName: string;
-  /** Base path resolved via PROJECT_FOR_NAV, e.g. 'docs/hive'. */
+  /** Base path from the NavSource, e.g. 'docs/console'. */
   base: string;
   /**
    * The section slug this entry falls under, or "" if it is a
    * bare (top-level) entry. Sections are the slugified `title:` fields
-   * of category objects in the NAV_STRUCTURE block.
+   * of the top-level sections in the nav file.
    */
   sectionSlug: string;
   /** The slug derived from the entry's title (via slugify()). */
@@ -110,73 +141,73 @@ export interface NavAliasEntry {
 }
 
 /**
- * Extract every nav-alias entry from a page-map.ts source string.
+ * Extract every nav-alias entry from one parsed nav file.
  *
- * This is the untangled version of the top-level regex loop that
- * check-internal-links.ts runs at startup. Keeping it pure and side-
- * effect-free lets tests feed synthetic page-map source and assert on
- * the exact set of entries produced — critical because a regex
- * regression here silently makes the link checker permissive
- * (invents nav routes that don't exist) or over-strict (misses real
- * nav routes and reports valid links as broken).
+ * Pure and side-effect-free so tests can feed synthetic nav data and assert
+ * on the exact set of entries produced — critical because a regression here
+ * silently makes the link checker permissive (invents nav routes that don't
+ * exist) or over-strict (misses real nav routes and reports valid links as
+ * broken).
  *
- * The function does NOT filter entries by file existence — callers
- * decide whether an entry is registered as a valid route. That
- * separation makes both halves independently testable.
+ * The function does NOT filter entries by file existence — callers decide
+ * whether an entry is registered as a valid route.
  *
- * Parsing rules (must mirror buildPageMap in src/app/docs/page-map.ts):
- *   - Each `const NAV_STRUCTURE_<NAME> ... = [ ... ]` block is one nav.
- *   - Category objects `{ title: 'X', items: [...] }` contribute section
- *     slugs; slugify(X) is used as the section prefix.
- *   - `{ 'Title': 'file.md' }` (or "double quoted") pairs inside a nav
- *     block are entries; slugify('Title') is the slug.
- *   - Entries whose file starts with `http` or `/` are external and
- *     skipped.
- *   - Every entry is emitted once per section slug in the block AND
- *     once with `sectionSlug: ""` (bare form), mirroring the two
- *     validRoutes.add() calls the main script makes.
+ * Rules (must mirror buildPageMap in src/app/docs/page-map.ts):
+ *   - Each top-level `{ title, items }` section contributes a section slug
+ *     (slugify(title)).
+ *   - Every `Title: file.md(x)` pair anywhere in the file (including nested
+ *     folders) is an entry; slugify(Title) is the slug.
+ *   - Entries whose file starts with `http` or `/` are external and skipped;
+ *     values without a .md/.mdx extension are not doc files and are skipped.
+ *   - Every entry is emitted once per section slug in the file AND once
+ *     with `sectionSlug: ""` (bare form), mirroring the two
+ *     validRoutes.add() calls the main script makes. This deliberately
+ *     over-approximates (an entry is registered under every section, not
+ *     just its own) — safe, because it only ever adds routes that the
+ *     flat route set would otherwise already accept.
  */
-export function parseNavStructures(
-  pageMapSrc: string,
-  projectForNav: Record<string, string> = PROJECT_FOR_NAV,
+export function navAliasEntries(
+  source: Pick<NavSource, "name" | "base">,
+  sections: NavSection[],
 ): NavAliasEntry[] {
-  const results: NavAliasEntry[] = [];
-  const navBlockRe = /const NAV_STRUCTURE_([A-Z_]+)[^=]*=\s*(\[[\s\S]*?\n\])/g;
-  let nav: RegExpExecArray | null;
-  while ((nav = navBlockRe.exec(pageMapSrc))) {
-    const navName = nav[1];
-    const base = projectForNav[navName];
-    if (!base) continue;
-    const block = nav[2];
+  const sectionSlugs = sections.map((s) => slugify(s.title));
 
-    // Category section slugs come from `title:` bareword fields on
-    // category objects. These are slugified and used as path prefixes.
-    const sections: string[] = [];
-    const catRe = /title:\s*['"]([^'"]+)['"]/g;
-    let c: RegExpExecArray | null;
-    while ((c = catRe.exec(block))) sections.push(slugify(c[1]));
-
-    // Entry pairs are `'Title': 'file.md'` or `"Title": "file.md"`.
-    const titleFileRe = /['"]([^'"]+)['"]\s*:\s*['"]([^'"]+\.mdx?)['"]/g;
-    const entries: { title: string; file: string; slug: string }[] = [];
-    let m: RegExpExecArray | null;
-    while ((m = titleFileRe.exec(block))) {
-      const title = m[1];
-      const file = m[2];
-      if (file.startsWith("http") || file.startsWith("/")) continue;
-      entries.push({ title, file, slug: slugify(title) });
-    }
-
-    // Emit each entry once per section prefix and once bare, matching
-    // the two `validRoutes.add(...)` calls the main script makes.
-    for (const { title, file, slug } of entries) {
-      for (const sectionSlug of sections) {
-        results.push({ navName, base, sectionSlug, slug, title, file });
+  const entries: { title: string; file: string; slug: string }[] = [];
+  const visit = (items: NavItem[]) => {
+    for (const item of items) {
+      if (typeof item === "string") continue;
+      for (const [title, value] of Object.entries(item)) {
+        if (Array.isArray(value)) {
+          visit(value);
+        } else if (typeof value === "string") {
+          if (value.startsWith("http") || value.startsWith("/")) continue;
+          if (!/\.mdx?$/i.test(value)) continue;
+          entries.push({ title, file: value, slug: slugify(title) });
+        }
       }
-      results.push({ navName, base, sectionSlug: "", slug, title, file });
     }
+  };
+  for (const section of sections) visit(section.items);
+
+  const results: NavAliasEntry[] = [];
+  for (const { title, file, slug } of entries) {
+    for (const sectionSlug of sectionSlugs) {
+      results.push({ navName: source.name, base: source.base, sectionSlug, slug, title, file });
+    }
+    results.push({ navName: source.name, base: source.base, sectionSlug: "", slug, title, file });
   }
   return results;
+}
+
+/**
+ * Parse nav YAML source text and extract its nav-alias entries. Thin wrapper
+ * over parseNavYaml() (schema validation) + navAliasEntries().
+ */
+export function parseNavStructure(
+  source: NavSource,
+  yamlSource: string,
+): NavAliasEntry[] {
+  return navAliasEntries(source, parseNavYaml(source.navPath, yamlSource));
 }
 
 /**

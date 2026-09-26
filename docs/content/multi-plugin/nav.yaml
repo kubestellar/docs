@@ -1,0 +1,25 @@
+# Sidebar navigation for the multi-plugin project (PROJECTS['multi-plugin'].navPath).
+# Paths are relative to docs/content/multi-plugin/.
+# Each top-level entry is a sidebar section: { title, items }. Items are
+#   - Title: relative/path.md            (page)
+#   - Title:                             (folder)
+#       - Child Title: relative/path.md
+#   - https://example.com or /abs/path   (external / absolute link, as a value)
+# A page that is not listed here does not appear in the sidebar.
+# Schema is validated at build time by loadNavFile() in src/app/docs/page-map.ts.
+# See kubestellar/docs#7080.
+- title: Overview
+  items:
+    - Introduction: readme.md
+    - Architecture: architecture_guide.md
+- title: Getting Started
+  items:
+    - Installation: installation_guide.md
+    - Installation (Windows): installation_guide_windows.md
+    - Usage Guide: usage_guide.md
+- title: Reference
+  items:
+    - API Reference: api_reference.md
+- title: Development
+  items:
+    - Development Guide: development_guide.md

@@ -5,8 +5,8 @@ import { join } from 'node:path'
 /**
  * Source-parsing drift-guard for the DEFENSIVE arms inside `buildNavNodes`
  * (src/app/docs/page-map.ts). These arms cannot currently be exercised at
- * runtime because none of the NAV_STRUCTURE_* constants use a bare string
- * item or an external/absolute-URL value; but each arm exists to keep the
+ * runtime because none of the nav.yaml files use a bare string item or an
+ * external/absolute-URL value; but each arm exists to keep the
  * general-section routing invariant intact when future navs are added.
  *
  * If a future refactor silently deletes or narrows any of these arms, this
@@ -14,28 +14,31 @@ import { join } from 'node:path'
  * runtime-exercised checks in page-map-general-section-arms.test.ts by
  * pinning the arms that only fire under future nav shapes.
  *
- * Invariants locked (see kubestellar/docs#6663 for context):
+ * Invariants locked (see kubestellar/docs#6663 and #7080 for context):
  *
- *   1. buildPageMap merges general-section files (contributing/, community/,
- *      news/) from the main kubestellar docs dir into every non-kubestellar
- *      project's allDocFiles — plus the three root-level shared pages.
+ *   1. buildPageMap merges general-section files (every GENERAL_SECTIONS
+ *      prefix) from the main kubestellar docs dir into every non-kubestellar
+ *      project's allDocFiles — plus the ROOT_SHARED_PAGES.
  *
- *   2. Bare-string item arm (arm 3 in page-map-general-section-arms.test.ts)
- *      routes under /docs/... when the string path starts with any of the
- *      three general-section prefixes; otherwise under projectBasePath.
+ *   2. Bare-string item arm routes under /docs/... when the string path is a
+ *      general-section file; otherwise under projectBasePath.
  *
  *   3. Object-with-string-value arm routes external links (starts with 'http')
  *      and absolute internal paths (starts with '/') directly, without
  *      re-anchoring them under any project base, and without adding them to
  *      processedFiles (they're not local doc files).
  *
- *   4. Object-with-string-value arm applies the SAME three general-section
- *      prefixes to string values before deciding route base.
+ *   4. Object-with-string-value arm applies the SAME general-section test to
+ *      string values before deciding route base.
  *
  *   5. Folder-of-children arm inspects nested object values to detect a
- *      general-section leaf (Object.values(...).some(...)) — required
- *      because navs frequently wrap contributing/community/news pages
- *      inside titled subfolders.
+ *      general-section leaf — required because navs frequently wrap
+ *      contributing/community/news pages inside titled subfolders.
+ *
+ *   6. There is exactly ONE definition of "general section" — the
+ *      GENERAL_SECTIONS list in src/lib/nav.ts — and page-map.ts contains no
+ *      hard-coded 'contributing/' | 'community/' | 'news/' prefix checks of
+ *      its own (the pre-#7080 shape that had to be edited in four places).
  */
 
 const SRC = readFileSync(
@@ -44,15 +47,10 @@ const SRC = readFileSync(
 )
 
 describe('buildPageMap: general-section file merge (drift-guard)', () => {
-  it('merges the three general-section prefixes plus root shared pages when projectId !== kubestellar', () => {
-    // Line ~547: the filter that pulls general-section files into non-kubestellar projects.
-    expect(SRC).toContain("f.startsWith('contributing/')")
-    expect(SRC).toContain("f.startsWith('community/')")
-    expect(SRC).toContain("f.startsWith('news/')")
+  it('merges general-section files plus root shared pages when projectId !== kubestellar', () => {
+    expect(SRC).toMatch(/isGeneralSectionFile\(f\) \|\| \(ROOT_SHARED_PAGES as readonly string\[\]\)\.includes\(f\)/)
     // Root-level shared pages that render on every project.
-    expect(SRC).toContain("f === 'intro.md'")
-    expect(SRC).toContain("f === 'legacy-components.md'")
-    expect(SRC).toContain("f === 'what-is-console.md'")
+    expect(SRC).toMatch(/const ROOT_SHARED_PAGES = \['intro\.md', 'legacy-components\.md', 'what-is-console\.md'\] as const/)
     // The gate — only apply the extra merge for non-kubestellar projects.
     expect(SRC).toContain("if (projectId !== 'kubestellar')")
   })
@@ -60,14 +58,8 @@ describe('buildPageMap: general-section file merge (drift-guard)', () => {
 
 describe('buildNavNodes: bare-string item arm (drift-guard)', () => {
   it('has the bare-string branch that routes general-section strings under /docs', () => {
-    // Arm gate at ~L561.
     expect(SRC).toContain("if (typeof item === 'string')")
-    // General-section detection at ~L567 uses exactly the three prefixes.
-    expect(SRC).toMatch(
-      /const isGeneralSection = item\.startsWith\('contributing\/'\) \|\| item\.startsWith\('community\/'\) \|\| item\.startsWith\('news\/'\)/,
-    )
-    // basePathForRoute ternary at ~L568 selects 'docs' vs projectBasePath.
-    expect(SRC).toMatch(/const basePathForRoute = isGeneralSection \? 'docs' : projectBasePath/)
+    expect(SRC).toMatch(/const basePathForRoute = isGeneralSectionFile\(item\) \? 'docs' : projectBasePath/)
   })
 
   it('adds the bare-string item to processedFiles and pushes an MdxPage node', () => {
@@ -81,75 +73,54 @@ describe('buildNavNodes: bare-string item arm (drift-guard)', () => {
 
 describe('buildNavNodes: external-link / absolute-path arm (drift-guard)', () => {
   it('detects external URLs and absolute internal paths', () => {
-    // Arm gate at ~L581.
     expect(SRC).toMatch(
       /if \(value\.startsWith\('http'\) \|\| value\.startsWith\('\/'\)\)/,
     )
   })
 
   it('emits the value verbatim as the route (no project-base rewrite)', () => {
-    // Lines 583-584: push MdxPage with route: value, without going through
-    // any /${basePathForRoute}/... template. If someone "helpfully" wraps
-    // external links under projectBasePath, every external footer link in
-    // the docs collapses to a 404 loop.
+    // If someone "helpfully" wraps external links under projectBasePath,
+    // every external footer link in the docs collapses to a 404 loop.
     expect(SRC).toMatch(/nodes\.push\(\{ kind: 'MdxPage', name: title, route: value \}\)/)
   })
 })
 
 describe('buildNavNodes: object-with-string-value general-section arm (drift-guard)', () => {
-  it('applies the same three prefixes to string values before choosing route base', () => {
-    // Line ~590.
-    expect(SRC).toMatch(
-      /const isGeneralSection = value\.startsWith\('contributing\/'\) \|\| value\.startsWith\('community\/'\) \|\| value\.startsWith\('news\/'\)/,
-    )
+  it('applies the shared general-section test to string values before choosing route base', () => {
+    expect(SRC).toMatch(/const basePathForRoute = isGeneralSectionFile\(value\) \? 'docs' : projectBasePath/)
   })
 })
 
 describe('buildNavNodes: folder-of-children nested-object detection (drift-guard)', () => {
-  it('detects a general-section leaf inside a titled subfolder via Object.values(...).some(...)', () => {
-    // Line ~607-616: when a folder's children are objects (title -> path),
-    // the folder itself must be routed under /docs if any child value
-    // points into contributing/community/news. Peeling this back would
-    // put the whole 'CI/CD' folder under /docs/<project>/ci-cd/ instead
-    // of /docs/ci-cd/, breaking every shared-section cross link.
-    expect(SRC).toContain('const objValues = Object.values(v);')
-    expect(SRC).toMatch(/objValues\.some\(val =>/)
-    // The nested predicate MUST cover the same three prefixes.
-    expect(SRC).toMatch(
-      /val\.startsWith\('contributing\/'\) \|\| val\.startsWith\('community\/'\) \|\| val\.startsWith\('news\/'\)/,
-    )
+  it('routes a folder under /docs when any direct child touches a general section', () => {
+    // Peeling this back would put the whole 'CI/CD' folder under
+    // /docs/<project>/ci-cd/ instead of /docs/ci-cd/, breaking every
+    // shared-section cross link.
+    expect(SRC).toMatch(/const basePathForRoute = value\.some\(navItemTouchesGeneralSection\) \? 'docs' : projectBasePath/)
   })
 
-  it('also handles the direct-string case inside the folder-children detector', () => {
-    // Same block, string-typed branch: v itself is a string path.
-    expect(SRC).toMatch(
-      /v\.startsWith\('contributing\/'\) \|\| v\.startsWith\('community\/'\) \|\| v\.startsWith\('news\/'\)/,
-    )
+  it('routes a top-level category under /docs when its title is a general-section title', () => {
+    expect(SRC).toMatch(/const generalSectionTitles = new Set\(navStructure\.filter\(c => c\.general\)\.map\(c => c\.title\)\)/)
+    expect(SRC).toMatch(/const basePath = generalSectionTitles\.has\(category\.title\) \? 'docs' : projectBasePath/)
   })
 })
 
-describe('buildNavNodes: general-section prefix set is EXACTLY three (drift-guard)', () => {
-  it('exactly three arms use the tri-prefix general-section check', () => {
-    // Whole-file count: bare-string arm, object-string-value arm, and
-    // folder-children direct-string sub-arm. If a fourth or fifth copy
-    // appears with a divergent prefix set, or one disappears entirely,
-    // this catches the drift.
-    const bareStringArm = SRC.match(
-      /item\.startsWith\('contributing\/'\) \|\| item\.startsWith\('community\/'\) \|\| item\.startsWith\('news\/'\)/g,
-    ) ?? []
-    const valueArm = SRC.match(
-      /value\.startsWith\('contributing\/'\) \|\| value\.startsWith\('community\/'\) \|\| value\.startsWith\('news\/'\)/g,
-    ) ?? []
-    const nestedStringArm = SRC.match(
-      /v\.startsWith\('contributing\/'\) \|\| v\.startsWith\('community\/'\) \|\| v\.startsWith\('news\/'\)/g,
-    ) ?? []
-    const nestedValArm = SRC.match(
-      /val\.startsWith\('contributing\/'\) \|\| val\.startsWith\('community\/'\) \|\| val\.startsWith\('news\/'\)/g,
-    ) ?? []
-    // Plus the getAllDocFiles filter uses `f.startsWith(...)` (see first block).
-    expect(bareStringArm).toHaveLength(1)
-    expect(valueArm).toHaveLength(1)
-    expect(nestedStringArm).toHaveLength(1)
-    expect(nestedValArm).toHaveLength(1)
+describe('general-section prefix set has exactly ONE definition (drift-guard)', () => {
+  it('page-map.ts has no hard-coded general-section prefix literals', () => {
+    // The pre-#7080 file repeated `startsWith('contributing/') || ...` in
+    // four places (plus a title list). All of them now route through
+    // GENERAL_SECTIONS / isGeneralSectionFile in src/lib/nav.ts.
+    expect(SRC).not.toMatch(/startsWith\('(contributing|community|news)\/'\)/)
+    expect(SRC).not.toMatch(/\['Contributing', 'Community', 'News'\]/)
+  })
+
+  it('page-map.ts contains no per-project NAV_STRUCTURE_* literals', () => {
+    expect(SRC).not.toMatch(/NAV_STRUCTURE_/)
+  })
+
+  it('each of the three general-section route decisions calls the shared helper exactly once', () => {
+    expect(SRC.match(/isGeneralSectionFile\(item\)/g) ?? []).toHaveLength(1)
+    expect(SRC.match(/isGeneralSectionFile\(value\)/g) ?? []).toHaveLength(1)
+    expect(SRC.match(/value\.some\(navItemTouchesGeneralSection\)/g) ?? []).toHaveLength(1)
   })
 })
