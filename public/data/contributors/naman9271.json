@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-09-26T14:13:54.125Z",
+  "generated_at": "2026-09-26T18:16:42.502Z",
   "total_issues_opened": 41,
   "total_prs_opened": 71,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
@@ -54,20 +54,6 @@
   },
   "topics": [
     {
-      "name": "refactor, componenet, accord",
-      "issue_count": 24,
-      "recent_issue": {
-        "title": "Feat: Revamp Contribution Ladder",
-        "url": "https://github.com/kubestellar/docs/issues/362",
-        "created_at": "2025-12-07T19:25:25Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 24
-    },
-    {
       "name": "detailed, relate, changes",
       "issue_count": 22,
       "recent_issue": {
@@ -82,6 +68,20 @@
       "closed_count": 22
     },
     {
+      "name": "refactor, componenet, accord",
+      "issue_count": 15,
+      "recent_issue": {
+        "title": "Many Fixes",
+        "url": "https://github.com/kubestellar/docs/pull/206",
+        "created_at": "2025-11-05T23:33:05Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 15
+    },
+    {
       "name": "page, come, installation",
       "issue_count": 13,
       "recent_issue": {
@@ -94,6 +94,20 @@
       ],
       "open_count": 0,
       "closed_count": 13
+    },
+    {
+      "name": "thing, ladder, contribution",
+      "issue_count": 9,
+      "recent_issue": {
+        "title": "Feat: Revamp Contribution Ladder",
+        "url": "https://github.com/kubestellar/docs/issues/362",
+        "created_at": "2025-12-07T19:25:25Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 9
     },
     {
       "name": "nextra, heading, implementation",
@@ -387,12 +401,6 @@
     ],
     "stretch": [
       {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
         "name": "GPU & AI/ML",
         "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
         "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
@@ -415,6 +423,12 @@
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
       }
     ]
   },
