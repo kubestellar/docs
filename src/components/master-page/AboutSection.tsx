@@ -58,9 +58,16 @@ export default function AboutSection() {
       `;
       document.head.appendChild(style);
 
+      // Store event handlers for cleanup
+      const eventHandlers: Array<{
+        card: Element;
+        handler: (e: Event) => void;
+        type: "mousemove" | "mouseleave";
+      }> = [];
+
       // 3D tilt effect on mouse move
       featureCards.forEach(card => {
-        card.addEventListener("mousemove", (e: Event) => {
+        const moveHandler = (e: Event) => {
           const mouseEvent = e as MouseEvent;
           const container = card.querySelector(".card-3d-container");
           const rect = card.getBoundingClientRect();
@@ -78,20 +85,35 @@ export default function AboutSection() {
             (container as HTMLElement).style.transform =
               `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
           }
-        });
+        };
 
-        // Reset on mouse leave
-        card.addEventListener("mouseleave", () => {
+        const leaveHandler = () => {
           const container = card.querySelector(".card-3d-container");
           if (container) {
             (container as HTMLElement).style.transform =
               "rotateY(0deg) rotateX(0deg)";
           }
-        });
+        };
+
+        card.addEventListener("mousemove", moveHandler);
+        card.addEventListener("mouseleave", leaveHandler);
+
+        eventHandlers.push({ card, handler: moveHandler, type: "mousemove" });
+        eventHandlers.push({ card, handler: leaveHandler, type: "mouseleave" });
       });
+
+      // Cleanup function
+      return () => {
+        observer.disconnect();
+        style.remove();
+        eventHandlers.forEach(({ card, handler, type }) => {
+          card.removeEventListener(type, handler);
+        });
+      };
     };
 
-    initFeatureCards();
+    const cleanup = initFeatureCards();
+    return cleanup;
   }, []);
 
   return (
