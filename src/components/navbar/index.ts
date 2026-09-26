@@ -1,7 +1,11 @@
 export { useGithubStats } from "./useGithubStats";
 export type { GithubStats } from "./useGithubStats";
 export { useNavDropdowns } from "./useNavDropdowns";
-export type { DropdownState } from "./useNavDropdowns";
+export type {
+  NavDropdownName,
+  OpenDropdown,
+  NavDropdownControls,
+} from "./useNavDropdowns";
 export { default as NavbarLogo } from "./NavbarLogo";
 export { default as ContributeDropdown } from "./ContributeDropdown";
 export { default as CommunityDropdown } from "./CommunityDropdown";

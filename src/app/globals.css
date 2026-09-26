@@ -1123,11 +1123,11 @@ html:not(.dark) .contributor-card:hover {
   filter: drop-shadow(0 0 8px currentColor);
 }
 
-/* Dropdown styles */
+/* Dropdown styles — visibility is owned by the React `hidden` attribute
+   on the menu element (see src/components/navbar/useNavDropdowns.ts). */
 [data-dropdown-menu] {
   transition: all 0.3s ease;
   transform-origin: top center;
-  display: none;
 }
 
 [data-dropdown] {

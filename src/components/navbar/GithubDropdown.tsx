@@ -5,14 +5,21 @@ import type { GithubStats } from "./useGithubStats";
 
 interface GithubDropdownProps {
   t: ReturnType<typeof useTranslations>;
-  isGithubOpen: boolean;
+  /** Derived by the parent from `openDropdown`; drives visibility AND aria-expanded. */
+  isOpen: boolean;
+  /** Pointer entered the dropdown; open it (closing any other). */
+  onOpen: () => void;
+  /** Pointer left the dropdown; schedule a debounced close. */
+  onClose: () => void;
   githubStats: GithubStats;
 }
 
 /** Desktop GitHub stats dropdown (stars, forks, watchers, create issue). */
 export default function GithubDropdown({
   t,
-  isGithubOpen,
+  isOpen,
+  onOpen,
+  onClose,
   githubStats,
 }: GithubDropdownProps) {
   return (
@@ -21,6 +28,8 @@ export default function GithubDropdown({
               <div
                 className="hidden lg:flex relative group"
                 data-dropdown="github"
+                onMouseEnter={onOpen}
+                onMouseLeave={onClose}
               >
                 <div
                   data-dropdown-button
@@ -42,7 +51,7 @@ export default function GithubDropdown({
                     </svg>
                   </a>
                   <svg
-                    className={`w-4 h-4 ml-2 transition-transform duration-200 ${isGithubOpen ? "rotate-180" : ""}`}
+                    className={`w-4 h-4 ml-2 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -56,9 +65,9 @@ export default function GithubDropdown({
                   </svg>
                 </div>
                 <div
-                  data-dropdown-menu
                   className="absolute right-0 mt-1 w-48 bg-gray-800/95 backdrop-blur-sm rounded-md shadow-lg border border-gray-700 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
-                  style={{ display: "none" }}
+                  data-dropdown-menu
+                  hidden={!isOpen}
                 >
                   <a
                     href="https://github.com/kubestellar/console"
