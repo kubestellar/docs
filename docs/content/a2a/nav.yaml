@@ -1,0 +1,25 @@
+# Sidebar navigation for the a2a project (PROJECTS['a2a'].navPath).
+# Paths are relative to docs/content/a2a/.
+# Each top-level entry is a sidebar section: { title, items }. Items are
+#   - Title: relative/path.md            (page)
+#   - Title:                             (folder)
+#       - Child Title: relative/path.md
+#   - https://example.com or /abs/path   (external / absolute link, as a value)
+# A page that is not listed here does not appear in the sidebar.
+# Schema is validated at build time by loadNavFile() in src/app/docs/page-map.ts.
+# See kubestellar/docs#7080.
+- title: Overview
+  items:
+    - Introduction: intro.md
+- title: Getting Started
+  items:
+    - Quick Start: getting-started/quick-start.md
+    - Installation: getting-started/installation.md
+    - Guide Overview: getting-started/index.md
+- title: Reference
+  items:
+    - CLI Reference: cli-reference.md
+    - Troubleshooting: troubleshooting.md
+- title: Contribute to A2A
+  items:
+    - Contribute to A2A: CONTRIBUTING.md

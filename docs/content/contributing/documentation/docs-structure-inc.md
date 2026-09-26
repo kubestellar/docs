@@ -48,7 +48,7 @@ For safety reasons, copies of the docs source may remain in a to-be-deleted fold
 |   ├ src/  <-- Source for pages, site nav and layout            |    
 |   | ├ app/                                                     |
 |   | |  ├ docs/  <-- layouts to apply to component docs pages   |
-|   | |  ├── page-map.ts     <-- Defines navigation structure    │
+|   | |  ├── page-map.ts     <-- Builds sidebar from nav.yaml    │
 │   | |  ├── layout.tsx      <-- Nextra theme integration        │
 |   | |  └── page.mdx      <-- Nextra page master                │
 |   | ├ components/                                              │
@@ -76,7 +76,7 @@ For safety reasons, copies of the docs source may remain in a to-be-deleted fold
 - **Content lives in the docs/content folder of this kubestellar/docs repo** (`docs/content/`)
 - **The website structure is defined in the src folder of this repo**
 - **This repo also contains the website framework** (Next.js + Nextra)
-- **Navigation is defined in `page-map.ts`** (not auto-generated from files)
+- **Navigation is defined in `nav.yaml` files under `docs/content/`** (not auto-generated from files) — `docs/content/nav.yaml` for KubeStellar, `docs/content/<project>/nav.yaml` for each other project, and `docs/content/{contributing,community,news}/nav.yaml` for the shared sections
 
 ### How Nextra Integration Works
 
@@ -105,13 +105,13 @@ This documentation site is built using **Nextra**, a powerful Next.js-based docu
    - Enables dark mode and collapsible sidebar sections
 
 3. **`src/app/docs/page-map.ts`** - Navigation structure builder that:
-   - Defines the documentation navigation structure in `NAV_STRUCTURE`
+   - Loads each project's navigation from its `nav.yaml` (`PROJECTS[project].navPath`, see `src/config/versions/lookup.ts`) plus the shared `contributing`, `community` and `news` sections, validating the schema at build time (`src/lib/nav.ts`)
    - Reads documentation files from the local `/docs/content/` directory
    - Constructs hierarchical navigation from the defined structure
    - Generates routes for each documentation page
    - Creates a mapping between file paths and URL routes
    - **Note:** The file tree structure in _/docs/content_ roughly parallels the navigation created in _pagemap.ts_ but is **not** identical. As the new site matures many of the differences will be smoothed out
-   - Using the page-map rather than file structure to generate the `NAV_STRUCTURE` simplifies changing menus for different locales (languages)
+   - Using explicit `nav.yaml` files rather than the file structure to generate the navigation simplifies changing menus for different locales (languages)
 
 4. **`src/app/docs/[...slug]/page.tsx`** - Dynamic page renderer that:
    - Reads MDX content from the local `/docs/content/` directory
