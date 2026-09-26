@@ -7,13 +7,20 @@ import { getLocalizedUrl } from "@/lib/url";
 
 interface ContributeDropdownProps {
   t: ReturnType<typeof useTranslations>;
-  isContributeOpen: boolean;
+  /** Derived by the parent from `openDropdown`; drives visibility AND aria-expanded. */
+  isOpen: boolean;
+  /** Pointer entered the dropdown; open it (closing any other). */
+  onOpen: () => void;
+  /** Pointer left the dropdown; schedule a debounced close. */
+  onClose: () => void;
 }
 
 /** Desktop "Contribute" nav dropdown. */
 export default function ContributeDropdown({
   t,
-  isContributeOpen,
+  isOpen,
+  onOpen,
+  onClose,
 }: ContributeDropdownProps) {
   return (
     <>
@@ -21,13 +28,15 @@ export default function ContributeDropdown({
                 <div
                   className="relative group after:content-[''] after:absolute after:top-full after:left-0 after:right-0 after:h-2 after:bg-transparent"
                   data-dropdown="contribute"
+                  onMouseEnter={onOpen}
+                  onMouseLeave={onClose}
                 >
                   <button
                     type="button"
-                    className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-100 transform nav-link-hover cursor-pointer"
                     data-dropdown-button
+                    className="text-sm font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-emerald-500/10 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-100 transform nav-link-hover cursor-pointer"
                     aria-haspopup="true"
-                    aria-expanded={isContributeOpen}
+                    aria-expanded={isOpen}
                   >
                     <div className="relative">
                       <svg
@@ -53,7 +62,7 @@ export default function ContributeDropdown({
                     </div>
                     <span>{t("contribute")}</span>
                     <svg
-                      className={`ml-1 h-4 w-4 transition-transform duration-200 ${isContributeOpen ? "rotate-180" : ""}`}
+                      className={`ml-1 h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -69,7 +78,7 @@ export default function ContributeDropdown({
                   <div
                     className="absolute left-0 mt-1 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
                     data-dropdown-menu
-                    style={{ display: "none" }}
+                    hidden={!isOpen}
                   >
                     <a
                       href={getLocalizedUrl("https://kubestellar.io/joinus")}

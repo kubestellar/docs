@@ -6,13 +6,20 @@ import type { useTranslations } from "next-intl";
 
 interface CommunityDropdownProps {
   t: ReturnType<typeof useTranslations>;
-  isCommunityOpen: boolean;
+  /** Derived by the parent from `openDropdown`; drives visibility AND aria-expanded. */
+  isOpen: boolean;
+  /** Pointer entered the dropdown; open it (closing any other). */
+  onOpen: () => void;
+  /** Pointer left the dropdown; schedule a debounced close. */
+  onClose: () => void;
 }
 
 /** Desktop "Community" nav dropdown. */
 export default function CommunityDropdown({
   t,
-  isCommunityOpen,
+  isOpen,
+  onOpen,
+  onClose,
 }: CommunityDropdownProps) {
   return (
     <>
@@ -20,13 +27,15 @@ export default function CommunityDropdown({
                 <div
                   className="relative group after:content-[''] after:absolute after:top-full after:left-0 after:right-0 after:h-2 after:bg-transparent"
                   data-dropdown="community"
+                  onMouseEnter={onOpen}
+                  onMouseLeave={onClose}
                 >
                   <button
                     type="button"
-                    className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-100 transform nav-link-hover cursor-pointer"
                     data-dropdown-button
+                    className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-all duration-300 flex items-center space-x-1 px-3 py-2 rounded-lg hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20 hover:scale-100 transform nav-link-hover cursor-pointer"
                     aria-haspopup="true"
-                    aria-expanded={isCommunityOpen}
+                    aria-expanded={isOpen}
                   >
                     <div className="relative">
                       <svg
@@ -45,7 +54,7 @@ export default function CommunityDropdown({
                     </div>
                     <span>{t("community")}</span>
                     <svg
-                      className={`ml-1 h-4 w-4 transition-transform duration-200 ${isCommunityOpen ? "rotate-180" : ""}`}
+                      className={`ml-1 h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -61,7 +70,7 @@ export default function CommunityDropdown({
                   <div
                     className="absolute left-0  mt-1 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
                     data-dropdown-menu
-                    style={{ display: "none" }}
+                    hidden={!isOpen}
                   >
                     <Link
                       href="/contribute-handbook"

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { locales, localeNames, type Locale } from "@/i18n/settings";
@@ -9,14 +9,40 @@ interface LanguageSwitcherProps {
   className?: string;
   showLabel?: boolean;
   variant?: "dropdown" | "minimal";
+  /**
+   * Controlled open state. When provided, the parent owns whether the
+   * listbox is shown and must update it from `onOpenChange`; when omitted
+   * the component manages its own state.
+   */
+  open?: boolean;
+  /** Called whenever the component wants to open or close its listbox. */
+  onOpenChange?: (open: boolean) => void;
 }
 
 export default function LanguageSwitcher({
   className = "",
   showLabel = true,
   variant = "dropdown",
+  open,
+  onOpenChange,
 }: LanguageSwitcherProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
+  const isControlled = open !== undefined;
+  const isOpen = isControlled ? open : uncontrolledOpen;
+  // Latest-callback ref so the document listeners below never go stale
+  // without re-subscribing every time the parent passes a new lambda.
+  const onOpenChangeRef = useRef(onOpenChange);
+  useEffect(() => {
+    onOpenChangeRef.current = onOpenChange;
+  }, [onOpenChange]);
+
+  const setIsOpen = useCallback(
+    (next: boolean) => {
+      if (!isControlled) setUncontrolledOpen(next);
+      onOpenChangeRef.current?.(next);
+    },
+    [isControlled]
+  );
   const [isTransitioning, setIsTransitioning] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -51,7 +77,7 @@ export default function LanguageSwitcher({
         clearTimeout(currentTimeout);
       }
     };
-  }, []);
+  }, [setIsOpen]);
 
   // Close dropdown on escape key
   useEffect(() => {
@@ -69,7 +95,7 @@ export default function LanguageSwitcher({
     return () => {
       document.removeEventListener("keydown", handleEscape);
     };
-  }, [isOpen]);
+  }, [isOpen, setIsOpen]);
 
   const handleLanguageChange = async (newLocale: Locale) => {
     if (newLocale === locale) {
