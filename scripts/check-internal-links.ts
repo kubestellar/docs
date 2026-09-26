@@ -18,7 +18,7 @@
  *      (generateStaticParams strips the extension). This is the flat/direct
  *      route set.
  *   2. buildPageMap() adds nav routes whose slug derives from the nav title
- *      (e.g. hive `readme.md` -> `/docs/hive/overview/introduction`).
+ *      (e.g. console `readme.md` -> `/docs/console/overview/introduction`).
  * A link is valid if it resolves to a route in EITHER set.
  */
 import fs from "fs";
@@ -29,10 +29,12 @@ import {
   normRoute,
   isExternalOrAnchor,
   ASSET_EXT,
-  PROJECT_FOR_NAV,
-  parseNavStructures,
+  navSourcesFor,
+  parseNavStructure,
   navEntryRoute,
 } from "./check-internal-links-helpers";
+import { PROJECTS } from "../src/config/versions/lookup";
+import { GENERAL_SECTIONS } from "../src/lib/nav";
 
 const contentRoot = path.join(process.cwd(), "docs", "content");
 
@@ -59,36 +61,34 @@ function collectFlatRoutes(dir: string) {
 collectFlatRoutes(contentRoot);
 
 // (2) Nav-alias routes. Some pages are ALSO served under a nav-section path
-// whose slug derives from the nav title (e.g. hive `readme.md` is aliased at
-// `/docs/hive/overview/introduction`). We derive these from the same page-map
-// source the site uses, WITHOUT importing it directly (page-map.ts pulls in
-// nextra's bundler-only `normalizePageMap` export, which does not resolve under
-// a plain Node/tsx run). Instead we parse the NAV_STRUCTURE_* tables out of
-// page-map.ts and replicate its title->slug rule. This keeps the checker a
-// zero-heavy-dependency, deterministic gate.
-const pageMapSrc = fs.readFileSync(
-  path.join(process.cwd(), "src", "app", "docs", "page-map.ts"),
-  "utf8"
-);
-// slugify, normRoute, isExternalOrAnchor and ASSET_EXT are imported from
-// ./check-internal-links-helpers.ts (side-effect free, unit-tested).
-
+// whose slug derives from the nav title (e.g. console `readme.md` is aliased at
+// `/docs/console/overview/introduction`). We derive these from the same
+// nav.yaml files the site loads (PROJECTS[id].navPath plus the cross-project
+// GENERAL_SECTIONS), replicating buildPageMap's title->slug rule, WITHOUT
+// importing page-map.ts (it pulls in nextra's bundler-only `normalizePageMap`
+// export, which does not resolve under a plain Node/tsx run). This keeps the
+// checker a zero-heavy-dependency, deterministic gate, and a malformed nav.yaml
+// fails it with the same NavFileError the site build would raise.
+//
 // Extract every nav-alias entry, then filter to those whose target file
 // actually exists on disk, and register both the sectioned and the bare
-// form as valid routes. Splitting the pure parse (parseNavStructures)
+// form as valid routes. Splitting the pure parse (parseNavStructure)
 // from this fs-touching registration keeps the parser unit-testable.
-for (const entry of parseNavStructures(pageMapSrc, PROJECT_FOR_NAV)) {
-  const fileAbs = path.join(
-    contentRoot,
-    entry.base.replace(/^docs\/?/, ""),
-    entry.file,
-  );
-  if (!fs.existsSync(fileAbs) && entry.base !== "docs") {
-    // Kubestellar nav references live under docs/content directly.
-    const alt = path.join(contentRoot, entry.file);
-    if (!fs.existsSync(alt)) continue;
+for (const source of navSourcesFor(PROJECTS, GENERAL_SECTIONS)) {
+  const yamlSrc = fs.readFileSync(path.join(process.cwd(), source.navPath), "utf8");
+  for (const entry of parseNavStructure(source, yamlSrc)) {
+    const fileAbs = path.join(
+      contentRoot,
+      entry.base.replace(/^docs\/?/, ""),
+      entry.file,
+    );
+    if (!fs.existsSync(fileAbs) && entry.base !== "docs") {
+      // Cross-project section references live under docs/content directly.
+      const alt = path.join(contentRoot, entry.file);
+      if (!fs.existsSync(alt)) continue;
+    }
+    validRoutes.add(navEntryRoute(entry));
   }
-  validRoutes.add(navEntryRoute(entry));
 }
 
 // Normalize a route for comparison: use the shared helper.

@@ -1,23 +1,23 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-26T14:13:53.546Z",
+  "generated_at": "2026-09-26T18:16:41.899Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2750,
+  "total_prs_opened": 2760,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6233850,
+  "total_points": 6269050,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 50.6,
-    "avg_per_day": 8.31,
+    "avg_per_week": 51.4,
+    "avg_per_day": 8.33,
     "by_day_of_week": [
       310,
       588,
       749,
       553,
       534,
-      350,
+      360,
       306
     ],
     "by_hour_of_day": [
@@ -35,11 +35,11 @@
       18,
       47,
       33,
-      41,
-      177,
+      45,
+      182,
       93,
       80,
-      142,
+      143,
       104,
       120,
       52,
@@ -50,27 +50,27 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-26T12:02:18.000Z"
+    "last_issue_at": "2026-09-26T18:02:06.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 116,
+      "issue_count": 118,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-26",
-        "url": "https://github.com/kubestellar/console-kb/pull/3556",
-        "created_at": "2026-09-26T12:02:18Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3563",
+        "created_at": "2026-09-26T18:02:06Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 13,
-      "closed_count": 103
+      "open_count": 3,
+      "closed_count": 115
     },
     {
       "name": "release, version, sync",
-      "issue_count": 66,
+      "issue_count": 65,
       "recent_issue": {
         "title": "📖 Sync console docs versions",
         "url": "https://github.com/kubestellar/docs/pull/7090",
@@ -80,25 +80,26 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 66
+      "closed_count": 65
     },
     {
       "name": "hive, doc, sync",
-      "issue_count": 21,
+      "issue_count": 20,
       "recent_issue": {
-        "title": "🌱 Retire /live/hive and point the Hive dashboard links at hivecommons",
-        "url": "https://github.com/kubestellar/docs/pull/6838",
-        "created_at": "2026-09-09T18:17:43Z"
+        "title": "🐛 fix(llm): default to models.github.ai/inference — old GitHub Models host no longer resolves",
+        "url": "https://github.com/kubestellar/console-kb/pull/3558",
+        "created_at": "2026-09-26T14:36:14Z"
       },
       "repos": [
+        "console-kb",
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 21
+      "open_count": 1,
+      "closed_count": 19
     },
     {
       "name": "dragonflydb, exact, support",
-      "issue_count": 18,
+      "issue_count": 19,
       "recent_issue": {
         "title": "🌱 dragonflydb: Add bloom/cuckoo filter support",
         "url": "https://github.com/kubestellar/console-kb/pull/3454",
@@ -108,11 +109,11 @@
         "console-kb"
       ],
       "open_count": 0,
-      "closed_count": 18
+      "closed_count": 19
     },
     {
       "name": "ghsa, postcss, r28c",
-      "issue_count": 15,
+      "issue_count": 13,
       "recent_issue": {
         "title": "[scanner] fix: remediate brace-expansion vulnerability",
         "url": "https://github.com/kubestellar/docs/pull/6456",
@@ -123,7 +124,23 @@
         "console-kb"
       ],
       "open_count": 0,
-      "closed_count": 15
+      "closed_count": 13
+    },
+    {
+      "name": "test, module, dedicated",
+      "issue_count": 8,
+      "recent_issue": {
+        "title": "test: add dedicated unit tests for openyurt_status/fetch.ts",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/811",
+        "created_at": "2026-09-26T15:47:50Z"
+      },
+      "repos": [
+        "console-marketplace",
+        "console-kb",
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 7
     },
     {
       "name": "warning, registry, staleness",
@@ -140,35 +157,19 @@
       "closed_count": 7
     },
     {
-      "name": "test, quality, coverage",
+      "name": "workflow, label, sync",
       "issue_count": 6,
       "recent_issue": {
-        "title": "[quality] tests: bring src/lib/url.ts to 100% coverage",
-        "url": "https://github.com/kubestellar/docs/pull/6423",
-        "created_at": "2026-07-24T14:10:58Z"
+        "title": "ci: drop secrets: inherit from three reusable-workflow callers",
+        "url": "https://github.com/kubestellar/console-kb/pull/3560",
+        "created_at": "2026-09-26T14:53:32Z"
       },
       "repos": [
+        "console-kb",
         "docs",
-        "console-marketplace",
-        "console-kb"
+        "console-marketplace"
       ],
-      "open_count": 0,
-      "closed_count": 6
-    },
-    {
-      "name": "workflow, label, sync",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "🌱 Sync workflows from kubestellar/infra",
-        "url": "https://github.com/kubestellar/docs/pull/6559",
-        "created_at": "2026-08-23T00:23:21Z"
-      },
-      "repos": [
-        "docs",
-        "console-marketplace",
-        "console-kb"
-      ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 5
     },
     {
@@ -214,6 +215,20 @@
       "closed_count": 3
     },
     {
+      "name": "client, github, rate",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🌱 scripts: consolidate GitHub REST client + rate-limit budget onto lib/cncf-github-client",
+        "url": "https://github.com/kubestellar/console-kb/pull/3561",
+        "created_at": "2026-09-26T15:03:09Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 2,
+      "closed_count": 0
+    },
+    {
       "name": "oidc, headlamp, pop",
       "issue_count": 2,
       "recent_issue": {
@@ -223,20 +238,6 @@
       },
       "repos": [
         "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "die, test, suite",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🐛 Mermaid.test.tsx fails under vitest 5: module-load mermaid.initialize() call invisible to the test's mock instance",
-        "url": "https://github.com/kubestellar/docs/issues/6835",
-        "created_at": "2026-09-09T17:51:25Z"
-      },
-      "repos": [
-        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -284,18 +285,46 @@
       "closed_count": 2
     },
     {
-      "name": "finding, hardening, chain",
-      "issue_count": 2,
+      "name": "phase, hook, own",
+      "issue_count": 1,
       "recent_issue": {
-        "title": "[scanner] fix: address Scorecard supply-chain hardening findings",
-        "url": "https://github.com/kubestellar/console-kb/pull/2948",
-        "created_at": "2026-07-23T18:37:06Z"
+        "title": "refactor: extract useCardShell and port buildpacks/coredns/notary cards (#810 phase 1–2c)",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/812",
+        "created_at": "2026-09-26T15:55:43Z"
       },
       "repos": [
-        "console-kb"
+        "console-marketplace"
       ],
-      "open_count": 0,
-      "closed_count": 2
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "opendropdown, state, drive",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "refactor(navbar): drive dropdown visibility from a single declarative openDropdown state",
+        "url": "https://github.com/kubestellar/docs/pull/7097",
+        "created_at": "2026-09-26T15:42:21Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "nav, loc, sidebar",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 refactor(nav): move sidebar navigation from page-map.ts into per-project nav.yaml data files",
+        "url": "https://github.com/kubestellar/docs/pull/7096",
+        "created_at": "2026-09-26T15:26:31Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "openshift, article, typo",
@@ -308,8 +337,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "atlantis, bitbucket, incompatibility",
@@ -430,20 +459,6 @@
         "title": "🌱 cert-manager: Add ca.crt to TLS secret generated by ACME issuers",
         "url": "https://github.com/kubestellar/console-kb/pull/3304",
         "created_at": "2026-09-10T06:16:54Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "l2announcement, externaltrafficpolicy, cilium",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 cilium: L2Announcement with externalTrafficPolicy: Local",
-        "url": "https://github.com/kubestellar/console-kb/pull/3202",
-        "created_at": "2026-09-05T06:14:08Z"
       },
       "repos": [
         "console-kb"
@@ -604,34 +619,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "reformatted, phrase, line",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "📖 fix: restore missing words in Combined Status from WECs docs",
-        "url": "https://github.com/kubestellar/docs/pull/6414",
-        "created_at": "2026-07-23T07:11:26Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "namespaceselector, webhooks, kyverno",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 kyverno: [Bug] Policy namespaceSelector is applied to Webhooks",
-        "url": "https://github.com/kubestellar/console-kb/pull/2946",
-        "created_at": "2026-07-23T06:58:04Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -642,12 +629,6 @@
         "path": "web/src/components/onboarding/, web/src/components/rewards/",
         "description": "New user onboarding, gamification, contributor rewards system",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
-        "name": "Backend API & Handlers",
-        "path": "pkg/api/, pkg/models/, pkg/store/",
-        "description": "Go backend REST API, request handlers, data models, persistence layer",
-        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
       },
       {
         "name": "Marketplace & Operators",
@@ -666,6 +647,12 @@
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       }
     ]
   },
@@ -716,7 +703,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 159
+      "issue_count": 169
     }
   ],
   "repo_breakdown": [
@@ -725,7 +712,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2047,
+      "prs_opened": 2053,
       "prs_merged": 1726
     },
     {
@@ -733,15 +720,15 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 186,
-      "prs_opened": 615,
-      "prs_merged": 572
+      "prs_opened": 617,
+      "prs_merged": 573
     },
     {
       "repo": "console-marketplace",
       "bug_issues": 11,
       "feature_issues": 13,
       "other_issues": 145,
-      "prs_opened": 88,
+      "prs_opened": 90,
       "prs_merged": 80
     }
   ]

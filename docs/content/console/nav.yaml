@@ -1,0 +1,72 @@
+# Sidebar navigation for the console project (PROJECTS['console'].navPath).
+# Paths are relative to docs/content/console/.
+# Each top-level entry is a sidebar section: { title, items }. Items are
+#   - Title: relative/path.md            (page)
+#   - Title:                             (folder)
+#       - Child Title: relative/path.md
+#   - https://example.com or /abs/path   (external / absolute link, as a value)
+# A page that is not listed here does not appear in the sidebar.
+# Schema is validated at build time by loadNavFile() in src/app/docs/page-map.ts.
+# See kubestellar/docs#7080.
+- title: Overview
+  items:
+    - Introduction: readme.md
+    - Quick Start: quickstart.md
+    - Console Overview: console-overview.md
+    - Architecture: architecture.md
+    - Architecture Diagram: _architecture-diagram.md
+    - Installation: installation.md
+    - Cluster Registration: cluster-registration.md
+    - Demo Mode: demo-mode.md
+    - Configuration: configuration.md
+    - Updates and Releases: console-updates.md
+- title: Setup
+  items:
+    - Local Setup Guide: local-setup.md
+    - Local Deployment: local-deployment.md
+    - Deploy & Orchestrate: deploy.md
+    - vCluster Setup: vcluster-setup.md
+- title: Features
+  items:
+    - Console Features: console-features.md
+    - Dashboards: dashboards.md
+    - Cards: all-cards.md
+    - Card Types: cards.md
+    - Card Reference: console-cards.md
+    - Stats Blocks: stats-blocks.md
+    - Alerts: alerts.md
+    - Cost Optimization Cards: cost-optimization.md
+    - Drasi Reactive Pipeline Dashboard: drasi-dashboard.md
+    - KServe Monitoring Card: kserve-monitoring.md
+    - Feedback System: feedback.md
+- title: AI Integration
+  items:
+    - AI Features: ai-features.md
+    - AI Missions Setup: ai-missions-setup.md
+    - Kagenti LLM Provider Setup: kagenti-llm-provider-setup.md
+    - Local LLM Strategy: local-llm-strategy.md
+    - Agentic Quality Controls: agentic-quality.md
+- title: Security
+  items:
+    - Authentication & Sessions: authentication.md
+    - Security Model: security-model.md
+    - Persistence & State Management: persistence.md
+- title: Enterprise
+  items:
+    - Enterprise Compliance Portal: enterprise-compliance.md
+    - Federation & Multi-Hub: federation.md
+- title: Development
+  items:
+    - Development Methodology: development.md
+- title: ACMM
+  items:
+    - ACMM Dashboard: acmm-dashboard.md
+- title: Programs
+  items:
+    - Marketplace: marketplace.md
+    - Knowledge Base: knowledge-base.md
+    - Rewards System: console-rewards.md
+- title: Troubleshooting
+  items:
+    - Troubleshooting: troubleshooting.md
+    - Windows 11 Local Source Build Troubleshooting: windows-11-local-source-build-troubleshooting.md

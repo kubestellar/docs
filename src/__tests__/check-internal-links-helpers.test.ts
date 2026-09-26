@@ -8,20 +8,24 @@
  * every PR touching content).
  */
 import { describe, it, expect } from "vitest";
+import { existsSync } from "node:fs";
 import {
   slugify,
   normRoute,
   isExternalOrAnchor,
   ASSET_EXT,
   resolveInternalLink,
-  PROJECT_FOR_NAV,
-  parseNavStructures,
+  navAliasEntries,
   navEntryRoute,
+  navSourcesFor,
+  parseNavStructure,
   type NavAliasEntry,
 } from "../../scripts/check-internal-links-helpers";
+import { PROJECTS } from "../config/versions/lookup";
+import { GENERAL_SECTIONS } from "../lib/nav";
 
 // ─────────────────────────────────────────────────────────────────────────
-// slugify — must match the rule buildPageMap() uses on NAV_STRUCTURE_* titles
+// slugify — must match the rule buildPageMap() uses on nav.yaml titles
 // ─────────────────────────────────────────────────────────────────────────
 describe("slugify", () => {
   it("lowercases ASCII", () => {
@@ -267,251 +271,156 @@ describe("resolveInternalLink", () => {
 });
 
 // ─────────────────────────────────────────────────────────────────────────
-// PROJECT_FOR_NAV — a regression here would silently break every nav
-// alias for the affected project.
+// navSourcesFor — derives the nav.yaml list from PROJECTS + GENERAL_SECTIONS
+// (kubestellar/docs#7080). A regression here silently drops a project's nav
+// aliases from the route table and mass-reports its links as broken.
 // ─────────────────────────────────────────────────────────────────────────
-describe("PROJECT_FOR_NAV", () => {
-  it("maps every documented project name to its docs base path", () => {
-    expect(PROJECT_FOR_NAV).toEqual({
-      A2A: "docs/a2a",
-      MULTI_PLUGIN: "docs/multi-plugin",
-      KUBEFLEX: "docs/kubeflex",
-      KUBESTELLAR_MCP: "docs/kubestellar-mcp",
-      CONSOLE: "docs/console",
-      HIVE: "docs/hive",
-      KUBESTELLAR: "docs",
-    });
+describe("navSourcesFor", () => {
+  const projects = {
+    kubestellar: { id: "kubestellar", basePath: "", navPath: "docs/content/nav.yaml" },
+    console: { id: "console", basePath: "console", navPath: "docs/content/console/nav.yaml" },
+  };
+
+  it("maps the root project (empty basePath) to bare 'docs'", () => {
+    const [ks] = navSourcesFor(projects, []);
+    expect(ks).toEqual({ name: "kubestellar", base: "docs", navPath: "docs/content/nav.yaml" });
   });
 
-  it("uses docs/<slug> for every non-kubestellar project", () => {
-    // The root Kubestellar project lives at docs/ (no sub-slug); every
-    // other project must be under docs/<slug>. This invariant is what
-    // makes route registration deterministic — breaking it would move
-    // nav aliases to the wrong path and mass-report broken links.
-    for (const [name, base] of Object.entries(PROJECT_FOR_NAV)) {
-      if (name === "KUBESTELLAR") {
-        expect(base).toBe("docs");
-      } else {
-        expect(base.startsWith("docs/")).toBe(true);
-        expect(base).not.toBe("docs");
-      }
+  it("maps every other project to docs/<basePath> and its own navPath", () => {
+    const sources = navSourcesFor(projects, []);
+    expect(sources[1]).toEqual({ name: "console", base: "docs/console", navPath: "docs/content/console/nav.yaml" });
+  });
+
+  it("appends one 'docs'-based source per general section, under <contentRoot>/<section>/nav.yaml", () => {
+    const sources = navSourcesFor(projects, ["contributing", "news"]);
+    expect(sources.slice(2)).toEqual([
+      { name: "contributing", base: "docs", navPath: "docs/content/contributing/nav.yaml" },
+      { name: "news", base: "docs", navPath: "docs/content/news/nav.yaml" },
+    ]);
+  });
+
+  it("covers every real project and general section with an existing nav.yaml", () => {
+    for (const s of navSourcesFor(PROJECTS, GENERAL_SECTIONS)) {
+      expect(existsSync(s.navPath), `${s.name}: ${s.navPath}`).toBe(true);
     }
   });
 });
 
 // ─────────────────────────────────────────────────────────────────────────
-// parseNavStructures — the untangled NAV_STRUCTURE_* regex loop.
-// These are the highest-impact tests in this file: a regex regression
-// here silently makes the link checker either permissive (invents nav
-// routes that don't exist) or over-strict (misses real nav routes and
-// mass-reports valid links as broken).
+// navAliasEntries / parseNavStructure — nav.yaml → nav-alias routes.
+// These are the highest-impact tests in this file: a regression here
+// silently makes the link checker either permissive (invents nav routes
+// that don't exist) or over-strict (misses real nav routes and mass-
+// reports valid links as broken).
 // ─────────────────────────────────────────────────────────────────────────
-describe("parseNavStructures", () => {
-  it("returns an empty list on empty source", () => {
-    expect(parseNavStructures("")).toEqual([]);
-  });
+const hive = { name: "hive", base: "docs/hive", navPath: "docs/content/hive/nav.yaml" };
 
-  it("returns an empty list when no NAV_STRUCTURE_* declarations are present", () => {
-    const src = "const something = { title: 'X' };\nexport default {};\n";
-    expect(parseNavStructures(src)).toEqual([]);
-  });
-
-  it("skips NAV_STRUCTURE_* blocks whose name is not in projectForNav", () => {
-    const src = `
-      const NAV_STRUCTURE_UNKNOWN = [
-        { 'Intro': 'intro.md' },
-]
-`;
-    expect(parseNavStructures(src)).toEqual([]);
-  });
-
-  it("extracts a single bare entry from a HIVE block with no sections", () => {
-    const src = `
-      const NAV_STRUCTURE_HIVE = [
-        { 'Introduction': 'readme.md' },
-]
-`;
-    const entries = parseNavStructures(src);
-    // Bare-form only (no section).
-    expect(entries).toEqual([
-      {
-        navName: "HIVE",
-        base: "docs/hive",
-        sectionSlug: "",
-        slug: "introduction",
-        title: "Introduction",
-        file: "readme.md",
-      },
-    ]);
-    expect(navEntryRoute(entries[0])).toBe("/docs/hive/introduction");
+describe("navAliasEntries", () => {
+  it("returns an empty list for an empty nav", () => {
+    expect(navAliasEntries(hive, [])).toEqual([]);
   });
 
   it("emits one entry per section slug PLUS one bare entry", () => {
     // Mirrors the main-script rule: register the route under every
     // section slug AND once with no section prefix.
-    const src = `
-      const NAV_STRUCTURE_HIVE = [
-        { title: 'Overview', items: [ { 'Introduction': 'readme.md' } ] },
-]
-`;
-    const entries = parseNavStructures(src);
-    expect(entries).toHaveLength(2);
+    const entries = navAliasEntries(hive, [
+      { title: "Overview", items: [{ Introduction: "readme.md" }] },
+    ]);
+    expect(entries).toEqual([
+      { navName: "hive", base: "docs/hive", sectionSlug: "overview", slug: "introduction", title: "Introduction", file: "readme.md" },
+      { navName: "hive", base: "docs/hive", sectionSlug: "", slug: "introduction", title: "Introduction", file: "readme.md" },
+    ]);
     expect(new Set(entries.map(navEntryRoute))).toEqual(
       new Set(["/docs/hive/overview/introduction", "/docs/hive/introduction"]),
     );
   });
 
-  it("emits an entry for every (section × entry) combination when a block has multiple sections", () => {
+  it("emits an entry for every (section × entry) combination when a nav has multiple sections", () => {
     // The main script over-approximates by registering an entry under
-    // EVERY section slug in the block, not just the one it lexically
+    // EVERY section slug in the nav, not just the one it lexically
     // belongs to. That is deliberate (safe: only adds valid routes).
     // Locking that behavior in with a test protects against a "fix"
     // that changes it and mass-reports real links as broken.
-    const src = `
-      const NAV_STRUCTURE_HIVE = [
-        { title: 'Overview', items: [ { 'Intro': 'intro.md' } ] },
-        { title: 'Guides', items: [] },
-]
-`;
-    const routes = new Set(parseNavStructures(src).map(navEntryRoute));
-    expect(routes).toEqual(
-      new Set([
-        "/docs/hive/overview/intro",
-        "/docs/hive/guides/intro",
-        "/docs/hive/intro",
-      ]),
+    const routes = new Set(
+      navAliasEntries(hive, [
+        { title: "Overview", items: [{ Intro: "intro.md" }] },
+        { title: "Guides", items: [] },
+      ]).map(navEntryRoute),
     );
+    expect(routes).toEqual(
+      new Set(["/docs/hive/overview/intro", "/docs/hive/guides/intro", "/docs/hive/intro"]),
+    );
+  });
+
+  it("descends into nested folders and emits their leaf pages", () => {
+    const files = navAliasEntries(hive, [
+      { title: "S", items: [{ Folder: [{ Leaf: "a/leaf.md" }, { Deeper: [{ Deep: "a/b/deep.md" }] }] }] },
+    ]).map((e) => e.file);
+    expect(new Set(files)).toEqual(new Set(["a/leaf.md", "a/b/deep.md"]));
   });
 
   it("skips entries whose file value is an http(s) URL", () => {
-    const src = `
-      const NAV_STRUCTURE_HIVE = [
-        { 'External': 'https://example.com/foo.md' },
-        { 'Real': 'readme.md' },
-]
-`;
-    const files = parseNavStructures(src).map(e => e.file);
-    expect(files).toEqual(["readme.md"]);
+    const files = navAliasEntries(hive, [
+      { title: "S", items: [{ External: "https://example.com/foo.md" }, { Real: "readme.md" }] },
+    ]).map((e) => e.file);
+    expect(new Set(files)).toEqual(new Set(["readme.md"]));
   });
 
   it("skips entries whose file value is a root-absolute path", () => {
-    const src = `
-      const NAV_STRUCTURE_HIVE = [
-        { 'Root': '/other-project/readme.md' },
-        { 'Real': 'readme.md' },
-]
-`;
-    const files = parseNavStructures(src).map(e => e.file);
-    expect(files).toEqual(["readme.md"]);
-  });
-
-  it("accepts both single- and double-quoted title:file pairs", () => {
-    const src = `
-      const NAV_STRUCTURE_HIVE = [
-        { 'Single': 'a.md' },
-        { "Double": "b.md" },
-]
-`;
-    const slugs = parseNavStructures(src).map(e => e.slug);
-    expect(slugs).toEqual(["single", "double"]);
+    const files = navAliasEntries(hive, [
+      { title: "S", items: [{ Root: "/other-project/readme.md" }, { Real: "readme.md" }] },
+    ]).map((e) => e.file);
+    expect(new Set(files)).toEqual(new Set(["readme.md"]));
   });
 
   it("accepts .md and .mdx file extensions but nothing else", () => {
-    const src = `
-      const NAV_STRUCTURE_HIVE = [
-        { 'A': 'a.md' },
-        { 'B': 'b.mdx' },
-        { 'C': 'c.txt' },
-        { 'D': 'd' },
-]
-`;
-    const files = parseNavStructures(src).map(e => e.file);
-    expect(files).toEqual(["a.md", "b.mdx"]);
+    const files = navAliasEntries(hive, [
+      { title: "S", items: [{ A: "a.md" }, { B: "b.mdx" }, { C: "c.txt" }, { D: "d" }] },
+    ]).map((e) => e.file);
+    expect(new Set(files)).toEqual(new Set(["a.md", "b.mdx"]));
+  });
+
+  it("ignores bare-string items (they have no title to alias from)", () => {
+    expect(navAliasEntries(hive, [{ title: "S", items: ["readme.md"] }])).toEqual([]);
   });
 
   it("slugifies titles the same way slugify() does — punctuation collapses", () => {
-    const src = `
-      const NAV_STRUCTURE_HIVE = [
-    { title: "Whats New", items: [ { 'v1.2.3 release notes': 'v1.md' } ] },
-]
-`;
-    const [sectioned, bare] = parseNavStructures(src);
-expect(sectioned.sectionSlug).toBe("whats-new");
+    const [sectioned, bare] = navAliasEntries(hive, [
+      { title: "Whats New", items: [{ "v1.2.3 release notes": "v1.md" }] },
+    ]);
+    expect(sectioned.sectionSlug).toBe("whats-new");
     expect(sectioned.slug).toBe("v1-2-3-release-notes");
     expect(bare.sectionSlug).toBe("");
-    expect(navEntryRoute(sectioned)).toBe(
-  "/docs/hive/whats-new/v1-2-3-release-notes",
+    expect(navEntryRoute(sectioned)).toBe("/docs/hive/whats-new/v1-2-3-release-notes");
+  });
+
+  it("handles the root docs base (no sub-slug)", () => {
+    const [entry] = navAliasEntries(
+      { name: "kubestellar", base: "docs" },
+      [{ title: "S", items: [{ "Getting Started": "getting-started.md" }] }],
     );
+    expect(navEntryRoute(entry)).toBe("/docs/s/getting-started");
+  });
+});
+
+describe("parseNavStructure", () => {
+  it("parses YAML and yields the same entries as navAliasEntries", () => {
+    const yaml = "- title: Overview\n  items:\n    - Introduction: readme.md\n";
+    expect(parseNavStructure(hive, yaml).map(navEntryRoute)).toEqual([
+      "/docs/hive/overview/introduction",
+      "/docs/hive/introduction",
+    ]);
   });
 
-  it("independently parses multiple NAV_STRUCTURE_* blocks in one source", () => {
-    const src = `
-      const NAV_STRUCTURE_HIVE = [
-        { 'Intro': 'intro.md' },
-]
-      const NAV_STRUCTURE_CONSOLE = [
-        { 'Home': 'home.md' },
-]
-`;
-    const byNav = new Map<string, string[]>();
-    for (const e of parseNavStructures(src)) {
-      const list = byNav.get(e.navName) ?? [];
-      list.push(navEntryRoute(e));
-      byNav.set(e.navName, list);
-    }
-    expect(byNav.get("HIVE")).toEqual(["/docs/hive/intro"]);
-    expect(byNav.get("CONSOLE")).toEqual(["/docs/console/home"]);
-  });
-
-  it("handles the KUBESTELLAR base (root docs path, no sub-slug)", () => {
-    const src = `
-      const NAV_STRUCTURE_KUBESTELLAR = [
-        { 'Getting Started': 'getting-started.md' },
-]
-`;
-    const entries = parseNavStructures(src);
-    expect(navEntryRoute(entries[0])).toBe("/docs/getting-started");
-  });
-
-  it("supports an override of PROJECT_FOR_NAV for injection in tests", () => {
-    const src = `
-      const NAV_STRUCTURE_CUSTOM = [
-        { 'X': 'x.md' },
-]
-`;
-    const entries = parseNavStructures(src, { CUSTOM: "docs/injected" });
-    expect(entries).toHaveLength(1);
-    expect(entries[0].base).toBe("docs/injected");
-    expect(navEntryRoute(entries[0])).toBe("/docs/injected/x");
-  });
-
-  it("does not confuse `title:` fields inside NAV_STRUCTURE with entry pairs", () => {
-    // Regression guard: the entry-pair regex is quoted-key based, so
-    // an unquoted `title: '...'` field must not be picked up as an
-    // entry. If someone loosens the entry regex, we want this to fail.
-    const src = `
-      const NAV_STRUCTURE_HIVE = [
-        { title: 'Overview', items: [] },
-]
-`;
-    const entries = parseNavStructures(src);
-    expect(entries).toEqual([]);
-  });
-
-  it("does not match a NAV_STRUCTURE reference that is not a declaration", () => {
-    // Only `const NAV_STRUCTURE_<X>` declarations should be parsed —
-    // uses/references to the same name in other positions must be
-    // ignored so we don't double-count.
-    const src = `
-      const other = NAV_STRUCTURE_HIVE;
-      export { NAV_STRUCTURE_HIVE };
-    `;
-    expect(parseNavStructures(src)).toEqual([]);
+  it("rejects a malformed nav with a NavFileError naming the file", () => {
+    expect(() => parseNavStructure(hive, "- title: X\n  items: nope\n")).toThrow(
+      /Invalid sidebar nav file docs\/content\/hive\/nav\.yaml: .*"items" must be a list/,
+    );
   });
 });
 
 // ─────────────────────────────────────────────────────────────────────────
-// navEntryRoute — trivial but pinned by contract with parseNavStructures.
+// navEntryRoute — trivial but pinned by contract with navAliasEntries.
 // ─────────────────────────────────────────────────────────────────────────
 describe("navEntryRoute", () => {
   const base: NavAliasEntry = {
