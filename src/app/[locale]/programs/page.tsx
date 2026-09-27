@@ -3,7 +3,7 @@
 import { getAllPrograms } from "./programs";
 import Image from "next/image";
 import { useEffect } from "react";
-import { Navbar, Footer, GridLines, StarField } from "@/components";
+import PageShell from "@/components/master-page/PageShell";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
@@ -44,22 +44,7 @@ export default function ProgramsPage() {
   }, []);
 
   return (
-    <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
-      {/* Navigation */}
-      <Navbar />
-
-      {/* Full page background with starfield */}
-      <div className="fixed inset-0 z-0">
-        {/* Dark base background */}
-        <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-
-        {/* Starfield background */}
-        <StarField density="medium" showComets={true} cometCount={3} />
-
-        {/* Grid lines background */}
-        <GridLines horizontalLines={21} verticalLines={18} />
-      </div>
-
+    <PageShell contentClassName={null}>
       {/* Hero Section */}
       <section className="relative min-h-[40vh] flex items-center justify-center z-10">
         <div className="relative z-10 text-center px-4 pt-20 pb-2">
@@ -118,7 +103,6 @@ export default function ProgramsPage() {
       </section>
 
       {/* Footer */}
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

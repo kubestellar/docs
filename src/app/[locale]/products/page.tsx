@@ -2,12 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import {
-  Navbar,
-  Footer,
-  GridLines,
-  StarField,
-} from "@/components";
+import PageShell from "@/components/master-page/PageShell";
 import { useTranslations } from "next-intl";
 
 interface Product {
@@ -58,7 +53,8 @@ export default function ProductsPage() {
     {
       id: "kubeflex",
       logo: "/products/kubeflex.png",
-      website: "https://kubestellar.io/docs/what-is-kubestellar/related/kubeflex",
+      website:
+        "https://kubestellar.io/docs/what-is-kubestellar/related/kubeflex",
       repository: "https://github.com/kubestellar/kubeflex",
       name: t("products.kubeflex.name"),
       fullName: t("products.kubeflex.fullName"),
@@ -129,22 +125,7 @@ export default function ProductsPage() {
   }, []);
 
   return (
-    <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
-      {/* Navigation */}
-      <Navbar />
-
-      {/* Full page background with starfield */}
-      <div className="fixed inset-0 z-0">
-        {/* Dark base background */}
-        <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-
-        {/* Starfield background */}
-        <StarField density="medium" showComets={true} cometCount={3} />
-
-        {/* Grid lines background */}
-        <GridLines horizontalLines={21} verticalLines={18} />
-      </div>
-
+    <PageShell contentClassName={null}>
       {/* Hero Section */}
       <section className="relative min-h-[40vh] flex items-center justify-center z-10">
         <div className="relative z-10 text-center px-2 sm:px-4 pt-16 sm:pt-20 pb-2">
@@ -349,7 +330,6 @@ export default function ProductsPage() {
       )}
 
       {/* Footer */}
-      <Footer />
-    </div>
+    </PageShell>
   );
 }
