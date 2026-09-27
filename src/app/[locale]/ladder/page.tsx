@@ -1,12 +1,9 @@
 "use client";
 
 import {
-  GridLines,
-  StarField,
   ContributionCallToAction,
-  Navbar,
-  Footer,
 } from "../../../components/index";
+import PageShell from "../../../components/master-page/PageShell";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -195,29 +192,12 @@ export default function MaintainerLadderPage() {
   ];
 
   return (
-    <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
-      <Navbar />
-
-      {/* Full page background with starfield */}
-      <div className="fixed inset-0 z-0">
-        {/* Dark base background */}
-        <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-
-        {/* Starfield background */}
-        <StarField density="medium" showComets={true} cometCount={3} />
-
-        {/* Grid lines background */}
-        <GridLines horizontalLines={21} verticalLines={18} />
-      </div>
-
-      <div className="relative z-10 pt-7">
-        {" "}
-        {/* Add padding-top to account for fixed navbar */}
-        {/* Header Section */}
-        <section className="pt-12 pb-12 sm:pt-28 sm:pb-16 lg:pt-24 lg:pb-6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
+    <PageShell>
+      {/* Header Section */}
+      <section className="pt-12 pb-12 sm:pt-28 sm:pb-16 lg:pt-24 lg:pb-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
                 {t("title")}{" "}
                 <span className="text-gradient animated-gradient bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600">
                   {t("titleSpan")}
@@ -476,10 +456,8 @@ export default function MaintainerLadderPage() {
             </div>
           </div>
         </section>
-        {/* Ready To Contribute Section */}
-        <ContributionCallToAction />
-      </div>
-      <Footer />
-    </div>
+      {/* Ready To Contribute Section */}
+      <ContributionCallToAction />
+    </PageShell>
   );
 }

@@ -4,12 +4,9 @@ import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  GridLines,
-  StarField,
   ContributionCallToAction,
-  Navbar,
-  Footer,
 } from "../../../components/index";
+import PageShell from "../../../components/master-page/PageShell";
 import type { AffiliateData, LeaderboardData, SortDir, SortField } from "./types";
 import {
   AFFILIATE_API_URL,
@@ -130,19 +127,9 @@ export default function LeaderboardPage() {
     : null;
 
   return (
-    <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
-      <Navbar />
-
-      {/* Full page background with starfield */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-        <StarField density="medium" showComets={true} cometCount={3} />
-        <GridLines horizontalLines={21} verticalLines={18} />
-      </div>
-
-      <div className="relative z-10 pt-7">
-        {/* Header Section */}
-        <section className="pt-12 pb-8 sm:pt-28 sm:pb-12 lg:pt-24 lg:pb-8">
+    <PageShell>
+      {/* Header Section */}
+      <section className="pt-12 pb-8 sm:pt-28 sm:pb-12 lg:pt-24 lg:pb-8">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
@@ -492,8 +479,6 @@ export default function LeaderboardPage() {
 
         {/* CTA Section */}
         <ContributionCallToAction />
-      </div>
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

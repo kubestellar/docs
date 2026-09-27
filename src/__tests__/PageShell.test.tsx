@@ -60,7 +60,7 @@ async function importShell() {
 }
 
 describe('PageShell', () => {
-  it('renders Navbar, children, Footer, and both background layers by default', async () => {
+  it('renders Navbar, children, Footer, background wrapper, base layer, and both animated layers by default', async () => {
     const { default: PageShell } = await importShell()
     const { getByTestId } = render(
       <PageShell>
@@ -74,6 +74,28 @@ describe('PageShell', () => {
     expect(getByTestId('starfield')).not.toBeNull()
     expect(getByTestId('child')).not.toBeNull()
     expect(getByTestId('page-shell-background')).not.toBeNull()
+    expect(getByTestId('page-shell-base-layer')).not.toBeNull()
+    expect(getByTestId('page-shell-content')).not.toBeNull()
+  })
+
+  it('applies the canonical default Tailwind classes on outer, background wrapper, base, and content', async () => {
+    const {
+      default: PageShell,
+      DEFAULT_OUTER_CLASS,
+      DEFAULT_BACKGROUND_WRAPPER_CLASS,
+      DEFAULT_BASE_LAYER_CLASS,
+      DEFAULT_CONTENT_CLASS,
+    } = await importShell()
+    const { getByTestId } = render(<PageShell>content</PageShell>)
+
+    expect(getByTestId('page-shell').className).toBe(DEFAULT_OUTER_CLASS)
+    expect(getByTestId('page-shell-background').className).toBe(
+      DEFAULT_BACKGROUND_WRAPPER_CLASS,
+    )
+    expect(getByTestId('page-shell-base-layer').className).toBe(
+      DEFAULT_BASE_LAYER_CLASS,
+    )
+    expect(getByTestId('page-shell-content').className).toBe(DEFAULT_CONTENT_CLASS)
   })
 
   it('forwards the canonical GridLines/StarField defaults', async () => {
@@ -117,7 +139,7 @@ describe('PageShell', () => {
     })
   })
 
-  it('omits GridLines when background.grid === false', async () => {
+  it('omits GridLines when background.grid === false but keeps stars and the base layer', async () => {
     const { default: PageShell } = await importShell()
     const { queryByTestId } = render(
       <PageShell background={{ grid: false }}>content</PageShell>,
@@ -125,8 +147,9 @@ describe('PageShell', () => {
 
     expect(queryByTestId('gridlines')).toBeNull()
     expect(queryByTestId('starfield')).not.toBeNull()
-    // background wrapper still present because stars remain
+    // background wrapper still present because stars + base remain
     expect(queryByTestId('page-shell-background')).not.toBeNull()
+    expect(queryByTestId('page-shell-base-layer')).not.toBeNull()
   })
 
   it('omits StarField when background.stars === false', async () => {
@@ -139,15 +162,50 @@ describe('PageShell', () => {
     expect(queryByTestId('gridlines')).not.toBeNull()
   })
 
-  it('omits the background wrapper entirely when both layers are disabled', async () => {
+  it('omits the base layer when background.baseLayerClassName === false', async () => {
     const { default: PageShell } = await importShell()
     const { queryByTestId } = render(
-      <PageShell background={{ grid: false, stars: false }}>content</PageShell>,
+      <PageShell background={{ baseLayerClassName: false }}>content</PageShell>,
+    )
+
+    expect(queryByTestId('page-shell-base-layer')).toBeNull()
+    // stars + grid still render, so wrapper is still present
+    expect(queryByTestId('page-shell-background')).not.toBeNull()
+  })
+
+  it('omits the background wrapper entirely when every layer is disabled', async () => {
+    const { default: PageShell } = await importShell()
+    const { queryByTestId } = render(
+      <PageShell
+        background={{ grid: false, stars: false, baseLayerClassName: false }}
+      >
+        content
+      </PageShell>,
     )
 
     expect(queryByTestId('gridlines')).toBeNull()
     expect(queryByTestId('starfield')).toBeNull()
+    expect(queryByTestId('page-shell-base-layer')).toBeNull()
     expect(queryByTestId('page-shell-background')).toBeNull()
+  })
+
+  it('honors contentClassName override', async () => {
+    const { default: PageShell } = await importShell()
+    const { getByTestId } = render(
+      <PageShell contentClassName="content-x">content</PageShell>,
+    )
+    expect(getByTestId('page-shell-content').className).toBe('content-x')
+  })
+
+  it('omits the content wrapper when contentClassName === null (page brings its own)', async () => {
+    const { default: PageShell } = await importShell()
+    const { queryByTestId, getByText } = render(
+      <PageShell contentClassName={null}>
+        <div>bespoke hero</div>
+      </PageShell>,
+    )
+    expect(queryByTestId('page-shell-content')).toBeNull()
+    expect(getByText('bespoke hero')).not.toBeNull()
   })
 
   it('honors showFooter=false', async () => {

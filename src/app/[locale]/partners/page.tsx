@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  Navbar,
-  Footer,
-  GridLines,
-  StarField,
-} from "../../../components/index";
+import PageShell from "../../../components/master-page/PageShell";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
@@ -78,25 +73,9 @@ export default function PartnersPage() {
   ];
 
   return (
-    <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
-      <Navbar />
-
-      {/* Full page background with starfield */}
-      <div className="fixed inset-0 z-0">
-        {/* Dark base background */}
-        <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-
-        {/* Starfield background */}
-        <StarField density="medium" showComets={true} cometCount={3} />
-
-        {/* Grid lines background */}
-        <GridLines horizontalLines={21} verticalLines={18} />
-      </div>
-
-      <div className="relative z-10 pt-7">
-        {/* Add padding-top to account for fixed navbar */}
-        {/* Header Section */}
-        <section className="py-16 sm:py-20 lg:py-24 pb-8">
+    <PageShell>
+      {/* Header Section */}
+      <section className="py-16 sm:py-20 lg:py-24 pb-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
@@ -494,8 +473,6 @@ export default function PartnersPage() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
-    </div>
+    </PageShell>
   );
 }
