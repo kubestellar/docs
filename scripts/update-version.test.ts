@@ -379,6 +379,46 @@ describe("update-version.js — shared.json is kept in sync", () => {
     }
   });
 
+  test("re-running with versions already present leaves shared.json byte-for-byte unchanged", () => {
+    const dir = makeFixtureDir();
+    try {
+      const sharedPath = join(dir, "public", "config", "shared.json");
+      const first = runScript(dir, [
+        "--project", "kubestellar",
+        "--version", "0.31.0",
+        "--branch", "docs/0.31.0",
+        "--set-latest",
+      ]);
+      expect(first.status).toBe(0);
+      const afterFirst = readFileSync(sharedPath, "utf8");
+      expect(JSON.parse(afterFirst).updatedAt).not.toBe("2020-01-01T00:00:00.000Z");
+
+      // Same invocation again: nothing to add, so the generated timestamp must
+      // not move either — otherwise the daily sync opens a timestamp-only PR.
+      const second = runScript(dir, [
+        "--project", "kubestellar",
+        "--version", "0.31.0",
+        "--branch", "docs/0.31.0",
+        "--set-latest",
+      ]);
+      expect(second.status).toBe(0);
+      expect(second.stdout).toContain("No changes needed for");
+      expect(readFileSync(sharedPath, "utf8")).toBe(afterFirst);
+
+      // A different project whose latest already matches is also a no-op.
+      const third = runScript(dir, [
+        "--project", "a2a",
+        "--version", "0.1.0",
+        "--branch", "docs/a2a/0.1.0",
+        "--set-latest",
+      ], "a2a");
+      expect(third.status).toBe(0);
+      expect(readFileSync(sharedPath, "utf8")).toBe(afterFirst);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
   test("--set-latest for a non-kubestellar project does NOT rewrite editBaseUrls.kubestellar", () => {
     const dir = makeFixtureDir();
     try {

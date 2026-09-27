@@ -263,6 +263,12 @@ const sharedJsonPath = path.join(__dirname, '../public/config/shared.json');
 if (fs.existsSync(sharedJsonPath)) {
   console.log('\nUpdating shared.json...');
   const sharedConfig = JSON.parse(fs.readFileSync(sharedJsonPath, 'utf8'));
+  // Snapshot everything except the generated timestamp so a no-op run
+  // (all versions already present) leaves the file byte-for-byte untouched.
+  // Otherwise the daily sync workflow sees a timestamp-only diff and opens
+  // a PR that changes nothing.
+  const sharedConfigSnapshot = (config) => JSON.stringify({ ...config, updatedAt: undefined });
+  const sharedConfigBefore = sharedConfigSnapshot(sharedConfig);
 
   // Initialize project versions if not exists
   if (!sharedConfig.versions[project]) {
@@ -319,9 +325,6 @@ if (fs.existsSync(sharedJsonPath)) {
     console.log(`  Added version entry for ${version}`);
   }
 
-  // Update timestamp
-  sharedConfig.updatedAt = new Date().toISOString();
-
   // Update editBaseUrls for kubestellar to always point to the current branch.
   // The NEXT_PUBLIC_BRANCH env var (set in netlify.toml) takes precedence at build
   // time, but keeping shared.json in sync helps as a documentation reference and
@@ -334,9 +337,14 @@ if (fs.existsSync(sharedJsonPath)) {
     }
   }
 
-  // Write updated shared.json
-  fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedConfig, null, 2) + '\n');
-  console.log(`✅ Updated ${sharedJsonPath}`);
+  if (sharedConfigSnapshot(sharedConfig) === sharedConfigBefore) {
+    console.log(`No changes needed for ${sharedJsonPath}`);
+  } else {
+    // Only stamp the file when version metadata actually changed.
+    sharedConfig.updatedAt = new Date().toISOString();
+    fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedConfig, null, 2) + '\n');
+    console.log(`✅ Updated ${sharedJsonPath}`);
+  }
 } else {
   console.log(`\nWarning: ${sharedJsonPath} not found, skipping shared config update`);
 }
