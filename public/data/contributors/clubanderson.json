@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-26T22:12:21.067Z",
+  "generated_at": "2026-09-27T02:23:23.388Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2762,
+  "total_prs_opened": 2764,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6271150,
+  "total_points": 6273550,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 51.6,
+    "avg_per_week": 51.5,
     "avg_per_day": 8.33,
     "by_day_of_week": [
       310,
@@ -18,12 +18,12 @@
       553,
       534,
       362,
-      306
+      308
     ],
     "by_hour_of_day": [
-      98,
+      99,
       114,
-      92,
+      93,
       55,
       38,
       118,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-26T21:33:07.000Z"
+    "last_issue_at": "2026-09-27T02:14:42.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 118,
+      "issue_count": 119,
       "recent_issue": {
-        "title": "✨ Platform install mission generation 2026-09-26",
-        "url": "https://github.com/kubestellar/console-kb/pull/3563",
-        "created_at": "2026-09-26T18:02:06Z"
+        "title": "✨ Platform install mission generation 2026-09-27",
+        "url": "https://github.com/kubestellar/console-kb/pull/3565",
+        "created_at": "2026-09-27T00:04:07Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 3,
+      "open_count": 4,
       "closed_count": 115
     },
     {
@@ -139,20 +139,6 @@
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 6
-    },
-    {
-      "name": "warning, registry, staleness",
-      "issue_count": 7,
-      "recent_issue": {
-        "title": "[Auto-QA] Download URL Validation: 0 error(s), 5 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/543",
-        "created_at": "2026-09-02T06:34:14Z"
-      },
-      "repos": [
-        "console-marketplace"
-      ],
       "open_count": 0,
       "closed_count": 7
     },
@@ -170,6 +156,20 @@
         "console-marketplace"
       ],
       "open_count": 1,
+      "closed_count": 5
+    },
+    {
+      "name": "warning, registry, staleness",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "[Auto-QA] Download URL Validation: 0 error(s), 5 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/543",
+        "created_at": "2026-09-02T06:34:14Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 0,
       "closed_count": 5
     },
     {
@@ -213,6 +213,20 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "openyurt, authfetch, fetchpods",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "test(openyurt_status): align fetch.test.ts with authFetch-routed fetchPods",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/819",
+        "created_at": "2026-09-27T02:14:42Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 1,
+      "closed_count": 1
     },
     {
       "name": "client, github, rate",
@@ -295,22 +309,8 @@
       "repos": [
         "console-marketplace"
       ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "openyurt, fetchpods, authfetch",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix(openyurt_status): route fetchPods through authFetch",
-        "url": "https://github.com/kubestellar/console-marketplace/pull/815",
-        "created_at": "2026-09-26T21:15:48Z"
-      },
-      "repos": [
-        "console-marketplace"
-      ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "phase, hook, own",
@@ -717,7 +717,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 171
+      "issue_count": 173
     }
   ],
   "repo_breakdown": [
@@ -726,7 +726,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2053,
+      "prs_opened": 2054,
       "prs_merged": 1726
     },
     {
@@ -742,8 +742,8 @@
       "bug_issues": 11,
       "feature_issues": 13,
       "other_issues": 145,
-      "prs_opened": 92,
-      "prs_merged": 81
+      "prs_opened": 93,
+      "prs_merged": 84
     }
   ]
 }
