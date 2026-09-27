@@ -1,16 +1,16 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-27T02:23:23.388Z",
+  "generated_at": "2026-09-27T06:23:18.758Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2764,
+  "total_prs_opened": 2767,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6273550,
+  "total_points": 6274850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 51.5,
-    "avg_per_day": 8.33,
+    "avg_per_week": 51.8,
+    "avg_per_day": 8.34,
     "by_day_of_week": [
       310,
       588,
@@ -18,7 +18,7 @@
       553,
       534,
       362,
-      308
+      311
     ],
     "by_hour_of_day": [
       99,
@@ -26,8 +26,8 @@
       93,
       55,
       38,
-      118,
-      1512,
+      120,
+      1513,
       279,
       54,
       8,
@@ -50,36 +50,36 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-27T02:14:42.000Z"
+    "last_issue_at": "2026-09-27T06:02:46.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 119,
+      "issue_count": 120,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-27",
-        "url": "https://github.com/kubestellar/console-kb/pull/3565",
-        "created_at": "2026-09-27T00:04:07Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3566",
+        "created_at": "2026-09-27T06:02:46Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 4,
+      "open_count": 5,
       "closed_count": 115
     },
     {
       "name": "release, version, sync",
-      "issue_count": 65,
+      "issue_count": 67,
       "recent_issue": {
         "title": "📖 Sync console docs versions",
-        "url": "https://github.com/kubestellar/docs/pull/7090",
-        "created_at": "2026-09-26T05:27:24Z"
+        "url": "https://github.com/kubestellar/docs/pull/7104",
+        "created_at": "2026-09-27T05:27:50Z"
       },
       "repos": [
         "docs"
       ],
-      "open_count": 0,
+      "open_count": 2,
       "closed_count": 65
     },
     {
@@ -127,23 +127,7 @@
       "closed_count": 13
     },
     {
-      "name": "test, module, dedicated",
-      "issue_count": 7,
-      "recent_issue": {
-        "title": "test: add dedicated unit tests for openyurt_status/fetch.ts",
-        "url": "https://github.com/kubestellar/console-marketplace/pull/811",
-        "created_at": "2026-09-26T15:47:50Z"
-      },
-      "repos": [
-        "console-marketplace",
-        "console-kb",
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 7
-    },
-    {
-      "name": "workflow, label, sync",
+      "name": "workflow, label, caller",
       "issue_count": 6,
       "recent_issue": {
         "title": "ci: drop secrets: inherit from three reusable-workflow callers",
@@ -187,6 +171,21 @@
       "closed_count": 4
     },
     {
+      "name": "test, module, suite",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "test: add dedicated unit tests for openyurt_status/fetch.ts",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/811",
+        "created_at": "2026-09-26T15:47:50Z"
+      },
+      "repos": [
+        "console-marketplace",
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
       "name": "keycloak, takeover, cimd",
       "issue_count": 3,
       "recent_issue": {
@@ -225,8 +224,8 @@
       "repos": [
         "console-marketplace"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "client, github, rate",
@@ -633,6 +632,20 @@
       ],
       "open_count": 0,
       "closed_count": 1
+    },
+    {
+      "name": "bring, production, coverage",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[quality] tests: bring src/lib/url.ts to 100% coverage",
+        "url": "https://github.com/kubestellar/docs/pull/6423",
+        "created_at": "2026-07-24T14:10:58Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -717,7 +730,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 173
+      "issue_count": 176
     }
   ],
   "repo_breakdown": [
@@ -726,7 +739,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2054,
+      "prs_opened": 2055,
       "prs_merged": 1726
     },
     {
@@ -734,7 +747,7 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 186,
-      "prs_opened": 617,
+      "prs_opened": 619,
       "prs_merged": 575
     },
     {
@@ -743,7 +756,7 @@
       "feature_issues": 13,
       "other_issues": 145,
       "prs_opened": 93,
-      "prs_merged": 84
+      "prs_merged": 85
     }
   ]
 }
