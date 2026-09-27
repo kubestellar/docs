@@ -3,8 +3,8 @@ import type { VersionInfo } from "../types"
 // kubestellar-mcp versions
 export const KUBESTELLAR_MCP_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.9.15 (Latest)",
-    branch: "docs/kubestellar-mcp/0.9.15",
+    label: "v0.9.16 (Latest)",
+    branch: "docs/kubestellar-mcp/0.9.16",
     isDefault: true,
   },
   main: {
@@ -12,6 +12,11 @@ export const KUBESTELLAR_MCP_VERSIONS: Record<string, VersionInfo> = {
     branch: "main",
     isDefault: false,
     isDev: true,
+  },
+  "0.9.15": {
+    label: "v0.9.15",
+    branch: "docs/kubestellar-mcp/0.9.15",
+    isDefault: false,
   },
   "0.9.14": {
     label: "v0.9.14",
