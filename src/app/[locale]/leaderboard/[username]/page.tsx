@@ -3,12 +3,7 @@
 import { useState, useEffect, useMemo, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  GridLines,
-  StarField,
-  Navbar,
-  Footer,
-} from "../../../../components/index";
+import PageShell from "../../../../components/master-page/PageShell";
 import type { ContributorProfile, LeaderboardData, StretchArea } from "./types";
 import { DAY_LABELS, LEVEL_STYLES, REPO_COLORS, TREND_DISPLAY } from "./constants";
 import { ContributionRadarChart } from "./components/ContributionRadarChart";
@@ -93,18 +88,9 @@ export default function ContributorProfilePage({
   const trend = TREND_DISPLAY[profile?.cadence?.trend || "inactive"];
 
   return (
-    <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
-      <Navbar />
-
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-[#0a0a0a]" />
-        <StarField density="medium" showComets={true} cometCount={3} />
-        <GridLines horizontalLines={21} verticalLines={18} />
-      </div>
-
-      <div className="relative z-10 pt-7">
-        {/* Back link */}
-        <section className="pt-12 sm:pt-28 lg:pt-24">
+    <PageShell>
+      {/* Back link */}
+      <section className="pt-12 sm:pt-28 lg:pt-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               href="/leaderboard"
@@ -534,8 +520,6 @@ export default function ContributorProfilePage({
             )}
           </div>
         </section>
-      </div>
-      <Footer />
-    </div>
+    </PageShell>
   );
 }
