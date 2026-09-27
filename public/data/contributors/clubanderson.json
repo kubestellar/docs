@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-27T06:23:18.758Z",
+  "generated_at": "2026-09-27T10:14:07.759Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2767,
+  "total_prs_opened": 2768,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6274850,
+  "total_points": 6275850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 51.8,
+    "avg_per_week": 51.7,
     "avg_per_day": 8.34,
     "by_day_of_week": [
       310,
@@ -18,7 +18,7 @@
       553,
       534,
       362,
-      311
+      312
     ],
     "by_hour_of_day": [
       99,
@@ -28,7 +28,7 @@
       38,
       120,
       1513,
-      279,
+      280,
       54,
       8,
       21,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-27T06:02:46.000Z"
+    "last_issue_at": "2026-09-27T07:06:15.000Z"
   },
   "topics": [
     {
@@ -65,22 +65,22 @@
         "console-kb",
         "docs"
       ],
-      "open_count": 5,
-      "closed_count": 115
+      "open_count": 2,
+      "closed_count": 118
     },
     {
       "name": "release, version, sync",
-      "issue_count": 67,
+      "issue_count": 68,
       "recent_issue": {
-        "title": "📖 Sync console docs versions",
-        "url": "https://github.com/kubestellar/docs/pull/7104",
-        "created_at": "2026-09-27T05:27:50Z"
+        "title": "🐛 update-version: stop stamping shared.json updatedAt on no-op sync runs",
+        "url": "https://github.com/kubestellar/docs/pull/7105",
+        "created_at": "2026-09-27T07:06:15Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 2,
-      "closed_count": 65
+      "closed_count": 66
     },
     {
       "name": "hive, doc, sync",
@@ -632,20 +632,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "bring, production, coverage",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[quality] tests: bring src/lib/url.ts to 100% coverage",
-        "url": "https://github.com/kubestellar/docs/pull/6423",
-        "created_at": "2026-07-24T14:10:58Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -730,7 +716,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 176
+      "issue_count": 177
     }
   ],
   "repo_breakdown": [
@@ -747,7 +733,7 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 186,
-      "prs_opened": 619,
+      "prs_opened": 620,
       "prs_merged": 575
     },
     {

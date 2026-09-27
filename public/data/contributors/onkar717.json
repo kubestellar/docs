@@ -1,6 +1,6 @@
 {
   "login": "onkar717",
-  "generated_at": "2026-09-27T06:23:19.430Z",
+  "generated_at": "2026-09-27T10:14:08.144Z",
   "total_issues_opened": 5,
   "total_prs_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/144542684?v=4",
@@ -96,7 +96,7 @@
       "closed_count": 1
     },
     {
-      "name": "linkdin, point, correct",
+      "name": "linkdin, correct, point",
       "issue_count": 1,
       "recent_issue": {
         "title": "update the linkdin to point correct page",
