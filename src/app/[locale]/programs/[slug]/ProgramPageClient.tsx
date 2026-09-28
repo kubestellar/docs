@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Program } from "../programs";
-import { Navbar, Footer, StarField, GridLines } from "@/components";
+import PageShell from "@/components/master-page/PageShell";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
@@ -107,19 +107,12 @@ export default function ProgramPageClient({ program }: ProgramPageClientProps) {
   };
 
   return (
-    <div className="bg-[#0a0a0a] text-white min-h-screen">
-      {/* Navigation */}
-      <Navbar />
-
-      {/* Main Content with full background */}
+    <PageShell
+      className="bg-[#0a0a0a] text-white min-h-screen"
+      contentClassName={null}
+    >
+      {/* Main Content */}
       <main className="relative min-h-screen">
-        {/* Background layers */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-          <StarField density="medium" showComets={true} cometCount={3} />
-          <GridLines horizontalLines={21} verticalLines={18} />
-        </div>
-
         {/* Hero Section */}
         <section className="relative z-20 pt-24 pb-8 border-b border-gray-800/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -476,9 +469,6 @@ export default function ProgramPageClient({ program }: ProgramPageClientProps) {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <Footer />
-    </div>
+    </PageShell>
   );
 }
