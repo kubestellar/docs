@@ -23,7 +23,7 @@ them. These are the boxes outlined in red in the following flowchart.
     1. Cleanup from previous runs
     1. OCM Quick Start with Ingress
     1. Label WECs for selection by examples
-    1. Install Kubestellar core components
+    1. Install KubeStellar core components
   2. [Exercise KubeStellar](#exercise-kubestellar)
   3. [Troubleshooting](#troubleshooting)
 
