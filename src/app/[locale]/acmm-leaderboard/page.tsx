@@ -1,12 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback, useEffect } from "react";
-import {
-  GridLines,
-  StarField,
-  Navbar,
-  Footer,
-} from "../../../components/index";
+import PageShell from "../../../components/master-page/PageShell";
 import { gtagEvent } from "../../../components/GoogleAnalytics";
 import { ACMM_PROJECTS, BADGE_PARTICIPANTS, SNAPSHOT_DATE } from "./data";
 import {
@@ -175,15 +170,16 @@ export default function AcmmLeaderboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] text-white flex flex-col">
-      <Navbar />
-
-      {/* Background effects */}
-      <div className="fixed inset-0 pointer-events-none">
-        <GridLines horizontalLines={20} verticalLines={20} strokeColor="rgba(255,255,255,0.03)" />
-        <StarField density="medium" />
-      </div>
-
+    <PageShell
+      className="min-h-screen bg-[#0a0a0f] text-white flex flex-col"
+      contentClassName={null}
+      background={{
+        wrapperClassName: "fixed inset-0 pointer-events-none",
+        baseLayerClassName: false,
+        grid: { horizontalLines: 20, verticalLines: 20, strokeColor: "rgba(255,255,255,0.03)" },
+        stars: { density: "medium" },
+      }}
+    >
       {/* Hero section */}
       <section className="relative pt-32 pb-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto text-center">
@@ -478,8 +474,6 @@ export default function AcmmLeaderboardPage() {
 
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </PageShell>
   );
 }
