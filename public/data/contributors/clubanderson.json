@@ -1,18 +1,18 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-28T10:17:21.700Z",
+  "generated_at": "2026-09-28T14:17:25.044Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2772,
+  "total_prs_opened": 2773,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6283950,
+  "total_points": 6284650,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 51.6,
+    "avg_per_week": 51.7,
     "avg_per_day": 8.33,
     "by_day_of_week": [
-      312,
+      313,
       588,
       749,
       553,
@@ -33,7 +33,7 @@
       8,
       21,
       18,
-      48,
+      49,
       33,
       45,
       182,
@@ -50,23 +50,23 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-28T06:03:15.000Z"
+    "last_issue_at": "2026-09-28T12:02:53.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 123,
+      "issue_count": 124,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-28",
-        "url": "https://github.com/kubestellar/console-kb/pull/3573",
-        "created_at": "2026-09-28T06:03:15Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3577",
+        "created_at": "2026-09-28T12:02:53Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 122
+      "open_count": 0,
+      "closed_count": 124
     },
     {
       "name": "release, version, sync",
@@ -98,8 +98,8 @@
       "closed_count": 19
     },
     {
-      "name": "dragonflydb, exact, support",
-      "issue_count": 19,
+      "name": "dragonflydb, helm, structure",
+      "issue_count": 11,
       "recent_issue": {
         "title": "🌱 dragonflydb: Add bloom/cuckoo filter support",
         "url": "https://github.com/kubestellar/console-kb/pull/3454",
@@ -109,7 +109,7 @@
         "console-kb"
       ],
       "open_count": 0,
-      "closed_count": 19
+      "closed_count": 11
     },
     {
       "name": "ghsa, postcss, r28c",
@@ -276,6 +276,20 @@
         "title": "🌱 alertmanager: No documentation on how to setup a custom email template",
         "url": "https://github.com/kubestellar/console-kb/pull/2994",
         "created_at": "2026-08-21T06:16:15Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "clickhouse, sql, finish",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🌱 clickhouse: Allow interactive queries finish in the background",
+        "url": "https://github.com/kubestellar/console-kb/pull/2992",
+        "created_at": "2026-08-20T06:32:44Z"
       },
       "repos": [
         "console-kb"
@@ -508,6 +522,34 @@
       "closed_count": 1
     },
     {
+      "name": "cronjob, kagent, agent",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 kagent: [FEATURE] Add cronjob for agents",
+        "url": "https://github.com/kubestellar/console-kb/pull/3226",
+        "created_at": "2026-09-06T06:28:33Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "l2announcement, externaltrafficpolicy, cilium",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 cilium: L2Announcement with externalTrafficPolicy: Local",
+        "url": "https://github.com/kubestellar/console-kb/pull/3202",
+        "created_at": "2026-09-05T06:14:08Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "alternative, kubelet, kubevirt",
       "issue_count": 1,
       "recent_issue": {
@@ -528,6 +570,20 @@
         "title": "🌱 wasmedge-runtime: LFX Workspace: Memory alignment in WASM instructions",
         "url": "https://github.com/kubestellar/console-kb/pull/3043",
         "created_at": "2026-08-28T09:30:37Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "https, gitea, key",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 gitea: feature: HTTPS based deploy keys",
+        "url": "https://github.com/kubestellar/console-kb/pull/3030",
+        "created_at": "2026-08-27T09:33:52Z"
       },
       "repos": [
         "console-kb"
@@ -578,6 +634,20 @@
       "closed_count": 1
     },
     {
+      "name": "router, timeout, traefik",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 traefik: Setting timeout per service/router",
+        "url": "https://github.com/kubestellar/console-kb/pull/2996",
+        "created_at": "2026-08-21T06:37:47Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "conversation, normal, dify",
       "issue_count": 1,
       "recent_issue": {
@@ -598,6 +668,20 @@
         "title": "🌱 containerd: config_path is treated inconsistently between local client pull mode and",
         "url": "https://github.com/kubestellar/console-kb/pull/2988",
         "created_at": "2026-08-17T06:14:00Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "unix, socket, address",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 prometheus: Support Unix socket for metrics address",
+        "url": "https://github.com/kubestellar/console-kb/pull/2973",
+        "created_at": "2026-08-07T06:30:11Z"
       },
       "repos": [
         "console-kb"
@@ -730,7 +814,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 181
+      "issue_count": 182
     }
   ],
   "repo_breakdown": [
@@ -739,8 +823,8 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2059,
-      "prs_merged": 1734
+      "prs_opened": 2060,
+      "prs_merged": 1735
     },
     {
       "repo": "docs",
