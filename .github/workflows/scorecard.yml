@@ -16,7 +16,6 @@ permissions:
 jobs:
   analysis:
     uses: kubestellar/infra/.github/workflows/reusable-scorecard.yml@cfe3dcacb317e67ccf3701c98bc0416a7712cfbf  # main
-    secrets: inherit
 
   alert-on-failure:
     # The work runs in a reusable workflow, so the alert is a separate job.
