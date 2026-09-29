@@ -1,6 +1,7 @@
 // @vitest-environment jsdom
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
+import type React from 'react'
 
 /**
  * Render smoke tests for src/components/docs/DocsNavbar.tsx (1076 LOC, 0% coverage
@@ -20,6 +21,28 @@ import { render, screen, fireEvent } from '@testing-library/react'
  * to the mock fetch payload shape); we assert only that the fallback values
  * render pre-mount.
  */
+
+// The unified Community/Contribute/GithubDropdown components (docs#7143-7146)
+// import `Link` from `@/i18n/navigation` (next-intl's navigation wrapper) for
+// their marketing-variant branch. Left unmocked, that pulls in next-intl's
+// createNavigation() and its extensionless `import 'next/navigation'`, which
+// is unresolvable under Next.js 16's ESM-only `exports` map. Mock it the same
+// way the other navbar/master-page render-smoke tests do (see
+// NavbarSubcomponents.render.test.tsx, HowToUseSection.render.test.tsx #6997).
+vi.mock('@/i18n/navigation', () => ({
+  Link: ({
+    href,
+    children,
+    ...rest
+  }: {
+    href: string
+    children?: React.ReactNode
+  }) => (
+    <a href={href} {...rest}>
+      {children}
+    </a>
+  ),
+}))
 
 let mockResolvedTheme: string | undefined = 'light'
 vi.mock('next-themes', () => ({
