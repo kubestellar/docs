@@ -2,10 +2,10 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
 import { render, cleanup, fireEvent } from "@testing-library/react";
 import React from "react";
-import GithubDropdown from "../components/docs/navbar/GithubDropdown";
+import GithubDropdown from "../components/navbar/GithubDropdown";
 
 /**
- * Coverage for src/components/docs/navbar/GithubDropdown.tsx (baseline: 75% lines
+ * Coverage for src/components/navbar/GithubDropdown.tsx (baseline: 75% lines
  * / 18.2% branches / 50% functions on 2026-09-27). The four external anchors
  * (star / fork / watch / issues) and both isDark themes only render when
  * openDropdown === "github", so the light/dark × open/closed matrix drives the
