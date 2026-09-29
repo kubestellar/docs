@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-09-29T10:15:41.324Z",
+  "generated_at": "2026-09-29T14:15:52.399Z",
   "total_issues_opened": 0,
   "total_prs_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
@@ -96,10 +96,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
