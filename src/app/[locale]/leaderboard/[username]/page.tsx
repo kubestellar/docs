@@ -38,7 +38,10 @@ export default function ContributorProfilePage({
 
     const leaderboardFetch = fetch("/data/leaderboard.json")
       .then((res) => (res.ok ? (res.json() as Promise<LeaderboardData>) : null))
-      .catch(() => null);
+      .catch((err) => {
+        console.error("Failed to fetch leaderboard.json for profile merge:", err);
+        return null;
+      });
 
     Promise.all([profileFetch, leaderboardFetch])
       .then(([profileData, leaderboardData]) => {
