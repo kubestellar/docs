@@ -1,0 +1,1 @@
+- refactor(docs/navbar): remove six pass-through stubs (`CommunityDropdown`, `ContributeDropdown`, `GithubDropdown`, `MobileMenu`, `icons`, `styles`) under `src/components/docs/navbar/` and point the barrel directly at the canonical `@/components/navbar/` implementations (#7156).

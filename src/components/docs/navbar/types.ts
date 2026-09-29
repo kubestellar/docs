@@ -1,9 +1,9 @@
-// Moved to src/components/navbar/types.ts (docs#7146) so the unified
-// dropdown components have one canonical location for the type.
-export type { DropdownType } from "@/components/navbar/types";
+// Docs-navbar-specific types. DropdownType and GithubStats moved to
+// src/components/navbar/types.ts and src/hooks/useGithubStats.ts
+// respectively (docs#7146); the docs-navbar barrel now re-exports them
+// straight from those canonical locations.
 
-export type { GithubStats } from "@/hooks/useGithubStats";
-
+/** Result item rendered by the docs search command palette. */
 export interface SearchResult {
   title: string;
   url: string;
