@@ -165,7 +165,8 @@ export function ContributorHoverCard({
         setData(json);
         setLoading(false);
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error(`Failed to fetch contributor profile for ${login}:`, err);
         if (!cancelled) setLoading(false);
       });
     return () => { cancelled = true; };
