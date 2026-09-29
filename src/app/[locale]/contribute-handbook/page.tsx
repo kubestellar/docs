@@ -2,12 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import {
-  Navbar,
-  Footer,
-  StarField,
-  GridLines,
-} from "@/components";
+import PageShell from "@/components/master-page/PageShell";
 import { handbookCards, HandbookCard } from "./handbook";
 import { useTranslations } from "next-intl";
 
@@ -107,21 +102,12 @@ export default function CommunityHandbook() {
   }, []);
 
   return (
-    <div className="bg-slate-900 text-white overflow-x-hidden dark">
-      <Navbar />
-
-      <main className="pt-24 relative overflow-hidden bg-slate-900 text-white">
-        {/* Dark base background */}
-        <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-
-        {/* Starfield background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <StarField density="high" showComets={true} cometCount={5} />
-        </div>
-
-        {/* Grid lines background */}
-        <GridLines horizontalLines={21} verticalLines={18} />
-
+    <PageShell
+      className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen dark"
+      background={{ stars: { density: "high", cometCount: 5 } }}
+      contentClassName="relative z-10"
+    >
+      <main className="pt-24 relative overflow-hidden text-white">
         {/* Floating Data Particles */}
         <div className="absolute inset-0">
           <div
@@ -169,8 +155,6 @@ export default function CommunityHandbook() {
         </div>
       </main>
 
-      <Footer />
-
       {/* Floating back to top button */}
       <button
         id="back-to-top"
@@ -192,6 +176,6 @@ export default function CommunityHandbook() {
           />
         </svg>
       </button>
-    </div>
+    </PageShell>
   );
 }

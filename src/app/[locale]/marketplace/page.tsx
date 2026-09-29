@@ -13,7 +13,7 @@ import {
   Tag,
 } from "lucide-react";
 
-import { Footer, GridLines, Navbar, StarField } from "@/components/index";
+import PageShell from "@/components/master-page/PageShell";
 
 import { MarketplaceCard } from "./components/MarketplaceCard";
 import { REGISTRY_URL } from "./lib/constants";
@@ -95,13 +95,11 @@ export default function MarketplacePage() {
   }, [data]);
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
-
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[#0a0a0a]" />
-        <StarField density="low" showComets={true} cometCount={2} />
-        <GridLines />
+    <PageShell
+      background={{ stars: { density: "low", cometCount: 2 } }}
+      contentClassName="relative z-10"
+    >
+      <section className="relative py-24 text-white overflow-hidden">
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -305,8 +303,6 @@ export default function MarketplacePage() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </main>
+    </PageShell>
   );
 }
