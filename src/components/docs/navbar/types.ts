@@ -1,4 +1,6 @@
-export type DropdownType = "contribute" | "community" | "language" | "github" | null;
+// Moved to src/components/navbar/types.ts (docs#7146) so the unified
+// dropdown components have one canonical location for the type.
+export type { DropdownType } from "@/components/navbar/types";
 
 export type { GithubStats } from "@/hooks/useGithubStats";
 
