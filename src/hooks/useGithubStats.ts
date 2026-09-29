@@ -19,7 +19,9 @@ const endpoints: Array<{ key: keyof GithubStats; metric: string }> = [
 
 /**
  * Fetches GitHub repository stats (stars, forks, watchers) via shields.io
- * JSON endpoints to avoid GitHub API rate limits.
+ * JSON endpoints to avoid GitHub API rate limits. Returns fallback values
+ * until shields.io responds so the navbar never renders empty badges and
+ * layout does not jump on hydration.
  */
 export function useGithubStats(): GithubStats {
   const [githubStats, setGithubStats] = useState<GithubStats>({

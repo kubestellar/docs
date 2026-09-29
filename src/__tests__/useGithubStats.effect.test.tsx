@@ -53,7 +53,7 @@ describe('useGithubStats — effect body under jsdom', () => {
     const fetchMock = vi.fn(async (url: string) => jsonRes({ value: byUrl[url] }))
     globalThis.fetch = fetchMock as unknown as typeof fetch
 
-    const { useGithubStats } = await import('../components/navbar/useGithubStats')
+    const { useGithubStats } = await import('../hooks/useGithubStats')
     const { result } = renderHook(() => useGithubStats())
 
     // Initial synchronous render returns the fallback.
@@ -81,7 +81,7 @@ describe('useGithubStats — effect body under jsdom', () => {
     globalThis.fetch = fetchMock as unknown as typeof fetch
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
 
-    const { useGithubStats } = await import('../components/navbar/useGithubStats')
+    const { useGithubStats } = await import('../hooks/useGithubStats')
     const { result } = renderHook(() => useGithubStats())
 
     await waitFor(() => {
@@ -106,7 +106,7 @@ describe('useGithubStats — effect body under jsdom', () => {
     globalThis.fetch = fetchMock as unknown as typeof fetch
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
 
-    const { useGithubStats } = await import('../components/navbar/useGithubStats')
+    const { useGithubStats } = await import('../hooks/useGithubStats')
     const { result } = renderHook(() => useGithubStats())
 
     await waitFor(() => {
@@ -131,7 +131,7 @@ describe('useGithubStats — effect body under jsdom', () => {
     })
     globalThis.fetch = fetchMock as unknown as typeof fetch
 
-    const { useGithubStats } = await import('../components/navbar/useGithubStats')
+    const { useGithubStats } = await import('../hooks/useGithubStats')
     const { result } = renderHook(() => useGithubStats())
 
     await waitFor(() => {

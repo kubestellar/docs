@@ -40,7 +40,7 @@ vi.mock('../components/index', async () => {
   }
 })
 
-vi.mock('../components/navbar/useGithubStats', () => ({
+vi.mock('../hooks/useGithubStats', () => ({
   useGithubStats: () => ({ stars: '1', forks: '2', watchers: '3' }),
 }))
 
