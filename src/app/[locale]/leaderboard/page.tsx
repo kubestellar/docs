@@ -85,7 +85,8 @@ export default function LeaderboardPage() {
     let retryHandle: ReturnType<typeof setTimeout> | undefined;
     fetchAffiliates().catch(() => {
       retryHandle = setTimeout(() => {
-        fetchAffiliates().catch(() => {
+        fetchAffiliates().catch((err) => {
+          console.error("Failed to fetch affiliate data after retry:", err);
           setAffiliateLoading(false);
         });
       }, AFFILIATE_RETRY_DELAY_MS);

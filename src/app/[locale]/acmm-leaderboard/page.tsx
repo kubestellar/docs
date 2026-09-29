@@ -46,7 +46,9 @@ export default function AcmmLeaderboardPage() {
       .then((data) => {
         if (data?.dates && data?.scores) setHistory(data);
       })
-      .catch(() => {});
+      .catch((err) => {
+        console.error("Failed to fetch ACMM history:", err);
+      });
   }, []);
 
   // ── GA4 event helpers ──────────────────────────────────────────────
