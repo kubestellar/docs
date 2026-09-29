@@ -1,7 +1,7 @@
 "use client";
 
 import type { useTranslations } from "next-intl";
-import type { GithubStats } from "./useGithubStats";
+import type { GithubStats } from "@/hooks/useGithubStats";
 import MobileTopLinks from "./MobileTopLinks";
 import MobileContributeSection from "./MobileContributeSection";
 import MobileCommunitySection from "./MobileCommunitySection";

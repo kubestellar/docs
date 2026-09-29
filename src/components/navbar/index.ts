@@ -1,5 +1,5 @@
-export { useGithubStats } from "./useGithubStats";
-export type { GithubStats } from "./useGithubStats";
+export { useGithubStats } from "@/hooks/useGithubStats";
+export type { GithubStats } from "@/hooks/useGithubStats";
 export { useNavDropdowns } from "./useNavDropdowns";
 export type {
   NavDropdownName,

@@ -1,7 +1,7 @@
 export { LinkedinIcon } from "./icons";
 export type { DropdownType, GithubStats, SearchResult } from "./types";
 export { getNavClasses } from "./styles";
-export { useGithubStats } from "./useGithubStats";
+export { useGithubStats } from "@/hooks/useGithubStats";
 export { useDocsSearch } from "./useDocsSearch";
 export { default as ContributeDropdown } from "./ContributeDropdown";
 export { default as CommunityDropdown } from "./CommunityDropdown";

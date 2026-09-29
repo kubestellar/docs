@@ -18,7 +18,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 
-import { useGithubStats } from '../components/navbar/useGithubStats'
+import { useGithubStats } from '../hooks/useGithubStats'
 
 function Probe() {
   const stats = useGithubStats()
