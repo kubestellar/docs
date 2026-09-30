@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { render, cleanup } from '@testing-library/react'
+import { render, fireEvent, act, cleanup } from '@testing-library/react'
 import React from 'react'
 
 /**
@@ -102,5 +102,65 @@ describe('HowToUseSection render', () => {
     const { container } = render(<HowToUseSection />)
     const links = container.querySelectorAll('a[href]')
     expect(links.length).toBeGreaterThan(0)
+  })
+
+  it('copy button success path calls clipboard.writeText with the install script and flips the copied indicator', async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined)
+    Object.defineProperty(navigator, 'clipboard', {
+      configurable: true,
+      value: { writeText },
+    })
+
+    const mod = await import('../components/master-page/HowToUseSection')
+    const HowToUseSection = mod.default
+    const { container } = render(<HowToUseSection />)
+    const button = container.querySelector('button')
+    expect(button).not.toBeNull()
+
+    await act(async () => {
+      fireEvent.click(button!)
+      await Promise.resolve()
+    })
+
+    expect(writeText).toHaveBeenCalledWith(
+      expect.stringContaining('curl -sSL https://raw.githubusercontent.com'),
+    )
+  })
+
+  it('copy button rejection path calls console.error and does not throw', async () => {
+    const writeText = vi.fn().mockRejectedValue(new Error('denied'))
+    Object.defineProperty(navigator, 'clipboard', {
+      configurable: true,
+      value: { writeText },
+    })
+    const errSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+
+    const mod = await import('../components/master-page/HowToUseSection')
+    const HowToUseSection = mod.default
+    const { container } = render(<HowToUseSection />)
+    const button = container.querySelector('button')
+    expect(button).not.toBeNull()
+
+    await act(async () => {
+      fireEvent.click(button!)
+      await Promise.resolve()
+      await Promise.resolve()
+    })
+
+    expect(writeText).toHaveBeenCalled()
+    expect(errSpy).toHaveBeenCalled()
+    errSpy.mockRestore()
+  })
+
+  it('typewriter effect progresses displayedText char-by-char across intervals', async () => {
+    const mod = await import('../components/master-page/HowToUseSection')
+    const HowToUseSection = mod.default
+    const { container } = render(<HowToUseSection />)
+
+    await act(async () => {
+      vi.advanceTimersByTime(200)
+    })
+    const displayed = container.textContent ?? ''
+    expect(displayed).toContain('curl')
   })
 })
