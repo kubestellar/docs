@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-30T06:25:17.459Z",
-  "total_issues_opened": 640,
-  "total_prs_opened": 2782,
+  "generated_at": "2026-09-30T10:16:36.751Z",
+  "total_issues_opened": 641,
+  "total_prs_opened": 2783,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6291200,
+  "total_points": 6293500,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 48.5,
-    "avg_per_day": 8.31,
+    "avg_per_week": 48.6,
+    "avg_per_day": 8.32,
     "by_day_of_week": [
       314,
       592,
-      753,
+      755,
       553,
       534,
       362,
@@ -27,7 +27,7 @@
       55,
       38,
       120,
-      1519,
+      1521,
       280,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-30T06:21:24.000Z"
+    "last_issue_at": "2026-09-30T06:38:04.000Z"
   },
   "topics": [
     {
@@ -65,8 +65,8 @@
         "console-kb",
         "docs"
       ],
-      "open_count": 2,
-      "closed_count": 129
+      "open_count": 1,
+      "closed_count": 130
     },
     {
       "name": "release, version, sync",
@@ -84,18 +84,17 @@
     },
     {
       "name": "hive, doc, sync",
-      "issue_count": 19,
+      "issue_count": 17,
       "recent_issue": {
-        "title": "🐛 fix(llm): default to models.github.ai/inference — old GitHub Models host no longer resolves",
-        "url": "https://github.com/kubestellar/console-kb/pull/3558",
-        "created_at": "2026-09-26T14:36:14Z"
+        "title": "🌱 Retire /live/hive and point the Hive dashboard links at hivecommons",
+        "url": "https://github.com/kubestellar/docs/pull/6838",
+        "created_at": "2026-09-09T18:17:43Z"
       },
       "repos": [
-        "console-kb",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 19
+      "closed_count": 17
     },
     {
       "name": "dragonflydb, helm, structure",
@@ -112,16 +111,15 @@
       "closed_count": 11
     },
     {
-      "name": "ghsa, mh99, v99m",
+      "name": "registry, warning, staleness",
       "issue_count": 6,
       "recent_issue": {
-        "title": "[scanner] fix: remediate brace-expansion vulnerability",
-        "url": "https://github.com/kubestellar/docs/pull/6456",
-        "created_at": "2026-07-28T16:00:01Z"
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/855",
+        "created_at": "2026-09-30T06:31:29Z"
       },
       "repos": [
-        "docs",
-        "console-kb"
+        "console-marketplace"
       ],
       "open_count": 0,
       "closed_count": 6
@@ -143,18 +141,33 @@
       "closed_count": 5
     },
     {
-      "name": "warning, registry, staleness",
+      "name": "ghsa, r28c, q8g",
       "issue_count": 5,
       "recent_issue": {
-        "title": "[Auto-QA] Download URL Validation: 0 error(s), 5 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/543",
-        "created_at": "2026-09-02T06:34:14Z"
+        "title": "[scanner] fix: remediate brace-expansion vulnerability",
+        "url": "https://github.com/kubestellar/docs/pull/6456",
+        "created_at": "2026-07-28T16:00:01Z"
       },
       "repos": [
-        "console-marketplace"
+        "docs",
+        "console-kb"
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "llm, inference, import",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "🌱 llm-d: Create a new llm-d repository to host inference server API extensions",
+        "url": "https://github.com/kubestellar/console-kb/pull/3609",
+        "created_at": "2026-09-30T06:38:04Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "alertmanager, template, kv",
@@ -167,8 +180,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 2
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "test, module, suite",
@@ -363,20 +376,6 @@
       },
       "repos": [
         "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "import, llm, orchestrator",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 refactor: own platform LLM config in lib/platform-llm-config.mjs (#3544)",
-        "url": "https://github.com/kubestellar/console-kb/pull/3559",
-        "created_at": "2026-09-26T14:50:46Z"
-      },
-      "repos": [
-        "console-kb"
       ],
       "open_count": 0,
       "closed_count": 1
@@ -742,12 +741,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
@@ -764,6 +757,12 @@
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       }
     ]
   },
@@ -814,7 +813,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 191
+      "issue_count": 193
     }
   ],
   "repo_breakdown": [
@@ -823,8 +822,8 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2069,
-      "prs_merged": 1741
+      "prs_opened": 2070,
+      "prs_merged": 1744
     },
     {
       "repo": "docs",
@@ -837,7 +836,7 @@
     {
       "repo": "console-marketplace",
       "bug_issues": 11,
-      "feature_issues": 13,
+      "feature_issues": 14,
       "other_issues": 145,
       "prs_opened": 93,
       "prs_merged": 85
