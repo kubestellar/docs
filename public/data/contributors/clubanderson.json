@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-30T02:25:46.478Z",
+  "generated_at": "2026-09-30T06:25:17.459Z",
   "total_issues_opened": 640,
-  "total_prs_opened": 2779,
+  "total_prs_opened": 2782,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6290250,
+  "total_points": 6291200,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 48.6,
+    "avg_per_week": 48.5,
     "avg_per_day": 8.31,
     "by_day_of_week": [
       314,
       592,
-      750,
+      753,
       553,
       534,
       362,
@@ -27,7 +27,7 @@
       55,
       38,
       120,
-      1516,
+      1519,
       280,
       54,
       8,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-30T00:03:59.000Z"
+    "last_issue_at": "2026-09-30T06:21:24.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 129,
+      "issue_count": 131,
       "recent_issue": {
-        "title": "✨ Platform install mission generation 2026-09-30",
-        "url": "https://github.com/kubestellar/console-kb/pull/3603",
-        "created_at": "2026-09-30T00:03:59Z"
+        "title": "✨ CNCF install mission generation 2026-09-30",
+        "url": "https://github.com/kubestellar/console-kb/pull/3607",
+        "created_at": "2026-09-30T06:19:08Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 0,
+      "open_count": 2,
       "closed_count": 129
     },
     {
@@ -112,8 +112,8 @@
       "closed_count": 11
     },
     {
-      "name": "ghsa, postcss, r28c",
-      "issue_count": 9,
+      "name": "ghsa, mh99, v99m",
+      "issue_count": 6,
       "recent_issue": {
         "title": "[scanner] fix: remediate brace-expansion vulnerability",
         "url": "https://github.com/kubestellar/docs/pull/6456",
@@ -124,7 +124,7 @@
         "console-kb"
       ],
       "open_count": 0,
-      "closed_count": 9
+      "closed_count": 6
     },
     {
       "name": "workflow, label, caller",
@@ -155,6 +155,20 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "alertmanager, template, kv",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "🌱 alertmanager: Send subsequent notifications to a slack thread instead of channel",
+        "url": "https://github.com/kubestellar/console-kb/pull/3608",
+        "created_at": "2026-09-30T06:21:24Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 2
     },
     {
       "name": "test, module, suite",
@@ -276,20 +290,6 @@
         "title": "🌱 fluent-bit: fluentbit_ metrics stop being sent to prometheus_remote_write output about 1",
         "url": "https://github.com/kubestellar/console-kb/pull/3029",
         "created_at": "2026-08-27T09:11:47Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "alertmanager, template, kv",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🌱 alertmanager: No documentation on how to setup a custom email template",
-        "url": "https://github.com/kubestellar/console-kb/pull/2994",
-        "created_at": "2026-08-21T06:16:15Z"
       },
       "repos": [
         "console-kb"
@@ -748,12 +748,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       },
       {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
         "name": "Charts & Visualizations",
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
@@ -764,6 +758,12 @@
         "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
         "description": "OAuth flow, user settings, preferences, API middleware, authentication",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       }
     ]
   },
@@ -814,7 +814,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 188
+      "issue_count": 191
     }
   ],
   "repo_breakdown": [
@@ -823,7 +823,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2066,
+      "prs_opened": 2069,
       "prs_merged": 1741
     },
     {
