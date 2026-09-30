@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-09-30T14:17:45.986Z",
+  "generated_at": "2026-09-30T18:19:43.265Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2784,
+  "total_prs_opened": 2785,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6294600,
+  "total_points": 6294800,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 48.6,
-    "avg_per_day": 8.32,
+    "avg_per_week": 47.3,
+    "avg_per_day": 8.31,
     "by_day_of_week": [
       314,
       592,
-      756,
+      757,
       553,
       534,
       362,
@@ -39,7 +39,7 @@
       182,
       93,
       80,
-      145,
+      146,
       104,
       120,
       54,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 39,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-09-30T12:02:56.000Z"
+    "last_issue_at": "2026-09-30T18:02:34.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 132,
+      "issue_count": 133,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-09-30",
-        "url": "https://github.com/kubestellar/console-kb/pull/3613",
-        "created_at": "2026-09-30T12:02:56Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3616",
+        "created_at": "2026-09-30T18:02:34Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 131
     },
     {
@@ -139,21 +139,6 @@
       ],
       "open_count": 0,
       "closed_count": 5
-    },
-    {
-      "name": "ghsa, postcss, remediate",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "[scanner] fix: remediate brace-expansion vulnerability",
-        "url": "https://github.com/kubestellar/docs/pull/6456",
-        "created_at": "2026-07-28T16:00:01Z"
-      },
-      "repos": [
-        "docs",
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 4
     },
     {
       "name": "llm, inference, import",
@@ -236,6 +221,21 @@
       },
       "repos": [
         "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "ghsa, mh99, v99m",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "[scanner] fix: remediate brace-expansion vulnerability",
+        "url": "https://github.com/kubestellar/docs/pull/6456",
+        "created_at": "2026-07-28T16:00:01Z"
+      },
+      "repos": [
+        "docs",
+        "console-kb"
       ],
       "open_count": 0,
       "closed_count": 3
@@ -813,7 +813,7 @@
     },
     {
       "month": "2026-09",
-      "issue_count": 194
+      "issue_count": 195
     }
   ],
   "repo_breakdown": [
@@ -822,7 +822,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2071,
+      "prs_opened": 2072,
       "prs_merged": 1745
     },
     {
