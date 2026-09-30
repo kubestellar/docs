@@ -70,7 +70,7 @@
   "overrides": {
     "@xmldom/xmldom": "^0.9.12",
     "axios": "^1.16.0",
-    "brace-expansion": "^2.0.1",
+    "brace-expansion": "^2.1.7",
     "dompurify": "^3.4.13",
     "linkify-it": "^6.1.0",
     "follow-redirects": "^1.16.0",
