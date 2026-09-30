@@ -6,6 +6,8 @@ import { GridLines, StarField } from "../index";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 
+const SCROLL_THRESHOLD_PX = 300;
+
 export default function Footer() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
@@ -27,11 +29,15 @@ export default function Footer() {
 
   useEffect(() => {
     // Back to top functionality
+    // Runs once `mounted` is true so `#back-to-top` exists in the DOM
+    // (the pre-mount branch does not render this button).
+    if (!mounted) return;
+
     const backToTopButton = document.getElementById("back-to-top");
     if (!backToTopButton) return;
 
     const toggleButton = () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > SCROLL_THRESHOLD_PX) {
         backToTopButton.style.opacity = "1";
         backToTopButton.style.transform = "translateY(-30px)";
       } else {
@@ -58,7 +64,7 @@ export default function Footer() {
       window.removeEventListener("scroll", toggleButton);
       backToTopButton.removeEventListener("click", handleClick);
     };
-  }, []);
+  }, [mounted]);
 
   // Prevent hydration mismatch by rendering dark theme until mounted
   if (!mounted) {

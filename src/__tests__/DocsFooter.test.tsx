@@ -19,7 +19,7 @@ import React from 'react'
  *   - back-to-top useEffect: scrollY > 300 sets opacity=1 / translateY(-30px)
  *   - back-to-top useEffect: scrollY <= 300 sets opacity=0 / translateY(10px)
  *   - back-to-top click triggers window.scrollTo({top:0, behavior:'smooth'})
- *   - initBackToTop early return when #back-to-top element is absent
+ *   - unmount cleans up both the scroll and click listeners
  */
 
 let mockResolvedTheme: string | undefined = 'dark'
@@ -118,27 +118,57 @@ describe('DocsFooter', () => {
     expect(input.value).toBe('')
   })
 
-  // NOTE: The back-to-top useEffect has `[]` deps, so it runs exactly once
-  // after the first render. But on first render `mounted=false` and the
-  // pre-mount branch does not include `#back-to-top`, so `getElementById`
-  // returns null and the effect early-returns permanently. That's the
-  // observed component behavior; we test the early-return path here rather
-  // than the (unreachable-in-practice) toggle/click/cleanup paths.
+  // The back-to-top effect depends on `mounted`, so it re-runs once the
+  // mounted branch (which renders `#back-to-top`) has committed.
 
-  it('back-to-top effect early-returns when #back-to-top element is absent', () => {
-    // Force document.getElementById to miss #back-to-top so the effect's guard
-    // returns before adding listeners. Component must still render.
-    const origGet = document.getElementById.bind(document)
-    const spy = vi.spyOn(document, 'getElementById').mockImplementation((id: string) =>
-      id === 'back-to-top' ? null : origGet(id)
-    )
-    expect(() => render(<DocsFooter />)).not.toThrow()
-    spy.mockRestore()
+  it('back-to-top: scrollY > 300 sets opacity=1 and translateY(-30px)', () => {
+    const { container } = render(<DocsFooter />)
+    const button = container.querySelector('#back-to-top') as HTMLElement
+    expect(button).toBeTruthy()
+
+    Object.defineProperty(window, 'scrollY', { value: 400, configurable: true })
+    act(() => {
+      fireEvent.scroll(window)
+    })
+
+    expect(button.style.opacity).toBe('1')
+    expect(button.style.transform).toBe('translateY(-30px)')
   })
 
-  it('unmount cleans up scroll/click listeners without throwing', () => {
+  it('back-to-top: scrollY <= 300 sets opacity=0 and translateY(10px)', () => {
+    const { container } = render(<DocsFooter />)
+    const button = container.querySelector('#back-to-top') as HTMLElement
+    expect(button).toBeTruthy()
+
+    Object.defineProperty(window, 'scrollY', { value: 100, configurable: true })
+    act(() => {
+      fireEvent.scroll(window)
+    })
+
+    expect(button.style.opacity).toBe('0')
+    expect(button.style.transform).toBe('translateY(10px)')
+  })
+
+  it('back-to-top: click triggers window.scrollTo({top: 0, behavior: "smooth"}) once', () => {
+    const { container } = render(<DocsFooter />)
+    const button = container.querySelector('#back-to-top') as HTMLElement
+    expect(button).toBeTruthy()
+
+    fireEvent.click(button)
+
+    expect(scrollToSpy).toHaveBeenCalledTimes(1)
+    expect(scrollToSpy).toHaveBeenCalledWith({ top: 0, behavior: 'smooth' })
+  })
+
+  it('unmount cleans up both scroll and click listeners', () => {
+    const removeEventListenerSpy = vi.spyOn(window, 'removeEventListener')
     const { unmount, container } = render(<DocsFooter />)
-    expect(container.querySelector('#back-to-top')).toBeTruthy()
+    const button = container.querySelector('#back-to-top') as HTMLElement
+    const buttonRemoveEventListenerSpy = vi.spyOn(button, 'removeEventListener')
+
     expect(() => act(() => unmount())).not.toThrow()
+
+    expect(removeEventListenerSpy).toHaveBeenCalledWith('scroll', expect.any(Function))
+    expect(buttonRemoveEventListenerSpy).toHaveBeenCalledWith('click', expect.any(Function))
   })
 })
