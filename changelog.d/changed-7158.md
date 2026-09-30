@@ -1,0 +1,1 @@
+- test(HowToUseSection): pin the copy-button success and rejection paths and the typewriter interval in `src/__tests__/HowToUseSection.render.test.tsx`, raising `src/components/master-page/HowToUseSection.tsx` statement coverage from 58.6% to 86.2% (#7158).
