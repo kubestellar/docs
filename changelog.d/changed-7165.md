@@ -1,0 +1,1 @@
+- refactor(api/search): remove duplicate `stripUntilStableSR` and import the shared `stripUntilStable` from `@/lib/sanitizeHtml`, so any hardening of the multi-character-sanitization helper covers both the search corpus scan and MDX sanitization (#7165).

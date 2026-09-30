@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { convertHtmlScriptsToJsxComments } from "@/lib/transformMdx"
+import { stripUntilStable } from "@/lib/sanitizeHtml"
 import { buildPageMap, docsContentPath, basePath } from "../../docs/page-map"
 import fs from 'fs'
 import path from 'path'
@@ -22,14 +23,8 @@ const MAX_QUERY_LENGTH = 128
 
 // Apply a regex removal repeatedly until the output is stable.
 // Prevents bypass via nested/interleaved input (CWE-20, CodeQL js/incomplete-multi-character-sanitization).
-function stripUntilStableSR(text: string, pattern: RegExp): string {
-  let prev = ''
-  while (text !== prev) {
-    prev = text
-    text = text.replace(pattern, '')
-  }
-  return text
-}
+// Shared implementation lives in `@/lib/sanitizeHtml` (imported above) so any
+// future hardening applies to both the search corpus scan and MDX sanitization.
 
 function toPlainText(content: string): string {
   let text = content
@@ -40,7 +35,7 @@ function toPlainText(content: string): string {
   // Loop until stable — single-pass removal of `<!--...-->` is bypassable via
   // nested input e.g. `<!-<!--` → removes inner `<!--` → reassembles to `<!--`
   // (CodeQL #11: js/incomplete-multi-character-sanitization)
-  text = stripUntilStableSR(text, /<!--[\s\S]*?-->/g)
+  text = stripUntilStable(text, /<!--[\s\S]*?-->/g)
 
   // Links/images
   text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
@@ -59,7 +54,7 @@ function toPlainText(content: string): string {
 
   // Strip residual HTML tags — loop until stable to prevent nested-tag bypass
   // (CodeQL #12: js/incomplete-multi-character-sanitization)
-  text = stripUntilStableSR(text, /<\/?[^>]+>/g)
+  text = stripUntilStable(text, /<\/?[^>]+>/g)
 
   // Collapse whitespace
   text = text.replace(/\n\s*\n/g, "\n").trim()
