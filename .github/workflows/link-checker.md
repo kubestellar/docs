@@ -5,9 +5,9 @@
 # from PATH on some runners, which makes the "detection" job fail with
 # "threat-detect binary not found on PATH" (exit code 127). This
 # frontmatter has no setting to control that binary version, so if this
-# workflow is recompiled with `gh aw compile`, verify the generated
-# install_threat_detect_binary.sh call in link-checker.lock.yml still
-# requests >= v0.5.2 with the pinned SHA256 digests, and reapply the pin
+# workflow is recompiled with `gh aw compile`, do not merge the generated
+# link-checker.lock.yml unless its install_threat_detect_binary.sh call
+# still requests >= v0.5.2 with pinned SHA256 digests; reapply the pin
 # manually if the compiler regenerates v0.5.1.
 description: |
   AI-powered link checker that runs nightly. Scans all markdown files,
