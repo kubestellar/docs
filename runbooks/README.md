@@ -6,7 +6,7 @@ looking at.
 
 | Runbook | Use when... | Linked from |
 | --- | --- | --- |
-| [`slo.md`](slo.md) | Establishing the readiness SLO/SLI for the production docs site and how the (proposed) `healthz-monitor` alerting would work. | Start here for any production readiness question. |
+| [`slo.md`](slo.md) | Establishing the readiness SLO/SLI for the production docs site and how the `healthz-monitor` alerting works. | Start here for any production readiness question. |
 | [`deploy-rollback.md`](deploy-rollback.md) | The live site is serving broken/stale content or a bad deploy went out (Netlify or container path) and needs to be rolled back. | `slo.md` |
 | [`api-error-rate-latency.md`](api-error-rate-latency.md) | The `DocsApiHighErrorRate` or `DocsApiHighRequestLatency` alert fires. | `cluster-objects/prometheusrule.yaml` `runbook_url` annotations |
 | [`netlify-build-failure.md`](netlify-build-failure.md) | A Netlify build fails: a `[netlify-deploy-failure]` issue opens for a direct-to-main commit, or `netlify-error-reporter.yml` comments on a PR (the alert links this runbook and auto-closes on the next successful deploy, added in [#6783](https://github.com/kubestellar/docs/issues/6783)). | `netlify-error-reporter.yml` failure alert |
