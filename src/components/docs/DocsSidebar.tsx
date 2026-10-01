@@ -29,20 +29,15 @@ const GENERAL_SECTION_NAMES = GENERAL_SECTION_SLUGS.map(
   (slug) => slug.charAt(0).toUpperCase() + slug.slice(1),
 );
 
-// Project display order and labels — each with a landing href for navigation links
-const PRIMARY_PROJECTS = [
-  { id: 'console', label: 'KubeStellar Console', href: '/docs/console/readme' },
-  { id: 'kubestellar-mcp', label: 'KubeStellar MCP', href: '/docs/kubestellar-mcp/overview/intro' },
-] as const;
-
-const LEGACY_PROJECTS = [
-  { id: 'kubestellar', label: 'KubeStellar', href: '/docs/readme' },
-  { id: 'a2a', label: 'A2A', href: '/docs/a2a/intro' },
-  { id: 'kubeflex', label: 'KubeFlex', href: '/docs/kubeflex/readme' },
-  { id: 'multi-plugin', label: 'Multi Plugin', href: '/docs/multi-plugin/overview/introduction' },
-] as const;
-
-const ALL_PROJECTS = [...PRIMARY_PROJECTS, ...LEGACY_PROJECTS] as const;
+// Project display order and labels — each with a landing href for navigation
+// links. Live in ./sidebarProjects so the `ProjectId` keys enforce a compile-
+// time completeness check against the canonical PROJECTS registry
+// (kubestellar/docs#7174, mirrors #7172).
+import {
+  ALL_PROJECTS,
+  LEGACY_PROJECTS,
+  PRIMARY_PROJECTS,
+} from './sidebarProjects';
 
 // Key prefix for project-level collapse state (avoids collision with nav item keys)
 const PROJECT_KEY_PREFIX = '__project_';
