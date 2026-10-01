@@ -71,7 +71,7 @@
     "@xmldom/xmldom": "^0.9.12",
     "axios": "^1.16.0",
     "brace-expansion": "^2.1.7",
-    "dompurify": "^3.4.13",
+    "dompurify": "^3.4.16",
     "linkify-it": "^6.1.0",
     "follow-redirects": "^1.16.0",
     "markdown-it": "^14.3.2",
