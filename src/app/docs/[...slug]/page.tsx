@@ -6,7 +6,7 @@ import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
 import { sanitizeHtmlForMdx, removeCommentPatterns } from '@/lib/sanitizeHtml'
 import { rewriteRelativeImagePaths } from '@/lib/rewriteImagePaths'
 import { buildPageMap, docsContentPath, getContentPath } from '../page-map'
-import { CURRENT_VERSION, type ProjectId } from '@/config/versions'
+import { CURRENT_VERSION, PROJECTS, type ProjectId } from '@/config/versions'
 import { logger } from '@/lib/logger'
 import fs from 'fs'
 import path from 'path'
@@ -167,8 +167,12 @@ async function buildContent(slug: string[], projectId?: ProjectId): Promise<Page
 }
 
 function getProjectFromSlug(slug: string[]): { projectId: ProjectId | undefined; docSlug: string[] } {
-  const knownProjects: string[] = ['kubestellar', 'clusteradm-ocm', 'ks-core', 'multi-plugin', 'kubestellar-mcp', 'console', 'a2a', 'kubeflex']
-  
+  // Derived from PROJECTS (src/config/versions/lookup.ts) so adding a project to
+  // the registry automatically teaches this route to accept its slug — and so
+  // ids removed from PROJECTS can no longer slip through here as dead strings
+  // (which would then 500 the handler via getContentPath). See #7171, #7037.
+  const knownProjects = Object.keys(PROJECTS)
+
   if (slug.length > 0 && knownProjects.includes(slug[0])) {
     return {
       projectId: slug[0] as ProjectId,

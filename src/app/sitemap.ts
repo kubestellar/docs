@@ -152,13 +152,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   })
 
   // --- KubeStellar docs (root content) ---
+  // Project sub-dirs are derived from PROJECTS (every project with a non-empty
+  // basePath is a sub-directory under docs/content/). Hand-maintained lists at
+  // this call site have drifted from the registry in the past — see #7171.
+  const projectSubDirs = new Set(
+    Object.values(PROJECTS)
+      .map((p) => p.basePath)
+      .filter((b): b is string => b.length > 0),
+  )
   const ksFiles = findMarkdownFiles(contentRoot)
     .filter((f) => {
       // Only include files directly in the root or under kubestellar/, ui-docs/,
       // contributing/, community/, news/ — NOT project sub-dirs
-      const projectDirs = ['a2a', 'kubeflex', 'multi-plugin', 'kubestellar-mcp', 'console']
       const topDir = f.split('/')[0]
-      return !projectDirs.includes(topDir)
+      return !projectSubDirs.has(topDir)
     })
 
   for (const file of ksFiles) {
@@ -174,7 +181,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // --- Project-specific docs ---
-  const projectIds: ProjectId[] = ['a2a', 'kubeflex', 'multi-plugin', 'kubestellar-mcp', 'console']
+  // Derived from PROJECTS so every registered project (except kubestellar,
+  // whose content lives at docs/content root above) is picked up automatically.
+  // See #7171.
+  const projectIds = (Object.keys(PROJECTS) as ProjectId[]).filter(
+    (id) => id !== 'kubestellar',
+  )
 
   for (const projectId of projectIds) {
     const projectContentPath = path.join(contentRoot, PROJECTS[projectId].basePath)
