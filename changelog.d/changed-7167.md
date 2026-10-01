@@ -1,0 +1,1 @@
+- test: cover `/docs/hive` moved-page `metadata.robots.index` and CTA target so the "Hive has moved" landing never silently regresses (#7167).
