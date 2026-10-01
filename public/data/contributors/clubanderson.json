@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-01T14:17:31.383Z",
+  "generated_at": "2026-10-01T18:20:39.345Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2788,
+  "total_prs_opened": 2789,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6299250,
+  "total_points": 6299450,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 45.3,
-    "avg_per_day": 8.31,
+    "avg_per_week": 44.9,
+    "avg_per_day": 8.3,
     "by_day_of_week": [
       314,
       592,
       757,
-      556,
+      557,
       534,
       362,
       314
@@ -39,7 +39,7 @@
       182,
       93,
       80,
-      146,
+      147,
       104,
       120,
       54,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 40,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-01T12:03:03.000Z"
+    "last_issue_at": "2026-10-01T18:03:21.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 136,
+      "issue_count": 137,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-10-01",
-        "url": "https://github.com/kubestellar/console-kb/pull/3625",
-        "created_at": "2026-10-01T12:03:03Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3626",
+        "created_at": "2026-10-01T18:03:21Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 135
     },
     {
@@ -206,21 +206,6 @@
         "created_at": "2026-08-09T06:20:18Z"
       },
       "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "ghsa, mh99, v99m",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "[scanner] fix: remediate brace-expansion vulnerability",
-        "url": "https://github.com/kubestellar/docs/pull/6456",
-        "created_at": "2026-07-28T16:00:01Z"
-      },
-      "repos": [
-        "docs",
         "console-kb"
       ],
       "open_count": 0,
@@ -715,6 +700,34 @@
       ],
       "open_count": 0,
       "closed_count": 1
+    },
+    {
+      "name": "remediate, override, 5.0.7",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[scanner] fix: remediate brace-expansion vulnerability",
+        "url": "https://github.com/kubestellar/docs/pull/6456",
+        "created_at": "2026-07-28T16:00:01Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "pm4m, ph32, ghv5",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "[sec-check] Scorecard Vulnerabilities: js-yaml GHSA-pm4m-ph32-ghv5 + postcss GHSA-r28c-9q8g-f849",
+        "url": "https://github.com/kubestellar/console-kb/issues/2966",
+        "created_at": "2026-07-28T14:55:47Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -799,7 +812,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 3
+      "issue_count": 4
     }
   ],
   "repo_breakdown": [
@@ -808,7 +821,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2075,
+      "prs_opened": 2076,
       "prs_merged": 1749
     },
     {
