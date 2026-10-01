@@ -1,10 +1,10 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-01T10:16:27.417Z",
+  "generated_at": "2026-10-01T14:17:31.383Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2787,
+  "total_prs_opened": 2788,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6298550,
+  "total_points": 6299250,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -15,7 +15,7 @@
       314,
       592,
       757,
-      555,
+      556,
       534,
       362,
       314
@@ -33,7 +33,7 @@
       8,
       21,
       18,
-      51,
+      52,
       33,
       45,
       182,
@@ -50,23 +50,23 @@
     "longest_streak_weeks": 40,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-01T06:02:56.000Z"
+    "last_issue_at": "2026-10-01T12:03:03.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 135,
+      "issue_count": 136,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-10-01",
-        "url": "https://github.com/kubestellar/console-kb/pull/3620",
-        "created_at": "2026-10-01T06:02:56Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3625",
+        "created_at": "2026-10-01T12:03:03Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
       "open_count": 1,
-      "closed_count": 134
+      "closed_count": 135
     },
     {
       "name": "release, version, sync",
@@ -212,20 +212,6 @@
       "closed_count": 3
     },
     {
-      "name": "lock, stale, refresh",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "[scanner] fix: refresh stale link-checker lock file",
-        "url": "https://github.com/kubestellar/docs/pull/6461",
-        "created_at": "2026-07-29T10:19:36Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
       "name": "ghsa, mh99, v99m",
       "issue_count": 3,
       "recent_issue": {
@@ -320,6 +306,20 @@
       },
       "repos": [
         "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
+      "name": "stale, lock, refresh",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "[scanner] fix: refresh stale link-checker lock file",
+        "url": "https://github.com/kubestellar/docs/pull/6461",
+        "created_at": "2026-07-29T10:19:36Z"
+      },
+      "repos": [
+        "docs"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -799,7 +799,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 2
+      "issue_count": 3
     }
   ],
   "repo_breakdown": [
@@ -808,8 +808,8 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2074,
-      "prs_merged": 1748
+      "prs_opened": 2075,
+      "prs_merged": 1749
     },
     {
       "repo": "docs",
