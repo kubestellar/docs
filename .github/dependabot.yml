@@ -54,3 +54,29 @@ updates:
     open-pull-requests-limit: 5
     commit-message:
       prefix: "chore(deps)"
+  - package-ecosystem: "docker"
+    directory: "/cluster-objects"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "dependencies"
+      - "docker"
+    reviewers:
+      - "clubanderson"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+  - package-ecosystem: "pip"
+    directory: "/cluster-objects"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "dependencies"
+      - "python"
+    reviewers:
+      - "clubanderson"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
