@@ -13,14 +13,14 @@ export default function middleware(request: NextRequest) {
   // Redirect docs.kubestellar.io before any other processing
   if (request.nextUrl.hostname === "docs.kubestellar.io") {
     const path = request.nextUrl.pathname;
-    const target = path === "/" ? "/docs" : `/docs${path}`;
+    const target = path === "/" ? "/docs" : path.startsWith("/docs") ? path : `/docs${path}`;
     return NextResponse.redirect(`https://kubestellar.io${target}`, 301);
   }
 
   // Redirect console-docs.kubestellar.io to console docs section
   if (request.nextUrl.hostname === "console-docs.kubestellar.io") {
     const path = request.nextUrl.pathname;
-    const target = path === "/" ? "/docs/console/readme" : `/docs/console${path}`;
+    const target = path === "/" ? "/docs/console/readme" : path.startsWith("/docs") ? path : `/docs/console${path}`;
     return NextResponse.redirect(`https://kubestellar.io${target}`, 301);
   }
 
@@ -32,6 +32,12 @@ export default function middleware(request: NextRequest) {
     // Remove the locale prefix from the pathname
     url.pathname = url.pathname.replace(/^\/[a-z]{2}(?:-[A-Z]{2})?\/docs\//, '/docs/').replace(/^\/SC\/docs\//, '/docs/');
     return NextResponse.redirect(url, 307);
+  }
+
+  // Non-localized /docs paths (on canonical host) bypass the intl middleware
+  // entirely; they are served as-is and must never get locale-prefixed.
+  if (request.nextUrl.pathname.startsWith("/docs")) {
+    return NextResponse.next();
   }
 
   // Explicitly handle root path to ensure consistent redirect to /en
@@ -50,5 +56,6 @@ export const config = {
   matcher: [
     "/((?!docs|api|live|_next|_vercel|agenda|blog|code|community|drive|infomercial|join_us|joinus|ladder_stats|linkedin|quickstart|slack|survey|tv|youtube|.*\\..*).*)",
     "/",
+    "/docs/:path*",
   ],
 };

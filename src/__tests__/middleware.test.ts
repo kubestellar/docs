@@ -6,16 +6,19 @@ import { describe, it, expect, vi } from 'vitest'
  * without needing a full Next.js server.
  */
 
-// Mock NextResponse.redirect
+// Mock NextResponse.redirect / NextResponse.next
 const mockRedirect = vi.fn((url: string, status: number) => ({
   type: 'redirect',
   url,
   status,
 }))
 
+const mockNext = vi.fn(() => ({ type: 'next' }))
+
 vi.mock('next/server', () => ({
   NextResponse: {
     redirect: (url: string, status: number) => mockRedirect(url, status),
+    next: () => mockNext(),
   },
 }))
 
@@ -65,6 +68,7 @@ function createLocaleMockRequest(hostname: string, pathname: string) {
 describe('middleware redirects', () => {
   beforeEach(() => {
     mockRedirect.mockClear()
+    mockNext.mockClear()
   })
 
   describe('docs.kubestellar.io path preservation (fix #4499)', () => {
@@ -94,6 +98,16 @@ describe('middleware redirects', () => {
         301
       )
     })
+
+    it('does not double-prefix a path that already starts with /docs (issue #7206)', async () => {
+      const { default: middleware } = await import('../middleware')
+      const req = createMockRequest('docs.kubestellar.io', '/docs/v0.25/getting-started')
+      middleware(req)
+      expect(mockRedirect).toHaveBeenCalledWith(
+        'https://kubestellar.io/docs/v0.25/getting-started',
+        301
+      )
+    })
   })
 
   describe('console-docs.kubestellar.io redirects', () => {
@@ -110,6 +124,16 @@ describe('middleware redirects', () => {
     it('preserves subpaths under console-docs', async () => {
       const { default: middleware } = await import('../middleware')
       const req = createMockRequest('console-docs.kubestellar.io', '/getting-started')
+      middleware(req)
+      expect(mockRedirect).toHaveBeenCalledWith(
+        'https://kubestellar.io/docs/console/getting-started',
+        301
+      )
+    })
+
+    it('does not double-prefix a /docs path on console-docs.kubestellar.io (issue #7206)', async () => {
+      const { default: middleware } = await import('../middleware')
+      const req = createMockRequest('console-docs.kubestellar.io', '/docs/console/getting-started')
       middleware(req)
       expect(mockRedirect).toHaveBeenCalledWith(
         'https://kubestellar.io/docs/console/getting-started',
@@ -198,6 +222,17 @@ describe('middleware redirects', () => {
       const req = createMockRequest('kubestellar.io', '/en/some/other/page')
       const result = middleware(req)
       expect(result).toEqual({ type: 'intl' })
+      expect(mockRedirect).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('/docs paths on the canonical host (issue #7206)', () => {
+    it('serves /docs/* as-is without invoking intlMiddleware or redirecting', async () => {
+      const { default: middleware } = await import('../middleware')
+      const req = createMockRequest('kubestellar.io', '/docs/stable/getting-started')
+      const result = middleware(req)
+      expect(result).toEqual({ type: 'next' })
+      expect(mockNext).toHaveBeenCalledTimes(1)
       expect(mockRedirect).not.toHaveBeenCalled()
     })
   })
