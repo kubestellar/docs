@@ -1,22 +1,22 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-02T14:16:35.055Z",
+  "generated_at": "2026-10-02T18:20:10.862Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2793,
+  "total_prs_opened": 2794,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6302900,
+  "total_points": 6303100,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 41,
-    "avg_per_day": 8.3,
+    "avg_per_week": 41.1,
+    "avg_per_day": 8.29,
     "by_day_of_week": [
       314,
       592,
       757,
       557,
-      538,
+      539,
       362,
       314
     ],
@@ -39,7 +39,7 @@
       182,
       93,
       80,
-      147,
+      148,
       104,
       120,
       54,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 40,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-02T12:03:02.000Z"
+    "last_issue_at": "2026-10-02T18:02:30.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 140,
+      "issue_count": 141,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-10-02",
-        "url": "https://github.com/kubestellar/console-kb/pull/3640",
-        "created_at": "2026-10-02T12:03:02Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3643",
+        "created_at": "2026-10-02T18:02:30Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 139
     },
     {
@@ -700,20 +700,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "stale, lock, recompiles",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[scanner] fix: refresh stale link-checker lock file",
-        "url": "https://github.com/kubestellar/docs/pull/6461",
-        "created_at": "2026-07-29T10:19:36Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -798,7 +784,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 8
+      "issue_count": 9
     }
   ],
   "repo_breakdown": [
@@ -807,7 +793,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2080,
+      "prs_opened": 2081,
       "prs_merged": 1754
     },
     {
