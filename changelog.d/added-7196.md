@@ -1,0 +1,1 @@
+- test(docs/[...slug]): extract the slug-layout helpers (`getProjectFromSlug`, `isMetaNode`, `stripMetaNodes`) into `src/app/docs/[...slug]/layout-helpers.ts` and pin them with 19 cases in `src/__tests__/slug-layout-helpers.test.ts`, moving the file from 0% to 100% unit coverage (#7196).
