@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PageShell from "@/components/master-page/PageShell";
 import { useTranslations } from "next-intl";
 
@@ -91,38 +91,6 @@ export default function ProductsPage() {
       description: t("products.galaxyMarketplace.description"),
     },
   ];
-
-  useEffect(() => {
-    // Add CSS for animations
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes twinkle {
-        0%, 100% { opacity: 0.2; }
-        50% { opacity: 1; }
-      }
-      .text-gradient {
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        background-image: linear-gradient(to right, #8B5CF6, #3B82F6);
-      }
-      .product-card:hover {
-        transform: translateY(-0.5rem);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      }
-      .background-grid {
-        background-image: 
-          linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
-        background-size: 50px 50px;
-      }
-    `;
-    document.head.appendChild(style);
-
-    return () => {
-      document.head.removeChild(style);
-    };
-  }, []);
 
   return (
     <PageShell contentClassName={null}>
