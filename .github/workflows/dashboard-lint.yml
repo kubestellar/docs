@@ -11,6 +11,10 @@ on:
       - "scripts/lint-dashboard-helpers.mjs"
       - ".github/workflows/dashboard-lint.yml"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions: read-all  # default read; no write permissions needed
 
 jobs:
