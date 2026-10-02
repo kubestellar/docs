@@ -76,8 +76,16 @@ function readLocalFile(filePath: string): string | null {
     if (fs.existsSync(fullPath)) {
       return fs.readFileSync(fullPath, 'utf-8')
     }
-  } catch {
-    // File doesn't exist
+  } catch (error) {
+    // existsSync/readFileSync threw (e.g. permission denied, I/O error) —
+    // distinct from the expected "no file at this path" case above, which
+    // never reaches here. Log it so a real corpus-read failure isn't
+    // indistinguishable from an absent doc and silently dropped from results.
+    logger.error('search corpus file read failed', {
+      route: 'search',
+      filePath,
+      error: error instanceof Error ? error.message : String(error),
+    })
   }
   return null
 }
