@@ -38,8 +38,8 @@ function toPlainText(content: string): string {
   text = stripUntilStable(text, /<!--[\s\S]*?-->/g)
 
   // Links/images
-  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
   text = text.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, "")
+  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1")
 
   // Headings -> keep text
   text = text.replace(/^#{1,6}\s+(.+)$/gm, "$1")
