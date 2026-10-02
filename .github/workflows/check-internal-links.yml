@@ -31,6 +31,10 @@ on:
       - "src/lib/nav.ts"
       - "src/config/versions/**"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions: read-all
 
 jobs:
