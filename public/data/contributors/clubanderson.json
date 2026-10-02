@@ -1,22 +1,22 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-02T02:24:08.779Z",
+  "generated_at": "2026-10-02T06:24:44.277Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2790,
+  "total_prs_opened": 2792,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6300700,
+  "total_points": 6300900,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 41.7,
+    "avg_per_week": 41.5,
     "avg_per_day": 8.3,
     "by_day_of_week": [
       314,
       592,
       757,
       557,
-      535,
+      537,
       362,
       314
     ],
@@ -27,7 +27,7 @@
       55,
       38,
       120,
-      1522,
+      1524,
       280,
       54,
       8,
@@ -50,27 +50,27 @@
     "longest_streak_weeks": 40,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-02T00:04:13.000Z"
+    "last_issue_at": "2026-10-02T06:21:51.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 138,
+      "issue_count": 139,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-10-02",
-        "url": "https://github.com/kubestellar/console-kb/pull/3629",
-        "created_at": "2026-10-02T00:04:13Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3635",
+        "created_at": "2026-10-02T06:02:53Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 137
     },
     {
       "name": "release, version, sync",
-      "issue_count": 65,
+      "issue_count": 64,
       "recent_issue": {
         "title": "🐛 update-version: stop stamping shared.json updatedAt on no-op sync runs",
         "url": "https://github.com/kubestellar/docs/pull/7105",
@@ -80,7 +80,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 65
+      "closed_count": 64
     },
     {
       "name": "hive, doc, sync",
@@ -308,6 +308,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "clusterresource, crds, specify",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 kyverno: [Bug] [CLI] CRDs not loaded when specified in tests with ClusterResource",
+        "url": "https://github.com/kubestellar/console-kb/pull/3636",
+        "created_at": "2026-10-02T06:21:51Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "rebind, answer, ip",
@@ -700,20 +714,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "remediate, override, 5.0.7",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[scanner] fix: remediate brace-expansion vulnerability",
-        "url": "https://github.com/kubestellar/docs/pull/6456",
-        "created_at": "2026-07-28T16:00:01Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -798,7 +798,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 5
+      "issue_count": 7
     }
   ],
   "repo_breakdown": [
@@ -807,7 +807,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2077,
+      "prs_opened": 2079,
       "prs_merged": 1751
     },
     {
