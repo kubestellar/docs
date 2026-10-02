@@ -14,7 +14,18 @@ Applies to the `kubestellar/docs` Next.js site, which ships through two paths:
 - `GET /api/healthz` reports readiness. It returns `200 {"status":"ok"}`
   only when the docs content tree (`docs/content`, the directory every page
   render and `/api/search` read from at request time) is present, is a
-  directory, and is non-empty. It returns `503` otherwise. `GET /api/livez`
+  directory, and is non-empty, **and** every project's sidebar `nav.yaml`
+  (`PROJECTS[id].navPath`) plus the shared `contributing`/`community`/`news`
+  navs parse and validate via `src/lib/nav.ts`'s `loadNavFile()`. It returns
+  `503` otherwise, naming the offending nav file. This nav check exists
+  because `buildPageMap()`/`getNavStructure()` load those files at request
+  time (every `/docs/<project>/*` page render and `/api/search`, since
+  [#7096](https://github.com/kubestellar/docs/issues/7096)); a missing or
+  malformed nav.yaml otherwise throws uncaught in page renders, surfacing
+  only as a client-side `console.error` in each visitor's browser
+  (`src/app/global-error.tsx`) with no server log and no
+  `docs_api_requests_total` sample — readiness is the only place that
+  failure is now detectable. `GET /api/livez`
   is a separate, dependency-free liveness check used by the Deployment's
   `livenessProbe` (see `cluster-objects/deployment.yaml`) — it always
   returns `200` so a content-tree problem marks a pod not-ready instead of
