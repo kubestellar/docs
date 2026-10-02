@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import Image from "next/image";
 import { Program } from "../programs";
 import PageShell from "@/components/master-page/PageShell";
@@ -29,53 +29,6 @@ export default function ProgramPageClient({ program }: ProgramPageClientProps) {
   const [activeSection, setActiveSection] = useState("overview");
 
   useEffect(() => {
-    // Add CSS for animations and program-specific styling
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes gradient {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-      }
-      @keyframes fade-in {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .text-gradient {
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        background-image: ${program.theme.gradient};
-        background-size: 300% 300%;
-        animation: gradient 3s ease infinite;
-      }
-      .section-content {
-        animation: fade-in 0.4s ease-out;
-      }
-      .nav-item-active {
-        background: linear-gradient(90deg, ${program.theme.primaryColor}20, transparent);
-        border-left: 3px solid ${program.theme.primaryColor};
-      }
-      .nav-item:hover {
-        background: linear-gradient(90deg, ${program.theme.primaryColor}10, transparent);
-      }
-      .prose-program h2 {
-        color: ${program.theme.primaryColor};
-      }
-      .accent-border {
-        border-left: 4px solid ${program.theme.primaryColor};
-      }
-      .program-link {
-        color: ${program.theme.primaryColor};
-      }
-      .program-link:hover {
-        color: ${program.theme.secondaryColor};
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-    `;
-    document.head.appendChild(style);
-
     // Intersection Observer for scroll spy
     const observer = new IntersectionObserver(
       (entries) => {
@@ -94,10 +47,9 @@ export default function ProgramPageClient({ program }: ProgramPageClientProps) {
     });
 
     return () => {
-      document.head.removeChild(style);
       observer.disconnect();
     };
-  }, [program]);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -112,7 +64,16 @@ export default function ProgramPageClient({ program }: ProgramPageClientProps) {
       contentClassName={null}
     >
       {/* Main Content */}
-      <main className="relative min-h-screen">
+      <main
+        className="program-themed relative min-h-screen"
+        style={
+          {
+            "--program-primary": program.theme.primaryColor,
+            "--program-secondary": program.theme.secondaryColor,
+            "--program-gradient": program.theme.gradient,
+          } as CSSProperties
+        }
+      >
         {/* Hero Section */}
         <section className="relative z-20 pt-24 pb-8 border-b border-gray-800/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
