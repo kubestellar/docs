@@ -1,23 +1,23 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-03T15:00:05.809Z",
+  "generated_at": "2026-10-03T18:45:54.091Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2797,
+  "total_prs_opened": 2798,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6305250,
+  "total_points": 6306000,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 39.7,
-    "avg_per_day": 8.29,
+    "avg_per_week": 39.8,
+    "avg_per_day": 8.28,
     "by_day_of_week": [
       314,
       592,
       757,
       557,
       539,
-      365,
+      366,
       314
     ],
     "by_hour_of_day": [
@@ -39,7 +39,7 @@
       182,
       93,
       80,
-      148,
+      149,
       104,
       120,
       54,
@@ -50,23 +50,23 @@
     "longest_streak_weeks": 40,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-03T13:25:25.000Z"
+    "last_issue_at": "2026-10-03T18:33:55.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 144,
+      "issue_count": 145,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-10-03",
-        "url": "https://github.com/kubestellar/console-kb/pull/3657",
-        "created_at": "2026-10-03T13:25:25Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3659",
+        "created_at": "2026-10-03T18:33:55Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
       "open_count": 2,
-      "closed_count": 142
+      "closed_count": 143
     },
     {
       "name": "release, version, sync",
@@ -111,20 +111,6 @@
       "closed_count": 11
     },
     {
-      "name": "warning, registry, staleness",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/855",
-        "created_at": "2026-09-30T06:31:29Z"
-      },
-      "repos": [
-        "console-marketplace"
-      ],
-      "open_count": 0,
-      "closed_count": 5
-    },
-    {
       "name": "workflow, label, caller",
       "issue_count": 5,
       "recent_issue": {
@@ -139,6 +125,20 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "warning, registry, staleness",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/855",
+        "created_at": "2026-09-30T06:31:29Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 0,
+      "closed_count": 4
     },
     {
       "name": "llm, inference, import",
@@ -770,7 +770,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 12
+      "issue_count": 13
     }
   ],
   "repo_breakdown": [
@@ -779,8 +779,8 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2084,
-      "prs_merged": 1756
+      "prs_opened": 2085,
+      "prs_merged": 1757
     },
     {
       "repo": "docs",
