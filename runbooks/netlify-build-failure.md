@@ -84,9 +84,9 @@ regression in an otherwise-successful deploy (see
 3. Once a subsequent commit builds successfully, close any open
    `[netlify-deploy-failure]` issue with a comment noting the fixing
    commit — the workflow does not currently auto-close these on recovery
-   (unlike the proposed `healthz-monitor` alert in `runbooks/slo.md`,
-   which is designed to auto-close). That auto-close behavior would also
-   need a maintainer to add to `netlify-error-reporter.yml`.
+   (unlike the live `healthz-monitor` alert in `runbooks/slo.md`, which
+   already auto-closes). That auto-close behavior would also need a
+   maintainer to add to `netlify-error-reporter.yml`.
 
 ## Escalation
 
