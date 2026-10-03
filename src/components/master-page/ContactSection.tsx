@@ -1,80 +1,20 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { GridLines, StarField } from "../index";
 import { useTranslations } from "next-intl";
 import { getLocalizedUrl } from "@/lib/url";
+import { useContactForm } from "../../hooks/useContactForm";
 
 export default function ContactSection() {
   const t = useTranslations("contactSection");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-    privacy: false,
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value, type } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]:
-        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!formData.privacy) {
-      alert("Please agree to the privacy policy to continue.");
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const formPayload = new URLSearchParams({
-        "form-name": "contact",
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      });
-
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formPayload.toString(),
-      });
-
-      if (!res.ok) throw new Error("Form submission failed");
-
-      setShowSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        privacy: false,
-      });
-
-      setTimeout(() => setShowSuccess(false), 8000);
-    } catch (error) {
-      console.error("Submission error:", error);
-      alert("Submission failed. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const {
+    formData,
+    isSubmitting,
+    showSuccess,
+    handleInputChange,
+    handleSubmit,
+  } = useContactForm();
 
   return (
     <section
