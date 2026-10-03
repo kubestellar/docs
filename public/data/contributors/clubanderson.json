@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-03T02:21:17.318Z",
+  "generated_at": "2026-10-03T06:25:37.715Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2795,
+  "total_prs_opened": 2796,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6303900,
+  "total_points": 6304100,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 39.9,
+    "avg_per_week": 39.8,
     "avg_per_day": 8.29,
     "by_day_of_week": [
       314,
@@ -17,7 +17,7 @@
       757,
       557,
       539,
-      363,
+      364,
       314
     ],
     "by_hour_of_day": [
@@ -27,7 +27,7 @@
       55,
       38,
       120,
-      1524,
+      1525,
       280,
       54,
       8,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 40,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-03T00:03:52.000Z"
+    "last_issue_at": "2026-10-03T06:05:04.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 142,
+      "issue_count": 143,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-10-03",
-        "url": "https://github.com/kubestellar/console-kb/pull/3648",
-        "created_at": "2026-10-03T00:03:52Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3649",
+        "created_at": "2026-10-03T06:05:04Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 141
     },
     {
@@ -268,7 +268,7 @@
       "closed_count": 2
     },
     {
-      "name": "fluent, bit, fluentbit",
+      "name": "prometheus, unix, metric",
       "issue_count": 2,
       "recent_issue": {
         "title": "🌱 fluent-bit: fluentbit_ metrics stop being sent to prometheus_remote_write output about 1",
@@ -660,20 +660,6 @@
       "closed_count": 1
     },
     {
-      "name": "unix, socket, address",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 prometheus: Support Unix socket for metrics address",
-        "url": "https://github.com/kubestellar/console-kb/pull/2973",
-        "created_at": "2026-08-07T06:30:11Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "link, ccf7896d, break",
       "issue_count": 1,
       "recent_issue": {
@@ -784,7 +770,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 10
+      "issue_count": 11
     }
   ],
   "repo_breakdown": [
@@ -793,7 +779,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2082,
+      "prs_opened": 2083,
       "prs_merged": 1755
     },
     {
