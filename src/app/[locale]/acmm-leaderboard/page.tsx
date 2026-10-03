@@ -13,6 +13,7 @@ import {
   levelFromScore,
 } from "./scoring";
 import { LevelBadge, MIN_DATA_POINTS_FOR_SPARKLINE, RankDisplay, ScoreBar, Sparkline } from "./components";
+import { nextSortState } from "../../../lib/sortToggle";
 
 // ── History payload from acmm-history.json ────────────────────────────
 
@@ -154,16 +155,10 @@ export default function AcmmLeaderboardPage() {
   }, [projects, search, levelFilter, badgeOnly, sortField, sortDir]);
 
   function toggleSort(field: SortField) {
-    let newDir: SortDir;
-    if (sortField === field) {
-      newDir = sortDir === "asc" ? "desc" : "asc";
-      setSortDir(newDir);
-    } else {
-      newDir = field === "name" ? "asc" : "desc";
-      setSortField(field);
-      setSortDir(newDir);
-    }
-    trackSort(field, newDir);
+    const next = nextSortState(sortField, sortDir, field, field === "name" ? "asc" : "desc");
+    setSortField(next.field);
+    setSortDir(next.dir);
+    trackSort(field, next.dir);
   }
 
   const SortIcon = ({ field }: { field: SortField }) => {

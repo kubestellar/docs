@@ -15,6 +15,7 @@ import {
 } from "./types";
 import { ActivitySparkline, BreakdownPills, LevelBadge, RankDisplay, SocialBadge } from "./components";
 import { ContributorHoverCard, HOVER_FETCH_DELAY_MS } from "./ContributorHoverCard";
+import { nextSortState } from "../../../lib/sortToggle";
 
 // ── Leaderboard data URL ──────────────────────────────────────────────
 const LEADERBOARD_DATA_PATH = "/data/leaderboard.json";
@@ -304,12 +305,9 @@ export default function LeaderboardPage() {
                   <button
                     className={`text-right cursor-pointer hover:text-white transition-colors ${sortField === "points" ? "text-yellow-400" : ""}`}
                     onClick={() => {
-                      if (sortField === "points") {
-                        setSortDir(sortDir === "desc" ? "asc" : "desc");
-                      } else {
-                        setSortField("points");
-                        setSortDir("desc");
-                      }
+                      const next = nextSortState(sortField, sortDir, "points");
+                      setSortField(next.field);
+                      setSortDir(next.dir);
                     }}
                   >
                     Points {sortField === "points" ? (sortDir === "desc" ? "▼" : "▲") : ""}
@@ -317,12 +315,9 @@ export default function LeaderboardPage() {
                   <button
                     className={`text-center cursor-pointer hover:text-white transition-colors ${sortField === "activity" ? "text-blue-400" : ""}`}
                     onClick={() => {
-                      if (sortField === "activity") {
-                        setSortDir(sortDir === "desc" ? "asc" : "desc");
-                      } else {
-                        setSortField("activity");
-                        setSortDir("desc");
-                      }
+                      const next = nextSortState(sortField, sortDir, "activity");
+                      setSortField(next.field);
+                      setSortDir(next.dir);
                     }}
                     title="Sort by recent activity (last 12 weeks, recency-weighted)"
                   >
