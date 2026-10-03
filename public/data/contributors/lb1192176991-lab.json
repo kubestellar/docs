@@ -1,27 +1,27 @@
 {
-  "login": "anand-242003",
-  "generated_at": "2026-10-03T02:21:17.898Z",
+  "login": "lb1192176991-lab",
+  "generated_at": "2026-10-03T02:21:17.941Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 0,
-  "avatar_url": "https://avatars.githubusercontent.com/u/186507724?v=4",
-  "total_points": 2500,
-  "level": "Navigator",
-  "level_rank": 3,
-  "rank": 53,
+  "total_prs_opened": 1,
+  "avatar_url": "https://avatars.githubusercontent.com/u/244153020?v=4",
+  "total_points": 200,
+  "level": "Observer",
+  "level_rank": 1,
+  "rank": 141,
   "cadence": {
-    "avg_per_week": 0,
-    "avg_per_day": 0,
+    "avg_per_week": 0.1,
+    "avg_per_day": 1,
     "by_day_of_week": [
       0,
       0,
       0,
       0,
       0,
-      0,
+      1,
       0
     ],
     "by_hour_of_day": [
-      0,
+      1,
       0,
       0,
       0,
@@ -46,11 +46,11 @@
       0,
       0
     ],
-    "current_streak_weeks": 0,
-    "longest_streak_weeks": 0,
-    "trend": "inactive",
-    "first_issue_at": null,
-    "last_issue_at": null
+    "current_streak_weeks": 1,
+    "longest_streak_weeks": 1,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-10-03T00:19:58.000Z",
+    "last_issue_at": "2026-10-03T00:19:58.000Z"
   },
   "topics": [],
   "suggestions": {
@@ -104,8 +104,17 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 0
+      "issue_count": 1
     }
   ],
-  "repo_breakdown": []
+  "repo_breakdown": [
+    {
+      "repo": "console-marketplace",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 1,
+      "prs_merged": 0
+    }
+  ]
 }
