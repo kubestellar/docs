@@ -1,120 +1,15 @@
 "use client";
 
-import { useEffect } from "react";
 import { GridLines, StarField } from "../index";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useFeatureCardAnimations } from "../../hooks/useFeatureCardAnimations";
 
 export default function AboutSection() {
   const t = useTranslations("aboutSection");
   const router = useRouter();
-  useEffect(() => {
-    // Feature cards animation
-    const initFeatureCards = () => {
-      const featureCards = document.querySelectorAll(".feature-card");
-
-      // Cards appear on scroll
-      const observer = new IntersectionObserver(
-        entries => {
-          entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-              setTimeout(() => {
-                entry.target.classList.add("animate-in");
-              }, index * 150);
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.2,
-        }
-      );
-
-      featureCards.forEach(card => {
-        card.classList.add("opacity-0", "translate-y-10");
-        observer.observe(card);
-      });
-
-      // Add CSS to handle animation
-      const style = document.createElement("style");
-      style.textContent = `
-        .feature-card {
-          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .feature-card.animate-in {
-          opacity: 1 !important;
-          transform: translateY(0) !important;
-        }
-        .perspective {
-          perspective: 1000px;
-        }
-        .transform-style-3d {
-          transform-style: preserve-3d;
-        }
-        .rotate-y-10 {
-          transform: rotateY(10deg);
-        }
-      `;
-      document.head.appendChild(style);
-
-      // Store event handlers for cleanup
-      const eventHandlers: Array<{
-        card: Element;
-        handler: (e: Event) => void;
-        type: "mousemove" | "mouseleave";
-      }> = [];
-
-      // 3D tilt effect on mouse move
-      featureCards.forEach(card => {
-        const moveHandler = (e: Event) => {
-          const mouseEvent = e as MouseEvent;
-          const container = card.querySelector(".card-3d-container");
-          const rect = card.getBoundingClientRect();
-          const x = mouseEvent.clientX - rect.left;
-          const y = mouseEvent.clientY - rect.top;
-
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-
-          // Calculate rotation values (reduced intensity for subtlety)
-          const rotateY = (x - centerX) / 15;
-          const rotateX = (centerY - y) / 15;
-
-          if (container) {
-            (container as HTMLElement).style.transform =
-              `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
-          }
-        };
-
-        const leaveHandler = () => {
-          const container = card.querySelector(".card-3d-container");
-          if (container) {
-            (container as HTMLElement).style.transform =
-              "rotateY(0deg) rotateX(0deg)";
-          }
-        };
-
-        card.addEventListener("mousemove", moveHandler);
-        card.addEventListener("mouseleave", leaveHandler);
-
-        eventHandlers.push({ card, handler: moveHandler, type: "mousemove" });
-        eventHandlers.push({ card, handler: leaveHandler, type: "mouseleave" });
-      });
-
-      // Cleanup function
-      return () => {
-        observer.disconnect();
-        style.remove();
-        eventHandlers.forEach(({ card, handler, type }) => {
-          card.removeEventListener(type, handler);
-        });
-      };
-    };
-
-    const cleanup = initFeatureCards();
-    return cleanup;
-  }, []);
+  useFeatureCardAnimations();
 
   return (
     <section
