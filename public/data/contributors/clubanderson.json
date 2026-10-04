@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-04T02:55:27.642Z",
+  "generated_at": "2026-10-04T08:08:09.864Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2799,
+  "total_prs_opened": 2802,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6307200,
+  "total_points": 6307800,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 39.6,
+    "avg_per_week": 39.8,
     "avg_per_day": 8.28,
     "by_day_of_week": [
       314,
@@ -18,7 +18,7 @@
       557,
       539,
       366,
-      315
+      318
     ],
     "by_hour_of_day": [
       106,
@@ -28,7 +28,7 @@
       38,
       120,
       1525,
-      280,
+      283,
       54,
       8,
       21,
@@ -50,37 +50,37 @@
     "longest_streak_weeks": 40,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-04T00:49:40.000Z"
+    "last_issue_at": "2026-10-04T07:47:08.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 146,
+      "issue_count": 147,
       "recent_issue": {
         "title": "✨ Platform install mission generation 2026-10-04",
-        "url": "https://github.com/kubestellar/console-kb/pull/3664",
-        "created_at": "2026-10-04T00:49:40Z"
+        "url": "https://github.com/kubestellar/console-kb/pull/3671",
+        "created_at": "2026-10-04T07:47:08Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 145
     },
     {
       "name": "release, version, sync",
-      "issue_count": 63,
+      "issue_count": 62,
       "recent_issue": {
-        "title": "🐛 update-version: stop stamping shared.json updatedAt on no-op sync runs",
-        "url": "https://github.com/kubestellar/docs/pull/7105",
-        "created_at": "2026-09-27T07:06:15Z"
+        "title": "📖 Update kubestellar-mcp docs to v0.9.17",
+        "url": "https://github.com/kubestellar/docs/pull/7242",
+        "created_at": "2026-10-04T07:01:25Z"
       },
       "repos": [
         "docs"
       ],
-      "open_count": 0,
-      "closed_count": 63
+      "open_count": 1,
+      "closed_count": 61
     },
     {
       "name": "hive, doc, sync",
@@ -97,8 +97,8 @@
       "closed_count": 17
     },
     {
-      "name": "dragonflydb, helm, structure",
-      "issue_count": 11,
+      "name": "dragonflydb, structure, support",
+      "issue_count": 9,
       "recent_issue": {
         "title": "🌱 dragonflydb: Add bloom/cuckoo filter support",
         "url": "https://github.com/kubestellar/console-kb/pull/3454",
@@ -108,7 +108,7 @@
         "console-kb"
       ],
       "open_count": 0,
-      "closed_count": 11
+      "closed_count": 9
     },
     {
       "name": "workflow, label, caller",
@@ -294,6 +294,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "route53, respond, panic",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 coredns: Panic in route53 plugin fails to release lock and stops responding.",
+        "url": "https://github.com/kubestellar/console-kb/pull/3670",
+        "created_at": "2026-10-04T07:45:55Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "clusterresource, crds, specify",
@@ -534,6 +548,20 @@
       "closed_count": 1
     },
     {
+      "name": "maxdecompressedfilesize, v3, chart",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 helm: MaxDecompressedFileSize in v3.17.3 breaks existing charts",
+        "url": "https://github.com/kubestellar/console-kb/pull/3112",
+        "created_at": "2026-09-01T06:16:57Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "wasm, wasmedge, alignment",
       "issue_count": 1,
       "recent_issue": {
@@ -698,12 +726,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       },
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "Authentication & Settings",
         "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
         "description": "OAuth flow, user settings, preferences, API middleware, authentication",
@@ -716,10 +738,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       }
     ]
   },
@@ -770,7 +798,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 14
+      "issue_count": 17
     }
   ],
   "repo_breakdown": [
@@ -779,7 +807,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2086,
+      "prs_opened": 2088,
       "prs_merged": 1759
     },
     {
@@ -787,7 +815,7 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 186,
-      "prs_opened": 620,
+      "prs_opened": 621,
       "prs_merged": 577
     },
     {
