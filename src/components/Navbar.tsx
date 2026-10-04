@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
-import { GridLines, StarField, LanguageSwitcher } from "./index";
+import GridLines from "./animations/GridLines";
+import StarField from "./animations/StarField";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 import {
   useGithubStats,
