@@ -39,16 +39,20 @@ vi.mock('@/lib/url', () => ({
   getLocalizedUrl: (u: string) => getLocalizedUrlMock(u),
 }))
 
-vi.mock('@/components/index', () => ({
-  GridLines: () => React.createElement('div', { 'data-testid': 'gridlines' }),
-  StarField: () => React.createElement('div', { 'data-testid': 'starfield' }),
+vi.mock('@/components/animations/GridLines', () => ({
+  default: () => React.createElement('div', { 'data-testid': 'gridlines' }),
+}))
+vi.mock('@/components/animations/StarField', () => ({
+  default: () => React.createElement('div', { 'data-testid': 'starfield' }),
 }))
 
-// The tested file imports from './index' (relative). Also register the specifier
-// vitest sees for that path.
-vi.mock('../components/index', () => ({
-  GridLines: () => React.createElement('div', { 'data-testid': 'gridlines' }),
-  StarField: () => React.createElement('div', { 'data-testid': 'starfield' }),
+// The tested file imports these relatively (not via '@/'). Also register the
+// specifiers vitest sees for those paths.
+vi.mock('../components/animations/GridLines', () => ({
+  default: () => React.createElement('div', { 'data-testid': 'gridlines' }),
+}))
+vi.mock('../components/animations/StarField', () => ({
+  default: () => React.createElement('div', { 'data-testid': 'starfield' }),
 }))
 
 import ContributionCallToAction from '@/components/ContributionCallToAction'
