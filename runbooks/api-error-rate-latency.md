@@ -3,10 +3,24 @@
 ## Scope
 
 Applies to the three alerts defined in `cluster-objects/prometheusrule.yaml`
-over the docs site's existing `/api/metrics` output
-(`src/lib/metrics.ts`), which only instruments the `search`
-(`src/app/api/search/route.ts`) and `docs-image`
-(`src/app/api/docs-image/[...path]/route.ts`) routes:
+over the docs site's existing `/api/metrics` output (`src/lib/metrics.ts`).
+As of [#6800](https://github.com/kubestellar/docs/pull/6800), that registry
+instruments four routes — `search` (`src/app/api/search/route.ts`),
+`docs-image` (`src/app/api/docs-image/[...path]/route.ts`), `healthz`
+(`src/app/api/healthz/route.ts`), and `livez` (`src/app/api/livez/route.ts`)
+— not just the first two; the `ApiRoutes` union in `src/lib/metrics.ts` is
+the source of truth. Because `DocsApiHighErrorRate` and
+`DocsApiHighRequestLatency` aggregate `docs_api_requests_total` /
+`docs_api_request_duration_seconds` across all instrumented routes (no
+`route` filter in their `expr`), a sustained `503` from `/api/healthz`
+(reported separately by `DocsApiMetricsTargetDown`'s sibling readiness
+checks, see `runbooks/deploy-rollback.md`) also counts toward
+`DocsApiHighErrorRate`'s 5xx ratio, not just `search`/`docs-image`
+failures — check `/api/healthz`'s own status first (step 4 below) before
+assuming the error-rate alert implicates one of the two routes this
+runbook's diagnosis steps focus on. `livez` always returns `200`, so it
+does not contribute to the error-rate alert, but its (normally trivial)
+latency is included in the aggregate p95 the latency alert evaluates.
 
 - **`DocsApiHighErrorRate`** — fires when more than 5% of requests to
   these instrumented routes return a `5xx` status over a 5-minute window,
