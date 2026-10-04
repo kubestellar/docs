@@ -29,14 +29,18 @@ vi.mock('@/i18n/navigation', () => ({
   usePathname: () => '/',
 }))
 
-vi.mock('../components/index', async () => {
+vi.mock('../components/animations/GridLines', () => ({
+  default: () => null,
+}))
+vi.mock('../components/animations/StarField', () => ({
+  default: () => null,
+}))
+vi.mock('../components/LanguageSwitcher', async () => {
   const actual = await vi.importActual<
     typeof import('../components/LanguageSwitcher')
   >('../components/LanguageSwitcher')
   return {
-    GridLines: () => null,
-    StarField: () => null,
-    LanguageSwitcher: actual.default,
+    default: actual.default,
   }
 })
 

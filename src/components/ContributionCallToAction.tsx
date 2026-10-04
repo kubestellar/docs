@@ -1,7 +1,8 @@
 "use client";
 
 import { Link as IntlLink } from "@/i18n/navigation";
-import { GridLines, StarField } from "./index";
+import GridLines from "./animations/GridLines";
+import StarField from "./animations/StarField";
 import { useTranslations } from "next-intl";
 import { getLocalizedUrl } from "@/lib/url";
 
