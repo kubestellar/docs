@@ -56,7 +56,7 @@
     "eslint": "^10",
     "eslint-config-next": "^16.3.7",
     "eslint-plugin-react": "^7.37.5",
-    "jsdom": "^30.1.1",
+    "jsdom": "^26.1.0",
     "markdownlint": "^0.41.1",
     "markdownlint-cli2": "^0.23.3",
     "prettier": "^3.9.9",
