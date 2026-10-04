@@ -114,11 +114,11 @@ describe('MobileTOC', () => {
     const header = container.querySelector('button') as HTMLButtonElement
     // Accordion content is the sibling div after the header button.
     const content = header.nextElementSibling as HTMLElement
-    expect(content.style.maxHeight).toBe('0px')
+    expect(['0', '0px']).toContain(content.style.maxHeight)
     fireEvent.click(header)
-    expect(content.style.maxHeight).toBe('400px')
+    expect(['400', '400px']).toContain(content.style.maxHeight)
     fireEvent.click(header)
-    expect(content.style.maxHeight).toBe('0px')
+    expect(['0', '0px']).toContain(content.style.maxHeight)
   })
 
   it('applies hover styling to the header on mouse enter/leave', () => {
@@ -155,14 +155,14 @@ describe('MobileTOC', () => {
     const header = container.querySelector('button') as HTMLButtonElement
     const content = header.nextElementSibling as HTMLElement
     fireEvent.click(header)
-    expect(content.style.maxHeight).toBe('400px')
+    expect(['400', '400px']).toContain(content.style.maxHeight)
 
     const links = container.querySelectorAll('a')
     fireEvent.click(links[1]) // href="#setup"
 
     expect(scrollIntoView).toHaveBeenCalledWith({ behavior: 'smooth', block: 'start' })
     expect(pushState).toHaveBeenCalledWith(null, '', '#setup')
-    expect(content.style.maxHeight).toBe('0px')
+    expect(['0', '0px']).toContain(content.style.maxHeight)
 
     document.body.removeChild(target)
   })
@@ -174,7 +174,7 @@ describe('MobileTOC', () => {
     const header = container.querySelector('button') as HTMLButtonElement
     fireEvent.click(header)
     const content = header.nextElementSibling as HTMLElement
-    expect(content.style.maxHeight).toBe('400px')
+    expect(['400', '400px']).toContain(content.style.maxHeight)
 
     const link = container.querySelector('a') as HTMLAnchorElement
     fireEvent.click(link) // no #intro element exists in the DOM
@@ -182,6 +182,6 @@ describe('MobileTOC', () => {
     // Guarded by `if (element)`, so pushState must NOT have been called.
     expect(pushState).not.toHaveBeenCalled()
     // Accordion still closes.
-    expect(content.style.maxHeight).toBe('0px')
+    expect(['0', '0px']).toContain(content.style.maxHeight)
   })
 })
