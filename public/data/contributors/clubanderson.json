@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-04T08:08:09.864Z",
+  "generated_at": "2026-10-04T11:27:15.903Z",
   "total_issues_opened": 641,
   "total_prs_opened": 2802,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6307800,
+  "total_points": 6308300,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 39.8,
+    "avg_per_week": 39.6,
     "avg_per_day": 8.28,
     "by_day_of_week": [
       314,
@@ -65,8 +65,8 @@
         "console-kb",
         "docs"
       ],
-      "open_count": 2,
-      "closed_count": 145
+      "open_count": 1,
+      "closed_count": 146
     },
     {
       "name": "release, version, sync",
@@ -306,8 +306,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "clusterresource, crds, specify",
@@ -808,7 +808,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2088,
-      "prs_merged": 1759
+      "prs_merged": 1760
     },
     {
       "repo": "docs",
