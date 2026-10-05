@@ -1,18 +1,18 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-05T02:31:16.847Z",
+  "generated_at": "2026-10-05T06:35:58.504Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2805,
+  "total_prs_opened": 2806,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6309600,
+  "total_points": 6309800,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 39.6,
-    "avg_per_day": 8.28,
+    "avg_per_week": 39.5,
+    "avg_per_day": 8.27,
     "by_day_of_week": [
-      315,
+      316,
       592,
       757,
       557,
@@ -27,7 +27,7 @@
       55,
       38,
       120,
-      1525,
+      1526,
       283,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 40,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-05T00:04:01.000Z"
+    "last_issue_at": "2026-10-05T06:07:57.000Z"
   },
   "topics": [
     {
@@ -65,12 +65,12 @@
         "console-kb",
         "docs"
       ],
-      "open_count": 3,
-      "closed_count": 147
+      "open_count": 1,
+      "closed_count": 149
     },
     {
       "name": "release, version, sync",
-      "issue_count": 61,
+      "issue_count": 60,
       "recent_issue": {
         "title": "📖 Update kubestellar-mcp docs to v0.9.17",
         "url": "https://github.com/kubestellar/docs/pull/7242",
@@ -80,7 +80,7 @@
         "docs"
       ],
       "open_count": 1,
-      "closed_count": 60
+      "closed_count": 59
     },
     {
       "name": "hive, doc, sync",
@@ -294,6 +294,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "bgp, unnumbered, cplane",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 cilium: CFP: BGP Unnumbered support for BGP CPlane",
+        "url": "https://github.com/kubestellar/console-kb/pull/3693",
+        "created_at": "2026-10-05T06:07:57Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "route53, respond, panic",
@@ -784,7 +798,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 20
+      "issue_count": 21
     }
   ],
   "repo_breakdown": [
@@ -793,7 +807,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2091,
+      "prs_opened": 2092,
       "prs_merged": 1760
     },
     {
