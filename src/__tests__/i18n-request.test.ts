@@ -99,6 +99,42 @@ describe("i18n request config", () => {
     errorSpy.mockRestore();
   });
 
+  it("stringifies a non-Error throw from the locale bundle import (request.ts:58 false branch)", async () => {
+    // `error instanceof Error ? error.message : String(error)` on request.ts:58
+    // only exercised its true branch elsewhere in this file (an actual Error
+    // is thrown). Locale bundles are loaded via dynamic import, so a bundler
+    // or loader failure could just as easily reject with a plain string or
+    // other non-Error value — this covers that `String(error)` fallback.
+    vi.resetModules();
+
+    const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+
+    vi.doMock("../../messages/es.json", () => ({
+      // A getter (rather than throwing directly from the factory) so the
+      // non-Error value surfaces from the `.default` access inside
+      // request.ts's try block, not from Vitest's own module-mocking
+      // machinery (which wraps a factory-level throw in its own Error).
+      get default(): never {
+        throw "Spanish messages unavailable";
+      },
+    }));
+
+    const { default: requestConfig } = await import("../i18n/request");
+
+    const result = await requestConfig({
+      requestLocale: Promise.resolve("es"),
+    });
+
+    expect(result.locale).toBe("es");
+    expect(result.messages).toBeDefined();
+
+    expect(errorSpy).toHaveBeenCalledTimes(1);
+    const logged = JSON.parse(errorSpy.mock.calls[0][0] as string);
+    expect(logged.error).toBe("Spanish messages unavailable");
+
+    errorSpy.mockRestore();
+  });
+
   it("deep-merges a locale-only nested key into an empty branch (target[key] || {} fallback)", async () => {
     // deepMerge on request.ts:19 has `(target[key] as Record<string, unknown>) || {}`.
     // The `|| {}` fallback fires when a locale bundle introduces a NESTED key
