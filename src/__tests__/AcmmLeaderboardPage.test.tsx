@@ -85,7 +85,7 @@ describe("AcmmLeaderboardPage", () => {
 
   it("filters by level and clears the filter via the results-count button", async () => {
     const { getByRole, getByText, queryByText } = await renderPage();
-    fireEvent.click(getByRole("button", { name: /L5\(/ }));
+    fireEvent.click(getByRole("button", { name: /L5\s*\(/ }));
     expect(mockGtagEvent).toHaveBeenCalledWith(
       "acmm_level_filter",
       expect.objectContaining({ level: 5, action: "select" }),
@@ -99,7 +99,7 @@ describe("AcmmLeaderboardPage", () => {
 
   it("toggles the level filter off when the same level button is clicked twice", async () => {
     const { getByRole } = await renderPage();
-    const l5Button = getByRole("button", { name: /L5\(/ });
+    const l5Button = getByRole("button", { name: /L5\s*\(/ });
     fireEvent.click(l5Button);
     fireEvent.click(l5Button);
     expect(mockGtagEvent).toHaveBeenLastCalledWith(
