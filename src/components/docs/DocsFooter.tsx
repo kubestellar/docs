@@ -1,26 +1,19 @@
 "use client";
 
-import { useEffect, useState, FormEvent } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "../index";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useBackToTop } from "@/hooks/useBackToTop";
+import { useNewsletterSubscribe } from "@/hooks/useNewsletterSubscribe";
 
 export default function Footer() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
-  const [email, setEmail] = useState("");
-
-  const handleSubscribe = (e: FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-
-    window.alert("Subscriptions are not available yet. Please try again later.");
-    setEmail("");
-  };
+  const { email, setEmail, handleSubscribe } = useNewsletterSubscribe();
 
   useEffect(() => {
     setMounted(true);

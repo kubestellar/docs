@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, FormEvent } from "react";
 import Image from "next/image";
 import GridLines from "./animations/GridLines";
 import StarField from "./animations/StarField";
@@ -8,17 +7,11 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { getLocalizedUrl } from "@/lib/url";
 import { useBackToTop } from "@/hooks/useBackToTop";
+import { useNewsletterSubscribe } from "@/hooks/useNewsletterSubscribe";
 
 export default function Footer() {
   const t = useTranslations("footer");
-  const [email, setEmail] = useState("");
-  const handleSubscribe = (e: FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-
-    window.alert("Subscriptions are not available yet. Please try again later.");
-    setEmail("");
-  };
+  const { email, setEmail, handleSubscribe } = useNewsletterSubscribe();
   useBackToTop();
 
   return (
