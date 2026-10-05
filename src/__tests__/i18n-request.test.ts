@@ -58,13 +58,17 @@ describe("i18n request config", () => {
   it("falls back to default messages when the locale bundle cannot be loaded", async () => {
     vi.resetModules();
 
-    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
     vi.doMock("../../messages/es.json", () => {
       throw new Error("Failed to load Spanish messages");
     });
 
     const { default: requestConfig } = await import("../i18n/request");
+    const { i18nLocaleFallbackTotal } = await import("../lib/metrics");
+    const before = (await i18nLocaleFallbackTotal.get()).values.find(
+      (v) => v.labels.locale === "es"
+    )?.value ?? 0;
 
     const result = await requestConfig({
       requestLocale: Promise.resolve("es"),
@@ -73,11 +77,26 @@ describe("i18n request config", () => {
     expect(result.locale).toBe("es");
     expect(result.messages).toBeDefined();
 
-    expect(warn).toHaveBeenCalledWith(
-      "Could not load messages for locale: es. Falling back to 'en'."
-    );
+    // Structured log (src/lib/logger.ts) replaces the old bare console.warn.
+    expect(errorSpy).toHaveBeenCalledTimes(1);
+    const logged = JSON.parse(errorSpy.mock.calls[0][0] as string);
+    expect(logged).toMatchObject({
+      level: "error",
+      message: "i18n locale bundle failed to load",
+      route: "i18n-locale-fallback",
+      filePath: "messages/es.json",
+    });
+    expect(typeof logged.error).toBe("string");
+    expect(logged.error.length).toBeGreaterThan(0);
 
-    warn.mockRestore();
+    // Bounded docs_i18n_locale_fallback_total counter (locale="es") was
+    // incremented alongside the log.
+    const after = (await i18nLocaleFallbackTotal.get()).values.find(
+      (v) => v.labels.locale === "es"
+    )?.value ?? 0;
+    expect(after).toBe(before + 1);
+
+    errorSpy.mockRestore();
   });
 
   it("deep-merges a locale-only nested key into an empty branch (target[key] || {} fallback)", async () => {
