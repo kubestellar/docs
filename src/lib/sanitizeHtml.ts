@@ -213,6 +213,23 @@ export function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/<tr>[\s\S]*?<\/tr>/gi, '')
   sanitized = sanitized.replace(/<td[^>]*>[\s\S]*?<\/td>/gi, '')
 
+  // Neutralize dangerous URL schemes in any remaining <a href="..."> attributes.
+  // The contributor-table conversion above already runs every href/src through
+  // safeUrl(), but any other raw anchor tag in the content (i.e. anywhere
+  // outside a contributor table) previously passed through unchanged — so a
+  // `javascript:` href would survive, and the site CSP's `unsafe-inline`
+  // script-src does not block `javascript:` link navigation (same risk as
+  // the contributor-card case; see safeUrl() above and #5842). Replace the
+  // href value in place rather than dropping the tag, so legitimate link
+  // text/markup is preserved.
+  sanitized = sanitized.replace(
+    /(<a\b[^>]*\shref\s*=\s*)(["'])([^"']*)\2/gi,
+    (match, prefix, quote, hrefVal) => {
+      const safe = safeUrl(hrefVal)
+      return `${prefix}${quote}${safe || '#'}${quote}`
+    },
+  )
+
   // Remove all iframe tags — handles closed, self-closing, and unclosed <iframe> forms.
   // Use stripUntilStable for both patterns to prevent multi-character bypass via
   // nested/interleaved input (e.g. <i<iframe>frame ...) — CWE-116.
