@@ -86,24 +86,32 @@ describe("cluster-objects manifests stay consistent with src/lib/metrics.ts", ()
   it("prometheusrule.yaml only references metric and label names that exist in src/lib/metrics.ts", () => {
     const doc = loadYaml("prometheusrule.yaml") as AnyRecord
     // Prometheus built-in metrics that any scrape target automatically
-    // exposes (see prometheus.io/docs/concepts/jobs_instances). These are
-    // legitimate to reference from alert rules without a corresponding
-    // definition in src/lib/metrics.ts.
+    // exposes (see prometheus.io/docs/concepts/jobs_instances), plus
+    // kube-state-metrics metrics that the DocsRolloutCheckerStalled /
+    // DocsPrRolloutCheckerStalled alerts rely on (a near-universal
+    // companion to a Prometheus Operator install, not something this repo
+    // provisions). These are legitimate to reference from alert rules
+    // without a corresponding definition in src/lib/metrics.ts.
     const prometheusBuiltinMetrics = ["up"]
+    const kubeStateMetrics = ["kube_cronjob_status_last_successful_time"]
     const knownMetricNames = [
       httpRequestsTotal.name,
       httpRequestDurationSeconds.name,
       ...prometheusBuiltinMetrics,
+      ...kubeStateMetrics,
     ]
     // `job` and `instance` are labels Prometheus attaches to every scraped
     // series (from scrape_configs.job_name / the target endpoint), so they
     // are always available even though src/lib/metrics.ts does not declare
-    // them.
+    // them. `namespace` and `cronjob` are labels kube-state-metrics attaches
+    // to kube_cronjob_status_last_successful_time.
     const prometheusBuiltinLabels = ["job", "instance"]
+    const kubeStateMetricsLabels = ["namespace", "cronjob"]
     const knownLabelNames = new Set([
       ...httpRequestsTotal.labelNames,
       ...httpRequestDurationSeconds.labelNames,
       ...prometheusBuiltinLabels,
+      ...kubeStateMetricsLabels,
     ])
 
     const groups = doc.spec?.groups ?? []
