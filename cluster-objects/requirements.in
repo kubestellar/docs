@@ -1,4 +1,4 @@
 cryptography>=50.0.2
-click>=8.3.3
+click>=8.4.2
 pyOpenSSL>=26.4.0
 oci-cli==3.94.1
