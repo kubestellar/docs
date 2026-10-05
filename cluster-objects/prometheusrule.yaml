@@ -1,15 +1,23 @@
-# Prometheus Operator alerting rules for the docs site's existing
-# `/api/metrics` endpoint (src/app/api/metrics/route.ts, src/lib/metrics.ts),
-# already scraped by cluster-objects/servicemonitor.yaml.
+# Prometheus Operator alerting rules for:
+#   1. the docs site's own `/api/metrics` endpoint
+#      (src/app/api/metrics/route.ts, src/lib/metrics.ts), already scraped
+#      by cluster-objects/servicemonitor.yaml; and
+#   2. the automated rollout-checker CronJobs (cluster-objects/job.yaml,
+#      cluster-objects/pr-job.yaml) that deploy new images, via
+#      kube-state-metrics' kube_cronjob_status_last_successful_time.
 #
 # This resource only takes effect if a Prometheus Operator with the
-# PrometheusRule CRD is already watching this namespace/selector, and only
-# if servicemonitor.yaml is applied so the referenced metrics are actually
-# being scraped. It does not install an operator, does not configure any
+# PrometheusRule CRD is already watching this namespace/selector — group 1
+# additionally needs servicemonitor.yaml applied so those metrics are
+# actually scraped, and group 2 additionally needs kube-state-metrics
+# running in-cluster (a near-universal companion to a Prometheus Operator
+# install). This file does not install an operator, does not configure any
 # exporter, and does not send data off-box — it only defines evaluation
-# rules over metrics already produced in-process by this application.
+# rules over metrics already produced by this application or by
+# kube-state-metrics, if present.
 #
-# Both alerts use metric/label names defined in src/lib/metrics.ts:
+# The first three alerts use metric/label names defined in
+# src/lib/metrics.ts:
 #   docs_api_requests_total{route, method, status_class}
 #   docs_api_request_duration_seconds{route, method}
 # `route` and `status_class` are fixed, bounded label sets (see the
@@ -74,3 +82,43 @@ spec:
               instrumented API routes has exceeded 1s over the last 5
               minutes (current value: {{ $value | humanizeDuration }}).
             runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
+        # The two alerts below cover the automated deploy pipeline itself
+        # (cluster-objects/job.yaml, cluster-objects/pr-job.yaml), not the
+        # application. kube_cronjob_status_last_successful_time is a
+        # kube-state-metrics metric (a near-universal companion to a
+        # Prometheus Operator install) — this does not add a new exporter,
+        # it only evaluates a metric that kube-state-metrics already
+        # exposes if it is present. Both CronJobs are concurrencyPolicy:
+        # Forbid with failedJobsHistoryLimit: 1, so a stalled or failing
+        # rollout-checker would otherwise go undetected: production/preview
+        # Deployments keep serving a stale image with no signal until
+        # someone happens to check `kubectl get cronjob -n docs`.
+        - alert: DocsRolloutCheckerStalled
+          expr: >-
+            time() - kube_cronjob_status_last_successful_time{namespace="docs", cronjob="nextra-rollout-checker"} > 900
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Production rollout-checker CronJob has not succeeded in 15m"
+            description: >-
+              `nextra-rollout-checker` (cluster-objects/job.yaml) runs every
+              2 minutes and auto-rolls out new `kubestellar-docs` images
+              from OCIR. It has not completed successfully in over 15
+              minutes, so new production image builds are not being
+              deployed.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/rollout-checker-failure.md"
+        - alert: DocsPrRolloutCheckerStalled
+          expr: >-
+            time() - kube_cronjob_status_last_successful_time{namespace="docs", cronjob="nextra-pr-rollout-checker"} > 600
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: "PR-preview rollout-checker CronJob has not succeeded in 10m"
+            description: >-
+              `nextra-pr-rollout-checker` (cluster-objects/pr-job.yaml) runs
+              every 1 minute and reconciles PR preview deployments from
+              OCIR. It has not completed successfully in over 10 minutes,
+              so PR preview deploys/teardowns are not being reconciled.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/rollout-checker-failure.md"
