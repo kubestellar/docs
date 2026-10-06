@@ -1,0 +1,1 @@
+- refactor(docs-sidebar): extract `DocsSidebar`'s initial collapse-state derivation (project/legacy-group/active-path/general-section rules) and page-map helpers into a standalone, directly unit-tested `sidebarCollapseState.ts` module (#7290).
