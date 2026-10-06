@@ -202,3 +202,53 @@ jobs:
           done
           echo "All $MAX_RETRIES push attempts failed"
           exit 1
+
+      - name: Create issue on monitor failure
+        if: failure()
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const tag = '[healthz-monitor-failure]';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'ci-failure',
+              per_page: 20,
+            });
+            const existing = issues.find(i => i.title.includes(tag));
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body: `Still failing as of ${new Date().toISOString().slice(0, 10)}. [Run](${runUrl})`,
+              });
+              return;
+            }
+            try {
+              await github.rest.issues.getLabel({ owner: context.repo.owner, repo: context.repo.repo, name: 'ci-failure' });
+            } catch {
+              await github.rest.issues.createLabel({ owner: context.repo.owner, repo: context.repo.repo, name: 'ci-failure', color: 'b60205' });
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `${tag} Docs Site Health Monitor workflow failing`,
+              body: [
+                '## Docs Site Health Monitor is failing',
+                '',
+                `**Run:** [${context.runId}](${runUrl})`,
+                `**Date:** ${new Date().toISOString().slice(0, 10)}`,
+                '',
+                'The healthz-monitor workflow itself failed, so production outages may go undetected until this is fixed.',
+                '',
+                '### Next steps',
+                'See `runbooks/healthz-monitor-failure-monitoring.md` and manually check `GET https://kubestellar-docs.netlify.app/api/healthz`.',
+                '',
+                '> Auto-generated. This issue will receive comments on subsequent failures.',
+              ].join('\n'),
+              labels: ['ci-failure'],
+            });
