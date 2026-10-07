@@ -1,6 +1,6 @@
 {
   "login": "JHON12091986",
-  "generated_at": "2026-10-07T02:29:04.026Z",
+  "generated_at": "2026-10-07T06:24:25.847Z",
   "total_issues_opened": 0,
   "total_prs_opened": 1,
   "avatar_url": "https://avatars.githubusercontent.com/u/278171760?v=4",
@@ -9,7 +9,7 @@
   "level_rank": 2,
   "rank": 76,
   "cadence": {
-    "avg_per_week": 0.1,
+    "avg_per_week": 0,
     "avg_per_day": 1,
     "by_day_of_week": [
       0,
