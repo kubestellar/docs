@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-07T06:24:25.256Z",
+  "generated_at": "2026-10-07T10:16:22.610Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2806,
+  "total_prs_opened": 2807,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6310200,
+  "total_points": 6310700,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 34.7,
-    "avg_per_day": 8.27,
+    "avg_per_week": 34.1,
+    "avg_per_day": 8.24,
     "by_day_of_week": [
       316,
       592,
-      757,
+      758,
       557,
       539,
       366,
@@ -27,7 +27,7 @@
       55,
       38,
       120,
-      1526,
+      1527,
       283,
       54,
       8,
@@ -50,22 +50,22 @@
     "longest_streak_weeks": 40,
     "trend": "ramping_up",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-05T06:07:57.000Z"
+    "last_issue_at": "2026-10-07T06:33:27.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 150,
+      "issue_count": 151,
       "recent_issue": {
-        "title": "✨ Platform install mission generation 2026-10-05",
-        "url": "https://github.com/kubestellar/console-kb/pull/3683",
-        "created_at": "2026-10-05T00:04:01Z"
+        "title": "✨ CNCF install mission generation 2026-10-07",
+        "url": "https://github.com/kubestellar/console-kb/pull/3722",
+        "created_at": "2026-10-07T06:33:27Z"
       },
       "repos": [
         "console-kb",
         "docs"
       ],
-      "open_count": 1,
+      "open_count": 2,
       "closed_count": 149
     },
     {
@@ -274,20 +274,6 @@
         "title": "🌱 clickhouse: Allow interactive queries finish in the background",
         "url": "https://github.com/kubestellar/console-kb/pull/2992",
         "created_at": "2026-08-20T06:32:44Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "grpc, python, segfault",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🌱 grpc: [Python] segfault in python `1.31.0`",
-        "url": "https://github.com/kubestellar/console-kb/pull/2977",
-        "created_at": "2026-08-09T06:20:18Z"
       },
       "repos": [
         "console-kb"
@@ -702,6 +688,20 @@
       "closed_count": 1
     },
     {
+      "name": "python, segfault, grpc",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 grpc: [Python] segfault in python `1.31.0`",
+        "url": "https://github.com/kubestellar/console-kb/pull/2977",
+        "created_at": "2026-08-09T06:20:18Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "link, ccf7896d, break",
       "issue_count": 1,
       "recent_issue": {
@@ -798,7 +798,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 21
+      "issue_count": 22
     }
   ],
   "repo_breakdown": [
@@ -807,7 +807,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2092,
+      "prs_opened": 2093,
       "prs_merged": 1760
     },
     {
