@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import {
   ChevronDown,
   ExternalLink,
@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 import PageShell from "@/components/master-page/PageShell";
+import { useClickOutside } from "@/hooks/useClickOutside";
 
 import { MarketplaceCard } from "./components/MarketplaceCard";
 import { REGISTRY_URL } from "./lib/constants";
@@ -54,15 +55,7 @@ export default function MarketplacePage() {
       .finally(() => clearTimeout(timer));
   }, []);
 
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (tagRef.current && !tagRef.current.contains(e.target as Node)) {
-        setTagDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
+  useClickOutside(tagRef, useCallback(() => setTagDropdownOpen(false), []));
 
   const allTags = useMemo(() => {
     if (!data) return [];

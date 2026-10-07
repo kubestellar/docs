@@ -17,6 +17,7 @@ import {
   TREND_DISPLAY,
 } from "../../../lib/leaderboardShared";
 import type { TimelineEntry } from "../../../lib/leaderboardShared";
+import { useClickOutside } from "@/hooks/useClickOutside";
 
 export type { TimelineEntry };
 
@@ -172,15 +173,7 @@ export function ContributorHoverCard({
     return () => { cancelled = true; };
   }, [login]);
 
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
-        onClose();
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [onClose]);
+  useClickOutside(cardRef, onClose);
 
   if (loading) {
     return (
