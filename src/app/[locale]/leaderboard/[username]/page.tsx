@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PageShell from "../../../../components/master-page/PageShell";
 import type { ContributorProfile, LeaderboardData, StretchArea } from "./types";
-import { DAY_LABELS, LEVEL_STYLES, REPO_COLORS, TREND_DISPLAY } from "./constants";
+import { DAY_LABELS, DAY_LABELS_FULL, LEVEL_STYLES, REPO_COLORS, TREND_DISPLAY } from "./constants";
 import { ContributionRadarChart } from "./components/ContributionRadarChart";
 import { HeatmapCell } from "./components/HeatmapCell";
 import { TopicBar } from "./components/TopicBar";
@@ -74,7 +74,7 @@ export default function ContributorProfilePage({
     if (!profile?.cadence) return "";
     const c = profile.cadence;
     const peakDay =
-      DAY_LABELS[
+      DAY_LABELS_FULL[
       c.by_day_of_week.indexOf(Math.max(...c.by_day_of_week))
       ];
     const peakHour = c.by_hour_of_day.indexOf(
