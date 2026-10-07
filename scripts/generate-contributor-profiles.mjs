@@ -19,13 +19,10 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   REST_PER_PAGE,
-  REST_MAX_PAGES,
-  REST_PAGE_DELAY_MS,
   API_BASE,
   classifyIssueLabels,
   buildDefaultHeaders,
-  delay,
-  ghFetch,
+  fetchAllPages,
 } from "./lib/github-fetch.mjs";
 import {
   cleanText,
@@ -86,20 +83,11 @@ const defaultHeaders = buildDefaultHeaders(TOKEN);
 // ── Data fetching ────────────────────────────────────────────────────
 
 async function fetchAllIssuesWithBodies(repo) {
-  const allItems = [];
-
-  for (let page = 1; page <= REST_MAX_PAGES; page++) {
-    const url = `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&page=${page}&sort=created&direction=desc`;
-
-    if (page > 1) await delay(REST_PAGE_DELAY_MS);
-
-    const items = await ghFetch(url, defaultHeaders);
-    allItems.push(...items);
-
-    if (items.length < REST_PER_PAGE) break;
-  }
-
-  return allItems;
+  return fetchAllPages(
+    (page) =>
+      `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&page=${page}&sort=created&direction=desc`,
+    defaultHeaders
+  );
 }
 
 // ── Main ─────────────────────────────────────────────────────────────

@@ -16,10 +16,9 @@ import { categorizeIssuesByRepo, sortRepoBreakdown } from "./add-repo-breakdown-
 import {
   API_BASE,
   REST_PER_PAGE,
-  REST_MAX_PAGES,
   REST_PAGE_DELAY_MS,
   buildDefaultHeaders,
-  ghFetch,
+  fetchAllPages,
   delay,
 } from "./lib/github-fetch.mjs";
 
@@ -41,25 +40,18 @@ if (!TOKEN) {
 const defaultHeaders = buildDefaultHeaders(TOKEN);
 
 async function fetchAllIssues(owner, repo, creator) {
-  const items = [];
-  for (let page = 1; page <= REST_MAX_PAGES; page++) {
-    const url = `${API_BASE}/repos/${owner}/${repo}/issues?creator=${creator}&state=all&per_page=${REST_PER_PAGE}&page=${page}`;
-    const data = await ghFetch(url, defaultHeaders);
-    if (data.length === 0) break;
-    
-    for (const issue of data) {
-      items.push({
-        repo: `${owner}/${repo}`,
-        is_pr: !!issue.pull_request,
-        merged_at: issue.pull_request?.merged_at || null,
-        labels: issue.labels.map((l) => l.name),
-      });
-    }
-    
-    if (data.length < REST_PER_PAGE) break;
-    await delay(REST_PAGE_DELAY_MS);
-  }
-  return items;
+  const data = await fetchAllPages(
+    (page) =>
+      `${API_BASE}/repos/${owner}/${repo}/issues?creator=${creator}&state=all&per_page=${REST_PER_PAGE}&page=${page}`,
+    defaultHeaders
+  );
+
+  return data.map((issue) => ({
+    repo: `${owner}/${repo}`,
+    is_pr: !!issue.pull_request,
+    merged_at: issue.pull_request?.merged_at || null,
+    labels: issue.labels.map((l) => l.name),
+  }));
 }
 
 async function main() {

@@ -4,6 +4,12 @@
  * can be reused and unit-tested independently of the network calls made by
  * the runner.
  *
+ * `fetchAllPages` is the single owner of the "walk pages until short/empty"
+ * loop; scripts/add-repo-breakdown.mjs and scripts/generate-contributor-
+ * profiles.mjs each used to hand-roll their own untested copy of it (see
+ * scripts/lib/leaderboard-fetch.mjs for the date-chunked variant used by
+ * the leaderboard generator, which wraps this same contract).
+ *
  * See scripts/lib/github-fetch.test.mjs for the contract these functions
  * must uphold.
  */
@@ -55,4 +61,34 @@ export async function ghFetch(url, headers) {
     throw new Error(`GitHub API ${res.status}: ${url}\n${body.slice(0, 200)}`);
   }
   return res.json();
+}
+
+/**
+ * Walk a REST API list endpoint page-by-page until a short page (or an
+ * empty page) signals the end, delaying between requests to stay under
+ * rate limits.
+ *
+ * `buildUrl(page)` returns the URL for the given 1-indexed page; callers
+ * own the query string (filters, sort, etc.) so this stays usable for any
+ * paginated GitHub list endpoint, not just issues.
+ */
+export async function fetchAllPages(
+  buildUrl,
+  headers,
+  { maxPages = REST_MAX_PAGES, perPage = REST_PER_PAGE, delayMs = REST_PAGE_DELAY_MS } = {}
+) {
+  const allItems = [];
+
+  for (let page = 1; page <= maxPages; page++) {
+    if (page > 1 && delayMs) await delay(delayMs);
+
+    const items = await ghFetch(buildUrl(page), headers);
+    if (items.length === 0) break;
+
+    allItems.push(...items);
+
+    if (items.length < perPage) break;
+  }
+
+  return allItems;
 }
