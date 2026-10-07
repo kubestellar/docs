@@ -47,3 +47,6 @@ deno.lock
 # git worktrees — prevent accidental commits that create broken gitlinks
 *-worktree
 *-worktree/
+# Playwright
+/playwright-report/
+/test-results/
