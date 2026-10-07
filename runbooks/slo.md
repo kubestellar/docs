@@ -50,16 +50,21 @@ deploy-time gaps and content-sync failures, not runtime request failures.
   again — this does not change the SLO target or suppress the underlying
   signal, it only reflects that the SLI has recovered.
 
-## Known gap: no meta-monitoring of the alerting workflow itself
+## Meta-monitoring of the alerting workflow itself
 
-`healthz-monitor.yml` is itself the alerting mechanism for the SLI above,
-but unlike every other scheduled workflow in this repo it has no
-`if: failure()` step — a silent failure in the job (checkout error, state
-file parse error, or the commit/push step exhausting its retries) leaves
-the readiness SLI unmeasured for that cycle with no notification. See
+`healthz-monitor.yml` is itself the alerting mechanism for the SLI above.
+A silent failure in the job (checkout error, state file parse error, or
+the commit/push step exhausting its retries) would leave the readiness
+SLI unmeasured for that cycle with no notification. This gap is now
+closed: a `Create issue on monitor failure` step with `if: failure()`
+files/updates a `[healthz-monitor-failure]` `ci-failure` issue whenever the
+workflow itself fails, matching the pattern used by the repo's other
+scheduled workflows. Applied in
+[#7288](https://github.com/kubestellar/docs/pull/7288), closing
+[#7284](https://github.com/kubestellar/docs/issues/7284). See
 [`runbooks/healthz-monitor-failure-monitoring.md`](healthz-monitor-failure-monitoring.md)
-for manual detection steps and the tracked `[operations]` issue with the
-proposed fix (requires `workflows` permission to land).
+for manual detection steps, kept as a fallback reference in case this
+meta-alert step itself fails to run.
 
 ## Notes on monitoring backend
 
