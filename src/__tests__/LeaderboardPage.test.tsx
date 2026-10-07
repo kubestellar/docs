@@ -93,9 +93,12 @@ function mockFetch(opts: {
 }
 
 function loginOrder() {
+  // Each row renders RankDisplay twice (desktop grid cell + mobile inline),
+  // so collapse the per-row duplicate before comparing order.
   return screen
     .getAllByTestId("rank")
-    .map((el) => el.textContent);
+    .map((el) => el.textContent)
+    .filter((_, i) => i % 2 === 0);
 }
 
 beforeEach(() => {

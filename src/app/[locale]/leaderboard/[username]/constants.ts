@@ -5,6 +5,7 @@
 
 export {
   DAY_LABELS,
+  DAY_LABELS_FULL,
   LEVEL_STYLES,
   TREND_DISPLAY,
 } from "../../../../lib/leaderboardShared";

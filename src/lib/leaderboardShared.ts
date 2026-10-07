@@ -76,6 +76,17 @@ export const TREND_DISPLAY: Record<
 /** Short weekday labels used by cadence/activity sparklines. */
 export const DAY_LABELS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
+/** Full weekday names used by prose such as the cadence summary line. */
+export const DAY_LABELS_FULL = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+
 /** A single month's issue-count bucket in an activity timeline. */
 export interface TimelineEntry {
   month: string;
