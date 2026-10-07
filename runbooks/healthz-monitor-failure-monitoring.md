@@ -42,7 +42,11 @@ state-file history itself is still not surfaced beyond the alert issue).
 
 ## Detecting a silent failure manually
 
-Until the automated alert is added, check for a stalled or failed run:
+The automated `[healthz-monitor-failure]` alert (above) covers a failed
+workflow run, but it cannot fire for a run that never triggers at all
+(e.g. a scheduling gap) or for the narrower state-persistence case noted
+above. Use the steps below to confirm the alert's result or to check
+coverage independently:
 
 1. Open the [Docs Site Health Monitor run history](https://github.com/kubestellar/docs/actions/workflows/healthz-monitor.yml)
    and confirm a run exists within the last 15–30 minutes with a green
