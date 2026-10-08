@@ -1,6 +1,6 @@
 {
   "title": "KubeStellar Docs — API Self Metrics",
-  "description": "Recommendation-only dashboard for the docs site's bounded self-metrics (docs_api_requests_total, docs_api_request_duration_seconds) exposed at /api/metrics (see src/lib/metrics.ts). Import this JSON into a Grafana instance already pointed at a Prometheus that scrapes this deployment via cluster-objects/servicemonitor.yaml; nothing here configures a data source or exporter automatically. No observability backend is confirmed for this repo, so this file is not wired into any deployment or CI step. Panels mirror the three alerts in cluster-objects/prometheusrule.yaml and support the per-route diagnosis steps in runbooks/api-error-rate-latency.md.",
+  "description": "Recommendation-only dashboard for the docs site's bounded self-metrics (docs_api_requests_total, docs_api_request_duration_seconds) exposed at /api/metrics (see src/lib/metrics.ts). Import this JSON into a Grafana instance already pointed at a Prometheus that scrapes this deployment via cluster-objects/servicemonitor.yaml; nothing here configures a data source or exporter automatically. No observability backend is confirmed for this repo, so this file is not wired into any deployment or CI step. Panels mirror alerts now defined in cluster-objects/alerts.yaml (app-metric alerts, see kubestellar/docs#6884) and cluster-objects/prometheusrule.yaml (DocsApiMetricsTargetDown) and support the per-route diagnosis steps in runbooks/api-error-rate-latency.md.",
   "schemaVersion": 39,
   "version": 1,
   "editable": true,
@@ -33,7 +33,7 @@
     },
     {
       "id": 2,
-      "title": "5xx error rate (ratio) — DocsApiHighErrorRate",
+      "title": "5xx error rate (ratio) — DocsApiHighErrorRateAggregate",
       "type": "timeseries",
       "datasource": { "type": "prometheus", "uid": "${datasource}" },
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
@@ -46,7 +46,7 @@
     },
     {
       "id": 3,
-      "title": "P95 request latency by route — DocsApiHighRequestLatency",
+      "title": "P95 request latency by route",
       "type": "timeseries",
       "datasource": { "type": "prometheus", "uid": "${datasource}" },
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },

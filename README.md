@@ -165,8 +165,8 @@ docs live under [`runbooks/`](./runbooks/):
   and [`runbooks/gh-aw-stop-time-monitoring.md`](./runbooks/gh-aw-stop-time-monitoring.md) —
   detecting silently-failed or silently-skipped scheduled workflow runs.
 - [`runbooks/api-error-rate-latency.md`](./runbooks/api-error-rate-latency.md) —
-  diagnosing the `DocsApiHighErrorRate` / `DocsApiHighRequestLatency`
-  alerts (`cluster-objects/prometheusrule.yaml`).
+  diagnosing the docs API error-rate / latency alerts
+  (`cluster-objects/alerts.yaml`).
 - [`runbooks/acmm-history-failure-monitoring.md`](./runbooks/acmm-history-failure-monitoring.md) —
   detecting and resolving a stale/unresolved `[acmm-history-failure]`
   alert from `generate-acmm-history.yml`.

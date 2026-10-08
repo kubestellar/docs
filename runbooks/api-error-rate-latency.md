@@ -2,73 +2,78 @@
 
 ## Scope
 
-Applies to the three alerts defined in `cluster-objects/prometheusrule.yaml`
+Applies to the app-metric alerts defined in `cluster-objects/alerts.yaml`
 over the docs site's existing `/api/metrics` output (`src/lib/metrics.ts`).
 As of [#6800](https://github.com/kubestellar/docs/pull/6800), that registry
 instruments four routes — `search` (`src/app/api/search/route.ts`),
 `docs-image` (`src/app/api/docs-image/[...path]/route.ts`), `healthz`
 (`src/app/api/healthz/route.ts`), and `livez` (`src/app/api/livez/route.ts`)
 — not just the first two; the `ApiRoutes` union in `src/lib/metrics.ts` is
-the source of truth. Because `DocsApiHighErrorRate` and
-`DocsApiHighRequestLatency` aggregate `docs_api_requests_total` /
-`docs_api_request_duration_seconds` across all instrumented routes (no
-`route` filter in their `expr`), a sustained `503` from `/api/healthz`
-(reported separately by `DocsApiMetricsTargetDown`'s sibling readiness
-checks, see `runbooks/deploy-rollback.md`) also counts toward
-`DocsApiHighErrorRate`'s 5xx ratio, not just `search`/`docs-image`
-failures — check `/api/healthz`'s own status first (step 4 below) before
-assuming the error-rate alert implicates one of the two routes this
-runbook's diagnosis steps focus on. `livez` always returns `200`, so it
-does not contribute to the error-rate alert, but its (normally trivial)
-latency is included in the aggregate p95 the latency alert evaluates.
+the source of truth. Because the `Aggregate`-suffixed alerts aggregate
+`docs_api_requests_total` / `docs_api_request_duration_seconds` across all
+instrumented routes (no `route` filter in their `expr`), a sustained `503`
+from `/api/healthz` (reported separately by `DocsApiMetricsTargetDown`'s
+sibling readiness checks, see `runbooks/deploy-rollback.md`) also counts
+toward those alerts' 5xx ratio, not just `search`/`docs-image` failures —
+check `/api/healthz`'s own status first (step 4 below) before assuming an
+error-rate alert implicates one of the two routes this runbook's
+diagnosis steps focus on. `livez` always returns `200`, so it does not
+contribute to any error-rate alert, but its (normally trivial) latency is
+included in the aggregate p95 the latency alerts evaluate.
 
-- **`DocsApiHighErrorRate`** — fires when more than 5% of requests to
-  these instrumented routes return a `5xx` status over a 5-minute window,
-  sustained for 10 minutes.
-- **`DocsApiHighRequestLatency`** — fires when the p95 request duration
-  across these routes exceeds 1s over a 5-minute window, sustained for 10
-  minutes.
-- **`DocsApiMetricsTargetDown`** — fires when Prometheus has been unable
-  to scrape the `kubestellar-docs` job for 10 minutes. This covers the
-  blackout case the other two alerts cannot: while the scrape target is
-  down, both rate/ratio expressions evaluate over no data and stay
-  silent, so a crash-looping pod, an `/api/metrics` regression, or a
-  `ServiceMonitor`/selector mismatch would otherwise go undetected.
+- **`DocsApiHighErrorRate`** — fires when more than 5% of requests to a
+  given route return a `5xx` status over a 5-minute window, sustained for
+  10 minutes (per-route).
+- **`DocsApiHighErrorRateAggregate`** — the same 5xx-only check,
+  aggregated across all instrumented routes instead of per-route.
+- **`DocsApiHighErrorRatio`** — fires when more than 10% of requests
+  across all instrumented routes return a `4xx` or `5xx` status (not
+  5xx-only) over a 5-minute window, sustained for 10 minutes — catches a
+  sustained client-error storm the 5xx-only alerts above cannot.
+- **`DocsApiHighLatency`** — fires when the p95 request duration for a
+  given route exceeds 2s over a 5-minute window, sustained for 10 minutes
+  (per-route).
+- **`DocsApiHighRequestLatencyAggregate`** — fires when the aggregate p95
+  request duration across all instrumented routes exceeds 1s over a
+  5-minute window, sustained for 10 minutes.
+- **`DocsApiMetricsTargetDown`** (`cluster-objects/prometheusrule.yaml`)
+  — fires when Prometheus has been unable to scrape the `kubestellar-docs`
+  job for 10 minutes. This covers the blackout case the other alerts
+  cannot: while the scrape target is down, every rate/ratio expression
+  above evaluates over no data and stays silent, so a crash-looping pod,
+  an `/api/metrics` regression, or a `ServiceMonitor`/selector mismatch
+  would otherwise go undetected.
 
-All three alerts only fire if a Prometheus Operator is already scraping
+All of the above only fire if a Prometheus Operator is already scraping
 this namespace via `cluster-objects/servicemonitor.yaml` — this runbook
 does not assume any specific monitoring backend is provisioned.
 
-Two other `PrometheusRule` manifests in `cluster-objects/` —
-`prometheusrule-docs-api.yaml` (`DocsApiHighErrorRatio`,
-`DocsApiHighLatencyP95`) and `alerts.yaml` (`DocsApiHighErrorRate`,
-`DocsApiHighLatency`) — evaluate the same underlying
-`docs_api_requests_total` / `docs_api_request_duration_seconds` metrics
-with different thresholds (10%/2s and 5%/2s, respectively, vs. this
-runbook's 5%/1s) and now also link here via `runbook_url` since they were
-previously undocumented. If you land on this runbook from one of those
-alerts, use the same diagnosis steps below, but note the firing
-condition may differ from what's described above — see
-[#6884](https://github.com/kubestellar/docs/issues/6884) for the
-consolidation this drift needs.
+`cluster-objects/alerts.yaml` is now the single canonical PrometheusRule
+for all `docs_api_*`/`docs_i18n_*` app-metric alerts; the previous
+three-way duplication across `alerts.yaml`, `prometheusrule.yaml`, and
+`prometheusrule-docs-api.yaml` (tracked in
+[#6884](https://github.com/kubestellar/docs/issues/6884), closed without
+the underlying fix landing) has been consolidated — every distinct
+detection case was merged in, only renaming alerts where needed to avoid
+an exact `alert:` name collision, with no threshold loosened.
+`prometheusrule-docs-api.yaml` was removed entirely;
+`prometheusrule.yaml` now holds only the infra/platform alerts
+(`DocsApiMetricsTargetDown`, the rollout-checker CronJob alerts) that
+reference metrics outside `src/lib/metrics.ts` and so can't be validated
+by `scripts/lint-dashboard.mjs`'s known-metric check if moved into
+`alerts.yaml`. See `cluster-objects/alerts.yaml`'s header comment for the
+full mapping.
 
-The same drift exists on the dashboard side: `cluster-objects/dashboard.json`,
-`dashboard-docs-api.json`, and `grafana-dashboard.json` all visualize the
-same `docs_api_requests_total` / `docs_api_request_duration_seconds`
-metrics, but disagree on what counts as an "error" and at what
-granularity — `dashboard.json` has a per-route `5xx error rate by route`
-panel, `dashboard-docs-api.json` has an aggregate `Error ratio (4xx+5xx /
-total)` panel (4xx counted as an error here, unlike everywhere else in
-this runbook), and only `grafana-dashboard.json` has a scrape-target-up
-panel for `DocsApiMetricsTargetDown`. If you cross-check an alert against
-whichever of these three dashboards you have bookmarked, confirm which
-error definition and aggregation it's actually showing before treating
-its state as consistent with the alert that paged you — see
-[#6891](https://github.com/kubestellar/docs/issues/6891) for the full
-drift and [#6928](https://github.com/kubestellar/docs/issues/6928) for a
-related `uid` collision between the first two files.
+The dashboard-side drift ([#6891](https://github.com/kubestellar/docs/issues/6891),
+[#6928](https://github.com/kubestellar/docs/issues/6928)) across
+`cluster-objects/dashboard.json`, `dashboard-docs-api.json`, and
+`grafana-dashboard.json` is a separate, still-open gap — `#6928`'s `uid`
+collision was fixed in [#6967](https://github.com/kubestellar/docs/pull/6967),
+but the panel/aggregation drift `#6891` describes was only
+cross-referenced in this runbook, not resolved, and dashboard JSON edits
+are outside this runbook's/PR's scope.
 
-## Detecting and diagnosing `DocsApiHighErrorRate`
+## Detecting and diagnosing `DocsApiHighErrorRate` / `DocsApiHighErrorRateAggregate` / `DocsApiHighErrorRatio`
 
 1. Both instrumented routes wrap their handler body in a `catch` that
    sets `status = 500` and logs a structured `error` entry (see
@@ -91,7 +96,7 @@ related `uid` collision between the first two files.
    symptom of the missing/broken content dependency, not a separate root
    cause.
 
-## Detecting and diagnosing `DocsApiHighRequestLatency`
+## Detecting and diagnosing `DocsApiHighLatency` / `DocsApiHighRequestLatencyAggregate`
 
 1. Confirm which route is slow: compare
    `docs_api_request_duration_seconds_bucket{route="search"}` against
@@ -144,8 +149,8 @@ related `uid` collision between the first two files.
 4. This alert firing does not by itself mean traffic is failing —
    `/api/healthz`/`/api/livez` and real user traffic may be unaffected.
    Treat it as "observability is blind right now", and prioritize
-   restoring the scrape target so `DocsApiHighErrorRate` /
-   `DocsApiHighRequestLatency` can do their job again.
+   restoring the scrape target so the error-rate and latency alerts in
+   `cluster-objects/alerts.yaml` can do their job again.
 
 ## Recovery
 
