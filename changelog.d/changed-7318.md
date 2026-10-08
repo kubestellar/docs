@@ -1,0 +1,1 @@
+- changed(cluster-objects): consolidate the three drifted Grafana dashboards into `dashboard.json` (5xx per-route, matching `alerts.yaml`), adding a scrape-down panel; remove `dashboard-docs-api.json` and `grafana-dashboard.json` (#7318).
