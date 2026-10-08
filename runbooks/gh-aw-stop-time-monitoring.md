@@ -61,3 +61,13 @@ devstats update); it does not affect the production docs site or its
 content. The impact is limited to the missing recurring
 report/deliverable until the lock file is recompiled with an extended
 stop-time.
+
+**Note:** recompiling the lock file with a new stop-time fixes the
+in-file gate, but does not by itself guarantee the workflow is actually
+registered as runnable in GitHub Actions — it can still be separately
+disabled at the Actions level (`state: "disabled_manually"`), which the
+stop-time fix does not touch. See
+[`gh-aw-workflow-disabled-monitoring.md`](gh-aw-workflow-disabled-monitoring.md)
+for that check; it was still needed for both `devstats.lock.yml` and
+`daily-team-status.lock.yml` as of 2026-10-07, months after their
+stop-times were already bumped forward.
