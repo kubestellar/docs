@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
 import { convertHtmlScriptsToJsxComments } from "@/lib/transformMdx"
 import { stripUntilStable } from "@/lib/sanitizeHtml"
+import { readFileWithinRoot } from "@/lib/safeFsRead"
 import { buildPageMap, docsContentPath, basePath } from "../../docs/page-map"
-import fs from 'fs'
-import path from 'path'
 import { logger } from "@/lib/logger"
 import { recordApiRequest } from "@/lib/metrics"
 
@@ -71,11 +70,8 @@ function routeKeyToUrl(routeKey: string): string {
 }
 
 function readLocalFile(filePath: string): string | null {
-  const fullPath = path.join(docsContentPath, filePath)
   try {
-    if (fs.existsSync(fullPath)) {
-      return fs.readFileSync(fullPath, 'utf-8')
-    }
+    return readFileWithinRoot(docsContentPath, filePath)
   } catch (error) {
     // existsSync/readFileSync threw (e.g. permission denied, I/O error) —
     // distinct from the expected "no file at this path" case above, which
