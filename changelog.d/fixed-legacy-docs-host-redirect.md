@@ -1,0 +1,1 @@
+- Legacy docs.kubestellar.io and console-docs.kubestellar.io hostnames now redirect /docs/* paths to kubestellar.io as well.

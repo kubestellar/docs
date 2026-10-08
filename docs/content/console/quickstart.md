@@ -35,7 +35,7 @@ Get KubeStellar Console running locally for development or evaluation.
 ## Fastest Path (curl)
 
 > **Prerequisites**: You must install the kubestellar-mcp plugins **before** running this command — they are
-not installed by `start.sh`. See [Install Kubestellar-mcp Tools](#install-kubestellar-mcp-tools) below.
+not installed by `start.sh`. See [Install KubeStellar-mcp Tools](#install-kubestellar-mcp-tools) below.
 
 One command — downloads pre-built binaries, starts the backend + agent, and opens your browser:
 
@@ -278,7 +278,7 @@ helm install ksc oci://ghcr.io/kubestellar/charts/kubestellar-console \
   --namespace ksc \
   --set github.existingSecret=ksc-secrets
 
-# Expose the Kubestellar service
+# Expose the KubeStellar service
 kubectl port-forward -n ksc svc/ksc-kubestellar-console 8080:8080
 ```
 

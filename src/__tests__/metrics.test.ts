@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest"
-import { metricsRegistry, recordApiRequest } from "@/lib/metrics"
+import { metricsRegistry, recordApiRequest, recordLocaleFallback } from "@/lib/metrics"
 
 describe("metrics", () => {
   beforeEach(() => {
@@ -30,5 +30,17 @@ describe("metrics", () => {
     for (const route of routeMatches) {
       expect(["search", "docs-image", "healthz", "livez"]).toContain(route)
     }
+  })
+
+  it("exposes docs_i18n_locale_fallback_total, by bounded locale label", async () => {
+    recordLocaleFallback("es")
+    recordLocaleFallback("es")
+    recordLocaleFallback("fr")
+
+    const text = await metricsRegistry.metrics()
+
+    expect(text).toContain("docs_i18n_locale_fallback_total")
+    expect(text).toMatch(/docs_i18n_locale_fallback_total\{locale="es"\} 2/)
+    expect(text).toMatch(/docs_i18n_locale_fallback_total\{locale="fr"\} 1/)
   })
 })

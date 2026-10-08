@@ -1,0 +1,36 @@
+# Sidebar navigation for the kubestellar-mcp project (PROJECTS['kubestellar-mcp'].navPath).
+# Paths are relative to docs/content/kubestellar-mcp/.
+# Each top-level entry is a sidebar section: { title, items }. Items are
+#   - Title: relative/path.md            (page)
+#   - Title:                             (folder)
+#       - Child Title: relative/path.md
+#   - https://example.com or /abs/path   (external / absolute link, as a value)
+# A page that is not listed here does not appear in the sidebar.
+# Schema is validated at build time by loadNavFile() in src/app/docs/page-map.ts.
+# See kubestellar/docs#7080.
+- title: Overview
+  items:
+    - Introduction: overview/intro.md
+- title: Setup
+  items:
+    - Homebrew Installation: setup/homebrew.md
+- title: Architecture
+  items:
+    - Architecture Overview: architecture/overview.md
+    - Local Development: architecture/local-development.md
+    - Request and Response Lifecycle: architecture/request-response-lifecycle.md
+    - Adding a New Tool: architecture/adding-a-tool.md
+    - Testing: architecture/testing.md
+- title: Commands
+  items:
+    - App Logs: commands/app-logs.md
+    - App Status: commands/app-status.md
+    - Delete: commands/delete.md
+    - Deploy: commands/deploy.md
+    - GitOps Drift: commands/gitops-drift.md
+    - GitOps Sync: commands/gitops-sync.md
+    - Helm Install: commands/helm-install.md
+    - Helm Rollback: commands/helm-rollback.md
+    - Helm Uninstall: commands/helm-uninstall.md
+    - Kustomize: commands/kustomize.md
+    - Label: commands/label.md

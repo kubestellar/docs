@@ -58,11 +58,66 @@ describe("i18n request config", () => {
   it("falls back to default messages when the locale bundle cannot be loaded", async () => {
     vi.resetModules();
 
-    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
 
     vi.doMock("../../messages/es.json", () => {
       throw new Error("Failed to load Spanish messages");
     });
+
+    const { default: requestConfig } = await import("../i18n/request");
+    const { i18nLocaleFallbackTotal } = await import("../lib/metrics");
+    const before = (await i18nLocaleFallbackTotal.get()).values.find(
+      (v) => v.labels.locale === "es"
+    )?.value ?? 0;
+
+    const result = await requestConfig({
+      requestLocale: Promise.resolve("es"),
+    });
+
+    expect(result.locale).toBe("es");
+    expect(result.messages).toBeDefined();
+
+    // Structured log (src/lib/logger.ts) replaces the old bare console.warn.
+    expect(errorSpy).toHaveBeenCalledTimes(1);
+    const logged = JSON.parse(errorSpy.mock.calls[0][0] as string);
+    expect(logged).toMatchObject({
+      level: "error",
+      message: "i18n locale bundle failed to load",
+      route: "i18n-locale-fallback",
+      filePath: "messages/es.json",
+    });
+    expect(typeof logged.error).toBe("string");
+    expect(logged.error.length).toBeGreaterThan(0);
+
+    // Bounded docs_i18n_locale_fallback_total counter (locale="es") was
+    // incremented alongside the log.
+    const after = (await i18nLocaleFallbackTotal.get()).values.find(
+      (v) => v.labels.locale === "es"
+    )?.value ?? 0;
+    expect(after).toBe(before + 1);
+
+    errorSpy.mockRestore();
+  });
+
+  it("stringifies a non-Error throw from the locale bundle import (request.ts:58 false branch)", async () => {
+    // `error instanceof Error ? error.message : String(error)` on request.ts:58
+    // only exercised its true branch elsewhere in this file (an actual Error
+    // is thrown). Locale bundles are loaded via dynamic import, so a bundler
+    // or loader failure could just as easily reject with a plain string or
+    // other non-Error value — this covers that `String(error)` fallback.
+    vi.resetModules();
+
+    const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+
+    vi.doMock("../../messages/es.json", () => ({
+      // A getter (rather than throwing directly from the factory) so the
+      // non-Error value surfaces from the `.default` access inside
+      // request.ts's try block, not from Vitest's own module-mocking
+      // machinery (which wraps a factory-level throw in its own Error).
+      get default(): never {
+        throw "Spanish messages unavailable";
+      },
+    }));
 
     const { default: requestConfig } = await import("../i18n/request");
 
@@ -73,11 +128,11 @@ describe("i18n request config", () => {
     expect(result.locale).toBe("es");
     expect(result.messages).toBeDefined();
 
-    expect(warn).toHaveBeenCalledWith(
-      "Could not load messages for locale: es. Falling back to 'en'."
-    );
+    expect(errorSpy).toHaveBeenCalledTimes(1);
+    const logged = JSON.parse(errorSpy.mock.calls[0][0] as string);
+    expect(logged.error).toBe("Spanish messages unavailable");
 
-    warn.mockRestore();
+    errorSpy.mockRestore();
   });
 
   it("deep-merges a locale-only nested key into an empty branch (target[key] || {} fallback)", async () => {

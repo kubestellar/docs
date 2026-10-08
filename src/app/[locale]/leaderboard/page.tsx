@@ -4,12 +4,9 @@ import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  GridLines,
-  StarField,
   ContributionCallToAction,
-  Navbar,
-  Footer,
 } from "../../../components/index";
+import PageShell from "../../../components/master-page/PageShell";
 import type { AffiliateData, LeaderboardData, SortDir, SortField } from "./types";
 import {
   AFFILIATE_API_URL,
@@ -18,6 +15,7 @@ import {
 } from "./types";
 import { ActivitySparkline, BreakdownPills, LevelBadge, RankDisplay, SocialBadge } from "./components";
 import { ContributorHoverCard, HOVER_FETCH_DELAY_MS } from "./ContributorHoverCard";
+import { nextSortState } from "../../../lib/sortToggle";
 
 // ── Leaderboard data URL ──────────────────────────────────────────────
 const LEADERBOARD_DATA_PATH = "/data/leaderboard.json";
@@ -88,7 +86,8 @@ export default function LeaderboardPage() {
     let retryHandle: ReturnType<typeof setTimeout> | undefined;
     fetchAffiliates().catch(() => {
       retryHandle = setTimeout(() => {
-        fetchAffiliates().catch(() => {
+        fetchAffiliates().catch((err) => {
+          console.error("Failed to fetch affiliate data after retry:", err);
           setAffiliateLoading(false);
         });
       }, AFFILIATE_RETRY_DELAY_MS);
@@ -130,19 +129,9 @@ export default function LeaderboardPage() {
     : null;
 
   return (
-    <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
-      <Navbar />
-
-      {/* Full page background with starfield */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-        <StarField density="medium" showComets={true} cometCount={3} />
-        <GridLines horizontalLines={21} verticalLines={18} />
-      </div>
-
-      <div className="relative z-10 pt-7">
-        {/* Header Section */}
-        <section className="pt-12 pb-8 sm:pt-28 sm:pb-12 lg:pt-24 lg:pb-8">
+    <PageShell>
+      {/* Header Section */}
+      <section className="pt-12 pb-8 sm:pt-28 sm:pb-12 lg:pt-24 lg:pb-8">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
@@ -316,12 +305,9 @@ export default function LeaderboardPage() {
                   <button
                     className={`text-right cursor-pointer hover:text-white transition-colors ${sortField === "points" ? "text-yellow-400" : ""}`}
                     onClick={() => {
-                      if (sortField === "points") {
-                        setSortDir(sortDir === "desc" ? "asc" : "desc");
-                      } else {
-                        setSortField("points");
-                        setSortDir("desc");
-                      }
+                      const next = nextSortState(sortField, sortDir, "points");
+                      setSortField(next.field);
+                      setSortDir(next.dir);
                     }}
                   >
                     Points {sortField === "points" ? (sortDir === "desc" ? "▼" : "▲") : ""}
@@ -329,12 +315,9 @@ export default function LeaderboardPage() {
                   <button
                     className={`text-center cursor-pointer hover:text-white transition-colors ${sortField === "activity" ? "text-blue-400" : ""}`}
                     onClick={() => {
-                      if (sortField === "activity") {
-                        setSortDir(sortDir === "desc" ? "asc" : "desc");
-                      } else {
-                        setSortField("activity");
-                        setSortDir("desc");
-                      }
+                      const next = nextSortState(sortField, sortDir, "activity");
+                      setSortField(next.field);
+                      setSortDir(next.dir);
                     }}
                     title="Sort by recent activity (last 12 weeks, recency-weighted)"
                   >
@@ -492,8 +475,6 @@ export default function LeaderboardPage() {
 
         {/* CTA Section */}
         <ContributionCallToAction />
-      </div>
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

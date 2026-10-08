@@ -1,20 +1,26 @@
-# Prometheus Operator alerting rules for the docs site's existing
-# `/api/metrics` endpoint (src/app/api/metrics/route.ts, src/lib/metrics.ts),
-# already scraped by cluster-objects/servicemonitor.yaml.
+# Prometheus Operator alerting rules for infra/platform metrics that are
+# deliberately NOT in cluster-objects/alerts.yaml (the canonical
+# PrometheusRule for all docs_api_*/docs_i18n_* app metrics, see that
+# file's header and kubestellar/docs#6884):
+#   1. the docs site's own `/api/metrics` scrape target going dark
+#      (Prometheus-native `up{}`, not an app metric); and
+#   2. the automated rollout-checker CronJobs (cluster-objects/job.yaml,
+#      cluster-objects/pr-job.yaml) that deploy new images, via
+#      kube-state-metrics' kube_cronjob_status_last_successful_time.
+#
+# Both metric families are outside src/lib/metrics.ts, so
+# scripts/lint-dashboard.mjs's known-metric check (which only validates
+# cluster-objects/alerts.yaml against that file's declared docs_* metrics)
+# would flag them as unknown if they were moved there — that's why this
+# file exists separately rather than being folded into alerts.yaml.
 #
 # This resource only takes effect if a Prometheus Operator with the
-# PrometheusRule CRD is already watching this namespace/selector, and only
-# if servicemonitor.yaml is applied so the referenced metrics are actually
-# being scraped. It does not install an operator, does not configure any
-# exporter, and does not send data off-box — it only defines evaluation
-# rules over metrics already produced in-process by this application.
-#
-# Both alerts use metric/label names defined in src/lib/metrics.ts:
-#   docs_api_requests_total{route, method, status_class}
-#   docs_api_request_duration_seconds{route, method}
-# `route` and `status_class` are fixed, bounded label sets (see the
-# cardinality note in that file), so these rules cannot grow unbounded
-# label cardinality.
+# PrometheusRule CRD is already watching this namespace/selector — group 1
+# additionally needs servicemonitor.yaml applied so that target is actually
+# scraped, and group 2 additionally needs kube-state-metrics running
+# in-cluster (a near-universal companion to a Prometheus Operator
+# install). This file does not install an operator, does not configure any
+# exporter, and does not send data off-box.
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -27,22 +33,6 @@ spec:
   groups:
     - name: kubestellar-docs.rules
       rules:
-        - alert: DocsApiHighErrorRate
-          expr: >-
-            sum(rate(docs_api_requests_total{status_class="5xx"}[5m]))
-            /
-            sum(rate(docs_api_requests_total[5m]))
-            > 0.05
-          for: 10m
-          labels:
-            severity: warning
-          annotations:
-            summary: "Docs site API 5xx rate is above threshold"
-            description: >-
-              More than 5% of requests to the docs site's instrumented API
-              routes (search, docs-image) have returned a 5xx status over
-              the last 5 minutes (current value: {{ $value | humanizePercentage }}).
-            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
         - alert: DocsApiMetricsTargetDown
           expr: up{job="kubestellar-docs"} == 0
           for: 10m
@@ -53,24 +43,50 @@ spec:
             description: >-
               Prometheus has been unable to scrape the docs site's
               `/api/metrics` endpoint (job "kubestellar-docs") for 10
-              minutes. While this target is down, DocsApiHighErrorRate and
-              DocsApiHighRequestLatency evaluate over no data and cannot
-              fire, so a total metrics blackout (crash-looping pod,
-              `/api/metrics` regression, or a ServiceMonitor/selector
-              mismatch) would otherwise go undetected.
+              minutes. While this target is down, the error-rate and
+              latency alerts in cluster-objects/alerts.yaml evaluate over
+              no data and cannot fire, so a total metrics blackout
+              (crash-looping pod, `/api/metrics` regression, or a
+              ServiceMonitor/selector mismatch) would otherwise go
+              undetected.
             runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
-        - alert: DocsApiHighRequestLatency
+        # The two alerts below cover the automated deploy pipeline itself
+        # (cluster-objects/job.yaml, cluster-objects/pr-job.yaml), not the
+        # application. kube_cronjob_status_last_successful_time is a
+        # kube-state-metrics metric (a near-universal companion to a
+        # Prometheus Operator install) — this does not add a new exporter,
+        # it only evaluates a metric that kube-state-metrics already
+        # exposes if it is present. Both CronJobs are concurrencyPolicy:
+        # Forbid with failedJobsHistoryLimit: 1, so a stalled or failing
+        # rollout-checker would otherwise go undetected: production/preview
+        # Deployments keep serving a stale image with no signal until
+        # someone happens to check `kubectl get cronjob -n docs`.
+        - alert: DocsRolloutCheckerStalled
           expr: >-
-            histogram_quantile(0.95,
-              sum(rate(docs_api_request_duration_seconds_bucket[5m])) by (le)
-            ) > 1
-          for: 10m
+            time() - kube_cronjob_status_last_successful_time{namespace="docs", cronjob="nextra-rollout-checker"} > 900
+          for: 5m
           labels:
             severity: warning
           annotations:
-            summary: "Docs site API p95 request latency is elevated"
+            summary: "Production rollout-checker CronJob has not succeeded in 15m"
             description: >-
-              The 95th percentile request latency for the docs site's
-              instrumented API routes has exceeded 1s over the last 5
-              minutes (current value: {{ $value | humanizeDuration }}).
-            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
+              `nextra-rollout-checker` (cluster-objects/job.yaml) runs every
+              2 minutes and auto-rolls out new `kubestellar-docs` images
+              from OCIR. It has not completed successfully in over 15
+              minutes, so new production image builds are not being
+              deployed.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/rollout-checker-failure.md"
+        - alert: DocsPrRolloutCheckerStalled
+          expr: >-
+            time() - kube_cronjob_status_last_successful_time{namespace="docs", cronjob="nextra-pr-rollout-checker"} > 600
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: "PR-preview rollout-checker CronJob has not succeeded in 10m"
+            description: >-
+              `nextra-pr-rollout-checker` (cluster-objects/pr-job.yaml) runs
+              every 1 minute and reconciles PR preview deployments from
+              OCIR. It has not completed successfully in over 10 minutes,
+              so PR preview deploys/teardowns are not being reconciled.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/rollout-checker-failure.md"

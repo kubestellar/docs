@@ -1,13 +1,13 @@
 {
   "login": "onkar717",
-  "generated_at": "2026-09-26T10:13:51.624Z",
+  "generated_at": "2026-10-08T14:17:58.859Z",
   "total_issues_opened": 5,
   "total_prs_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/144542684?v=4",
   "total_points": 1400,
   "level": "Explorer",
   "level_rank": 2,
-  "rank": 78,
+  "rank": 79,
   "cadence": {
     "avg_per_week": 0,
     "avg_per_day": 0.15,
@@ -96,7 +96,7 @@
       "closed_count": 1
     },
     {
-      "name": "linkdin, point, correct",
+      "name": "linkdin, correct, point",
       "issue_count": 1,
       "recent_issue": {
         "title": "update the linkdin to point correct page",
@@ -161,10 +161,6 @@
   },
   "activity_timeline": [
     {
-      "month": "2025-10",
-      "issue_count": 8
-    },
-    {
       "month": "2025-11",
       "issue_count": 0
     },
@@ -206,6 +202,10 @@
     },
     {
       "month": "2026-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-10",
       "issue_count": 0
     }
   ],

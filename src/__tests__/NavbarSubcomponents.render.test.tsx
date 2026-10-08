@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { describe, it, expect, vi } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import React from 'react'
 
 /**
@@ -27,6 +27,7 @@ const t = ((key: string) => key) as unknown as Parameters<
 >[0]['t']
 
 const githubStats = { stars: '30', forks: '25', watchers: '1' }
+const noop = () => {}
 
 import NavbarLogo from '../components/navbar/NavbarLogo'
 import ContributeDropdown from '../components/navbar/ContributeDropdown'
@@ -53,51 +54,101 @@ describe('NavbarLogo', () => {
   })
 })
 
-describe('ContributeDropdown', () => {
-  it('renders closed (aria-expanded=false, no rotate class)', () => {
-    render(<ContributeDropdown t={t} isContributeOpen={false} />)
-    const button = screen.getByRole('button', { expanded: false })
-    expect(button).toBeTruthy()
+/**
+ * Shared contract for the three hover dropdowns (docs#7095): the menu's
+ * `hidden` attribute and the trigger's `aria-expanded` derive from the same
+ * `isOpen` prop, and hover wires straight to `onOpen` / `onClose`.
+ */
+function dropdownContract(
+  name: string,
+  renderWith: (props: {
+    isOpen: boolean
+    onOpen: () => void
+    onClose: () => void
+  }) => ReturnType<typeof render>,
+  opts: { hasAriaExpanded: boolean }
+) {
+  describe(name, () => {
+    it('renders closed: menu hidden, chevron not rotated', () => {
+      const { container } = renderWith({ isOpen: false, onOpen: noop, onClose: noop })
+      const menu = container.querySelector('[data-dropdown-menu]')
+      expect(menu).not.toBeNull()
+      expect(menu!.hasAttribute('hidden')).toBe(true)
+      expect(container.querySelector('.rotate-180')).toBeNull()
+      if (opts.hasAriaExpanded) {
+        expect(screen.getByRole('button', { expanded: false })).toBeTruthy()
+      }
+    })
+
+    it('renders open: menu visible, chevron rotated', () => {
+      const { container } = renderWith({ isOpen: true, onOpen: noop, onClose: noop })
+      const menu = container.querySelector('[data-dropdown-menu]')
+      expect(menu!.hasAttribute('hidden')).toBe(false)
+      expect(container.querySelector('.rotate-180')).not.toBeNull()
+      if (opts.hasAriaExpanded) {
+        expect(screen.getByRole('button', { expanded: true })).toBeTruthy()
+      }
+    })
+
+    it('never renders an inline display style (visibility is declarative)', () => {
+      const { container } = renderWith({ isOpen: true, onOpen: noop, onClose: noop })
+      const menu = container.querySelector<HTMLElement>('[data-dropdown-menu]')
+      expect(menu!.style.display).toBe('')
+    })
+
+    it('calls onOpen on mouseenter and onClose on mouseleave of the container', () => {
+      const onOpen = vi.fn()
+      const onClose = vi.fn()
+      const { container } = renderWith({ isOpen: false, onOpen, onClose })
+      const root = container.querySelector('[data-dropdown]')!
+      fireEvent.mouseEnter(root)
+      expect(onOpen).toHaveBeenCalledTimes(1)
+      expect(onClose).not.toHaveBeenCalled()
+      fireEvent.mouseLeave(root)
+      expect(onClose).toHaveBeenCalledTimes(1)
+    })
+  })
+}
+
+dropdownContract(
+  'ContributeDropdown',
+  props => render(<ContributeDropdown t={t} {...props} />),
+  { hasAriaExpanded: true }
+)
+
+dropdownContract(
+  'CommunityDropdown',
+  props => render(<CommunityDropdown t={t} {...props} />),
+  { hasAriaExpanded: true }
+)
+
+dropdownContract(
+  'GithubDropdown',
+  props => render(<GithubDropdown t={t} githubStats={githubStats} {...props} />),
+  { hasAriaExpanded: false }
+)
+
+describe('dropdown content', () => {
+  it('ContributeDropdown links to joinus', () => {
+    render(<ContributeDropdown t={t} isOpen={false} onOpen={noop} onClose={noop} />)
     expect(
       screen.getByText('joinIn').closest('a')?.getAttribute('href')
     ).toContain('joinus')
   })
 
-  it('renders open (aria-expanded=true, rotate class applied)', () => {
-    render(<ContributeDropdown t={t} isContributeOpen={true} />)
-    expect(screen.getByRole('button', { expanded: true })).toBeTruthy()
-  })
-})
-
-describe('CommunityDropdown', () => {
-  it('renders closed', () => {
-    render(<CommunityDropdown t={t} isCommunityOpen={false} />)
-    expect(screen.getByRole('button', { expanded: false })).toBeTruthy()
+  it('CommunityDropdown lists partners', () => {
+    render(<CommunityDropdown t={t} isOpen={false} onOpen={noop} onClose={noop} />)
     expect(screen.getByText('partners')).toBeTruthy()
   })
 
-  it('renders open', () => {
-    render(<CommunityDropdown t={t} isCommunityOpen={true} />)
-    expect(screen.getByRole('button', { expanded: true })).toBeTruthy()
-  })
-})
-
-describe('GithubDropdown', () => {
-  it('renders closed and shows github stats', () => {
+  it('GithubDropdown shows github stats', () => {
     render(
-      <GithubDropdown t={t} isGithubOpen={false} githubStats={githubStats} />
+      <GithubDropdown t={t} isOpen={false} onOpen={noop} onClose={noop} githubStats={githubStats} />
     )
     expect(screen.getByText('githubStar')).toBeTruthy()
     expect(screen.getByText(githubStats.stars)).toBeTruthy()
     expect(screen.getByText(githubStats.forks)).toBeTruthy()
     expect(screen.getByText(githubStats.watchers)).toBeTruthy()
-  })
-
-  it('renders open', () => {
-    const { container } = render(
-      <GithubDropdown t={t} isGithubOpen={true} githubStats={githubStats} />
-    )
-    expect(container.querySelector('.rotate-180')).not.toBeNull()
   })
 })
 

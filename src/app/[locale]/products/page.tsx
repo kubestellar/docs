@@ -1,13 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import {
-  Navbar,
-  Footer,
-  GridLines,
-  StarField,
-} from "@/components";
+import { useState } from "react";
+import PageShell from "@/components/master-page/PageShell";
 import { useTranslations } from "next-intl";
 
 interface Product {
@@ -58,7 +53,8 @@ export default function ProductsPage() {
     {
       id: "kubeflex",
       logo: "/products/kubeflex.png",
-      website: "https://kubestellar.io/docs/what-is-kubestellar/related/kubeflex",
+      website:
+        "https://kubestellar.io/docs/what-is-kubestellar/related/kubeflex",
       repository: "https://github.com/kubestellar/kubeflex",
       name: t("products.kubeflex.name"),
       fullName: t("products.kubeflex.fullName"),
@@ -96,55 +92,8 @@ export default function ProductsPage() {
     },
   ];
 
-  useEffect(() => {
-    // Add CSS for animations
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes twinkle {
-        0%, 100% { opacity: 0.2; }
-        50% { opacity: 1; }
-      }
-      .text-gradient {
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        background-image: linear-gradient(to right, #8B5CF6, #3B82F6);
-      }
-      .product-card:hover {
-        transform: translateY(-0.5rem);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      }
-      .background-grid {
-        background-image: 
-          linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
-        background-size: 50px 50px;
-      }
-    `;
-    document.head.appendChild(style);
-
-    return () => {
-      document.head.removeChild(style);
-    };
-  }, []);
-
   return (
-    <div className="bg-[#0a0a0a] text-white overflow-x-hidden min-h-screen">
-      {/* Navigation */}
-      <Navbar />
-
-      {/* Full page background with starfield */}
-      <div className="fixed inset-0 z-0">
-        {/* Dark base background */}
-        <div className="absolute inset-0 bg-[#0a0a0a]"></div>
-
-        {/* Starfield background */}
-        <StarField density="medium" showComets={true} cometCount={3} />
-
-        {/* Grid lines background */}
-        <GridLines horizontalLines={21} verticalLines={18} />
-      </div>
-
+    <PageShell contentClassName={null}>
       {/* Hero Section */}
       <section className="relative min-h-[40vh] flex items-center justify-center z-10">
         <div className="relative z-10 text-center px-2 sm:px-4 pt-16 sm:pt-20 pb-2">
@@ -349,7 +298,6 @@ export default function ProductsPage() {
       )}
 
       {/* Footer */}
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

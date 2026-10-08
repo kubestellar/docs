@@ -177,6 +177,56 @@ describe('LanguageSwitcher — minimal variant', () => {
   })
 })
 
+describe('LanguageSwitcher — controlled mode (open / onOpenChange)', () => {
+  it('renders the listbox purely from the `open` prop', () => {
+    const { rerender } = render(<LanguageSwitcher open={false} />)
+    expect(screen.queryByRole('listbox')).toBeNull()
+    rerender(<LanguageSwitcher open={true} />)
+    expect(screen.getByRole('listbox')).toBeTruthy()
+    expect(
+      screen.getByRole('button', { name: /Current language/ }).getAttribute('aria-expanded')
+    ).toBe('true')
+  })
+
+  it('does not toggle itself on click; it reports the request via onOpenChange', () => {
+    const onOpenChange = vi.fn()
+    render(<LanguageSwitcher open={false} onOpenChange={onOpenChange} />)
+    fireEvent.click(screen.getByRole('button', { name: /Current language/ }))
+    expect(onOpenChange).toHaveBeenCalledWith(true)
+    // Parent has not updated `open`, so the listbox stays closed.
+    expect(screen.queryByRole('listbox')).toBeNull()
+  })
+
+  it('reports close requests from outside click and Escape', () => {
+    const onOpenChange = vi.fn()
+    render(
+      <div>
+        <div data-testid="outside" />
+        <LanguageSwitcher open={true} onOpenChange={onOpenChange} />
+      </div>
+    )
+    fireEvent.mouseDown(screen.getByTestId('outside'))
+    expect(onOpenChange).toHaveBeenLastCalledWith(false)
+    fireEvent.keyDown(document, { key: 'Escape' })
+    expect(onOpenChange).toHaveBeenCalledTimes(2)
+    expect(onOpenChange).toHaveBeenLastCalledWith(false)
+    // Still controlled by the parent: listbox remains until `open` changes.
+    expect(screen.getByRole('listbox')).toBeTruthy()
+  })
+
+  it('uncontrolled mode still notifies onOpenChange while managing its own state', () => {
+    const onOpenChange = vi.fn()
+    render(<LanguageSwitcher onOpenChange={onOpenChange} />)
+    const trigger = screen.getByRole('button', { name: /Current language/ })
+    fireEvent.click(trigger)
+    expect(screen.getByRole('listbox')).toBeTruthy()
+    expect(onOpenChange).toHaveBeenLastCalledWith(true)
+    fireEvent.click(trigger)
+    expect(screen.queryByRole('listbox')).toBeNull()
+    expect(onOpenChange).toHaveBeenLastCalledWith(false)
+  })
+})
+
 describe('LanguageSwitcher — exported variant wrappers', () => {
   it('LanguageSwitcherMinimal renders the minimal variant', () => {
     render(<LanguageSwitcherMinimal />)

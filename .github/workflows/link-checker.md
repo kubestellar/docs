@@ -1,4 +1,14 @@
 ---
+# MAINTENANCE NOTE (kubestellar/docs#7162, #7178): the compiled
+# link-checker.lock.yml pins the threat-detect binary to v0.5.2 (with
+# SHA256 digests) because the gh-aw-actions default of v0.5.1 is missing
+# from PATH on some runners, which makes the "detection" job fail with
+# "threat-detect binary not found on PATH" (exit code 127). This
+# frontmatter has no setting to control that binary version, so if this
+# workflow is recompiled with `gh aw compile`, do not merge the generated
+# link-checker.lock.yml unless its install_threat_detect_binary.sh call
+# still requests >= v0.5.2 with pinned SHA256 digests; reapply the pin
+# manually if the compiler regenerates v0.5.1.
 description: |
   AI-powered link checker that runs nightly. Scans all markdown files,
   distinguishes real broken links from transient failures, and creates/updates

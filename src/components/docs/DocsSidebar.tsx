@@ -7,73 +7,34 @@ import { ChevronRight, ChevronDown, FileText } from 'lucide-react';
 import { useDocsMenu } from './DocsProvider';
 import { SidebarFooter } from './SidebarFooter';
 
-interface MenuItem {
-  name: string;
-  route?: string;
-  title?: string;
-  children?: MenuItem[];
-  frontMatter?: Record<string, unknown>;
-  kind?: string;
-  theme?: { collapsed?: boolean };
-}
+// Project display order and labels — each with a landing href for navigation
+// links. Live in ./sidebarProjects so the `ProjectId` keys enforce a compile-
+// time completeness check against the canonical PROJECTS registry
+// (kubestellar/docs#7174, mirrors #7172).
+import {
+  LEGACY_PROJECTS,
+  PRIMARY_PROJECTS,
+} from './sidebarProjects';
+
+// Pure page-map helpers and the mount-only collapse-state computation live in
+// ./sidebarCollapseState so they can be unit-tested without mounting this
+// 600+-line component (see kubestellar/docs architect finding: DocsSidebar
+// god-component collapse-state logic untested in isolation).
+import {
+  GENERAL_SECTION_PATH_REGEX,
+  LEGACY_GROUP_KEY,
+  PROJECT_KEY_PREFIX,
+  computeInitialCollapsedState,
+  getFirstChildRoute,
+  getGeneralSections,
+  getProjectItems,
+  type MenuItem,
+} from './sidebarCollapseState';
 
 interface DocsSidebarProps {
   pageMap: MenuItem[];
   className?: string;
   projectId?: string;
-}
-
-// General sections that appear in every project's pageMap — show once at bottom
-const GENERAL_SECTION_SLUGS = ['contributing', 'community', 'news'] as const;
-const GENERAL_SECTION_NAMES = GENERAL_SECTION_SLUGS.map(
-  (slug) => slug.charAt(0).toUpperCase() + slug.slice(1),
-);
-
-// Project display order and labels — each with a landing href for navigation links
-const PRIMARY_PROJECTS = [
-  { id: 'console', label: 'KubeStellar Console', href: '/docs/console/readme' },
-  { id: 'kubestellar-mcp', label: 'KubeStellar MCP', href: '/docs/kubestellar-mcp/overview/intro' },
-] as const;
-
-const LEGACY_PROJECTS = [
-  { id: 'kubestellar', label: 'KubeStellar', href: '/docs/readme' },
-  { id: 'a2a', label: 'A2A', href: '/docs/a2a/intro' },
-  { id: 'kubeflex', label: 'KubeFlex', href: '/docs/kubeflex/readme' },
-  { id: 'multi-plugin', label: 'Multi Plugin', href: '/docs/multi-plugin/overview/introduction' },
-] as const;
-
-const ALL_PROJECTS = [...PRIMARY_PROJECTS, ...LEGACY_PROJECTS] as const;
-
-// Key prefix for project-level collapse state (avoids collision with nav item keys)
-const PROJECT_KEY_PREFIX = '__project_';
-const LEGACY_GROUP_KEY = '__legacy';
-const GENERAL_SECTION_PATH_REGEX = new RegExp(
-  `^/docs/(${GENERAL_SECTION_SLUGS.join('|')})(/|$)`,
-);
-
-function getGeneralSectionSlugFromPath(path: string): string | null {
-  const match = path.match(GENERAL_SECTION_PATH_REGEX);
-  return match?.[1] ?? null;
-}
-
-function getProjectItems(items: MenuItem[]): MenuItem[] {
-  return items.filter(item => !GENERAL_SECTION_NAMES.includes(item.name || item.title || ''));
-}
-
-function getGeneralSections(items: MenuItem[]): MenuItem[] {
-  return items.filter(item => GENERAL_SECTION_NAMES.includes(item.name || item.title || ''));
-}
-
-// Find the first navigable route in a menu item's children
-function getFirstChildRoute(item: MenuItem): string | undefined {
-  if (!item.children) return undefined;
-  for (const child of item.children) {
-    if (child.kind === 'Meta' || child.kind === 'Separator') continue;
-    if (child.route && child.route !== '#') return child.route;
-    const nested = getFirstChildRoute(child);
-    if (nested) return nested;
-  }
-  return undefined;
 }
 
 const LEGACY_OVERVIEW_HREF = '/docs/legacy-components';
@@ -138,91 +99,14 @@ export function DocsSidebar({ pageMap, className, projectId }: DocsSidebarProps)
   // Store initial pathname for initialization
   const initialPathnameRef = useRef(pathname);
 
-  // Initialize collapsed state once on mount
+  // Initialize collapsed state once on mount. The derivation itself is a
+  // pure function of (pageMap, projectId, currentPath) — see
+  // ./sidebarCollapseState for the testable implementation.
   useEffect(() => {
     if (navInitialized.current) return;
     navInitialized.current = true;
 
-    const initialCollapsed = new Set<string>();
-    const pathToActive = new Set<string>();
-    const currentPath = initialPathnameRef.current;
-
-    // Determine active project from pathname
-    const activeProjectId = projectId || 'console';
-
-    // Keep non-active project sections collapsed by default
-    for (const proj of ALL_PROJECTS) {
-      const isProjectLink = currentPath === '/docs/introduction' || proj.id !== activeProjectId;
-      if (isProjectLink) {
-        initialCollapsed.add(`${PROJECT_KEY_PREFIX}${proj.id}`);
-      }
-    }
-
-    // Collapse legacy group if active project is not a legacy project
-    const legacyIds = LEGACY_PROJECTS.map(p => p.id) as readonly string[];
-    if (!legacyIds.includes(activeProjectId)) {
-      initialCollapsed.add(LEGACY_GROUP_KEY);
-    }
-
-    // For the active project, find the path to the active page and collapse non-active folders
-    const activeItems = getProjectItems(pageMap);
-    const activeParentKey = `${PROJECT_KEY_PREFIX}${activeProjectId}`;
-
-    function findActivePath(items: MenuItem[], parentKey: string): boolean {
-      for (const item of items) {
-        const itemKey = `${parentKey}-${item.name}`;
-        if (item.route && currentPath === item.route) {
-          return true;
-        }
-        if (item.children) {
-          const childActive = findActivePath(item.children, itemKey);
-          if (childActive) {
-            pathToActive.add(itemKey);
-            return true;
-          }
-        }
-      }
-      return false;
-    }
-
-    function collapseAll(items: MenuItem[], parentKey: string) {
-      for (const item of items) {
-        const itemKey = `${parentKey}-${item.name}`;
-        const hasChildren = item.children && item.children.length > 0;
-        if (hasChildren) {
-          const shouldStayExpanded = item.theme?.collapsed === false;
-          if (!pathToActive.has(itemKey) && !shouldStayExpanded) {
-            initialCollapsed.add(itemKey);
-          }
-          if (item.children) {
-            collapseAll(item.children, itemKey);
-          }
-        }
-      }
-    }
-
-    findActivePath(activeItems, activeParentKey);
-    collapseAll(activeItems, activeParentKey);
-
-    // Also handle general sections
-    const generalSections = getGeneralSections(pageMap);
-    const currentGeneralSectionSlug = getGeneralSectionSlugFromPath(currentPath);
-    const isViewingGeneralSection = Boolean(currentGeneralSectionSlug);
-
-    for (const section of generalSections) {
-      const sectionKey = section.name;
-      const sectionSlug = (section.name || section.title || '').toLowerCase();
-      const isCurrent = isViewingGeneralSection && sectionSlug === currentGeneralSectionSlug;
-      if (!isCurrent) {
-        initialCollapsed.add(sectionKey);
-      }
-      if (isCurrent && section.children) {
-        findActivePath(section.children, sectionKey);
-        collapseAll(section.children, sectionKey);
-      }
-    }
-
-    setCollapsed(initialCollapsed);
+    setCollapsed(computeInitialCollapsedState(pageMap, projectId, initialPathnameRef.current));
   }, [pageMap, projectId, navInitialized, setCollapsed]);
 
   // Keep legacy group collapsed while browsing general sections

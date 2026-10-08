@@ -21,6 +21,10 @@ on:
       - "tsconfig.json"
       - "eslint.config.*"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions: read-all  # default read; writes scoped to job below
 
 jobs:

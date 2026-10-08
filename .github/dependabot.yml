@@ -28,6 +28,15 @@ updates:
           - "react-dom"
           - "@types/react"
           - "@types/react-dom"
+    ignore:
+      # typescript-eslint does not support TypeScript 7.x yet (tracked
+      # upstream as typescript-eslint/typescript-eslint#12518, closed
+      # "not planned" until TS 7.1 ships a stable programmatic API).
+      # Dependabot's typescript 6->7 bump (#6314) cannot be merged and
+      # was re-proposed every week with no way to land it. Drop this
+      # ignore rule once typescript-eslint adds TypeScript 7 support.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -49,6 +58,32 @@ updates:
     labels:
       - "dependencies"
       - "docker"
+    reviewers:
+      - "clubanderson"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+  - package-ecosystem: "docker"
+    directory: "/cluster-objects"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "dependencies"
+      - "docker"
+    reviewers:
+      - "clubanderson"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+  - package-ecosystem: "pip"
+    directory: "/cluster-objects"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "dependencies"
+      - "python"
     reviewers:
       - "clubanderson"
     open-pull-requests-limit: 5

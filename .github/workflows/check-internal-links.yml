@@ -14,18 +14,26 @@ on:
       - "docs/content/**"
       - "scripts/sync-hive-docs.ts"
       - "scripts/check-internal-links.ts"
+      - "scripts/check-internal-links-helpers.ts"
       - "src/app/docs/page-map.ts"
       - "src/app/docs/**"
-      - "src/config/versions.ts"
+      - "src/lib/nav.ts"
+      - "src/config/versions/**"
   push:
     branches: [main]
     paths:
       - "docs/content/**"
       - "scripts/sync-hive-docs.ts"
       - "scripts/check-internal-links.ts"
+      - "scripts/check-internal-links-helpers.ts"
       - "src/app/docs/page-map.ts"
       - "src/app/docs/**"
-      - "src/config/versions.ts"
+      - "src/lib/nav.ts"
+      - "src/config/versions/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions: read-all
 

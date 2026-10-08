@@ -122,7 +122,7 @@ The first section of the `values.yaml` file refers to parameters that are specif
 
 In particular:
 - `kubeflex-operator.install` accepts a boolean value to enable/disable the installation of KubeFlex into the cluster by the chart
-- `kubeflex-operator.isOpenShift` must be set to true by the user when installing the chart into a OpenShift cluster
+- `kubeflex-operator.isOpenShift` must be set to true by the user when installing the chart into an OpenShift cluster
 
 By default, the chart will install the KubeFlex and its PostgreSQL dependency.
 

@@ -1,26 +1,53 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { locales, localeNames, type Locale } from "@/i18n/settings";
+import { useClickOutside } from "@/hooks/useClickOutside";
+import { useEscapeKey } from "@/hooks/useEscapeKey";
 
 interface LanguageSwitcherProps {
   className?: string;
   showLabel?: boolean;
   variant?: "dropdown" | "minimal";
+  /**
+   * Controlled open state. When provided, the parent owns whether the
+   * listbox is shown and must update it from `onOpenChange`; when omitted
+   * the component manages its own state.
+   */
+  open?: boolean;
+  /** Called whenever the component wants to open or close its listbox. */
+  onOpenChange?: (open: boolean) => void;
 }
 
 export default function LanguageSwitcher({
   className = "",
   showLabel = true,
   variant = "dropdown",
+  open,
+  onOpenChange,
 }: LanguageSwitcherProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
+  const isControlled = open !== undefined;
+  const isOpen = isControlled ? open : uncontrolledOpen;
+  // Latest-callback ref so the document listeners below never go stale
+  // without re-subscribing every time the parent passes a new lambda.
+  const onOpenChangeRef = useRef(onOpenChange);
+  useEffect(() => {
+    onOpenChangeRef.current = onOpenChange;
+  }, [onOpenChange]);
+
+  const setIsOpen = useCallback(
+    (next: boolean) => {
+      if (!isControlled) setUncontrolledOpen(next);
+      onOpenChangeRef.current?.(next);
+    },
+    [isControlled]
+  );
   const [isTransitioning, setIsTransitioning] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const locale = useLocale() as Locale;
   const pathname = usePathname();
@@ -28,48 +55,16 @@ export default function LanguageSwitcher({
   const t = useTranslations("navigation");
 
   // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
+  useClickOutside(dropdownRef, useCallback(() => setIsOpen(false), [setIsOpen]), [buttonRef]);
 
-    document.addEventListener("mousedown", handleClickOutside);
-
-    // Capture the current timeout value at effect setup time for cleanup
-    const currentTimeout = timeoutRef.current;
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      if (currentTimeout) {
-        clearTimeout(currentTimeout);
-      }
-    };
-  }, []);
-
-  // Close dropdown on escape key
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsOpen(false);
-        buttonRef.current?.focus();
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("keydown", handleEscape);
-    }
-
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, [isOpen]);
+  // Close dropdown on escape key, restoring focus to the toggle button
+  useEscapeKey(
+    useCallback(() => {
+      setIsOpen(false);
+      buttonRef.current?.focus();
+    }, [setIsOpen]),
+    isOpen
+  );
 
   const handleLanguageChange = async (newLocale: Locale) => {
     if (newLocale === locale) {

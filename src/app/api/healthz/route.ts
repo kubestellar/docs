@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server'
 import fs from 'fs'
+import path from 'path'
 import { docsContentPath } from '../../docs/page-map'
+import { GENERAL_SECTIONS, NAV_FILE_NAME, loadNavFile, NavFileError } from '@/lib/nav'
+import { getAllProjects } from '@/config/versions'
 import { logger } from '@/lib/logger'
 import { recordApiRequest } from '@/lib/metrics'
 
@@ -19,6 +22,22 @@ import { recordApiRequest } from '@/lib/metrics'
 // Outcomes are also recorded via the existing bounded `docs_api_*` metrics
 // (route="healthz"), so readiness pass/fail rates are visible to
 // Prometheus/alerting, not just grep-able from structured logs on failure.
+//
+// Also validates every project's sidebar nav.yaml (PROJECTS[id].navPath) and
+// the shared GENERAL_SECTIONS navs via loadNavFile() from src/lib/nav.ts.
+// Since kubestellar/docs#7096, buildPageMap()/getNavStructure() load and
+// parse these files at REQUEST time from SlugLayout (every /docs/<project>/*
+// page render) and from /api/search — not just at build time, despite the
+// "build error" framing in src/lib/nav.ts's module comment. A missing or
+// malformed nav.yaml (bad deploy, partial checkout, hand-edit typo) throws
+// NavFileError there uncaught: page renders hit only the client-side
+// global-error.tsx boundary (console.error in the visitor's browser, no
+// server log, no `docs_api_requests_total` sample, since that metric is only
+// wired into /api/* route handlers), and the docs content directory itself
+// is untouched, so the prior check above still reports "ok". Checking these
+// files here closes that gap: the instance fails readiness instead of
+// silently serving a broken sidebar/search on every request for an affected
+// project. See runbooks/api-error-rate-latency.md.
 export async function GET() {
   const startedAt = performance.now()
   let status = 200
@@ -34,6 +53,20 @@ export async function GET() {
     const entries = fs.readdirSync(docsContentPath)
     if (entries.length === 0) {
       const reason = 'docs content path is empty'
+      status = 503
+      logger.error('healthz check failed', { route: 'healthz', method: 'GET', status, error: reason })
+      return NextResponse.json({ status: 'unhealthy', reason }, { status })
+    }
+
+    try {
+      for (const project of getAllProjects()) {
+        loadNavFile(path.join(process.cwd(), project.navPath))
+      }
+      for (const section of GENERAL_SECTIONS) {
+        loadNavFile(path.join(docsContentPath, section, NAV_FILE_NAME))
+      }
+    } catch (navErr) {
+      const reason = navErr instanceof NavFileError ? navErr.message : 'sidebar nav file is invalid'
       status = 503
       logger.error('healthz check failed', { route: 'healthz', method: 'GET', status, error: reason })
       return NextResponse.json({ status: 'unhealthy', reason }, { status })

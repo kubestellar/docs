@@ -231,7 +231,12 @@ export default function DocsNavbar() {
         onResultClick={search.trackSearchResultClick}
       />
 
-      <MobileMenu isDark={isDark} isMenuOpen={isMenuOpen} githubStats={githubStats} />
+      <MobileMenu
+        isDark={isDark}
+        isMenuOpen={isMenuOpen}
+        githubStats={githubStats}
+        extraContent={<VersionSelector isMobile={true} />}
+      />
     </div>
   );
 }

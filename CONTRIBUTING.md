@@ -15,7 +15,8 @@ also changes product code outside this repository.
 ## What lives in this repository
 
 - `docs/content/` — documentation source files (`.md` and `.mdx`)
-- `src/app/docs/page-map.ts` — sidebar and navigation structure
+- `docs/content/<project>/nav.yaml` — sidebar navigation for each project (and
+  `docs/content/{contributing,community,news}/nav.yaml` for the shared sections)
 - `src/` — site code, theme customizations, and shared components
 - `public/` — static assets used by the docs site
 
@@ -37,7 +38,7 @@ Use a local clone when you need to:
 
 - update multiple pages at once
 - add images or other assets
-- change navigation in `src/app/docs/page-map.ts`
+- change navigation in a `nav.yaml` file under `docs/content/`
 - edit components, styling, or site behavior under `src/`
 - validate a more complex docs change before opening a PR
 
@@ -89,9 +90,24 @@ Most documentation edits happen in `docs/content/`.
 
 ### Navigation changes
 
-The docs navigation is not generated automatically from the filesystem.
-When you add, remove, rename, or move a page in the site navigation, also update
-`src/app/docs/page-map.ts`.
+The docs navigation is not generated automatically from the filesystem. Each
+project's sidebar is defined in a `nav.yaml` next to its content —
+`docs/content/nav.yaml` for KubeStellar, `docs/content/<project>/nav.yaml` for
+every other project — and the shared Contributing / Community / News sections
+live in `docs/content/<section>/nav.yaml`. When you add, remove, rename, or move
+a page in the site navigation, also update the matching `nav.yaml`:
+
+```yaml
+- title: Getting Started
+  items:
+    - Quick Start: getting-started/quick-start.md
+    - Advanced:
+        - Custom Setup: getting-started/advanced/custom-setup.md
+```
+
+Paths are relative to the directory that holds the `nav.yaml`. A page that is
+not listed does not appear in the sidebar; a malformed `nav.yaml` fails
+`npm run build` (and `npm test`) with the file and location of the problem.
 
 ### Version-aware changes
 
@@ -211,7 +227,7 @@ When reviewing a PR, pay attention to:
 1. **Content Quality**
    - Clarity and accuracy of documentation changes
    - Correct Markdown/MDX syntax and formatting
-   - Proper navigation structure updates in `src/app/docs/page-map.ts`
+   - Proper navigation structure updates in the relevant `docs/content/**/nav.yaml`
    - Working links and valid examples
 
 2. **Security-Sensitive Changes**
@@ -390,7 +406,7 @@ For safety reasons, copies of the docs source may remain in a to-be-deleted fold
 |   ├📁 src/  ← Source for NEW pages, site nav and layout       |    
 |   | ├📁 app/                                                  |
 |   | |  ├📁 docs/  ← layouts to apply to component docs pages  |
-|   | |  ├── 📄page-map.ts     ← Defines navigation structure   │
+|   | |  ├── 📄page-map.ts     ← Builds sidebar from nav.yaml   │
 │   | |  ├── 📄layout.tsx      ← Nextra theme integration       │
 |   | |  └── 📄page.mdx      ← Nextra page master               │
 |   | ├📁 components/                                           │
@@ -418,7 +434,7 @@ For safety reasons, copies of the docs source may remain in a to-be-deleted fold
 - ✅ **Content lives in the docs/content folder of this kubestellar/docs repo** (`docs/content/`)
 - ✅ **The website structure is defined in the src folder of this repo**
 - ✅ **This repo also contains the website framework** (Next.js + Nextra)
-- ✅ **Navigation is defined in `page-map.ts`** (not auto-generated from files)
+- ✅ **Navigation is defined in `nav.yaml` files under `docs/content/`** (not auto-generated from files)
 
 ### How Nextra Integration Works
 
@@ -447,13 +463,13 @@ This documentation site is built using **Nextra**, a powerful Next.js-based docu
    - Enables dark mode and collapsible sidebar sections
 
 3. **`src/app/docs/page-map.ts`** - Navigation structure builder that:
-   - Defines the documentation navigation structure in `NAV_STRUCTURE`
+   - Loads each project's navigation from its `nav.yaml` (`PROJECTS[project].navPath` in `src/config/versions/lookup.ts`) plus the shared `contributing`, `community` and `news` sections, validating the schema at build time (`src/lib/nav.ts`)
    - Reads documentation files from the local `/docs/content/` directory
    - Constructs hierarchical navigation from the defined structure
    - Generates routes for each documentation page
    - Creates a mapping between file paths and URL routes
    - **Note:** The file tree structure in _/docs/content_ roughly parallels the navigation created in _pagemap.ts_ but is **not** identical. As the new site matures many of the differences will be smoothed out
-   - Using the page-map rather than file structure to generate the `NAV_STRUCTURE` simplifies changing menus for different locales (languages)
+   - Using explicit `nav.yaml` files rather than the file structure to generate the navigation simplifies changing menus for different locales (languages)
 
 4. **`src/app/docs/[...slug]/page.tsx`** - Dynamic page renderer that:
    - Reads MDX content from the local `/docs/content/` directory
@@ -510,7 +526,15 @@ All documentation content lives in this repository:
 
 #### Navigation Structure
 
-The navigation is defined in `src/app/docs/page-map.ts` in the `NAV_STRUCTURE` constant. This defines how documentation pages are organized and displayed in the sidebar.
+The navigation is defined in `nav.yaml` data files that live next to the content they describe:
+
+| File                                                   | Sidebar it defines                                   |
+| ------------------------------------------------------ | ---------------------------------------------------- |
+| `docs/content/nav.yaml`                                | KubeStellar (paths relative to `docs/content/`)      |
+| `docs/content/<project>/nav.yaml`                      | Each other project, e.g. `console`, `kubeflex`       |
+| `docs/content/{contributing,community,news}/nav.yaml`  | Shared sections appended to every project's sidebar  |
+
+Each file is a list of sections; each section has a `title` and a list of `items`. An item is either `Page Title: relative/path.md` or `Folder Title:` followed by a nested list. `src/app/docs/page-map.ts` loads these files (via `PROJECTS[project].navPath`, see `src/config/versions/lookup.ts`) and validates them at build time — a missing or malformed `nav.yaml` fails `npm run build` and `npm test` with the file and location of the problem.
 
 #### Adding New Content
 
@@ -523,15 +547,15 @@ To add new documentation pages:
    - You can use template variables: `{{ config.variable_name }}`
 
 2. **Update the Navigation:**
-   - Edit `src/app/docs/page-map.ts`
-   - Find the appropriate section in `NAV_STRUCTURE`
+   - Edit the `nav.yaml` for the project (`docs/content/nav.yaml` for KubeStellar, `docs/content/<project>/nav.yaml` otherwise)
+   - Find the appropriate section
    - Add an entry for your new file:
      
-     ```typescript
-     { 'Page Title': 'path/to/your-file.md' }
+     ```yaml
+     - Page Title: path/to/your-file.md
      ```
      
-   - The file path is relative to `/docs/content/`
+   - The file path is relative to the directory that holds the `nav.yaml`
 
 3. **Preview Your Changes:**
    
@@ -543,34 +567,25 @@ To add new documentation pages:
 
 #### Example: Adding a New Getting Started Guide
 
-```typescript
-// In src/app/docs/page-map.ts, within NAV_STRUCTURE
-{
-  title: 'User Guide',
-  items: [
-    { 'Quick Start': 'kubestellar/get-started.md' },
-    { 'Your New Guide': 'kubestellar/new-guide.md' }, // Add this line
-    // ... rest of the entries
-  ]
-}
+```yaml
+# In docs/content/nav.yaml
+- title: User Guide
+  items:
+    - Quick Start: kubestellar/get-started.md
+    - Your New Guide: kubestellar/new-guide.md   # Add this line
+    # ... rest of the entries
 ```
 
 #### Adding Nested Sections
 
 For hierarchical navigation:
 
-```typescript
-{
-  'Parent Section': [
-    { 'Subsection 1': 'path/to/file1.md' },
-    { 'Subsection 2': 'path/to/file2.md' },
-    {
-      'Nested Section': [
-        { 'Deep Page': 'path/to/deep/file.md' }
-      ]
-    }
-  ]
-}
+```yaml
+- Parent Section:
+    - Subsection 1: path/to/file1.md
+    - Subsection 2: path/to/file2.md
+    - Nested Section:
+        - Deep Page: path/to/deep/file.md
 ```
 
 
@@ -578,8 +593,8 @@ For hierarchical navigation:
 
 You can also add external documentation links:
 
-```typescript
-{ 'API Reference (new tab)': 'https://pkg.go.dev/github.com/kubestellar/kubestellar/api/control/v1alpha1' }
+```yaml
+- API Reference (new tab): https://pkg.go.dev/github.com/kubestellar/kubestellar/api/control/v1alpha1
 ```
 
 ### Version Management
@@ -627,7 +642,7 @@ The site when first loaded shows the **latest** tagged version of the KubeStella
 
 3. **Content Verification:**
    - Ensure the content file exists in the docs repository
-   - Verify the file path in `page-map.ts` matches exactly
+   - Verify the file path in the project's `nav.yaml` matches exactly
    - Check that the category structure makes logical sense
 
 ### Common Issues
@@ -639,8 +654,8 @@ The site when first loaded shows the **latest** tagged version of the KubeStella
    - Rebuild the page map
 
 2. **Navigation Issues:**
-   - Check `NAV_STRUCTURE` structure syntax
-   - Ensure proper nesting of arrays and objects
+   - Check the `nav.yaml` syntax — the build error names the file, section and item
+   - Ensure proper indentation of nested lists
    - Verify route generation logic
 
 3. **Content Not Updating:**
@@ -682,16 +697,16 @@ echo "# My New Page" > docs/content/my-new-page.md
 git add docs/content/my-new-page.md
 git commit -m "Add new documentation page"
 
-# Step 2: Update navigation in page-map.ts
-# Edit src/app/docs/page-map.ts to add your page
-# Add: { file: 'my-new-page.md' } in appropriate category
+# Step 2: Update navigation in nav.yaml
+# Edit docs/content/nav.yaml to add your page
+# Add: "- My New Page: my-new-page.md" under the appropriate section
 
 # Step 3: Test locally
 npm run dev
 # Visit http://localhost:3000/docs to verify
 
 # Step 4: Commit and push
-git add src/app/docs/page-map.ts
+git add docs/content/nav.yaml
 git commit -m "Add my-new-page to navigation"
 git push
 ```
@@ -699,9 +714,8 @@ git push
 #### Workflow 2: Reorganizing Navigation
 
 ```sh
-# Edit src/app/docs/page-map.ts
-# Modify NAV_STRUCTURE array
-# Example: Move a page to different category
+# Edit the project's docs/content/**/nav.yaml
+# Example: Move a page to a different section
 npm run dev  # Test changes
 npm run build  # Verify build succeeds
 git commit -am "Reorganize documentation navigation"
@@ -754,7 +768,8 @@ GITHUB_PAT=ghp_your_token_here    # Alternative name
 
 | File                       | Purpose                 | When to Edit                           |
 | -------------------------- | ----------------------- | -------------------------------------- |
-| `src/app/docs/page-map.ts` | Navigation structure    | Adding/removing/reorganizing pages     |
+| `docs/content/**/nav.yaml` | Navigation structure    | Adding/removing/reorganizing pages     |
+| `src/app/docs/page-map.ts` | Sidebar/route builder   | Changing how nav.yaml becomes routes   |
 | `next.config.ts`           | Nextra & Next.js config | Changing Nextra settings, redirects    |
 | `src/app/docs/layout.tsx`  | Docs page layout        | Modifying sidebar, theme, or layout    |
 | `mdx-components.js`        | MDX component mappings  | Adding custom React components to MDX  |
@@ -772,8 +787,8 @@ DOCS_FILE_PATH="docs/content/your-file.md"
 GITHUB_CONTENTS_API="https://api.github.com/repos/kubestellar/docs/contents"
 curl "${GITHUB_CONTENTS_API}/${DOCS_FILE_PATH}"
 
-# Verify page-map.ts entry
-grep -r "your-file.md" src/app/docs/page-map.ts
+# Verify nav.yaml entry
+grep -r "your-file.md" docs/content --include=nav.yaml
 
 # Clear Next.js cache
 npm run clean

@@ -14,10 +14,11 @@ Applies to the automated version-branch pipeline in this repo:
 - `.github/workflows/sync-console-release-versions.yml` — a related,
   lower-risk nightly job that performs the same `versions.ts`/`shared.json`
   update for console releases, but opens a plain PR for human review and
-  does **not** self-approve. It currently has no failure-alert step (see
-  [docs#6718](https://github.com/kubestellar/docs/issues/6718)), so a
-  failed run is silent rather than surfaced — see "Detecting a
-  silently-failed sync" below.
+  does **not** self-approve. A failed run now files/comments on a
+  `[sync-console-versions-failure]`-tagged `ci-failure` issue (added in
+  [#6916](https://github.com/kubestellar/docs/pull/6916); confirmed firing
+  in [#6989](https://github.com/kubestellar/docs/issues/6989)) — see
+  "Detecting a failed sync" below.
 
 This runbook is specific to the version-routing config
 (`src/config/versions.ts` / `public/config/shared.json`), which controls
@@ -38,19 +39,19 @@ the bad input and the config change going live.
 
 ## Detecting a bad automated version-branch/config push
 
-**Known gap (tracked in issue #6694):** `sync-console-release-versions.yml`
-has no failure alert — if the daily cron job itself fails (auth error,
-API rate limit, script bug, etc.), the only signal is a red run in the
-Actions tab; nothing pages, comments, or opens an issue. A silent failure
-here means the docs version picker can go stale for an arbitrary number of
-days after a new stable console release ships, with no automated
-indication. Until fixed, treat "no recent `📖 Sync console docs versions`
-PR after a new console release" as a symptom requiring a manual check of
-the workflow's run history. The recommended fix (see `generate-acmm-history.yml`
-for the existing convention in this repo) is a `if: failure()` step using
-`actions/github-script` that opens a deduplicated, `bug`-labeled issue
-tagged e.g. `[sync-console-release-versions-failure]` linking back to the
-failed run and this runbook.
+**Fixed (was tracked in issues #6694/#6718, implemented in
+[#6916](https://github.com/kubestellar/docs/pull/6916)):** if the daily
+cron job fails (auth error, API rate limit, script bug, etc.), a
+`Create issue on failure` step (`if: failure()`, `actions/github-script`)
+opens or comments on a deduplicated, `ci-failure`-labeled issue tagged
+`[sync-console-versions-failure]` linking back to the failed run — see
+[#6989](https://github.com/kubestellar/docs/issues/6989) for a real
+instance. A silent failure here would otherwise mean the docs version
+picker goes stale for an arbitrary number of days after a new stable
+console release ships, so treat an open `[sync-console-versions-failure]`
+issue, or "no recent `📖 Sync console docs versions` PR after a new
+console release" with no such issue open, as the two symptoms to check
+first.
 
 Symptoms that point to this pipeline rather than a normal content/deploy
 issue:
@@ -83,31 +84,25 @@ issue:
    the source project's release automation that fired the
    `repository_dispatch` event).
 
-## Detecting a silently-failed sync (no PR appears)
+## Detecting a failed sync
 
-Unlike a bad push (previous section), `sync-console-release-versions.yml`
-has no failure-alert step
-([docs#6718](https://github.com/kubestellar/docs/issues/6718)), so a
-failed run produces **no visible symptom** — no PR, no issue, no error
-anyone sees by default. The only way to notice is to actively check for
-staleness:
+`sync-console-release-versions.yml` now alerts on failure (see above), so
+the primary signal is an open `ci-failure`-labeled issue titled
+`[sync-console-versions-failure] ...`. If one is open:
 
-1. Compare the latest stable tag at
-   `https://github.com/kubestellar/console/releases` against the console
-   entry in `src/config/versions.ts` on `main`.
-2. If a release is newer than what's in `versions.ts` and it's been more
-   than ~24h since that release published (one cron cycle), check the
-   [workflow's run history](https://github.com/kubestellar/docs/actions/workflows/sync-console-release-versions.yml)
-   for a recent failure.
-3. If the run failed, re-run it via `workflow_dispatch` after fixing the
-   underlying cause (expired `WORKFLOW_SYNC_TOKEN`, GitHub API rate limit,
-   or a `scripts/update-version.js` error shown in the failed run's logs).
-4. If it succeeded but still produced no PR, that's expected when there is
-   no new stable console release to sync — not a bug.
+1. Check the linked run for the underlying cause (expired
+   `WORKFLOW_SYNC_TOKEN`, GitHub API rate limit, or a
+   `scripts/update-version.js` error in the failed run's logs).
+2. Re-run the workflow via `workflow_dispatch` after fixing the cause.
+   Unlike `healthz-monitor.yml`'s alert issues, this workflow's alert step
+   does not auto-close on the next successful run — close the
+   `[sync-console-versions-failure]` issue manually once resolved.
 
-This check has no fixed cadence enforced by tooling today; treat it as a
-manual spot-check when a console release is expected to appear in the docs
-version picker and doesn't.
+If no alert issue is open but the version picker still looks stale (e.g. a
+console release is newer than the entry in `src/config/versions.ts` on
+`main` and it's been more than ~24h since that release published), that
+means the workflow ran and reported success but produced no PR — expected
+when there is no new stable console release to sync, not a bug.
 
 ## Rollback: bad version branch
 

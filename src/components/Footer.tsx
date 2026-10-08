@@ -1,53 +1,18 @@
 "use client";
 
-import { useEffect, useState, FormEvent } from "react";
 import Image from "next/image";
-import { GridLines, StarField } from "./index";
+import GridLines from "./animations/GridLines";
+import StarField from "./animations/StarField";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { getLocalizedUrl } from "@/lib/url";
+import { useBackToTop } from "@/hooks/useBackToTop";
+import { useNewsletterSubscribe } from "@/hooks/useNewsletterSubscribe";
 
 export default function Footer() {
   const t = useTranslations("footer");
-  const [email, setEmail] = useState("");
-  const handleSubscribe = (e: FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-
-    window.alert("Subscriptions are not available yet. Please try again later.");
-    setEmail("");
-  };
-  useEffect(() => {
-    // Back to top functionality
-    const initBackToTop = () => {
-      const backToTopButton = document.getElementById("back-to-top");
-      if (!backToTopButton) return;
-
-      const toggleButton = () => {
-        if (window.scrollY > 300) {
-          backToTopButton.style.opacity = "1";
-          backToTopButton.style.transform = "translateY(-30px)";
-        } else {
-          backToTopButton.style.opacity = "0";
-          backToTopButton.style.transform = "translateY(10px)";
-        }
-      };
-
-      window.addEventListener("scroll", toggleButton);
-
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
-      // Initial check
-      toggleButton();
-    };
-
-    initBackToTop();
-  }, []);
+  const { email, setEmail, handleSubscribe } = useNewsletterSubscribe();
+  useBackToTop();
 
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8">

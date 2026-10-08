@@ -1,12 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback, useEffect } from "react";
-import {
-  GridLines,
-  StarField,
-  Navbar,
-  Footer,
-} from "../../../components/index";
+import PageShell from "../../../components/master-page/PageShell";
 import { gtagEvent } from "../../../components/GoogleAnalytics";
 import { ACMM_PROJECTS, BADGE_PARTICIPANTS, SNAPSHOT_DATE } from "./data";
 import {
@@ -18,6 +13,7 @@ import {
   levelFromScore,
 } from "./scoring";
 import { LevelBadge, MIN_DATA_POINTS_FOR_SPARKLINE, RankDisplay, ScoreBar, Sparkline } from "./components";
+import { nextSortState } from "../../../lib/sortToggle";
 
 // ── History payload from acmm-history.json ────────────────────────────
 
@@ -51,7 +47,9 @@ export default function AcmmLeaderboardPage() {
       .then((data) => {
         if (data?.dates && data?.scores) setHistory(data);
       })
-      .catch(() => {});
+      .catch((err) => {
+        console.error("Failed to fetch ACMM history:", err);
+      });
   }, []);
 
   // ── GA4 event helpers ──────────────────────────────────────────────
@@ -157,16 +155,10 @@ export default function AcmmLeaderboardPage() {
   }, [projects, search, levelFilter, badgeOnly, sortField, sortDir]);
 
   function toggleSort(field: SortField) {
-    let newDir: SortDir;
-    if (sortField === field) {
-      newDir = sortDir === "asc" ? "desc" : "asc";
-      setSortDir(newDir);
-    } else {
-      newDir = field === "name" ? "asc" : "desc";
-      setSortField(field);
-      setSortDir(newDir);
-    }
-    trackSort(field, newDir);
+    const next = nextSortState(sortField, sortDir, field, field === "name" ? "asc" : "desc");
+    setSortField(next.field);
+    setSortDir(next.dir);
+    trackSort(field, next.dir);
   }
 
   const SortIcon = ({ field }: { field: SortField }) => {
@@ -175,15 +167,16 @@ export default function AcmmLeaderboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] text-white flex flex-col">
-      <Navbar />
-
-      {/* Background effects */}
-      <div className="fixed inset-0 pointer-events-none">
-        <GridLines horizontalLines={20} verticalLines={20} strokeColor="rgba(255,255,255,0.03)" />
-        <StarField density="medium" />
-      </div>
-
+    <PageShell
+      className="min-h-screen bg-[#0a0a0f] text-white flex flex-col"
+      contentClassName={null}
+      background={{
+        wrapperClassName: "fixed inset-0 pointer-events-none",
+        baseLayerClassName: false,
+        grid: { horizontalLines: 20, verticalLines: 20, strokeColor: "rgba(255,255,255,0.03)" },
+        stars: { density: "medium" },
+      }}
+    >
       {/* Hero section */}
       <section className="relative pt-32 pb-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto text-center">
@@ -478,8 +471,6 @@ export default function AcmmLeaderboardPage() {
 
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </PageShell>
   );
 }

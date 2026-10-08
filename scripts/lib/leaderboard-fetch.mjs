@@ -48,7 +48,7 @@ export async function fetchItemsSince(repo, sinceDate, headers) {
   const totalDays = Math.ceil((now - since) / (86400 * 1000));
 
   if (totalDays <= CHUNK_DAYS) {
-    return fetchPagedItems(repo, sinceDate, null);
+    return fetchPagedItems(repo, sinceDate, null, headers);
   }
 
   const allItems = [];

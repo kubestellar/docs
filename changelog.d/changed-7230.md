@@ -1,0 +1,1 @@
+- refactor(master-page): extract `AboutSection`'s feature-card scroll/tilt effect into `useFeatureCardAnimations` and `ContactSection`'s form-submit handler into `useContactForm`, following the existing `useCounterAnimation` hook-extraction convention (#7230).

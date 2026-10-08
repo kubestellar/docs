@@ -1123,11 +1123,11 @@ html:not(.dark) .contributor-card:hover {
   filter: drop-shadow(0 0 8px currentColor);
 }
 
-/* Dropdown styles */
+/* Dropdown styles — visibility is owned by the React `hidden` attribute
+   on the menu element (see src/components/navbar/useNavDropdowns.ts). */
 [data-dropdown-menu] {
   transition: all 0.3s ease;
   transform-origin: top center;
-  display: none;
 }
 
 [data-dropdown] {
@@ -2474,4 +2474,75 @@ html.dark aside[data-sidebar="docs"] svg[class*="text-gray-"] {
   color: #d1d5db; /* gray-300 */
 }
 
+.background-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
 
+.product-card:hover,
+.program-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* Program detail page theming (ProgramPageClient).
+   Scoped under .program-themed; colors come from CSS custom properties
+   (--program-primary, --program-secondary, --program-gradient) set
+   inline on the page root. */
+.program-themed .text-gradient {
+  background-image: var(--program-gradient);
+  background-size: 300% 300%;
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes program-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.program-themed .section-content {
+  animation: program-fade-in 0.4s ease-out;
+}
+
+.program-themed .nav-item-active {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--program-primary) 12.5%, transparent),
+    transparent
+  );
+  border-left: 3px solid var(--program-primary);
+}
+
+.program-themed .nav-item:hover {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--program-primary) 6.3%, transparent),
+    transparent
+  );
+}
+
+.program-themed .prose-program h2 {
+  color: var(--program-primary);
+}
+
+.program-themed .accent-border {
+  border-left: 4px solid var(--program-primary);
+}
+
+.program-themed .program-link {
+  color: var(--program-primary);
+}
+
+.program-themed .program-link:hover {
+  color: var(--program-secondary);
+}

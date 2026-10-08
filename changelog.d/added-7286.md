@@ -1,0 +1,1 @@
+- added(cluster-objects): add a Grafana panel and a `DocsI18nLocaleFallbackSustained` Prometheus alert for the existing `docs_i18n_locale_fallback_total` counter, which had no dashboard or alerting coverage since it was added; new `runbooks/i18n-locale-fallback.md` covers diagnosis/recovery (#7286).

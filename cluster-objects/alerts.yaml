@@ -6,10 +6,26 @@
 # and no off-box data flow. It only takes effect where a Prometheus
 # Operator is already watching this namespace/selector.
 #
-# Expressions reference only docs_api_requests_total and
-# docs_api_request_duration_seconds, whose `route`/`status_class` labels
-# come from the fixed ApiRoute union and status-class set in
-# src/lib/metrics.ts (bounded cardinality, no user input in labels).
+# Expressions reference docs_api_requests_total,
+# docs_api_request_duration_seconds, and docs_i18n_locale_fallback_total,
+# whose `route`/`status_class`/`locale` labels come from the fixed
+# ApiRoute union, status-class set, and Locale union in src/lib/metrics.ts
+# (bounded cardinality, no user input in labels).
+#
+# This is the single canonical PrometheusRule for all docs_api_*/
+# docs_i18n_* app-metric alerts (see kubestellar/docs#6884): it used to be
+# one of three separate PrometheusRule manifests alerting on the same
+# metrics with drifted names/thresholds (cluster-objects/prometheusrule.yaml,
+# cluster-objects/prometheusrule-docs-api.yaml). Every distinct detection
+# case from those two files has been merged in below, renamed only where
+# needed to avoid an exact `alert:` name collision; no threshold was
+# loosened in the merge. kubestellar-docs CronJob-rollout and scrape-target
+# alerts remain in cluster-objects/prometheusrule.yaml, which is NOT a
+# duplicate of this file — scripts/lint-dashboard.mjs validates this file's
+# `expr` fields against the known docs_* metrics in src/lib/metrics.ts, and
+# the CronJob/scrape-target alerts intentionally reference
+# `kube_cronjob_status_last_successful_time`/`up`, metrics that lint would
+# flag as unknown if moved here.
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
@@ -52,3 +68,88 @@ spec:
               The 95th percentile request duration for docs API route
               {{ $labels.route }} has exceeded 2s for 10 minutes.
             runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
+        - alert: DocsApiHighErrorRateAggregate
+          # Merged from cluster-objects/prometheusrule.yaml's
+          # `DocsApiHighErrorRate` (renamed here to avoid colliding with
+          # this file's own per-route alert of that name). Aggregate
+          # across all instrumented routes: catches a cross-route error
+          # spike that no single route's per-route rate crosses 5% on.
+          expr: >-
+            sum(rate(docs_api_requests_total{status_class="5xx"}[5m]))
+            /
+            sum(rate(docs_api_requests_total[5m]))
+            > 0.05
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Docs site API 5xx rate is above threshold (aggregate)"
+            description: >-
+              More than 5% of requests to the docs site's instrumented API
+              routes have returned a 5xx status over the last 5 minutes,
+              sustained for 10 minutes (aggregated across routes; see
+              DocsApiHighErrorRate for the per-route version).
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
+        - alert: DocsApiHighRequestLatencyAggregate
+          # Merged from cluster-objects/prometheusrule.yaml's
+          # `DocsApiHighRequestLatency` (renamed to disambiguate from this
+          # file's per-route `DocsApiHighLatency`). Kept at its original
+          # 1s threshold, which is stricter than this file's per-route 2s
+          # alert, so this merge does not weaken latency detection.
+          expr: >-
+            histogram_quantile(0.95,
+              sum(rate(docs_api_request_duration_seconds_bucket[5m])) by (le)
+            ) > 1
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Docs site API p95 request latency is elevated (aggregate)"
+            description: >-
+              The 95th percentile request latency for the docs site's
+              instrumented API routes has exceeded 1s over the last 5
+              minutes, sustained for 10 minutes (aggregated across routes;
+              see DocsApiHighLatency for the per-route version).
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
+        - alert: DocsApiHighErrorRatio
+          # Merged unchanged from cluster-objects/prometheusrule-docs-api.yaml.
+          # Unlike the two alerts above (5xx-only), this counts 4xx+5xx, so
+          # it also catches a sustained client-error storm (e.g. a broken
+          # search query path) that never crosses the 5xx-only thresholds.
+          # That file's second alert, `DocsApiHighLatencyP95` (p95 > 2s
+          # aggregate), was dropped as part of this merge: it is strictly
+          # subsumed by `DocsApiHighRequestLatencyAggregate` above, which
+          # evaluates the identical aggregate expression at a stricter 1s
+          # threshold and therefore always fires at least as early — no
+          # detection capability is lost.
+          expr: >-
+            sum(rate(docs_api_requests_total{status_class=~"4xx|5xx"}[5m]))
+            /
+            sum(rate(docs_api_requests_total[5m]))
+            > 0.10
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Docs site API error ratio above 10% for 10m"
+            description: >-
+              More than 10% of requests to the docs site's /api routes have
+              returned a 4xx or 5xx status over the last 5 minutes,
+              sustained for 10 minutes.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/api-error-rate-latency.md"
+        - alert: DocsI18nLocaleFallbackSustained
+          expr: >-
+            sum(rate(docs_i18n_locale_fallback_total[15m])) by (locale) > 0
+          for: 15m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Docs site is falling back from locale {{ $labels.locale }} to the default locale"
+            description: >-
+              Requests for locale {{ $labels.locale }} have been falling
+              back to the default locale's message bundle continuously for
+              15 minutes. This means that locale's messages/<locale>.json
+              bundle is failing to load (missing file, bad deploy, or
+              corrupt JSON) and visitors using that locale are silently
+              seeing default-locale UI strings instead.
+            runbook_url: "https://github.com/kubestellar/docs/blob/main/runbooks/i18n-locale-fallback.md"

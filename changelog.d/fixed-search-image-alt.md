@@ -1,0 +1,1 @@
+- Search index no longer leaks image alt text as literal "!alt" fragments.

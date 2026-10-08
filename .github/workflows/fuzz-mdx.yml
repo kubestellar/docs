@@ -25,6 +25,10 @@ on:
         required: false
         default: ''
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions: {}  # no default permissions; this job needs no token access
 
 jobs:
@@ -50,6 +54,7 @@ jobs:
         run: npm ci
 
       - name: Run fuzz harness
+        id: fuzz
         env:
           FUZZ_SEED: ${{ github.event.inputs.seed || '' }}
           FUZZ_ITERATIONS: ${{ github.event.inputs.iterations || '20000' }}
@@ -80,6 +85,22 @@ jobs:
           path: /tmp/fuzz-*.log
           if-no-files-found: ignore
           retention-days: 14
+
+      - name: CI Observability Summary
+        if: always()
+        run: |
+          FUZZ_OUTCOME="${{ steps.fuzz.outcome }}"
+          echo "CI_OBSERVABILITY check=fuzz-mdx fuzz=${FUZZ_OUTCOME} status=${FUZZ_OUTCOME}"
+          if [ -n "$GITHUB_STEP_SUMMARY" ]; then
+            ICON=$([ "$FUZZ_OUTCOME" = "success" ] && echo "✅" || echo "❌")
+            cat <<EOF >> "$GITHUB_STEP_SUMMARY"
+          ## Fuzz MDX Sanitizer Summary
+
+          | Check | Outcome | Status |
+          | --- | --- | --- |
+          | Fuzz harness | \`$FUZZ_OUTCOME\` | $ICON |
+          EOF
+          fi
 
       - name: Create issue on failure
         if: failure() && github.event_name == 'schedule'

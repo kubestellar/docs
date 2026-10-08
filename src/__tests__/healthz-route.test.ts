@@ -2,6 +2,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import fs from 'fs'
 import { docsContentPath } from '@/app/docs/page-map'
 import { GET } from '@/app/api/healthz/route'
+import * as nav from '@/lib/nav'
+import { NavFileError } from '@/lib/nav'
 import { logger } from '@/lib/logger'
 import { metricsRegistry } from '@/lib/metrics'
 
@@ -14,11 +16,15 @@ describe('/api/healthz route', () => {
   let statSyncSpy: ReturnType<typeof vi.spyOn>
   let readdirSyncSpy: ReturnType<typeof vi.spyOn>
   let loggerErrorSpy: ReturnType<typeof vi.spyOn>
+  let loadNavFileSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
     statSyncSpy = vi.spyOn(fs, 'statSync')
     readdirSyncSpy = vi.spyOn(fs, 'readdirSync')
     loggerErrorSpy = vi.spyOn(logger, 'error').mockImplementation(() => {})
+    // Default: every nav.yaml loads fine, so the content-path-only test
+    // cases below don't also have to reason about the real on-disk navs.
+    loadNavFileSpy = vi.spyOn(nav, 'loadNavFile').mockReturnValue([])
     metricsRegistry.resetMetrics()
   })
 
@@ -128,6 +134,49 @@ describe('/api/healthz route', () => {
       method: 'GET',
       status: 503,
       error: 'docs content path is unreadable',
+    })
+  })
+
+  it('returns 503 naming the offending nav.yaml when a project sidebar nav is missing or malformed', async () => {
+    statSyncSpy.mockReturnValueOnce({ isDirectory: () => true } as unknown as fs.Stats)
+    readdirSyncSpy.mockReturnValueOnce(['intro.md', 'kubestellar'] as unknown as fs.Dirent[])
+    loadNavFileSpy.mockImplementationOnce(() => {
+      throw new NavFileError('docs/content/a2a/nav.yaml', 'file not found')
+    })
+
+    const res = await GET()
+
+    expect(res.status).toBe(503)
+    const body = await res.json()
+    expect(body).toEqual({
+      status: 'unhealthy',
+      reason: 'Invalid sidebar nav file docs/content/a2a/nav.yaml: file not found',
+    })
+    expect(loggerErrorSpy).toHaveBeenCalledWith('healthz check failed', {
+      route: 'healthz',
+      method: 'GET',
+      status: 503,
+      error: 'Invalid sidebar nav file docs/content/a2a/nav.yaml: file not found',
+    })
+    const metricsText = await metricsRegistry.metrics()
+    expect(metricsText).toContain('route="healthz"')
+    expect(metricsText).toContain('status_class="5xx"')
+  })
+
+  it('returns 503 with a generic reason when nav validation throws a non-NavFileError', async () => {
+    statSyncSpy.mockReturnValueOnce({ isDirectory: () => true } as unknown as fs.Stats)
+    readdirSyncSpy.mockReturnValueOnce(['intro.md'] as unknown as fs.Dirent[])
+    loadNavFileSpy.mockImplementationOnce(() => {
+      throw new Error('unexpected')
+    })
+
+    const res = await GET()
+
+    expect(res.status).toBe(503)
+    const body = await res.json()
+    expect(body).toEqual({
+      status: 'unhealthy',
+      reason: 'sidebar nav file is invalid',
     })
   })
 

@@ -1,64 +1,27 @@
 "use client";
 
-import { useEffect, useState, FormEvent } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "../index";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { useBackToTop } from "@/hooks/useBackToTop";
+import { useNewsletterSubscribe } from "@/hooks/useNewsletterSubscribe";
 
 export default function Footer() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
-  const [email, setEmail] = useState("");
-
-  const handleSubscribe = (e: FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-
-    window.alert("Subscriptions are not available yet. Please try again later.");
-    setEmail("");
-  };
+  const { email, setEmail, handleSubscribe } = useNewsletterSubscribe();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    // Back to top functionality
-    const backToTopButton = document.getElementById("back-to-top");
-    if (!backToTopButton) return;
-
-    const toggleButton = () => {
-      if (window.scrollY > 300) {
-        backToTopButton.style.opacity = "1";
-        backToTopButton.style.transform = "translateY(-30px)";
-      } else {
-        backToTopButton.style.opacity = "0";
-        backToTopButton.style.transform = "translateY(10px)";
-      }
-    };
-
-    const handleClick = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    };
-
-    window.addEventListener("scroll", toggleButton);
-    backToTopButton.addEventListener("click", handleClick);
-
-    // Initial check
-    toggleButton();
-
-    // Cleanup function to prevent memory leaks
-    return () => {
-      window.removeEventListener("scroll", toggleButton);
-      backToTopButton.removeEventListener("click", handleClick);
-    };
-  }, []);
+  // Runs once `mounted` is true so `#back-to-top` exists in the DOM
+  // (the pre-mount branch does not render this button).
+  useBackToTop({ enabled: mounted });
 
   // Prevent hydration mismatch by rendering dark theme until mounted
   if (!mounted) {

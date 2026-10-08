@@ -6,7 +6,7 @@ import type { ProjectId } from '../config/versions'
  * Coverage for the `isGeneralSection` routing arms inside `buildNavNodes`
  * in src/app/docs/page-map.ts (see kubestellar/docs#6663).
  *
- * NAV_STRUCTURE_CONTRIBUTING / NAV_STRUCTURE_COMMUNITY / NAV_STRUCTURE_NEWS
+ * The contributing / community / news navs (docs/content/<section>/nav.yaml)
  * are appended by getNavStructure() to every project's baseStructure, so
  * their pages MUST route under /docs/<section>/... rather than under the
  * per-project base (/docs/a2a/contributing/..., /docs/console/community/...,
@@ -23,7 +23,7 @@ import type { ProjectId } from '../config/versions'
  *
  *   3. bare-string item          (page-map.ts ~L561)
  *      A defensive arm for future navs; none of the current
- *      NAV_STRUCTURE_* constants use bare strings, so we only assert
+ *      nav.yaml files use bare strings, so we only assert
  *      that the top-level route wiring below stays correct — the arm
  *      itself is exercised elsewhere by future nav changes.
  *
@@ -191,7 +191,7 @@ describe('buildNavNodes — non-general folder retains project base path', () =>
       // under the project prefix (they live under /docs/contributing etc.
       // regardless of project). A project may legitimately have its own
       // 'community/…' pages inside its contentPath — those are project-owned
-      // and unrelated to the shared NAV_STRUCTURE_COMMUNITY arm.
+      // and unrelated to the shared community nav arm.
       const sharedFolderUnderProject = flat.filter(
         (n) =>
           n.kind === 'Folder' &&

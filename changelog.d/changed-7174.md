@@ -1,0 +1,1 @@
+- refactor(docs): extract DocsSidebar's hard-coded project arrays to `src/components/docs/sidebarProjects.ts` keyed by `ProjectId`, so a new project added to the `PROJECTS` registry is a compile error until the sidebar presentation map is updated — closes the drift path left half-fixed by #7172 (#7174).

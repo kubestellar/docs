@@ -1,0 +1,1 @@
+- fix(DocsFooter): add `mounted` to the back-to-top wiring `useEffect`'s dependency array so listeners attach once `#back-to-top` is actually rendered, fixing a permanently dead button (#7160).

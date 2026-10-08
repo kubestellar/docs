@@ -13,6 +13,14 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { categorizeIssuesByRepo, sortRepoBreakdown } from "./add-repo-breakdown-helpers.mjs";
+import {
+  API_BASE,
+  REST_PER_PAGE,
+  REST_PAGE_DELAY_MS,
+  buildDefaultHeaders,
+  fetchAllPages,
+  delay,
+} from "./lib/github-fetch.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -23,55 +31,27 @@ const REPOS = [
   "kubestellar/docs",
 ];
 
-const API_BASE = "https://api.github.com";
-const REST_PER_PAGE = 100;
-const REST_MAX_PAGES = 100;
-const REST_PAGE_DELAY_MS = 100;
-
 const TOKEN = process.env.GITHUB_TOKEN;
 if (!TOKEN) {
   console.error("Error: GITHUB_TOKEN environment variable is required");
   process.exit(1);
 }
 
-const defaultHeaders = {
-  Accept: "application/vnd.github.v3+json",
-  Authorization: `Bearer ${TOKEN}`,
-};
-
-async function ghFetch(url) {
-  const res = await fetch(url, { headers: defaultHeaders });
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new Error(`GitHub API ${res.status}: ${url}\n${body.slice(0, 200)}`);
-  }
-  return res.json();
-}
-
-async function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+const defaultHeaders = buildDefaultHeaders(TOKEN);
 
 async function fetchAllIssues(owner, repo, creator) {
-  const items = [];
-  for (let page = 1; page <= REST_MAX_PAGES; page++) {
-    const url = `${API_BASE}/repos/${owner}/${repo}/issues?creator=${creator}&state=all&per_page=${REST_PER_PAGE}&page=${page}`;
-    const data = await ghFetch(url);
-    if (data.length === 0) break;
-    
-    for (const issue of data) {
-      items.push({
-        repo: `${owner}/${repo}`,
-        is_pr: !!issue.pull_request,
-        merged_at: issue.pull_request?.merged_at || null,
-        labels: issue.labels.map((l) => l.name),
-      });
-    }
-    
-    if (data.length < REST_PER_PAGE) break;
-    await delay(REST_PAGE_DELAY_MS);
-  }
-  return items;
+  const data = await fetchAllPages(
+    (page) =>
+      `${API_BASE}/repos/${owner}/${repo}/issues?creator=${creator}&state=all&per_page=${REST_PER_PAGE}&page=${page}`,
+    defaultHeaders
+  );
+
+  return data.map((issue) => ({
+    repo: `${owner}/${repo}`,
+    is_pr: !!issue.pull_request,
+    merged_at: issue.pull_request?.merged_at || null,
+    labels: issue.labels.map((l) => l.name),
+  }));
 }
 
 async function main() {

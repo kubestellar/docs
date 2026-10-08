@@ -5,8 +5,9 @@ import { useMDXComponents as getMDXComponents } from '../../../../mdx-components
 import { convertHtmlScriptsToJsxComments } from '@/lib/transformMdx'
 import { sanitizeHtmlForMdx, removeCommentPatterns } from '@/lib/sanitizeHtml'
 import { rewriteRelativeImagePaths } from '@/lib/rewriteImagePaths'
+import { readFileWithinRoot } from '@/lib/safeFsRead'
 import { buildPageMap, docsContentPath, getContentPath } from '../page-map'
-import { CURRENT_VERSION, type ProjectId } from '@/config/versions'
+import { CURRENT_VERSION, PROJECTS, type ProjectId } from '@/config/versions'
 import { logger } from '@/lib/logger'
 import fs from 'fs'
 import path from 'path'
@@ -46,16 +47,10 @@ function replaceTemplateVariables(content: string): string {
 }
 
 function readLocalFile(filePath: string, contentPath: string = docsContentPath): string | null {
-  // Reject path traversal attempts (mirrors protection in docs-image/route.ts)
-  if (filePath.includes('..')) return null
-
   // Try the project-specific content path first
-  const fullPath = path.join(contentPath, filePath)
-  if (!fullPath.startsWith(contentPath + path.sep) && fullPath !== contentPath) return null
   try {
-    if (fs.existsSync(fullPath)) {
-      return fs.readFileSync(fullPath, 'utf-8')
-    }
+    const content = readFileWithinRoot(contentPath, filePath)
+    if (content !== null) return content
   } catch {
     // File doesn't exist in content directory
   }
@@ -63,29 +58,20 @@ function readLocalFile(filePath: string, contentPath: string = docsContentPath):
   // If not found in project directory, try main KubeStellar content path
   // This is needed for general sections (Contributing, Community, News) on non-KubeStellar projects
   if (contentPath !== docsContentPath) {
-    const kubestellarPath = path.join(docsContentPath, filePath)
-    if (kubestellarPath.startsWith(docsContentPath + path.sep)) {
-      try {
-        if (fs.existsSync(kubestellarPath)) {
-          return fs.readFileSync(kubestellarPath, 'utf-8')
-        }
-      } catch {
-        // File doesn't exist in KubeStellar directory either
-      }
+    try {
+      const content = readFileWithinRoot(docsContentPath, filePath)
+      if (content !== null) return content
+    } catch {
+      // File doesn't exist in KubeStellar directory either
     }
   }
 
   // If not found in content directories, try repository root
-  const cwd = process.cwd()
-  const repoRootPath = path.join(cwd, filePath)
-  if (repoRootPath.startsWith(cwd + path.sep)) {
-    try {
-      if (fs.existsSync(repoRootPath)) {
-        return fs.readFileSync(repoRootPath, 'utf-8')
-      }
-    } catch {
-      // File doesn't exist in repository root
-    }
+  try {
+    const content = readFileWithinRoot(process.cwd(), filePath)
+    if (content !== null) return content
+  } catch {
+    // File doesn't exist in repository root
   }
 
   return null
@@ -167,8 +153,12 @@ async function buildContent(slug: string[], projectId?: ProjectId): Promise<Page
 }
 
 function getProjectFromSlug(slug: string[]): { projectId: ProjectId | undefined; docSlug: string[] } {
-  const knownProjects: string[] = ['kubestellar', 'clusteradm-ocm', 'ks-core', 'multi-plugin', 'kubestellar-mcp', 'console', 'a2a', 'kubeflex']
-  
+  // Derived from PROJECTS (src/config/versions/lookup.ts) so adding a project to
+  // the registry automatically teaches this route to accept its slug — and so
+  // ids removed from PROJECTS can no longer slip through here as dead strings
+  // (which would then 500 the handler via getContentPath). See #7171, #7037.
+  const knownProjects = Object.keys(PROJECTS)
+
   if (slug.length > 0 && knownProjects.includes(slug[0])) {
     return {
       projectId: slug[0] as ProjectId,

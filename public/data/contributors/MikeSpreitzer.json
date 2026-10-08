@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-09-26T10:13:51.390Z",
+  "generated_at": "2026-10-08T14:17:58.594Z",
   "total_issues_opened": 43,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
@@ -9,7 +9,7 @@
   "level_rank": 5,
   "rank": 17,
   "cadence": {
-    "avg_per_week": 0.3,
+    "avg_per_week": 0.2,
     "avg_per_day": 0.2,
     "by_day_of_week": [
       9,
@@ -48,7 +48,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 3,
-    "trend": "slowing_down",
+    "trend": "inactive",
     "first_issue_at": "2025-12-11T19:58:02.000Z",
     "last_issue_at": "2026-08-06T18:07:50.000Z"
   },
@@ -315,10 +315,6 @@
   },
   "activity_timeline": [
     {
-      "month": "2025-10",
-      "issue_count": 0
-    },
-    {
       "month": "2025-11",
       "issue_count": 0
     },
@@ -360,6 +356,10 @@
     },
     {
       "month": "2026-09",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-10",
       "issue_count": 0
     }
   ],

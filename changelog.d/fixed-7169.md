@@ -1,0 +1,1 @@
+- fix(deps): bump `dompurify` override floor from `^3.4.13` to `^3.4.16` to pull `node_modules/dompurify` out of the `GHSA-p98j-92pf-mc4p` vulnerable range (`>=3.4.13 <=3.4.15`) and clear the single `npm audit` low (#7169).

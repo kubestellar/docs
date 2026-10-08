@@ -7,7 +7,8 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
  *   - extractTitle fallback (no `# Title` heading) → title derived from routeKey
  *   - snippet path when title matches but content does not
  *     (`snippet = text.slice(0, 140) + '...'` and short-text branches)
- *   - readLocalFile: fs.existsSync throwing and fs.existsSync returning false
+ *   - readLocalFile: fs.existsSync throwing (now logged) and existsSync
+ *     returning false (expected absence, not logged)
  *   - routeKeyToUrl empty-string branch (root docs mapping)
  *   - GET error handler (buildPageMap throws → 500 JSON)
  */
@@ -76,6 +77,17 @@ vi.mock('@/lib/transformMdx', () => ({
   convertHtmlScriptsToJsxComments: (content: string) => content,
 }))
 
+const errorSpy = { calls: [] as unknown[][] }
+
+vi.mock('@/lib/logger', () => ({
+  logger: {
+    error: (...args: unknown[]) => {
+      errorSpy.calls.push(args)
+    },
+    info: () => {},
+  },
+}))
+
 vi.mock('path', async () => {
   const actual = await vi.importActual<typeof import('path')>('path')
   return {
@@ -108,6 +120,7 @@ let GET: (request: any) => Promise<any>
 
 beforeEach(async () => {
   vi.resetModules()
+  errorSpy.calls.length = 0
   const mod = await import('../app/api/search/route')
   GET = mod.GET
 })
@@ -204,13 +217,22 @@ describe('GET /api/search (extra branches)', () => {
     ).toBeUndefined()
   })
 
-  it('readLocalFile: fs errors are swallowed (catch branch)', async () => {
+  it('readLocalFile: fs errors are logged and treated as absent (catch branch)', async () => {
     // guides/throws throws inside existsSync — must not surface as 500
     const req = new MockNextRequest('rich')
     const res = await GET(req)
     // Handler still returns 200 with the other results
     expect(res.status).toBe(200)
     expect(res.body.results.find((r: any) => r.title === 'Rich Doc')).toBeDefined()
+    // The fs failure is no longer silently swallowed — it's logged distinctly
+    // from the "file doesn't exist" case so real read failures are traceable.
+    expect(errorSpy.calls.length).toBe(1)
+    const [msg, meta] = errorSpy.calls[0]
+    expect(msg).toBe('search corpus file read failed')
+    expect((meta as { filePath: string; error: string }).filePath).toBe(
+      'guides/throws.mdx'
+    )
+    expect((meta as { filePath: string; error: string }).error).toBe('boom')
   })
 
   it('rejects queries longer than MAX_QUERY_LENGTH (128) with 400', async () => {

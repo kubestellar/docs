@@ -96,6 +96,19 @@ describe('ContributorHoverCard', () => {
     expect(screen.queryByText('ghost-404')).toBeNull()
   })
 
+  it('logs and stops loading when the profile fetch rejects (docs#7118)', async () => {
+    const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
+    vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new Error('network down'))))
+    render(
+      <ContributorHoverCard login="offline-user" onClose={vi.fn()} rank={1} totalPoints={0} level="Observer" />
+    )
+    await waitFor(() => expect(document.querySelector('.animate-pulse')).toBeNull())
+    expect(consoleErrorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('offline-user'),
+      expect.any(Error)
+    )
+  })
+
   it('closes when a mousedown occurs outside the card', async () => {
     vi.stubGlobal('fetch', vi.fn(() => Promise.resolve(jsonResponse({ ...basePreview, login: 'octocat-close' }))))
     const onClose = vi.fn()

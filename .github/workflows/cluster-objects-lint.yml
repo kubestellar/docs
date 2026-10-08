@@ -7,6 +7,10 @@ on:
       - "cluster-objects/*.yaml"
       - ".github/workflows/cluster-objects-lint.yml"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions: read-all
 
 jobs:

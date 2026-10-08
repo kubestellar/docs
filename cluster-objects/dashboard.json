@@ -1,5 +1,5 @@
 {
-  "_comment": "Static Grafana dashboard definition for the docs site's existing bounded Prometheus metrics (src/lib/metrics.ts, scraped via cluster-objects/servicemonitor.yaml). This file configures no exporter, backend, or credentials, and sends no data anywhere by itself \u2014 it is import-ready JSON for an operator's own Grafana instance once one is confirmed. Panels reference only docs_api_requests_total and docs_api_request_duration_seconds, whose route/status_class labels are drawn from the fixed ApiRoute union and status-class set (bounded cardinality).",
+  "_comment": "Static Grafana dashboard definition for the docs site's existing bounded Prometheus metrics (src/lib/metrics.ts, scraped via cluster-objects/servicemonitor.yaml). This file configures no exporter, backend, or credentials, and sends no data anywhere by itself \u2014 it is import-ready JSON for an operator's own Grafana instance once one is confirmed. Single canonical docs dashboard (see kubestellar/docs#6891, #7318): per-route 5xx error rate matches the DocsApiHighErrorRate alert in cluster-objects/alerts.yaml. Panels reference docs_api_requests_total, docs_api_request_duration_seconds, and docs_i18n_locale_fallback_total, whose route/status_class/locale labels are drawn from the fixed ApiRoute, status-class, and Locale unions respectively (bounded cardinality).",
   "title": "KubeStellar Docs \u2014 API Requests",
   "uid": "kubestellar-docs-api",
   "tags": ["kubestellar", "docs"],
@@ -61,6 +61,34 @@
         {
           "expr": "sum(increase(docs_api_requests_total[1h])) by (status_class)",
           "legendFormat": "{{status_class}}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Locale message-bundle fallbacks by locale (1h)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "targets": [
+        {
+          "expr": "sum(increase(docs_i18n_locale_fallback_total[1h])) by (locale)",
+          "legendFormat": "{{locale}}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Metrics series absent (1 = scrape down) \u2014 DocsApiMetricsTargetDown",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
+      "targets": [
+        {
+          "expr": "absent(docs_api_requests_total)",
+          "legendFormat": "no docs_api_requests_total series",
           "refId": "A"
         }
       ]

@@ -35,7 +35,7 @@ make fmt
 make check
 ```
 
-### Setup Kubestellar Demo Environment
+### Setup KubeStellar Demo Environment
 This can help developers to set up multi-cluster where they can test their **kubectl multi** commands.
 
 ```bash

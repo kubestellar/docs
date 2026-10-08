@@ -379,6 +379,89 @@ describe("update-version.js — shared.json is kept in sync", () => {
     }
   });
 
+  test("re-running with versions already present leaves shared.json byte-for-byte unchanged", () => {
+    const dir = makeFixtureDir();
+    try {
+      const sharedPath = join(dir, "public", "config", "shared.json");
+      const first = runScript(dir, [
+        "--project", "kubestellar",
+        "--version", "0.31.0",
+        "--branch", "docs/0.31.0",
+        "--set-latest",
+      ]);
+      expect(first.status).toBe(0);
+      const afterFirst = readFileSync(sharedPath, "utf8");
+      expect(JSON.parse(afterFirst).updatedAt).not.toBe("2020-01-01T00:00:00.000Z");
+
+      // Same invocation again: nothing to add, so the generated timestamp must
+      // not move either — otherwise the daily sync opens a timestamp-only PR.
+      const second = runScript(dir, [
+        "--project", "kubestellar",
+        "--version", "0.31.0",
+        "--branch", "docs/0.31.0",
+        "--set-latest",
+      ]);
+      expect(second.status).toBe(0);
+      expect(second.stdout).toContain("No changes needed for");
+      expect(readFileSync(sharedPath, "utf8")).toBe(afterFirst);
+
+      // A different project whose latest already matches is also a no-op.
+      const third = runScript(dir, [
+        "--project", "a2a",
+        "--version", "0.1.0",
+        "--branch", "docs/a2a/0.1.0",
+        "--set-latest",
+      ], "a2a");
+      expect(third.status).toBe(0);
+      expect(readFileSync(sharedPath, "utf8")).toBe(afterFirst);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  test("re-running for an existing non-latest version without --set-latest leaves shared.json unchanged", () => {
+    const dir = makeFixtureDir();
+    try {
+      const sharedPath = join(dir, "public", "config", "shared.json");
+
+      // kubestellar: 0.29.0 already has a historical entry in the fixture. The
+      // first run still rewrites editBaseUrls.kubestellar to the 0.29.0 branch
+      // (existing behaviour), so it is a real change and must be stamped.
+      const first = runScript(dir, ["--project", "kubestellar", "--version", "0.29.0", "--branch", "docs/0.29.0"]);
+      expect(first.status).toBe(0);
+      expect(first.stdout).not.toContain("Added version entry for 0.29.0");
+      expect(first.stdout).toContain("Updated editBaseUrls.kubestellar to https://github.com/kubestellar/docs/edit/docs/0.29.0/docs/content");
+      const afterFirst = readFileSync(sharedPath, "utf8");
+      expect(JSON.parse(afterFirst).updatedAt).not.toBe("2020-01-01T00:00:00.000Z");
+      expect(JSON.parse(afterFirst).versions.kubestellar.latest.label).toBe("v0.30.0 (Latest)");
+
+      // Same non-latest invocation again: entry present, editBaseUrls already
+      // points at the branch, no --set-latest — nothing may move, including updatedAt.
+      const second = runScript(dir, ["--project", "kubestellar", "--version", "0.29.0", "--branch", "docs/0.29.0"]);
+      expect(second.status).toBe(0);
+      expect(second.stdout).toContain("No changes needed for");
+      expect(second.stdout).not.toContain("Updated editBaseUrls.kubestellar");
+      expect(readFileSync(sharedPath, "utf8")).toBe(afterFirst);
+
+      // a2a has no editBaseUrls, so the no-op path is reached purely through the
+      // "version entry already exists" branch: add 0.0.9 once, then re-run.
+      const third = runScript(dir, ["--project", "a2a", "--version", "0.0.9", "--branch", "docs/a2a/0.0.9"], "a2a");
+      expect(third.status).toBe(0);
+      expect(third.stdout).toContain("Added version entry for 0.0.9");
+      const afterThird = readFileSync(sharedPath, "utf8");
+      expect(afterThird).not.toBe(afterFirst);
+      expect(JSON.parse(afterThird).versions.a2a["0.0.9"]).toEqual({ label: "v0.0.9", branch: "docs/a2a/0.0.9", isDefault: false });
+      expect(JSON.parse(afterThird).versions.a2a.latest.label).toBe("v0.1.0 (Latest)");
+
+      const fourth = runScript(dir, ["--project", "a2a", "--version", "0.0.9", "--branch", "docs/a2a/0.0.9"], "a2a");
+      expect(fourth.status).toBe(0);
+      expect(fourth.stdout).toContain("No changes needed for");
+      expect(readFileSync(sharedPath, "utf8")).toBe(afterThird);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
   test("--set-latest for a non-kubestellar project does NOT rewrite editBaseUrls.kubestellar", () => {
     const dir = makeFixtureDir();
     try {

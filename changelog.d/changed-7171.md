@@ -1,0 +1,1 @@
+- refactor(docs): derive project-id lists in `src/app/docs/[...slug]/page.tsx` and `src/app/sitemap.ts` from the canonical `PROJECTS` registry; drops the dead `clusteradm-ocm` / `ks-core` entries that would have 500-ed the slug handler (#7171).
