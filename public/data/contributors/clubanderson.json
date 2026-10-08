@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-08T02:28:09.655Z",
+  "generated_at": "2026-10-08T06:26:32.394Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2807,
+  "total_prs_opened": 2809,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6312400,
+  "total_points": 6312800,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 33.3,
-    "avg_per_day": 8.24,
+    "avg_per_week": 33.4,
+    "avg_per_day": 8.22,
     "by_day_of_week": [
       316,
       592,
       758,
-      557,
+      559,
       539,
       366,
       320
@@ -27,7 +27,7 @@
       55,
       38,
       120,
-      1527,
+      1529,
       283,
       54,
       8,
@@ -46,11 +46,11 @@
       58,
       36
     ],
-    "current_streak_weeks": 40,
-    "longest_streak_weeks": 40,
+    "current_streak_weeks": 41,
+    "longest_streak_weeks": 41,
     "trend": "steady",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-07T06:33:27.000Z"
+    "last_issue_at": "2026-10-08T06:10:08.000Z"
   },
   "topics": [
     {
@@ -84,7 +84,7 @@
     },
     {
       "name": "hive, doc, sync",
-      "issue_count": 17,
+      "issue_count": 16,
       "recent_issue": {
         "title": "🌱 Retire /live/hive and point the Hive dashboard links at hivecommons",
         "url": "https://github.com/kubestellar/docs/pull/6838",
@@ -94,7 +94,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 17
+      "closed_count": 16
     },
     {
       "name": "dragonflydb, structure, support",
@@ -280,6 +280,34 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "interest, reply, leafnode",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 nats: Leafnode with server_name never receives interest, and drops requests/replies,",
+        "url": "https://github.com/kubestellar/console-kb/pull/3736",
+        "created_at": "2026-10-08T06:10:08Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "createorupdate, deadline, jetstream",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 nats: Jetstream consumer createOrUpdate context deadline exceeded",
+        "url": "https://github.com/kubestellar/console-kb/pull/3735",
+        "created_at": "2026-10-08T06:09:58Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "bgp, unnumbered, cplane",
@@ -700,20 +728,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "link, ccf7896d, break",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Broken link: https://kubestellar.io/#key-features...",
-        "url": "https://github.com/kubestellar/docs/issues/6473",
-        "created_at": "2026-08-03T07:28:07Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -798,7 +812,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 22
+      "issue_count": 24
     }
   ],
   "repo_breakdown": [
@@ -807,7 +821,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2093,
+      "prs_opened": 2095,
       "prs_merged": 1760
     },
     {
