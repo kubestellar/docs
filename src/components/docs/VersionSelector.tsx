@@ -279,5 +279,3 @@ export function VersionSelector({ className = '', isMobile = false }: VersionSel
     </div>
   );
 }
-
-export default VersionSelector;
