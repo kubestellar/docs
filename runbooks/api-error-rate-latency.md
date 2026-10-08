@@ -65,13 +65,13 @@ by `scripts/lint-dashboard.mjs`'s known-metric check if moved into
 full mapping.
 
 The dashboard-side drift ([#6891](https://github.com/kubestellar/docs/issues/6891),
-[#6928](https://github.com/kubestellar/docs/issues/6928)) across
-`cluster-objects/dashboard.json`, `dashboard-docs-api.json`, and
-`grafana-dashboard.json` is a separate, still-open gap — `#6928`'s `uid`
-collision was fixed in [#6967](https://github.com/kubestellar/docs/pull/6967),
-but the panel/aggregation drift `#6891` describes was only
-cross-referenced in this runbook, not resolved, and dashboard JSON edits
-are outside this runbook's/PR's scope.
+[#6928](https://github.com/kubestellar/docs/issues/6928),
+[#7318](https://github.com/kubestellar/docs/issues/7318)) has been
+consolidated into a single dashboard, `cluster-objects/dashboard.json`,
+whose error-rate panel is the per-route 5xx rate matching
+`DocsApiHighErrorRate`. `dashboard-docs-api.json` and
+`grafana-dashboard.json` were removed; their distinct coverage
+(scrape-down signal) was folded into `dashboard.json`.
 
 ## Detecting and diagnosing `DocsApiHighErrorRate` / `DocsApiHighErrorRateAggregate` / `DocsApiHighErrorRatio`
 
@@ -103,22 +103,10 @@ are outside this runbook's/PR's scope.
    `route="docs-image"` in Prometheus/Grafana — the alert's
    `histogram_quantile` aggregates both routes together, so the raw
    per-route buckets are needed to isolate which one regressed.
-   `cluster-objects/grafana-dashboard.json` has a ready-made "P95 request
-   latency by route" panel for this exact comparison (import it into a
+   `cluster-objects/dashboard.json` has a ready-made "p95 request
+   duration by route" panel for this exact comparison (import it into a
    Grafana instance already pointed at the Prometheus scraping this
    deployment — it does not configure a data source itself).
-   `cluster-objects/dashboard.json` and `cluster-objects/dashboard-docs-api.json`
-   are two other, drifted dashboard definitions in the same directory —
-   they are not referenced by this runbook. They previously shared an
-   identical `"uid": "kubestellar-docs-api"` (fixed in
-   [#6928](https://github.com/kubestellar/docs/issues/6928), the
-   dashboard-side follow-up to the `PrometheusRule` drift in
-   [#6884](https://github.com/kubestellar/docs/issues/6884)), so
-   provisioning both no longer silently overwrites one at that uid —
-   but their titles, panels, and error-rate definitions (5xx-only vs.
-   4xx+5xx, per-route vs. aggregate) still disagree; see
-   [#6891](https://github.com/kubestellar/docs/issues/6891) before
-   relying on either of those two files.
 2. For `search`: elevated latency usually indicates a larger-than-normal
    search index, a slow/uncached parse of the query, or resource
    contention on the instance (check pod CPU/memory alongside this
