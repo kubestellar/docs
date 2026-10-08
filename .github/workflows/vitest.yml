@@ -45,6 +45,7 @@ jobs:
         run: npm ci
 
       - name: Run Vitest suite with coverage
+        id: vitest
         run: npx vitest run --coverage
 
       - name: Upload coverage report
@@ -54,3 +55,19 @@ jobs:
           name: coverage-report
           path: coverage/
           retention-days: 7
+
+      - name: CI Observability Summary
+        if: always()
+        run: |
+          VITEST_OUTCOME="${{ steps.vitest.outcome }}"
+          echo "CI_OBSERVABILITY check=vitest vitest=${VITEST_OUTCOME} status=${VITEST_OUTCOME}"
+          if [ -n "$GITHUB_STEP_SUMMARY" ]; then
+            ICON=$([ "$VITEST_OUTCOME" = "success" ] && echo "✅" || echo "❌")
+            cat <<EOF >> "$GITHUB_STEP_SUMMARY"
+          ## Vitest Summary
+
+          | Check | Outcome | Status |
+          | --- | --- | --- |
+          | Vitest (with coverage) | \`$VITEST_OUTCOME\` | $ICON |
+          EOF
+          fi
