@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
+import { mockWindow, restoreWindow as restoreWindowShared } from './windowTestUtils'
 
 /**
  * Complementary unit tests for src/lib/url.ts covering the exports that
@@ -17,24 +18,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 const originalWindow = globalThis.window
 
 function restoreWindow() {
-  if (originalWindow === undefined) {
-    // @ts-expect-error - removing window for SSR-style tests
-    delete globalThis.window
-  } else {
-    Object.defineProperty(globalThis, 'window', {
-      value: originalWindow,
-      writable: true,
-      configurable: true,
-    })
-  }
-}
-
-function mockWindow(host: string, protocol = 'https:') {
-  Object.defineProperty(globalThis, 'window', {
-    value: { location: { host, protocol } },
-    writable: true,
-    configurable: true,
-  })
+  restoreWindowShared(originalWindow)
 }
 
 // ═════════════════════════════════════════════════════════════════════

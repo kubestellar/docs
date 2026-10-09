@@ -1,4 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { mockWindow, restoreWindow as restoreWindowShared } from './windowTestUtils'
 
 /**
  * Unit tests for the uncovered branches of src/lib/url.ts.
@@ -13,25 +14,8 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 
 const originalWindow = globalThis.window
 
-function mockWindow(host: string, protocol = 'https:') {
-  Object.defineProperty(globalThis, 'window', {
-    value: { location: { host, protocol } },
-    writable: true,
-    configurable: true,
-  })
-}
-
 function restoreWindow() {
-  if (originalWindow === undefined) {
-    // @ts-expect-error - removing window for SSR tests
-    delete globalThis.window
-  } else {
-    Object.defineProperty(globalThis, 'window', {
-      value: originalWindow,
-      writable: true,
-      configurable: true,
-    })
-  }
+  restoreWindowShared(originalWindow)
 }
 
 describe('getBaseUrl — production fallback (server-side)', () => {
