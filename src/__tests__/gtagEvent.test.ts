@@ -21,6 +21,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { gtagEvent } from '../components/GoogleAnalytics'
+import { restoreWindow as restoreWindowShared } from './windowTestUtils'
 
 const originalWindow = globalThis.window
 
@@ -33,16 +34,7 @@ function installWindow(gtag: unknown) {
 }
 
 function restoreWindow() {
-  if (originalWindow === undefined) {
-    // @ts-expect-error - removing window for SSR tests
-    delete globalThis.window
-  } else {
-    Object.defineProperty(globalThis, 'window', {
-      value: originalWindow,
-      writable: true,
-      configurable: true,
-    })
-  }
+  restoreWindowShared(originalWindow)
 }
 
 describe('gtagEvent', () => {

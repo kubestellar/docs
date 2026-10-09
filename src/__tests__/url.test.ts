@@ -1,4 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { mockWindow, restoreWindow as restoreWindowShared } from './windowTestUtils'
 
 /**
  * Unit tests for getBaseUrl() hostname validation.
@@ -11,25 +12,8 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 // We need to control window.location for client-side tests
 const originalWindow = globalThis.window
 
-function mockWindow(host: string, protocol = 'https:') {
-  Object.defineProperty(globalThis, 'window', {
-    value: { location: { host, protocol } },
-    writable: true,
-    configurable: true,
-  })
-}
-
 function restoreWindow() {
-  if (originalWindow === undefined) {
-    // @ts-expect-error - removing window for SSR tests
-    delete globalThis.window
-  } else {
-    Object.defineProperty(globalThis, 'window', {
-      value: originalWindow,
-      writable: true,
-      configurable: true,
-    })
-  }
+  restoreWindowShared(originalWindow)
 }
 
 describe('getBaseUrl — client-side hostname validation', () => {
