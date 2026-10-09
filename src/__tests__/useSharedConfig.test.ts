@@ -1,8 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
   getVersionsForProject,
-  getProjectInfo,
-  getEditUrl,
   getSurveyUrl,
   type SharedConfig,
   type VersionInfo,
@@ -66,57 +64,6 @@ describe('getVersionsForProject', () => {
       branch: 'docs/a2a/0.1.0',
       isDefault: true,
     })
-  })
-})
-
-// ---------------------------------------------------------------------------
-// getProjectInfo
-// ---------------------------------------------------------------------------
-
-describe('getProjectInfo', () => {
-  it('returns project info for a known project', () => {
-    const info = getProjectInfo(mockConfig, 'kubestellar')
-    expect(info).toEqual({
-      name: 'KubeStellar',
-      basePath: '',
-      currentVersion: '0.30.0',
-    })
-  })
-
-  it('returns null for unknown project', () => {
-    expect(getProjectInfo(mockConfig, 'nonexistent')).toBeNull()
-  })
-
-  it('returns null when config is null', () => {
-    expect(getProjectInfo(null, 'kubestellar')).toBeNull()
-  })
-})
-
-// ---------------------------------------------------------------------------
-// getEditUrl
-// ---------------------------------------------------------------------------
-
-describe('getEditUrl', () => {
-  it('constructs edit URL for known project', () => {
-    const url = getEditUrl(mockConfig, 'kubestellar', 'getting-started/install.md')
-    expect(url).toBe(
-      'https://github.com/kubestellar/docs/edit/main/docs/content/getting-started/install.md'
-    )
-  })
-
-  it('strips leading slash from filePath', () => {
-    const url = getEditUrl(mockConfig, 'kubestellar', '/getting-started/install.md')
-    expect(url).toBe(
-      'https://github.com/kubestellar/docs/edit/main/docs/content/getting-started/install.md'
-    )
-  })
-
-  it('returns null for unknown project', () => {
-    expect(getEditUrl(mockConfig, 'nonexistent', 'file.md')).toBeNull()
-  })
-
-  it('returns null when config is null', () => {
-    expect(getEditUrl(null, 'kubestellar', 'file.md')).toBeNull()
   })
 })
 
