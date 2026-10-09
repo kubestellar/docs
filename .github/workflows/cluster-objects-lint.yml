@@ -33,11 +33,11 @@ jobs:
 
       - name: Kubeconform — validate cluster-objects manifests
         run: |
-          # ServiceMonitor is a Prometheus Operator CRD with no schema in the
-          # default kubeconform schema set, so its kind is skipped rather than
-          # ignored wholesale (deployment.yaml/job.yaml/etc. are still checked
-          # strictly).
+          # ServiceMonitor and PrometheusRule are Prometheus Operator CRDs with
+          # no schema in the default kubeconform schema set, so their kinds are
+          # skipped rather than ignored wholesale (deployment.yaml/job.yaml/etc.
+          # are still checked strictly).
           kubeconform -strict -summary \
             -kubernetes-version 1.30.0 \
-            -skip ServiceMonitor \
+            -skip ServiceMonitor,PrometheusRule \
             cluster-objects/*.yaml
