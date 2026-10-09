@@ -208,29 +208,6 @@ export function getVersionsForProject(
   }));
 }
 
-export function getProjectInfo(
-  config: SharedConfig | null,
-  projectId: string
-): ProjectInfo | null {
-  if (!config || !config.projects[projectId]) {
-    return null;
-  }
-  return config.projects[projectId];
-}
-
-export function getEditUrl(
-  config: SharedConfig | null,
-  projectId: string,
-  filePath: string
-): string | null {
-  if (!config || !config.editBaseUrls[projectId]) {
-    return null;
-  }
-  // Remove leading slash if present
-  const cleanPath = filePath.startsWith('/') ? filePath.slice(1) : filePath;
-  return `${config.editBaseUrls[projectId]}/${cleanPath}`;
-}
-
 // Get survey URL from config or fallback to redirect
 export function getSurveyUrl(config: SharedConfig | null): string {
   return config?.surveyUrl ?? 'https://kubestellar.io/survey';
