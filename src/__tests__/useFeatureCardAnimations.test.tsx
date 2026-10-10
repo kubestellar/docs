@@ -4,13 +4,16 @@ import { renderHook, cleanup } from '@testing-library/react'
 import { useFeatureCardAnimations } from '@/hooks/useFeatureCardAnimations'
 
 // IntersectionObserver isn't provided by jsdom.
+let lastObserver: NoopIntersectionObserver | undefined
+
 class NoopIntersectionObserver {
   callback: IntersectionObserverCallback
+  unobserve = vi.fn()
   constructor(callback: IntersectionObserverCallback) {
     this.callback = callback
+    lastObserver = this
   }
   observe() {}
-  unobserve() {}
   disconnect() {}
   takeRecords() {
     return []
@@ -89,5 +92,52 @@ describe('useFeatureCardAnimations', () => {
     expect(() =>
       renderHook(() => useFeatureCardAnimations({ selector: '.nothing-here' })),
     ).not.toThrow()
+  })
+
+  it('adds the animate-in class and stops observing once a card intersects', () => {
+    vi.useFakeTimers()
+    const root = seed('<div class="feature-card"><div class="card-3d-container"></div></div>')
+    const card = root.querySelector('.feature-card') as HTMLElement
+
+    renderHook(() => useFeatureCardAnimations({ staggerMs: 50 }))
+
+    lastObserver!.callback(
+      [{ target: card, isIntersecting: true } as IntersectionObserverEntry],
+      lastObserver as unknown as IntersectionObserver,
+    )
+    vi.advanceTimersByTime(50)
+
+    expect(card.classList.contains('animate-in')).toBe(true)
+    expect(lastObserver!.unobserve).toHaveBeenCalledWith(card)
+
+    vi.useRealTimers()
+  })
+
+  it('ignores non-intersecting entries', () => {
+    const root = seed('<div class="feature-card"><div class="card-3d-container"></div></div>')
+    const card = root.querySelector('.feature-card') as HTMLElement
+
+    renderHook(() => useFeatureCardAnimations())
+
+    lastObserver!.callback(
+      [{ target: card, isIntersecting: false } as IntersectionObserverEntry],
+      lastObserver as unknown as IntersectionObserver,
+    )
+
+    expect(card.classList.contains('animate-in')).toBe(false)
+    expect(lastObserver!.unobserve).not.toHaveBeenCalled()
+  })
+
+  it('skips the tilt transform when the card has no 3D-tilt container', () => {
+    const root = seed('<div class="feature-card"></div>')
+    const card = root.querySelector('.feature-card') as HTMLElement
+
+    expect(() => {
+      renderHook(() => useFeatureCardAnimations())
+      card.dispatchEvent(
+        new MouseEvent('mousemove', { bubbles: true, clientX: 10, clientY: 10 }),
+      )
+      card.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
+    }).not.toThrow()
   })
 })
