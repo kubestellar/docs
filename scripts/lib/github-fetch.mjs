@@ -22,6 +22,19 @@ export const REST_MAX_PAGES = 100;
 /** Delay between REST API pages (ms) */
 export const REST_PAGE_DELAY_MS = 100;
 
+/**
+ * Repos scanned by the leaderboard/contributor-profile generator scripts.
+ * Single source of truth so add-repo-breakdown.mjs, generate-leaderboard.mjs
+ * and generate-contributor-profiles.mjs can't drift from each other when a
+ * repo is added or removed.
+ */
+export const TRACKED_REPOS = [
+  "kubestellar/console",
+  "kubestellar/console-marketplace",
+  "kubestellar/console-kb",
+  "kubestellar/docs",
+];
+
 // ── Label classification ──────────────────────────────────────────────
 const BUG_LABELS = new Set(["bug", "kind/bug", "type/bug"]);
 const FEATURE_LABELS = new Set([

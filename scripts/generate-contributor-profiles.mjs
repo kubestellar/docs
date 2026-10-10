@@ -23,6 +23,7 @@ import {
   classifyIssueLabels,
   buildDefaultHeaders,
   fetchAllPages,
+  TRACKED_REPOS,
 } from "./lib/github-fetch.mjs";
 import {
   cleanText,
@@ -43,12 +44,7 @@ import {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // ── Configuration ────────────────────────────────────────────────────
-const REPOS = [
-  "kubestellar/console",
-  "kubestellar/console-marketplace",
-  "kubestellar/console-kb",
-  "kubestellar/docs",
-];
+const REPOS = TRACKED_REPOS;
 
 /** Max characters of issue body to use for topic extraction */
 const BODY_CHAR_LIMIT = 500;
