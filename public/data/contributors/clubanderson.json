@@ -1,23 +1,23 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-10T06:23:31.304Z",
+  "generated_at": "2026-10-10T10:14:23.764Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2812,
+  "total_prs_opened": 2813,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6316000,
+  "total_points": 6316200,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
     "avg_per_week": 32.3,
-    "avg_per_day": 8.2,
+    "avg_per_day": 8.19,
     "by_day_of_week": [
       316,
       592,
       758,
       561,
       540,
-      366,
+      367,
       320
     ],
     "by_hour_of_day": [
@@ -27,7 +27,7 @@
       55,
       38,
       120,
-      1529,
+      1530,
       283,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 41,
     "trend": "steady",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-09T15:07:03.000Z"
+    "last_issue_at": "2026-10-10T06:25:25.000Z"
   },
   "topics": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 58,
+      "issue_count": 57,
       "recent_issue": {
         "title": "📖 Update kubestellar-mcp docs to v0.9.17",
         "url": "https://github.com/kubestellar/docs/pull/7242",
@@ -79,7 +79,7 @@
         "docs"
       ],
       "open_count": 1,
-      "closed_count": 57
+      "closed_count": 56
     },
     {
       "name": "hive, doc, sync",
@@ -281,6 +281,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "chat, export, litellm",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 litellm: [Bug]: /ui/chat returns 404 — Next.js static export missing index.html in chat/",
+        "url": "https://github.com/kubestellar/console-kb/pull/3772",
+        "created_at": "2026-10-10T06:25:25Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "protection, filter, apply",
@@ -841,7 +855,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 27
+      "issue_count": 28
     }
   ],
   "repo_breakdown": [
@@ -850,7 +864,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2096,
+      "prs_opened": 2097,
       "prs_merged": 1761
     },
     {
