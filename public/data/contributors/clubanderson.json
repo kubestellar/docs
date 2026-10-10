@@ -1,10 +1,10 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-10T18:18:02.400Z",
+  "generated_at": "2026-10-10T22:14:48.796Z",
   "total_issues_opened": 641,
   "total_prs_opened": 2813,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6316200,
+  "total_points": 6317700,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -78,8 +78,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 56
+      "open_count": 0,
+      "closed_count": 57
     },
     {
       "name": "hive, doc, sync",
@@ -335,8 +335,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "bgp, unnumbered, cplane",
@@ -349,8 +349,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "route53, respond, panic",
@@ -865,7 +865,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2097,
-      "prs_merged": 1761
+      "prs_merged": 1763
     },
     {
       "repo": "docs",
@@ -873,7 +873,7 @@
       "feature_issues": 0,
       "other_issues": 186,
       "prs_opened": 621,
-      "prs_merged": 577
+      "prs_merged": 578
     },
     {
       "repo": "console-marketplace",
