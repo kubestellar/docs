@@ -1,0 +1,1 @@
+- changed(e2e): add a `CI_OBSERVABILITY` summary line and `$GITHUB_STEP_SUMMARY` table for Playwright e2e runs via a custom `scripts/playwright-ci-observability-reporter.ts` reporter, mirroring the existing vitest reporter (#7323) — the `e2e` CI job previously had no structured pass/fail/flaky/skip summary.

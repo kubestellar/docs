@@ -11,7 +11,13 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : 'list',
+  // e2e.yml invokes `npm run test:e2e` directly, so the bounded
+  // CI_OBSERVABILITY summary (see scripts/playwright-ci-observability-reporter.ts,
+  // mirroring vitest.config.ts's reporter for the vitest suite) is wired in
+  // here rather than via a wrapping CI script.
+  reporter: process.env.CI
+    ? [['github'], ['html', { open: 'never' }], ['./scripts/playwright-ci-observability-reporter.ts']]
+    : 'list',
   use: {
     baseURL,
     trace: 'on-first-retry',
