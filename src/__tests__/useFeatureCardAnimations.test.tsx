@@ -3,14 +3,17 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { renderHook, cleanup } from '@testing-library/react'
 import { useFeatureCardAnimations } from '@/hooks/useFeatureCardAnimations'
 
-// IntersectionObserver isn't provided by jsdom.
+// IntersectionObserver isn't provided by jsdom. This tracked variant lets
+// tests capture the most recently constructed instance so the intersection
+// callback can be invoked directly, exercising the isIntersecting branch.
 class NoopIntersectionObserver {
   callback: IntersectionObserverCallback
+  unobserve = vi.fn()
   constructor(callback: IntersectionObserverCallback) {
     this.callback = callback
+    NoopIntersectionObserver.instances.push(this)
   }
   observe() {}
-  unobserve() {}
   disconnect() {}
   takeRecords() {
     return []
@@ -18,15 +21,20 @@ class NoopIntersectionObserver {
   root = null
   rootMargin = ''
   thresholds: number[] = []
+
+  static instances: NoopIntersectionObserver[] = []
 }
 
 beforeEach(() => {
+  NoopIntersectionObserver.instances = []
   vi.stubGlobal('IntersectionObserver', NoopIntersectionObserver as unknown as typeof IntersectionObserver)
+  vi.useFakeTimers()
 })
 
 afterEach(() => {
   cleanup()
   vi.unstubAllGlobals()
+  vi.useRealTimers()
   document.body.innerHTML = ''
   document.head.querySelectorAll('style').forEach(s => s.remove())
 })
@@ -89,5 +97,48 @@ describe('useFeatureCardAnimations', () => {
     expect(() =>
       renderHook(() => useFeatureCardAnimations({ selector: '.nothing-here' })),
     ).not.toThrow()
+  })
+
+  it('adds "animate-in" after the stagger delay and unobserves once a card intersects', () => {
+    const root = seed(
+      '<div class="feature-card" data-card="0"></div><div class="feature-card" data-card="1"></div>',
+    )
+    const cards = Array.from(root.querySelectorAll('.feature-card'))
+
+    renderHook(() => useFeatureCardAnimations({ staggerMs: 100 }))
+
+    const observer = NoopIntersectionObserver.instances[0]
+    observer.callback(
+      [
+        { isIntersecting: true, target: cards[0] } as IntersectionObserverEntry,
+        { isIntersecting: false, target: cards[1] } as IntersectionObserverEntry,
+      ],
+      observer as unknown as IntersectionObserver,
+    )
+
+    // Not intersecting entries never schedule a reveal or get unobserved.
+    expect(cards[1].classList.contains('animate-in')).toBe(false)
+    expect(observer.unobserve).not.toHaveBeenCalledWith(cards[1])
+
+    // Intersecting entries unobserve immediately...
+    expect(observer.unobserve).toHaveBeenCalledWith(cards[0])
+    // ...but the reveal class is only applied after the staggered delay.
+    expect(cards[0].classList.contains('animate-in')).toBe(false)
+    vi.advanceTimersByTime(100)
+    expect(cards[0].classList.contains('animate-in')).toBe(true)
+  })
+
+  it('leaves the tilt transform untouched when the 3D container is missing', () => {
+    const root = seed('<div class="feature-card"></div>')
+    const card = root.querySelector('.feature-card') as HTMLElement
+
+    renderHook(() => useFeatureCardAnimations())
+
+    expect(() => {
+      card.dispatchEvent(
+        new MouseEvent('mousemove', { bubbles: true, clientX: 50, clientY: 50 }),
+      )
+      card.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
+    }).not.toThrow()
   })
 })
