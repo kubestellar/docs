@@ -4,6 +4,17 @@ import os from 'os'
 import path from 'path'
 import sitemap from '@/app/sitemap'
 
+const errorSpy = { calls: [] as unknown[][] }
+
+vi.mock('@/lib/logger', () => ({
+  logger: {
+    error: (...args: unknown[]) => {
+      errorSpy.calls.push(args)
+    },
+    info: () => {},
+  },
+}))
+
 const SITE_URL = 'https://kubestellar.io'
 
 function mkTmpRoot() {
@@ -24,6 +35,7 @@ describe('sitemap()', () => {
   beforeEach(() => {
     root = mkTmpRoot()
     cwdSpy = vi.spyOn(process, 'cwd').mockReturnValue(root)
+    errorSpy.calls = []
   })
 
   afterEach(() => {
@@ -167,11 +179,17 @@ describe('sitemap()', () => {
     expect((alice?.lastModified as Date).toISOString()).toBe('2025-01-15T00:00:00.000Z')
   })
 
-  it('silently skips leaderboard section when the JSON is malformed', () => {
+  it('skips the leaderboard section and logs an error when the JSON is malformed', () => {
     write(root, 'public/data/leaderboard.json', '{not json')
     expect(() => sitemap()).not.toThrow()
     const urls = sitemap().map((e) => e.url)
     expect(urls.some((u) => u.startsWith(`${SITE_URL}/en/leaderboard/`))).toBe(false)
+    // Must not be silent: a corrupt leaderboard.json is a real condition an
+    // operator needs visibility into (see src/app/sitemap.ts's catch block).
+    expect(errorSpy.calls.length).toBeGreaterThan(0)
+    const [message, fields] = errorSpy.calls[0] as [string, Record<string, unknown>]
+    expect(message).toMatch(/leaderboard\.json/)
+    expect(fields.route).toBe('sitemap')
   })
 
   it('handles an empty entries array in leaderboard.json without emitting profile URLs', () => {

@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import fs from 'fs'
 import path from 'path'
 import { PROJECTS, type ProjectId } from '@/config/versions'
+import { logger } from '@/lib/logger'
 
 const SITE_URL = 'https://kubestellar.io'
 
@@ -138,8 +139,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
           priority: DOCS_PAGE_PRIORITY,
         })
       }
-    } catch {
-      // Skip if leaderboard data is malformed
+    } catch (error) {
+      // Skip if leaderboard data is malformed — but record it. Before this,
+      // a corrupt/truncated leaderboard.json silently dropped every
+      // contributor profile page from the sitemap with zero signal (same
+      // "discards failures with no console record" gap class as #7134/
+      // #7136/#7137/#7138), leaving the regression to surface only as an
+      // unexplained drop in indexed profile pages.
+      logger.error('sitemap: failed to parse leaderboard.json', {
+        route: 'sitemap',
+        filePath: 'public/data/leaderboard.json',
+        error: error instanceof Error ? error.message : String(error),
+      })
     }
   }
 
