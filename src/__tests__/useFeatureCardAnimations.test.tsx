@@ -140,4 +140,32 @@ describe('useFeatureCardAnimations', () => {
       card.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
     }).not.toThrow()
   })
+
+  it('honors custom selector, containerSelector and tiltDivisor options', () => {
+    const root = seed(
+      '<div class="tile"><div class="tilt-box"></div></div>',
+    )
+    const card = root.querySelector('.tile') as HTMLElement
+    const container = root.querySelector('.tilt-box') as HTMLElement
+
+    renderHook(() =>
+      useFeatureCardAnimations({
+        selector: '.tile',
+        containerSelector: '.tilt-box',
+        threshold: 0.5,
+        staggerMs: 10,
+        tiltDivisor: 5,
+      }),
+    )
+
+    expect(card.classList.contains('opacity-0')).toBe(true)
+
+    card.dispatchEvent(
+      new MouseEvent('mousemove', { bubbles: true, clientX: 40, clientY: 40 }),
+    )
+    expect(container.style.transform).toMatch(/rotateY\(.+\) rotateX\(.+\)/)
+
+    card.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
+    expect(container.style.transform).toBe('rotateY(0deg) rotateX(0deg)')
+  })
 })
