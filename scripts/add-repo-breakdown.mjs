@@ -20,16 +20,12 @@ import {
   buildDefaultHeaders,
   fetchAllPages,
   delay,
+  TRACKED_REPOS,
 } from "./lib/github-fetch.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const REPOS = [
-  "kubestellar/console",
-  "kubestellar/console-marketplace",
-  "kubestellar/console-kb",
-  "kubestellar/docs",
-];
+const REPOS = TRACKED_REPOS;
 
 const TOKEN = process.env.GITHUB_TOKEN;
 if (!TOKEN) {
