@@ -5,10 +5,12 @@
 # Polls the production readiness endpoint (GET /api/healthz) and reports
 # whether the docs site's one real dependency for serving traffic — the
 # docs/content tree — is present, non-empty, and readable. This is the same
-# check a future automated healthz-monitor workflow (tracked in
-# https://github.com/kubestellar/docs/issues/6701) would run on a schedule;
-# until that workflow exists, this script lets an on-call responder run the
-# same check by hand during a suspected outage or right after a deploy.
+# check .github/workflows/healthz-monitor.yml already runs automatically
+# every 15 minutes (added in https://github.com/kubestellar/docs/issues/6701
+# — see runbooks/slo.md for the SLI/SLO and runbooks/deploy-rollback.md for
+# rollback steps); this script lets an on-call responder run that same
+# check by hand, on demand, during a suspected outage or right after a
+# deploy, without waiting for the next scheduled run.
 #
 # Usage:
 #   scripts/verify-site-health.sh [site-url]
