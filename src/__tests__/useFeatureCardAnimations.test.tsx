@@ -4,13 +4,16 @@ import { renderHook, cleanup } from '@testing-library/react'
 import { useFeatureCardAnimations } from '@/hooks/useFeatureCardAnimations'
 
 // IntersectionObserver isn't provided by jsdom.
+let lastObserverInstance: NoopIntersectionObserver | null = null
+
 class NoopIntersectionObserver {
   callback: IntersectionObserverCallback
+  unobserve = vi.fn()
   constructor(callback: IntersectionObserverCallback) {
     this.callback = callback
+    lastObserverInstance = this
   }
   observe() {}
-  unobserve() {}
   disconnect() {}
   takeRecords() {
     return []
@@ -21,6 +24,7 @@ class NoopIntersectionObserver {
 }
 
 beforeEach(() => {
+  lastObserverInstance = null
   vi.stubGlobal('IntersectionObserver', NoopIntersectionObserver as unknown as typeof IntersectionObserver)
 })
 
@@ -89,5 +93,45 @@ describe('useFeatureCardAnimations', () => {
     expect(() =>
       renderHook(() => useFeatureCardAnimations({ selector: '.nothing-here' })),
     ).not.toThrow()
+  })
+
+  it('adds the animate-in class after the stagger delay once a card intersects, then stops observing it', () => {
+    vi.useFakeTimers()
+    const root = seed('<div class="feature-card"><div class="card-3d-container"></div></div>')
+    const card = root.querySelector('.feature-card') as HTMLElement
+
+    renderHook(() => useFeatureCardAnimations({ staggerMs: 100 }))
+
+    expect(lastObserverInstance).not.toBeNull()
+    lastObserverInstance!.callback(
+      [{ isIntersecting: true, target: card } as unknown as IntersectionObserverEntry],
+      lastObserverInstance as unknown as IntersectionObserver,
+    )
+
+    expect(card.classList.contains('animate-in')).toBe(false)
+    vi.advanceTimersByTime(100)
+    expect(card.classList.contains('animate-in')).toBe(true)
+    expect(lastObserverInstance!.unobserve).toHaveBeenCalledWith(card)
+
+    vi.useRealTimers()
+  })
+
+  it('ignores non-intersecting entries', () => {
+    vi.useFakeTimers()
+    const root = seed('<div class="feature-card"><div class="card-3d-container"></div></div>')
+    const card = root.querySelector('.feature-card') as HTMLElement
+
+    renderHook(() => useFeatureCardAnimations())
+
+    lastObserverInstance!.callback(
+      [{ isIntersecting: false, target: card } as unknown as IntersectionObserverEntry],
+      lastObserverInstance as unknown as IntersectionObserver,
+    )
+    vi.advanceTimersByTime(1000)
+
+    expect(card.classList.contains('animate-in')).toBe(false)
+    expect(lastObserverInstance!.unobserve).not.toHaveBeenCalled()
+
+    vi.useRealTimers()
   })
 })
