@@ -25,7 +25,7 @@ import { writeFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildDefaultHeaders } from "./lib/github-fetch.mjs";
+import { buildDefaultHeaders, TRACKED_REPOS } from "./lib/github-fetch.mjs";
 import { fetchItemsSince } from "./lib/leaderboard-fetch.mjs";
 import {
   ACTIVITY_WEEKS,
@@ -46,12 +46,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, "..", "public", "data");
 
 // ── Repos to scan ─────────────────────────────────────────────────────
-const REPOS = [
-  "kubestellar/console",
-  "kubestellar/console-marketplace",
-  "kubestellar/console-kb",
-  "kubestellar/docs",
-];
+const REPOS = TRACKED_REPOS;
 
 // ── GitHub API constants ──────────────────────────────────────────────
 const YEAR_START = `${new Date().getFullYear()}-01-01T00:00:00Z`;

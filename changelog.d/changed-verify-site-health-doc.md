@@ -1,0 +1,1 @@
+- docs(scripts): correct `verify-site-health.sh`'s header comment, which still described the automated `healthz-monitor.yml` workflow as a future addition (tracked in #6701) when that workflow has existed and run every 15 minutes since #6701 was implemented.

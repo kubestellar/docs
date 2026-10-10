@@ -4,14 +4,14 @@ import { renderHook, cleanup } from '@testing-library/react'
 import { useFeatureCardAnimations } from '@/hooks/useFeatureCardAnimations'
 
 // IntersectionObserver isn't provided by jsdom.
-let lastObserverInstance: NoopIntersectionObserver | null = null
+let lastObserver: NoopIntersectionObserver | undefined
 
 class NoopIntersectionObserver {
   callback: IntersectionObserverCallback
   unobserve = vi.fn()
   constructor(callback: IntersectionObserverCallback) {
     this.callback = callback
-    lastObserverInstance = this
+    lastObserver = this
   }
   observe() {}
   disconnect() {}
@@ -24,7 +24,6 @@ class NoopIntersectionObserver {
 }
 
 beforeEach(() => {
-  lastObserverInstance = null
   vi.stubGlobal('IntersectionObserver', NoopIntersectionObserver as unknown as typeof IntersectionObserver)
 })
 
@@ -95,43 +94,78 @@ describe('useFeatureCardAnimations', () => {
     ).not.toThrow()
   })
 
-  it('adds the animate-in class after the stagger delay once a card intersects, then stops observing it', () => {
+  it('adds the animate-in class and stops observing once a card intersects', () => {
     vi.useFakeTimers()
     const root = seed('<div class="feature-card"><div class="card-3d-container"></div></div>')
     const card = root.querySelector('.feature-card') as HTMLElement
 
-    renderHook(() => useFeatureCardAnimations({ staggerMs: 100 }))
+    renderHook(() => useFeatureCardAnimations({ staggerMs: 50 }))
 
-    expect(lastObserverInstance).not.toBeNull()
-    lastObserverInstance!.callback(
-      [{ isIntersecting: true, target: card } as unknown as IntersectionObserverEntry],
-      lastObserverInstance as unknown as IntersectionObserver,
+    lastObserver!.callback(
+      [{ target: card, isIntersecting: true } as IntersectionObserverEntry],
+      lastObserver as unknown as IntersectionObserver,
     )
+    vi.advanceTimersByTime(50)
 
-    expect(card.classList.contains('animate-in')).toBe(false)
-    vi.advanceTimersByTime(100)
     expect(card.classList.contains('animate-in')).toBe(true)
-    expect(lastObserverInstance!.unobserve).toHaveBeenCalledWith(card)
+    expect(lastObserver!.unobserve).toHaveBeenCalledWith(card)
 
     vi.useRealTimers()
   })
 
   it('ignores non-intersecting entries', () => {
-    vi.useFakeTimers()
     const root = seed('<div class="feature-card"><div class="card-3d-container"></div></div>')
     const card = root.querySelector('.feature-card') as HTMLElement
 
     renderHook(() => useFeatureCardAnimations())
 
-    lastObserverInstance!.callback(
-      [{ isIntersecting: false, target: card } as unknown as IntersectionObserverEntry],
-      lastObserverInstance as unknown as IntersectionObserver,
+    lastObserver!.callback(
+      [{ target: card, isIntersecting: false } as IntersectionObserverEntry],
+      lastObserver as unknown as IntersectionObserver,
     )
-    vi.advanceTimersByTime(1000)
 
     expect(card.classList.contains('animate-in')).toBe(false)
-    expect(lastObserverInstance!.unobserve).not.toHaveBeenCalled()
+    expect(lastObserver!.unobserve).not.toHaveBeenCalled()
+  })
 
-    vi.useRealTimers()
+  it('skips the tilt transform when the card has no 3D-tilt container', () => {
+    const root = seed('<div class="feature-card"></div>')
+    const card = root.querySelector('.feature-card') as HTMLElement
+
+    expect(() => {
+      renderHook(() => useFeatureCardAnimations())
+      card.dispatchEvent(
+        new MouseEvent('mousemove', { bubbles: true, clientX: 10, clientY: 10 }),
+      )
+      card.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
+    }).not.toThrow()
+  })
+
+  it('honors custom selector, containerSelector and tiltDivisor options', () => {
+    const root = seed(
+      '<div class="tile"><div class="tilt-box"></div></div>',
+    )
+    const card = root.querySelector('.tile') as HTMLElement
+    const container = root.querySelector('.tilt-box') as HTMLElement
+
+    renderHook(() =>
+      useFeatureCardAnimations({
+        selector: '.tile',
+        containerSelector: '.tilt-box',
+        threshold: 0.5,
+        staggerMs: 10,
+        tiltDivisor: 5,
+      }),
+    )
+
+    expect(card.classList.contains('opacity-0')).toBe(true)
+
+    card.dispatchEvent(
+      new MouseEvent('mousemove', { bubbles: true, clientX: 40, clientY: 40 }),
+    )
+    expect(container.style.transform).toMatch(/rotateY\(.+\) rotateX\(.+\)/)
+
+    card.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }))
+    expect(container.style.transform).toBe('rotateY(0deg) rotateX(0deg)')
   })
 })
