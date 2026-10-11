@@ -77,8 +77,7 @@ function getAllDocFiles(dir: string, baseDir: string = dir): string[] {
 }
 
 // Sidebar navigation is data: see src/lib/nav.ts for the nav.yaml schema and
-// loader. Re-exported so existing importers of page-map keep working.
-export { GENERAL_SECTIONS, NAV_FILE_NAME, isGeneralSectionFile, loadNavFile } from '@/lib/nav'
+// loader.
 export type { NavItem, NavSection } from '@/lib/nav'
 
 // Root-level pages of docs/content/ that every project can resolve.
@@ -251,9 +250,4 @@ export function buildPageMap(projectId: ProjectId = 'kubestellar') {
   const pageMap = normalizePageMap(_pageMap)
 
   return { pageMap, routeMap, filePaths: allDocFiles, contentPath }
-}
-
-// For backwards compatibility, export a function that doesn't need branch parameter
-export async function buildPageMapForBranch() {
-  return buildPageMap()
 }

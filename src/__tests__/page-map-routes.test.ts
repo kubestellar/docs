@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
-import { buildPageMap, buildPageMapForBranch } from '../app/docs/page-map'
+import { buildPageMap } from '../app/docs/page-map'
 
 /**
- * Coverage for uncovered arms of buildPageMap() and buildPageMapForBranch()
+ * Coverage for uncovered arms of buildPageMap()
  * in src/app/docs/page-map.ts:
  *
  *   - The "general section" branch (contributing/, community/, news/) that
@@ -18,10 +18,6 @@ import { buildPageMap, buildPageMapForBranch } from '../app/docs/page-map'
  *     (what-is-console.md). Any of these disappearing silently would
  *     break externally-shared /docs/introduction, /docs/legacy-components,
  *     and /docs/what-is-console URLs.
- *
- *   - The exported `buildPageMapForBranch` compatibility wrapper — it
- *     must delegate to buildPageMap() with the default project so callers
- *     upstream of the branch-aware refactor keep seeing the same shape.
  */
 
 describe('buildPageMap – general section routing (contributing/community/news)', () => {
@@ -105,25 +101,6 @@ describe('buildPageMap – special top-level route entries', () => {
       const noExt = fp.replace(/\.(md|mdx)$/i, '')
       expect(routeMap[noExt]).toBeDefined()
     }
-  })
-})
-
-describe('buildPageMapForBranch – backwards-compatible wrapper', () => {
-  it('delegates to buildPageMap with the default kubestellar project', async () => {
-    const wrapped = await buildPageMapForBranch()
-    const direct = buildPageMap('kubestellar')
-
-    // The wrapper is a thin compatibility shim: it should produce a
-    // result with the same top-level shape as the direct call.
-    expect(Object.keys(wrapped).sort()).toEqual(
-      Object.keys(direct).sort()
-    )
-    const w = wrapped as unknown as BuildResult
-    const d = direct as unknown as BuildResult
-    expect(w.contentPath).toBe(d.contentPath)
-    expect(w.filePaths.length).toBe(d.filePaths.length)
-    // The two calls resolve the same intro route.
-    expect(w.routeMap['introduction']).toBe(d.routeMap['introduction'])
   })
 })
 
