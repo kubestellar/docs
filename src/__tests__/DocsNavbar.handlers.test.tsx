@@ -26,7 +26,7 @@ import type React from 'react'
 // createNavigation() and its extensionless `import 'next/navigation'`, which
 // is unresolvable under Next.js 16's ESM-only `exports` map. Mock it the same
 // way the other navbar/master-page render-smoke tests do (see
-// NavbarSubcomponents.render.test.tsx, HowToUseSection.render.test.tsx #6997).
+// NavbarSubcomponents.render.test.tsx, HeroSection.render.test.tsx #6997).
 vi.mock('@/i18n/navigation', () => ({
   Link: ({
     href,
