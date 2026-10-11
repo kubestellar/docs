@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-10T22:14:48.796Z",
+  "generated_at": "2026-10-11T02:29:34.867Z",
   "total_issues_opened": 641,
   "total_prs_opened": 2813,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6317700,
+  "total_points": 6319100,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 32.3,
+    "avg_per_week": 32.1,
     "avg_per_day": 8.19,
     "by_day_of_week": [
       316,
@@ -293,8 +293,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "protection, filter, apply",
@@ -321,8 +321,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "createorupdate, deadline, jetstream",
@@ -865,7 +865,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2097,
-      "prs_merged": 1763
+      "prs_merged": 1765
     },
     {
       "repo": "docs",
