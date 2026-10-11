@@ -1,6 +1,6 @@
 {
   "login": "burakeyler",
-  "generated_at": "2026-10-11T14:15:07.662Z",
+  "generated_at": "2026-10-11T18:18:39.512Z",
   "total_issues_opened": 0,
   "total_prs_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/121062562?v=4",
@@ -48,7 +48,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "ramping_up",
+    "trend": "slowing_down",
     "first_issue_at": "2026-09-13T12:29:27.000Z",
     "last_issue_at": "2026-09-13T14:57:50.000Z"
   },

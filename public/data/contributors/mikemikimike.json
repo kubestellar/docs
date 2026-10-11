@@ -1,6 +1,6 @@
 {
   "login": "mikemikimike",
-  "generated_at": "2026-10-11T14:15:07.830Z",
+  "generated_at": "2026-10-11T18:18:39.707Z",
   "total_issues_opened": 0,
   "total_prs_opened": 1,
   "avatar_url": "https://avatars.githubusercontent.com/u/186855910?v=4",
@@ -48,7 +48,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "ramping_up",
+    "trend": "slowing_down",
     "first_issue_at": "2026-09-13T16:00:21.000Z",
     "last_issue_at": "2026-09-13T16:00:21.000Z"
   },
