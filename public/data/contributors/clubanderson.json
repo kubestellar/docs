@@ -1,16 +1,16 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-11T02:29:34.867Z",
+  "generated_at": "2026-10-11T06:23:49.294Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2813,
+  "total_prs_opened": 2814,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6319100,
+  "total_points": 6319300,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 32.1,
-    "avg_per_day": 8.19,
+    "avg_per_week": 32,
+    "avg_per_day": 8.18,
     "by_day_of_week": [
       316,
       592,
@@ -18,7 +18,7 @@
       561,
       540,
       367,
-      320
+      321
     ],
     "by_hour_of_day": [
       107,
@@ -26,7 +26,7 @@
       93,
       55,
       38,
-      120,
+      121,
       1530,
       283,
       54,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 41,
     "trend": "steady",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-10T06:25:25.000Z"
+    "last_issue_at": "2026-10-11T05:18:43.000Z"
   },
   "topics": [
     {
@@ -69,16 +69,16 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 57,
+      "issue_count": 58,
       "recent_issue": {
-        "title": "📖 Update kubestellar-mcp docs to v0.9.17",
-        "url": "https://github.com/kubestellar/docs/pull/7242",
-        "created_at": "2026-10-04T07:01:25Z"
+        "title": "📖 Update kubestellar-mcp docs to v0.9.18",
+        "url": "https://github.com/kubestellar/docs/pull/7353",
+        "created_at": "2026-10-11T05:18:43Z"
       },
       "repos": [
         "docs"
       ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 57
     },
     {
@@ -247,20 +247,6 @@
         "title": "🌱 security-compliance: [Bug]: Failed to use openid.oidc with bearer.oidc authorization being configured",
         "url": "https://github.com/kubestellar/console-kb/pull/3345",
         "created_at": "2026-09-12T06:32:25Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "prometheus, unix, metric",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🌱 fluent-bit: fluentbit_ metrics stop being sent to prometheus_remote_write output about 1",
-        "url": "https://github.com/kubestellar/console-kb/pull/3029",
-        "created_at": "2026-08-27T09:11:47Z"
       },
       "repos": [
         "console-kb"
@@ -661,6 +647,20 @@
       "closed_count": 1
     },
     {
+      "name": "fluentbit, send, remote",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 fluent-bit: fluentbit_ metrics stop being sent to prometheus_remote_write output about 1",
+        "url": "https://github.com/kubestellar/console-kb/pull/3029",
+        "created_at": "2026-08-27T09:11:47Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "spec, pkg, opencontainers",
       "issue_count": 1,
       "recent_issue": {
@@ -855,7 +855,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 28
+      "issue_count": 29
     }
   ],
   "repo_breakdown": [
@@ -872,7 +872,7 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 186,
-      "prs_opened": 621,
+      "prs_opened": 622,
       "prs_merged": 578
     },
     {
