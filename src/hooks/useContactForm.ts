@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { gtagEvent } from "@/components/GoogleAnalytics";
+
 export interface ContactFormData {
   name: string;
   email: string;
@@ -38,6 +40,15 @@ export interface UseContactFormResult {
  * Extracted from ContactSection.tsx, which open-coded this ~75-line form
  * handler alongside ~510 lines of JSX, following the same hook-extraction
  * pattern as useCounterAnimation (#7086/#7087) and useFeatureCardAnimations.
+ *
+ * Fires a bounded `contact_form_submit` GA4 event (status: "success" |
+ * "error" only — never field content) on every submit outcome, matching
+ * the gtagEvent instrumentation already present on docs search and the
+ * ACMM leaderboard (src/components/docs/navbar/useDocsSearch.ts,
+ * src/app/[locale]/acmm-leaderboard/page.tsx). Before this, a failed
+ * contact submission was only visible as an unstructured console.error in
+ * the visitor's own browser console — never observable in GA4 or any
+ * server-side log.
  */
 export function useContactForm(): UseContactFormResult {
   const [formData, setFormData] = useState<ContactFormData>(EMPTY_FORM);
@@ -81,12 +92,16 @@ export function useContactForm(): UseContactFormResult {
 
       if (!res.ok) throw new Error("Form submission failed");
 
+      gtagEvent("contact_form_submit", { status: "success" });
       setShowSuccess(true);
       setFormData(EMPTY_FORM);
 
       setTimeout(() => setShowSuccess(false), SUCCESS_BANNER_MS);
     } catch (error) {
       console.error("Submission error:", error);
+      // Bounded label: only a fixed success/error status, never the
+      // error message or any form field content (name/email/message).
+      gtagEvent("contact_form_submit", { status: "error" });
       alert("Submission failed. Please try again later.");
     } finally {
       setIsSubmitting(false);
