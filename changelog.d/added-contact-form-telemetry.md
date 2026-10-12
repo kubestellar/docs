@@ -1,0 +1,1 @@
+- added(contact-form): fire a bounded `contact_form_submit` GA4 event (status: `success`/`error` only, no form content) on every contact form submission outcome, matching the existing `gtagEvent` instrumentation on docs search and the ACMM leaderboard; previously a failed submission was only visible as an unstructured `console.error` in the visitor's own browser.
