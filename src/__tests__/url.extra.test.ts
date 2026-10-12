@@ -6,6 +6,7 @@ import { mockWindow, restoreWindow as restoreWindowShared } from './windowTestUt
  * `url.test.ts` does not exercise:
  *
  *   - CURRENT_BRANCH  (module-init read of NEXT_PUBLIC_BRANCH)
+ *   - getBaseUrl() server-side production fallback
  *   - getKubestellarEditBaseUrl()
  *   - getLocalizedUrl()
  *
@@ -50,6 +51,28 @@ describe('CURRENT_BRANCH', () => {
     vi.stubEnv('NEXT_PUBLIC_BRANCH', 'feature/new-thing')
     const mod = await import('../lib/url')
     expect(mod.CURRENT_BRANCH).toBe('feature/new-thing')
+  })
+})
+
+// ═════════════════════════════════════════════════════════════════════
+// getBaseUrl — server-side production fallback
+// ═════════════════════════════════════════════════════════════════════
+
+describe('getBaseUrl — production fallback (server-side)', () => {
+  beforeEach(() => {
+    vi.resetModules()
+    restoreWindow()
+  })
+
+  afterEach(() => {
+    vi.unstubAllEnvs()
+  })
+
+  it('falls back to the production URL when neither NODE_ENV=development nor NEXT_PUBLIC_BASE_URL is set', async () => {
+    vi.stubEnv('NEXT_PUBLIC_BASE_URL', '')
+    vi.stubEnv('NODE_ENV', 'production')
+    const mod = await import('../lib/url')
+    expect(mod.getBaseUrl()).toBe('https://kubestellar.io')
   })
 })
 
@@ -180,5 +203,15 @@ describe('getLocalizedUrl', () => {
     expect(getLocalizedUrl(bad)).toBe(bad)
     expect(spy).toHaveBeenCalled()
     spy.mockRestore()
+  })
+
+  it('keeps kubestellar.io URLs on the production host in production', async () => {
+    // Server-side production fallback
+    vi.stubEnv('NEXT_PUBLIC_BASE_URL', '')
+    vi.stubEnv('NODE_ENV', 'production')
+    const { getLocalizedUrl } = await import('../lib/url')
+    expect(getLocalizedUrl('https://kubestellar.io/docs')).toBe(
+      'https://kubestellar.io/docs',
+    )
   })
 })
