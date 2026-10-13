@@ -1,6 +1,6 @@
 {
   "login": "Bryandero98",
-  "generated_at": "2026-10-13T02:33:26.615Z",
+  "generated_at": "2026-10-13T06:27:53.926Z",
   "total_issues_opened": 0,
   "total_prs_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/124054031?v=4",
@@ -48,7 +48,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 2,
-    "trend": "steady",
+    "trend": "slowing_down",
     "first_issue_at": "2026-09-09T22:32:31.000Z",
     "last_issue_at": "2026-09-15T04:34:16.000Z"
   },
