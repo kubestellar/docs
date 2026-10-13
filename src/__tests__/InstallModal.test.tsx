@@ -149,6 +149,7 @@ describe('InstallModal', () => {
     const fetchMock = vi.fn().mockRejectedValue(new Error('network error'))
     vi.stubGlobal('fetch', fetchMock)
     const openSpy = vi.spyOn(window, 'open').mockImplementation(() => null)
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
 
     render(<InstallModal item={item} onClose={() => {}} />)
     await waitFor(() => expect(screen.getByText(/Running on port/)).toBeTruthy())
@@ -162,8 +163,15 @@ describe('InstallModal', () => {
       expect.stringContaining('http://localhost:8080/?marketplace-install=dash-1'),
       '_blank',
     )
+    // Before this, the fallback-to-manual-link path was fully silent: no
+    // console record distinguished it from the direct-API-call success path.
+    expect(errorSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Marketplace install to Console failed'),
+      expect.any(Error),
+    )
 
     openSpy.mockRestore()
+    errorSpy.mockRestore()
     vi.unstubAllGlobals()
   })
 
