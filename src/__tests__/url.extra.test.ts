@@ -215,3 +215,34 @@ describe('getLocalizedUrl', () => {
     )
   })
 })
+
+// ═════════════════════════════════════════════════════════════════════
+// getEnglishUrl — shared `${getBaseUrl()}/en${path}` builder for untranslated
+// marketing pages (ladder, partners, contact), extracted out of
+// CommunityDropdown/ContributeDropdown/MobileMenu where it used to be
+// hand-rolled at five call sites.
+// ═════════════════════════════════════════════════════════════════════
+
+describe('getEnglishUrl', () => {
+  beforeEach(() => {
+    vi.resetModules()
+  })
+
+  afterEach(() => {
+    vi.unstubAllEnvs()
+  })
+
+  it('prefixes a path with the base URL and /en', async () => {
+    vi.stubEnv('NEXT_PUBLIC_BASE_URL', 'https://kubestellar.io')
+    vi.stubEnv('NODE_ENV', 'production')
+    const { getEnglishUrl } = await import('../lib/url')
+    expect(getEnglishUrl('/partners')).toBe('https://kubestellar.io/en/partners')
+  })
+
+  it('prefixes a hash fragment with the base URL and /en', async () => {
+    vi.stubEnv('NEXT_PUBLIC_BASE_URL', 'https://kubestellar.io')
+    vi.stubEnv('NODE_ENV', 'production')
+    const { getEnglishUrl } = await import('../lib/url')
+    expect(getEnglishUrl('#contact')).toBe('https://kubestellar.io/en#contact')
+  })
+})

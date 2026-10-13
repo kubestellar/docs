@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import type { useTranslations } from "next-intl";
 import type { GithubStats } from "@/hooks/useGithubStats";
-import { getLocalizedUrl, getBaseUrl } from "@/lib/url";
+import { getLocalizedUrl, getEnglishUrl } from "@/lib/url";
 import { LinkedinIcon } from "./icons";
 import MobileTopLinks from "./MobileTopLinks";
 import MobileContributeSection from "./MobileContributeSection";
@@ -115,7 +115,7 @@ function DocsMobileMenu({ isDark, githubStats, extraContent }: DocsMobileMenuPro
           </svg>
           Products
         </Link>
-        <a href={`${getBaseUrl()}/en/ladder`} className={linkClasses}>
+        <a href={getEnglishUrl("/ladder")} className={linkClasses}>
           <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
           </svg>
@@ -143,7 +143,7 @@ function DocsMobileMenu({ isDark, githubStats, extraContent }: DocsMobileMenuPro
           </svg>
           Programs
         </Link>
-        <a href={`${getBaseUrl()}/en#contact`} className={linkClasses}>
+        <a href={getEnglishUrl("#contact")} className={linkClasses}>
           <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
@@ -153,7 +153,7 @@ function DocsMobileMenu({ isDark, githubStats, extraContent }: DocsMobileMenuPro
           <LinkedinIcon className="w-4 h-4 mr-3" />
           LinkedIn
         </a>
-        <a href={`${getBaseUrl()}/en/partners`} className={linkClasses}>
+        <a href={getEnglishUrl("/partners")} className={linkClasses}>
           <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>

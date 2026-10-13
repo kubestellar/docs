@@ -65,6 +65,21 @@ export function getBaseUrl(): string {
 }
 
 /**
+ * Build an absolute URL to an English-only marketing page (contact, ladder,
+ * partners, ...) that doesn't have translated routes, anchored to the
+ * current deploy's base URL. CommunityDropdown, ContributeDropdown, and
+ * MobileMenu each used to hand-roll an identical
+ * `` `${getBaseUrl()}/en${path}` `` template literal for this; centralizing
+ * it here keeps the `/en` prefix in one place instead of five.
+ *
+ * @param path - The path (and optional hash) to append after `/en`, e.g.
+ *   `/partners` or `#contact`.
+ */
+export function getEnglishUrl(path: string): string {
+  return `${getBaseUrl()}/en${path}`;
+}
+
+/**
  * Convert an absolute URL to use the current base URL if it's a kubestellar.io URL.
  * External URLs are left unchanged.
  *
