@@ -56,6 +56,7 @@ vi.mock('../components/docs/VersionSelector', () => ({
 vi.mock('@/lib/url', () => ({
   getLocalizedUrl: (p: string) => `https://kubestellar.io${p}`,
   getBaseUrl: () => 'https://kubestellar.io',
+  getEnglishUrl: (p: string) => `https://kubestellar.io/en${p}`,
 }))
 
 vi.mock('@/config/versions', () => ({

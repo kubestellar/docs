@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Link as LocalizedLink } from "@/i18n/navigation";
 import type { useTranslations } from "next-intl";
-import { getLocalizedUrl, getBaseUrl } from "@/lib/url";
+import { getLocalizedUrl, getEnglishUrl } from "@/lib/url";
 import { getNavClasses } from "./styles";
 import type { DropdownType } from "./types";
 
@@ -300,7 +300,7 @@ function DocsContributeDropdown({
             </svg>
             <span>Products</span>
           </Link>
-          <a href={`${getBaseUrl()}/en/ladder`} className={dropdownItemClasses}>
+          <a href={getEnglishUrl("/ladder")} className={dropdownItemClasses}>
             <svg className="w-5 h-5 mr-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
             </svg>
