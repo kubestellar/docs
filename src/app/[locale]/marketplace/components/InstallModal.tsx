@@ -66,7 +66,14 @@ export function InstallModal({
         );
       }
       setInstallResult("success");
-    } catch {
+    } catch (error) {
+      // The automated install call failed (download error or a non-ok
+      // Console API response); fall back to a manual install link so the
+      // user still has a path forward. Before this, that fallback was
+      // indistinguishable from the direct-API-call success path above —
+      // no console record — matching the gap class already fixed in
+      // ContributorHoverCard.tsx and acmm-leaderboard/page.tsx.
+      console.error("Marketplace install to Console failed, falling back to manual link:", error);
       window.open(
         `http://localhost:${consolePort}/?marketplace-install=${encodeURIComponent(item.id)}`,
         "_blank",
