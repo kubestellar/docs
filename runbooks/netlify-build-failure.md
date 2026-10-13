@@ -7,7 +7,10 @@ Applies to a build-time failure of the Netlify deploy for `main` or a
 `.github/workflows/netlify-error-reporter.yml`, distinct from a runtime
 regression in an otherwise-successful deploy (see
 `runbooks/deploy-rollback.md`) or a stale readiness endpoint (see
-`runbooks/slo.md`).
+`runbooks/slo.md`). If the `netlify-error-reporter.yml` workflow's own
+scheduled watchdog job (`check-deploy-freshness`) is itself failing to
+run, see
+`runbooks/netlify-freshness-check-failure-monitoring.md` instead.
 
 ## How this alert reaches you
 
