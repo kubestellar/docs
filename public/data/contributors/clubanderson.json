@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-14T02:19:42.699Z",
+  "generated_at": "2026-10-14T06:23:43.248Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2815,
+  "total_prs_opened": 2816,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6321400,
+  "total_points": 6321650,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 31,
-    "avg_per_day": 8.14,
+    "avg_per_week": 30.9,
+    "avg_per_day": 8.12,
     "by_day_of_week": [
       316,
       593,
-      758,
+      759,
       561,
       540,
       367,
@@ -27,7 +27,7 @@
       55,
       38,
       121,
-      1531,
+      1532,
       283,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 41,
     "trend": "steady",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-13T06:17:57.000Z"
+    "last_issue_at": "2026-10-14T06:12:40.000Z"
   },
   "topics": [
     {
@@ -83,7 +83,7 @@
     },
     {
       "name": "hive, doc, sync",
-      "issue_count": 18,
+      "issue_count": 17,
       "recent_issue": {
         "title": "🌱 ci: use shared console checkout pin",
         "url": "https://github.com/kubestellar/console-marketplace/pull/937",
@@ -95,7 +95,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 18
+      "closed_count": 17
     },
     {
       "name": "dragonflydb, structure, support",
@@ -267,6 +267,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "autopilot, gke, onboarding",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 opentelemetry: GKE Autopilot allowlist onboarding",
+        "url": "https://github.com/kubestellar/console-kb/pull/3808",
+        "created_at": "2026-10-14T06:12:40Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "kmesh, develop, mesh",
@@ -803,12 +817,6 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
@@ -819,6 +827,12 @@
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       }
     ]
   },
@@ -869,7 +883,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 30
+      "issue_count": 31
     }
   ],
   "repo_breakdown": [
@@ -878,7 +892,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2098,
+      "prs_opened": 2099,
       "prs_merged": 1766
     },
     {
