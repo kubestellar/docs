@@ -30,7 +30,7 @@
     "@theguild/remark-mermaid": "^0.3.0",
     "braces": "file:vendor/braces",
     "dotenv": "^18.0.4",
-    "framer-motion": "^13.4.6",
+    "framer-motion": "^14.1.0",
     "js-yaml": "^5.4.2",
     "lucide-react": "^1.49.0",
     "mermaid": "^12.1.0",
