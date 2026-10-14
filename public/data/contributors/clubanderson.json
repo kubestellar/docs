@@ -1,10 +1,10 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-14T06:23:43.248Z",
+  "generated_at": "2026-10-14T10:16:46.062Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2816,
+  "total_prs_opened": 2817,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6321650,
+  "total_points": 6322350,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -14,7 +14,7 @@
     "by_day_of_week": [
       316,
       593,
-      759,
+      760,
       561,
       540,
       367,
@@ -27,7 +27,7 @@
       55,
       38,
       121,
-      1532,
+      1533,
       283,
       54,
       8,
@@ -50,21 +50,21 @@
     "longest_streak_weeks": 41,
     "trend": "steady",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-14T06:12:40.000Z"
+    "last_issue_at": "2026-10-14T06:34:15.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 149,
+      "issue_count": 150,
       "recent_issue": {
-        "title": "✨ CNCF install mission generation 2026-10-07",
-        "url": "https://github.com/kubestellar/console-kb/pull/3722",
-        "created_at": "2026-10-07T06:33:27Z"
+        "title": "✨ CNCF install mission generation 2026-10-14",
+        "url": "https://github.com/kubestellar/console-kb/pull/3809",
+        "created_at": "2026-10-14T06:34:15Z"
       },
       "repos": [
         "console-kb"
       ],
-      "open_count": 2,
+      "open_count": 3,
       "closed_count": 147
     },
     {
@@ -83,7 +83,7 @@
     },
     {
       "name": "hive, doc, sync",
-      "issue_count": 17,
+      "issue_count": 16,
       "recent_issue": {
         "title": "🌱 ci: use shared console checkout pin",
         "url": "https://github.com/kubestellar/console-marketplace/pull/937",
@@ -95,7 +95,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 17
+      "closed_count": 16
     },
     {
       "name": "dragonflydb, structure, support",
@@ -279,8 +279,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "kmesh, develop, mesh",
@@ -883,7 +883,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 31
+      "issue_count": 32
     }
   ],
   "repo_breakdown": [
@@ -892,8 +892,8 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2099,
-      "prs_merged": 1766
+      "prs_opened": 2100,
+      "prs_merged": 1767
     },
     {
       "repo": "docs",
