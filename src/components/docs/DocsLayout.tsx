@@ -7,12 +7,7 @@ import { MobileHeader } from './MobileSidebarToggle';
 import { useDocsMenu } from './DocsProvider';
 import type { ProjectId } from '@/config/versions';
 import { DocsSourceActions } from '@/components/docs/DocsSourceActions';
-
-interface TOCItem {
-  id: string;
-  value: string;
-  depth: number;
-}
+import type { TOCItem } from './types';
 
 interface Metadata {
   title?: string;
