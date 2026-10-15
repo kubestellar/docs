@@ -1,23 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { GridLines, StarField } from "../index";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { useBackToTop } from "@/hooks/useBackToTop";
 import { useNewsletterSubscribe } from "@/hooks/useNewsletterSubscribe";
+import { useHydratedTheme } from "@/hooks/useHydratedTheme";
 
 export default function Footer() {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === 'dark';
+  const { mounted, isDark } = useHydratedTheme();
 
   const { email, setEmail, handleSubscribe } = useNewsletterSubscribe();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Runs once `mounted` is true so `#back-to-top` exists in the DOM
   // (the pre-mount branch does not render this button).

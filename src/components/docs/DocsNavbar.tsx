@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 // import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { VERSIONS } from '@/config/versions'
 import { VersionSelector } from './VersionSelector';
+import { useHydratedTheme } from '@/hooks/useHydratedTheme';
 import {
   useGithubStats,
   useDocsSearch,
@@ -22,8 +22,7 @@ export default function DocsNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<DropdownType>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const { mounted, isDark } = useHydratedTheme();
   const githubStats = useGithubStats();
   const search = useDocsSearch(() => setOpenDropdown(null));
 
@@ -32,10 +31,6 @@ export default function DocsNavbar() {
   // const router = useRouter()
   // Note: Version label is now handled by VersionSelector component
   void VERSIONS; // Keep import for reference
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const handleMouseEnter = (dropdown: DropdownType) => {
     if (timeoutRef.current) {
@@ -57,8 +52,6 @@ export default function DocsNavbar() {
       timeoutRef.current = null;
     }
   };
-
-  const isDark = resolvedTheme === 'dark';
 
   if (!mounted) {
     return null;

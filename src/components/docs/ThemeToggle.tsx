@@ -1,23 +1,16 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import { useHydratedTheme } from "@/hooks/useHydratedTheme";
 
 interface ThemeToggleProps {
   variant?: 'fixed' | 'icon';
 }
 
 export function ThemeToggle({ variant = 'fixed' }: ThemeToggleProps) {
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // Avoid hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const isDark = resolvedTheme === "dark";
+  const { setTheme } = useTheme();
+  const { mounted, isDark } = useHydratedTheme();
 
   // Icon-only variant for collapsed sidebar
   if (variant === 'icon') {

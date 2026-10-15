@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { Moon, Sun, PanelRightOpenIcon, PanelLeftOpen } from 'lucide-react';
+import { useHydratedTheme } from '@/hooks/useHydratedTheme';
 
 interface SidebarFooterProps {
   onCollapse: () => void;
@@ -11,14 +11,8 @@ interface SidebarFooterProps {
 }
 
 export function SidebarFooter({ onCollapse, variant = 'full', isMobile = false }: SidebarFooterProps) {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const isDark = mounted && resolvedTheme === 'dark';
+  const { mounted, isDark } = useHydratedTheme();
+  const { setTheme } = useTheme();
 
   // Slim variant - icon-only vertical layout
   if (variant === 'slim') {
