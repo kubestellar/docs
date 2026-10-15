@@ -22,9 +22,10 @@ on:
 permissions: read-all
 
 network:
+  # Link checking curls arbitrary external hosts; a narrow allowlist makes
+  # curl return 000 (kubestellar/docs#7408).
   allowed:
-    - defaults
-    - github
+    - "*"
 
 safe-outputs:
   report-failure-as-issue: false
