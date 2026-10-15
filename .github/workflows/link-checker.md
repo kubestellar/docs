@@ -43,7 +43,16 @@ tools:
   github:
     toolsets: [repos, issues]
   web-fetch:
-  bash: [ ":*" ]
+  bash:
+    - "find *"
+    - "grep *"
+    - "sort"
+    - "test *"
+    - "curl *"
+    - "cat *"
+    - "sleep *"
+    - "jq *"
+    - "gh *"
 
 timeout-minutes: 30
 ---
