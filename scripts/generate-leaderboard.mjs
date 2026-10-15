@@ -33,12 +33,14 @@ import {
   getRecentWeekKeys,
   computeRecentScore,
 } from "./lib/scoring.mjs";
+import { loadSnapshot, saveSnapshot } from "./lib/snapshot.mjs";
 import {
-  scoreItemsIntoMap,
-  addItemsToWeeklyActivity,
-  loadSnapshot,
-  saveSnapshot,
-} from "./lib/snapshot.mjs";
+  restoreSnapshot,
+  shouldAdvanceSnapshot,
+  filterFrozenItems,
+  freezeItemsIntoSnapshot,
+  mergeSnapshotWithLive,
+} from "./lib/leaderboard-merge.mjs";
 import { fetchBonusPoints } from "./lib/bonus-points.mjs";
 import { startOfDayUTC, addDays } from "./lib/dates.mjs";
 
@@ -82,37 +84,19 @@ async function main() {
   // On each run we advance the snapshot by 1 day — adding items from
   // (old snapshot_date) to (liveWindowStart) into the frozen record.
 
-  /** Frozen contributor data (from snapshot) */
-  let snapshotContributors = new Map();
-  let snapshotItemIds = new Set();
-  let snapshotWeekly = new Map();
-  let snapshotDate = YEAR_START;
+  const state = restoreSnapshot(snapshot, YEAR_START);
+  const snapshotContributors = state.contributors;
+  const snapshotItemIds = state.itemIds;
+  const snapshotWeekly = state.weekly;
+  const snapshotDate = state.snapshotDate;
 
   if (snapshot) {
-    // Restore snapshot
-    for (const [login, data] of Object.entries(snapshot.contributors)) {
-      snapshotContributors.set(login, {
-        avatarUrl: data.avatar_url,
-        totalPoints: data.total_points,
-        breakdown: { ...data.breakdown },
-      });
-    }
-    snapshotItemIds = new Set(snapshot.item_ids || []);
-    for (const [login, weeks] of Object.entries(snapshot.weekly_activity || {})) {
-      const weekMap = new Map();
-      for (const [wk, count] of Object.entries(weeks)) {
-        weekMap.set(wk, count);
-      }
-      snapshotWeekly.set(login, weekMap);
-    }
-    snapshotDate = snapshot.snapshot_date;
-
     // Advance snapshot: fetch items from snapshot_date to liveWindowStart
     // and add them permanently to the frozen record.
     const advanceFrom = snapshotDate;
     const advanceTo = liveWindowISO;
 
-    if (advanceFrom < advanceTo) {
+    if (shouldAdvanceSnapshot(advanceFrom, advanceTo)) {
       console.log(`Advancing snapshot: ${advanceFrom.slice(0, 10)} → ${advanceTo.slice(0, 10)}`);
       console.log("Fetching items to freeze into snapshot...\n");
 
@@ -121,9 +105,7 @@ async function main() {
         try {
           const items = await fetchItemsSince(repo, advanceFrom, defaultHeaders);
           // Only keep items created before the live window
-          const frozen = items.filter(
-            (i) => i.created_at >= YEAR_START && i.created_at < advanceTo
-          );
+          const frozen = filterFrozenItems(items, YEAR_START, advanceTo);
           advanceItems.push(...frozen);
           console.log(`  ${repo}: ${frozen.length} items to freeze (${items.length} fetched)`);
         } catch (err) {
@@ -131,13 +113,7 @@ async function main() {
         }
       }
 
-      const newFrozen = scoreItemsIntoMap(
-        advanceItems,
-        YEAR_START,
-        snapshotContributors,
-        snapshotItemIds
-      );
-      addItemsToWeeklyActivity(advanceItems, YEAR_START, snapshotWeekly);
+      const newFrozen = freezeItemsIntoSnapshot(advanceItems, YEAR_START, state);
       console.log(`\n  Froze ${newFrozen} new items into snapshot.\n`);
     } else {
       console.log(`Snapshot is current (${snapshotDate.slice(0, 10)}). No advancement needed.\n`);
@@ -165,8 +141,7 @@ async function main() {
 
     // Split into frozen (before live window) and live (within live window)
     const frozenItems = allItems.filter((i) => i.created_at < liveWindowISO);
-    scoreItemsIntoMap(frozenItems, YEAR_START, snapshotContributors, snapshotItemIds);
-    addItemsToWeeklyActivity(frozenItems, YEAR_START, snapshotWeekly);
+    freezeItemsIntoSnapshot(frozenItems, YEAR_START, state);
     console.log(`Frozen into snapshot: ${snapshotItemIds.size} items\n`);
   }
 
@@ -195,31 +170,10 @@ async function main() {
   console.log(`\nLive items fetched: ${liveItems.length}`);
 
   // ── Merge: snapshot (frozen) + live (fresh) ─────────────────────
-  // Deep-clone snapshot contributors so we don't mutate the saved snapshot
-  const mergedContributors = new Map();
-  for (const [login, data] of snapshotContributors) {
-    mergedContributors.set(login, {
-      avatarUrl: data.avatarUrl,
-      totalPoints: data.totalPoints,
-      breakdown: { ...data.breakdown },
-    });
-  }
-  const mergedItemIds = new Set(snapshotItemIds);
-
-  const liveScored = scoreItemsIntoMap(
-    liveItems,
-    YEAR_START,
-    mergedContributors,
-    mergedItemIds
-  );
-  console.log(`Live items scored: ${liveScored}\n`);
-
-  // Weekly activity: clone snapshot weekly + add live items
-  const mergedWeekly = new Map();
-  for (const [login, weekMap] of snapshotWeekly) {
-    mergedWeekly.set(login, new Map(weekMap));
-  }
-  addItemsToWeeklyActivity(liveItems, YEAR_START, mergedWeekly);
+  const merged = mergeSnapshotWithLive(state, liveItems, YEAR_START);
+  const mergedContributors = merged.contributors;
+  const mergedWeekly = merged.weekly;
+  console.log(`Live items scored: ${merged.liveScored}\n`);
 
   // ── Bonus points (always fetched fresh — small query) ───────────
   console.log("Fetching bonus point awards...");
