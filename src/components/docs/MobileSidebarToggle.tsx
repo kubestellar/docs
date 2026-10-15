@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
+import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useDocsMenu } from './DocsProvider';
+import { useHydratedTheme } from '@/hooks/useHydratedTheme';
 
 interface MobileHeaderProps {
   onToggleSidebar: () => void;
@@ -11,14 +11,9 @@ interface MobileHeaderProps {
 
 export function MobileHeader({ onToggleSidebar }: MobileHeaderProps) {
   const pathname = usePathname();
-  const { resolvedTheme } = useTheme();
+  const { isDark } = useHydratedTheme();
   const { dismissBanner } = useDocsMenu();
-  const [mounted, setMounted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Build breadcrumb from pathname: '/docs/console/features/dashboards' -> 'Docs > Console > Features > Dashboards'
   const getBreadcrumb = () => {
@@ -47,9 +42,6 @@ export function MobileHeader({ onToggleSidebar }: MobileHeaderProps) {
     dismissBanner();
     onToggleSidebar();
   };
-
-  // Prevent hydration mismatch by not applying theme-specific styles until mounted
-  const isDark = mounted ? resolvedTheme === 'dark' : false;
 
   return (
     <div className="lg:hidden">

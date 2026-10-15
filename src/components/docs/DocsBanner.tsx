@@ -1,27 +1,19 @@
 'use client'
 
 import Link from 'next/link'
-import { useTheme } from 'next-themes'
-import { useState, useEffect } from 'react'
 import { useDocsMenu } from './DocsProvider'
 import { useSharedConfig, getSurveyUrl } from '@/hooks/useSharedConfig'
+import { useHydratedTheme } from '@/hooks/useHydratedTheme'
 
 export function DocsBanner() {
-  const { resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { mounted, isDark } = useHydratedTheme()
   const { bannerDismissed, dismissBanner } = useDocsMenu()
   const { config } = useSharedConfig()
   const surveyUrl = getSurveyUrl(config)
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   if (!mounted || bannerDismissed) {
     return null
   }
-
-  const isDark = resolvedTheme === 'dark'
 
   return (
     <div className={`docs-banner relative ${isDark ? 'bg-neutral-900' : 'bg-blue-50'} border-b ${isDark ? 'border-gray-800' : 'border-blue-100'}`}>
