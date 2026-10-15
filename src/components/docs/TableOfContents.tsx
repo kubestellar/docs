@@ -1,14 +1,9 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
 import Link from 'next/link';
-
-interface TOCItem {
-  id: string;
-  value: string;
-  depth: number;
-}
+import { useIsDarkMounted } from '@/hooks/useIsDarkMounted';
+import type { TOCItem } from './types';
 
 interface TableOfContentsProps {
   toc?: TOCItem[];
@@ -54,12 +49,7 @@ function TOCLink({ item, isActive, isDark }: { item: TOCItem; isActive: boolean;
 
 export function TableOfContents({ toc }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>('');
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const isDark = useIsDarkMounted();
 
   useEffect(() => {
     if (!toc || toc.length === 0) return;
@@ -94,8 +84,6 @@ export function TableOfContents({ toc }: TableOfContentsProps) {
   if (!toc || toc.length === 0) {
     return null;
   }
-
-  const isDark = mounted && resolvedTheme === 'dark';
 
   return (
     <aside 

@@ -1,14 +1,9 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
+import { useState } from 'react';
 import Link from 'next/link';
-
-interface TOCItem {
-  id: string;
-  value: string;
-  depth: number;
-}
+import { useIsDarkMounted } from '@/hooks/useIsDarkMounted';
+import type { TOCItem } from './types';
 
 interface MobileTOCProps {
   toc?: TOCItem[];
@@ -54,20 +49,12 @@ function TOCLink({ item, isDark, onClose }: { item: TOCItem; isDark: boolean; on
 
 export function MobileTOC({ toc }: MobileTOCProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const isDark = useIsDarkMounted();
   const [headerHovered, setHeaderHovered] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   if (!toc || toc.length === 0) {
     return null;
   }
-
-  // Prevent hydration mismatch by using default light theme on server
-  const isDark = mounted && resolvedTheme === 'dark';
 
   return (
     <div 
