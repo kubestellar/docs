@@ -1,6 +1,24 @@
 import { test, expect } from '@playwright/test'
 
-const ROUTES = ['/', '/docs', '/marketplace', '/leaderboard', '/programs']
+const ROUTES = [
+  '/',
+  '/docs',
+  '/docs/console/acmm-dashboard',
+  '/docs/hive',
+  '/marketplace',
+  '/leaderboard',
+  '/acmm-leaderboard',
+  '/programs',
+  '/programs/gsoc',
+  '/products',
+  '/partners',
+  '/playground',
+  '/ladder',
+  '/quick-installation',
+  '/contribute-handbook',
+  '/coming-soon',
+  '/coming-soon-marketplace',
+]
 
 for (const route of ROUTES) {
   test(`${route} renders without page errors`, async ({ page }) => {
