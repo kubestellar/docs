@@ -5,6 +5,7 @@ import { Link as LocalizedLink } from "@/i18n/navigation";
 import type { useTranslations } from "next-intl";
 import { getLocalizedUrl, getEnglishUrl } from "@/lib/url";
 import { getNavClasses } from "./styles";
+import { ChevronDownIcon } from "./icons";
 import type { DropdownType } from "./types";
 
 /** Marketing navbar variant: i18n copy + debounced pointer, driven by `useNavDropdowns`. */
@@ -89,19 +90,7 @@ function MarketingContributeDropdown({
                       </svg>
                     </div>
                     <span>{t("contribute")}</span>
-                    <svg
-                      className={`ml-1 h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
+                    <ChevronDownIcon isOpen={isOpen} className="ml-1 h-4 w-4" />
                   </button>
                   <div
                     className="absolute left-0 mt-1 w-56 bg-gray-800/90 backdrop-blur-md rounded-xl shadow-2xl py-2 ring-1 ring-gray-700/50 transition-all duration-200 z-50 before:content-[''] before:absolute before:bottom-full before:left-0 before:right-0 before:h-2 before:bg-transparent"
@@ -260,15 +249,7 @@ function DocsContributeDropdown({
           />
         </svg>
         <span>Contribute</span>
-        <svg
-          className={`w-5 h-5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
+        <ChevronDownIcon isOpen={isOpen} className="w-5 h-5" />
       </button>
       {isOpen && (
         <div
