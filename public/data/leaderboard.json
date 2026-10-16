@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T06:20:13.508Z",
-  "git_hash": "53f0043",
+  "generated_at": "2026-10-16T10:12:01.775Z",
+  "git_hash": "8a7e583",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-07-27",
@@ -20,15 +20,15 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 6324650,
+      "total_points": 6325350,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 727,
         "feature_issues": 1447,
         "other_issues": 2182,
-        "prs_opened": 8946,
-        "prs_merged": 8127
+        "prs_opened": 8947,
+        "prs_merged": 8128
       },
       "bonus_points": 50,
       "weekly_activity": [
@@ -43,9 +43,9 @@
         136,
         88,
         59,
-        28
+        29
       ],
-      "recent_activity_score": 433.71,
+      "recent_activity_score": 434.71,
       "rank": 1
     },
     {
@@ -2510,6 +2510,36 @@
       "rank": 83
     },
     {
+      "login": "Karibhou",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
+      "total_points": 1100,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 3,
+        "prs_merged": 1
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "recent_activity_score": 3,
+      "rank": 84
+    },
+    {
       "login": "5tjrtddt4k-cloud",
       "avatar_url": "https://avatars.githubusercontent.com/u/288685405?v=4",
       "total_points": 900,
@@ -2537,7 +2567,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 84
+      "rank": 85
     },
     {
       "login": "antedotee",
@@ -2567,7 +2597,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 85
+      "rank": 86
     },
     {
       "login": "janewas",
@@ -2597,36 +2627,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 86
-    },
-    {
-      "login": "Karibhou",
-      "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-      "total_points": 900,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 2,
-        "prs_merged": 1
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
-      ],
-      "recent_activity_score": 2,
       "rank": 87
     },
     {
