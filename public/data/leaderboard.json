@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T14:12:35.890Z",
-  "git_hash": "f1d1af7",
+  "generated_at": "2026-10-16T18:14:19.074Z",
+  "git_hash": "a9b6509",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-07-27",
@@ -20,13 +20,13 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 6325750,
+      "total_points": 6325800,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 728,
         "feature_issues": 1448,
-        "other_issues": 2182,
+        "other_issues": 2183,
         "prs_opened": 8947,
         "prs_merged": 8128
       },
@@ -43,9 +43,9 @@
         136,
         88,
         59,
-        31
+        32
       ],
-      "recent_activity_score": 436.71,
+      "recent_activity_score": 437.71,
       "rank": 1
     },
     {
@@ -2450,6 +2450,36 @@
       "rank": 81
     },
     {
+      "login": "Karibhou",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
+      "total_points": 1300,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 4,
+        "prs_merged": 1
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      "recent_activity_score": 4,
+      "rank": 82
+    },
+    {
       "login": "zyzzmohit",
       "avatar_url": "https://avatars.githubusercontent.com/u/237704724?v=4",
       "total_points": 1300,
@@ -2477,7 +2507,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 82
+      "rank": 83
     },
     {
       "login": "jakharmonika364",
@@ -2507,36 +2537,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 83
-    },
-    {
-      "login": "Karibhou",
-      "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-      "total_points": 1100,
-      "level": "Explorer",
-      "level_rank": 2,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 3,
-        "prs_merged": 1
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        3
-      ],
-      "recent_activity_score": 3,
       "rank": 84
     },
     {
