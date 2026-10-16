@@ -18,6 +18,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  buildVersionsAndProjects,
+  deriveEditBaseUrls,
+  mergeSharedConfig,
+  parseExistingSharedConfig,
+} from './generate-shared-config-helpers';
 
 // ---------------------------------------------------------------------------
 // Resolve paths relative to repo root
@@ -31,73 +37,23 @@ const sharedJsonPath = path.join(repoRoot, 'public', 'config', 'shared.json');
 // Import version data from versions.ts and generate shared.json
 // Wrapped in an async IIFE to avoid top-level await, which is not supported
 // when tsx runs in CJS mode (e.g. Netlify's Node 20).
+//
+// The transformation/merge logic itself lives in
+// generate-shared-config-helpers.ts (unit tested) — this IIFE is just I/O.
 // ---------------------------------------------------------------------------
-type VersionEntry = {
-  label: string;
-  branch: string;
-  isDefault: boolean;
-  externalUrl?: string;
-  isDev?: boolean;
-};
-
-interface ExistingSharedConfig {
-  surveyUrl?: string;
-  relatedProjects?: unknown[];
-  editBaseUrls?: Record<string, string>;
-  [key: string]: unknown;
-}
-
 (async () => {
   const { PROJECTS } = await import(versionsPath) as typeof import('../src/config/versions/index.ts');
 
-  // Build versions and projects maps from PROJECTS
-  const versions: Record<string, Record<string, VersionEntry>> = {};
-  const projects: Record<string, { name: string; basePath: string; currentVersion: string }> = {};
-
-  for (const [id, project] of Object.entries(PROJECTS)) {
-    versions[id] = Object.fromEntries(
-      Object.entries(project.versions).map(([key, v]) => {
-        const entry: VersionEntry = {
-          label: v.label,
-          branch: v.branch,
-          isDefault: v.isDefault,
-        };
-        if (v.externalUrl) entry.externalUrl = v.externalUrl;
-        if (v.isDev) entry.isDev = v.isDev;
-        return [key, entry];
-      }),
-    );
-
-    projects[id] = {
-      name: project.name,
-      basePath: project.basePath,
-      currentVersion: project.currentVersion,
-    };
-  }
+  const { versions, projects } = buildVersionsAndProjects(PROJECTS);
 
   // Preserve hand-maintained fields from the existing shared.json
-  let existing: ExistingSharedConfig = {};
-  if (fs.existsSync(sharedJsonPath)) {
-    existing = JSON.parse(fs.readFileSync(sharedJsonPath, 'utf8')) as ExistingSharedConfig;
-  }
+  const existing = parseExistingSharedConfig(
+    fs.existsSync(sharedJsonPath) ? fs.readFileSync(sharedJsonPath, 'utf8') : undefined,
+  );
 
-  // Derive editBaseUrls from project data; fall back to existing values so
-  // hand-maintained URLs (e.g. external repos) are not lost.
-  const editBaseUrls: Record<string, string> = { ...(existing.editBaseUrls ?? {}) };
-  const ksLatest = PROJECTS.kubestellar.versions.latest;
-  if (ksLatest?.branch) {
-    editBaseUrls.kubestellar = `https://github.com/kubestellar/docs/edit/${ksLatest.branch}/docs/content`;
-  }
+  const editBaseUrls = deriveEditBaseUrls(existing.editBaseUrls, PROJECTS.kubestellar.versions.latest?.branch);
 
-  // Assemble and write the new shared.json
-  const sharedConfig = {
-    surveyUrl: existing.surveyUrl,
-    versions,
-    projects,
-    relatedProjects: existing.relatedProjects ?? [],
-    editBaseUrls,
-    updatedAt: new Date().toISOString(),
-  };
+  const sharedConfig = mergeSharedConfig(existing, versions, projects, editBaseUrls);
 
   fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedConfig, null, 2) + '\n');
   console.log(`✅ Generated ${path.relative(repoRoot, sharedJsonPath)} from versions.ts`);

@@ -1,0 +1,1 @@
+- refactor(scripts): extract `generate-shared-config.ts`'s versions/projects transform, editBaseUrls derivation, and preserve-existing-fields merge into a unit-tested `generate-shared-config-helpers.ts` module (#7428).
