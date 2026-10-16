@@ -1,6 +1,6 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-15T22:15:21.429Z",
+  "generated_at": "2026-10-16T02:19:39.381Z",
   "total_issues_opened": 641,
   "total_prs_opened": 2817,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
@@ -9,7 +9,7 @@
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 30.1,
+    "avg_per_week": 30,
     "avg_per_day": 8.12,
     "by_day_of_week": [
       316,
