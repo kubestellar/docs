@@ -18,3 +18,29 @@ export function LinkedinIcon({
     </svg>
   );
 }
+
+/**
+ * Dropdown-toggle caret, shared by the Community/Contribute nav dropdowns
+ * (marketing and docs variants alike — docs#<issue>). `className` carries
+ * only sizing/spacing utility classes; the rotate/transition behavior is
+ * fixed so every caller flips the same way when `isOpen` changes.
+ */
+export function ChevronDownIcon({
+  isOpen,
+  className,
+}: {
+  isOpen: boolean;
+  className?: string;
+}) {
+  return (
+    <svg
+      className={`${className ?? ""} transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  );
+}
