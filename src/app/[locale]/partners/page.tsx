@@ -299,118 +299,30 @@ export default function PartnersPage() {
                     {t("partnershipOpportunities.description")}
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-300">
-                          {t("partnershipOpportunities.features.0")}
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-300">
-                          {t("partnershipOpportunities.features.1")}
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-300">
-                          {t("partnershipOpportunities.features.2")}
-                        </span>
-                      </li>
-                    </ul>
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-300">
-                          {t("partnershipOpportunities.features.3")}
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-300">
-                          {t("partnershipOpportunities.features.4")}
-                        </span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-300">
-                          {t("partnershipOpportunities.features.5")}
-                        </span>
-                      </li>
-                    </ul>
+                    {[[0, 1, 2], [3, 4, 5]].map(columnIndices => (
+                      <ul className="space-y-2" key={columnIndices[0]}>
+                        {columnIndices.map(i => (
+                          <li className="flex items-start" key={i}>
+                            <svg
+                              className="w-5 h-5 text-green-400 mr-2 mt-0.5 flex-shrink-0"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                            <span className="text-gray-300">
+                              {t(`partnershipOpportunities.features.${i}`)}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    ))}
                   </div>
                 </div>
               </div>
