@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-10-17T14:12:55.992Z",
+  "generated_at": "2026-10-17T18:15:37.699Z",
   "total_issues_opened": 41,
   "total_prs_opened": 71,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
@@ -391,7 +391,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "refactor(scripts): use yaml for knowledge source config",
+        "url": "https://github.com/kubestellar/console-kb/pull/3842",
+        "repo": "console-kb",
+        "topic_match": "loader, docsloader, remove"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-17T14:09:37.551Z",
-  "git_hash": "de704ac",
+  "generated_at": "2026-10-17T18:12:25.067Z",
+  "git_hash": "585d73f",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-07-27",
@@ -1280,6 +1280,36 @@
       "rank": 42
     },
     {
+      "login": "Karibhou",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
+      "total_points": 3800,
+      "level": "Navigator",
+      "level_rank": 3,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 9,
+        "prs_merged": 4
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9
+      ],
+      "recent_activity_score": 9,
+      "rank": 43
+    },
+    {
       "login": "sshekhar563",
       "avatar_url": "https://avatars.githubusercontent.com/u/173538652?v=4",
       "total_points": 3750,
@@ -1307,36 +1337,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 43
-    },
-    {
-      "login": "Karibhou",
-      "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-      "total_points": 3600,
-      "level": "Navigator",
-      "level_rank": 3,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 8,
-        "prs_merged": 4
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        8
-      ],
-      "recent_activity_score": 8,
       "rank": 44
     },
     {
