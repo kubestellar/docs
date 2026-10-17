@@ -206,4 +206,44 @@ describe("ContributorProfilePage", () => {
     expect(screen.queryByText("Stretch Into New Areas")).toBeNull();
     expect(screen.getByText(/12 issues opened across/).textContent).toContain("multiple repos");
   });
+
+  it("falls back to [] when topics/suggestions are missing entirely (legacy API payload) and uses the default badge for an unmapped repo", async () => {
+    const legacyProfile = makeProfile({
+      repo_breakdown: [
+        { repo: "kubestellar-mcp", bug_issues: 1, feature_issues: 0, other_issues: 0, prs_opened: 2, prs_merged: 1 },
+      ],
+    }) as Record<string, unknown>;
+    delete legacyProfile.topics;
+    delete legacyProfile.suggestions;
+
+    mockFetch({ profile: legacyProfile, leaderboard: { generated_at: "", entries: [] } });
+    render(<ContributorProfilePage params={resolvedParams("Alice")} />);
+
+    await waitFor(() => expect(screen.getByText("Not enough issues for topic analysis")).toBeTruthy());
+    expect(screen.getByText("Requires at least 3 issues for clustering")).toBeTruthy();
+    expect(screen.queryByText("Deepen Your Expertise")).toBeNull();
+    expect(screen.queryByText("Stretch Into New Areas")).toBeNull();
+    expect(screen.getByText(/12 issues opened across/).textContent).toContain("multiple repos");
+    // Unmapped repo keys fall back to the default gray badge class instead of REPO_COLORS.
+    expect(screen.getByText("KUBESTELLAR-MCP").className).toContain("text-gray-400 bg-gray-500/10");
+  });
+
+  it("renders only the suggestion section that has entries (deepen-only, then stretch-only)", async () => {
+    mockFetch({
+      profile: makeProfile({ suggestions: { deepen: [{ title: "Fix flaky test", url: "https://x/1", repo: "docs", topic_match: "testing" }], stretch: [] } }),
+      leaderboard: { generated_at: "", entries: [] },
+    });
+    const { unmount } = render(<ContributorProfilePage params={resolvedParams("Alice")} />);
+    await screen.findByText("Deepen Your Expertise");
+    expect(screen.queryByText("Stretch Into New Areas")).toBeNull();
+    unmount();
+
+    mockFetch({
+      profile: makeProfile({ suggestions: { deepen: [], stretch: [{ name: "Cards", path: "web/src/cards", description: "Card UI", url: "https://x/cards" }] } }),
+      leaderboard: { generated_at: "", entries: [] },
+    });
+    render(<ContributorProfilePage params={resolvedParams("Alice")} />);
+    await screen.findByText("Stretch Into New Areas");
+    expect(screen.queryByText("Deepen Your Expertise")).toBeNull();
+  });
 });
