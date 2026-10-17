@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { render, cleanup } from "@testing-library/react";
+import { render, cleanup, fireEvent } from "@testing-library/react";
 import React from "react";
 
 /**
@@ -133,6 +133,30 @@ describe("PartnersPage", () => {
     const argocdLogos = getAllByAltText("ArgoCD logo");
     expect(mviLogos[0].className).toContain("bg-white");
     expect(argocdLogos[0].className).not.toContain("bg-white");
+  });
+
+  it("pauses and resumes the desktop carousel animation on card hover enter/leave", async () => {
+    const { default: PartnersPage } = await import(
+      "@/app/[locale]/partners/page"
+    );
+    const { container } = render(<PartnersPage />);
+
+    const carousel = container.querySelector(".animate-slide-partners");
+    expect(carousel).not.toBeNull();
+
+    // Each tripled card is a direct child of the carousel and owns the
+    // onMouseEnter/onMouseLeave handlers that toggle "pause-animation" on
+    // the carousel itself via e.currentTarget.closest(...).
+    const card = carousel!.firstElementChild as HTMLElement;
+    expect(card).not.toBeNull();
+
+    expect(carousel!.classList.contains("pause-animation")).toBe(false);
+
+    fireEvent.mouseEnter(card);
+    expect(carousel!.classList.contains("pause-animation")).toBe(true);
+
+    fireEvent.mouseLeave(card);
+    expect(carousel!.classList.contains("pause-animation")).toBe(false);
   });
 
   it("renders the Slack CTA link with its path preserved through getLocalizedUrl", async () => {
