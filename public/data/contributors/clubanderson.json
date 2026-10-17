@@ -1,23 +1,23 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-17T02:18:40.596Z",
+  "generated_at": "2026-10-17T06:21:16.178Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2818,
+  "total_prs_opened": 2819,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6325800,
+  "total_points": 6326000,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 29.2,
-    "avg_per_day": 8.09,
+    "avg_per_week": 29,
+    "avg_per_day": 8.07,
     "by_day_of_week": [
       316,
       593,
       760,
       561,
       541,
-      367,
+      368,
       321
     ],
     "by_hour_of_day": [
@@ -27,7 +27,7 @@
       55,
       38,
       121,
-      1534,
+      1535,
       283,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 42,
     "trend": "steady",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-16T06:26:54.000Z"
+    "last_issue_at": "2026-10-17T06:11:04.000Z"
   },
   "topics": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 57,
+      "issue_count": 56,
       "recent_issue": {
         "title": "📖 Update kubestellar-mcp docs to v0.9.18",
         "url": "https://github.com/kubestellar/docs/pull/7353",
@@ -79,7 +79,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 57
+      "closed_count": 56
     },
     {
       "name": "hive, doc, sync",
@@ -281,6 +281,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "alias, rpc, generic",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 connect-rpc: Type aliases for generics",
+        "url": "https://github.com/kubestellar/console-kb/pull/3840",
+        "created_at": "2026-10-17T06:11:04Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "autopilot, gke, onboarding",
@@ -883,7 +897,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 33
+      "issue_count": 34
     }
   ],
   "repo_breakdown": [
@@ -892,7 +906,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2101,
+      "prs_opened": 2102,
       "prs_merged": 1768
     },
     {
