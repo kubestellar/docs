@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-17T06:21:16.178Z",
+  "generated_at": "2026-10-17T10:13:28.155Z",
   "total_issues_opened": 641,
   "total_prs_opened": 2819,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6326000,
+  "total_points": 6326500,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 29,
+    "avg_per_week": 28.9,
     "avg_per_day": 8.07,
     "by_day_of_week": [
       316,
@@ -293,8 +293,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "autopilot, gke, onboarding",
@@ -907,7 +907,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2102,
-      "prs_merged": 1768
+      "prs_merged": 1769
     },
     {
       "repo": "docs",
