@@ -1,0 +1,1 @@
+Fixed the Node 20 `Iterator` polyfill so vitest passes again on the prow image: the polyfill is now mirrored into the vm contexts jsdom 30 creates per window, and `NODE_OPTIONS` is rewritten to the polyfill's absolute path so child `node` processes spawned by script tests from tmpdir cwds no longer die with MODULE_NOT_FOUND.
