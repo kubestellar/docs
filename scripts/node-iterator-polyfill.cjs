@@ -43,6 +43,56 @@ if (typeof globalThis.Iterator === 'undefined') {
   }
 }
 
+// jsdom >= 30 also calls the ES2024 `Promise.withResolvers` (added in
+// Node 22) from lib/jsdom/living/nodes/Document-impl.js close(), so on the
+// Node 20 prow image every jsdom window teardown crashes with
+// "TypeError: Promise.withResolvers is not a function" — same 74
+// unhandled-errors-exit-1 pattern as the Iterator gap, which masked this one
+// until it was fixed. Polyfill it on the host realm and mirror it into every
+// vm context (jsdom windows get the context realm's `Promise`).
+function withResolversPolyfill () {
+  let resolve, reject
+  // eslint-disable-next-line promise/param-names
+  const promise = new this((res, rej) => {
+    resolve = res
+    reject = rej
+  })
+  return { promise, resolve, reject }
+}
+
+if (typeof Promise.withResolvers !== 'function') {
+  Object.defineProperty(Promise, 'withResolvers', {
+    value: withResolversPolyfill,
+    writable: true,
+    configurable: true
+  })
+
+  const vm = require('vm')
+  const originalCreateContext = vm.createContext
+  vm.createContext = function (...args) {
+    const context = originalCreateContext.apply(this, args)
+    const globalObject =
+      context !== null && typeof context === 'object' ? context : args[0]
+    try {
+      if (
+        globalObject &&
+        vm.runInContext('typeof Promise.withResolvers', globalObject) ===
+          'undefined'
+      ) {
+        const contextPromise = vm.runInContext('Promise', globalObject)
+        Object.defineProperty(contextPromise, 'withResolvers', {
+          value: withResolversPolyfill,
+          writable: true,
+          configurable: true
+        })
+      }
+    } catch {
+      // Non-contextified or frozen targets: leave untouched.
+    }
+    return context
+  }
+}
+
 // The `test` script preloads this file with a cwd-relative path
 // (`--require ./scripts/node-iterator-polyfill.cjs`). Node resolves that
 // against the cwd of EACH process, so a child `node` process a test spawns

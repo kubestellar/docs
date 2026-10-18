@@ -1,0 +1,1 @@
+Fixed vitest on the Node 20 prow image again: jsdom 30's Document teardown calls the ES2024 `Promise.withResolvers` (Node 22+), so every worker exited 1 with 74 unhandled errors once the Iterator gap stopped masking it. The preload polyfill now also installs `Promise.withResolvers` on the host realm and mirrors it into jsdom's vm contexts.
