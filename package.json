@@ -18,8 +18,8 @@
     "analyze": "ANALYZE=true npm run build",
     "export": "next export",
     "clean": "rm -rf .next out",
-    "test": "vitest run",
-    "test:watch": "vitest",
+    "test": "NODE_OPTIONS=\"$NODE_OPTIONS --require ./scripts/node-iterator-polyfill.cjs\" vitest run",
+    "test:watch": "NODE_OPTIONS=\"$NODE_OPTIONS --require ./scripts/node-iterator-polyfill.cjs\" vitest",
     "test:e2e": "playwright test",
     "audit": "npm audit --audit-level=moderate",
     "update-deps": "npm update && npm audit fix"
@@ -55,6 +55,7 @@
     "@types/react-dom": "^19.3.0",
     "@types/three": "^0.186.0",
     "@vitest/coverage-v8": "^5.0.3",
+    "core-js": "^3.50.0",
     "eslint": "^10",
     "eslint-config-next": "^16.4.0",
     "eslint-plugin-react": "^7.37.5",
