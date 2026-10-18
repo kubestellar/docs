@@ -5,6 +5,141 @@ import { GridLines, StarField } from "../index";
 import { useTranslations } from "next-intl";
 import { getLocalizedUrl } from "@/lib/url";
 import { useContactForm } from "../../hooks/useContactForm";
+import ContactCard, { type ContactCardConfig } from "./ContactCard";
+
+const CONTACT_CARD_BASE_CLASSNAME =
+  "block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 cursor-pointer";
+
+const CONTACT_CARDS: ContactCardConfig[] = [
+  {
+    href: "mailto:info@kubestellar.io",
+    external: false,
+    cardClassName: `${CONTACT_CARD_BASE_CLASSNAME} border border-gray-700/50 hover:border-blue-500/50`,
+    iconWrapperClassName:
+      "flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-blue-900/30 flex items-center justify-center",
+    icon: (
+      <svg
+        className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+        />
+      </svg>
+    ),
+    linkColorClassName: "text-blue-400",
+    titleKey: "card1Title",
+    descriptionKey: "card1Description",
+    linkKey: "card1Link",
+  },
+  {
+    href: getLocalizedUrl("https://kubestellar.io/slack"),
+    external: true,
+    cardClassName: `${CONTACT_CARD_BASE_CLASSNAME} border border-transparent hover:border-purple-500/70`,
+    iconWrapperClassName:
+      "flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gray-800 flex items-center justify-center shadow-lg",
+    icon: (
+      <svg
+        className="h-6 w-6 sm:h-8 sm:w-8"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 60 60"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <path
+          d="M22,12 a6,6 0 1 1 6,-6 v6z M22,16 a6,6 0 0 1 0,12 h-16 a6,6 0 1 1 0,-12"
+          fill="#36C5F0"
+        />
+        <path
+          d="M48,22 a6,6 0 1 1 6,6 h-6z M32,6 a6,6 0 1 1 12,0v16a6,6 0 0 1 -12,0z"
+          fill="#2EB67D"
+        />
+        <path
+          d="M38,48 a6,6 0 1 1 -6,6 v-6z M54,32 a6,6 0 0 1 0,12 h-16 a6,6 0 1 1 0,-12"
+          fill="#ECB22E"
+        />
+        <path
+          d="M12,38 a6,6 0 1 1 -6,-6 h6z M16,38 a6,6 0 1 1 12,0v16a6,6 0 0 1 -12,0z"
+          fill="#E01E5A"
+        />
+      </svg>
+    ),
+    linkColorClassName: "text-purple-400",
+    titleKey: "card2Title",
+    descriptionKey: "card2Description",
+    linkKey: "card2Link",
+  },
+  {
+    href: "https://github.com/kubestellar/console",
+    external: true,
+    cardClassName: `${CONTACT_CARD_BASE_CLASSNAME} border border-gray-700/50 hover:border-green-500/50`,
+    iconWrapperClassName:
+      "flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-lg border border-gray-600",
+    icon: (
+      <svg
+        className="h-6 w-6 sm:h-8 sm:w-8 text-white"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+      </svg>
+    ),
+    linkColorClassName: "text-green-400",
+    titleKey: "card3Title",
+    descriptionKey: "card3Description",
+    linkKey: "card3Link",
+  },
+  {
+    href: "https://linkedin.com/company/kubestellar",
+    external: true,
+    cardClassName: `${CONTACT_CARD_BASE_CLASSNAME} border border-gray-700/50 hover:border-blue-500/50`,
+    iconWrapperClassName:
+      "flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-blue-600 flex items-center justify-center shadow-lg",
+    icon: (
+      <svg
+        className="h-4 w-4 sm:h-6 sm:w-6"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 382 382"
+        fill="white"
+      >
+        <path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z" />
+      </svg>
+    ),
+    linkColorClassName: "text-blue-400",
+    titleKey: "card4Title",
+    descriptionKey: "card4Description",
+    linkKey: "card4Link",
+  },
+  {
+    href: "https://www.youtube.com/@kubestellar",
+    external: true,
+    cardClassName: `${CONTACT_CARD_BASE_CLASSNAME} border border-gray-700/50 hover:border-red-500/50`,
+    iconWrapperClassName:
+      "flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-black-600 flex items-center justify-center shadow-lg",
+    icon: (
+      <svg
+        className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          className="transition-colors duration-300 text-red-500 group-hover:text-[#FF0000]"
+          d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+        />
+      </svg>
+    ),
+    linkColorClassName: "text-red-400",
+    titleKey: "card5Title",
+    descriptionKey: "card5Description",
+    linkKey: "card5Link",
+  },
+];
 
 export default function ContactSection() {
   const t = useTranslations("contactSection");
@@ -52,249 +187,9 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 items-stretch">
           {/* Left side: Contact info cards */}
           <div className="lg:col-span-2 flex flex-col justify-between space-y-3 sm:space-y-4">
-            {/* Contact card 1 */}
-            <a
-              href="mailto:info@kubestellar.io"
-              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer"
-            >
-              <div className="flex items-center">
-                <div className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-blue-900/30 flex items-center justify-center">
-                  <svg
-                    className="h-6 w-6 sm:h-8 sm:w-8 text-blue-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                </div>
-                <div className="ml-3 sm:ml-5">
-                  <h3 className="text-base sm:text-lg font-medium text-white">
-                    {t("card1Title")}
-                  </h3>
-                  <p className="text-gray-300 mt-1 text-sm sm:text-base">
-                    {t("card1Description")}
-                  </p>
-                  <p className="text-blue-400 mt-1 text-xs sm:text-sm inline-flex items-center">
-                    {t("card1Link")}
-                    <svg
-                      className="ml-1 w-3 h-3 sm:w-4 sm:h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            {/* Contact card 2 */}
-            <a
-              href={getLocalizedUrl("https://kubestellar.io/slack")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-transparent p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-purple-500/70 cursor-pointer"
-            >
-              <div className="flex items-center">
-                <div className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gray-800 flex items-center justify-center shadow-lg">
-                  <svg
-                    className="h-6 w-6 sm:h-8 sm:w-8"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 60 60"
-                    preserveAspectRatio="xMidYMid meet"
-                  >
-                    <path
-                      d="M22,12 a6,6 0 1 1 6,-6 v6z M22,16 a6,6 0 0 1 0,12 h-16 a6,6 0 1 1 0,-12"
-                      fill="#36C5F0"
-                    />
-                    <path
-                      d="M48,22 a6,6 0 1 1 6,6 h-6z M32,6 a6,6 0 1 1 12,0v16a6,6 0 0 1 -12,0z"
-                      fill="#2EB67D"
-                    />
-                    <path
-                      d="M38,48 a6,6 0 1 1 -6,6 v-6z M54,32 a6,6 0 0 1 0,12 h-16 a6,6 0 1 1 0,-12"
-                      fill="#ECB22E"
-                    />
-                    <path
-                      d="M12,38 a6,6 0 1 1 -6,-6 h6z M16,38 a6,6 0 1 1 12,0v16a6,6 0 0 1 -12,0z"
-                      fill="#E01E5A"
-                    />
-                  </svg>
-                </div>
-                <div className="ml-3 sm:ml-5">
-                  <h3 className="text-base sm:text-lg font-medium text-white">
-                    {t("card2Title")}
-                  </h3>
-                  <p className="text-gray-300 mt-1 text-sm sm:text-base">
-                    {t("card2Description")}
-                  </p>
-                  <p className="text-purple-400 mt-1 text-xs sm:text-sm inline-flex items-center">
-                    {t("card2Link")}
-                    <svg
-                      className="ml-1 w-3 h-3 sm:w-4 sm:h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            {/* Contact card 3 */}
-            <a
-              href="https://github.com/kubestellar/console"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-green-500/50 cursor-pointer"
-            >
-              <div className="flex items-center">
-                <div className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-lg border border-gray-600">
-                  <svg
-                    className="h-6 w-6 sm:h-8 sm:w-8 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                  </svg>
-                </div>
-                <div className="ml-3 sm:ml-5">
-                  <h3 className="text-base sm:text-lg font-medium text-white">
-                    {t("card3Title")}
-                  </h3>
-                  <p className="text-gray-300 mt-1 text-sm sm:text-base">
-                    {t("card3Description")}
-                  </p>
-                  <p className="text-green-400 mt-1 text-xs sm:text-sm inline-flex items-center">
-                    {t("card3Link")}
-                    <svg
-                      className="ml-1 w-3 h-3 sm:w-4 sm:h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </div>
-            </a>
-            {/* Contact card 4 - LinkedIn */}
-            <a
-              href="https://linkedin.com/company/kubestellar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-blue-500/50 cursor-pointer"
-            >
-              <div className="flex items-center">
-                <div className="flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-blue-600 flex items-center justify-center shadow-lg">
-                  <svg
-                    className="h-4 w-4 sm:h-6 sm:w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 382 382"
-                    fill="white"
-                  >
-                    <path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z" />
-                  </svg>
-                </div>
-                <div className="ml-3 sm:ml-5">
-                  <h3 className="text-base sm:text-lg font-medium text-white">
-                    {t("card4Title")}
-                  </h3>
-                  <p className="text-gray-300 mt-1 text-sm sm:text-base">
-                    {t("card4Description")}
-                  </p>
-                  <p className="text-blue-400 mt-1 text-xs sm:text-sm inline-flex items-center">
-                    {t("card4Link")}
-                    <svg
-                      className="ml-1 w-3 h-3 sm:w-4 sm:h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </div>
-            </a>
-             {/* Contact card 5 - YouTube */}
-            <a
-              href="https://www.youtube.com/@kubestellar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-gray-800/50 backdrop-blur-md rounded-xl shadow-sm border border-gray-700/50 p-4 sm:p-6 transform transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-red-500/50 cursor-pointer"
-            >
-              <div className="flex items-center">
-                <div className="flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-black-600 flex items-center justify-center shadow-lg">
-                  <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  >
-                    <path
-                      className="transition-colors duration-300 text-red-500 group-hover:text-[#FF0000]"
-                      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                    />
-                  </svg>
-                </div>
-                <div className="ml-3 sm:ml-5">
-                  <h3 className="text-base sm:text-lg font-medium text-white">
-                    {t("card5Title")}
-                  </h3>
-                  <p className="text-gray-300 mt-1 text-sm sm:text-base">
-                    {t("card5Description")}
-                  </p>
-                  <p className="text-red-400 mt-1 text-xs sm:text-sm inline-flex items-center">
-                    {t("card5Link")}
-                    <svg
-                      className="ml-1 w-3 h-3 sm:w-4 sm:h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </p>
-                </div>
-              </div>
-            </a>
+            {CONTACT_CARDS.map((card) => (
+              <ContactCard key={card.titleKey} {...card} />
+            ))}
           </div>
 
           {/* Right side: Contact form */}
