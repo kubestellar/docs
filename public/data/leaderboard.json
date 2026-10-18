@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-17T22:09:54.608Z",
-  "git_hash": "ac839b4",
+  "generated_at": "2026-10-18T02:15:44.914Z",
+  "git_hash": "63eaa2a",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-07-27",
@@ -41,11 +41,11 @@
         106,
         53,
         136,
-        90,
-        64,
+        91,
+        66,
         34
       ],
-      "recent_activity_score": 444.94,
+      "recent_activity_score": 447.16,
       "rank": 1
     },
     {
@@ -860,6 +860,36 @@
       "rank": 28
     },
     {
+      "login": "Karibhou",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
+      "total_points": 8800,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 19,
+        "prs_merged": 10
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        19
+      ],
+      "recent_activity_score": 19,
+      "rank": 29
+    },
+    {
       "login": "Khushisgh01",
       "avatar_url": "https://avatars.githubusercontent.com/u/195645709?v=4",
       "total_points": 8350,
@@ -887,7 +917,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 29
+      "rank": 30
     },
     {
       "login": "nancysangani",
@@ -917,7 +947,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 30
+      "rank": 31
     },
     {
       "login": "ashnaaseth2325-oss",
@@ -947,7 +977,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 31
+      "rank": 32
     },
     {
       "login": "Jayant-kernel",
@@ -977,36 +1007,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 32
-    },
-    {
-      "login": "Karibhou",
-      "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-      "total_points": 7200,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 16,
-        "prs_merged": 8
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        16
-      ],
-      "recent_activity_score": 16,
       "rank": 33
     },
     {
@@ -3731,12 +3731,12 @@
         0,
         0,
         0,
-        33,
+        36,
         0,
         0,
         0
       ],
-      "recent_activity_score": 16.5,
+      "recent_activity_score": 18,
       "rank": 124
     },
     {
@@ -4243,10 +4243,10 @@
         0,
         0,
         0,
-        5,
+        6,
         0
       ],
-      "recent_activity_score": 3.97,
+      "recent_activity_score": 4.76,
       "rank": 141
     },
     {
@@ -4362,11 +4362,11 @@
         0,
         0,
         0,
-        8,
+        9,
         0,
         0
       ],
-      "recent_activity_score": 5.04,
+      "recent_activity_score": 5.67,
       "rank": 145
     },
     {
