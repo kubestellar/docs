@@ -5,6 +5,7 @@ import { Link as IntlLink } from "@/i18n/navigation";
 import { GridLines, StarField, GlobeAnimation } from "../index";
 import { useTranslations } from "next-intl";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
+import FloatingDataParticles from "./FloatingDataParticles";
 
 export default function HeroSection() {
   const t = useTranslations("heroSection");
@@ -61,32 +62,7 @@ export default function HeroSection() {
         </div>
 
         {/* Floating Data Particles */}
-        <div className="absolute inset-0">
-          <div
-            className="data-particle"
-            style={{ "--delay": "0s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "1s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "2s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "3s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "4s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "5s" } as React.CSSProperties}
-          ></div>
-        </div>
+        <FloatingDataParticles />
       </div>
 
       {/* Main Content Container */}
