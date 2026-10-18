@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import PageShell from "@/components/master-page/PageShell";
+import FloatingDataParticles from "@/components/master-page/FloatingDataParticles";
 import { handbookCards, HandbookCard } from "./handbook";
 import { useTranslations } from "next-intl";
 
@@ -109,32 +110,7 @@ export default function CommunityHandbook() {
     >
       <main className="pt-24 relative overflow-hidden text-white">
         {/* Floating Data Particles */}
-        <div className="absolute inset-0">
-          <div
-            className="data-particle"
-            style={{ "--delay": "0s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "1s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "2s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "3s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "4s" } as React.CSSProperties}
-          ></div>
-          <div
-            className="data-particle"
-            style={{ "--delay": "5s" } as React.CSSProperties}
-          ></div>
-        </div>
+        <FloatingDataParticles />
 
         <div className="relative pt-5 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
