@@ -29,7 +29,7 @@
     "@react-three/fiber": "^9.8.1",
     "@theguild/remark-mermaid": "^0.3.0",
     "braces": "file:vendor/braces",
-    "dotenv": "^18.0.4",
+    "dotenv": "^18.0.8",
     "framer-motion": "^14.3.0",
     "js-yaml": "^5.5.0",
     "lucide-react": "^1.55.0",
