@@ -1,8 +1,11 @@
 import { describe, it, expect } from 'vitest'
 import {
+  PROJECTS,
   getProjectFromPath,
   getProject,
   getAllProjects,
+  CURRENT_VERSION,
+  VERSIONS,
   getDefaultVersion,
   getCurrentVersion,
   getBranchForVersion,
@@ -15,6 +18,34 @@ import {
   PRODUCTION_URL,
   NETLIFY_SITE_NAME,
 } from '../config/versions'
+import { KUBESTELLAR_VERSIONS } from '../config/versions/data/kubestellar'
+
+// ---------------------------------------------------------------------------
+// PROJECTS registry
+// ---------------------------------------------------------------------------
+
+describe('PROJECTS registry', () => {
+  const expectedIds = ['kubestellar', 'a2a', 'kubeflex', 'multi-plugin', 'kubestellar-mcp', 'console'] as const
+
+  it('contains an entry for every ProjectId', () => {
+    for (const id of expectedIds) {
+      expect(PROJECTS[id]).toBeDefined()
+      expect(PROJECTS[id].id).toBe(id)
+    }
+  })
+
+  it('only the kubestellar project uses an empty basePath', () => {
+    expect(PROJECTS.kubestellar.basePath).toBe('')
+    for (const id of expectedIds.filter((x) => x !== 'kubestellar')) {
+      expect(PROJECTS[id].basePath).not.toBe('')
+    }
+  })
+
+  it('basePaths are unique across projects (no routing collisions)', () => {
+    const basePaths = expectedIds.map((id) => PROJECTS[id].basePath)
+    expect(new Set(basePaths).size).toBe(basePaths.length)
+  })
+})
 
 // ---------------------------------------------------------------------------
 // getProjectFromPath — routing-critical: determines active project from URL
@@ -63,6 +94,12 @@ describe('getProjectFromPath', () => {
     expect(getProjectFromPath('/')).toHaveProperty('id', 'kubestellar')
     expect(getProjectFromPath('')).toHaveProperty('id', 'kubestellar')
   })
+
+  it('is prefix-based, not substring-based (a path containing "a2a" mid-string does not route to a2a)', () => {
+    // Guards against a naive .includes() rewrite that would misroute e.g.
+    // /docs/kubestellar/a2a-notes into the a2a project.
+    expect(getProjectFromPath('/docs/kubestellar/a2a-notes')).toHaveProperty('id', 'kubestellar')
+  })
 })
 
 // ---------------------------------------------------------------------------
@@ -84,6 +121,11 @@ describe('getProject', () => {
     expect(typeof project.currentVersion).toBe('string')
     expect(typeof project.contentPath).toBe('string')
     expect(project.versions).toBeTruthy()
+  })
+
+  it('returns the same reference as PROJECTS[id]', () => {
+    expect(getProject('a2a')).toBe(PROJECTS.a2a)
+    expect(getProject('kubestellar')).toBe(PROJECTS.kubestellar)
   })
 })
 
@@ -116,9 +158,22 @@ describe('getAllProjects', () => {
 // getDefaultVersion / getCurrentVersion
 // ---------------------------------------------------------------------------
 
+describe('backwards-compatible KubeStellar exports', () => {
+  it('CURRENT_VERSION matches PROJECTS.kubestellar.currentVersion', () => {
+    expect(CURRENT_VERSION).toBe(PROJECTS.kubestellar.currentVersion)
+    expect(getCurrentVersion()).toBe(CURRENT_VERSION)
+  })
+
+  it('VERSIONS is the KubeStellar versions map', () => {
+    expect(VERSIONS).toBe(KUBESTELLAR_VERSIONS)
+  })
+})
+
 describe('getDefaultVersion', () => {
   it('returns "latest"', () => {
     expect(getDefaultVersion()).toBe('latest')
+    expect(VERSIONS.latest).toBeDefined()
+    expect(VERSIONS.latest.isDefault).toBe(true)
   })
 })
 
@@ -145,6 +200,12 @@ describe('getBranchForVersion', () => {
     expect(getBranchForVersion('main')).toBe('main')
   })
 
+  it('returns the branch recorded for every known version', () => {
+    for (const [key, info] of Object.entries(KUBESTELLAR_VERSIONS)) {
+      expect(getBranchForVersion(key as keyof typeof KUBESTELLAR_VERSIONS)).toBe(info.branch)
+    }
+  })
+
   it('returns "main" for unknown version key', () => {
     // Unknown versions fall back to main
     expect(getBranchForVersion('nonexistent' as any)).toBe('main')
@@ -167,6 +228,16 @@ describe('getVersionFromBranch', () => {
   it('returns version key for docs/ branch', () => {
     const result = getVersionFromBranch('docs/0.30.0')
     expect(result).not.toBeNull()
+  })
+
+  it('maps a docs/<version> branch back to its version key', () => {
+    // Pick a non-latest entry so the "latest" fallback cannot mask a bug.
+    const nonLatest = Object.entries(KUBESTELLAR_VERSIONS).find(
+      ([key, v]) => key !== 'latest' && key !== 'main' && v.branch.startsWith('docs/'),
+    )
+    expect(nonLatest, 'expected at least one docs/<version> entry').toBeDefined()
+    const [key, info] = nonLatest!
+    expect(getVersionFromBranch(info.branch)).toBe(key)
   })
 
   it('returns null for unrecognized branches', () => {
@@ -198,6 +269,16 @@ describe('getAllVersions', () => {
   it('includes a default version', () => {
     const versions = getAllVersions()
     expect(versions.some(v => v.isDefault)).toBe(true)
+  })
+
+  it('returns one entry per KUBESTELLAR_VERSIONS key and includes the key on each', () => {
+    const all = getAllVersions()
+    expect(all.length).toBe(Object.keys(KUBESTELLAR_VERSIONS).length)
+    for (const entry of all) {
+      expect(entry.key).toBeDefined()
+      expect(KUBESTELLAR_VERSIONS[entry.key]).toBeDefined()
+      expect(entry.branch).toBe(KUBESTELLAR_VERSIONS[entry.key].branch)
+    }
   })
 })
 
@@ -248,10 +329,46 @@ describe('getVersionUrl', () => {
     expect(url).toBe(`${PRODUCTION_URL}/docs`)
   })
 
+  it('returns PRODUCTION_URL + pathname for any isDefault version', () => {
+    // Find the default entry per project; that entry must resolve to production.
+    for (const project of getAllProjects()) {
+      const defaultKey = Object.entries(project.versions).find(([, v]) => v.isDefault)?.[0]
+      if (!defaultKey) continue
+      expect(getVersionUrl(defaultKey, '/docs', project.id)).toBe(`${PRODUCTION_URL}/docs`)
+    }
+  })
+
+  it('uses externalUrl when present on the version entry', () => {
+    // KubeStellar's "legacy" entry pins an externalUrl; guard the invariant
+    // rather than the specific URL string (which is data, not logic).
+    const legacy = KUBESTELLAR_VERSIONS.legacy
+    if (legacy && 'externalUrl' in legacy && legacy.externalUrl) {
+      expect(getVersionUrl('legacy', '/anything-ignored', 'kubestellar')).toBe(legacy.externalUrl)
+    }
+  })
+
   it('converts branch slashes and dots to hyphens in URL', () => {
     // docs/0.28.0 -> docs-0-28-0
     const url = getVersionUrl('0.28.0', '/docs')
     expect(url).toContain('docs-0-28-0')
+  })
+
+  it('escapes both slashes and dots in the branch when building the Netlify slug', () => {
+    // Explicit lockdown: docs/0.28.0 must become docs-0-28-0 (both replacements
+    // applied) — a regression here silently 404s every non-latest doc URL.
+    const entry = Object.entries(KUBESTELLAR_VERSIONS).find(
+      ([, v]) => v.branch === 'docs/0.28.0' && !v.isDefault,
+    )
+    if (entry) {
+      const [key] = entry
+      expect(getVersionUrl(key, '/', 'kubestellar')).toBe(
+        `https://docs-0-28-0--${NETLIFY_SITE_NAME}.netlify.app/`,
+      )
+    }
+  })
+
+  it('defaults pathname to "/docs" and projectId to "kubestellar" when omitted', () => {
+    expect(getVersionUrl('latest')).toBe(`${PRODUCTION_URL}/docs`)
   })
 })
 
@@ -277,6 +394,17 @@ describe('getProjectVersions', () => {
       expect(v.label).toBeTruthy()
     }
   })
+
+  it('returns one entry per version in the project, each carrying its key', () => {
+    for (const project of getAllProjects()) {
+      const list = getProjectVersions(project.id)
+      expect(list.length).toBe(Object.keys(project.versions).length)
+      for (const entry of list) {
+        expect(project.versions[entry.key]).toBeDefined()
+        expect(entry.branch).toBe(project.versions[entry.key].branch)
+      }
+    }
+  })
 })
 
 // ---------------------------------------------------------------------------
@@ -298,5 +426,29 @@ describe('isVersionMigrated', () => {
 
   it('unknown version is not migrated', () => {
     expect(isVersionMigrated('99.99.99', 'kubestellar')).toBe(false)
+  })
+
+  it('always returns true for "latest" and "legacy" regardless of project', () => {
+    for (const project of getAllProjects()) {
+      expect(isVersionMigrated('latest', project.id)).toBe(true)
+      expect(isVersionMigrated('legacy', project.id)).toBe(true)
+    }
+  })
+
+  it('returns true when the version key exists in the project versions map', () => {
+    for (const project of getAllProjects()) {
+      for (const key of Object.keys(project.versions)) {
+        expect(isVersionMigrated(key, project.id)).toBe(true)
+      }
+    }
+  })
+
+  it('returns false for a version key that is not in any project versions map', () => {
+    expect(isVersionMigrated('does-not-exist', 'a2a')).toBe(false)
+  })
+
+  it('defaults projectId to "kubestellar" when omitted', () => {
+    expect(isVersionMigrated('latest')).toBe(true)
+    expect(isVersionMigrated('99.99.99')).toBe(false)
   })
 })
