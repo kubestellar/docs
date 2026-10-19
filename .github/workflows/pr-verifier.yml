@@ -19,7 +19,10 @@ on:
     types: [opened, edited, synchronize, reopened]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  # On pull_request_target, github.ref is the BASE branch, so keying the
+  # group on it put every PR in one group and cancel-in-progress made
+  # concurrent PRs cancel each other's verify run. Key per PR instead.
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 permissions: {}
