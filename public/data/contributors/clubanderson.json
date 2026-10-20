@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-20T14:16:45.300Z",
+  "generated_at": "2026-10-20T18:19:16.597Z",
   "total_issues_opened": 641,
   "total_prs_opened": 2820,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6328950,
+  "total_points": 6330850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 27.7,
+    "avg_per_week": 27.4,
     "avg_per_day": 8.06,
     "by_day_of_week": [
       316,
@@ -64,8 +64,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 2,
-      "closed_count": 148
+      "open_count": 0,
+      "closed_count": 150
     },
     {
       "name": "release, version, sync",
