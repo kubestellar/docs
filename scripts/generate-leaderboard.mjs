@@ -90,6 +90,10 @@ async function main() {
   const snapshotWeekly = state.weekly;
   const snapshotDate = state.snapshotDate;
 
+  // Set when any frozen-window fetch fails; the snapshot cutoff must not advance
+  // past data we failed to freeze, or those items are lost permanently.
+  let freezeFetchFailed = false;
+
   if (snapshot) {
     // Advance snapshot: fetch items from snapshot_date to liveWindowStart
     // and add them permanently to the frozen record.
@@ -109,6 +113,7 @@ async function main() {
           advanceItems.push(...frozen);
           console.log(`  ${repo}: ${frozen.length} items to freeze (${items.length} fetched)`);
         } catch (err) {
+          freezeFetchFailed = true;
           console.warn(`  Warning: failed to fetch ${repo}: ${err.message}`);
         }
       }
@@ -133,6 +138,7 @@ async function main() {
           `  ${repo}: ${items.length} items (${issueCount} issues, ${prCount} PRs)`
         );
       } catch (err) {
+        freezeFetchFailed = true;
         console.warn(`  Warning: failed to fetch ${repo}: ${err.message}`);
       }
     }
@@ -146,8 +152,12 @@ async function main() {
   }
 
   // Save updated snapshot (frozen through liveWindowStart)
-  saveSnapshot(SNAPSHOT_PATH, liveWindowISO, YEAR_START, snapshotContributors, snapshotItemIds, snapshotWeekly);
-  console.log(`Snapshot saved (${snapshotItemIds.size} frozen items, cutoff ${liveWindowISO.slice(0, 10)}).`);
+  const savedSnapshotDate = freezeFetchFailed ? snapshotDate : liveWindowISO;
+  if (freezeFetchFailed) {
+    console.warn("Warning: a fetch failed while freezing items — keeping previous snapshot cutoff so the next run retries.");
+  }
+  saveSnapshot(SNAPSHOT_PATH, savedSnapshotDate, YEAR_START, snapshotContributors, snapshotItemIds, snapshotWeekly);
+  console.log(`Snapshot saved (${snapshotItemIds.size} frozen items, cutoff ${savedSnapshotDate.slice(0, 10)}).`);
 
   // ── Live window: re-fetch last 7 days fresh ─────────────────────
   console.log(`\nFetching live window (last ${LIVE_WINDOW_DAYS} days) from API...\n`);
