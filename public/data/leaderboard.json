@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-20T18:15:17.721Z",
-  "git_hash": "450f1fe",
+  "generated_at": "2026-10-20T22:11:17.047Z",
+  "git_hash": "ddce871",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-08-03",
@@ -20,12 +20,12 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 6330850,
+      "total_points": 6331450,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 730,
-        "feature_issues": 1454,
+        "bug_issues": 731,
+        "feature_issues": 1457,
         "other_issues": 2186,
         "prs_opened": 8953,
         "prs_merged": 8133
@@ -43,9 +43,9 @@
         93,
         70,
         35,
-        14
+        18
       ],
-      "recent_activity_score": 338.47,
+      "recent_activity_score": 342.47,
       "rank": 1
     },
     {
@@ -800,6 +800,36 @@
       "rank": 26
     },
     {
+      "login": "Karibhou",
+      "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
+      "total_points": 11500,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 20,
+        "prs_merged": 15
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        19,
+        1
+      ],
+      "recent_activity_score": 16.08,
+      "rank": 27
+    },
+    {
       "login": "RajdeepKushwaha5",
       "avatar_url": "https://avatars.githubusercontent.com/u/157990661?v=4",
       "total_points": 11450,
@@ -827,36 +857,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 27
-    },
-    {
-      "login": "Karibhou",
-      "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-      "total_points": 10800,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 19,
-        "prs_merged": 14
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        19,
-        0
-      ],
-      "recent_activity_score": 15.08,
       "rank": 28
     },
     {
