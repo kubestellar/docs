@@ -9,6 +9,7 @@ import { getLocalizedUrl } from "@/lib/url";
 import { useBackToTop } from "@/hooks/useBackToTop";
 import { useNewsletterSubscribe } from "@/hooks/useNewsletterSubscribe";
 import NewsletterForm from "./NewsletterForm";
+import BackToTopButton from "./BackToTopButton";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -267,26 +268,7 @@ export default function Footer() {
       </div>
 
       {/* Floating back to top button */}
-      <button
-        id="back-to-top"
-        className="fixed bottom-18 right-8 p-3 rounded-full bg-blue-600 text-white shadow-lg z-40 transition-all duration-300 opacity-0 translate-y-10 hover:bg-blue-700 hover:scale-110"
-        aria-label={t("backToTop")}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 sm:h-5 sm:w-5 md:h-6 md:w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 10l7-7m0 0l7 7m-7-7v18"
-          />
-        </svg>
-      </button>
+      <BackToTopButton ariaLabel={t("backToTop")} />
     </footer>
   );
 }
