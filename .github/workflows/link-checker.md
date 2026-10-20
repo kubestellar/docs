@@ -21,6 +21,11 @@ on:
 
 permissions: read-all
 
+# The compiler's strict mode (the default) rejects the wildcard network
+# allowlist below, but the wildcard is required: this workflow curls
+# arbitrary external hosts to check links (#7408, #7409).
+strict: false
+
 network:
   # Link checking curls arbitrary external hosts; a narrow allowlist makes
   # curl return 000 (kubestellar/docs#7408).
