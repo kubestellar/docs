@@ -1,7 +1,7 @@
 {
   "login": "Darshit42",
-  "generated_at": "2026-10-21T14:16:41.476Z",
-  "total_issues_opened": 1,
+  "generated_at": "2026-10-21T18:18:50.721Z",
+  "total_issues_opened": 0,
   "total_prs_opened": 2,
   "avatar_url": "https://avatars.githubusercontent.com/u/166272518?v=4",
   "total_points": 15400,
@@ -10,14 +10,14 @@
   "rank": 24,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 0.03,
+    "avg_per_day": 0.33,
     "by_day_of_week": [
       0,
       1,
       1,
       0,
       0,
-      1,
+      0,
       0
     ],
     "by_hour_of_day": [
@@ -29,7 +29,7 @@
       0,
       0,
       0,
-      1,
+      0,
       0,
       0,
       0,
@@ -50,86 +50,12 @@
     "longest_streak_weeks": 2,
     "trend": "inactive",
     "first_issue_at": "2026-04-15T13:57:18.000Z",
-    "last_issue_at": "2026-07-11T08:12:06.000Z"
+    "last_issue_at": "2026-04-21T13:52:46.000Z"
   },
-  "topics": [
-    {
-      "name": "clip, benchmark, card",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Latest Benchmark card content is clipped at certain viewport sizes",
-        "url": "https://github.com/kubestellar/console/issues/20845",
-        "created_at": "2026-07-11T08:12:06Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "runbook, idempotent, kubestellar",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "feat(runbook): add idempotent KubeStellar install runbook (Helm standalone mode)",
-        "url": "https://github.com/kubestellar/console-kb/pull/2061",
-        "created_at": "2026-04-21T13:52:46Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "poc, grader, completeness",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "poc for kb scorer",
-        "url": "https://github.com/kubestellar/console-kb/pull/2019",
-        "created_at": "2026-04-15T13:57:18Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
     {
@@ -166,7 +92,7 @@
     },
     {
       "month": "2026-07",
-      "issue_count": 1
+      "issue_count": 0
     },
     {
       "month": "2026-08",
@@ -189,14 +115,6 @@
       "other_issues": 0,
       "prs_opened": 2,
       "prs_merged": 2
-    },
-    {
-      "repo": "console",
-      "bug_issues": 1,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 0,
-      "prs_merged": 0
     }
   ]
 }

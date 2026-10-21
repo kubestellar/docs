@@ -1,23 +1,23 @@
 {
   "login": "Karibhou",
-  "generated_at": "2026-10-21T14:16:41.482Z",
+  "generated_at": "2026-10-21T18:18:50.724Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 20,
+  "total_prs_opened": 2,
   "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
   "total_points": 11500,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 27,
   "cadence": {
-    "avg_per_week": 1.7,
-    "avg_per_day": 4.02,
+    "avg_per_week": 0.2,
+    "avg_per_day": 2,
     "by_day_of_week": [
       0,
-      1,
+      0,
+      0,
       0,
       1,
-      5,
-      13,
+      1,
       0
     ],
     "by_hour_of_day": [
@@ -26,166 +26,36 @@
       0,
       0,
       0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       1,
       1,
       0,
       0,
-      2,
       0,
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
-      2,
-      4,
-      6,
-      0,
-      0,
-      3
+      0
     ],
     "current_streak_weeks": 1,
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
-    "first_issue_at": "2026-10-15T20:33:57.000Z",
-    "last_issue_at": "2026-10-20T20:04:47.000Z"
+    "first_issue_at": "2026-10-16T18:32:00.000Z",
+    "last_issue_at": "2026-10-17T17:50:38.000Z"
   },
-  "topics": [
-    {
-      "name": "tab, refactor, preserve",
-      "issue_count": 13,
-      "recent_issue": {
-        "title": "test: cover alert secondary tabs",
-        "url": "https://github.com/kubestellar/console/pull/24424",
-        "created_at": "2026-10-17T23:52:07Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 13
-    },
-    {
-      "name": "docker, retry, ecr",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "fix(ci): fall back to Docker Hub in releases",
-        "url": "https://github.com/kubestellar/console/pull/24371",
-        "created_at": "2026-10-16T05:59:39Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "event, panel, part",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "test: cover Stellar events panel components",
-        "url": "https://github.com/kubestellar/console/pull/24503",
-        "created_at": "2026-10-20T20:04:47Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "parser, configuration, yaml",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "refactor(scripts): use yaml for knowledge source config",
-        "url": "https://github.com/kubestellar/console-kb/pull/3842",
-        "created_at": "2026-10-17T17:50:38Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "pat, quota, exhaust",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix: keep Auto-QA running when PAT quota is exhausted",
-        "url": "https://github.com/kubestellar/console/pull/24384",
-        "created_at": "2026-10-16T19:47:33Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "skip, generation, warning",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 fix(ci): clarify platform LLM skip warning",
-        "url": "https://github.com/kubestellar/console-kb/pull/3837",
-        "created_at": "2026-10-16T18:32:00Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "v0, aw, gh",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "chore(ci): upgrade gh-aw to v0.92.0",
-        "url": "https://github.com/kubestellar/console/pull/24374",
-        "created_at": "2026-10-16T06:35:24Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Cost Management",
-        "path": "web/src/components/cost/",
-        "description": "Cloud cost analysis, resource cost allocation, budgeting",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
     {
@@ -234,18 +104,10 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 20
+      "issue_count": 2
     }
   ],
   "repo_breakdown": [
-    {
-      "repo": "console",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 18,
-      "prs_merged": 15
-    },
     {
       "repo": "console-kb",
       "bug_issues": 0,
