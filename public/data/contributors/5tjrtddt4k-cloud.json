@@ -1,8 +1,8 @@
 {
   "login": "5tjrtddt4k-cloud",
-  "generated_at": "2026-10-21T10:15:26.600Z",
+  "generated_at": "2026-10-21T14:16:41.505Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 1,
+  "total_prs_opened": 2,
   "avatar_url": "https://avatars.githubusercontent.com/u/288685405?v=4",
   "total_points": 900,
   "level": "Explorer",
@@ -10,11 +10,11 @@
   "rank": 85,
   "cadence": {
     "avg_per_week": 0,
-    "avg_per_day": 1,
+    "avg_per_day": 2,
     "by_day_of_week": [
       0,
       0,
-      1,
+      2,
       0,
       0,
       0,
@@ -22,7 +22,7 @@
     ],
     "by_hour_of_day": [
       0,
-      1,
+      2,
       0,
       0,
       0,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 1,
     "trend": "inactive",
     "first_issue_at": "2026-07-08T01:03:08.000Z",
-    "last_issue_at": "2026-07-08T01:03:08.000Z"
+    "last_issue_at": "2026-07-08T01:03:33.000Z"
   },
   "topics": [],
   "suggestions": {
@@ -92,7 +92,7 @@
     },
     {
       "month": "2026-07",
-      "issue_count": 1
+      "issue_count": 2
     },
     {
       "month": "2026-08",
@@ -108,6 +108,14 @@
     }
   ],
   "repo_breakdown": [
+    {
+      "repo": "console",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 1,
+      "prs_merged": 1
+    },
     {
       "repo": "console-marketplace",
       "bug_issues": 0,

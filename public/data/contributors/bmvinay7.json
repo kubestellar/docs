@@ -1,6 +1,6 @@
 {
   "login": "bmvinay7",
-  "generated_at": "2026-10-21T10:15:26.473Z",
+  "generated_at": "2026-10-21T14:16:41.478Z",
   "total_issues_opened": 2,
   "total_prs_opened": 14,
   "avatar_url": "https://avatars.githubusercontent.com/u/171116665?v=4",
@@ -54,7 +54,7 @@
   },
   "topics": [
     {
-      "name": "install, thanos, guide",
+      "name": "install, guide, thanos",
       "issue_count": 14,
       "recent_issue": {
         "title": "fix(cncf-install): use Falco chart 8.0.1, disable falcoctl downloader",
@@ -88,7 +88,7 @@
         "title": "✨ CNCF install mission generation 2026-10-21",
         "url": "https://github.com/kubestellar/console-kb/pull/3864",
         "repo": "console-kb",
-        "topic_match": "install, thanos, guide"
+        "topic_match": "install, guide, thanos"
       }
     ],
     "stretch": [
