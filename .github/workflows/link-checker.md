@@ -1,14 +1,12 @@
 ---
-# MAINTENANCE NOTE (kubestellar/docs#7162, #7178): the compiled
-# link-checker.lock.yml pins the threat-detect binary to v0.5.2 (with
-# SHA256 digests) because the gh-aw-actions default of v0.5.1 is missing
-# from PATH on some runners, which makes the "detection" job fail with
-# "threat-detect binary not found on PATH" (exit code 127). This
-# frontmatter has no setting to control that binary version, so if this
-# workflow is recompiled with `gh aw compile`, do not merge the generated
-# link-checker.lock.yml unless its install_threat_detect_binary.sh call
-# still requests >= v0.5.2 with pinned SHA256 digests; reapply the pin
-# manually if the compiler regenerates v0.5.1.
+# MAINTENANCE NOTE (kubestellar/docs#7162, #7178, #7484): threat detection
+# is disabled (safe-outputs.threat-detection: false) because it can only run
+# inside the AWF agent sandbox, and this workflow disables that sandbox —
+# the firewall cannot express the all-domains egress link checking needs
+# (gh-aw-firewall rejects a bare "*" pattern, #7484). If threat detection is
+# ever re-enabled, restore the threat-detect >= v0.5.2 pin with SHA256
+# digests in the compiled lock (the v0.5.1 default is missing from PATH on
+# some runners, #7162/#7178).
 description: |
   AI-powered link checker that runs nightly. Scans all markdown files,
   distinguishes real broken links from transient failures, and creates/updates
@@ -21,18 +19,32 @@ on:
 
 permissions: read-all
 
-# The compiler's strict mode (the default) rejects the wildcard network
-# allowlist below, but the wildcard is required: this workflow curls
-# arbitrary external hosts to check links (#7408, #7409).
+# This workflow needs unrestricted egress: it curls arbitrary external
+# hosts to check links (#7408, #7409). The AWF firewall cannot express an
+# all-domains allowlist (gh-aw-firewall rejects a bare "*" pattern, #7484),
+# so the agent sandbox firewall is disabled via gh-aw's explicit opt-out
+# below. strict: false is required for that opt-out (and was already
+# required for the previous wildcard allowlist).
 strict: false
 
+features:
+  dangerously-disable-sandbox-agent: true
+
+sandbox:
+  agent: false
+
 network:
-  # Link checking curls arbitrary external hosts; a narrow allowlist makes
-  # curl return 000 (kubestellar/docs#7408).
+  # Kept for safe-outputs content sanitization: URLs outside this allowlist
+  # are rewritten to "(redacted)" in the created issue, which would destroy
+  # the link report. With the agent sandbox disabled above, no firewall
+  # config is generated from it.
   allowed:
     - "*"
 
 safe-outputs:
+  # Threat detection runs inside the agent sandbox (AWF) and cannot run with
+  # sandbox.agent: false (#7484); safe-outputs sanitization still applies.
+  threat-detection: false
   report-failure-as-issue: false
   noop:
     report-as-issue: false
