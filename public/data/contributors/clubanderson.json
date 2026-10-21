@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-21T06:23:33.895Z",
+  "generated_at": "2026-10-21T10:15:26.207Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2820,
+  "total_prs_opened": 2821,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6331950,
+  "total_points": 6332150,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
     "avg_per_week": 27.3,
-    "avg_per_day": 8.06,
+    "avg_per_day": 8,
     "by_day_of_week": [
       316,
       593,
-      760,
+      761,
       561,
       541,
       368,
@@ -27,7 +27,7 @@
       55,
       38,
       122,
-      1535,
+      1536,
       283,
       54,
       8,
@@ -50,21 +50,21 @@
     "longest_streak_weeks": 42,
     "trend": "steady",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-18T05:18:01.000Z"
+    "last_issue_at": "2026-10-21T06:27:46.000Z"
   },
   "topics": [
     {
       "name": "platform, generation, report",
-      "issue_count": 150,
+      "issue_count": 151,
       "recent_issue": {
-        "title": "✨ CNCF install mission generation 2026-10-14",
-        "url": "https://github.com/kubestellar/console-kb/pull/3809",
-        "created_at": "2026-10-14T06:34:15Z"
+        "title": "✨ CNCF install mission generation 2026-10-21",
+        "url": "https://github.com/kubestellar/console-kb/pull/3864",
+        "created_at": "2026-10-21T06:27:46Z"
       },
       "repos": [
         "console-kb"
       ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 150
     },
     {
@@ -799,20 +799,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "python, segfault, grpc",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 grpc: [Python] segfault in python `1.31.0`",
-        "url": "https://github.com/kubestellar/console-kb/pull/2977",
-        "created_at": "2026-08-09T06:20:18Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -904,7 +890,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 35
+      "issue_count": 36
     }
   ],
   "repo_breakdown": [
@@ -913,7 +899,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2102,
+      "prs_opened": 2103,
       "prs_merged": 1769
     },
     {
