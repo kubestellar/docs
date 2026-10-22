@@ -1,21 +1,21 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-22T06:23:35.505Z",
+  "generated_at": "2026-10-22T10:15:21.078Z",
   "total_issues_opened": 641,
-  "total_prs_opened": 2821,
+  "total_prs_opened": 2822,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6332450,
+  "total_points": 6333150,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 27.2,
-    "avg_per_day": 8,
+    "avg_per_week": 26.9,
+    "avg_per_day": 7.99,
     "by_day_of_week": [
       316,
       593,
       761,
-      561,
+      562,
       541,
       368,
       322
@@ -27,7 +27,7 @@
       55,
       38,
       122,
-      1536,
+      1537,
       283,
       54,
       8,
@@ -46,11 +46,11 @@
       58,
       36
     ],
-    "current_streak_weeks": 42,
-    "longest_streak_weeks": 42,
-    "trend": "slowing_down",
+    "current_streak_weeks": 43,
+    "longest_streak_weeks": 43,
+    "trend": "steady",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-21T06:27:46.000Z"
+    "last_issue_at": "2026-10-22T06:27:31.000Z"
   },
   "topics": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 56,
+      "issue_count": 55,
       "recent_issue": {
         "title": "📖 Update kubestellar-mcp docs to v0.9.19",
         "url": "https://github.com/kubestellar/docs/pull/7440",
@@ -79,7 +79,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 56
+      "closed_count": 55
     },
     {
       "name": "hive, doc, sync",
@@ -126,6 +126,20 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "n8n, notion, deepseek",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "🌱 n8n: Breaking issue: Notion Node does not support latest Notion API (2025-09-03)",
+        "url": "https://github.com/kubestellar/console-kb/pull/3867",
+        "created_at": "2026-10-22T06:27:31Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "llm, inference, import",
@@ -197,20 +211,6 @@
       ],
       "open_count": 0,
       "closed_count": 3
-    },
-    {
-      "name": "n8n, deepseek, editor",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🌱 n8n: Clicking on a folder with N8N_PATH and N8N_EDITOR_BASE_URL set causes 404",
-        "url": "https://github.com/kubestellar/console-kb/pull/3830",
-        "created_at": "2026-10-16T06:26:54Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
     },
     {
       "name": "trace, opa, policy",
@@ -890,7 +890,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 36
+      "issue_count": 37
     }
   ],
   "repo_breakdown": [
@@ -899,7 +899,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2103,
+      "prs_opened": 2104,
       "prs_merged": 1769
     },
     {
