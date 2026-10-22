@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 
 import type { Plugin } from "../../plugins";
+import { SuccessCheckmarkIcon } from "./SuccessCheckmarkIcon";
 
 export function PluginInstallModal({
   plugin,
@@ -29,19 +30,7 @@ export function PluginInstallModal({
         ) : (
           <div className="text-center">
             <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/30">
-              <svg
-                className="w-10 h-10 text-green-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <SuccessCheckmarkIcon />
             </div>
             <h3 className="text-xl font-bold text-white mb-2">
               {t("installation.success.title")}
