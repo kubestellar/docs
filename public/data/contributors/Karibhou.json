@@ -1,19 +1,19 @@
 {
   "login": "Karibhou",
-  "generated_at": "2026-10-22T14:13:47.326Z",
+  "generated_at": "2026-10-22T18:18:20.587Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 3,
+  "total_prs_opened": 2,
   "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-  "total_points": 8300,
+  "total_points": 11500,
   "level": "Pilot",
   "level_rank": 4,
-  "rank": 30,
+  "rank": 27,
   "cadence": {
-    "avg_per_week": 0.3,
-    "avg_per_day": 0.74,
+    "avg_per_week": 0.2,
+    "avg_per_day": 2,
     "by_day_of_week": [
       0,
-      1,
+      0,
       0,
       0,
       1,
@@ -41,7 +41,7 @@
       1,
       1,
       0,
-      1,
+      0,
       0,
       0,
       0
@@ -50,86 +50,12 @@
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
     "first_issue_at": "2026-10-16T18:32:00.000Z",
-    "last_issue_at": "2026-10-20T20:04:47.000Z"
+    "last_issue_at": "2026-10-17T17:50:38.000Z"
   },
-  "topics": [
-    {
-      "name": "event, panel, part",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "test: cover Stellar events panel components",
-        "url": "https://github.com/kubestellar/console/pull/24503",
-        "created_at": "2026-10-20T20:04:47Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "suite, parser, test",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "refactor(scripts): use yaml for knowledge source config",
-        "url": "https://github.com/kubestellar/console-kb/pull/3842",
-        "created_at": "2026-10-17T17:50:38Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    },
-    {
-      "name": "gate, warning, secret",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 fix(ci): clarify platform LLM skip warning",
-        "url": "https://github.com/kubestellar/console-kb/pull/3837",
-        "created_at": "2026-10-16T18:32:00Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 1,
-      "closed_count": 0
-    }
-  ],
+  "topics": [],
   "suggestions": {
     "deepen": [],
-    "stretch": [
-      {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
-        "name": "Networking & Services",
-        "path": "web/src/components/network/, web/src/components/services/",
-        "description": "Service mesh, ingress, network policies, service discovery",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      }
-    ]
+    "stretch": []
   },
   "activity_timeline": [
     {
@@ -178,7 +104,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 3
+      "issue_count": 2
     }
   ],
   "repo_breakdown": [
@@ -189,14 +115,6 @@
       "other_issues": 0,
       "prs_opened": 2,
       "prs_merged": 0
-    },
-    {
-      "repo": "console",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 1,
-      "prs_merged": 1
     }
   ]
 }
