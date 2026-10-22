@@ -1,0 +1,16 @@
+{
+  "threshold": 1.0,
+  "reporters": ["console"],
+  "path": ["src", "scripts"],
+  "ignore": [
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/__tests__/**",
+    "**/*.css",
+    "**/vendor/**"
+  ],
+  "format": ["typescript", "tsx", "javascript"],
+  "minLines": 10,
+  "minTokens": 50,
+  "gitignore": true
+}
