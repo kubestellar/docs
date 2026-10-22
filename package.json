@@ -22,7 +22,8 @@
     "test:watch": "NODE_OPTIONS=\"$NODE_OPTIONS --require ./scripts/node-iterator-polyfill.cjs\" vitest",
     "test:e2e": "playwright test",
     "audit": "npm audit --audit-level=moderate",
-    "update-deps": "npm update && npm audit fix"
+    "update-deps": "npm update && npm audit fix",
+    "duplication-check": "npx --yes jscpd --config .jscpd.json"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",
