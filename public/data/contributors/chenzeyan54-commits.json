@@ -1,6 +1,6 @@
 {
   "login": "chenzeyan54-commits",
-  "generated_at": "2026-10-22T22:14:10.233Z",
+  "generated_at": "2026-10-23T02:21:07.181Z",
   "total_issues_opened": 0,
   "total_prs_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/263139938?v=4",
@@ -48,7 +48,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "ramping_up",
+    "trend": "steady",
     "first_issue_at": "2026-09-25T01:17:56.000Z",
     "last_issue_at": "2026-09-26T18:06:05.000Z"
   },
