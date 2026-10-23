@@ -40,7 +40,18 @@ jobs:
         id: releases
         run: |
           RELEASES_JSON_FILE=$(mktemp)
-          gh api repos/kubestellar/console/releases --paginate > "$RELEASES_JSON_FILE"
+          for attempt in 1 2 3; do
+            if gh api repos/kubestellar/console/releases --paginate > "$RELEASES_JSON_FILE"; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "::error::Failed to fetch console releases after 3 attempts"
+              exit 1
+            fi
+            delay=$((attempt * 30))
+            echo "gh api failed (attempt $attempt); retrying in ${delay}s"
+            sleep "$delay"
+          done
           RELEASES_JSON_FILE="$RELEASES_JSON_FILE" node - <<'NODE' >> "$GITHUB_OUTPUT"
           const fs = require('fs')
           const releases = JSON.parse(fs.readFileSync(process.env.RELEASES_JSON_FILE, 'utf8') || '[]')
