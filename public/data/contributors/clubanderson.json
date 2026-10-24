@@ -1,10 +1,10 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-24T10:13:58.230Z",
+  "generated_at": "2026-10-24T14:13:34.808Z",
   "total_issues_opened": 641,
   "total_prs_opened": 2824,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6336150,
+  "total_points": 6336650,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -293,8 +293,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "alias, rpc, generic",
@@ -816,14 +816,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "🐛 fix(ci): clarify platform LLM skip warning",
-        "url": "https://github.com/kubestellar/console-kb/pull/3837",
-        "repo": "console-kb",
-        "topic_match": "platform, generation, report"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Security & RBAC",
@@ -914,7 +907,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2105,
-      "prs_merged": 1769
+      "prs_merged": 1770
     },
     {
       "repo": "docs",
