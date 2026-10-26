@@ -1,18 +1,18 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-25T22:13:23.565Z",
-  "total_issues_opened": 641,
-  "total_prs_opened": 2824,
+  "generated_at": "2026-10-26T02:24:40.662Z",
+  "total_issues_opened": 642,
+  "total_prs_opened": 2828,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6336650,
+  "total_points": 6339500,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 26.6,
-    "avg_per_day": 7.95,
+    "avg_per_week": 27,
+    "avg_per_day": 7.93,
     "by_day_of_week": [
-      316,
+      321,
       593,
       761,
       562,
@@ -21,7 +21,7 @@
       322
     ],
     "by_hour_of_day": [
-      107,
+      112,
       114,
       93,
       55,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 43,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-24T06:25:26.000Z"
+    "last_issue_at": "2026-10-26T00:36:06.000Z"
   },
   "topics": [
     {
@@ -64,12 +64,12 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 150
+      "open_count": 0,
+      "closed_count": 151
     },
     {
       "name": "release, version, sync",
-      "issue_count": 54,
+      "issue_count": 52,
       "recent_issue": {
         "title": "📖 Update kubeflex docs to v0.9.4",
         "url": "https://github.com/kubestellar/docs/pull/7496",
@@ -79,23 +79,21 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 54
+      "closed_count": 52
     },
     {
       "name": "hive, doc, sync",
-      "issue_count": 15,
+      "issue_count": 12,
       "recent_issue": {
-        "title": "🌱 ci: use shared console checkout pin",
-        "url": "https://github.com/kubestellar/console-marketplace/pull/937",
-        "created_at": "2026-10-08T19:01:21Z"
+        "title": "🌱 Retire /live/hive and point the Hive dashboard links at hivecommons",
+        "url": "https://github.com/kubestellar/docs/pull/6838",
+        "created_at": "2026-09-09T18:17:43Z"
       },
       "repos": [
-        "console-marketplace",
-        "console-kb",
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 15
+      "closed_count": 12
     },
     {
       "name": "dragonflydb, structure, support",
@@ -126,6 +124,21 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "checkout, ci, apply",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "✨ ci: add tsc --noEmit type-check job; render Skeleton/ClusterBadge props",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/1022",
+        "created_at": "2026-10-26T00:25:37Z"
+      },
+      "repos": [
+        "console-marketplace",
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 4
     },
     {
       "name": "n8n, notion, deepseek",
@@ -199,18 +212,19 @@
       "closed_count": 3
     },
     {
-      "name": "keycloak, takeover, cimd",
-      "issue_count": 3,
+      "name": "jscpd, baseline, ratchet",
+      "issue_count": 2,
       "recent_issue": {
-        "title": "🌱 keycloak: [CIMD] Claude Desktop authentication rejected by Keycloak: jwt-bearer grant",
-        "url": "https://github.com/kubestellar/console-kb/pull/3491",
-        "created_at": "2026-09-21T06:23:45Z"
+        "title": "✨ ci: add jscpd duplication ratchet gate",
+        "url": "https://github.com/kubestellar/docs/pull/7501",
+        "created_at": "2026-10-26T00:17:32Z"
       },
       "repos": [
+        "docs",
         "console-kb"
       ],
       "open_count": 0,
-      "closed_count": 3
+      "closed_count": 2
     },
     {
       "name": "trace, opa, policy",
@@ -255,6 +269,20 @@
       "closed_count": 2
     },
     {
+      "name": "keycloak, takeover, cimd",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🌱 keycloak: [CIMD] Claude Desktop authentication rejected by Keycloak: jwt-bearer grant",
+        "url": "https://github.com/kubestellar/console-kb/pull/3491",
+        "created_at": "2026-09-21T06:23:45Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 2
+    },
+    {
       "name": "oidc, headlamp, pop",
       "issue_count": 2,
       "recent_issue": {
@@ -269,18 +297,32 @@
       "closed_count": 2
     },
     {
-      "name": "clickhouse, sql, finish",
-      "issue_count": 2,
+      "name": "probe, deny, checker",
+      "issue_count": 1,
       "recent_issue": {
-        "title": "🌱 clickhouse: Allow interactive queries finish in the background",
-        "url": "https://github.com/kubestellar/console-kb/pull/2992",
-        "created_at": "2026-08-20T06:32:44Z"
+        "title": "Link Checker: curl -o /dev/null probe still denied after python3 allowlist (#7493 follow-up)",
+        "url": "https://github.com/kubestellar/docs/issues/7503",
+        "created_at": "2026-10-26T00:36:06Z"
       },
       "repos": [
-        "console-kb"
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
+      "name": "lock, blanket, untouched",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🐛 ci: allow python3 in Link Checker bash allowlist",
+        "url": "https://github.com/kubestellar/docs/pull/7502",
+        "created_at": "2026-10-26T00:20:51Z"
+      },
+      "repos": [
+        "docs"
       ],
       "open_count": 0,
-      "closed_count": 2
+      "closed_count": 1
     },
     {
       "name": "opencode, session, send",
@@ -348,20 +390,6 @@
       },
       "repos": [
         "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "protection, filter, apply",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 ci: run merge-gate workflows on every PR so they can be required checks",
-        "url": "https://github.com/kubestellar/console-marketplace/pull/945",
-        "created_at": "2026-10-09T15:07:03Z"
-      },
-      "repos": [
-        "console-marketplace"
       ],
       "open_count": 0,
       "closed_count": 1
@@ -787,6 +815,20 @@
       "closed_count": 1
     },
     {
+      "name": "finish, interactive, clickhouse",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 clickhouse: Allow interactive queries finish in the background",
+        "url": "https://github.com/kubestellar/console-kb/pull/2992",
+        "created_at": "2026-08-20T06:32:44Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "conversation, normal, dify",
       "issue_count": 1,
       "recent_issue": {
@@ -825,16 +867,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
-        "name": "Authentication & Settings",
-        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
-        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
       },
       {
         "name": "Charts & Visualizations",
@@ -897,7 +939,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 39
+      "issue_count": 44
     }
   ],
   "repo_breakdown": [
@@ -906,24 +948,24 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2105,
-      "prs_merged": 1770
+      "prs_opened": 2106,
+      "prs_merged": 1771
     },
     {
       "repo": "docs",
       "bug_issues": 133,
       "feature_issues": 0,
-      "other_issues": 186,
-      "prs_opened": 624,
-      "prs_merged": 581
+      "other_issues": 187,
+      "prs_opened": 626,
+      "prs_merged": 583
     },
     {
       "repo": "console-marketplace",
       "bug_issues": 11,
       "feature_issues": 14,
       "other_issues": 145,
-      "prs_opened": 95,
-      "prs_merged": 87
+      "prs_opened": 96,
+      "prs_merged": 88
     }
   ]
 }
