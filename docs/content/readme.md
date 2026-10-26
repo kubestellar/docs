@@ -55,7 +55,7 @@ For the KubeStellar Console UI experience, see the [Console Quick Start](console
 
 ## Community and Support
 
-- **Slack**: [`#kubestellar-dev`](https://cloud-native.slack.com/archives/C097094RZ3M) in the [CNCF Slack workspace](https://communityinviter.com/apps/cloud-native/cncf)
+- **Slack**: [`#kubestellar-dev`](https://cloud-native.slack.com/archives/C097094RZ3M) in the [CNCF Slack workspace](https://www.cncf.io/blog/2023/10/19/the-cncf-community-talks-cloud-native/)
 - **Mailing Lists**: [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) and [kubestellar-users](https://groups.google.com/g/kubestellar-users)
 - **YouTube**: [Community meetings and demos](https://www.youtube.com/@kubestellar)
 - **Contributing**: [Contribution guide](contributing/documentation/contributing-inc.md)

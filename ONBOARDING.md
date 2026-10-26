@@ -32,10 +32,10 @@ Use the repository that matches the area where you plan to contribute:
 | --- | --- | --- |
 | Core KubeStellar platform | [kubestellar/kubestellar](https://github.com/kubestellar/kubestellar) | Project docs and contribution guides for the core platform |
 | Documentation website | [kubestellar/docs](https://github.com/kubestellar/docs) | `README.md` and `CONTRIBUTING.md` in this repository |
-| KubeStellar Console | [kubestellar/console](https://github.com/kubestellar/console) | [Console docs](https://kubestellar.io/console/console-overview/) and the repository README |
+| KubeStellar Console | [kubestellar/console](https://github.com/kubestellar/console) | [Console docs](https://github.com/kubestellar/console#readme) and the repository README |
 | Console knowledge base | [kubestellar/console-kb](https://github.com/kubestellar/console-kb) | Repository README and contribution guidance |
 | Console marketplace | [kubestellar/console-marketplace](https://github.com/kubestellar/console-marketplace) | Repository README and contribution guidance |
-| MCP tools | [kubestellar/kubestellar-mcp](https://github.com/kubestellar/kubestellar-mcp) | [KubeStellar MCP docs](https://kubestellar.io/kubestellar-mcp/) and the repository README |
+| MCP tools | [kubestellar/kubestellar-mcp](https://github.com/kubestellar/kubestellar-mcp) | [KubeStellar MCP docs](https://github.com/kubestellar/kubestellar-mcp#readme) and the repository README |
 
 ### 2.3 Access request
 

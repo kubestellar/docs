@@ -47,6 +47,6 @@ Come find us in [#kubestellar](https://cloud-native.slack.com/archives/C097094RZ
 ## Further Reading
 
 - [Cornell CIDA Software-Defined Farm Repository](https://github.com/Cornell-CIDA-Dev/Software-Defined-Farm)
-- [KubeStellar Quickstart](https://docs.kubestellar.io/release-0.30.0/Getting-Started/quickstart/)
-- [BindingPolicy Reference](https://docs.kubestellar.io/release-0.30.0/Coding-Milestones/PoC2019q1/mailbox-controller/)
+- [KubeStellar Quickstart](https://docs.kubestellar.io/Getting-Started/quickstart/)
+- [BindingPolicy Reference](https://github.com/kubestellar/kubestellar)
 - [Add Your Organization to ADOPTERS.md](https://github.com/kubestellar/kubestellar/blob/main/ADOPTERS.md)
