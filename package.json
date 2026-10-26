@@ -61,7 +61,7 @@
     "@vitest/coverage-v8": "^5.0.5",
     "core-js": "^3.50.0",
     "eslint": "^10",
-    "eslint-config-next": "^16.4.0",
+    "eslint-config-next": "^16.4.3",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
