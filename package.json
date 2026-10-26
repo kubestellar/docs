@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",
-    "@react-three/fiber": "^9.8.1",
+    "@react-three/fiber": "^9.8.2",
     "@theguild/remark-mermaid": "^0.3.0",
     "braces": "file:vendor/braces",
     "dotenv": "^18.0.8",
