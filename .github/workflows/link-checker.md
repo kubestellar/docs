@@ -110,7 +110,8 @@ For each markdown file:
 3. Check each link:
    - **Internal links**: verify the target file exists in the repo using `test -f`
    - **Anchor links**: verify the heading exists in the target file
-   - **External links**: use `curl -sL -o /dev/null -w '%{http_code}' --max-time 10` to check
+   - **External links**: probe with a single `python3 -c` command using `urllib.request` (do NOT use `curl -o /dev/null` or any command that writes a file, and do not chain commands with `mkdir` or other non-allowlisted segments). Send a `HEAD` request with `timeout=10` and a browser-like `User-Agent`; if it returns 405 (or 501), retry once with `GET`. Treat `urllib.error.HTTPError` codes as the status and print `status url` per link. Example:
+       `python3 -c "import sys,urllib.request as u,urllib.error as e; f=lambda m: (lambda r: r)(u.urlopen(u.Request(sys.argv[1],method=m,headers={'User-Agent':'Mozilla/5.0'}),timeout=10).status); exec('try: c=f(\"HEAD\")\nexcept e.HTTPError as x: c=x.code\nexcept Exception as x: c=repr(x)\nif c in (405,501):\n try: c=f(\"GET\")\n except e.HTTPError as x: c=x.code\n except Exception as x: c=repr(x)'); print(c,sys.argv[1])" <url>`
      - For external URLs that return 4xx: mark as **definitely broken**
      - For external URLs that return 5xx or timeout: retry once after 5 seconds
      - For external URLs that still fail after retry: mark as **possibly transient**
@@ -199,7 +200,7 @@ These domains are known to have intermittent availability or require authenticat
 3. Do not fail the workflow — use issues for feedback
 4. Be concise — developers should be able to fix issues quickly from the report
 5. Close the issue if all links are valid
-6. **Always write the report body to `/tmp/link-report.md` first**, then use `--body-file /tmp/link-report.md` with `gh issue create` or `gh issue edit` — never construct JSON manually or use `printf`/`python3` to build API payloads (this avoids JSON-escaping failures caused by special characters in URLs, markdown tables, and emoji)
+6. **Always write the report body to `link-report.md` in the workspace (current working directory) first**, then use `--body-file link-report.md` with `gh issue create` or `gh issue edit` — never construct JSON manually or use `printf`/`python3` to build API payloads, and never run `mkdir` or compound commands (this avoids JSON-escaping failures caused by special characters in URLs, markdown tables, and emoji)
 7. Always finish by invoking a safe-output tool: `create_issue` or close/update the existing issue when broken links are found, `close_issue` when all links are fixed, or `noop` when the scan finds nothing actionable
 
 ### Exit Conditions
