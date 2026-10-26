@@ -1,10 +1,10 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-26T10:18:56.134Z",
+  "generated_at": "2026-10-26T15:04:13.472Z",
   "total_issues_opened": 642,
   "total_prs_opened": 2829,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6339800,
+  "total_points": 6340400,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -307,8 +307,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "probe, deny, checker",
@@ -963,7 +963,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2107,
-      "prs_merged": 1771
+      "prs_merged": 1772
     },
     {
       "repo": "docs",
