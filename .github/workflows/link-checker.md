@@ -70,6 +70,7 @@ tools:
     - "sleep *"
     - "jq *"
     - "gh *"
+    - "python3 *"
 
 timeout-minutes: 30
 ---
