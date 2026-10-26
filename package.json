@@ -23,7 +23,7 @@
     "test:e2e": "playwright test",
     "audit": "npm audit --audit-level=moderate",
     "update-deps": "npm update && npm audit fix",
-    "duplication-check": "npx --yes jscpd --config .jscpd.json"
+    "duplication-check": "node scripts/jscpd-ratchet.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",
