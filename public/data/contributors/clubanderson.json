@@ -1,10 +1,10 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-26T02:24:40.662Z",
+  "generated_at": "2026-10-26T06:30:08.704Z",
   "total_issues_opened": 642,
-  "total_prs_opened": 2828,
+  "total_prs_opened": 2829,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6339500,
+  "total_points": 6339700,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -12,7 +12,7 @@
     "avg_per_week": 27,
     "avg_per_day": 7.93,
     "by_day_of_week": [
-      321,
+      322,
       593,
       761,
       562,
@@ -27,7 +27,7 @@
       55,
       38,
       122,
-      1538,
+      1539,
       284,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 43,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-26T00:36:06.000Z"
+    "last_issue_at": "2026-10-26T06:21:41.000Z"
   },
   "topics": [
     {
@@ -83,7 +83,7 @@
     },
     {
       "name": "hive, doc, sync",
-      "issue_count": 12,
+      "issue_count": 11,
       "recent_issue": {
         "title": "🌱 Retire /live/hive and point the Hive dashboard links at hivecommons",
         "url": "https://github.com/kubestellar/docs/pull/6838",
@@ -93,7 +93,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 12
+      "closed_count": 11
     },
     {
       "name": "dragonflydb, structure, support",
@@ -297,6 +297,20 @@
       "closed_count": 2
     },
     {
+      "name": "way, compliance, search",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 security-compliance: [Feat]: Need a way to disable CVE only but keep UI & Search",
+        "url": "https://github.com/kubestellar/console-kb/pull/3881",
+        "created_at": "2026-10-26T06:21:41Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
+    {
       "name": "probe, deny, checker",
       "issue_count": 1,
       "recent_issue": {
@@ -307,8 +321,8 @@
       "repos": [
         "docs"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "lock, blanket, untouched",
@@ -861,12 +875,6 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Security & RBAC",
-        "path": "web/src/components/security/, web/src/components/rbac/",
-        "description": "Security scanning, RBAC management, role bindings, compliance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
-      },
-      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
@@ -889,6 +897,12 @@
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Backend API & Handlers",
+        "path": "pkg/api/, pkg/models/, pkg/store/",
+        "description": "Go backend REST API, request handlers, data models, persistence layer",
+        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
       }
     ]
   },
@@ -939,7 +953,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 44
+      "issue_count": 45
     }
   ],
   "repo_breakdown": [
@@ -948,7 +962,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2106,
+      "prs_opened": 2107,
       "prs_merged": 1771
     },
     {
