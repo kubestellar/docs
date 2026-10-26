@@ -19,7 +19,7 @@ Dapr (Distributed Application Runtime) is a CNCF Graduated project with 23k+ sta
 ## Community Resources
 
 ### Dapr v1.15+ Multi-Cluster
-- [Dapr Documentation](https://dapr.io/docs/)
+- [Dapr Documentation](https://docs.dapr.io/)
 - [Dapr GitHub](https://github.com/dapr/dapr)
 - CNCF Slack: `#dapr`
 - CNCF TAG Runtime: `#tag-runtime`

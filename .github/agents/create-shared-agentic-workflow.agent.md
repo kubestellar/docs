@@ -110,9 +110,10 @@ allowed: ["read_file", "find_symbol"]
 **HTTP MCP Server** (for remote services):
 \`\`\`yaml
 mcp-servers:
-deepwiki:
-url: "https://mcp.deepwiki.com/sse"
-allowed: ["read_wiki_structure", "read_wiki_contents", "ask_question"]
+# deepwiki service is no longer available (410 Gone)
+# deepwiki:
+#   url: "https://mcp.deepwiki.com/sse"
+#   allowed: ["read_wiki_structure", "read_wiki_contents", "ask_question"]
 \`\`\`
 
 ### Selective Tool Allowlist
@@ -392,14 +393,15 @@ Create a comment header explaining:
 ---
 
 mcp-servers:
-deepwiki:
-url: "https://mcp.deepwiki.com/sse"
-allowed: ["*"]
+# deepwiki service is no longer available (410 Gone)
+# deepwiki:
+#   url: "https://mcp.deepwiki.com/sse"
+#   allowed: ["*"]
 
 ---
 
 <!--
-DeepWiki MCP Server
+DeepWiki MCP Server (service no longer available)
 Provides read-only access to GitHub repository documentation
 
 Required secrets: None (public service)

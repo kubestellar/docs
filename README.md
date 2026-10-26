@@ -128,7 +128,7 @@ We welcome contributions and engagement from the community. Here's how to get in
 
 ### Communication Channels
 
-- **Slack**: Join [#kubestellar-dev](https://cloud-native.slack.com/archives/C097094RZ3M) in the [CNCF Slack Workspace](https://communityinviter.com/apps/cloud-native/cncf)
+- **Slack**: Join [#kubestellar-dev](https://cloud-native.slack.com/archives/C097094RZ3M) in the [CNCF Slack Workspace](https://www.cncf.io/blog/2023/10/19/the-cncf-community-talks-cloud-native/)
 - **Mailing Lists**:
   - [kubestellar-dev](https://groups.google.com/g/kubestellar-dev) — Development discussions
   - [kubestellar-users](https://groups.google.com/g/kubestellar-users) — User community discussions

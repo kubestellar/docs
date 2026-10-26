@@ -35,11 +35,8 @@ GitHub](https://github.com/helm/helm/issues/13179).
 
 For an example, consider the case of someone using Rancher Desktop on
 Linux. The installation instructions for Rancher Desktop, in the Linux
-case, [recommend installing and initializing a package named
-"pass"](https://docs.docker.com/desktop/setup/install/linux/#general-system-requirements). This
-is explained in more detail in a [linked
-document](https://docs.docker.com/desktop/setup/sign-in/#credentials-management-for-linux-users). If
-the user does _not_ install _and_ initialize "pass" then Docker's
+case, recommend following the [Docker Engine installation guide](https://docs.docker.com/engine/install/). For credential management, refer to the [Docker documentation](https://docs.docker.com/get-started/). If
+the user does _not_ properly configure Docker credentials then Docker's
 handling of registry credentials will be messed up.
 
 ### Testing whether Helm can fetch public charts
