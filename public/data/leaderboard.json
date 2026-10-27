@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-27T14:14:50.879Z",
-  "git_hash": "acecfe0",
+  "generated_at": "2026-10-27T18:10:43.921Z",
+  "git_hash": "c55a225",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-08-10",
@@ -3800,6 +3800,36 @@
       "rank": 126
     },
     {
+      "login": "markankamaransheogarat-sys",
+      "avatar_url": "https://avatars.githubusercontent.com/u/279850453?v=4",
+      "total_points": 600,
+      "level": "Explorer",
+      "level_rank": 2,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 3,
+        "prs_merged": 0
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      "recent_activity_score": 2.79,
+      "rank": 127
+    },
+    {
       "login": "mmagram0926",
       "avatar_url": "https://avatars.githubusercontent.com/u/267122122?v=4",
       "total_points": 600,
@@ -3827,7 +3857,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 127
+      "rank": 128
     },
     {
       "login": "pm-ju",
@@ -3857,7 +3887,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 128
+      "rank": 129
     },
     {
       "login": "waltforme",
@@ -3887,7 +3917,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 129
+      "rank": 130
     },
     {
       "login": "kira88-code",
@@ -3917,7 +3947,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 130
+      "rank": 131
     },
     {
       "login": "laurentketterle-hub",
@@ -3947,36 +3977,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 131
-    },
-    {
-      "login": "markankamaransheogarat-sys",
-      "avatar_url": "https://avatars.githubusercontent.com/u/279850453?v=4",
-      "total_points": 400,
-      "level": "Observer",
-      "level_rank": 1,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 2,
-        "prs_merged": 0
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1
-      ],
-      "recent_activity_score": 1.79,
       "rank": 132
     },
     {
