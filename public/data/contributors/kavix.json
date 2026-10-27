@@ -1,6 +1,6 @@
 {
   "login": "kavix",
-  "generated_at": "2026-10-27T06:23:39.701Z",
+  "generated_at": "2026-10-27T10:16:00.669Z",
   "total_issues_opened": 0,
   "total_prs_opened": 2,
   "avatar_url": "https://avatars.githubusercontent.com/u/2276412?v=4",
@@ -48,7 +48,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "ramping_up",
+    "trend": "slowing_down",
     "first_issue_at": "2026-09-29T06:41:46.000Z",
     "last_issue_at": "2026-09-29T06:59:33.000Z"
   },
