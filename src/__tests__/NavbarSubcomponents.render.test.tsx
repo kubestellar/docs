@@ -166,6 +166,68 @@ describe('MobileMenu', () => {
     expect(screen.getByText(githubStats.forks)).toBeTruthy()
     expect(screen.getByText(githubStats.watchers)).toBeTruthy()
   })
+
+  /**
+   * The docs-navbar variant ("isDark" in props) is a completely separate
+   * branch from the marketing variant above: before this test it was
+   * exercised by neither a unit test nor e2e (DocsNavbar.handlers.test.tsx
+   * mocks MobileMenu away, and e2e/smoke.pw.ts never opens the mobile
+   * panel), so its dark/light theming, optional `extraContent` slot, and
+   * star-count link were all unverified.
+   */
+  it('renders nothing when the docs variant is closed', () => {
+    const { container } = render(
+      <MobileMenu isDark={false} isMenuOpen={false} githubStats={githubStats} />
+    )
+    expect(container.innerHTML).toBe('')
+  })
+
+  it('renders the docs variant with light theme classes and star count', () => {
+    const { container } = render(
+      <MobileMenu isDark={false} isMenuOpen={true} githubStats={githubStats} />
+    )
+    expect(screen.getByText('View on GitHub')).toBeTruthy()
+    expect(screen.getByText(`${githubStats.stars} ★`)).toBeTruthy()
+    expect(container.querySelector('.bg-white')).toBeTruthy()
+    expect(container.querySelector('.bg-\\[\\#111\\]')).toBeNull()
+  })
+
+  it('renders the docs variant with dark theme classes', () => {
+    const { container } = render(
+      <MobileMenu isDark={true} isMenuOpen={true} githubStats={githubStats} />
+    )
+    expect(container.querySelector('.bg-\\[\\#111\\]')).toBeTruthy()
+    expect(container.querySelector('.bg-white')).toBeNull()
+  })
+
+  it('renders the optional extraContent slot for the docs variant', () => {
+    render(
+      <MobileMenu
+        isDark={false}
+        isMenuOpen={true}
+        githubStats={githubStats}
+        extraContent={<span data-testid="version-selector">v1.0</span>}
+      />
+    )
+    expect(screen.getByTestId('version-selector')).toBeTruthy()
+  })
+
+  it('omits the extraContent slot for the docs variant when absent', () => {
+    render(<MobileMenu isDark={false} isMenuOpen={true} githubStats={githubStats} />)
+    expect(screen.queryByTestId('version-selector')).toBeNull()
+  })
+
+  it('renders the extraContent slot with dark theme classes', () => {
+    render(
+      <MobileMenu
+        isDark={true}
+        isMenuOpen={true}
+        githubStats={githubStats}
+        extraContent={<span data-testid="version-selector">v1.0</span>}
+      />
+    )
+    expect(screen.getByTestId('version-selector')).toBeTruthy()
+  })
 })
 
 describe('navbar index exports', () => {
