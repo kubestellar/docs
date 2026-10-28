@@ -153,6 +153,16 @@ function stripDangerousPatterns(content: string): string {
     content = stripUntilStable(content, /<iframe[\s\S]*?<\/iframe>/gi)
     content = stripUntilStable(content, /<iframe\b[^>]*\/?>/gi)
 
+    // Remove <object> and <embed> tags. Like <iframe>, these can load and
+    // execute attacker-controlled content (e.g. <object data="javascript:...">
+    // or <embed src="data:text/html,<script>...">) and were previously left
+    // untouched by this sanitizer while <script>/<style>/<iframe> were
+    // stripped — a stored-XSS gap for contributor-supplied MDX.
+    content = stripUntilStable(content, /<object[\s\S]*?<\/object>/gi)
+    content = stripUntilStable(content, /<object\b[^>]*\/?>/gi)
+    content = stripUntilStable(content, /<embed[\s\S]*?<\/embed>/gi)
+    content = stripUntilStable(content, /<embed\b[^>]*\/?>/gi)
+
     // Remove inline event handlers.
     content = stripUntilStable(
       content,
@@ -237,6 +247,14 @@ export function sanitizeHtmlForMdx(content: string): string {
   // iframe-spacer patterns like <scri<iframe …>pt>…</script> are also caught.
   sanitized = stripUntilStable(sanitized, /<iframe[\s\S]*?<\/iframe>/gi)
   sanitized = stripUntilStable(sanitized, /<iframe\b[^>]*\/?>/gi)
+
+  // Remove all <object>/<embed> tags up front too, for the same reason as
+  // iframe above (also re-stripped in stripDangerousPatterns for spacer
+  // resistance).
+  sanitized = stripUntilStable(sanitized, /<object[\s\S]*?<\/object>/gi)
+  sanitized = stripUntilStable(sanitized, /<object\b[^>]*\/?>/gi)
+  sanitized = stripUntilStable(sanitized, /<embed[\s\S]*?<\/embed>/gi)
+  sanitized = stripUntilStable(sanitized, /<embed\b[^>]*\/?>/gi)
 
   // Normalize all img tags - handle both <img ...> and <img ... />
   sanitized = sanitized.replace(/<img\s+([^>]*?)\/?>/gi, (match, attrs) => {

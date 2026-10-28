@@ -88,6 +88,18 @@ describe('sanitizeHtmlForMdx — dangerous tag stripping', () => {
     expect(sanitizeHtmlForMdx('a<iframe>content</iframe>b')).toBe('ab')
   })
 
+  it('strips <object> tags, including javascript: data URIs', () => {
+    expect(
+      sanitizeHtmlForMdx('a<object data="javascript:alert(1)"></object>b'),
+    ).toBe('ab')
+    expect(sanitizeHtmlForMdx('a<object data="x" />b')).toBe('ab')
+  })
+
+  it('strips <embed> tags, including javascript: src', () => {
+    expect(sanitizeHtmlForMdx('a<embed src="javascript:alert(1)">b')).toBe('ab')
+    expect(sanitizeHtmlForMdx('a<embed src="x" />b')).toBe('ab')
+  })
+
   it('resists spacer bypass: <sty<script>…</script>le> → <style> → stripped', () => {
     // The single-outer-loop guarantee from stripDangerousPatterns() means the
     // reconstituted <style> is caught on the next iteration.
