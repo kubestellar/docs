@@ -1,10 +1,10 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-28T14:13:31.098Z",
+  "generated_at": "2026-10-28T18:15:03.360Z",
   "total_issues_opened": 642,
   "total_prs_opened": 2833,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6342400,
+  "total_points": 6342900,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -348,8 +348,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "way, compliance, search",
@@ -1004,7 +1004,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2111,
-      "prs_merged": 1772
+      "prs_merged": 1773
     },
     {
       "repo": "docs",
