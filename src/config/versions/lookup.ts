@@ -33,7 +33,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "kubeflex",
     name: "KubeFlex",
     basePath: "kubeflex",
-    currentVersion: "0.9.4",
+    currentVersion: "0.9.5",
     contentPath: "docs/content/kubeflex",
     navPath: "docs/content/kubeflex/nav.yaml",
     versions: KUBEFLEX_VERSIONS,
