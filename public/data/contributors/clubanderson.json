@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-28T18:15:03.360Z",
+  "generated_at": "2026-10-28T22:12:08.672Z",
   "total_issues_opened": 642,
-  "total_prs_opened": 2833,
+  "total_prs_opened": 2834,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6342900,
+  "total_points": 6344600,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 26.9,
+    "avg_per_week": 27,
     "avg_per_day": 7.9,
     "by_day_of_week": [
       322,
       593,
-      765,
+      766,
       562,
       542,
       369,
@@ -40,7 +40,7 @@
       93,
       80,
       150,
-      106,
+      107,
       120,
       54,
       58,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 43,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-28T06:31:52.000Z"
+    "last_issue_at": "2026-10-28T19:57:40.000Z"
   },
   "topics": [
     {
@@ -71,9 +71,9 @@
       "name": "release, version, sync",
       "issue_count": 52,
       "recent_issue": {
-        "title": "📖 Update kubeflex docs to v0.9.4",
-        "url": "https://github.com/kubestellar/docs/pull/7496",
-        "created_at": "2026-10-23T07:16:29Z"
+        "title": "📖 Update kubeflex docs to v0.9.5",
+        "url": "https://github.com/kubestellar/docs/pull/7528",
+        "created_at": "2026-10-28T19:57:40Z"
       },
       "repos": [
         "docs"
@@ -206,8 +206,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "annotation, pause, shutdown",
@@ -234,8 +234,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "jscpd, baseline, ratchet",
@@ -994,7 +994,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 49
+      "issue_count": 50
     }
   ],
   "repo_breakdown": [
@@ -1004,15 +1004,15 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2111,
-      "prs_merged": 1773
+      "prs_merged": 1775
     },
     {
       "repo": "docs",
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 187,
-      "prs_opened": 626,
-      "prs_merged": 583
+      "prs_opened": 627,
+      "prs_merged": 584
     },
     {
       "repo": "console-marketplace",
