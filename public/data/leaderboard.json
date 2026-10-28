@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-27T22:08:28.292Z",
-  "git_hash": "9a7142a",
+  "generated_at": "2026-10-28T02:12:35.700Z",
+  "git_hash": "2e31d1b",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-08-10",
@@ -20,12 +20,12 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 6341200,
+      "total_points": 6341400,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 735,
-        "feature_issues": 1484,
+        "feature_issues": 1486,
         "other_issues": 2187,
         "prs_opened": 8962,
         "prs_merged": 8141
@@ -42,10 +42,10 @@
         95,
         84,
         49,
-        48,
-        12
+        49,
+        14
       ],
-      "recent_activity_score": 318.93,
+      "recent_activity_score": 321.72,
       "rank": 1
     },
     {
@@ -792,11 +792,11 @@
         0,
         0,
         0,
-        42,
+        46,
         1,
         2
       ],
-      "recent_activity_score": 29.25,
+      "recent_activity_score": 31.77,
       "rank": 26
     },
     {
@@ -2503,10 +2503,10 @@
         0,
         0,
         0,
-        1,
+        2,
         3
       ],
-      "recent_activity_score": 3.79,
+      "recent_activity_score": 4.59,
       "rank": 83
     },
     {
@@ -4392,11 +4392,11 @@
         0,
         0,
         0,
-        8,
+        9,
         0,
         0
       ],
-      "recent_activity_score": 5.04,
+      "recent_activity_score": 5.67,
       "rank": 146
     },
     {
