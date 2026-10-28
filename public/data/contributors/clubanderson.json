@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-28T02:16:01.214Z",
+  "generated_at": "2026-10-28T06:18:59.045Z",
   "total_issues_opened": 642,
-  "total_prs_opened": 2829,
+  "total_prs_opened": 2832,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6341400,
+  "total_points": 6342000,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 26.8,
-    "avg_per_day": 7.93,
+    "avg_per_week": 26.9,
+    "avg_per_day": 7.9,
     "by_day_of_week": [
       322,
       593,
-      761,
+      764,
       562,
       542,
       369,
@@ -27,7 +27,7 @@
       55,
       38,
       122,
-      1539,
+      1542,
       284,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 43,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-26T06:21:41.000Z"
+    "last_issue_at": "2026-10-28T06:10:30.000Z"
   },
   "topics": [
     {
@@ -83,7 +83,7 @@
     },
     {
       "name": "hive, doc, sync",
-      "issue_count": 11,
+      "issue_count": 10,
       "recent_issue": {
         "title": "🌱 Retire /live/hive and point the Hive dashboard links at hivecommons",
         "url": "https://github.com/kubestellar/docs/pull/6838",
@@ -93,11 +93,11 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 11
+      "closed_count": 10
     },
     {
-      "name": "dragonflydb, structure, support",
-      "issue_count": 9,
+      "name": "dragonflydb, structure, pfcount",
+      "issue_count": 7,
       "recent_issue": {
         "title": "🌱 dragonflydb: Add bloom/cuckoo filter support",
         "url": "https://github.com/kubestellar/console-kb/pull/3454",
@@ -107,23 +107,7 @@
         "console-kb"
       ],
       "open_count": 0,
-      "closed_count": 9
-    },
-    {
-      "name": "workflow, label, caller",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "ci: drop secrets: inherit from three reusable-workflow callers",
-        "url": "https://github.com/kubestellar/console-kb/pull/3560",
-        "created_at": "2026-09-26T14:53:32Z"
-      },
-      "repos": [
-        "console-kb",
-        "docs",
-        "console-marketplace"
-      ],
-      "open_count": 0,
-      "closed_count": 5
+      "closed_count": 7
     },
     {
       "name": "checkout, ci, apply",
@@ -210,6 +194,64 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "workflow, caller, label",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "ci: drop secrets: inherit from three reusable-workflow callers",
+        "url": "https://github.com/kubestellar/console-kb/pull/3560",
+        "created_at": "2026-09-26T14:53:32Z"
+      },
+      "repos": [
+        "console-kb",
+        "docs",
+        "console-marketplace"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "longhorn, xfs, mib",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🌱 longhorn: [FEATURE] Health check for Longhorn system",
+        "url": "https://github.com/kubestellar/console-kb/pull/3888",
+        "created_at": "2026-10-28T06:10:30Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
+      "name": "annotation, pause, shutdown",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🌱 dapr: allow annotation to specify shutdown pause",
+        "url": "https://github.com/kubestellar/console-kb/pull/3887",
+        "created_at": "2026-10-28T06:06:42Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
+      "name": "crossplane, compositionrevisions, providerconfigusage",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🌱 crossplane: Garbage collect unused CompositionRevisions",
+        "url": "https://github.com/kubestellar/console-kb/pull/3886",
+        "created_at": "2026-10-28T06:05:47Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 1
     },
     {
       "name": "jscpd, baseline, ratchet",
@@ -605,20 +647,6 @@
       "closed_count": 1
     },
     {
-      "name": "longhorn, xfs, mib",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 longhorn: [BUG] Longhorn can no longer create XFS volumes smaller than 300 MiB",
-        "url": "https://github.com/kubestellar/console-kb/pull/3344",
-        "created_at": "2026-09-12T06:21:17Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "bus, offload, valkey",
       "issue_count": 1,
       "recent_issue": {
@@ -639,20 +667,6 @@
         "title": "🌱 coredns: 1.14.6: intermittent NOERROR/empty-A for external names with autopath + cache",
         "url": "https://github.com/kubestellar/console-kb/pull/3322",
         "created_at": "2026-09-11T06:17:07Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "providerconfigusage, foreground, deletion",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 crossplane: ProviderConfigUsage does not work when deletion policy is set to Foreground",
-        "url": "https://github.com/kubestellar/console-kb/pull/3305",
-        "created_at": "2026-09-10T06:19:02Z"
       },
       "repos": [
         "console-kb"
@@ -815,6 +829,20 @@
       "closed_count": 1
     },
     {
+      "name": "templated, applicationset, application",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 argo: Application/ApplicationSet: add support for templated helm value files",
+        "url": "https://github.com/kubestellar/console-kb/pull/3012",
+        "created_at": "2026-08-25T06:09:53Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "router, timeout, traefik",
       "issue_count": 1,
       "recent_issue": {
@@ -875,6 +903,12 @@
     "deepen": [],
     "stretch": [
       {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
@@ -897,12 +931,6 @@
         "path": "web/src/components/marketplace/, web/src/components/operators/",
         "description": "Plugin marketplace, operator management, extensions",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Backend API & Handlers",
-        "path": "pkg/api/, pkg/models/, pkg/store/",
-        "description": "Go backend REST API, request handlers, data models, persistence layer",
-        "url": "https://github.com/kubestellar/console/tree/main/pkg/api"
       }
     ]
   },
@@ -953,7 +981,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 45
+      "issue_count": 48
     }
   ],
   "repo_breakdown": [
@@ -962,7 +990,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2107,
+      "prs_opened": 2110,
       "prs_merged": 1772
     },
     {
