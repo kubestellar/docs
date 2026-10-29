@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-29T02:16:03.124Z",
+  "generated_at": "2026-10-29T06:19:08.319Z",
   "total_issues_opened": 642,
   "total_prs_opened": 2834,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6344600,
+  "total_points": 6345100,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 27,
+    "avg_per_week": 26.9,
     "avg_per_day": 7.9,
     "by_day_of_week": [
       322,
@@ -220,8 +220,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "crossplane, compositionrevisions, providerconfigusage",
@@ -1004,7 +1004,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2111,
-      "prs_merged": 1775
+      "prs_merged": 1776
     },
     {
       "repo": "docs",
