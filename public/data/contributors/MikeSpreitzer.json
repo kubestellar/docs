@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-10-29T14:13:59.904Z",
+  "generated_at": "2026-10-29T18:15:09.664Z",
   "total_issues_opened": 43,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
@@ -9,7 +9,7 @@
   "level_rank": 5,
   "rank": 17,
   "cadence": {
-    "avg_per_week": 0.1,
+    "avg_per_week": 0,
     "avg_per_day": 0.2,
     "by_day_of_week": [
       9,
