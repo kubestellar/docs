@@ -1,8 +1,11 @@
 /**
  * Unit tests for scripts/lib/leaderboard-merge.mjs — snapshot restore,
- * advance decision, freeze, and frozen + live merge.
+ * advance decision, freeze, frozen + live merge, and final entry-list
+ * assembly (level/bonus/weekly merge + ranking).
  *
- * Filed under kubestellar/docs#7419.
+ * Filed under kubestellar/docs#7419 (merge helpers) and kubestellar/docs#7531
+ * (buildLeaderboardEntries/applyBonusPoints, extracted from generate-leaderboard.mjs's
+ * previously-untested main() orchestration).
  */
 import { describe, it, expect } from "vitest";
 import {
@@ -11,8 +14,10 @@ import {
   filterFrozenItems,
   freezeItemsIntoSnapshot,
   mergeSnapshotWithLive,
+  buildLeaderboardEntries,
+  applyBonusPoints,
 } from "./leaderboard-merge.mjs";
-import { POINTS_PR_OPENED } from "./scoring.mjs";
+import { POINTS_PR_OPENED, getLevelForPoints, computeRecentScore } from "./scoring.mjs";
 
 const YEAR_START = "2026-01-01T00:00:00Z";
 
@@ -155,5 +160,98 @@ describe("mergeSnapshotWithLive", () => {
     const m = mergeSnapshotWithLive(state, [], YEAR_START);
     expect(m.contributors.size).toBe(0);
     expect(m.liveScored).toBe(0);
+  });
+});
+
+function contributor(totalPoints, bugIssues = 0) {
+  return {
+    avatarUrl: `https://a/x`,
+    totalPoints,
+    breakdown: { bug_issues: bugIssues, feature_issues: 0, other_issues: 0, prs_opened: 0, prs_merged: 0 },
+  };
+}
+
+describe("applyBonusPoints", () => {
+  it("adds bonus points onto an existing contributor without touching breakdown", () => {
+    const contributors = new Map([["alice", contributor(100, 1)]]);
+    applyBonusPoints(contributors, new Map([["alice", { points: 25, reasons: ["r"] }]]));
+    expect(contributors.get("alice").totalPoints).toBe(125);
+    expect(contributors.get("alice").breakdown.bug_issues).toBe(1);
+  });
+
+  it("creates a new bonus-only contributor with a zeroed breakdown", () => {
+    const contributors = new Map();
+    applyBonusPoints(contributors, new Map([["bob", { points: 50, reasons: ["r"] }]]));
+    expect(contributors.get("bob")).toEqual({
+      avatarUrl: "https://github.com/bob.png",
+      totalPoints: 50,
+      breakdown: { bug_issues: 0, feature_issues: 0, other_issues: 0, prs_opened: 0, prs_merged: 0 },
+    });
+  });
+
+  it("leaves contributors unchanged when there are no bonus awards", () => {
+    const contributors = new Map([["alice", contributor(100)]]);
+    applyBonusPoints(contributors, new Map());
+    expect(contributors.get("alice").totalPoints).toBe(100);
+  });
+});
+
+describe("buildLeaderboardEntries", () => {
+  const recentWeeks = ["2026-W01", "2026-W02"];
+
+  it("ranks by total_points descending, then login ascending on ties", () => {
+    const contributors = new Map([
+      ["bob", contributor(100)],
+      ["alice", contributor(100)],
+      ["carol", contributor(200)],
+    ]);
+    const entries = buildLeaderboardEntries(
+      contributors, new Map(), new Map(), recentWeeks, getLevelForPoints, computeRecentScore
+    );
+    expect(entries.map((e) => e.login)).toEqual(["carol", "alice", "bob"]);
+    expect(entries.map((e) => e.rank)).toEqual([1, 2, 3]);
+  });
+
+  it("attaches level name/rank and omits bonus_points when no bonus was awarded", () => {
+    const contributors = new Map([["alice", contributor(0)]]);
+    const [entry] = buildLeaderboardEntries(
+      contributors, new Map(), new Map(), recentWeeks, getLevelForPoints, computeRecentScore
+    );
+    expect(entry.level).toBe("Observer");
+    expect(entry.level_rank).toBe(1);
+    expect(entry).not.toHaveProperty("bonus_points");
+  });
+
+  it("includes bonus_points when the login has a bonus award", () => {
+    const contributors = new Map([["alice", contributor(500)]]);
+    const bonusMap = new Map([["alice", { points: 25, reasons: ["r"] }]]);
+    const [entry] = buildLeaderboardEntries(
+      contributors, new Map(), bonusMap, recentWeeks, getLevelForPoints, computeRecentScore
+    );
+    expect(entry.bonus_points).toBe(25);
+  });
+
+  it("maps weekly_activity onto recentWeeks, defaulting missing weeks to 0", () => {
+    const contributors = new Map([["alice", contributor(0)]]);
+    const weekly = new Map([["alice", new Map([["2026-W02", 3]])]]);
+    const [entry] = buildLeaderboardEntries(
+      contributors, weekly, new Map(), recentWeeks, getLevelForPoints, computeRecentScore
+    );
+    expect(entry.weekly_activity).toEqual([0, 3]);
+    expect(entry.recent_activity_score).toBe(computeRecentScore([0, 3]));
+  });
+
+  it("defaults weekly_activity to all zeros when a login has no weekly entry", () => {
+    const contributors = new Map([["alice", contributor(0)]]);
+    const [entry] = buildLeaderboardEntries(
+      contributors, new Map(), new Map(), recentWeeks, getLevelForPoints, computeRecentScore
+    );
+    expect(entry.weekly_activity).toEqual([0, 0]);
+  });
+
+  it("returns an empty list for no contributors", () => {
+    expect(
+      buildLeaderboardEntries(new Map(), new Map(), new Map(), recentWeeks, getLevelForPoints, computeRecentScore)
+    ).toEqual([]);
   });
 });

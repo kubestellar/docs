@@ -40,6 +40,8 @@ import {
   filterFrozenItems,
   freezeItemsIntoSnapshot,
   mergeSnapshotWithLive,
+  buildLeaderboardEntries,
+  applyBonusPoints,
 } from "./lib/leaderboard-merge.mjs";
 import { fetchBonusPoints } from "./lib/bonus-points.mjs";
 import { startOfDayUTC, addDays } from "./lib/dates.mjs";
@@ -188,16 +190,8 @@ async function main() {
   // ── Bonus points (always fetched fresh — small query) ───────────
   console.log("Fetching bonus point awards...");
   const bonusMap = await fetchBonusPoints(defaultHeaders);
+  applyBonusPoints(mergedContributors, bonusMap);
   for (const [login, bonus] of bonusMap) {
-    if (mergedContributors.has(login)) {
-      mergedContributors.get(login).totalPoints += bonus.points;
-    } else {
-      mergedContributors.set(login, {
-        avatarUrl: `https://github.com/${login}.png`,
-        totalPoints: bonus.points,
-        breakdown: { bug_issues: 0, feature_issues: 0, other_issues: 0, prs_opened: 0, prs_merged: 0 },
-      });
-    }
     for (const reason of bonus.reasons) {
       console.log(`  ${login}: ${reason}`);
     }
@@ -211,33 +205,14 @@ async function main() {
   console.log(`  Tracking ${recentWeeks.length} weeks: ${recentWeeks[0]} → ${recentWeeks[recentWeeks.length - 1]}\n`);
 
   // ── Build sorted entries ────────────────────────────────────────
-  const entries = [];
-  for (const [login, data] of mergedContributors) {
-    const level = getLevelForPoints(data.totalPoints);
-    const bonus = bonusMap.get(login);
-    const loginWeeks = mergedWeekly.get(login) || new Map();
-    const weeklyCounts = recentWeeks.map((wk) => loginWeeks.get(wk) || 0);
-    entries.push({
-      login,
-      avatar_url: data.avatarUrl,
-      total_points: data.totalPoints,
-      level: level.name,
-      level_rank: level.rank,
-      breakdown: data.breakdown,
-      ...(bonus ? { bonus_points: bonus.points } : {}),
-      weekly_activity: weeklyCounts,
-      recent_activity_score: computeRecentScore(weeklyCounts),
-    });
-  }
-
-  entries.sort((a, b) => {
-    if (a.total_points !== b.total_points) return b.total_points - a.total_points;
-    return a.login.localeCompare(b.login);
-  });
-
-  entries.forEach((entry, i) => {
-    entry.rank = i + 1;
-  });
+  const entries = buildLeaderboardEntries(
+    mergedContributors,
+    mergedWeekly,
+    bonusMap,
+    recentWeeks,
+    getLevelForPoints,
+    computeRecentScore
+  );
 
   // ── Write leaderboard.json ──────────────────────────────────────
   let gitHash = "";
