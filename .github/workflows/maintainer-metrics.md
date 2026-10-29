@@ -177,6 +177,7 @@ safe-outputs:
           env:
             POSTMARK_API_TOKEN: "${{ secrets.POSTMARK_API_TOKEN }}"
             POSTMARK_FROM_EMAIL: "${{ secrets.POSTMARK_FROM_EMAIL }}"
+            MAINTAINER_INPUT: "${{ github.event.inputs.maintainer }}"
           with:
             script: |
               const postmarkToken = process.env.POSTMARK_API_TOKEN;
@@ -193,7 +194,7 @@ safe-outputs:
                 'waltforme': 'jun.duan@ibm.com'
               };
 
-              const maintainer = '${{ github.event.inputs.maintainer }}';
+              const maintainer = process.env.MAINTAINER_INPUT;
               const toEmail = maintainerEmails[maintainer];
 
               if (!toEmail) {

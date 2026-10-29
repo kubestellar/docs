@@ -35,20 +35,15 @@
       "version": "v4",
       "sha": "ea165f8d65b6e75b540449e92b4886f43607fa02"
     },
-    "github/gh-aw-actions/setup@v0.88.7": {
+    "github/gh-aw-actions/setup-cli@v1.0.1": {
+      "repo": "github/gh-aw-actions/setup-cli",
+      "version": "v1.0.1",
+      "sha": "221ba4f4319de6b8e809d1a15528b3ae6a818aa5"
+    },
+    "github/gh-aw-actions/setup@v1.0.1": {
       "repo": "github/gh-aw-actions/setup",
-      "version": "v0.88.7",
-      "sha": "5e508589e03a7757a7e05b26e834292f5445bfb6"
-    },
-    "github/gh-aw/actions/setup@v0.53.4": {
-      "repo": "github/gh-aw/actions/setup",
-      "version": "v0.53.4",
-      "sha": "b2d8af7543ec40f72bb3b8fea5148c2d3ee401c7"
-    },
-    "peter-evans/create-pull-request@v6": {
-      "repo": "peter-evans/create-pull-request",
-      "version": "v6",
-      "sha": "c5a7806660adbe173f04e3e038b0ccdcd758773c"
+      "version": "v1.0.1",
+      "sha": "221ba4f4319de6b8e809d1a15528b3ae6a818aa5"
     }
   }
 }

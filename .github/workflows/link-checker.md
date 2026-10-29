@@ -59,7 +59,9 @@ safe-outputs:
 tools:
   github:
     toolsets: [repos, issues]
-  web-fetch:
+  # web-fetch removed: gh-aw v1.0.x rejects Copilot's native web-fetch tool
+  # outside SDK mode, and the prompt already checks external links with the
+  # allowlisted python3/curl commands below.
   bash:
     - "find *"
     - "grep *"
