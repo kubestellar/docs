@@ -1,6 +1,7 @@
 /**
  * Pure orchestration helpers for scripts/generate-leaderboard.mjs:
- * snapshot restore, advance decision/freeze filter, and frozen + live merge.
+ * snapshot restore, advance decision/freeze filter, frozen + live merge,
+ * and the final entry-list assembly (level/bonus/weekly merge + ranking).
  */
 
 import { scoreItemsIntoMap, addItemsToWeeklyActivity } from "./snapshot.mjs";
@@ -71,4 +72,64 @@ export function mergeSnapshotWithLive(state, liveItems, yearStart) {
   addItemsToWeeklyActivity(liveItems, yearStart, weekly);
 
   return { contributors, itemIds, weekly, liveScored };
+}
+
+/**
+ * Build the sorted, ranked leaderboard entry list from merged contributor
+ * totals, per-login weekly activity, and bonus-point awards. Pure function:
+ * `getLevelForPoints`/`computeRecentScore` are injected so this has no
+ * dependency on scoring.mjs internals or wall-clock time.
+ */
+export function buildLeaderboardEntries(
+  mergedContributors,
+  mergedWeekly,
+  bonusMap,
+  recentWeeks,
+  getLevelForPoints,
+  computeRecentScore
+) {
+  const entries = [];
+  for (const [login, data] of mergedContributors) {
+    const level = getLevelForPoints(data.totalPoints);
+    const bonus = bonusMap.get(login);
+    const loginWeeks = mergedWeekly.get(login) || new Map();
+    const weeklyCounts = recentWeeks.map((wk) => loginWeeks.get(wk) || 0);
+    entries.push({
+      login,
+      avatar_url: data.avatarUrl,
+      total_points: data.totalPoints,
+      level: level.name,
+      level_rank: level.rank,
+      breakdown: data.breakdown,
+      ...(bonus ? { bonus_points: bonus.points } : {}),
+      weekly_activity: weeklyCounts,
+      recent_activity_score: computeRecentScore(weeklyCounts),
+    });
+  }
+
+  entries.sort((a, b) => {
+    if (a.total_points !== b.total_points) return b.total_points - a.total_points;
+    return a.login.localeCompare(b.login);
+  });
+
+  entries.forEach((entry, i) => {
+    entry.rank = i + 1;
+  });
+
+  return entries;
+}
+
+/** Apply a bonus-point award map onto merged contributor totals (mutates `mergedContributors`). */
+export function applyBonusPoints(mergedContributors, bonusMap) {
+  for (const [login, bonus] of bonusMap) {
+    if (mergedContributors.has(login)) {
+      mergedContributors.get(login).totalPoints += bonus.points;
+    } else {
+      mergedContributors.set(login, {
+        avatarUrl: `https://github.com/${login}.png`,
+        totalPoints: bonus.points,
+        breakdown: { bug_issues: 0, feature_issues: 0, other_issues: 0, prs_opened: 0, prs_merged: 0 },
+      });
+    }
+  }
 }
