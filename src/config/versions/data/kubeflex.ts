@@ -3,8 +3,8 @@ import type { VersionInfo } from "../types"
 // kubeflex versions
 export const KUBEFLEX_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.9.5 (Latest)",
-    branch: "docs/kubeflex/0.9.5",
+    label: "v0.9.6 (Latest)",
+    branch: "docs/kubeflex/0.9.6",
     isDefault: true,
   },
   main: {
@@ -12,6 +12,11 @@ export const KUBEFLEX_VERSIONS: Record<string, VersionInfo> = {
     branch: "main",
     isDefault: false,
     isDev: true,
+  },
+  "0.9.5": {
+    label: "v0.9.5",
+    branch: "docs/kubeflex/0.9.5",
+    isDefault: false,
   },
   "0.9.4": {
     label: "v0.9.4",

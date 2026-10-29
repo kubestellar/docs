@@ -110,8 +110,8 @@
     },
     "kubeflex": {
       "latest": {
-        "label": "v0.9.5 (Latest)",
-        "branch": "docs/kubeflex/0.9.5",
+        "label": "v0.9.6 (Latest)",
+        "branch": "docs/kubeflex/0.9.6",
         "isDefault": true
       },
       "main": {
@@ -138,6 +138,11 @@
       "0.9.4": {
         "label": "v0.9.4",
         "branch": "docs/kubeflex/0.9.4",
+        "isDefault": false
+      },
+      "0.9.5": {
+        "label": "v0.9.5",
+        "branch": "docs/kubeflex/0.9.5",
         "isDefault": false
       }
     },
@@ -500,7 +505,7 @@
     "kubeflex": {
       "name": "KubeFlex",
       "basePath": "kubeflex",
-      "currentVersion": "0.9.5"
+      "currentVersion": "0.9.6"
     },
     "multi-plugin": {
       "name": "Multi Plugin",
@@ -562,5 +567,5 @@
     "multi-plugin": "https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin",
     "kubestellar-mcp": "https://github.com/kubestellar/kubestellar-mcp/edit/main/docs"
   },
-  "updatedAt": "2026-10-28T19:57:37.330Z"
+  "updatedAt": "2026-10-29T18:59:23.944Z"
 }
