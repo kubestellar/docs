@@ -82,6 +82,20 @@ describe('SearchCommandPalette', () => {
     expect(screen.getByText(/"zzz"/)).toBeTruthy()
   })
 
+  it('applies dark-theme classes in the loading and no-results states', () => {
+    // isDark's ternaries in the isSearching and no-results branches are
+    // only reachable when isDark=true is combined with those two states;
+    // every other test pins isDark=false, so they were unreachable.
+    const loadingProps = { ...baseProps(), isDark: true, searchQuery: 'kube', isSearching: true }
+    const { unmount } = render(<SearchCommandPalette {...loadingProps} />)
+    expect(screen.getByText(/Searching documentation/i).className).toMatch(/text-gray-300/)
+    unmount()
+
+    const noResultsProps = { ...baseProps(), isDark: true, searchQuery: 'zzz', isSearching: false }
+    render(<SearchCommandPalette {...noResultsProps} />)
+    expect(screen.getByText(/No results found for/i).className).toMatch(/text-gray-300/)
+  })
+
   it('renders each result and marks the selected index', () => {
     const results = [mkResult({ title: 'First' }), mkResult({ title: 'Second', url: '/docs/second' })]
     const props = { ...baseProps(), searchQuery: 'q', searchResults: results, selectedIndex: 1 }
@@ -160,5 +174,29 @@ describe('SearchCommandPalette', () => {
     const { container } = render(<SearchCommandPalette {...baseProps()} />)
     const shell = container.querySelector('.bg-white')
     expect(shell).not.toBeNull()
+  })
+
+  it('applies dark-theme classes to result rows and the footer when isDark is true', () => {
+    // The isDark branches inside the results .map() and the footer are only
+    // exercised when both isDark and a non-empty searchResults are set at
+    // once — every other test here uses isDark=false or an empty results
+    // list, so these branches were previously unreachable.
+    const results = [mkResult({ title: 'First' }), mkResult({ title: 'Second', url: '/docs/second' })]
+    const props = {
+      ...baseProps(),
+      isDark: true,
+      searchQuery: 'q',
+      searchResults: results,
+      selectedIndex: 0,
+    }
+    const { container } = render(<SearchCommandPalette {...props} />)
+    const anchors = container.querySelectorAll('a[href]')
+    // Selected (dark) row picks up the dark selected style...
+    expect(anchors[0].className).toMatch(/bg-neutral-800 border-blue-500/)
+    // ...while the unselected (dark) row gets the dark hover style.
+    expect(anchors[1].className).toMatch(/hover:bg-neutral-800 border-transparent/)
+    // Footer border/text also switches to its dark variant.
+    const footer = screen.getByText(/to navigate/i).closest('div.flex.items-center.justify-between')
+    expect(footer?.className).toMatch(/border-neutral-700 text-gray-500/)
   })
 })
