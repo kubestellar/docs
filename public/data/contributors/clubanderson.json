@@ -1,23 +1,23 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-10-31T06:15:51.444Z",
-  "total_issues_opened": 642,
+  "generated_at": "2026-10-31T10:11:10.599Z",
+  "total_issues_opened": 643,
   "total_prs_opened": 2835,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6348500,
+  "total_points": 6348600,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
     "avg_per_week": 26.8,
-    "avg_per_day": 7.88,
+    "avg_per_day": 7.86,
     "by_day_of_week": [
       322,
       593,
       766,
       563,
       542,
-      369,
+      370,
       322
     ],
     "by_hour_of_day": [
@@ -27,7 +27,7 @@
       55,
       38,
       122,
-      1543,
+      1544,
       284,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 44,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-10-29T18:59:26.000Z"
+    "last_issue_at": "2026-10-31T06:15:43.000Z"
   },
   "topics": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 52,
+      "issue_count": 51,
       "recent_issue": {
         "title": "📖 Update kubeflex docs to v0.9.6",
         "url": "https://github.com/kubestellar/docs/pull/7534",
@@ -79,7 +79,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 52
+      "closed_count": 51
     },
     {
       "name": "hive, doc, sync",
@@ -108,6 +108,20 @@
       ],
       "open_count": 0,
       "closed_count": 7
+    },
+    {
+      "name": "registry, warning, qa",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
+        "url": "https://github.com/kubestellar/console-marketplace/issues/1032",
+        "created_at": "2026-10-31T06:15:43Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 0,
+      "closed_count": 4
     },
     {
       "name": "checkout, ci, apply",
@@ -148,20 +162,6 @@
       },
       "repos": [
         "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "warning, registry, qa",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "[Auto-QA] Registry Staleness: 0 error(s), 1 warning(s)",
-        "url": "https://github.com/kubestellar/console-marketplace/issues/855",
-        "created_at": "2026-09-30T06:31:29Z"
-      },
-      "repos": [
-        "console-marketplace"
       ],
       "open_count": 0,
       "closed_count": 3
@@ -994,7 +994,7 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 51
+      "issue_count": 52
     }
   ],
   "repo_breakdown": [
@@ -1017,7 +1017,7 @@
     {
       "repo": "console-marketplace",
       "bug_issues": 11,
-      "feature_issues": 14,
+      "feature_issues": 15,
       "other_issues": 145,
       "prs_opened": 96,
       "prs_merged": 88
