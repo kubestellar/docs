@@ -6,8 +6,8 @@ import { useTheme } from "next-themes";
 /**
  * Returns the hydration-safe `mounted` flag and derived `isDark` boolean
  * open-coded (as `useState`/`useEffect`/`resolvedTheme`) independently in
- * `DocsBanner.tsx`, `DocsNavbar.tsx`, `MobileSidebarToggle.tsx`,
- * `SidebarFooter.tsx`, and `ThemeToggle.tsx`. `resolvedTheme` is undefined on
+ * `DocsBanner.tsx`, `DocsNavbar.tsx`, `MobileSidebarToggle.tsx`, and
+ * `SidebarFooter.tsx`. `resolvedTheme` is undefined on
  * the server and on the first client render, so components gate on
  * `mounted` (set `true` only after the first effect runs) to avoid a
  * hydration mismatch — some early-return before `mounted`, others fold it
