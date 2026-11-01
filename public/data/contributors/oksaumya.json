@@ -1,6 +1,6 @@
 {
   "login": "oksaumya",
-  "generated_at": "2026-10-31T22:10:28.846Z",
+  "generated_at": "2026-11-01T02:15:07.354Z",
   "total_issues_opened": 42,
   "total_prs_opened": 17,
   "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
@@ -329,10 +329,6 @@
   },
   "activity_timeline": [
     {
-      "month": "2025-11",
-      "issue_count": 10
-    },
-    {
       "month": "2025-12",
       "issue_count": 9
     },
@@ -374,6 +370,10 @@
     },
     {
       "month": "2026-10",
+      "issue_count": 0
+    },
+    {
+      "month": "2026-11",
       "issue_count": 0
     }
   ],
