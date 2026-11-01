@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-11-01T02:15:06.935Z",
+  "generated_at": "2026-11-01T06:16:57.074Z",
   "total_issues_opened": 14,
   "total_prs_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
@@ -97,7 +97,7 @@
       "closed_count": 2
     },
     {
-      "name": "easily, manage, v0",
+      "name": "easily, manage, site",
       "issue_count": 1,
       "recent_issue": {
         "title": "doc: Documentation content mismatch in release v0.29.0 (latest)",
