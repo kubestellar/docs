@@ -38,6 +38,7 @@ import {
   computeTimeline,
   findDeepenSuggestions,
   findStretchAreas,
+  buildRepoBreakdown,
   CONSOLE_CODEBASE_AREAS,
 } from "./lib/contributor-metrics.mjs";
 
@@ -279,32 +280,7 @@ async function main() {
     };
 
     // Per-repo breakdown
-    const repoBreakdownMap = new Map();
-    for (const item of myIssues) {
-      if (!repoBreakdownMap.has(item.repo)) {
-        repoBreakdownMap.set(item.repo, {
-          repo: item.repo,
-          bug_issues: 0,
-          feature_issues: 0,
-          other_issues: 0,
-          prs_opened: 0,
-          prs_merged: 0,
-        });
-      }
-      const rb = repoBreakdownMap.get(item.repo);
-      if (item.is_pr) {
-        rb.prs_opened++;
-        if (item.merged_at) rb.prs_merged++;
-      } else {
-        if (item.issue_type === "bug") rb.bug_issues++;
-        else if (item.issue_type === "feature") rb.feature_issues++;
-        else rb.other_issues++;
-      }
-    }
-    const repoBreakdown = [...repoBreakdownMap.values()].sort((a, b) =>
-      (b.prs_opened + b.bug_issues + b.feature_issues + b.other_issues) -
-      (a.prs_opened + a.bug_issues + a.feature_issues + a.other_issues)
-    );
+    const repoBreakdown = buildRepoBreakdown(myIssues);
 
     // Build profile
     const lbEntry = leaderboardMap.get(login);

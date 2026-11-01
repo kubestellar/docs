@@ -369,3 +369,54 @@ export function findStretchAreas(clusterCentroids, areaVectors) {
     .slice(0, SUGGESTION_COUNT)
     .map(({ similarity, ...rest }) => rest);
 }
+
+/**
+ * Build a contributor's per-repo breakdown (bug/feature/other issue counts
+ * plus PRs opened/merged), sorted by descending total activity.
+ *
+ * Each item is expected to have:
+ *   - repo:       string
+ *   - is_pr:      boolean
+ *   - merged_at:  string|null (PR-only; non-null means the PR was merged)
+ *   - issue_type: "bug"|"feature"|"other"|null (issue-only; null for PRs,
+ *                 pre-classified via classifyIssueLabels — see
+ *                 scripts/lib/github-fetch.mjs)
+ *
+ * Mirrors scripts/add-repo-breakdown-helpers.mjs's categorizeIssuesByRepo
+ * / sortRepoBreakdown, but keys off the pre-computed issue_type field
+ * (classifyIssueLabels' broader bug/feature label set) instead of raw
+ * label strings, matching this runner's inline classification exactly.
+ *
+ * @param {object[]} items - Flattened issue/PR items for one contributor
+ * @returns {object[]} Per-repo breakdown, descending by total activity
+ */
+export function buildRepoBreakdown(items) {
+  const repoBreakdownMap = new Map();
+  for (const item of items) {
+    if (!repoBreakdownMap.has(item.repo)) {
+      repoBreakdownMap.set(item.repo, {
+        repo: item.repo,
+        bug_issues: 0,
+        feature_issues: 0,
+        other_issues: 0,
+        prs_opened: 0,
+        prs_merged: 0,
+      });
+    }
+    const rb = repoBreakdownMap.get(item.repo);
+    if (item.is_pr) {
+      rb.prs_opened++;
+      if (item.merged_at) rb.prs_merged++;
+    } else {
+      if (item.issue_type === "bug") rb.bug_issues++;
+      else if (item.issue_type === "feature") rb.feature_issues++;
+      else rb.other_issues++;
+    }
+  }
+
+  return [...repoBreakdownMap.values()].sort(
+    (a, b) =>
+      (b.prs_opened + b.bug_issues + b.feature_issues + b.other_issues) -
+      (a.prs_opened + a.bug_issues + a.feature_issues + a.other_issues)
+  );
+}

@@ -13,6 +13,7 @@ import {
   computeTimeline,
   findDeepenSuggestions,
   findStretchAreas,
+  buildRepoBreakdown,
   CONSOLE_CODEBASE_AREAS,
 } from "./contributor-metrics.mjs";
 
@@ -146,5 +147,121 @@ describe("findStretchAreas", () => {
     const clusterCentroids = [new Map([["dashboard", 1], ["card", 1]])];
     const stretch = findStretchAreas(clusterCentroids, areaVectors);
     expect(stretch.find((a) => a.name === CONSOLE_CODEBASE_AREAS[0].name)).toBeUndefined();
+  });
+});
+
+describe("buildRepoBreakdown", () => {
+  it("returns an empty array for an empty list", () => {
+    expect(buildRepoBreakdown([])).toEqual([]);
+  });
+
+  it("classifies an issue_type of 'bug' as bug_issues", () => {
+    const result = buildRepoBreakdown([
+      { repo: "kubestellar/docs", is_pr: false, merged_at: null, issue_type: "bug" },
+    ]);
+    expect(result).toEqual([
+      { repo: "kubestellar/docs", bug_issues: 1, feature_issues: 0, other_issues: 0, prs_opened: 0, prs_merged: 0 },
+    ]);
+  });
+
+  it("classifies an issue_type of 'feature' as feature_issues", () => {
+    const result = buildRepoBreakdown([
+      { repo: "kubestellar/docs", is_pr: false, merged_at: null, issue_type: "feature" },
+    ]);
+    expect(result[0]).toMatchObject({ bug_issues: 0, feature_issues: 1, other_issues: 0 });
+  });
+
+  it("classifies an issue_type of 'other' (and any unrecognized value) as other_issues", () => {
+    const result = buildRepoBreakdown([
+      { repo: "kubestellar/docs", is_pr: false, merged_at: null, issue_type: "other" },
+    ]);
+    expect(result[0]).toMatchObject({ bug_issues: 0, feature_issues: 0, other_issues: 1 });
+  });
+
+  it("does NOT classify a PR against any issue-type bucket even if issue_type is set", () => {
+    const result = buildRepoBreakdown([
+      { repo: "kubestellar/console", is_pr: true, merged_at: null, issue_type: "bug" },
+    ]);
+    expect(result[0]).toMatchObject({
+      prs_opened: 1,
+      prs_merged: 0,
+      bug_issues: 0,
+      feature_issues: 0,
+      other_issues: 0,
+    });
+  });
+
+  it("counts a merged PR toward both prs_opened and prs_merged", () => {
+    const result = buildRepoBreakdown([
+      { repo: "kubestellar/console", is_pr: true, merged_at: "2026-01-01T00:00:00Z", issue_type: null },
+    ]);
+    expect(result[0]).toMatchObject({ prs_opened: 1, prs_merged: 1 });
+  });
+
+  it("aggregates multiple items per repo without resetting counters", () => {
+    const result = buildRepoBreakdown([
+      { repo: "kubestellar/docs", is_pr: false, merged_at: null, issue_type: "bug" },
+      { repo: "kubestellar/docs", is_pr: false, merged_at: null, issue_type: "bug" },
+      { repo: "kubestellar/docs", is_pr: false, merged_at: null, issue_type: "feature" },
+      { repo: "kubestellar/docs", is_pr: false, merged_at: null, issue_type: "other" },
+      { repo: "kubestellar/docs", is_pr: true, merged_at: "2026-01-02T00:00:00Z", issue_type: null },
+      { repo: "kubestellar/docs", is_pr: true, merged_at: null, issue_type: null },
+    ]);
+    expect(result).toEqual([
+      {
+        repo: "kubestellar/docs",
+        bug_issues: 2,
+        feature_issues: 1,
+        other_issues: 1,
+        prs_opened: 2,
+        prs_merged: 1,
+      },
+    ]);
+  });
+
+  it("sorts repos by descending total activity (prs_opened + bug + feature + other)", () => {
+    const result = buildRepoBreakdown([
+      { repo: "low", is_pr: false, merged_at: null, issue_type: "feature" },
+      { repo: "high", is_pr: true, merged_at: "2026-01-01T00:00:00Z", issue_type: null },
+      { repo: "high", is_pr: false, merged_at: null, issue_type: "bug" },
+      { repo: "mid", is_pr: false, merged_at: null, issue_type: "other" },
+      { repo: "mid", is_pr: true, merged_at: null, issue_type: null },
+    ]);
+    expect(result.map((r) => r.repo)).toEqual(["high", "mid", "low"]);
+  });
+
+  it("does NOT double-count prs_merged in the sort key", () => {
+    // Two repos with equal (opened + issues) but different merged counts
+    // must sort as equal, preserving insertion order.
+    const result = buildRepoBreakdown([
+      { repo: "a", is_pr: true, merged_at: "2026-01-01T00:00:00Z", issue_type: null },
+      { repo: "a", is_pr: true, merged_at: "2026-01-02T00:00:00Z", issue_type: null },
+      { repo: "b", is_pr: true, merged_at: "2026-01-01T00:00:00Z", issue_type: null },
+      { repo: "b", is_pr: true, merged_at: null, issue_type: null },
+    ]);
+    expect(result.map((r) => r.repo)).toEqual(["a", "b"]);
+  });
+
+  it("keeps per-repo aggregates independent when items span multiple repos", () => {
+    const result = buildRepoBreakdown([
+      { repo: "kubestellar/docs", is_pr: false, merged_at: null, issue_type: "bug" },
+      { repo: "kubestellar/console", is_pr: true, merged_at: "2026-01-01T00:00:00Z", issue_type: null },
+      { repo: "kubestellar/console", is_pr: false, merged_at: null, issue_type: "feature" },
+    ]);
+    expect(result).toHaveLength(2);
+    expect(result.find((r) => r.repo === "kubestellar/docs")).toMatchObject({ bug_issues: 1, prs_opened: 0 });
+    expect(result.find((r) => r.repo === "kubestellar/console")).toMatchObject({
+      prs_opened: 1,
+      prs_merged: 1,
+      feature_issues: 1,
+    });
+  });
+
+  it("treats merged_at as boolean-truthy: empty string and 0 are NOT merged", () => {
+    const result = buildRepoBreakdown([
+      { repo: "r", is_pr: true, merged_at: "", issue_type: null },
+      { repo: "r", is_pr: true, merged_at: 0, issue_type: null },
+    ]);
+    expect(result[0]).toMatchObject({ prs_opened: 2, prs_merged: 0 });
   });
 });
