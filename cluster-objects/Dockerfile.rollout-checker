@@ -1,5 +1,5 @@
 # Dockerfile.rollout-checker
-FROM docker.io/alpine/kubectl:1.37.1@sha256:7b4cc9a9ce0d064cedeb85550266c11f2b32f010ca299525518646261e4d955e
+FROM docker.io/alpine/kubectl:1.37.1@sha256:a5d0fbecab3f7b6c2ab7398f1daa73a3e0ed6ece18556d21698233e9e3759cc7
 
 # Install runtime dependencies and OCI CLI (all dependencies hash-pinned)
 RUN apk add --no-cache python3 py3-pip bash jq curl gettext \
