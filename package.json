@@ -33,7 +33,7 @@
     "dotenv": "^18.0.9",
     "framer-motion": "^14.9.0",
     "js-yaml": "^5.5.0",
-    "lucide-react": "^1.61.0",
+    "lucide-react": "^1.65.0",
     "mermaid": "^12.2.0",
     "next": "^16.4.3",
     "next-intl": "^4.14.9",
