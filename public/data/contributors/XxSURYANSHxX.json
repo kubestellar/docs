@@ -1,6 +1,6 @@
 {
   "login": "XxSURYANSHxX",
-  "generated_at": "2026-11-02T14:13:44.484Z",
+  "generated_at": "2026-11-02T18:12:22.635Z",
   "total_issues_opened": 0,
   "total_prs_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/200365949?v=4",
@@ -54,7 +54,7 @@
   },
   "topics": [
     {
-      "name": "preset, card, placeholder",
+      "name": "preset, remove, placeholder",
       "issue_count": 5,
       "recent_issue": {
         "title": "feat(marketplace): activate KServe preset as available",
