@@ -60,6 +60,24 @@ export function checkIdempotency(history, today) {
 }
 
 /**
+ * Resolve a single repo's score/detectedIds for today's run from its raw
+ * scan response (`null`/`undefined` on fetch failure), carrying forward the
+ * repo's last-known score and detectedIds from `history` on failure. Does
+ * not mutate `history`.
+ */
+export function resolveScanResult(repo, scanResult, history) {
+  if (scanResult?.detectedIds) {
+    return { score: scanResult.detectedIds.length, detectedIds: scanResult.detectedIds, failed: false };
+  }
+  const prev = history.scores[repo];
+  return {
+    score: prev?.length ? prev[prev.length - 1] : 0,
+    detectedIds: history.detectedIds?.[repo] ?? [],
+    failed: true,
+  };
+}
+
+/**
  * Append (or, if backfilling, overwrite the last entry of) today's scan
  * results into the history, store the latest detectedIds, trim to
  * `maxDataPoints`, and drop any repos no longer being tracked. Mutates and

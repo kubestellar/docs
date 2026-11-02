@@ -23,6 +23,7 @@ import {
   migrateLegacyHistory,
   seedColdStart,
   checkIdempotency,
+  resolveScanResult,
   applyScanResults,
 } from './lib/acmm-history.mjs'
 
@@ -446,15 +447,10 @@ async function main() {
   for (const repo of REPOS) {
     const data = await fetchWithRetry(`${SCAN_API}?repo=${encodeURIComponent(repo)}&force=true`)
 
-    if (data?.detectedIds) {
-      scores[repo] = data.detectedIds.length
-      latestDetectedIds[repo] = data.detectedIds
-    } else {
-      const prev = history.scores[repo]
-      scores[repo] = prev?.length ? prev[prev.length - 1] : 0
-      latestDetectedIds[repo] = history.detectedIds?.[repo] ?? []
-      failed++
-    }
+    const result = resolveScanResult(repo, data, history)
+    scores[repo] = result.score
+    latestDetectedIds[repo] = result.detectedIds
+    if (result.failed) failed++
 
     scanned++
     if (scanned % 50 === 0) {

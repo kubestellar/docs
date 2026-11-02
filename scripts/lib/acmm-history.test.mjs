@@ -12,6 +12,7 @@ import {
   migrateLegacyHistory,
   seedColdStart,
   checkIdempotency,
+  resolveScanResult,
   applyScanResults,
 } from "./acmm-history.mjs";
 
@@ -92,6 +93,41 @@ describe("checkIdempotency", () => {
     const result = checkIdempotency(history, "2026-03-15");
     expect(result.isNoOp).toBe(false);
     expect(result.isBackfill).toBe(false);
+  });
+});
+
+describe("resolveScanResult", () => {
+  it("derives score/detectedIds from a successful scan", () => {
+    const history = { scores: {}, detectedIds: {} };
+    const result = resolveScanResult("repo/a", { detectedIds: ["x", "y"] }, history);
+    expect(result).toEqual({ score: 2, detectedIds: ["x", "y"], failed: false });
+  });
+
+  it("falls back to the last-known score and detectedIds on a failed scan", () => {
+    const history = {
+      scores: { "repo/a": [1, 2, 3] },
+      detectedIds: { "repo/a": ["old-1", "old-2"] },
+    };
+    const result = resolveScanResult("repo/a", null, history);
+    expect(result).toEqual({ score: 3, detectedIds: ["old-1", "old-2"], failed: true });
+  });
+
+  it("falls back to 0 and an empty detectedIds list when there is no prior history", () => {
+    const history = { scores: {}, detectedIds: {} };
+    const result = resolveScanResult("repo/new", undefined, history);
+    expect(result).toEqual({ score: 0, detectedIds: [], failed: true });
+  });
+
+  it("falls back to an empty detectedIds list when the prior entry predates detectedIds tracking", () => {
+    const history = { scores: { "repo/a": [4] } };
+    const result = resolveScanResult("repo/a", { detectedIds: undefined }, history);
+    expect(result).toEqual({ score: 4, detectedIds: [], failed: true });
+  });
+
+  it("treats a scan response without detectedIds as a failure even when other fields are present", () => {
+    const history = { scores: { "repo/a": [5] }, detectedIds: { "repo/a": ["z"] } };
+    const result = resolveScanResult("repo/a", { someOtherField: true }, history);
+    expect(result).toEqual({ score: 5, detectedIds: ["z"], failed: true });
   });
 });
 
