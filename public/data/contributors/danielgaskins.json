@@ -1,6 +1,6 @@
 {
   "login": "danielgaskins",
-  "generated_at": "2026-11-03T18:13:46.487Z",
+  "generated_at": "2026-11-03T22:10:21.715Z",
   "total_issues_opened": 0,
   "total_prs_opened": 1,
   "avatar_url": "https://avatars.githubusercontent.com/u/75106549?v=4",
@@ -48,7 +48,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "ramping_up",
+    "trend": "slowing_down",
     "first_issue_at": "2026-10-06T21:34:54.000Z",
     "last_issue_at": "2026-10-06T21:34:54.000Z"
   },
