@@ -13,7 +13,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "kubestellar",
     name: "KubeStellar",
     basePath: "",
-    currentVersion: "0.30.0",
+    currentVersion: "0.30.1",
     contentPath: "docs/content",
     navPath: "docs/content/nav.yaml",
     versions: KUBESTELLAR_VERSIONS,
