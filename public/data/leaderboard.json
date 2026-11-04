@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-04T06:12:53.727Z",
-  "git_hash": "7b55c1a",
+  "generated_at": "2026-11-04T10:09:17.884Z",
+  "git_hash": "60819ad",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-08-17",
@@ -20,12 +20,12 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 6351400,
+      "total_points": 6351600,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 738,
-        "feature_issues": 1513,
+        "feature_issues": 1515,
         "other_issues": 2187,
         "prs_opened": 8974,
         "prs_merged": 8149
@@ -43,9 +43,9 @@
         49,
         65,
         55,
-        5
+        7
       ],
-      "recent_activity_score": 297.04,
+      "recent_activity_score": 299.04,
       "rank": 1
     },
     {
@@ -1070,6 +1070,36 @@
       "rank": 35
     },
     {
+      "login": "mendezr",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18744521?v=4",
+      "total_points": 6300,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 9,
+        "prs_merged": 9
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        13,
+        1
+      ],
+      "recent_activity_score": 14.47,
+      "rank": 36
+    },
+    {
       "login": "Janhvibabani",
       "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
       "total_points": 6250,
@@ -1097,7 +1127,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 36
+      "rank": 37
     },
     {
       "login": "Creativeklvn",
@@ -1127,36 +1157,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 37
-    },
-    {
-      "login": "mendezr",
-      "avatar_url": "https://avatars.githubusercontent.com/u/18744521?v=4",
-      "total_points": 5600,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 8,
-        "prs_merged": 8
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        5,
-        13,
-        0
-      ],
-      "recent_activity_score": 13.47,
       "rank": 38
     },
     {
