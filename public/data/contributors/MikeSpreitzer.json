@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-11-04T18:12:53.812Z",
+  "generated_at": "2026-11-04T22:10:23.392Z",
   "total_issues_opened": 43,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
@@ -194,7 +194,7 @@
       "closed_count": 1
     },
     {
-      "name": "issues, chore, title",
+      "name": "issues, chore, picture",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: scan-merged-prs omits source repo name from chore title",
