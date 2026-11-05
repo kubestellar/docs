@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-05T06:16:44.768Z",
+  "generated_at": "2026-11-05T10:12:01.466Z",
   "total_issues_opened": 643,
   "total_prs_opened": 2841,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6352850,
+  "total_points": 6353850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 26.4,
+    "avg_per_week": 26.3,
     "avg_per_day": 7.82,
     "by_day_of_week": [
       323,
@@ -120,8 +120,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 3
+      "open_count": 0,
+      "closed_count": 4
     },
     {
       "name": "registry, warning, qa",
@@ -234,8 +234,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "longhorn, xfs, mib",
@@ -990,7 +990,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2115,
-      "prs_merged": 1778
+      "prs_merged": 1780
     },
     {
       "repo": "docs",
