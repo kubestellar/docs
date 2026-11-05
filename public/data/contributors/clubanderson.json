@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-05T02:14:29.883Z",
+  "generated_at": "2026-11-05T06:16:44.768Z",
   "total_issues_opened": 643,
   "total_prs_opened": 2841,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6352350,
+  "total_points": 6352850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 26.5,
+    "avg_per_week": 26.4,
     "avg_per_day": 7.82,
     "by_day_of_week": [
       323,
@@ -163,8 +163,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 2
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "llm, inference, import",
@@ -990,7 +990,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2115,
-      "prs_merged": 1777
+      "prs_merged": 1778
     },
     {
       "repo": "docs",
