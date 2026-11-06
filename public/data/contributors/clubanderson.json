@@ -1,22 +1,22 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-06T02:14:29.096Z",
+  "generated_at": "2026-11-06T06:17:30.836Z",
   "total_issues_opened": 643,
-  "total_prs_opened": 2841,
+  "total_prs_opened": 2842,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6354450,
+  "total_points": 6354650,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
     "avg_per_week": 26.3,
-    "avg_per_day": 7.82,
+    "avg_per_day": 7.77,
     "by_day_of_week": [
       323,
       596,
       766,
       563,
-      542,
+      543,
       370,
       324
     ],
@@ -27,7 +27,7 @@
       55,
       38,
       123,
-      1548,
+      1549,
       284,
       54,
       8,
@@ -46,11 +46,11 @@
       58,
       36
     ],
-    "current_streak_weeks": 44,
-    "longest_streak_weeks": 44,
+    "current_streak_weeks": 45,
+    "longest_streak_weeks": 45,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-11-03T06:24:27.000Z"
+    "last_issue_at": "2026-11-06T06:13:09.000Z"
   },
   "topics": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 53,
+      "issue_count": 52,
       "recent_issue": {
         "title": "📖 Update kubestellar docs to v0.30.1",
         "url": "https://github.com/kubestellar/docs/pull/7563",
@@ -79,7 +79,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 53
+      "closed_count": 52
     },
     {
       "name": "dragonflydb, structure, pfcount",
@@ -151,6 +151,21 @@
       ],
       "open_count": 0,
       "closed_count": 4
+    },
+    {
+      "name": "openyurt, fetchpods, authfetch",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "🌱 openyurt: [feature request] Add Claude Code Skills for deploying OpenYurt and configuring",
+        "url": "https://github.com/kubestellar/console-kb/pull/3906",
+        "created_at": "2026-11-06T06:13:09Z"
+      },
+      "repos": [
+        "console-kb",
+        "console-marketplace"
+      ],
+      "open_count": 1,
+      "closed_count": 2
     },
     {
       "name": "keycloak, cimd, takeover",
@@ -304,20 +319,6 @@
       },
       "repos": [
         "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "openyurt, authfetch, fetchpods",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "test(openyurt_status): align fetch.test.ts with authFetch-routed fetchPods",
-        "url": "https://github.com/kubestellar/console-marketplace/pull/819",
-        "created_at": "2026-09-27T02:14:42Z"
-      },
-      "repos": [
-        "console-marketplace"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -980,7 +981,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 6
+      "issue_count": 7
     }
   ],
   "repo_breakdown": [
@@ -989,7 +990,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2115,
+      "prs_opened": 2116,
       "prs_merged": 1780
     },
     {
