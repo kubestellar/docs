@@ -33,7 +33,9 @@ test('search command palette finds a result and navigates to it', async ({ page 
 })
 
 test('search command palette closes on Escape without navigating', async ({ page }) => {
-  await page.goto('/docs')
+  // Note: /docs server-redirects to /docs/introduction (src/app/docs/page.tsx),
+  // so start from the resolved URL to assert the palette itself doesn't navigate.
+  await page.goto('/docs/introduction')
 
   await page.getByRole('button', { name: 'Search documentation' }).first().click()
   const searchInput = page.getByPlaceholder('Search documentation...')
@@ -43,5 +45,5 @@ test('search command palette closes on Escape without navigating', async ({ page
   await page.keyboard.press('Escape')
 
   await expect(searchInput).toBeHidden()
-  await expect(page).toHaveURL(/\/docs$/)
+  await expect(page).toHaveURL(/\/docs\/introduction$/)
 })
