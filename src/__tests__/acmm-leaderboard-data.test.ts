@@ -21,6 +21,7 @@ import {
   SNAPSHOT_DATE,
   type AcmmProject,
 } from "../app/[locale]/acmm-leaderboard/data";
+import { TRACKED_REPOS } from "../../scripts/lib/acmm-tracked-repos.mjs";
 
 describe("acmm-leaderboard/data — SNAPSHOT_DATE", () => {
   it("is a non-empty ISO yyyy-MM-dd string", () => {
@@ -127,5 +128,31 @@ describe("acmm-leaderboard/data — ACMM_PROJECTS", () => {
     }
     expect(dupes, `duplicates: ${dupes.join(", ")}`).toEqual([]);
     expect(seen.size).toBe(repos.length);
+  });
+});
+
+describe("acmm-leaderboard/data — TRACKED_REPOS parity", () => {
+  // ACMM_PROJECTS (displayed table) and TRACKED_REPOS (scripts/lib/
+  // acmm-tracked-repos.mjs, scanned by generate-acmm-history.mjs) used to
+  // be two independently hand-maintained lists that drifted to 106
+  // mismatches: projects shown on the page that were never scanned (stuck
+  // on the snapshot score forever), and scanned repos with no row to
+  // display (wasted scan-API calls). This test keeps the two lists in
+  // lockstep going forward.
+  it("matches TRACKED_REPOS exactly (no drift between displayed and scanned repos)", () => {
+    const displayed = new Set(ACMM_PROJECTS.map(p => p.repo));
+    const tracked = new Set(TRACKED_REPOS);
+
+    const displayedNotTracked = [...displayed].filter(r => !tracked.has(r));
+    const trackedNotDisplayed = [...tracked].filter(r => !displayed.has(r));
+
+    expect(
+      displayedNotTracked,
+      `in ACMM_PROJECTS but not scanned: ${displayedNotTracked.join(", ")}`
+    ).toEqual([]);
+    expect(
+      trackedNotDisplayed,
+      `scanned but not displayed: ${trackedNotDisplayed.join(", ")}`
+    ).toEqual([]);
   });
 });
