@@ -1,6 +1,6 @@
 {
   "login": "vjymisal0",
-  "generated_at": "2026-11-08T02:13:52.053Z",
+  "generated_at": "2026-11-08T06:15:11.660Z",
   "total_issues_opened": 0,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/97379957?v=4",
@@ -48,7 +48,7 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "slowing_down",
+    "trend": "inactive",
     "first_issue_at": "2026-08-29T08:48:49.000Z",
     "last_issue_at": "2026-09-13T05:19:51.000Z"
   },
