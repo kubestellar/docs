@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-07T22:09:45.806Z",
+  "generated_at": "2026-11-08T02:13:51.668Z",
   "total_issues_opened": 643,
   "total_prs_opened": 2842,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6355650,
+  "total_points": 6356150,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 26.1,
+    "avg_per_week": 25.8,
     "avg_per_day": 7.77,
     "by_day_of_week": [
       323,
@@ -164,8 +164,8 @@
         "console-kb",
         "console-marketplace"
       ],
-      "open_count": 1,
-      "closed_count": 2
+      "open_count": 0,
+      "closed_count": 3
     },
     {
       "name": "keycloak, cimd, takeover",
@@ -991,7 +991,7 @@
       "feature_issues": 1,
       "other_issues": 149,
       "prs_opened": 2116,
-      "prs_merged": 1780
+      "prs_merged": 1781
     },
     {
       "repo": "docs",
