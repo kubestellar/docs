@@ -159,6 +159,29 @@ describe('sanitizeHtmlForMdx — navigational URL attribute neutralization', () 
     ).toBe('<input type="submit" formaction="#">')
   })
 
+  it('sanitizes every navigational attribute on a tag, not only the first (decoy-attribute bypass)', () => {
+    // Decoy benign first attribute + javascript: second one on the same element.
+    // SVG gives href precedence over xlink:href, so leaving the second attribute
+    // unsanitized navigates to the payload.
+    expect(
+      sanitizeHtmlForMdx('<svg><a xlink:href="#fine" href="javascript:alert(1)">x</a></svg>'),
+    ).toBe('<svg><a xlink:href="#fine" href="#">x</a></svg>')
+    expect(
+      sanitizeHtmlForMdx('<button action="#" formaction="javascript:alert(1)">x</button>'),
+    ).toBe('<button action="#" formaction="#">x</button>')
+    expect(
+      sanitizeHtmlForMdx('<a href="javascript:alert(1)" formaction="javascript:alert(2)">x</a>'),
+    ).toBe('<a href="#" formaction="#">x</a>')
+  })
+
+  it('neutralizes javascript: in unquoted attribute values', () => {
+    expect(sanitizeHtmlForMdx('<a href=javascript:alert(1)>x</a>')).toBe('<a href="#">x</a>')
+    expect(sanitizeHtmlForMdx('<form action=javascript:alert(1)>x</form>')).toBe(
+      '<form action="#">x</form>',
+    )
+    expect(sanitizeHtmlForMdx('<a href=/relative/path>x</a>')).toBe('<a href="/relative/path">x</a>')
+  })
+
   it('leaves safe http(s)/relative URLs in href/xlink:href/action/formaction untouched', () => {
     expect(sanitizeHtmlForMdx('<a href="https://example.com">x</a>')).toBe(
       '<a href="https://example.com">x</a>',

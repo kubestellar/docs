@@ -234,12 +234,29 @@ export function sanitizeHtmlForMdx(content: string): string {
   // block `javascript:` navigation (same risk as the contributor-card case;
   // see safeUrl() above and #5842). Replace the attribute value in place
   // rather than dropping the tag, so legitimate markup is preserved.
-  sanitized = sanitized.replace(
-    /(<\w+\b[^>]*?\s(?:xlink:href|href|action|formaction)\s*=\s*)(["'])([^"']*)\2/gi,
-    (match, prefix, quote, urlVal) => {
-      const safe = safeUrl(urlVal)
-      return `${prefix}${quote}${safe || '#'}${quote}`
-    },
+  //
+  // Two-level replace: first match each opening tag, then sanitize EVERY
+  // navigational attribute inside it. A single flat regex anchored on `<\w+`
+  // only handles the first such attribute per tag (after one match the
+  // scanner finds no new tag opener before the next attribute), so a decoy
+  // like `<svg><a xlink:href="#fine" href="javascript:alert(1)">` would
+  // leave the second attribute untouched — and SVG gives `href` precedence.
+  // Unquoted values (`<a href=javascript:alert(1)>`) are matched too, since
+  // browsers accept them even though they carry no quote character.
+  // The tag matcher is quote-aware so a `>` inside a quoted attribute value
+  // (e.g. a data: URI embedding markup) does not truncate the tag.
+  sanitized = sanitized.replace(/<\w+\b(?:[^>"']|"[^"]*"|'[^']*')*>/g, (tag) =>
+    tag.replace(
+      /(\s(?:xlink:href|href|action|formaction)\s*=\s*)(?:(["'])([^"']*)\2|([^\s>"'][^\s>]*))/gi,
+      (match, prefix, quote, quotedVal, unquotedVal) => {
+        // Quoted values cannot contain their own quote char; formerly-unquoted
+        // values get re-emitted quoted, so escape any quote/markup chars they
+        // carry to avoid breaking out of the new attribute context.
+        const safe = quote ? safeUrl(quotedVal) : escapeAngle(safeUrl(unquotedVal))
+        const q = quote || '"'
+        return `${prefix}${q}${safe || '#'}${q}`
+      },
+    ),
   )
 
   // Remove all iframe tags — handles closed, self-closing, and unclosed <iframe> forms.
