@@ -245,14 +245,25 @@ export function sanitizeHtmlForMdx(content: string): string {
   // browsers accept them even though they carry no quote character.
   // The tag matcher is quote-aware so a `>` inside a quoted attribute value
   // (e.g. a data: URI embedding markup) does not truncate the tag.
+  //
+  // Quoted values use per-quote alternatives ("([^"]*)" | '([^']*)') rather
+  // than a backreferenced (["'])([^"']*)\2 — the backreferenced form cannot
+  // match a value containing the opposite quote char, so mixed-quote payloads
+  // like href="javascript:alert('1')" would bypass sanitization entirely.
   sanitized = sanitized.replace(/<\w+\b(?:[^>"']|"[^"]*"|'[^']*')*>/g, (tag) =>
     tag.replace(
-      /(\s(?:xlink:href|href|action|formaction)\s*=\s*)(?:(["'])([^"']*)\2|([^\s>"'][^\s>]*))/gi,
-      (match, prefix, quote, quotedVal, unquotedVal) => {
-        // Quoted values cannot contain their own quote char; formerly-unquoted
-        // values get re-emitted quoted, so escape any quote/markup chars they
-        // carry to avoid breaking out of the new attribute context.
-        const safe = quote ? safeUrl(quotedVal) : escapeAngle(safeUrl(unquotedVal))
+      /(\s(?:xlink:href|href|action|formaction)\s*=\s*)(?:"([^"]*)"|'([^']*)'|([^\s>"'][^\s>]*))/gi,
+      (match, prefix, dquotedVal, squotedVal, unquotedVal) => {
+        // A quoted value cannot contain its own quote char (each alternative
+        // excludes it), so re-emitting with the same quote is safe; formerly-
+        // unquoted values get re-emitted double-quoted, so escape any
+        // quote/markup chars they carry to avoid breaking out of the new
+        // attribute context.
+        const quote = dquotedVal !== undefined ? '"' : squotedVal !== undefined ? "'" : undefined
+        const safe =
+          quote !== undefined
+            ? safeUrl(dquotedVal !== undefined ? dquotedVal : squotedVal)
+            : escapeAngle(safeUrl(unquotedVal))
         const q = quote || '"'
         return `${prefix}${q}${safe || '#'}${q}`
       },

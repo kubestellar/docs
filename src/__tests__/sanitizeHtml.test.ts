@@ -182,6 +182,23 @@ describe('sanitizeHtmlForMdx — navigational URL attribute neutralization', () 
     expect(sanitizeHtmlForMdx('<a href=/relative/path>x</a>')).toBe('<a href="/relative/path">x</a>')
   })
 
+  it('neutralizes mixed-quote javascript: URLs (opposite quote inside quoted value)', () => {
+    // A backreferenced (["'])([^"']*)\2 regex cannot match a value containing
+    // the opposite quote char — these payloads previously bypassed sanitization.
+    expect(sanitizeHtmlForMdx(`<a href="javascript:alert('1')">x</a>`)).toBe('<a href="#">x</a>')
+    expect(sanitizeHtmlForMdx(`<a href='javascript:alert("1")'>x</a>`)).toBe("<a href='#'>x</a>")
+    expect(sanitizeHtmlForMdx(`<form action="javascript:alert('1')">x</form>`)).toBe(
+      '<form action="#">x</form>',
+    )
+    expect(sanitizeHtmlForMdx(`<button formaction='javascript:alert("1")'>x</button>`)).toBe(
+      "<button formaction='#'>x</button>",
+    )
+    // Safe mixed-quote values survive with the value intact
+    expect(sanitizeHtmlForMdx(`<a href="https://example.com/?q='v'">x</a>`)).toBe(
+      `<a href="https://example.com/?q='v'">x</a>`,
+    )
+  })
+
   it('leaves safe http(s)/relative URLs in href/xlink:href/action/formaction untouched', () => {
     expect(sanitizeHtmlForMdx('<a href="https://example.com">x</a>')).toBe(
       '<a href="https://example.com">x</a>',
