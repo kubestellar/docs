@@ -223,19 +223,21 @@ export function sanitizeHtmlForMdx(content: string): string {
   sanitized = sanitized.replace(/<tr>[\s\S]*?<\/tr>/gi, '')
   sanitized = sanitized.replace(/<td[^>]*>[\s\S]*?<\/td>/gi, '')
 
-  // Neutralize dangerous URL schemes in any remaining <a href="..."> attributes.
-  // The contributor-table conversion above already runs every href/src through
-  // safeUrl(), but any other raw anchor tag in the content (i.e. anywhere
-  // outside a contributor table) previously passed through unchanged — so a
-  // `javascript:` href would survive, and the site CSP's `unsafe-inline`
-  // script-src does not block `javascript:` link navigation (same risk as
-  // the contributor-card case; see safeUrl() above and #5842). Replace the
-  // href value in place rather than dropping the tag, so legitimate link
-  // text/markup is preserved.
+  // Neutralize dangerous URL schemes in any remaining navigational attribute
+  // on any tag: href (including SVG's `xlink:href`, used on <a>/<use> for
+  // same-document-navigation-equivalent behavior), and <form>'s action /
+  // formaction (submitting a form navigates exactly like clicking a link).
+  // The previous version of this check only matched a literal `href=`
+  // preceded by whitespace, so `<svg><a xlink:href="javascript:...">`,
+  // `<form action="javascript:...">`, and `<button formaction="javascript:...">`
+  // all bypassed it — the site CSP's `unsafe-inline` script-src does not
+  // block `javascript:` navigation (same risk as the contributor-card case;
+  // see safeUrl() above and #5842). Replace the attribute value in place
+  // rather than dropping the tag, so legitimate markup is preserved.
   sanitized = sanitized.replace(
-    /(<a\b[^>]*\shref\s*=\s*)(["'])([^"']*)\2/gi,
-    (match, prefix, quote, hrefVal) => {
-      const safe = safeUrl(hrefVal)
+    /(<\w+\b[^>]*?\s(?:xlink:href|href|action|formaction)\s*=\s*)(["'])([^"']*)\2/gi,
+    (match, prefix, quote, urlVal) => {
+      const safe = safeUrl(urlVal)
       return `${prefix}${quote}${safe || '#'}${quote}`
     },
   )
