@@ -122,6 +122,99 @@ describe('sanitizeHtmlForMdx — dangerous tag stripping', () => {
   })
 })
 
+describe('sanitizeHtmlForMdx — navigational URL attribute neutralization', () => {
+  // These are the elements/attributes other than plain <a href> that a
+  // browser treats as link-navigation-equivalent: SVG's xlink:href (used by
+  // <a>/<use>) and <form>'s action/formaction (submitting a form navigates
+  // like clicking a link). All four previously bypassed the sanitizer
+  // because it only matched a literal, whitespace-preceded `href=`.
+  it('neutralizes javascript: in a plain <a href>', () => {
+    const out = sanitizeHtmlForMdx('<a href="javascript:alert(1)">x</a>')
+    expect(out).toBe('<a href="#">x</a>')
+  })
+
+  it('neutralizes javascript: in SVG xlink:href on <a>', () => {
+    const out = sanitizeHtmlForMdx('<svg><a xlink:href="javascript:alert(1)">x</a></svg>')
+    expect(out).toBe('<svg><a xlink:href="#">x</a></svg>')
+  })
+
+  it('neutralizes a data: URI in SVG xlink:href on <use>', () => {
+    const out = sanitizeHtmlForMdx(
+      '<use xlink:href="data:image/svg+xml,<script>alert(1)</script>">',
+    )
+    expect(out).toBe('<use xlink:href="#">')
+  })
+
+  it('neutralizes javascript: in <form action>', () => {
+    const out = sanitizeHtmlForMdx('<form action="javascript:alert(1)"><button>x</button></form>')
+    expect(out).toBe('<form action="#"><button>x</button></form>')
+  })
+
+  it('neutralizes javascript: in formaction on <button>/<input>', () => {
+    expect(sanitizeHtmlForMdx('<button formaction="javascript:alert(1)">x</button>')).toBe(
+      '<button formaction="#">x</button>',
+    )
+    expect(
+      sanitizeHtmlForMdx('<input type="submit" formaction="javascript:alert(1)">'),
+    ).toBe('<input type="submit" formaction="#">')
+  })
+
+  it('sanitizes every navigational attribute on a tag, not only the first (decoy-attribute bypass)', () => {
+    // Decoy benign first attribute + javascript: second one on the same element.
+    // SVG gives href precedence over xlink:href, so leaving the second attribute
+    // unsanitized navigates to the payload.
+    expect(
+      sanitizeHtmlForMdx('<svg><a xlink:href="#fine" href="javascript:alert(1)">x</a></svg>'),
+    ).toBe('<svg><a xlink:href="#fine" href="#">x</a></svg>')
+    expect(
+      sanitizeHtmlForMdx('<button action="#" formaction="javascript:alert(1)">x</button>'),
+    ).toBe('<button action="#" formaction="#">x</button>')
+    expect(
+      sanitizeHtmlForMdx('<a href="javascript:alert(1)" formaction="javascript:alert(2)">x</a>'),
+    ).toBe('<a href="#" formaction="#">x</a>')
+  })
+
+  it('neutralizes javascript: in unquoted attribute values', () => {
+    expect(sanitizeHtmlForMdx('<a href=javascript:alert(1)>x</a>')).toBe('<a href="#">x</a>')
+    expect(sanitizeHtmlForMdx('<form action=javascript:alert(1)>x</form>')).toBe(
+      '<form action="#">x</form>',
+    )
+    expect(sanitizeHtmlForMdx('<a href=/relative/path>x</a>')).toBe('<a href="/relative/path">x</a>')
+  })
+
+  it('neutralizes mixed-quote javascript: URLs (opposite quote inside quoted value)', () => {
+    // A backreferenced (["'])([^"']*)\2 regex cannot match a value containing
+    // the opposite quote char — these payloads previously bypassed sanitization.
+    expect(sanitizeHtmlForMdx(`<a href="javascript:alert('1')">x</a>`)).toBe('<a href="#">x</a>')
+    expect(sanitizeHtmlForMdx(`<a href='javascript:alert("1")'>x</a>`)).toBe("<a href='#'>x</a>")
+    expect(sanitizeHtmlForMdx(`<form action="javascript:alert('1')">x</form>`)).toBe(
+      '<form action="#">x</form>',
+    )
+    expect(sanitizeHtmlForMdx(`<button formaction='javascript:alert("1")'>x</button>`)).toBe(
+      "<button formaction='#'>x</button>",
+    )
+    // Safe mixed-quote values survive with the value intact
+    expect(sanitizeHtmlForMdx(`<a href="https://example.com/?q='v'">x</a>`)).toBe(
+      `<a href="https://example.com/?q='v'">x</a>`,
+    )
+  })
+
+  it('leaves safe http(s)/relative URLs in href/xlink:href/action/formaction untouched', () => {
+    expect(sanitizeHtmlForMdx('<a href="https://example.com">x</a>')).toBe(
+      '<a href="https://example.com">x</a>',
+    )
+    expect(sanitizeHtmlForMdx('<a href="/relative/path">x</a>')).toBe(
+      '<a href="/relative/path">x</a>',
+    )
+    expect(
+      sanitizeHtmlForMdx('<svg><a xlink:href="https://example.com">x</a></svg>'),
+    ).toBe('<svg><a xlink:href="https://example.com">x</a></svg>')
+    expect(sanitizeHtmlForMdx('<form action="/submit">x</form>')).toBe(
+      '<form action="/submit">x</form>',
+    )
+  })
+})
+
 describe('sanitizeHtmlForMdx — contributors table conversion', () => {
   it('converts a well-formed contributors <table> to a contributors-grid', () => {
     const html = `<table><tr>
