@@ -124,6 +124,42 @@ describe('sanitizeHtmlForMdx — style removal', () => {
 })
 
 // ═══════════════════════════════════════════════════════════════════════
+// Iframe tag removal (CWE-116: nested/interleaved tag reconstruction bypass)
+// ═══════════════════════════════════════════════════════════════════════
+
+describe('sanitizeHtmlForMdx — iframe removal', () => {
+  it('strips basic <iframe>...</iframe>', () => {
+    const result = sanitizeHtmlForMdx('<p>safe</p><iframe src="evil.com"></iframe><p>text</p>')
+    expect(result).not.toContain('iframe')
+    expect(result).not.toContain('evil.com')
+  })
+
+  it('strips self-closing <iframe />', () => {
+    const result = sanitizeHtmlForMdx('<iframe src="evil.com" />')
+    expect(result).not.toContain('iframe')
+  })
+
+  it('strips nested iframe reconstruction (stripUntilStable)', () => {
+    // '<ifr<iframe src=x></iframe>ame src=evil.com>' → removing the inner
+    // complete <iframe>...</iframe> pair reassembles an outer <iframe ...>
+    // opener; the loop must catch the reconstructed tag too.
+    const result = sanitizeHtmlForMdx('<ifr<iframe src=x></iframe>ame src="evil.com">payload</iframe>')
+    expect(result).not.toContain('iframe')
+    expect(result).not.toContain('evil.com')
+  })
+
+  it('strips iframe-spacer reconstruction of <script> (CWE-116)', () => {
+    // '<scri<iframe src=x></iframe>pt>...</script>' → removing the <iframe>
+    // pair reassembles '<script>...</script>'; a single-pass sanitizer that
+    // handles iframe and script independently would miss this.
+    const result = sanitizeHtmlForMdx('<scri<iframe src=x></iframe>pt>alert(1)</script>')
+    expect(result).not.toContain('iframe')
+    expect(result).not.toContain('script')
+    expect(result).not.toContain('alert')
+  })
+})
+
+// ═══════════════════════════════════════════════════════════════════════
 // Null bytes and control characters
 // ═══════════════════════════════════════════════════════════════════════
 
