@@ -1,18 +1,18 @@
 {
   "login": "Karibhou",
-  "generated_at": "2026-11-09T06:20:51.940Z",
+  "generated_at": "2026-11-09T10:11:44.499Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 4,
+  "total_prs_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-  "total_points": 24800,
+  "total_points": 25200,
   "level": "Commander",
   "level_rank": 5,
-  "rank": 17,
+  "rank": 16,
   "cadence": {
-    "avg_per_week": 0.3,
-    "avg_per_day": 0.17,
+    "avg_per_week": 0.4,
+    "avg_per_day": 0.21,
     "by_day_of_week": [
-      0,
+      1,
       0,
       0,
       0,
@@ -27,7 +27,7 @@
       0,
       1,
       0,
-      0,
+      1,
       0,
       0,
       0,
@@ -50,9 +50,23 @@
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
     "first_issue_at": "2026-10-16T18:32:00.000Z",
-    "last_issue_at": "2026-11-08T23:18:28.000Z"
+    "last_issue_at": "2026-11-09T06:58:26.000Z"
   },
   "topics": [
+    {
+      "name": "crash, id, string",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "fix: reject non-string registry ids and verdict single-file demo-data cards",
+        "url": "https://github.com/kubestellar/console-marketplace/pull/1052",
+        "created_at": "2026-11-09T06:58:26Z"
+      },
+      "repos": [
+        "console-marketplace"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
     {
       "name": "gate, hive, drops",
       "issue_count": 1,
@@ -114,12 +128,6 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Dashboard & Cards",
-        "path": "web/src/components/cards/, web/src/components/dashboard/",
-        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
-      },
-      {
         "name": "Security & RBAC",
         "path": "web/src/components/security/, web/src/components/rbac/",
         "description": "Security scanning, RBAC management, role bindings, compliance",
@@ -142,6 +150,12 @@
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
       }
     ]
   },
@@ -192,7 +206,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 2
+      "issue_count": 3
     }
   ],
   "repo_breakdown": [
@@ -203,6 +217,14 @@
       "other_issues": 0,
       "prs_opened": 4,
       "prs_merged": 3
+    },
+    {
+      "repo": "console-marketplace",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 1,
+      "prs_merged": 0
     }
   ]
 }
