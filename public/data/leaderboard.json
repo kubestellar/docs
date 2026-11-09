@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-09T14:08:23.736Z",
-  "git_hash": "151f658",
+  "generated_at": "2026-11-09T22:07:04.163Z",
+  "git_hash": "ddb0101",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-08-24",
@@ -20,12 +20,12 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 6357950,
+      "total_points": 6358350,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
-        "bug_issues": 741,
-        "feature_issues": 1524,
+        "bug_issues": 742,
+        "feature_issues": 1525,
         "other_issues": 2188,
         "prs_opened": 8979,
         "prs_merged": 8156
@@ -43,9 +43,9 @@
         65,
         94,
         22,
-        3
+        5
       ],
-      "recent_activity_score": 272.63,
+      "recent_activity_score": 274.63,
       "rank": 1
     },
     {
@@ -472,14 +472,14 @@
     {
       "login": "Karibhou",
       "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-      "total_points": 25200,
+      "total_points": 26000,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 0,
         "feature_issues": 0,
         "other_issues": 0,
-        "prs_opened": 46,
+        "prs_opened": 50,
         "prs_merged": 32
       },
       "weekly_activity": [
@@ -494,9 +494,9 @@
         1,
         17,
         21,
-        2
+        6
       ],
-      "recent_activity_score": 52.89,
+      "recent_activity_score": 56.89,
       "rank": 16
     },
     {
@@ -1012,7 +1012,7 @@
     {
       "login": "mendezr",
       "avatar_url": "https://avatars.githubusercontent.com/u/18744521?v=4",
-      "total_points": 7200,
+      "total_points": 7700,
       "level": "Pilot",
       "level_rank": 4,
       "breakdown": {
@@ -1020,7 +1020,7 @@
         "feature_issues": 0,
         "other_issues": 0,
         "prs_opened": 11,
-        "prs_merged": 10
+        "prs_merged": 11
       },
       "weekly_activity": [
         0,
@@ -1092,11 +1092,11 @@
         0,
         0,
         0,
-        10,
+        11,
         0,
         0
       ],
-      "recent_activity_score": 9.68,
+      "recent_activity_score": 10.31,
       "rank": 36
     },
     {
@@ -4061,12 +4061,12 @@
         0,
         0,
         0,
-        4,
-        4,
+        5,
+        5,
         0,
         0
       ],
-      "recent_activity_score": 4.52,
+      "recent_activity_score": 5.65,
       "rank": 135
     },
     {

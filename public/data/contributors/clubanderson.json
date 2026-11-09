@@ -1,15 +1,15 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-09T14:12:09.643Z",
+  "generated_at": "2026-11-09T22:10:44.487Z",
   "total_issues_opened": 643,
   "total_prs_opened": 2846,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6357950,
+  "total_points": 6358350,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 25.8,
+    "avg_per_week": 25.5,
     "avg_per_day": 7.73,
     "by_day_of_week": [
       326,
@@ -235,8 +235,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 1
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "v3, vllm, maxdecompressedfilesize",
@@ -391,8 +391,8 @@
       "repos": [
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "probe, deny, checker",
@@ -906,6 +906,12 @@
         "url": "https://github.com/kubestellar/console-kb/pull/3909",
         "repo": "console-kb",
         "topic_match": "jscpd, baseline, ratchet"
+      },
+      {
+        "title": "🐛 fix(ci): pin Link Checker Copilot model so it runs without the agent sandbox",
+        "url": "https://github.com/kubestellar/docs/pull/7588",
+        "repo": "docs",
+        "topic_match": "hive, redirect, doc"
       }
     ],
     "stretch": [
