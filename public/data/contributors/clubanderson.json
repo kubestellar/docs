@@ -1,18 +1,18 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-09T02:15:13.337Z",
+  "generated_at": "2026-11-09T06:20:51.579Z",
   "total_issues_opened": 643,
-  "total_prs_opened": 2843,
+  "total_prs_opened": 2845,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6356850,
+  "total_points": 6357750,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
     "avg_per_week": 25.8,
-    "avg_per_day": 7.74,
+    "avg_per_day": 7.72,
     "by_day_of_week": [
-      323,
+      325,
       596,
       766,
       563,
@@ -26,8 +26,8 @@
       93,
       55,
       38,
-      124,
-      1549,
+      125,
+      1550,
       284,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 45,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-11-08T05:14:32.000Z"
+    "last_issue_at": "2026-11-09T06:07:15.000Z"
   },
   "topics": [
     {
@@ -69,17 +69,17 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 53,
+      "issue_count": 54,
       "recent_issue": {
-        "title": "📖 Update kubestellar-mcp docs to v0.9.22",
-        "url": "https://github.com/kubestellar/docs/pull/7578",
-        "created_at": "2026-11-08T05:14:32Z"
+        "title": "📖 Sync console docs versions",
+        "url": "https://github.com/kubestellar/docs/pull/7584",
+        "created_at": "2026-11-09T05:21:44Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 53
+      "closed_count": 54
     },
     {
       "name": "dragonflydb, structure, pfcount",
@@ -94,34 +94,6 @@
       ],
       "open_count": 0,
       "closed_count": 7
-    },
-    {
-      "name": "hive, doc, redirect",
-      "issue_count": 5,
-      "recent_issue": {
-        "title": "🌱 Retire /live/hive and point the Hive dashboard links at hivecommons",
-        "url": "https://github.com/kubestellar/docs/pull/6838",
-        "created_at": "2026-09-09T18:17:43Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 5
-    },
-    {
-      "name": "n8n, notion, node",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "🌱 n8n: Bearer Authentication Not Working with HTTP Request Node Pagination",
-        "url": "https://github.com/kubestellar/console-kb/pull/3892",
-        "created_at": "2026-11-01T06:27:23Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 4
     },
     {
       "name": "registry, warning, qa",
@@ -153,6 +125,20 @@
       "closed_count": 4
     },
     {
+      "name": "hive, redirect, doc",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "🌱 Retire /live/hive and point the Hive dashboard links at hivecommons",
+        "url": "https://github.com/kubestellar/docs/pull/6838",
+        "created_at": "2026-09-09T18:17:43Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 4
+    },
+    {
       "name": "openyurt, fetchpods, authfetch",
       "issue_count": 3,
       "recent_issue": {
@@ -174,6 +160,20 @@
         "title": "🌱 keycloak: CIMD: authorization request rejected when Client ID Metadata Document contains",
         "url": "https://github.com/kubestellar/console-kb/pull/3895",
         "created_at": "2026-11-03T06:07:20Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "n8n, notion, node",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "🌱 n8n: Bearer Authentication Not Working with HTTP Request Node Pagination",
+        "url": "https://github.com/kubestellar/console-kb/pull/3892",
+        "created_at": "2026-11-01T06:27:23Z"
       },
       "repos": [
         "console-kb"
@@ -365,6 +365,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "falco, 0.42.1, random",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 falco: Falco 0.42.1 random memory usage spikes",
+        "url": "https://github.com/kubestellar/console-kb/pull/3910",
+        "created_at": "2026-11-09T06:07:15Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "way, compliance, search",
@@ -974,7 +988,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 8
+      "issue_count": 10
     }
   ],
   "repo_breakdown": [
@@ -983,7 +997,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2116,
+      "prs_opened": 2117,
       "prs_merged": 1781
     },
     {
@@ -991,8 +1005,8 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 187,
-      "prs_opened": 631,
-      "prs_merged": 588
+      "prs_opened": 632,
+      "prs_merged": 589
     },
     {
       "repo": "console-marketplace",
