@@ -63,7 +63,7 @@ export const PROJECTS: Record<ProjectId, ProjectConfig> = {
     id: "console",
     name: "Console",
     basePath: "console",
-    currentVersion: "0.3.42",
+    currentVersion: "0.3.43",
     contentPath: "docs/content/console",
     navPath: "docs/content/console/nav.yaml",
     versions: CONSOLE_VERSIONS,
