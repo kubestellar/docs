@@ -1,16 +1,16 @@
 {
   "login": "Karibhou",
-  "generated_at": "2026-11-08T22:10:27.604Z",
+  "generated_at": "2026-11-09T02:15:13.645Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 3,
+  "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-  "total_points": 24600,
+  "total_points": 24800,
   "level": "Commander",
   "level_rank": 5,
   "rank": 17,
   "cadence": {
     "avg_per_week": 0.3,
-    "avg_per_day": 0.15,
+    "avg_per_day": 0.17,
     "by_day_of_week": [
       0,
       0,
@@ -18,7 +18,7 @@
       0,
       2,
       1,
-      0
+      1
     ],
     "by_hour_of_day": [
       0,
@@ -44,15 +44,29 @@
       0,
       0,
       0,
-      0
+      1
     ],
     "current_streak_weeks": 1,
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
     "first_issue_at": "2026-10-16T18:32:00.000Z",
-    "last_issue_at": "2026-11-06T04:02:16.000Z"
+    "last_issue_at": "2026-11-08T23:18:28.000Z"
   },
   "topics": [
+    {
+      "name": "gate, hive, drops",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 ci: enforce jscpd duplication ratchet gate",
+        "url": "https://github.com/kubestellar/console-kb/pull/3909",
+        "created_at": "2026-11-08T23:18:28Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
+    },
     {
       "name": "case, import, dry",
       "issue_count": 1,
@@ -178,7 +192,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 1
+      "issue_count": 2
     }
   ],
   "repo_breakdown": [
@@ -187,7 +201,7 @@
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,
-      "prs_opened": 3,
+      "prs_opened": 4,
       "prs_merged": 3
     }
   ]
