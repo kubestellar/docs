@@ -7,6 +7,7 @@ import { spawnSync } from 'node:child_process';
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { evaluateRatchet } from './jscpd-ratchet-helpers.mjs';
 
 const baselinePath = 'jscpd-baseline.json';
 const baseline = JSON.parse(readFileSync(baselinePath, 'utf8'));
@@ -23,13 +24,11 @@ try {
   const report = JSON.parse(readFileSync(join(outDir, 'jscpd-report.json'), 'utf8'));
   const clones = report.statistics.total.clones;
 
-  console.log(`\njscpd ratchet: ${clones} clone(s) found, baseline ${baseline.clones}`);
-  if (clones > baseline.clones) {
-    console.error(`::error::Duplication increased: ${clones} clones > baseline ${baseline.clones}. Remove the new duplication (see clones above).`);
+  const result = evaluateRatchet(clones, baseline.clones);
+  for (const line of result.logLines) console.log(line);
+  if (!result.ok) {
+    console.error(result.errorLine);
     process.exit(1);
-  }
-  if (clones < baseline.clones) {
-    console.log(`::notice::Duplication decreased; lower "clones" in ${baselinePath} to ${clones} in this PR to ratchet.`);
   }
 } finally {
   rmSync(outDir, { recursive: true, force: true });
