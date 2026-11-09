@@ -33,6 +33,15 @@ features:
 sandbox:
   agent: false
 
+# Pin a concrete model id (kubestellar/docs#7568). With the agent sandbox
+# disabled there is no AWF /reflect model catalog, so the Copilot harness
+# cannot resolve the default "auto" alias and exits before starting the
+# agent. A concrete id from the bundled catalog passes through unresolved.
+# claude-sonnet-5.5 is what "auto" resolves to in the sandboxed Typo Checker.
+engine:
+  id: copilot
+  model: claude-sonnet-5.5
+
 network:
   # Kept for safe-outputs content sanitization: URLs outside this allowlist
   # are rewritten to "(redacted)" in the created issue, which would destroy
