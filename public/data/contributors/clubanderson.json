@@ -1,19 +1,19 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-10T02:14:32.031Z",
+  "generated_at": "2026-11-10T06:15:57.617Z",
   "total_issues_opened": 643,
-  "total_prs_opened": 2846,
+  "total_prs_opened": 2847,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6358450,
+  "total_points": 6358650,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
     "avg_per_week": 25.4,
-    "avg_per_day": 7.73,
+    "avg_per_day": 7.71,
     "by_day_of_week": [
       326,
-      596,
+      597,
       766,
       563,
       543,
@@ -27,7 +27,7 @@
       55,
       38,
       125,
-      1551,
+      1552,
       284,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 45,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-11-09T06:21:02.000Z"
+    "last_issue_at": "2026-11-10T06:06:59.000Z"
   },
   "topics": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 53,
+      "issue_count": 52,
       "recent_issue": {
         "title": "📖 Sync console docs versions",
         "url": "https://github.com/kubestellar/docs/pull/7584",
@@ -79,7 +79,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 53
+      "closed_count": 52
     },
     {
       "name": "dragonflydb, structure, pfcount",
@@ -137,6 +137,20 @@
       ],
       "open_count": 0,
       "closed_count": 4
+    },
+    {
+      "name": "opa, trace, policy",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "🌱 open-policy-agent-opa-: Add support for TLS certificate rotation in OPA's HTTP server",
+        "url": "https://github.com/kubestellar/console-kb/pull/3922",
+        "created_at": "2026-11-10T06:06:59Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 2
     },
     {
       "name": "openyurt, fetchpods, authfetch",
@@ -318,20 +332,6 @@
       },
       "repos": [
         "docs",
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "trace, opa, policy",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🌱 open-policy-agent-opa-: High evaluation time when referencing huge array",
-        "url": "https://github.com/kubestellar/console-kb/pull/3592",
-        "created_at": "2026-09-29T06:20:01Z"
-      },
-      "repos": [
         "console-kb"
       ],
       "open_count": 0,
@@ -900,20 +900,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "🌱 ci: enforce jscpd duplication ratchet gate",
-        "url": "https://github.com/kubestellar/console-kb/pull/3909",
-        "repo": "console-kb",
-        "topic_match": "jscpd, baseline, ratchet"
-      },
-      {
-        "title": "🐛 fix(ci): pin Link Checker Copilot model so it runs without the agent sandbox",
-        "url": "https://github.com/kubestellar/docs/pull/7588",
-        "repo": "docs",
-        "topic_match": "hive, redirect, doc"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Charts & Visualizations",
@@ -994,7 +981,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 11
+      "issue_count": 12
     }
   ],
   "repo_breakdown": [
@@ -1003,7 +990,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2118,
+      "prs_opened": 2119,
       "prs_merged": 1781
     },
     {

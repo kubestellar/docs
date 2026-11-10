@@ -1,10 +1,10 @@
 {
   "login": "Karibhou",
-  "generated_at": "2026-11-10T02:14:32.325Z",
+  "generated_at": "2026-11-10T06:15:57.915Z",
   "total_issues_opened": 0,
   "total_prs_opened": 9,
   "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-  "total_points": 26000,
+  "total_points": 30000,
   "level": "Commander",
   "level_rank": 5,
   "rank": 16,
@@ -66,8 +66,8 @@
         "console-marketplace",
         "docs"
       ],
-      "open_count": 5,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 5
     },
     {
       "name": "crash, id, string",
@@ -218,7 +218,7 @@
       "feature_issues": 0,
       "other_issues": 0,
       "prs_opened": 6,
-      "prs_merged": 3
+      "prs_merged": 5
     },
     {
       "repo": "console-marketplace",
@@ -226,7 +226,7 @@
       "feature_issues": 0,
       "other_issues": 0,
       "prs_opened": 2,
-      "prs_merged": 0
+      "prs_merged": 1
     },
     {
       "repo": "docs",
@@ -234,7 +234,7 @@
       "feature_issues": 0,
       "other_issues": 0,
       "prs_opened": 1,
-      "prs_merged": 0
+      "prs_merged": 1
     }
   ]
 }
