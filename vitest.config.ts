@@ -48,12 +48,16 @@ export default defineConfig({
       ],
       thresholds: {
         // Global floors — kept a couple of points below actual totals
-        // (~40 L / 39 S / 29 F / 29 B on 2026-09-11) so day-to-day churn
-        // doesn't false-fire while a broad regression still trips CI.
-        lines: 38,
-        statements: 37,
-        functions: 27,
-        branches: 27,
+        // (~98.45 L / 97.57 S / 97.87 F / 92.78 B on 2026-11-10) so day-to-day
+        // churn doesn't false-fire while a broad regression still trips CI.
+        // Previous floors (38/37/27/27, set when actual was ~40/39/29/29 on
+        // 2026-09-11) had drifted ~55-60pp behind actual as overall suite
+        // coverage grew, leaving a wide silent-regression window across every
+        // file not already pinned by a per-glob floor below.
+        lines: 96,
+        statements: 95,
+        functions: 95,
+        branches: 90,
         // Per-glob floors ratchet in the paths that are actually
         // well-covered today. Without these, a file like src/lib/url.ts
         // could regress from 100% → 15% and the global gate would still
