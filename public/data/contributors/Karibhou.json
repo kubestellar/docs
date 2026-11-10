@@ -1,10 +1,10 @@
 {
   "login": "Karibhou",
-  "generated_at": "2026-11-10T18:11:55.954Z",
+  "generated_at": "2026-11-10T22:11:44.146Z",
   "total_issues_opened": 0,
   "total_prs_opened": 9,
   "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-  "total_points": 30000,
+  "total_points": 30500,
   "level": "Commander",
   "level_rank": 5,
   "rank": 16,
@@ -80,8 +80,8 @@
       "repos": [
         "console-marketplace"
       ],
-      "open_count": 1,
-      "closed_count": 0
+      "open_count": 0,
+      "closed_count": 1
     },
     {
       "name": "case, import, dry",
@@ -226,7 +226,7 @@
       "feature_issues": 0,
       "other_issues": 0,
       "prs_opened": 2,
-      "prs_merged": 1
+      "prs_merged": 2
     },
     {
       "repo": "docs",
