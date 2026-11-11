@@ -31,6 +31,7 @@ jobs:
   verify:
     if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       checks: write
       pull-requests: read

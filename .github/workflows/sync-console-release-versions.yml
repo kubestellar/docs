@@ -17,6 +17,7 @@ jobs:
       # issues:write for the failure alert step (GITHUB_TOKEN)
       issues: write
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     env:
       GH_TOKEN: ${{ secrets.WORKFLOW_SYNC_TOKEN }}
     steps:

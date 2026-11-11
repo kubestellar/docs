@@ -34,6 +34,7 @@ jobs:
   check-healthz:
     name: Check production readiness
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
       issues: write

@@ -27,6 +27,7 @@ jobs:
       (github.event.state == 'failure' || github.event.state == 'success') &&
       contains(github.event.context, 'netlify')
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       pull-requests: write
       issues: write
@@ -229,6 +230,7 @@ jobs:
     name: Check Netlify deploy freshness
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: read
       issues: write
