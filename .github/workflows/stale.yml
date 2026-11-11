@@ -19,6 +19,7 @@ jobs:
     needs: [stale]
     if: failure()
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       issues: write
     steps:

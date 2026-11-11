@@ -11,6 +11,7 @@ permissions: read-all  # default read; writes scoped to job below
 jobs:
   collect-pr-info:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Save PR number
         run: |

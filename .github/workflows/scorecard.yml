@@ -22,6 +22,7 @@ jobs:
     needs: [analysis]
     if: failure() && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       issues: write
     steps:
