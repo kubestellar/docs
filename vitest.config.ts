@@ -88,6 +88,20 @@ export default defineConfig({
         'src/app/robots.ts': {
           lines: 95, statements: 95, functions: 95, branches: 0,
         },
+        // page-map.ts drives every /docs/* route's nav tree and routeMap
+        // fallback resolution — the same class of silent-regression risk the
+        // per-glob floors above guard against, pinned 2-5pp under observed
+        // coverage (88.34 S / 75.36 B / 92.3 F / 88.88 L on 2026-11-11).
+        'src/app/docs/page-map.ts': {
+          lines: 86, statements: 86, functions: 90, branches: 72,
+        },
+        // Sidebar/TOC/collapse-state components had no per-glob floor despite
+        // sitting 5-15pp under the global thresholds, pinned 2-5pp under
+        // observed coverage (95.73 S / 90.45 B / 96.03 F / 96.75 L, excluding
+        // the already-100%-covered src/components/docs/navbar/** subtree).
+        'src/components/docs/**': {
+          lines: 94, statements: 93, functions: 93, branches: 87,
+        },
         'src/components/navbar/**': {
           lines: 95, statements: 95, functions: 90, branches: 80,
         },
