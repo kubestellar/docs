@@ -22,7 +22,6 @@ if [ -z "$VERSION" ] || [ -z "$SOURCE_BRANCH" ]; then
     exit 1
 fi
 
-DOCS_REPO_DIR=$(pwd)
 TEMP_DIR="/tmp/ks-migrate-$$"
 
 echo "=== Migrating documentation for version $VERSION from $SOURCE_BRANCH ==="

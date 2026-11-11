@@ -294,12 +294,14 @@ jobs:
             exit 0
           fi
 
-          echo "stale=true" >> "$GITHUB_OUTPUT"
-          echo "head_sha=${HEAD_SHA}" >> "$GITHUB_OUTPUT"
-          echo "latest_sha=${LATEST_SHA}" >> "$GITHUB_OUTPUT"
-          echo "deploy_id=${DEPLOY_ID}" >> "$GITHUB_OUTPUT"
-          echo "admin_url=${ADMIN_URL}" >> "$GITHUB_OUTPUT"
-          echo "created_at=${CREATED_AT}" >> "$GITHUB_OUTPUT"
+          {
+            echo "stale=true"
+            echo "head_sha=${HEAD_SHA}"
+            echo "latest_sha=${LATEST_SHA}"
+            echo "deploy_id=${DEPLOY_ID}"
+            echo "admin_url=${ADMIN_URL}"
+            echo "created_at=${CREATED_AT}"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Open or update issue for stale deploy
         if: steps.freshness.outputs.stale == 'true'

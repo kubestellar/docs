@@ -43,12 +43,10 @@ jobs:
           for maintainer in "${MAINTAINERS[@]}"; do
             echo "📧 Triggering audit for: $maintainer"
             
-            gh workflow run maintainer-metrics.lock.yml \
+            if gh workflow run maintainer-metrics.lock.yml \
               --repo ${{ github.repository }} \
               --ref ${{ github.ref_name }} \
-              --field maintainer="$maintainer"
-            
-            if [ $? -eq 0 ]; then
+              --field maintainer="$maintainer"; then
               echo "Successfully triggered audit for $maintainer" 
             else
               echo "❌ Failed to trigger audit for $maintainer"
