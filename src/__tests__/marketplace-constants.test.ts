@@ -61,4 +61,24 @@ describe('marketplace/lib/constants', () => {
 
     expect(result).toBe(false)
   })
+
+  it('clears the abort timer and resolves false when the abort fires before the fetch settles', async () => {
+    vi.useFakeTimers()
+    const fetchMock = vi.fn((_url: string, opts: { signal: AbortSignal }) => {
+      return new Promise((_resolve, reject) => {
+        opts.signal.addEventListener('abort', () => reject(new DOMException('aborted', 'AbortError')))
+      })
+    })
+    vi.stubGlobal('fetch', fetchMock)
+
+    const { detectConsole, CONSOLE_DETECT_TIMEOUT } = await import(
+      '@/app/[locale]/marketplace/lib/constants'
+    )
+    const pending = detectConsole()
+    await vi.advanceTimersByTimeAsync(CONSOLE_DETECT_TIMEOUT)
+    const result = await pending
+
+    expect(result).toBe(false)
+    vi.useRealTimers()
+  })
 })
