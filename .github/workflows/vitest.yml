@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "src/**"
+      - "scripts/**"
       - "package.json"
       - "package-lock.json"
       - "vitest.config.ts"
@@ -14,6 +15,7 @@ on:
     branches: [main]
     paths:
       - "src/**"
+      - "scripts/**"
       - "package.json"
       - "package-lock.json"
       - "vitest.config.ts"
