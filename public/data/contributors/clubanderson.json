@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-11T14:12:05.705Z",
+  "generated_at": "2026-11-11T18:12:04.318Z",
   "total_issues_opened": 643,
-  "total_prs_opened": 2849,
+  "total_prs_opened": 2851,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6360150,
+  "total_points": 6360750,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 25.3,
+    "avg_per_week": 25.4,
     "avg_per_day": 7.7,
     "by_day_of_week": [
       326,
       598,
-      767,
+      769,
       563,
       543,
       370,
@@ -36,7 +36,7 @@
       53,
       35,
       45,
-      183,
+      185,
       93,
       80,
       151,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 45,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-11-11T06:15:42.000Z"
+    "last_issue_at": "2026-11-11T15:05:27.000Z"
   },
   "topics": [
     {
@@ -96,6 +96,22 @@
       "closed_count": 7
     },
     {
+      "name": "filter, checkout, ci",
+      "issue_count": 5,
+      "recent_issue": {
+        "title": "🌱 ci: run vitest when scripts/ changes",
+        "url": "https://github.com/kubestellar/docs/pull/7610",
+        "created_at": "2026-11-11T15:05:27Z"
+      },
+      "repos": [
+        "docs",
+        "console-marketplace",
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 4
+    },
+    {
       "name": "registry, warning, qa",
       "issue_count": 4,
       "recent_issue": {
@@ -105,21 +121,6 @@
       },
       "repos": [
         "console-marketplace"
-      ],
-      "open_count": 0,
-      "closed_count": 4
-    },
-    {
-      "name": "checkout, ci, apply",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "✨ ci: add tsc --noEmit type-check job; render Skeleton/ClusterBadge props",
-        "url": "https://github.com/kubestellar/console-marketplace/pull/1022",
-        "created_at": "2026-10-26T00:25:37Z"
-      },
-      "repos": [
-        "console-marketplace",
-        "console-kb"
       ],
       "open_count": 0,
       "closed_count": 4
@@ -238,21 +239,7 @@
       "closed_count": 3
     },
     {
-      "name": "alertmanager, template, kv",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "🌱 alertmanager: Send subsequent notifications to a slack thread instead of channel",
-        "url": "https://github.com/kubestellar/console-kb/pull/3608",
-        "created_at": "2026-09-30T06:21:24Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "test, module, suite",
+      "name": "test, module, peer",
       "issue_count": 3,
       "recent_issue": {
         "title": "test: add dedicated unit tests for openyurt_status/fetch.ts",
@@ -265,6 +252,20 @@
       ],
       "open_count": 0,
       "closed_count": 3
+    },
+    {
+      "name": "gh, compiler, aw",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🌱 ci: give Maintainer Metrics Tracker a GH_TOKEN again",
+        "url": "https://github.com/kubestellar/docs/pull/7609",
+        "created_at": "2026-11-11T15:05:04Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 1
     },
     {
       "name": "headlamp, pop, oidc",
@@ -423,20 +424,6 @@
       "closed_count": 1
     },
     {
-      "name": "lock, blanket, untouched",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 ci: allow python3 in Link Checker bash allowlist",
-        "url": "https://github.com/kubestellar/docs/pull/7502",
-        "created_at": "2026-10-26T00:20:51Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "alias, rpc, generic",
       "issue_count": 1,
       "recent_issue": {
@@ -541,6 +528,20 @@
         "title": "🌱 kyverno: [Bug] [CLI] CRDs not loaded when specified in tests with ClusterResource",
         "url": "https://github.com/kubestellar/console-kb/pull/3636",
         "created_at": "2026-10-02T06:21:51Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "thread, notification, channel",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 alertmanager: Send subsequent notifications to a slack thread instead of channel",
+        "url": "https://github.com/kubestellar/console-kb/pull/3608",
+        "created_at": "2026-09-30T06:21:24Z"
       },
       "repos": [
         "console-kb"
@@ -953,7 +954,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 14
+      "issue_count": 16
     }
   ],
   "repo_breakdown": [
@@ -970,7 +971,7 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 187,
-      "prs_opened": 632,
+      "prs_opened": 634,
       "prs_merged": 589
     },
     {

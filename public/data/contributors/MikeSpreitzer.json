@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-11-11T14:12:06.078Z",
+  "generated_at": "2026-11-11T18:12:04.634Z",
   "total_issues_opened": 43,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
@@ -279,7 +279,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "🌱 ci: give Maintainer Metrics Tracker a GH_TOKEN again",
+        "url": "https://github.com/kubestellar/docs/pull/7609",
+        "repo": "docs",
+        "topic_match": "gh, aw, @mymac"
+      }
+    ],
     "stretch": [
       {
         "name": "Networking & Services",
