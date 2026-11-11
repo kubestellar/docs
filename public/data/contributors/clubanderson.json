@@ -1,10 +1,10 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-11T18:12:04.318Z",
+  "generated_at": "2026-11-11T22:11:22.366Z",
   "total_issues_opened": 643,
   "total_prs_opened": 2851,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6360750,
+  "total_points": 6361350,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
@@ -108,8 +108,8 @@
         "console-marketplace",
         "console-kb"
       ],
-      "open_count": 1,
-      "closed_count": 4
+      "open_count": 0,
+      "closed_count": 5
     },
     {
       "name": "registry, warning, qa",
@@ -972,7 +972,7 @@
       "feature_issues": 0,
       "other_issues": 187,
       "prs_opened": 634,
-      "prs_merged": 589
+      "prs_merged": 590
     },
     {
       "repo": "console-marketplace",
