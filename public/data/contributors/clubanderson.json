@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-11T06:16:37.396Z",
+  "generated_at": "2026-11-11T10:11:49.407Z",
   "total_issues_opened": 643,
-  "total_prs_opened": 2848,
+  "total_prs_opened": 2849,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6359350,
+  "total_points": 6360050,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 25.2,
-    "avg_per_day": 7.71,
+    "avg_per_week": 25.3,
+    "avg_per_day": 7.7,
     "by_day_of_week": [
       326,
       598,
-      766,
+      767,
       563,
       543,
       370,
@@ -27,7 +27,7 @@
       55,
       38,
       125,
-      1553,
+      1554,
       284,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 45,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-11-10T06:26:03.000Z"
+    "last_issue_at": "2026-11-11T06:15:42.000Z"
   },
   "topics": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 52,
+      "issue_count": 51,
       "recent_issue": {
         "title": "📖 Sync console docs versions",
         "url": "https://github.com/kubestellar/docs/pull/7584",
@@ -79,7 +79,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 52
+      "closed_count": 51
     },
     {
       "name": "dragonflydb, structure, pfcount",
@@ -159,6 +159,20 @@
         "title": "🌱 open-policy-agent-opa-: Add support for TLS certificate rotation in OPA's HTTP server",
         "url": "https://github.com/kubestellar/console-kb/pull/3922",
         "created_at": "2026-11-10T06:06:59Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
+      "name": "compliance, oidc, feat",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "🌱 security-compliance: [Feat]: Option to skip upstream sync for tags already present locally with",
+        "url": "https://github.com/kubestellar/console-kb/pull/3911",
+        "created_at": "2026-11-09T06:21:02Z"
       },
       "repos": [
         "console-kb"
@@ -253,12 +267,12 @@
       "closed_count": 3
     },
     {
-      "name": "compliance, feat, way",
+      "name": "headlamp, pop, oidc",
       "issue_count": 2,
       "recent_issue": {
-        "title": "🌱 security-compliance: [Feat]: Option to skip upstream sync for tags already present locally with",
-        "url": "https://github.com/kubestellar/console-kb/pull/3911",
-        "created_at": "2026-11-09T06:21:02Z"
+        "title": "🌱 headlamp: Distributed Headlamp settings",
+        "url": "https://github.com/kubestellar/console-kb/pull/3931",
+        "created_at": "2026-11-11T06:15:42Z"
       },
       "repos": [
         "console-kb"
@@ -376,20 +390,6 @@
       "repos": [
         "console-kb",
         "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "oidc, headlamp, pop",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🌱 security-compliance: [Bug]: Failed to use openid.oidc with bearer.oidc authorization being configured",
-        "url": "https://github.com/kubestellar/console-kb/pull/3345",
-        "created_at": "2026-09-12T06:32:25Z"
-      },
-      "repos": [
-        "console-kb"
       ],
       "open_count": 0,
       "closed_count": 2
@@ -953,7 +953,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 13
+      "issue_count": 14
     }
   ],
   "repo_breakdown": [
@@ -962,8 +962,8 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2120,
-      "prs_merged": 1782
+      "prs_opened": 2121,
+      "prs_merged": 1783
     },
     {
       "repo": "docs",
