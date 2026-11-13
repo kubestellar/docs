@@ -1,22 +1,22 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-13T14:12:03.319Z",
+  "generated_at": "2026-11-13T18:12:30.276Z",
   "total_issues_opened": 643,
-  "total_prs_opened": 2852,
+  "total_prs_opened": 2853,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6362350,
+  "total_points": 6362550,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 24.9,
-    "avg_per_day": 7.68,
+    "avg_per_week": 25,
+    "avg_per_day": 7.67,
     "by_day_of_week": [
       326,
       598,
       769,
       564,
-      543,
+      544,
       370,
       325
     ],
@@ -35,7 +35,7 @@
       18,
       53,
       35,
-      45,
+      46,
       186,
       93,
       80,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 46,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-11-12T15:15:09.000Z"
+    "last_issue_at": "2026-11-13T14:55:14.000Z"
   },
   "topics": [
     {
@@ -69,16 +69,16 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 52,
+      "issue_count": 53,
       "recent_issue": {
-        "title": "📖 Update kubeflex docs to v0.9.7",
-        "url": "https://github.com/kubestellar/docs/pull/7616",
-        "created_at": "2026-11-12T15:15:09Z"
+        "title": "📖 Update kubestellar docs to v0.30.2",
+        "url": "https://github.com/kubestellar/docs/pull/7617",
+        "created_at": "2026-11-13T14:55:14Z"
       },
       "repos": [
         "docs"
       ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 52
     },
     {
@@ -856,20 +856,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "router, timeout, traefik",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 traefik: Setting timeout per service/router",
-        "url": "https://github.com/kubestellar/console-kb/pull/2996",
-        "created_at": "2026-08-21T06:37:47Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -954,7 +940,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 17
+      "issue_count": 18
     }
   ],
   "repo_breakdown": [
@@ -971,7 +957,7 @@
       "bug_issues": 133,
       "feature_issues": 0,
       "other_issues": 187,
-      "prs_opened": 635,
+      "prs_opened": 636,
       "prs_merged": 591
     },
     {
