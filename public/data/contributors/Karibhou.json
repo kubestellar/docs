@@ -1,20 +1,20 @@
 {
   "login": "Karibhou",
-  "generated_at": "2026-11-13T06:16:20.540Z",
+  "generated_at": "2026-11-13T10:11:55.358Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 8,
+  "total_prs_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
   "total_points": 33600,
   "level": "Commander",
   "level_rank": 5,
   "rank": 16,
   "cadence": {
-    "avg_per_week": 0.7,
-    "avg_per_day": 0.33,
+    "avg_per_week": 0.8,
+    "avg_per_day": 0.38,
     "by_day_of_week": [
-      4,
+      5,
       0,
-      0,
+      1,
       0,
       2,
       1,
@@ -36,26 +36,26 @@
       0,
       0,
       0,
-      1,
+      2,
       1,
       1,
       1,
       0,
       0,
       1,
-      0,
+      1,
       1
     ],
     "current_streak_weeks": 1,
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
     "first_issue_at": "2026-10-16T18:32:00.000Z",
-    "last_issue_at": "2026-11-09T21:22:06.000Z"
+    "last_issue_at": "2026-11-11T22:34:07.000Z"
   },
   "topics": [
     {
       "name": "omp, hive, 🐝",
-      "issue_count": 4,
+      "issue_count": 5,
       "recent_issue": {
         "title": "ci: rebuild mission index on push retry instead of rebasing stale commit",
         "url": "https://github.com/kubestellar/console-kb/pull/3920",
@@ -63,10 +63,25 @@
       },
       "repos": [
         "console-kb",
-        "console-marketplace"
+        "console-marketplace",
+        "docs"
       ],
       "open_count": 0,
-      "closed_count": 4
+      "closed_count": 5
+    },
+    {
+      "name": "shellcheck, actionlint, script",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "ci: lint workflows and shell scripts",
+        "url": "https://github.com/kubestellar/docs/pull/7612",
+        "created_at": "2026-11-11T22:34:07Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "crash, id, string",
@@ -83,7 +98,7 @@
       "closed_count": 1
     },
     {
-      "name": "case, import, reuse",
+      "name": "case, import, dry",
       "issue_count": 1,
       "recent_issue": {
         "title": "test: reuse mission executor module across dry-run cases",
@@ -97,7 +112,7 @@
       "closed_count": 1
     },
     {
-      "name": "suite, parser, test",
+      "name": "parser, suite, yaml",
       "issue_count": 1,
       "recent_issue": {
         "title": "refactor(scripts): use yaml for knowledge source config",
@@ -111,7 +126,7 @@
       "closed_count": 1
     },
     {
-      "name": "gate, skip, warning",
+      "name": "gate, skip, generation",
       "issue_count": 1,
       "recent_issue": {
         "title": "🐛 fix(ci): clarify platform LLM skip warning",
@@ -207,7 +222,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 6
+      "issue_count": 8
     }
   ],
   "repo_breakdown": [
@@ -226,6 +241,14 @@
       "other_issues": 0,
       "prs_opened": 2,
       "prs_merged": 2
+    },
+    {
+      "repo": "docs",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 2,
+      "prs_merged": 1
     }
   ]
 }
