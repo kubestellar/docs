@@ -3,8 +3,8 @@ import type { VersionInfo } from "../types"
 // KubeStellar versions (existing)
 export const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
   latest: {
-    label: "v0.30.1 (Latest)",
-    branch: "docs/0.30.1",
+    label: "v0.30.2 (Latest)",
+    branch: "docs/0.30.2",
     isDefault: true,
   },
   main: {
@@ -12,6 +12,11 @@ export const KUBESTELLAR_VERSIONS: Record<string, VersionInfo> = {
     branch: "main",
     isDefault: false,
     isDev: true,
+  },
+  "0.30.1": {
+    label: "v0.30.1",
+    branch: "docs/0.30.1",
+    isDefault: false,
   },
   "0.30.0": {
     label: "v0.30.0",
