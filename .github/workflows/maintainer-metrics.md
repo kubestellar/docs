@@ -30,6 +30,16 @@ jobs:
   fetch-data:
     name: Fetch GitHub Data
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
+    # Job-level on purpose: the gh-aw compiler replaces a run step's env block
+    # with its own GH_AW_* variables, which silently dropped GH_TOKEN and made
+    # every `gh search` fail with 401 (#7569). GH_AUDIT_TOKEN (org-wide PAT)
+    # is used when set; otherwise the workflow token covers public repos.
+    env:
+      GH_TOKEN: ${{ secrets.GH_AUDIT_TOKEN || github.token }}
     outputs:
       data-ready: ${{ steps.fetch.outputs.ready }}
     steps:
@@ -41,8 +51,6 @@ jobs:
 
       - name: Fetch all GitHub data
         id: fetch
-        env:
-          GH_TOKEN: ${{ secrets.GH_AUDIT_TOKEN }}
         run: |
           # Fetch data for selected maintainer
           username="${{ github.event.inputs.maintainer }}"
