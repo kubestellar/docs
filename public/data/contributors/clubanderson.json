@@ -1,23 +1,23 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-14T02:14:19.173Z",
+  "generated_at": "2026-11-14T06:15:15.015Z",
   "total_issues_opened": 643,
-  "total_prs_opened": 2853,
+  "total_prs_opened": 2854,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6362850,
+  "total_points": 6363050,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
     "avg_per_week": 25,
-    "avg_per_day": 7.67,
+    "avg_per_day": 7.66,
     "by_day_of_week": [
       326,
       598,
       769,
       564,
       544,
-      370,
+      371,
       325
     ],
     "by_hour_of_day": [
@@ -27,7 +27,7 @@
       55,
       38,
       125,
-      1554,
+      1555,
       284,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 46,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-11-13T14:55:14.000Z"
+    "last_issue_at": "2026-11-14T06:09:13.000Z"
   },
   "topics": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 53,
+      "issue_count": 52,
       "recent_issue": {
         "title": "📖 Update kubestellar docs to v0.30.2",
         "url": "https://github.com/kubestellar/docs/pull/7617",
@@ -79,7 +79,7 @@
         "docs"
       ],
       "open_count": 1,
-      "closed_count": 52
+      "closed_count": 51
     },
     {
       "name": "dragonflydb, structure, pfcount",
@@ -138,6 +138,20 @@
       ],
       "open_count": 0,
       "closed_count": 4
+    },
+    {
+      "name": "kyverno, v3, crds",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "🌱 kyverno: [Bug] Argo CD v3.3.0 + Kyverno Helm chart 3.7.0: CRDs remain OutOfSync after",
+        "url": "https://github.com/kubestellar/console-kb/pull/3936",
+        "created_at": "2026-11-14T06:09:13Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 2
     },
     {
       "name": "litellm, opencode, chat",
@@ -268,20 +282,6 @@
       "closed_count": 1
     },
     {
-      "name": "v3, vllm, maxdecompressedfilesize",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🌱 vllm: [Feature]: Any plans to add nvidia/parakeet-tdt-0.6b-v3 to vllm?",
-        "url": "https://github.com/kubestellar/console-kb/pull/3896",
-        "created_at": "2026-11-03T06:24:27Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
       "name": "pipeline, manual, prune",
       "issue_count": 2,
       "recent_issue": {
@@ -410,6 +410,20 @@
       "closed_count": 1
     },
     {
+      "name": "vllm, parakeet, tdt",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 vllm: [Feature]: Any plans to add nvidia/parakeet-tdt-0.6b-v3 to vllm?",
+        "url": "https://github.com/kubestellar/console-kb/pull/3896",
+        "created_at": "2026-11-03T06:24:27Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
       "name": "probe, deny, checker",
       "issue_count": 1,
       "recent_issue": {
@@ -514,20 +528,6 @@
         "title": "🌱 coredns: Panic in route53 plugin fails to release lock and stops responding.",
         "url": "https://github.com/kubestellar/console-kb/pull/3670",
         "created_at": "2026-10-04T07:45:55Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "clusterresource, crds, specify",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🌱 kyverno: [Bug] [CLI] CRDs not loaded when specified in tests with ClusterResource",
-        "url": "https://github.com/kubestellar/console-kb/pull/3636",
-        "created_at": "2026-10-02T06:21:51Z"
       },
       "repos": [
         "console-kb"
@@ -862,16 +862,16 @@
     "deepen": [],
     "stretch": [
       {
-        "name": "Charts & Visualizations",
-        "path": "web/src/components/charts/, web/src/components/drilldown/",
-        "description": "Data visualization components, chart library, drill-down views",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
       },
       {
         "name": "Cost Management",
@@ -940,7 +940,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 18
+      "issue_count": 19
     }
   ],
   "repo_breakdown": [
@@ -949,7 +949,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2121,
+      "prs_opened": 2122,
       "prs_merged": 1783
     },
     {
