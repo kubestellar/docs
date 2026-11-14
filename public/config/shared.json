@@ -3,8 +3,8 @@
   "versions": {
     "kubestellar": {
       "latest": {
-        "label": "v0.30.1 (Latest)",
-        "branch": "docs/0.30.1",
+        "label": "v0.30.2 (Latest)",
+        "branch": "docs/0.30.2",
         "isDefault": true
       },
       "main": {
@@ -97,6 +97,11 @@
       "0.30.0": {
         "label": "v0.30.0",
         "branch": "docs/0.30.0",
+        "isDefault": false
+      },
+      "0.30.1": {
+        "label": "v0.30.1",
+        "branch": "docs/0.30.1",
         "isDefault": false
       }
     },
@@ -520,7 +525,7 @@
     "kubestellar": {
       "name": "KubeStellar",
       "basePath": "",
-      "currentVersion": "0.30.1"
+      "currentVersion": "0.30.2"
     },
     "a2a": {
       "name": "A2A",
@@ -586,11 +591,11 @@
   ],
   "editBaseUrls": {
     "console": "https://github.com/kubestellar/docs/edit/main/docs/content/console",
-    "kubestellar": "https://github.com/kubestellar/docs/edit/docs/0.30.1/docs/content",
+    "kubestellar": "https://github.com/kubestellar/docs/edit/docs/0.30.2/docs/content",
     "a2a": "https://github.com/kubestellar/a2a/edit/main/docs",
     "kubeflex": "https://github.com/kubestellar/kubeflex/edit/main/docs",
     "multi-plugin": "https://github.com/kubestellar/docs/edit/main/docs/content/multi-plugin",
     "kubestellar-mcp": "https://github.com/kubestellar/kubestellar-mcp/edit/main/docs"
   },
-  "updatedAt": "2026-11-12T15:15:05.146Z"
+  "updatedAt": "2026-11-13T14:55:11.602Z"
 }
