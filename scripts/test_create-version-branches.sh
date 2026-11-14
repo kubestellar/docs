@@ -93,7 +93,11 @@ assert_contains "1a banner"        "DRY RUN MODE"                      "$OUT"
 assert_contains "1b enumerates 28" "[DRY RUN] Would migrate version 0.28.0 from release-0.28.0" "$OUT"
 assert_contains "1c enumerates 21" "[DRY RUN] Would migrate version 0.21.0 from release-0.21.0" "$OUT"
 assert_contains "1d summary"       "Migration Summary"                 "$OUT"
-[ "$RC" -eq 0 ] && record_pass "1e rc=0" || record_fail "1e rc" "rc=$RC"
+if [ "$RC" -eq 0 ]; then
+  record_pass "1e rc=0"
+else
+  record_fail "1e rc" "rc=$RC"
+fi
 
 # Count enumerated versions in the STABLE_VERSIONS array and in OUT.
 EXPECTED_COUNT="$(grep -c '"[0-9][0-9.]*:release-' "$SCRIPT" || echo 0)"
@@ -185,7 +189,11 @@ OUT="$(cd "$d" && PATH="$d/bin:/usr/bin:/bin" bash scripts/create-version-branch
 RC=$?
 
 assert_contains "4a already-exists msg" "already exists, skipping" "$OUT"
-[ "$RC" -eq 0 ] && record_pass "4b rc=0" || record_fail "4b rc" "rc=$RC"
+if [ "$RC" -eq 0 ]; then
+  record_pass "4b rc=0"
+else
+  record_fail "4b rc" "rc=$RC"
+fi
 if [ ! -s "$MIGRATE_LOG" ]; then
   record_pass "4c migrate-version.sh not invoked when branch exists"
 else

@@ -53,14 +53,16 @@ jobs:
           set -e
 
           if [ "$CURL_EXIT" -ne 0 ]; then
-            echo "healthy=false" >> "$GITHUB_OUTPUT"
-            echo "unreachable=true" >> "$GITHUB_OUTPUT"
-            echo "detail=curl failed with exit code ${CURL_EXIT} (network/DNS/TLS failure reaching ${HEALTHZ_URL})" >> "$GITHUB_OUTPUT"
-          elif [ "$HTTP_CODE" != "200" ]; then
-            BODY=$(cat /tmp/healthz_body.json 2>/dev/null | head -c 500)
-            echo "healthy=false" >> "$GITHUB_OUTPUT"
-            echo "unreachable=false" >> "$GITHUB_OUTPUT"
             {
+              echo "healthy=false"
+              echo "unreachable=true"
+              echo "detail=curl failed with exit code ${CURL_EXIT} (network/DNS/TLS failure reaching ${HEALTHZ_URL})"
+            } >> "$GITHUB_OUTPUT"
+          elif [ "$HTTP_CODE" != "200" ]; then
+            BODY=$(head -c 500 /tmp/healthz_body.json 2>/dev/null)
+            {
+              echo "healthy=false"
+              echo "unreachable=false"
               echo "detail<<EOF"
               echo "HTTP ${HTTP_CODE} from ${HEALTHZ_URL}"
               echo "${BODY}"
