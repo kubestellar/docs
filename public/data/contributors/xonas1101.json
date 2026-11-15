@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-11-15T02:14:24.068Z",
+  "generated_at": "2026-11-15T06:15:32.855Z",
   "total_issues_opened": 14,
   "total_prs_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
@@ -130,6 +130,12 @@
       {
         "title": "📖 Update kubestellar docs to v0.30.2",
         "url": "https://github.com/kubestellar/docs/pull/7617",
+        "repo": "docs",
+        "topic_match": "easily, manage, site"
+      },
+      {
+        "title": "📖 Update kubestellar-mcp docs to v0.9.23",
+        "url": "https://github.com/kubestellar/docs/pull/7618",
         "repo": "docs",
         "topic_match": "easily, manage, site"
       }
