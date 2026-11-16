@@ -57,7 +57,7 @@
     "@types/react-dom": "^19.3.0",
     "@types/three": "^0.187.0",
     "@typescript-eslint/eslint-plugin": "^8.72.2",
-    "@typescript-eslint/parser": "^8.72.1",
+    "@typescript-eslint/parser": "^8.72.2",
     "@vitest/coverage-v8": "^5.1.0",
     "core-js": "^3.51.0",
     "eslint": "^10",
