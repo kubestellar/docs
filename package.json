@@ -74,7 +74,7 @@
     "tsx": "^4.23.15",
     "typescript": "^6",
     "vite": "^8.3.6",
-    "vitest": "^5.0.5",
+    "vitest": "^5.1.0",
     "wink-eng-lite-web-model": "^1.8.1",
     "wink-nlp": "^2.4.0"
   },
