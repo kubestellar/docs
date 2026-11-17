@@ -1,19 +1,19 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-17T02:14:49.963Z",
+  "generated_at": "2026-11-17T06:17:05.667Z",
   "total_issues_opened": 643,
-  "total_prs_opened": 2855,
+  "total_prs_opened": 2856,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6365450,
+  "total_points": 6365650,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 24.8,
-    "avg_per_day": 7.64,
+    "avg_per_week": 24.5,
+    "avg_per_day": 7.61,
     "by_day_of_week": [
       326,
-      598,
+      599,
       769,
       564,
       544,
@@ -27,7 +27,7 @@
       55,
       38,
       126,
-      1555,
+      1556,
       284,
       54,
       8,
@@ -50,7 +50,7 @@
     "longest_streak_weeks": 46,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-11-15T05:13:35.000Z"
+    "last_issue_at": "2026-11-17T06:04:42.000Z"
   },
   "topics": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 53,
+      "issue_count": 52,
       "recent_issue": {
         "title": "📖 Update kubestellar-mcp docs to v0.9.23",
         "url": "https://github.com/kubestellar/docs/pull/7618",
@@ -79,7 +79,7 @@
         "docs"
       ],
       "open_count": 2,
-      "closed_count": 51
+      "closed_count": 50
     },
     {
       "name": "dragonflydb, structure, pfcount",
@@ -365,6 +365,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "apparmor, signal, deny",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 containerd: Default AppArmor profile denies signals inside a container when the label is",
+        "url": "https://github.com/kubestellar/console-kb/pull/3941",
+        "created_at": "2026-11-17T06:04:42Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "headlamp, distribute, setting",
@@ -939,7 +953,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 20
+      "issue_count": 21
     }
   ],
   "repo_breakdown": [
@@ -948,7 +962,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2122,
+      "prs_opened": 2123,
       "prs_merged": 1783
     },
     {
