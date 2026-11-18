@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-17T22:08:49.223Z",
-  "git_hash": "79d8566",
+  "generated_at": "2026-11-18T02:12:11.892Z",
+  "git_hash": "7f861bf",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-08-31",
@@ -40,12 +40,12 @@
         84,
         49,
         65,
-        121,
+        122,
         61,
         34,
         7
       ],
-      "recent_activity_score": 281.37,
+      "recent_activity_score": 281.87,
       "rank": 1
     },
     {
@@ -472,14 +472,14 @@
     {
       "login": "Karibhou",
       "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-      "total_points": 37900,
+      "total_points": 38100,
       "level": "Commander",
       "level_rank": 5,
       "breakdown": {
         "bug_issues": 0,
         "feature_issues": 0,
         "other_issues": 0,
-        "prs_opened": 77,
+        "prs_opened": 78,
         "prs_merged": 45
       },
       "weekly_activity": [
@@ -489,14 +489,14 @@
         0,
         0,
         0,
-        115,
-        4,
-        41,
-        101,
-        34,
-        5
+        134,
+        5,
+        44,
+        122,
+        40,
+        6
       ],
-      "recent_activity_score": 153.92,
+      "recent_activity_score": 180.79,
       "rank": 16
     },
     {
