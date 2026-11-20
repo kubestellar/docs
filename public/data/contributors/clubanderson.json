@@ -1,22 +1,22 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-20T02:14:26.258Z",
+  "generated_at": "2026-11-20T06:16:45.055Z",
   "total_issues_opened": 643,
-  "total_prs_opened": 2857,
+  "total_prs_opened": 2858,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6367650,
+  "total_points": 6367850,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 24.1,
-    "avg_per_day": 7.6,
+    "avg_per_week": 24.2,
+    "avg_per_day": 7.57,
     "by_day_of_week": [
       326,
       599,
       770,
       564,
-      544,
+      545,
       371,
       326
     ],
@@ -27,7 +27,7 @@
       55,
       38,
       126,
-      1557,
+      1558,
       284,
       54,
       8,
@@ -46,11 +46,11 @@
       58,
       36
     ],
-    "current_streak_weeks": 46,
-    "longest_streak_weeks": 46,
+    "current_streak_weeks": 47,
+    "longest_streak_weeks": 47,
     "trend": "slowing_down",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-11-18T06:02:27.000Z"
+    "last_issue_at": "2026-11-20T06:06:52.000Z"
   },
   "topics": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "release, version, sync",
-      "issue_count": 51,
+      "issue_count": 50,
       "recent_issue": {
         "title": "📖 Update kubestellar-mcp docs to v0.9.23",
         "url": "https://github.com/kubestellar/docs/pull/7618",
@@ -79,7 +79,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 51
+      "closed_count": 50
     },
     {
       "name": "dragonflydb, argo, exact",
@@ -110,6 +110,20 @@
       ],
       "open_count": 0,
       "closed_count": 5
+    },
+    {
+      "name": "keycloak, cimd, cve",
+      "issue_count": 4,
+      "recent_issue": {
+        "title": "🌱 keycloak: [CVE-2026-114938] Mitigate OpenJDK Base64 intrinsic vulnerability",
+        "url": "https://github.com/kubestellar/console-kb/pull/3943",
+        "created_at": "2026-11-20T06:06:52Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 3
     },
     {
       "name": "registry, warning, qa",
@@ -192,20 +206,6 @@
       "repos": [
         "console-kb",
         "console-marketplace"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "keycloak, cimd, takeover",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "🌱 keycloak: CIMD: authorization request rejected when Client ID Metadata Document contains",
-        "url": "https://github.com/kubestellar/console-kb/pull/3895",
-        "created_at": "2026-11-03T06:07:20Z"
-      },
-      "repos": [
-        "console-kb"
       ],
       "open_count": 0,
       "closed_count": 3
@@ -883,7 +883,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 22
+      "issue_count": 23
     }
   ],
   "repo_breakdown": [
@@ -892,7 +892,7 @@
       "bug_issues": 2,
       "feature_issues": 1,
       "other_issues": 149,
-      "prs_opened": 2124,
+      "prs_opened": 2125,
       "prs_merged": 1783
     },
     {
