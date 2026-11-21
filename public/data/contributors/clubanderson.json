@@ -1,6 +1,6 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-21T14:10:46.286Z",
+  "generated_at": "2026-11-21T18:11:50.734Z",
   "total_issues_opened": 643,
   "total_prs_opened": 2859,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
@@ -9,7 +9,7 @@
   "level_rank": 8,
   "rank": 1,
   "cadence": {
-    "avg_per_week": 23.7,
+    "avg_per_week": 23.6,
     "avg_per_day": 7.57,
     "by_day_of_week": [
       326,
@@ -48,7 +48,7 @@
     ],
     "current_streak_weeks": 47,
     "longest_streak_weeks": 47,
-    "trend": "slowing_down",
+    "trend": "steady",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
     "last_issue_at": "2026-11-20T06:25:00.000Z"
   },
