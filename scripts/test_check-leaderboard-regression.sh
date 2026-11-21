@@ -74,7 +74,7 @@ make_fixture() {
   cp "$SCRIPT_SOURCE" "$dir/scripts/check-leaderboard-regression.mjs"
 
   (
-    cd "$dir"
+    cd "$dir" || exit 1
     git init --quiet
     git config user.email 'test@example.com'
     git config user.name  'Test Fixture'

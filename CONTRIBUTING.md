@@ -150,6 +150,14 @@ npm run build
 These checks match the CI workflows used for site code and configuration
 changes.
 
+### For workflow or shell-script changes
+
+CI runs actionlint v1.7.7 on hand-authored workflow YAML and
+`shellcheck -x -P scripts scripts/*.sh` on shell scripts. Generated
+`*.lock.yml` files and `agentics-maintenance.yml` are excluded from
+actionlint because their gh-aw extensions are outside its schema;
+`check-aw-lock-drift.yml` checks lock files against their sources.
+
 ---
 
 ## Commit and pull request conventions

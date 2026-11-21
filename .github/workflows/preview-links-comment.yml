@@ -55,7 +55,7 @@ jobs:
             STATUS=$(curl -sL -o /dev/null -w "%{http_code}" "$PREVIEW_URL" || echo "000")
             if [ "$STATUS" = "200" ] || [ "$STATUS" = "307" ] || [ "$STATUS" = "301" ] || [ "$STATUS" = "302" ]; then
               echo "Preview is ready!"
-              echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
+              echo "url=$PREVIEW_URL" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             echo "Attempt $ATTEMPT: Status $STATUS, retrying..."
@@ -64,7 +64,7 @@ jobs:
           done
 
           echo "Timeout waiting for preview, continuing anyway..."
-          echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
+          echo "url=$PREVIEW_URL" >> "$GITHUB_OUTPUT"
 
       - name: Get changed files and post comment
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3  # v9.0.0

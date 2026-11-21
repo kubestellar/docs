@@ -123,18 +123,18 @@ jobs:
             console) BRANCH="docs/console/${VERSION}" ;;
             *) echo "Unknown project: $PROJECT"; exit 1 ;;
           esac
-          echo "name=$BRANCH" >> $GITHUB_OUTPUT
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "name=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "Branch name: $BRANCH"
 
       - name: Check if branch exists
         id: check-branch
         run: |
           if git ls-remote --heads origin "${{ steps.branch.outputs.name }}" | grep -q "${{ steps.branch.outputs.name }}"; then
-            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "exists=true" >> "$GITHUB_OUTPUT"
             echo "Branch ${{ steps.branch.outputs.name }} already exists"
           else
-            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "exists=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create version branch
