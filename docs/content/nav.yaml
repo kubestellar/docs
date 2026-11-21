@@ -11,6 +11,7 @@
 - title: Overview
   items:
     - Introduction: readme.md
+    - Glossary: glossary.md
     - Architecture: kubestellar/architecture.md
     - OCM Status Addon: kubestellar/ocm-status-addon-intro.md
     - Release Notes: kubestellar/release-notes.md
