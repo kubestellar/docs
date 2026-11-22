@@ -1,6 +1,6 @@
 {
   "login": "xonas1101",
-  "generated_at": "2026-11-22T02:14:30.040Z",
+  "generated_at": "2026-11-22T06:15:33.214Z",
   "total_issues_opened": 14,
   "total_prs_opened": 10,
   "avatar_url": "https://avatars.githubusercontent.com/u/81941842?v=4",
@@ -127,6 +127,12 @@
   ],
   "suggestions": {
     "deepen": [
+      {
+        "title": "📖 Update kubestellar-mcp docs to v0.9.24",
+        "url": "https://github.com/kubestellar/docs/pull/7637",
+        "repo": "docs",
+        "topic_match": "easily, manage, site"
+      },
       {
         "title": "🌱 argo-workflows: UI: Dark mode",
         "url": "https://github.com/kubestellar/console-kb/pull/3942",
