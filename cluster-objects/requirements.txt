@@ -760,13 +760,13 @@ multidict==6.9.1 \
     # via
     #   aiohttp
     #   yarl
-oci==2.191.0 \
-    --hash=sha256:9831e669a9d07768f96bc5a71f57477ad8c7129bcd757ecf9c9c70fa9dfb61b1 \
-    --hash=sha256:f149bc6e49d5e11a781d1085b222079eb3eefe59732bb1db9409d6b45a873194
+oci==2.192.0 \
+    --hash=sha256:0a2598eb1dce3ee4cf3474a240cdfe5e061a5e2fbc834cd035f30f2cad65c9ef \
+    --hash=sha256:f7bd3df4022ce4485c6b8d5a8e1cc3c9e06b1a12d679b4d1523d1784308abb73
     # via oci-cli
-oci-cli==3.96.2 \
-    --hash=sha256:7b0b57b74ff8a2a44511163dd6c856724283d259e99cda27b00c9818ad71d573 \
-    --hash=sha256:d58ed2ec5af0c3a1f4c8f9660ff25b1cef417c2ed7b715592f904674dec96d64
+oci-cli==3.96.3 \
+    --hash=sha256:9a592a91b9ac7f84efa4dc4a039085baa0fbf5af6aa02f9f6b2b7b25d02fdd2c \
+    --hash=sha256:a23991f482c4425c232775c53252db4776ebe5787aeb2ab6d5925a1ae6b96f4f
     # via -r requirements.in
 prompt-toolkit==3.0.43 \
     --hash=sha256:3527b7af26106cbc65a040bcc84839a3566ec1b051bb0bfe953631e704b0ff7d \
