@@ -1,6 +1,6 @@
 {
   "login": "Solarthis",
-  "generated_at": "2026-11-23T22:11:04.699Z",
+  "generated_at": "2026-11-24T02:15:05.497Z",
   "total_issues_opened": 0,
   "total_prs_opened": 2,
   "avatar_url": "https://avatars.githubusercontent.com/u/215013468?v=4",
@@ -9,7 +9,7 @@
   "level_rank": 2,
   "rank": 83,
   "cadence": {
-    "avg_per_week": 0.2,
+    "avg_per_week": 0,
     "avg_per_day": 2,
     "by_day_of_week": [
       2,

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-23T22:06:52.953Z",
-  "git_hash": "d5bfa00",
+  "generated_at": "2026-11-24T02:11:09.525Z",
+  "git_hash": "9a56ef3",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-09-07",
@@ -41,11 +41,11 @@
         65,
         122,
         61,
-        41,
+        43,
         22,
         1
       ],
-      "recent_activity_score": 218.16,
+      "recent_activity_score": 219.42,
       "rank": 1
     },
     {
@@ -493,10 +493,10 @@
         56,
         206,
         80,
-        17,
+        18,
         1
       ],
-      "recent_activity_score": 245.45,
+      "recent_activity_score": 246.24,
       "rank": 16
     },
     {
@@ -4873,10 +4873,10 @@
         0,
         0,
         0,
-        1,
+        2,
         0
       ],
-      "recent_activity_score": 0.79,
+      "recent_activity_score": 1.59,
       "rank": 162
     },
     {
