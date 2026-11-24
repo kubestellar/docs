@@ -1,6 +1,6 @@
 {
   "login": "KPRoche",
-  "generated_at": "2026-11-24T14:13:03.687Z",
+  "generated_at": "2026-11-24T18:13:06.712Z",
   "total_issues_opened": 10,
   "total_prs_opened": 48,
   "avatar_url": "https://avatars.githubusercontent.com/u/25445603?v=4",
@@ -55,7 +55,7 @@
   "topics": [
     {
       "name": "link, changes, 📝",
-      "issue_count": 51,
+      "issue_count": 52,
       "recent_issue": {
         "title": "📖 fixed news link in docsnavbar",
         "url": "https://github.com/kubestellar/docs/pull/1383",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 51
+      "closed_count": 52
     },
     {
       "name": "dark, gray, item",
@@ -124,26 +124,12 @@
       "closed_count": 1
     },
     {
-      "name": "reader, webserver, combined",
+      "name": "reader, website, webserver",
       "issue_count": 1,
       "recent_issue": {
         "title": "doc: Need our readers/contributors to note rendering issues on the new website",
         "url": "https://github.com/kubestellar/docs/issues/353",
         "created_at": "2025-12-05T20:24:25Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "preview, notes, try",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "Trying a new fork to test preview function",
-        "url": "https://github.com/kubestellar/docs/pull/188",
-        "created_at": "2025-10-29T18:14:24Z"
       },
       "repos": [
         "docs"
@@ -181,16 +167,16 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       },
       {
+        "name": "Charts & Visualizations",
+        "path": "web/src/components/charts/, web/src/components/drilldown/",
+        "description": "Data visualization components, chart library, drill-down views",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
+      },
+      {
         "name": "Storage & Compute",
         "path": "web/src/components/storage/, web/src/components/compute/",
         "description": "Persistent volumes, storage classes, compute resource management",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
       }
     ]
   },

@@ -1,6 +1,6 @@
 {
   "login": "AnvayKharb",
-  "generated_at": "2026-11-24T14:13:03.937Z",
+  "generated_at": "2026-11-24T18:13:07.266Z",
   "total_issues_opened": 1,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/185811796?v=4",
@@ -82,7 +82,7 @@
       "closed_count": 1
     },
     {
-      "name": "height, ladder, layout",
+      "name": "height, ladder, balanced",
       "issue_count": 1,
       "recent_issue": {
         "title": "improve contribution ladder card layout and responsiveness",

@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-11-24T14:13:03.711Z",
+  "generated_at": "2026-11-24T18:13:06.982Z",
   "total_issues_opened": 43,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
@@ -55,7 +55,7 @@
   "topics": [
     {
       "name": "describe, doc, contribute",
-      "issue_count": 32,
+      "issue_count": 34,
       "recent_issue": {
         "title": "doc: ks/ks release process doc needs updates wrt doc separation",
         "url": "https://github.com/kubestellar/docs/issues/1945",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 32
+      "closed_count": 34
     },
     {
       "name": "login, need, agent",
@@ -194,7 +194,7 @@
       "closed_count": 1
     },
     {
-      "name": "issues, chore, picture",
+      "name": "issues, chore, title",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: scan-merged-prs omits source repo name from chore title",
@@ -208,7 +208,7 @@
       "closed_count": 1
     },
     {
-      "name": "gh, aw, @mymac",
+      "name": "gh, @mymac, aw",
       "issue_count": 1,
       "recent_issue": {
         "title": "🌱 gh aw compile scan-merged-prs",
@@ -248,34 +248,6 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "uncommon, 146.0, 15.7.3",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: Application error: a client-side exception has occurred while loading kubestellar.io",
-        "url": "https://github.com/kubestellar/docs/issues/431",
-        "created_at": "2025-12-19T00:28:50Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "complaint, hamburger, menu",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "bug: browser console errors when clicking on hamburger menu",
-        "url": "https://github.com/kubestellar/docs/issues/397",
-        "created_at": "2025-12-11T19:58:02Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
@@ -284,7 +256,25 @@
         "title": "🌱 ci: give Maintainer Metrics Tracker a GH_TOKEN again",
         "url": "https://github.com/kubestellar/docs/pull/7609",
         "repo": "docs",
-        "topic_match": "gh, aw, @mymac"
+        "topic_match": "gh, @mymac, aw"
+      },
+      {
+        "title": "refactor(argo): migrate resource buttons to shared UI Button component",
+        "url": "https://github.com/kubestellar/console/pull/24998",
+        "repo": "console",
+        "topic_match": "button, shared, create"
+      },
+      {
+        "title": "🐛 fix: stop Auto-QA loading-state check flagging test mocks",
+        "url": "https://github.com/kubestellar/console/pull/25111",
+        "repo": "console",
+        "topic_match": "button, shared, create"
+      },
+      {
+        "title": "fix: correct mission card button semantics",
+        "url": "https://github.com/kubestellar/console/pull/25023",
+        "repo": "console",
+        "topic_match": "button, shared, create"
       }
     ],
     "stretch": [
@@ -301,6 +291,12 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
       },
       {
+        "name": "Storage & Compute",
+        "path": "web/src/components/storage/, web/src/components/compute/",
+        "description": "Persistent volumes, storage classes, compute resource management",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
+      },
+      {
         "name": "Cost Management",
         "path": "web/src/components/cost/",
         "description": "Cloud cost analysis, resource cost allocation, budgeting",
@@ -311,12 +307,6 @@
         "path": "web/src/components/charts/, web/src/components/drilldown/",
         "description": "Data visualization components, chart library, drill-down views",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/charts"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       }
     ]
   },

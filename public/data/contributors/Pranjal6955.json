@@ -1,6 +1,6 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-11-24T14:13:03.621Z",
+  "generated_at": "2026-11-24T18:13:06.626Z",
   "total_issues_opened": 6,
   "total_prs_opened": 15,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
@@ -54,7 +54,7 @@
   },
   "topics": [
     {
-      "name": "nextra, section, screenshots",
+      "name": "nextra, section, implement",
       "issue_count": 14,
       "recent_issue": {
         "title": "fix: fixes functionality in the contact section",
@@ -82,7 +82,7 @@
       "closed_count": 5
     },
     {
-      "name": "preset, promote, metadata",
+      "name": "preset, metadata, promote",
       "issue_count": 2,
       "recent_issue": {
         "title": "✨: update cilium preset metadata and version in registry",

@@ -1,6 +1,6 @@
 {
   "login": "Arpit529Srivastava",
-  "generated_at": "2026-11-24T14:13:03.643Z",
+  "generated_at": "2026-11-24T18:13:06.657Z",
   "total_issues_opened": 7,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/151747267?v=4",
@@ -54,7 +54,7 @@
   },
   "topics": [
     {
-      "name": "button, bug, products",
+      "name": "bug, button, products",
       "issue_count": 4,
       "recent_issue": {
         "title": "bug: Primary CTA Button (“Install to Console”) is Partially Overlapped in Security Audit Modal",

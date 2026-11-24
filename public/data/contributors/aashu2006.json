@@ -1,6 +1,6 @@
 {
   "login": "aashu2006",
-  "generated_at": "2026-11-24T14:13:03.379Z",
+  "generated_at": "2026-11-24T18:13:06.327Z",
   "total_issues_opened": 0,
   "total_prs_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/170659176?v=4",
@@ -69,7 +69,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "fix(web): show last-updated time on cached-data cards",
+        "url": "https://github.com/kubestellar/console/pull/25067",
+        "repo": "console",
+        "topic_match": "card, activate, marketplace"
+      }
+    ],
     "stretch": [
       {
         "name": "Deployments & GitOps",

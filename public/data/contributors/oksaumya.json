@@ -1,6 +1,6 @@
 {
   "login": "oksaumya",
-  "generated_at": "2026-11-24T14:13:03.744Z",
+  "generated_at": "2026-11-24T18:13:07.024Z",
   "total_issues_opened": 42,
   "total_prs_opened": 17,
   "avatar_url": "https://avatars.githubusercontent.com/u/173081204?v=4",
@@ -55,7 +55,7 @@
   "topics": [
     {
       "name": "hero, head, section",
-      "issue_count": 12,
+      "issue_count": 13,
       "recent_issue": {
         "title": "🐛fix: hero section overflow, animation alignment, and button outline s…",
         "url": "https://github.com/kubestellar/docs/pull/1307",
@@ -65,7 +65,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 12
+      "closed_count": 13
     },
     {
       "name": "translation, audit, tasks",
@@ -96,8 +96,22 @@
       "closed_count": 8
     },
     {
-      "name": "icon, edit, navbar",
+      "name": "refactor, figma, icon",
       "issue_count": 7,
+      "recent_issue": {
+        "title": "Edit icon hover issue in docs",
+        "url": "https://github.com/kubestellar/docs/issues/1162",
+        "created_at": "2026-02-16T05:09:42Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 7
+    },
+    {
+      "name": "response, okay, docsnavbar",
+      "issue_count": 3,
       "recent_issue": {
         "title": "🐛 Console Error: \"Network response was not okay\" in DocsNavbar GitHub stats fetch",
         "url": "https://github.com/kubestellar/docs/issues/1197",
@@ -107,21 +121,7 @@
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 7
-    },
-    {
-      "name": "design, refactor, figma",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "Refactor the Footer",
-        "url": "https://github.com/kubestellar/docs/issues/191",
-        "created_at": "2025-11-01T14:31:49Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 4
+      "closed_count": 3
     },
     {
       "name": "hydration, href, client",
@@ -208,7 +208,7 @@
       "closed_count": 2
     },
     {
-      "name": "clickable, learn, style",
+      "name": "learn, clickable, style",
       "issue_count": 1,
       "recent_issue": {
         "title": "Fix:\"Learn more\" is Clickable but Not Styled as Button or Hover Link",
@@ -222,12 +222,12 @@
       "closed_count": 1
     },
     {
-      "name": "device, bar, responsive",
+      "name": "star, connect, display",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Make Navigation Bar Fully Responsive",
-        "url": "https://github.com/kubestellar/docs/issues/102",
-        "created_at": "2025-10-06T08:42:19Z"
+        "title": "Connect GitHub API to NavBar for Fork, Watch, and Star Counts",
+        "url": "https://github.com/kubestellar/docs/issues/100",
+        "created_at": "2025-10-06T08:39:54Z"
       },
       "repos": [
         "docs"
@@ -236,12 +236,12 @@
       "closed_count": 1
     },
     {
-      "name": "star, connect, count",
+      "name": "gradient, design, section",
       "issue_count": 1,
       "recent_issue": {
-        "title": "Connect GitHub API to NavBar for Fork, Watch, and Star Counts",
-        "url": "https://github.com/kubestellar/docs/issues/100",
-        "created_at": "2025-10-06T08:39:54Z"
+        "title": "Improve Gradient Usage for Section Divisions According to Design",
+        "url": "https://github.com/kubestellar/docs/issues/99",
+        "created_at": "2025-10-06T08:38:17Z"
       },
       "repos": [
         "docs"

@@ -1,22 +1,22 @@
 {
   "login": "Lakshya-2440",
-  "generated_at": "2026-11-24T14:13:03.921Z",
+  "generated_at": "2026-11-24T18:13:07.247Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 0,
+  "total_prs_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/98229279?v=4",
   "total_points": 1900,
   "level": "Explorer",
   "level_rank": 2,
   "rank": 65,
   "cadence": {
-    "avg_per_week": 0,
-    "avg_per_day": 0,
+    "avg_per_week": 0.3,
+    "avg_per_day": 1.43,
     "by_day_of_week": [
       0,
       0,
+      1,
       0,
-      0,
-      0,
+      2,
       0,
       0
     ],
@@ -29,9 +29,9 @@
       0,
       0,
       0,
+      1,
       0,
-      0,
-      0,
+      2,
       0,
       0,
       0,
@@ -46,16 +46,89 @@
       0,
       0
     ],
-    "current_streak_weeks": 0,
-    "longest_streak_weeks": 0,
-    "trend": "inactive",
-    "first_issue_at": null,
-    "last_issue_at": null
+    "current_streak_weeks": 2,
+    "longest_streak_weeks": 2,
+    "trend": "ramping_up",
+    "first_issue_at": "2026-11-11T08:32:06.000Z",
+    "last_issue_at": "2026-11-13T10:52:33.000Z"
   },
-  "topics": [],
+  "topics": [
+    {
+      "name": "button, pass, defer",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "refactor(argo): migrate resource buttons to shared UI Button component",
+        "url": "https://github.com/kubestellar/console/pull/24998",
+        "created_at": "2026-11-13T10:52:33Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 2,
+      "closed_count": 0
+    },
+    {
+      "name": "confirmation, native, theme",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "fix(namespaces): replace native confirm with ConfirmDialog in NamespaceAccessPanel",
+        "url": "https://github.com/kubestellar/console/pull/24952",
+        "created_at": "2026-11-11T08:32:06Z"
+      },
+      "repos": [
+        "console"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    }
+  ],
   "suggestions": {
-    "deepen": [],
-    "stretch": []
+    "deepen": [
+      {
+        "title": "🐛 fix: stop Auto-QA loading-state check flagging test mocks",
+        "url": "https://github.com/kubestellar/console/pull/25111",
+        "repo": "console",
+        "topic_match": "button, pass, defer"
+      },
+      {
+        "title": "fix: correct mission card button semantics",
+        "url": "https://github.com/kubestellar/console/pull/25023",
+        "repo": "console",
+        "topic_match": "button, pass, defer"
+      }
+    ],
+    "stretch": [
+      {
+        "name": "Dashboard & Cards",
+        "path": "web/src/components/cards/, web/src/components/dashboard/",
+        "description": "Dashboard layout, card framework, card registry, and individual monitoring cards",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cards"
+      },
+      {
+        "name": "Security & RBAC",
+        "path": "web/src/components/security/, web/src/components/rbac/",
+        "description": "Security scanning, RBAC management, role bindings, compliance",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
+      },
+      {
+        "name": "Networking & Services",
+        "path": "web/src/components/network/, web/src/components/services/",
+        "description": "Service mesh, ingress, network policies, service discovery",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
+      },
+      {
+        "name": "Marketplace & Operators",
+        "path": "web/src/components/marketplace/, web/src/components/operators/",
+        "description": "Plugin marketplace, operator management, extensions",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
+      },
+      {
+        "name": "Onboarding & Rewards",
+        "path": "web/src/components/onboarding/, web/src/components/rewards/",
+        "description": "New user onboarding, gamification, contributor rewards system",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+      }
+    ]
   },
   "activity_timeline": [
     {
@@ -104,8 +177,17 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 0
+      "issue_count": 3
     }
   ],
-  "repo_breakdown": []
+  "repo_breakdown": [
+    {
+      "repo": "console",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 3,
+      "prs_merged": 1
+    }
+  ]
 }

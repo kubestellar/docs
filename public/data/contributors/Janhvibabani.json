@@ -1,6 +1,6 @@
 {
   "login": "Janhvibabani",
-  "generated_at": "2026-11-24T14:13:03.754Z",
+  "generated_at": "2026-11-24T18:13:07.046Z",
   "total_issues_opened": 8,
   "total_prs_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/114232474?v=4",
@@ -55,20 +55,20 @@
   "topics": [
     {
       "name": "linkedin, link, calendar",
-      "issue_count": 7,
+      "issue_count": 8,
       "recent_issue": {
-        "title": "📖docs: updated community meetings link in README",
-        "url": "https://github.com/kubestellar/docs/pull/929",
-        "created_at": "2026-01-30T07:21:02Z"
+        "title": "✨ Remove edit buttons from non-docs pages",
+        "url": "https://github.com/kubestellar/docs/pull/1143",
+        "created_at": "2026-02-07T06:34:17Z"
       },
       "repos": [
         "docs"
       ],
       "open_count": 0,
-      "closed_count": 7
+      "closed_count": 8
     },
     {
-      "name": "year, footer, hardcoded",
+      "name": "year, footer, dynamic",
       "issue_count": 4,
       "recent_issue": {
         "title": "🐛 Make homepage footer year dynamic across all locales",
@@ -96,7 +96,7 @@
       "closed_count": 2
     },
     {
-      "name": "windows, normalize, backslashes",
+      "name": "windows, backslashes, normalize",
       "issue_count": 2,
       "recent_issue": {
         "title": "🐛fix: normalize file paths for cross-platform compatibility",
@@ -108,20 +108,6 @@
       ],
       "open_count": 0,
       "closed_count": 2
-    },
-    {
-      "name": "edit, button, component",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "✨ Remove edit buttons from non-docs pages",
-        "url": "https://github.com/kubestellar/docs/pull/1143",
-        "created_at": "2026-02-07T06:34:17Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
