@@ -1,6 +1,6 @@
 {
   "login": "burakeyler",
-  "generated_at": "2026-11-24T18:13:07.056Z",
+  "generated_at": "2026-11-24T22:11:43.243Z",
   "total_issues_opened": 0,
   "total_prs_opened": 5,
   "avatar_url": "https://avatars.githubusercontent.com/u/121062562?v=4",
@@ -54,7 +54,7 @@
   },
   "topics": [
     {
-      "name": "alert, failure, date",
+      "name": "failure, alert, date",
       "issue_count": 5,
       "recent_issue": {
         "title": "🌱 ci: alert on failure of the Stale Issues workflow",
@@ -69,14 +69,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "fix: handle coverage notification API failures",
-        "url": "https://github.com/kubestellar/console/pull/24989",
-        "repo": "console",
-        "topic_match": "alert, failure, date"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Dashboard & Cards",

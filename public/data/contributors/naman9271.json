@@ -1,6 +1,6 @@
 {
   "login": "naman9271",
-  "generated_at": "2026-11-24T18:13:07.234Z",
+  "generated_at": "2026-11-24T22:11:43.417Z",
   "total_issues_opened": 41,
   "total_prs_opened": 71,
   "avatar_url": "https://avatars.githubusercontent.com/u/179296103?v=4",
@@ -68,12 +68,12 @@
       "closed_count": 22
     },
     {
-      "name": "page, installation, come",
+      "name": "refactor, componenet, accord",
       "issue_count": 15,
       "recent_issue": {
-        "title": "Theme  layout fixed in Nextra",
-        "url": "https://github.com/kubestellar/docs/issues/308",
-        "created_at": "2025-11-22T17:50:05Z"
+        "title": "Many Fixes",
+        "url": "https://github.com/kubestellar/docs/pull/206",
+        "created_at": "2025-11-05T23:33:05Z"
       },
       "repos": [
         "docs"
@@ -82,12 +82,12 @@
       "closed_count": 15
     },
     {
-      "name": "refactor, componenet, accord",
+      "name": "page, come, installation",
       "issue_count": 13,
       "recent_issue": {
-        "title": "HowItWorkSection --> HowToUseSection refactor to 5 steps ",
-        "url": "https://github.com/kubestellar/docs/pull/202",
-        "created_at": "2025-11-04T18:29:57Z"
+        "title": "Theme  layout fixed in Nextra",
+        "url": "https://github.com/kubestellar/docs/issues/308",
+        "created_at": "2025-11-22T17:50:05Z"
       },
       "repos": [
         "docs"
@@ -138,7 +138,7 @@
       "closed_count": 5
     },
     {
-      "name": "light, theme, docnavbar",
+      "name": "light, theme, mode",
       "issue_count": 5,
       "recent_issue": {
         "title": "Add Light Theme for `DocsFooter.tsx`",
@@ -152,7 +152,7 @@
       "closed_count": 5
     },
     {
-      "name": "dropdown, language, navbar",
+      "name": "dropdown, language, blur",
       "issue_count": 5,
       "recent_issue": {
         "title": "Inconsistent Animation in the navbar",
@@ -208,6 +208,20 @@
       "closed_count": 3
     },
     {
+      "name": "component, codebase, terminal",
+      "issue_count": 3,
+      "recent_issue": {
+        "title": "fix hero section",
+        "url": "https://github.com/kubestellar/docs/pull/146",
+        "created_at": "2025-10-22T06:30:21Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 3
+    },
+    {
       "name": "readme, kinda, irrelevant",
       "issue_count": 2,
       "recent_issue": {
@@ -222,7 +236,7 @@
       "closed_count": 2
     },
     {
-      "name": "pretty, husky, lint",
+      "name": "pretty, lint, husky",
       "issue_count": 2,
       "recent_issue": {
         "title": "Implement Husky",
@@ -242,20 +256,6 @@
         "title": "remove loader",
         "url": "https://github.com/kubestellar/docs/pull/222",
         "created_at": "2025-11-06T16:57:03Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "component, codebase, background",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "Section Dividers Added",
-        "url": "https://github.com/kubestellar/docs/pull/144",
-        "created_at": "2025-10-22T05:47:23Z"
       },
       "repos": [
         "docs"
@@ -334,20 +334,6 @@
       "closed_count": 1
     },
     {
-      "name": "terminal, experience, hero",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix hero section",
-        "url": "https://github.com/kubestellar/docs/pull/146",
-        "created_at": "2025-10-22T06:30:21Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "owners, add",
       "issue_count": 1,
       "recent_issue": {
@@ -405,26 +391,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "[Auto-QA] Refresh icon animation consistency issues",
-        "url": "https://github.com/kubestellar/console/issues/25094",
-        "repo": "console",
-        "topic_match": "animation, globe, star"
-      },
-      {
-        "title": "[Auto-QA] Bundle has JS chunks over 300KB",
-        "url": "https://github.com/kubestellar/console/issues/25081",
-        "repo": "console",
-        "topic_match": "js, initial, project"
-      },
-      {
-        "title": "perf: isolate the lazy login globe chunk",
-        "url": "https://github.com/kubestellar/console/pull/25086",
-        "repo": "console",
-        "topic_match": "animation, globe, star"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "GPU & AI/ML",

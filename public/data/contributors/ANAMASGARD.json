@@ -1,6 +1,6 @@
 {
   "login": "ANAMASGARD",
-  "generated_at": "2026-11-24T18:13:06.627Z",
+  "generated_at": "2026-11-24T22:11:43.070Z",
   "total_issues_opened": 1,
   "total_prs_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/137998824?v=4",
@@ -68,7 +68,7 @@
       "closed_count": 5
     },
     {
-      "name": "vulnerability, :/, 0:0",
+      "name": "vulnerability, :/, package",
       "issue_count": 2,
       "recent_issue": {
         "title": "fix: Resolve high severity npm vulnerability in dependencies",

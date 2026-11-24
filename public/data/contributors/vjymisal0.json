@@ -1,24 +1,24 @@
 {
   "login": "vjymisal0",
-  "generated_at": "2026-11-24T18:13:07.042Z",
-  "total_issues_opened": 1,
-  "total_prs_opened": 11,
+  "generated_at": "2026-11-24T22:11:43.232Z",
+  "total_issues_opened": 0,
+  "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/97379957?v=4",
   "total_points": 6750,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 36,
   "cadence": {
-    "avg_per_week": 0.6,
-    "avg_per_day": 0.15,
+    "avg_per_week": 0.2,
+    "avg_per_day": 0.27,
     "by_day_of_week": [
+      0,
+      0,
+      0,
+      0,
+      0,
       2,
-      0,
-      0,
-      0,
-      1,
-      4,
-      5
+      2
     ],
     "by_hour_of_day": [
       0,
@@ -26,18 +26,18 @@
       0,
       0,
       0,
-      4,
-      1,
-      0,
-      1,
-      3,
-      0,
-      0,
-      0,
-      0,
-      0,
-      1,
       2,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0,
@@ -48,56 +48,13 @@
     ],
     "current_streak_weeks": 0,
     "longest_streak_weeks": 1,
-    "trend": "slowing_down",
-    "first_issue_at": "2026-08-07T15:19:58.000Z",
-    "last_issue_at": "2026-10-26T16:30:56.000Z"
+    "trend": "inactive",
+    "first_issue_at": "2026-08-29T08:48:49.000Z",
+    "last_issue_at": "2026-09-13T05:19:51.000Z"
   },
   "topics": [
     {
-      "name": "tooltip, tour, kubestellar",
-      "issue_count": 3,
-      "recent_issue": {
-        "title": "🌱 owners: add vjymisal0 to reviewers",
-        "url": "https://github.com/kubestellar/docs/pull/6619",
-        "created_at": "2026-08-29T09:21:34Z"
-      },
-      "repos": [
-        "docs",
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 3
-    },
-    {
-      "name": "logoutcleanup, token, branch",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "🌱 test(auth): add unit coverage for logoutCleanup branches",
-        "url": "https://github.com/kubestellar/console/pull/24640",
-        "created_at": "2026-10-26T16:30:56Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "updater, pkg, seam",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "refactor(updater): expose test seams for polling intervals and SHA detection",
-        "url": "https://github.com/kubestellar/console/pull/23356",
-        "created_at": "2026-09-13T06:59:30Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "typecheck, yml, observability",
+      "name": "typecheck, eslint, yml",
       "issue_count": 1,
       "recent_issue": {
         "title": "ci(telemetry): add structured CI-observability summary to typecheck.yml",
@@ -111,40 +68,26 @@
       "closed_count": 1
     },
     {
-      "name": "font, heme, weight",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix(theme): use optional chaining for theme font and weight properties",
-        "url": "https://github.com/kubestellar/console/pull/23352",
-        "created_at": "2026-09-13T05:18:31Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "usedashboardcards, warn, parse",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix(hooks): upgrade swallowed parse error from console.warn to console.error in useDashboardCards",
-        "url": "https://github.com/kubestellar/console/pull/23351",
-        "created_at": "2026-09-13T05:17:37Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "concurrency, vitest, cancel",
+      "name": "vitest, concurrency, cancel",
       "issue_count": 1,
       "recent_issue": {
         "title": "ci(vitest): add timeout-minutes, concurrency group, and self-trigger path",
         "url": "https://github.com/kubestellar/docs/pull/6904",
         "created_at": "2026-09-13T05:16:02Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 0,
+      "closed_count": 1
+    },
+    {
+      "name": "kubestellar, a11y, reviewer",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 owners: add vjymisal0 to reviewers",
+        "url": "https://github.com/kubestellar/docs/pull/6619",
+        "created_at": "2026-08-29T09:21:34Z"
       },
       "repos": [
         "docs"
@@ -165,31 +108,10 @@
       ],
       "open_count": 0,
       "closed_count": 1
-    },
-    {
-      "name": "shard, artifact, merge",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "🐛 Fix: fail coverage merge job on incomplete shard artifact set",
-        "url": "https://github.com/kubestellar/console/pull/22284",
-        "created_at": "2026-08-07T15:19:58Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "fix: enforce merged frontend coverage floors",
-        "url": "https://github.com/kubestellar/console/pull/24987",
-        "repo": "console",
-        "topic_match": "shard, artifact, merge"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "GPU & AI/ML",
@@ -204,22 +126,22 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/security"
       },
       {
+        "name": "Missions & AI Agent",
+        "path": "web/src/components/missions/, web/src/components/mission-control/, pkg/agent/",
+        "description": "AI-driven missions, mission browser, agent protocol, MCP integration",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/missions"
+      },
+      {
+        "name": "Authentication & Settings",
+        "path": "web/src/components/auth/, web/src/components/settings/, pkg/api/middleware/",
+        "description": "OAuth flow, user settings, preferences, API middleware, authentication",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/auth"
+      },
+      {
         "name": "Networking & Services",
         "path": "web/src/components/network/, web/src/components/services/",
         "description": "Service mesh, ingress, network policies, service discovery",
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/network"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
       }
     ]
   },
@@ -258,15 +180,15 @@
     },
     {
       "month": "2026-08",
-      "issue_count": 5
+      "issue_count": 2
     },
     {
       "month": "2026-09",
-      "issue_count": 5
+      "issue_count": 2
     },
     {
       "month": "2026-10",
-      "issue_count": 2
+      "issue_count": 0
     },
     {
       "month": "2026-11",
@@ -274,14 +196,6 @@
     }
   ],
   "repo_breakdown": [
-    {
-      "repo": "console",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 1,
-      "prs_opened": 7,
-      "prs_merged": 7
-    },
     {
       "repo": "docs",
       "bug_issues": 0,

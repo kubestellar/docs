@@ -1,23 +1,23 @@
 {
   "login": "mendezr",
-  "generated_at": "2026-11-24T18:13:07.039Z",
+  "generated_at": "2026-11-24T22:11:43.231Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 11,
+  "total_prs_opened": 0,
   "avatar_url": "https://avatars.githubusercontent.com/u/18744521?v=4",
   "total_points": 7700,
   "level": "Pilot",
   "level_rank": 4,
   "rank": 34,
   "cadence": {
-    "avg_per_week": 0.9,
-    "avg_per_day": 0.65,
+    "avg_per_week": 0,
+    "avg_per_day": 0,
     "by_day_of_week": [
-      3,
-      1,
-      1,
-      4,
-      1,
-      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0
     ],
     "by_hour_of_day": [
@@ -29,194 +29,33 @@
       0,
       0,
       0,
-      1,
-      0,
-      0,
-      1,
       0,
       0,
       0,
       0,
-      1,
       0,
       0,
-      6,
-      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0,
       0
     ],
     "current_streak_weeks": 0,
-    "longest_streak_weeks": 4,
-    "trend": "ramping_up",
-    "first_issue_at": "2026-10-20T16:00:12.000Z",
-    "last_issue_at": "2026-11-06T11:22:51.000Z"
+    "longest_streak_weeks": 0,
+    "trend": "inactive",
+    "first_issue_at": null,
+    "last_issue_at": null
   },
-  "topics": [
-    {
-      "name": "positive, recognize, false",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "fix(qa): recognize existing flicker loading indicators",
-        "url": "https://github.com/kubestellar/console/pull/24701",
-        "created_at": "2026-10-29T20:02:45Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 4
-    },
-    {
-      "name": "label, fixture, button",
-      "issue_count": 2,
-      "recent_issue": {
-        "title": "fix(auto-qa): exclude test fixtures from localization scans",
-        "url": "https://github.com/kubestellar/console/pull/24833",
-        "created_at": "2026-11-05T19:34:16Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 2
-    },
-    {
-      "name": "priority, menu, focus",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix(a11y): complete agent and priority menu keyboard navigation",
-        "url": "https://github.com/kubestellar/console/pull/24850",
-        "created_at": "2026-11-06T11:22:51Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "bounded, transient, retry",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix(e2e): recover bounded live API read transients",
-        "url": "https://github.com/kubestellar/console/pull/24737",
-        "created_at": "2026-10-31T20:23:14Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "refresh, invert, scann",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix(qa): eliminate false refresh animation findings",
-        "url": "https://github.com/kubestellar/console/pull/24699",
-        "created_at": "2026-10-29T19:47:49Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "reclaim, image, rollback",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "fix(ci): reclaim image ownership during upgrade smoke rollback",
-        "url": "https://github.com/kubestellar/console/pull/24643",
-        "created_at": "2026-10-26T19:12:42Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
-      "name": "hive, hivecommons, smoke",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "chore: remove temporary Hive action smoke workflow",
-        "url": "https://github.com/kubestellar/console/pull/24494",
-        "created_at": "2026-10-20T16:00:12Z"
-      },
-      "repos": [
-        "console"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    }
-  ],
+  "topics": [],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "fix: support keyboard navigation in OPA policy menu",
-        "url": "https://github.com/kubestellar/console/pull/25001",
-        "repo": "console",
-        "topic_match": "priority, menu, focus"
-      },
-      {
-        "title": "fix(ui): standardize refresh spinner animation",
-        "url": "https://github.com/kubestellar/console/pull/25095",
-        "repo": "console",
-        "topic_match": "refresh, invert, scann"
-      },
-      {
-        "title": "🐛 fix: stop Auto-QA loading-state check flagging test mocks",
-        "url": "https://github.com/kubestellar/console/pull/25111",
-        "repo": "console",
-        "topic_match": "label, fixture, button"
-      },
-      {
-        "title": "🌱 ci(auto-qa): drop false positives from console-error heuristics",
-        "url": "https://github.com/kubestellar/console/pull/25068",
-        "repo": "console",
-        "topic_match": "positive, recognize, false"
-      },
-      {
-        "title": "[Auto-QA] Refresh icon animation consistency issues",
-        "url": "https://github.com/kubestellar/console/issues/25094",
-        "repo": "console",
-        "topic_match": "refresh, invert, scann"
-      }
-    ],
-    "stretch": [
-      {
-        "name": "Observability & Logs",
-        "path": "web/src/components/logs/, web/src/components/events/, web/src/components/alerts/",
-        "description": "Log streaming, event timeline, alerting, notifications",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/logs"
-      },
-      {
-        "name": "Marketplace & Operators",
-        "path": "web/src/components/marketplace/, web/src/components/operators/",
-        "description": "Plugin marketplace, operator management, extensions",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/marketplace"
-      },
-      {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
-      },
-      {
-        "name": "GPU & AI/ML",
-        "path": "web/src/components/gpu/, web/src/components/aiml/, web/src/components/llmd-benchmarks/",
-        "description": "GPU namespace allocations, AI/ML workload monitoring, llm-d benchmarks and performance",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/gpu"
-      },
-      {
-        "name": "Storage & Compute",
-        "path": "web/src/components/storage/, web/src/components/compute/",
-        "description": "Persistent volumes, storage classes, compute resource management",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
-      }
-    ]
+    "deepen": [],
+    "stretch": []
   },
   "activity_timeline": [
     {
@@ -261,21 +100,12 @@
     },
     {
       "month": "2026-10",
-      "issue_count": 8
+      "issue_count": 0
     },
     {
       "month": "2026-11",
-      "issue_count": 3
+      "issue_count": 0
     }
   ],
-  "repo_breakdown": [
-    {
-      "repo": "console",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 11,
-      "prs_merged": 11
-    }
-  ]
+  "repo_breakdown": []
 }

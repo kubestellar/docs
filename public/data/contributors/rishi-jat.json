@@ -1,6 +1,6 @@
 {
   "login": "rishi-jat",
-  "generated_at": "2026-11-24T18:13:06.621Z",
+  "generated_at": "2026-11-24T22:11:43.065Z",
   "total_issues_opened": 89,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/192839807?v=4",
@@ -82,7 +82,7 @@
       "closed_count": 2
     },
     {
-      "name": "attach, screenshot, style",
+      "name": "attach, screenshot, button",
       "issue_count": 2,
       "recent_issue": {
         "title": "Review and fix mkdocs.yml configuration",
@@ -110,7 +110,7 @@
       "closed_count": 2
     },
     {
-      "name": "temporary, intend, preview",
+      "name": "temporary, intend, testing",
       "issue_count": 1,
       "recent_issue": {
         "title": "This PR adds a temporary test file to verify that the preview build and deploy workflows run as expected.",
@@ -139,14 +139,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "fix(auto-qa): stop navigation check flagging tests and modal views",
-        "url": "https://github.com/kubestellar/console/pull/25102",
-        "repo": "console",
-        "topic_match": "noopener, rel, index"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "Cost Management",

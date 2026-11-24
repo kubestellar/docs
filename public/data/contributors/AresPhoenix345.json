@@ -1,6 +1,6 @@
 {
   "login": "AresPhoenix345",
-  "generated_at": "2026-11-24T18:13:07.057Z",
+  "generated_at": "2026-11-24T22:11:43.244Z",
   "total_issues_opened": 2,
   "total_prs_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/229183175?v=4",
@@ -54,7 +54,7 @@
   },
   "topics": [
     {
-      "name": "agenda, meeting, community",
+      "name": "agenda, meeting, translation",
       "issue_count": 3,
       "recent_issue": {
         "title": "✨fix: add missing translations for \"Meeting Agendas\" across all languages",

@@ -1,6 +1,6 @@
 {
   "login": "zyzzmohit",
-  "generated_at": "2026-11-24T18:13:07.260Z",
+  "generated_at": "2026-11-24T22:11:43.437Z",
   "total_issues_opened": 0,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/237704724?v=4",
@@ -111,14 +111,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "perf: stabilize shared card filter controls",
-        "url": "https://github.com/kubestellar/console/pull/25025",
-        "repo": "console",
-        "topic_match": "filter, global, status"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "GPU & AI/ML",

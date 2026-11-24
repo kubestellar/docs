@@ -1,6 +1,6 @@
 {
   "login": "Creativeklvn",
-  "generated_at": "2026-11-24T18:13:07.048Z",
+  "generated_at": "2026-11-24T22:11:43.235Z",
   "total_issues_opened": 1,
   "total_prs_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/216730209?v=4",
@@ -96,7 +96,7 @@
       "closed_count": 2
     },
     {
-      "name": "page, console, navigation",
+      "name": "page, navigation, console",
       "issue_count": 1,
       "recent_issue": {
         "title": "Reorder console navigation and add cluster registration link",

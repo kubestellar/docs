@@ -1,6 +1,6 @@
 {
   "login": "ParthKshirsagar7",
-  "generated_at": "2026-11-24T18:13:07.250Z",
+  "generated_at": "2026-11-24T22:11:43.429Z",
   "total_issues_opened": 1,
   "total_prs_opened": 3,
   "avatar_url": "https://avatars.githubusercontent.com/u/149901357?v=4",
@@ -83,14 +83,7 @@
     }
   ],
   "suggestions": {
-    "deepen": [
-      {
-        "title": "fix(gitops): make single-cluster auto-selection explicit in useGitOps",
-        "url": "https://github.com/kubestellar/console/pull/25070",
-        "repo": "console",
-        "topic_match": "cluster, end, management"
-      }
-    ],
+    "deepen": [],
     "stretch": [
       {
         "name": "GPU & AI/ML",

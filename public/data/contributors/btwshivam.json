@@ -1,6 +1,6 @@
 {
   "login": "btwshivam",
-  "generated_at": "2026-11-24T18:13:07.240Z",
+  "generated_at": "2026-11-24T22:11:43.422Z",
   "total_issues_opened": 5,
   "total_prs_opened": 7,
   "avatar_url": "https://avatars.githubusercontent.com/u/127589548?v=4",
@@ -68,7 +68,7 @@
       "closed_count": 4
     },
     {
-      "name": "duplicate, icon, remove",
+      "name": "icon, duplicate, remove",
       "issue_count": 2,
       "recent_issue": {
         "title": "🐛 Fix: remove duplicate non-functional icons from feature cards ",
@@ -110,7 +110,7 @@
       "closed_count": 2
     },
     {
-      "name": "downside, increse, box",
+      "name": "downside, increse, length",
       "issue_count": 1,
       "recent_issue": {
         "title": "feature: Remove Stay Updated and place it below downside the sections and Increse the length of input box",
@@ -145,12 +145,6 @@
         "url": "https://github.com/kubestellar/console-kb/pull/3942",
         "repo": "console-kb",
         "topic_match": "dark, light, mode"
-      },
-      {
-        "title": "fix(ui): standardize refresh spinner animation",
-        "url": "https://github.com/kubestellar/console/pull/25095",
-        "repo": "console",
-        "topic_match": "duplicate, icon, remove"
       }
     ],
     "stretch": [

@@ -1,6 +1,6 @@
 {
   "login": "onkar717",
-  "generated_at": "2026-11-24T18:13:07.257Z",
+  "generated_at": "2026-11-24T22:11:43.435Z",
   "total_issues_opened": 5,
   "total_prs_opened": 8,
   "avatar_url": "https://avatars.githubusercontent.com/u/144542684?v=4",
@@ -96,7 +96,7 @@
       "closed_count": 1
     },
     {
-      "name": "linkdin, point, correct",
+      "name": "linkdin, correct, point",
       "issue_count": 1,
       "recent_issue": {
         "title": "update the linkdin to point correct page",
@@ -110,7 +110,7 @@
       "closed_count": 1
     },
     {
-      "name": "display, ui, stats",
+      "name": "ui, display, stats",
       "issue_count": 1,
       "recent_issue": {
         "title": "bug: Mismatch between GitHub repo stats and UI display",
