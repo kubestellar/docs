@@ -1,6 +1,6 @@
 {
   "login": "MikeSpreitzer",
-  "generated_at": "2026-11-25T02:16:17.690Z",
+  "generated_at": "2026-11-25T06:18:41.278Z",
   "total_issues_opened": 43,
   "total_prs_opened": 4,
   "avatar_url": "https://avatars.githubusercontent.com/u/14296719?v=4",
@@ -285,6 +285,12 @@
         "url": "https://github.com/kubestellar/docs/pull/7609",
         "repo": "docs",
         "topic_match": "gh, aw, @mymac"
+      },
+      {
+        "title": "🌱 argo: Auto-login with SSO",
+        "url": "https://github.com/kubestellar/console-kb/pull/3947",
+        "repo": "console-kb",
+        "topic_match": "login, need, agent"
       }
     ],
     "stretch": [
