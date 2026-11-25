@@ -76,6 +76,23 @@ export async function ghFetch(url, headers) {
   return res.json();
 }
 
+/** Follow GitHub's next links, including cursor-based pagination for large datasets. */
+export async function fetchLinkedPages(url, headers, { delayMs = REST_PAGE_DELAY_MS } = {}) {
+  const allItems = [];
+  while (url) {
+    const res = await fetch(url, { headers });
+    if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      throw new Error(`GitHub API ${res.status}: ${url}\n${body.slice(0, 200)}`);
+    }
+    allItems.push(...await res.json());
+    const next = res.headers.get("link")?.split(",").find((link) => /;\s*rel="next"/.test(link));
+    url = next?.match(/<([^>]+)>/)?.[1];
+    if (url && delayMs) await delay(delayMs);
+  }
+  return allItems;
+}
+
 /**
  * Walk a REST API list endpoint page-by-page until a short page (or an
  * empty page) signals the end, delaying between requests to stay under

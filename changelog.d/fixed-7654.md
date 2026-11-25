@@ -1,0 +1,1 @@
+Fixed contributor profile generation for repositories with large issue histories by following GitHub's cursor pagination. Failed profile runs no longer publish partial profile data, and the workflow allows additional time for the complete scan.

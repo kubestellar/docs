@@ -22,7 +22,7 @@ import {
   API_BASE,
   classifyIssueLabels,
   buildDefaultHeaders,
-  fetchAllPages,
+  fetchLinkedPages,
   TRACKED_REPOS,
 } from "./lib/github-fetch.mjs";
 import {
@@ -80,9 +80,8 @@ const defaultHeaders = buildDefaultHeaders(TOKEN);
 // ── Data fetching ────────────────────────────────────────────────────
 
 async function fetchAllIssuesWithBodies(repo) {
-  return fetchAllPages(
-    (page) =>
-      `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&page=${page}&sort=created&direction=desc`,
+  return fetchLinkedPages(
+    `${API_BASE}/repos/${repo}/issues?state=all&per_page=${REST_PER_PAGE}&sort=created&direction=desc`,
     defaultHeaders
   );
 }
@@ -138,7 +137,7 @@ async function main() {
       const prsCount = processed.filter(p => p.is_pr).length;
       console.log(`  ${repo}: ${processed.length} items (${issuesCount} issues, ${prsCount} PRs)`);
     } catch (err) {
-      console.warn(`  Warning: failed to fetch ${repo}: ${err.message}`);
+      throw new Error(`Failed to fetch ${repo}: ${err.message}`, { cause: err });
     }
   }
 
