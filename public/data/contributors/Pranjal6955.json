@@ -1,6 +1,6 @@
 {
   "login": "Pranjal6955",
-  "generated_at": "2026-11-25T22:12:32.735Z",
+  "generated_at": "2026-11-26T02:14:55.012Z",
   "total_issues_opened": 6,
   "total_prs_opened": 15,
   "avatar_url": "https://avatars.githubusercontent.com/u/181936109?v=4",
@@ -97,7 +97,20 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "[contributor-profiles-failure] Contributor profile generation step failing",
+        "url": "https://github.com/kubestellar/docs/issues/7654",
+        "repo": "docs",
+        "topic_match": "profile, leaderboard, contribution"
+      },
+      {
+        "title": "fix: generate contributor profiles with cursor pagination",
+        "url": "https://github.com/kubestellar/docs/pull/7655",
+        "repo": "docs",
+        "topic_match": "profile, leaderboard, contribution"
+      }
+    ],
     "stretch": [
       {
         "name": "GPU & AI/ML",

@@ -1,20 +1,20 @@
 {
   "login": "Karibhou",
-  "generated_at": "2026-11-25T22:12:32.817Z",
+  "generated_at": "2026-11-26T02:14:55.094Z",
   "total_issues_opened": 0,
-  "total_prs_opened": 10,
+  "total_prs_opened": 11,
   "avatar_url": "https://avatars.githubusercontent.com/u/157208370?v=4",
-  "total_points": 40900,
+  "total_points": 41300,
   "level": "Commander",
   "level_rank": 5,
   "rank": 16,
   "cadence": {
-    "avg_per_week": 0.8,
-    "avg_per_day": 0.38,
+    "avg_per_week": 0.9,
+    "avg_per_day": 0.27,
     "by_day_of_week": [
       5,
       0,
-      1,
+      2,
       0,
       2,
       1,
@@ -43,30 +43,30 @@
       0,
       0,
       1,
-      1,
+      2,
       1
     ],
-    "current_streak_weeks": 0,
+    "current_streak_weeks": 1,
     "longest_streak_weeks": 1,
     "trend": "ramping_up",
     "first_issue_at": "2026-10-16T18:32:00.000Z",
-    "last_issue_at": "2026-11-11T22:34:07.000Z"
+    "last_issue_at": "2026-11-25T22:31:55.000Z"
   },
   "topics": [
     {
       "name": "omp, hive, 🐝",
-      "issue_count": 5,
+      "issue_count": 6,
       "recent_issue": {
-        "title": "ci: rebuild mission index on push retry instead of rebasing stale commit",
-        "url": "https://github.com/kubestellar/console-kb/pull/3920",
-        "created_at": "2026-11-09T21:22:06Z"
+        "title": "fix: generate contributor profiles with cursor pagination",
+        "url": "https://github.com/kubestellar/docs/pull/7655",
+        "created_at": "2026-11-25T22:31:55Z"
       },
       "repos": [
+        "docs",
         "console-kb",
-        "console-marketplace",
-        "docs"
+        "console-marketplace"
       ],
-      "open_count": 0,
+      "open_count": 1,
       "closed_count": 5
     },
     {
@@ -168,10 +168,10 @@
         "url": "https://github.com/kubestellar/console/tree/main/web/src/components/storage"
       },
       {
-        "name": "Onboarding & Rewards",
-        "path": "web/src/components/onboarding/, web/src/components/rewards/",
-        "description": "New user onboarding, gamification, contributor rewards system",
-        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/onboarding"
+        "name": "Cost Management",
+        "path": "web/src/components/cost/",
+        "description": "Cloud cost analysis, resource cost allocation, budgeting",
+        "url": "https://github.com/kubestellar/console/tree/main/web/src/components/cost"
       }
     ]
   },
@@ -222,7 +222,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 8
+      "issue_count": 9
     }
   ],
   "repo_breakdown": [
@@ -235,20 +235,20 @@
       "prs_merged": 5
     },
     {
+      "repo": "docs",
+      "bug_issues": 0,
+      "feature_issues": 0,
+      "other_issues": 0,
+      "prs_opened": 3,
+      "prs_merged": 1
+    },
+    {
       "repo": "console-marketplace",
       "bug_issues": 0,
       "feature_issues": 0,
       "other_issues": 0,
       "prs_opened": 2,
       "prs_merged": 2
-    },
-    {
-      "repo": "docs",
-      "bug_issues": 0,
-      "feature_issues": 0,
-      "other_issues": 0,
-      "prs_opened": 2,
-      "prs_merged": 1
     }
   ]
 }

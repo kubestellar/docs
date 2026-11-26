@@ -1,20 +1,20 @@
 {
   "login": "clubanderson",
-  "generated_at": "2026-11-25T22:12:32.448Z",
-  "total_issues_opened": 643,
+  "generated_at": "2026-11-26T02:14:54.728Z",
+  "total_issues_opened": 644,
   "total_prs_opened": 2861,
   "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-  "total_points": 6368850,
+  "total_points": 6368900,
   "level": "Legend",
   "level_rank": 8,
   "rank": 1,
   "cadence": {
     "avg_per_week": 21.7,
-    "avg_per_day": 7.49,
+    "avg_per_day": 7.48,
     "by_day_of_week": [
       326,
       599,
-      771,
+      772,
       564,
       546,
       371,
@@ -43,14 +43,14 @@
       107,
       120,
       54,
-      58,
+      59,
       36
     ],
     "current_streak_weeks": 47,
     "longest_streak_weeks": 47,
     "trend": "steady",
     "first_issue_at": "2025-08-14T15:16:28.000Z",
-    "last_issue_at": "2026-11-25T06:02:09.000Z"
+    "last_issue_at": "2026-11-25T22:12:37.000Z"
   },
   "topics": [
     {
@@ -110,20 +110,6 @@
       ],
       "open_count": 0,
       "closed_count": 5
-    },
-    {
-      "name": "keycloak, cimd, cve",
-      "issue_count": 4,
-      "recent_issue": {
-        "title": "🌱 keycloak: [CVE-2026-114938] Mitigate OpenJDK Base64 intrinsic vulnerability",
-        "url": "https://github.com/kubestellar/console-kb/pull/3943",
-        "created_at": "2026-11-20T06:06:52Z"
-      },
-      "repos": [
-        "console-kb"
-      ],
-      "open_count": 1,
-      "closed_count": 3
     },
     {
       "name": "registry, warning, qa",
@@ -254,6 +240,20 @@
       "closed_count": 3
     },
     {
+      "name": "profile, contributor, leaderboard",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "[contributor-profiles-failure] Contributor profile generation step failing",
+        "url": "https://github.com/kubestellar/docs/issues/7654",
+        "created_at": "2026-11-25T22:12:37Z"
+      },
+      "repos": [
+        "docs"
+      ],
+      "open_count": 1,
+      "closed_count": 1
+    },
+    {
       "name": "gh, compiler, aw",
       "issue_count": 2,
       "recent_issue": {
@@ -266,6 +266,20 @@
       ],
       "open_count": 1,
       "closed_count": 1
+    },
+    {
+      "name": "cimd, keycloak, bearer",
+      "issue_count": 2,
+      "recent_issue": {
+        "title": "🌱 keycloak: CIMD: authorization request rejected when Client ID Metadata Document contains",
+        "url": "https://github.com/kubestellar/console-kb/pull/3895",
+        "created_at": "2026-11-03T06:07:20Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 0,
+      "closed_count": 2
     },
     {
       "name": "longhorn, xfs, mib",
@@ -323,6 +337,20 @@
       ],
       "open_count": 0,
       "closed_count": 2
+    },
+    {
+      "name": "openjdk, intrinsic, mitigate",
+      "issue_count": 1,
+      "recent_issue": {
+        "title": "🌱 keycloak: [CVE-2026-114938] Mitigate OpenJDK Base64 intrinsic vulnerability",
+        "url": "https://github.com/kubestellar/console-kb/pull/3943",
+        "created_at": "2026-11-20T06:06:52Z"
+      },
+      "repos": [
+        "console-kb"
+      ],
+      "open_count": 1,
+      "closed_count": 0
     },
     {
       "name": "apparmor, signal, deny",
@@ -619,20 +647,6 @@
       "closed_count": 1
     },
     {
-      "name": "profile, contributor, dat",
-      "issue_count": 1,
-      "recent_issue": {
-        "title": "[contributor-profiles-failure] Contributor profile generation step failing",
-        "url": "https://github.com/kubestellar/docs/issues/7001",
-        "created_at": "2026-09-17T14:19:24Z"
-      },
-      "repos": [
-        "docs"
-      ],
-      "open_count": 0,
-      "closed_count": 1
-    },
-    {
       "name": "oss, sdk, gpt",
       "issue_count": 1,
       "recent_issue": {
@@ -788,7 +802,14 @@
     }
   ],
   "suggestions": {
-    "deepen": [],
+    "deepen": [
+      {
+        "title": "fix: generate contributor profiles with cursor pagination",
+        "url": "https://github.com/kubestellar/docs/pull/7655",
+        "repo": "docs",
+        "topic_match": "profile, contributor, leaderboard"
+      }
+    ],
     "stretch": [
       {
         "name": "Charts & Visualizations",
@@ -869,7 +890,7 @@
     },
     {
       "month": "2026-11",
-      "issue_count": 26
+      "issue_count": 27
     }
   ],
   "repo_breakdown": [
@@ -885,7 +906,7 @@
       "repo": "docs",
       "bug_issues": 133,
       "feature_issues": 0,
-      "other_issues": 187,
+      "other_issues": 188,
       "prs_opened": 638,
       "prs_merged": 592
     },
