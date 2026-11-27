@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-27T10:08:02.243Z",
-  "git_hash": "7367099",
+  "generated_at": "2026-11-27T14:07:57.476Z",
+  "git_hash": "6913bcc",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-09-07",
@@ -20,12 +20,12 @@
     {
       "login": "clubanderson",
       "avatar_url": "https://avatars.githubusercontent.com/u/407614?v=4",
-      "total_points": 6368900,
+      "total_points": 6369000,
       "level": "Legend",
       "level_rank": 8,
       "breakdown": {
         "bug_issues": 747,
-        "feature_issues": 1558,
+        "feature_issues": 1559,
         "other_issues": 2189,
         "prs_opened": 8995,
         "prs_merged": 8161
@@ -43,9 +43,9 @@
         61,
         45,
         26,
-        4
+        5
       ],
-      "recent_activity_score": 226.86,
+      "recent_activity_score": 227.86,
       "rank": 1
     },
     {
@@ -950,6 +950,36 @@
       "rank": 31
     },
     {
+      "login": "mendezr",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18744521?v=4",
+      "total_points": 7900,
+      "level": "Pilot",
+      "level_rank": 4,
+      "breakdown": {
+        "bug_issues": 0,
+        "feature_issues": 0,
+        "other_issues": 0,
+        "prs_opened": 12,
+        "prs_merged": 11
+      },
+      "weekly_activity": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        42,
+        7,
+        0,
+        0,
+        1
+      ],
+      "recent_activity_score": 22.74,
+      "rank": 32
+    },
+    {
       "login": "ashnaaseth2325-oss",
       "avatar_url": "https://avatars.githubusercontent.com/u/226311472?v=4",
       "total_points": 7800,
@@ -977,7 +1007,7 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 32
+      "rank": 33
     },
     {
       "login": "Jayant-kernel",
@@ -1007,36 +1037,6 @@
         0
       ],
       "recent_activity_score": 0,
-      "rank": 33
-    },
-    {
-      "login": "mendezr",
-      "avatar_url": "https://avatars.githubusercontent.com/u/18744521?v=4",
-      "total_points": 7700,
-      "level": "Pilot",
-      "level_rank": 4,
-      "breakdown": {
-        "bug_issues": 0,
-        "feature_issues": 0,
-        "other_issues": 0,
-        "prs_opened": 11,
-        "prs_merged": 11
-      },
-      "weekly_activity": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        5,
-        42,
-        7,
-        0,
-        0,
-        0
-      ],
-      "recent_activity_score": 21.74,
       "rank": 34
     },
     {
