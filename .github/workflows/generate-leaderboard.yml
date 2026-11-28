@@ -49,14 +49,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.LEADERBOARD_GITHUB_TOKEN }}
         run: node scripts/generate-contributor-profiles.mjs
-        timeout-minutes: 5
+        timeout-minutes: 20
         continue-on-error: true
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/leaderboard.json public/data/leaderboard-snapshot.json public/data/contributors/
+          git add public/data/leaderboard.json public/data/leaderboard-snapshot.json
+          if [ "${{ steps.contrib-profiles.outcome }}" = "success" ]; then
+            git add public/data/contributors/
+          fi
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "chore: update leaderboard and contributor profile data"
           MAX_RETRIES=5
