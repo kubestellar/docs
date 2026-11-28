@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-28T14:07:05.200Z",
-  "git_hash": "6b9f1ed",
+  "generated_at": "2026-11-28T18:08:34.130Z",
+  "git_hash": "64753a7",
   "year_start": "2026-01-01T00:00:00Z",
   "activity_weeks": [
     "2026-09-07",
@@ -492,11 +492,11 @@
         9,
         56,
         206,
-        84,
-        23,
+        85,
+        24,
         5
       ],
-      "recent_activity_score": 256.73,
+      "recent_activity_score": 258.15,
       "rank": 16
     },
     {
