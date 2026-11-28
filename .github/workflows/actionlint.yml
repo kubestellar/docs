@@ -1,0 +1,71 @@
+name: actionlint
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/**'
+      - '.github/actions/**'
+      - 'scripts/**.sh'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/**'
+      - '.github/actions/**'
+      - 'scripts/**.sh'
+  schedule:
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  actionlint:
+    name: lint workflows
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Download actionlint
+        id: get_actionlint
+        env:
+          ACTIONLINT_REF: '03d0035246f3e81f36aed592ffb4bebf33a03106' # v1.7.7
+          ACTIONLINT_VERSION: '1.7.7'
+        run: |
+          set -euo pipefail
+          curl -fsSL -o download-actionlint.bash \
+            "https://raw.githubusercontent.com/rhysd/actionlint/${ACTIONLINT_REF}/scripts/download-actionlint.bash"
+          bash download-actionlint.bash "${ACTIONLINT_VERSION}"
+          rm -f download-actionlint.bash
+      - name: Run actionlint
+        env:
+          ACTIONLINT: ${{ steps.get_actionlint.outputs.executable }}
+        run: |
+          # Generated gh-aw workflows use extensions outside actionlint's schema.
+          # Lock files are checked by check-aw-lock-drift.yml instead.
+          files=()
+          for file in .github/workflows/*.yml; do
+            case "$file" in
+              *.lock.yml|*/agentics-maintenance.yml) continue ;;
+            esac
+            files+=("$file")
+          done
+          "$ACTIONLINT" -color "${files[@]}"
+
+  shellcheck:
+    name: lint shell scripts
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install shellcheck
+        run: sudo apt-get update && sudo apt-get install -y shellcheck
+      - name: Run shellcheck on scripts/*.sh
+        run: shellcheck -x -P scripts scripts/*.sh
